@@ -10,4 +10,3 @@ Text-based descriptions and analysis of M5Stack series schematic diagrams for ea
 - 二次整理与文档化（写博客、技术文档、教学资料等）
 - 大模型应用
 
-> 说明：本仓库不存放官方原理图图片或源文件，仅提供在阅读原理图后总结的文字性描述和解析。
