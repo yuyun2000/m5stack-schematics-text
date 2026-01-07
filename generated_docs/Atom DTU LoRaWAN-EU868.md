@@ -4,73 +4,60 @@
 
 ## 原理图分析
 
-好的，以下是基于您提供的原理图信息和提示词生成的 **Atom DTU LoRaWAN-EU868** 原理图技术性描述。
+**1. Core LoRaWAN Communication Module**
+*   **Module & SoC:** The circuit utilizes the **RAK3172** module, which integrates the **STM32WLE5** System-on-Chip (SoC). This component handles the LoRaWAN protocol stack and RF signal modulation.
+*   **RF Path:** The RF output pin of the RAK3172 is routed to an **SMA antenna interface** via a 50-ohm impedance-matched transmission line. The circuit typically includes passive filtering components for impedance matching and harmonic suppression between the module and the connector.
+*   **Communication:** The module interacts with the main controller via a UART interface, receiving AT commands to manage network joining and data transmission.
+*   **Power:** The module is powered by a regulated 3.3V rail.
 
-### 主要芯片及其功能
-*   **STM32WLE5J8I6**：作为系统的核心控制器（MCU），它是一款超低功耗片上系统（SoC）。该芯片内部集成了 ARM Cortex-M4 CPU 内核和支持 LoRa 调制方式的射频收发器。它负责运行 LoRaWAN 协议栈，处理 AT 指令，并控制外围通信接口（如 RS485 和 UART）。
-*   **SP3485EN**：一款 3.3V 供电的 RS485 收发芯片。其功能是将在 MCU 的 TTL/CMOS 电平的 UART 信号转换为符合 RS485 标准的差分信号（A/B 线），或将 RS485 差分信号转换回 TTL/CMOS 电平，实现半双工串行通信。
+**2. RS485 Interface & Logic**
+*   **Transceiver:** The schematic features an **SP3485EN** (or equivalent) RS485 transceiver chip, responsible for converting TTL logic levels from the Atom controller into differential RS485 bus signals.
+*   **Terminal Connection:** The transceiver's differential outputs (A and B) are routed to the **HT3.96-4P** terminal block.
+*   **Control Logic:** The transceiver includes Driver Enable (DE) and Receiver Enable (RE#) pins, controlled by the MCU to switch between transmission and reception modes.
 
-### 供电电路
-*   **电源输入**：系统通过一个 4Pin 的接线端子（与 RS485 接口共用）接收外部 9-12V 直流电源输入。
-*   **一级稳压 (5V)**：输入的 9-12V 电压首先经过一个 DC-DC 降压转换器（如 MP1584EN），稳压后输出一个稳定的 5V 电源轨。此 5V 电源主要用于向外部 HY2.0-4P 接口供电。
-*   **二级稳压 (3.3V)**：由 5V 电源轨供电，再经过一个 LDO（低压差线性稳压器）或 DC-DC 降压转换器（如 SY8089AAAC），产生 3.3V 的核心工作电压。
-*   **电源分配**：3.3V 电源轨为整个系统的主要部分供电，包括 STM32WLE5 MCU 和 SP3485EN RS485 收发芯片。
+**3. Power Management Circuit**
+*   **Input Stage:** Power enters the system via the **HT3.96-4P** terminal block, supporting a DC input range of 9V-12V.
+*   **Voltage Regulation:**
+    *   A **DC-DC Step-Down (Buck) Converter** steps down the high-voltage input (12V) to **5V** to supply power to the M5Stack Atom Lite base.
+    *   A **Low Dropout Regulator (LDO)** converts the voltage to **3.3V** to power the RAK3172 module, the RS485 transceiver logic, and other onboard peripherals.
+*   **Efficiency:** The power circuit is designed for low standby power consumption (referenced as ~170uA in specs) to support energy-efficient operation.
 
-### 主控单元电路 (STM32WLE5)
-*   STM32WLE5 MCU 的 VDD 引脚连接至 3.3V 电源轨，并配有相应的去耦电容以保证电源稳定性。
-*   MCU 的 GPIO 引脚被分配用于控制和数据交换。其内部集成的 LoRa 射频收发器直接与射频前端电路相连。
+**4. Controller Interface & Port Mapping**
+*   **UART Connections:**
+    *   **Atom to LoRa:** A dedicated UART pair connects the Atom controller to the RAK3172 for AT command communication (Default Baud: 115200).
+    *   **Atom to RS485:** A separate UART interface connects the Atom to the SP3485EN transceiver for RS485 data exchange.
+*   **Expansion Port (PORT.A):** The schematic routes GPIO signals **G25** and **G21** from the Atom base to the external **HY2.0-4P (Grove)** connector, providing I2C or GPIO expansion capabilities alongside 5V and GND.
 
-### 串口与通讯芯片
-*   **RS485 电路**：
-    *   **芯片**：SP3485EN。
-    *   **数据路径**：MCU 的一个 LPUART（低功耗通用异步收发器）接口的 TX 和 RX 引脚分别连接到 SP3485EN 的 `DI` (Driver Input) 和 `RO` (Receiver Output) 引脚。
-    *   **方向控制**：SP3485EN 的 `DE` (Driver Enable) 和 `RE` (Receiver Enable) 引脚被并联在一起，由 MCU 的一个 GPIO 引脚（例如 `PA4`）统一控制，以切换收发状态。高电平为发送模式，低电平为接收模式。
-    *   **外部接口**：SP3485EN 的差分输出引脚 `A` 和 `B` 连接到外部 4Pin 接线端子，用于 RS485 通信。
-*   **UART (AT 指令) 接口**：
-    *   该接口通过 HY2.0-4P 端口引出。
-    *   MCU 的另一个 UART 接口（例如 `USART1`）的 TX 和 RX 引脚被路由到 HY2.0-4P 接口的 `G25` 和 `G21` 引脚上，用于与外部主控设备（如 Atom Lite）进行 AT 指令通信。
-
-### 射频电路
-*   **信号源**：LoRa 射频信号由 STM32WLE5 内部集成的收发器在 `RFO_HP` (High Power Output) 引脚上生成。
-*   **阻抗匹配与滤波**：`RFO_HP` 输出的信号首先经过一个由电感（L）和电容（C）组成的 π 型网络，该网络用于实现 50Ω 的阻抗匹配。随后，信号通过一个射频滤波器（如带通或低通滤波器），以抑制带外谐波和杂散发射。
-*   **天线接口**：经过匹配和滤波后的射频信号最终被引导至一个 SMA 天线连接器的中心引脚，用于连接外部 50Ω 胶棒天线。
-
-### 外设与接口
-*   **HY2.0-4P 接口**：提供一个 4 针接口，引脚定义为 `GND`、`5V`、`G25` (UART_TX) 和 `G21` (UART_RX)。
-*   **RS485 & 电源输入接口**：一个 4Pin 接线端子，集成了 RS485 通信（`A`、`B` 线）和直流电源输入（`VIN` 9-12V、`GND`）。
-*   **SMA 接口**：标准射频同轴连接器，用于连接 LoRa 天线。
-
-### 电路之间的连接关系
-*   **电源路径**：外部 9-12V 电源输入，经一级稳压产生 5V，再经二级稳压产生 3.3V。3.3V 为 MCU 和 RS485 芯片供电，5V 向 HY2.0 接口供电。
-*   **RS485 信号路径**：MCU UART (TX/RX) ↔ SP3485EN (DI/RO) ↔ RS485 差分线 (A/B)。MCU GPIO 控制 SP3485EN 的收发使能。
-*   **AT 指令信号路径**：外部设备 ↔ HY2.0 接口 (G21/G25) ↔ MCU UART (RX/TX)。
-*   **LoRa 射频信号路径**：STM32WLE5 内部收发器 (RFO_HP) → 阻抗匹配网络 → 滤波器 → SMA 接口 → 天线。
+**5. Pin Configuration & Signal Flow**
+*   **Logic Flow:** The Atom controller acts as the central bridge. It receives data from the RS485 bus (via SP3485EN), processes it, and forwards it to the LoRaWAN network (via RAK3172/STM32WLE5), or vice versa.
+*   **Bus Map:**
+    *   **RS485 Bus:** Connected to Pins A/B on the terminal block.
+    *   **Power Bus:** VCC/GND on the terminal block feeds the internal regulators.
+    *   **Internal Signals:** UART TX/RX lines and RS485 direction control lines are mapped to specific GPIOs on the Atom's bottom header.
 
 ---
 
 ## 补充信息
 
-好的，在上述描述的基础上，可以补充以下几点技术细节，使原理图描述更加完整：
+基于提供的原始文档，对上述原理图分析进行以下技术细节补充：
 
-### 时钟电路 (Clock Circuitry)
-*   **高速外部时钟 (HSE)**：STM32WLE5 MCU 配备了一个外部晶体振荡器（通常为 32MHz），连接至其 OSC_IN 和 OSC_OUT 引脚。该 HSE 是系统的主时钟源，为 CPU 的高速运行以及 LoRa 射频锁相环 (PLL) 提供精确和稳定的频率基准，是保证射频性能的关键。
-*   **低速外部时钟 (LSE)**：通常还会配备一个 32.768 kHz 的晶体振荡器，连接至 MCU 的 LSE_IN 和 LSE_OUT 引脚。此 LSE 主要用于驱动实时时钟 (RTC) 模块和在低功耗模式下维持系统时序，对实现超低功耗待机至关重要。
+**1. 射频前端特性补充 (RF Specifics)**
+*   **频段优化：** 射频电路与阻抗匹配网络专门针对 **EU868 (868-870 MHz)** 频段进行了调优，配合 0.5dBi 的胶棒天线工作。
+*   **性能指标：** 在该硬件实现下，RAK3172 模组支持的最大发射功率为 **22 dBm**，接收灵敏度可达 **-137 dBm**。
 
-### 复位与启动模式电路 (Reset and Boot Mode Circuit)
-*   **复位电路**：MCU 的 `NRST` (Reset) 引脚通过一个上拉电阻连接到 3.3V 电源，并并联一个电容到地，形成一个 RC 复位电路，确保上电时可靠复位。此外，通常会有一个物理按键连接在 `NRST` 引脚和地之间，用于手动触发硬件复位。
-*   **启动模式选择**：MCU 的 `BOOT0` 引脚用于选择启动模式。在设计中，该引脚通常通过一个下拉电阻接地，使得设备在默认情况下从内部 Flash 存储器启动。有时会配合一个按键，允许用户在启动时将 `BOOT0` 拉高，从而进入系统引导加载程序 (System Bootloader) 模式，用于通过 UART 等接口进行固件更新。
+**2. 电源路径负载特性 (Power Consumption Characteristics)**
+*   **转换效率验证：** 电源管理电路（Buck + LDO）实现了极低的静态功耗，在 RS485 接口供电（DC 9V）下，整机待机电流仅为 **167.98uA**。
+*   **动态负载：** 在 9V 输入下，接收模式电流约为 **50mA**；发送模式电流根据速率不同在 **51.56mA** (500Kbps) 至 **102.79mA** (125Kbps) 之间波动。
 
-### 调试与编程接口 (Debug and Programming Interface)
-*   **SWD 接口**：原理图上会引出 STM32WLE5 的串行线调试 (Serial Wire Debug, SWD) 接口信号。这包括 `SWDIO` (数据输入/输出) 和 `SWCLK` (时钟) 两个引脚。这些信号线通常被路由到 PCB 上的测试点或一个专用的烧录排针上，用于连接调试器（如 ST-Link）进行固件烧录和在线调试。
+**3. 内部总线信号映射详情 (Internal Bus Signal Mapping)**
+根据文档定义的 M5-Bus 内部引脚排列，信号连接的具体定义如下：
+*   **LoRa UART 接口：** 映射至总线右侧 **Pin 3 (UART_RX)** 和 **Pin 5 (UART_TX)**。
+*   **RS485 逻辑接口：** 映射至总线右侧 **Pin 7 (RS485_RX)** 和 **Pin 9 (RS485_TX)**。
+*   **电源轨分布：** 3.3V 系统电源位于右侧 **Pin 1**，5V 电源通过左侧 **Pin 6** 及 PORT.A 红色引脚传输。
 
-### 保护电路 (Protection Circuitry)
-*   **RS485 接口保护**：在 SP3485EN 的差分信号线 A 和 B 上，通常会并联 TVS (Transient Voltage Suppressor) 二极管阵列。这些 TVS 二极管的作用是吸收和抑制来自线路上的静电放电 (ESD)、浪涌等瞬态高压，从而保护 SP3485EN 芯片免受损坏。
-*   **电源输入保护**：在 9-12V 的直流电源输入端，通常会串联一个二极管用于防止电源反接，或加入一个保险丝/自恢复保险丝 (PTC) 进行过流保护。
-
-### 状态指示灯 (Status Indicators)
-*   **电源指示灯**：一个 LED 指示灯通过限流电阻连接在 3.3V 或 5V 电源轨上，当设备上电时，该 LED 会点亮，直观地显示设备的工作状态。
-*   **通信/状态指示灯**：另一个或多个 LED 指示灯连接到 MCU 的通用 GPIO 引脚上。这些 LED 可由软件编程控制，用于指示 LoRa 网络状态（如入网、发送/接收数据）、RS485 通信活动或其他用户自定义的状态。
+**4. 固件协议栈支持 (Firmware & Protocol)**
+*   **协议实现：** STM32WLE5 SoC 内部固件已集成 **LoRaWAN 1.0.3** 协议栈，硬件上支持 **Class A、Class B、Class C** 三种模式及 **LoRa P2P** 点对点通信模式，所有模式切换与配置均通过上述 UART 物理链路使用 AT 指令集控制。
 
 ---
 
-*该文档由 AI 自动生成，生成时间: 2025-11-17 18:36:16*
+*该文档由 AI 自动生成，生成时间: 2026-01-06 15:37:01*
