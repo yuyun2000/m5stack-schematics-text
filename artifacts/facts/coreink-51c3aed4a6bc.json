@@ -1,0 +1,510 @@
+{
+  "schema_version": 1,
+  "generator": "schematic_describer",
+  "product": {
+    "product_id": "coreink-51c3aed4a6bc",
+    "product_name": "CoreInk",
+    "sku": "K048",
+    "source_path": "core/coreink.md",
+    "source_sha256": "752f7bf40c22ea39aa1bc54fe24bc7b5c8796d37f6738ad5951826811a6cd7e7",
+    "input_sha256": "bc27e5bb7a34da89540ca683947dc093adbb5d923ff7a0b2b4a1d748d72adec8"
+  },
+  "schematic_assets": [
+    {
+      "sha256": "7cd4730d0074fdbab3d21193e52cda999831ba42cd0b504c679431a194a588a3",
+      "source_url": "https://m5stack-doc.oss-cn-shenzhen.aliyuncs.com/687/coreink_sch_page_01.png",
+      "pages": [1]
+    },
+    {
+      "sha256": "b0e23e40780f602b19469bc70a064f8869bcb46c4bc862153ff8b06a6f32cbec",
+      "source_url": "https://static-cdn.m5stack.com/resource/docs/products/core/coreink/coreink_sch_01.webp",
+      "pages": [1]
+    }
+  ],
+  "summary": "CoreInk 以 U1 ESP32-PICO-D4 SiP 为主控，通过 SPI 驱动 EPD1 电子墨水屏，并以 I2C 连接 U4 BM8563 RTC。USB Type-C 经 U2 CP2104 提供下载调试串口，M5-Bus、Grove 与 10 针 HAT FPC 引出电源和 GPIO。电源由 U6 TP4057 负责电池充电，U5 SY7088 生成 SYS_P050，U3 SY8089 生成 MCU_VDD，独立升压网络产生电子墨水屏 VGG/VEE 高压轨。",
+  "keywords": [
+    "CoreInk",
+    "K048",
+    "ESP32-PICO-D4",
+    "PICO_D4",
+    "CP2104-F03-GMR",
+    "BM8563",
+    "TP4057",
+    "SY7088",
+    "SY8089",
+    "EPD_SPI",
+    "E-Ink",
+    "GDEW0154M09",
+    "M5_BUS_16P_H7.1",
+    "USB Type-C",
+    "GROVE",
+    "HY2.0-4P",
+    "HAT CON10",
+    "SYS_BAT",
+    "BST_IN",
+    "SYS_P050",
+    "MCU_VDD",
+    "EXT_5V0",
+    "PWR_TRIG",
+    "MCU_RST",
+    "CP_TX",
+    "CP_RX",
+    "GPIO21 SDA",
+    "GPIO22 SCL",
+    "GPIO18 SCK",
+    "GPIO23 MOSI",
+    "GPIO9 EPD_CS",
+    "GPIO15 EPD_DC",
+    "GPIO4 EPD_BUSY",
+    "GPIO0 EPD_RST",
+    "32.768K",
+    "SRV05-4"
+  ],
+  "components": [
+    {
+      "reference": "U1",
+      "part_number": "ESP32-PICO-D4",
+      "role": "主控 SiP，连接射频、电子墨水屏、RTC、USB-UART、按键、蜂鸣器和扩展接口",
+      "evidence": [{"asset_sha256": "7cd4730d0074fdbab3d21193e52cda999831ba42cd0b504c679431a194a588a3", "page": 1, "locator": "主原理图 A2-B2，U1 PICO_D4，GPIO0-GPIO39、LNA_IN、EN 与电源引脚"}]
+    },
+    {
+      "reference": "U2",
+      "part_number": "CP2104-F03-GMR",
+      "role": "USB 转 UART 桥，连接 SYS_DP/SYS_DM 与 ESP32 下载调试串口",
+      "evidence": [{"asset_sha256": "7cd4730d0074fdbab3d21193e52cda999831ba42cd0b504c679431a194a588a3", "page": 1, "locator": "主原理图 C2 USB2UART 区，U2 CP2104-F03-GMR"}]
+    },
+    {
+      "reference": "U3",
+      "part_number": "SY8089",
+      "role": "3.3V 降压转换器，从 SYS_P050 生成 MCU_VDD",
+      "evidence": [{"asset_sha256": "7cd4730d0074fdbab3d21193e52cda999831ba42cd0b504c679431a194a588a3", "page": 1, "locator": "主原理图 C3 3.3V DC-DC 区，U3 SY8089、L3 2.2uH、R39/R40"}]
+    },
+    {
+      "reference": "U4",
+      "part_number": "BM8563",
+      "role": "实时时钟，通过 GPIO21/GPIO22 I2C 连接主控并提供 CLKOUT/INT",
+      "evidence": [{"asset_sha256": "7cd4730d0074fdbab3d21193e52cda999831ba42cd0b504c679431a194a588a3", "page": 1, "locator": "主原理图 D3 RTC 区，U4 BM8563 与 X1 32.768K"}]
+    },
+    {
+      "reference": "U5",
+      "part_number": "SY7088",
+      "role": "5V 升压转换器，从 BST_IN 生成 SYS_P050",
+      "evidence": [{"asset_sha256": "7cd4730d0074fdbab3d21193e52cda999831ba42cd0b504c679431a194a588a3", "page": 1, "locator": "主原理图 C3 5V DC-DC 区，U5 SY7088、L2 2.2uH、R43/R44"}]
+    },
+    {
+      "reference": "U6",
+      "part_number": "TP4057",
+      "role": "单节电池线性充电控制器，CHG 输入连接 SYS_BAT 输出并带充电指示",
+      "evidence": [{"asset_sha256": "7cd4730d0074fdbab3d21193e52cda999831ba42cd0b504c679431a194a588a3", "page": 1, "locator": "主原理图 B3 CHARGER 区，U6 TP4057、R45 5.1K、LED1"}]
+    },
+    {
+      "reference": "EPD1",
+      "part_number": "EPD_SPI",
+      "role": "24 针电子墨水屏连接器，承载 SPI、BUSY/RESET 和 VGG/VEE/VCOM 等显示电源",
+      "evidence": [{"asset_sha256": "7cd4730d0074fdbab3d21193e52cda999831ba42cd0b504c679431a194a588a3", "page": 1, "locator": "主原理图 B4 EPD_SPI 区，EPD1 1-24 脚及 SHELL_GND"}]
+    },
+    {
+      "reference": "BUS1",
+      "part_number": "M5_BUS_16P_H7.1",
+      "role": "16 针 M5-Bus 扩展连接器，引出电池、5V、3.3V、复位、UART、I2C、SPI 与 GPIO",
+      "evidence": [{"asset_sha256": "7cd4730d0074fdbab3d21193e52cda999831ba42cd0b504c679431a194a588a3", "page": 1, "locator": "主原理图 A1 BUS 区，BUS1 M5_BUS_16P_H7.1，针脚 1-16"}]
+    },
+    {
+      "reference": "J2",
+      "part_number": "TYPEC",
+      "role": "USB Type-C 供电和 USB 2.0 数据接口",
+      "evidence": [{"asset_sha256": "7cd4730d0074fdbab3d21193e52cda999831ba42cd0b504c679431a194a588a3", "page": 1, "locator": "主原理图 C1 USB TYPE-C 区，J2 TYPEC、CC1/CC2、DP/DM、USB_5V"}]
+    },
+    {
+      "reference": "J3",
+      "part_number": "GROVE",
+      "role": "4 针 Grove 连接器，提供 EXT_G33、EXT_G32、EXT_5V0 与 GND",
+      "evidence": [{"asset_sha256": "7cd4730d0074fdbab3d21193e52cda999831ba42cd0b504c679431a194a588a3", "page": 1, "locator": "主原理图 A4 GROVE 区，J3 针脚 1-4 与 SH"}]
+    },
+    {
+      "reference": "J1",
+      "part_number": "CON10",
+      "role": "10 针 HAT FPC，连接 LED、KEY、扩展 GPIO 和多路电源",
+      "evidence": [{"asset_sha256": "7cd4730d0074fdbab3d21193e52cda999831ba42cd0b504c679431a194a588a3", "page": 1, "locator": "主原理图 C1-D1 FPC TO HAT 区，J1 CON10 针脚 1-10"}]
+    },
+    {
+      "reference": "U4 (CON2)",
+      "part_number": "CON2",
+      "role": "两针电池端口，连接 SYS_BAT 与 GND；图中连接器位号显示为 U4",
+      "evidence": [{"asset_sha256": "7cd4730d0074fdbab3d21193e52cda999831ba42cd0b504c679431a194a588a3", "page": 1, "locator": "主原理图 D4 BATTERY PORT 区，U4/CON2，1 脚 SYS_BAT、2 脚 GND、SH GND"}]
+    },
+    {
+      "reference": "D1-D3",
+      "part_number": "SRV05-4",
+      "role": "扩展 GPIO 与复位线的多通道 ESD 保护阵列",
+      "evidence": [{"asset_sha256": "7cd4730d0074fdbab3d21193e52cda999831ba42cd0b504c679431a194a588a3", "page": 1, "locator": "主原理图 B1 ESD 区，D1-D3 SRV05-4 与 R6-R16 47R 串联电阻"}]
+    },
+    {
+      "reference": "Q2/Q4",
+      "part_number": "SI2302/SI2301",
+      "role": "电池升压输入的电源锁存和 PWR_TRIG 控制级",
+      "evidence": [{"asset_sha256": "7cd4730d0074fdbab3d21193e52cda999831ba42cd0b504c679431a194a588a3", "page": 1, "locator": "主原理图 B3 PWR_SW&ADC 区，Q4 SI2301、Q2 SI2302、GPIO12、PWR_TRIG"}]
+    },
+    {
+      "reference": "Q1/BZ1",
+      "part_number": "S8050/BUZZER",
+      "role": "GPIO2 控制的低边蜂鸣器驱动，带 D4 1N4148 续流二极管",
+      "evidence": [{"asset_sha256": "7cd4730d0074fdbab3d21193e52cda999831ba42cd0b504c679431a194a588a3", "page": 1, "locator": "主原理图 D1 BUZZER 区，Q1 S8050、BZ1、D4 1N4148"}]
+    },
+    {
+      "reference": "S1/S2/S3",
+      "part_number": "POWER/RESET/K1-15025A-02",
+      "role": "电源、复位和三向多功能拨轮/按键输入",
+      "evidence": [{"asset_sha256": "7cd4730d0074fdbab3d21193e52cda999831ba42cd0b504c679431a194a588a3", "page": 1, "locator": "主原理图 D2 BUTTONS 区，S1 POWER、S2 RESET、S3 MULTI-FUNCTION"}]
+    },
+    {
+      "reference": "ANT1/ANT2",
+      "part_number": "ANT1/IPEX",
+      "role": "ESP32 射频天线端，带 L1/C4/C6 匹配网络和 IPEX 连接点",
+      "evidence": [{"asset_sha256": "7cd4730d0074fdbab3d21193e52cda999831ba42cd0b504c679431a194a588a3", "page": 1, "locator": "主原理图 A2，U1 LNA_IN 至 L1 1.8nH、C4 1.5pF、C6 1.2pF、ANT1/ANT2 IPEX"}]
+    },
+    {
+      "reference": "L4/D15-D17",
+      "part_number": "10uH/1N5819",
+      "role": "电子墨水屏高压升压与整流网络，生成 VGG 和 VEE",
+      "evidence": [{"asset_sha256": "7cd4730d0074fdbab3d21193e52cda999831ba42cd0b504c679431a194a588a3", "page": 1, "locator": "主原理图 C4 EPD BOOST 区，L4 10uH、D15-D17 1N5819、VGG/VEE"}]
+    }
+  ],
+  "facts": [
+    {
+      "id": "system.coreink-architecture",
+      "category": "system",
+      "subject": "CoreInk 系统架构",
+      "statement": "ESP32-PICO-D4 SiP 连接 EPD、BM8563 RTC、CP2104 USB-UART、按键、蜂鸣器及 M5-Bus/Grove/HAT 扩展；电池充电、5V/3.3V 转换与 EPD 高压由独立电源分区完成。",
+      "confidence": "confirmed",
+      "attributes": {"mcu": "U1 ESP32-PICO-D4", "display": "EPD1 EPD_SPI", "rtc": "U4 BM8563", "usb_uart": "U2 CP2104-F03-GMR", "power": "TP4057 + SY7088 + SY8089 + EPD BOOST"},
+      "evidence": [
+        {"asset_sha256": "7cd4730d0074fdbab3d21193e52cda999831ba42cd0b504c679431a194a588a3", "page": 1, "locator": "主原理图完整页，BUS/MCU/USB2UART/PMU/EPD/RTC 等分区"},
+        {"asset_sha256": "b0e23e40780f602b19469bc70a064f8869bcb46c4bc862153ff8b06a6f32cbec", "page": 1, "locator": "系统框图完整页，ESP32-PICO-D4 与 E-INK、RTC、CP2104、电源和扩展接口连接"}
+      ]
+    },
+    {
+      "id": "component.mcu",
+      "category": "component",
+      "subject": "U1 ESP32-PICO-D4",
+      "statement": "U1 为 ESP32-PICO-D4，EN 接 MCU_RST，GPIO0-GPIO39 分配给显示、RTC、UART、按键、蜂鸣器和扩展信号。",
+      "confidence": "confirmed",
+      "attributes": {"reference": "U1", "part_number": "ESP32-PICO-D4", "reset_net": "MCU_RST", "power_net": "MCU_VDD"},
+      "evidence": [{"asset_sha256": "7cd4730d0074fdbab3d21193e52cda999831ba42cd0b504c679431a194a588a3", "page": 1, "locator": "主原理图 A2-B2，U1 PICO_D4"}]
+    },
+    {
+      "id": "memory.flash-capacity",
+      "category": "memory",
+      "subject": "ESP32-PICO-D4 Flash",
+      "statement": "主原理图未放置独立 Flash 器件；产品正文标称 4MB Flash，但该容量未在两张原理图中标注。",
+      "confidence": "uncertain",
+      "attributes": {"package": "ESP32-PICO-D4 SiP", "documented_capacity": "4MB", "schematic_capacity_label": null, "discrete_flash_reference": null},
+      "evidence": [
+        {"asset_sha256": "7cd4730d0074fdbab3d21193e52cda999831ba42cd0b504c679431a194a588a3", "page": 1, "locator": "主原理图 A2-B2 U1 PICO_D4；整页无独立 Flash 位号"},
+        {"asset_sha256": "b0e23e40780f602b19469bc70a064f8869bcb46c4bc862153ff8b06a6f32cbec", "page": 1, "locator": "系统框图中央 ESP32-PICO-D4 SIP MODULE，未标 Flash 容量"}
+      ]
+    },
+    {
+      "id": "rf.antenna-path",
+      "category": "rf",
+      "subject": "ESP32 射频路径",
+      "statement": "U1 LNA_IN 经 L1 1.8nH 与 C4 1.5pF、C6 1.2pF 匹配网络连接 ANT1，并并列标出 ANT2 IPEX 射频点。",
+      "confidence": "confirmed",
+      "attributes": {"source_pin": "U1 LNA_IN", "inductor": "L1 1.8nH", "capacitors": "C4 1.5pF; C6 1.2pF", "antenna": "ANT1", "connector": "ANT2 IPEX"},
+      "evidence": [{"asset_sha256": "7cd4730d0074fdbab3d21193e52cda999831ba42cd0b504c679431a194a588a3", "page": 1, "locator": "主原理图 A2 射频匹配网络与 ANT1/ANT2"}]
+    },
+    {
+      "id": "clock.mcu-40mhz",
+      "category": "clock",
+      "subject": "ESP32-PICO-D4 时钟",
+      "statement": "系统框图将 ESP32-PICO-D4 标注为 SiP 模块并标出晶振频率 40MHz。",
+      "confidence": "confirmed",
+      "attributes": {"device": "ESP32-PICO-D4", "frequency": "40MHz", "integration": "SIP MODULE"},
+      "evidence": [{"asset_sha256": "b0e23e40780f602b19469bc70a064f8869bcb46c4bc862153ff8b06a6f32cbec", "page": 1, "locator": "系统框图中央 ESP32-PICO-D4，SIP MODULE CRYSTAL:40MHz"}]
+    },
+    {
+      "id": "power.input-oring",
+      "category": "power",
+      "subject": "USB、扩展 5V 与电池电源汇合",
+      "statement": "USB_5V、EXT_5V1 与 SYS_BAT 通过 D8-D11 和 D9 等肖特基二极管形成 CHG、EXT_5V0 与 BST_IN 路径。",
+      "confidence": "confirmed",
+      "attributes": {"usb_input": "USB_5V", "external_input": "EXT_5V1", "battery": "SYS_BAT", "charge_net": "CHG", "boost_input": "BST_IN", "diodes": "D8/D11 1N5819; D9 1N5819; D10 SS34"},
+      "evidence": [{"asset_sha256": "7cd4730d0074fdbab3d21193e52cda999831ba42cd0b504c679431a194a588a3", "page": 1, "locator": "主原理图 A3 PMU 区，USB_5V/SYS_BAT/EXT_5V0/CHG/BST_IN 与 D8-D11"}]
+    },
+    {
+      "id": "power.battery-charger",
+      "category": "power",
+      "subject": "U6 TP4057 充电路径",
+      "statement": "U6 TP4057 的 VCC 接 CHG、BAT 接 SYS_BAT、PROG 接 R45 5.1K，CHG 状态脚驱动 LED1 充电指示。",
+      "confidence": "confirmed",
+      "attributes": {"reference": "U6", "part_number": "TP4057", "input": "CHG", "battery_net": "SYS_BAT", "program_resistor": "R45 5.1K", "indicator": "LED1 + R34 2K"},
+      "evidence": [{"asset_sha256": "7cd4730d0074fdbab3d21193e52cda999831ba42cd0b504c679431a194a588a3", "page": 1, "locator": "主原理图 B3 CHARGER 区"}]
+    },
+    {
+      "id": "power.battery-port",
+      "category": "power",
+      "subject": "电池连接器",
+      "statement": "BATTERY PORT 的 CON2 两针连接器将 1 脚接 SYS_BAT、2 脚接 GND，屏蔽脚 SH 接 GND。",
+      "confidence": "confirmed",
+      "attributes": {"reference_as_drawn": "U4", "connector": "CON2", "pin_1": "SYS_BAT", "pin_2": "GND", "shield": "GND"},
+      "evidence": [{"asset_sha256": "7cd4730d0074fdbab3d21193e52cda999831ba42cd0b504c679431a194a588a3", "page": 1, "locator": "主原理图 D4 BATTERY PORT 区"}]
+    },
+    {
+      "id": "power.latch-control",
+      "category": "power",
+      "subject": "电源锁存与控制",
+      "statement": "SYS_BAT 经 Q4 SI2301 向 BST_IN 供电，Q2 SI2302 的门极由 GPIO12 驱动，PWR_TRIG 与 GPIO35 参与开机触发和状态检测网络。",
+      "confidence": "confirmed",
+      "attributes": {"high_side": "Q4 SI2301", "control_transistor": "Q2 SI2302", "hold_gpio": "GPIO12", "trigger_net": "PWR_TRIG", "sense_gpio": "GPIO35", "input": "SYS_BAT", "output": "BST_IN"},
+      "evidence": [{"asset_sha256": "7cd4730d0074fdbab3d21193e52cda999831ba42cd0b504c679431a194a588a3", "page": 1, "locator": "主原理图 B3 PWR_SW&ADC 区"}]
+    },
+    {
+      "id": "power.5v-boost",
+      "category": "power",
+      "subject": "SYS_P050 5V 电源轨",
+      "statement": "U5 SY7088 以 BST_IN 为输入，经 L2 2.2uH 升压并由 R43 51K/R44 4.7K 反馈，输出网络标为 SYS_P050。",
+      "confidence": "confirmed",
+      "attributes": {"reference": "U5", "part_number": "SY7088", "input": "BST_IN", "output": "SYS_P050", "inductor": "L2 2.2uH", "feedback": "R43 51K; R44 4.7K"},
+      "evidence": [{"asset_sha256": "7cd4730d0074fdbab3d21193e52cda999831ba42cd0b504c679431a194a588a3", "page": 1, "locator": "主原理图 C3 5V DC-DC 区"}]
+    },
+    {
+      "id": "power.3v3-buck",
+      "category": "power",
+      "subject": "MCU_VDD 3.3V 电源轨",
+      "statement": "U3 SY8089 从 SYS_P050 降压，经 L3 2.2uH 和 R39 22K/R40 5.1K 反馈生成 MCU_VDD；该分区标题标为 3.3V DC-DC。",
+      "confidence": "confirmed",
+      "attributes": {"reference": "U3", "part_number": "SY8089", "input": "SYS_P050", "output": "MCU_VDD", "nominal_voltage": "3.3V", "inductor": "L3 2.2uH", "feedback": "R39 22K; R40 5.1K"},
+      "evidence": [{"asset_sha256": "7cd4730d0074fdbab3d21193e52cda999831ba42cd0b504c679431a194a588a3", "page": 1, "locator": "主原理图 C3 3.3V DC-DC 区"}]
+    },
+    {
+      "id": "power.epd-high-voltage",
+      "category": "power",
+      "subject": "电子墨水屏 VGG/VEE 电源",
+      "statement": "EPD BOOST 区以 MCU_VDD 为输入，L4 10uH、开关管及 D15-D17 1N5819 产生 VGG 和 VEE，并接入 EPD1 PREVGH/PREVGL。",
+      "confidence": "confirmed",
+      "attributes": {"input": "MCU_VDD", "control": "EPD_CD", "inductor": "L4 10uH", "diodes": "D15-D17 1N5819", "positive_rail": "VGG", "negative_rail": "VEE", "display_pins": "EPD1-21 PREVGH; EPD1-23 PREVGL"},
+      "evidence": [{"asset_sha256": "7cd4730d0074fdbab3d21193e52cda999831ba42cd0b504c679431a194a588a3", "page": 1, "locator": "主原理图 C4 EPD BOOST 区与 B4 EPD1 21/23 脚"}]
+    },
+    {
+      "id": "interface.usb-type-c",
+      "category": "interface",
+      "subject": "J2 USB Type-C",
+      "statement": "J2 提供 USB_5V 输入和 USB 2.0 DP/DM；A6/B6 汇入 SYS_DP，A7/B7 汇入 SYS_DM，CC1/CC2 分别以 R3/R4 5.1K 下拉至 GND。",
+      "confidence": "confirmed",
+      "attributes": {"reference": "J2", "power_pin": "VCC -> USB_5V", "data_plus": "A6/B6 -> SYS_DP", "data_minus": "A7/B7 -> SYS_DM", "cc1": "R3 5.1K to GND", "cc2": "R4 5.1K to GND", "direction": "USB data bidirectional; VCC input"},
+      "evidence": [{"asset_sha256": "7cd4730d0074fdbab3d21193e52cda999831ba42cd0b504c679431a194a588a3", "page": 1, "locator": "主原理图 C1 USB TYPE-C 区，J2"}]
+    },
+    {
+      "id": "bus.usb-uart",
+      "category": "bus",
+      "subject": "CP2104 UART",
+      "statement": "U2 CP2104 的 USB D+/D- 接 SYS_DP/SYS_DM；TXD 网络 CP_TX 经 47R 接 ESP32 GPIO3/U0RXD，RXD 网络 CP_RX 经 47R 接 GPIO1/U0TXD。",
+      "confidence": "confirmed",
+      "attributes": {"bridge": "U2 CP2104-F03-GMR", "usb": "SYS_DP/SYS_DM", "bridge_txd": "CP_TX -> GPIO3/U0RXD", "bridge_rxd": "CP_RX <- GPIO1/U0TXD", "series_resistors": "R21/R22 47R", "logic_rail": "MCU_VDD"},
+      "evidence": [{"asset_sha256": "7cd4730d0074fdbab3d21193e52cda999831ba42cd0b504c679431a194a588a3", "page": 1, "locator": "主原理图 C2 USB2UART 区，U2 TXD/RXD 与 CP_TX/CP_RX、R21/R22"}]
+    },
+    {
+      "id": "debug.usb-download",
+      "category": "debug",
+      "subject": "USB 下载与调试路径",
+      "statement": "J2 USB 数据经 U2 CP2104 转换为 ESP32 UART0，U2 DTR/RTS 再通过 Q5/Q6、D7/D8 和电阻网络控制 GPIO0 与 MCU_RST，实现自动下载复位。",
+      "confidence": "confirmed",
+      "attributes": {"connector": "J2", "bridge": "U2 CP2104-F03-GMR", "uart": "GPIO1/GPIO3", "boot_pin": "GPIO0", "reset_net": "MCU_RST", "control_pins": "DTR/RTS", "transistors": "Q5/Q6"},
+      "evidence": [{"asset_sha256": "7cd4730d0074fdbab3d21193e52cda999831ba42cd0b504c679431a194a588a3", "page": 1, "locator": "主原理图 C2 USB2UART 右侧自动下载电路"}]
+    },
+    {
+      "id": "reset.auto-download",
+      "category": "reset",
+      "subject": "ESP32 自动复位与 BOOT",
+      "statement": "CP2104 的 DTR/RTS 控制晶体管网络分别作用于 GPIO0 和 MCU_RST，GPIO0 带 R29 2.2K 上拉，MCU_RST 接 U1 EN。",
+      "confidence": "confirmed",
+      "attributes": {"boot": "GPIO0", "reset": "MCU_RST -> U1 EN", "pullup": "R29 2.2K to MCU_VDD", "source": "U2 DTR/RTS", "diodes": "D7/D8 1N4148"},
+      "evidence": [{"asset_sha256": "7cd4730d0074fdbab3d21193e52cda999831ba42cd0b504c679431a194a588a3", "page": 1, "locator": "主原理图 C2 USB2UART 自动下载网络与 A2 U1 EN"}]
+    },
+    {
+      "id": "interface.m5-bus",
+      "category": "interface",
+      "subject": "BUS1 M5-Bus",
+      "statement": "BUS1 16 针接口引出 GND、SYS_BAT、5V 输入/输出、MCU_VDD、EXT_RST，以及 EXT_G13/G14/G21/G22/G18/G36/G34/G26/G23/G25。",
+      "confidence": "confirmed",
+      "attributes": {"reference": "BUS1", "pin_1": "GND", "pin_2": "SYS_BAT", "pin_3": "EXT_5V1", "pin_4": "EXT_5V0", "pin_5": "EXT_RST", "pin_6": "MCU_VDD", "pin_7": "EXT_G13", "pin_8": "EXT_G14", "pin_9": "EXT_G21", "pin_10": "EXT_G22", "pin_11": "EXT_G18", "pin_12": "EXT_G36", "pin_13": "EXT_G34", "pin_14": "EXT_G26", "pin_15": "EXT_G23", "pin_16": "EXT_G25", "logic_level": "MCU_VDD (3.3V)"},
+      "evidence": [{"asset_sha256": "7cd4730d0074fdbab3d21193e52cda999831ba42cd0b504c679431a194a588a3", "page": 1, "locator": "主原理图 A1 BUS1 针脚 1-16"}]
+    },
+    {
+      "id": "interface.grove",
+      "category": "interface",
+      "subject": "J3 Grove",
+      "statement": "J3 的 1 脚和屏蔽脚接 GND，2 脚接 EXT_5V0，3 脚为 EXT_G32，4 脚为 EXT_G33；GPIO32/GPIO33 分别经 R48/R49 47R 串联。",
+      "confidence": "confirmed",
+      "attributes": {"reference": "J3", "pin_1": "GND", "pin_2": "EXT_5V0", "pin_3": "EXT_G32", "pin_4": "EXT_G33", "shield": "GND", "series_resistors": "R48/R49 47R", "signal_direction": "ESP32 GPIO bidirectional", "logic_level": "MCU_VDD (3.3V)"},
+      "evidence": [{"asset_sha256": "7cd4730d0074fdbab3d21193e52cda999831ba42cd0b504c679431a194a588a3", "page": 1, "locator": "主原理图 A4 GROVE 区 J3 与 R48/R49"}]
+    },
+    {
+      "id": "interface.hat-fpc",
+      "category": "interface",
+      "subject": "J1 HAT FPC",
+      "statement": "J1 CON10 引出 GPIO10/LED、GPIO5/KEY、EXT_G26、EXT_G36、EXT_G25、SYS_BAT、MCU_VDD 及 5V 电源网络，外壳接 GND。",
+      "confidence": "confirmed",
+      "attributes": {"reference": "J1", "pin_1": "GPIO10 / LED", "pin_2": "GPIO5 / KEY", "pin_4": "EXT_5V0", "pin_5": "EXT_G26", "pin_6": "EXT_G36", "pin_7": "EXT_G25", "pin_8": "SYS_BAT", "pin_9": "MCU_VDD", "pin_10": "EXT_5V1", "shield": "GND"},
+      "evidence": [{"asset_sha256": "7cd4730d0074fdbab3d21193e52cda999831ba42cd0b504c679431a194a588a3", "page": 1, "locator": "主原理图 C1-D1 FPC TO HAT 区，J1 CON10"}]
+    },
+    {
+      "id": "bus.rtc-i2c",
+      "category": "bus",
+      "subject": "BM8563 I2C",
+      "statement": "U1 GPIO21/SDA 与 GPIO22/SCL 连接 U4 BM8563 的 SDA/SCL，并通过 R26/R27 2.2K 上拉至 MCU_VDD；同一信号也引出至 M5-Bus。",
+      "confidence": "confirmed",
+      "attributes": {"controller": "U1 ESP32-PICO-D4", "device": "U4 BM8563", "sda": "GPIO21 / EXT_G21", "scl": "GPIO22 / EXT_G22", "pullups": "R26/R27 2.2K to MCU_VDD", "logic_level": "3.3V"},
+      "evidence": [{"asset_sha256": "7cd4730d0074fdbab3d21193e52cda999831ba42cd0b504c679431a194a588a3", "page": 1, "locator": "主原理图 A2 U1 GPIO21/22 与 R26/R27；D3 U4 SDA/SCL；A1 BUS1 pins 9/10"}]
+    },
+    {
+      "id": "address.rtc-not-labeled",
+      "category": "address",
+      "subject": "BM8563 I2C 地址",
+      "statement": "两张原理图均未标注 BM8563 的数值 I2C 地址。",
+      "confidence": "confirmed",
+      "attributes": {"device": "U4 BM8563", "bus": "GPIO21 SDA / GPIO22 SCL", "address_visible": false, "address": null},
+      "evidence": [
+        {"asset_sha256": "7cd4730d0074fdbab3d21193e52cda999831ba42cd0b504c679431a194a588a3", "page": 1, "locator": "主原理图 D3 RTC 区 U4 BM8563，未见地址标注"},
+        {"asset_sha256": "b0e23e40780f602b19469bc70a064f8869bcb46c4bc862153ff8b06a6f32cbec", "page": 1, "locator": "系统框图 RTC:BM8563，未见地址标注"}
+      ]
+    },
+    {
+      "id": "clock.rtc-32768",
+      "category": "clock",
+      "subject": "BM8563 RTC 晶振",
+      "statement": "U4 BM8563 的 OSCI/OSCO 连接 X1 32.768K 晶振；CLKOUT 经 D12 1N4148 接 GPIO19。",
+      "confidence": "confirmed",
+      "attributes": {"rtc": "U4 BM8563", "crystal": "X1", "frequency": "32.768K", "clock_output": "CLKOUT -> D12 1N4148 -> GPIO19"},
+      "evidence": [{"asset_sha256": "7cd4730d0074fdbab3d21193e52cda999831ba42cd0b504c679431a194a588a3", "page": 1, "locator": "主原理图 D3 RTC 区 U4、X1、D12"}]
+    },
+    {
+      "id": "key_net.rtc-wakeup",
+      "category": "key_net",
+      "subject": "RTC 唤醒电源触发",
+      "statement": "BM8563 的 INT 输出经 D13 1N4148 汇入 PWR_TRIG，形成 RTC 到电源锁存电路的唤醒路径。",
+      "confidence": "confirmed",
+      "attributes": {"source": "U4 INT", "diode": "D13 1N4148", "destination": "PWR_TRIG", "function": "power trigger/wakeup"},
+      "evidence": [{"asset_sha256": "7cd4730d0074fdbab3d21193e52cda999831ba42cd0b504c679431a194a588a3", "page": 1, "locator": "主原理图 D3 RTC 区 U4 INT、D13、PWR_TRIG 与 B3 PWR_SW&ADC"}]
+    },
+    {
+      "id": "bus.epd-spi",
+      "category": "bus",
+      "subject": "电子墨水屏 SPI",
+      "statement": "U1 以 GPIO18/SCK 和 GPIO23/MOSI 驱动 EPD1，GPIO9 为 CS#、GPIO15 为 D/C；该接口未画出 MISO 返回线。",
+      "confidence": "confirmed",
+      "attributes": {"controller": "U1 ESP32-PICO-D4", "device": "EPD1 EPD_SPI", "sck": "GPIO18 -> EPD1-13", "mosi": "GPIO23 -> EPD1-14", "chip_select": "GPIO9 -> EPD1-12 CS#", "data_command": "GPIO15 -> EPD1-11 D/C", "miso": null, "direction": "MCU to display"},
+      "evidence": [{"asset_sha256": "7cd4730d0074fdbab3d21193e52cda999831ba42cd0b504c679431a194a588a3", "page": 1, "locator": "主原理图 B4 EPD1 pins 11-14 与 A2 U1 GPIO9/15/18/23"}]
+    },
+    {
+      "id": "gpio.epd-control",
+      "category": "gpio",
+      "subject": "EPD 控制 GPIO",
+      "statement": "EPD1 BUSY 接 GPIO4、RST# 接 GPIO0、D/C 接 GPIO15、CS# 接 GPIO9、SCK 接 GPIO18、MOSI 接 GPIO23。",
+      "confidence": "confirmed",
+      "attributes": {"busy": "EPD1-9 -> GPIO4 (display to MCU)", "reset": "EPD1-10 RST# <- GPIO0", "dc": "EPD1-11 D/C <- GPIO15", "cs": "EPD1-12 CS# <- GPIO9", "sck": "EPD1-13 <- GPIO18", "mosi": "EPD1-14 <- GPIO23"},
+      "evidence": [{"asset_sha256": "7cd4730d0074fdbab3d21193e52cda999831ba42cd0b504c679431a194a588a3", "page": 1, "locator": "主原理图 B4 EPD1 pins 9-14"}]
+    },
+    {
+      "id": "component.epd-model",
+      "category": "component",
+      "subject": "电子墨水屏具体型号",
+      "statement": "产品正文称屏幕为 GDEW0154M09、200x200、1.54 英寸，但原理图连接器仅标 EPD_SPI，未标出面板型号和分辨率。",
+      "confidence": "uncertain",
+      "attributes": {"schematic_label": "EPD1 EPD_SPI", "documented_model": "GDEW0154M09", "documented_resolution": "200x200", "documented_size": "1.54 inch"},
+      "evidence": [
+        {"asset_sha256": "7cd4730d0074fdbab3d21193e52cda999831ba42cd0b504c679431a194a588a3", "page": 1, "locator": "主原理图 B4 EPD1 仅标 EPD_SPI"},
+        {"asset_sha256": "b0e23e40780f602b19469bc70a064f8869bcb46c4bc862153ff8b06a6f32cbec", "page": 1, "locator": "系统框图仅标 E-INK，未标面板型号或分辨率"}
+      ]
+    },
+    {
+      "id": "gpio.multifunction-buttons",
+      "category": "gpio",
+      "subject": "多功能拨轮与按键",
+      "statement": "S3 MULTI-FUNCTION 将 GPIO37、GPIO39、GPIO38 作为三路开关输入，各自带 10K 上拉至 MCU_VDD 和 0.1uF 对地电容；J1 KEY 信号另接 GPIO5。",
+      "confidence": "confirmed",
+      "attributes": {"switch": "S3 K1-15025A-02", "input_1": "GPIO37", "input_2": "GPIO39", "input_3": "GPIO38", "pullups": "R23/R24/R25 10K", "filters": "C5/C6/C7 0.1uF", "user_key": "J1-2 KEY -> GPIO5", "direction": "input"},
+      "evidence": [{"asset_sha256": "7cd4730d0074fdbab3d21193e52cda999831ba42cd0b504c679431a194a588a3", "page": 1, "locator": "主原理图 D2 BUTTONS 区 S3 与 C5-C7/R23-R25；C1 J1 pins 1-2"}]
+    },
+    {
+      "id": "reset.manual-buttons",
+      "category": "reset",
+      "subject": "手动电源与复位按键",
+      "statement": "S1 POWER 接入 PWR_TRIG 电源触发链路，S2 RESET 将 MCU_RST 拉低；MCU_RST 同时连接 U1 EN 和 M5-Bus EXT_RST。",
+      "confidence": "confirmed",
+      "attributes": {"power_switch": "S1 POWER -> PWR_TRIG", "reset_switch": "S2 RESET -> MCU_RST", "mcu_pin": "U1 EN", "external_reset": "BUS1-5 EXT_RST"},
+      "evidence": [{"asset_sha256": "7cd4730d0074fdbab3d21193e52cda999831ba42cd0b504c679431a194a588a3", "page": 1, "locator": "主原理图 D2 BUTTONS 区 S1/S2，A2 U1 EN，A1 BUS1 pin 5"}]
+    },
+    {
+      "id": "audio.buzzer",
+      "category": "audio",
+      "subject": "蜂鸣器驱动",
+      "statement": "GPIO2 经 R2 2.2K 驱动 Q1 S8050 低边开关，BZ1 从 EXT_5V0 经 R5 4.7R 供电，D4 1N4148 跨接蜂鸣器支路。",
+      "confidence": "confirmed",
+      "attributes": {"gpio": "GPIO2", "base_resistor": "R2 2.2K", "transistor": "Q1 S8050", "buzzer": "BZ1", "supply": "EXT_5V0 via R5 4.7R", "flyback_diode": "D4 1N4148"},
+      "evidence": [{"asset_sha256": "7cd4730d0074fdbab3d21193e52cda999831ba42cd0b504c679431a194a588a3", "page": 1, "locator": "主原理图 D1 BUZZER 区"}]
+    },
+    {
+      "id": "gpio.led-key-hat",
+      "category": "gpio",
+      "subject": "HAT LED 与 KEY",
+      "statement": "J1 HAT FPC 的 1 脚将 GPIO10 标为 LED，2 脚将 GPIO5 标为 KEY。",
+      "confidence": "confirmed",
+      "attributes": {"led": "J1-1 GPIO10 / LED (MCU output)", "key": "J1-2 GPIO5 / KEY (MCU input)", "connector": "J1 CON10"},
+      "evidence": [{"asset_sha256": "7cd4730d0074fdbab3d21193e52cda999831ba42cd0b504c679431a194a588a3", "page": 1, "locator": "主原理图 C1 FPC TO HAT，J1 pins 1-2"}]
+    },
+    {
+      "id": "protection.expansion-esd",
+      "category": "protection",
+      "subject": "M5-Bus 信号保护",
+      "statement": "D1-D3 三颗 SRV05-4 保护 EXT_G13/G14/EXT_RST、EXT_G18/G21/G22/G36 与 EXT_G34/G26/G23/G25；各线在 MCU 与外部网之间串联 47R。",
+      "confidence": "confirmed",
+      "attributes": {"devices": "D1-D3 SRV05-4", "protected_nets": "EXT_G13, EXT_G14, EXT_RST, EXT_G18, EXT_G21, EXT_G22, EXT_G36, EXT_G34, EXT_G26, EXT_G23, EXT_G25", "series_resistors": "R6-R16 47R", "rail": "MCU_VDD/GND"},
+      "evidence": [{"asset_sha256": "7cd4730d0074fdbab3d21193e52cda999831ba42cd0b504c679431a194a588a3", "page": 1, "locator": "主原理图 B1 ESD 区 D1-D3 与 R6-R16"}]
+    },
+    {
+      "id": "component.usb-uart-variant",
+      "category": "component",
+      "subject": "USB-UART 硬件批次",
+      "statement": "本地原理图明确画出 U2 CP2104-F03-GMR；产品正文同时提示存在 CH9102 驱动芯片版本，但未提供对应本地原理图，无法确认其电路与本图是否完全等价。",
+      "confidence": "uncertain",
+      "attributes": {"schematic_part": "CP2104-F03-GMR", "documented_variant": "CH9102", "variant_schematic_available": false},
+      "evidence": [
+        {"asset_sha256": "7cd4730d0074fdbab3d21193e52cda999831ba42cd0b504c679431a194a588a3", "page": 1, "locator": "主原理图 C2 U2 明确标 CP2104-F03-GMR"},
+        {"asset_sha256": "b0e23e40780f602b19469bc70a064f8869bcb46c4bc862153ff8b06a6f32cbec", "page": 1, "locator": "系统框图 USB-UART 模块明确标 CP2104"}
+      ]
+    }
+  ],
+  "needs_review": [
+    {
+      "id": "review.flash-capacity",
+      "fact_id": "memory.flash-capacity",
+      "question": "当前 CoreInk K048 硬件批次的 ESP32-PICO-D4 内部 Flash 容量是否固定为 4MB？",
+      "reason": "4MB 来自产品正文，两个原理图资源均未标出 Flash 容量。",
+      "evidence": [
+        {"asset_sha256": "7cd4730d0074fdbab3d21193e52cda999831ba42cd0b504c679431a194a588a3", "page": 1, "locator": "主原理图 A2-B2 U1 PICO_D4，未标容量"},
+        {"asset_sha256": "b0e23e40780f602b19469bc70a064f8869bcb46c4bc862153ff8b06a6f32cbec", "page": 1, "locator": "系统框图 ESP32-PICO-D4 SiP，未标容量"}
+      ]
+    },
+    {
+      "id": "review.epd-model",
+      "fact_id": "component.epd-model",
+      "question": "本原理图对应的 EPD1 面板是否确定为 GDEW0154M09、200x200、1.54 英寸？",
+      "reason": "型号和规格来自产品正文，原理图只标 EPD_SPI/E-INK。",
+      "evidence": [
+        {"asset_sha256": "7cd4730d0074fdbab3d21193e52cda999831ba42cd0b504c679431a194a588a3", "page": 1, "locator": "主原理图 B4 EPD1 EPD_SPI"},
+        {"asset_sha256": "b0e23e40780f602b19469bc70a064f8869bcb46c4bc862153ff8b06a6f32cbec", "page": 1, "locator": "系统框图 E-INK 模块"}
+      ]
+    },
+    {
+      "id": "review.usb-uart-variant",
+      "fact_id": "component.usb-uart-variant",
+      "question": "CH9102 批次是否有独立原理图，且其自动下载、供电和 UART 网络是否与当前 CP2104 图一致？",
+      "reason": "现有两张原理图均只显示 CP2104，无法验证产品正文提到的 CH9102 批次。",
+      "evidence": [
+        {"asset_sha256": "7cd4730d0074fdbab3d21193e52cda999831ba42cd0b504c679431a194a588a3", "page": 1, "locator": "主原理图 C2 U2 CP2104-F03-GMR"},
+        {"asset_sha256": "b0e23e40780f602b19469bc70a064f8869bcb46c4bc862153ff8b06a6f32cbec", "page": 1, "locator": "系统框图 UART:CP2104"}
+      ]
+    }
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "dry_run": false,
+  "failed": 0,
+  "published": 1,
+  "results": [
+    {
+      "backup": null,
+      "draft_action": "unchanged",
+      "dry_run": false,
+      "errors": [],
+      "needs_review": 4,
+      "product_id": "module-usb-e0c9e68607fe",
+      "product_name": "Module USB",
+      "publish_action": "unchanged",
+      "sha256": "33675874793f12c81fe97cdf20bdf82dd326133c180282f32b578a1023ae4f99",
+      "status": "valid",
+      "uncertain_facts": 4
+    }
+  ],
+  "schema_version": 1
+}

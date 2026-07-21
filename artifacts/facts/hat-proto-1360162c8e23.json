@@ -1,0 +1,161 @@
+{
+  "schema_version": 1,
+  "generator": "schematic_describer",
+  "product": {
+    "product_id": "hat-proto-1360162c8e23",
+    "product_name": "Hat Proto",
+    "sku": "U060",
+    "source_path": "hat/hat-proto.md",
+    "source_sha256": "328f4fdec3331bc5778a18e95bba8284c13d6508dbd3275a91ef9d9b39d54c42",
+    "input_sha256": "d885a64ffe29614c53b35c3d1d1ec622c244314c8634beba683a3d1f5627407f"
+  },
+  "schematic_assets": [
+    {
+      "sha256": "457618cb5be8cc0f4cb5d1904b0bd9648ff339c85b020d11f526928c473786d7",
+      "source_url": "https://m5stack-doc.oss-cn-shenzhen.aliyuncs.com/862/StickHat_PROTO_page_01.png",
+      "pages": [1]
+    }
+  ],
+  "summary": "Hat Proto 是一块无预设功能电路的 StickC 原型转接板。原理图仅包含 P1 STICKIO 与 P2 Header 8，两者按相同针号 1:1 连接 GND、5VOUT、G26、G36、G0、BAT、3V3 和 5VIN。图中未配置有源器件、保护、滤波、去耦或固定总线功能，用户电路需自行设计。",
+  "keywords": [
+    "Hat Proto",
+    "U060",
+    "STICKIO",
+    "Header 8",
+    "P1",
+    "P2",
+    "GND",
+    "5VOUT",
+    "G26",
+    "G36",
+    "G0",
+    "BAT",
+    "3V3",
+    "5VIN",
+    "1:1 pass-through",
+    "prototype board",
+    "40 holes",
+    "2.54mm pitch",
+    "1mm hole"
+  ],
+  "components": [
+    {
+      "reference": "P1",
+      "part_number": "STICKIO",
+      "role": "连接 M5StickC 主机的 8 针 HAT 接口",
+      "evidence": [{"asset_sha256": "457618cb5be8cc0f4cb5d1904b0bd9648ff339c85b020d11f526928c473786d7", "page": 1, "locator": "B1-B2，P1 STICKIO pins 1-8"}]
+    },
+    {
+      "reference": "P2",
+      "part_number": "Header 8",
+      "role": "与 P1 同针号直通的 8 针原型板排针接口",
+      "evidence": [{"asset_sha256": "457618cb5be8cc0f4cb5d1904b0bd9648ff339c85b020d11f526928c473786d7", "page": 1, "locator": "B2，P2 Header 8 pins 1-8"}]
+    }
+  ],
+  "facts": [
+    {
+      "id": "system.architecture",
+      "category": "system",
+      "subject": "无源原型转接",
+      "statement": "Hat Proto 原理图只包含 P1 STICKIO 与 P2 Header 8，并以八条网络完成 1:1 直通。",
+      "confidence": "confirmed",
+      "attributes": {"host_connector": "P1 STICKIO", "prototype_connector": "P2 Header 8", "topology": "pin-for-pin pass-through", "pin_count": 8},
+      "evidence": [{"asset_sha256": "457618cb5be8cc0f4cb5d1904b0bd9648ff339c85b020d11f526928c473786d7", "page": 1, "locator": "P1 与 P2 之间八条同编号直连网络"}]
+    },
+    {
+      "id": "interface.pin-map",
+      "category": "interface",
+      "subject": "8 针直通映射",
+      "statement": "P1/P2 pins 1-8 依次为 GND、5VOUT、G26、G36、G0、BAT、3V3、5VIN。",
+      "confidence": "confirmed",
+      "attributes": {"pin1": "GND", "pin2": "5VOUT", "pin3": "G26", "pin4": "G36", "pin5": "G0", "pin6": "BAT", "pin7": "3V3", "pin8": "5VIN"},
+      "evidence": [{"asset_sha256": "457618cb5be8cc0f4cb5d1904b0bd9648ff339c85b020d11f526928c473786d7", "page": 1, "locator": "P1/P2 pins 1-8 与网络标签"}]
+    },
+    {
+      "id": "gpio.exposed",
+      "category": "gpio",
+      "subject": "GPIO 引出",
+      "statement": "原型板直通引出 G26、G36 和 G0 三路主机 GPIO。",
+      "confidence": "confirmed",
+      "attributes": {"gpios": "G26; G36; G0", "pins": "3; 4; 5"},
+      "evidence": [{"asset_sha256": "457618cb5be8cc0f4cb5d1904b0bd9648ff339c85b020d11f526928c473786d7", "page": 1, "locator": "P1/P2 pin3 G26、pin4 G36、pin5 G0"}]
+    },
+    {
+      "id": "power.rails",
+      "category": "power",
+      "subject": "电源轨引出",
+      "statement": "原型板直通引出 GND、5VOUT、BAT、3V3 与 5VIN，不进行转换或选择。",
+      "confidence": "confirmed",
+      "attributes": {"ground": "pin1 GND", "host_5v_output": "pin2 5VOUT", "battery": "pin6 BAT", "3v3": "pin7 3V3", "5v_input": "pin8 5VIN", "conversion": "none shown"},
+      "evidence": [{"asset_sha256": "457618cb5be8cc0f4cb5d1904b0bd9648ff339c85b020d11f526928c473786d7", "page": 1, "locator": "P1/P2 电源网络 pins 1/2/6/7/8"}]
+    },
+    {
+      "id": "protection.none-shown",
+      "category": "protection",
+      "subject": "保护与调理",
+      "statement": "该原理图未在 P1 与 P2 之间显示保险丝、ESD、限流、滤波、去耦、稳压或电平转换器件。",
+      "confidence": "confirmed",
+      "attributes": {"fuse": "not shown", "esd": "not shown", "filter": "not shown", "decoupling": "not shown", "regulator": "not shown", "level_shifter": "not shown"},
+      "evidence": [{"asset_sha256": "457618cb5be8cc0f4cb5d1904b0bd9648ff339c85b020d11f526928c473786d7", "page": 1, "locator": "整页仅 P1/P2 和直连网络，无其他器件"}]
+    },
+    {
+      "id": "interface.bus-assignment",
+      "category": "interface",
+      "subject": "预设总线功能",
+      "statement": "G26、G36、G0 在原理图中仅以 GPIO 网络名直通，未预设 I2C、UART、SPI 或模拟功能方向。",
+      "confidence": "confirmed",
+      "attributes": {"signals": "G26; G36; G0", "preassigned_bus": "none", "direction": "not fixed"},
+      "evidence": [{"asset_sha256": "457618cb5be8cc0f4cb5d1904b0bd9648ff339c85b020d11f526928c473786d7", "page": 1, "locator": "GPIO 网络标签仅为 G26/G36/G0"}]
+    },
+    {
+      "id": "other.prototype-holes",
+      "category": "other",
+      "subject": "原型孔数量与规格",
+      "statement": "产品正文称原型区有 40 孔、2.54 mm 孔距和 1 mm 孔径，但当前原理图未画原型孔阵列或尺寸标注。",
+      "confidence": "uncertain",
+      "attributes": {"claimed_holes": 40, "claimed_pitch": "2.54mm", "claimed_diameter": "1mm", "schematic_geometry": "not shown"},
+      "evidence": [{"asset_sha256": "457618cb5be8cc0f4cb5d1904b0bd9648ff339c85b020d11f526928c473786d7", "page": 1, "locator": "原理图只显示连接器，未画孔阵列"}]
+    },
+    {
+      "id": "other.mechanical-size",
+      "category": "other",
+      "subject": "产品机械尺寸",
+      "statement": "当前原理图未直接标注产品正文所述 35.0×24.0×13.7 mm 尺寸。",
+      "confidence": "uncertain",
+      "attributes": {"claimed_size": "35.0x24.0x13.7mm", "schematic_dimensions": "not shown"},
+      "evidence": [{"asset_sha256": "457618cb5be8cc0f4cb5d1904b0bd9648ff339c85b020d11f526928c473786d7", "page": 1, "locator": "图纸页面无产品尺寸标注"}]
+    },
+    {
+      "id": "power.current-rating",
+      "category": "power",
+      "subject": "电源轨额定电流",
+      "statement": "原理图确认 5VOUT、BAT、3V3、5VIN 直通，但未给出连接器、铜箔或原型孔的最大电流与电压额定值。",
+      "confidence": "uncertain",
+      "attributes": {"rails": "5VOUT; BAT; 3V3; 5VIN", "maximum_current": "not shown", "maximum_voltage": "not shown"},
+      "evidence": [{"asset_sha256": "457618cb5be8cc0f4cb5d1904b0bd9648ff339c85b020d11f526928c473786d7", "page": 1, "locator": "P1/P2 电源网络无额定值"}]
+    }
+  ],
+  "needs_review": [
+    {
+      "id": "review.prototype-holes",
+      "fact_id": "other.prototype-holes",
+      "question": "请用 PCB/机械图确认 40 孔、2.54 mm 孔距和 1 mm 孔径。",
+      "reason": "当前原理图未画原型孔阵列。",
+      "evidence": [{"asset_sha256": "457618cb5be8cc0f4cb5d1904b0bd9648ff339c85b020d11f526928c473786d7", "page": 1, "locator": "整页无孔阵列"}]
+    },
+    {
+      "id": "review.mechanical-size",
+      "fact_id": "other.mechanical-size",
+      "question": "请用机械图确认 35.0×24.0×13.7 mm 外形尺寸。",
+      "reason": "电气原理图无尺寸。",
+      "evidence": [{"asset_sha256": "457618cb5be8cc0f4cb5d1904b0bd9648ff339c85b020d11f526928c473786d7", "page": 1, "locator": "图纸无机械尺寸"}]
+    },
+    {
+      "id": "review.power-rating",
+      "fact_id": "power.current-rating",
+      "question": "请用 PCB 铜厚、连接器和孔焊盘规格确认各电源轨额定电流/电压。",
+      "reason": "原理图仅显示直通网络。",
+      "evidence": [{"asset_sha256": "457618cb5be8cc0f4cb5d1904b0bd9648ff339c85b020d11f526928c473786d7", "page": 1, "locator": "P1/P2 电源直通"}]
+    }
+  ]
+}

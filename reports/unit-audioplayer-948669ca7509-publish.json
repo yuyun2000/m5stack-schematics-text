@@ -1,0 +1,21 @@
+{
+  "dry_run": false,
+  "failed": 0,
+  "published": 1,
+  "results": [
+    {
+      "backup": null,
+      "draft_action": "unchanged",
+      "dry_run": false,
+      "errors": [],
+      "needs_review": 5,
+      "product_id": "unit-audioplayer-948669ca7509",
+      "product_name": "Unit AudioPlayer",
+      "publish_action": "unchanged",
+      "sha256": "24ae950d1be9eb2e7b832505f4f8c6bf7e7792edf42ec443c462a6468b176b70",
+      "status": "valid",
+      "uncertain_facts": 5
+    }
+  ],
+  "schema_version": 1
+}

@@ -1,0 +1,21 @@
+{
+  "dry_run": false,
+  "failed": 0,
+  "published": 1,
+  "results": [
+    {
+      "backup": null,
+      "draft_action": "unchanged",
+      "dry_run": false,
+      "errors": [],
+      "needs_review": 4,
+      "product_id": "unit-rgb-c8ad97af0ab8",
+      "product_name": "Unit RGB",
+      "publish_action": "unchanged",
+      "sha256": "feec07d9fa92cdd79d7ad8e4eedbb2174082acf4aa841ee7356910031646fae8",
+      "status": "valid",
+      "uncertain_facts": 4
+    }
+  ],
+  "schema_version": 1
+}

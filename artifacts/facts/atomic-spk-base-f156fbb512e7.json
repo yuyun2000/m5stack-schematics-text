@@ -1,0 +1,461 @@
+{
+  "schema_version": 1,
+  "generator": "schematic_describer",
+  "product": {
+    "product_id": "atomic-spk-base-f156fbb512e7",
+    "product_name": "Atomic SPK Base",
+    "sku": "A098",
+    "source_path": "atom/Atomic SPK Base.md",
+    "source_sha256": "d3502fdda63dfbf8dfea82e365bbb0bc2137421113abd914c1c2afd0cdae0a2d",
+    "input_sha256": "619ed7ae374854abcfd0411b33bcfcb1bf0f35800cf3c57aec2ea1d09f4e55c7"
+  },
+  "schematic_assets": [
+    {
+      "sha256": "6350bd8032e5d535e15fc3d932e6d4f4358a99329bec122f73380497fed9f133",
+      "source_url": "https://static-cdn.m5stack.com/resource/docs/products/atom/Atomic SPK Base/img-315f8e96-ce32-4861-809c-cb02f5def6b5.webp",
+      "pages": [1]
+    }
+  ],
+  "summary": "Atomic SPK Base 由 U1 TF-015 卡座和 U2 NS4168 音频功放组成。卡座的 MOSI、CLK、MISO 连接 Atom，CS 只经 Rp1 4.7KΩ 下拉到 GND；图中没有主机 CS 线，因此存储接口的实际协议模式需要确认。NS4168 由 3.3V 供电，以 LRCLK、BCLK、DATA 接收数字音频，VON/VOP 差分输出同时连接 P5 两针扬声器头和 J1 3.5mm 插座。P1/P2 构成 Atom 接口，P3/P4 重复引出 I2S 与 3.3V。正文中的 8kHz~96kHz、自适应检测、1W 输出和 1W@8Ω 扬声器参数不直接出现在原理图上。",
+  "keywords": [
+    "Atomic SPK Base",
+    "A098",
+    "NS4168",
+    "TF-015",
+    "microSD",
+    "I2S",
+    "LRCLK",
+    "BCLK",
+    "DATA",
+    "MOSI",
+    "CLK",
+    "MISO",
+    "CS",
+    "VON",
+    "VOP",
+    "3.3V",
+    "5VIN",
+    "P5 Header2",
+    "3.5mm jack",
+    "8kHz~96kHz",
+    "1W@8Ω"
+  ],
+  "components": [
+    {
+      "reference": "U1",
+      "part_number": "TF-015",
+      "role": "存储卡座，连接 CS、MOSI、CLK、MISO、3.3V 和 GND",
+      "evidence": [
+        {
+          "asset_sha256": "6350bd8032e5d535e15fc3d932e6d4f4358a99329bec122f73380497fed9f133",
+          "page": 1,
+          "locator": "第 1 页左上 U1 TF-015，pins2-7 为 CS/MOSI/VCC/CLK/GND/MISO"
+        }
+      ]
+    },
+    {
+      "reference": "Rp1",
+      "part_number": "4 x 4.7KΩ (472) ±5%",
+      "role": "TF-015 CS/MOSI/CLK/MISO 的上拉或下拉电阻阵列",
+      "evidence": [
+        {
+          "asset_sha256": "6350bd8032e5d535e15fc3d932e6d4f4358a99329bec122f73380497fed9f133",
+          "page": 1,
+          "locator": "第 1 页左上 Rp1，top pins8/7/6 接 +3.3V、top pin5 接 GND，bottom pins1/2/3/4 接 U1 MISO/CLK/MOSI/CS"
+        }
+      ]
+    },
+    {
+      "reference": "U2",
+      "part_number": "NS4168",
+      "role": "I2S 数字音频功放，输出 VON/VOP 差分音频",
+      "evidence": [
+        {
+          "asset_sha256": "6350bd8032e5d535e15fc3d932e6d4f4358a99329bec122f73380497fed9f133",
+          "page": 1,
+          "locator": "第 1 页右上 U2 NS4168，CTRL/LRCLK/BCLK/SDATA/GND/VDD/VON/VOP"
+        }
+      ]
+    },
+    {
+      "reference": "P5",
+      "part_number": "Header 2",
+      "role": "VON/VOP 差分扬声器输出接口",
+      "evidence": [
+        {
+          "asset_sha256": "6350bd8032e5d535e15fc3d932e6d4f4358a99329bec122f73380497fed9f133",
+          "page": 1,
+          "locator": "第 1 页右上 P5 Header2，pin2 接 VON、pin1 接 VOP"
+        }
+      ]
+    },
+    {
+      "reference": "J1",
+      "part_number": "3.5mm_jack",
+      "role": "VON/VOP 差分音频的 3.5mm 输出插座",
+      "evidence": [
+        {
+          "asset_sha256": "6350bd8032e5d535e15fc3d932e6d4f4358a99329bec122f73380497fed9f133",
+          "page": 1,
+          "locator": "第 1 页右中 J1 3.5mm_jack，pins2/3 接 VON/VOP，pins1/4 未连接"
+        }
+      ]
+    },
+    {
+      "reference": "P1,P2",
+      "part_number": "Header 5 / Header 4",
+      "role": "Atom 主机的 3.3V、5VIN、I2S、存储信号与 GND 接口",
+      "evidence": [
+        {
+          "asset_sha256": "6350bd8032e5d535e15fc3d932e6d4f4358a99329bec122f73380497fed9f133",
+          "page": 1,
+          "locator": "第 1 页左下 P2 Header4 与 P1 Header5，LRCLK/DATA/+5VIN/GND/+3.3V/BCLK/MOSI/CLK/MISO"
+        }
+      ]
+    },
+    {
+      "reference": "P3,P4",
+      "part_number": "Header 2X2",
+      "role": "两组重复的 DATA/LRCLK/BCLK/+3.3V 数字音频扩展头",
+      "evidence": [
+        {
+          "asset_sha256": "6350bd8032e5d535e15fc3d932e6d4f4358a99329bec122f73380497fed9f133",
+          "page": 1,
+          "locator": "第 1 页中部 P3/P4 Header2X2，pins1-4 为 DATA/BCLK/LRCLK/+3.3V"
+        }
+      ]
+    },
+    {
+      "reference": "C1,C2,C3",
+      "part_number": "100nF / 100nF / 10uF",
+      "role": "3.3V、5VIN 与 NS4168 供电去耦",
+      "evidence": [
+        {
+          "asset_sha256": "6350bd8032e5d535e15fc3d932e6d4f4358a99329bec122f73380497fed9f133",
+          "page": 1,
+          "locator": "第 1 页 C1 100nF 从 +3.3V 到 GND、C2 100nF 从 +5VIN 到 GND、C3 10uF 从 U2 VDD/+3.3V 到 GND"
+        }
+      ]
+    }
+  ],
+  "facts": [
+    {
+      "id": "system.spk-base-architecture",
+      "category": "system",
+      "subject": "Atomic SPK Base 系统架构",
+      "statement": "U1 TF-015 通过 MOSI/CLK/MISO 连接 Atom 存储信号，U2 NS4168 通过 LRCLK/BCLK/DATA 接收数字音频并以 VON/VOP 驱动 P5 与 J1；两部分均使用 Atom 提供的 3.3V/GND。",
+      "confidence": "confirmed",
+      "attributes": {
+        "storage": "U1 TF-015",
+        "storage_signals": "MOSI,CLK,MISO",
+        "amplifier": "U2 NS4168",
+        "audio_bus": "LRCLK,BCLK,DATA",
+        "audio_outputs": "VON,VOP",
+        "speaker_output": "P5 Header2",
+        "headphone_output": "J1 3.5mm_jack",
+        "logic_supply": "+3.3V"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "6350bd8032e5d535e15fc3d932e6d4f4358a99329bec122f73380497fed9f133",
+          "page": 1,
+          "locator": "第 1 页完整单页：U1/Rp1/P1/P2 与 U2/P5/J1/P3/P4 的信号和电源连接"
+        }
+      ]
+    },
+    {
+      "id": "storage.tf015-pinout",
+      "category": "storage",
+      "subject": "U1 TF-015 卡座连接",
+      "statement": "U1 pin2 为 CS，pin3 为 MOSI，pin4 接 +3.3V，pin5 为 CLK，pin6 接 GND，pin7 为 MISO；图中未使用该符号的其他卡信号。",
+      "confidence": "confirmed",
+      "attributes": {
+        "pin2": "CS",
+        "pin3": "MOSI",
+        "pin4": "+3.3V",
+        "pin5": "CLK",
+        "pin6": "GND",
+        "pin7": "MISO"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "6350bd8032e5d535e15fc3d932e6d4f4358a99329bec122f73380497fed9f133",
+          "page": 1,
+          "locator": "第 1 页左上 U1 pins2-7 与右侧文字、网络标签"
+        }
+      ]
+    },
+    {
+      "id": "storage.tf015-bias-network",
+      "category": "storage",
+      "subject": "TF-015 信号偏置",
+      "statement": "Rp1 为四联 4.7KΩ 阵列：MISO、CLK、MOSI 三路通过对应电阻接 +3.3V，CS 通过第四路电阻接 GND。",
+      "confidence": "confirmed",
+      "attributes": {
+        "array": "Rp1 4 x 4.7KΩ (472) ±5%",
+        "MISO": "4.7KΩ to +3.3V",
+        "CLK": "4.7KΩ to +3.3V",
+        "MOSI": "4.7KΩ to +3.3V",
+        "CS": "4.7KΩ to GND"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "6350bd8032e5d535e15fc3d932e6d4f4358a99329bec122f73380497fed9f133",
+          "page": 1,
+          "locator": "第 1 页左上 Rp1 top pins8/7/6 接 +3.3V、top pin5 接 GND，bottom pins1/2/3/4 接 MISO/CLK/MOSI/CS"
+        }
+      ]
+    },
+    {
+      "id": "storage.card-interface-mode",
+      "category": "storage",
+      "subject": "TF-015 存储接口协议模式",
+      "statement": "正文与管脚表把 MOSI/CLK/MISO 描述为 SPI，但原理图没有从 Atom 引出 CS，U1 CS 仅经 4.7KΩ 下拉到 GND；无法由该页确认实际使用标准 SPI 还是其他三线 SD 模式。",
+      "confidence": "uncertain",
+      "attributes": {
+        "documented_bus": "SPI",
+        "host_signals": "MOSI,CLK,MISO",
+        "host_cs": null,
+        "card_cs": "Rp1 4.7KΩ pull-down to GND",
+        "mode": null
+      },
+      "evidence": [
+        {
+          "asset_sha256": "6350bd8032e5d535e15fc3d932e6d4f4358a99329bec122f73380497fed9f133",
+          "page": 1,
+          "locator": "第 1 页 U1 CS 只连接 Rp1 下拉；P1/P2 仅引出 MOSI/CLK/MISO，没有 CS 网络"
+        }
+      ]
+    },
+    {
+      "id": "bus.ns4168-i2s",
+      "category": "bus",
+      "subject": "NS4168 数字音频总线",
+      "statement": "U2 LRCLK pin2、BCLK pin3、SDATA pin4 分别连接 LRCLK、BCLK、DATA 网络，并通过 P2/P1 连接 Atom，同时由 P3/P4 两组 Header2X2 重复引出。",
+      "confidence": "confirmed",
+      "attributes": {
+        "LRCLK": "U2 pin2 -> P2 pin1 -> P3/P4 pin3",
+        "BCLK": "U2 pin3 -> P1 pin2 -> P3/P4 pin2",
+        "DATA": "U2 pin4 SDATA -> P2 pin2 -> P3/P4 pin1",
+        "breakout_supply": "P3/P4 pin4 +3.3V"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "6350bd8032e5d535e15fc3d932e6d4f4358a99329bec122f73380497fed9f133",
+          "page": 1,
+          "locator": "第 1 页 U2 pins2-4、P1/P2 与 P3/P4 的 LRCLK/BCLK/DATA 同名网络"
+        }
+      ]
+    },
+    {
+      "id": "audio.ns4168-power-control",
+      "category": "audio",
+      "subject": "NS4168 供电与控制",
+      "statement": "U2 CTRL pin1 与 VDD pin6 均接 +3.3V，GND pin7 接地；C3 10uF/10V 从 +3.3V 接 GND。",
+      "confidence": "confirmed",
+      "attributes": {
+        "control": "CTRL pin1 +3.3V",
+        "supply": "VDD pin6 +3.3V",
+        "ground": "GND pin7",
+        "decoupling": "C3 10uF (106) 10% 10V"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "6350bd8032e5d535e15fc3d932e6d4f4358a99329bec122f73380497fed9f133",
+          "page": 1,
+          "locator": "第 1 页右上 U2 pins1/6/7 与 +3.3V/GND、C3"
+        }
+      ]
+    },
+    {
+      "id": "audio.differential-speaker-output",
+      "category": "audio",
+      "subject": "P5 差分扬声器输出",
+      "statement": "U2 VON pin5 连接 P5 pin2，VOP pin8 连接 P5 pin1，P5 标注为 Header 2；输出两端没有在图中接地。",
+      "confidence": "confirmed",
+      "attributes": {
+        "negative_output": "U2 VON pin5 -> P5 pin2",
+        "positive_output": "U2 VOP pin8 -> P5 pin1",
+        "connector": "P5 Header 2",
+        "grounded_output": false
+      },
+      "evidence": [
+        {
+          "asset_sha256": "6350bd8032e5d535e15fc3d932e6d4f4358a99329bec122f73380497fed9f133",
+          "page": 1,
+          "locator": "第 1 页右上 U2 pins5/8 与 P5 pins2/1"
+        }
+      ]
+    },
+    {
+      "id": "audio.headphone-jack-output",
+      "category": "audio",
+      "subject": "J1 3.5mm 插座输出",
+      "statement": "J1 标注 3.5mm_jack，pins2/3 分别连接 VON/VOP，pins1/4 未连接；该插座与 P5 并联在同一差分输出网络。",
+      "confidence": "confirmed",
+      "attributes": {
+        "connector": "J1 3.5mm_jack",
+        "pin2": "VON",
+        "pin3": "VOP",
+        "pin1": "NC",
+        "pin4": "NC",
+        "parallel_output": "P5"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "6350bd8032e5d535e15fc3d932e6d4f4358a99329bec122f73380497fed9f133",
+          "page": 1,
+          "locator": "第 1 页右中 J1 pins1-4 与来自 U2/P5 的 VON/VOP 连线"
+        }
+      ]
+    },
+    {
+      "id": "power.atom-supplies",
+      "category": "power",
+      "subject": "Atom 3.3V 与 5VIN 电源",
+      "statement": "P1 pin1 提供 +3.3V，P2 pin3 提供 +5VIN，P2 pin4 为 GND；C1 100nF 从 +3.3V 接 GND，C2 100nF 从 +5VIN 接 GND。U1 和 U2 使用 +3.3V，图中未显示 +5VIN 的其他负载。",
+      "confidence": "confirmed",
+      "attributes": {
+        "three_volt_input": "P1 pin1 +3.3V",
+        "five_volt_input": "P2 pin3 +5VIN",
+        "ground": "P2 pin4 GND",
+        "three_volt_decoupling": "C1 100nF (104) 10% 50V",
+        "five_volt_decoupling": "C2 100nF (104) 10% 50V",
+        "three_volt_consumers": "U1 VCC, U2 CTRL/VDD, P3/P4 pin4",
+        "five_volt_consumers": "C2 only on this page"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "6350bd8032e5d535e15fc3d932e6d4f4358a99329bec122f73380497fed9f133",
+          "page": 1,
+          "locator": "第 1 页左下 P1/P2/C1/C2 与 U1/U2/P3/P4 的 +3.3V/+5VIN/GND 网络"
+        }
+      ]
+    },
+    {
+      "id": "interface.atom-headers",
+      "category": "interface",
+      "subject": "P1/P2 Atom 主机接口",
+      "statement": "P2 pins1-4 依次为 LRCLK、DATA、+5VIN、GND；P1 pins1-5 依次为 +3.3V、BCLK、MOSI、CLK、MISO。",
+      "confidence": "confirmed",
+      "attributes": {
+        "P2_pin1": "LRCLK",
+        "P2_pin2": "DATA",
+        "P2_pin3": "+5VIN",
+        "P2_pin4": "GND",
+        "P1_pin1": "+3.3V",
+        "P1_pin2": "BCLK",
+        "P1_pin3": "MOSI",
+        "P1_pin4": "CLK",
+        "P1_pin5": "MISO"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "6350bd8032e5d535e15fc3d932e6d4f4358a99329bec122f73380497fed9f133",
+          "page": 1,
+          "locator": "第 1 页左下 P2 Header4 与 P1 Header5 的 pin1-pin5 网络标签"
+        }
+      ]
+    },
+    {
+      "id": "interface.i2s-breakout-headers",
+      "category": "interface",
+      "subject": "P3/P4 I2S 扩展头",
+      "statement": "P3 和 P4 的 pin1 为 DATA、pin2 为 BCLK、pin3 为 LRCLK、pin4 为 +3.3V，两组 Header2X2 电气映射相同。",
+      "confidence": "confirmed",
+      "attributes": {
+        "P3": "pin1 DATA, pin2 BCLK, pin3 LRCLK, pin4 +3.3V",
+        "P4": "pin1 DATA, pin2 BCLK, pin3 LRCLK, pin4 +3.3V"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "6350bd8032e5d535e15fc3d932e6d4f4358a99329bec122f73380497fed9f133",
+          "page": 1,
+          "locator": "第 1 页中左 P3 与右下 P4 Header2X2 的 pin1-pin4 标号和网络"
+        }
+      ]
+    },
+    {
+      "id": "audio.documented-ns4168-capabilities",
+      "category": "audio",
+      "subject": "正文中的 NS4168 采样能力",
+      "statement": "正文称 NS4168 支持 8kHz~96kHz、自动采样率检测和自适应功能；原理图只确认芯片型号及 LRCLK/BCLK/SDATA 电气连接，无法单独证明这些数据手册能力。",
+      "confidence": "uncertain",
+      "attributes": {
+        "documented_sample_rate": "8kHz~96kHz",
+        "documented_auto_detection": true,
+        "documented_adaptation": true,
+        "schematic_part": "U2 NS4168"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "6350bd8032e5d535e15fc3d932e6d4f4358a99329bec122f73380497fed9f133",
+          "page": 1,
+          "locator": "第 1 页右上 U2 仅标 NS4168 与引脚，不含采样率或自动检测文字"
+        }
+      ]
+    },
+    {
+      "id": "audio.documented-output-ratings",
+      "category": "audio",
+      "subject": "正文中的输出功率与扬声器规格",
+      "statement": "正文给出功放输出 1W@VDD 3.3V、配套扬声器 1W@8Ω、扬声器接口 1.25mm-2P；原理图确认 VDD 3.3V 和 P5 Header2，但没有负载、功率、阻抗或接口间距标注。",
+      "confidence": "uncertain",
+      "attributes": {
+        "documented_amplifier_output": "1W at VDD=3.3V",
+        "documented_speaker": "1W@8Ω",
+        "documented_connector": "1.25mm-2P",
+        "schematic_supply": "U2 VDD +3.3V",
+        "schematic_connector": "P5 Header 2"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "6350bd8032e5d535e15fc3d932e6d4f4358a99329bec122f73380497fed9f133",
+          "page": 1,
+          "locator": "第 1 页 U2 VDD/VON/VOP 与 P5 Header2，图中无 1W、8Ω 或 1.25mm 标注"
+        }
+      ]
+    }
+  ],
+  "needs_review": [
+    {
+      "id": "review.storage-interface-mode",
+      "fact_id": "storage.card-interface-mode",
+      "question": "Atomic SPK Base 的 TF-015 实际使用 SPI 还是 1-bit SD 模式，软件初始化时如何处理未引出的 CS？",
+      "reason": "图纸只有 MOSI/CLK/MISO 主机线，CS 仅 4.7KΩ 下拉；旧文档关于主机 CS 路径的说法缺少图纸证据。",
+      "evidence": [
+        {
+          "asset_sha256": "6350bd8032e5d535e15fc3d932e6d4f4358a99329bec122f73380497fed9f133",
+          "page": 1,
+          "locator": "第 1 页 U1 CS/Rp1 与 P1/P2 主机信号范围"
+        }
+      ]
+    },
+    {
+      "id": "review.ns4168-datasheet-capabilities",
+      "fact_id": "audio.documented-ns4168-capabilities",
+      "question": "当前 NS4168 datasheet 版本是否确认 8kHz~96kHz、自动采样率检测和自适应能力？",
+      "reason": "这些是芯片数据手册能力，原理图只能确认 NS4168 型号和 I2S 引脚连接。",
+      "evidence": [
+        {
+          "asset_sha256": "6350bd8032e5d535e15fc3d932e6d4f4358a99329bec122f73380497fed9f133",
+          "page": 1,
+          "locator": "第 1 页 U2 NS4168 型号与 LRCLK/BCLK/SDATA"
+        }
+      ]
+    },
+    {
+      "id": "review.audio-output-ratings",
+      "fact_id": "audio.documented-output-ratings",
+      "question": "1W@3.3V、1W@8Ω 与 P5 1.25mm-2P 是否由当前 BOM、NS4168 datasheet 和整机测试确认？",
+      "reason": "原理图没有标扬声器负载、输出功率或 P5 间距，需 BOM/规格书/测试记录补证。",
+      "evidence": [
+        {
+          "asset_sha256": "6350bd8032e5d535e15fc3d932e6d4f4358a99329bec122f73380497fed9f133",
+          "page": 1,
+          "locator": "第 1 页 U2 VON/VOP 与 P5 Header2"
+        }
+      ]
+    }
+  ]
+}

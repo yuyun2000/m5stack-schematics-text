@@ -1,0 +1,21 @@
+{
+  "dry_run": false,
+  "failed": 0,
+  "published": 1,
+  "results": [
+    {
+      "backup": null,
+      "draft_action": "unchanged",
+      "dry_run": false,
+      "errors": [],
+      "needs_review": 3,
+      "product_id": "dial-aff7d730eff4",
+      "product_name": "Dial",
+      "publish_action": "unchanged",
+      "sha256": "d750c21865ce6992d36615e8e29d870e879efc98089f169332ffbc7dc33cb4a6",
+      "status": "valid",
+      "uncertain_facts": 3
+    }
+  ],
+  "schema_version": 1
+}

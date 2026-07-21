@@ -1,0 +1,21 @@
+{
+  "dry_run": false,
+  "failed": 0,
+  "published": 1,
+  "results": [
+    {
+      "backup": null,
+      "draft_action": "unchanged",
+      "dry_run": false,
+      "errors": [],
+      "needs_review": 1,
+      "product_id": "module-goplus-140e3b5d1a2f",
+      "product_name": "Module GoPlus",
+      "publish_action": "unchanged",
+      "sha256": "9e249022242ed974e39aed129c6e2ad5a037eadb616c8e6d6d23913e2fc48398",
+      "status": "valid",
+      "uncertain_facts": 1
+    }
+  ],
+  "schema_version": 1
+}

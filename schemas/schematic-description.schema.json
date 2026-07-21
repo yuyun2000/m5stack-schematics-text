@@ -1,0 +1,129 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://m5stack.local/schemas/schematic-description.schema.json",
+  "title": "M5Stack schematic description facts",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "generator",
+    "product",
+    "schematic_assets",
+    "summary",
+    "keywords",
+    "components",
+    "facts",
+    "needs_review"
+  ],
+  "properties": {
+    "schema_version": { "const": 1 },
+    "generator": { "const": "schematic_describer" },
+    "product": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["product_id", "product_name", "sku", "source_path", "source_sha256", "input_sha256"],
+      "properties": {
+        "product_id": { "type": "string", "minLength": 8 },
+        "product_name": { "type": "string", "minLength": 1 },
+        "sku": { "type": ["string", "null"] },
+        "source_path": { "type": "string", "minLength": 1 },
+        "source_sha256": { "$ref": "#/$defs/sha256" },
+        "input_sha256": { "$ref": "#/$defs/sha256" }
+      }
+    },
+    "schematic_assets": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["sha256", "source_url", "pages"],
+        "properties": {
+          "sha256": { "$ref": "#/$defs/sha256" },
+          "source_url": { "type": "string", "format": "uri" },
+          "pages": { "type": "array", "minItems": 1, "items": { "type": "integer", "minimum": 1 } }
+        }
+      }
+    },
+    "summary": { "type": "string", "minLength": 20 },
+    "keywords": {
+      "type": "array",
+      "minItems": 3,
+      "uniqueItems": true,
+      "items": { "type": "string", "minLength": 1 }
+    },
+    "components": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["reference", "part_number", "role", "evidence"],
+        "properties": {
+          "reference": { "type": "string", "minLength": 1 },
+          "part_number": { "type": ["string", "null"] },
+          "role": { "type": "string", "minLength": 1 },
+          "evidence": { "$ref": "#/$defs/evidenceList" }
+        }
+      }
+    },
+    "facts": {
+      "type": "array",
+      "minItems": 1,
+      "items": { "$ref": "#/$defs/fact" }
+    },
+    "needs_review": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["id", "fact_id", "question", "reason", "evidence"],
+        "properties": {
+          "id": { "type": "string", "pattern": "^[a-z0-9][a-z0-9._-]*$" },
+          "fact_id": { "type": ["string", "null"] },
+          "question": { "type": "string", "minLength": 1 },
+          "reason": { "type": "string", "minLength": 1 },
+          "evidence": { "$ref": "#/$defs/evidenceList" }
+        }
+      }
+    }
+  },
+  "$defs": {
+    "sha256": { "type": "string", "pattern": "^[a-f0-9]{64}$" },
+    "evidence": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["asset_sha256", "page", "locator"],
+      "properties": {
+        "asset_sha256": { "$ref": "#/$defs/sha256" },
+        "page": { "type": "integer", "minimum": 1 },
+        "locator": { "type": "string", "minLength": 1 }
+      }
+    },
+    "evidenceList": {
+      "type": "array",
+      "minItems": 1,
+      "items": { "$ref": "#/$defs/evidence" }
+    },
+    "attributeValue": { "type": ["string", "number", "integer", "boolean", "null"] },
+    "fact": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "category", "subject", "statement", "confidence", "attributes", "evidence"],
+      "properties": {
+        "id": { "type": "string", "pattern": "^[a-z0-9][a-z0-9._-]*$" },
+        "category": {
+          "enum": ["system", "component", "power", "interface", "bus", "address", "gpio", "clock", "reset", "protection", "key_net", "storage", "memory", "audio", "sensor", "rf", "debug", "analog", "other"]
+        },
+        "subject": { "type": "string", "minLength": 1 },
+        "statement": { "type": "string", "minLength": 1 },
+        "confidence": { "enum": ["confirmed", "uncertain"] },
+        "attributes": {
+          "type": "object",
+          "additionalProperties": { "$ref": "#/$defs/attributeValue" }
+        },
+        "evidence": { "$ref": "#/$defs/evidenceList" }
+      }
+    }
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "dry_run": false,
+  "failed": 0,
+  "published": 1,
+  "results": [
+    {
+      "backup": null,
+      "draft_action": "unchanged",
+      "dry_run": false,
+      "errors": [],
+      "needs_review": 5,
+      "product_id": "cm4stack-c8ed4963c06f",
+      "product_name": "CM4Stack",
+      "publish_action": "unchanged",
+      "sha256": "18fd4573d93109fb473e013aaf015456ddb2f735ef36397323995046443d7512",
+      "status": "valid",
+      "uncertain_facts": 5
+    }
+  ],
+  "schema_version": 1
+}

@@ -1,0 +1,203 @@
+{
+  "schema_version": 1,
+  "generator": "schematic_describer",
+  "product": {
+    "product_id": "chain-dualkey-38acc9b60721",
+    "product_name": "Chain DualKey",
+    "sku": "C147",
+    "source_path": "chain/Chain_DualKey.md",
+    "source_sha256": "d813d86181395d7b2ed5392395f106dafdd0eff59f14f80a13d4a51ec4a26279",
+    "input_sha256": "d2ad2e14267177b3256d46600af470d6eb4933dd1af199b269488aa3cd41d031"
+  },
+  "schematic_assets": [
+    {"sha256": "33f2d99c40de8917f12e3c22e454daaf079fc76ed91f7eb3ef5e613cb61bcb1e", "source_url": "https://m5stack-doc.oss-cn-shenzhen.aliyuncs.com/1176/Chain_DualKey_SCH_V1.5_20250725_2025_07_25_16_06_51_page_01.png", "pages": [1]},
+    {"sha256": "602669f0d68313d37ad6de060fc6b1dafb9a35dfc885114668f1bf5c2c3f7255", "source_url": "https://m5stack-doc.oss-cn-shenzhen.aliyuncs.com/1176/Chain_DualKey_SCH_V1.5_20250725_2025_07_25_16_06_51_page_02.png", "pages": [1]},
+    {"sha256": "68d899624de7431af7fb9a7cfe0fd50e4dd530000de8c8e146f6d70e54f6294a", "source_url": "https://m5stack-doc.oss-cn-shenzhen.aliyuncs.com/1176/Chain_DualKey_SCH_V1.5_20250725_2025_07_25_16_06_51_page_03.png", "pages": [1]}
+  ],
+  "summary": "Chain DualKey 以 U6 ESP32-S3FN8 为主控，使用 40MHz 主晶振和 32.768kHz RTC 晶振，GPIO19/GPIO20 直连 USB-C D-/D+，GPIO47/GPIO48 与 GPIO6/GPIO5 分别形成两路 Chain UART。电源由 USB VBUS 和电池经 AO3401A 路径汇入 VIN，U29 WL9005S5-33 生成 MCU_3V3；U5 TP4057 负责 VBAT 充电，U20 SY7088DGC 将 VBAT 升压到 VOUT。SW3/SW4 是两路低有效按键，Q27 驱动两颗 WS2812B-2020 的电源和数据，SW5 与分压网络提供 SWITCH_1/SWITCH_2 状态。原理图框图写 3.7V 200mAh，而正文写 350mAh，电池容量必须按版本/BOM 复核。",
+  "keywords": [
+    "Chain DualKey", "C147", "ESP32-S3FN8", "TP4057", "WL9005S5-33", "SY7088DGC", "WS2812B-2020", "AO3401A",
+    "BSS84DW-7-F", "CJ3439KDW", "USB-C", "USB_DN", "USB_DP", "GPIO19", "GPIO20", "KEY_1", "KEY_2", "GPIO0", "GPIO17",
+    "SWITCH_1", "SWITCH_2", "GPIO8", "GPIO7", "ADC_BAT", "ADC_VBUS", "ADC_CHRG", "GPIO10", "GPIO2", "GPIO9",
+    "WS2812_IN", "PWR_2812", "GPIO21", "GPIO40", "UART1_TX", "UART1_RX", "UART2_TX", "UART2_RX", "VOUT", "VBAT", "MCU_3V3"
+  ],
+  "components": [
+    {"reference": "U6", "part_number": "ESP32-S3FN8", "role": "主控制器，连接 USB、按键、开关 ADC、RGB LED、两路 UART、调试、时钟和射频网络", "evidence": [{"asset_sha256": "68d899624de7431af7fb9a7cfe0fd50e4dd530000de8c8e146f6d70e54f6294a", "page": 1, "locator": "第 3 张第 1 页中央 U6 ESP32-S3FN8，GPIO0-GPIO48、USB、UART、时钟、SPI/射频和电源引脚"}]},
+    {"reference": "U25", "part_number": "USB Type-C receptacle", "role": "VBUS 电源与 USB_DN/USB_DP 数据接口，CC1/CC2 配置为受电设备", "evidence": [{"asset_sha256": "602669f0d68313d37ad6de060fc6b1dafb9a35dfc885114668f1bf5c2c3f7255", "page": 1, "locator": "第 2 张第 1 页上中 Type-C 区域 U25，A/B 排 VBUS、DP/DN、CC1/CC2、GND/EP"}]},
+    {"reference": "U29", "part_number": "WL9005S5-33", "role": "由 VIN 生成 MCU_3V3 的 3.3V LDO，EN 由 PWR_EN 控制", "evidence": [{"asset_sha256": "602669f0d68313d37ad6de060fc6b1dafb9a35dfc885114668f1bf5c2c3f7255", "page": 1, "locator": "第 2 张第 1 页左中 LDO 区 U29 WL9005S5-33，VIN/GND/EN/VOUT"}]},
+    {"reference": "U5", "part_number": "TP4057", "role": "VBUS 输入的单节电池充电器，连接 VBAT、CHRG#、STDBY# 和 PROG", "evidence": [{"asset_sha256": "602669f0d68313d37ad6de060fc6b1dafb9a35dfc885114668f1bf5c2c3f7255", "page": 1, "locator": "第 2 张第 1 页左下 Charge 区 U5 TP4057，CHRG#/BAT/PROG/STDBY#/VCC/GND"}]},
+    {"reference": "U20", "part_number": "SY7088DGC", "role": "将 VBAT 升压为 VOUT 的开关转换器", "evidence": [{"asset_sha256": "602669f0d68313d37ad6de060fc6b1dafb9a35dfc885114668f1bf5c2c3f7255", "page": 1, "locator": "第 2 张第 1 页右下 Boost 区 U20 SY7088DGC，LX/EN/IN/OUT/FB 与 U21 1.5uH"}]},
+    {"reference": "Q1,Q25", "part_number": "AO3401A", "role": "VBAT/VBUS/VIN/VOUT 电源路径的 P 沟道 MOSFET", "evidence": [{"asset_sha256": "602669f0d68313d37ad6de060fc6b1dafb9a35dfc885114668f1bf5c2c3f7255", "page": 1, "locator": "第 2 张第 1 页 LDO 区 Q1 与右上电源切换区 Q25，均标 AO3401A"}]},
+    {"reference": "Q26", "part_number": "BSS84DW-7-F", "role": "与 S1/D1/D2/G1/G2 网络连接的双 P 沟道开关器件", "evidence": [{"asset_sha256": "602669f0d68313d37ad6de060fc6b1dafb9a35dfc885114668f1bf5c2c3f7255", "page": 1, "locator": "第 2 张第 1 页右上 Q26 BSS84DW-7-F 双 MOSFET，S1/D1/D2/G1/G2"}]},
+    {"reference": "Q27", "part_number": "CJ3439KDW", "role": "分别控制 PWR_2812 电源和 WS2812_IN 数据电平的双 MOSFET", "evidence": [{"asset_sha256": "602669f0d68313d37ad6de060fc6b1dafb9a35dfc885114668f1bf5c2c3f7255", "page": 1, "locator": "第 2 张第 1 页右中 LED 区 Q27.1/Q27.2 CJ3439KDW"}]},
+    {"reference": "LED1,LED2", "part_number": "WS2812B-2020", "role": "两颗串联数据链的可编程 RGB LED", "evidence": [{"asset_sha256": "602669f0d68313d37ad6de060fc6b1dafb9a35dfc885114668f1bf5c2c3f7255", "page": 1, "locator": "第 2 张第 1 页右中 LED1/LED2 WS2812B-2020，LED1 DO 接 LED2 DI"}]},
+    {"reference": "SW3,SW4", "part_number": "CPG151101S13", "role": "KEY_2 与 KEY_1 的两颗按键开关", "evidence": [{"asset_sha256": "602669f0d68313d37ad6de060fc6b1dafb9a35dfc885114668f1bf5c2c3f7255", "page": 1, "locator": "第 2 张第 1 页中部 Key 区 SW3/SW4 CPG151101S13 与 KEY_2/KEY_1"}]},
+    {"reference": "SW5", "part_number": "K3-1311S-F1", "role": "生成 SWITCH_1/SWITCH_2 和 PWR_EN 状态的三挡滑动开关", "evidence": [{"asset_sha256": "602669f0d68313d37ad6de060fc6b1dafb9a35dfc885114668f1bf5c2c3f7255", "page": 1, "locator": "第 2 张第 1 页左下 Switch 区 SW5 K3-1311S-F1、D2/D3、SWITCH_1/SWITCH_2/PWR_EN"}]},
+    {"reference": "H2", "part_number": "PZ254V-11-02P", "role": "VBAT/GND 两针电池连接器", "evidence": [{"asset_sha256": "602669f0d68313d37ad6de060fc6b1dafb9a35dfc885114668f1bf5c2c3f7255", "page": 1, "locator": "第 2 张第 1 页左上 Battery 区 H2 PZ254V-11-02P pin2 VBAT、pin1 GND"}]},
+    {"reference": "U27,U28", "part_number": "WAFER-PH2.0-4PZZ", "role": "两组 Chain UART 扩展接口，分别引出 UART1 与 UART2、VOUT 和 GND", "evidence": [{"asset_sha256": "68d899624de7431af7fb9a7cfe0fd50e4dd530000de8c8e146f6d70e54f6294a", "page": 1, "locator": "第 3 张第 1 页左下 U27/U28 WAFER-PH2.0-4PZZ"}]},
+    {"reference": "H1", "part_number": "PZ254V-11-06P", "role": "GND、GPIO0、CHIP_PU、U0RXD/U0TXD、MCU_3V3 调试接口", "evidence": [{"asset_sha256": "68d899624de7431af7fb9a7cfe0fd50e4dd530000de8c8e146f6d70e54f6294a", "page": 1, "locator": "第 3 张第 1 页左中 DEBUG 区 H1 PZ254V-11-06P pin1-pin6"}]},
+    {"reference": "X1", "part_number": "40MHz", "role": "ESP32-S3 XTAL_P/XTAL_N 主晶振", "evidence": [{"asset_sha256": "68d899624de7431af7fb9a7cfe0fd50e4dd530000de8c8e146f6d70e54f6294a", "page": 1, "locator": "第 3 张第 1 页右上 X1 40MHz、C17/C18 12pF 与 L6 10nH"}]},
+    {"reference": "X3", "part_number": "32.768kHz", "role": "ESP32-S3 XTAL_32K_P/XTAL_32K_N 低速晶振", "evidence": [{"asset_sha256": "68d899624de7431af7fb9a7cfe0fd50e4dd530000de8c8e146f6d70e54f6294a", "page": 1, "locator": "第 3 张第 1 页中央 X3 32.768kHz、C29/C90 与 R114"}]},
+    {"reference": "D1,D2,D3", "part_number": "1N5819WS", "role": "USB/VIN 和三挡开关 PWR_EN 路径的肖特基二极管", "evidence": [{"asset_sha256": "602669f0d68313d37ad6de060fc6b1dafb9a35dfc885114668f1bf5c2c3f7255", "page": 1, "locator": "第 2 张第 1 页右上 D1 及左下 Switch 区 D2/D3，均标 1N5819WS"}]}
+  ],
+  "facts": [
+    {
+      "id": "system.chain-dualkey-architecture", "category": "system", "subject": "Chain DualKey 系统架构",
+      "statement": "USB-C 提供 VBUS 和 D+/D-，电池与 USB 电源经切换后由 U29 生成 MCU_3V3；U6 ESP32-S3FN8 连接双按键、双 WS2812B、三挡开关 ADC、两路 Chain UART、调试和射频/时钟网络。U5 TP4057 连接 VBUS/VBAT，U20 SY7088DGC 将 VBAT 升压为 VOUT。",
+      "confidence": "confirmed", "attributes": {"mcu": "U6 ESP32-S3FN8", "usb": "U25 USB-C", "ldo": "U29 WL9005S5-33", "charger": "U5 TP4057", "boost": "U20 SY7088DGC", "keys": "SW3/SW4", "rgb": "LED1/LED2", "chain_ports": "U27/U28"},
+      "evidence": [
+        {"asset_sha256": "33f2d99c40de8917f12e3c22e454daaf079fc76ed91f7eb3ef5e613cb61bcb1e", "page": 1, "locator": "第 1 张第 1 页 Overview 系统框图"},
+        {"asset_sha256": "602669f0d68313d37ad6de060fc6b1dafb9a35dfc885114668f1bf5c2c3f7255", "page": 1, "locator": "第 2 张第 1 页完整 Power 页"},
+        {"asset_sha256": "68d899624de7431af7fb9a7cfe0fd50e4dd530000de8c8e146f6d70e54f6294a", "page": 1, "locator": "第 3 张第 1 页完整 MCU 页"}
+      ]
+    },
+    {
+      "id": "component.esp32-s3fn8-pin-use", "category": "component", "subject": "U6 ESP32-S3FN8 已使用 GPIO",
+      "statement": "U6 使用 GPIO0/GPIO17 作为 KEY_1/KEY_2，GPIO8/GPIO7 作为 SWITCH_1/SWITCH_2，GPIO10/GPIO2/GPIO9 作为 ADC_BAT/ADC_VBUS/ADC_CHRG，GPIO21/GPIO40 作为 WS2812_IN/PWR_2812，GPIO19/GPIO20 作为 USB_DN/USB_DP。",
+      "confidence": "confirmed", "attributes": {"keys": "GPIO0 KEY_1, GPIO17 KEY_2", "switch": "GPIO8 SWITCH_1, GPIO7 SWITCH_2", "adc": "GPIO10 ADC_BAT, GPIO2 ADC_VBUS, GPIO9 ADC_CHRG", "rgb": "GPIO21 WS2812_IN, GPIO40 PWR_2812", "usb": "GPIO19 USB_DN, GPIO20 USB_DP"},
+      "evidence": [{"asset_sha256": "68d899624de7431af7fb9a7cfe0fd50e4dd530000de8c8e146f6d70e54f6294a", "page": 1, "locator": "第 3 张第 1 页左侧 KEY/ADC/USB 网络与中央 U6 同名 GPIO"}]
+    },
+    {
+      "id": "bus.usb-native", "category": "bus", "subject": "ESP32-S3 原生 USB",
+      "statement": "U25 的 A6/B6 DP1/DP2 汇合为 USB_DP 并连接 U6 GPIO20，A7/B7 DN1/DN2 汇合为 USB_DN 并连接 U6 GPIO19；VBUS 独立进入电源与检测网络。",
+      "confidence": "confirmed", "attributes": {"controller": "U6 ESP32-S3FN8", "dp": "U25 A6/B6 -> USB_DP -> GPIO20", "dn": "U25 A7/B7 -> USB_DN -> GPIO19", "power": "VBUS"},
+      "evidence": [
+        {"asset_sha256": "602669f0d68313d37ad6de060fc6b1dafb9a35dfc885114668f1bf5c2c3f7255", "page": 1, "locator": "第 2 张第 1 页 Type-C 区 U25 DP1/DP2/DN1/DN2"},
+        {"asset_sha256": "68d899624de7431af7fb9a7cfe0fd50e4dd530000de8c8e146f6d70e54f6294a", "page": 1, "locator": "第 3 张第 1 页 USB 区 GPIO19/GPIO20"}
+      ]
+    },
+    {
+      "id": "protection.usb-cc-esd", "category": "protection", "subject": "USB-C 配置与保护",
+      "statement": "U25 CC1/CC2 分别通过 R56/R55 5.1KΩ 接 GND；D7/D8/D5 连接相关 USB-C 侧网络到 GND，构成接口钳位保护。",
+      "confidence": "confirmed", "attributes": {"cc1": "R56 5.1KΩ to GND", "cc2": "R55 5.1KΩ to GND", "protectors": "D7,D8,D5 to GND"},
+      "evidence": [{"asset_sha256": "602669f0d68313d37ad6de060fc6b1dafb9a35dfc885114668f1bf5c2c3f7255", "page": 1, "locator": "第 2 张第 1 页 Type-C 区 U25 CC1/CC2、R56/R55 与 D7/D8/D5"}]
+    },
+    {
+      "id": "power.usb-battery-to-vin", "category": "power", "subject": "USB 与电池到 VIN 的电源汇入",
+      "statement": "VBUS 直接连接 VIN 节点并通过 R4 1MΩ 控制 Q1 AO3401A；VBAT 经 Q1 接入 VIN。VIN 通过 D1 1N5819WS 连接 VBUS，并参与 Q25/Q26/S1 的 VOUT/G1/G2 电源切换网络。",
+      "confidence": "confirmed", "attributes": {"battery_path": "VBAT -> Q1 AO3401A -> VIN", "usb_path": "VBUS -> VIN node", "gate_bias": "VBUS -> R4 1MΩ -> Q1 gate", "diode": "VIN -> D1 1N5819WS -> VBUS", "switch_network": "Q25/Q26/S1/G1/G2"},
+      "evidence": [{"asset_sha256": "602669f0d68313d37ad6de060fc6b1dafb9a35dfc885114668f1bf5c2c3f7255", "page": 1, "locator": "第 2 张第 1 页 LDO 区 Q1/VBAT/VBUS/VIN 与右上 D1/Q25/Q26"}]
+    },
+    {
+      "id": "power.mcu-3v3-ldo", "category": "power", "subject": "VIN 到 MCU_3V3",
+      "statement": "U29 WL9005S5-33 的 VIN pin1 接 VIN，VOUT pin5 输出 MCU_3V3，EN pin3 接 PWR_EN 并由 R5 1MΩ 下拉；C4 1uF/C5 10uF 为输入电容，C6 10uF/C7 1uF 为输出电容。",
+      "confidence": "confirmed", "attributes": {"input": "VIN", "regulator": "U29 WL9005S5-33", "output": "MCU_3V3", "enable": "PWR_EN", "enable_pulldown": "R5 1MΩ", "input_caps": "C4 1uF,C5 10uF", "output_caps": "C6 10uF,C7 1uF"},
+      "evidence": [{"asset_sha256": "602669f0d68313d37ad6de060fc6b1dafb9a35dfc885114668f1bf5c2c3f7255", "page": 1, "locator": "第 2 张第 1 页 LDO 区 U29、C4-C7、PWR_EN/MCU_3V3"}]
+    },
+    {
+      "id": "power.tp4057-charge", "category": "power", "subject": "TP4057 充电路径",
+      "statement": "U5 TP4057 VCC pin4 接 VBUS、BAT pin3 接 VBAT、GND pin2 接 GND；PROG pin6 经 R6 5.1KΩ 接 GND，CHRG# pin1 输出 CHRG，STDBY# pin5 输出 STDBY，C8/C9 各 10uF 对地。",
+      "confidence": "confirmed", "attributes": {"input": "VBUS", "battery": "VBAT", "program_resistor": "R6 5.1KΩ", "status": "CHRG#,STDBY#", "caps": "C8/C9 10uF"},
+      "evidence": [{"asset_sha256": "602669f0d68313d37ad6de060fc6b1dafb9a35dfc885114668f1bf5c2c3f7255", "page": 1, "locator": "第 2 张第 1 页 Charge 区 U5 TP4057、R6、C8/C9"}]
+    },
+    {
+      "id": "analog.charge-status-adc", "category": "analog", "subject": "ADC_CHRG 状态采样",
+      "statement": "ADC_CHRG 节点通过 R9 100KΩ 接 MCU_3V3、R10 200KΩ 接 STDBY、R11 100KΩ 接 CHRG，并由 C10 100nF 对地；图中注释标出无充电约 3.3V、有线充电约 1.65V、无线充电约 2.2V。",
+      "confidence": "confirmed", "attributes": {"host_gpio": "GPIO9 ADC_CHRG", "pullup": "R9 100KΩ MCU_3V3", "standby": "R10 200KΩ STDBY", "charge": "R11 100KΩ CHRG", "filter": "C10 100nF", "schematic_notes": "no charge 3.3V, wired charge 1.65V, wireless charge 2.2V"},
+      "evidence": [{"asset_sha256": "602669f0d68313d37ad6de060fc6b1dafb9a35dfc885114668f1bf5c2c3f7255", "page": 1, "locator": "第 2 张第 1 页 Charge 区 ADC_CHRG、R9-R11/C10 与三行电压注释"}]
+    },
+    {
+      "id": "power.sy7088-boost", "category": "power", "subject": "VBAT 到 VOUT 升压",
+      "statement": "VBAT 经 U21 1.5uH 接 U20 SY7088DGC LX，U20 OUT pins7/8 输出 VOUT；FB pin5 使用 R87 220KΩ 与 R88 68KΩ，C85 100nF/C86 22uF 对地，VOUT_EN 控制 EN pin3。",
+      "confidence": "confirmed", "attributes": {"input": "VBAT", "inductor": "U21 1.5uH", "converter": "U20 SY7088DGC", "output": "VOUT", "feedback": "R87 220KΩ,R88 68KΩ", "output_caps": "C85 100nF,C86 22uF", "enable": "VOUT_EN"},
+      "evidence": [{"asset_sha256": "602669f0d68313d37ad6de060fc6b1dafb9a35dfc885114668f1bf5c2c3f7255", "page": 1, "locator": "第 2 张第 1 页 Boost 区 VBAT/U21/U20/R87/R88/C85/C86/VOUT"}]
+    },
+    {
+      "id": "analog.battery-vbus-measurement", "category": "analog", "subject": "电池与 VBUS ADC",
+      "statement": "VBAT 经 R61 510KΩ/R62 1MΩ 分压形成 ADC_BAT，并由 C28 100nF 对地；图中给出 Vadv_bat=Vbat*0.662、Vbat=Vadv_bat*1.51。ADC_VBUS 由 VBUS 经 R119 51KΩ/R120 100KΩ 分压。",
+      "confidence": "confirmed", "attributes": {"adc_bat_gpio": "GPIO10", "battery_divider": "R61 510KΩ,R62 1MΩ,C28 100nF", "battery_formula": "Vadv_bat=Vbat*0.662; Vbat=Vadv_bat*1.51", "adc_vbus_gpio": "GPIO2", "vbus_divider": "R119 51KΩ,R120 100KΩ"},
+      "evidence": [{"asset_sha256": "602669f0d68313d37ad6de060fc6b1dafb9a35dfc885114668f1bf5c2c3f7255", "page": 1, "locator": "第 2 张第 1 页左上 Battery ADC 与右上 ADC_VBUS 分压"}]
+    },
+    {
+      "id": "gpio.dual-keys", "category": "gpio", "subject": "双按键输入",
+      "statement": "SW4 KEY_1 连接 GPIO0，SW3 KEY_2 连接 GPIO17；两路均由 R118/R117 10KΩ 上拉到 MCU_3V3，按下开关时接 GND。",
+      "confidence": "confirmed", "attributes": {"key1": "SW4 KEY_1 -> GPIO0", "key2": "SW3 KEY_2 -> GPIO17", "pullups": "R118/R117 10KΩ to MCU_3V3", "active_level": "low"},
+      "evidence": [
+        {"asset_sha256": "602669f0d68313d37ad6de060fc6b1dafb9a35dfc885114668f1bf5c2c3f7255", "page": 1, "locator": "第 2 张第 1 页 Key 区 SW3/SW4 与 R117/R118"},
+        {"asset_sha256": "68d899624de7431af7fb9a7cfe0fd50e4dd530000de8c8e146f6d70e54f6294a", "page": 1, "locator": "第 3 张第 1 页 KEY 区 GPIO0/GPIO17"}
+      ]
+    },
+    {
+      "id": "gpio.three-position-switch", "category": "gpio", "subject": "SW5 三挡开关与关断控制",
+      "statement": "SW5 K3-1311S-F1 通过 D2/D3 1N5819WS 连接 VIN/PWR_EN，并通过 R59/R60、R57/R58 各 510KΩ/1MΩ 分压输出 SWITCH_1 和 SWITCH_2，分别进入 GPIO8/GPIO7。",
+      "confidence": "confirmed", "attributes": {"switch": "SW5 K3-1311S-F1", "power_control": "VIN,PWR_EN through D2/D3", "switch1": "R59 510KΩ/R60 1MΩ -> GPIO8", "switch2": "R57 510KΩ/R58 1MΩ -> GPIO7"},
+      "evidence": [
+        {"asset_sha256": "602669f0d68313d37ad6de060fc6b1dafb9a35dfc885114668f1bf5c2c3f7255", "page": 1, "locator": "第 2 张第 1 页 Switch 区 SW5、D2/D3、R57-R60"},
+        {"asset_sha256": "68d899624de7431af7fb9a7cfe0fd50e4dd530000de8c8e146f6d70e54f6294a", "page": 1, "locator": "第 3 张第 1 页 ADC 区 GPIO8/GPIO7"}
+      ]
+    },
+    {
+      "id": "gpio.rgb-led-control", "category": "gpio", "subject": "双 WS2812 电源与数据控制",
+      "statement": "GPIO40 的 PWR_2812 经 R8 10KΩ 控制 Q27.2，为 LED1/LED2 的 VDD 电源链路开关；GPIO21 的 WS2812_IN 经 Q27.1 电平网络送入 LED1 DI，LED1 DO 接 LED2 DI，LED2 DO 未继续连接。",
+      "confidence": "confirmed", "attributes": {"power_enable": "GPIO40 PWR_2812 -> R8 -> Q27.2", "data": "GPIO21 WS2812_IN -> Q27.1 -> LED1 DI", "chain": "LED1 DO -> LED2 DI", "last_output": "LED2 DO NC", "led_part": "WS2812B-2020"},
+      "evidence": [
+        {"asset_sha256": "602669f0d68313d37ad6de060fc6b1dafb9a35dfc885114668f1bf5c2c3f7255", "page": 1, "locator": "第 2 张第 1 页 LED 区 Q27.1/Q27.2、LED1/LED2"},
+        {"asset_sha256": "68d899624de7431af7fb9a7cfe0fd50e4dd530000de8c8e146f6d70e54f6294a", "page": 1, "locator": "第 3 张第 1 页 GPIO21 WS2812_IN 与 GPIO40 PWR_2812"}
+      ]
+    },
+    {
+      "id": "bus.chain-uarts", "category": "bus", "subject": "两路 Chain UART",
+      "statement": "UART1_TX 由 GPIO47 输出到 U27 pin1，UART1_RX 由 U27 pin2 经 R63 499Ω 到 GPIO48；UART2_TX 由 GPIO6 经 R64 499Ω 到 U28 pin2，UART2_RX 由 U28 pin1 接 GPIO5。U27/U28 pin3 均为 VOUT、pin4 均为 GND。",
+      "confidence": "confirmed", "attributes": {"uart1": "GPIO47 TX -> U27 pin1; U27 pin2 RX -> R63 499Ω -> GPIO48", "uart2": "GPIO6 -> R64 499Ω -> U28 pin2 TX; U28 pin1 RX -> GPIO5", "power": "pin3 VOUT, pin4 GND", "logic_level": "MCU GPIO domain"},
+      "evidence": [{"asset_sha256": "68d899624de7431af7fb9a7cfe0fd50e4dd530000de8c8e146f6d70e54f6294a", "page": 1, "locator": "第 3 张第 1 页左侧 UART 网络、R63/R64 与 U27/U28"}]
+    },
+    {
+      "id": "debug.programming-header", "category": "debug", "subject": "H1 调试下载接口",
+      "statement": "H1 PZ254V-11-06P 的 pin1=GND、pin2=GPIO0、pin3=CHIP_PU、pin4=U0RXD、pin5=U0TXD、pin6=MCU_3V3；CHIP_PU 由 R15 10KΩ 上拉并由 C25 1uF 对地。",
+      "confidence": "confirmed", "attributes": {"header": "H1", "pinout": "1 GND,2 GPIO0,3 CHIP_PU,4 U0RXD,5 U0TXD,6 MCU_3V3", "chip_pu": "R15 10KΩ,C25 1uF"},
+      "evidence": [{"asset_sha256": "68d899624de7431af7fb9a7cfe0fd50e4dd530000de8c8e146f6d70e54f6294a", "page": 1, "locator": "第 3 张第 1 页 DEBUG 区 H1 与中央 CHIP_PU R15/C25"}]
+    },
+    {
+      "id": "clock.esp32-main-rtc", "category": "clock", "subject": "ESP32-S3 主时钟与 RTC 时钟",
+      "statement": "U6 XTAL_P/XTAL_N 连接 X1 40MHz，配合 L6 10nH 与 C17/C18 各 12pF；XTAL_32K_P/XTAL_32K_N 连接 X3 32.768kHz，C29/C90 标 22pF，其中 R114 标 NC。",
+      "confidence": "confirmed", "attributes": {"main": "X1 40MHz, L6 10nH, C17/C18 12pF", "rtc": "X3 32.768kHz, C29/C90 22pF", "rtc_resistor": "R114 NC"},
+      "evidence": [{"asset_sha256": "68d899624de7431af7fb9a7cfe0fd50e4dd530000de8c8e146f6d70e54f6294a", "page": 1, "locator": "第 3 张第 1 页 U6 上方 X1 主晶振和左侧 X3 RTC 晶振"}]
+    },
+    {
+      "id": "rf.esp32-matching", "category": "rf", "subject": "ESP32-S3 射频匹配网络",
+      "statement": "U6 LNA_IN 通过 L7 2nH 接 MCU_3V3 去耦侧，并通过页底 L4 2.4nH、L5 2nH、C23 1.8pF、C24 2pF 及 C26/C27 NC 构成射频网络；资源未给出天线位号或天线接口。",
+      "confidence": "confirmed", "attributes": {"mcu_pin": "LNA_IN", "series_inductors": "L4 2.4nH,L5 2nH", "shunt_caps": "C23 1.8pF,C24 2pF", "optional_caps": "C26/C27 NC", "antenna_reference": null},
+      "evidence": [{"asset_sha256": "68d899624de7431af7fb9a7cfe0fd50e4dd530000de8c8e146f6d70e54f6294a", "page": 1, "locator": "第 3 张第 1 页 U6 LNA_IN 与页底 L4/L5/C23/C24/C26/C27"}]
+    },
+    {
+      "id": "memory.documented-integrated-flash", "category": "memory", "subject": "ESP32-S3FN8 集成 Flash 容量",
+      "statement": "原理图明确标 U6 为 ESP32-S3FN8，正文写 8MB Flash；图中没有独立 Flash 器件或容量字段，且仅注释 SPICS1/IO33-IO37 连接 OSPI PSRAM 并不可作其他用途。",
+      "confidence": "uncertain", "attributes": {"mcu": "ESP32-S3FN8", "documented_flash": "8MB", "external_flash": null, "schematic_note": "SPICS1 and IO33-IO37 connect to OSPI PSRAM and are not available for other use"},
+      "evidence": [{"asset_sha256": "68d899624de7431af7fb9a7cfe0fd50e4dd530000de8c8e146f6d70e54f6294a", "page": 1, "locator": "第 3 张第 1 页 U6 型号与下方 OSPI PSRAM 注释"}]
+    },
+    {
+      "id": "power.battery-capacity-conflict", "category": "power", "subject": "电池容量版本冲突",
+      "statement": "第 1 页 Overview 框图标注 Battery 3.7V 200mAh，而产品正文标注 350mAh 锂电池；两处容量不一致，当前量产电池容量无法确定。",
+      "confidence": "uncertain", "attributes": {"schematic_overview": "3.7V 200mAh", "product_document": "350mAh", "battery_connector": "H2", "resolved_capacity": null},
+      "evidence": [{"asset_sha256": "33f2d99c40de8917f12e3c22e454daaf079fc76ed91f7eb3ef5e613cb61bcb1e", "page": 1, "locator": "第 1 张第 1 页 Overview 中 Battery 3.7V 200mAh 方框"}]
+    },
+    {
+      "id": "power.electrical-performance", "category": "power", "subject": "充电、升压与低功耗性能",
+      "statement": "原理图给出 TP4057、SY7088DGC、反馈/设定电阻和电源路径，但未标注量产充电电流、终止电压、VOUT 额定电流、转换效率、温升或正文所列待机/深睡/USB 电流的测试条件。",
+      "confidence": "uncertain", "attributes": {"charger": "TP4057 with R6 5.1KΩ", "boost": "SY7088DGC with R87/R88", "charge_current": null, "termination_voltage": null, "vout_current": null, "efficiency": null, "measured_currents": null},
+      "evidence": [{"asset_sha256": "602669f0d68313d37ad6de060fc6b1dafb9a35dfc885114668f1bf5c2c3f7255", "page": 1, "locator": "第 2 张第 1 页 TP4057 Charge 与 SY7088DGC Boost 电路"}]
+    },
+    {
+      "id": "rf.antenna-implementation", "category": "rf", "subject": "Wi-Fi/BLE 天线实现与性能",
+      "statement": "Overview 以 Wi-Fi 图标表示无线连接，MCU 页只画出 LNA_IN 匹配网络，没有天线位号、PCB 天线形状、连接器、射频测试点或 2.4GHz 性能参数，因此天线实现与认证状态无法确认。",
+      "confidence": "uncertain", "attributes": {"radio": "ESP32-S3FN8", "matching": "L4/L5/C23/C24", "antenna": null, "connector": null, "test_point": null, "rf_performance": null},
+      "evidence": [
+        {"asset_sha256": "33f2d99c40de8917f12e3c22e454daaf079fc76ed91f7eb3ef5e613cb61bcb1e", "page": 1, "locator": "第 1 张第 1 页 Overview ESP32-S3FN8 上方 Wi-Fi 图标"},
+        {"asset_sha256": "68d899624de7431af7fb9a7cfe0fd50e4dd530000de8c8e146f6d70e54f6294a", "page": 1, "locator": "第 3 张第 1 页 LNA_IN 匹配网络，图中无天线位号"}
+      ]
+    },
+    {
+      "id": "other.documented-firmware-features", "category": "other", "subject": "正文中的 USB/BLE HID 与 Web 配置功能",
+      "statement": "正文描述 USB/BLE HID、AP 热点、Web 配置和宏键盘固件；原理图只确认 ESP32-S3、USB、按键、RGB 和无线射频硬件连接，不能证明具体固件版本、协议行为或功能映射。",
+      "confidence": "uncertain", "attributes": {"documented_features": "USB HID,BLE HID,AP,Web configuration,macro keyboard", "firmware_version": null, "usb_stack": null, "ble_profile": null},
+      "evidence": [{"asset_sha256": "33f2d99c40de8917f12e3c22e454daaf079fc76ed91f7eb3ef5e613cb61bcb1e", "page": 1, "locator": "第 1 张第 1 页 Overview 仅显示 USB/Wi-Fi/KEY/WS2812/UART 功能框"}]
+    }
+  ],
+  "needs_review": [
+    {"id": "review.flash-capacity", "fact_id": "memory.documented-integrated-flash", "question": "请用 ESP32-S3FN8 料号定义或实机读取确认 C147 的集成 Flash 容量是否为 8MB，并澄清图中 OSPI PSRAM 注释。", "reason": "容量来自正文和型号后缀，原理图没有独立容量字段，且 PSRAM 注释需结合芯片版本解释。", "evidence": [{"asset_sha256": "68d899624de7431af7fb9a7cfe0fd50e4dd530000de8c8e146f6d70e54f6294a", "page": 1, "locator": "第 3 张第 1 页 U6 ESP32-S3FN8 与 OSPI 注释"}]},
+    {"id": "review.battery-capacity", "fact_id": "power.battery-capacity-conflict", "question": "C147 当前量产 BOM 的电池是 3.7V 200mAh 还是 350mAh？", "reason": "Overview 原理图与产品正文容量直接冲突。", "evidence": [{"asset_sha256": "33f2d99c40de8917f12e3c22e454daaf079fc76ed91f7eb3ef5e613cb61bcb1e", "page": 1, "locator": "第 1 张第 1 页 Battery 3.7V 200mAh"}]},
+    {"id": "review.power-performance", "fact_id": "power.electrical-performance", "question": "TP4057 充电电流/终止条件、SY7088DGC VOUT 电压与额定电流、转换效率和各低功耗电流的测试条件是什么？", "reason": "原理图连接不足以证明整机性能与热边界。", "evidence": [{"asset_sha256": "602669f0d68313d37ad6de060fc6b1dafb9a35dfc885114668f1bf5c2c3f7255", "page": 1, "locator": "第 2 张第 1 页 Charge 与 Boost 区"}]},
+    {"id": "review.rf-antenna", "fact_id": "rf.antenna-implementation", "question": "C147 使用何种 PCB 天线或外部天线，匹配值、辐射性能和认证测试结果是什么？", "reason": "资源只有 LNA_IN 匹配网络，没有天线本体或射频指标。", "evidence": [{"asset_sha256": "68d899624de7431af7fb9a7cfe0fd50e4dd530000de8c8e146f6d70e54f6294a", "page": 1, "locator": "第 3 张第 1 页 LNA_IN 与 L4/L5/C23/C24"}]},
+    {"id": "review.firmware-features", "fact_id": "other.documented-firmware-features", "question": "C147 当前出厂固件版本实际支持哪些 USB/BLE HID、AP/Web 配置和宏键盘功能？", "reason": "软件功能不能由原理图独立验证。", "evidence": [{"asset_sha256": "33f2d99c40de8917f12e3c22e454daaf079fc76ed91f7eb3ef5e613cb61bcb1e", "page": 1, "locator": "第 1 张第 1 页 Overview 功能框图"}]}
+  ]
+}

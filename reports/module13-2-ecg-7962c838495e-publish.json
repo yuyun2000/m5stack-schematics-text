@@ -1,0 +1,21 @@
+{
+  "dry_run": false,
+  "failed": 0,
+  "published": 1,
+  "results": [
+    {
+      "backup": null,
+      "draft_action": "unchanged",
+      "dry_run": false,
+      "errors": [],
+      "needs_review": 8,
+      "product_id": "module13-2-ecg-7962c838495e",
+      "product_name": "Module13.2 ECG",
+      "publish_action": "unchanged",
+      "sha256": "b77a92208b60ad3746b8844cd0f182574b7264721122cef0db0a7694f0fc8bdd",
+      "status": "valid",
+      "uncertain_facts": 8
+    }
+  ],
+  "schema_version": 1
+}

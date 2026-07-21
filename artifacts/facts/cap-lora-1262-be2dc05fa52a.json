@@ -1,0 +1,511 @@
+{
+  "schema_version": 1,
+  "generator": "schematic_describer",
+  "product": {
+    "product_id": "cap-lora-1262-be2dc05fa52a",
+    "product_name": "Cap LoRa-1262",
+    "sku": "U214",
+    "source_path": "cap/Cap_LoRa-1262.md",
+    "source_sha256": "c62c7c05757b90bb7ccccafdeecc0e172e4ebafcc7308761bb12e9d42d33e337",
+    "input_sha256": "c257f369f8d566718fa297799d9bacde0e8c353465501c7580c08aa325d238d8"
+  },
+  "schematic_assets": [
+    {
+      "sha256": "ca8220583ff646b8466fd2161672edd74d905b6693d3850f4ceeef666333b39c",
+      "source_url": "https://m5stack-doc.oss-cn-shenzhen.aliyuncs.com/1208/U214-sche-Cap-LoRa1262_SCH_1.1_20251029_2025_11_07_22_53_19_page_02.png",
+      "pages": [1]
+    },
+    {
+      "sha256": "77b258457736a07175c6c3b8c8706d047d959da1093bfeb48e9aadaade91bc30",
+      "source_url": "https://m5stack-doc.oss-cn-shenzhen.aliyuncs.com/1208/NEW-1262-SCH_A1-Lora_2025_08_27_10_58_52_page_01.png",
+      "pages": [1]
+    }
+  ],
+  "summary": "Cap LoRa-1262 主板以 P1 14-pin Cap-Bus 接收 LoRa SPI、GNSS UART、I2C 和 5V 电源，U3 JW5712 生成 VDD_3V3，M1 Stamp LoRa-1262 Mini 接 E4 SMA-KE，M2 GP-02 GNSS 经 MAX2659 LNA 与 ANT181804 陶瓷天线接收信号。U2 PI4IOE5V6408ZTAEX 通过 I2C 控制 M1 的 BYPASS/SHUT_DOWN 网络，并把 I2C 与 +5VOUT 引到 J2 Grove。Stamp 子板原理图进一步展开 U1 SX1262、0900FM15K0039 射频前端、FM8625H 开关、32MHz 有源时钟和 IPEX4 天线口；两张图的天线接口与控制网络需要结合 BOM/PCB 确认最终装配拓扑。",
+  "keywords": [
+    "Cap LoRa-1262",
+    "U214",
+    "SX1262",
+    "Stamp LoRa-1262 Mini",
+    "JW5712",
+    "PI4IOE5V6408ZTAEX",
+    "GP-02",
+    "ATGM336H-6N",
+    "AT6668",
+    "MAX2659",
+    "0900FM15K0039",
+    "FM8625H",
+    "ANT181804",
+    "SMA-KE",
+    "IPEX4",
+    "LoRa SPI",
+    "SPI_CLK",
+    "SPI_MOSI",
+    "SPI_MISO",
+    "SX_NSS",
+    "LORA_IRQ",
+    "SX_BUSY",
+    "SX_NRST",
+    "SX_DIO2",
+    "SX_DIO3",
+    "GPS-TX",
+    "GPS-RX",
+    "G15",
+    "G13",
+    "I2C_SDA",
+    "I2C_SCL",
+    "BYPASS",
+    "SHUT_DOWN",
+    "SX_ANT_SW",
+    "VDD_3V3",
+    "+5VOUT",
+    "+5VIN",
+    "GROVE 4P",
+    "0x68",
+    "0x69"
+  ],
+  "components": [
+    {
+      "reference": "U3 [Cap main]",
+      "part_number": "JW5712",
+      "role": "+5VOUT 至 VDD_3V3 的 0~0.6A 降压转换器",
+      "evidence": [{"asset_sha256": "ca8220583ff646b8466fd2161672edd74d905b6693d3850f4ceeef666333b39c", "page": 1, "locator": "网格 A1-A2，U3 JW5712、L2、VDD_3V3，IOUT:0~0.6A"}]
+    },
+    {
+      "reference": "M1 [Cap main]",
+      "part_number": "Stamp LoRa-1262 Mini",
+      "role": "LoRa 子模块，通过 SPI/IRQ/BUSY/RST 与 Cap-Bus 通信，并引出 ANT、BYPASS 和 3V3",
+      "evidence": [{"asset_sha256": "ca8220583ff646b8466fd2161672edd74d905b6693d3850f4ceeef666333b39c", "page": 1, "locator": "网格 A3-A4，M1 Stamp LoRa-1262 Mini pins1-13"}]
+    },
+    {
+      "reference": "U2 [Cap main]",
+      "part_number": "PI4IOE5V6408ZTAEX",
+      "role": "I2C IO 扩展器，P0/P1 分别连接 BYPASS/SHUT_DOWN",
+      "evidence": [{"asset_sha256": "ca8220583ff646b8466fd2161672edd74d905b6693d3850f4ceeef666333b39c", "page": 1, "locator": "网格 B1-C2，U2 PI4IOE5V6408ZTAEX，SCL/SDA/P0/P1/ADDR/RESET"}]
+    },
+    {
+      "reference": "E4 [Cap main]",
+      "part_number": "SMA-KE",
+      "role": "主板 LoRa 外置天线连接器，经 R2 0Ω 与 M1 ANT 相连",
+      "evidence": [{"asset_sha256": "ca8220583ff646b8466fd2161672edd74d905b6693d3850f4ceeef666333b39c", "page": 1, "locator": "网格 A2-A4，E4 SMA-KE、D1/C10/C11/R2 至 M1 ANT"}]
+    },
+    {
+      "reference": "M2 [Cap main]",
+      "part_number": "GP-02",
+      "role": "GNSS 模组，通过 TXD1/RXD1 UART 连接 Cap-Bus，并连接备份电池与外部 LNA/陶瓷天线",
+      "evidence": [{"asset_sha256": "ca8220583ff646b8466fd2161672edd74d905b6693d3850f4ceeef666333b39c", "page": 1, "locator": "网格 C1-D3，M2 GP-02，TXD1/RXD1/VBAT/VCC/ANT/ON-OFF"}]
+    },
+    {
+      "reference": "U1 [Cap main]",
+      "part_number": "MAX2659",
+      "role": "GNSS 射频低噪声放大器，RFIN 接陶瓷天线，RFOUT 接 M2 ANT",
+      "evidence": [{"asset_sha256": "ca8220583ff646b8466fd2161672edd74d905b6693d3850f4ceeef666333b39c", "page": 1, "locator": "网格 C2-C4，U1 MAX2659，RFIN/RFOUT/VCC/SHDN/GND"}]
+    },
+    {
+      "reference": "J1 [Cap main]",
+      "part_number": "ANT181804",
+      "role": "GNSS 内置陶瓷天线，经 C5/L1 连接 MAX2659 RFIN",
+      "evidence": [{"asset_sha256": "ca8220583ff646b8466fd2161672edd74d905b6693d3850f4ceeef666333b39c", "page": 1, "locator": "网格 C3-C4，J1 ANT181804、C5 470pF、L1 6.8nH 至 MAX2659"}]
+    },
+    {
+      "reference": "BT1 [Cap main]",
+      "part_number": "+Battery",
+      "role": "GP-02 VBAT 备用电源",
+      "evidence": [{"asset_sha256": "ca8220583ff646b8466fd2161672edd74d905b6693d3850f4ceeef666333b39c", "page": 1, "locator": "网格 D1-D2，BT1 +Battery 连接 M2 pin6 VBAT"}]
+    },
+    {
+      "reference": "J2 [Cap main]",
+      "part_number": "GROVE 4P",
+      "role": "外部 I2C/5V 扩展接口，提供 SCL、SDA、+5VOUT、GND",
+      "evidence": [{"asset_sha256": "ca8220583ff646b8466fd2161672edd74d905b6693d3850f4ceeef666333b39c", "page": 1, "locator": "网格 C1，J2 GROVE 4P，SCL/SDA/5V/GND"}]
+    },
+    {
+      "reference": "P1 [Cap main]",
+      "part_number": "HDR-SMD_14P-P2.54",
+      "role": "14-pin Cap-Bus 主机连接器，承载 LoRa、GNSS、I2C 与双 5V 网络",
+      "evidence": [{"asset_sha256": "ca8220583ff646b8466fd2161672edd74d905b6693d3850f4ceeef666333b39c", "page": 1, "locator": "网格 D3-D4，P1 HDR-SMD_14P-P2.54 pins1-14"}]
+    },
+    {
+      "reference": "U1 [Stamp]",
+      "part_number": "SX1262",
+      "role": "Stamp 内部 LoRa 收发器，连接 SPI、DIO、32MHz 参考时钟与射频前端",
+      "evidence": [{"asset_sha256": "77b258457736a07175c6c3b8c8706d047d959da1093bfeb48e9aadaade91bc30", "page": 1, "locator": "网格 A1-A2，U1 SX1262，SPI/DIO/RF/XTAL/电源引脚"}]
+    },
+    {
+      "reference": "U3 [Stamp]",
+      "part_number": "0900FM15K0039",
+      "role": "SX1262 RFO/RFLP/RFLN 与 SX_SRFI/SX_SRFO 之间的射频前端/匹配器件",
+      "evidence": [{"asset_sha256": "77b258457736a07175c6c3b8c8706d047d959da1093bfeb48e9aadaade91bc30", "page": 1, "locator": "网格 A3-A4，U3 0900FM15K0039，RFO/RFLP/RFLN/SW_RFI/SW_RFO"}]
+    },
+    {
+      "reference": "U2 [Stamp]",
+      "part_number": "FM8625H",
+      "role": "Stamp 射频天线开关，RF1/RF2 选择到 RFC 天线端，控制网络为 SX_ANT_SW/SX_DIO2",
+      "evidence": [{"asset_sha256": "77b258457736a07175c6c3b8c8706d047d959da1093bfeb48e9aadaade91bc30", "page": 1, "locator": "网格 A5-A6，U2 FM8625H，RF1/RF2/RFC/VDD/CTRL/GND"}]
+    },
+    {
+      "reference": "X1 [Stamp]",
+      "part_number": "X1G0041310042",
+      "role": "3.0V 有源参考时钟源，输出经 R3/C6 形成 SX_32M_REF",
+      "evidence": [{"asset_sha256": "77b258457736a07175c6c3b8c8706d047d959da1093bfeb48e9aadaade91bc30", "page": 1, "locator": "网格 B2-B4，X1 X1G0041310042、VDD:3.0V、R3 220R、C6 10nF、SX_32M_REF"}]
+    },
+    {
+      "reference": "J1 [Stamp]",
+      "part_number": "IPEX4",
+      "role": "Stamp 子板射频天线连接器，前级含匹配位和 ESD 保护",
+      "evidence": [{"asset_sha256": "77b258457736a07175c6c3b8c8706d047d959da1093bfeb48e9aadaade91bc30", "page": 1, "locator": "网格 A7-A8，J1 IPEX4，C1/L2/C2/C3/D1 射频网络"}]
+    }
+  ],
+  "facts": [
+    {
+      "id": "system.architecture",
+      "category": "system",
+      "subject": "Cap LoRa-1262 系统架构",
+      "statement": "主板由 Stamp LoRa-1262 Mini、GP-02 GNSS、MAX2659 LNA、PI4IOE5V6408、JW5712 电源、SMA/Grove/Cap-Bus 接口组成；第二资产展开 Stamp 内部 SX1262、射频前端、开关、时钟与 IPEX4。",
+      "confidence": "confirmed",
+      "attributes": {"lora_module": "M1 Stamp LoRa-1262 Mini", "lora_ic": "U1 [Stamp] SX1262", "gnss": "M2 GP-02", "gnss_lna": "U1 [Cap] MAX2659", "io_expander": "U2 [Cap] PI4IOE5V6408ZTAEX", "buck": "U3 [Cap] JW5712", "host": "P1 14-pin"},
+      "evidence": [{"asset_sha256": "ca8220583ff646b8466fd2161672edd74d905b6693d3850f4ceeef666333b39c", "page": 1, "locator": "主板整页功能分区"}, {"asset_sha256": "77b258457736a07175c6c3b8c8706d047d959da1093bfeb48e9aadaade91bc30", "page": 1, "locator": "Stamp 整页 SX1262/RF/Clock/Connector"}]
+    },
+    {
+      "id": "power.main-buck",
+      "category": "power",
+      "subject": "JW5712 3.3V 电源",
+      "statement": "U3 JW5712 的 VIN 接 +5V/+5VOUT，EN 经 R1 10K 上拉，SW 经 L2 WPN201610U2R2MT 输出 VDD_3V3；页内标注 IOUT 0~0.6A。",
+      "confidence": "confirmed",
+      "attributes": {"converter": "U3 JW5712", "input": "+5V,+5VOUT", "enable": "R1 10K pull-up", "inductor": "L2 WPN201610U2R2MT", "output": "VDD_3V3", "current_mark": "0~0.6A", "output_caps": "C2,C3,C4 22uF"},
+      "evidence": [{"asset_sha256": "ca8220583ff646b8466fd2161672edd74d905b6693d3850f4ceeef666333b39c", "page": 1, "locator": "网格 A1-A2，U3/R1/L2/C1-C4/VDD_3V3"}]
+    },
+    {
+      "id": "power.rail-distribution",
+      "category": "power",
+      "subject": "主板 5V 与 3.3V 分配",
+      "statement": "+5VOUT 同时供给 JW5712 和 J2 Grove；VDD_3V3 供给 M1、U2、M2、MAX2659 与相关逻辑。P1 另有独立 +5VIN pin7，在本页未显示其他负载。",
+      "confidence": "confirmed",
+      "attributes": {"5vout": "P1 pin5,J2 pin3,U3 VIN", "5vin": "P1 pin7 only on page", "3v3": "U3 output VDD_3V3", "3v3_loads": "M1,U2,M2,U1 MAX2659"},
+      "evidence": [{"asset_sha256": "ca8220583ff646b8466fd2161672edd74d905b6693d3850f4ceeef666333b39c", "page": 1, "locator": "整页 +5VOUT/+5VIN/VDD_3V3 网络"}]
+    },
+    {
+      "id": "interface.cap-bus",
+      "category": "interface",
+      "subject": "P1 14-pin Cap-Bus",
+      "statement": "P1 pins8~14 分别为 RST、IRQ、BUSY、SCK、MOSI、MISO、NSS；pins1/2 为 GPS-TX/GPS-RX，pins3/4 为 SCL/SDA，pin5 +5VOUT、pin6 GND、pin7 +5VIN。",
+      "confidence": "confirmed",
+      "attributes": {"pin1": "GPS-TX/G15", "pin2": "GPS-RX/G13", "pin3": "SCL", "pin4": "SDA", "pin5": "+5VOUT", "pin6": "GND", "pin7": "+5VIN", "pin8": "RST/G3", "pin9": "IRQ/G4", "pin10": "BUSY/G6", "pin11": "SCK/G40", "pin12": "MOSI/G14", "pin13": "MISO/G39", "pin14": "NSS/G5"},
+      "evidence": [{"asset_sha256": "ca8220583ff646b8466fd2161672edd74d905b6693d3850f4ceeef666333b39c", "page": 1, "locator": "网格 D3-D4，P1 HDR-SMD_14P-P2.54 pin1-14"}]
+    },
+    {
+      "id": "bus.lora-spi",
+      "category": "bus",
+      "subject": "Cap-Bus 到 Stamp LoRa SPI",
+      "statement": "P1 SCK/G40、MOSI/G14、MISO/G39、NSS/G5 分别连接 M1 SCK pin6、MOSI pin7、MISO pin8、NSS pin9；RST/G3、BUSY/G6、IRQ/G4 连接 M1 对应控制脚。",
+      "confidence": "confirmed",
+      "attributes": {"sck": "P1.11 G40 -> M1.6", "mosi": "P1.12 G14 -> M1.7", "miso": "P1.13 G39 -> M1.8", "chip_select": "P1.14 G5 -> M1.9 NSS", "reset": "P1.8 G3 -> M1.2 RST", "busy": "P1.10 G6 -> M1.3 BUSY", "interrupt": "M1.4 IRQ -> P1.9 G4"},
+      "evidence": [{"asset_sha256": "ca8220583ff646b8466fd2161672edd74d905b6693d3850f4ceeef666333b39c", "page": 1, "locator": "网格 A3-D4，M1 SPI/控制网络到 P1"}]
+    },
+    {
+      "id": "component.sx1262",
+      "category": "component",
+      "subject": "Stamp 内部 SX1262",
+      "statement": "第二资产 U1 明确标为 SX1262，SPI_CLK/MOSI/MISO/NSS、LORA_IRQ、SX_BUSY、SX_NRST、SX_DIO2/SX_DIO3 与射频/电源网络均从该芯片引出。",
+      "confidence": "confirmed",
+      "attributes": {"reference": "U1 [Stamp]", "part_number": "SX1262", "spi": "SPI_CLK,SPI_MOSI,SPI_MISO,SX_NSS", "control": "LORA_IRQ,SX_BUSY,SX_NRST,SX_DIO2,SX_DIO3", "rf": "SX_RFO,SX_RFL_P,SX_RFL_N", "clock": "SX_32M_REF"},
+      "evidence": [{"asset_sha256": "77b258457736a07175c6c3b8c8706d047d959da1093bfeb48e9aadaade91bc30", "page": 1, "locator": "网格 A1-A2，U1 SX1262 全部网络"}]
+    },
+    {
+      "id": "rf.stamp-front-end",
+      "category": "rf",
+      "subject": "SX1262 射频前端",
+      "statement": "SX1262 的 SX_RFO、SX_RFL_P、SX_RFL_N 进入 U3 0900FM15K0039，输出 SX_SRFI/SX_SRFO 再进入 U2 FM8625H 的 RF2/RF1，RFC 通过匹配网络到 J1 IPEX4。",
+      "confidence": "confirmed",
+      "attributes": {"transceiver": "U1 SX1262", "front_end": "U3 0900FM15K0039", "switch": "U2 FM8625H", "tx_rx_nets": "SX_RFO,SX_RFL_P,SX_RFL_N,SX_SRFI,SX_SRFO", "antenna_connector": "J1 IPEX4"},
+      "evidence": [{"asset_sha256": "77b258457736a07175c6c3b8c8706d047d959da1093bfeb48e9aadaade91bc30", "page": 1, "locator": "网格 A1-A8，SX1262 经 U3/U2 到 IPEX4"}]
+    },
+    {
+      "id": "gpio.rf-switch-control",
+      "category": "gpio",
+      "subject": "Stamp RF 开关控制",
+      "statement": "FM8625H CTRL pin6 经 R2 100R/1% 接 SX_DIO2，并以 C5 100pF/25V 对地；VDD pin4 通过 R1 100R/1% 接 SX_ANT_SW，并以 C4 100pF/25V 对地。",
+      "confidence": "confirmed",
+      "attributes": {"switch": "U2 [Stamp] FM8625H", "control": "pin6 CTRL -> R2 100R -> SX_DIO2", "supply_control": "pin4 VDD -> R1 100R -> SX_ANT_SW", "control_caps": "C4,C5 100pF/25V"},
+      "evidence": [{"asset_sha256": "77b258457736a07175c6c3b8c8706d047d959da1093bfeb48e9aadaade91bc30", "page": 1, "locator": "网格 A5-A6，U2 FM8625H、R1/R2、C4/C5、SX_ANT_SW/SX_DIO2"}]
+    },
+    {
+      "id": "clock.sx1262-reference",
+      "category": "clock",
+      "subject": "SX1262 32MHz 参考时钟",
+      "statement": "X1 X1G0041310042 标注 VDD 3.0V，输出 pin3 经 R3 220R/1% 和 C6 10nF/5% 形成 SX_32M_REF；VDD_OCXO 由 SX_DIO3 经 FB1 600R/0201 滤波供电。",
+      "confidence": "confirmed",
+      "attributes": {"oscillator": "X1 X1G0041310042", "frequency_net": "SX_32M_REF", "supply_mark": "3.0V", "output_chain": "pin3 -> R3 220R/1% -> C6 10nF/5%", "supply_chain": "SX_DIO3 -> FB1 600R/0201 -> VDD_OCXO", "decoupling": "C7,C8,C9 100nF/25V"},
+      "evidence": [{"asset_sha256": "77b258457736a07175c6c3b8c8706d047d959da1093bfeb48e9aadaade91bc30", "page": 1, "locator": "网格 B1-B4，X1/FB1/R3/C6-C9/SX_32M_REF"}]
+    },
+    {
+      "id": "power.stamp-3v3",
+      "category": "power",
+      "subject": "Stamp 子板 3.3V 滤波",
+      "statement": "VIN_3V3 经 FB2 BLM15AX601SN1D 形成 VDD_3V3，配置 C18/C10 10uF、C11/C12 1uF、C13/C14 100nF 去耦；SX_VREG 与 SX_PAVDD 另有 C15/C16/C17。",
+      "confidence": "confirmed",
+      "attributes": {"input": "VIN_3V3", "ferrite": "FB2 BLM15AX601SN1D", "output": "VDD_3V3", "bulk_caps": "C18,C10 10uF/10V", "mid_caps": "C11,C12 1uF/10V", "hf_caps": "C13,C14 100nF/25V", "rf_rails": "SX_VREG,SX_PAVDD"},
+      "evidence": [{"asset_sha256": "77b258457736a07175c6c3b8c8706d047d959da1093bfeb48e9aadaade91bc30", "page": 1, "locator": "网格 B1-C4，FB2/C10-C18/VDD_3V3/SX_VREG/SX_PAVDD"}]
+    },
+    {
+      "id": "rf.main-sma-path",
+      "category": "rf",
+      "subject": "主板 SMA LoRa 天线路径",
+      "statement": "M1 ANT pin12 经 R2 0Ω 到 E4 SMA-KE；D1、C10、C11 均标 NC，构成未装的保护/匹配位置。",
+      "confidence": "confirmed",
+      "attributes": {"source": "M1 pin12 ANT", "series": "R2 0Ω", "connector": "E4 SMA-KE", "shunt_protection": "D1 NC", "matching_caps": "C10 NC,C11 NC"},
+      "evidence": [{"asset_sha256": "ca8220583ff646b8466fd2161672edd74d905b6693d3850f4ceeef666333b39c", "page": 1, "locator": "网格 A2-A4，M1 ANT/R2/D1/C10/C11/E4"}]
+    },
+    {
+      "id": "protection.stamp-antenna",
+      "category": "protection",
+      "subject": "Stamp IPEX 天线保护与匹配",
+      "statement": "FM8625H RFC 经 C1 串联、L2 0R/TBD 与 C2/C3/L4 匹配位到 J1 IPEX4，D1 H3V3U10B/TBD 从天线节点对地保护；L4 标 NC。",
+      "confidence": "confirmed",
+      "attributes": {"connector": "J1 IPEX4", "series_cap": "C1", "series_inductor": "L2 0R/TBD", "shunt_options": "C2 TBD,C3 TBD,L4 NC", "esd": "D1 H3V3U10B/TBD"},
+      "evidence": [{"asset_sha256": "77b258457736a07175c6c3b8c8706d047d959da1093bfeb48e9aadaade91bc30", "page": 1, "locator": "网格 A6-A8，FM8625H RFC 到 J1 IPEX4 的 C1/L2/C2/C3/L4/D1"}]
+    },
+    {
+      "id": "bus.io-expander-i2c",
+      "category": "bus",
+      "subject": "PI4IOE5V6408 与 Grove I2C",
+      "statement": "P1 SDA/SCL 连接 U2 PI4IOE5V6408 pins14/13 并延伸到 J2 SDA/SCL；R5/R6 10K 上拉位置均标 NC，因此主板不装这两颗 I2C 上拉。",
+      "confidence": "confirmed",
+      "attributes": {"controller": "P1 pins4/3", "device": "U2 pins14 SDA,13 SCL", "extension": "J2 SDA,SCL", "sda_pullup": "R5 10K NC", "scl_pullup": "R6 10K NC", "rail": "VDD_3V3"},
+      "evidence": [{"asset_sha256": "ca8220583ff646b8466fd2161672edd74d905b6693d3850f4ceeef666333b39c", "page": 1, "locator": "网格 B1-C2/D4，P1/J2/U2 I2C 与 R5/R6 NC"}]
+    },
+    {
+      "id": "address.io-expander-strap",
+      "category": "address",
+      "subject": "PI4IOE5V6408 地址选择",
+      "statement": "U2 ADDR pin9 接 GND；原理图未标出该绑带对应的数值 I2C 地址。",
+      "confidence": "confirmed",
+      "attributes": {"device": "U2 PI4IOE5V6408ZTAEX", "address_pin": "pin9 ADDR", "strap": "GND", "numeric_address": null},
+      "evidence": [{"asset_sha256": "ca8220583ff646b8466fd2161672edd74d905b6693d3850f4ceeef666333b39c", "page": 1, "locator": "网格 B1-C2，U2 ADDR pin9 接 GND"}]
+    },
+    {
+      "id": "gpio.io-expander",
+      "category": "gpio",
+      "subject": "PI4IOE5V6408 输出映射",
+      "statement": "U2 P0 pin12 连接 BYPASS 并到 M1 pin10，P1 pin11 连接 SHUT_DOWN；P2~P7 未连接。",
+      "confidence": "confirmed",
+      "attributes": {"p0": "pin12 BYPASS -> M1 pin10", "p1": "pin11 SHUT_DOWN", "unused": "P2-P7 NC", "interrupt": "pin1 INT no external net"},
+      "evidence": [{"asset_sha256": "ca8220583ff646b8466fd2161672edd74d905b6693d3850f4ceeef666333b39c", "page": 1, "locator": "网格 B1-C2，U2 P0/P1/P2-P7 与 M1 BYPASS"}]
+    },
+    {
+      "id": "interface.grove",
+      "category": "interface",
+      "subject": "J2 HY2.0-4P/Grove 接口",
+      "statement": "J2 GROVE 4P 从上到下引出 SCL、SDA、+5VOUT、GND，并与 P1/U2 共用 I2C 网络。",
+      "confidence": "confirmed",
+      "attributes": {"reference": "J2", "pin1": "SCL", "pin2": "SDA", "pin3": "+5VOUT", "pin4": "GND", "bus": "shared with P1 and U2"},
+      "evidence": [{"asset_sha256": "ca8220583ff646b8466fd2161672edd74d905b6693d3850f4ceeef666333b39c", "page": 1, "locator": "网格 C1，J2 GROVE 4P"}]
+    },
+    {
+      "id": "component.gnss-module",
+      "category": "component",
+      "subject": "GP-02 GNSS 模组",
+      "statement": "主板 M2 标为 GP-02，TXD1/RXD1 连接 G15/G13，VBAT 接 BT1，VCC 经 FB3 供电，ANT 接 MAX2659 RFOUT；1PPS、NRST、SCL/SDA 等多脚未连接。",
+      "confidence": "confirmed",
+      "attributes": {"reference": "M2", "schematic_model": "GP-02", "uart": "pin2 TXD1/G15,pin3 RXD1/G13", "backup": "pin6 VBAT/BT1", "main_power": "pin8 VCC via FB3", "antenna": "pin11 ANT", "unused": "1PPS,NRST,SCL,SDA,VCC_RF"},
+      "evidence": [{"asset_sha256": "ca8220583ff646b8466fd2161672edd74d905b6693d3850f4ceeef666333b39c", "page": 1, "locator": "网格 C1-D3，M2 GP-02 pins1-18"}]
+    },
+    {
+      "id": "bus.gnss-uart",
+      "category": "bus",
+      "subject": "Cap-Bus 到 GNSS UART",
+      "statement": "M2 TXD1 pin2 经 R4 0Ω 连接 G15 并到 P1 pin1 GPS-TX；M2 RXD1 pin3 连接 G13 并到 P1 pin2 GPS-RX。",
+      "confidence": "confirmed",
+      "attributes": {"device_tx": "M2.2 TXD1 -> R4 0Ω -> G15 -> P1.1 GPS-TX", "device_rx": "P1.2 GPS-RX/G13 -> M2.3 RXD1", "device": "M2 GP-02"},
+      "evidence": [{"asset_sha256": "ca8220583ff646b8466fd2161672edd74d905b6693d3850f4ceeef666333b39c", "page": 1, "locator": "网格 C1-D4，M2 TXD1/RXD1 到 P1 pins1/2"}]
+    },
+    {
+      "id": "power.gnss",
+      "category": "power",
+      "subject": "GNSS 主电源与备份电源",
+      "statement": "M2 VCC pin8 从 +3.3V 经 FB3 120Ω/MB 供电，并以 C8 22uF/C9 100nF 去耦；VBAT pin6 接 BT1 +Battery；ON/OFF pin5 由 R3 10K 上拉到 +3.3V。",
+      "confidence": "confirmed",
+      "attributes": {"main_supply": "+3.3V -> FB3 120Ω/MB -> M2.8 VCC", "decoupling": "C8 22uF,C9 100nF", "backup": "BT1 -> M2.6 VBAT", "on_off": "M2.5 with R3 10K pull-up"},
+      "evidence": [{"asset_sha256": "ca8220583ff646b8466fd2161672edd74d905b6693d3850f4ceeef666333b39c", "page": 1, "locator": "网格 C1-D3，M2 VCC/VBAT/ON-OFF、FB3/C8/C9/R3/BT1"}]
+    },
+    {
+      "id": "rf.gnss-antenna",
+      "category": "rf",
+      "subject": "GNSS 陶瓷天线与 LNA",
+      "statement": "J1 ANT181804 经 C5 470pF 与 L1 6.8nH/5% 连接 MAX2659 RFIN pin3；MAX2659 RFOUT pin6 连接 M2 ANT pin11，VCC/SHDN 共接滤波后的 3.3V。",
+      "confidence": "confirmed",
+      "attributes": {"antenna": "J1 ANT181804", "matching": "C5 470pF,L1 6.8nH 5%", "lna": "U1 MAX2659", "input": "RFIN pin3", "output": "RFOUT pin6 -> M2 pin11 ANT", "supply": "3.3V via FB2 120Ω/MB"},
+      "evidence": [{"asset_sha256": "ca8220583ff646b8466fd2161672edd74d905b6693d3850f4ceeef666333b39c", "page": 1, "locator": "网格 C2-D4，J1/L1/C5/U1 MAX2659 到 M2 ANT"}]
+    },
+    {
+      "id": "reset.lora",
+      "category": "reset",
+      "subject": "LoRa 复位网络",
+      "statement": "P1 pin8 G3/RST 连接 M1 pin2 RST；Stamp 内部该信号为 SX_NRST 并连接 SX1262 NRRESET。",
+      "confidence": "confirmed",
+      "attributes": {"host": "P1.8 G3/RST", "module": "M1.2 RST", "internal_net": "SX_NRST", "target": "U1 [Stamp] NRRESET"},
+      "evidence": [{"asset_sha256": "ca8220583ff646b8466fd2161672edd74d905b6693d3850f4ceeef666333b39c", "page": 1, "locator": "网格 A3-D4，P1 RST 到 M1"}, {"asset_sha256": "77b258457736a07175c6c3b8c8706d047d959da1093bfeb48e9aadaade91bc30", "page": 1, "locator": "网格 A1，SX_NRST 到 SX1262 NRRESET"}]
+    },
+    {
+      "id": "key_net.radio-navigation",
+      "category": "key_net",
+      "subject": "LoRa 与 GNSS 关键连接",
+      "statement": "LoRa 路径为 P1 SPI/控制 -> M1 -> SX1262/RF 前端 -> 天线接口；GNSS 路径为 ANT181804 -> MAX2659 -> M2 GP-02，定位数据由 M2 UART -> G15/G13 -> P1。",
+      "confidence": "confirmed",
+      "attributes": {"lora_control": "P1 -> M1 -> SX1262", "lora_rf": "SX1262 -> 0900FM15K0039 -> FM8625H -> antenna", "gnss_rf": "ANT181804 -> MAX2659 -> M2 ANT", "gnss_data": "M2 TXD1/RXD1 -> G15/G13 -> P1"},
+      "evidence": [{"asset_sha256": "ca8220583ff646b8466fd2161672edd74d905b6693d3850f4ceeef666333b39c", "page": 1, "locator": "主板 LoRa/GNSS 网络"}, {"asset_sha256": "77b258457736a07175c6c3b8c8706d047d959da1093bfeb48e9aadaade91bc30", "page": 1, "locator": "Stamp SX1262 射频链"}]
+    },
+    {
+      "id": "analog.gnss-rf-matching",
+      "category": "analog",
+      "subject": "GNSS 射频匹配与滤波",
+      "statement": "GNSS 天线输入串联 C5 470pF 与 L1 6.8nH；MAX2659 电源经 FB2 120Ω/MB，C6 100nF 与 C7 33nF 对地去耦。",
+      "confidence": "confirmed",
+      "attributes": {"series_cap": "C5 470pF", "series_inductor": "L1 6.8nH 5%", "supply_ferrite": "FB2 120Ω/MB", "decoupling": "C6 100nF,C7 33nF"},
+      "evidence": [{"asset_sha256": "ca8220583ff646b8466fd2161672edd74d905b6693d3850f4ceeef666333b39c", "page": 1, "locator": "网格 C2-C4，MAX2659/J1 周边 L1/C5/FB2/C6/C7"}]
+    },
+    {
+      "id": "debug.none",
+      "category": "debug",
+      "subject": "调试接口",
+      "statement": "两张原理图均未显示 SWD/JTAG 或专用调试连接器；可观测信号主要通过 P1、J2 与 Stamp 12-pin 焊盘引出。",
+      "confidence": "confirmed",
+      "attributes": {"swd": null, "jtag": null, "debug_connector": null, "signal_connectors": "P1,J2,Stamp J1 1x12"},
+      "evidence": [{"asset_sha256": "ca8220583ff646b8466fd2161672edd74d905b6693d3850f4ceeef666333b39c", "page": 1, "locator": "主板整页无 Debug/SWD/JTAG"}, {"asset_sha256": "77b258457736a07175c6c3b8c8706d047d959da1093bfeb48e9aadaade91bc30", "page": 1, "locator": "Stamp 整页无 Debug/SWD/JTAG"}]
+    },
+    {
+      "id": "storage.none",
+      "category": "storage",
+      "subject": "板级存储",
+      "statement": "两张原理图未显示外部 Flash、EEPROM、eMMC 或存储卡接口。",
+      "confidence": "confirmed",
+      "attributes": {"flash": null, "eeprom": null, "emmc": null, "storage_card": null},
+      "evidence": [{"asset_sha256": "ca8220583ff646b8466fd2161672edd74d905b6693d3850f4ceeef666333b39c", "page": 1, "locator": "主板整页无存储器件"}, {"asset_sha256": "77b258457736a07175c6c3b8c8706d047d959da1093bfeb48e9aadaade91bc30", "page": 1, "locator": "Stamp 整页无外部存储器件"}]
+    },
+    {
+      "id": "memory.none-external",
+      "category": "memory",
+      "subject": "外部内存",
+      "statement": "两张原理图未显示独立 RAM、PSRAM 或 DDR 器件；SX1262 与 GP-02 的内部存储未展开。",
+      "confidence": "confirmed",
+      "attributes": {"ram": null, "psram": null, "ddr": null, "internal_memory": "not shown"},
+      "evidence": [{"asset_sha256": "ca8220583ff646b8466fd2161672edd74d905b6693d3850f4ceeef666333b39c", "page": 1, "locator": "主板 M1/M2 模组符号，无外部 memory"}, {"asset_sha256": "77b258457736a07175c6c3b8c8706d047d959da1093bfeb48e9aadaade91bc30", "page": 1, "locator": "Stamp SX1262 外围，无 RAM/DDR"}]
+    },
+    {
+      "id": "audio.none",
+      "category": "audio",
+      "subject": "音频电路",
+      "statement": "两张原理图未显示音频编解码器、麦克风、扬声器或 I2S 网络。",
+      "confidence": "confirmed",
+      "attributes": {"codec": null, "microphone": null, "speaker": null, "i2s": null},
+      "evidence": [{"asset_sha256": "ca8220583ff646b8466fd2161672edd74d905b6693d3850f4ceeef666333b39c", "page": 1, "locator": "主板整页无音频分区"}, {"asset_sha256": "77b258457736a07175c6c3b8c8706d047d959da1093bfeb48e9aadaade91bc30", "page": 1, "locator": "Stamp 整页无音频分区"}]
+    },
+    {
+      "id": "sensor.gnss",
+      "category": "sensor",
+      "subject": "GNSS 定位接收链",
+      "statement": "M2 GP-02 与 J1 ANT181804/MAX2659 组成 GNSS 接收链，数据通过 UART 输出；原理图未展开卫星基带内部结构。",
+      "confidence": "confirmed",
+      "attributes": {"module": "M2 GP-02", "antenna": "J1 ANT181804", "lna": "U1 MAX2659", "data": "TXD1/RXD1 UART", "internal_baseband": "not shown"},
+      "evidence": [{"asset_sha256": "ca8220583ff646b8466fd2161672edd74d905b6693d3850f4ceeef666333b39c", "page": 1, "locator": "网格 C1-D4，GP-02/MAX2659/ANT181804/UART"}]
+    },
+    {
+      "id": "component.gnss-model",
+      "category": "component",
+      "subject": "GNSS 模组具体型号",
+      "statement": "产品正文称 GPS 模组为 ATGM336H-6N@AT6668，但主板原理图 M2 仅标 GP-02，未在器件符号中出现 ATGM336H-6N 或 AT6668。",
+      "confidence": "uncertain",
+      "attributes": {"reference": "M2", "schematic_model": "GP-02", "documented_module": "ATGM336H-6N", "documented_chip": "AT6668", "assembled_model": null},
+      "evidence": [{"asset_sha256": "ca8220583ff646b8466fd2161672edd74d905b6693d3850f4ceeef666333b39c", "page": 1, "locator": "网格 C1-D3，M2 器件文字 GP-02"}]
+    },
+    {
+      "id": "rf.antenna-connector-topology",
+      "category": "rf",
+      "subject": "LoRa 天线连接器拓扑",
+      "statement": "主板图显示 M1 ANT 经 R2 到 E4 SMA-KE；Stamp 子板图显示 FM8625H 经匹配网络到 J1 IPEX4。两资产未提供连接关系说明，无法确认量产件是否同时装配两种接口或其中一个仅为子板选件。",
+      "confidence": "uncertain",
+      "attributes": {"main_board_connector": "E4 SMA-KE", "stamp_connector": "J1 IPEX4", "main_path": "M1 ANT -> R2 -> E4", "stamp_path": "FM8625H -> matching -> J1", "assembled_topology": null},
+      "evidence": [{"asset_sha256": "ca8220583ff646b8466fd2161672edd74d905b6693d3850f4ceeef666333b39c", "page": 1, "locator": "主板网格 A2-A4，E4 SMA-KE"}, {"asset_sha256": "77b258457736a07175c6c3b8c8706d047d959da1093bfeb48e9aadaade91bc30", "page": 1, "locator": "Stamp 网格 A6-A8，J1 IPEX4"}]
+    },
+    {
+      "id": "gpio.documented-antenna-enable",
+      "category": "gpio",
+      "subject": "IO 扩展 P0 与射频开关使能",
+      "statement": "正文要求 PI4IOE P0 置高以使能 FM8625H；主板图 P0 标为 BYPASS 并连接 M1 pin10，而 Stamp 图控制网名为 SX_ANT_SW/SX_DIO2，未直接展示 BYPASS 到 SX_ANT_SW 的内部映射。",
+      "confidence": "uncertain",
+      "attributes": {"documented_action": "PI4IOE P0 high", "main_schematic": "U2 P0/BYPASS -> M1 pin10", "stamp_switch_supply": "SX_ANT_SW", "stamp_switch_control": "SX_DIO2", "verified_cross_board_mapping": null},
+      "evidence": [{"asset_sha256": "ca8220583ff646b8466fd2161672edd74d905b6693d3850f4ceeef666333b39c", "page": 1, "locator": "主板网格 B2/A3，U2 P0 BYPASS 到 M1 pin10"}, {"asset_sha256": "77b258457736a07175c6c3b8c8706d047d959da1093bfeb48e9aadaade91bc30", "page": 1, "locator": "Stamp 网格 A5-A6，FM8625H SX_ANT_SW/SX_DIO2"}]
+    },
+    {
+      "id": "rf.documented-lora-performance",
+      "category": "rf",
+      "subject": "LoRa 频段与射频性能",
+      "statement": "正文称支持 868~923MHz、+22dBm 发射、-147dBm 接收和最高 300kbps；原理图确认 SX1262 与射频前端，但没有这些频段、功率、灵敏度或速率的配置/测试数据。",
+      "confidence": "uncertain",
+      "attributes": {"documented_frequency": "868~923MHz", "documented_tx_power": "+22dBm", "documented_sensitivity": "-147dBm", "documented_bitrate": "300kbps max", "schematic_performance": null},
+      "evidence": [{"asset_sha256": "77b258457736a07175c6c3b8c8706d047d959da1093bfeb48e9aadaade91bc30", "page": 1, "locator": "Stamp SX1262/RF 前端图，无频段/功率/灵敏度/速率表"}]
+    },
+    {
+      "id": "sensor.documented-gnss-performance",
+      "category": "sensor",
+      "subject": "GNSS 星座、精度与启动性能",
+      "statement": "正文列出多星座、多频点、50通道、<1.5m CEP50、10Hz 和启动/灵敏度指标；原理图只确认 GP-02、UART、LNA 与天线，未提供这些运行参数。",
+      "confidence": "uncertain",
+      "attributes": {"documented_constellations": "GPS,QZSS,BD2,BD3,GAL,GLO", "documented_channels": 50, "documented_accuracy": "<1.5m CEP50", "documented_update_rate": "10Hz max", "documented_uart": "115200 8N1", "schematic_performance": null},
+      "evidence": [{"asset_sha256": "ca8220583ff646b8466fd2161672edd74d905b6693d3850f4ceeef666333b39c", "page": 1, "locator": "主板 M2 GP-02/MAX2659/ANT181804 图，无 GNSS 性能表"}]
+    },
+    {
+      "id": "address.io-expander-numeric",
+      "category": "address",
+      "subject": "PI4IOE5V6408 数值地址",
+      "statement": "U2 ADDR 接 GND，但当前原理图未给出对应 7-bit I2C 地址，需要 datasheet 或总线扫描确认。",
+      "confidence": "uncertain",
+      "attributes": {"device": "U2 PI4IOE5V6408ZTAEX", "strap": "ADDR=GND", "address_7bit": null},
+      "evidence": [{"asset_sha256": "ca8220583ff646b8466fd2161672edd74d905b6693d3850f4ceeef666333b39c", "page": 1, "locator": "网格 B1-C2，U2 ADDR pin9 接 GND，无地址注记"}]
+    }
+  ],
+  "needs_review": [
+    {
+      "id": "review.gnss-model",
+      "fact_id": "component.gnss-model",
+      "question": "请用量产 BOM 或 M2 丝印确认 GP-02 是否对应 ATGM336H-6N 模组及 AT6668 芯片。",
+      "reason": "产品正文与原理图采用不同层级/名称，页内不能直接等同。",
+      "evidence": [{"asset_sha256": "ca8220583ff646b8466fd2161672edd74d905b6693d3850f4ceeef666333b39c", "page": 1, "locator": "网格 C1-D3，M2 GP-02"}]
+    },
+    {
+      "id": "review.lora-antenna-topology",
+      "fact_id": "rf.antenna-connector-topology",
+      "question": "请用主板/Stamp PCB、BOM 与装配图确认 E4 SMA-KE 和 Stamp J1 IPEX4 的实际连接及装配状态。",
+      "reason": "两个正式资源分别显示不同 LoRa 天线连接器，未给跨板说明。",
+      "evidence": [{"asset_sha256": "ca8220583ff646b8466fd2161672edd74d905b6693d3850f4ceeef666333b39c", "page": 1, "locator": "主板 E4 SMA-KE"}, {"asset_sha256": "77b258457736a07175c6c3b8c8706d047d959da1093bfeb48e9aadaade91bc30", "page": 1, "locator": "Stamp J1 IPEX4"}]
+    },
+    {
+      "id": "review.antenna-enable",
+      "fact_id": "gpio.documented-antenna-enable",
+      "question": "请用 Stamp 引脚定义或 PCB 网表确认主板 P0/BYPASS 到 Stamp SX_ANT_SW/FM8625H 的实际映射与有效电平。",
+      "reason": "两张图使用 BYPASS 与 SX_ANT_SW/SX_DIO2 不同网名，未直接给出跨板映射。",
+      "evidence": [{"asset_sha256": "ca8220583ff646b8466fd2161672edd74d905b6693d3850f4ceeef666333b39c", "page": 1, "locator": "U2 P0 BYPASS/M1 pin10"}, {"asset_sha256": "77b258457736a07175c6c3b8c8706d047d959da1093bfeb48e9aadaade91bc30", "page": 1, "locator": "FM8625H SX_ANT_SW/SX_DIO2"}]
+    },
+    {
+      "id": "review.lora-performance",
+      "fact_id": "rf.documented-lora-performance",
+      "question": "请依据 SX1262 配置、射频 BOM、认证报告和实测确认 868~923MHz、+22dBm、-147dBm 与 300kbps 指标。",
+      "reason": "原理图不包含射频性能测试数据。",
+      "evidence": [{"asset_sha256": "77b258457736a07175c6c3b8c8706d047d959da1093bfeb48e9aadaade91bc30", "page": 1, "locator": "Stamp SX1262/RF 前端"}]
+    },
+    {
+      "id": "review.gnss-performance",
+      "fact_id": "sensor.documented-gnss-performance",
+      "question": "请依据实际 GNSS 模组 datasheet、固件和定位测试确认星座、通道、精度、更新率、UART 与启动/灵敏度指标。",
+      "reason": "主板图仅给出模组连接，且具体 GNSS 型号尚需确认。",
+      "evidence": [{"asset_sha256": "ca8220583ff646b8466fd2161672edd74d905b6693d3850f4ceeef666333b39c", "page": 1, "locator": "M2 GP-02 与 GNSS 射频/UART 链"}]
+    },
+    {
+      "id": "review.io-expander-address",
+      "fact_id": "address.io-expander-numeric",
+      "question": "请依据 PI4IOE5V6408ZTAEX datasheet 或 I2C 扫描确认 ADDR 接 GND 时的 7-bit 地址。",
+      "reason": "原理图只给出地址绑带，没有数值地址。",
+      "evidence": [{"asset_sha256": "ca8220583ff646b8466fd2161672edd74d905b6693d3850f4ceeef666333b39c", "page": 1, "locator": "U2 ADDR pin9 接 GND"}]
+    }
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "dry_run": false,
+  "failed": 0,
+  "published": 1,
+  "results": [
+    {
+      "backup": null,
+      "draft_action": "unchanged",
+      "dry_run": false,
+      "errors": [],
+      "needs_review": 6,
+      "product_id": "unit-synth-ae301994d0ec",
+      "product_name": "Unit Synth",
+      "publish_action": "unchanged",
+      "sha256": "088f06add7532c3c91d956907b9f378662346cc45fca7fa85580140136fc1147",
+      "status": "valid",
+      "uncertain_facts": 6
+    }
+  ],
+  "schema_version": 1
+}

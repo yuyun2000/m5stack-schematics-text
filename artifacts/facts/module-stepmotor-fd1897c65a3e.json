@@ -1,0 +1,273 @@
+{
+  "schema_version": 1,
+  "generator": "schematic_describer",
+  "product": {
+    "product_id": "module-stepmotor-fd1897c65a3e",
+    "product_name": "Module Stepmotor",
+    "sku": "M012",
+    "source_path": "module/stepmotor.md",
+    "source_sha256": "5ce1a89012e69a723a425a560ca69a8d6398a10e0bf5e71ca00fc0e7590442e9",
+    "input_sha256": "90cf3c80c76fd8216dac2063e2c3322381cfc00e68d042c306b9bc5cafa8ea28"
+  },
+  "schematic_assets": [
+    {
+      "sha256": "17b7ea817633473514370e6bf1cce8fa75ce842fa14bd1b559ecba9a1d073677",
+      "source_url": "https://static-cdn.m5stack.com/resource/docs/products/module/stepmotor/stepmotor_sch_01.webp",
+      "pages": [1]
+    }
+  ],
+  "summary": "Module Stepmotor 以 U1 ATMEGA328 控制三块标为 A4988_M 的步进驱动插座 M1–M3，分别使用 PX/DX、PY/DY、PZ/DZ 作为 X/Y/Z 的 STEP/DIR，并共享 OE 与 MS1/MS2/MS3。J3/J4/J5 四针端子分别输出三台双极步进电机的 2B/2A/1A/1B 绕组，驱动功率使用外部 VCC，逻辑使用 U2 LM2596SX-5.0/NOPB 生成的 +5 V。U1 通过 SDA/SCL 与 M5-Bus 通信，并提供 P2 调试/扩展排针；原理图没有显示 RS-485 收发器。",
+  "keywords": [
+    "Module Stepmotor", "M012", "ATMEGA328", "A4988_M", "DRV8825", "LM2596SX-5.0/NOPB", "I2C", "0x70", "GRBL", "PX", "DX", "PY", "DY", "PZ", "DZ", "STEP_X", "DIR_X", "STEP_Y", "DIR_Y", "STEP_Z", "DIR_Z", "OE", "MS1", "MS2", "MS3", "J3", "J4 motor", "J5", "2B", "2A", "1A", "1B", "VCC", "+5V", "M5Stack_BUS", "SDA", "SCL", "GPIO16", "GPIO17", "XT30"
+  ],
+  "components": [
+    {
+      "reference": "U1",
+      "part_number": "ATMEGA328",
+      "role": "三轴步进控制 MCU，生成 X/Y/Z STEP/DIR、OE、微步配置并通过 I2C 通信",
+      "evidence": [{"asset_sha256": "17b7ea817633473514370e6bf1cce8fa75ce842fa14bd1b559ecba9a1d073677", "page": 1, "locator": "上中 U1 ATMEGA328 pins1-32"}]
+    },
+    {
+      "reference": "M1/M2/M3",
+      "part_number": "A4988_M",
+      "role": "X/Y/Z 三轴步进驱动模块插座，接收 STEP/DIR/OE/MS1-MS3 并输出两相绕组",
+      "evidence": [{"asset_sha256": "17b7ea817633473514370e6bf1cce8fa75ce842fa14bd1b559ecba9a1d073677", "page": 1, "locator": "下部 M1/M2/M3 A4988_M pins1-16"}]
+    },
+    {
+      "reference": "U2",
+      "part_number": "LM2596SX-5.0/NOPB",
+      "role": "从外部 VCC 生成 +5 V 逻辑电源的固定输出开关稳压器",
+      "evidence": [{"asset_sha256": "17b7ea817633473514370e6bf1cce8fa75ce842fa14bd1b559ecba9a1d073677", "page": 1, "locator": "左上 U2 LM2596SX-5.0/NOPB/L1/C1-C3"}]
+    },
+    {
+      "reference": "J3/J4/J5",
+      "part_number": "Header 4",
+      "role": "X/Y/Z 三台双极步进电机的四线绕组输出端子",
+      "evidence": [{"asset_sha256": "17b7ea817633473514370e6bf1cce8fa75ce842fa14bd1b559ecba9a1d073677", "page": 1, "locator": "下部 J3/J4/J5 Header 4 connected to M1/M2/M3 outputs"}]
+    },
+    {
+      "reference": "P1",
+      "part_number": "Header 2",
+      "role": "外部 VCC 与 GND 电源输入接口",
+      "evidence": [{"asset_sha256": "17b7ea817633473514370e6bf1cce8fa75ce842fa14bd1b559ecba9a1d073677", "page": 1, "locator": "左上 P1 Header 2/VCC/GND"}]
+    },
+    {
+      "reference": "P2",
+      "part_number": "Header 7X2",
+      "role": "ATMEGA328 SPI、RESET、PB0-PB2、A0-A3、+5 V 与 GND 扩展/下载排针",
+      "evidence": [{"asset_sha256": "17b7ea817633473514370e6bf1cce8fa75ce842fa14bd1b559ecba9a1d073677", "page": 1, "locator": "中左 P2 Header 7X2 pins1-14"}]
+    },
+    {
+      "reference": "J1",
+      "part_number": "M5Stack_BUS",
+      "role": "30 针主机接口，提供 +5 V、+3V3、I2C、GPIO16/17 与其他通用 GPIO",
+      "evidence": [{"asset_sha256": "17b7ea817633473514370e6bf1cce8fa75ce842fa14bd1b559ecba9a1d073677", "page": 1, "locator": "右下 J1 M5Stack_BUS pins1-30"}]
+    },
+    {
+      "reference": "D1/R1",
+      "part_number": "LED / 470Ω",
+      "role": "+5 V 电源指示灯及限流电阻",
+      "evidence": [{"asset_sha256": "17b7ea817633473514370e6bf1cce8fa75ce842fa14bd1b559ecba9a1d073677", "page": 1, "locator": "右中 +5V/R1 470Ω/D1/GND"}]
+    },
+    {
+      "reference": "L1/C1-C3",
+      "part_number": "0630/330 / 100uF/100nF/10uF",
+      "role": "LM2596 输出储能、滤波与去耦网络",
+      "evidence": [{"asset_sha256": "17b7ea817633473514370e6bf1cce8fa75ce842fa14bd1b559ecba9a1d073677", "page": 1, "locator": "左上 L1 0630/330/C1-C3/+5V"}]
+    }
+  ],
+  "facts": [
+    {
+      "id": "system.architecture",
+      "category": "system",
+      "subject": "Module Stepmotor 系统架构",
+      "statement": "U1 ATMEGA328 通过 I2C 接收主机命令，驱动三块 M1-M3 A4988_M 模块控制 X/Y/Z 电机；U2 从外部 VCC 生成 +5 V 逻辑电源。",
+      "confidence": "confirmed",
+      "attributes": {"controller": "U1 ATMEGA328", "drivers": "M1/M2/M3 A4988_M", "axes": "X/Y/Z", "host": "J1 M5Stack_BUS", "bus": "I2C", "power": "P1 VCC -> U2 LM2596SX-5.0/NOPB -> +5V", "motor_power": "VCC"},
+      "evidence": [{"asset_sha256": "17b7ea817633473514370e6bf1cce8fa75ce842fa14bd1b559ecba9a1d073677", "page": 1, "locator": "整页 P1/U2/U1/M1-M3/J1"}]
+    },
+    {
+      "id": "component.axis-control",
+      "category": "component",
+      "subject": "ATMEGA328 三轴 STEP/DIR",
+      "statement": "U1 PX pin32/DX pin9 控制 X 轴，PY pin1/DY pin10 控制 Y 轴，PZ pin2/DZ pin11 控制 Z 轴，并分别连接 M1/M2/M3 STEP/DIR pins7/8。",
+      "confidence": "confirmed",
+      "attributes": {"x": "U1 PX pin32 -> M1 STEP pin7; DX pin9 -> M1 DIR pin8", "y": "U1 PY pin1 -> M2 STEP pin7; DY pin10 -> M2 DIR pin8", "z": "U1 PZ pin2 -> M3 STEP pin7; DZ pin11 -> M3 DIR pin8"},
+      "evidence": [{"asset_sha256": "17b7ea817633473514370e6bf1cce8fa75ce842fa14bd1b559ecba9a1d073677", "page": 1, "locator": "U1 PD2-PD7 PX/PY/PZ/DX/DY/DZ and M1-M3 STEP/DIR"}]
+    },
+    {
+      "id": "gpio.shared-driver-control",
+      "category": "gpio",
+      "subject": "共享 OE 与微步配置",
+      "statement": "M1-M3 的 ENA pin1 共用 OE，MS1/MS2/MS3 pins2/3/4 分别共用同名网络；OE 来自 U1 PB0 pin12。",
+      "confidence": "confirmed",
+      "attributes": {"enable": "U1 PB0 pin12 OE -> M1-M3 ENA pin1", "microstep_1": "MS1 -> all driver pin2", "microstep_2": "MS2 -> all driver pin3", "microstep_3": "MS3 -> all driver pin4"},
+      "evidence": [{"asset_sha256": "17b7ea817633473514370e6bf1cce8fa75ce842fa14bd1b559ecba9a1d073677", "page": 1, "locator": "U1 PB0/OE and lower M1-M3 OE/MS1/MS2/MS3"}]
+    },
+    {
+      "id": "power.driver-modules",
+      "category": "power",
+      "subject": "步进驱动功率与逻辑供电",
+      "statement": "M1-M3 VMOT pin16 接外部 VCC、VDD pin9 接 +5 V，GND pins10/15 接地；RST/SLEEP pins5/6 连接 +5 V。",
+      "confidence": "confirmed",
+      "attributes": {"motor_supply": "VMOT pin16 VCC", "logic_supply": "VDD pin9 +5V", "ground": "pins10/15", "reset_sleep": "pins5/6 +5V", "drivers": "M1/M2/M3"},
+      "evidence": [{"asset_sha256": "17b7ea817633473514370e6bf1cce8fa75ce842fa14bd1b559ecba9a1d073677", "page": 1, "locator": "Lower M1-M3 VMOT/VDD/GND/RST/SLEEP"}]
+    },
+    {
+      "id": "interface.motor-outputs",
+      "category": "interface",
+      "subject": "三路四线电机输出",
+      "statement": "M1/M2/M3 的 2B/2A/1A/1B pins14/13/12/11 分别连接 J3/J4/J5 pins4/3/2/1。",
+      "confidence": "confirmed",
+      "attributes": {"x_connector": "J3", "y_connector": "J4", "z_connector": "J5", "pin4": "2B", "pin3": "2A", "pin2": "1A", "pin1": "1B", "connector_type": "Header 4"},
+      "evidence": [{"asset_sha256": "17b7ea817633473514370e6bf1cce8fa75ce842fa14bd1b559ecba9a1d073677", "page": 1, "locator": "Lower M1-J3, M2-J4, M3-J5 output wiring"}]
+    },
+    {
+      "id": "power.external-input",
+      "category": "power",
+      "subject": "外部 VCC 电源输入",
+      "statement": "P1 Header 2 pin1 接 VCC、pin2 接 GND；VCC 直接连接 U2 VIN 与三块驱动的 VMOT。",
+      "confidence": "confirmed",
+      "attributes": {"connector": "P1 Header 2", "positive": "pin1 VCC", "negative": "pin2 GND", "loads": "U2 VIN; M1-M3 VMOT"},
+      "evidence": [{"asset_sha256": "17b7ea817633473514370e6bf1cce8fa75ce842fa14bd1b559ecba9a1d073677", "page": 1, "locator": "P1/VCC/U2 VIN and M1-M3 VMOT"}]
+    },
+    {
+      "id": "power.regulator",
+      "category": "power",
+      "subject": "LM2596 5 V 逻辑电源",
+      "statement": "U2 LM2596SX-5.0/NOPB VIN pin1 接 VCC、OUT pin2 经 L1 输出 +5 V、FB pin4取样 +5 V、GND pin3 接地，ON/OFF pin5 未外接。",
+      "confidence": "confirmed",
+      "attributes": {"input": "VCC", "converter": "U2 LM2596SX-5.0/NOPB", "output": "+5V", "inductor": "L1 0630/330", "feedback": "FB pin4", "enable": "ON/OFF pin5 not connected", "output_caps": "C2 100nF; C3 10uF; C1 100uF"},
+      "evidence": [{"asset_sha256": "17b7ea817633473514370e6bf1cce8fa75ce842fa14bd1b559ecba9a1d073677", "page": 1, "locator": "Left top U2/L1/C1-C3/+5V"}]
+    },
+    {
+      "id": "power.mcu",
+      "category": "power",
+      "subject": "ATMEGA328 供电",
+      "statement": "U1 VCC pins4/6 与 AVCC pin18 接 +5 V，GND pins3/5/21 接地；D1 经 R1 470 Ω 从 +5 V 到 GND 指示电源。",
+      "confidence": "confirmed",
+      "attributes": {"vcc": "pins4/6 +5V", "avcc": "pin18 +5V", "ground": "pins3/5/21", "indicator": "+5V -> R1 470Ω -> D1 -> GND"},
+      "evidence": [{"asset_sha256": "17b7ea817633473514370e6bf1cce8fa75ce842fa14bd1b559ecba9a1d073677", "page": 1, "locator": "U1 VCC/AVCC/GND and right D1/R1"}]
+    },
+    {
+      "id": "bus.i2c",
+      "category": "bus",
+      "subject": "ATMEGA328 I2C",
+      "statement": "U1 SDA pin27 与 SCL pin28 连接 J1 M5-Bus 对应 SDA/GPIO21 pin17 和 SCL/GPIO22 pin18；页面未画 I2C 上拉电阻。",
+      "confidence": "confirmed",
+      "attributes": {"device": "U1 ATMEGA328", "sda": "U1 pin27 -> SDA -> J1 pin17 GPIO21", "scl": "U1 pin28 -> SCL -> J1 pin18 GPIO22", "pullups": "not shown"},
+      "evidence": [{"asset_sha256": "17b7ea817633473514370e6bf1cce8fa75ce842fa14bd1b559ecba9a1d073677", "page": 1, "locator": "U1 SDA/SCL and J1 pin17/18"}]
+    },
+    {
+      "id": "interface.mcu-gpio-bus",
+      "category": "interface",
+      "subject": "GPIO16/GPIO17 主机映射",
+      "statement": "U1 PD1 pin31 标 GPIO16、PD0 pin30 标 GPIO17，并分别连接 J1 M5-Bus pins15/16；这些网络与 X/Y/Z STEP/DIR 为不同引脚。",
+      "confidence": "confirmed",
+      "attributes": {"gpio16": "U1 PD1 pin31 -> J1 pin15", "gpio17": "U1 PD0 pin30 -> J1 pin16", "step_dir": "PX/PY/PZ/DX/DY/DZ on PD2-PD7"},
+      "evidence": [{"asset_sha256": "17b7ea817633473514370e6bf1cce8fa75ce842fa14bd1b559ecba9a1d073677", "page": 1, "locator": "U1 GPIO16/GPIO17 labels and J1 pins15/16"}]
+    },
+    {
+      "id": "debug.header",
+      "category": "debug",
+      "subject": "P2 调试扩展排针",
+      "statement": "P2 Header 7X2 引出 SCK、MISO、MOSI、PB2、PB1、PB0、+5 V、RESET、A3、A2、A1、A0 与 GND。",
+      "confidence": "confirmed",
+      "attributes": {"connector": "P2 Header 7X2", "left": "SCK/MISO/MOSI/PB2/PB1/PB0/+5V", "right": "RESET/A3/A2/A1/A0/GND", "device": "U1 ATMEGA328"},
+      "evidence": [{"asset_sha256": "17b7ea817633473514370e6bf1cce8fa75ce842fa14bd1b559ecba9a1d073677", "page": 1, "locator": "Middle left P2 Header 7X2 labels"}]
+    },
+    {
+      "id": "clock.mcu",
+      "category": "clock",
+      "subject": "ATMEGA328 时钟引脚",
+      "statement": "U1 XTAL1 pin7 与 XTAL2 pin8 只标网络名，页面没有画晶振、谐振器、负载电容或频率。",
+      "confidence": "confirmed",
+      "attributes": {"xtal1": "pin7", "xtal2": "pin8", "crystal": "not shown", "frequency": "not shown", "load_caps": "not shown"},
+      "evidence": [{"asset_sha256": "17b7ea817633473514370e6bf1cce8fa75ce842fa14bd1b559ecba9a1d073677", "page": 1, "locator": "U1 XTAL1/XTAL2 pins7/8"}]
+    },
+    {
+      "id": "interface.m5bus",
+      "category": "interface",
+      "subject": "M5Stack_BUS 使用网络",
+      "statement": "J1 使用 pins1/3/5 GND、pin12 +3V3、pins15/16 GPIO16/GPIO17、pins17/18 SDA/SCL、pin28 +5 V；GPIO36、GPIO26、GPIO13 等总线标签在本页未连接功能电路。",
+      "confidence": "confirmed",
+      "attributes": {"ground": "pins1/3/5", "3v3": "pin12", "mcu_gpio": "pin15 GPIO16; pin16 GPIO17", "i2c": "pin17 SDA; pin18 SCL", "5v": "pin28", "unused_labels": "GPIO36/GPIO26/GPIO13 and others"},
+      "evidence": [{"asset_sha256": "17b7ea817633473514370e6bf1cce8fa75ce842fa14bd1b559ecba9a1d073677", "page": 1, "locator": "Right bottom J1 M5Stack_BUS pins1-30"}]
+    },
+    {
+      "id": "protection.power-path",
+      "category": "protection",
+      "subject": "电机电源保护",
+      "statement": "P1 VCC 到 M1-M3 VMOT 与 U2 VIN 的路径上未画保险丝、TVS、反接保护或负载开关。",
+      "confidence": "confirmed",
+      "attributes": {"fuse": "not shown", "tvs": "not shown", "reverse_protection": "not shown", "load_switch": "not shown", "path": "P1 VCC directly to VMOT/U2 VIN"},
+      "evidence": [{"asset_sha256": "17b7ea817633473514370e6bf1cce8fa75ce842fa14bd1b559ecba9a1d073677", "page": 1, "locator": "P1/VCC/U2/M1-M3 direct path"}]
+    },
+    {
+      "id": "address.i2c",
+      "category": "address",
+      "subject": "Module Stepmotor I2C 地址",
+      "statement": "产品正文声明 I2C 地址为 0x70，但原理图只显示 ATMEGA328 SDA/SCL，数值地址由固件实现且未打印在页面。",
+      "confidence": "uncertain",
+      "attributes": {"document_address": "0x70", "device": "U1 ATMEGA328", "schematic_address": "not printed", "implementation": "firmware-dependent"},
+      "evidence": [{"asset_sha256": "17b7ea817633473514370e6bf1cce8fa75ce842fa14bd1b559ecba9a1d073677", "page": 1, "locator": "U1 SDA/SCL without address label"}]
+    },
+    {
+      "id": "component.driver-variant",
+      "category": "component",
+      "subject": "A4988 与 DRV8825 驱动板型号",
+      "statement": "原理图 M1-M3 明确标 A4988_M，产品正文称集成三片 DRV8825 驱动板，当前资料存在驱动型号冲突。",
+      "confidence": "uncertain",
+      "attributes": {"schematic": "M1/M2/M3 A4988_M", "document": "3x DRV8825", "resolved_variant": null},
+      "evidence": [{"asset_sha256": "17b7ea817633473514370e6bf1cce8fa75ce842fa14bd1b559ecba9a1d073677", "page": 1, "locator": "M1-M3 A4988_M markings"}]
+    },
+    {
+      "id": "gpio.microstep-capability",
+      "category": "gpio",
+      "subject": "最高 1/32 微步能力",
+      "statement": "产品正文称最高 1/32 微步，原理图只确认 MS1/MS2/MS3 三根配置线；因驱动型号存在 A4988/DRV8825 冲突，无法由页面确认最大微步倍率。",
+      "confidence": "uncertain",
+      "attributes": {"document_max": "1/32", "visible_control": "MS1/MS2/MS3", "schematic_driver": "A4988_M", "document_driver": "DRV8825", "confirmed_max": null},
+      "evidence": [{"asset_sha256": "17b7ea817633473514370e6bf1cce8fa75ce842fa14bd1b559ecba9a1d073677", "page": 1, "locator": "M1-M3 MS1/MS2/MS3 and A4988_M"}]
+    },
+    {
+      "id": "power.input-interface",
+      "category": "power",
+      "subject": "DC 9–24 V 与 XT30/HY2.0 接口",
+      "statement": "产品正文称电源为 DC 9–24 V、XT30，电机接口为 HY2.0-4P；原理图只标 P1 Header 2 与 J3-J5 Header 4，未给机械连接器型号或电压范围。",
+      "confidence": "uncertain",
+      "attributes": {"document_voltage": "DC9-24V", "document_power_connector": "XT30", "document_motor_connector": "HY2.0-4P", "schematic_power": "P1 Header 2", "schematic_motor": "J3/J4/J5 Header 4"},
+      "evidence": [{"asset_sha256": "17b7ea817633473514370e6bf1cce8fa75ce842fa14bd1b559ecba9a1d073677", "page": 1, "locator": "P1 and J3-J5 generic header symbols"}]
+    }
+  ],
+  "needs_review": [
+    {
+      "id": "review.i2c-address",
+      "fact_id": "address.i2c",
+      "question": "请用 ATMEGA328 GRBL 固件或 I2C 扫描确认地址为 0x70。",
+      "reason": "地址由固件实现，未印在原理图。",
+      "evidence": [{"asset_sha256": "17b7ea817633473514370e6bf1cce8fa75ce842fa14bd1b559ecba9a1d073677", "page": 1, "locator": "U1 SDA/SCL"}]
+    },
+    {
+      "id": "review.driver-variant",
+      "fact_id": "component.driver-variant",
+      "question": "请用 BOM、驱动板丝印或实物确认三个插座实际装配 A4988 还是 DRV8825。",
+      "reason": "原理图和产品正文型号冲突。",
+      "evidence": [{"asset_sha256": "17b7ea817633473514370e6bf1cce8fa75ce842fa14bd1b559ecba9a1d073677", "page": 1, "locator": "M1-M3 A4988_M"}]
+    },
+    {
+      "id": "review.microstep-capability",
+      "fact_id": "gpio.microstep-capability",
+      "question": "请在确认驱动型号后按 MS1/MS2/MS3 真值表复核最大微步倍率。",
+      "reason": "A4988 与 DRV8825 的微步能力不同。",
+      "evidence": [{"asset_sha256": "17b7ea817633473514370e6bf1cce8fa75ce842fa14bd1b559ecba9a1d073677", "page": 1, "locator": "MS1/MS2/MS3 on M1-M3"}]
+    },
+    {
+      "id": "review.input-interface",
+      "fact_id": "power.input-interface",
+      "question": "请用 PCB/BOM/装配资料确认 DC 9–24 V、XT30 与 HY2.0-4P 接口规格和极性。",
+      "reason": "原理图只使用通用 Header 符号且未标输入范围。",
+      "evidence": [{"asset_sha256": "17b7ea817633473514370e6bf1cce8fa75ce842fa14bd1b559ecba9a1d073677", "page": 1, "locator": "P1/J3/J4/J5"}]
+    }
+  ]
+}

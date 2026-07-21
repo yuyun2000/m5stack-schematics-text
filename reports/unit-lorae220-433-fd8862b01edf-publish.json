@@ -1,0 +1,21 @@
+{
+  "dry_run": false,
+  "failed": 0,
+  "published": 1,
+  "results": [
+    {
+      "backup": null,
+      "draft_action": "unchanged",
+      "dry_run": false,
+      "errors": [],
+      "needs_review": 6,
+      "product_id": "unit-lorae220-433-fd8862b01edf",
+      "product_name": "Unit LoRaE220-433",
+      "publish_action": "unchanged",
+      "sha256": "24618a34815fc16f8b3d009b95681a29bc0bf6cb257de8488e1c58dcdf1117fc",
+      "status": "valid",
+      "uncertain_facts": 6
+    }
+  ],
+  "schema_version": 1
+}

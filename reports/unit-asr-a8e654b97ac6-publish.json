@@ -1,0 +1,21 @@
+{
+  "dry_run": false,
+  "failed": 0,
+  "published": 1,
+  "results": [
+    {
+      "backup": null,
+      "draft_action": "unchanged",
+      "dry_run": false,
+      "errors": [],
+      "needs_review": 4,
+      "product_id": "unit-asr-a8e654b97ac6",
+      "product_name": "Unit ASR",
+      "publish_action": "unchanged",
+      "sha256": "353de9121e5d17973990625f555a3b672258639fa358ca44a641a8a84f7bce2b",
+      "status": "valid",
+      "uncertain_facts": 4
+    }
+  ],
+  "schema_version": 1
+}

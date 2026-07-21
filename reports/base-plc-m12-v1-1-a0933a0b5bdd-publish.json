@@ -1,0 +1,21 @@
+{
+  "dry_run": false,
+  "failed": 0,
+  "published": 1,
+  "results": [
+    {
+      "backup": null,
+      "draft_action": "unchanged",
+      "dry_run": false,
+      "errors": [],
+      "needs_review": 3,
+      "product_id": "base-plc-m12-v1-1-a0933a0b5bdd",
+      "product_name": "Base PLC-M12 v1.1",
+      "publish_action": "unchanged",
+      "sha256": "6b2fe9872ef9923d6172c8894d36d87edccb4571fe7254efcc6958557118a043",
+      "status": "valid",
+      "uncertain_facts": 3
+    }
+  ],
+  "schema_version": 1
+}

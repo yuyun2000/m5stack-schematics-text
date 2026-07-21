@@ -1,0 +1,21 @@
+{
+  "dry_run": false,
+  "failed": 0,
+  "published": 1,
+  "results": [
+    {
+      "backup": null,
+      "draft_action": "unchanged",
+      "dry_run": false,
+      "errors": [],
+      "needs_review": 5,
+      "product_id": "unit-rf433t-21f49a191358",
+      "product_name": "Unit RF433T",
+      "publish_action": "unchanged",
+      "sha256": "f915fc92b5e6dfee62e189f158b4347455b7d5a6c82561d1ba3c8261a0f84b62",
+      "status": "valid",
+      "uncertain_facts": 5
+    }
+  ],
+  "schema_version": 1
+}

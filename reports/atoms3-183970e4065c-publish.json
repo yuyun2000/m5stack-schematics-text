@@ -1,0 +1,21 @@
+{
+  "dry_run": false,
+  "failed": 0,
+  "published": 1,
+  "results": [
+    {
+      "backup": null,
+      "draft_action": "unchanged",
+      "dry_run": false,
+      "errors": [],
+      "needs_review": 2,
+      "product_id": "atoms3-183970e4065c",
+      "product_name": "AtomS3",
+      "publish_action": "unchanged",
+      "sha256": "5922872c85e2442173b3e09ef46c86a929e9ccf18bf2c758056bb1c911798692",
+      "status": "valid",
+      "uncertain_facts": 2
+    }
+  ],
+  "schema_version": 1
+}

@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "generator": "schematic_describer",
+  "product": {
+    "product_id": "hat-env-b52ddfec42a4",
+    "product_name": "Hat ENV",
+    "sku": "U053",
+    "source_path": "hat/hat-env.md",
+    "source_sha256": "3c6c481b7b231e92c4423979794aceeba7aa39f28104c59c464c74fe196ab04f",
+    "input_sha256": "279983d4fa15af18befc98e181fd996c21715f470b17fbe47a497840220d9929"
+  },
+  "schematic_assets": [
+    {"sha256":"5dc013de68a40d38e6cc019f62c41d7c5d6f2e96f9e9ad096b27a1674694554e","source_url":"https://m5stack-doc.oss-cn-shenzhen.aliyuncs.com/857/StickHat_ENV_page_01.png","pages":[1]}
+  ],
+  "summary": "Hat ENV 通过 P1 STICKIO 的 G26/SCL 与 G0/SDA 接入主机 I2C，总线由 R1/R2 4.7KΩ上拉到 +3.3V。U1 DHT12、U3 BMP280 和 U2 BMM150 共用该总线；BMP280 通过 CSB 拉高进入串行总线配置，BMM150 的 CSB/SDO 拉低并使用 SCK/SDI。三颗传感器均由 +3.3V 供电并配置本地 100nF 去耦。",
+  "keywords": ["Hat ENV","U053","DHT12","BMP280","BMM150","I2C","DHT12 0x5C","BMM150 0x10","G26 SCL","G0 SDA","+3.3V","R1 4.7K","R2 4.7K","BMP280 CSB high","BMP280 SDO GND","BMM150 CSB GND","BMM150 SDO GND","STICKIO","temperature","humidity","pressure","magnetometer"],
+  "components": [
+    {"reference":"U1","part_number":"DHT12","role":"I2C 温湿度传感器","evidence":[{"asset_sha256":"5dc013de68a40d38e6cc019f62c41d7c5d6f2e96f9e9ad096b27a1674694554e","page":1,"locator":"第1页网格 B2：U1 DHT12 pins1-4"}]},
+    {"reference":"U3","part_number":"BMP280","role":"I2C 气压传感器","evidence":[{"asset_sha256":"5dc013de68a40d38e6cc019f62c41d7c5d6f2e96f9e9ad096b27a1674694554e","page":1,"locator":"第1页网格 C2：U3 BMP280 pins1-8"}]},
+    {"reference":"U2","part_number":"BMM150","role":"I2C 三轴磁力传感器","evidence":[{"asset_sha256":"5dc013de68a40d38e6cc019f62c41d7c5d6f2e96f9e9ad096b27a1674694554e","page":1,"locator":"第1页网格 C3：U2 BMM150 A1-E5"}]},
+    {"reference":"P1","part_number":"STICKIO","role":"主机 I2C、3.3V 与 GND 接口","evidence":[{"asset_sha256":"5dc013de68a40d38e6cc019f62c41d7c5d6f2e96f9e9ad096b27a1674694554e","page":1,"locator":"第1页网格 B3：P1 STICKIO pins1-8"}]},
+    {"reference":"R1,R2","part_number":"4.7KΩ","role":"SCL 与 SDA 上拉到 +3.3V","evidence":[{"asset_sha256":"5dc013de68a40d38e6cc019f62c41d7c5d6f2e96f9e9ad096b27a1674694554e","page":1,"locator":"第1页网格 A2：R1/R2 4.7KΩ"}]}
+  ],
+  "facts": [
+    {"id":"system.hat-env-architecture","category":"system","subject":"Hat ENV 架构","statement":"P1 提供 +3.3V、GND、SCL 和 SDA，U1 DHT12、U3 BMP280、U2 BMM150 共用 I2C 总线并分别配置本地去耦。","confidence":"confirmed","attributes":{"host":"P1 STICKIO","sensors":"U1 DHT12; U3 BMP280; U2 BMM150","bus":"I2C SCL/SDA","rail":"+3.3V"},"evidence":[{"asset_sha256":"5dc013de68a40d38e6cc019f62c41d7c5d6f2e96f9e9ad096b27a1674694554e","page":1,"locator":"第1页完整单页"}]},
+    {"id":"bus.shared-i2c","category":"bus","subject":"共享 I2C 总线","statement":"P1 pin3/G26 形成 SCL，P1 pin5/G0 形成 SDA；DHT12、BMP280 和 BMM150 均连接这两条网络，R1/R2 4.7KΩ分别上拉到 +3.3V。","confidence":"confirmed","attributes":{"controller_connector":"P1","scl":"P1 pin3 G26","sda":"P1 pin5 G0","devices":"DHT12,BMP280,BMM150","pullup_scl":"R1 4.7KΩ","pullup_sda":"R2 4.7KΩ","logic_level":"+3.3V","direction":"bidirectional"},"evidence":[{"asset_sha256":"5dc013de68a40d38e6cc019f62c41d7c5d6f2e96f9e9ad096b27a1674694554e","page":1,"locator":"第1页 P1 G26/G0、R1/R2 与 U1/U2/U3"}]},
+    {"id":"sensor.dht12","category":"sensor","subject":"DHT12 连接","statement":"U1 DHT12 pin1 接 +3.3V，pin2 接 SDA，pin3 接 GND，pin4 接 SCL；C1 100nF 从 +3.3V 对地。","confidence":"confirmed","attributes":{"device":"U1 DHT12","pin1":"+3.3V","pin2":"SDA","pin3":"GND","pin4":"SCL","decoupling":"C1 100nF"},"evidence":[{"asset_sha256":"5dc013de68a40d38e6cc019f62c41d7c5d6f2e96f9e9ad096b27a1674694554e","page":1,"locator":"第1页 B2：U1/C1"}]},
+    {"id":"sensor.bmp280","category":"sensor","subject":"BMP280 I2C 配置","statement":"U3 BMP280 SCK pin4 接 SCL、SDI pin3 接 SDA；CSB pin2、Vdd pin8、Vddio pin6 接 +3.3V，SDO pin5 与 GND pins1/7 接地。","confidence":"confirmed","attributes":{"device":"U3 BMP280","scl":"SCK pin4","sda":"SDI pin3","csb":"pin2 +3.3V","sdo":"pin5 GND","supply":"Vdd pin8; Vddio pin6 -> +3.3V","ground":"pins1/7","decoupling":"C2 100nF"},"evidence":[{"asset_sha256":"5dc013de68a40d38e6cc019f62c41d7c5d6f2e96f9e9ad096b27a1674694554e","page":1,"locator":"第1页 C2：U3/C2"}]},
+    {"id":"sensor.bmm150","category":"sensor","subject":"BMM150 I2C 配置","statement":"U2 BMM150 SCK A3 接 SCL、SDI B4 接 SDA；CSB A5 与 SDO C1 接地，PS A1、VDDIO B2、VDD E5 接 +3.3V，INT D2 与 DRDY D4 未连接。","confidence":"confirmed","attributes":{"device":"U2 BMM150","scl":"SCK A3","sda":"SDI B4","csb":"A5 GND","sdo":"C1 GND","supply":"PS A1; VDDIO B2; VDD E5 -> +3.3V","interrupt":"INT D2 NC","data_ready":"DRDY D4 NC","grounds":"E1,E3,C5","decoupling":"C3/C4 100nF"},"evidence":[{"asset_sha256":"5dc013de68a40d38e6cc019f62c41d7c5d6f2e96f9e9ad096b27a1674694554e","page":1,"locator":"第1页 C3：U2/C3/C4"}]},
+    {"id":"address.documented-sensors","category":"address","subject":"DHT12 与 BMM150 I2C 地址","statement":"产品正文标称 DHT12 地址 0x5C、BMM150 地址 0x10；原理图显示两器件的总线及 BMM150 地址选择连接，但未打印地址数值。","confidence":"uncertain","attributes":{"DHT12":"0x5C","BMM150":"0x10","explicit_address_text_on_schematic":false,"bmm150_sdo":"GND"},"evidence":[{"asset_sha256":"5dc013de68a40d38e6cc019f62c41d7c5d6f2e96f9e9ad096b27a1674694554e","page":1,"locator":"第1页 U1 DHT12 与 U2 BMM150 SDO/CSB"}]},
+    {"id":"interface.host-p1","category":"interface","subject":"P1 STICKIO 接口","statement":"P1 pin1 为 GND、pin3 G26 为 SCL、pin5 G0 为 SDA、pin7 3V3 接 +3.3V；pins2 5VOUT、4 G36、6 BAT、8 5VIN 未接入本页功能网络。","confidence":"confirmed","attributes":{"pin1":"GND","pin2":"5VOUT unused","pin3":"G26 / SCL","pin4":"G36 unused","pin5":"G0 / SDA","pin6":"BAT unused","pin7":"3V3 / +3.3V","pin8":"5VIN unused"},"evidence":[{"asset_sha256":"5dc013de68a40d38e6cc019f62c41d7c5d6f2e96f9e9ad096b27a1674694554e","page":1,"locator":"第1页 B3：P1 pins1-8"}]},
+    {"id":"power.sensor-rail","category":"power","subject":"传感器 3.3V 供电","statement":"P1 pin7 提供 +3.3V，供给 DHT12、BMP280、BMM150 以及 I2C 上拉；C1-C4 均为 100nF 对地去耦。","confidence":"confirmed","attributes":{"input":"P1 pin7 3V3","rail":"+3.3V","loads":"U1,U2,U3,R1,R2","decoupling":"C1,C2,C3,C4 100nF"},"evidence":[{"asset_sha256":"5dc013de68a40d38e6cc019f62c41d7c5d6f2e96f9e9ad096b27a1674694554e","page":1,"locator":"第1页 +3.3V rails and C1-C4"}]},
+    {"id":"protection.visibility","category":"protection","subject":"接口保护可见性","statement":"本页未画 P1、SCL、SDA 或传感器电源上的 TVS、ESD、保险丝或串联保护器件。","confidence":"confirmed","attributes":{"tvs_esd_shown":false,"fuse_shown":false,"series_protection_shown":false},"evidence":[{"asset_sha256":"5dc013de68a40d38e6cc019f62c41d7c5d6f2e96f9e9ad096b27a1674694554e","page":1,"locator":"第1页完整单页保护器件范围"}]},
+    {"id":"clock.visibility","category":"clock","subject":"外部时钟可见性","statement":"本页未画独立晶体、晶振或外部时钟输入器件。","confidence":"confirmed","attributes":{"crystal_shown":false,"oscillator_shown":false},"evidence":[{"asset_sha256":"5dc013de68a40d38e6cc019f62c41d7c5d6f2e96f9e9ad096b27a1674694554e","page":1,"locator":"第1页完整单页，无 X/Y 位号"}]}
+  ],
+  "needs_review": [
+    {"id":"review.sensor-addresses","fact_id":"address.documented-sensors","question":"U053 当前 DHT12 与 BMM150 的 I2C 地址是否分别固定为 0x5C 和 0x10？","reason":"地址来自产品正文，原理图未打印地址数值。","evidence":[{"asset_sha256":"5dc013de68a40d38e6cc019f62c41d7c5d6f2e96f9e9ad096b27a1674694554e","page":1,"locator":"第1页 U1 DHT12 与 U2 BMM150"}]}
+  ]
+}

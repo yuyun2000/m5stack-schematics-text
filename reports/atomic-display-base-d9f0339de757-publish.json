@@ -1,0 +1,21 @@
+{
+  "dry_run": false,
+  "failed": 0,
+  "published": 1,
+  "results": [
+    {
+      "backup": null,
+      "draft_action": "unchanged",
+      "dry_run": false,
+      "errors": [],
+      "needs_review": 1,
+      "product_id": "atomic-display-base-d9f0339de757",
+      "product_name": "Atomic Display Base",
+      "publish_action": "unchanged",
+      "sha256": "d6701fae31e69f702a62913df830e2120d17eb5413ec8a35c5bb97d33a066f24",
+      "status": "valid",
+      "uncertain_facts": 1
+    }
+  ],
+  "schema_version": 1
+}

@@ -1,0 +1,21 @@
+{
+  "dry_run": false,
+  "failed": 0,
+  "published": 1,
+  "results": [
+    {
+      "backup": null,
+      "draft_action": "unchanged",
+      "dry_run": false,
+      "errors": [],
+      "needs_review": 2,
+      "product_id": "module13-2-rs232f-18a695a51a0b",
+      "product_name": "Module13.2 RS232F",
+      "publish_action": "unchanged",
+      "sha256": "afd81ae97bf2fbf962e00936e6ca72b16298c30eb75c40c9f9e84a75db450130",
+      "status": "valid",
+      "uncertain_facts": 2
+    }
+  ],
+  "schema_version": 1
+}

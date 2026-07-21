@@ -1,0 +1,539 @@
+{
+  "schema_version": 1,
+  "generator": "schematic_describer",
+  "product": {
+    "product_id": "cammodule-sc850sl-002eb6b0807b",
+    "product_name": "CamModule SC850SL",
+    "sku": "A157",
+    "source_path": "accessory/CamModule_SC850SL.md",
+    "source_sha256": "6aa8b7bc96b668b6294e74790a2728badfa484299704987255af99428e5fa491",
+    "input_sha256": "bc6582aad36f7e46b252979e53570824356a6468dd1c889fb5934670d1fb1afa"
+  },
+  "schematic_assets": [
+    {
+      "sha256": "9efa49abd81cc9c081eacf982273c1933baed00977dd86c2858fd35a1e0f1797",
+      "source_url": "https://m5stack-doc.oss-cn-shenzhen.aliyuncs.com/1152/K157-CamModule-SC850SL_page_01.png",
+      "pages": [1]
+    }
+  ],
+  "summary": "CamModule SC850SL 以 U1 SC850SL 图像传感器为核心，通过 J1 30 针 FPC 引出四条 MIPI CSI-2 数据通道和一条差分时钟通道。控制侧包括 1.8V I2C、CAM_RSTN 和 CAM_MCLK，SID 通过 0Ω 电阻固定为低电平。传感器使用 AVDD_2V8、DOVDD_1V8 和 DVDD_1V3 三个电源域，其中 U2 TPS7A9101DSK 从 DOVDD_1V8 生成 DVDD_1V3；连接器另有 DVDD_1V2 引脚，但图中未显示其与核心电源相连。",
+  "keywords": [
+    "CamModule SC850SL",
+    "A157",
+    "SC850SL",
+    "TPS7A9101DSK",
+    "MIPI CSI-2",
+    "4 Lane",
+    "MIPI_RX0",
+    "MIPI_RX1",
+    "MIPI_RX2",
+    "MIPI_RX3",
+    "MIPI_RX4",
+    "CAM_SDA_1V8",
+    "CAM_SCL_1V8",
+    "CAM_RSTN",
+    "CAM_MCLK",
+    "AVDD_2V8",
+    "DOVDD_1V8",
+    "DVDD_1V3",
+    "DVDD_1V2",
+    "SID",
+    "XSHUTDN",
+    "EXTCLK",
+    "FPC 30P",
+    "FH34SRJ-30S-0.5SH",
+    "M0CP",
+    "M0D0P",
+    "M0D1P",
+    "M0D2P",
+    "M0D3P",
+    "VREFH",
+    "VREFN",
+    "TXVDD"
+  ],
+  "components": [
+    {
+      "reference": "U1",
+      "part_number": "SC850SL",
+      "role": "CMOS 图像传感器，提供四通道 MIPI 输出、I2C 控制、复位和外部时钟接口",
+      "evidence": [
+        {
+          "asset_sha256": "9efa49abd81cc9c081eacf982273c1933baed00977dd86c2858fd35a1e0f1797",
+          "page": 1,
+          "locator": "网格 1A-3D，U1A-U1E SC850SL 的电源、控制、参考和 MIPI 分部符号"
+        }
+      ]
+    },
+    {
+      "reference": "U2",
+      "part_number": "TPS7A9101DSK",
+      "role": "DOVDD_1V8 到 DVDD_1V3 的低压差稳压器",
+      "evidence": [
+        {
+          "asset_sha256": "9efa49abd81cc9c081eacf982273c1933baed00977dd86c2858fd35a1e0f1797",
+          "page": 1,
+          "locator": "网格 3A-4A，U2 TPS7A9101DSK、DOVDD_1V8 输入、DVDD_1V3 输出和反馈网络"
+        }
+      ]
+    },
+    {
+      "reference": "J1",
+      "part_number": "FPC-SMD_30P-FH34SRJ-30S-0.5SH",
+      "role": "30 针摄像头电源、控制和 MIPI CSI 接口",
+      "evidence": [
+        {
+          "asset_sha256": "9efa49abd81cc9c081eacf982273c1933baed00977dd86c2858fd35a1e0f1797",
+          "page": 1,
+          "locator": "网格 5A-6B，J1 pin1-pin30、SH、五组 MIPI 差分对、控制线和三路外部电源"
+        }
+      ]
+    },
+    {
+      "reference": "R3",
+      "part_number": "0R/1%",
+      "role": "SC850SL SID 配置下拉电阻",
+      "evidence": [
+        {
+          "asset_sha256": "9efa49abd81cc9c081eacf982273c1933baed00977dd86c2858fd35a1e0f1797",
+          "page": 1,
+          "locator": "网格 1C，U1C SID pin D10 经 R3 0R/1% 接 GND"
+        }
+      ]
+    },
+    {
+      "reference": "R1,R2,C1",
+      "part_number": "7.5K/1%, 12K/1%, 10nF/10V",
+      "role": "TPS7A9101DSK 输出反馈与前馈网络",
+      "evidence": [
+        {
+          "asset_sha256": "9efa49abd81cc9c081eacf982273c1933baed00977dd86c2858fd35a1e0f1797",
+          "page": 1,
+          "locator": "网格 4A，U2 FB pin3、R1 7.5K、R2 12K、C1 10nF 与 DVDD_1V3"
+        }
+      ]
+    },
+    {
+      "reference": "C2",
+      "part_number": "100nF/10V",
+      "role": "TPS7A9101DSK NR/SS 软启动/降噪电容",
+      "evidence": [
+        {
+          "asset_sha256": "9efa49abd81cc9c081eacf982273c1933baed00977dd86c2858fd35a1e0f1797",
+          "page": 1,
+          "locator": "网格 3A-4A，U2 NR/SS pin8 经 C2 100nF 接 GND"
+        }
+      ]
+    },
+    {
+      "reference": "C5-C9",
+      "part_number": "1uF",
+      "role": "SC850SL VREFH、VREFN2、VREFN、VREF3 和 TXVDD 参考/内部电源去耦",
+      "evidence": [
+        {
+          "asset_sha256": "9efa49abd81cc9c081eacf982273c1933baed00977dd86c2858fd35a1e0f1797",
+          "page": 1,
+          "locator": "网格 1B-2B，U1B 的 VREFH/VREFN2/VREFN/VREF3/TXVDD 分别连接 C5-C9 到 GND"
+        }
+      ]
+    },
+    {
+      "reference": "C10-C19",
+      "part_number": "AVDD_2V8 decoupling network",
+      "role": "AVDD_2V8 模拟电源的分布式去耦",
+      "evidence": [
+        {
+          "asset_sha256": "9efa49abd81cc9c081eacf982273c1933baed00977dd86c2858fd35a1e0f1797",
+          "page": 1,
+          "locator": "网格 3B-5B，AVDD_2V8 上 C10-C13 1uF、C14-C18 100nF、C19 10uF"
+        }
+      ]
+    },
+    {
+      "reference": "C20-C28",
+      "part_number": "DOVDD_1V8 decoupling network",
+      "role": "DOVDD_1V8 I/O 电源的分布式去耦",
+      "evidence": [
+        {
+          "asset_sha256": "9efa49abd81cc9c081eacf982273c1933baed00977dd86c2858fd35a1e0f1797",
+          "page": 1,
+          "locator": "网格 3C-5C，DOVDD_1V8 上 C20-C22 1uF、C23-C27 100nF、C28 10uF"
+        }
+      ]
+    },
+    {
+      "reference": "C29-C38",
+      "part_number": "DVDD_1V3 decoupling network",
+      "role": "DVDD_1V3 核心电源的分布式去耦",
+      "evidence": [
+        {
+          "asset_sha256": "9efa49abd81cc9c081eacf982273c1933baed00977dd86c2858fd35a1e0f1797",
+          "page": 1,
+          "locator": "网格 3C-5C，DVDD_1V3 上 C29-C32 1uF、C33-C37 100nF、C38 10uF"
+        }
+      ]
+    }
+  ],
+  "facts": [
+    {
+      "id": "system.camera-architecture",
+      "category": "system",
+      "subject": "SC850SL 摄像头模组架构",
+      "statement": "U1 SC850SL 由三路电源域供电，通过 1.8V I2C、复位和主时钟控制，并以四条数据通道加一条时钟通道的 MIPI 差分接口连接 J1。",
+      "confidence": "confirmed",
+      "attributes": {
+        "sensor": "U1 SC850SL",
+        "connector": "J1 30P FPC",
+        "power_domains": "AVDD_2V8, DOVDD_1V8, DVDD_1V3",
+        "control": "CAM_SDA_1V8, CAM_SCL_1V8, CAM_RSTN, CAM_MCLK",
+        "mipi_data_lanes": 4
+      },
+      "evidence": [
+        {
+          "asset_sha256": "9efa49abd81cc9c081eacf982273c1933baed00977dd86c2858fd35a1e0f1797",
+          "page": 1,
+          "locator": "网格 1A-3D 的 U1 各分部、网格 5A-6B 的 J1 和网格 3A-4A 的 U2"
+        }
+      ]
+    },
+    {
+      "id": "power.sensor-analog-2v8",
+      "category": "power",
+      "subject": "SC850SL 模拟电源 AVDD_2V8",
+      "statement": "AVDD_2V8 连接 U1A 的 A2、A4、A7、A9、E1、E6、E10 七个 AVDD 引脚，并从 J1 pin9 输入。",
+      "confidence": "confirmed",
+      "attributes": {
+        "net": "AVDD_2V8",
+        "sensor_pins": "A2,A4,A7,A9,E1,E6,E10",
+        "connector_pin": 9,
+        "domain": "analog"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "9efa49abd81cc9c081eacf982273c1933baed00977dd86c2858fd35a1e0f1797",
+          "page": 1,
+          "locator": "网格 1A-2A 的 U1A AVDD 引脚与网格 5A-6B 的 J1 pin9 AVDD_2V8"
+        }
+      ]
+    },
+    {
+      "id": "power.sensor-io-1v8",
+      "category": "power",
+      "subject": "SC850SL I/O 电源 DOVDD_1V8",
+      "statement": "DOVDD_1V8 连接 U1A 的 A5、C4、C7、E2、E5、E9 六个 DOVDD 引脚，并从 J1 pin8 输入。",
+      "confidence": "confirmed",
+      "attributes": {
+        "net": "DOVDD_1V8",
+        "sensor_pins": "A5,C4,C7,E2,E5,E9",
+        "connector_pin": 8,
+        "domain": "digital_io"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "9efa49abd81cc9c081eacf982273c1933baed00977dd86c2858fd35a1e0f1797",
+          "page": 1,
+          "locator": "网格 1A-2A 的 U1A DOVDD 引脚与网格 5A-6B 的 J1 pin8 DOVDD_1V8"
+        }
+      ]
+    },
+    {
+      "id": "power.sensor-core-1v3",
+      "category": "power",
+      "subject": "SC850SL 核心电源 DVDD_1V3",
+      "statement": "DVDD_1V3 连接 U1A 的 B1、B10、D2、D3、D4、D7、D8、D9 八个 DVDD 引脚，并由 U2 TPS7A9101DSK 从 DOVDD_1V8 生成。",
+      "confidence": "confirmed",
+      "attributes": {
+        "net": "DVDD_1V3",
+        "sensor_pins": "B1,B10,D2,D3,D4,D7,D8,D9",
+        "regulator": "U2 TPS7A9101DSK",
+        "regulator_input": "DOVDD_1V8"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "9efa49abd81cc9c081eacf982273c1933baed00977dd86c2858fd35a1e0f1797",
+          "page": 1,
+          "locator": "网格 1A-2A U1A DVDD 引脚与网格 3A-4A U2 OUT/DVDD_1V3"
+        }
+      ]
+    },
+    {
+      "id": "power.core-ldo-config",
+      "category": "power",
+      "subject": "TPS7A9101DSK 配置",
+      "statement": "U2 IN pin9/10、SS_CTRL pin6 和 EN pin7 接 DOVDD_1V8，OUT pin1/2 输出 DVDD_1V3；FB 使用 R1 7.5kΩ、R2 12kΩ 和 C1 10nF，NR/SS 通过 C2 100nF 接地，PG pin5 未连接。",
+      "confidence": "confirmed",
+      "attributes": {
+        "reference": "U2",
+        "input": "DOVDD_1V8",
+        "output": "DVDD_1V3",
+        "feedback_upper": "R1 7.5kΩ",
+        "feedback_lower": "R2 12kΩ",
+        "feedforward_capacitor": "C1 10nF",
+        "nr_ss_capacitor": "C2 100nF",
+        "power_good": "NC"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "9efa49abd81cc9c081eacf982273c1933baed00977dd86c2858fd35a1e0f1797",
+          "page": 1,
+          "locator": "网格 3A-4A，U2、R1、R2、C1、C2 及 DOVDD_1V8/DVDD_1V3"
+        }
+      ]
+    },
+    {
+      "id": "bus.camera-i2c",
+      "category": "bus",
+      "subject": "SC850SL 1.8V I2C 控制总线",
+      "statement": "U1C SDA pin C1 连接 CAM_SDA_1V8，SCL pin B3 连接 CAM_SCL_1V8，并分别引到 J1 pin11 和 pin12。",
+      "confidence": "confirmed",
+      "attributes": {
+        "sensor": "U1 SC850SL",
+        "sda_sensor_pin": "C1",
+        "sda_net": "CAM_SDA_1V8",
+        "sda_connector_pin": 11,
+        "scl_sensor_pin": "B3",
+        "scl_net": "CAM_SCL_1V8",
+        "scl_connector_pin": 12,
+        "io_voltage": "1.8V"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "9efa49abd81cc9c081eacf982273c1933baed00977dd86c2858fd35a1e0f1797",
+          "page": 1,
+          "locator": "网格 1C-2C U1C SDA/SCL 与网格 5A-6B J1 pin11/pin12"
+        }
+      ]
+    },
+    {
+      "id": "reset.camera-reset",
+      "category": "reset",
+      "subject": "SC850SL 硬件复位",
+      "statement": "U1C XSHUTDN pin B2 连接 CAM_RSTN，并引到 J1 pin13。",
+      "confidence": "confirmed",
+      "attributes": {
+        "sensor_pin": "B2 XSHUTDN",
+        "net": "CAM_RSTN",
+        "connector_pin": 13
+      },
+      "evidence": [
+        {
+          "asset_sha256": "9efa49abd81cc9c081eacf982273c1933baed00977dd86c2858fd35a1e0f1797",
+          "page": 1,
+          "locator": "网格 1C-2C U1C XSHUTDN/CAM_RSTN 与网格 5A-6B J1 pin13"
+        }
+      ]
+    },
+    {
+      "id": "clock.camera-mclk",
+      "category": "clock",
+      "subject": "SC850SL 外部主时钟",
+      "statement": "U1C EXTCLK pin B4 连接 CAM_MCLK，并引到 J1 pin14。",
+      "confidence": "confirmed",
+      "attributes": {
+        "sensor_pin": "B4 EXTCLK",
+        "net": "CAM_MCLK",
+        "connector_pin": 14,
+        "frequency": null
+      },
+      "evidence": [
+        {
+          "asset_sha256": "9efa49abd81cc9c081eacf982273c1933baed00977dd86c2858fd35a1e0f1797",
+          "page": 1,
+          "locator": "网格 1C-2C U1C EXTCLK/CAM_MCLK 与网格 5A-6B J1 pin14"
+        }
+      ]
+    },
+    {
+      "id": "address.sid-low",
+      "category": "address",
+      "subject": "SC850SL SID 配置",
+      "statement": "U1C SID pin D10 通过 R3 0Ω 固定连接 GND；原理图未标注该配置对应的数值 I2C 地址。",
+      "confidence": "confirmed",
+      "attributes": {
+        "sensor_pin": "D10 SID",
+        "strap": "GND",
+        "resistor": "R3 0Ω",
+        "numeric_i2c_address": null
+      },
+      "evidence": [
+        {
+          "asset_sha256": "9efa49abd81cc9c081eacf982273c1933baed00977dd86c2858fd35a1e0f1797",
+          "page": 1,
+          "locator": "网格 1C-2C，U1C SID pin D10、R3 0R/1% 和 GND"
+        }
+      ]
+    },
+    {
+      "id": "bus.mipi-clock-lane",
+      "category": "bus",
+      "subject": "MIPI CSI 差分时钟通道",
+      "statement": "U1D M0CP/M0CN 形成 MIPI_RX2_P/N，并连接 J1 pin23/pin22；该差分对位于四条数据通道之间的时钟位置。",
+      "confidence": "confirmed",
+      "attributes": {
+        "sensor_pair": "M0CP/M0CN",
+        "nets": "MIPI_RX2_P, MIPI_RX2_N",
+        "connector_positive_pin": 23,
+        "connector_negative_pin": 22
+      },
+      "evidence": [
+        {
+          "asset_sha256": "9efa49abd81cc9c081eacf982273c1933baed00977dd86c2858fd35a1e0f1797",
+          "page": 1,
+          "locator": "网格 1D-2D U1D M0CP/M0CN 到 MIPI_RX2_P/N，网格 5A-6A J1 pin22/pin23"
+        }
+      ]
+    },
+    {
+      "id": "bus.mipi-data-lanes",
+      "category": "bus",
+      "subject": "四条 MIPI CSI 数据通道",
+      "statement": "U1D M0D0、M0D1、M0D2、M0D3 四组差分输出分别映射到 MIPI_RX0、MIPI_RX1、MIPI_RX3、MIPI_RX4，并连接 J1 pin16/17、19/20、25/26、28/29。",
+      "confidence": "confirmed",
+      "attributes": {
+        "lane0": "M0D0P/N -> MIPI_RX0_P/N -> J1 17/16",
+        "lane1": "M0D1P/N -> MIPI_RX1_P/N -> J1 20/19",
+        "lane2": "M0D2P/N -> MIPI_RX3_P/N -> J1 26/25",
+        "lane3": "M0D3P/N -> MIPI_RX4_P/N -> J1 29/28",
+        "data_lane_count": 4
+      },
+      "evidence": [
+        {
+          "asset_sha256": "9efa49abd81cc9c081eacf982273c1933baed00977dd86c2858fd35a1e0f1797",
+          "page": 1,
+          "locator": "网格 1D-2D U1D M0D0-M0D3 网络与网格 5A-6A J1 MIPI_RX0/RX1/RX3/RX4 引脚"
+        }
+      ]
+    },
+    {
+      "id": "interface.fpc-pinout",
+      "category": "interface",
+      "subject": "J1 30 针 FPC 接口",
+      "statement": "J1 pin1-pin5 未连接，pin6/10/15/18/21/24/27/30 和 SH 接 GND，pin7=DVDD_1V2、pin8=DOVDD_1V8、pin9=AVDD_2V8、pin11-pin14 为 I2C/复位/时钟，pin16-pin29 承载五组 MIPI 差分对。",
+      "confidence": "confirmed",
+      "attributes": {
+        "reference": "J1",
+        "part_number": "FPC-SMD_30P-FH34SRJ-30S-0.5SH",
+        "unconnected_pins": "1,2,3,4,5",
+        "ground_pins": "6,10,15,18,21,24,27,30,SH",
+        "power_pins": "7 DVDD_1V2, 8 DOVDD_1V8, 9 AVDD_2V8",
+        "control_pins": "11 CAM_SDA_1V8, 12 CAM_SCL_1V8, 13 CAM_RSTN, 14 CAM_MCLK"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "9efa49abd81cc9c081eacf982273c1933baed00977dd86c2858fd35a1e0f1797",
+          "page": 1,
+          "locator": "网格 5A-6B，J1 pin1-pin30 和 SH 的完整网络标注"
+        }
+      ]
+    },
+    {
+      "id": "component.unused-secondary-mipi",
+      "category": "component",
+      "subject": "SC850SL M1 差分接口",
+      "statement": "U1E 的 M1CP/M1CN 和 M1D0-M1D3 四组差分引脚均在原理图中标记为未连接。",
+      "confidence": "confirmed",
+      "attributes": {
+        "sensor_section": "U1E",
+        "unused_pairs": "M1CP/M1CN, M1D0P/N, M1D1P/N, M1D2P/N, M1D3P/N"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "9efa49abd81cc9c081eacf982273c1933baed00977dd86c2858fd35a1e0f1797",
+          "page": 1,
+          "locator": "网格 2D，U1E 全部 M1 接口引脚右侧的未连接标记"
+        }
+      ]
+    },
+    {
+      "id": "component.unused-sync-gpio",
+      "category": "gpio",
+      "subject": "SC850SL 未使用同步与 GPIO 引脚",
+      "statement": "U1C EFSYNC pin C2、FSYNC pin C3 和 GPIO2 pin D1 均在原理图中标记为未连接。",
+      "confidence": "confirmed",
+      "attributes": {
+        "unconnected_pins": "C2 EFSYNC, C3 FSYNC, D1 GPIO2"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "9efa49abd81cc9c081eacf982273c1933baed00977dd86c2858fd35a1e0f1797",
+          "page": 1,
+          "locator": "网格 1C-2C，U1C EFSYNC、FSYNC、GPIO2 网络末端的未连接标记"
+        }
+      ]
+    },
+    {
+      "id": "power.reference-decoupling",
+      "category": "analog",
+      "subject": "SC850SL 参考与内部电源去耦",
+      "statement": "U1B VREFH、VREFN2、VREFN、VREF3 和 TXVDD 分别通过 C5、C6、C7、C8、C9 的 1uF 电容接地。",
+      "confidence": "confirmed",
+      "attributes": {
+        "vrefh": "C5 1uF",
+        "vrefn2": "C6 1uF",
+        "vrefn": "C7 1uF",
+        "vref3": "C8 1uF",
+        "txvdd": "C9 1uF"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "9efa49abd81cc9c081eacf982273c1933baed00977dd86c2858fd35a1e0f1797",
+          "page": 1,
+          "locator": "网格 1B-2B，U1B 与 C5-C9"
+        }
+      ]
+    },
+    {
+      "id": "power.distributed-decoupling",
+      "category": "power",
+      "subject": "三路传感器电源去耦",
+      "statement": "AVDD_2V8 使用 C10-C19，DOVDD_1V8 使用 C20-C28，DVDD_1V3 使用 C29-C38 形成分布式 1uF、100nF 和 10uF 去耦网络。",
+      "confidence": "confirmed",
+      "attributes": {
+        "avdd_2v8": "C10-C13 1uF, C14-C18 100nF, C19 10uF",
+        "dovdd_1v8": "C20-C22 1uF, C23-C27 100nF, C28 10uF",
+        "dvdd_1v3": "C29-C32 1uF, C33-C37 100nF, C38 10uF"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "9efa49abd81cc9c081eacf982273c1933baed00977dd86c2858fd35a1e0f1797",
+          "page": 1,
+          "locator": "网格 3B-5C，AVDD_2V8、DOVDD_1V8、DVDD_1V3 三组电容阵列"
+        }
+      ]
+    },
+    {
+      "id": "power.connector-dvdd-1v2",
+      "category": "power",
+      "subject": "J1 DVDD_1V2 引脚用途",
+      "statement": "J1 pin7 标记为 DVDD_1V2，但图中 SC850SL 核心 DVDD 使用 U2 生成的 DVDD_1V3，原理图未显示 DVDD_1V2 与任何其他器件或网络的连接。",
+      "confidence": "uncertain",
+      "attributes": {
+        "connector_pin": 7,
+        "connector_net": "DVDD_1V2",
+        "sensor_core_net": "DVDD_1V3",
+        "visible_connection_between_nets": false
+      },
+      "evidence": [
+        {
+          "asset_sha256": "9efa49abd81cc9c081eacf982273c1933baed00977dd86c2858fd35a1e0f1797",
+          "page": 1,
+          "locator": "网格 5A-6B J1 pin7 DVDD_1V2，与网格 1A-4A U1 DVDD_1V3 和 U2 DVDD_1V3 输出"
+        }
+      ]
+    }
+  ],
+  "needs_review": [
+    {
+      "id": "review.connector-dvdd-1v2",
+      "fact_id": "power.connector-dvdd-1v2",
+      "question": "J1 pin7 的 DVDD_1V2 是否为未使用预留，或应与传感器 DVDD_1V3 电源域存在未画出的连接？",
+      "reason": "连接器标注 DVDD_1V2，而 SC850SL 核心电源和 U2 输出均标注 DVDD_1V3，当前原理图未显示两者关系。",
+      "evidence": [
+        {
+          "asset_sha256": "9efa49abd81cc9c081eacf982273c1933baed00977dd86c2858fd35a1e0f1797",
+          "page": 1,
+          "locator": "网格 5A-6B J1 pin7，与网格 3A-4A U2 OUT 和网格 1A-2A U1A DVDD 引脚"
+        }
+      ]
+    }
+  ]
+}

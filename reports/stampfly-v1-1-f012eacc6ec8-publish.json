@@ -1,0 +1,21 @@
+{
+  "dry_run": false,
+  "failed": 0,
+  "published": 1,
+  "results": [
+    {
+      "backup": null,
+      "draft_action": "unchanged",
+      "dry_run": false,
+      "errors": [],
+      "needs_review": 6,
+      "product_id": "stampfly-v1-1-f012eacc6ec8",
+      "product_name": "StampFly v1.1",
+      "publish_action": "unchanged",
+      "sha256": "5bf6fc63dba27ebb98bdd14041b31a1a37196172eee2884fba4957c07e7cbe91",
+      "status": "valid",
+      "uncertain_facts": 6
+    }
+  ],
+  "schema_version": 1
+}

@@ -1,0 +1,21 @@
+{
+  "dry_run": false,
+  "failed": 0,
+  "published": 1,
+  "results": [
+    {
+      "backup": null,
+      "draft_action": "unchanged",
+      "dry_run": false,
+      "errors": [],
+      "needs_review": 5,
+      "product_id": "dinmeter-375ebdfc5925",
+      "product_name": "DinMeter",
+      "publish_action": "unchanged",
+      "sha256": "00d80ce90d1e80a9048e8d55634e7a5daeba31e665884d547519185eab9a2349",
+      "status": "valid",
+      "uncertain_facts": 5
+    }
+  ],
+  "schema_version": 1
+}

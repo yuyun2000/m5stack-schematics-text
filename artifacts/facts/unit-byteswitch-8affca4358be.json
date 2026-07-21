@@ -1,0 +1,454 @@
+{
+  "schema_version": 1,
+  "generator": "schematic_describer",
+  "product": {
+    "product_id": "unit-byteswitch-8affca4358be",
+    "product_name": "Unit ByteSwitch",
+    "sku": "U191",
+    "source_path": "unit/Unit ByteSwitch.md",
+    "source_sha256": "27cbf900f3375952a1ba8dce3bc672d61ca0400f845aba49e347ee3977fce5f3",
+    "input_sha256": "17cbcfb92c48e73a0da24e242916d96b1e8f38fc1e78dd3a24b54a3aea0043d6"
+  },
+  "schematic_assets": [
+    {
+      "sha256": "07888ba382237d2623c21eb5a9491c709b770967b4ca497fe05ed496a85b2c45",
+      "source_url": "https://m5stack-doc.oss-cn-shenzhen.aliyuncs.com/820/SCH_Unit-ByteSwitch_V1.0_page_01.png",
+      "pages": [1]
+    }
+  ],
+  "summary": "Unit ByteSwitch 以 U10 STM32G031G8U6 为主控，采集 8 路 DPDT 开关并驱动 9 颗串接的 WS2812C-2020。J1/J2 通过 0 Ω 电阻连接同一组 SCL、SDA，形成可级联的双 Grove 接口，J3 提供 SWD 调试与复位。VCC_5V 由 U11 ME6206A33XG 转换为 VCC_3V3，供 MCU、开关上拉和 RGB 链使用；每路开关信号均带 RC 网络及 PESD3V3S1UB 对地保护。",
+  "keywords": [
+    "Unit ByteSwitch",
+    "U191",
+    "STM32G031G8U6",
+    "ME6206A33XG",
+    "WS2812C-2020",
+    "PESD3V3S1UB",
+    "GROVE 4P",
+    "SWD_5P",
+    "I2C",
+    "UART Chain Mode",
+    "SCL",
+    "SDA",
+    "RGB",
+    "VCC_5V",
+    "VCC_3V3",
+    "SW_K1",
+    "SW_K2",
+    "SW_K3",
+    "SW_K4",
+    "SW_K5",
+    "SW_K6",
+    "SW_K7",
+    "SW_K8",
+    "Sel_A0",
+    "Sel_A1",
+    "MCU_SWDIO",
+    "MCU_SWCLK",
+    "NRST",
+    "PA11[PA9]",
+    "PA12[PA10]",
+    "PB5"
+  ],
+  "components": [
+    {
+      "reference": "U10",
+      "part_number": "STM32G031G8U6",
+      "role": "主控制器，采集八路开关、控制 RGB 链并提供 I2C、UART 和 SWD 信号",
+      "evidence": [{"asset_sha256": "07888ba382237d2623c21eb5a9491c709b770967b4ca497fe05ed496a85b2c45", "page": 1, "locator": "网格 A3-A4，U10 方框及 STM32G031G8U6 型号标注"}]
+    },
+    {
+      "reference": "U11",
+      "part_number": "ME6206A33XG",
+      "role": "将 VCC_5V 转换为 VCC_3V3 的三端稳压器",
+      "evidence": [{"asset_sha256": "07888ba382237d2623c21eb5a9491c709b770967b4ca497fe05ed496a85b2c45", "page": 1, "locator": "网格 A2，U11 的 Vin、Vout、GND 引脚及 ME6206A33XG 标注"}]
+    },
+    {
+      "reference": "J1",
+      "part_number": "GROVE 4P",
+      "role": "级联输入侧四针 Grove 接口，引出 IN_2、IN_1、VCC_5V 和 GND",
+      "evidence": [{"asset_sha256": "07888ba382237d2623c21eb5a9491c709b770967b4ca497fe05ed496a85b2c45", "page": 1, "locator": "网格 A1 左侧 J1 GROVE 4P，IO2/IO1/5V/GND 与 IN_2/IN_1/VCC_5V/GND"}]
+    },
+    {
+      "reference": "J2",
+      "part_number": "GROVE 4P",
+      "role": "级联输出侧四针 Grove 接口，引出 OUT_2、OUT_1、VCC_5V 和 GND",
+      "evidence": [{"asset_sha256": "07888ba382237d2623c21eb5a9491c709b770967b4ca497fe05ed496a85b2c45", "page": 1, "locator": "网格 A1 左侧 J2 GROVE 4P，IO2/IO1/5V/GND 与 OUT_2/OUT_1/VCC_5V/GND"}]
+    },
+    {
+      "reference": "J3",
+      "part_number": "SWD_5P",
+      "role": "五针 MCU SWD 调试、复位与供电参考接口",
+      "evidence": [{"asset_sha256": "07888ba382237d2623c21eb5a9491c709b770967b4ca497fe05ed496a85b2c45", "page": 1, "locator": "网格 A4 右上 J3 SWD_5P，1 至 5 脚网络"}]
+    },
+    {
+      "reference": "S1-S8",
+      "part_number": "DPDT 6-pin switch",
+      "role": "八个六脚双刀双掷开关，分别生成 SW_K1 至 SW_K8 状态",
+      "evidence": [{"asset_sha256": "07888ba382237d2623c21eb5a9491c709b770967b4ca497fe05ed496a85b2c45", "page": 1, "locator": "网格 B1-B4，S1 至 S8 六脚双刀双掷符号及 SW_K1 至 SW_K8 网络"}]
+    },
+    {
+      "reference": "U1-U9",
+      "part_number": "WS2812C-2020",
+      "role": "九颗 VCC_3V3 供电的串行可寻址 RGB LED",
+      "evidence": [{"asset_sha256": "07888ba382237d2623c21eb5a9491c709b770967b4ca497fe05ed496a85b2c45", "page": 1, "locator": "网格 D1-D4，U1 至 U9 及各自 WS2812C-2020 型号标注"}]
+    },
+    {
+      "reference": "D1-D8",
+      "part_number": "PESD3V3S1UB",
+      "role": "SW_K1 至 SW_K8 的对地静电/瞬态保护器件",
+      "evidence": [{"asset_sha256": "07888ba382237d2623c21eb5a9491c709b770967b4ca497fe05ed496a85b2c45", "page": 1, "locator": "网格 C1，D1 至 D8、PESD3V3S1UB、SW_K1 至 SW_K8 和公共 GND"}]
+    },
+    {
+      "reference": "R1-R8,C17-C24",
+      "part_number": "10K / 100nF",
+      "role": "八路开关输入的 VCC_3V3 上拉与对地滤波网络",
+      "evidence": [{"asset_sha256": "07888ba382237d2623c21eb5a9491c709b770967b4ca497fe05ed496a85b2c45", "page": 1, "locator": "网格 B1-B4，R1-R8 10K 和 C17-C24 100nF 围绕 S1-S8"}]
+    },
+    {
+      "reference": "R9,R10",
+      "part_number": "4.7K",
+      "role": "SCL 与 SDA 到 VCC_3V3 的 I2C 上拉电阻",
+      "evidence": [{"asset_sha256": "07888ba382237d2623c21eb5a9491c709b770967b4ca497fe05ed496a85b2c45", "page": 1, "locator": "网格 A1-A2，R9 4.7K 接 SCL、R10 4.7K 接 SDA，顶端均接 VCC_3V3"}]
+    },
+    {
+      "reference": "R11,R12,R14,R15",
+      "part_number": "NC / 10K",
+      "role": "Sel_A0 与 Sel_A1 的模式选择绑带；上拉位未装，下拉位为 10K",
+      "evidence": [{"asset_sha256": "07888ba382237d2623c21eb5a9491c709b770967b4ca497fe05ed496a85b2c45", "page": 1, "locator": "网格 A4，R11/R12 标 NC、R14/R15 标 10K，并连接 Sel_A0/Sel_A1"}]
+    },
+    {
+      "reference": "R13,C12",
+      "part_number": "10K / 1uF",
+      "role": "NRST 的 VCC_3V3 上拉与对地复位电容",
+      "evidence": [{"asset_sha256": "07888ba382237d2623c21eb5a9491c709b770967b4ca497fe05ed496a85b2c45", "page": 1, "locator": "网格 A2-A3，R13 10K、NRST 与 C12 1uF 到 GND"}]
+    },
+    {
+      "reference": "R16,R18,R20,R22",
+      "part_number": "0R",
+      "role": "将输入/输出 Grove 网络连接到板内 SCL 和 SDA",
+      "evidence": [{"asset_sha256": "07888ba382237d2623c21eb5a9491c709b770967b4ca497fe05ed496a85b2c45", "page": 1, "locator": "网格 A1，R16/R18/R20/R22 均标 0R，连接 IN_2/IN_1/OUT_2/OUT_1 与 SCL/SDA"}]
+    },
+    {
+      "reference": "C1,C2,C10,C11,C15,C16",
+      "part_number": "10uF / 100nF",
+      "role": "稳压器输入输出及 MCU VCC_3V3 的储能和去耦电容",
+      "evidence": [{"asset_sha256": "07888ba382237d2623c21eb5a9491c709b770967b4ca497fe05ed496a85b2c45", "page": 1, "locator": "网格 A2-A3，U11 两侧 C16/C1/C2/C15 及 U10 供电旁 C11/C10"}]
+    },
+    {
+      "reference": "C3-C9,C13,C14",
+      "part_number": "100nF",
+      "role": "九颗 WS2812C-2020 的 VCC_3V3 对地去耦电容组",
+      "evidence": [{"asset_sha256": "07888ba382237d2623c21eb5a9491c709b770967b4ca497fe05ed496a85b2c45", "page": 1, "locator": "网格 C3-C4，C3-C9、C13、C14 均标 100nF，跨接 VCC_3V3 与 GND"}]
+    }
+  ],
+  "facts": [
+    {
+      "id": "system.architecture",
+      "category": "system",
+      "subject": "Unit ByteSwitch 系统结构",
+      "statement": "U10 STM32G031G8U6 连接八路开关输入、九颗串接 RGB LED、双 Grove 总线接口和五针 SWD 接口；U11 从 VCC_5V 生成全板 VCC_3V3。",
+      "confidence": "confirmed",
+      "attributes": {"controller": "U10 STM32G031G8U6", "regulator": "U11 ME6206A33XG", "switch_channels": 8, "rgb_led_count": 9, "grove_connectors": "J1,J2", "debug_connector": "J3"},
+      "evidence": [{"asset_sha256": "07888ba382237d2623c21eb5a9491c709b770967b4ca497fe05ed496a85b2c45", "page": 1, "locator": "整页网格 A1-D4：U10/U11、J1-J3、S1-S8、U1-U9 功能分区"}]
+    },
+    {
+      "id": "component.controller",
+      "category": "component",
+      "subject": "U10",
+      "statement": "主控制器 U10 的型号标注为 STM32G031G8U6。",
+      "confidence": "confirmed",
+      "attributes": {"reference": "U10", "part_number": "STM32G031G8U6", "package_pin_count": 28},
+      "evidence": [{"asset_sha256": "07888ba382237d2623c21eb5a9491c709b770967b4ca497fe05ed496a85b2c45", "page": 1, "locator": "网格 A3，U10 下方 STM32G031G8U6 标注及 1-28 脚号"}]
+    },
+    {
+      "id": "power.regulator",
+      "category": "power",
+      "subject": "U11 电源转换",
+      "statement": "U11 ME6206A33XG 的 pin 3 Vin 接 VCC_5V，pin 2 Vout 输出 VCC_3V3，pin 1 GND 接地。",
+      "confidence": "confirmed",
+      "attributes": {"reference": "U11", "part_number": "ME6206A33XG", "input_pin": "3:Vin", "input_rail": "VCC_5V", "output_pin": "2:Vout", "output_rail": "VCC_3V3", "ground_pin": "1:GND"},
+      "evidence": [{"asset_sha256": "07888ba382237d2623c21eb5a9491c709b770967b4ca497fe05ed496a85b2c45", "page": 1, "locator": "网格 A2，U11 Vin/Vout/GND 引脚及两侧 VCC_5V、VCC_3V3 网络"}]
+    },
+    {
+      "id": "power.regulator_decoupling",
+      "category": "power",
+      "subject": "U11 输入输出滤波",
+      "statement": "U11 输入侧由 C16 100nF 和 C1 10uF 跨接 VCC_5V 与 GND；输出侧由 C2 10uF 和 C15 100nF 跨接 VCC_3V3 与 GND。",
+      "confidence": "confirmed",
+      "attributes": {"input_capacitors": "C16:100nF,C1:10uF", "output_capacitors": "C2:10uF,C15:100nF", "input_rail": "VCC_5V", "output_rail": "VCC_3V3"},
+      "evidence": [{"asset_sha256": "07888ba382237d2623c21eb5a9491c709b770967b4ca497fe05ed496a85b2c45", "page": 1, "locator": "网格 A2，U11 左右两侧 C16/C1/C2/C15 与电源、地连接"}]
+    },
+    {
+      "id": "power.controller",
+      "category": "power",
+      "subject": "U10 供电",
+      "statement": "U10 的 pin 3 VDD/VDDA 接 VCC_3V3，pin 4 VSS/VSSA 接 GND；C11 100nF 与 C10 10uF 在该电源轨对地去耦。",
+      "confidence": "confirmed",
+      "attributes": {"supply_pin": "3:VDD/VDDA", "ground_pin": "4:VSS/VSSA", "rail": "VCC_3V3", "decoupling": "C11:100nF,C10:10uF"},
+      "evidence": [{"asset_sha256": "07888ba382237d2623c21eb5a9491c709b770967b4ca497fe05ed496a85b2c45", "page": 1, "locator": "网格 A3，U10 pin 3/4 与左侧 C11 100nF、C10 10uF"}]
+    },
+    {
+      "id": "interface.grove_j1",
+      "category": "interface",
+      "subject": "J1 Grove 输入侧接口",
+      "statement": "J1 的四个触点按符号标注连接 IO2=IN_2、IO1=IN_1、5V=VCC_5V、GND=GND。",
+      "confidence": "confirmed",
+      "attributes": {"reference": "J1", "part_number": "GROVE 4P", "pinout": "IO2:IN_2,IO1:IN_1,5V:VCC_5V,GND:GND", "signal_level": "SCL/SDA 上拉至 VCC_3V3，接口电源为 VCC_5V"},
+      "evidence": [{"asset_sha256": "07888ba382237d2623c21eb5a9491c709b770967b4ca497fe05ed496a85b2c45", "page": 1, "locator": "网格 A1 左上 J1 GROVE 4P 的 IO2、IO1、5V、GND 行"}]
+    },
+    {
+      "id": "interface.grove_j2",
+      "category": "interface",
+      "subject": "J2 Grove 输出侧接口",
+      "statement": "J2 的四个触点按符号标注连接 IO2=OUT_2、IO1=OUT_1、5V=VCC_5V、GND=GND。",
+      "confidence": "confirmed",
+      "attributes": {"reference": "J2", "part_number": "GROVE 4P", "pinout": "IO2:OUT_2,IO1:OUT_1,5V:VCC_5V,GND:GND", "signal_level": "SCL/SDA 上拉至 VCC_3V3，接口电源为 VCC_5V"},
+      "evidence": [{"asset_sha256": "07888ba382237d2623c21eb5a9491c709b770967b4ca497fe05ed496a85b2c45", "page": 1, "locator": "网格 A1 左侧 J2 GROVE 4P 的 IO2、IO1、5V、GND 行"}]
+    },
+    {
+      "id": "bus.i2c_physical",
+      "category": "bus",
+      "subject": "J1/J2 与 U10 的 I2C 物理连接",
+      "statement": "IN_2 经 R16 0R、OUT_2 经 R20 0R 连接 SCL；IN_1 经 R18 0R、OUT_1 经 R22 0R 连接 SDA。SCL 接 U10 pin 18 PA11[PA9]，SDA 接 U10 pin 19 PA12[PA10]。",
+      "confidence": "confirmed",
+      "attributes": {"controller": "U10", "scl_mcu_pin": "pin 18 PA11[PA9]", "sda_mcu_pin": "pin 19 PA12[PA10]", "scl_paths": "J1 IN_2-R16 0R-SCL;J2 OUT_2-R20 0R-SCL", "sda_paths": "J1 IN_1-R18 0R-SDA;J2 OUT_1-R22 0R-SDA", "topology": "shared bidirectional bus"},
+      "evidence": [{"asset_sha256": "07888ba382237d2623c21eb5a9491c709b770967b4ca497fe05ed496a85b2c45", "page": 1, "locator": "网格 A1 的 R16/R18/R20/R22 与 SCL/SDA，以及网格 A3 的 U10 pin 18/19"}]
+    },
+    {
+      "id": "bus.i2c_pullups",
+      "category": "bus",
+      "subject": "I2C 上拉",
+      "statement": "SCL 通过 R9 4.7K 上拉到 VCC_3V3，SDA 通过 R10 4.7K 上拉到 VCC_3V3。",
+      "confidence": "confirmed",
+      "attributes": {"scl_pullup": "R9 4.7K", "sda_pullup": "R10 4.7K", "pullup_rail": "VCC_3V3", "bus_level_v": 3.3},
+      "evidence": [{"asset_sha256": "07888ba382237d2623c21eb5a9491c709b770967b4ca497fe05ed496a85b2c45", "page": 1, "locator": "网格 A1-A2，R9/R10 4.7K 从 SCL/SDA 接 VCC_3V3"}]
+    },
+    {
+      "id": "address.mode_straps",
+      "category": "address",
+      "subject": "Sel_A0 与 Sel_A1 模式绑带",
+      "statement": "Sel_A0 由 R14 10K 下拉且 R11 上拉位标 NC；Sel_A1 由 R15 10K 下拉且 R12 上拉位标 NC，因此图示装配状态为 A0=0、A1=0。页面注明 A0=A1=0 为 I2C Mode，A0=A1=1 为 UART Chain Mode。",
+      "confidence": "confirmed",
+      "attributes": {"sel_a0_mcu_pin": "U10 pin 14 PB0", "sel_a1_mcu_pin": "U10 pin 15 PB1", "sel_a0_default": 0, "sel_a1_default": 0, "pull_downs": "R14:10K,R15:10K", "unpopulated_pullups": "R11:NC,R12:NC", "mode_00": "I2C Mode", "mode_11": "UART Chain Mode"},
+      "evidence": [{"asset_sha256": "07888ba382237d2623c21eb5a9491c709b770967b4ca497fe05ed496a85b2c45", "page": 1, "locator": "网格 A4，R11/R12/R14/R15、Sel_A0/Sel_A1 及 I2C Mode/UART Chain Mode 注释"}]
+    },
+    {
+      "id": "gpio.switch_map",
+      "category": "gpio",
+      "subject": "U10 八路开关 GPIO 映射",
+      "statement": "U10 的 PA0、PA1、PA5、PA6、PA7、PA15、PB3、PA8 分别连接 SW_K1、SW_K2、SW_K3、SW_K4、SW_K5、SW_K6、SW_K7、SW_K8。",
+      "confidence": "confirmed",
+      "attributes": {"mapping": "PA0/pin6:SW_K1,PA1/pin7:SW_K2,PA5/pin11:SW_K3,PA6/pin12:SW_K4,PA7/pin13:SW_K5,PA15/pin22:SW_K6,PB3/pin23:SW_K7,PA8/pin16:SW_K8", "direction": "inputs"},
+      "evidence": [{"asset_sha256": "07888ba382237d2623c21eb5a9491c709b770967b4ca497fe05ed496a85b2c45", "page": 1, "locator": "网格 A3，U10 左右两侧 SW_K1-SW_K8 的 GPIO 与脚号"}]
+    },
+    {
+      "id": "gpio.switch_frontend",
+      "category": "gpio",
+      "subject": "S1-S8 开关输入前端",
+      "statement": "S1-S8 分别对应 SW_K1-SW_K8；每路信号由 R1-R8 中对应的 10K 电阻上拉至 VCC_3V3，并由 C17-C24 中对应的 100nF 电容接至 GND。",
+      "confidence": "confirmed",
+      "attributes": {"switches": "S1-S8", "signals": "SW_K1-SW_K8", "pullups": "R1-R8", "pullup_ohm": 10000, "filter_capacitors": "C17-C24", "filter_capacitance_nf": 100},
+      "evidence": [{"asset_sha256": "07888ba382237d2623c21eb5a9491c709b770967b4ca497fe05ed496a85b2c45", "page": 1, "locator": "网格 B1-B4，八组 SW_Kx、Sx、Rx 10K、Cx 100nF 重复电路"}]
+    },
+    {
+      "id": "component.switch_contact_wiring",
+      "category": "component",
+      "subject": "S1-S8 DPDT 触点",
+      "statement": "每个 S1-S8 均绘制为六脚 DPDT：两刀公共端联接对应 SW_Kx，触点侧分别接上拉节点与 GND，使开关位置改变输入逻辑状态。",
+      "confidence": "confirmed",
+      "attributes": {"switch_type": "DPDT", "pins_per_switch": 6, "common_signals": "SW_K1-SW_K8", "states": "VCC_3V3 through 10K or GND"},
+      "evidence": [{"asset_sha256": "07888ba382237d2623c21eb5a9491c709b770967b4ca497fe05ed496a85b2c45", "page": 1, "locator": "网格 B1-B4，S1-S8 的 1-6 脚双刀触点、右侧上拉节点和下方 GND"}]
+    },
+    {
+      "id": "protection.switch_esd",
+      "category": "protection",
+      "subject": "SW_K1-SW_K8 保护",
+      "statement": "D1-D8 均标注 PESD3V3S1UB，分别从 SW_K1-SW_K8 接到公共 GND 节点。",
+      "confidence": "confirmed",
+      "attributes": {"references": "D1-D8", "part_number": "PESD3V3S1UB", "protected_nets": "SW_K1-SW_K8", "return": "GND"},
+      "evidence": [{"asset_sha256": "07888ba382237d2623c21eb5a9491c709b770967b4ca497fe05ed496a85b2c45", "page": 1, "locator": "网格 C1，D1-D8 PESD3V3S1UB 从 SW_K1-SW_K8 汇接 GND"}]
+    },
+    {
+      "id": "gpio.rgb_control",
+      "category": "gpio",
+      "subject": "RGB 数据控制",
+      "statement": "U10 pin 25 PB5 连接 RGB 网络，RGB 网络进入 U1 的 DI pin 3。",
+      "confidence": "confirmed",
+      "attributes": {"controller_pin": "U10 pin 25 PB5", "net": "RGB", "direction": "U10 output to U1 DI", "first_device": "U1 pin 3 DI"},
+      "evidence": [{"asset_sha256": "07888ba382237d2623c21eb5a9491c709b770967b4ca497fe05ed496a85b2c45", "page": 1, "locator": "网格 A3 的 U10 PB5/RGB 与网格 D1 的 RGB 到 U1 DI"}]
+    },
+    {
+      "id": "bus.rgb_chain",
+      "category": "bus",
+      "subject": "U1-U9 单线 RGB 链",
+      "statement": "U1 的 DO 依次连接 U2 的 DI，随后逐级串接到 U9 的 DI；U9 DO 未画出后续设备连接。",
+      "confidence": "confirmed",
+      "attributes": {"devices": "U1-U9", "part_number": "WS2812C-2020", "data_order": "RGB->U1->U2->U3->U4->U5->U6->U7->U8->U9", "last_output": "U9 DO no downstream connection shown"},
+      "evidence": [{"asset_sha256": "07888ba382237d2623c21eb5a9491c709b770967b4ca497fe05ed496a85b2c45", "page": 1, "locator": "网格 D1-D4，U1-U9 的 DI pin3 与 DO pin1 逐级连接"}]
+    },
+    {
+      "id": "power.rgb_chain",
+      "category": "power",
+      "subject": "U1-U9 供电与去耦",
+      "statement": "U1-U9 的 VDD pin 4 全部连接 VCC_3V3，GND pin 2 全部接 GND；C3-C9、C13、C14 九颗 100nF 电容跨接 VCC_3V3 与 GND。",
+      "confidence": "confirmed",
+      "attributes": {"devices": "U1-U9", "supply_pin": "4:VDD", "supply_rail": "VCC_3V3", "ground_pin": "2:GND", "decoupling": "C3-C9,C13,C14", "capacitance_nf_each": 100},
+      "evidence": [{"asset_sha256": "07888ba382237d2623c21eb5a9491c709b770967b4ca497fe05ed496a85b2c45", "page": 1, "locator": "网格 C3-C4 的九颗 100nF 电容组及网格 D1-D4 的 U1-U9 VDD/GND 总线"}]
+    },
+    {
+      "id": "reset.nrst",
+      "category": "reset",
+      "subject": "U10 NRST",
+      "statement": "U10 pin 5 NRST 连接 NRST 网络；R13 10K 将其上拉到 VCC_3V3，C12 1uF 将其连接至 GND，J3 pin 4 也引出 NRST。",
+      "confidence": "confirmed",
+      "attributes": {"mcu_pin": "U10 pin 5 NRST", "pullup": "R13 10K to VCC_3V3", "capacitor": "C12 1uF to GND", "connector_pin": "J3 pin 4"},
+      "evidence": [{"asset_sha256": "07888ba382237d2623c21eb5a9491c709b770967b4ca497fe05ed496a85b2c45", "page": 1, "locator": "网格 A2-A4，R13/C12/NRST、U10 pin 5 及 J3 pin 4"}]
+    },
+    {
+      "id": "debug.swd",
+      "category": "debug",
+      "subject": "J3 SWD_5P",
+      "statement": "J3 pin 1=VCC_3V3、pin 2=MCU_SWCLK、pin 3=MCU_SWDIO、pin 4=NRST、pin 5=GND。MCU_SWCLK 接 U10 pin 21 PA14-BOOT0，MCU_SWDIO 接 U10 pin 20 PA13。",
+      "confidence": "confirmed",
+      "attributes": {"connector": "J3", "pinout": "1:VCC_3V3,2:MCU_SWCLK,3:MCU_SWDIO,4:NRST,5:GND", "swclk_mcu_pin": "U10 pin 21 PA14-BOOT0", "swdio_mcu_pin": "U10 pin 20 PA13", "signal_level": "VCC_3V3 reference"},
+      "evidence": [{"asset_sha256": "07888ba382237d2623c21eb5a9491c709b770967b4ca497fe05ed496a85b2c45", "page": 1, "locator": "网格 A3-A4，U10 PA13/PA14-BOOT0 网络及 J3 1-5 脚"}]
+    },
+    {
+      "id": "gpio.uart_labels",
+      "category": "gpio",
+      "subject": "U10 UART 标注网络",
+      "statement": "U10 pin 26 PB6 标为 TXD1，pin 27 PB7 标为 RXD1；pin 8 PA2 标为 TXD2、pin 9 PA3 标为 RXD2，且 TXD2/RXD2 线上绘有未连接叉号。",
+      "confidence": "confirmed",
+      "attributes": {"uart1": "PB6/pin26:TXD1,PB7/pin27:RXD1", "uart2": "PA2/pin8:TXD2,PA3/pin9:RXD2", "uart2_connection": "NC marks shown"},
+      "evidence": [{"asset_sha256": "07888ba382237d2623c21eb5a9491c709b770967b4ca497fe05ed496a85b2c45", "page": 1, "locator": "网格 A3，U10 左侧 TXD2/RXD2 与 NC 叉号、右侧 TXD1/RXD1"}]
+    },
+    {
+      "id": "clock.no_external_crystal",
+      "category": "clock",
+      "subject": "U10 外部时钟",
+      "statement": "U10 pin 1 PC14-OSC32IN 与 pin 2 PC15-OSC32OUT 线上均绘有未连接标记，本页未绘制外部晶振或振荡器。",
+      "confidence": "confirmed",
+      "attributes": {"osc32in_pin": "U10 pin 1 PC14-OSC32IN", "osc32out_pin": "U10 pin 2 PC15-OSC32OUT", "external_clock_component": null},
+      "evidence": [{"asset_sha256": "07888ba382237d2623c21eb5a9491c709b770967b4ca497fe05ed496a85b2c45", "page": 1, "locator": "网格 A3，U10 pin 1/2 PC14-OSC32IN、PC15-OSC32OUT 左侧未连接标记"}]
+    },
+    {
+      "id": "key_net.power_rails",
+      "category": "key_net",
+      "subject": "VCC_5V 与 VCC_3V3",
+      "statement": "VCC_5V 从 J1/J2 的 5V 触点进入 U11 Vin；VCC_3V3 从 U11 Vout 分配到 U10、I2C 上拉、开关上拉、J3 和 U1-U9。",
+      "confidence": "confirmed",
+      "attributes": {"input_rail": "VCC_5V", "regulated_rail": "VCC_3V3", "regulated_consumers": "U10,R1-R15 configured pullups,U1-U9,J3"},
+      "evidence": [{"asset_sha256": "07888ba382237d2623c21eb5a9491c709b770967b4ca497fe05ed496a85b2c45", "page": 1, "locator": "整页 VCC_5V 与 VCC_3V3 电源符号及 U11 转换路径"}]
+    },
+    {
+      "id": "power.no_battery_charger_switch",
+      "category": "power",
+      "subject": "电池、充电与负载开关",
+      "statement": "本页电源路径仅显示 Grove VCC_5V、U11 稳压和 VCC_3V3 分配，未绘制电池、充电器、电源监测器或负载开关。",
+      "confidence": "confirmed",
+      "attributes": {"battery": false, "charger": false, "power_monitor": false, "load_switch": false},
+      "evidence": [{"asset_sha256": "07888ba382237d2623c21eb5a9491c709b770967b4ca497fe05ed496a85b2c45", "page": 1, "locator": "整页原理图，电源功能区位于 A1-A3，仅见 J1/J2、U11 和去耦网络"}]
+    },
+    {
+      "id": "system.no_auxiliary_subsystems",
+      "category": "system",
+      "subject": "独立协处理器与外围功能分区",
+      "statement": "本页未绘制独立协处理器、外部存储器、存储卡、音频器件、传感器、射频器件或独立模拟采样前端；主要功能器件为 U10、U11、S1-S8、U1-U9 及接口和保护网络。",
+      "confidence": "confirmed",
+      "attributes": {"coprocessor": false, "external_memory": false, "storage": false, "audio": false, "sensor": false, "rf": false, "external_analog_frontend": false},
+      "evidence": [{"asset_sha256": "07888ba382237d2623c21eb5a9491c709b770967b4ca497fe05ed496a85b2c45", "page": 1, "locator": "整页网格 A1-D4 的全部器件和功能分区"}]
+    },
+    {
+      "id": "key_net.boot0_swclk",
+      "category": "key_net",
+      "subject": "U10 PA14-BOOT0",
+      "statement": "U10 pin 21 标注 PA14-BOOT0，并连接 MCU_SWCLK 后引至 J3 pin 2；本页未绘制独立 BOOT 按键或单独 BOOT0 绑带。",
+      "confidence": "confirmed",
+      "attributes": {"mcu_pin": "U10 pin 21 PA14-BOOT0", "net": "MCU_SWCLK", "connector_pin": "J3 pin 2", "boot_switch": false, "separate_boot_strap": false},
+      "evidence": [{"asset_sha256": "07888ba382237d2623c21eb5a9491c709b770967b4ca497fe05ed496a85b2c45", "page": 1, "locator": "网格 A3-A4，U10 pin 21 PA14-BOOT0、MCU_SWCLK 与 J3 pin 2"}]
+    },
+    {
+      "id": "address.documented_i2c_address",
+      "category": "address",
+      "subject": "I2C 从机地址",
+      "statement": "本页原理图没有标注具体 I2C 从机地址，无法仅凭原理图确认产品正文所列 0x46。",
+      "confidence": "uncertain",
+      "attributes": {"documented_address": "0x46", "schematic_address": null, "verification_source_needed": "firmware or protocol specification"},
+      "evidence": [{"asset_sha256": "07888ba382237d2623c21eb5a9491c709b770967b4ca497fe05ed496a85b2c45", "page": 1, "locator": "网格 A1-A4 的 SCL/SDA、U10 与 Sel_A0/Sel_A1 区域未出现十六进制地址值"}]
+    },
+    {
+      "id": "clock.documented_mcu_frequency",
+      "category": "clock",
+      "subject": "MCU 主频",
+      "statement": "本页原理图未标注 U10 的运行频率，且未绘制外部主晶振，无法仅凭原理图确认产品正文所列 64 MHz。",
+      "confidence": "uncertain",
+      "attributes": {"documented_frequency_mhz": 64, "schematic_frequency": null, "external_crystal": false},
+      "evidence": [{"asset_sha256": "07888ba382237d2623c21eb5a9491c709b770967b4ca497fe05ed496a85b2c45", "page": 1, "locator": "网格 A3 的 U10 及 PC14-OSC32IN/PC15-OSC32OUT 未连接区域，无频率标注"}]
+    },
+    {
+      "id": "power.documented_standby_current",
+      "category": "power",
+      "subject": "待机电流",
+      "statement": "本页原理图未给出电流预算或测试条件，无法仅凭原理图确认产品正文所列 DC 5V@9.03mA 待机功耗。",
+      "confidence": "uncertain",
+      "attributes": {"documented_voltage_v": 5, "documented_current_ma": 9.03, "schematic_current": null, "test_condition": null},
+      "evidence": [{"asset_sha256": "07888ba382237d2623c21eb5a9491c709b770967b4ca497fe05ed496a85b2c45", "page": 1, "locator": "整页电源路径仅标 VCC_5V/VCC_3V3 与器件参数，没有电流或功耗注释"}]
+    },
+    {
+      "id": "bus.uart_chain_routing",
+      "category": "bus",
+      "subject": "UART Chain Mode 外部路由",
+      "statement": "页面注明 A0=A1=1 为 UART Chain Mode，但 J1/J2 到 U10 UART 引脚的完整切换或复用路径未在本页明确画出，因此无法确定 UART 级联时每个 Grove 触点对应的 TX/RX 方向。",
+      "confidence": "uncertain",
+      "attributes": {"mode_select": "Sel_A0=1,Sel_A1=1", "labeled_uart_nets": "TXD1,RXD1,TXD2,RXD2", "external_pin_mapping": null, "direction_mapping": null},
+      "evidence": [{"asset_sha256": "07888ba382237d2623c21eb5a9491c709b770967b4ca497fe05ed496a85b2c45", "page": 1, "locator": "网格 A1-A4：J1/J2 仅经 0R 标为 SCL/SDA，U10 有 TXD1/RXD1/TXD2/RXD2，右下仅注明 UART Chain Mode: A0=A1=1"}]
+    },
+    {
+      "id": "interface.grove_color_mapping",
+      "category": "interface",
+      "subject": "Grove 线色映射",
+      "statement": "J1/J2 原理图符号标注了 IO2、IO1、5V、GND，但没有标注 Black、Red、Yellow、White 线色，无法仅凭原理图确认正文中的线色映射。",
+      "confidence": "uncertain",
+      "attributes": {"schematic_contacts": "IO2,IO1,5V,GND", "color_mapping": null},
+      "evidence": [{"asset_sha256": "07888ba382237d2623c21eb5a9491c709b770967b4ca497fe05ed496a85b2c45", "page": 1, "locator": "网格 A1 左侧 J1/J2 GROVE 4P 符号，仅有 IO2、IO1、5V、GND 文本"}]
+    }
+  ],
+  "needs_review": [
+    {
+      "id": "review.i2c_address",
+      "fact_id": "address.documented_i2c_address",
+      "question": "当前产品版本和固件的 I2C 从机地址是否为 0x46？",
+      "reason": "原理图没有地址常量；Sel_A0/Sel_A1 注释描述通信模式，而非具体 I2C 地址。",
+      "evidence": [{"asset_sha256": "07888ba382237d2623c21eb5a9491c709b770967b4ca497fe05ed496a85b2c45", "page": 1, "locator": "网格 A1-A4 的 I2C 与模式选择区域，无 0x46 标注"}]
+    },
+    {
+      "id": "review.mcu_frequency",
+      "fact_id": "clock.documented_mcu_frequency",
+      "question": "固件时钟配置是否使 U10 运行在 64 MHz？",
+      "reason": "原理图没有运行频率标注或外部主时钟器件，频率取决于 MCU 内部时钟和固件配置。",
+      "evidence": [{"asset_sha256": "07888ba382237d2623c21eb5a9491c709b770967b4ca497fe05ed496a85b2c45", "page": 1, "locator": "网格 A3 的 U10 时钟相关引脚区域，无频率标注"}]
+    },
+    {
+      "id": "review.standby_current",
+      "fact_id": "power.documented_standby_current",
+      "question": "DC 5V@9.03mA 待机值对应何种固件、RGB 状态和测试条件？",
+      "reason": "原理图没有电流预算或测量条件，不能从元件连接直接复核该实测规格。",
+      "evidence": [{"asset_sha256": "07888ba382237d2623c21eb5a9491c709b770967b4ca497fe05ed496a85b2c45", "page": 1, "locator": "整页原理图无电流和功耗测试注释"}]
+    },
+    {
+      "id": "review.uart_chain_routing",
+      "fact_id": "bus.uart_chain_routing",
+      "question": "UART Chain Mode 下 J1/J2 的 IO1、IO2 分别对应哪一路 TXD/RXD，方向如何？",
+      "reason": "原理图注明模式条件并标出 UART 网络，但没有明确显示这些网络与两个 Grove 接口之间的完整复用路由。",
+      "evidence": [{"asset_sha256": "07888ba382237d2623c21eb5a9491c709b770967b4ca497fe05ed496a85b2c45", "page": 1, "locator": "网格 A1-A4 的 Grove、UART 网络和 UART Chain Mode 注释"}]
+    },
+    {
+      "id": "review.grove_color_mapping",
+      "fact_id": "interface.grove_color_mapping",
+      "question": "J1/J2 的 Black、Red、Yellow、White 线色是否依次对应 GND、VCC_5V、SDA、SCL？",
+      "reason": "原理图仅标 IO2、IO1、5V、GND，没有线色文本。",
+      "evidence": [{"asset_sha256": "07888ba382237d2623c21eb5a9491c709b770967b4ca497fe05ed496a85b2c45", "page": 1, "locator": "网格 A1 的 J1/J2 GROVE 4P 符号"}]
+    }
+  ]
+}

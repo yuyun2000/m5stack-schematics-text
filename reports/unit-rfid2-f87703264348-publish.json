@@ -1,0 +1,21 @@
+{
+  "dry_run": false,
+  "failed": 0,
+  "published": 1,
+  "results": [
+    {
+      "backup": null,
+      "draft_action": "unchanged",
+      "dry_run": false,
+      "errors": [],
+      "needs_review": 7,
+      "product_id": "unit-rfid2-f87703264348",
+      "product_name": "Unit RFID2",
+      "publish_action": "unchanged",
+      "sha256": "9b14b2a5be89e8657d9246e7b8cad59b447bc29c40166b50cefdce27c44f8d4e",
+      "status": "valid",
+      "uncertain_facts": 7
+    }
+  ],
+  "schema_version": 1
+}

@@ -1,0 +1,21 @@
+{
+  "dry_run": false,
+  "failed": 0,
+  "published": 1,
+  "results": [
+    {
+      "backup": null,
+      "draft_action": "unchanged",
+      "dry_run": false,
+      "errors": [],
+      "needs_review": 1,
+      "product_id": "hat-env-b52ddfec42a4",
+      "product_name": "Hat ENV",
+      "publish_action": "unchanged",
+      "sha256": "ec5e032413a6532d356381319a454a8fdaec8d6392d5fc35663a409e4bf143ee",
+      "status": "valid",
+      "uncertain_facts": 1
+    }
+  ],
+  "schema_version": 1
+}

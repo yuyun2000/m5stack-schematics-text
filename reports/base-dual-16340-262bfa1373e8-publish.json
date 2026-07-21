@@ -1,0 +1,21 @@
+{
+  "dry_run": false,
+  "failed": 0,
+  "published": 1,
+  "results": [
+    {
+      "backup": null,
+      "draft_action": "unchanged",
+      "dry_run": false,
+      "errors": [],
+      "needs_review": 0,
+      "product_id": "base-dual-16340-262bfa1373e8",
+      "product_name": "Base Dual 16340",
+      "publish_action": "unchanged",
+      "sha256": "46e5fc63821e69119dd8dbf5c0c5d0b2bedf0d4d09a136d16c8f366c514da73a",
+      "status": "valid",
+      "uncertain_facts": 0
+    }
+  ],
+  "schema_version": 1
+}

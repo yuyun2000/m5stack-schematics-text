@@ -1,0 +1,21 @@
+{
+  "dry_run": false,
+  "failed": 0,
+  "published": 1,
+  "results": [
+    {
+      "backup": null,
+      "draft_action": "unchanged",
+      "dry_run": false,
+      "errors": [],
+      "needs_review": 4,
+      "product_id": "chain-angle-1f6d463f3b0d",
+      "product_name": "Chain Angle",
+      "publish_action": "unchanged",
+      "sha256": "089d3e72fef262dd33e43bb58115432ccec42f4ff92cd7247df64d800e7bf57f",
+      "status": "valid",
+      "uncertain_facts": 4
+    }
+  ],
+  "schema_version": 1
+}

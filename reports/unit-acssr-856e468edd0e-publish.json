@@ -1,0 +1,21 @@
+{
+  "dry_run": false,
+  "failed": 0,
+  "published": 1,
+  "results": [
+    {
+      "backup": null,
+      "draft_action": "unchanged",
+      "dry_run": false,
+      "errors": [],
+      "needs_review": 4,
+      "product_id": "unit-acssr-856e468edd0e",
+      "product_name": "Unit ACSSR",
+      "publish_action": "unchanged",
+      "sha256": "5d413aca267a9e4190696a670cf77fe00030935cd28f2329736ec4c82fb6b17d",
+      "status": "valid",
+      "uncertain_facts": 4
+    }
+  ],
+  "schema_version": 1
+}

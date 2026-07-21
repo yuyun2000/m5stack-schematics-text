@@ -1,0 +1,536 @@
+# Dial RFID 射频识别（NFC）
+
+Dial RFID 射频识别（NFC）相关 API 与案例程序。
+
+#> 识别位置 | 如果 RFID 标签的外形小于 Dial 的轮廓，则需要注意标签与 Dial 接触的位置。建议不要放在屏幕中央完全被 Dial 边框包围，且标签中心远离 M5 标志位置，可以靠近对面的箭头位置。
+
+## 案例程序
+
+### 编译要求
+
+- M5Stack 板管理版本 >= 3.2.2
+- 开发板选项 = M5Dial
+- M5Dial 库版本 >= 1.0.3
+
+### 读取UID示例
+
+```cpp line-num
+#include "M5Dial.h"
+
+void setup() {
+  auto cfg = M5.config();
+  M5Dial.begin(cfg, false, true);  // encoder, RFID
+  Serial.begin(115200);
+}
+
+void loop() {
+  // PICC: Proximity Integrated Circuit Card
+  if (M5Dial.Rfid.PICC_IsNewCardPresent() && M5Dial.Rfid.PICC_ReadCardSerial()) {
+    M5Dial.Display.clear();
+
+    uint8_t piccType = M5Dial.Rfid.PICC_GetType(M5Dial.Rfid.uid.sak);
+    Serial.print(F("PICC type: "));
+    Serial.println(M5Dial.Rfid.PICC_GetTypeName(piccType));
+
+    // Check if the tag / card is of type MIFARE Classic
+    if (piccType != MFRC522::PICC_TYPE_MIFARE_MINI && piccType != MFRC522::PICC_TYPE_MIFARE_1K && piccType != MFRC522::PICC_TYPE_MIFARE_4K) {
+      Serial.println(F("This tag / card is not of type MIFARE Classic.\n"));
+      delay(500);
+      return;
+    }
+
+    // Output the stored UID data
+    for (byte i = 0; i < M5Dial.Rfid.uid.size; i++) {
+      Serial.printf("%02X ", M5Dial.Rfid.uid.uidByte[i]);
+    }
+    Serial.println("\n");
+    delay(500);
+  }
+}
+```
+
+<img src="https://m5stack-doc.oss-cn-shenzhen.aliyuncs.com/1126/Arduino_RFID_UID.png" width="90%">
+
+### 读写卡示例
+
+```cpp line-num
+#include "M5Dial.h"
+
+MFRC522::MIFARE_Key key;
+
+void setup() {
+  auto cfg = M5.config();
+  M5Dial.begin(cfg, false, true);  // encoder, RFID
+  Serial.begin(115200);
+
+  // Prepare the key (used both as key A and as key B) with FFFFFFFFFFFFh,
+  // which is the default at chip delivery from the factory.
+  for (byte i = 0; i < 6; i++) {
+    key.keyByte[i] = 0xFF;
+  }
+}
+
+// Helper routine to dump a byte array as hex values to Serial.
+void dump_byte_array(byte *buffer, byte bufferSize) {
+  for (byte i = 0; i < bufferSize; i++) {
+    Serial.print(buffer[i] < 0x10 ? " 0" : " ");
+    Serial.print(buffer[i], HEX);
+  }
+}
+
+void loop() {
+  M5Dial.update();
+
+  // PICC: Proximity Integrated Circuit Card
+  if (M5Dial.Rfid.PICC_IsNewCardPresent() && M5Dial.Rfid.PICC_ReadCardSerial()) {
+    M5Dial.Display.clear();
+
+    uint8_t piccType = M5Dial.Rfid.PICC_GetType(M5Dial.Rfid.uid.sak);
+    Serial.print(F("PICC type: "));
+    Serial.println(M5Dial.Rfid.PICC_GetTypeName(piccType));
+
+    // Check if the tag / card is of type MIFARE Classic
+    if (piccType != MFRC522::PICC_TYPE_MIFARE_MINI && piccType != MFRC522::PICC_TYPE_MIFARE_1K && piccType != MFRC522::PICC_TYPE_MIFARE_4K) {
+      Serial.println(F("This tag / card is not of type MIFARE Classic.\n"));
+      delay(500);
+      return;
+    }
+
+    // Output the stored UID data
+    String uid = "";
+    for (byte i = 0; i < M5Dial.Rfid.uid.size; i++) {
+      Serial.printf("%02X ", M5Dial.Rfid.uid.uidByte[i]);
+      uid += String(M5Dial.Rfid.uid.uidByte[i], HEX);
+    }
+    Serial.println("\n");
+
+    // M5Dial.Rfid.PICC_DumpToSerial(&(M5Dial.Rfid.uid));
+    // Serial.println("\n");
+
+    // In this example, we use the second sector (sector #1) including blocks #4, #5, #6, #7
+    byte sector = 1;
+    byte blockAddr = 4;
+    byte trailerBlock = 7;
+    byte dataBlock[] = {
+      0x01, 0x02, 0x03, 0x04,  //  1,  2,  3,   4,
+      0x05, 0x06, 0x07, 0x08,  //  5,  6,  7,   8,
+      0x09, 0x0a, 0x0b, 0x0c,  //  9, 10, 11,  12,
+      0x0d, 0x0e, 0x0f, 0xff   // 13, 14, 15, 255
+    };
+    MFRC522::StatusCode status;
+    byte buffer[18];
+    byte size = sizeof(buffer);
+
+    // Authenticate using key A
+    Serial.println(F("Authenticating using key A..."));
+    status = (MFRC522::StatusCode)M5Dial.Rfid.PCD_Authenticate(MFRC522::PICC_CMD_MF_AUTH_KEY_A, trailerBlock, &key, &(M5Dial.Rfid.uid));
+    if (status != MFRC522::STATUS_OK) {
+      Serial.print(F("PCD_Authenticate() failed: "));
+      Serial.println(M5Dial.Rfid.GetStatusCodeName(status));
+      return;
+    }
+
+    // Show the whole sector as it currently is
+    Serial.println(F("Current data in sector: "));
+    M5Dial.Rfid.PICC_DumpMifareClassicSectorToSerial(&(M5Dial.Rfid.uid), &key, sector);
+    Serial.println("");
+
+    // Read data from the block
+    Serial.print(F("Reading data from block #"));
+    Serial.print(blockAddr);
+    Serial.println(F(" ..."));
+    status = (MFRC522::StatusCode)M5Dial.Rfid.MIFARE_Read(blockAddr, buffer, &size);
+    if (status != MFRC522::STATUS_OK) {
+      Serial.print(F("MIFARE_Read() failed: "));
+      Serial.println(M5Dial.Rfid.GetStatusCodeName(status));
+    }
+    Serial.print(F("Data in block #"));
+    Serial.print(blockAddr);
+    Serial.println(F(": "));
+    dump_byte_array(buffer, 16);
+    Serial.println("\n");
+
+    // Authenticate using key B
+    Serial.println(F("Authenticating again using key B..."));
+    status = (MFRC522::StatusCode)M5Dial.Rfid.PCD_Authenticate(MFRC522::PICC_CMD_MF_AUTH_KEY_B, trailerBlock, &key, &(M5Dial.Rfid.uid));
+    if (status != MFRC522::STATUS_OK) {
+      Serial.print(F("PCD_Authenticate() failed: "));
+      Serial.println(M5Dial.Rfid.GetStatusCodeName(status));
+      return;
+    }
+
+    // Write data to the block
+    Serial.print(F("Writing data into block #"));
+    Serial.print(blockAddr);
+    Serial.println(F(" ..."));
+    dump_byte_array(dataBlock, 16);
+    Serial.println();
+    status = (MFRC522::StatusCode)M5Dial.Rfid.MIFARE_Write(blockAddr, dataBlock, 16);
+    if (status != MFRC522::STATUS_OK) {
+      Serial.print(F("MIFARE_Write() failed: "));
+      Serial.println(M5Dial.Rfid.GetStatusCodeName(status));
+    }
+    Serial.println("");
+
+    // Read data from the block again, now it should be what we have written
+    Serial.print(F("Reading data from block #"));
+    Serial.print(blockAddr);
+    Serial.println(F(" ..."));
+    status = (MFRC522::StatusCode)M5Dial.Rfid.MIFARE_Read(blockAddr, buffer, &size);
+    if (status != MFRC522::STATUS_OK) {
+      Serial.print(F("MIFARE_Read() failed: "));
+      Serial.println(M5Dial.Rfid.GetStatusCodeName(status));
+    }
+    Serial.print(F("Data in block #"));
+    Serial.print(blockAddr);
+    Serial.println(F(": "));
+    dump_byte_array(buffer, 16);
+    Serial.println("\n");
+
+    // Check if the data in block is what we have written, by counting the number of bytes that are equal
+    Serial.println(F("Checking result..."));
+    byte count = 0;
+    for (byte i = 0; i < 16; i++) {
+      // Compare buffer (what we've read) with dataBlock (what we've written)
+      if (buffer[i] == dataBlock[i]) {
+        count++;
+      }
+    }
+    Serial.print(F("Number of bytes that match = "));
+    Serial.println(count);
+    if (count == 16) {
+      Serial.println(F("Success :-)"));
+    } else {
+      Serial.println(F("Failure, no match :-("));
+      Serial.println(F("  perhaps the write didn't work properly..."));
+    }
+    Serial.println();
+
+    // Dump the sector data
+    Serial.println(F("Current data in sector: "));
+    M5Dial.Rfid.PICC_DumpMifareClassicSectorToSerial(&(M5Dial.Rfid.uid), &key, sector);
+    Serial.println("");
+
+    // Halt PICC
+    M5Dial.Rfid.PICC_HaltA();
+    // Stop encryption on PCD
+    M5Dial.Rfid.PCD_StopCrypto1();
+
+    Serial.println("====================");
+  }
+}
+```
+
+这段程序会在完成 Key A 认证后读取 Sector 1 中的 Block 4 的数据，然后在完成 Key B 认证后修改 Sector 1 中的 Block 4 的数据。在这个过程中标签 / 卡片需要保持靠近 Dial。程序输出如下：
+
+<img src="https://m5stack-doc.oss-cn-shenzhen.aliyuncs.com/1126/Arduino_RFID_ReadWrite.png" width="90%">
+
+## Init API
+
+以下为常用 API 的使用说明。一般读写 MIFARE 卡的流程为：
+
+1. 初始化 RFID
+2. 检测新卡存在，获取卡 UID
+3. 通过 UID 选中卡片，进入 active 状态
+4. 通过 Key A、Key B 解锁对应的 Block
+5. 读 / 写数据
+6. 控制卡进入休眠状态
+
+**操作返回值状态码**
+
+```cpp line-num
+enum StatusCode {
+    STATUS_OK             = 1,  // Success
+    STATUS_ERROR          = 2,  // Error in communication
+    STATUS_COLLISION      = 3,  // Collision detected
+    STATUS_TIMEOUT        = 4,  // Timeout in communication
+    STATUS_NO_ROOM        = 5,  // The buffer is not big enough
+    STATUS_INTERNAL_ERROR = 6,  // Internal error in the code. Should not happen ;-)
+    STATUS_INVALID        = 7,  // Invalid argument
+    STATUS_CRC_WRONG      = 8,  // The CRC_A does not match
+    STATUS_MIFARE_NACK    = 9   // The MIFARE PICC responded with NAK
+};
+```
+
+### begin
+
+**函数原型：**
+
+```cpp
+void begin();
+```
+
+**功能说明：**
+
+- 初始化 RFID
+
+可在调用`M5Dial.begin()`时将参数`enableRFID`设置为`true`一同初始化。
+
+```cpp
+M5Dial.begin(m5::M5Unified::config_t cfg, bool enableEncoder, bool enableRFID);
+```
+
+**传入参数：**
+
+- null
+
+**返回值：**
+
+- null
+
+### PICC_IsNewCardPresent
+
+**函数原型:**
+
+```cpp
+bool PICC_IsNewCardPresent();
+```
+
+**功能说明:**
+
+- 扫描是否存在未检测过且处于`IDLE`状态的卡片，处于`HALT`状态的卡片将被忽略。
+
+**传入参数:**
+
+- null
+
+**返回值:**
+
+- bool
+  - true: 扫描到了新卡
+  - false: 未扫描到新卡
+
+### PICC_ReadCardSerial
+
+**函数原型:**
+
+```cpp
+bool PICC_ReadCardSerial();
+```
+
+**功能说明:**
+
+- 读取卡 UID，读取成功后的 UID 可以在类成员`Uid uid;`中读取。读取操作前需执行`PICC_IsNewCardPresent()`或`PICC_RequestA()`或`PICC_WakeupA()`确保读取到卡片。
+
+```cpp line-num
+for (byte i = 0; i < M5Dial.Rfid.uid.size; i++) {
+  Serial.printf("%02X ", M5Dial.Rfid.uid.uidByte[i]);
+}
+```
+
+**传入参数:**
+
+- null
+
+**返回值:**
+
+- bool
+  - true: 读取成功
+  - false: 读取失败
+
+### PICC_RequestA
+
+**函数原型:**
+
+```cpp
+uint8_t PICC_RequestA(uint8_t *bufferATQA, uint8_t *bufferSize);
+```
+
+**功能说明:**
+
+- 扫描检测读取范围内的 Type A 标准的卡片
+
+**传入参数:**
+
+- uint8_t *bufferATQA
+  - 存储请求响应 ATQA (Answer to request) 的 buffer
+- uint8_t *bufferSize
+  - buffer 长度 (>2 byte)
+
+**返回值:**
+
+- uint8_t
+  - StatusCode
+
+### PICC_WakeupA
+
+**函数原型:**
+
+```cpp
+uint8_t PICC_WakeupA(uint8_t *bufferATQA, uint8_t *bufferSize);
+```
+
+**功能说明:**
+
+- 唤醒范围内的 Type A 标准的卡片
+
+**传入参数:**
+
+- uint8_t *bufferATQA
+  - 存储请求响应 ATQA (Answer to request) 的 buffer
+- uint8_t *bufferSize
+  - buffer 长度 (>2 byte)
+
+**返回值:**
+
+- uint8_t
+  - StatusCode
+
+### PICC_Select
+
+**函数原型:**
+
+```cpp
+uint8_t PICC_Select(Uid *uid, uint8_t validBits = 0);
+```
+
+**功能说明:**
+
+- 通过 uid 选中一张卡片进入 active 状态
+
+**传入参数:**
+
+- Uid *uid
+  - 通过扫描获取到的卡片 uid 结构体指针
+- uint8_t validBits
+  - 最后一个 uint8_t 中的有效位，0 表示 8 个有效位
+
+**返回值:**
+
+- uint8_t
+  - StatusCode
+
+### PICC_HaltA
+
+**函数原型:**
+
+```cpp
+uint8_t PICC_HaltA();
+```
+
+**功能说明:**
+
+- 选中当前卡片进入休眠状态
+
+**传入参数:**
+
+- null
+
+**返回值:**
+
+- uint8_t
+  - StatusCode
+
+## MIFARE API
+
+### PCD_Authenticate
+
+**函数原型:**
+
+```cpp
+uint8_t PCD_Authenticate(uint8_t command, uint8_t blockAddr, MIFARE_Key *key, Uid *uid);
+```
+
+**功能说明:**
+
+- 进行 MIFARE 身份验证。在调用此函数之前，需要对卡片进行 select 操作使其处于 active 状态。经过身份验证的 PICC 通信结束后需调用`PCD_StopCrypto1()`，否则无法开始新的通信。
+
+**传入参数:**
+
+- uint8_t command
+  - PICC_CMD_MF_AUTH_KEY_A
+  - PICC_CMD_MF_AUTH_KEY_B
+- uint8_t blockAddr
+  - Block 地址
+- MIFARE_Key *key
+  - 默认状态下，Key A、Key B 均为`FFFFFFFFFFFF`
+- Uid *uid
+
+**返回值:**
+
+- uint8_t
+  - StatusCode
+
+### PCD_StopCrypto1
+
+**函数原型:**
+
+```cpp
+void PCD_StopCrypto1();
+```
+
+**功能说明:**
+
+- 退出 PCD 的认证状态。经过身份验证的 PICC 通信结束后需调用`PCD_StopCrypto1()`，否则无法开始新的通信。
+
+**传入参数:**
+
+- null
+
+**返回值:**
+
+- null
+
+### MIFARE_Read
+
+**函数原型:**
+
+```cpp
+uint8_t MIFARE_Read(uint8_t blockAddr, uint8_t *buffer, uint8_t *bufferSize);
+```
+
+**功能说明:**
+
+- 从指定 blockAddr 读取数据
+
+**传入参数:**
+
+- uint8_t blockAddr
+  - 实际卡片扇区中的 block 地址
+- uint8_t *buffer
+  - 接收数据的 buffer 指针
+- uint8_t *bufferSize
+  - 接收数据的 buffer 长度 (>=18 byte)
+
+**返回值:**
+
+- uint8_t
+  - StatusCode
+
+### MIFARE_Write
+
+**函数原型:**
+
+```cpp
+uint8_t MIFARE_Write(uint8_t blockAddr, uint8_t *buffer, uint8_t bufferSize);
+```
+
+**功能说明:**
+
+- 向指定 blockAddr 写入数据
+
+**传入参数:**
+
+- uint8_t blockAddr
+  - 实际卡片扇区中的 block 地址
+- uint8_t *buffer
+  - 写入数据的 buffer 指针
+- uint8_t *bufferSize
+  - 写入数据的 buffer 长度 (16 byte)
+
+**返回值:**
+
+- uint8_t
+  - StatusCode
+
+## 参考链接
+
+- Dial 射频识别部分使用 `MFRC522` 库作为驱动，更多相关的 API 可以参考 [MFRC522 源码](https://github.com/m5stack/M5Dial/blob/master/src/utility/MFRC522.h)。
+- [ISO/IEC 14443 - Wikipedia](https://en.wikipedia.org/wiki/ISO/IEC_14443)
+- [MFRC522 - NXP Docs](https://www.nxp.com/docs/en/data-sheet/MFRC522.pdf) (Standard performance MIFARE and NTAG frontend)
+- [MFRC523 - NXP Docs](https://www.nxp.com/docs/en/data-sheet/MFRC523.pdf) (Standard performance ISO/IEC 14443 A/B frontend)
+- [MIFARE Classic EV1 1K - NXP Docs](https://www.nxp.com/docs/en/data-sheet/MF1S50YYX_V1.pdf) （[中文版](https://www.nxp.com/docs/zh/data-sheet/MF1S50YYX_V1.pdf)）
+- [MIFARE Classic EV1 4K - NXP Docs](https://www.nxp.com/docs/en/data-sheet/MF1S70YYX_V1.pdf)
+- [AN1305  - NXP Docs](https://www.nxp.com/docs/en/application-note/AN1305.pdf) (MIFARE Classic as NFC Type MIFARE Classic Tag)
+- [AN10833 - NXP Docs](https://www.nxp.com/docs/en/application-note/AN10833.pdf) (MIFARE type identification procedure)
+- [AN10834 - NXP Docs](https://www.nxp.com/docs/en/application-note/AN10834.pdf) (MIFARE ISO/IEC 14443 PICC selection)

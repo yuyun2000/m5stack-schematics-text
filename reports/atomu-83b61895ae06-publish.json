@@ -1,0 +1,21 @@
+{
+  "dry_run": false,
+  "failed": 0,
+  "published": 1,
+  "results": [
+    {
+      "backup": null,
+      "draft_action": "unchanged",
+      "dry_run": false,
+      "errors": [],
+      "needs_review": 1,
+      "product_id": "atomu-83b61895ae06",
+      "product_name": "AtomU",
+      "publish_action": "unchanged",
+      "sha256": "1d9dd190a9c21f69f73a2e8bc39637421e725c9988e228c30870bd8ce461ec27",
+      "status": "valid",
+      "uncertain_facts": 1
+    }
+  ],
+  "schema_version": 1
+}

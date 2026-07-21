@@ -1,0 +1,21 @@
+{
+  "dry_run": false,
+  "failed": 0,
+  "published": 1,
+  "results": [
+    {
+      "backup": null,
+      "draft_action": "unchanged",
+      "dry_run": false,
+      "errors": [],
+      "needs_review": 6,
+      "product_id": "cap-lora-1262-be2dc05fa52a",
+      "product_name": "Cap LoRa-1262",
+      "publish_action": "unchanged",
+      "sha256": "77d032cd33d35ccad9f88c3406a09a6d9205095ef0367e2b96fbc31ab59f08f0",
+      "status": "valid",
+      "uncertain_facts": 6
+    }
+  ],
+  "schema_version": 1
+}

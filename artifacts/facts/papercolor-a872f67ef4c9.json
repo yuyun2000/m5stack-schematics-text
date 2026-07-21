@@ -1,0 +1,1184 @@
+{
+  "schema_version": 1,
+  "generator": "schematic_describer",
+  "product": {
+    "product_id": "papercolor-a872f67ef4c9",
+    "product_name": "PaperColor",
+    "sku": "C151",
+    "source_path": "core/PaperColor.md",
+    "source_sha256": "3d42fca51d9020c08eac4ebd1a72e629ee6672fa512bffdca359c414da3dda50",
+    "input_sha256": "4635a85632b0681202ae1be7cbb82967b961beb6e2e62bb0993eea705c0e744e"
+  },
+  "schematic_assets": [
+    {
+      "sha256": "51251532fbba1e4a2070e43001ee18bc4768e9132ee903d99bb52041d303214d",
+      "source_url": "https://m5stack-doc.oss-cn-shenzhen.aliyuncs.com/1239/C151-SCH_PaperColor_V0.5_SCH_PDF_20260424_EN_2026_04_24_11_01_17_page_01.png",
+      "pages": [1]
+    },
+    {
+      "sha256": "298eb46ddad2a0c678f8685544feec805099f27ea33008ca760f5e8189011548",
+      "source_url": "https://m5stack-doc.oss-cn-shenzhen.aliyuncs.com/1239/C151-SCH_PaperColor_V0.5_SCH_PDF_20260424_EN_2026_04_24_11_01_17_page_02.png",
+      "pages": [1]
+    },
+    {
+      "sha256": "1095527840e25c09a00ce55701db03a5a7b94c28cb2c63e46e03983e3d632ccb",
+      "source_url": "https://m5stack-doc.oss-cn-shenzhen.aliyuncs.com/1239/C151-SCH_PaperColor_V0.5_SCH_PDF_20260424_EN_2026_04_24_11_01_17_page_03.png",
+      "pages": [1]
+    }
+  ],
+  "summary": "PaperColor C151 的三页 V0.5 原理图以 ESP32-S3R8 为主控，外接 W25Q128JVPIQ NOR Flash，并由 M5PM1/PY32 PMIC 管理常开、待机、深睡眠、核心活动和全功能活动电源域；系统包含 USB-C 充电与数据、1250mAh 电池、E Ink SPI/FPC、高压驱动、ES8311 与 ES7210 音频链路、AW8737A 扬声器功放、RX8130CE RTC、SHT40、microSD、双向供电 Grove、三按键、红外和双 RGB LED。",
+  "keywords": [
+    "PaperColor",
+    "C151",
+    "ESP32-S3R8",
+    "M5PM1",
+    "PY32L020F15U6",
+    "W25Q128JVPIQ",
+    "E Ink",
+    "EINK",
+    "EPD_3V3_L3B",
+    "ES8311",
+    "ES7210",
+    "AW8737A",
+    "RX8130CE",
+    "SHT40",
+    "microSD",
+    "TYPEC-302-BRP16SC08",
+    "AW32901FCR",
+    "IP2315",
+    "IP2316",
+    "JW5712",
+    "SGM6603-5.0",
+    "MT9700",
+    "WS2812B-4020",
+    "SYS_VBUS",
+    "SYS_SCL",
+    "SYS_SDA",
+    "PY_EPD_EN",
+    "PY_SD_PWR_EN",
+    "PY_GROVE_OUT_EN",
+    "AUDIO_PWR_EN",
+    "GROVE_5V",
+    "SPI_CLK",
+    "SPI_MOSI",
+    "SPI_MISO",
+    "I2S_MCLK",
+    "I2S_BCLK",
+    "I2S_LRCK"
+  ],
+  "components": [
+    {
+      "reference": "U7",
+      "part_number": "ESP32-S3R8",
+      "role": "主控 SoC，连接外部 Flash、USB、E Ink、音频、microSD、RTC、SHT40、Grove、按键、红外和 RGB",
+      "evidence": [
+        {
+          "asset_sha256": "298eb46ddad2a0c678f8685544feec805099f27ea33008ca760f5e8189011548",
+          "page": 1,
+          "locator": "Core MCU 区 C4-D6，U7 ESP32_S3R8 及 GPIO 网络"
+        }
+      ]
+    },
+    {
+      "reference": "U9",
+      "part_number": "W25Q128JVPIQ",
+      "role": "ESP32-S3R8 外部 NOR Flash",
+      "evidence": [
+        {
+          "asset_sha256": "298eb46ddad2a0c678f8685544feec805099f27ea33008ca760f5e8189011548",
+          "page": 1,
+          "locator": "Core MCU 区 B6，U9 W25Q128JVPIQ 与 NOR_CS/CLK/D0/D1/WP/HOLD"
+        }
+      ]
+    },
+    {
+      "reference": "U14",
+      "part_number": "PY32_PMIC / PY32L020F15U6 (M5PM1)",
+      "role": "系统电源管理控制器，管理多级电源域、唤醒、按键、ADC 检测及外围电源使能",
+      "evidence": [
+        {
+          "asset_sha256": "51251532fbba1e4a2070e43001ee18bc4768e9132ee903d99bb52041d303214d",
+          "page": 1,
+          "locator": "Functions 与 I/Os Map 区 A1-B3、C4-D5，PMIC PY32L020F15U6 信号表"
+        },
+        {
+          "asset_sha256": "298eb46ddad2a0c678f8685544feec805099f27ea33008ca760f5e8189011548",
+          "page": 1,
+          "locator": "PMIC 区 C1-D2，U14 PY32_PMIC"
+        }
+      ]
+    },
+    {
+      "reference": "J1",
+      "part_number": "TYPEC-302-BRP16SC08",
+      "role": "USB Type-C 电源与 USB 2.0 数据接口",
+      "evidence": [
+        {
+          "asset_sha256": "298eb46ddad2a0c678f8685544feec805099f27ea33008ca760f5e8189011548",
+          "page": 1,
+          "locator": "TYPEC 区 A1，J1 TYPEC-302-BRP16SC08"
+        }
+      ]
+    },
+    {
+      "reference": "U2,U5",
+      "part_number": "AW32901FCR",
+      "role": "USB 输入和 Grove 端口电源保护器件",
+      "evidence": [
+        {
+          "asset_sha256": "298eb46ddad2a0c678f8685544feec805099f27ea33008ca760f5e8189011548",
+          "page": 1,
+          "locator": "TYPEC 区 A2 的 U2 与 Grove 区 D3 的 U5，均标 AW32901FCR"
+        }
+      ]
+    },
+    {
+      "reference": "U3",
+      "part_number": "IP2315 / IP2316",
+      "role": "USB 输入到 VBAT 的开关充电控制器；总览与详图型号标注冲突",
+      "evidence": [
+        {
+          "asset_sha256": "51251532fbba1e4a2070e43001ee18bc4768e9132ee903d99bb52041d303214d",
+          "page": 1,
+          "locator": "Power Network 区 A3，充电块标注 IP2316 0.5C"
+        },
+        {
+          "asset_sha256": "298eb46ddad2a0c678f8685544feec805099f27ea33008ca760f5e8189011548",
+          "page": 1,
+          "locator": "CHARG 区 A3，U3 标注 PD Only IP2315"
+        }
+      ]
+    },
+    {
+      "reference": "U15",
+      "part_number": "TPAP7343D-33PS4",
+      "role": "SYS_VBUS 到 3V3_L0 的常开低静态电流 LDO",
+      "evidence": [
+        {
+          "asset_sha256": "298eb46ddad2a0c678f8685544feec805099f27ea33008ca760f5e8189011548",
+          "page": 1,
+          "locator": "PMIC 区 B1，U15 TPAP7343D-33PS4，输出 3V3_L0"
+        }
+      ]
+    },
+    {
+      "reference": "U6",
+      "part_number": "JW5712",
+      "role": "由 PY_MPWR_EN 控制的主 3V3_L2 电源转换器",
+      "evidence": [
+        {
+          "asset_sha256": "298eb46ddad2a0c678f8685544feec805099f27ea33008ca760f5e8189011548",
+          "page": 1,
+          "locator": "PowerPath/CorePower 区 B5-B6，U6 JW5712、L1 与 3V3_L2"
+        }
+      ]
+    },
+    {
+      "reference": "U8,U21,U23",
+      "part_number": "SGM6603-5.0 / MT9700",
+      "role": "由 PY_GROVE_OUT_EN 控制的 Grove 5V 双向电源路径",
+      "evidence": [
+        {
+          "asset_sha256": "298eb46ddad2a0c678f8685544feec805099f27ea33008ca760f5e8189011548",
+          "page": 1,
+          "locator": "Grove two-way control 区 B3-D4，U8、U21、U23 与 GROVE_5V/SYS_5VIN"
+        }
+      ]
+    },
+    {
+      "reference": "U18",
+      "part_number": "SSP7615-33DFR",
+      "role": "由 AUDIO_PWR_EN 控制的 CODEC_3V3_L3B 音频电源 LDO",
+      "evidence": [
+        {
+          "asset_sha256": "1095527840e25c09a00ce55701db03a5a7b94c28cb2c63e46e03983e3d632ccb",
+          "page": 1,
+          "locator": "Audio 左上 A1，U18 SSP7615-33DFR，SYS_VBUS 到 CODEC_3V3_L3B"
+        }
+      ]
+    },
+    {
+      "reference": "U1,U24",
+      "part_number": "MT9700",
+      "role": "E Ink 和 microSD 的受控 3.3V 负载开关",
+      "evidence": [
+        {
+          "asset_sha256": "1095527840e25c09a00ce55701db03a5a7b94c28cb2c63e46e03983e3d632ccb",
+          "page": 1,
+          "locator": "EINK 区 A5-A6 的 U1 与 TF 区 D4-D5 的 U24，均标 MT9700"
+        }
+      ]
+    },
+    {
+      "reference": "U10",
+      "part_number": "ES8311",
+      "role": "I2C/I2S 音频编解码器，提供扬声器 DAC 差分信号",
+      "evidence": [
+        {
+          "asset_sha256": "1095527840e25c09a00ce55701db03a5a7b94c28cb2c63e46e03983e3d632ccb",
+          "page": 1,
+          "locator": "Audio Codec 区 B1，U10 ES8311"
+        }
+      ]
+    },
+    {
+      "reference": "U11",
+      "part_number": "ES7210",
+      "role": "I2C/I2S 音频 ADC，采集板载麦克风和 AEC 回采信号",
+      "evidence": [
+        {
+          "asset_sha256": "1095527840e25c09a00ce55701db03a5a7b94c28cb2c63e46e03983e3d632ccb",
+          "page": 1,
+          "locator": "Audio ADC 区 A2-C3，U11 ES7210"
+        }
+      ]
+    },
+    {
+      "reference": "U12",
+      "part_number": "MSM381A3729H9BPC",
+      "role": "VBIAS_MIC 供电的模拟 MEMS 麦克风",
+      "evidence": [
+        {
+          "asset_sha256": "1095527840e25c09a00ce55701db03a5a7b94c28cb2c63e46e03983e3d632ccb",
+          "page": 1,
+          "locator": "MIC 区 C3，U12 及 MIC_P/MIC_N"
+        }
+      ]
+    },
+    {
+      "reference": "U13,J4",
+      "part_number": "AW8737A / SPK 2-pin",
+      "role": "差分输入扬声器功放及扬声器连接器",
+      "evidence": [
+        {
+          "asset_sha256": "1095527840e25c09a00ce55701db03a5a7b94c28cb2c63e46e03983e3d632ccb",
+          "page": 1,
+          "locator": "SPEAK 区 A4-A5，U13 AW8737A、FB1/FB2 与 J4 SPK"
+        }
+      ]
+    },
+    {
+      "reference": "U17",
+      "part_number": "RX8130CE",
+      "role": "系统 I2C 实时时钟与低功耗唤醒源",
+      "evidence": [
+        {
+          "asset_sha256": "1095527840e25c09a00ce55701db03a5a7b94c28cb2c63e46e03983e3d632ccb",
+          "page": 1,
+          "locator": "RTC 区 D1-D2，U17 RX8130CE"
+        }
+      ]
+    },
+    {
+      "reference": "U19",
+      "part_number": "SHT40I-AD1B-R2",
+      "role": "系统 I2C 温湿度传感器",
+      "evidence": [
+        {
+          "asset_sha256": "1095527840e25c09a00ce55701db03a5a7b94c28cb2c63e46e03983e3d632ccb",
+          "page": 1,
+          "locator": "SHT40 区 D1-D2，U19 SHT40I-AD1B-R2"
+        }
+      ]
+    },
+    {
+      "reference": "U16,U24",
+      "part_number": "MicroSD / MT9700",
+      "role": "带受控电源、卡检测和 ESD 保护的 SPI microSD 接口",
+      "evidence": [
+        {
+          "asset_sha256": "1095527840e25c09a00ce55701db03a5a7b94c28cb2c63e46e03983e3d632ccb",
+          "page": 1,
+          "locator": "TF 区 D4-D5，U16 MicroSD、U24 MT9700 与 TVS3-TVS6"
+        }
+      ]
+    },
+    {
+      "reference": "J5",
+      "part_number": "50-pin E Ink FPC",
+      "role": "E Ink 面板数字控制、SPI 和高压电源接口",
+      "evidence": [
+        {
+          "asset_sha256": "1095527840e25c09a00ce55701db03a5a7b94c28cb2c63e46e03983e3d632ccb",
+          "page": 1,
+          "locator": "EINK 区 B6-D6，J5 50-pin 接口"
+        }
+      ]
+    },
+    {
+      "reference": "LED3,LED4",
+      "part_number": "WS2812B-4020",
+      "role": "两颗串接的可寻址 RGB LED",
+      "evidence": [
+        {
+          "asset_sha256": "1095527840e25c09a00ce55701db03a5a7b94c28cb2c63e46e03983e3d632ccb",
+          "page": 1,
+          "locator": "IR/RGB 区 C4-C5，LED3/LED4 WS2812B-4020"
+        }
+      ]
+    },
+    {
+      "reference": "S1,S2,S3",
+      "part_number": "SW",
+      "role": "三个低有效用户按键 USER_KEY1/2/3",
+      "evidence": [
+        {
+          "asset_sha256": "1095527840e25c09a00ce55701db03a5a7b94c28cb2c63e46e03983e3d632ccb",
+          "page": 1,
+          "locator": "KEY 区 B4-B5，S1/S2/S3"
+        }
+      ]
+    },
+    {
+      "reference": "J3",
+      "part_number": "CON4",
+      "role": "Grove/HY2.0-4P 端口，提供 GROVE_5V、GROVE_I、GROVE_O 与 GND",
+      "evidence": [
+        {
+          "asset_sha256": "298eb46ddad2a0c678f8685544feec805099f27ea33008ca760f5e8189011548",
+          "page": 1,
+          "locator": "Grove two-way control 区 D3-D4，J3 CON4"
+        }
+      ]
+    },
+    {
+      "reference": "J6",
+      "part_number": "SPI Expansion 12-pin",
+      "role": "扩展 SPI、外部中断、复位、忙信号和受控电源接口",
+      "evidence": [
+        {
+          "asset_sha256": "1095527840e25c09a00ce55701db03a5a7b94c28cb2c63e46e03983e3d632ccb",
+          "page": 1,
+          "locator": "SPI Expansion 区 D2-D3，J6"
+        }
+      ]
+    },
+    {
+      "reference": "ANT1",
+      "part_number": "ANT_PIFA",
+      "role": "ESP32-S3R8 板载射频天线及匹配网络",
+      "evidence": [
+        {
+          "asset_sha256": "298eb46ddad2a0c678f8685544feec805099f27ea33008ca760f5e8189011548",
+          "page": 1,
+          "locator": "Core MCU 区 C4，ANT1 ANT_PIFA 与 L2/L3/C82/C3 匹配网络"
+        }
+      ]
+    }
+  ],
+  "facts": [
+    {
+      "id": "system.papercolor-architecture",
+      "category": "system",
+      "subject": "PaperColor 三页硬件架构",
+      "statement": "三页原理图以 U7 ESP32-S3R8 为主控，连接 U9 外部 NOR Flash、M5PM1 多级电源控制、USB-C 与电池充电、E Ink 接口与高压电源、ES8311/ES7210/AW8737A 音频链路、RX8130CE、SHT40、microSD、Grove、按键、红外和两颗 RGB LED。",
+      "confidence": "confirmed",
+      "attributes": {
+        "schematic_revision": "V0.5",
+        "schematic_date": "2026-04-24",
+        "page_count": 3
+      },
+      "evidence": [
+        {
+          "asset_sha256": "51251532fbba1e4a2070e43001ee18bc4768e9132ee903d99bb52041d303214d",
+          "page": 1,
+          "locator": "Functions、Power Network 与 I/Os Map 全页"
+        },
+        {
+          "asset_sha256": "298eb46ddad2a0c678f8685544feec805099f27ea33008ca760f5e8189011548",
+          "page": 1,
+          "locator": "TYPEC、CHARG、PMIC、PowerPath、Grove 与 Core MCU 全页"
+        },
+        {
+          "asset_sha256": "1095527840e25c09a00ce55701db03a5a7b94c28cb2c63e46e03983e3d632ccb",
+          "page": 1,
+          "locator": "Audio、RTC、SHT40、SPI Expansion、KEY、IR/RGB、TF 与 EINK 全页"
+        }
+      ]
+    },
+    {
+      "id": "system.power-modes",
+      "category": "system",
+      "subject": "L0/L1/L2/L3A/L3B 电源模式",
+      "statement": "功能总览定义 L0 Shipping、L1 Standby、L2 DeepSleep、L3A CORE ACTIVE 和 L3B All ACTIVE。PMIC 和电池贯穿各模式；ESP32-S3R8 从 L2 起活动；E Ink、SHT40、TF、RGB、CODEC 和 SPEAKER 仅在 L3B 标为活动，用户按键可从低功耗状态唤醒。",
+      "confidence": "confirmed",
+      "attributes": {
+        "shipping": "L0",
+        "standby": "L1",
+        "deep_sleep": "L2",
+        "core_active": "L3A",
+        "all_active": "L3B"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "51251532fbba1e4a2070e43001ee18bc4768e9132ee903d99bb52041d303214d",
+          "page": 1,
+          "locator": "Functions 区 A1-B3 与 Power Mode 区 C1-D3"
+        }
+      ]
+    },
+    {
+      "id": "power.usb-charge-battery",
+      "category": "power",
+      "subject": "USB 输入、充电和电池主路径",
+      "statement": "J1 的 VUSBIN 经 U2 AW32901FCR 保护形成 SYS_5VIN，再进入 U3 开关充电级并输出 VBAT；电池 J2 接 VBAT/GND，R20 0Ω 将 VBAT 接至 SYS_VBUS。总览将充电级标为 0.5C，并把电池容量标为 1250mAh。",
+      "confidence": "confirmed",
+      "attributes": {
+        "battery_capacity_mah": 1250,
+        "charge_label": "0.5C",
+        "main_bus": "SYS_VBUS"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "51251532fbba1e4a2070e43001ee18bc4768e9132ee903d99bb52041d303214d",
+          "page": 1,
+          "locator": "Functions 与 Power Network 区 A1-A4，1250mAh lithium battery、VUSB_IN、SYS_5VIN、VBAT、SYS_VBUS"
+        },
+        {
+          "asset_sha256": "298eb46ddad2a0c678f8685544feec805099f27ea33008ca760f5e8189011548",
+          "page": 1,
+          "locator": "TYPEC、CHARG 与 PowerPath 区 A1-B6，J1/U2/U3/J2/R20"
+        }
+      ]
+    },
+    {
+      "id": "component.charger-model-conflict",
+      "category": "component",
+      "subject": "充电控制器型号",
+      "statement": "同一套 V0.5 资源存在型号冲突：第一页 Power Network 把充电器标为 IP2316，第二页 CHARG 详图的 U3 标为 IP2315，无法仅凭当前三页确定量产器件。",
+      "confidence": "uncertain",
+      "attributes": {
+        "overview_label": "IP2316",
+        "detail_label": "IP2315"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "51251532fbba1e4a2070e43001ee18bc4768e9132ee903d99bb52041d303214d",
+          "page": 1,
+          "locator": "Power Network 区 A3，IP2316 0.5C"
+        },
+        {
+          "asset_sha256": "298eb46ddad2a0c678f8685544feec805099f27ea33008ca760f5e8189011548",
+          "page": 1,
+          "locator": "CHARG 区 A3，PD Only IP2315 与 U3"
+        }
+      ]
+    },
+    {
+      "id": "power.battery-adc",
+      "category": "analog",
+      "subject": "电池电压采样",
+      "statement": "Q1A/Q1B CJ3439KDW 与 BAT_ADC_EN 构成受控电池采样路径，VBAT 经开关和 R7/R86 分压输出 BAT_ADC 到 M5PM1 的 BAT_ADC_IN，BAT_ADC_EN_OD 控制采样使能。",
+      "confidence": "confirmed",
+      "attributes": {
+        "sense_net": "BAT_ADC",
+        "enable_net": "BAT_ADC_EN"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "298eb46ddad2a0c678f8685544feec805099f27ea33008ca760f5e8189011548",
+          "page": 1,
+          "locator": "PowerPath 区 A4-B4，Q1A/Q1B、BAT_ADC_EN 与 BAT_ADC"
+        }
+      ]
+    },
+    {
+      "id": "power.always-on-3v3-l0",
+      "category": "power",
+      "subject": "3V3_L0 常开电源域",
+      "statement": "U15 TPAP7343D-33PS4 从 SYS_VBUS 产生 3V3_L0，EN 直接接 SYS_VBUS；总览标注该 LDO Always On，3V3_L0 供给 M5PM1 常开域和电源按键相关电路。",
+      "confidence": "confirmed",
+      "attributes": {
+        "input": "SYS_VBUS",
+        "output": "3V3_L0",
+        "always_on": true
+      },
+      "evidence": [
+        {
+          "asset_sha256": "51251532fbba1e4a2070e43001ee18bc4768e9132ee903d99bb52041d303214d",
+          "page": 1,
+          "locator": "Power Network 区 A4-A5，TPAP7343D LDO Always On 与 3V3_L0"
+        },
+        {
+          "asset_sha256": "298eb46ddad2a0c678f8685544feec805099f27ea33008ca760f5e8189011548",
+          "page": 1,
+          "locator": "PMIC 区 B1，U15、SYS_VBUS 与 3V3_L0"
+        }
+      ]
+    },
+    {
+      "id": "power.main-3v3-l2",
+      "category": "power",
+      "subject": "3V3_L2 主电源域",
+      "statement": "U6 JW5712 以 SYS_VBUS 为输入，EN 由 PY_MPWR_EN 控制，经 L1 2.2uH/1.8A 产生 3V3_L2；该电源域供给 ESP32-S3R8、按键、SHT40、IR，并作为 RGB、microSD 和 E Ink 受控支路的上游。",
+      "confidence": "confirmed",
+      "attributes": {
+        "input": "SYS_VBUS",
+        "output": "3V3_L2",
+        "enable": "PY_MPWR_EN"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "51251532fbba1e4a2070e43001ee18bc4768e9132ee903d99bb52041d303214d",
+          "page": 1,
+          "locator": "Power Network 区 A5-B8，JW5712、PY_MPWR_EN 与 3V3_L2 分支"
+        },
+        {
+          "asset_sha256": "298eb46ddad2a0c678f8685544feec805099f27ea33008ca760f5e8189011548",
+          "page": 1,
+          "locator": "CorePower 区 B5-B6，U6、L1 与 3V3_L2"
+        }
+      ]
+    },
+    {
+      "id": "power.audio-rail",
+      "category": "power",
+      "subject": "CODEC_3V3_L3B 音频电源",
+      "statement": "U18 SSP7615-33DFR 从 SYS_VBUS 产生 CODEC_3V3_L3B，EN 由 ESP32-S3R8 的 AUDIO_PWR_EN 控制；该受控电源供给 ES8311、ES7210、麦克风偏置和音频侧 I2C 上拉。",
+      "confidence": "confirmed",
+      "attributes": {
+        "input": "SYS_VBUS",
+        "output": "CODEC_3V3_L3B",
+        "enable": "AUDIO_PWR_EN"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "1095527840e25c09a00ce55701db03a5a7b94c28cb2c63e46e03983e3d632ccb",
+          "page": 1,
+          "locator": "Audio 区 A1-C3，U18 与 U10/U11/U12 电源网络"
+        }
+      ]
+    },
+    {
+      "id": "power.grove-bidirectional",
+      "category": "power",
+      "subject": "Grove 5V 双向电源控制",
+      "statement": "输出方向由 U8 SGM6603-5.0 把 SYS_VBUS 升压后经 U21 MT9700 送到 GROVE_5V；反向输入方向由 U23 MT9700 把 GROVE_5V 送到 SYS_5VIN。PY_GROVE_OUT_EN 同时控制 U8/U21，并经 Q3 2N7002T 反相控制 U23，J3 电源线上另有 U5 AW32901FCR 保护。",
+      "confidence": "confirmed",
+      "attributes": {
+        "control": "PY_GROVE_OUT_EN",
+        "port_power": "GROVE_5V",
+        "system_input": "SYS_5VIN"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "298eb46ddad2a0c678f8685544feec805099f27ea33008ca760f5e8189011548",
+          "page": 1,
+          "locator": "Grove two-way control 区 B3-D4，U8/U21/U23/Q3/U5/J3"
+        }
+      ]
+    },
+    {
+      "id": "power.peripheral-switches",
+      "category": "power",
+      "subject": "E Ink、microSD 与 RGB 受控电源",
+      "statement": "PY_EPD_EN 控制 U1 MT9700 生成 EPD_3V3_L3B，PY_SD_PWR_EN 控制 U24 MT9700 生成 TF_3V3_L3B，PY_RGB_PWR_EN 控制 MOSFET 电路生成 RGB_3V3_L3B；三路均以上游 3V3_L2 为输入。",
+      "confidence": "confirmed",
+      "attributes": {
+        "eink_rail": "EPD_3V3_L3B",
+        "sd_rail": "TF_3V3_L3B",
+        "rgb_rail": "RGB_3V3_L3B"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "51251532fbba1e4a2070e43001ee18bc4768e9132ee903d99bb52041d303214d",
+          "page": 1,
+          "locator": "Power Network 区 B5-B8，EINK/TF/RGB 受控支路"
+        },
+        {
+          "asset_sha256": "1095527840e25c09a00ce55701db03a5a7b94c28cb2c63e46e03983e3d632ccb",
+          "page": 1,
+          "locator": "EINK 区 A5-A6、IR/RGB 区 C4-C5、TF 区 D4-D5"
+        }
+      ]
+    },
+    {
+      "id": "gpio.m5pm1-control-map",
+      "category": "gpio",
+      "subject": "M5PM1 控制与唤醒映射",
+      "statement": "M5PM1 的 DCDC3V3_EN_PP、LDO3V3_EN_PP、BOOST5V_EN_PP 分别连接 PY_MPWR_EN、PY_RGB_PWR_EN、PY_GROVE_OUT_EN；BAT_ADC_IN/EN_OD 连接 BAT_ADC/BAT_ADC_EN；G0、G2、G4、G3、G1 分别连接 PY_EPD_EN、RTC_IRQ、PY_SD_DET_EN、PY_SD_PWR_EN、CARD_DEC；BOOT_OUT_OD 与 BTN_PU 连接 PY_BOOT_OUT 与 PWR_KEY。",
+      "confidence": "confirmed",
+      "attributes": {
+        "i2c_scl": "SYS_SCL",
+        "i2c_sda": "SYS_SDA"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "51251532fbba1e4a2070e43001ee18bc4768e9132ee903d99bb52041d303214d",
+          "page": 1,
+          "locator": "I/Os Map 区 C4-D5，PMIC 信号表"
+        },
+        {
+          "asset_sha256": "298eb46ddad2a0c678f8685544feec805099f27ea33008ca760f5e8189011548",
+          "page": 1,
+          "locator": "PMIC 区 C1-D2，U14 PY32_PMIC 引脚网络"
+        }
+      ]
+    },
+    {
+      "id": "gpio.esp32-peripheral-map",
+      "category": "gpio",
+      "subject": "ESP32-S3R8 主要 GPIO 映射",
+      "statement": "U7 将 GPIO0 连接 PY_BOOT_OUT，GPIO1/9/10 连接 USER_KEY1/2/3，GPIO2/3 连接 SYS_SCL/SYS_SDA，GPIO6 连接 EXT_INT，GPIO7 连接 RTC_IRQ，GPIO11/12 连接 EINK_BUSY/EINK_RST，GPIO13/14/15 连接 SPI_MOSI/SPI_MISO/SPI_CLK，GPIO19/20 连接 SOC_DM/SOC_DP，GPIO21 连接 RGB，GPIO38-42 连接 I2S_DSDIN/SDOUT/BCLK/LRCK/MCLK，GPIO43/44 连接 EINK_DC/EINK_CS，GPIO45 连接 AUDIO_PWR_EN，GPIO47 连接 Card_CS，GPIO48 连接 IR_TX。",
+      "confidence": "confirmed",
+      "attributes": {
+        "system_i2c_scl_gpio": 2,
+        "system_i2c_sda_gpio": 3,
+        "usb_dm_gpio": 19,
+        "usb_dp_gpio": 20
+      },
+      "evidence": [
+        {
+          "asset_sha256": "51251532fbba1e4a2070e43001ee18bc4768e9132ee903d99bb52041d303214d",
+          "page": 1,
+          "locator": "I/Os Map 区 C5-D8，ESP32 GPIO 与各功能框"
+        },
+        {
+          "asset_sha256": "298eb46ddad2a0c678f8685544feec805099f27ea33008ca760f5e8189011548",
+          "page": 1,
+          "locator": "Core MCU 区 C4-D6，U7 ESP32_S3R8 引脚网络"
+        }
+      ]
+    },
+    {
+      "id": "bus.system-i2c",
+      "category": "bus",
+      "subject": "SYS_SCL/SYS_SDA 系统 I2C",
+      "statement": "ESP32-S3R8 GPIO2/GPIO3 与 M5PM1 I2C_SCL_OD/I2C_SDA_OD 共用 SYS_SCL/SYS_SDA；R22/R23 各 2.2K 上拉到 3V3_L2。RX8130CE 与 SHT40 直接挂载，音频侧经 2N7002DW 热插拔隔离级连接 AUDIO_I2C_SCL/SDA。",
+      "confidence": "confirmed",
+      "attributes": {
+        "scl": "SYS_SCL",
+        "sda": "SYS_SDA",
+        "pullup_ohm": 2200
+      },
+      "evidence": [
+        {
+          "asset_sha256": "298eb46ddad2a0c678f8685544feec805099f27ea33008ca760f5e8189011548",
+          "page": 1,
+          "locator": "PMIC 区 C1-D2 与 Core MCU 区 C4-D6，SYS_SCL/SYS_SDA"
+        },
+        {
+          "asset_sha256": "1095527840e25c09a00ce55701db03a5a7b94c28cb2c63e46e03983e3d632ccb",
+          "page": 1,
+          "locator": "I2C HOT PLUGIN 区 A1-B2、RTC/SHT40 区 D1-D2"
+        }
+      ]
+    },
+    {
+      "id": "address.documented-i2c-addresses",
+      "category": "address",
+      "subject": "正文列出的 I2C 地址",
+      "statement": "产品正文列出 M5PM1=0x6e、ES8311=0x18、ES7210=0x40、RX8130CE=0x32、SHT40=0x44；三页原理图只显示器件及总线网络，没有这些 7-bit 地址或地址脚配置标注，因此地址仍需数据手册或实机扫描确认。",
+      "confidence": "uncertain",
+      "attributes": {
+        "m5pm1": "0x6e",
+        "es8311": "0x18",
+        "es7210": "0x40",
+        "rx8130ce": "0x32",
+        "sht40": "0x44"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "298eb46ddad2a0c678f8685544feec805099f27ea33008ca760f5e8189011548",
+          "page": 1,
+          "locator": "PMIC 与 Core MCU 区，U14/U7 的 SYS_SCL/SYS_SDA"
+        },
+        {
+          "asset_sha256": "1095527840e25c09a00ce55701db03a5a7b94c28cb2c63e46e03983e3d632ccb",
+          "page": 1,
+          "locator": "Audio、RTC 与 SHT40 区，U10/U11/U17/U19 总线连接但无地址标注"
+        }
+      ]
+    },
+    {
+      "id": "storage.external-flash",
+      "category": "storage",
+      "subject": "W25Q128JVPIQ 外部 NOR Flash",
+      "statement": "U9 标注 W25Q128JVPIQ，VCC 接 VDD_NOR，nCS/SCLK/SI/SO/nWP/HOLD 分别连接 NOR_CS、NOR_SCK、NOR_D1、NOR_D0、NOR_WP、NOR_HOLD。",
+      "confidence": "confirmed",
+      "attributes": {
+        "part_number": "W25Q128JVPIQ",
+        "supply": "VDD_NOR"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "298eb46ddad2a0c678f8685544feec805099f27ea33008ca760f5e8189011548",
+          "page": 1,
+          "locator": "Core MCU 区 B6，U9 W25Q128JVPIQ"
+        }
+      ]
+    },
+    {
+      "id": "storage.documented-flash-capacity",
+      "category": "storage",
+      "subject": "16MB Flash 容量",
+      "statement": "正文称板载 Flash 为 16MB，原理图 U9 标注 W25Q128JVPIQ 并显示 NOR 连线，但图面没有单独写出 bit 或 byte 容量，容量换算需由器件 datasheet 或 BOM 确认。",
+      "confidence": "uncertain",
+      "attributes": {
+        "documented_capacity_mb": 16,
+        "schematic_part_number": "W25Q128JVPIQ"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "298eb46ddad2a0c678f8685544feec805099f27ea33008ca760f5e8189011548",
+          "page": 1,
+          "locator": "Core MCU 区 B6，U9 W25Q128JVPIQ，未另标容量"
+        }
+      ]
+    },
+    {
+      "id": "memory.documented-psram-capacity",
+      "category": "memory",
+      "subject": "ESP32-S3R8 与 8MB PSRAM",
+      "statement": "功能总览与 U7 器件标注均为 ESP32-S3R8，正文称内置 8MB PSRAM；三页原理图没有独立 PSRAM、容量字段或封装内存配置表，容量需由 ESP32-S3R8 datasheet 或量产 BOM 确认。",
+      "confidence": "uncertain",
+      "attributes": {
+        "documented_capacity_mb": 8,
+        "schematic_part_number": "ESP32-S3R8"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "51251532fbba1e4a2070e43001ee18bc4768e9132ee903d99bb52041d303214d",
+          "page": 1,
+          "locator": "Functions 区 A1，SOC Feature 标注 ESP32-S3R8"
+        },
+        {
+          "asset_sha256": "298eb46ddad2a0c678f8685544feec805099f27ea33008ca760f5e8189011548",
+          "page": 1,
+          "locator": "Core MCU 区 C4-D6，U7 ESP32_S3R8，未标 PSRAM 容量"
+        }
+      ]
+    },
+    {
+      "id": "clock.main-40mhz",
+      "category": "clock",
+      "subject": "ESP32-S3R8 40MHz 晶振",
+      "statement": "X1 标注 40MHz/15pF/10ppm，连接 XTAL_P/XTAL_N；XTAL_P 侧串联 L5 22nH，C32/C33 各 22pF 接地。",
+      "confidence": "confirmed",
+      "attributes": {
+        "frequency_mhz": 40,
+        "tolerance_ppm": 10,
+        "load_pf": 15
+      },
+      "evidence": [
+        {
+          "asset_sha256": "298eb46ddad2a0c678f8685544feec805099f27ea33008ca760f5e8189011548",
+          "page": 1,
+          "locator": "Core MCU 区 B5-B6，X1、L5、C32、C33 与 XTAL_P/N"
+        }
+      ]
+    },
+    {
+      "id": "rf.pifa-antenna",
+      "category": "rf",
+      "subject": "板载 PIFA 天线",
+      "statement": "ESP32-S3R8 LNA_IN 经板载匹配网络连接 ANT1 ANT_PIFA；匹配网络包含 L2、L3、C82、C3，并在两处标注 Z=50R。",
+      "confidence": "confirmed",
+      "attributes": {
+        "impedance_ohm": 50,
+        "antenna": "ANT_PIFA"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "298eb46ddad2a0c678f8685544feec805099f27ea33008ca760f5e8189011548",
+          "page": 1,
+          "locator": "Core MCU 区 C4，ANT1、L2/L3/C82/C3 与 Z=50R 标注"
+        }
+      ]
+    },
+    {
+      "id": "interface.usb-typec",
+      "category": "interface",
+      "subject": "USB Type-C 电源与数据路径",
+      "statement": "J1 将 CC1/CC2 分别通过 5.1K 电阻接地，VBUS 形成 VUSBIN 并经 U2 AW32901FCR 保护；USB_DN/USB_DP 经 TVS1/TVS2 ESD5311 保护后连接 SOC_DM/SOC_DP，主控侧还有 22Ω 串联电阻和 ICMF062P900MFR 共模滤波器。",
+      "confidence": "confirmed",
+      "attributes": {
+        "cc_pulldown_ohm": 5100,
+        "usb_dm_gpio": 19,
+        "usb_dp_gpio": 20
+      },
+      "evidence": [
+        {
+          "asset_sha256": "298eb46ddad2a0c678f8685544feec805099f27ea33008ca760f5e8189011548",
+          "page": 1,
+          "locator": "TYPEC 区 A1-A2 与 Core MCU 区 D5-D6，J1、TVS1/2、U2、R24/R25、U10 共模滤波器"
+        }
+      ]
+    },
+    {
+      "id": "debug.native-usb",
+      "category": "debug",
+      "subject": "ESP32-S3R8 原生 USB",
+      "statement": "U7 GPIO19/GPIO20 分别连接 SOC_DM/SOC_DP，经 22Ω 串联电阻与共模滤波器到 J1 USB_DN/USB_DP，构成无需外置 USB-UART 的原生 USB 数据和下载路径。",
+      "confidence": "confirmed",
+      "attributes": {
+        "dm": "GPIO19",
+        "dp": "GPIO20"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "298eb46ddad2a0c678f8685544feec805099f27ea33008ca760f5e8189011548",
+          "page": 1,
+          "locator": "Core MCU 区 D5-D6，U7 GPIO19/GPIO20、SOC_DM/SOC_DP 与 USB_N/USB_P"
+        }
+      ]
+    },
+    {
+      "id": "interface.eink-digital-power",
+      "category": "interface",
+      "subject": "E Ink SPI、控制和电源接口",
+      "statement": "J5 50-pin FPC 接口承载 EINK_RST、EINK_BUSY、EINK_DC、EINK_CS、SPI_CLK、SPI_MOSI，以及 EPD_3V3_L3B、VPC、PREVGH、VGH、VGL、RESEC/GDRC 等面板电源网络；U1 MT9700 由 PY_EPD_EN 控制面板 3.3V，外围升压和反相电路生成面板高压轨。",
+      "confidence": "confirmed",
+      "attributes": {
+        "supply": "EPD_3V3_L3B",
+        "enable": "PY_EPD_EN",
+        "connector_pins": 50
+      },
+      "evidence": [
+        {
+          "asset_sha256": "1095527840e25c09a00ce55701db03a5a7b94c28cb2c63e46e03983e3d632ccb",
+          "page": 1,
+          "locator": "EINK 区 A5-D6，U1、Q9、高压网络与 J5 50-pin FPC"
+        }
+      ]
+    },
+    {
+      "id": "component.eink-panel-spec",
+      "category": "component",
+      "subject": "E Ink 面板型号、尺寸和分辨率",
+      "statement": "正文称面板为 4 英寸 E Ink Spectra 6、ED2208-DOA/EL040EF1、400x600；原理图只画 J5 50-pin FPC、数字信号和电源网络，未在器件或页标题中标出面板型号、尺寸、色彩体系或分辨率。",
+      "confidence": "uncertain",
+      "attributes": {
+        "documented_model": "ED2208-DOA (EL040EF1)",
+        "documented_size_inch": 4,
+        "documented_resolution": "400x600"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "1095527840e25c09a00ce55701db03a5a7b94c28cb2c63e46e03983e3d632ccb",
+          "page": 1,
+          "locator": "EINK 区 B6-D6，J5 仅标 50-pin 引脚与网络"
+        }
+      ]
+    },
+    {
+      "id": "audio.codec-adc-i2s",
+      "category": "audio",
+      "subject": "ES8311 与 ES7210 数字音频链路",
+      "statement": "U10 ES8311 与 U11 ES7210 共享 I2S_MCLK、I2S_BCLK 和 I2S_LRCK；ES8311 使用 I2S_DSDIN 接收播放数据并输出 DAC_P/DAC_N，ES7210 使用 I2S_SDOUT 输出采集数据。两器件分别通过 AUDIO_I2C_SCL/SDA 配置，并由 CODEC_3V3_L3B 供电。",
+      "confidence": "confirmed",
+      "attributes": {
+        "codec": "ES8311",
+        "adc": "ES7210",
+        "power": "CODEC_3V3_L3B"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "1095527840e25c09a00ce55701db03a5a7b94c28cb2c63e46e03983e3d632ccb",
+          "page": 1,
+          "locator": "Audio Codec 与 Audio ADC 区 A1-C3，U10/U11 数字总线"
+        }
+      ]
+    },
+    {
+      "id": "audio.microphone-aec",
+      "category": "audio",
+      "subject": "麦克风采集与 AEC 回采",
+      "statement": "U12 模拟 MEMS 麦克风由 VBIAS_MIC 供电，MIC_P/MIC_N 经 C111/C112 接 ES7210 MIC1P/MIC1N；扬声器 DAC_P/DAC_N 经 AEC Filtering 网络形成 MIC_3P/MIC_3N，再经 C113/C114 接 ES7210 MIC3P/MIC3N。",
+      "confidence": "confirmed",
+      "attributes": {
+        "microphone_input": "MIC1",
+        "aec_input": "MIC3"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "1095527840e25c09a00ce55701db03a5a7b94c28cb2c63e46e03983e3d632ccb",
+          "page": 1,
+          "locator": "Audio ADC、Audio Codec、AEC Filtering 与 MIC 区 A1-C3"
+        }
+      ]
+    },
+    {
+      "id": "audio.speaker-amplifier",
+      "category": "audio",
+      "subject": "AW8737A 扬声器输出",
+      "statement": "U13 AW8737A 以 DAC_P/DAC_N 为差分输入，SHDN 由 SPK_EN 控制，VOP/VON 经 FB1/FB2 连接 J4 两针 SPK；功放电源直接来自 SYS_VBUS。",
+      "confidence": "confirmed",
+      "attributes": {
+        "amplifier": "AW8737A",
+        "enable": "SPK_EN",
+        "supply": "SYS_VBUS"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "1095527840e25c09a00ce55701db03a5a7b94c28cb2c63e46e03983e3d632ccb",
+          "page": 1,
+          "locator": "SPEAK 区 A4-A5，U13、FB1/FB2 与 J4"
+        }
+      ]
+    },
+    {
+      "id": "audio.speaker-rating",
+      "category": "audio",
+      "subject": "扬声器额定功率和阻抗",
+      "statement": "正文称内置扬声器为 1W、8Ω、2520；原理图只画 U13 AW8737A、差分输出和 J4 两针 SPK，没有扬声器器件型号、阻抗、额定功率或尺寸标注。",
+      "confidence": "uncertain",
+      "attributes": {
+        "documented_power_w": 1,
+        "documented_impedance_ohm": 8,
+        "documented_size": "2520"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "1095527840e25c09a00ce55701db03a5a7b94c28cb2c63e46e03983e3d632ccb",
+          "page": 1,
+          "locator": "SPEAK 区 A4-A5，J4 仅标 SPK 两针"
+        }
+      ]
+    },
+    {
+      "id": "clock.rtc-rx8130ce",
+      "category": "clock",
+      "subject": "RX8130CE RTC 与唤醒",
+      "statement": "U17 RX8130CE 通过 SYS_SCL/SYS_SDA 接入系统 I2C，nIRQ 经 R60 连接 RTC_IRQ；VBAT 接 SYS_VBUS，VDD 经 R99 0Ω 接 3V3_L0，RTC_IRQ 同时进入 M5PM1 的 G2_WAKEin 和 ESP32-S3R8 GPIO7。",
+      "confidence": "confirmed",
+      "attributes": {
+        "interrupt": "RTC_IRQ",
+        "rtc_supply": "3V3_L0",
+        "backup_supply": "SYS_VBUS"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "1095527840e25c09a00ce55701db03a5a7b94c28cb2c63e46e03983e3d632ccb",
+          "page": 1,
+          "locator": "RTC 区 D1-D2，U17、R60、R98/R99 与 SYS_VBUS/3V3_L0"
+        },
+        {
+          "asset_sha256": "51251532fbba1e4a2070e43001ee18bc4768e9132ee903d99bb52041d303214d",
+          "page": 1,
+          "locator": "Power Mode 与 I/Os Map 区 C1-D8，RTC_IRQ 唤醒路径"
+        }
+      ]
+    },
+    {
+      "id": "sensor.sht40",
+      "category": "sensor",
+      "subject": "SHT40 温湿度传感器",
+      "statement": "U19 标注 SHT40I-AD1B-R2，SCL/SDA 分别接 SYS_SCL/SYS_SDA，VDD 接 3V3_L2；图中备注要求避免使用发热器件，并建议开槽、钻孔或切开铜皮以降低热耦合。",
+      "confidence": "confirmed",
+      "attributes": {
+        "supply": "3V3_L2",
+        "scl": "SYS_SCL",
+        "sda": "SYS_SDA"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "1095527840e25c09a00ce55701db03a5a7b94c28cb2c63e46e03983e3d632ccb",
+          "page": 1,
+          "locator": "SHT40 区 D1-D2，U19 与热设计备注"
+        }
+      ]
+    },
+    {
+      "id": "storage.microsd",
+      "category": "storage",
+      "subject": "受控电源 microSD 接口",
+      "statement": "U16 MicroSD 的 CLK/CMD/DAT0/DAT1 分别连接 SPI_CLK/SPI_MOSI/SPI_MISO 与卡检测相关网络，Card_CS 为片选；U24 MT9700 由 PY_SD_PWR_EN 控制 TF_3V3_L3B，PY_SD_DET_EN 控制检测上拉，CARD_DEC 回到 M5PM1，TVS3-TVS6 ESD5311 保护信号线。",
+      "confidence": "confirmed",
+      "attributes": {
+        "power": "TF_3V3_L3B",
+        "power_enable": "PY_SD_PWR_EN",
+        "detect_enable": "PY_SD_DET_EN",
+        "detect": "CARD_DEC"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "1095527840e25c09a00ce55701db03a5a7b94c28cb2c63e46e03983e3d632ccb",
+          "page": 1,
+          "locator": "TF 区 D4-D5，U16/U24、TVS3-TVS6 与检测电路"
+        }
+      ]
+    },
+    {
+      "id": "interface.spi-expansion",
+      "category": "interface",
+      "subject": "12 针 SPI 扩展接口",
+      "statement": "J6 引出 3V3_L2、TF_3V3_L3B、GPIO8_EXT、EXT_INT、EXT_BUSY、EXT_RST、SPI_MISO、SPI_MOSI、EXT_CS、SPI_CLK 和 GND；EXT_INT 由 R75 10K 上拉到 3V3_L2。",
+      "confidence": "confirmed",
+      "attributes": {
+        "connector_pins": 12,
+        "interrupt": "EXT_INT",
+        "chip_select": "EXT_CS"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "1095527840e25c09a00ce55701db03a5a7b94c28cb2c63e46e03983e3d632ccb",
+          "page": 1,
+          "locator": "SPI Expansion 区 D2-D3，J6 与 R75"
+        }
+      ]
+    },
+    {
+      "id": "interface.grove-port",
+      "category": "interface",
+      "subject": "Grove/HY2.0-4P 端口",
+      "statement": "J3 CON4 的四线为 GROVE_5V、GROVE_I、GROVE_O 和 GND，信号线上串接双向保护器件；ESP32-S3R8 GPIO4/GPIO5 对应 Grove 两路数字信号，端口电源可在输出与外部输入方向之间切换。",
+      "confidence": "confirmed",
+      "attributes": {
+        "pin_count": 4,
+        "power": "GROVE_5V"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "298eb46ddad2a0c678f8685544feec805099f27ea33008ca760f5e8189011548",
+          "page": 1,
+          "locator": "Grove two-way control 区 D3-D4，J3、U5 与 GROVE_I/GROVE_O"
+        },
+        {
+          "asset_sha256": "51251532fbba1e4a2070e43001ee18bc4768e9132ee903d99bb52041d303214d",
+          "page": 1,
+          "locator": "I/Os Map 区 C5-D8，ESP32 GPIO4/GPIO5 与 GROVE 功能"
+        }
+      ]
+    },
+    {
+      "id": "gpio.user-keys",
+      "category": "gpio",
+      "subject": "三个用户按键",
+      "statement": "S1/S2/S3 分别把 USER_KEY1/USER_KEY2/USER_KEY3 按下接地，各信号由 10K 电阻上拉到 3V3_L2 并有 100nF 电容对地；三路连接 ESP32-S3R8 GPIO1/GPIO9/GPIO10，可作为低功耗唤醒输入。",
+      "confidence": "confirmed",
+      "attributes": {
+        "key1_gpio": 1,
+        "key2_gpio": 9,
+        "key3_gpio": 10,
+        "active_low": true
+      },
+      "evidence": [
+        {
+          "asset_sha256": "1095527840e25c09a00ce55701db03a5a7b94c28cb2c63e46e03983e3d632ccb",
+          "page": 1,
+          "locator": "KEY 区 B4-B5，S1/S2/S3、R25/R31/R38 与 C44/C50/C64"
+        },
+        {
+          "asset_sha256": "51251532fbba1e4a2070e43001ee18bc4768e9132ee903d99bb52041d303214d",
+          "page": 1,
+          "locator": "Power Mode 与 I/Os Map 区 C1-D8，USER_KEY1/2/3 唤醒与 GPIO"
+        }
+      ]
+    },
+    {
+      "id": "interface.ir-rgb",
+      "category": "interface",
+      "subject": "红外发射与双 RGB LED",
+      "statement": "IR_TX 通过 Q6 2N7002T 驱动红外发射二极管，供电侧串联 R37 150Ω；LED3/LED4 为两颗串接 WS2812B-4020，数据输入为 RGB，电源 RGB_3V3_L3B 由 PY_RGB_PWR_EN 控制。",
+      "confidence": "confirmed",
+      "attributes": {
+        "ir_gpio": 48,
+        "rgb_gpio": 21,
+        "rgb_count": 2
+      },
+      "evidence": [
+        {
+          "asset_sha256": "1095527840e25c09a00ce55701db03a5a7b94c28cb2c63e46e03983e3d632ccb",
+          "page": 1,
+          "locator": "IR/RGB 区 C4-C5，Q6、R37、LED3/LED4 与电源开关"
+        }
+      ]
+    }
+  ],
+  "needs_review": [
+    {
+      "id": "review.charger-model-conflict",
+      "fact_id": "component.charger-model-conflict",
+      "question": "PaperColor C151 V0.5 量产 BOM 中的充电控制器是 IP2315 还是 IP2316",
+      "reason": "第一页电源总览标 IP2316，第二页 U3 详图标 IP2315，两个标注直接冲突。",
+      "evidence": [
+        {
+          "asset_sha256": "51251532fbba1e4a2070e43001ee18bc4768e9132ee903d99bb52041d303214d",
+          "page": 1,
+          "locator": "Power Network 区 A3，IP2316 0.5C"
+        },
+        {
+          "asset_sha256": "298eb46ddad2a0c678f8685544feec805099f27ea33008ca760f5e8189011548",
+          "page": 1,
+          "locator": "CHARG 区 A3，PD Only IP2315 与 U3"
+        }
+      ]
+    },
+    {
+      "id": "review.documented-i2c-addresses",
+      "fact_id": "address.documented-i2c-addresses",
+      "question": "M5PM1、ES8311、ES7210、RX8130CE 与 SHT40 的量产 7-bit 地址是否与产品正文一致",
+      "reason": "原理图显示器件和 I2C 网络，但未标出地址或所有地址选择条件。",
+      "evidence": [
+        {
+          "asset_sha256": "298eb46ddad2a0c678f8685544feec805099f27ea33008ca760f5e8189011548",
+          "page": 1,
+          "locator": "PMIC 与 Core MCU 区，SYS_SCL/SYS_SDA"
+        },
+        {
+          "asset_sha256": "1095527840e25c09a00ce55701db03a5a7b94c28cb2c63e46e03983e3d632ccb",
+          "page": 1,
+          "locator": "Audio、RTC 与 SHT40 区，器件总线连接无地址标注"
+        }
+      ]
+    },
+    {
+      "id": "review.documented-flash-capacity",
+      "fact_id": "storage.documented-flash-capacity",
+      "question": "U9 W25Q128JVPIQ 对应的量产 Flash 容量是否为正文所述 16MB",
+      "reason": "原理图给出完整器件型号和 NOR 连线，但未在图面单独写出 bit 或 byte 容量。",
+      "evidence": [
+        {
+          "asset_sha256": "298eb46ddad2a0c678f8685544feec805099f27ea33008ca760f5e8189011548",
+          "page": 1,
+          "locator": "Core MCU 区 B6，U9 W25Q128JVPIQ"
+        }
+      ]
+    },
+    {
+      "id": "review.documented-psram-capacity",
+      "fact_id": "memory.documented-psram-capacity",
+      "question": "U7 ESP32-S3R8 封装内 PSRAM 容量是否为正文所述 8MB",
+      "reason": "原理图只有 ESP32-S3R8 型号，没有内存容量字段或封装配置表。",
+      "evidence": [
+        {
+          "asset_sha256": "51251532fbba1e4a2070e43001ee18bc4768e9132ee903d99bb52041d303214d",
+          "page": 1,
+          "locator": "Functions 区 A1，ESP32-S3R8"
+        },
+        {
+          "asset_sha256": "298eb46ddad2a0c678f8685544feec805099f27ea33008ca760f5e8189011548",
+          "page": 1,
+          "locator": "Core MCU 区 C4-D6，U7 ESP32_S3R8"
+        }
+      ]
+    },
+    {
+      "id": "review.eink-panel-spec",
+      "fact_id": "component.eink-panel-spec",
+      "question": "J5 所接量产 E Ink 面板是否为 ED2208-DOA/EL040EF1、4 英寸、400x600、Spectra 6",
+      "reason": "主板原理图仅给 50-pin FPC 和电源网络，未给面板型号、尺寸、分辨率或色彩体系。",
+      "evidence": [
+        {
+          "asset_sha256": "1095527840e25c09a00ce55701db03a5a7b94c28cb2c63e46e03983e3d632ccb",
+          "page": 1,
+          "locator": "EINK 区 B6-D6，J5 50-pin FPC"
+        }
+      ]
+    },
+    {
+      "id": "review.speaker-rating",
+      "fact_id": "audio.speaker-rating",
+      "question": "J4 所接量产扬声器是否为 1W、8Ω、2520 规格",
+      "reason": "原理图仅给 AW8737A、滤波磁珠和两针 SPK 接口，没有扬声器料号或额定参数。",
+      "evidence": [
+        {
+          "asset_sha256": "1095527840e25c09a00ce55701db03a5a7b94c28cb2c63e46e03983e3d632ccb",
+          "page": 1,
+          "locator": "SPEAK 区 A4-A5，J4 SPK"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "dry_run": false,
+  "failed": 0,
+  "published": 1,
+  "results": [
+    {
+      "backup": null,
+      "draft_action": "unchanged",
+      "dry_run": false,
+      "errors": [],
+      "needs_review": 1,
+      "product_id": "cores3-se-de74f0945ee3",
+      "product_name": "CoreS3-SE",
+      "publish_action": "unchanged",
+      "sha256": "085777e9e365f01e5f3a7cbb610071a09ab462db60261bcd144ca3793829b354",
+      "status": "valid",
+      "uncertain_facts": 1
+    }
+  ],
+  "schema_version": 1
+}

@@ -1,0 +1,306 @@
+# Atomic Voice Base 原理图描述
+
+## 快速信息
+
+| 项目 | 内容 |
+| --- | --- |
+| 产品 | Atomic Voice Base |
+| SKU | A149 |
+| 产品 ID | `atomic-voice-base-9afc5eb1fbae` |
+| 源文档 | `zh_CN/atom/Atomic Echo Base.md` |
+
+## 概述
+
+Atomic Voice Base 是无主控的 3.3V 音频底座，U2 ES8311 负责 I2S 音频编解码，U1 MSM381A3729H9BPC MEMS 麦克风经 MIC_P/MIC_N 接入其 ADC 输入，DAC 差分输出 OUTP/OUTN 则驱动 U3 NS4150B 功放和 SPK+/SPK-。J1 引出 MCLK/SCLK/LRCK/DSDIN/ASDOUT，J2 引出 SCL/SDA/5V/GND；U4 PI4IOE5V6408ZTAEX 通过同一 I2C 总线以 P0/CTRL 控制功放。ES8311 CE 接低，原理图注记对应 I2C 地址 0x18；板上未显示电源转换、存储、射频或独立时钟源。
+
+## 检索关键词
+
+`Atomic Voice Base`、`A149`、`ES8311`、`0x18`、`MSM381A3729H9BPC`、`NS4150B`、`PI4IOE5V6408ZTAEX`、`I2S`、`I2C`、`MCLK`、`SCLK`、`LRCK`、`DSDIN`、`ASDOUT`、`MIC_P`、`MIC_N`、`OUTP`、`OUTN`、`SPK+`、`SPK-`、`CTRL`、`Atom_4P@2.54`、`Atom_5P@2.54`、`SCL`、`SDA`、`3.3V`、`MEMS microphone`、`D class amplifier`、`CE`、`ADDR`
+
+## 主要器件
+
+| 位号 | 型号 | 作用 | 证据 |
+| --- | --- | --- | --- |
+| U2 | ES8311 | 单通道音频编解码器，连接 I2C、I2S、麦克风差分输入和 DAC 差分输出 | 图 cf413df4fc1a / 第 1 页 / 网格 A2-B3，U2 ES8311，SCL/MCLK/SCLK/ASDOUT/LRCK/DSDIN/MIC1P/MIC1N/OUTP/OUTN |
+| U1 | MSM381A3729H9BPC | MEMS 麦克风，OUT 经耦合形成 MIC_P，GND/AGND 侧形成 MIC_N 参考 | 图 cf413df4fc1a / 第 1 页 / 网格 A3-B4，U1 MSM381A3729H9BPC，OUT/VDD/GND 与 MIC_P/MIC_N |
+| U3 | NS4150B | 3.3V D 类扬声器功率放大器，差分输入来自 ES8311 OUTN/OUTP，桥接输出为 SPK-/SPK+ | 图 cf413df4fc1a / 第 1 页 / 网格 C1-C3，U3 NS4150B，INN/INP/CTRL/VoN/VoP/VCC/GND |
+| U4 | PI4IOE5V6408ZTAEX | I2C 8 位 IO 扩展器，P0 输出 CTRL 控制 NS4150B | 图 cf413df4fc1a / 第 1 页 / 网格 D2-D3，U4 PI4IOE5V6408ZTAEX，SCL/SDA/P0-P7/ADDR/RESET |
+| J1 | Atom_5P@2.54 | 主机音频/电源连接器，引出 3.3V、DSDIN、LRCK、ASDOUT、SCLK | 图 cf413df4fc1a / 第 1 页 / 网格 D4，J1 Atom_5P@2.54 pins1-5 |
+| J2 | Atom_4P@2.54 | 主机 I2C/电源连接器，引出 SCL、SDA、5V、GND | 图 cf413df4fc1a / 第 1 页 / 网格 D4，J2 Atom_4P@2.54 pins1-4 |
+| L1 | HZ1005U102TFB01 | 麦克风 3.3V 电源串联磁珠/滤波器件 | 图 cf413df4fc1a / 第 1 页 / 网格 A4，3.3V 经 L1 HZ1005U102TFB01 到 U1 VDD |
+| R1,R2 | 4.7KΩ | ES8311 I2C SCL/SDA 上拉电阻 | 图 cf413df4fc1a / 第 1 页 / 网格 A2-A3，R1 4.7K 从 SCL 到 3.3V，R2 4.7K 从 SDA 到 3.3V |
+| R6,R11 | 0Ω | NS4150B VoN/VoP 至 SPK-/SPK+ 的串联跳线 | 图 cf413df4fc1a / 第 1 页 / 网格 C2-C3，U3 VoN-R6 0Ω-SPK- 与 VoP-R11 0Ω-SPK+ |
+| SPK+,SPK- | 未标注 | 板上扬声器差分输出网络；原理图未给出扬声器位号或型号 | 图 cf413df4fc1a / 第 1 页 / 网格 C2-C3，R6/R11 后的 SPK-/SPK+ 网络终点 |
+
+## 系统结构
+
+### Atomic Voice Base 架构
+
+该页展示无主控音频底座：ES8311 连接 MEMS 麦克风、I2S 主机接口与 NS4150B 功放，PI4IOE5V6408ZTAEX 通过 I2C 控制功放 CTRL。
+
+- 参数与网络：`codec=U2 ES8311`；`microphone=U1 MSM381A3729H9BPC`；`amplifier=U3 NS4150B`；`io_expander=U4 PI4IOE5V6408ZTAEX`；`host_connectors=J1,J2`；`main_soc=null`
+- 证据：图 cf413df4fc1a / 第 1 页 / 整页网格 A1-D4，Codec/MIC/AMP/IO Expander/Atom 接口
+
+## 电源
+
+### NS4150B 3.3V 供电与去耦
+
+U3 VCC pin6 经 R9 0Ω 接 3.3V，电源节点使用 C18 1.0uF、C19 100nF、C20 22uF、C21 22uF 对地去耦；Bypass pin2 使用 C22 1.0uF。
+
+- 参数与网络：`supply=3.3V`；`series=R9 0Ω`；`vcc_pin=U3 pin6`；`decoupling=C18 1.0uF,C19 100nF,C20 22uF,C21 22uF`；`bypass=U3 pin2,C22 1.0uF`
+- 证据：图 cf413df4fc1a / 第 1 页 / 网格 C1-C3，U3 VCC/Bypass 与 R9/C18-C22
+
+### ES8311 3.3V 供电
+
+3.3V 经 R3 0Ω 为 U2 PVDD pin3 与 DVDD pin4 供电，C8 10uF/C9 100nF 去耦；3.3V 经 R5 0Ω 为 AVDD pin11 供电。DGND pin5 与 AGND pin10 接地。
+
+- 参数与网络：`digital_supply=3.3V -> R3 0Ω -> PVDD pin3,DVDD pin4`；`digital_caps=C8 10uF,C9 100nF`；`analog_supply=3.3V -> R5 0Ω -> AVDD pin11`；`digital_ground=pin5 DGND`；`analog_ground=pin10 AGND`
+- 证据：图 cf413df4fc1a / 第 1 页 / 网格 A1-B3，R3/C8/C9 到 U2 PVDD/DVDD，R5/C13 到 AVDD
+
+### MEMS 麦克风滤波电源
+
+U1 VDD pin1 从 3.3V 经 L1 HZ1005U102TFB01 供电，C3 100nF 与 C4 10uF 对地去耦；U1 的 AGND 通过 R4 0Ω 与 GND 相连。
+
+- 参数与网络：`input=3.3V`；`filter=L1 HZ1005U102TFB01`；`target=U1 pin1 VDD`；`decoupling=C3 100nF,C4 10uF`；`ground_link=R4 0Ω AGND-GND`
+- 证据：图 cf413df4fc1a / 第 1 页 / 网格 A3-B4，3.3V/L1/C3/C4/U1 与 R4
+
+### 外部电源轨与板上转换
+
+J1 pin1 提供 3.3V 并直接供给所有有源音频与 IO 器件；J2 pin3 引出 5V，但本页未显示 5V 负载、Buck、LDO、负载开关、电池或充电器。
+
+- 参数与网络：`active_rail=3.3V from J1 pin1`；`5v_pin=J2 pin3`；`5v_load=null`；`converter=null`；`ldo=null`；`load_switch=null`；`battery=null`；`charger=null`
+- 证据：图 cf413df4fc1a / 第 1 页 / 整页网格 A1-D4，3.3V 分配与 J2 5V 网络终点；无电源转换/电池区
+
+## 接口
+
+### J1 Atom 5Pin 音频接口
+
+J1 Atom_5P@2.54 pin1 为 3.3V、pin2 DSDIN、pin3 LRCK、pin4 ASDOUT、pin5 SCLK。
+
+- 参数与网络：`reference=J1`；`pin1=3.3V`；`pin2=DSDIN host-to-codec`；`pin3=LRCK host-to-codec`；`pin4=ASDOUT codec-to-host`；`pin5=SCLK host-to-codec`
+- 证据：图 cf413df4fc1a / 第 1 页 / 网格 D4，J1 Atom_5P@2.54 pins1-5
+
+### J2 Atom 4Pin I2C 接口
+
+J2 Atom_4P@2.54 pin1 为 SCL、pin2 SDA、pin3 5V、pin4 GND；5V 仅在连接器处显示，未连接本页 3.3V 音频供电网络。
+
+- 参数与网络：`reference=J2`；`pin1=SCL`；`pin2=SDA`；`pin3=5V`；`pin4=GND`；`5v_board_load=null`
+- 证据：图 cf413df4fc1a / 第 1 页 / 网格 D4，J2 Atom_4P@2.54；5V 网络止于 pin3
+
+## 总线
+
+### 主机到 ES8311 I2S
+
+J1 pin2 DSDIN 连接 U2 pin9 DSDIN，pin3 LRCK 连接 U2 pin8 LRCK，pin4 ASDOUT 连接 U2 pin7 ASDOUT，pin5 SCLK 连接 U2 pin6 SCLK；MCLK 连接 U2 pin2，但本页未在 J1 上显示 MCLK 引脚。
+
+- 参数与网络：`connector=J1`；`playback_data=J1.2 DSDIN -> U2.9`；`word_clock=J1.3 LRCK -> U2.8`；`capture_data=U2.7 ASDOUT -> J1.4`；`bit_clock=J1.5 SCLK -> U2.6`；`master_clock=MCLK -> U2.2`；`mclk_connector_pin=null`
+- 证据：图 cf413df4fc1a / 第 1 页 / 网格 B1-B2 与 D4，U2 数字音频网络到 J1；MCLK 仅在 U2 左侧出现
+
+### ES8311 与 IO 扩展器 I2C
+
+J2 的 SCL/SDA 共用连接 U2 ES8311 pin1/pin19 与 U4 PI4IOE5V6408ZTAEX pin13/pin14；R1/R2 各 4.7K 将 SCL/SDA 上拉到 3.3V。
+
+- 参数与网络：`controller_connector=J2`；`scl_devices=U2 pin1,U4 pin13`；`sda_devices=U2 pin19,U4 pin14`；`pullups=R1 4.7K SCL,R2 4.7K SDA`；`level=3.3V`
+- 证据：图 cf413df4fc1a / 第 1 页 / 网格 A2-D4，SCL/SDA 从 J2 到 U2/U4 与 R1/R2
+
+## 总线地址
+
+### ES8311 I2C 地址
+
+原理图注记 CE pin low 对应 0x18、CE pin high 对应 0x19；U2 CE pin20 接 GND，因此本页装配地址为 0x18。
+
+- 参数与网络：`device=U2 ES8311`；`ce_pin=pin20`；`ce_level=GND/low`；`address=0x18`；`alternate_high=0x19`
+- 证据：图 cf413df4fc1a / 第 1 页 / 网格 A2，顶部 ES8311 address 注记与 U2 CE pin20 接 GND
+
+### PI4IOE5V6408 地址选择
+
+U4 ADDR pin9 接 GND；原理图未标注该绑带对应的数值 I2C 地址。
+
+- 参数与网络：`device=U4 PI4IOE5V6408ZTAEX`；`address_pin=pin9 ADDR`；`strap=GND`；`numeric_address=null`
+- 证据：图 cf413df4fc1a / 第 1 页 / 网格 D2，U4 ADDR pin9 接 GND
+
+## GPIO 与控制信号
+
+### 功放 CTRL 控制
+
+U4 P0 pin12 输出 CTRL 到 U3 pin1；CTRL 由 R10 4.7K 上拉至 3.3V。U4 P1-P7 未连接。
+
+- 参数与网络：`controller=U4 PI4IOE5V6408ZTAEX`；`gpio=P0 pin12`；`net=CTRL`；`target=U3 pin1`；`pullup=R10 4.7K to 3.3V`；`unused_gpio=P1-P7 NC`
+- 证据：图 cf413df4fc1a / 第 1 页 / 网格 C1-D3，U4 P0/CTRL 到 U3，R10 上拉，P1-P7 悬空
+
+## 时钟
+
+### 音频时钟网络
+
+ES8311 接收 MCLK pin2、SCLK pin6 与 LRCK pin8；本页没有晶振或振荡器，时钟均由外部主机网络提供，其中 SCLK/LRCK 由 J1 引出，MCLK 的连接器引脚未显示。
+
+- 参数与网络：`master_clock=MCLK -> U2 pin2`；`bit_clock=J1 pin5 SCLK -> U2 pin6`；`word_clock=J1 pin3 LRCK -> U2 pin8`；`oscillator=null`；`mclk_connector=null`
+- 证据：图 cf413df4fc1a / 第 1 页 / 网格 B1-B2/D4，U2 MCLK/SCLK/LRCK 与 J1；整页无 X/Y 器件
+
+## 复位
+
+### PI4IOE5V6408 复位
+
+U4 RESET pin10 由 R12 4.7K 上拉至 3.3V，并由 C24 100nF 对地形成 RC；INT pin1 未连接。
+
+- 参数与网络：`device=U4`；`reset_pin=pin10 RESET`；`pullup=R12 4.7K to 3.3V`；`capacitor=C24 100nF to GND`；`interrupt=pin1 INT NC`
+- 证据：图 cf413df4fc1a / 第 1 页 / 网格 D2，U4 RESET/INT 与 R12/C24
+
+## 保护电路
+
+### 外部接口保护
+
+J1/J2、SPK+/SPK- 在本页未显示专用 ESD/TVS 器件；音频与电源网络使用串联 0Ω、电容和去耦进行连接与滤波。
+
+- 参数与网络：`j1_esd=null`；`j2_esd=null`；`speaker_esd=null`；`series_links=R3,R5,R6,R9,R11 0Ω`；`filtering=local capacitors and L1`
+- 证据：图 cf413df4fc1a / 第 1 页 / 整页网格 A1-D4，无 TVS/ESD 标注器件
+
+## 关键网络
+
+### 录音与播放关键路径
+
+录音路径为 U1 OUT -> MIC_P/MIC_N -> U2 MIC1P/MIC1N -> ASDOUT -> J1；播放路径为 J1 DSDIN -> U2 -> OUTP/OUTN -> U3 -> SPK+/SPK-。
+
+- 参数与网络：`capture=U1 -> MIC_P/MIC_N -> U2 ADC -> ASDOUT -> J1`；`playback=J1 DSDIN -> U2 DAC -> OUTP/OUTN -> U3 -> SPK+/SPK-`；`clocks=MCLK,SCLK,LRCK`；`amplifier_enable=U4 P0/CTRL`
+- 证据：图 cf413df4fc1a / 第 1 页 / 整页音频网络追踪：U1/U2/J1/U3/SPK
+
+## 存储
+
+### 板级存储
+
+本页未显示 Flash、EEPROM、eMMC 或存储卡接口。
+
+- 参数与网络：`flash=null`；`eeprom=null`；`emmc=null`；`storage_card=null`
+- 证据：图 cf413df4fc1a / 第 1 页 / 整页网格 A1-D4，无存储器件
+
+## 内存与 Flash
+
+### 外部内存
+
+本页未显示 RAM、PSRAM 或 DDR 器件；底座也未显示主控 SoC。
+
+- 参数与网络：`ram=null`；`psram=null`；`ddr=null`；`soc=null`
+- 证据：图 cf413df4fc1a / 第 1 页 / 整页网格 A1-D4，仅音频与 IO 器件，无主控/内存
+
+## 音频
+
+### ES8311 音频编解码器
+
+U2 ES8311 的 MIC1P/MIC1N 接麦克风，OUTP/OUTN 接功放，数字侧包含 MCLK、SCLK、LRCK、DSDIN 与 ASDOUT，控制侧为 SCL/SDA/CE。
+
+- 参数与网络：`reference=U2`；`part_number=ES8311`；`adc_inputs=pin18 MIC1P,pin17 MIC1N`；`dac_outputs=pin12 OUTP,pin13 OUTN`；`i2s=MCLK,SCLK,LRCK,DSDIN,ASDOUT`；`control=SCL,SDA,CE`
+- 证据：图 cf413df4fc1a / 第 1 页 / 网格 A2-B3，U2 ES8311 pin1-20
+
+### MEMS 麦克风输入链
+
+U1 OUT 经 C2 1.0uF 交流耦合到 MIC_P，再接 U2 MIC1P pin18；U1 GND/AGND 侧的 MIC_N 经 C5 1.0uF 接 U2 MIC1N pin17。
+
+- 参数与网络：`microphone=U1 MSM381A3729H9BPC`；`positive_path=U1 OUT -> C2 1.0uF -> MIC_P -> U2 pin18 MIC1P`；`negative_path=U1 GND/AGND -> MIC_N -> C5 1.0uF -> U2 pin17 MIC1N`；`ground_bridge=R4 0Ω AGND-GND`
+- 证据：图 cf413df4fc1a / 第 1 页 / 网格 A3-B4，U1、C2/C5、MIC_P/MIC_N 到 U2 MIC1P/MIC1N
+
+### ES8311 DAC 至功放输入
+
+U2 OUTN pin13 经 C11 1.0uF 形成 OUTN，再经 C16 100nF 与 R7 150K 接 U3 INN；U2 OUTP pin12 经 C12 1.0uF 形成 OUTP，再经 C17 100nF 与 R8 150K 接 U3 INP。
+
+- 参数与网络：`negative=U2.13 -> C11 1.0uF -> OUTN -> C16 100nF -> R7 150K -> U3.4 INN`；`positive=U2.12 -> C12 1.0uF -> OUTP -> C17 100nF -> R8 150K -> U3.3 INP`
+- 证据：图 cf413df4fc1a / 第 1 页 / 网格 B2-C2，U2 OUTN/OUTP 经 C11/C12 与 C16/C17/R7/R8 到 U3
+
+### NS4150B 扬声器功放
+
+U3 NS4150B 由 3.3V 经 R9 0Ω 供电，CTRL 控制 pin1，VoN pin5 经 R6 0Ω 输出 SPK-，VoP pin8 经 R11 0Ω 输出 SPK+。
+
+- 参数与网络：`reference=U3`；`part_number=NS4150B`；`supply=3.3V via R9 0Ω`；`control=pin1 CTRL`；`negative_output=pin5 VoN -> R6 0Ω -> SPK-`；`positive_output=pin8 VoP -> R11 0Ω -> SPK+`；`ground=pin7`
+- 证据：图 cf413df4fc1a / 第 1 页 / 网格 C1-C3，U3、R6/R9/R11、SPK-/SPK+
+
+## 传感器
+
+### MSM381A3729H9BPC 麦克风
+
+U1 明确标为 MSM381A3729H9BPC，pin1 VDD 经 L1 从 3.3V 供电，pins2/3 为 GND，pin4 为 OUT；C3 100nF、C4 10uF 去耦，C1 22pF 从 OUT 接 GND。
+
+- 参数与网络：`reference=U1`；`part_number=MSM381A3729H9BPC`；`pin1=VDD`；`pins2_3=GND`；`pin4=OUT`；`supply_filter=L1 HZ1005U102TFB01`；`decoupling=C3 100nF,C4 10uF`；`output_filter=C1 22pF`
+- 证据：图 cf413df4fc1a / 第 1 页 / 网格 A3-B4，U1 pins1-4 与 L1/C1/C3/C4
+
+## 射频
+
+### 射频电路
+
+本页未显示射频芯片、天线或射频匹配网络。
+
+- 参数与网络：`rf_ic=null`；`antenna=null`；`matching=null`
+- 证据：图 cf413df4fc1a / 第 1 页 / 整页网格 A1-D4，无 RF/ANT 器件或网络
+
+## 调试与烧录
+
+### 调试接口
+
+本页未显示 SWD、JTAG、UART 调试连接器或测试点。
+
+- 参数与网络：`swd=null`；`jtag=null`；`uart_debug=null`；`test_points=null`
+- 证据：图 cf413df4fc1a / 第 1 页 / 整页网格 A1-D4，无 Debug/TP/SWD/JTAG
+
+## 模拟电路
+
+### ES8311 模拟基准与中点
+
+U2 VMID pin16、ADCVREF pin15、DACVREF pin14 分别以 C6/C7/C10 1.0uF 对地；AVDD pin11 经 R5 0Ω 接 3.3V，并以 C13 1.0uF 去耦。
+
+- 参数与网络：`vmid=U2 pin16,C6 1.0uF`；`adcvref=U2 pin15,C7 1.0uF`；`dacvref=U2 pin14,C10 1.0uF`；`avdd=U2 pin11 via R5 0Ω to 3.3V`；`avdd_cap=C13 1.0uF`
+- 证据：图 cf413df4fc1a / 第 1 页 / 网格 B2-B3，U2 pins11/14/15/16 与 R5/C6/C7/C10/C13
+
+## 参数与信号索引
+
+| 分类 | 对象 | 参数 |
+| --- | --- | --- |
+| 系统结构 | Atomic Voice Base 架构 | `codec=U2 ES8311`；`microphone=U1 MSM381A3729H9BPC`；`amplifier=U3 NS4150B`；`io_expander=U4 PI4IOE5V6408ZTAEX`；`host_connectors=J1,J2`；`main_soc=null` |
+| 音频 | ES8311 音频编解码器 | `reference=U2`；`part_number=ES8311`；`adc_inputs=pin18 MIC1P,pin17 MIC1N`；`dac_outputs=pin12 OUTP,pin13 OUTN`；`i2s=MCLK,SCLK,LRCK,DSDIN,ASDOUT`；`control=SCL,SDA,CE` |
+| 总线 | 主机到 ES8311 I2S | `connector=J1`；`playback_data=J1.2 DSDIN -> U2.9`；`word_clock=J1.3 LRCK -> U2.8`；`capture_data=U2.7 ASDOUT -> J1.4`；`bit_clock=J1.5 SCLK -> U2.6`；`master_clock=MCLK -> U2.2`；`mclk_connector_pin=null` |
+| 接口 | J1 Atom 5Pin 音频接口 | `reference=J1`；`pin1=3.3V`；`pin2=DSDIN host-to-codec`；`pin3=LRCK host-to-codec`；`pin4=ASDOUT codec-to-host`；`pin5=SCLK host-to-codec` |
+| 总线 | ES8311 与 IO 扩展器 I2C | `controller_connector=J2`；`scl_devices=U2 pin1,U4 pin13`；`sda_devices=U2 pin19,U4 pin14`；`pullups=R1 4.7K SCL,R2 4.7K SDA`；`level=3.3V` |
+| 接口 | J2 Atom 4Pin I2C 接口 | `reference=J2`；`pin1=SCL`；`pin2=SDA`；`pin3=5V`；`pin4=GND`；`5v_board_load=null` |
+| 总线地址 | ES8311 I2C 地址 | `device=U2 ES8311`；`ce_pin=pin20`；`ce_level=GND/low`；`address=0x18`；`alternate_high=0x19` |
+| 音频 | MEMS 麦克风输入链 | `microphone=U1 MSM381A3729H9BPC`；`positive_path=U1 OUT -> C2 1.0uF -> MIC_P -> U2 pin18 MIC1P`；`negative_path=U1 GND/AGND -> MIC_N -> C5 1.0uF -> U2 pin17 MIC1N`；`ground_bridge=R4 0Ω AGND-GND` |
+| 传感器 | MSM381A3729H9BPC 麦克风 | `reference=U1`；`part_number=MSM381A3729H9BPC`；`pin1=VDD`；`pins2_3=GND`；`pin4=OUT`；`supply_filter=L1 HZ1005U102TFB01`；`decoupling=C3 100nF,C4 10uF`；`output_filter=C1 22pF` |
+| 模拟电路 | ES8311 模拟基准与中点 | `vmid=U2 pin16,C6 1.0uF`；`adcvref=U2 pin15,C7 1.0uF`；`dacvref=U2 pin14,C10 1.0uF`；`avdd=U2 pin11 via R5 0Ω to 3.3V`；`avdd_cap=C13 1.0uF` |
+| 音频 | ES8311 DAC 至功放输入 | `negative=U2.13 -> C11 1.0uF -> OUTN -> C16 100nF -> R7 150K -> U3.4 INN`；`positive=U2.12 -> C12 1.0uF -> OUTP -> C17 100nF -> R8 150K -> U3.3 INP` |
+| 音频 | NS4150B 扬声器功放 | `reference=U3`；`part_number=NS4150B`；`supply=3.3V via R9 0Ω`；`control=pin1 CTRL`；`negative_output=pin5 VoN -> R6 0Ω -> SPK-`；`positive_output=pin8 VoP -> R11 0Ω -> SPK+`；`ground=pin7` |
+| 电源 | NS4150B 3.3V 供电与去耦 | `supply=3.3V`；`series=R9 0Ω`；`vcc_pin=U3 pin6`；`decoupling=C18 1.0uF,C19 100nF,C20 22uF,C21 22uF`；`bypass=U3 pin2,C22 1.0uF` |
+| GPIO 与控制信号 | 功放 CTRL 控制 | `controller=U4 PI4IOE5V6408ZTAEX`；`gpio=P0 pin12`；`net=CTRL`；`target=U3 pin1`；`pullup=R10 4.7K to 3.3V`；`unused_gpio=P1-P7 NC` |
+| 复位 | PI4IOE5V6408 复位 | `device=U4`；`reset_pin=pin10 RESET`；`pullup=R12 4.7K to 3.3V`；`capacitor=C24 100nF to GND`；`interrupt=pin1 INT NC` |
+| 总线地址 | PI4IOE5V6408 地址选择 | `device=U4 PI4IOE5V6408ZTAEX`；`address_pin=pin9 ADDR`；`strap=GND`；`numeric_address=null` |
+| 电源 | ES8311 3.3V 供电 | `digital_supply=3.3V -> R3 0Ω -> PVDD pin3,DVDD pin4`；`digital_caps=C8 10uF,C9 100nF`；`analog_supply=3.3V -> R5 0Ω -> AVDD pin11`；`digital_ground=pin5 DGND`；`analog_ground=pin10 AGND` |
+| 电源 | MEMS 麦克风滤波电源 | `input=3.3V`；`filter=L1 HZ1005U102TFB01`；`target=U1 pin1 VDD`；`decoupling=C3 100nF,C4 10uF`；`ground_link=R4 0Ω AGND-GND` |
+| 电源 | 外部电源轨与板上转换 | `active_rail=3.3V from J1 pin1`；`5v_pin=J2 pin3`；`5v_load=null`；`converter=null`；`ldo=null`；`load_switch=null`；`battery=null`；`charger=null` |
+| 关键网络 | 录音与播放关键路径 | `capture=U1 -> MIC_P/MIC_N -> U2 ADC -> ASDOUT -> J1`；`playback=J1 DSDIN -> U2 DAC -> OUTP/OUTN -> U3 -> SPK+/SPK-`；`clocks=MCLK,SCLK,LRCK`；`amplifier_enable=U4 P0/CTRL` |
+| 时钟 | 音频时钟网络 | `master_clock=MCLK -> U2 pin2`；`bit_clock=J1 pin5 SCLK -> U2 pin6`；`word_clock=J1 pin3 LRCK -> U2 pin8`；`oscillator=null`；`mclk_connector=null` |
+| 保护电路 | 外部接口保护 | `j1_esd=null`；`j2_esd=null`；`speaker_esd=null`；`series_links=R3,R5,R6,R9,R11 0Ω`；`filtering=local capacitors and L1` |
+| 存储 | 板级存储 | `flash=null`；`eeprom=null`；`emmc=null`；`storage_card=null` |
+| 内存与 Flash | 外部内存 | `ram=null`；`psram=null`；`ddr=null`；`soc=null` |
+| 射频 | 射频电路 | `rf_ic=null`；`antenna=null`；`matching=null` |
+| 调试与烧录 | 调试接口 | `swd=null`；`jtag=null`；`uart_debug=null`；`test_points=null` |
+| 总线地址 | PI4IOE5V6408 数值地址 | `device=U4 PI4IOE5V6408ZTAEX`；`strap=ADDR=GND`；`address_7bit=null` |
+| 音频 | 音频分辨率、采样率与全双工 | `documented_resolution=24-bit`；`documented_sample_rate=16kHz~64kHz`；`documented_mode=full duplex`；`schematic_capture=MIC -> ADC -> ASDOUT`；`schematic_playback=DSDIN -> DAC -> AMP`；`register_configuration=null` |
+| 音频 | 内置扬声器额定值 | `documented_speaker=2014 cavity speaker`；`documented_rating=1W@8Ω`；`schematic_nets=SPK+,SPK-`；`speaker_reference=null`；`schematic_impedance=null`；`schematic_power=null` |
+
+## 待确认事项
+
+- `address.io-expander`：原理图确认 U4 ADDR pin9 接地，但没有给出对应的 7-bit I2C 地址，无法仅凭该页填写数值。（证据：图 cf413df4fc1a / 第 1 页 / 网格 D2，U4 ADDR pin9 接 GND，无地址注记）
+- `audio.documented-format`：正文称 ES8311 为 24 位、采样率 16kHz~64kHz 且设备支持全双工；原理图确认独立录音/播放信号链，但未标寄存器配置、位宽、采样率或同时收发时序。（证据：图 cf413df4fc1a / 第 1 页 / 整页 U1/U2/U3/J1 音频链，无位宽/采样率/时序参数）
+- `audio.documented-speaker-rating`：正文称扬声器为 2014 型腔体、1W@8Ω；原理图只显示 NS4150B 的 SPK+/SPK- 网络终点，没有扬声器位号、阻抗或功率标注。（证据：图 cf413df4fc1a / 第 1 页 / 网格 C2-C3，U3 经 R6/R11 到 SPK-/SPK+，无扬声器器件标注）
+- `review.io-expander-address`：请依据 PI4IOE5V6408ZTAEX datasheet 确认 ADDR 接 GND 时的 7-bit I2C 地址。；原因：原理图只显示地址绑带，不显示数值地址。
+- `review.audio-format`：请用 ES8311 寄存器配置、驱动代码或音频测试确认 24 位、16kHz~64kHz 与全双工工作模式。；原因：原理图只证明物理录音/播放链路，不包含运行配置与时序。
+- `review.speaker-rating`：请用量产 BOM、扬声器丝印或实测确认内置扬声器为 2014 型腔体且额定 1W@8Ω。；原因：原理图仅给出 SPK+/SPK- 网络，没有扬声器器件参数。
+
+## 原理图来源
+
+| 资源 | 页码 | SHA-256 | 原始地址 |
+| --- | --- | --- | --- |
+| 1 | 1 | `cf413df4fc1aa5231cafcbd077555a559e3626c4b3618a3a10aff9be41ac5345` | `https://m5stack-doc.oss-cn-shenzhen.aliyuncs.com/903/Sch_ECHO_Base_v1.0_page_01.png` |
+
+---
+
+源文档：`zh_CN/atom/Atomic Echo Base.md`
+
+源文档 SHA-256：`6af8c74d2c811bcc060d00ddb28cb10378b766816c5b82e853351b1a6966b9a4`
+
+*该文档由专用原理图子智能体基于原理图证据自动生成；无法确认的内容集中列在“待确认事项”章节。*

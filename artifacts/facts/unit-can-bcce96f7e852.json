@@ -1,0 +1,301 @@
+{
+  "schema_version": 1,
+  "generator": "schematic_describer",
+  "product": {
+    "product_id": "unit-can-bcce96f7e852",
+    "product_name": "Unit CAN",
+    "sku": "U085",
+    "source_path": "unit/can.md",
+    "source_sha256": "356734b1d86f0d144345375a28ab04401f3d2066966ccc7a11751d11be57cfbc",
+    "input_sha256": "6790779e1f8b85ebd766bfe58dbb9bec972040e2c41670ffdf88934132edf49a"
+  },
+  "schematic_assets": [
+    {
+      "sha256": "50d1f5c9439941d97c41061b94ea12996470e1694e1439395a987ff928838bf4",
+      "source_url": "https://m5stack-doc.oss-cn-shenzhen.aliyuncs.com/586/SCH_UNIT_ISOCAN_v1.1_sch_01.png",
+      "pages": [1]
+    }
+  ],
+  "summary": "Unit CAN（U085）以 U1 CA-IS3050G 隔离 CAN 收发器为核心，将 Grove 侧 CAN_Tx/CAN_Rx 转换为隔离侧 CAN_H/CAN_L，并由 JP1 引出 CAN_OUT_H、CAN_OUT_L 与 SHIELD。M1 B0505ST16-W5 将 HOST_5V 隔离转换为 VCC_5V，分别为 U1 的主机侧和总线侧供电；U2 MST5333 另生成 HOST_3V3 驱动白色电源指示灯。总线侧配置双路 ESD、三只 P0080TA、双 GDT、双串联保护器件及 GND-SHIELD 阻容耦合，主机侧 CAN_Tx/CAN_Rx 由 D3 SRV05-4 防护。原理图未显示板载 120Ω 终端电阻，正文中的 1Mbps、110 节点、1000V 隔离及保护额定值需结合 datasheet 或实测确认。",
+  "keywords": [
+    "Unit CAN",
+    "U085",
+    "SCH_UNIT_ISOCAN_v1.1",
+    "CA-IS3050G",
+    "B0505ST16-W5",
+    "MST5333",
+    "SRV05-4",
+    "PESD5V0L1BA",
+    "P0080TA",
+    "SMD4532-075",
+    "LESD3Z5.0CMT1G",
+    "CAN",
+    "CAN_Tx",
+    "CAN_Rx",
+    "CAN_H",
+    "CAN_L",
+    "CAN_OUT_H",
+    "CAN_OUT_L",
+    "HOST_5V",
+    "HOST_3V3",
+    "VCC_5V",
+    "HOST_GND",
+    "GND",
+    "SHIELD",
+    "Grove",
+    "JP1",
+    "60V 100mA/JK-NSMD010",
+    "1nF/2000V",
+    "120Ω",
+    "隔离 CAN",
+    "1Mbps"
+  ],
+  "components": [
+    {
+      "reference": "U1",
+      "part_number": "CA-IS3050G",
+      "role": "双电源域隔离 CAN 收发器，将主机侧 RxD/TxD 转换为隔离侧 CANH/CANL",
+      "evidence": [{"asset_sha256": "50d1f5c9439941d97c41061b94ea12996470e1694e1439395a987ff928838bf4", "page": 1, "locator": "第 1 页网格 A1-A2，U1 CA-IS3050G，pin1-pin8 的 VCC1/GND1/RxD/TxD 与 VCC2/GND2/CANH/CANL"}]
+    },
+    {
+      "reference": "M1",
+      "part_number": "B0505ST16-W5",
+      "role": "由 HOST_5V 生成隔离 VCC_5V 的 5V-5V 隔离电源模块",
+      "evidence": [{"asset_sha256": "50d1f5c9439941d97c41061b94ea12996470e1694e1439395a987ff928838bf4", "page": 1, "locator": "第 1 页网格 B1-B2，M1 B0505ST16-W5，VIN/GND/CTRL 与 VO/0V/TRIM"}]
+    },
+    {
+      "reference": "U2",
+      "part_number": "MST5333",
+      "role": "将 HOST_5V 稳压为 HOST_3V3，供 LED1 电源指示支路使用",
+      "evidence": [{"asset_sha256": "50d1f5c9439941d97c41061b94ea12996470e1694e1439395a987ff928838bf4", "page": 1, "locator": "第 1 页网格 B3，U2 MST5333，VIN pin3、VOUT pin2、GND 与 HOST_5V/HOST_3V3"}]
+    },
+    {
+      "reference": "GROVE",
+      "part_number": null,
+      "role": "主机侧四针接口，提供 CAN_Rx、CAN_Tx、HOST_5V 与 HOST_GND",
+      "evidence": [{"asset_sha256": "50d1f5c9439941d97c41061b94ea12996470e1694e1439395a987ff928838bf4", "page": 1, "locator": "第 1 页网格 A3，GROVE 符号 IO2/IO1/5V/GND 与 CAN_Rx/CAN_Tx/HOST_5V/HOST_GND"}]
+    },
+    {
+      "reference": "JP1",
+      "part_number": null,
+      "role": "四针 CAN 输出连接器，引出 CAN_OUT_H、CAN_OUT_L、NC 与 SHIELD",
+      "evidence": [{"asset_sha256": "50d1f5c9439941d97c41061b94ea12996470e1694e1439395a987ff928838bf4", "page": 1, "locator": "第 1 页网格 A3，JP1 pin4 CAN_OUT_H、pin3 CAN_OUT_L、pin2 未连接、pin1 SHIELD"}]
+    },
+    {
+      "reference": "D3",
+      "part_number": "SRV05-4",
+      "role": "主机侧 CAN_Rx/CAN_Tx 四通道钳位保护阵列，VCC 接 HOST_5V、GND 接 HOST_GND",
+      "evidence": [{"asset_sha256": "50d1f5c9439941d97c41061b94ea12996470e1694e1439395a987ff928838bf4", "page": 1, "locator": "第 1 页网格 A1，D3 SRV05-4，IO1-IO4 跨接 CAN_Rx/CAN_Tx，VCC pin5 与 GND pin2"}]
+    },
+    {
+      "reference": "DZ1,DZ2",
+      "part_number": "PESD5V0L1BA",
+      "role": "分别从 CAN_H、CAN_L 到隔离侧 GND 的 ESD/TVS 保护器件",
+      "evidence": [{"asset_sha256": "50d1f5c9439941d97c41061b94ea12996470e1694e1439395a987ff928838bf4", "page": 1, "locator": "第 1 页网格 A2 CAN Protector，DZ1/DZ2 PESD5V0L1BA 与 CAN_H/CAN_L/GND"}]
+    },
+    {
+      "reference": "TSS1,TSS2,TSS3",
+      "part_number": "P0080TA",
+      "role": "CAN_H、CAN_L 与 SHIELD 保护网络中的三只双向浪涌抑制器件",
+      "evidence": [{"asset_sha256": "50d1f5c9439941d97c41061b94ea12996470e1694e1439395a987ff928838bf4", "page": 1, "locator": "第 1 页网格 A2，TSS1/TSS2/TSS3 均标注 P0080TA，位于 CAN_H/CAN_L/SHIELD 网络"}]
+    },
+    {
+      "reference": "GDT1,GDT2",
+      "part_number": "SMD4532-075",
+      "role": "CAN_OUT_H、CAN_OUT_L 到 SHIELD 的双路气体放电管保护",
+      "evidence": [{"asset_sha256": "50d1f5c9439941d97c41061b94ea12996470e1694e1439395a987ff928838bf4", "page": 1, "locator": "第 1 页网格 A2，GDT1/GDT2 SMD4532-075，连接输出线与 SHIELD 中心节点"}]
+    },
+    {
+      "reference": "F1,F2",
+      "part_number": "60V 100mA/JK-NSMD010",
+      "role": "分别串联在 CAN_H 到 CAN_OUT_H、CAN_L 到 CAN_OUT_L 路径中的保护器件",
+      "evidence": [{"asset_sha256": "50d1f5c9439941d97c41061b94ea12996470e1694e1439395a987ff928838bf4", "page": 1, "locator": "第 1 页网格 A2，F1/F2 均标注 60V 100mA/JK-NSMD010，串联于两条差分线"}]
+    },
+    {
+      "reference": "R6,C12",
+      "part_number": "1MΩ / 1nF/2000V",
+      "role": "在隔离侧 GND 与 SHIELD 之间提供并联的高阻直流泄放和高压电容耦合",
+      "evidence": [{"asset_sha256": "50d1f5c9439941d97c41061b94ea12996470e1694e1439395a987ff928838bf4", "page": 1, "locator": "第 1 页网格 A2，R6 1M 与 C12 1nF/2000V 并联跨接 GND-SHIELD"}]
+    },
+    {
+      "reference": "L1,C5,C6,C7",
+      "part_number": "6.8uH / 10uF/16V",
+      "role": "M1 隔离电源输入 LC 滤波与输出 VCC_5V 去耦",
+      "evidence": [{"asset_sha256": "50d1f5c9439941d97c41061b94ea12996470e1694e1439395a987ff928838bf4", "page": 1, "locator": "第 1 页网格 B1-B2，L1 6.8uH，C5/C6/C7 各 10uF/16V"}]
+    },
+    {
+      "reference": "D1",
+      "part_number": "LESD3Z5.0CMT1G",
+      "role": "VCC_5V 到隔离侧 GND 的电源轨保护器件",
+      "evidence": [{"asset_sha256": "50d1f5c9439941d97c41061b94ea12996470e1694e1439395a987ff928838bf4", "page": 1, "locator": "第 1 页网格 B2，D1 LESD3Z5.0CMT1G 跨接 VCC_5V 与 GND"}]
+    },
+    {
+      "reference": "LED1,R3",
+      "part_number": "White / 1KΩ",
+      "role": "HOST_3V3 电源指示灯及其串联限流电阻",
+      "evidence": [{"asset_sha256": "50d1f5c9439941d97c41061b94ea12996470e1694e1439395a987ff928838bf4", "page": 1, "locator": "第 1 页网格 B3，LED1 White 与 R3 1K 从 HOST_3V3 接至 HOST_GND"}]
+    }
+  ],
+  "facts": [
+    {
+      "id": "system.isolated-can-architecture",
+      "category": "system",
+      "subject": "Unit CAN 隔离架构",
+      "statement": "外部主机通过 GROVE 的 CAN_Tx/CAN_Rx 连接 U1 CA-IS3050G 的 TxD/RxD，U1 跨越 HOST_GND 与隔离 GND 两个电气域并输出 CAN_H/CAN_L。M1 B0505ST16-W5 提供隔离侧 VCC_5V，保护网络将差分信号变为 CAN_OUT_H/CAN_OUT_L 后由 JP1 引出；原理图没有本地主控、协处理器、存储器、晶振、射频、音频、传感器或电池。",
+      "confidence": "confirmed",
+      "attributes": {"host_interface": "GROVE CAN_Tx/CAN_Rx", "transceiver": "U1 CA-IS3050G", "power_isolation": "M1 B0505ST16-W5", "bus_output": "JP1 CAN_OUT_H/CAN_OUT_L/SHIELD", "local_controller": null, "storage": null, "clock": null, "battery": null},
+      "evidence": [{"asset_sha256": "50d1f5c9439941d97c41061b94ea12996470e1694e1439395a987ff928838bf4", "page": 1, "locator": "第 1 页完整网格 A1-B3，Isolated CAN、CAN Protector、Isolated 5V Power、Grove LDO 与连接器"}]
+    },
+    {
+      "id": "component.ca-is3050g-pinmap",
+      "category": "component",
+      "subject": "CA-IS3050G 引脚与电源域",
+      "statement": "U1 pin1 VCC1 接 HOST_5V，pin4 GND1 接 HOST_GND，pin2 RxD 接 CAN_Rx，pin3 TxD 接 CAN_Tx；隔离侧 pin8 VCC2 接 VCC_5V，pin5 GND2 接 GND，pin7 CANH 接 CAN_H，pin6 CANL 接 CAN_L。",
+      "confidence": "confirmed",
+      "attributes": {"pin1": "VCC1 HOST_5V", "pin2": "RxD CAN_Rx", "pin3": "TxD CAN_Tx", "pin4": "GND1 HOST_GND", "pin5": "GND2 GND", "pin6": "CANL CAN_L", "pin7": "CANH CAN_H", "pin8": "VCC2 VCC_5V"},
+      "evidence": [{"asset_sha256": "50d1f5c9439941d97c41061b94ea12996470e1694e1439395a987ff928838bf4", "page": 1, "locator": "第 1 页网格 A1-A2，U1 CA-IS3050G pin1-pin8 标注与网络"}]
+    },
+    {
+      "id": "bus.can-signal-path",
+      "category": "bus",
+      "subject": "主机逻辑信号到 CAN 差分总线",
+      "statement": "GROVE IO1 的 CAN_Tx 进入 U1 TxD pin3，U1 CANH pin7/CANL pin6 产生 CAN_H/CAN_L；经过 CAN Protector 后形成 CAN_OUT_H/CAN_OUT_L。U1 RxD pin2 输出 CAN_Rx 到 GROVE IO2，供外部 CAN 控制器接收。",
+      "confidence": "confirmed",
+      "attributes": {"controller": "external CAN controller", "tx_path": "GROVE IO1 CAN_Tx -> U1 pin3 TxD -> pin7/pin6 CANH/CANL", "rx_path": "U1 pin2 RxD -> GROVE IO2 CAN_Rx", "differential_output": "CAN_H/CAN_L -> protection -> CAN_OUT_H/CAN_OUT_L"},
+      "evidence": [{"asset_sha256": "50d1f5c9439941d97c41061b94ea12996470e1694e1439395a987ff928838bf4", "page": 1, "locator": "第 1 页网格 A1-A3，GROVE、U1 与 CAN Protector 的 CAN_Tx/CAN_Rx/CAN_H/CAN_L/CAN_OUT_H/CAN_OUT_L"}]
+    },
+    {
+      "id": "interface.grove-host",
+      "category": "interface",
+      "subject": "GROVE 主机接口针脚",
+      "statement": "GROVE 四针符号依次标为 IO2、IO1、5V、GND；IO2 连接 CAN_Rx（U1 到主机的接收数据输出），IO1 连接 CAN_Tx（主机到 U1 的发送数据输入），5V 连接 HOST_5V 电源输入，GND 连接 HOST_GND。",
+      "confidence": "confirmed",
+      "attributes": {"IO2": "CAN_Rx, output from unit to host", "IO1": "CAN_Tx, input from host to unit", "5V": "HOST_5V power input", "GND": "HOST_GND return", "logic_supply": "HOST_5V"},
+      "evidence": [{"asset_sha256": "50d1f5c9439941d97c41061b94ea12996470e1694e1439395a987ff928838bf4", "page": 1, "locator": "第 1 页网格 A3，GROVE IO2/IO1/5V/GND 与四个同名网络"}]
+    },
+    {
+      "id": "interface.jp1-can-output",
+      "category": "interface",
+      "subject": "JP1 CAN 输出连接器",
+      "statement": "JP1 pin4 接 CAN_OUT_H，pin3 接 CAN_OUT_L，pin2 在图中为未连接短线，pin1 接 SHIELD。JP1 没有引出隔离侧 GND 或电源。",
+      "confidence": "confirmed",
+      "attributes": {"pin4": "CAN_OUT_H bidirectional differential bus", "pin3": "CAN_OUT_L bidirectional differential bus", "pin2": "NC", "pin1": "SHIELD", "power_pin": null, "ground_pin": null},
+      "evidence": [{"asset_sha256": "50d1f5c9439941d97c41061b94ea12996470e1694e1439395a987ff928838bf4", "page": 1, "locator": "第 1 页网格 A3，JP1 pin1-pin4 标注"}]
+    },
+    {
+      "id": "power.host-five-volt-distribution",
+      "category": "power",
+      "subject": "HOST_5V 主机侧电源分配",
+      "statement": "HOST_5V 从 GROVE 5V 引入，直接供给 U1 VCC1 pin1 和 U2 MST5333 VIN pin3，并经 C5-L1-C6 输入滤波后进入 M1 VIN pin3。HOST_GND 连接 U1 GND1、U2 GND、M1 GND/CTRL 以及相关去耦。",
+      "confidence": "confirmed",
+      "attributes": {"source": "GROVE 5V", "rail": "HOST_5V", "loads": "U1 VCC1,U2 VIN,M1 VIN via L1", "input_filter": "C5 10uF/16V,L1 6.8uH,C6 10uF/16V", "return": "HOST_GND"},
+      "evidence": [{"asset_sha256": "50d1f5c9439941d97c41061b94ea12996470e1694e1439395a987ff928838bf4", "page": 1, "locator": "第 1 页 GROVE 5V/HOST_GND、U1 VCC1/GND1、M1 输入滤波与 U2 VIN/GND"}]
+    },
+    {
+      "id": "power.isolated-five-volt",
+      "category": "power",
+      "subject": "隔离 VCC_5V 电源路径",
+      "statement": "HOST_5V 经 L1 6.8uH 与 C5/C6 各 10uF/16V 滤波后进入 M1 B0505ST16-W5 VIN pin3；M1 VO pin14 输出 VCC_5V，0V pins9/15/16 接隔离 GND。C7 10uF/16V 与 D1 LESD3Z5.0CMT1G 跨接 VCC_5V-GND，VCC_5V 为 U1 VCC2 pin8 供电。",
+      "confidence": "confirmed",
+      "attributes": {"converter": "M1 B0505ST16-W5", "input": "HOST_5V", "input_filter": "L1 6.8uH,C5/C6 10uF/16V", "output": "pin14 VO -> VCC_5V", "output_return": "pins9/15/16 0V -> GND", "output_capacitor": "C7 10uF/16V", "protection": "D1 LESD3Z5.0CMT1G"},
+      "evidence": [{"asset_sha256": "50d1f5c9439941d97c41061b94ea12996470e1694e1439395a987ff928838bf4", "page": 1, "locator": "第 1 页网格 B1-B2，Isolated 5V Power 的 L1/C5/C6/M1/R1/R2/C7/D1 与 VCC_5V"}]
+    },
+    {
+      "id": "power.grove-ldo-indicator",
+      "category": "power",
+      "subject": "HOST_3V3 与电源指示",
+      "statement": "U2 MST5333 VIN pin3 接 HOST_5V，VOUT pin2 生成 HOST_3V3，C3/C4 各 4.7uF/6.3V 分别为输入和输出去耦。HOST_3V3 只在本页连接 LED1 White，LED1 经 R3 1K 接 HOST_GND；未显示 U2 使能脚或其他 HOST_3V3 负载。",
+      "confidence": "confirmed",
+      "attributes": {"ldo": "U2 MST5333", "input": "pin3 HOST_5V", "output": "pin2 HOST_3V3", "capacitors": "C3/C4 4.7uF/6.3V", "indicator": "LED1 White + R3 1K to HOST_GND", "enable": null, "other_loads": null},
+      "evidence": [{"asset_sha256": "50d1f5c9439941d97c41061b94ea12996470e1694e1439395a987ff928838bf4", "page": 1, "locator": "第 1 页网格 B3 Grove LDO，U2/C3/C4/LED1/R3 与 HOST_5V/HOST_3V3/HOST_GND"}]
+    },
+    {
+      "id": "protection.host-digital-lines",
+      "category": "protection",
+      "subject": "CAN_Tx/CAN_Rx 主机侧保护",
+      "statement": "D3 SRV05-4 的 IO1-IO4 成对连接 CAN_Rx 与 CAN_Tx，VCC pin5 接 HOST_5V、GND pin2 接 HOST_GND，对进入 U1 RxD/TxD 的主机侧逻辑线提供钳位保护。",
+      "confidence": "confirmed",
+      "attributes": {"device": "D3 SRV05-4", "protected_nets": "CAN_Rx,CAN_Tx", "io_channels": "IO1-IO4", "positive_reference": "pin5 HOST_5V", "ground_reference": "pin2 HOST_GND"},
+      "evidence": [{"asset_sha256": "50d1f5c9439941d97c41061b94ea12996470e1694e1439395a987ff928838bf4", "page": 1, "locator": "第 1 页网格 A1，D3 SRV05-4 与 CAN_Rx/CAN_Tx/HOST_5V/HOST_GND"}]
+    },
+    {
+      "id": "protection.can-differential-network",
+      "category": "protection",
+      "subject": "CAN_H/CAN_L 多级保护路径",
+      "statement": "CAN_H/CAN_L 各由 DZ1/DZ2 PESD5V0L1BA 对隔离 GND 钳位；TSS1/TSS2/TSS3 均为 P0080TA，覆盖线对 SHIELD 及线间浪涌路径；GDT1/GDT2 SMD4532-075 将两条输出线连接至 SHIELD；F1/F2 以 60V 100mA/JK-NSMD010 分别串联生成 CAN_OUT_H/CAN_OUT_L。",
+      "confidence": "confirmed",
+      "attributes": {"esd": "DZ1/DZ2 PESD5V0L1BA to GND", "tss": "TSS1/TSS2/TSS3 P0080TA", "gdt": "GDT1/GDT2 SMD4532-075 to SHIELD", "series_h": "F1 60V 100mA/JK-NSMD010", "series_l": "F2 60V 100mA/JK-NSMD010", "input_nets": "CAN_H,CAN_L", "output_nets": "CAN_OUT_H,CAN_OUT_L"},
+      "evidence": [{"asset_sha256": "50d1f5c9439941d97c41061b94ea12996470e1694e1439395a987ff928838bf4", "page": 1, "locator": "第 1 页网格 A2 CAN Protector 全区，DZ1/DZ2、TSS1-TSS3、GDT1/GDT2、F1/F2"}]
+    },
+    {
+      "id": "protection.ground-shield-coupling",
+      "category": "protection",
+      "subject": "隔离 GND 与 SHIELD 耦合",
+      "statement": "R6 1MΩ 与 C12 1nF/2000V 并联跨接隔离侧 GND 和 SHIELD，在不直接短接两者的情况下形成直流泄放与交流耦合路径；JP1 pin1 连接 SHIELD。",
+      "confidence": "confirmed",
+      "attributes": {"from": "GND", "to": "SHIELD", "resistor": "R6 1MΩ", "capacitor": "C12 1nF/2000V", "connector": "JP1 pin1 SHIELD"},
+      "evidence": [{"asset_sha256": "50d1f5c9439941d97c41061b94ea12996470e1694e1439395a987ff928838bf4", "page": 1, "locator": "第 1 页网格 A2，R6/C12 并联于 GND-SHIELD；网格 A3 JP1 pin1"}]
+    },
+    {
+      "id": "key_net.isolation-domains",
+      "category": "key_net",
+      "subject": "电源、地与屏蔽域索引",
+      "statement": "主机域使用 HOST_5V/HOST_3V3/HOST_GND，隔离 CAN 域使用 VCC_5V/GND，屏蔽域为 SHIELD。M1 在 HOST_5V/HOST_GND 与 VCC_5V/GND 间提供隔离供电，U1 在主机逻辑域与隔离差分域间传输信号，SHIELD 仅经 R6/C12 与隔离 GND 耦合。",
+      "confidence": "confirmed",
+      "attributes": {"host_domain": "HOST_5V,HOST_3V3,HOST_GND", "isolated_domain": "VCC_5V,GND,CAN_H,CAN_L", "shield_domain": "SHIELD", "power_barrier": "M1 B0505ST16-W5", "signal_barrier": "U1 CA-IS3050G", "shield_coupling": "R6 1MΩ || C12 1nF/2000V"},
+      "evidence": [{"asset_sha256": "50d1f5c9439941d97c41061b94ea12996470e1694e1439395a987ff928838bf4", "page": 1, "locator": "第 1 页所有 HOST_5V/HOST_3V/HOST_GND/VCC_5V/GND/SHIELD 同名网络及 U1/M1 隔离边界"}]
+    },
+    {
+      "id": "bus.no-onboard-termination",
+      "category": "bus",
+      "subject": "CAN 终端电阻配置",
+      "statement": "完整单页原理图从 U1 CANH/CANL 到 JP1 CAN_OUT_H/CAN_OUT_L 的全部路径中未显示跨接两条差分线的 120Ω 终端电阻、终端开关或跳线；产品正文只在包装内容中列出一只独立 120R 电阻。",
+      "confidence": "confirmed",
+      "attributes": {"onboard_termination": null, "termination_switch": null, "differential_nets": "CAN_H/CAN_L,CAN_OUT_H/CAN_OUT_L", "documented_loose_resistor": "120R"},
+      "evidence": [{"asset_sha256": "50d1f5c9439941d97c41061b94ea12996470e1694e1439395a987ff928838bf4", "page": 1, "locator": "第 1 页网格 A1-A3，U1 至 JP1 的完整 CAN 差分与保护路径，无 120Ω 器件"}]
+    },
+    {
+      "id": "reset.no-local-control",
+      "category": "reset",
+      "subject": "复位、BOOT、使能与调试电路",
+      "statement": "本页没有本地主控，因此未显示 RESET、BOOT、片选、中断、方向控制 GPIO、调试连接器或外部时钟。M1 CTRL pin1 接 HOST_GND，U2 未画出独立使能引脚，U1 也没有图示使能/待机控制网络。",
+      "confidence": "confirmed",
+      "attributes": {"reset": null, "boot": null, "interrupt": null, "debug_connector": null, "external_clock": null, "m1_ctrl": "pin1 HOST_GND", "transceiver_enable": null},
+      "evidence": [{"asset_sha256": "50d1f5c9439941d97c41061b94ea12996470e1694e1439395a987ff928838bf4", "page": 1, "locator": "第 1 页完整单页；M1 CTRL pin1、U1 pin1-pin8 和 U2 三引脚电路"}]
+    },
+    {
+      "id": "other.documented-can-performance",
+      "category": "other",
+      "subject": "正文中的 CAN 通信性能",
+      "statement": "产品正文称信号速率最高 1Mbps、最多支持 110 个节点，通信距离可在低于 5Kbps 时达到 10km、在 1Mbps 时小于 40m，并符合 ISO11898-2；原理图只确认 CA-IS3050G 型号与连接，没有印出这些性能边界。",
+      "confidence": "uncertain",
+      "attributes": {"documented_max_rate": "1Mbps", "documented_nodes": 110, "documented_long_distance": "10km at <5Kbps", "documented_1mbps_distance": "<40m", "documented_standard": "ISO11898-2", "schematic_performance_table": null},
+      "evidence": [{"asset_sha256": "50d1f5c9439941d97c41061b94ea12996470e1694e1439395a987ff928838bf4", "page": 1, "locator": "第 1 页 U1 CA-IS3050G 与 CAN_H/CAN_L，整页无速率、节点数、距离或标准文字"}]
+    },
+    {
+      "id": "protection.documented-ratings",
+      "category": "protection",
+      "subject": "正文中的隔离与保护额定值",
+      "statement": "产品正文列出 1000V 隔离耐压、-12V 至 12V 共模电压、限流、过压、接地损耗保护、主动态超时与热关断，并描述接地损耗保护范围为 -40V 至 40V；原理图显示隔离与保护器件拓扑，但没有直接给出这些系统级额定值或测试条件。",
+      "confidence": "uncertain",
+      "attributes": {"documented_isolation": "1000V", "documented_common_mode": "-12V to 12V", "documented_ground_loss": "-40V to 40V", "documented_protections": "current limit,overvoltage,dominant timeout,thermal shutdown", "schematic_test_conditions": null},
+      "evidence": [{"asset_sha256": "50d1f5c9439941d97c41061b94ea12996470e1694e1439395a987ff928838bf4", "page": 1, "locator": "第 1 页 U1/M1 隔离边界与 CAN Protector 全区，图中无系统级隔离/共模/热关断额定表"}]
+    }
+  ],
+  "needs_review": [
+    {
+      "id": "review.can-performance",
+      "fact_id": "other.documented-can-performance",
+      "question": "请结合 CA-IS3050G datasheet、总线拓扑和线缆条件确认 U085 的 1Mbps、110 节点、通信距离及 ISO11898-2 适用边界。",
+      "reason": "原理图没有给出速率、节点负载、线缆、距离或标准符合性测试条件。",
+      "evidence": [{"asset_sha256": "50d1f5c9439941d97c41061b94ea12996470e1694e1439395a987ff928838bf4", "page": 1, "locator": "第 1 页 U1 CA-IS3050G 与 JP1 CAN 输出路径"}]
+    },
+    {
+      "id": "review.isolation-protection-ratings",
+      "fact_id": "protection.documented-ratings",
+      "question": "请用 U1、M1 与保护器件 datasheet 或整机测试报告确认 1000V 隔离、共模范围、接地损耗范围、限流、过压、主动态超时和热关断额定值。",
+      "reason": "页面只显示器件型号和拓扑，未显示系统级额定值、持续时间、环境或测试方法。",
+      "evidence": [{"asset_sha256": "50d1f5c9439941d97c41061b94ea12996470e1694e1439395a987ff928838bf4", "page": 1, "locator": "第 1 页 U1/M1 与 DZ/TSS/GDT/F1/F2 保护网络"}]
+    }
+  ]
+}

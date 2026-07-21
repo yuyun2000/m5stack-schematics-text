@@ -1,0 +1,21 @@
+{
+  "dry_run": false,
+  "failed": 0,
+  "published": 1,
+  "results": [
+    {
+      "backup": null,
+      "draft_action": "unchanged",
+      "dry_run": false,
+      "errors": [],
+      "needs_review": 4,
+      "product_id": "stamp-pwr485-f925b02d2ef4",
+      "product_name": "Stamp PWR485",
+      "publish_action": "unchanged",
+      "sha256": "72d6ca4725958356674eb2dcc111305c1cfa1a2846421f34f5bc8f6cb614b75f",
+      "status": "valid",
+      "uncertain_facts": 4
+    }
+  ],
+  "schema_version": 1
+}

@@ -1,0 +1,21 @@
+{
+  "dry_run": false,
+  "failed": 0,
+  "published": 1,
+  "results": [
+    {
+      "backup": null,
+      "draft_action": "unchanged",
+      "dry_run": false,
+      "errors": [],
+      "needs_review": 7,
+      "product_id": "unitv2-26188210094d",
+      "product_name": "UnitV2",
+      "publish_action": "unchanged",
+      "sha256": "379fe3338f76919db7b2de3fd128c41f452922b691e9f86c2a37828d6f10c3c8",
+      "status": "valid",
+      "uncertain_facts": 7
+    }
+  ],
+  "schema_version": 1
+}

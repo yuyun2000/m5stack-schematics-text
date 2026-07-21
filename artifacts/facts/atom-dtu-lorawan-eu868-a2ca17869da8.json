@@ -1,0 +1,649 @@
+{
+  "schema_version": 1,
+  "generator": "schematic_describer",
+  "product": {
+    "product_id": "atom-dtu-lorawan-eu868-a2ca17869da8",
+    "product_name": "Atom DTU LoRaWAN-EU868",
+    "sku": "A152-EU868",
+    "source_path": "atom/Atom DTU LoRaWAN-EU868.md",
+    "source_sha256": "d28d22d6f4f66a0d0f50603d87b2eef8955a29994f826bd2d0a1f44fa6f8800f",
+    "input_sha256": "9d5bd2365b67f92bf11e0d2f6d7f5da5f0b39d42f4adc3cd4d49b31d72a9495a"
+  },
+  "schematic_assets": [
+    {
+      "sha256": "70a4d5ed1c36f2e3667818970c8fb2db0e9d2b6af530d1a899ae3e0f768d03d3",
+      "source_url": "https://m5stack-doc.oss-cn-shenzhen.aliyuncs.com/1139/A152_EU868_Sch_page_01.png",
+      "pages": [
+        1
+      ]
+    }
+  ],
+  "summary": "Atom DTU LoRaWAN-EU868 以 M1 RAK3172 为无线通信模组，通过 Atom-5Pin 的 G22/G19 UART 连接模组，并经 R9 0Ω 与预留 C14/C15 匹配位连接 E1 SMA 天线座。P1 的 12V+ 进入 +VIN，经 F1 和 U1 MP1584EN 降压后通过 D7 形成 +5V；+3.3V 从 Atom-5Pin 引入，为 RAK3172、U2 SP3485EN-L/TR 与相关逻辑供电。Atom-5Pin 的 G23/G33 连接自动方向控制 RS485 电路，差分 A/B 具有偏置、可选 120Ω 端接和 SP4021 保护，并与 +VIN/GND 一同引到 4 Pin 端子。",
+  "keywords": [
+    "Atom DTU LoRaWAN-EU868",
+    "A152-EU868",
+    "EU868",
+    "863-870 MHz",
+    "RAK3172",
+    "STM32WLE5",
+    "MP1584EN",
+    "SP3485EN-L/TR",
+    "SS8050 Y1",
+    "LoRaWAN",
+    "LoRa P2P",
+    "RS485",
+    "RS485_A",
+    "RS485_B",
+    "ANT_SMA-KWE",
+    "R9 0Ω",
+    "C14 NC",
+    "C15 NC",
+    "Atom-5Pin",
+    "Atom-4Pin",
+    "HY-2.0_IIC",
+    "G19",
+    "G22",
+    "G23",
+    "G33",
+    "G21",
+    "G25",
+    "U2_RX",
+    "U2_TX",
+    "SWDIO",
+    "SWCLK",
+    "RST",
+    "BOOT",
+    "+VIN",
+    "+5V",
+    "+3.3V",
+    "F1 1.5A/24V",
+    "R14 120Ω/NC",
+    "SP4021-01FTG-C"
+  ],
+  "components": [
+    {
+      "reference": "U1",
+      "part_number": "MP1584EN",
+      "role": "+VIN 到 +5V 路径中的降压转换器",
+      "evidence": [
+        {
+          "asset_sha256": "70a4d5ed1c36f2e3667818970c8fb2db0e9d2b6af530d1a899ae3e0f768d03d3",
+          "page": 1,
+          "locator": "网格 1A~2B：U1 MP1584EN，VIN/SW/BST/FB/FREQ/COMP/GND 与外围电感、电容、电阻"
+        }
+      ]
+    },
+    {
+      "reference": "M1",
+      "part_number": "RAK3172",
+      "role": "LoRaWAN 无线通信模组，连接 Atom UART、SWD、复位、启动与射频天线",
+      "evidence": [
+        {
+          "asset_sha256": "70a4d5ed1c36f2e3667818970c8fb2db0e9d2b6af530d1a899ae3e0f768d03d3",
+          "page": 1,
+          "locator": "网格 2B~3C：M1 RAK3172 32 Pin 符号及 U2_RX/U2_TX/SWDIO/SWCLK/RF/RST/BOOT/VDD/GND"
+        }
+      ]
+    },
+    {
+      "reference": "U2",
+      "part_number": "SP3485EN-L/TR",
+      "role": "3.3V RS485 收发器，连接 Atom RX/TX 控制与 RS485_A/RS485_B",
+      "evidence": [
+        {
+          "asset_sha256": "70a4d5ed1c36f2e3667818970c8fb2db0e9d2b6af530d1a899ae3e0f768d03d3",
+          "page": 1,
+          "locator": "网格 1D~2D：U2 SP3485EN-L/TR 的 RO/nRE/DE/DI/A/B/VCC/GND 引脚"
+        }
+      ]
+    },
+    {
+      "reference": "Q1",
+      "part_number": "SS8050 Y1",
+      "role": "由 TX 经 R15 驱动的 RS485 nRE/DE 自动方向控制晶体管",
+      "evidence": [
+        {
+          "asset_sha256": "70a4d5ed1c36f2e3667818970c8fb2db0e9d2b6af530d1a899ae3e0f768d03d3",
+          "page": 1,
+          "locator": "网格 1D：TX-R15 1KΩ-Q1 SS8050，集电极接 U2 pins 2/3，发射极接 GND"
+        }
+      ]
+    },
+    {
+      "reference": "E1",
+      "part_number": "ANT_SMA-KWE",
+      "role": "外部 LoRa 天线 SMA 连接器",
+      "evidence": [
+        {
+          "asset_sha256": "70a4d5ed1c36f2e3667818970c8fb2db0e9d2b6af530d1a899ae3e0f768d03d3",
+          "page": 1,
+          "locator": "网格 1C~2C：E1 ANT_SMA-KWE 中心端 ANT 与外壳 GND"
+        }
+      ]
+    },
+    {
+      "reference": "F1",
+      "part_number": "1.5A/24V",
+      "role": "+VIN 输入串联保险丝",
+      "evidence": [
+        {
+          "asset_sha256": "70a4d5ed1c36f2e3667818970c8fb2db0e9d2b6af530d1a899ae3e0f768d03d3",
+          "page": 1,
+          "locator": "网格 1A：+VIN-F1 1.5A/24V-U1 VIN 输入节点"
+        }
+      ]
+    },
+    {
+      "reference": "D1/D2/D7",
+      "part_number": "SS54",
+      "role": "MP1584EN 输入、开关节点与 +5V 输出路径中的肖特基二极管",
+      "evidence": [
+        {
+          "asset_sha256": "70a4d5ed1c36f2e3667818970c8fb2db0e9d2b6af530d1a899ae3e0f768d03d3",
+          "page": 1,
+          "locator": "网格 1A~3A：D2 从输入节点到 GND、D1 从 SW 节点到 GND、D7 从降压输出到 +5V"
+        }
+      ]
+    },
+    {
+      "reference": "P1",
+      "part_number": "HDR_4P",
+      "role": "RS485 A/B 与 12V+/12V- 电源接线端子接口",
+      "evidence": [
+        {
+          "asset_sha256": "70a4d5ed1c36f2e3667818970c8fb2db0e9d2b6af530d1a899ae3e0f768d03d3",
+          "page": 1,
+          "locator": "网格 4C：P1 HDR_4P 的 B/A/12V+/12V- 与 RS485_B/RS485_A/+VIN/GND"
+        }
+      ]
+    },
+    {
+      "reference": "J1",
+      "part_number": "HY-2.0_IIC",
+      "role": "G21/G25 与 +5V/GND 的 4 Pin Grove/I2C 接口",
+      "evidence": [
+        {
+          "asset_sha256": "70a4d5ed1c36f2e3667818970c8fb2db0e9d2b6af530d1a899ae3e0f768d03d3",
+          "page": 1,
+          "locator": "网格 4C：J1 HY-2.0_IIC，pins 1~4 为 IIC_SCL/IIC_SDA/VCC/GND"
+        }
+      ]
+    },
+    {
+      "reference": "P2",
+      "part_number": "Atom-5Pin",
+      "role": "Atom 主控的 3.3V、LoRa UART 与 RS485 UART 接口",
+      "evidence": [
+        {
+          "asset_sha256": "70a4d5ed1c36f2e3667818970c8fb2db0e9d2b6af530d1a899ae3e0f768d03d3",
+          "page": 1,
+          "locator": "网格 4D：P2 Atom-5Pin，pins 1~5 为 3V3/G22/G19/G23/G33"
+        }
+      ]
+    },
+    {
+      "reference": "P3",
+      "part_number": "Atom-4Pin",
+      "role": "Atom 主控到 Grove 的 G21/G25/+5V/GND 接口",
+      "evidence": [
+        {
+          "asset_sha256": "70a4d5ed1c36f2e3667818970c8fb2db0e9d2b6af530d1a899ae3e0f768d03d3",
+          "page": 1,
+          "locator": "网格 3D~4D：P3 Atom-4Pin，pins 1~4 为 G21/G25/5V/GND"
+        }
+      ]
+    },
+    {
+      "reference": "R14",
+      "part_number": "120Ω/NC",
+      "role": "RS485_A 与 RS485_B 之间的可选终端电阻位",
+      "evidence": [
+        {
+          "asset_sha256": "70a4d5ed1c36f2e3667818970c8fb2db0e9d2b6af530d1a899ae3e0f768d03d3",
+          "page": 1,
+          "locator": "网格 2D：R14 120Ω/NC 跨接 RS485_B 与 RS485_A"
+        }
+      ]
+    },
+    {
+      "reference": "D3/D4/D5",
+      "part_number": "SP4021-01FTG-C",
+      "role": "RS485 A/B 对地及线间瞬态保护器件",
+      "evidence": [
+        {
+          "asset_sha256": "70a4d5ed1c36f2e3667818970c8fb2db0e9d2b6af530d1a899ae3e0f768d03d3",
+          "page": 1,
+          "locator": "网格 2D：D3 从 RS485_B 到 GND、D4 跨 A/B、D5 从 RS485_A 到 GND"
+        }
+      ]
+    },
+    {
+      "reference": "TVS1",
+      "part_number": "SMFJ5.0A",
+      "role": "+5V 到 GND 的瞬态抑制器",
+      "evidence": [
+        {
+          "asset_sha256": "70a4d5ed1c36f2e3667818970c8fb2db0e9d2b6af530d1a899ae3e0f768d03d3",
+          "page": 1,
+          "locator": "网格 3D：TVS1 SMFJ5.0A 连接 +5V 与 GND"
+        }
+      ]
+    },
+    {
+      "reference": "JP1~JP6",
+      "part_number": "Test pads",
+      "role": "3.3V、GND、SWCLK、SWDIO、RST 与 BOOT 测试/调试点",
+      "evidence": [
+        {
+          "asset_sha256": "70a4d5ed1c36f2e3667818970c8fb2db0e9d2b6af530d1a899ae3e0f768d03d3",
+          "page": 1,
+          "locator": "网格 1C：JP1 +3.3V、JP2 GND、JP3 SWCLK、JP4 SWDIO、JP5 RST、JP6 BOOT"
+        }
+      ]
+    },
+    {
+      "reference": "R1/R2/R3",
+      "part_number": "0Ω",
+      "role": "页面右上角 470/868/915 频段配置表中的三个电阻位，实际装配与连线待确认",
+      "evidence": [
+        {
+          "asset_sha256": "70a4d5ed1c36f2e3667818970c8fb2db0e9d2b6af530d1a899ae3e0f768d03d3",
+          "page": 1,
+          "locator": "网格 4A：R1 0Ω-470、R2 0Ω-868、R3 0Ω-915 表格"
+        }
+      ]
+    }
+  ],
+  "facts": [
+    {
+      "id": "system.atom-dtu-architecture",
+      "category": "system",
+      "subject": "Atom DTU LoRaWAN-EU868",
+      "statement": "电路由 RAK3172 无线模组、MP1584EN 5V 降压电源、SP3485EN-L/TR RS485 收发器、Atom 4/5 Pin 主控接口、SMA 天线接口与 Grove 接口组成。",
+      "confidence": "confirmed",
+      "attributes": {
+        "radio": "M1 RAK3172",
+        "power": "U1 MP1584EN",
+        "rs485": "U2 SP3485EN-L/TR",
+        "host_interfaces": "P2 Atom-5Pin,P3 Atom-4Pin",
+        "antenna": "E1 ANT_SMA-KWE",
+        "grove": "J1 HY-2.0_IIC"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "70a4d5ed1c36f2e3667818970c8fb2db0e9d2b6af530d1a899ae3e0f768d03d3",
+          "page": 1,
+          "locator": "整页 U1/M1/U2/P1/P2/P3/J1/E1 功能块及同名网络"
+        }
+      ]
+    },
+    {
+      "id": "power.vin-input-protection",
+      "category": "power",
+      "subject": "+VIN 输入",
+      "statement": "P1 的 12V+ 引脚连接 +VIN，+VIN 经 F1 1.5A/24V 后进入 U1 VIN；F1 后节点由 D2 SS54 与 C2 22uF/35V 接地。",
+      "confidence": "confirmed",
+      "attributes": {
+        "terminal": "P1 12V+",
+        "net": "+VIN",
+        "fuse": "F1 1.5A/24V",
+        "clamp_diode": "D2 SS54 to GND",
+        "input_capacitor": "C2 22uF/35V",
+        "converter_input": "U1 pin 7 VIN"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "70a4d5ed1c36f2e3667818970c8fb2db0e9d2b6af530d1a899ae3e0f768d03d3",
+          "page": 1,
+          "locator": "网格 4C P1 12V+ 与网格 1A +VIN-F1-D2-C2-U1 VIN 路径"
+        }
+      ]
+    },
+    {
+      "id": "power.mp1584-5v-buck",
+      "category": "power",
+      "subject": "U1 MP1584EN 降压输出",
+      "statement": "U1 SW 引脚 1 经 L1 22uH 到输出节点，D1 SS54 接在 SW 节点与 GND 之间；输出节点由 C3/C4/C5 各 22uF 滤波，经 D7 SS54 形成 +5V。",
+      "confidence": "confirmed",
+      "attributes": {
+        "controller": "U1 MP1584EN",
+        "switch_pin": "pin 1 SW",
+        "inductor": "L1 22uH",
+        "catch_diode": "D1 SS54",
+        "output_capacitors": "C3/C4/C5 22uF",
+        "series_diode": "D7 SS54",
+        "output": "+5V"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "70a4d5ed1c36f2e3667818970c8fb2db0e9d2b6af530d1a899ae3e0f768d03d3",
+          "page": 1,
+          "locator": "网格 1A~3A：U1 SW-D1-L1-C3/C4/C5-D7-+5V"
+        }
+      ]
+    },
+    {
+      "id": "power.mp1584-feedback",
+      "category": "power",
+      "subject": "MP1584EN 反馈与补偿",
+      "statement": "U1 FB 引脚 4 接 R4 56KΩ 与 R5 10KΩ 分压点；FREQ 引脚 6 经 R6 100KΩ 接地，COMP 引脚 3 经 C6 150pF 与 R7 100KΩ 串联接地，EN 引脚 2 标为未连接。",
+      "confidence": "confirmed",
+      "attributes": {
+        "feedback_top": "R4 56KΩ",
+        "feedback_bottom": "R5 10KΩ",
+        "frequency_resistor": "R6 100KΩ",
+        "compensation": "C6 150pF,R7 100KΩ",
+        "enable": "U1 pin 2 EN no-connect"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "70a4d5ed1c36f2e3667818970c8fb2db0e9d2b6af530d1a899ae3e0f768d03d3",
+          "page": 1,
+          "locator": "网格 1A~2B：U1 FB/FREQ/COMP/EN 与 R4/R5/R6/C6/R7"
+        }
+      ]
+    },
+    {
+      "id": "power.3v3-distribution",
+      "category": "power",
+      "subject": "+3.3V 电源域",
+      "statement": "P2 Atom-5Pin 引脚 1 引入 +3.3V，连接 M1 VDD 引脚 24、U2 VCC 引脚 8、复位上拉 R8、UART 偏置 D6，以及 C8/C9/C13/C11/C12 和 D9 等支路。",
+      "confidence": "confirmed",
+      "attributes": {
+        "source": "P2 pin 1 3V3",
+        "radio": "M1 pin 24 VDD",
+        "rs485": "U2 pin 8 VCC",
+        "radio_decoupling": "C8 100nF,C9 22uF,C13 33pF",
+        "rs485_decoupling": "C11 100nF",
+        "bulk_capacitor": "C12 100uF"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "70a4d5ed1c36f2e3667818970c8fb2db0e9d2b6af530d1a899ae3e0f768d03d3",
+          "page": 1,
+          "locator": "网格 4D P2 pin 1 与 M1/U2/R8/D6/C8/C9/C13/C11/C12/D9 的同名 +3.3V 网络"
+        }
+      ]
+    },
+    {
+      "id": "interface.power-rs485-terminal",
+      "category": "interface",
+      "subject": "P1 HDR_4P",
+      "statement": "P1 四个端子自上而下为 B、A、12V+、12V-，分别连接 RS485_B、RS485_A、+VIN 与 GND。",
+      "confidence": "confirmed",
+      "attributes": {
+        "B": "RS485_B",
+        "A": "RS485_A",
+        "12V_plus": "+VIN",
+        "12V_minus": "GND"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "70a4d5ed1c36f2e3667818970c8fb2db0e9d2b6af530d1a899ae3e0f768d03d3",
+          "page": 1,
+          "locator": "网格 4C：P1 HDR_4P 的 B/A/12V+/12V- 与左侧网络"
+        }
+      ]
+    },
+    {
+      "id": "interface.atom-5pin",
+      "category": "interface",
+      "subject": "P2 Atom-5Pin",
+      "statement": "P2 引脚 1~5 依次为 +3.3V、G22、G19、G23、G33；G22/G19 连接 RAK3172 UART，G23/G33 分别标为 TX/RX 并连接 RS485 电路。",
+      "confidence": "confirmed",
+      "attributes": {
+        "pin_1": "+3.3V",
+        "pin_2": "G22 to U2_RX",
+        "pin_3": "G19 to U2_TX",
+        "pin_4": "G23 TX",
+        "pin_5": "G33 RX"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "70a4d5ed1c36f2e3667818970c8fb2db0e9d2b6af530d1a899ae3e0f768d03d3",
+          "page": 1,
+          "locator": "网格 4D：P2 Atom-5Pin pins 1~5、R18/R19/U2_RX/U2_TX 与 TX/RX 网络"
+        }
+      ]
+    },
+    {
+      "id": "interface.atom-4pin-grove",
+      "category": "interface",
+      "subject": "P3 Atom-4Pin 到 J1 HY-2.0_IIC",
+      "statement": "P3 引脚 1/2/3/4 的 G21/G25/+5V/GND 分别连接 J1 引脚 1/2/3/4 的 IIC_SCL/IIC_SDA/VCC/GND；C10 100nF 接在 +5V 与 GND 之间。",
+      "confidence": "confirmed",
+      "attributes": {
+        "scl": "P3 pin 1 G21-J1 pin 1 IIC_SCL",
+        "sda": "P3 pin 2 G25-J1 pin 2 IIC_SDA",
+        "power": "P3 pin 3 +5V-J1 pin 3 VCC",
+        "ground": "P3 pin 4 GND-J1 pin 4 GND",
+        "decoupling": "C10 100nF"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "70a4d5ed1c36f2e3667818970c8fb2db0e9d2b6af530d1a899ae3e0f768d03d3",
+          "page": 1,
+          "locator": "网格 3D~4D：P3 Atom-4Pin、J1 HY-2.0_IIC 与 C10"
+        }
+      ]
+    },
+    {
+      "id": "bus.atom-to-rak-uart",
+      "category": "bus",
+      "subject": "Atom 与 RAK3172 UART",
+      "statement": "P2 G22 经 R18 22Ω 连接 U2_RX，并进入 M1 引脚 1；P2 G19 经 R19 22Ω 连接 U2_TX，并进入 M1 引脚 2。R10/R17 各 10KΩ 从两路信号接到 D6 后节点，D6 的另一端接 +3.3V。",
+      "confidence": "confirmed",
+      "attributes": {
+        "module_rx": "P2 pin 2 G22-R18 22Ω-U2_RX-M1 pin 1",
+        "module_tx": "P2 pin 3 G19-R19 22Ω-U2_TX-M1 pin 2",
+        "bias_rx": "R10 10KΩ to D6 node",
+        "bias_tx": "R17 10KΩ to D6 node",
+        "diode": "D6 1N4148WS T4 to +3.3V"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "70a4d5ed1c36f2e3667818970c8fb2db0e9d2b6af530d1a899ae3e0f768d03d3",
+          "page": 1,
+          "locator": "网格 4D P2/R10/R17/R18/R19/D6 与网格 2B M1 pins 1/2 的 U2_RX/U2_TX"
+        }
+      ]
+    },
+    {
+      "id": "bus.atom-to-rs485-control",
+      "category": "bus",
+      "subject": "Atom 与 SP3485EN 控制",
+      "statement": "P2 G33 的 RX 网络经 R12 1KΩ 接 U2 RO 引脚 1；P2 G23 的 TX 网络经 R15 1KΩ 驱动 Q1 基极，Q1 集电极连接 U2 nRE/DE 引脚 2/3并由 R13 4.7KΩ 上拉到 +3.3V，U2 DI 引脚 4 接 GND。",
+      "confidence": "confirmed",
+      "attributes": {
+        "receive": "U2 pin 1 RO-R12 1KΩ-RX-P2 pin 5 G33",
+        "direction_drive": "P2 pin 4 G23-TX-R15 1KΩ-Q1 base",
+        "direction_node": "Q1 collector-U2 pins 2 nRE and 3 DE-R13 4.7KΩ to +3.3V",
+        "driver_input": "U2 pin 4 DI to GND",
+        "transistor": "Q1 SS8050 Y1"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "70a4d5ed1c36f2e3667818970c8fb2db0e9d2b6af530d1a899ae3e0f768d03d3",
+          "page": 1,
+          "locator": "网格 1D U2/Q1/R12/R13/R15 的 RX/TX/nRE/DE/DI 与网格 4D P2 G23/G33"
+        }
+      ]
+    },
+    {
+      "id": "interface.rs485-differential",
+      "category": "interface",
+      "subject": "SP3485EN RS485 A/B",
+      "statement": "U2 B 引脚 7 连接 RS485_B 并由 R11 4.7KΩ 接 GND；U2 A 引脚 6 连接 RS485_A 并由 R16 4.7KΩ 接 +3.3V；R14 以 120Ω/NC 标注跨接 A/B。",
+      "confidence": "confirmed",
+      "attributes": {
+        "B": "U2 pin 7-RS485_B-R11 4.7KΩ-GND",
+        "A": "U2 pin 6-RS485_A-R16 4.7KΩ-+3.3V",
+        "termination": "R14 120Ω/NC across A/B"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "70a4d5ed1c36f2e3667818970c8fb2db0e9d2b6af530d1a899ae3e0f768d03d3",
+          "page": 1,
+          "locator": "网格 2D：U2 pins 6/7、R11/R16/R14 与 RS485_A/RS485_B"
+        }
+      ]
+    },
+    {
+      "id": "protection.rs485-lines",
+      "category": "protection",
+      "subject": "RS485 A/B 瞬态保护",
+      "statement": "D3 SP4021-01FTG-C 连接 RS485_B 与 GND，D5 同型号连接 RS485_A 与 GND，D4 同型号跨接 RS485_B 与 RS485_A。",
+      "confidence": "confirmed",
+      "attributes": {
+        "B_to_ground": "D3 SP4021-01FTG-C",
+        "A_to_ground": "D5 SP4021-01FTG-C",
+        "line_to_line": "D4 SP4021-01FTG-C"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "70a4d5ed1c36f2e3667818970c8fb2db0e9d2b6af530d1a899ae3e0f768d03d3",
+          "page": 1,
+          "locator": "网格 2D：D3/D4/D5 围绕 RS485_B/RS485_A 的三器件保护网络"
+        }
+      ]
+    },
+    {
+      "id": "protection.power-rails",
+      "category": "protection",
+      "subject": "+5V 与 +3.3V 保护支路",
+      "statement": "TVS1 SMFJ5.0A 连接 +5V 与 GND，D9 LESD3Z5.0CMT1G 连接 +3.3V 与 GND，D10 LESD3Z5.0CMT1G 连接 MP1584EN 输出节点与 GND。",
+      "confidence": "confirmed",
+      "attributes": {
+        "five_volt": "TVS1 SMFJ5.0A",
+        "three_volt_three": "D9 LESD3Z5.0CMT1G",
+        "buck_output": "D10 LESD3Z5.0CMT1G"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "70a4d5ed1c36f2e3667818970c8fb2db0e9d2b6af530d1a899ae3e0f768d03d3",
+          "page": 1,
+          "locator": "网格 3D TVS1/D9 与网格 3A D10 的电源轨到 GND 支路"
+        }
+      ]
+    },
+    {
+      "id": "rf.rak3172-antenna-path",
+      "category": "rf",
+      "subject": "RAK3172 RF 到 SMA",
+      "statement": "M1 RF 引脚 12 经 R9 0Ω 到 ANT 网络并连接 E1 ANT_SMA-KWE 中心端；C15 与 C14 分别位于 R9 两侧并接地，两个电容位均标为 NC，E1 外壳引脚接 GND。",
+      "confidence": "confirmed",
+      "attributes": {
+        "radio_pin": "M1 pin 12 RF",
+        "series": "R9 0Ω",
+        "antenna_net": "ANT",
+        "connector": "E1 ANT_SMA-KWE",
+        "module_side_shunt": "C15 NC to GND",
+        "antenna_side_shunt": "C14 NC to GND"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "70a4d5ed1c36f2e3667818970c8fb2db0e9d2b6af530d1a899ae3e0f768d03d3",
+          "page": 1,
+          "locator": "网格 1C~2C：M1 pin 12 RF-C15 NC-R9 0Ω-C14 NC-ANT-E1 ANT_SMA-KWE"
+        }
+      ]
+    },
+    {
+      "id": "rf.region-resistor-table",
+      "category": "rf",
+      "subject": "470/868/915 频段配置表",
+      "statement": "页面右上表格将 R1 0Ω 对应 470、R2 0Ω 对应 868、R3 0Ω 对应 915，但表格没有显示三个电阻的电气连接或实际装配状态，无法仅凭此页确认 EU868 版本是否装配 R2。",
+      "confidence": "uncertain",
+      "attributes": {
+        "470": "R1 0Ω",
+        "868": "R2 0Ω",
+        "915": "R3 0Ω",
+        "selected_population": null,
+        "product_region": "EU868"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "70a4d5ed1c36f2e3667818970c8fb2db0e9d2b6af530d1a899ae3e0f768d03d3",
+          "page": 1,
+          "locator": "网格 4A：R1/R2/R3 0Ω 与 470/868/915 的独立表格，无外接网络"
+        }
+      ]
+    },
+    {
+      "id": "debug.rak3172-swd-pads",
+      "category": "debug",
+      "subject": "RAK3172 SWD 与测试点",
+      "statement": "M1 SWDIO 引脚 7 连接 JP4，SWCLK 引脚 8 连接 JP3；JP1、JP2、JP5、JP6 分别引出 +3.3V、GND、RST、BOOT。",
+      "confidence": "confirmed",
+      "attributes": {
+        "swdio": "M1 pin 7-JP4",
+        "swclk": "M1 pin 8-JP3",
+        "power": "JP1 +3.3V",
+        "ground": "JP2 GND",
+        "reset": "JP5 RST",
+        "boot": "JP6 BOOT"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "70a4d5ed1c36f2e3667818970c8fb2db0e9d2b6af530d1a899ae3e0f768d03d3",
+          "page": 1,
+          "locator": "网格 1C JP1~JP6 与网格 2B M1 pins 7/8/22/21 的同名网络"
+        }
+      ]
+    },
+    {
+      "id": "reset.rak3172-reset-network",
+      "category": "reset",
+      "subject": "RAK3172 RST",
+      "statement": "M1 RST 引脚 22 连接 RST 网络与 JP5，R8 10KΩ 将 RST 上拉到 +3.3V，C7 1uF 将 RST 接到 GND。",
+      "confidence": "confirmed",
+      "attributes": {
+        "module_pin": "M1 pin 22 RST",
+        "test_pad": "JP5",
+        "pullup": "R8 10KΩ to +3.3V",
+        "capacitor": "C7 1uF to GND"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "70a4d5ed1c36f2e3667818970c8fb2db0e9d2b6af530d1a899ae3e0f768d03d3",
+          "page": 1,
+          "locator": "网格 4B R8/RST/C7 与网格 2C M1 pin 22、网格 1C JP5"
+        }
+      ]
+    },
+    {
+      "id": "key_net.rak3172-boot",
+      "category": "key_net",
+      "subject": "RAK3172 BOOT",
+      "statement": "M1 BOOT 引脚 21 连接 BOOT 网络并引到 JP6，页面未绘制该网络的固定上拉或下拉电阻。",
+      "confidence": "confirmed",
+      "attributes": {
+        "module_pin": "M1 pin 21 BOOT",
+        "test_pad": "JP6",
+        "external_strap": "not drawn"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "70a4d5ed1c36f2e3667818970c8fb2db0e9d2b6af530d1a899ae3e0f768d03d3",
+          "page": 1,
+          "locator": "网格 2C M1 pin 21 BOOT 与网格 1C JP6 BOOT，同页无该网络电阻支路"
+        }
+      ]
+    }
+  ],
+  "needs_review": [
+    {
+      "id": "review.eu868-region-resistor",
+      "fact_id": "rf.region-resistor-table",
+      "question": "请用 A152-EU868 的 BOM、PCB 或装配图确认 R2 0Ω 是否为 EU868 版本的实际装配位，并确认 R1/R2/R3 所连接的配置网络。",
+      "reason": "原理图只给出 R1/R2/R3 与 470/868/915 的对照表，没有绘制电气连接或装配标记，不能从表格单独证明 R2 已实装。",
+      "evidence": [
+        {
+          "asset_sha256": "70a4d5ed1c36f2e3667818970c8fb2db0e9d2b6af530d1a899ae3e0f768d03d3",
+          "page": 1,
+          "locator": "网格 4A：R1 0Ω-470、R2 0Ω-868、R3 0Ω-915 对照表"
+        }
+      ]
+    }
+  ]
+}

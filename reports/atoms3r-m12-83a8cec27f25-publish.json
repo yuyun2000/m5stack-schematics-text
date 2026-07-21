@@ -1,0 +1,21 @@
+{
+  "dry_run": false,
+  "failed": 0,
+  "published": 1,
+  "results": [
+    {
+      "backup": null,
+      "draft_action": "unchanged",
+      "dry_run": false,
+      "errors": [],
+      "needs_review": 5,
+      "product_id": "atoms3r-m12-83a8cec27f25",
+      "product_name": "AtomS3R-M12",
+      "publish_action": "unchanged",
+      "sha256": "dca4d6a8287e7236e49571e0e8524deb4703c277480ce9c9d448219278f76f1c",
+      "status": "valid",
+      "uncertain_facts": 5
+    }
+  ],
+  "schema_version": 1
+}

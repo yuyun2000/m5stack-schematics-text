@@ -1,0 +1,703 @@
+{
+  "schema_version": 1,
+  "generator": "schematic_describer",
+  "product": {
+    "product_id": "atom-switch-d-7c3e8ae886fb",
+    "product_name": "Atom Switch-D",
+    "sku": "K042-D",
+    "source_path": "atom/atomhub_switch_d.md",
+    "source_sha256": "5f371d81649a10b522e4ad0c8ca48b9020319b3ee3dd0ef7afb329379ca490d9",
+    "input_sha256": "cbfd21f2f83076a5e0d5da9c49b3b793f47f989a86fe116d13248693e97e2c42"
+  },
+  "schematic_assets": [
+    {
+      "sha256": "1adcf4e5fc2b372c63bf209b857b360a65f0e88a1113681a3a9463a8356b7558",
+      "source_url": "https://static-cdn.m5stack.com/resource/docs/products/atom/atomhub_switch_d/atomhub_switch_d_sch_01.webp",
+      "pages": [
+        1
+      ]
+    }
+  ],
+  "summary": "Atom Switch-D 原理图分为 RS485、12V 降压、Grove/端子、双继电器、AC-DC 和 Atom IO 六个功能区。BUS1 将 G22/G19 用于 Relay_1/Relay_2，G23/G33 用于 Uart_Tx/Uart_Rx，G21/G25 用于 I2C；SP3485EN-L/TR 通过 Q1 自动控制 /RE/DE，并在 A/B 端配置偏置、可选 120Ω 终端和 SMAJ6.5CA 防护。AC_L 经 F1 后同时送到两只 JQX-115F-005-2ZS4 的并联双刀公共端，NO 端分别形成 AC_L1/AC_L2；VCC_5V 既可由 MD1 AC-DC 5V1A 产生，也由外部 VCC_12V 经 MP1584 降压产生。",
+  "keywords": [
+    "Atom Switch-D",
+    "K042-D",
+    "SP3485EN-L/TR",
+    "MP1584",
+    "JQX-115F-005-2ZS4",
+    "SMAJ6.5CA",
+    "RS485_A",
+    "RS485_B",
+    "Uart_Tx",
+    "Uart_Rx",
+    "Relay_1",
+    "Relay_2",
+    "IIC_SCL",
+    "IIC_SDA",
+    "VCC_12V",
+    "VCC_5V",
+    "VCC_3V3",
+    "AC_L",
+    "AC_N",
+    "F1_2",
+    "AC_L1",
+    "AC_L2",
+    "AC-DC 5V1A",
+    "RS485_CON",
+    "RELAY_OUT_CON",
+    "GROVE",
+    "BUS1",
+    "GPIO22",
+    "GPIO19",
+    "GPIO23",
+    "GPIO33"
+  ],
+  "components": [
+    {
+      "reference": "U2",
+      "part_number": "SP3485EN-L/TR",
+      "role": "3.3V RS485 收发器，连接 Atom UART 控制逻辑与 RS485_A/RS485_B",
+      "evidence": [
+        {
+          "asset_sha256": "1adcf4e5fc2b372c63bf209b857b360a65f0e88a1113681a3a9463a8356b7558",
+          "page": 1,
+          "locator": "左上 RS485_3V3_Atom 区黄色 U2 SP3485EN-L/TR"
+        }
+      ]
+    },
+    {
+      "reference": "Q1",
+      "part_number": "S8050",
+      "role": "由 Uart_Tx 驱动并控制 U2 /RE 与 DE 共节点",
+      "evidence": [
+        {
+          "asset_sha256": "1adcf4e5fc2b372c63bf209b857b360a65f0e88a1113681a3a9463a8356b7558",
+          "page": 1,
+          "locator": "左上 Uart_Tx-R11-Q1 S8050 与 U2 /RE/DE"
+        }
+      ]
+    },
+    {
+      "reference": "DZ1-DZ3",
+      "part_number": "SMAJ6.5CA",
+      "role": "RS485_B 对地、A/B 之间及 RS485_A 对地的三级浪涌/瞬态防护",
+      "evidence": [
+        {
+          "asset_sha256": "1adcf4e5fc2b372c63bf209b857b360a65f0e88a1113681a3a9463a8356b7558",
+          "page": 1,
+          "locator": "左上 RS485 A/B 右侧 DZ1-DZ3 SMAJ6.5CA"
+        }
+      ]
+    },
+    {
+      "reference": "U1",
+      "part_number": "MP1584",
+      "role": "将 VCC_12V 降压为 VCC_5V 的开关稳压器",
+      "evidence": [
+        {
+          "asset_sha256": "1adcf4e5fc2b372c63bf209b857b360a65f0e88a1113681a3a9463a8356b7558",
+          "page": 1,
+          "locator": "上中 RS485_DC-DC 区 U1 MP1584 与 L1、D1、反馈网络"
+        }
+      ]
+    },
+    {
+      "reference": "JP1",
+      "part_number": null,
+      "role": "引出 GND、VCC_12V、RS485_A 与 RS485_B 的四针端子",
+      "evidence": [
+        {
+          "asset_sha256": "1adcf4e5fc2b372c63bf209b857b360a65f0e88a1113681a3a9463a8356b7558",
+          "page": 1,
+          "locator": "右上 RS485_CON 区 JP1 1-4 脚"
+        }
+      ]
+    },
+    {
+      "reference": "GROVE",
+      "part_number": null,
+      "role": "引出 IIC_SCL、IIC_SDA、VCC_5V 与 GND 的四针接口",
+      "evidence": [
+        {
+          "asset_sha256": "1adcf4e5fc2b372c63bf209b857b360a65f0e88a1113681a3a9463a8356b7558",
+          "page": 1,
+          "locator": "右上 GROVE 区 IO2/IO1/5V/GND 方框与 I2C 上拉"
+        }
+      ]
+    },
+    {
+      "reference": "JK1/JK2",
+      "part_number": "JQX-115F-005-2ZS4",
+      "role": "两路 5V 双刀继电器，分别切换 AC_L1 与 AC_L2",
+      "evidence": [
+        {
+          "asset_sha256": "1adcf4e5fc2b372c63bf209b857b360a65f0e88a1113681a3a9463a8356b7558",
+          "page": 1,
+          "locator": "左下 RELAY 区 JK1/JK2，均标注 JQX-115F-005-2ZS4"
+        }
+      ]
+    },
+    {
+      "reference": "Q2/Q3",
+      "part_number": "S8050",
+      "role": "由 Relay_1/Relay_2 通过 4.7K 电阻驱动的低侧继电器线圈开关",
+      "evidence": [
+        {
+          "asset_sha256": "1adcf4e5fc2b372c63bf209b857b360a65f0e88a1113681a3a9463a8356b7558",
+          "page": 1,
+          "locator": "左下 Q2/Q3 S8050、R15/R16 与 JK1A/JK2A 线圈"
+        }
+      ]
+    },
+    {
+      "reference": "D3/D4",
+      "part_number": "1N4148",
+      "role": "分别跨接 JK1/JK2 线圈的续流二极管",
+      "evidence": [
+        {
+          "asset_sha256": "1adcf4e5fc2b372c63bf209b857b360a65f0e88a1113681a3a9463a8356b7558",
+          "page": 1,
+          "locator": "左下 JK1A/JK2A 线圈左侧 D3/D4 1N4148"
+        }
+      ]
+    },
+    {
+      "reference": "MD1",
+      "part_number": "AC-DC 5V1A",
+      "role": "从 AC_L/AC_N 生成 VCC_5V 与 GND 的板载 AC-DC 模块",
+      "evidence": [
+        {
+          "asset_sha256": "1adcf4e5fc2b372c63bf209b857b360a65f0e88a1113681a3a9463a8356b7558",
+          "page": 1,
+          "locator": "下中 AC-DC 区 MD1，AC_1/AC_0/+5V/GND，底部标注 AC-DC 5V1A"
+        }
+      ]
+    },
+    {
+      "reference": "BUS1",
+      "part_number": "ATOM",
+      "role": "Atom 九针接口，连接双继电器、UART、I2C 和 3.3V/5V/GND",
+      "evidence": [
+        {
+          "asset_sha256": "1adcf4e5fc2b372c63bf209b857b360a65f0e88a1113681a3a9463a8356b7558",
+          "page": 1,
+          "locator": "右下 Atom_IO 区 BUS1 ATOM 1-9 脚"
+        }
+      ]
+    },
+    {
+      "reference": "JP2",
+      "part_number": null,
+      "role": "AC_N/AC_L 市电输入三针端子，2 脚未连接，火线串联 F1",
+      "evidence": [
+        {
+          "asset_sha256": "1adcf4e5fc2b372c63bf209b857b360a65f0e88a1113681a3a9463a8356b7558",
+          "page": 1,
+          "locator": "右中 AC_IN 区 JP2，1 AC_N、2 no-connect、3 保险后火线"
+        }
+      ]
+    },
+    {
+      "reference": "JP3/JP4",
+      "part_number": null,
+      "role": "分别引出 AC_N 与 AC_L1/AC_L2 的两路继电器输出端子",
+      "evidence": [
+        {
+          "asset_sha256": "1adcf4e5fc2b372c63bf209b857b360a65f0e88a1113681a3a9463a8356b7558",
+          "page": 1,
+          "locator": "右中下 RELAY_OUT_CON 区 JP3/JP4"
+        }
+      ]
+    }
+  ],
+  "facts": [
+    {
+      "id": "system.functional_partition",
+      "category": "system",
+      "subject": "系统功能分区",
+      "statement": "原理图分为 RS485_3V3_Atom、RS485_DC-DC、GROVE、RS485_CON、AC_IN、RELAY、AC-DC、RELAY_OUT_CON 和 Atom_IO 功能区。",
+      "confidence": "confirmed",
+      "attributes": {
+        "sections": "RS485_3V3_Atom; RS485_DC-DC; GROVE; RS485_CON; AC_IN; RELAY; AC-DC; RELAY_OUT_CON; Atom_IO"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "1adcf4e5fc2b372c63bf209b857b360a65f0e88a1113681a3a9463a8356b7558",
+          "page": 1,
+          "locator": "整页红色分区边框与各分区标题"
+        }
+      ]
+    },
+    {
+      "id": "gpio.atom_mapping",
+      "category": "gpio",
+      "subject": "ATOM 九针映射",
+      "statement": "BUS1 的 9 脚 3V3 接 VCC_3V3，8 脚 G22 接 Relay_1，6 脚 G19 接 Relay_2，4 脚 G23 接 Uart_Tx，2 脚 G33 接 Uart_Rx，7 脚 G21 接 IIC_SCL，5 脚 G25 接 IIC_SDA，3 脚 5V 接 VCC_5V，1 脚接 GND。",
+      "confidence": "confirmed",
+      "attributes": {
+        "pin9": "3V3 -> VCC_3V3",
+        "pin8": "G22 -> Relay_1",
+        "pin6": "G19 -> Relay_2",
+        "pin4": "G23 -> Uart_Tx",
+        "pin2": "G33 -> Uart_Rx",
+        "pin7": "G21 -> IIC_SCL",
+        "pin5": "G25 -> IIC_SDA",
+        "pin3": "5V -> VCC_5V",
+        "pin1": "GND"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "1adcf4e5fc2b372c63bf209b857b360a65f0e88a1113681a3a9463a8356b7558",
+          "page": 1,
+          "locator": "右下 BUS1 ATOM 方框的 1-9 脚网络"
+        }
+      ]
+    },
+    {
+      "id": "power.rs485_3v3",
+      "category": "power",
+      "subject": "U2 3.3V 供电",
+      "statement": "U2 SP3485EN-L/TR 的 VCC 8 脚接 VCC_3V3，GND 5 脚接 GND，C10 0.1uF/25V 跨接 VCC_3V3 与 GND。",
+      "confidence": "confirmed",
+      "attributes": {
+        "vcc": "pin 8 -> VCC_3V3",
+        "ground": "pin 5 -> GND",
+        "decoupling": "C10 0.1uF/25V"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "1adcf4e5fc2b372c63bf209b857b360a65f0e88a1113681a3a9463a8356b7558",
+          "page": 1,
+          "locator": "左上 U2 VCC/GND 与 C10"
+        }
+      ]
+    },
+    {
+      "id": "key_net.rs485_direction_control",
+      "category": "key_net",
+      "subject": "RS485 自动方向控制",
+      "statement": "Uart_Tx 经 R11 4.7K 驱动 Q1 S8050 基极，Q1 发射极接 GND，集电极连接 U2 /RE 2 脚和 DE 3 脚共节点，该节点经 R9 4.7K 上拉到 VCC_3V3。",
+      "confidence": "confirmed",
+      "attributes": {
+        "control": "Uart_Tx",
+        "base_resistor": "R11 4.7K",
+        "transistor": "Q1 S8050",
+        "controlled_pins": "U2 /RE pin 2 and DE pin 3",
+        "pullup": "R9 4.7K to VCC_3V3"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "1adcf4e5fc2b372c63bf209b857b360a65f0e88a1113681a3a9463a8356b7558",
+          "page": 1,
+          "locator": "左上 Uart_Tx-R11-Q1 与 U2 /RE/DE、R9"
+        }
+      ]
+    },
+    {
+      "id": "key_net.rs485_uart_data",
+      "category": "key_net",
+      "subject": "RS485 UART 数据",
+      "statement": "U2 RO 1 脚连接 Uart_Rx，并由 R3 4.7K 上拉到 VCC_3V3；U2 DI 4 脚直接接 GND。",
+      "confidence": "confirmed",
+      "attributes": {
+        "receiver": "U2 RO pin 1 -> Uart_Rx; R3 4.7K to VCC_3V3",
+        "driver_input": "U2 DI pin 4 -> GND"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "1adcf4e5fc2b372c63bf209b857b360a65f0e88a1113681a3a9463a8356b7558",
+          "page": 1,
+          "locator": "左上 U2 RO/Uart_Rx/R3 与 DI-GND"
+        }
+      ]
+    },
+    {
+      "id": "bus.rs485_ab_bias",
+      "category": "bus",
+      "subject": "RS485 A/B 与偏置",
+      "statement": "U2 B 7 脚连接 RS485_B，A 6 脚连接 RS485_A；RS485_B 经 R6 4.7K 接 GND，RS485_A 经 R13 4.7K 接 VCC_3V3。",
+      "confidence": "confirmed",
+      "attributes": {
+        "b": "U2 pin 7 -> RS485_B; R6 4.7K to GND",
+        "a": "U2 pin 6 -> RS485_A; R13 4.7K to VCC_3V3"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "1adcf4e5fc2b372c63bf209b857b360a65f0e88a1113681a3a9463a8356b7558",
+          "page": 1,
+          "locator": "左上 U2 A/B 与 R6/R13 偏置"
+        }
+      ]
+    },
+    {
+      "id": "bus.rs485_optional_termination",
+      "category": "bus",
+      "subject": "RS485 可选终端",
+      "statement": "R5 标注 120R/DNP，并跨接 RS485_B 与 RS485_A。",
+      "confidence": "confirmed",
+      "attributes": {
+        "component": "R5",
+        "value": "120R/DNP",
+        "endpoint_a": "RS485_B",
+        "endpoint_b": "RS485_A"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "1adcf4e5fc2b372c63bf209b857b360a65f0e88a1113681a3a9463a8356b7558",
+          "page": 1,
+          "locator": "左上 A/B 之间 R5 120R/DNP"
+        }
+      ]
+    },
+    {
+      "id": "protection.rs485_smaj",
+      "category": "protection",
+      "subject": "RS485 瞬态防护",
+      "statement": "DZ1、DZ2、DZ3 均标注 SMAJ6.5CA；DZ1 跨 GND 与 RS485_B，DZ2 跨 RS485_B 与 RS485_A，DZ3 跨 RS485_A 与 GND。",
+      "confidence": "confirmed",
+      "attributes": {
+        "dz1": "GND to RS485_B",
+        "dz2": "RS485_B to RS485_A",
+        "dz3": "RS485_A to GND",
+        "part_number": "SMAJ6.5CA"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "1adcf4e5fc2b372c63bf209b857b360a65f0e88a1113681a3a9463a8356b7558",
+          "page": 1,
+          "locator": "左上 RS485 A/B 右侧 DZ1-DZ3"
+        }
+      ]
+    },
+    {
+      "id": "interface.rs485_terminal",
+      "category": "interface",
+      "subject": "JP1 RS485 端子",
+      "statement": "JP1 的 1 脚接 GND，2 脚经 D2 SS24 连接 VCC_12V，3 脚接 RS485_A，4 脚接 RS485_B。",
+      "confidence": "confirmed",
+      "attributes": {
+        "pin1": "GND",
+        "pin2": "VCC_12V through D2 SS24",
+        "pin3": "RS485_A",
+        "pin4": "RS485_B"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "1adcf4e5fc2b372c63bf209b857b360a65f0e88a1113681a3a9463a8356b7558",
+          "page": 1,
+          "locator": "右上 RS485_CON 区 D2 与 JP1 1-4 脚"
+        }
+      ]
+    },
+    {
+      "id": "power.mp1584_input_enable",
+      "category": "power",
+      "subject": "MP1584 输入与使能",
+      "statement": "VCC_12V 连接 U1 MP1584 VIN 7 脚，C7 0.1uF/25V 与 C8 10uF/25V 对地滤波，EN 2 脚经 R7 100K 连接 VCC_12V。",
+      "confidence": "confirmed",
+      "attributes": {
+        "input": "VCC_12V -> VIN pin 7",
+        "input_capacitors": "C7 0.1uF/25V; C8 10uF/25V",
+        "enable": "R7 100K from VCC_12V to EN pin 2"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "1adcf4e5fc2b372c63bf209b857b360a65f0e88a1113681a3a9463a8356b7558",
+          "page": 1,
+          "locator": "上中 VCC_12V、C7/C8、R7 与 U1 VIN/EN"
+        }
+      ]
+    },
+    {
+      "id": "power.mp1584_output",
+      "category": "power",
+      "subject": "MP1584 5V 输出",
+      "statement": "U1 SW 1 脚经 L1 10uH 输出 VCC_5V，D1 SS24 从开关节点接 GND，C1 0.1uF/25V 跨 BST 与开关节点；VCC_5V 由 C4 22uF/6.3V、C5/C6 0.1uF/25V 对地滤波。",
+      "confidence": "confirmed",
+      "attributes": {
+        "switch_pin": 1,
+        "inductor": "L1 10uH",
+        "output": "VCC_5V",
+        "catch_diode": "D1 SS24",
+        "bootstrap": "C1 0.1uF/25V",
+        "output_capacitors": "C4 22uF/6.3V; C5/C6 0.1uF/25V"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "1adcf4e5fc2b372c63bf209b857b360a65f0e88a1113681a3a9463a8356b7558",
+          "page": 1,
+          "locator": "上中 U1 SW-C1-D1-L1-VCC_5V 与 C4-C6"
+        }
+      ]
+    },
+    {
+      "id": "power.mp1584_feedback_compensation",
+      "category": "power",
+      "subject": "MP1584 反馈与补偿",
+      "statement": "U1 FB 4 脚连接 R4 27K 与 R8 5.1K 的 VCC_5V 对地分压节点；COMP 3 脚经 R10 12K 与 C9 1nF 串联接地，FREQ 6 脚经 R12 100K 接地。",
+      "confidence": "confirmed",
+      "attributes": {
+        "feedback": "R4 27K to VCC_5V; R8 5.1K to GND",
+        "compensation": "R10 12K + C9 1nF to GND",
+        "frequency": "R12 100K to GND"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "1adcf4e5fc2b372c63bf209b857b360a65f0e88a1113681a3a9463a8356b7558",
+          "page": 1,
+          "locator": "上中 U1 FB/COMP/FREQ 外围 R4/R8/R10/C9/R12"
+        }
+      ]
+    },
+    {
+      "id": "interface.grove_i2c",
+      "category": "interface",
+      "subject": "Grove I2C 接口",
+      "statement": "GROVE 的 IO2 接 IIC_SCL，IO1 接 IIC_SDA，5V 接 VCC_5V，GND 接地；R1/R2 各 10K 将 IIC_SCL/IIC_SDA 上拉到 VCC_3V3。",
+      "confidence": "confirmed",
+      "attributes": {
+        "io2": "IIC_SCL",
+        "io1": "IIC_SDA",
+        "power": "VCC_5V",
+        "ground": "GND",
+        "pullups": "R1/R2 10K to VCC_3V3"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "1adcf4e5fc2b372c63bf209b857b360a65f0e88a1113681a3a9463a8356b7558",
+          "page": 1,
+          "locator": "右上 GROVE 区 R1/R2 与 IO2/IO1/5V/GND"
+        }
+      ]
+    },
+    {
+      "id": "key_net.relay1_driver",
+      "category": "key_net",
+      "subject": "继电器 1 线圈驱动",
+      "statement": "Relay_1 经 R15 4.7K 驱动 Q2 S8050 基极，Q2 发射极接 GND，集电极连接 JK1A 线圈 1 脚；线圈 8 脚接 VCC_5V，D3 1N4148 跨接线圈。",
+      "confidence": "confirmed",
+      "attributes": {
+        "control": "Relay_1",
+        "base_resistor": "R15 4.7K",
+        "transistor": "Q2 S8050",
+        "coil": "JK1A pins 8 VCC_5V and 1 Q2 collector",
+        "flyback": "D3 1N4148"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "1adcf4e5fc2b372c63bf209b857b360a65f0e88a1113681a3a9463a8356b7558",
+          "page": 1,
+          "locator": "左下上半 Relay_1-R15-Q2-JK1A-D3"
+        }
+      ]
+    },
+    {
+      "id": "key_net.relay2_driver",
+      "category": "key_net",
+      "subject": "继电器 2 线圈驱动",
+      "statement": "Relay_2 经 R16 4.7K 驱动 Q3 S8050 基极，Q3 发射极接 GND，集电极连接 JK2A 线圈 1 脚；线圈 8 脚接 VCC_5V，D4 1N4148 跨接线圈。",
+      "confidence": "confirmed",
+      "attributes": {
+        "control": "Relay_2",
+        "base_resistor": "R16 4.7K",
+        "transistor": "Q3 S8050",
+        "coil": "JK2A pins 8 VCC_5V and 1 Q3 collector",
+        "flyback": "D4 1N4148"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "1adcf4e5fc2b372c63bf209b857b360a65f0e88a1113681a3a9463a8356b7558",
+          "page": 1,
+          "locator": "左下下半 Relay_2-R16-Q3-JK2A-D4"
+        }
+      ]
+    },
+    {
+      "id": "power.relay_live_feed",
+      "category": "power",
+      "subject": "继电器火线公共输入",
+      "statement": "AC_L 从 JP2 侧经过 F1 250V 1A 形成 F1_2，F1_2 同时连接 JK1 和 JK2 两组触点的公共端 3/6。",
+      "confidence": "confirmed",
+      "attributes": {
+        "input": "AC_L",
+        "fuse": "F1 250V 1A",
+        "protected_net": "F1_2",
+        "relay1_commons": "JK1 pins 3 and 6",
+        "relay2_commons": "JK2 pins 3 and 6"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "1adcf4e5fc2b372c63bf209b857b360a65f0e88a1113681a3a9463a8356b7558",
+          "page": 1,
+          "locator": "右中 AC_IN 区 AC_L-F1-F1_2 与左下 F1_2 到 JK1/JK2 3/6 脚"
+        }
+      ]
+    },
+    {
+      "id": "key_net.relay_contact_parallel",
+      "category": "key_net",
+      "subject": "双刀触点并联输出",
+      "statement": "JK1 的公共端 3/6 并联接 F1_2，NO 端 4/5 并联形成 AC_L1，NC 端 2/7 未连接；JK2 同样以 3/6 接 F1_2、4/5 形成 AC_L2、2/7 未连接。",
+      "confidence": "confirmed",
+      "attributes": {
+        "relay1": "3/6 common F1_2; 4/5 output AC_L1; 2/7 NC unused",
+        "relay2": "3/6 common F1_2; 4/5 output AC_L2; 2/7 NC unused"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "1adcf4e5fc2b372c63bf209b857b360a65f0e88a1113681a3a9463a8356b7558",
+          "page": 1,
+          "locator": "左下 JK1B/JK1C 与 JK2B/JK2C 触点编号、F1_2、AC_L1/AC_L2"
+        }
+      ]
+    },
+    {
+      "id": "interface.relay_outputs",
+      "category": "interface",
+      "subject": "两路继电器输出端子",
+      "statement": "JP3 的 1 脚接 AC_N、2 脚未连接、3 脚接 AC_L1；JP4 的 1 脚接 AC_N、2 脚未连接、3 脚接 AC_L2。",
+      "confidence": "confirmed",
+      "attributes": {
+        "jp3": "pin1 AC_N; pin2 NC; pin3 AC_L1",
+        "jp4": "pin1 AC_N; pin2 NC; pin3 AC_L2"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "1adcf4e5fc2b372c63bf209b857b360a65f0e88a1113681a3a9463a8356b7558",
+          "page": 1,
+          "locator": "右中下 RELAY_OUT_CON 区 JP3/JP4"
+        }
+      ]
+    },
+    {
+      "id": "interface.ac_input",
+      "category": "interface",
+      "subject": "JP2 AC 输入端子",
+      "statement": "JP2 的 1 脚接 AC_N，2 脚标为未连接，3 脚连接 F1 后火线；F1 左侧网络为 AC_L。",
+      "confidence": "confirmed",
+      "attributes": {
+        "pin1": "AC_N",
+        "pin2": "not connected",
+        "pin3": "fused AC_L / F1_2",
+        "pre_fuse_net": "AC_L"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "1adcf4e5fc2b372c63bf209b857b360a65f0e88a1113681a3a9463a8356b7558",
+          "page": 1,
+          "locator": "右中 AC_IN 区 JP2 与 AC_N、AC_L、F1"
+        }
+      ]
+    },
+    {
+      "id": "power.acdc_module",
+      "category": "power",
+      "subject": "MD1 AC-DC 5V 电源",
+      "statement": "MD1 的 4 脚 AC_1 接 AC_L，3 脚 AC_0 接 AC_N，2 脚 +5V 输出 VCC_5V，1 脚接 GND；C11 0.1uF/25V 跨接 VCC_5V 与 GND。",
+      "confidence": "confirmed",
+      "attributes": {
+        "pin4": "AC_1 -> AC_L",
+        "pin3": "AC_0 -> AC_N",
+        "pin2": "+5V -> VCC_5V",
+        "pin1": "GND",
+        "decoupling": "C11 0.1uF/25V"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "1adcf4e5fc2b372c63bf209b857b360a65f0e88a1113681a3a9463a8356b7558",
+          "page": 1,
+          "locator": "下中 AC-DC 区 MD1 1-4 脚与 C11"
+        }
+      ]
+    },
+    {
+      "id": "power.dual_5v_sources_visible",
+      "category": "power",
+      "subject": "VCC_5V 双电源来源",
+      "statement": "图中 VCC_5V 同时出现在 U1 MP1584 的 12V 降压输出和 MD1 AC-DC 5V1A 的 +5V 输出，当前页面没有显示两路电源之间的隔离、优先级或防回灌器件。",
+      "confidence": "confirmed",
+      "attributes": {
+        "dc_source": "VCC_12V -> U1 MP1584 -> VCC_5V",
+        "ac_source": "AC_L/AC_N -> MD1 -> VCC_5V",
+        "source_selection_shown": false,
+        "reverse_current_blocking_shown": false
+      },
+      "evidence": [
+        {
+          "asset_sha256": "1adcf4e5fc2b372c63bf209b857b360a65f0e88a1113681a3a9463a8356b7558",
+          "page": 1,
+          "locator": "上中 U1 VCC_5V 输出与下中 MD1 VCC_5V 输出，未见两区之间 ORing 器件"
+        }
+      ]
+    },
+    {
+      "id": "component.relay_rating_not_shown",
+      "category": "component",
+      "subject": "继电器触点额定值可见性",
+      "statement": "原理图给出 JK1/JK2 型号 JQX-115F-005-2ZS4 和 5V 线圈连接，但没有在页面上标注触点的电压、电流、负载类别或双刀并联降额。",
+      "confidence": "confirmed",
+      "attributes": {
+        "part_number": "JQX-115F-005-2ZS4",
+        "coil_rail": "VCC_5V",
+        "contact_rating_shown": false,
+        "parallel_derating_shown": false
+      },
+      "evidence": [
+        {
+          "asset_sha256": "1adcf4e5fc2b372c63bf209b857b360a65f0e88a1113681a3a9463a8356b7558",
+          "page": 1,
+          "locator": "左下 JK1/JK2 型号和触点连接，未见额定值文字"
+        }
+      ]
+    },
+    {
+      "id": "component.acdc_identity_not_shown",
+      "category": "component",
+      "subject": "MD1 具体型号可见性",
+      "statement": "MD1 只标注 AC-DC 5V1A 和四个功能引脚，没有显示制造商、具体料号、输入范围、隔离等级或保护参数。",
+      "confidence": "confirmed",
+      "attributes": {
+        "reference": "MD1",
+        "visible_marking": "AC-DC 5V1A",
+        "part_number_shown": false,
+        "input_range_shown": false,
+        "isolation_rating_shown": false
+      },
+      "evidence": [
+        {
+          "asset_sha256": "1adcf4e5fc2b372c63bf209b857b360a65f0e88a1113681a3a9463a8356b7558",
+          "page": 1,
+          "locator": "下中 MD1 方框，仅见 AC_1/AC_0/+5V/GND 与 AC-DC 5V1A"
+        }
+      ]
+    }
+  ],
+  "needs_review": [
+    {
+      "id": "review.dual_5v_power_policy",
+      "fact_id": "power.dual_5v_sources_visible",
+      "question": "AC-DC 与 12V DC-DC 两路 VCC_5V 是否允许同时接入，实际硬件如何防止互相回灌？",
+      "reason": "原理图显示两路电源同名并网，但未显示电源选择或理想二极管/串联隔离。",
+      "evidence": [
+        {
+          "asset_sha256": "1adcf4e5fc2b372c63bf209b857b360a65f0e88a1113681a3a9463a8356b7558",
+          "page": 1,
+          "locator": "RS485_DC-DC 与 AC-DC 两区均输出 VCC_5V"
+        }
+      ]
+    },
+    {
+      "id": "review.relay_and_acdc_ratings",
+      "fact_id": "component.relay_rating_not_shown",
+      "question": "请确认 JK1/JK2 实装继电器的触点额定值、并联触点降额，以及 MD1 的具体料号与安全认证参数。",
+      "reason": "这些参数关系到市电负载和隔离安全，当前原理图只给出继电器与 MD1 的有限标识。",
+      "evidence": [
+        {
+          "asset_sha256": "1adcf4e5fc2b372c63bf209b857b360a65f0e88a1113681a3a9463a8356b7558",
+          "page": 1,
+          "locator": "RELAY 区 JK1/JK2 与 AC-DC 区 MD1"
+        }
+      ]
+    }
+  ]
+}

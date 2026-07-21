@@ -1,0 +1,21 @@
+{
+  "dry_run": false,
+  "failed": 0,
+  "published": 1,
+  "results": [
+    {
+      "backup": null,
+      "draft_action": "unchanged",
+      "dry_run": false,
+      "errors": [],
+      "needs_review": 3,
+      "product_id": "chain-rgb-0b295a8b03af",
+      "product_name": "Chain RGB",
+      "publish_action": "unchanged",
+      "sha256": "6748e843e4d024620079fb2e066096fb6ac41adcbf805e14878ebe68ef1da7d8",
+      "status": "valid",
+      "uncertain_facts": 3
+    }
+  ],
+  "schema_version": 1
+}

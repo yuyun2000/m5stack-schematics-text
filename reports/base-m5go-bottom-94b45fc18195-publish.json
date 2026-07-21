@@ -1,0 +1,21 @@
+{
+  "dry_run": false,
+  "failed": 0,
+  "published": 1,
+  "results": [
+    {
+      "backup": null,
+      "draft_action": "unchanged",
+      "dry_run": false,
+      "errors": [],
+      "needs_review": 1,
+      "product_id": "base-m5go-bottom-94b45fc18195",
+      "product_name": "Base M5GO Bottom",
+      "publish_action": "unchanged",
+      "sha256": "1a1a01916b2e231d7e3a6acfbca0c4c14e7f9f0cd39d18a46bd5cc39deb7edbd",
+      "status": "valid",
+      "uncertain_facts": 1
+    }
+  ],
+  "schema_version": 1
+}

@@ -1,0 +1,334 @@
+# LLM-8850 Kit 原理图描述
+
+## 快速信息
+
+| 项目 | 内容 |
+| --- | --- |
+| 产品 | LLM-8850 Kit |
+| SKU | AI-002-8G |
+| 产品 ID | `llm-8850-kit-19733465ff8f` |
+| 源文档 | `zh_CN/ai_hardware/LLM-8850_Kit.md` |
+
+## 概述
+
+LLM-8850 Kit 当前原理图资源是单页 LLM-8850 PiHat 转接板，系统由 USB Type-C PD 输入、HUSB238 协议控制、AW32901 输入保护、两路 SY8368A 系列 Buck、Raspberry Pi 40 针排针、16 针 PCIe FPC 与 M.2 M-Key 插槽组成。HV_BUS 分别转换为 BUS_5V 和 NGFF_3V3，后者由 PCIE_RPI_PWR_EN 控制，并以 5V_PG、NGFF_PG 和 ACT_LED 指示状态。PCIe 页面只装配一组 REFCLK/TX/RX 差分链路，另有复位电平转换、可选 32.768 MHz SUSCLK 和未装配的 I2C EEPROM；AX8850 加速卡内部主控、内存、Boot Flash、EC、风扇及其详细供电不在该页中。
+
+## 检索关键词
+
+`LLM-8850 Kit`、`AI-002-8G`、`LLM-8850 PiHat`、`HUSB238`、`ADDR_0x08`、`AW32901`、`SY8368A`、`SN74LVC1T45DBVR`、`USB Type-C`、`USB_P`、`USB_N`、`CC_1`、`CC_2`、`Raspberry Pi 40P`、`M.2 M-Key`、`PCIe FPC 16P`、`PCIE_REFCLK0_E_P`、`PCIE_RX0_E_P`、`PCIE_TX0_E_P`、`PCIE_RPI_PWR_EN`、`PCIE_RST_B`、`PCIE_RST_B_SW`、`PCIE_CLKREQ_N`、`DET_WAKE`、`SUSCLK`、`HV_BUS`、`BUS_5V`、`NGFF_3V3`、`RPI_3V3`、`RPI_SDA`、`RPI_SCL`、`5V_PG`、`NGFF_PG`、`ACT_LED`、`SMBJ24A`
+
+## 主要器件
+
+| 位号 | 型号 | 作用 | 证据 |
+| --- | --- | --- | --- |
+| USB1 | USB Type-C receptacle | PD 电源与 USB 2.0 数据入口，引出 VCC、USB_P/USB_N、CC_1/CC_2 和 GND | 图 a389e5ad6645 / 第 1 页 / 网格 A1-A2，USB1 Type-C，A4/B9 VCC、A6/B6 USB_P、B7/A7 USB_N、A5/B5 CC_1/CC_2 |
+| U2 | HUSB238 | USB Type-C PD Sink 控制器，连接 CC_1/CC_2 和 USB_P/USB_N，图面标注地址 0x08 与默认 20V 1.25A | 图 a389e5ad6645 / 第 1 页 / 网格 B2-B3，U2 HUSB238、ADDR_0X08、Default 20V 1.25A |
+| U19 | AW32901 | Type-C VCC 输入保护器件，将受保护输出送往 HV_BUS | 图 a389e5ad6645 / 第 1 页 / 网格 A2-A3，U19 AW32901，IN/OUT、OVLO、nEN 与 HV_BUS |
+| D1 | SMBJ24A | VCC 输入对地瞬态抑制二极管 | 图 a389e5ad6645 / 第 1 页 / 网格 A2，D1 SMBJ24A，VCC 至 GND |
+| U17 | SY8368A | HV_BUS 至 BUS_5V 的同步降压转换器，图面标注 5.1V、最大 8A | 图 a389e5ad6645 / 第 1 页 / 网格 A5-A6，U17 SY8368A 系列、L1、BUS_5V，注记 Ic max:8A/Vout:5.1V |
+| U1 | SY8368A | HV_BUS 至 NGFF_3V3 的同步降压转换器，由 PCIE_RPI_PWR_EN 控制，图面标注 3.3V、最大 8A | 图 a389e5ad6645 / 第 1 页 / 网格 B5-B6，U1 SY8368A 系列、L2、PCIE_RPI_PWR_EN、NGFF_3V3，注记 Ic max:8A/Vout:3.3V |
+| L1,L2 | FXL0420-1R5-M | BUS_5V 与 NGFF_3V3 两路 Buck 的 1.5 uH 功率电感 | 图 a389e5ad6645 / 第 1 页 / 网格 A6 与 B6，L1/L2 FXL0420-1R5-M |
+| JP1 | Raspberry Pi 2.54 mm 40-pin header | 连接 Raspberry Pi 的 40 针排针，使用 3.3V、5V、I2C 与 GND 引脚 | 图 a389e5ad6645 / 第 1 页 / 网格 C5-C6，JP1 1-40，RPI_3V3、BUS_5V、RPI_SDA、RPI_SCL、GND 与 NC 标记 |
+| CN1 | 1-1734839-6 | 16 针 Raspberry Pi PCIe FPC 连接器，承载 PCIE_5V、参考时钟、Lane 0 收发和侧带控制信号 | 图 a389e5ad6645 / 第 1 页 / 网格 C1-C3，CN1 1-16 / 1-1734839-6，PCIE_5V、REFCLK0、RX0、TX0、PWR_EN、WAKE、CLKREQ、RST |
+| J1 | M.2_NGFF_KEY_M | M.2 M-Key 插槽，为加速卡提供 NGFF_3V3、PCIe Lane 0、REFCLK 与侧带信号 | 图 a389e5ad6645 / 第 1 页 / 网格 C7-D8，J1 M.2_NGFF_KEY_M，1-75 脚与 Lane 0/侧带网络 |
+| U4 | SN74LVC1T45DBVR | RPI_3V3 与 NGFF_3V3 电源域之间的 PCIe 复位信号电平转换器 | 图 a389e5ad6645 / 第 1 页 / 网格 D2-D3，U4 SN74LVC1T45DBVR，VCCA=RPI_3V3、VCCB=NGFF_3V3、A=PCIE_RST_B、B=PCIE_RST_B_SW |
+| U3 | 未标注 | 预留 I2C EEPROM 符号；器件及 C5、R9 标 NC，SCL/SDA 连接 RPI_SCL/RPI_SDA 网络 | 图 a389e5ad6645 / 第 1 页 / 网格 D4-D5，虚线框 U3 NC，E0/E1/E2/WC/SCL/SDA，C5/R9 NC |
+| LED3,LED1,LED2 | 未标注 | 分别指示 5V_PG、NGFF_PG 与 ACT_LED 状态 | 图 a389e5ad6645 / 第 1 页 / 网格 D4-D6，R13/LED3 5V_PG、R8/LED1 NGFF_PG、LED2/R23 ACT_LED |
+| D4,D5 | 未标注 | USB_P/USB_N 预留 ESD/TVS 保护位置，图面标 NC | 图 a389e5ad6645 / 第 1 页 / 网格 A1-A2，USB1 D+/D- 支路 D4/D5，红色未装标记 |
+
+## 系统结构
+
+### LLM-8850 PiHat 系统架构
+
+单页原理图描述 PiHat 转接板：USB1 经 HUSB238 和 AW32901 建立 HV_BUS，两路 Buck 生成 BUS_5V 与 NGFF_3V3；JP1 连接 Raspberry Pi，CN1 输入 PCIe，J1 承载 M.2 加速卡。
+
+- 参数与网络：`input=USB1 Type-C`；`pd_controller=U2 HUSB238`；`input_protection=U19 AW32901`；`power_outputs=BUS_5V,NGFF_3V3`；`host_header=JP1`；`pcie_connector=CN1`；`m2_slot=J1`
+- 证据：图 a389e5ad6645 / 第 1 页 / 整页网格 A1-D8，Type-C/PD/电源、JP1、CN1、J1 功能分区
+
+## 核心器件
+
+### HUSB238 PD 配置
+
+U2 标为 HUSB238，图面明确标注 ADDR_0X08 与 Default 20V 1.25A；R16 为 0R/1%，R17 为 NC。
+
+- 参数与网络：`reference=U2`；`part_number=HUSB238`；`address_mark=0x08`；`default_request=20V 1.25A`；`iset_path=R16 0R/1%`；`vset_path=R17 NC`
+- 证据：图 a389e5ad6645 / 第 1 页 / 网格 B2-B3，U2、R16/R17、ADDR_0X08、Default 20V 1.25A 与 RSET/VSET 表
+
+## 电源
+
+### USB Type-C 电源输入
+
+USB1 的 A4/B9 VBUS 汇入 VCC，A1/A12/B1/B12 与 EP 接 GND；VCC 同时供给 U2 VIN，并经 D1 与 U19 进入保护和转换路径。
+
+- 参数与网络：`connector=USB1`；`vbus_pins=A4,B9`；`ground_pins=A1,A12,B1,B12,EP`；`input_net=VCC`；`pd_vin=U2 pin 1 VIN`
+- 证据：图 a389e5ad6645 / 第 1 页 / 网格 A1-B3，USB1 VBUS/GND、VCC、U2 VIN、D1、U19
+
+### HV_BUS 中间电源轨
+
+U19 的多路 OUT 汇入 HV_BUS，C7、C22 与 E3 对 HV_BUS 去耦；HV_BUS 同时送入 U17 和 U1 两路降压转换器。
+
+- 参数与网络：`source=U19 OUT`；`rail=HV_BUS`；`decoupling=C7 1uF/50V,C22 1uF/50V,E3 OVZ101M1ETR-0606`；`loads=U17,U1`
+- 证据：图 a389e5ad6645 / 第 1 页 / 网格 A3-A5，U19 OUT、HV_BUS、C7/C22/E3 与两路 HIGH_CURR 输入
+
+### BUS_5V 降压电源
+
+U17 与 L1 FXL0420-1R5-M 将 HV_BUS 转换为 BUS_5V；反馈电阻为 R2 75K/1% 与 R4 10K/1%，图面标注 Vfb 0.6V、Vout 5.1V、Ic max 8A。
+
+- 参数与网络：`converter=U17 SY8368A`；`input=HV_BUS`；`output=BUS_5V`；`inductor=L1 FXL0420-1R5-M`；`feedback_upper=R2 75K/1%`；`feedback_lower=R4 10K/1%`；`vfb_mark=0.6V`；`vout_mark=5.1V`；`current_mark=8A`；`test_point=TP1`
+- 证据：图 a389e5ad6645 / 第 1 页 / 网格 A5-A7，U17/L1/R2/R4、BUS_5V、TP1 与红色电源注记
+
+### NGFF_3V3 降压电源
+
+U1 与 L2 FXL0420-1R5-M 将 HV_BUS 转换为 NGFF_3V3；EN 接 PCIE_RPI_PWR_EN，PG 输出 NGFF_PG，反馈电阻 R6 45.3K/1% 与 R12 10K/1%，图面标注 Vout 3.3V、Ic max 8A。
+
+- 参数与网络：`converter=U1 SY8368A`；`input=HV_BUS`；`output=NGFF_3V3`；`enable=PCIE_RPI_PWR_EN`；`power_good=NGFF_PG`；`inductor=L2 FXL0420-1R5-M`；`feedback_upper=R6 45.3K/1%`；`feedback_lower=R12 10K/1%`；`vout_mark=3.3V`；`current_mark=8A`；`test_point=TP3`
+- 证据：图 a389e5ad6645 / 第 1 页 / 网格 B5-B7，U1/L2/R6/R12、PCIE_RPI_PWR_EN、NGFF_PG、NGFF_3V3、TP3
+
+## 接口
+
+### USB1 Type-C 引脚与网络
+
+USB1 将 A6/B6 D+ 合并为 USB_P、B7/A7 D- 合并为 USB_N，A5/B5 分别为 CC_1/CC_2；USB_P/USB_N 与 CC_1/CC_2 连接 U2 HUSB238。
+
+- 参数与网络：`reference=USB1`；`dp_pins=A6,B6`；`dp_net=USB_P`；`dn_pins=A7,B7`；`dn_net=USB_N`；`cc1_pin_net=A5 CC_1`；`cc2_pin_net=B5 CC_2`；`device=U2 HUSB238`
+- 证据：图 a389e5ad6645 / 第 1 页 / 网格 A1-B3，USB1 与 U2 的 USB_P/USB_N/CC_1/CC_2
+
+### JP1 Raspberry Pi 40 针接口
+
+JP1 使用 pin 1 RPI_3V3，pins 2/4 BUS_5V，pin 3 RPI_SDA，pin 5 RPI_SCL，并连接标准位置的多路 GND；其余信号针脚在本页以红色叉号标为未连接。
+
+- 参数与网络：`connector=JP1`；`pin_1=RPI_3V3`；`pins_2_4=BUS_5V`；`pin_3=RPI_SDA`；`pin_5=RPI_SCL`；`ground_pins=6,9,14,20,25,30,34,39`；`other_signal_pins=NC`
+- 证据：图 a389e5ad6645 / 第 1 页 / 网格 C5-C6，JP1 1-40 的供电、I2C、GND 与红色 NC 标记
+
+### CN1 16 针 PCIe FPC 接口
+
+CN1 提供 PCIE_5V、PCIe Lane 0 参考时钟与收发差分对，以及 PCIE_RPI_PWR_EN、DET_WAKE、PCIE_CLKREQ_N、PCIE_RST_B 和 GND。
+
+- 参数与网络：`connector=CN1 1-1734839-6`；`pins_1_2=PCIE_5V`；`pins_3_6_9_12=GND`；`pins_4_5=PCIE_REFCLK0_E_P/N`；`pins_7_8=PCIE_RX0_E_P/N`；`pins_10_11=PCIE_TX0_E_P/N`；`pin_13=PCIE_RPI_PWR_EN`；`pin_14=DET_WAKE`；`pin_15=PCIE_CLKREQ_N via R27 0R/1%`；`pin_16=PCIE_RST_B via R28 0R/1%`
+- 证据：图 a389e5ad6645 / 第 1 页 / 网格 C1-C3，CN1 pin 1-16 与右侧网络标签
+
+### J1 M.2 M-Key 接口
+
+J1 通过多组 3.3V 与 GND 针脚为卡供电，装配的高速链路为 REFCLKp/n、PETp0/n0 与 PERp0/n0；PEWAKE#、CLKREQ#、PERST#、SUSCLK 和 ACT_LED 亦接入板级网络。
+
+- 参数与网络：`connector=J1 M.2_NGFF_KEY_M`；`supply=NGFF_3V3`；`refclk=pins 53/51 PCIE_REFCLK0_E_P/N`；`tx_lane0=pins 49/47 PCIE_TX0_E_P/N`；`rx_lane0=pins 43/41 PCIE_RX0_E_P/N`；`pewake=pin 54 PCIE_PWAKE_N`；`clkreq=pin 52 PCIE_CLKREQ_N`；`perst=pin 50 PCIE_RST_B_SW`；`susclk=pin 68 SUSCLK`；`activity=pin 10 ACT_LED`
+- 证据：图 a389e5ad6645 / 第 1 页 / 网格 C7-D8，J1 M.2 引脚名称与 PCIE_REFCLK0/TX0/RX0、侧带网络
+
+## 总线
+
+### Raspberry Pi 至 HUSB238 I2C 预留链路
+
+U2 的 SCL/SDA 网络为 HUSB_SCL/HUSB_SDA；它们分别通过 R18/R19 预留到 RPI_SCL/RPI_SDA，但 R18、R19 均标 NC，因此图示装配状态下链路开路。
+
+- 参数与网络：`device=U2 HUSB238`；`device_scl=HUSB_SCL`；`device_sda=HUSB_SDA`；`host_scl=RPI_SCL`；`host_sda=RPI_SDA`；`series_scl=R18 NC`；`series_sda=R19 NC`；`assembled_state=open`
+- 证据：图 a389e5ad6645 / 第 1 页 / 网格 B2-B4，HUSB_SCL/HUSB_SDA 经 R18/R19 NC 至 RPI_SCL/RPI_SDA
+
+### Raspberry Pi 至 M.2 PCIe Lane 0
+
+CN1 的 PCIE_REFCLK0_E_P/N、PCIE_TX0_E_P/N 和 PCIE_RX0_E_P/N 直接延伸至 J1 的 REFCLKp/n、PETp0/n0 和 PERp0/n0；每组名称均保留 P/N 极性。
+
+- 参数与网络：`host_connector=CN1`；`device_connector=J1`；`reference_clock=PCIE_REFCLK0_E_P/N`；`host_rx=PCIE_RX0_E_P/N -> J1 PERp0/n0`；`host_tx=PCIE_TX0_E_P/N -> J1 PETp0/n0`；`lane=0`
+- 证据：图 a389e5ad6645 / 第 1 页 / 网格 C1-C8，CN1 到 J1 的 REFCLK0、RX0、TX0 差分网络
+
+## 总线地址
+
+### HUSB238 I2C 地址
+
+原理图在 U2 下方标注 ADDR_0X08。
+
+- 参数与网络：`device=U2 HUSB238`；`bus=HUSB_SCL,HUSB_SDA`；`address_7bit_mark=0x08`
+- 证据：图 a389e5ad6645 / 第 1 页 / 网格 B2，U2 下方 ADDR_0X08
+
+## GPIO 与控制信号
+
+### PCIe 侧带与电源控制
+
+CN1 pin 13 的 PCIE_RPI_PWR_EN 控制 U1 EN；pin 14 DET_WAKE 引出至 TP5；pin 15 PCIE_CLKREQ_N 经 R27 0R 到 J1 CLKREQ#；pin 16 PCIE_RST_B 经 R28 0R 进入复位电平转换链。
+
+- 参数与网络：`power_enable=CN1.13 PCIE_RPI_PWR_EN -> U1 EN`；`wake_detect=CN1.14 DET_WAKE -> TP5`；`clock_request=CN1.15 -> R27 0R -> PCIE_CLKREQ_N -> J1.52`；`reset=CN1.16 -> R28 0R -> PCIE_RST_B`
+- 证据：图 a389e5ad6645 / 第 1 页 / 网格 B5、C1-C3、C7，PCIE_RPI_PWR_EN/DET_WAKE/CLKREQ/RST 网络
+
+### 电源与活动指示灯
+
+RPI_3V3 经 R13 2.2K/1% 与 LED3 指示 5V_PG，经 R8 2.2K/1% 与 LED1 指示 NGFF_PG；NGFF_3V3 经 LED2 与 R23 2.2K/1% 连接 ACT_LED。
+
+- 参数与网络：`host_5v_indicator=R13 2.2K/1%,LED3,5V_PG`；`m2_power_indicator=R8 2.2K/1%,LED1,NGFF_PG`；`activity_indicator=NGFF_3V3,LED2,R23 2.2K/1%,ACT_LED`
+- 证据：图 a389e5ad6645 / 第 1 页 / 网格 D4-D6，三路 LED 与 R13/R8/R23
+
+## 时钟
+
+### PCIe 参考时钟
+
+PCIE_REFCLK0_E_P/N 从 CN1 pins 4/5 连接 J1 pins 53/51；图面在 J1 参考时钟附近标注 DIFF 100R。
+
+- 参数与网络：`source_connector=CN1 pins 4,5`；`nets=PCIE_REFCLK0_E_P,PCIE_REFCLK0_E_N`；`destination=J1 pins 53 REFCLKp,51 REFCLKn`；`differential_impedance_mark=100R`
+- 证据：图 a389e5ad6645 / 第 1 页 / 网格 C1-C8，CN1 REFCLK0 至 J1 REFCLKp/n，DIFF 100R 注记
+
+### M.2 SUSCLK 可选时钟
+
+32.768M 标注的振荡器位置及其 C21 均标 NC，输出位置经 R35 33R/1% 接 SUSCLK，再连接 J1 pin 68；R34 为 0R/1% 供电串联位。
+
+- 参数与网络：`frequency_mark=32.768M`；`assembly=oscillator NC,C21 NC`；`supply=NGFF_3V3 via R34 0R/1%`；`series_output=R35 33R/1%`；`net=SUSCLK`；`destination=J1 pin 68`
+- 证据：图 a389e5ad6645 / 第 1 页 / 网格 C3-C4，32.768M (NC) 振荡器、R34/R35/C21、SUSCLK/TP10
+
+## 复位
+
+### PCIe PERST# 电平转换
+
+U4 SN74LVC1T45DBVR 的 VCCA 接 RPI_3V3、VCCB 接 NGFF_3V3、DIR 接 GND，A 端为 PCIE_RST_B、B 端为 PCIE_RST_B_SW；R24 0R/1% 同时预留在两网络之间。
+
+- 参数与网络：`translator=U4 SN74LVC1T45DBVR`；`a_supply=RPI_3V3`；`b_supply=NGFF_3V3`；`direction_pin=DIR=GND`；`a_net=PCIE_RST_B`；`b_net=PCIE_RST_B_SW`；`m2_pin=J1 pin 50 PERST#`；`bypass=R24 0R/1%`
+- 证据：图 a389e5ad6645 / 第 1 页 / 网格 D1-D3，U4、C14/C20、R24 与 PCIE_RST_B/PCIE_RST_B_SW
+
+## 保护电路
+
+### VCC 瞬态与过压保护
+
+D1 SMBJ24A 从 VCC 对地钳位；U19 AW32901 位于 VCC 与 HV_BUS 之间，其 OVLO 分压由 R31 200K/1% 和 R32 10K/1% 构成，图面给出 Vth=1.2V 的计算式。
+
+- 参数与网络：`tvs=D1 SMBJ24A`；`protection_ic=U19 AW32901`；`input=VCC`；`output=HV_BUS`；`ovlo_upper=R31 200K/1%`；`ovlo_lower=R32 10K/1%`；`ovlo_vth_mark=1.2V`
+- 证据：图 a389e5ad6645 / 第 1 页 / 网格 A2-A4，D1、U19、R31/R32 与 Vopp=(R1+R2)/R2*Vth 注记
+
+### USB 2.0 数据线保护预留
+
+USB1 的 USB_P 与 USB_N 旁各有 D4/D5 对地保护位置，但两者均以红色叉号标示未装。
+
+- 参数与网络：`nets=USB_P,USB_N`；`references=D4,D5`；`assembly=NC`；`type=ESD/TVS symbol to GND`
+- 证据：图 a389e5ad6645 / 第 1 页 / 网格 A1-A2，USB_P/USB_N 支路 D4/D5 红色 NC 标记
+
+## 关键网络
+
+### PiHat 关键电源网络
+
+电源主路径为 USB1 VCC -> U19 AW32901 -> HV_BUS；HV_BUS 分为 U17 -> BUS_5V -> JP1 与 U1 -> NGFF_3V3 -> J1 两个支路。
+
+- 参数与网络：`input_path=USB1 VCC > U19 > HV_BUS`；`host_path=HV_BUS > U17 > BUS_5V > JP1 pins 2,4`；`m2_path=HV_BUS > U1 > NGFF_3V3 > J1 3.3V pins`
+- 证据：图 a389e5ad6645 / 第 1 页 / 整页网格 A1-D8，VCC/HV_BUS/BUS_5V/NGFF_3V3 网络追踪
+
+## 存储
+
+### 预留 I2C EEPROM
+
+U3 为带 E0/E1/E2、WC、SCL、SDA 的 I2C EEPROM 符号，SCL/SDA 接 RPI_SCL/RPI_SDA；U3、C5 与 R9 均标 NC，因此当前图示装配不包含该存储器。
+
+- 参数与网络：`reference=U3`；`part_number=null`；`bus=RPI_SCL,RPI_SDA`；`address_pins=E0,E1,E2 to GND`；`write_control=WC via R9 NC to RPI_3V3`；`decoupling=C5 NC`；`assembly=NC`
+- 证据：图 a389e5ad6645 / 第 1 页 / 网格 D4-D5，虚线框 U3/C5/R9 NC 与 RPI_SCL/RPI_SDA
+
+## 音频
+
+### PiHat 音频电路
+
+本单页 PiHat 原理图未显示音频编解码器、麦克风、扬声器、I2S 或音频连接器。
+
+- 参数与网络：`scope=single-page PiHat schematic`；`audio_ic=null`；`i2s=null`；`microphone=null`；`speaker=null`
+- 证据：图 a389e5ad6645 / 第 1 页 / 整页网格 A1-D8，无音频或 I2S 分区/网络
+
+## 传感器
+
+### PiHat 传感器与监测器件
+
+本单页未显示温度、电流或其他传感器 IC；PD 与 Buck 标注不构成独立传感器接口。
+
+- 参数与网络：`scope=single-page PiHat schematic`；`sensor_ic=null`；`monitor_bus=null`
+- 证据：图 a389e5ad6645 / 第 1 页 / 整页网格 A1-D8，无 Sensor/Monitor IC 或传感器连接器
+
+## 射频
+
+### PiHat 射频电路
+
+本单页未显示射频收发器、天线、射频匹配网络或同轴连接器。
+
+- 参数与网络：`scope=single-page PiHat schematic`；`rf_ic=null`；`antenna=null`；`rf_connector=null`
+- 证据：图 a389e5ad6645 / 第 1 页 / 整页网格 A1-D8，无 RF/ANT 分区或器件
+
+## 调试与烧录
+
+### 板级测试点
+
+图面提供 HV_BUS TP2、BUS_5V TP1、NGFF_3V3 TP3、PCIE_RPI_PWR_EN TP4、DET_WAKE TP5、PCIE_CLKREQ_N TP6、PCIE_RST_B TP7、RPI_SCL TP8、RPI_SDA TP9 和 SUSCLK TP10。
+
+- 参数与网络：`power=TP1 BUS_5V,TP2 HV_BUS,TP3 NGFF_3V3`；`control=TP4 PCIE_RPI_PWR_EN,TP5 DET_WAKE,TP6 PCIE_CLKREQ_N,TP7 PCIE_RST_B`；`i2c=TP8 RPI_SCL,TP9 RPI_SDA`；`clock=TP10 SUSCLK`
+- 证据：图 a389e5ad6645 / 第 1 页 / 整页 TP1-TP10 网络标记
+
+## 模拟电路
+
+### 模拟反馈与保护阈值网络
+
+输入保护 OVLO 使用 R31 200K/1% 与 R32 10K/1%；BUS_5V 反馈使用 R2 75K/1% 与 R4 10K/1%；NGFF_3V3 反馈使用 R6 45.3K/1% 与 R12 10K/1%。
+
+- 参数与网络：`ovlo=R31 200K/1%,R32 10K/1%`；`bus_5v_fb=R2 75K/1%,R4 10K/1%`；`ngff_3v3_fb=R6 45.3K/1%,R12 10K/1%`；`buck_vfb_mark=0.6V`
+- 证据：图 a389e5ad6645 / 第 1 页 / 网格 A2-A7 与 B5-B7，U19 OVLO 和 U17/U1 FB 分压网络
+
+## 其他事实
+
+### 电池与充电路径
+
+本单页电源从 USB1 VCC 开始，未显示电池连接器、电芯、充电管理 IC 或电池监测路径。
+
+- 参数与网络：`power_source=USB1 VCC`；`battery=null`；`charger=null`；`fuel_gauge=null`
+- 证据：图 a389e5ad6645 / 第 1 页 / 整页网格 A1-D8，电源路径为 USB1/U19/U17/U1，无 BAT/charger
+
+## 参数与信号索引
+
+| 分类 | 对象 | 参数 |
+| --- | --- | --- |
+| 系统结构 | LLM-8850 PiHat 系统架构 | `input=USB1 Type-C`；`pd_controller=U2 HUSB238`；`input_protection=U19 AW32901`；`power_outputs=BUS_5V,NGFF_3V3`；`host_header=JP1`；`pcie_connector=CN1`；`m2_slot=J1` |
+| 电源 | USB Type-C 电源输入 | `connector=USB1`；`vbus_pins=A4,B9`；`ground_pins=A1,A12,B1,B12,EP`；`input_net=VCC`；`pd_vin=U2 pin 1 VIN` |
+| 接口 | USB1 Type-C 引脚与网络 | `reference=USB1`；`dp_pins=A6,B6`；`dp_net=USB_P`；`dn_pins=A7,B7`；`dn_net=USB_N`；`cc1_pin_net=A5 CC_1`；`cc2_pin_net=B5 CC_2`；`device=U2 HUSB238` |
+| 核心器件 | HUSB238 PD 配置 | `reference=U2`；`part_number=HUSB238`；`address_mark=0x08`；`default_request=20V 1.25A`；`iset_path=R16 0R/1%`；`vset_path=R17 NC` |
+| 总线地址 | HUSB238 I2C 地址 | `device=U2 HUSB238`；`bus=HUSB_SCL,HUSB_SDA`；`address_7bit_mark=0x08` |
+| 总线 | Raspberry Pi 至 HUSB238 I2C 预留链路 | `device=U2 HUSB238`；`device_scl=HUSB_SCL`；`device_sda=HUSB_SDA`；`host_scl=RPI_SCL`；`host_sda=RPI_SDA`；`series_scl=R18 NC`；`series_sda=R19 NC`；`assembled_state=open` |
+| 保护电路 | VCC 瞬态与过压保护 | `tvs=D1 SMBJ24A`；`protection_ic=U19 AW32901`；`input=VCC`；`output=HV_BUS`；`ovlo_upper=R31 200K/1%`；`ovlo_lower=R32 10K/1%`；`ovlo_vth_mark=1.2V` |
+| 电源 | HV_BUS 中间电源轨 | `source=U19 OUT`；`rail=HV_BUS`；`decoupling=C7 1uF/50V,C22 1uF/50V,E3 OVZ101M1ETR-0606`；`loads=U17,U1` |
+| 电源 | BUS_5V 降压电源 | `converter=U17 SY8368A`；`input=HV_BUS`；`output=BUS_5V`；`inductor=L1 FXL0420-1R5-M`；`feedback_upper=R2 75K/1%`；`feedback_lower=R4 10K/1%`；`vfb_mark=0.6V`；`vout_mark=5.1V`；`current_mark=8A`；`test_point=TP1` |
+| 电源 | NGFF_3V3 降压电源 | `converter=U1 SY8368A`；`input=HV_BUS`；`output=NGFF_3V3`；`enable=PCIE_RPI_PWR_EN`；`power_good=NGFF_PG`；`inductor=L2 FXL0420-1R5-M`；`feedback_upper=R6 45.3K/1%`；`feedback_lower=R12 10K/1%`；`vout_mark=3.3V`；`current_mark=8A`；`test_point=TP3` |
+| 关键网络 | PiHat 关键电源网络 | `input_path=USB1 VCC > U19 > HV_BUS`；`host_path=HV_BUS > U17 > BUS_5V > JP1 pins 2,4`；`m2_path=HV_BUS > U1 > NGFF_3V3 > J1 3.3V pins` |
+| 接口 | JP1 Raspberry Pi 40 针接口 | `connector=JP1`；`pin_1=RPI_3V3`；`pins_2_4=BUS_5V`；`pin_3=RPI_SDA`；`pin_5=RPI_SCL`；`ground_pins=6,9,14,20,25,30,34,39`；`other_signal_pins=NC` |
+| 接口 | CN1 16 针 PCIe FPC 接口 | `connector=CN1 1-1734839-6`；`pins_1_2=PCIE_5V`；`pins_3_6_9_12=GND`；`pins_4_5=PCIE_REFCLK0_E_P/N`；`pins_7_8=PCIE_RX0_E_P/N`；`pins_10_11=PCIE_TX0_E_P/N`；`pin_13=PCIE_RPI_PWR_EN`；`pin_14=DET_WAKE`；`pin_15=PCIE_CLKREQ_N via R27 0R/1%`；`pin_16=PCIE_RST_B via R28 0R/1%` |
+| 接口 | J1 M.2 M-Key 接口 | `connector=J1 M.2_NGFF_KEY_M`；`supply=NGFF_3V3`；`refclk=pins 53/51 PCIE_REFCLK0_E_P/N`；`tx_lane0=pins 49/47 PCIE_TX0_E_P/N`；`rx_lane0=pins 43/41 PCIE_RX0_E_P/N`；`pewake=pin 54 PCIE_PWAKE_N`；`clkreq=pin 52 PCIE_CLKREQ_N`；`perst=pin 50 PCIE_RST_B_SW`；`susclk=pin 68 SUSCLK`；`activity=pin 10 ACT_LED` |
+| 总线 | Raspberry Pi 至 M.2 PCIe Lane 0 | `host_connector=CN1`；`device_connector=J1`；`reference_clock=PCIE_REFCLK0_E_P/N`；`host_rx=PCIE_RX0_E_P/N -> J1 PERp0/n0`；`host_tx=PCIE_TX0_E_P/N -> J1 PETp0/n0`；`lane=0` |
+| GPIO 与控制信号 | PCIe 侧带与电源控制 | `power_enable=CN1.13 PCIE_RPI_PWR_EN -> U1 EN`；`wake_detect=CN1.14 DET_WAKE -> TP5`；`clock_request=CN1.15 -> R27 0R -> PCIE_CLKREQ_N -> J1.52`；`reset=CN1.16 -> R28 0R -> PCIE_RST_B` |
+| 复位 | PCIe PERST# 电平转换 | `translator=U4 SN74LVC1T45DBVR`；`a_supply=RPI_3V3`；`b_supply=NGFF_3V3`；`direction_pin=DIR=GND`；`a_net=PCIE_RST_B`；`b_net=PCIE_RST_B_SW`；`m2_pin=J1 pin 50 PERST#`；`bypass=R24 0R/1%` |
+| 时钟 | PCIe 参考时钟 | `source_connector=CN1 pins 4,5`；`nets=PCIE_REFCLK0_E_P,PCIE_REFCLK0_E_N`；`destination=J1 pins 53 REFCLKp,51 REFCLKn`；`differential_impedance_mark=100R` |
+| 时钟 | M.2 SUSCLK 可选时钟 | `frequency_mark=32.768M`；`assembly=oscillator NC,C21 NC`；`supply=NGFF_3V3 via R34 0R/1%`；`series_output=R35 33R/1%`；`net=SUSCLK`；`destination=J1 pin 68` |
+| 存储 | 预留 I2C EEPROM | `reference=U3`；`part_number=null`；`bus=RPI_SCL,RPI_SDA`；`address_pins=E0,E1,E2 to GND`；`write_control=WC via R9 NC to RPI_3V3`；`decoupling=C5 NC`；`assembly=NC` |
+| 保护电路 | USB 2.0 数据线保护预留 | `nets=USB_P,USB_N`；`references=D4,D5`；`assembly=NC`；`type=ESD/TVS symbol to GND` |
+| GPIO 与控制信号 | 电源与活动指示灯 | `host_5v_indicator=R13 2.2K/1%,LED3,5V_PG`；`m2_power_indicator=R8 2.2K/1%,LED1,NGFF_PG`；`activity_indicator=NGFF_3V3,LED2,R23 2.2K/1%,ACT_LED` |
+| 模拟电路 | 模拟反馈与保护阈值网络 | `ovlo=R31 200K/1%,R32 10K/1%`；`bus_5v_fb=R2 75K/1%,R4 10K/1%`；`ngff_3v3_fb=R6 45.3K/1%,R12 10K/1%`；`buck_vfb_mark=0.6V` |
+| 调试与烧录 | 板级测试点 | `power=TP1 BUS_5V,TP2 HV_BUS,TP3 NGFF_3V3`；`control=TP4 PCIE_RPI_PWR_EN,TP5 DET_WAKE,TP6 PCIE_CLKREQ_N,TP7 PCIE_RST_B`；`i2c=TP8 RPI_SCL,TP9 RPI_SDA`；`clock=TP10 SUSCLK` |
+| 内存与 Flash | LLM-8850 Card 内存 | `schematic_scope=LLM-8850 PiHat`；`card_boundary=J1 M.2_NGFF_KEY_M`；`documented_variants=8GB/4GB LPDDR4x`；`memory_reference=null`；`memory_bus=null`；`memory_rails=null` |
+| 存储 | LLM-8850 Card Boot Flash | `documented_storage=32Mbits QSPI NOR Flash`；`schematic_storage=U3 I2C EEPROM reservation NC`；`card_flash_reference=null`；`qspi_nets=null` |
+| 核心器件 | AX8850 加速卡内部器件 | `schematic_title_scope=8850_HAT`；`card_connector=J1 M.2_NGFF_KEY_M`；`soc=not shown`；`ec=not shown`；`fan=not shown`；`thermal_control=not shown` |
+| 总线 | PCIe 链路宽度与版本 | `schematic_connected_lanes=Lane 0 only`；`unused_lanes=Lane 1,Lane 2,Lane 3 NC`；`documented_link=PCIe 2.0 x2`；`verified_generation=null`；`verified_width=null` |
+| 电源 | 整机 PD 与输出额定能力 | `schematic_pd_default=20V 1.25A`；`buck_current_marks=8A each`；`bus_5v_mark=5.1V`；`ngff_3v3_mark=3.3V`；`documented_pd=PD3.0 100W`；`documented_rpi_output=5V@4A`；`documented_m2_output=3.3V@6A`；`verified_system_rating=null` |
+| 音频 | PiHat 音频电路 | `scope=single-page PiHat schematic`；`audio_ic=null`；`i2s=null`；`microphone=null`；`speaker=null` |
+| 传感器 | PiHat 传感器与监测器件 | `scope=single-page PiHat schematic`；`sensor_ic=null`；`monitor_bus=null` |
+| 射频 | PiHat 射频电路 | `scope=single-page PiHat schematic`；`rf_ic=null`；`antenna=null`；`rf_connector=null` |
+| 其他事实 | 电池与充电路径 | `power_source=USB1 VCC`；`battery=null`；`charger=null`；`fuel_gauge=null` |
+
+## 待确认事项
+
+- `memory.card-internal-not-shown`：当前原理图页终止于 J1 M.2 插槽，没有显示加速卡内部 LPDDR4x 器件、位号、数据总线、容量或电源轨；正文所列 8GB/4GB 内存规格不能由该页验证。（证据：图 a389e5ad6645 / 第 1 页 / 网格 C7-D8，J1 M.2 插槽为原理图边界，页内无 LPDDR 器件）
+- `storage.card-flash-not-shown`：当前页仅显示未装配 U3 I2C EEPROM 预留和 J1 M.2 接口，没有显示加速卡内部 QSPI NOR 器件；正文所列 32Mbits QSPI NOR Flash 无法由该页确认。（证据：图 a389e5ad6645 / 第 1 页 / 网格 D4-D8，U3 NC 与 J1；整页无 QSPI NOR 器件或 QSPI 网络）
+- `component.accelerator-card-not-shown`：当前资源只画到 J1 M.2 M-Key 插槽，未包含 LLM-8850 Card 内部 AX8850 SoC、EC、风扇或散热控制电路，故这些器件的位号、型号连接与控制关系尚不能从本原理图确认。（证据：图 a389e5ad6645 / 第 1 页 / 整页 SCH_8850_HAT，网格 C7-D8 J1 为卡边界，页内无 AX8850/EC/风扇器件）
+- `bus.pcie-link-width-not-shown`：当前页只连接 J1 的 Lane 0 PETp/n 与 PERp/n，Lane 1/2/3 引脚均标未连接；正文所列 PCIe 2.0 x2 不能由该 PiHat 页直接证明，需结合加速卡与主机设计确认。（证据：图 a389e5ad6645 / 第 1 页 / 网格 C7-D8，J1 PET/PER Lane 0 已连，Lane 1/2/3 红色叉号 NC）
+- `power.system-rating-not-shown`：图面确认 HUSB238 默认 20V 1.25A、两路 Buck 注记 Ic max 8A，并标出 5.1V/3.3V 输出；但没有 PD3.0 100W PDO 配置或证明 Raspberry Pi 5 5V@4A、M.2 3.3V@6A 的完整热设计和系统额定数据。（证据：图 a389e5ad6645 / 第 1 页 / 网格 B2 U2 默认 20V 1.25A；网格 A5-B7 两路 Buck 8A/5.1V/3.3V 注记，无 100W PDO 或热额定表）
+- `review.card-memory`：请用 LLM-8850 Card 正式原理图、BOM 或器件丝印确认 8GB/4GB LPDDR4x 的具体料号、位号、容量组织和连接。；原因：当前资源是 PiHat 单页，卡内存止于 J1 接口边界。
+- `review.card-flash`：请用 LLM-8850 Card 正式原理图或 BOM 确认 32Mbits QSPI NOR Flash 的位号、型号和 AX8850 连接。；原因：PiHat 页内没有 QSPI NOR 器件或 QSPI 网络。
+- `review.accelerator-card`：请补充 LLM-8850 Card 原理图或 BOM，以确认 AX8850、EC、风扇、温度/电流监测与散热控制链。；原因：当前 SCH_8850_HAT 仅显示转接板与 M.2 卡边界。
+- `review.pcie-width`：请结合 Raspberry Pi 5 FPC、PiHat PCB 和 LLM-8850 Card 设计确认实际 PCIe 版本与链路宽度；当前页只连接 Lane 0。；原因：正文 PCIe 2.0 x2 与 PiHat 页显示的单组差分收发链路不能直接对应。
+- `review.power-rating`：请用 HUSB238 PDO 配置、量产 BOM、热设计与负载测试确认 PD3.0 100W、Raspberry Pi 5 5V@4A 和 M.2 3.3V@6A 的整机额定能力。；原因：原理图只给出默认请求值、Buck 峰值标注和输出设定，不能替代系统持续额定验证。
+
+## 原理图来源
+
+| 资源 | 页码 | SHA-256 | 原始地址 |
+| --- | --- | --- | --- |
+| 1 | 1 | `a389e5ad6645adcdad311918cc3cfb0944a6ef4e1ede94021fab7136a4ae073a` | `https://m5stack-doc.oss-cn-shenzhen.aliyuncs.com/1215/SCH_8850_HAT_V0.2_2025_11_28_15_52_22_page_01.png` |
+
+---
+
+源文档：`zh_CN/ai_hardware/LLM-8850_Kit.md`
+
+源文档 SHA-256：`6ad930fef80210c4a6fe8ae1166c9b7f3d665bb4f082ca9d7396d75581922477`
+
+*该文档由专用原理图子智能体基于原理图证据自动生成；无法确认的内容集中列在“待确认事项”章节。*

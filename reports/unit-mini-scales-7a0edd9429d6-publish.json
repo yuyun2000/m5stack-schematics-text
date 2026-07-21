@@ -1,0 +1,21 @@
+{
+  "dry_run": false,
+  "failed": 0,
+  "published": 1,
+  "results": [
+    {
+      "backup": null,
+      "draft_action": "unchanged",
+      "dry_run": false,
+      "errors": [],
+      "needs_review": 7,
+      "product_id": "unit-mini-scales-7a0edd9429d6",
+      "product_name": "Unit Mini Scales",
+      "publish_action": "unchanged",
+      "sha256": "36ff1f4b728c6eb7c124a787115cb7810a77815d92045d33cbcfe61842bc910a",
+      "status": "valid",
+      "uncertain_facts": 7
+    }
+  ],
+  "schema_version": 1
+}

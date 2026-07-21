@@ -1,0 +1,21 @@
+{
+  "dry_run": false,
+  "failed": 0,
+  "published": 1,
+  "results": [
+    {
+      "backup": null,
+      "draft_action": "unchanged",
+      "dry_run": false,
+      "errors": [],
+      "needs_review": 7,
+      "product_id": "unit-reflective-ir-b9aa857e0a62",
+      "product_name": "Unit Reflective IR",
+      "publish_action": "unchanged",
+      "sha256": "ce36f55b82aa9a336f292d9346e385786f60c9c9371500eb0b917d849b59471f",
+      "status": "valid",
+      "uncertain_facts": 7
+    }
+  ],
+  "schema_version": 1
+}

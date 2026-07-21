@@ -1,0 +1,21 @@
+{
+  "dry_run": false,
+  "failed": 0,
+  "published": 1,
+  "results": [
+    {
+      "backup": null,
+      "draft_action": "unchanged",
+      "dry_run": false,
+      "errors": [],
+      "needs_review": 4,
+      "product_id": "unit-lcd-f6d3e8883759",
+      "product_name": "Unit LCD",
+      "publish_action": "unchanged",
+      "sha256": "f186742a285c133ac1662d248db7427dcac1a4f44eb23252931593e8fb27d8c3",
+      "status": "valid",
+      "uncertain_facts": 4
+    }
+  ],
+  "schema_version": 1
+}

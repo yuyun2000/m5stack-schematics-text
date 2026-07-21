@@ -1,0 +1,21 @@
+{
+  "dry_run": false,
+  "failed": 0,
+  "published": 1,
+  "results": [
+    {
+      "backup": null,
+      "draft_action": "unchanged",
+      "dry_run": false,
+      "errors": [],
+      "needs_review": 2,
+      "product_id": "stamp-c3-ba12ba083e85",
+      "product_name": "Stamp-C3",
+      "publish_action": "unchanged",
+      "sha256": "3e9bdb1833b04c66e647c585d36f2fa9cd248df057c254d1a473753c5ae271a2",
+      "status": "valid",
+      "uncertain_facts": 2
+    }
+  ],
+  "schema_version": 1
+}

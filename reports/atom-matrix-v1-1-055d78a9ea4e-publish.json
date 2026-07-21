@@ -1,0 +1,21 @@
+{
+  "dry_run": false,
+  "failed": 0,
+  "published": 1,
+  "results": [
+    {
+      "backup": null,
+      "draft_action": "unchanged",
+      "dry_run": false,
+      "errors": [],
+      "needs_review": 6,
+      "product_id": "atom-matrix-v1-1-055d78a9ea4e",
+      "product_name": "Atom-Matrix v1.1",
+      "publish_action": "unchanged",
+      "sha256": "9f817f845c96a0ab62087ce688a70e7ffae0ceed84948474165ebd0ff85d906f",
+      "status": "valid",
+      "uncertain_facts": 6
+    }
+  ],
+  "schema_version": 1
+}

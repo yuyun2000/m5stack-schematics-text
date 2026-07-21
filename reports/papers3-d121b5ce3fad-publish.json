@@ -1,0 +1,21 @@
+{
+  "dry_run": false,
+  "failed": 0,
+  "published": 1,
+  "results": [
+    {
+      "backup": null,
+      "draft_action": "unchanged",
+      "dry_run": false,
+      "errors": [],
+      "needs_review": 4,
+      "product_id": "papers3-d121b5ce3fad",
+      "product_name": "PaperS3",
+      "publish_action": "unchanged",
+      "sha256": "abcefa65d4d8400779cc1e2e1b035d8747f96ea4f55e9b83f1c0563048c2f2fb",
+      "status": "valid",
+      "uncertain_facts": 4
+    }
+  ],
+  "schema_version": 1
+}

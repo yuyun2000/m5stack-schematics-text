@@ -1,0 +1,21 @@
+{
+  "dry_run": false,
+  "failed": 0,
+  "published": 1,
+  "results": [
+    {
+      "backup": null,
+      "draft_action": "unchanged",
+      "dry_run": false,
+      "errors": [],
+      "needs_review": 8,
+      "product_id": "unit-gateway-h2-3d4f3f01cf7e",
+      "product_name": "Unit Gateway H2",
+      "publish_action": "unchanged",
+      "sha256": "962b372192604776836a36781e5db3b36abbb15a2e327f5344061ec51c9066ce",
+      "status": "valid",
+      "uncertain_facts": 8
+    }
+  ],
+  "schema_version": 1
+}

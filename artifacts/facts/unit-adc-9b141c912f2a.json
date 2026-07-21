@@ -1,0 +1,294 @@
+{
+  "schema_version": 1,
+  "generator": "schematic_describer",
+  "product": {
+    "product_id": "unit-adc-9b141c912f2a",
+    "product_name": "Unit ADC",
+    "sku": "U013",
+    "source_path": "unit/adc.md",
+    "source_sha256": "c602b4da7778ab3db83616bc674c0205b2df67cf1523f8afa77e744e60ffd1ca",
+    "input_sha256": "41fc2c9660fae72a2465209669a6922dc8a09787f49aecc8b71f24a2907dc5fc"
+  },
+  "schematic_assets": [
+    {
+      "sha256": "41b676c7fb810dd2ad4d9420e7f3601763c9b8e3b4134c65b2f597928a87efd8",
+      "source_url": "https://m5stack-doc.oss-cn-shenzhen.aliyuncs.com/736/U013_UNIT_ADC_SCHE_page_01.png",
+      "pages": [1]
+    }
+  ],
+  "summary": "Unit ADC 以 ADS1100（U2）作为差分模数转换器，P1 两针输入通过 R4/R5 分压网络和 LM358DR2G（U1A）电压跟随器连接 VIN+/VIN-。J1 四针接口引出 IIC_SCL、IIC_SDA、VCC 和 GND，SCL/SDA 由 R2/R3 上拉到 +3.3V。HT7533（U3）把 VCC 转换为 +3.3V，供 ADS1100 与 I2C 上拉使用；原理图没有标注 VCC 额定值、I2C 地址或 P1 允许输入范围。",
+  "keywords": [
+    "Unit ADC",
+    "U013",
+    "ADS1100",
+    "LM358DR2G",
+    "HT7533",
+    "IIC_Socket_4P",
+    "Header 2",
+    "I2C",
+    "0x48",
+    "IIC_SCL",
+    "IIC_SDA",
+    "VIN+",
+    "VIN-",
+    "VCC",
+    "+3.3V",
+    "R1 1KΩ",
+    "R2 4.7KΩ",
+    "R3 4.7KΩ",
+    "R4 300KΩ",
+    "R5 100KΩ",
+    "R6 0Ω",
+    "C1 100nF",
+    "C2 100nF",
+    "C3 10uF",
+    "C4 10uF",
+    "V1.0"
+  ],
+  "components": [
+    {
+      "reference": "U2",
+      "part_number": "ADS1100",
+      "role": "将 VIN+/VIN- 差分模拟输入转换为 I2C 数据",
+      "evidence": [{"asset_sha256": "41b676c7fb810dd2ad4d9420e7f3601763c9b8e3b4134c65b2f597928a87efd8", "page": 1, "locator": "页 1 网格 B2-B3：U2 ADS1100，pin 1 VIN+、pin 6 VIN-、pin 5 VDD、pin 2 GND、pin 3 SCL、pin 4 SDA"}]
+    },
+    {
+      "reference": "U1A",
+      "part_number": "LM358DR2G",
+      "role": "以输出回接反相端的电压跟随器缓冲 R4/R5 分压节点",
+      "evidence": [{"asset_sha256": "41b676c7fb810dd2ad4d9420e7f3601763c9b8e3b4134c65b2f597928a87efd8", "page": 1, "locator": "页 1 网格 A2-B2：U1A LM358DR2G，pin 1 输出回接 pin 2，pin 3 接 R4/R5 节点，pin 8 VCC、pin 4 GND"}]
+    },
+    {
+      "reference": "U3",
+      "part_number": "HT7533",
+      "role": "将 VCC 稳压为 +3.3V",
+      "evidence": [{"asset_sha256": "41b676c7fb810dd2ad4d9420e7f3601763c9b8e3b4134c65b2f597928a87efd8", "page": 1, "locator": "页 1 网格 C2-C3：U3 HT7533，VIN pin 2 接 VCC、VOUT pin 3 接 +3.3V、GND pin 1 接地"}]
+    },
+    {
+      "reference": "J1",
+      "part_number": "IIC_Socket_4P",
+      "role": "外部 I2C 与电源接口",
+      "evidence": [{"asset_sha256": "41b676c7fb810dd2ad4d9420e7f3601763c9b8e3b4134c65b2f597928a87efd8", "page": 1, "locator": "页 1 网格 B3：J1 IIC_Socket_4P，1~4 脚依次为 IIC_SCL、IIC_SDA、VCC、GND"}]
+    },
+    {
+      "reference": "P1",
+      "part_number": "Header 2",
+      "role": "两针外部模拟输入连接器",
+      "evidence": [{"asset_sha256": "41b676c7fb810dd2ad4d9420e7f3601763c9b8e3b4134c65b2f597928a87efd8", "page": 1, "locator": "页 1 网格 B1-B2：P1 Header 2，pin 1 经 R4 进入分压/缓冲路径，pin 2 接 VIN- 与 R6"}]
+    },
+    {
+      "reference": "R4/R5",
+      "part_number": "300KΩ / 100KΩ",
+      "role": "P1 pin 1 到 P1 pin 2/VIN- 之间的模拟输入分压网络",
+      "evidence": [{"asset_sha256": "41b676c7fb810dd2ad4d9420e7f3601763c9b8e3b4134c65b2f597928a87efd8", "page": 1, "locator": "页 1 网格 B1-B2：P1 pin 1-R4 300KΩ-缓冲节点-R5 100KΩ-P1 pin 2/VIN-"}]
+    },
+    {
+      "reference": "R1",
+      "part_number": "1KΩ",
+      "role": "U1A 输出到 ADS1100 VIN+ 的串联电阻",
+      "evidence": [{"asset_sha256": "41b676c7fb810dd2ad4d9420e7f3601763c9b8e3b4134c65b2f597928a87efd8", "page": 1, "locator": "页 1 网格 B2：U1A pin 1 输出经 R1 1KΩ 接 U2 VIN+ pin 1"}]
+    },
+    {
+      "reference": "R6",
+      "part_number": "0Ω",
+      "role": "将 P1 pin 2 与 ADS1100 VIN- 网络连接到 GND",
+      "evidence": [{"asset_sha256": "41b676c7fb810dd2ad4d9420e7f3601763c9b8e3b4134c65b2f597928a87efd8", "page": 1, "locator": "页 1 网格 B2：VIN-/P1 pin 2 节点经 R6 0Ω 接 GND"}]
+    },
+    {
+      "reference": "R2/R3",
+      "part_number": "4.7KΩ",
+      "role": "IIC_SCL 与 IIC_SDA 到 +3.3V 的上拉电阻",
+      "evidence": [{"asset_sha256": "41b676c7fb810dd2ad4d9420e7f3601763c9b8e3b4134c65b2f597928a87efd8", "page": 1, "locator": "页 1 网格 B2-B3：R2/R3 各 4.7KΩ，上端接 +3.3V，下端分别接 IIC_SCL/IIC_SDA"}]
+    },
+    {
+      "reference": "C1",
+      "part_number": "100nF",
+      "role": "ADS1100 +3.3V 电源去耦电容",
+      "evidence": [{"asset_sha256": "41b676c7fb810dd2ad4d9420e7f3601763c9b8e3b4134c65b2f597928a87efd8", "page": 1, "locator": "页 1 网格 B2：U2 VDD pin 5 的 +3.3V 节点经 C1 100nF 接 GND"}]
+    },
+    {
+      "reference": "C2/C3/C4",
+      "part_number": "100nF / 10uF / 10uF",
+      "role": "HT7533 输出和输入滤波电容",
+      "evidence": [{"asset_sha256": "41b676c7fb810dd2ad4d9420e7f3601763c9b8e3b4134c65b2f597928a87efd8", "page": 1, "locator": "页 1 网格 C1-C2：C2 100nF 与 C3 10uF 跨 +3.3V/GND，C4 10uF 跨 VCC/GND"}]
+    }
+  ],
+  "facts": [
+    {
+      "id": "system.adc-signal-chain",
+      "category": "system",
+      "subject": "Unit ADC",
+      "statement": "P1 的模拟输入经 R4/R5 分压和 U1A LM358DR2G 电压跟随器缓冲后进入 U2 ADS1100 VIN+，VIN- 连接 P1 pin 2 并经 R6 接地；ADS1100 通过 J1 的 IIC_SCL/IIC_SDA 对外通信。",
+      "confidence": "confirmed",
+      "attributes": {"input_connector": "P1 Header 2", "divider": "R4 300KΩ,R5 100KΩ", "buffer": "U1A LM358DR2G", "adc": "U2 ADS1100", "digital_interface": "J1 IIC_SCL,IIC_SDA", "regulator": "U3 HT7533"},
+      "evidence": [{"asset_sha256": "41b676c7fb810dd2ad4d9420e7f3601763c9b8e3b4134c65b2f597928a87efd8", "page": 1, "locator": "页 1 网格 A2-C3：P1/R4/R5/U1A/R1/U2/J1 及 U3 电源路径"}]
+    },
+    {
+      "id": "interface.analog-input-pinout",
+      "category": "interface",
+      "subject": "P1 Header 2",
+      "statement": "P1 pin 1 经 R4 300KΩ进入分压与缓冲节点，P1 pin 2 直接连接 ADS1100 VIN- pin 6，并经 R6 0Ω接 GND。",
+      "confidence": "confirmed",
+      "attributes": {"pin_1": "analog input via R4 300KΩ", "pin_2": "VIN- node; U2 pin 6; R6 0Ω to GND", "connector": "Header 2"},
+      "evidence": [{"asset_sha256": "41b676c7fb810dd2ad4d9420e7f3601763c9b8e3b4134c65b2f597928a87efd8", "page": 1, "locator": "页 1 网格 B1-B2：P1 pins 1/2、R4/R5/R6 与 U2 VIN- pin 6"}]
+    },
+    {
+      "id": "analog.input-divider",
+      "category": "analog",
+      "subject": "R4/R5 分压网络",
+      "statement": "R4 300KΩ 从 P1 pin 1 接到 U1A 非反相输入节点，R5 100KΩ 从该节点接到 P1 pin 2/VIN- 节点。",
+      "confidence": "confirmed",
+      "attributes": {"upper_resistor": "R4 300KΩ", "lower_resistor": "R5 100KΩ", "source": "P1 pin 1", "sense_node": "U1A pin 3", "reference_node": "P1 pin 2,U2 VIN- pin 6"},
+      "evidence": [{"asset_sha256": "41b676c7fb810dd2ad4d9420e7f3601763c9b8e3b4134c65b2f597928a87efd8", "page": 1, "locator": "页 1 网格 B1-B2：R4/R5 串联拓扑及 U1A pin 3 分支"}]
+    },
+    {
+      "id": "analog.opamp-follower",
+      "category": "analog",
+      "subject": "U1A LM358DR2G",
+      "statement": "U1A pin 1 输出直接回接 pin 2 反相端，pin 3 非反相端接 R4/R5 节点，形成电压跟随连接；输出再经 R1 1KΩ进入 ADS1100 VIN+ pin 1。",
+      "confidence": "confirmed",
+      "attributes": {"non_inverting_input": "pin 3 to R4/R5 node", "inverting_input": "pin 2 tied to output", "output": "pin 1 via R1 1KΩ to U2 VIN+", "supply": "pin 8 VCC,pin 4 GND"},
+      "evidence": [{"asset_sha256": "41b676c7fb810dd2ad4d9420e7f3601763c9b8e3b4134c65b2f597928a87efd8", "page": 1, "locator": "页 1 网格 A2-B2：U1A pins 1/2/3/4/8、反馈线和 R1"}]
+    },
+    {
+      "id": "component.ads1100-pin-map",
+      "category": "component",
+      "subject": "U2 ADS1100",
+      "statement": "U2 pin 1 为 VIN+，pin 6 为 VIN-，pin 5 VDD 接 +3.3V，pin 2 GND 接地，pin 3 SCL 接 IIC_SCL，pin 4 SDA 接 IIC_SDA。",
+      "confidence": "confirmed",
+      "attributes": {"pin_1": "VIN+", "pin_2": "GND", "pin_3": "SCL,IIC_SCL", "pin_4": "SDA,IIC_SDA", "pin_5": "VDD,+3.3V", "pin_6": "VIN-"},
+      "evidence": [{"asset_sha256": "41b676c7fb810dd2ad4d9420e7f3601763c9b8e3b4134c65b2f597928a87efd8", "page": 1, "locator": "页 1 网格 B2-B3：U2 ADS1100 六个引脚号、功能名和外部网络"}]
+    },
+    {
+      "id": "analog.differential-input-reference",
+      "category": "analog",
+      "subject": "ADS1100 VIN+/VIN-",
+      "statement": "VIN+ 由 U1A 输出经 R1 1KΩ驱动，VIN- 连接 P1 pin 2 并通过 R6 0Ω接 GND；C1 不在模拟输入上，而是接在 U2 VDD 电源节点。",
+      "confidence": "confirmed",
+      "attributes": {"vin_plus": "U1A pin 1 via R1 1KΩ to U2 pin 1", "vin_minus": "P1 pin 2 to U2 pin 6", "vin_minus_ground": "R6 0Ω to GND", "adc_decoupling": "C1 100nF on VDD"},
+      "evidence": [{"asset_sha256": "41b676c7fb810dd2ad4d9420e7f3601763c9b8e3b4134c65b2f597928a87efd8", "page": 1, "locator": "页 1 网格 B2：R1/U2 VIN+、P1 pin 2/U2 VIN-/R6 与 C1/VDD"}]
+    },
+    {
+      "id": "interface.i2c-socket-pinout",
+      "category": "interface",
+      "subject": "J1 IIC_Socket_4P",
+      "statement": "J1 pin 1 接 IIC_SCL，pin 2 接 IIC_SDA，pin 3 接 VCC，pin 4 接 GND。",
+      "confidence": "confirmed",
+      "attributes": {"pin_1": "IIC_SCL", "pin_2": "IIC_SDA", "pin_3": "VCC", "pin_4": "GND"},
+      "evidence": [{"asset_sha256": "41b676c7fb810dd2ad4d9420e7f3601763c9b8e3b4134c65b2f597928a87efd8", "page": 1, "locator": "页 1 网格 B3：J1 1~4 脚与 IIC_SCL/IIC_SDA/VCC/GND 标签"}]
+    },
+    {
+      "id": "bus.i2c-connection",
+      "category": "bus",
+      "subject": "ADS1100 I2C",
+      "statement": "U2 SCL pin 3 通过 IIC_SCL 连接 J1 pin 1，U2 SDA pin 4 通过 IIC_SDA 连接 J1 pin 2；两条线均上拉至 +3.3V。",
+      "confidence": "confirmed",
+      "attributes": {"device": "U2 ADS1100", "scl": "U2 pin 3 to J1 pin 1 IIC_SCL", "sda": "U2 pin 4 to J1 pin 2 IIC_SDA", "pullup_rail": "+3.3V"},
+      "evidence": [{"asset_sha256": "41b676c7fb810dd2ad4d9420e7f3601763c9b8e3b4134c65b2f597928a87efd8", "page": 1, "locator": "页 1 网格 B2-B3：U2 SCL/SDA、R2/R3 与 J1 同名网络"}]
+    },
+    {
+      "id": "power.i2c-pullups",
+      "category": "power",
+      "subject": "IIC_SCL/IIC_SDA 上拉",
+      "statement": "R2 和 R3 均为 4.7KΩ，分别将 IIC_SCL 与 IIC_SDA 上拉到 +3.3V。",
+      "confidence": "confirmed",
+      "attributes": {"scl_pullup": "R2 4.7KΩ", "sda_pullup": "R3 4.7KΩ", "rail": "+3.3V"},
+      "evidence": [{"asset_sha256": "41b676c7fb810dd2ad4d9420e7f3601763c9b8e3b4134c65b2f597928a87efd8", "page": 1, "locator": "页 1 网格 B2-B3：+3.3V-R2-IIC_SCL 与 +3.3V-R3-IIC_SDA 支路"}]
+    },
+    {
+      "id": "address.i2c-not-shown",
+      "category": "address",
+      "subject": "Unit ADC I2C 地址",
+      "statement": "原理图显示 ADS1100 的 SCL/SDA 连接，但页面未印出 I2C 地址或地址选择网络，无法仅凭该原理图确认地址值。",
+      "confidence": "uncertain",
+      "attributes": {"device": "U2 ADS1100", "schematic_address": null, "address_selection": null, "address_source_needed": "part ordering code or protocol documentation"},
+      "evidence": [{"asset_sha256": "41b676c7fb810dd2ad4d9420e7f3601763c9b8e3b4134c65b2f597928a87efd8", "page": 1, "locator": "页 1 网格 B2-B3：U2/J1 IIC_SCL/IIC_SDA 区域，页面无 0x 地址或 ADDR 引脚"}]
+    },
+    {
+      "id": "power.ht7533-regulator",
+      "category": "power",
+      "subject": "U3 HT7533",
+      "statement": "U3 VIN pin 2 接 VCC，VOUT pin 3 输出 +3.3V，GND pin 1 接地；C4 10uF 位于 VCC 输入侧，C2 100nF 与 C3 10uF 位于 +3.3V 输出侧。",
+      "confidence": "confirmed",
+      "attributes": {"input_pin": "pin 2 VIN", "input_rail": "VCC", "output_pin": "pin 3 VOUT", "output_rail": "+3.3V", "ground_pin": "pin 1 GND", "input_capacitor": "C4 10uF", "output_capacitors": "C2 100nF,C3 10uF"},
+      "evidence": [{"asset_sha256": "41b676c7fb810dd2ad4d9420e7f3601763c9b8e3b4134c65b2f597928a87efd8", "page": 1, "locator": "页 1 网格 C1-C2：U3 HT7533、C2/C3/C4 与 VCC/+3.3V/GND"}]
+    },
+    {
+      "id": "power.adc-opamp-rails",
+      "category": "power",
+      "subject": "U1A/U2 供电",
+      "statement": "U1A LM358DR2G 的 pin 8 接 VCC、pin 4 接 GND；U2 ADS1100 的 VDD pin 5 接 +3.3V、GND pin 2 接地，并由 C1 100nF 去耦。",
+      "confidence": "confirmed",
+      "attributes": {"opamp_supply": "U1A pin 8 VCC", "opamp_ground": "U1A pin 4 GND", "adc_supply": "U2 pin 5 +3.3V", "adc_ground": "U2 pin 2 GND", "adc_decoupling": "C1 100nF"},
+      "evidence": [{"asset_sha256": "41b676c7fb810dd2ad4d9420e7f3601763c9b8e3b4134c65b2f597928a87efd8", "page": 1, "locator": "页 1 网格 A2-B3：U1A pin 8/4 与 U2 pin 5/2/C1 的电源网络"}]
+    },
+    {
+      "id": "power.vcc-rating-not-shown",
+      "category": "power",
+      "subject": "J1 VCC 额定值",
+      "statement": "J1 pin 3 与 U3 VIN、U1A 电源使用名为 VCC 的网络，但原理图没有为 VCC 标出数值，无法仅凭该页确认接口额定供电电压。",
+      "confidence": "uncertain",
+      "attributes": {"connector_pin": "J1 pin 3", "net": "VCC", "loads": "U3 VIN,U1A pin 8", "schematic_voltage": null, "generated_rail": "+3.3V"},
+      "evidence": [{"asset_sha256": "41b676c7fb810dd2ad4d9420e7f3601763c9b8e3b4134c65b2f597928a87efd8", "page": 1, "locator": "页 1 网格 A2-C3：J1 pin 3、U1A pin 8 与 U3 VIN 上的 VCC 网络，未见电压数值"}]
+    },
+    {
+      "id": "analog.input-range-not-shown",
+      "category": "analog",
+      "subject": "P1 允许输入范围",
+      "statement": "原理图给出 R4/R5 分压值和 U1A/ADS1100 连接，但没有标出 P1 的允许输入电压范围、极性限制或绝对最大值。",
+      "confidence": "uncertain",
+      "attributes": {"connector": "P1 Header 2", "divider": "R4 300KΩ,R5 100KΩ", "buffer": "U1A LM358DR2G", "adc": "U2 ADS1100", "schematic_input_range": null},
+      "evidence": [{"asset_sha256": "41b676c7fb810dd2ad4d9420e7f3601763c9b8e3b4134c65b2f597928a87efd8", "page": 1, "locator": "页 1 网格 A2-B2：P1/R4/R5/U1A/U2 模拟链，页面无输入量程或极性文字"}]
+    },
+    {
+      "id": "clock.no-external-clock",
+      "category": "clock",
+      "subject": "ADC/运放时钟",
+      "statement": "本页原理图未绘出外部晶振、谐振器或时钟连接，ADS1100 仅显示 VIN+/VIN-/SCL/SDA/VDD/GND 六个引脚。",
+      "confidence": "confirmed",
+      "attributes": {"external_clock_component": null, "clock_net": null, "adc_clock_pin_shown": false},
+      "evidence": [{"asset_sha256": "41b676c7fb810dd2ad4d9420e7f3601763c9b8e3b4134c65b2f597928a87efd8", "page": 1, "locator": "整页及页 1 网格 B2 的 U2 六引脚符号：无晶振位号或时钟网络"}]
+    },
+    {
+      "id": "key_net.signal-index",
+      "category": "key_net",
+      "subject": "Unit ADC 关键网络",
+      "statement": "关键网络为 P1 pin 1→R4/R5→U1A pin 3，U1A pin 1→R1→U2 VIN+，P1 pin 2→U2 VIN-/R6→GND，U2 SCL/SDA→IIC_SCL/IIC_SDA→J1，以及 VCC→U3→+3.3V。",
+      "confidence": "confirmed",
+      "attributes": {"analog_high_path": "P1.1-R4-U1A.3; R5 to P1.2", "buffered_path": "U1A.1-R1-U2.VIN+", "analog_reference": "P1.2-U2.VIN--R6-GND", "digital_path": "U2.SCL/SDA-J1.1/J1.2", "power_path": "J1.3 VCC-U3-+3.3V"},
+      "evidence": [{"asset_sha256": "41b676c7fb810dd2ad4d9420e7f3601763c9b8e3b4134c65b2f597928a87efd8", "page": 1, "locator": "整页：P1/R4/R5/U1A/R1/U2/J1/U3 之间的直接连线和同名网络"}]
+    },
+    {
+      "id": "other.schematic-version",
+      "category": "other",
+      "subject": "UNIT_ADC 原理图版本",
+      "statement": "图框标注 Project Title 为 UNIT_ADC.PrjPCB、Sheet Title 为 UNIT_ADC.SchDoc、Revised 为 V1.0、日期为 07/19/2018，Sheet 1 of 1。",
+      "confidence": "confirmed",
+      "attributes": {"project_title": "UNIT_ADC.PrjPCB", "sheet_title": "UNIT_ADC.SchDoc", "revision": "V1.0", "date": "07/19/2018", "sheet": "1 of 1"},
+      "evidence": [{"asset_sha256": "41b676c7fb810dd2ad4d9420e7f3601763c9b8e3b4134c65b2f597928a87efd8", "page": 1, "locator": "页 1 网格 D3-D4：右下角图框中的 Project Title、Sheet Title、Revised、Date、Sheet 字段"}]
+    }
+  ],
+  "needs_review": [
+    {
+      "id": "review.i2c-address",
+      "fact_id": "address.i2c-not-shown",
+      "question": "本产品所装 ADS1100 的 I2C 地址是否为 0x48？",
+      "reason": "原理图器件只标 ADS1100，未给出完整订货后缀、地址值或地址选择网络，需要 BOM、器件标记或协议资料确认。",
+      "evidence": [{"asset_sha256": "41b676c7fb810dd2ad4d9420e7f3601763c9b8e3b4134c65b2f597928a87efd8", "page": 1, "locator": "页 1 网格 B2-B3：U2 ADS1100 与 IIC_SCL/IIC_SDA，未见地址标注"}]
+    },
+    {
+      "id": "review.vcc-rating",
+      "fact_id": "power.vcc-rating-not-shown",
+      "question": "J1 pin 3 的 VCC 额定输入电压是多少？",
+      "reason": "原理图只标 VCC，并显示其进入 HT7533 和 LM358DR2G，没有打印电压数值。",
+      "evidence": [{"asset_sha256": "41b676c7fb810dd2ad4d9420e7f3601763c9b8e3b4134c65b2f597928a87efd8", "page": 1, "locator": "页 1 网格 A2-C3：J1/U1A/U3 共用 VCC 网络"}]
+    },
+    {
+      "id": "review.input-range",
+      "fact_id": "analog.input-range-not-shown",
+      "question": "P1 两针端子的额定输入范围、允许极性和过压边界是什么？",
+      "reason": "R4/R5 分压拓扑可见，但整机输入额定值取决于 LM358DR2G、ADS1100、电源 VCC 和器件耐压，原理图未直接给出。",
+      "evidence": [{"asset_sha256": "41b676c7fb810dd2ad4d9420e7f3601763c9b8e3b4134c65b2f597928a87efd8", "page": 1, "locator": "页 1 网格 A2-B2：P1 到 U1A/U2 的模拟输入链，无量程标注"}]
+    }
+  ]
+}

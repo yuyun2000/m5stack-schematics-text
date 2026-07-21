@@ -1,0 +1,21 @@
+{
+  "dry_run": false,
+  "failed": 0,
+  "published": 1,
+  "results": [
+    {
+      "backup": null,
+      "draft_action": "unchanged",
+      "dry_run": false,
+      "errors": [],
+      "needs_review": 1,
+      "product_id": "hat-8servos-v1-1-3d6b4fb4b335",
+      "product_name": "Hat 8Servos v1.1",
+      "publish_action": "unchanged",
+      "sha256": "8230f476e30be9f6344ac47e25fd0fc3557f28aecbcee7cbd674c0e553c63cbe",
+      "status": "valid",
+      "uncertain_facts": 1
+    }
+  ],
+  "schema_version": 1
+}

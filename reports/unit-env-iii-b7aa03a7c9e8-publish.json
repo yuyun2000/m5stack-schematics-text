@@ -1,0 +1,21 @@
+{
+  "dry_run": false,
+  "failed": 0,
+  "published": 1,
+  "results": [
+    {
+      "backup": null,
+      "draft_action": "unchanged",
+      "dry_run": false,
+      "errors": [],
+      "needs_review": 4,
+      "product_id": "unit-env-iii-b7aa03a7c9e8",
+      "product_name": "Unit ENV-III",
+      "publish_action": "unchanged",
+      "sha256": "d6a7b438c9e108b87736107645805a43cf8666ae8ea075165785330950f51f03",
+      "status": "valid",
+      "uncertain_facts": 4
+    }
+  ],
+  "schema_version": 1
+}

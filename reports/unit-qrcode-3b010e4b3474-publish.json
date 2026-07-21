@@ -1,0 +1,21 @@
+{
+  "dry_run": false,
+  "failed": 0,
+  "published": 1,
+  "results": [
+    {
+      "backup": null,
+      "draft_action": "unchanged",
+      "dry_run": false,
+      "errors": [],
+      "needs_review": 4,
+      "product_id": "unit-qrcode-3b010e4b3474",
+      "product_name": "Unit QRCode",
+      "publish_action": "unchanged",
+      "sha256": "3311d5d0eb849c8a2fbe1a3770ef9237e25335b4376c14d5c5f258d7f49d5135",
+      "status": "valid",
+      "uncertain_facts": 4
+    }
+  ],
+  "schema_version": 1
+}

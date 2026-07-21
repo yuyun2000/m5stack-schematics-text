@@ -1,0 +1,21 @@
+{
+  "dry_run": false,
+  "failed": 0,
+  "published": 1,
+  "results": [
+    {
+      "backup": null,
+      "draft_action": "unchanged",
+      "dry_run": false,
+      "errors": [],
+      "needs_review": 4,
+      "product_id": "stickc-plus-12af40664144",
+      "product_name": "StickC-Plus",
+      "publish_action": "unchanged",
+      "sha256": "6e58a2f56a3344c8dd6d1c1c5867a92148a5d5865ec149434ac659135a2009ec",
+      "status": "valid",
+      "uncertain_facts": 4
+    }
+  ],
+  "schema_version": 1
+}

@@ -1,0 +1,21 @@
+{
+  "dry_run": false,
+  "failed": 0,
+  "published": 1,
+  "results": [
+    {
+      "backup": null,
+      "draft_action": "unchanged",
+      "dry_run": false,
+      "errors": [],
+      "needs_review": 3,
+      "product_id": "unit-laser-tx-9cc73b1c6bc0",
+      "product_name": "Unit Laser TX",
+      "publish_action": "unchanged",
+      "sha256": "85589f0915928a1ed9e71aef081b2b8aa8a825933aa886c3e6ee2613102a2743",
+      "status": "valid",
+      "uncertain_facts": 3
+    }
+  ],
+  "schema_version": 1
+}

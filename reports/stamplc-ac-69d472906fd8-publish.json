@@ -1,0 +1,21 @@
+{
+  "dry_run": false,
+  "failed": 0,
+  "published": 1,
+  "results": [
+    {
+      "backup": null,
+      "draft_action": "unchanged",
+      "dry_run": false,
+      "errors": [],
+      "needs_review": 3,
+      "product_id": "stamplc-ac-69d472906fd8",
+      "product_name": "StamPLC AC",
+      "publish_action": "unchanged",
+      "sha256": "c97f4b23252854dc9277fb0560013ba8d74a58658317cd84d57015907c5f23fe",
+      "status": "valid",
+      "uncertain_facts": 3
+    }
+  ],
+  "schema_version": 1
+}

@@ -1,0 +1,21 @@
+{
+  "dry_run": false,
+  "failed": 0,
+  "published": 1,
+  "results": [
+    {
+      "backup": null,
+      "draft_action": "unchanged",
+      "dry_run": false,
+      "errors": [],
+      "needs_review": 1,
+      "product_id": "hat-rs485-9c47adff6d40",
+      "product_name": "Hat RS485",
+      "publish_action": "unchanged",
+      "sha256": "a67070f31801f2fe1b677faa63b655c5e4ffcf09a0738dc2fd9f30618cb31f94",
+      "status": "valid",
+      "uncertain_facts": 1
+    }
+  ],
+  "schema_version": 1
+}

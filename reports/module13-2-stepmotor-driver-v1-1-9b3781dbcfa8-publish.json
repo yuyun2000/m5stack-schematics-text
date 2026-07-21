@@ -1,0 +1,21 @@
+{
+  "dry_run": false,
+  "failed": 0,
+  "published": 1,
+  "results": [
+    {
+      "backup": null,
+      "draft_action": "unchanged",
+      "dry_run": false,
+      "errors": [],
+      "needs_review": 3,
+      "product_id": "module13-2-stepmotor-driver-v1-1-9b3781dbcfa8",
+      "product_name": "Module13.2 Stepmotor Driver v1.1",
+      "publish_action": "unchanged",
+      "sha256": "9218c493fa72a1213f510d80d0741d006b4b90d7e1542fd0b6d804a97e66ff84",
+      "status": "valid",
+      "uncertain_facts": 3
+    }
+  ],
+  "schema_version": 1
+}

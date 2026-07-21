@@ -1,0 +1,21 @@
+{
+  "dry_run": false,
+  "failed": 0,
+  "published": 1,
+  "results": [
+    {
+      "backup": null,
+      "draft_action": "unchanged",
+      "dry_run": false,
+      "errors": [],
+      "needs_review": 8,
+      "product_id": "llm630-compute-kit-6280ac7a8617",
+      "product_name": "LLM630 Compute Kit",
+      "publish_action": "unchanged",
+      "sha256": "d244d2faca23db808c8d670b48d65c08e4cfb6c4cdfb0318a13c01968a3820eb",
+      "status": "valid",
+      "uncertain_facts": 8
+    }
+  ],
+  "schema_version": 1
+}

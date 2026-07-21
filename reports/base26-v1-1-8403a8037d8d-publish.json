@@ -1,0 +1,21 @@
+{
+  "dry_run": false,
+  "failed": 0,
+  "published": 1,
+  "results": [
+    {
+      "backup": null,
+      "draft_action": "unchanged",
+      "dry_run": false,
+      "errors": [],
+      "needs_review": 3,
+      "product_id": "base26-v1-1-8403a8037d8d",
+      "product_name": "Base26 v1.1",
+      "publish_action": "unchanged",
+      "sha256": "6ddd541bb9e2bdec5f1b9ec30f50c5a29083d43139a39c6b7e0380a3bbd74885",
+      "status": "valid",
+      "uncertain_facts": 3
+    }
+  ],
+  "schema_version": 1
+}

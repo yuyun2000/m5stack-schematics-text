@@ -1,0 +1,279 @@
+{
+  "schema_version": 1,
+  "generator": "schematic_describer",
+  "product": {
+    "product_id": "stamp-pico-2def1461ad81",
+    "product_name": "Stamp-Pico",
+    "sku": "C050-B",
+    "source_path": "core/stamp_pico.md",
+    "source_sha256": "39046b557bca06d02609e5bf889ca33ced1239952edd4f502d89655b3cad85a6",
+    "input_sha256": "b51b535d7af8738eede017c98bdb54a3f94a1ced5b2638a7483097a6ad91a416"
+  },
+  "schematic_assets": [
+    {
+      "sha256": "81479376963d1b7ac69231f718bbe2287d47d6a373437cba92c073bfa11365c5",
+      "source_url": "https://static-cdn.m5stack.com/resource/docs/products/core/stamp_pico/stamp_pico_sch_01.webp",
+      "pages": [1]
+    }
+  ],
+  "summary": "Stamp-Pico 以 U2 PICO_D4 为主控，连接五金 3D 天线、GPIO27 控制的 SK6812_3535、GPIO39 用户按键以及 J1/J2 外部接口。SYS_P050 由 J1/J2 的 5V 引脚输入，经 U1 SY80079AAAC 降压形成 MCU_P033，并由 J2 提供 3.3V 引出。J2 还引出 EN、UART0 和 12 路 GPIO，图中未配置板载 USB-UART 下载电路。",
+  "keywords": [
+    "Stamp-Pico",
+    "C050-B",
+    "ESP32-PICO-D4",
+    "PICO_D4",
+    "SY80079AAAC",
+    "SK6812_3535",
+    "五金3D天线",
+    "SYS_P050",
+    "MCU_P033",
+    "GPIO27 RGB",
+    "GPIO39 Button",
+    "GPIO0 Boot",
+    "GPIO1 U0TXD",
+    "GPIO3 U0RXD",
+    "GPIO18",
+    "GPIO19",
+    "GPIO21",
+    "GPIO22",
+    "GPIO25",
+    "GPIO26",
+    "GPIO32",
+    "GPIO33",
+    "GPIO36",
+    "EN",
+    "J1 GROVE",
+    "J2 DNP",
+    "R1 22K/1%",
+    "R2 5.1K/1%",
+    "L1 2.20H",
+    "L2 0R",
+    "C5 TBD",
+    "C6 TBD",
+    "U0TXD",
+    "U0RXD"
+  ],
+  "components": [
+    {
+      "reference": "U2",
+      "part_number": "PICO_D4",
+      "role": "主控模块，连接射频、GPIO、UART0、RGB、按键和外部接口",
+      "evidence": [{"asset_sha256": "81479376963d1b7ac69231f718bbe2287d47d6a373437cba92c073bfa11365c5", "page": 1, "locator": "第1页右上主控区：U2 PICO_D4，pins0-46"}]
+    },
+    {
+      "reference": "U1",
+      "part_number": "SY80079AAAC",
+      "role": "SYS_P050 到 MCU_P033 的降压转换器",
+      "evidence": [{"asset_sha256": "81479376963d1b7ac69231f718bbe2287d47d6a373437cba92c073bfa11365c5", "page": 1, "locator": "第1页左下电源区：U1 SY80079AAAC"}]
+    },
+    {
+      "reference": "LED1",
+      "part_number": "SK6812_3535",
+      "role": "由 GPIO27 控制的可编程 RGB LED",
+      "evidence": [{"asset_sha256": "81479376963d1b7ac69231f718bbe2287d47d6a373437cba92c073bfa11365c5", "page": 1, "locator": "第1页下部中央：LED1 SK6812_3535"}]
+    },
+    {
+      "reference": "ANT1",
+      "part_number": "五金3D天线",
+      "role": "经 L2/C5/C6 匹配网络连接 U2 LNA_IN 的板载天线",
+      "evidence": [{"asset_sha256": "81479376963d1b7ac69231f718bbe2287d47d6a373437cba92c073bfa11365c5", "page": 1, "locator": "第1页顶部：ANT1 五金3D天线、L2/C5/C6"}]
+    },
+    {
+      "reference": "S1",
+      "part_number": "SW",
+      "role": "按下将 GPIO39 拉到 GND 的用户按键",
+      "evidence": [{"asset_sha256": "81479376963d1b7ac69231f718bbe2287d47d6a373437cba92c073bfa11365c5", "page": 1, "locator": "第1页右下：S1 SW、GPIO39、R3"}]
+    },
+    {
+      "reference": "J1",
+      "part_number": "GROVE",
+      "role": "GPIO32/GPIO33、5V 和 GND 的 4 针外部接口",
+      "evidence": [{"asset_sha256": "81479376963d1b7ac69231f718bbe2287d47d6a373437cba92c073bfa11365c5", "page": 1, "locator": "第1页左上：J1 GROVE pins1-4"}]
+    },
+    {
+      "reference": "J2",
+      "part_number": "DNP",
+      "role": "EN、UART0、GPIO、电源和 GND 的主引出接口",
+      "evidence": [{"asset_sha256": "81479376963d1b7ac69231f718bbe2287d47d6a373437cba92c073bfa11365c5", "page": 1, "locator": "第1页左中：J2，底部标注 DNP"}]
+    },
+    {
+      "reference": "L1",
+      "part_number": "2.20H",
+      "role": "U1 SW 到 MCU_P033 的降压储能电感",
+      "evidence": [{"asset_sha256": "81479376963d1b7ac69231f718bbe2287d47d6a373437cba92c073bfa11365c5", "page": 1, "locator": "第1页左下：L1，图中标注 2.20H"}]
+    }
+  ],
+  "facts": [
+    {
+      "id": "system.stamp-pico-architecture",
+      "category": "system",
+      "subject": "Stamp-Pico 架构",
+      "statement": "U2 PICO_D4 连接板载 3D 天线、LED1 SK6812_3535、GPIO39 按键和 J1/J2；U1 SY80079AAAC 将 SYS_P050 转换为 MCU_P033。",
+      "confidence": "confirmed",
+      "attributes": {"soc": "U2 PICO_D4", "power": "U1 SY80079AAAC", "antenna": "ANT1 五金3D天线", "rgb": "LED1 SK6812_3535", "button": "S1 GPIO39", "connectors": "J1 GROVE; J2 DNP"},
+      "evidence": [{"asset_sha256": "81479376963d1b7ac69231f718bbe2287d47d6a373437cba92c073bfa11365c5", "page": 1, "locator": "第1页完整单页：U1/U2、ANT1、LED1、S1、J1/J2"}]
+    },
+    {
+      "id": "power.main-3v3",
+      "category": "power",
+      "subject": "SYS_P050 到 MCU_P033",
+      "statement": "U1 SY80079AAAC 的 IN pin1 与 EN pin4 接 SYS_P050，SW pin3 经 L1 输出 MCU_P033；FB pin5 由 R1 22KΩ/1% 与 R2 5.1KΩ/1% 分压。",
+      "confidence": "confirmed",
+      "attributes": {"converter": "U1 SY80079AAAC", "input": "SYS_P050", "enable": "SYS_P050", "switch_pin": "U1 SW pin3", "inductor": "L1 2.20H", "output": "MCU_P033", "feedback_top": "R1 22KΩ/1%", "feedback_bottom": "R2 5.1KΩ/1%", "input_cap": "C1 226/10V", "output_cap": "C3 226/10V"},
+      "evidence": [{"asset_sha256": "81479376963d1b7ac69231f718bbe2287d47d6a373437cba92c073bfa11365c5", "page": 1, "locator": "第1页左下：U1 pins1-5、L1、R1/R2、C1/C3"}]
+    },
+    {
+      "id": "power.external-rails",
+      "category": "power",
+      "subject": "外部 5V/3.3V 电源接口",
+      "statement": "J1 pin2 与 J2 5V 引脚连接 SYS_P050；J2 3V3 引脚连接 MCU_P033；J1 pin1 与 J2 GND 引脚接地。",
+      "confidence": "confirmed",
+      "attributes": {"five_volt_inputs": "J1 pin2 5V; J2 5V -> SYS_P050", "three_volt_output": "J2 3V3 -> MCU_P033", "grounds": "J1 pin1; J2 GND", "logic_rail": "MCU_P033"},
+      "evidence": [{"asset_sha256": "81479376963d1b7ac69231f718bbe2287d47d6a373437cba92c073bfa11365c5", "page": 1, "locator": "第1页左侧 J1/J2 的 5V/3V3/GND 与 SYS_P050/MCU_P033"}]
+    },
+    {
+      "id": "interface.grove-j1",
+      "category": "interface",
+      "subject": "J1 GROVE 接口",
+      "statement": "J1 pins1-4 依次为 GND、5V/SYS_P050、IO1/GPIO32、IO2/GPIO33；GPIO32/33 为 MCU_P033 逻辑域的可配置 GPIO。",
+      "confidence": "confirmed",
+      "attributes": {"connector": "J1 GROVE", "pin1": "GND", "pin2": "5V / SYS_P050", "pin3": "IO1 / GPIO32", "pin4": "IO2 / GPIO33", "logic_level": "MCU_P033", "direction": "GPIO32/GPIO33 configurable"},
+      "evidence": [{"asset_sha256": "81479376963d1b7ac69231f718bbe2287d47d6a373437cba92c073bfa11365c5", "page": 1, "locator": "第1页左上：J1 GROVE pins1-4"}]
+    },
+    {
+      "id": "interface.main-j2",
+      "category": "interface",
+      "subject": "J2 主引出接口",
+      "statement": "J2 依次引出 EN、GPIO0、GPIO1、GPIO3、GPIO18、GPIO19、GPIO21、GPIO22、GPIO26、GPIO25、GPIO36、GPIO32、GPIO33、SYS_P050、MCU_P033 和 GND，器件标注 DNP。",
+      "confidence": "confirmed",
+      "attributes": {"connector": "J2 DNP", "signals": "EN,GPIO0,GPIO1,GPIO3,GPIO18,GPIO19,GPIO21,GPIO22,GPIO26,GPIO25,GPIO36,GPIO32,GPIO33", "power": "5V/SYS_P050; 3V3/MCU_P033; GND", "logic_level": "MCU_P033", "direction": "GPIO configurable; EN input"},
+      "evidence": [{"asset_sha256": "81479376963d1b7ac69231f718bbe2287d47d6a373437cba92c073bfa11365c5", "page": 1, "locator": "第1页左中：J2 EN/G0/G1/G3/G18/G19/G21/G22/G26/G25/G36/G32/G33/5V/3V3/GND"}]
+    },
+    {
+      "id": "debug.uart0",
+      "category": "debug",
+      "subject": "UART0 引出",
+      "statement": "U2 IO1/U0TXD pin41 形成 GPIO1 并引到 J2 G1；U2 IO3/U0RXD pin40 形成 GPIO3 并引到 J2 G3。",
+      "confidence": "confirmed",
+      "attributes": {"tx": "U2 IO1/U0TXD pin41 -> GPIO1 -> J2 G1", "rx": "U2 IO3/U0RXD pin40 -> GPIO3 -> J2 G3", "logic_level": "MCU_P033", "direction": "U0TXD output; U0RXD input"},
+      "evidence": [{"asset_sha256": "81479376963d1b7ac69231f718bbe2287d47d6a373437cba92c073bfa11365c5", "page": 1, "locator": "第1页 U2 IO1/U0TXD、IO3/U0RXD 与左侧 J2 G1/G3"}]
+    },
+    {
+      "id": "gpio.rgb-led",
+      "category": "gpio",
+      "subject": "GPIO27 RGB LED",
+      "statement": "U2 IO27 pin16 形成 GPIO27并连接 LED1 SK6812_3535 DI；LED1 VDD 接 MCU_P033，GND 接地，DO 未连接。",
+      "confidence": "confirmed",
+      "attributes": {"controller": "U2 IO27 pin16 / GPIO27", "data": "GPIO27 -> LED1 DI", "supply": "LED1 VDD -> MCU_P033", "ground": "LED1 GND", "data_out": "LED1 DO NC", "decoupling": "C4 105/6.3V"},
+      "evidence": [{"asset_sha256": "81479376963d1b7ac69231f718bbe2287d47d6a373437cba92c073bfa11365c5", "page": 1, "locator": "第1页 U2 IO27/GPIO27 与下部 LED1/C4"}]
+    },
+    {
+      "id": "gpio.user-button",
+      "category": "gpio",
+      "subject": "GPIO39 用户按键",
+      "statement": "U2 IO39 pin8 形成 GPIO39；R3 5.1KΩ将 GPIO39 上拉到 MCU_P033，S1 按下时将 GPIO39 接地。",
+      "confidence": "confirmed",
+      "attributes": {"gpio": "U2 IO39 pin8 / GPIO39", "switch": "S1 SW", "active_level": "low", "pullup": "R3 5.1KΩ to MCU_P033", "connection": "GPIO39 -> S1 -> GND"},
+      "evidence": [{"asset_sha256": "81479376963d1b7ac69231f718bbe2287d47d6a373437cba92c073bfa11365c5", "page": 1, "locator": "第1页 U2 IO39/GPIO39 与右下 R3/S1"}]
+    },
+    {
+      "id": "reset.enable-rc",
+      "category": "reset",
+      "subject": "EN 复位网络",
+      "statement": "U2 EN pin9 连接 EN 并引到 J2；R4 5.1KΩ从 MCU_P033 上拉 EN，C13 105/6.3V 从 EN 对地。",
+      "confidence": "confirmed",
+      "attributes": {"soc_pin": "U2 EN pin9", "external_pin": "J2 EN", "pullup": "R4 5.1KΩ to MCU_P033", "capacitor": "C13 105/6.3V to GND"},
+      "evidence": [{"asset_sha256": "81479376963d1b7ac69231f718bbe2287d47d6a373437cba92c073bfa11365c5", "page": 1, "locator": "第1页 U2 EN/J2 EN 与右下 R4/C13"}]
+    },
+    {
+      "id": "key-net.gpio0-boot",
+      "category": "key_net",
+      "subject": "GPIO0 启动网络",
+      "statement": "U2 IO0 pin23 形成 GPIO0并引到 J2 G0；R5 5.1KΩ将 GPIO0 上拉到 MCU_P033。",
+      "confidence": "confirmed",
+      "attributes": {"soc_pin": "U2 IO0 pin23", "net": "GPIO0", "external_pin": "J2 G0", "pullup": "R5 5.1KΩ to MCU_P033"},
+      "evidence": [{"asset_sha256": "81479376963d1b7ac69231f718bbe2287d47d6a373437cba92c073bfa11365c5", "page": 1, "locator": "第1页 U2 IO0/GPIO0、J2 G0 与右下 R5"}]
+    },
+    {
+      "id": "gpio.grounded-straps",
+      "category": "gpio",
+      "subject": "IO2 与 IO12 固定连接",
+      "statement": "U2 IO2 pin22 与 IO12 pin18 在图中连接同一接地网络。",
+      "confidence": "confirmed",
+      "attributes": {"io2": "U2 pin22 -> GND", "io12": "U2 pin18 -> GND"},
+      "evidence": [{"asset_sha256": "81479376963d1b7ac69231f718bbe2287d47d6a373437cba92c073bfa11365c5", "page": 1, "locator": "第1页 U2 左侧 IO2 pin22、IO12 pin18 与外侧 GND 连线"}]
+    },
+    {
+      "id": "gpio.exposed-map",
+      "category": "gpio",
+      "subject": "外部 GPIO 映射",
+      "statement": "J1/J2 对外提供 GPIO0、GPIO1、GPIO3、GPIO18、GPIO19、GPIO21、GPIO22、GPIO25、GPIO26、GPIO32、GPIO33、GPIO36；GPIO27 与 GPIO39 分别在板上连接 RGB LED 和按键。",
+      "confidence": "confirmed",
+      "attributes": {"external": "GPIO0,GPIO1,GPIO3,GPIO18,GPIO19,GPIO21,GPIO22,GPIO25,GPIO26,GPIO32,GPIO33,GPIO36", "onboard_rgb": "GPIO27", "onboard_button": "GPIO39", "connectors": "J1,J2"},
+      "evidence": [{"asset_sha256": "81479376963d1b7ac69231f718bbe2287d47d6a373437cba92c073bfa11365c5", "page": 1, "locator": "第1页 U2 GPIO labels、左侧 J1/J2、下部 LED1 与右下 S1"}]
+    },
+    {
+      "id": "rf.3d-antenna-matching",
+      "category": "rf",
+      "subject": "3D 天线射频路径",
+      "statement": "U2 LNA_IN pin2 经 L2 0Ω串联连接 ANT1 五金3D天线；C5、C6 为匹配支路且图中值均标为 TBD。",
+      "confidence": "confirmed",
+      "attributes": {"soc_pin": "U2 LNA_IN pin2", "series": "L2 0Ω", "antenna": "ANT1 五金3D天线", "matching_caps": "C5 TBD; C6 TBD"},
+      "evidence": [{"asset_sha256": "81479376963d1b7ac69231f718bbe2287d47d6a373437cba92c073bfa11365c5", "page": 1, "locator": "第1页顶部：U2 LNA_IN、L2/C5/C6、ANT1"}]
+    },
+    {
+      "id": "power.soc-domains",
+      "category": "power",
+      "subject": "PICO_D4 电源域与去耦",
+      "statement": "U2 VDDA、VDDA3P3、VDD3P3、VDD3P3_RTC、VDD3P3_CPU 和 VDD_SDIO 接 MCU_P033，并配置 C7-C12、C14 对地去耦。",
+      "confidence": "confirmed",
+      "attributes": {"rail": "MCU_P033", "domains": "VDDA,VDDA3P3,VDD3P3,VDD3P3_RTC,VDD3P3_CPU,VDD_SDIO", "bulk_cap": "C7 226/6.3V", "decoupling": "C8/C9/C10/C11/C12/C14 105/6.3V", "pad": "U2 PAD pin0 -> GND"},
+      "evidence": [{"asset_sha256": "81479376963d1b7ac69231f718bbe2287d47d6a373437cba92c073bfa11365c5", "page": 1, "locator": "第1页 U2 右下 power pins1/3/4/19/37/43/46/26、C7-C12/C14"}]
+    },
+    {
+      "id": "memory.integrated-storage-visibility",
+      "category": "memory",
+      "subject": "PICO_D4 集成存储可见性",
+      "statement": "U2 标为 PICO_D4，IO6/CLK、IO7/SD0、IO8/SD1、IO9/SD2、IO10/SD3、IO11/CMD pins28-33 未引到外部器件，原理图没有画独立 Flash 或 PSRAM。",
+      "confidence": "confirmed",
+      "attributes": {"soc": "U2 PICO_D4", "memory_bus_pins": "IO6/CLK,IO7/SD0,IO8/SD1,IO9/SD2,IO10/SD3,IO11/CMD", "external_flash_shown": false, "external_psram_shown": false},
+      "evidence": [{"asset_sha256": "81479376963d1b7ac69231f718bbe2287d47d6a373437cba92c073bfa11365c5", "page": 1, "locator": "第1页 U2 pins28-33 IO6/CLK 至 IO11/CMD"}]
+    },
+    {
+      "id": "memory.flash-capacity",
+      "category": "memory",
+      "subject": "集成 Flash 容量",
+      "statement": "产品正文标称 4MB Flash；原理图只打印 U2 PICO_D4，没有独立容量字段。",
+      "confidence": "uncertain",
+      "attributes": {"documented_capacity": "4MB", "schematic_part_number": "PICO_D4", "explicit_capacity_field_on_schematic": false},
+      "evidence": [{"asset_sha256": "81479376963d1b7ac69231f718bbe2287d47d6a373437cba92c073bfa11365c5", "page": 1, "locator": "第1页主控区：U2 PICO_D4 与 IO6/CLK-IO11/CMD"}]
+    },
+    {
+      "id": "clock.discrete-clock-visibility",
+      "category": "clock",
+      "subject": "离散时钟可见性",
+      "statement": "本页原理图未画独立晶振、晶体或外部时钟输入器件，时钟连接未作为板级独立网络引出。",
+      "confidence": "confirmed",
+      "attributes": {"discrete_crystal_shown": false, "external_clock_connector_shown": false, "soc_module": "U2 PICO_D4"},
+      "evidence": [{"asset_sha256": "81479376963d1b7ac69231f718bbe2287d47d6a373437cba92c073bfa11365c5", "page": 1, "locator": "第1页完整单页：仅 U2 PICO_D4，无 X/Y 晶体位号"}]
+    },
+    {
+      "id": "debug.download-interface",
+      "category": "debug",
+      "subject": "外部下载所需网络",
+      "statement": "J2 同时引出 EN、GPIO0、GPIO1/U0TXD、GPIO3/U0RXD、5V、3.3V 和 GND；图中未画板载 USB-UART 桥或 USB 连接器。",
+      "confidence": "confirmed",
+      "attributes": {"reset": "J2 EN", "boot": "J2 G0/GPIO0", "uart_tx": "J2 G1/GPIO1/U0TXD", "uart_rx": "J2 G3/GPIO3/U0RXD", "power": "J2 5V/3V3/GND", "usb_uart_bridge_shown": false, "usb_connector_shown": false},
+      "evidence": [{"asset_sha256": "81479376963d1b7ac69231f718bbe2287d47d6a373437cba92c073bfa11365c5", "page": 1, "locator": "第1页左中 J2 与完整单页器件范围"}]
+    }
+  ],
+  "needs_review": [
+    {
+      "id": "review.flash-capacity",
+      "fact_id": "memory.flash-capacity",
+      "question": "C050-B 的 U2 PICO_D4 集成 Flash 容量是否应确认为 4MB？",
+      "reason": "4MB 来自产品正文，原理图仅打印 PICO_D4 型号，没有独立容量字段。",
+      "evidence": [{"asset_sha256": "81479376963d1b7ac69231f718bbe2287d47d6a373437cba92c073bfa11365c5", "page": 1, "locator": "第1页主控区：U2 PICO_D4"}]
+    }
+  ]
+}

@@ -1,0 +1,377 @@
+{
+  "schema_version": 1,
+  "generator": "schematic_describer",
+  "product": {
+    "product_id": "unitv2-26188210094d",
+    "product_name": "UnitV2",
+    "sku": "U078-D",
+    "source_path": "unit/unitv2.md",
+    "source_sha256": "d280970c28ddd8496e805945e3471c141d5078bfa6ba1139edca8938544ab850",
+    "input_sha256": "4487282e5be0398fbe596dc3dfe071205fb7310fc8dcb9d8dcc93aec0eb40703"
+  },
+  "schematic_assets": [
+    {
+      "sha256": "c139d8ecf6b831adbcddb2a017ae780439d1e9345c9427e2bcb52e93c3edd40c",
+      "source_url": "https://static-cdn.m5stack.com/resource/docs/products/unit/unitv2/unitv2_sch_01.webp",
+      "pages": [1]
+    }
+  ],
+  "summary": "UnitV2 系统框图以 SSD202 为核心，框内标出 128MB DDR3，并通过 QSPI 连接 256MB NAND Flash。GC2145 Sensor 通过 DVP 连接 USB ISP，USB ISP 再通过 USB 与 SSD202 相连；RTL8188FTV 无线模块也通过 USB 连接 SSD202。Grove Port 以 UART 连接核心，USB Type-C 经 USB 接入 10/100M USB LAN，再以 100M LAN 连接 SSD202。该资源是框图而非器件级原理图，未提供位号、引脚、电源、时钟、复位或保护细节，且 SSD202/SSD202D 与 256MB/512MB NAND 在框图和正文之间存在冲突。",
+  "keywords": [
+    "UnitV2",
+    "U078-D",
+    "SSD202",
+    "SSD202D",
+    "Cortex-A7",
+    "128MB DDR3",
+    "256MB NAND Flash",
+    "512MB NAND Flash",
+    "QSPI",
+    "GC2145 Sensor",
+    "GC2145",
+    "DVP",
+    "USB ISP",
+    "RTL8188FTV",
+    "Wi-Fi 2.4GHz",
+    "USB",
+    "USB Type-C",
+    "10/100M USB LAN",
+    "100M LAN",
+    "Grove Port",
+    "UART",
+    "Linux AI camera",
+    "1080P",
+    "FOV 68°",
+    "5V 500mA",
+    "microphone",
+    "microSD",
+    "NAND",
+    "DDR3",
+    "system block diagram"
+  ],
+  "components": [
+    {
+      "reference": "SSD202 block",
+      "part_number": "SSD202",
+      "role": "系统核心，连接 DDR3、NAND、摄像头 ISP、Wi-Fi、Grove UART 与 LAN",
+      "evidence": [{"asset_sha256": "c139d8ecf6b831adbcddb2a017ae780439d1e9345c9427e2bcb52e93c3edd40c", "page": 1, "locator": "页 1 中央 SSD202 方框及其 USB/QSPI/UART/100M LAN 连线"}]
+    },
+    {
+      "reference": "128MB DDR3 block",
+      "part_number": null,
+      "role": "框图中嵌于 SSD202 区域的 128MB DDR3 内存",
+      "evidence": [{"asset_sha256": "c139d8ecf6b831adbcddb2a017ae780439d1e9345c9427e2bcb52e93c3edd40c", "page": 1, "locator": "页 1 中央 SSD202 方框内部的 128MB DDR3 子框"}]
+    },
+    {
+      "reference": "256MB NAND Flash block",
+      "part_number": null,
+      "role": "通过 QSPI 连接 SSD202 的非易失存储",
+      "evidence": [{"asset_sha256": "c139d8ecf6b831adbcddb2a017ae780439d1e9345c9427e2bcb52e93c3edd40c", "page": 1, "locator": "页 1 右中 256MB NAND Flash 方框与 QSPI 双向箭头"}]
+    },
+    {
+      "reference": "GC2145 Sensor block",
+      "part_number": "GC2145",
+      "role": "通过 DVP 连接 USB ISP 的图像传感器",
+      "evidence": [{"asset_sha256": "c139d8ecf6b831adbcddb2a017ae780439d1e9345c9427e2bcb52e93c3edd40c", "page": 1, "locator": "页 1 右上 GC2145 Sensor 方框与 DVP 双向箭头"}]
+    },
+    {
+      "reference": "USB ISP block",
+      "part_number": null,
+      "role": "位于 GC2145 DVP 与 SSD202 USB 之间的图像处理模块",
+      "evidence": [{"asset_sha256": "c139d8ecf6b831adbcddb2a017ae780439d1e9345c9427e2bcb52e93c3edd40c", "page": 1, "locator": "页 1 上中 USB ISP 方框，上接 DVP/GC2145，下接 USB/SSD202"}]
+    },
+    {
+      "reference": "RTL8188FTV block",
+      "part_number": "RTL8188FTV",
+      "role": "通过 USB 连接 SSD202 的无线网络模块",
+      "evidence": [{"asset_sha256": "c139d8ecf6b831adbcddb2a017ae780439d1e9345c9427e2bcb52e93c3edd40c", "page": 1, "locator": "页 1 右上 RTL8188FTV 方框、无线图标与 USB 双向箭头"}]
+    },
+    {
+      "reference": "10/100M USB LAN block",
+      "part_number": null,
+      "role": "在 USB Type-C USB 链路与 SSD202 100M LAN 之间提供网络桥接",
+      "evidence": [{"asset_sha256": "c139d8ecf6b831adbcddb2a017ae780439d1e9345c9427e2bcb52e93c3edd40c", "page": 1, "locator": "页 1 下中 10/100M USB LAN 方框，左接 USB Type-C/USB，上接 SSD202/100M LAN"}]
+    },
+    {
+      "reference": "USB Type-C block",
+      "part_number": null,
+      "role": "通过 USB 连接 10/100M USB LAN 的外部接口",
+      "evidence": [{"asset_sha256": "c139d8ecf6b831adbcddb2a017ae780439d1e9345c9427e2bcb52e93c3edd40c", "page": 1, "locator": "页 1 左下 USB Type-C 方框与 USB 双向箭头"}]
+    },
+    {
+      "reference": "Grove Port block",
+      "part_number": null,
+      "role": "通过 UART 与 SSD202 连接的外部 Grove 接口",
+      "evidence": [{"asset_sha256": "c139d8ecf6b831adbcddb2a017ae780439d1e9345c9427e2bcb52e93c3edd40c", "page": 1, "locator": "页 1 左中 Grove Port 方框与指向 SSD202 的 UART 双向箭头"}]
+    }
+  ],
+  "facts": [
+    {
+      "id": "system.unitv2-architecture",
+      "category": "system",
+      "subject": "UnitV2 系统框图",
+      "statement": "SSD202 核心连接 128MB DDR3、QSPI NAND、USB ISP/GC2145、USB/RTL8188FTV、UART/Grove Port，以及 100M LAN/USB LAN/USB Type-C 链路。",
+      "confidence": "confirmed",
+      "attributes": {"controller": "SSD202", "memory": "128MB DDR3", "storage": "256MB NAND Flash via QSPI", "camera": "GC2145 Sensor-DVP-USB ISP-USB-SSD202", "wireless": "RTL8188FTV via USB", "serial": "Grove Port via UART", "host_network": "SSD202-100M LAN-10/100M USB LAN-USB-Type-C"},
+      "evidence": [{"asset_sha256": "c139d8ecf6b831adbcddb2a017ae780439d1e9345c9427e2bcb52e93c3edd40c", "page": 1, "locator": "页 1 完整系统框图的全部方框与双向箭头"}]
+    },
+    {
+      "id": "component.controller-label",
+      "category": "component",
+      "subject": "系统核心标注",
+      "statement": "框图中央核心方框明确标为 SSD202，未带 D 后缀，也未展示 CPU 核心数或时钟频率。",
+      "confidence": "confirmed",
+      "attributes": {"schematic_label": "SSD202", "variant_suffix": "not shown", "cpu_cores": "not shown", "clock_frequency": "not shown"},
+      "evidence": [{"asset_sha256": "c139d8ecf6b831adbcddb2a017ae780439d1e9345c9427e2bcb52e93c3edd40c", "page": 1, "locator": "页 1 中央方框文字 SSD202"}]
+    },
+    {
+      "id": "component.controller-variant-conflict",
+      "category": "component",
+      "subject": "SSD202/SSD202D 变体",
+      "statement": "框图标为 SSD202，而产品正文标为 SigmaStar SSD202D；当前资源没有完整料号或位号可确认是否为 D 变体。",
+      "confidence": "uncertain",
+      "attributes": {"schematic_value": "SSD202", "product_document_value": "SigmaStar SSD202D", "verification_source_needed": "BOM, chip marking, or detailed schematic"},
+      "evidence": [{"asset_sha256": "c139d8ecf6b831adbcddb2a017ae780439d1e9345c9427e2bcb52e93c3edd40c", "page": 1, "locator": "页 1 中央核心仅标 SSD202"}]
+    },
+    {
+      "id": "memory.ddr3-capacity",
+      "category": "memory",
+      "subject": "128MB DDR3",
+      "statement": "框图在 SSD202 区域内部明确标出 128MB DDR3。",
+      "confidence": "confirmed",
+      "attributes": {"type": "DDR3", "capacity": "128MB", "part_number": null, "bus_width": null, "frequency": null},
+      "evidence": [{"asset_sha256": "c139d8ecf6b831adbcddb2a017ae780439d1e9345c9427e2bcb52e93c3edd40c", "page": 1, "locator": "页 1 中央 SSD202 方框内部 128MB DDR3 子框"}]
+    },
+    {
+      "id": "storage.nand-qspi",
+      "category": "storage",
+      "subject": "256MB NAND Flash",
+      "statement": "框图明确标出 256MB NAND Flash，并以 QSPI 双向箭头连接 SSD202。",
+      "confidence": "confirmed",
+      "attributes": {"capacity": "256MB", "type": "NAND Flash", "bus": "QSPI", "controller": "SSD202", "part_number": null},
+      "evidence": [{"asset_sha256": "c139d8ecf6b831adbcddb2a017ae780439d1e9345c9427e2bcb52e93c3edd40c", "page": 1, "locator": "页 1 右中 256MB NAND Flash 方框和 QSPI 箭头"}]
+    },
+    {
+      "id": "storage.nand-capacity-conflict",
+      "category": "storage",
+      "subject": "NAND Flash 容量冲突",
+      "statement": "当前框图标注 256MB NAND Flash，而产品正文写 512MB NAND；资源未给出 NAND 料号或硬件版本说明以解释差异。",
+      "confidence": "uncertain",
+      "attributes": {"schematic_value": "256MB NAND Flash", "product_document_value": "512MB NAND", "bus": "QSPI", "verification_source_needed": "revision-specific BOM or flash identification"},
+      "evidence": [{"asset_sha256": "c139d8ecf6b831adbcddb2a017ae780439d1e9345c9427e2bcb52e93c3edd40c", "page": 1, "locator": "页 1 右中方框文字 256MB NAND Flash"}]
+    },
+    {
+      "id": "bus.qspi-storage",
+      "category": "bus",
+      "subject": "SSD202 与 NAND 的 QSPI",
+      "statement": "SSD202 与 256MB NAND Flash 之间的连线标注 QSPI，并以双向箭头表示。框图未展开 CLK、CS、IO0~IO3 或电平。",
+      "confidence": "confirmed",
+      "attributes": {"controller": "SSD202", "device": "256MB NAND Flash", "bus": "QSPI", "direction": "bidirectional arrow", "signals": "not expanded", "voltage": "not shown"},
+      "evidence": [{"asset_sha256": "c139d8ecf6b831adbcddb2a017ae780439d1e9345c9427e2bcb52e93c3edd40c", "page": 1, "locator": "页 1 中右 SSD202-QSPI-256MB NAND Flash 箭头"}]
+    },
+    {
+      "id": "sensor.gc2145-block",
+      "category": "sensor",
+      "subject": "GC2145 Sensor",
+      "statement": "框图明确标出 GC2145 Sensor，并通过 DVP 双向箭头连接 USB ISP。",
+      "confidence": "confirmed",
+      "attributes": {"sensor": "GC2145", "interface": "DVP", "peer": "USB ISP", "direction": "bidirectional arrow", "pin_map": "not expanded"},
+      "evidence": [{"asset_sha256": "c139d8ecf6b831adbcddb2a017ae780439d1e9345c9427e2bcb52e93c3edd40c", "page": 1, "locator": "页 1 右上 GC2145 Sensor-DVP-USB ISP"}]
+    },
+    {
+      "id": "bus.camera-dvp-usb-path",
+      "category": "bus",
+      "subject": "摄像头到 SSD202 的数据路径",
+      "statement": "GC2145 Sensor 通过 DVP 连接 USB ISP，USB ISP 再通过 USB 双向箭头连接 SSD202。",
+      "confidence": "confirmed",
+      "attributes": {"sensor": "GC2145 Sensor", "sensor_bus": "DVP", "processor": "USB ISP", "soc_bus": "USB", "soc": "SSD202", "signals": "not expanded"},
+      "evidence": [{"asset_sha256": "c139d8ecf6b831adbcddb2a017ae780439d1e9345c9427e2bcb52e93c3edd40c", "page": 1, "locator": "页 1 上部 GC2145 Sensor-DVP-USB ISP-USB-SSD202 链路"}]
+    },
+    {
+      "id": "sensor.camera-performance-not-shown",
+      "category": "sensor",
+      "subject": "GC2145 摄像头性能",
+      "statement": "框图确认 GC2145 型号，但未标注分辨率、帧率、FOV、DOF、像素格式、镜头参数或供电。",
+      "confidence": "uncertain",
+      "attributes": {"sensor": "GC2145", "resolution": null, "frame_rate": null, "fov": null, "dof": null, "pixel_format": null, "supply": null, "product_document_resolution": "1080P", "product_document_fov": "68°"},
+      "evidence": [{"asset_sha256": "c139d8ecf6b831adbcddb2a017ae780439d1e9345c9427e2bcb52e93c3edd40c", "page": 1, "locator": "页 1 GC2145 Sensor 方框仅有型号和 DVP 连接"}]
+    },
+    {
+      "id": "rf.rtl8188ftv-usb",
+      "category": "rf",
+      "subject": "RTL8188FTV 无线模块",
+      "statement": "框图明确标出 RTL8188FTV 和无线图标，并通过 USB 双向箭头连接 SSD202。",
+      "confidence": "confirmed",
+      "attributes": {"device": "RTL8188FTV", "host": "SSD202", "interface": "USB", "direction": "bidirectional arrow", "antenna": "not expanded"},
+      "evidence": [{"asset_sha256": "c139d8ecf6b831adbcddb2a017ae780439d1e9345c9427e2bcb52e93c3edd40c", "page": 1, "locator": "页 1 右上 SSD202-USB-RTL8188FTV 方框与无线图标"}]
+    },
+    {
+      "id": "rf.wifi-performance-not-shown",
+      "category": "rf",
+      "subject": "无线网络规格",
+      "statement": "框图未标注无线频段、协议、吞吐率、天线类型、射频匹配或发射功率。",
+      "confidence": "uncertain",
+      "attributes": {"device": "RTL8188FTV", "band": null, "standard": null, "throughput": null, "antenna": null, "tx_power": null, "product_document_value": "150Mbps 2.4GHz 802.11 b/g/n"},
+      "evidence": [{"asset_sha256": "c139d8ecf6b831adbcddb2a017ae780439d1e9345c9427e2bcb52e93c3edd40c", "page": 1, "locator": "页 1 RTL8188FTV 方框只标型号、USB 与无线图标"}]
+    },
+    {
+      "id": "interface.grove-uart",
+      "category": "interface",
+      "subject": "Grove Port",
+      "statement": "Grove Port 通过标注 UART 的双向箭头直接连接 SSD202。框图未展开连接器针脚、TX/RX 网络、电源或地。",
+      "confidence": "confirmed",
+      "attributes": {"connector": "Grove Port", "interface": "UART", "peer": "SSD202", "direction": "bidirectional arrow", "pins": "not expanded", "power": "not shown", "ground": "not shown"},
+      "evidence": [{"asset_sha256": "c139d8ecf6b831adbcddb2a017ae780439d1e9345c9427e2bcb52e93c3edd40c", "page": 1, "locator": "页 1 左中 Grove Port-UART-SSD202 双向箭头"}]
+    },
+    {
+      "id": "bus.grove-uart-details-not-shown",
+      "category": "bus",
+      "subject": "Grove UART 电气与协议参数",
+      "statement": "框图只给出 UART 名称，未标注 TX/RX 针脚映射、电平、波特率、数据位、停止位、校验或流控。",
+      "confidence": "uncertain",
+      "attributes": {"tx_pin": null, "rx_pin": null, "logic_level": null, "baud_rate": null, "data_bits": null, "stop_bits": null, "parity": null, "flow_control": null},
+      "evidence": [{"asset_sha256": "c139d8ecf6b831adbcddb2a017ae780439d1e9345c9427e2bcb52e93c3edd40c", "page": 1, "locator": "页 1 Grove Port 与 SSD202 之间仅标 UART"}]
+    },
+    {
+      "id": "interface.usb-type-c-network",
+      "category": "interface",
+      "subject": "USB Type-C 与 USB LAN",
+      "statement": "USB Type-C 通过 USB 双向箭头连接 10/100M USB LAN；该网络模块再通过标注 100M LAN 的双向箭头连接 SSD202。",
+      "confidence": "confirmed",
+      "attributes": {"external_connector": "USB Type-C", "connector_bus": "USB", "bridge": "10/100M USB LAN", "soc_bus": "100M LAN", "soc": "SSD202", "direction": "bidirectional arrows"},
+      "evidence": [{"asset_sha256": "c139d8ecf6b831adbcddb2a017ae780439d1e9345c9427e2bcb52e93c3edd40c", "page": 1, "locator": "页 1 下部 USB Type-C-USB-10/100M USB LAN-100M LAN-SSD202 链路"}]
+    },
+    {
+      "id": "bus.usb-links",
+      "category": "bus",
+      "subject": "框图中的 USB 链路",
+      "statement": "USB 标注分别用于 SSD202 与 USB ISP、SSD202 与 RTL8188FTV、以及 USB Type-C 与 10/100M USB LAN 之间；框图未给 USB 版本、速率、角色或 D+/D- 引脚。",
+      "confidence": "confirmed",
+      "attributes": {"camera_usb": "SSD202<->USB ISP", "wifi_usb": "SSD202<->RTL8188FTV", "type_c_usb": "USB Type-C<->10/100M USB LAN", "usb_version": "not shown", "signals": "not expanded", "roles": "not shown"},
+      "evidence": [{"asset_sha256": "c139d8ecf6b831adbcddb2a017ae780439d1e9345c9427e2bcb52e93c3edd40c", "page": 1, "locator": "页 1 三处 USB 双向箭头"}]
+    },
+    {
+      "id": "bus.lan-path",
+      "category": "bus",
+      "subject": "100M LAN 路径",
+      "statement": "SSD202 与 10/100M USB LAN 之间的垂直双向箭头标为 100M LAN；框图未展开 RMII/MII 信号、PHY 地址或时钟。",
+      "confidence": "confirmed",
+      "attributes": {"soc": "SSD202", "peer": "10/100M USB LAN", "label": "100M LAN", "direction": "bidirectional arrow", "rmii_mii": "not shown", "phy_address": "not shown", "clock": "not shown"},
+      "evidence": [{"asset_sha256": "c139d8ecf6b831adbcddb2a017ae780439d1e9345c9427e2bcb52e93c3edd40c", "page": 1, "locator": "页 1 中下 SSD202-100M LAN-10/100M USB LAN 垂直链路"}]
+    },
+    {
+      "id": "address.no-device-addresses-shown",
+      "category": "address",
+      "subject": "总线地址",
+      "statement": "框图未打印 GC2145、RTL8188FTV、NAND、LAN 模块或其他设备的 I2C、USB、QSPI、PHY 地址。",
+      "confidence": "confirmed",
+      "attributes": {"camera_address": null, "wifi_address": null, "nand_address": null, "phy_address": null, "address_selectors": null},
+      "evidence": [{"asset_sha256": "c139d8ecf6b831adbcddb2a017ae780439d1e9345c9427e2bcb52e93c3edd40c", "page": 1, "locator": "页 1 完整框图，无 0x 地址、ADDR 或 PHY address 标注"}]
+    },
+    {
+      "id": "power.power-tree-not-shown",
+      "category": "power",
+      "subject": "输入电源与电源树",
+      "statement": "框图未绘出输入电压、电源连接器供电脚、DC/DC、LDO、电源轨、使能、充电、电池或监测路径。",
+      "confidence": "uncertain",
+      "attributes": {"input_voltage": null, "input_current": null, "regulators": null, "power_rails": null, "enables": null, "charger": null, "battery": null, "monitor": null, "product_document_value": "5V at 500mA"},
+      "evidence": [{"asset_sha256": "c139d8ecf6b831adbcddb2a017ae780439d1e9345c9427e2bcb52e93c3edd40c", "page": 1, "locator": "页 1 完整框图仅显示数据/网络接口，无任何电源符号或电源模块"}]
+    },
+    {
+      "id": "audio.microphone-not-shown",
+      "category": "audio",
+      "subject": "麦克风与音频链路",
+      "statement": "产品正文列出内置麦克风，但当前框图没有麦克风、音频 ADC/Codec、I2S/PDM 或模拟音频连接。",
+      "confidence": "uncertain",
+      "attributes": {"product_document_microphone": "integrated microphone", "schematic_microphone": null, "codec": null, "i2s": null, "pdm": null, "analog_audio": null},
+      "evidence": [{"asset_sha256": "c139d8ecf6b831adbcddb2a017ae780439d1e9345c9427e2bcb52e93c3edd40c", "page": 1, "locator": "页 1 完整框图，无 MIC/audio/I2S/PDM 方框或连线"}]
+    },
+    {
+      "id": "gpio.clock.reset.debug-not-expanded",
+      "category": "gpio",
+      "subject": "GPIO、时钟、复位与调试",
+      "statement": "该框图没有 GPIO 编号、BOOT、RESET、时钟/晶振、JTAG/SWD/UART 调试头或测试点信息。",
+      "confidence": "confirmed",
+      "attributes": {"gpio_map": null, "boot": null, "reset": null, "crystal": null, "clock_frequency": null, "jtag": null, "swd": null, "debug_header": null, "test_points": null},
+      "evidence": [{"asset_sha256": "c139d8ecf6b831adbcddb2a017ae780439d1e9345c9427e2bcb52e93c3edd40c", "page": 1, "locator": "页 1 完整框图，只有模块名和总线名，无引脚/时钟/复位/调试细节"}]
+    },
+    {
+      "id": "protection.no-protection-details",
+      "category": "protection",
+      "subject": "接口与电源保护",
+      "statement": "框图未显示 USB Type-C、Grove Port 或内部电源的 ESD、TVS、保险丝、过流、过压或反接保护。",
+      "confidence": "confirmed",
+      "attributes": {"usb_esd": null, "grove_esd": null, "tvs": null, "fuse": null, "overcurrent": null, "overvoltage": null, "reverse_polarity": null},
+      "evidence": [{"asset_sha256": "c139d8ecf6b831adbcddb2a017ae780439d1e9345c9427e2bcb52e93c3edd40c", "page": 1, "locator": "页 1 完整框图未出现保护器件或保护功能块"}]
+    },
+    {
+      "id": "analog.no-analog-detail",
+      "category": "analog",
+      "subject": "模拟采样链路",
+      "statement": "框图未展开模拟前端、ADC/DAC、传感器供电或模拟采样网络。",
+      "confidence": "confirmed",
+      "attributes": {"analog_front_end": null, "adc": null, "dac": null, "analog_sensor_supply": null, "sampling_nets": null},
+      "evidence": [{"asset_sha256": "c139d8ecf6b831adbcddb2a017ae780439d1e9345c9427e2bcb52e93c3edd40c", "page": 1, "locator": "页 1 完整框图，无模拟/ADC/DAC 网络"}]
+    },
+    {
+      "id": "key_net.unitv2-index",
+      "category": "key_net",
+      "subject": "UnitV2 关键连接索引",
+      "statement": "关键链路为 Grove Port↔UART↔SSD202、GC2145↔DVP↔USB ISP↔USB↔SSD202、RTL8188FTV↔USB↔SSD202、NAND↔QSPI↔SSD202，以及 USB Type-C↔USB↔10/100M USB LAN↔100M LAN↔SSD202。",
+      "confidence": "confirmed",
+      "attributes": {"grove": "Grove Port-UART-SSD202", "camera": "GC2145-DVP-USB ISP-USB-SSD202", "wifi": "RTL8188FTV-USB-SSD202", "storage": "256MB NAND-QSPI-SSD202", "type_c_network": "USB Type-C-USB-10/100M USB LAN-100M LAN-SSD202", "memory": "128MB DDR3 inside SSD202 block"},
+      "evidence": [{"asset_sha256": "c139d8ecf6b831adbcddb2a017ae780439d1e9345c9427e2bcb52e93c3edd40c", "page": 1, "locator": "页 1 完整系统框图全部双向箭头与模块标签"}]
+    }
+  ],
+  "needs_review": [
+    {
+      "id": "review.controller-variant",
+      "fact_id": "component.controller-variant-conflict",
+      "question": "该硬件版本实际装配的是 SSD202 还是 SSD202D，完整订货型号是什么？",
+      "reason": "当前框图标 SSD202，产品正文标 SigmaStar SSD202D，缺少 BOM、芯片丝印或详细原理图。",
+      "evidence": [{"asset_sha256": "c139d8ecf6b831adbcddb2a017ae780439d1e9345c9427e2bcb52e93c3edd40c", "page": 1, "locator": "页 1 中央 SSD202 方框"}]
+    },
+    {
+      "id": "review.nand-capacity",
+      "fact_id": "storage.nand-capacity-conflict",
+      "question": "该硬件版本的 NAND Flash 容量是框图所示 256MB 还是产品正文所示 512MB？",
+      "reason": "两个本地来源发生直接容量冲突，需版本化 BOM、Flash 丝印或系统容量读取确认。",
+      "evidence": [{"asset_sha256": "c139d8ecf6b831adbcddb2a017ae780439d1e9345c9427e2bcb52e93c3edd40c", "page": 1, "locator": "页 1 右中 256MB NAND Flash 方框"}]
+    },
+    {
+      "id": "review.camera-performance",
+      "fact_id": "sensor.camera-performance-not-shown",
+      "question": "GC2145 模组的分辨率、帧率、FOV、DOF、像素格式、镜头和供电规格是什么？",
+      "reason": "框图只确认 GC2145 和 DVP 连接，不能验证正文中的 1080P、FOV 68° 与 DOF 参数。",
+      "evidence": [{"asset_sha256": "c139d8ecf6b831adbcddb2a017ae780439d1e9345c9427e2bcb52e93c3edd40c", "page": 1, "locator": "页 1 GC2145 Sensor 方框"}]
+    },
+    {
+      "id": "review.wifi-performance",
+      "fact_id": "rf.wifi-performance-not-shown",
+      "question": "RTL8188FTV 的频段、802.11 模式、最大吞吐、天线形式与射频性能是否符合正文 150Mbps 2.4GHz 802.11 b/g/n？",
+      "reason": "框图只有模块型号、USB 链路和无线图标，没有射频参数。",
+      "evidence": [{"asset_sha256": "c139d8ecf6b831adbcddb2a017ae780439d1e9345c9427e2bcb52e93c3edd40c", "page": 1, "locator": "页 1 RTL8188FTV 方框"}]
+    },
+    {
+      "id": "review.grove-uart-details",
+      "fact_id": "bus.grove-uart-details-not-shown",
+      "question": "Grove Port 的针脚顺序、TX/RX 方向、逻辑电平、波特率和帧格式是什么？",
+      "reason": "框图仅以 UART 双向箭头表示，未展开连接器与电气参数。",
+      "evidence": [{"asset_sha256": "c139d8ecf6b831adbcddb2a017ae780439d1e9345c9427e2bcb52e93c3edd40c", "page": 1, "locator": "页 1 Grove Port-UART-SSD202 链路"}]
+    },
+    {
+      "id": "review.power-tree",
+      "fact_id": "power.power-tree-not-shown",
+      "question": "UnitV2 的供电入口、额定 5V@500mA 条件、内部电源轨、转换器、使能和保护路径是什么？",
+      "reason": "当前资源完全未绘出电源树，正文规格不能替代器件级电源证据。",
+      "evidence": [{"asset_sha256": "c139d8ecf6b831adbcddb2a017ae780439d1e9345c9427e2bcb52e93c3edd40c", "page": 1, "locator": "页 1 完整框图无电源模块或电源标注"}]
+    },
+    {
+      "id": "review.microphone",
+      "fact_id": "audio.microphone-not-shown",
+      "question": "正文所述内置麦克风的型号、接口、供电和 SSD202 引脚连接是什么？",
+      "reason": "当前框图未出现麦克风或任何音频链路。",
+      "evidence": [{"asset_sha256": "c139d8ecf6b831adbcddb2a017ae780439d1e9345c9427e2bcb52e93c3edd40c", "page": 1, "locator": "页 1 完整框图无音频模块"}]
+    }
+  ]
+}

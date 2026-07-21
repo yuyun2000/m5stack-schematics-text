@@ -1,0 +1,267 @@
+{
+  "schema_version": 1,
+  "generator": "schematic_describer",
+  "product": {
+    "product_id": "unit-tmos-pir-a9b1c47d19d8",
+    "product_name": "Unit TMOS PIR",
+    "sku": "U185",
+    "source_path": "unit/UNIT-TMOS PIR.md",
+    "source_sha256": "9eb6cf95260fd9e01c2b112d4f5bfb1995dcc578aada4b8899d479280b753acf",
+    "input_sha256": "d4f2db8b14cc58200a56e9789c80aaf0cf9c5e16ee87469ce5646797cd275eff"
+  },
+  "schematic_assets": [
+    {
+      "sha256": "31584bc04b292923310ffc64c6e51c2c3c5cb07b81eb1694eb047f63121761b5",
+      "source_url": "https://m5stack.oss-cn-shenzhen.aliyuncs.com/resource/docs/products/unit/UNIT-TMOS%20PIR/img-296f83d1-ddc1-473e-9542-c157eb6c5b95.png",
+      "pages": [1]
+    }
+  ],
+  "summary": "Unit TMOS PIR 以 U1 STHS34PF80TR 为唯一传感器核心，通过 I2C_SDA/I2C_SCL 与 J1 Grove 接口通信，并提供未引出 J1 的 I2C_INT 网络。VIN 同时连接 J1 电源针脚和 U2 XC6228D332VR-G，U2 输出 VCC_3V3 供传感器与 I2C 上拉使用。R1/R2 各 2.2K/1% 将 SDA/SCL 上拉到 VCC_3V3，U3 SRV05-4 为两条 I2C 线提供保护；R3 为 I2C_INT 预留上拉但标记 NC。本页未包含 MCU、存储、时钟、复位、电池、充电、射频、音频或调试电路，I2C 地址和传感器性能需由正文、datasheet 或实测确认。",
+  "keywords": [
+    "Unit TMOS PIR",
+    "U185",
+    "STHS34PF80",
+    "STHS34PF80TR",
+    "XC6228D332VR-G",
+    "SRV05-4",
+    "I2C",
+    "I2C_SDA",
+    "I2C_SCL",
+    "I2C_INT",
+    "0x5A",
+    "J1 GROVE_DIP",
+    "VIN",
+    "VCC_3V3",
+    "R1 2.2K/1%",
+    "R2 2.2K/1%",
+    "R3 NC",
+    "C1 100nF/25V",
+    "C2 100nF/25V",
+    "C3 1uF/25V",
+    "TMOS",
+    "presence detection",
+    "motion detection",
+    "thermal infrared",
+    "80 degree FOV",
+    "0.25Hz-30Hz"
+  ],
+  "components": [
+    {
+      "reference": "U1",
+      "part_number": "STHS34PF80TR",
+      "role": "红外热辐射传感器，连接 I2C_SDA、I2C_SCL、I2C_INT 和 VCC_3V3",
+      "evidence": [{"asset_sha256": "31584bc04b292923310ffc64c6e51c2c3c5cb07b81eb1694eb047f63121761b5", "page": 1, "locator": "第 1 页右上，U1 STHS34PF80TR pins1-10，SCL/SDA/INT/CS/VDD/GND"}]
+    },
+    {
+      "reference": "U2",
+      "part_number": "XC6228D332VR-G",
+      "role": "由 VIN 生成 VCC_3V3 的稳压器，IN 与 EN 同接 VIN",
+      "evidence": [{"asset_sha256": "31584bc04b292923310ffc64c6e51c2c3c5cb07b81eb1694eb047f63121761b5", "page": 1, "locator": "第 1 页左上，U2 XC6228D332VR-G，IN pin1、EN pin3、GND pin2、BYP/ADJ pin4、OUT pin5"}]
+    },
+    {
+      "reference": "U3",
+      "part_number": "SRV05-4",
+      "role": "I2C_SDA/I2C_SCL 接口保护阵列，GND 接地、pin5 接 VIN，另外两路标记未用",
+      "evidence": [{"asset_sha256": "31584bc04b292923310ffc64c6e51c2c3c5cb07b81eb1694eb047f63121761b5", "page": 1, "locator": "第 1 页左下，U3 SRV05-4，pin1 I2C_SDA、pin3 I2C_SCL、pin2 GND、pin5 VIN、pins4/6 未用"}]
+    },
+    {
+      "reference": "J1",
+      "part_number": "GROVE_DIP",
+      "role": "四针 Grove I2C 与电源接口，引出 GND、VIN、I2C_SDA 和 I2C_SCL",
+      "evidence": [{"asset_sha256": "31584bc04b292923310ffc64c6e51c2c3c5cb07b81eb1694eb047f63121761b5", "page": 1, "locator": "第 1 页右下，J1 GROVE_DIP pin1 GND、pin2 VIN、pin3 I2C_SDA、pin4 I2C_SCL"}]
+    },
+    {
+      "reference": "R1,R2,R3",
+      "part_number": "2.2K/1% / 2.2K/1% / NC",
+      "role": "R1/R2 为 I2C SDA/SCL 上拉，R3 为 I2C_INT 预留上拉且不装",
+      "evidence": [{"asset_sha256": "31584bc04b292923310ffc64c6e51c2c3c5cb07b81eb1694eb047f63121761b5", "page": 1, "locator": "第 1 页左下，R1 I2C_SDA、R2 I2C_SCL、R3 I2C_INT 至 VCC_3V3"}]
+    },
+    {
+      "reference": "C1,C2,C3,C4,C5",
+      "part_number": "100nF/25V / 100nF/25V / 1uF/25V / 1uF/25V / 1uF/25V",
+      "role": "U1 传感器与 U2 稳压器的电源去耦和输入输出电容",
+      "evidence": [{"asset_sha256": "31584bc04b292923310ffc64c6e51c2c3c5cb07b81eb1694eb047f63121761b5", "page": 1, "locator": "第 1 页上部，U1 旁 C1-C3 与 U2 旁 C4/C5"}]
+    }
+  ],
+  "facts": [
+    {
+      "id": "system.tmos-pir-architecture",
+      "category": "system",
+      "subject": "Unit TMOS PIR 系统架构",
+      "statement": "J1 提供 VIN/GND 与 I2C_SDA/I2C_SCL；U2 将 VIN 转换为 VCC_3V3，U1 STHS34PF80TR 由 VCC_3V3 供电并通过 I2C 通信，U3 保护两条 I2C 线，I2C_INT 仅连接 U1 与未装上拉 R3。",
+      "confidence": "confirmed",
+      "attributes": {"sensor": "U1 STHS34PF80TR", "regulator": "U2 XC6228D332VR-G", "protection": "U3 SRV05-4", "connector": "J1 GROVE_DIP", "bus": "I2C_SDA/I2C_SCL", "interrupt": "I2C_INT", "power": "VIN -> VCC_3V3"},
+      "evidence": [{"asset_sha256": "31584bc04b292923310ffc64c6e51c2c3c5cb07b81eb1694eb047f63121761b5", "page": 1, "locator": "第 1 页完整原理图，U1/U2/U3/J1 与全部网络"}]
+    },
+    {
+      "id": "power.vin-to-3v3",
+      "category": "power",
+      "subject": "VIN 至 VCC_3V3 稳压",
+      "statement": "U2 XC6228D332VR-G 的 IN pin1 与 EN pin3 同接 VIN，GND pin2 接 GND，OUT pin5 输出 VCC_3V3，BYP/ADJ pin4 未连接；C4 1uF/25V 位于 VIN 输入，C5 1uF/25V 位于 VCC_3V3 输出。",
+      "confidence": "confirmed",
+      "attributes": {"reference": "U2", "part_number": "XC6228D332VR-G", "input": "pin1 IN=VIN", "enable": "pin3 EN=VIN", "output": "pin5 OUT=VCC_3V3", "ground": "pin2 GND", "bypass_adjust": "pin4 NC", "input_cap": "C4 1uF/25V", "output_cap": "C5 1uF/25V"},
+      "evidence": [{"asset_sha256": "31584bc04b292923310ffc64c6e51c2c3c5cb07b81eb1694eb047f63121761b5", "page": 1, "locator": "第 1 页左上，VIN/C4/U2/C5/VCC_3V3"}]
+    },
+    {
+      "id": "power.sensor-supply-decoupling",
+      "category": "power",
+      "subject": "STHS34PF80TR 供电与去耦",
+      "statement": "U1 VDD pins6/9 接 VCC_3V3，GND pins7/8 与 RSV(GND) pin2 接 GND；C1/C2 各 100nF/25V、C3 1uF/25V 从供电轨接 GND。",
+      "confidence": "confirmed",
+      "attributes": {"sensor": "U1 STHS34PF80TR", "supply": "pins6/9 VDD=VCC_3V3", "ground": "pins2/7/8=GND", "decoupling": "C1/C2 100nF/25V,C3 1uF/25V"},
+      "evidence": [{"asset_sha256": "31584bc04b292923310ffc64c6e51c2c3c5cb07b81eb1694eb047f63121761b5", "page": 1, "locator": "第 1 页右上，U1 VDD/GND/RSV(GND) 与 C1-C3"}]
+    },
+    {
+      "id": "interface.grove-pinout",
+      "category": "interface",
+      "subject": "J1 Grove 针脚映射",
+      "statement": "J1 GROVE_DIP pin1=GND、pin2=VIN、pin3=I2C_SDA、pin4=I2C_SCL；SDA/SCL 为双向 I2C 信号，VIN/GND 为本单元供电输入与回路。",
+      "confidence": "confirmed",
+      "attributes": {"reference": "J1", "pin1": "GND", "pin2": "VIN power input", "pin3": "I2C_SDA bidirectional", "pin4": "I2C_SCL bidirectional"},
+      "evidence": [{"asset_sha256": "31584bc04b292923310ffc64c6e51c2c3c5cb07b81eb1694eb047f63121761b5", "page": 1, "locator": "第 1 页右下，J1 pins1-4 与网络标签"}]
+    },
+    {
+      "id": "bus.i2c-sensor",
+      "category": "bus",
+      "subject": "STHS34PF80TR I2C 总线",
+      "statement": "J1 I2C_SDA 连接 U1 SDA pin4，J1 I2C_SCL 连接 U1 SCL pin1；R1/R2 各 2.2K/1% 将 SDA/SCL 上拉到 VCC_3V3，U1 CS pin3 固定接 VCC_3V3。",
+      "confidence": "confirmed",
+      "attributes": {"device": "U1 STHS34PF80TR", "sda": "J1 pin3 I2C_SDA -> U1 pin4 SDA", "scl": "J1 pin4 I2C_SCL -> U1 pin1 SCL", "sda_pullup": "R1 2.2K/1% to VCC_3V3", "scl_pullup": "R2 2.2K/1% to VCC_3V3", "chip_select": "U1 pin3 CS=VCC_3V3", "controller": null},
+      "evidence": [{"asset_sha256": "31584bc04b292923310ffc64c6e51c2c3c5cb07b81eb1694eb047f63121761b5", "page": 1, "locator": "第 1 页 U1 pin1/pin3/pin4、R1/R2 与 J1 pin3/pin4 同名 I2C 网络"}]
+    },
+    {
+      "id": "gpio.sensor-interrupt",
+      "category": "gpio",
+      "subject": "I2C_INT 中断网络",
+      "statement": "U1 INT pin10 连接 I2C_INT；R3 从 I2C_INT 预留到 VCC_3V3，但标记 NC，I2C_INT 未连接到 J1 的四个针脚。",
+      "confidence": "confirmed",
+      "attributes": {"source": "U1 pin10 INT", "net": "I2C_INT", "pullup": "R3 NC to VCC_3V3", "grove_export": false, "direction": "sensor output"},
+      "evidence": [{"asset_sha256": "31584bc04b292923310ffc64c6e51c2c3c5cb07b81eb1694eb047f63121761b5", "page": 1, "locator": "第 1 页 U1 pin10 I2C_INT、左下 R3 NC 与 J1 pinout"}]
+    },
+    {
+      "id": "protection.i2c-esd",
+      "category": "protection",
+      "subject": "I2C 接口保护",
+      "statement": "U3 SRV05-4 的 pin1 接 I2C_SDA、pin3 接 I2C_SCL、pin2 接 GND、pin5 接 VIN，pins4/6 标记未使用；该阵列位于 J1 与 U1 的同名 I2C 网络上。",
+      "confidence": "confirmed",
+      "attributes": {"reference": "U3", "part_number": "SRV05-4", "pin1": "I2C_SDA", "pin3": "I2C_SCL", "pin2": "GND", "pin5": "VIN", "unused": "pins4/6"},
+      "evidence": [{"asset_sha256": "31584bc04b292923310ffc64c6e51c2c3c5cb07b81eb1694eb047f63121761b5", "page": 1, "locator": "第 1 页左下，U3 SRV05-4 pins1-6 与 I2C/VIN/GND"}]
+    },
+    {
+      "id": "key_net.power-and-signals",
+      "category": "key_net",
+      "subject": "关键电源与信号网络",
+      "statement": "VIN 同时连接 J1 pin2、U2 IN/EN 和 U3 pin5；VCC_3V3 连接 U2 OUT、U1 VDD/CS 和 R1/R2/R3 上拉端；I2C_SDA/I2C_SCL 贯通 J1、U3 与 U1。",
+      "confidence": "confirmed",
+      "attributes": {"VIN": "J1 pin2,U2 pins1/3,U3 pin5", "VCC_3V3": "U2 pin5,U1 pins3/6/9,R1/R2/R3", "I2C_SDA": "J1 pin3,U3 pin1,U1 pin4,R1", "I2C_SCL": "J1 pin4,U3 pin3,U1 pin1,R2", "I2C_INT": "U1 pin10,R3 NC"},
+      "evidence": [{"asset_sha256": "31584bc04b292923310ffc64c6e51c2c3c5cb07b81eb1694eb047f63121761b5", "page": 1, "locator": "第 1 页完整同名 VIN/VCC_3V3/I2C_SDA/I2C_SCL/I2C_INT 网络"}]
+    },
+    {
+      "id": "system.absent-subsystems",
+      "category": "system",
+      "subject": "本页未包含的子系统",
+      "statement": "该原理图页未显示 MCU、协处理器、外部存储、晶振、复位/BOOT、调试、SPI/UART/CAN/RS-485/USB/SDIO/MIPI/I2S、射频、音频、电池或充电电路。",
+      "confidence": "confirmed",
+      "attributes": {"mcu": null, "coprocessor": null, "storage": null, "clock": null, "reset_boot": null, "debug": null, "other_buses": null, "rf": null, "audio": null, "battery_charger": null},
+      "evidence": [{"asset_sha256": "31584bc04b292923310ffc64c6e51c2c3c5cb07b81eb1694eb047f63121761b5", "page": 1, "locator": "第 1 页完整原理图，仅含 U1/U2/U3/J1、阻容与 I2C/电源网络"}]
+    },
+    {
+      "id": "address.documented-i2c-address",
+      "category": "address",
+      "subject": "正文 I2C 地址 0x5A",
+      "statement": "正文标称默认 I2C 地址为 0x5A；原理图未打印 0x5A、地址选择电阻、地址引脚状态或总线扫描结果。",
+      "confidence": "uncertain",
+      "attributes": {"documented_address": "0x5A", "device": "U1 STHS34PF80TR", "schematic_address": null, "address_select": null},
+      "evidence": [{"asset_sha256": "31584bc04b292923310ffc64c6e51c2c3c5cb07b81eb1694eb047f63121761b5", "page": 1, "locator": "第 1 页 U1 I2C_SDA/I2C_SCL/CS 连接，图中无地址文字"}]
+    },
+    {
+      "id": "sensor.documented-detection-geometry",
+      "category": "sensor",
+      "subject": "正文检测距离、目标尺寸与视场角",
+      "statement": "正文给出测量距离 2 米以上、最小识别尺寸 70×25cm²、视场角 80°；原理图仅确认 U1 型号和电气连接，没有光学结构、目标条件、距离或视场角标注。",
+      "confidence": "uncertain",
+      "attributes": {"documented_distance": ">=2m", "documented_minimum_target": "70x25cm2", "documented_fov": "80 degrees", "test_conditions": null, "schematic_optics": null},
+      "evidence": [{"asset_sha256": "31584bc04b292923310ffc64c6e51c2c3c5cb07b81eb1694eb047f63121761b5", "page": 1, "locator": "第 1 页 U1 STHS34PF80TR 符号，无光学或距离参数"}]
+    },
+    {
+      "id": "sensor.documented-optical-metrology",
+      "category": "sensor",
+      "subject": "正文红外波段、灵敏度与精度",
+      "statement": "正文称红外波长范围为 5-20µm、红外灵敏度为 2000 LSB/°C、传感器精度为 ±0.3°C；原理图没有这些性能值、标定条件、噪声或温漂参数。",
+      "confidence": "uncertain",
+      "attributes": {"documented_wavelength": "5-20um", "documented_sensitivity": "2000 LSB/C", "documented_accuracy": "+/-0.3C", "calibration": null, "noise": null, "temperature_conditions": null},
+      "evidence": [{"asset_sha256": "31584bc04b292923310ffc64c6e51c2c3c5cb07b81eb1694eb047f63121761b5", "page": 1, "locator": "第 1 页 U1 STHS34PF80TR，无红外性能表"}]
+    },
+    {
+      "id": "sensor.documented-odr-gain-modes",
+      "category": "sensor",
+      "subject": "正文输出数据率与增益模式",
+      "statement": "正文称输出数据率可编程为 0.25Hz 至 30Hz，并支持默认增益与宽模式；原理图未给寄存器、时序、增益系数、饱和阈值或模式切换条件。",
+      "confidence": "uncertain",
+      "attributes": {"documented_odr": "0.25-30Hz", "documented_gain_modes": "default,wide", "registers": null, "gain_values": null, "saturation_threshold": null},
+      "evidence": [{"asset_sha256": "31584bc04b292923310ffc64c6e51c2c3c5cb07b81eb1694eb047f63121761b5", "page": 1, "locator": "第 1 页 U1 电气接口，无寄存器或采样参数"}]
+    },
+    {
+      "id": "sensor.documented-presence-motion-behavior",
+      "category": "sensor",
+      "subject": "正文在场与运动检测行为",
+      "statement": "正文称可区分静止与移动热辐射目标，并提示过饱和、温差敏感和掉电后重设标定温度；原理图不能确认检测算法、标志位延迟、阈值、校准流程或环境热耦合要求。",
+      "confidence": "uncertain",
+      "attributes": {"documented_functions": "presence,motion,ambient temperature", "documented_cautions": "saturation,temperature difference,power-down recalibration", "algorithm": null, "latency": null, "thresholds": null, "calibration_sequence": null},
+      "evidence": [{"asset_sha256": "31584bc04b292923310ffc64c6e51c2c3c5cb07b81eb1694eb047f63121761b5", "page": 1, "locator": "第 1 页 U1 与 I2C_INT 网络，无算法或校准说明"}]
+    },
+    {
+      "id": "power.documented-input-electrical-limits",
+      "category": "power",
+      "subject": "VIN 输入与接口电气边界",
+      "statement": "正文管脚表将 J1 pin2 标为 5V；原理图以 VIN 网络连接 U2 与 J1，但未标允许 VIN 范围、工作电流、I2C 电平门限、上拉负载或反接/过压边界。",
+      "confidence": "uncertain",
+      "attributes": {"documented_nominal_input": "5V", "schematic_net": "VIN", "input_range": null, "current_consumption": null, "i2c_logic_thresholds": null, "reverse_voltage": null, "overvoltage": null},
+      "evidence": [{"asset_sha256": "31584bc04b292923310ffc64c6e51c2c3c5cb07b81eb1694eb047f63121761b5", "page": 1, "locator": "第 1 页 J1 pin2 VIN、U2 和 R1/R2 上拉，无额定范围文字"}]
+    }
+  ],
+  "needs_review": [
+    {
+      "id": "review.i2c-address",
+      "fact_id": "address.documented-i2c-address",
+      "question": "请用 STHS34PF80 datasheet 或总线扫描确认默认 I2C 地址 0x5A 及是否可变。",
+      "reason": "原理图未标从地址或地址选择。",
+      "evidence": [{"asset_sha256": "31584bc04b292923310ffc64c6e51c2c3c5cb07b81eb1694eb047f63121761b5", "page": 1, "locator": "第 1 页 U1/J1 I2C 总线"}]
+    },
+    {
+      "id": "review.detection-geometry",
+      "fact_id": "sensor.documented-detection-geometry",
+      "question": "请确认 2 米以上、70×25cm² 与 80° FOV 的目标温差、姿态、环境、阈值和重复性条件。",
+      "reason": "电气原理图不能证明光学检测几何性能。",
+      "evidence": [{"asset_sha256": "31584bc04b292923310ffc64c6e51c2c3c5cb07b81eb1694eb047f63121761b5", "page": 1, "locator": "第 1 页 U1 STHS34PF80TR"}]
+    },
+    {
+      "id": "review.optical-metrology",
+      "fact_id": "sensor.documented-optical-metrology",
+      "question": "请用 datasheet 和整机标定记录确认 5-20µm、2000 LSB/°C、±0.3°C 的定义、条件、容差和适用模式。",
+      "reason": "原理图未列光学与测量性能。",
+      "evidence": [{"asset_sha256": "31584bc04b292923310ffc64c6e51c2c3c5cb07b81eb1694eb047f63121761b5", "page": 1, "locator": "第 1 页 U1 传感器符号"}]
+    },
+    {
+      "id": "review.odr-gain",
+      "fact_id": "sensor.documented-odr-gain-modes",
+      "question": "请确认 0.25-30Hz 可用档位、默认/宽增益配置寄存器、饱和判断与模式切换流程。",
+      "reason": "原理图不含寄存器和时序定义。",
+      "evidence": [{"asset_sha256": "31584bc04b292923310ffc64c6e51c2c3c5cb07b81eb1694eb047f63121761b5", "page": 1, "locator": "第 1 页 U1 I2C 接口"}]
+    },
+    {
+      "id": "review.presence-motion",
+      "fact_id": "sensor.documented-presence-motion-behavior",
+      "question": "请用应用笔记和实测确认在场/运动算法、标志位延迟、温差影响、掉电校准与过饱和恢复行为。",
+      "reason": "这些属于传感器算法和系统条件，无法由板级连线确认。",
+      "evidence": [{"asset_sha256": "31584bc04b292923310ffc64c6e51c2c3c5cb07b81eb1694eb047f63121761b5", "page": 1, "locator": "第 1 页 U1 与 I2C_INT"}]
+    },
+    {
+      "id": "review.input-limits",
+      "fact_id": "power.documented-input-electrical-limits",
+      "question": "请确认 J1 VIN 的允许范围、典型/最大电流、I2C VIH/VIL、总线上拉预算及反接和过压限制。",
+      "reason": "原理图只显示标称电源网络和器件连接。",
+      "evidence": [{"asset_sha256": "31584bc04b292923310ffc64c6e51c2c3c5cb07b81eb1694eb047f63121761b5", "page": 1, "locator": "第 1 页 J1/U2/R1/R2"}]
+    }
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "dry_run": false,
+  "failed": 0,
+  "published": 1,
+  "results": [
+    {
+      "backup": null,
+      "draft_action": "unchanged",
+      "dry_run": false,
+      "errors": [],
+      "needs_review": 3,
+      "product_id": "ai-pyramid-fd54617506a4",
+      "product_name": "AI Pyramid",
+      "publish_action": "unchanged",
+      "sha256": "9bd1dbf9c7cbb182d8e2a7193f96ff295a2248dcd789bfd3492a0fb9cf4274f6",
+      "status": "valid",
+      "uncertain_facts": 3
+    }
+  ],
+  "schema_version": 1
+}

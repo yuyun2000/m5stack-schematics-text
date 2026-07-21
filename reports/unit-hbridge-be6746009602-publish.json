@@ -1,0 +1,21 @@
+{
+  "dry_run": false,
+  "failed": 0,
+  "published": 1,
+  "results": [
+    {
+      "backup": null,
+      "draft_action": "unchanged",
+      "dry_run": false,
+      "errors": [],
+      "needs_review": 2,
+      "product_id": "unit-hbridge-be6746009602",
+      "product_name": "Unit HBridge",
+      "publish_action": "unchanged",
+      "sha256": "00252936e5a5e6355692c1f00d55665806306c231a6807278f4ec6143d33e4ed",
+      "status": "valid",
+      "uncertain_facts": 2
+    }
+  ],
+  "schema_version": 1
+}

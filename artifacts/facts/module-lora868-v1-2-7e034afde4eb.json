@@ -1,0 +1,267 @@
+{
+  "schema_version": 1,
+  "generator": "schematic_describer",
+  "product": {
+    "product_id": "module-lora868-v1-2-7e034afde4eb",
+    "product_name": "Module LoRa868 v1.2",
+    "sku": "M029-V12",
+    "source_path": "module/Module-LoRa868_V1.2.md",
+    "source_sha256": "a94517d83b2cc68d608473962bade871c392fcbe241ef478e531e8e10d8b8b5a",
+    "input_sha256": "6898340c2e9020da819e63230b1d28734eb63ebcda7543e0ff0d900b5db1e0eb"
+  },
+  "schematic_assets": [
+    {
+      "sha256": "4bf982015f09ceac8bbd0816d8e5051e9b5731bab5bb5f779baf719160637a9a",
+      "source_url": "https://m5stack-doc.oss-cn-shenzhen.aliyuncs.com/639/SCH_Module_LoRa_SX1262_V1.0_sch_01.png",
+      "pages": [1]
+    }
+  ],
+  "summary": "Module LoRa868 v1.2 以 U2 E22-900M22S 为无线模组，通过 SPI 的 MOSI、MISO、SCK 连接 J2 M5Stack_BUS。SW1 八位拨码开关为 RST、BUSY 和 NSS 提供多组主机 GPIO 选择，SW2 三位拨码开关为 IRQ 提供 GPIO35/GPIO34/GPIO26 选择。J2 pin28 的 +5 V 经 U1 VRH3301NLEX 转换为 +3.3 V，再通过 FB1 向 U2 VCC 供电；原理图只画出 U2 ANT pin21，未展开外部天线连接器。",
+  "keywords": [
+    "Module LoRa868 v1.2", "M029-V12", "E22-900M22S", "SX1262", "VRH3301NLEX", "M5Stack_BUS", "SPI", "MOSI", "MISO", "SCK", "NSS", "BUSY", "RST", "NRST", "IRQ", "DIO1", "ANT", "SW DIP-8", "SW DIP-3", "GPIO23", "GPIO19", "GPIO18", "GPIO25", "GPIO13", "GPIO36", "GPIO2", "GPIO15", "GPIO12", "GPIO5", "GPIO0", "GPIO35", "GPIO34", "GPIO26", "R1 33R", "FB1 120Ω/MB", "+5V", "+3.3V", "SMA", "868MHz", "850-930MHz"
+  ],
+  "components": [
+    {
+      "reference": "U2",
+      "part_number": "E22-900M22S",
+      "role": "LoRa 无线模组，提供 SPI、NRST、BUSY、DIO1/IRQ、ANT 与 3.3 V 电源接口",
+      "evidence": [{"asset_sha256": "4bf982015f09ceac8bbd0816d8e5051e9b5731bab5bb5f779baf719160637a9a", "page": 1, "locator": "B1-C2 U2 E22-900M22S pins1-22"}]
+    },
+    {
+      "reference": "U1",
+      "part_number": "VRH3301NLEX",
+      "role": "从 +5 V 产生 +3.3 V 的稳压器，EN 直接接 +5 V",
+      "evidence": [{"asset_sha256": "4bf982015f09ceac8bbd0816d8e5051e9b5731bab5bb5f779baf719160637a9a", "page": 1, "locator": "A1-A2 U1 VRH3301NLEX pins1-5"}]
+    },
+    {
+      "reference": "SW1",
+      "part_number": "SW DIP-8",
+      "role": "为 RST、BUSY 和 NSS 选择多个 M5-Bus GPIO 的八位拨码开关",
+      "evidence": [{"asset_sha256": "4bf982015f09ceac8bbd0816d8e5051e9b5731bab5bb5f779baf719160637a9a", "page": 1, "locator": "B3-C3 SW1 SW DIP-8 pins1-16"}]
+    },
+    {
+      "reference": "SW2",
+      "part_number": "SW DIP-3",
+      "role": "为 IRQ 选择 GPIO35、GPIO34 或 GPIO26 的三位拨码开关",
+      "evidence": [{"asset_sha256": "4bf982015f09ceac8bbd0816d8e5051e9b5731bab5bb5f779baf719160637a9a", "page": 1, "locator": "C3 SW2 SW DIP-3 pins1-6"}]
+    },
+    {
+      "reference": "J2",
+      "part_number": "M5Stack_BUS",
+      "role": "30 针主机接口，提供 +5 V、HPWR、SPI 与可切换的 RST/BUSY/NSS/IRQ GPIO",
+      "evidence": [{"asset_sha256": "4bf982015f09ceac8bbd0816d8e5051e9b5731bab5bb5f779baf719160637a9a", "page": 1, "locator": "B4-C4 J2 M5Stack_BUS pins1-30"}]
+    },
+    {
+      "reference": "FB1",
+      "part_number": "120Ω/MB",
+      "role": "+3.3 V 到 U2 VCC 的串联磁珠/滤波器件",
+      "evidence": [{"asset_sha256": "4bf982015f09ceac8bbd0816d8e5051e9b5731bab5bb5f779baf719160637a9a", "page": 1, "locator": "C1 FB1 120Ω/MB、U2 VCC pin9"}]
+    },
+    {
+      "reference": "R1",
+      "part_number": "33R",
+      "role": "U2 SCK 到 J2 GPIO18/pin11 的串联阻尼电阻",
+      "evidence": [{"asset_sha256": "4bf982015f09ceac8bbd0816d8e5051e9b5731bab5bb5f779baf719160637a9a", "page": 1, "locator": "C4 SCK/R1 33R/J2 pin11"}]
+    },
+    {
+      "reference": "C1-C6",
+      "part_number": "22uF / 100nF",
+      "role": "U1 输入/输出及 U2 VCC 的电源储能和高频去耦",
+      "evidence": [{"asset_sha256": "4bf982015f09ceac8bbd0816d8e5051e9b5731bab5bb5f779baf719160637a9a", "page": 1, "locator": "A1-A2 C1-C4；C1 C5/C6"}]
+    }
+  ],
+  "facts": [
+    {
+      "id": "system.architecture",
+      "category": "system",
+      "subject": "Module LoRa868 v1.2 系统架构",
+      "statement": "U2 E22-900M22S 通过固定 SPI 与可拨码选择的 RST/BUSY/NSS/IRQ 连接 J2 M5Stack_BUS，U1 将 +5 V 转换为 +3.3 V 并经 FB1 为模组供电。",
+      "confidence": "confirmed",
+      "attributes": {"radio_module": "U2 E22-900M22S", "host": "J2 M5Stack_BUS", "bus": "SPI", "switched_controls": "RST, BUSY, NSS, IRQ", "power": "+5V -> U1 VRH3301NLEX -> +3.3V -> FB1 -> U2 VCC"},
+      "evidence": [{"asset_sha256": "4bf982015f09ceac8bbd0816d8e5051e9b5731bab5bb5f779baf719160637a9a", "page": 1, "locator": "整页 U1/U2/SW1/SW2/J2 连接"}]
+    },
+    {
+      "id": "component.module-pinout",
+      "category": "component",
+      "subject": "E22-900M22S 引脚分组",
+      "statement": "U2 pins1-5、10-12、20、22 为 GND，pin9 VCC，pin13 DIO1/IRQ，pin14 BUSY，pin15 NRST/RST，pins16/17/18/19 为 MISO/MOSI/SCK/NSS，pin21 ANT；RXEN/TXEN/DIO2 pins6-8 未连接。",
+      "confidence": "confirmed",
+      "attributes": {"ground": "pins1-5/10-12/20/22", "power": "pin9 VCC", "irq": "pin13 DIO1", "busy": "pin14 BUSY", "reset": "pin15 NRST", "spi": "pin16 MISO; pin17 MOSI; pin18 SCK; pin19 NSS", "rf": "pin21 ANT", "unused": "pin6 RXEN; pin7 TXEN; pin8 DIO2"},
+      "evidence": [{"asset_sha256": "4bf982015f09ceac8bbd0816d8e5051e9b5731bab5bb5f779baf719160637a9a", "page": 1, "locator": "B1-C2 U2 pins1-22 labels"}]
+    },
+    {
+      "id": "power.regulator",
+      "category": "power",
+      "subject": "+5 V 至 +3.3 V 稳压",
+      "statement": "J2 pin28 的 +5 V 连接 U1 VIN pin4 和 EN pin3，U1 VOUT pin1 形成 +3.3 V；VSS pins2/5 接 GND。",
+      "confidence": "confirmed",
+      "attributes": {"input": "+5V from J2 pin28", "regulator": "U1 VRH3301NLEX", "vin": "pin4", "enable": "pin3 tied +5V", "output": "pin1 +3.3V", "ground": "pins2/5"},
+      "evidence": [{"asset_sha256": "4bf982015f09ceac8bbd0816d8e5051e9b5731bab5bb5f779baf719160637a9a", "page": 1, "locator": "A1-A2 +5V/U1/+3.3V；C4 J2 pin28"}]
+    },
+    {
+      "id": "power.regulator-decoupling",
+      "category": "power",
+      "subject": "稳压器输入输出电容",
+      "statement": "U1 输入配置 C1 22 uF 与 C2 100 nF，输出配置 C3 22 uF 与 C4 100 nF，全部对地。",
+      "confidence": "confirmed",
+      "attributes": {"input_caps": "C1 22uF; C2 100nF", "output_caps": "C3 22uF; C4 100nF", "input_rail": "+5V", "output_rail": "+3.3V"},
+      "evidence": [{"asset_sha256": "4bf982015f09ceac8bbd0816d8e5051e9b5731bab5bb5f779baf719160637a9a", "page": 1, "locator": "A1-A2 U1/C1-C4"}]
+    },
+    {
+      "id": "power.module-filter",
+      "category": "power",
+      "subject": "无线模组 VCC 滤波",
+      "statement": "+3.3 V 经 FB1 120 Ω/MB 串联到 U2 VCC pin9，VCC 节点由 C5 22 uF 与 C6 100 nF 对地去耦。",
+      "confidence": "confirmed",
+      "attributes": {"source": "+3.3V", "filter": "FB1 120Ω/MB", "rail": "VCC", "load": "U2 pin9", "decoupling": "C5 22uF; C6 100nF"},
+      "evidence": [{"asset_sha256": "4bf982015f09ceac8bbd0816d8e5051e9b5731bab5bb5f779baf719160637a9a", "page": 1, "locator": "C1 +3.3V/FB1/VCC/C5/C6/U2 pin9"}]
+    },
+    {
+      "id": "bus.spi",
+      "category": "bus",
+      "subject": "E22-900M22S SPI 主机连接",
+      "statement": "U2 MOSI pin17 直接连接 J2 pin7/GPIO23，MISO pin16 直接连接 J2 pin9/GPIO19，SCK pin18 经 R1 33 Ω 连接 J2 pin11/GPIO18；NSS 由 SW1 选择。",
+      "confidence": "confirmed",
+      "attributes": {"device": "U2 E22-900M22S", "mosi": "J2 pin7 GPIO23 -> U2 pin17 MOSI", "miso": "U2 pin16 MISO -> J2 pin9 GPIO19", "clock": "J2 pin11 GPIO18 -> R1 33R -> U2 pin18 SCK", "chip_select": "U2 pin19 NSS via SW1", "direction": "MOSI/SCK/NSS host-to-module; MISO module-to-host"},
+      "evidence": [{"asset_sha256": "4bf982015f09ceac8bbd0816d8e5051e9b5731bab5bb5f779baf719160637a9a", "page": 1, "locator": "C2 U2 pins16-19；C4 J2 pins7/9/11 and R1"}]
+    },
+    {
+      "id": "gpio.reset-switch",
+      "category": "gpio",
+      "subject": "RST GPIO 选择",
+      "statement": "U2 NRST pin15 的 RST 网络连接 SW1 公共侧 pins9/10，可通过开关选择 GPIO25/J2 pin8 或 GPIO13/J2 pin22。",
+      "confidence": "confirmed",
+      "attributes": {"source": "U2 NRST pin15", "net": "RST", "switch": "SW1 pins9/10", "option_1": "GPIO25 J2 pin8", "option_2": "GPIO13 J2 pin22", "direction": "host-to-module"},
+      "evidence": [{"asset_sha256": "4bf982015f09ceac8bbd0816d8e5051e9b5731bab5bb5f779baf719160637a9a", "page": 1, "locator": "C2 RST；B3-C3 SW1 rows GPIO25/GPIO13；J2 pins8/22"}]
+    },
+    {
+      "id": "gpio.busy-switch",
+      "category": "gpio",
+      "subject": "BUSY GPIO 选择",
+      "statement": "U2 BUSY pin14 连接 SW1 公共侧 pins11/12，可通过开关选择 GPIO36/J2 pin4 或 GPIO2/J2 pin19。",
+      "confidence": "confirmed",
+      "attributes": {"source": "U2 BUSY pin14", "net": "BUSY", "switch": "SW1 pins11/12", "option_1": "GPIO36 J2 pin4", "option_2": "GPIO2 J2 pin19", "direction": "module-to-host"},
+      "evidence": [{"asset_sha256": "4bf982015f09ceac8bbd0816d8e5051e9b5731bab5bb5f779baf719160637a9a", "page": 1, "locator": "C2 BUSY；B3-C3 SW1 rows GPIO36/GPIO2；J2 pins4/19"}]
+    },
+    {
+      "id": "gpio.nss-switch",
+      "category": "gpio",
+      "subject": "NSS GPIO 选择",
+      "statement": "U2 NSS pin19 连接 SW1 公共侧 pins13-16，可通过四个开关选择 GPIO15/J2 pin23、GPIO12/J2 pin21、GPIO5/J2 pin20 或 GPIO0/J2 pin24。",
+      "confidence": "confirmed",
+      "attributes": {"source": "U2 NSS pin19", "net": "NSS", "switch": "SW1 pins13-16", "options": "GPIO15 pin23; GPIO12 pin21; GPIO5 pin20; GPIO0 pin24", "direction": "host-to-module"},
+      "evidence": [{"asset_sha256": "4bf982015f09ceac8bbd0816d8e5051e9b5731bab5bb5f779baf719160637a9a", "page": 1, "locator": "C2 NSS；B3-C3 SW1 rows GPIO15/GPIO12/GPIO5/GPIO0；J2"}]
+    },
+    {
+      "id": "gpio.irq-switch",
+      "category": "gpio",
+      "subject": "IRQ GPIO 选择",
+      "statement": "U2 DIO1 pin13 的 IRQ 网络连接 SW2 公共侧 pins4-6，可通过三个开关选择 GPIO35/J2 pin2、GPIO34/J2 pin26 或 GPIO26/J2 pin10。",
+      "confidence": "confirmed",
+      "attributes": {"source": "U2 DIO1 pin13", "net": "IRQ", "switch": "SW2 pins4-6", "options": "GPIO35 pin2; GPIO34 pin26; GPIO26 pin10", "direction": "module-to-host"},
+      "evidence": [{"asset_sha256": "4bf982015f09ceac8bbd0816d8e5051e9b5731bab5bb5f779baf719160637a9a", "page": 1, "locator": "C2 IRQ；C3 SW2 GPIO35/GPIO34/GPIO26；J2 pins2/26/10"}]
+    },
+    {
+      "id": "reset.radio",
+      "category": "reset",
+      "subject": "无线模组复位",
+      "statement": "U2 NRST pin15 仅通过 RST 网络与 SW1 相连，页面未画外部上拉、下拉或 RC 复位网络。",
+      "confidence": "confirmed",
+      "attributes": {"target": "U2 NRST pin15", "net": "RST", "host_selection": "SW1 GPIO25/GPIO13", "pullup": "not shown", "pulldown": "not shown", "rc": "not shown"},
+      "evidence": [{"asset_sha256": "4bf982015f09ceac8bbd0816d8e5051e9b5731bab5bb5f779baf719160637a9a", "page": 1, "locator": "U2 NRST pin15-to-RST direct line and SW1"}]
+    },
+    {
+      "id": "interface.m5bus",
+      "category": "interface",
+      "subject": "M5Stack_BUS 已用网络",
+      "statement": "J2 使用 pins1/3/5 GND、pin7 GPIO23/MOSI、pin9 GPIO19/MISO、pin11 GPIO18/SCK、pin28 +5 V；拨码候选为 pins2/26/10 GPIO35/GPIO34/GPIO26（IRQ）、pins8/22 GPIO25/GPIO13（RST）、pins4/19 GPIO36/GPIO2（BUSY）及 pins23/21/20/24 GPIO15/GPIO12/GPIO5/GPIO0（NSS）。",
+      "confidence": "confirmed",
+      "attributes": {"ground": "pins1/3/5", "spi": "pin7 GPIO23 MOSI; pin9 GPIO19 MISO; pin11 GPIO18 SCK", "irq": "pin2 GPIO35; pin26 GPIO34; pin10 GPIO26", "reset": "pin8 GPIO25; pin22 GPIO13", "busy": "pin4 GPIO36; pin19 GPIO2", "nss": "pin23 GPIO15; pin21 GPIO12; pin20 GPIO5; pin24 GPIO0", "power": "pin28 +5V", "hpwr": "pins25/27/29 tied HPWR", "battery": "pin30 BAT not connected"},
+      "evidence": [{"asset_sha256": "4bf982015f09ceac8bbd0816d8e5051e9b5731bab5bb5f779baf719160637a9a", "page": 1, "locator": "B4-C4 J2 M5Stack_BUS pins1-30"}]
+    },
+    {
+      "id": "interface.unused-radio-pins",
+      "category": "interface",
+      "subject": "未使用的 RXEN/TXEN/DIO2",
+      "statement": "U2 RXEN pin6、TXEN pin7 与 DIO2 pin8 在页面上标记为未连接，没有路由到 J2 或开关。",
+      "confidence": "confirmed",
+      "attributes": {"unused": "RXEN pin6; TXEN pin7; DIO2 pin8", "host_route": "none shown"},
+      "evidence": [{"asset_sha256": "4bf982015f09ceac8bbd0816d8e5051e9b5731bab5bb5f779baf719160637a9a", "page": 1, "locator": "C1 U2 pins6-8 red no-connect marks"}]
+    },
+    {
+      "id": "protection.interfaces",
+      "category": "protection",
+      "subject": "接口保护器件",
+      "statement": "SPI、RST、BUSY、NSS、IRQ 与 ANT 路径上未画 ESD/TVS、串联保护或射频匹配器件；只有 SCK 配置 R1 33 Ω 串联电阻。",
+      "confidence": "confirmed",
+      "attributes": {"esd_tvs": "not shown", "rf_matching": "not shown", "spi_series": "R1 33R on SCK only", "control_series": "not shown"},
+      "evidence": [{"asset_sha256": "4bf982015f09ceac8bbd0816d8e5051e9b5731bab5bb5f779baf719160637a9a", "page": 1, "locator": "U2-to-SW1/SW2/J2 direct signal paths and ANT pin21"}]
+    },
+    {
+      "id": "component.internal-radio-chip",
+      "category": "component",
+      "subject": "SX1262 内部芯片",
+      "statement": "产品正文称 E22-900M22S 基于 SX1262，但原理图只把 U2 作为完整模组并标 E22-900M22S，没有单独显示 SX1262 位号。",
+      "confidence": "uncertain",
+      "attributes": {"schematic_module": "E22-900M22S", "document_chip": "SX1262", "chip_reference": "not shown"},
+      "evidence": [{"asset_sha256": "4bf982015f09ceac8bbd0816d8e5051e9b5731bab5bb5f779baf719160637a9a", "page": 1, "locator": "U2 E22-900M22S module block"}]
+    },
+    {
+      "id": "rf.frequency-performance",
+      "category": "rf",
+      "subject": "频段与射频性能",
+      "statement": "产品正文列出 850-930 MHz、+22 dBm、-147 dBm、4 km 与最高 300 kbps，但这些频段和性能数值未印在原理图。",
+      "confidence": "uncertain",
+      "attributes": {"document_band": "850-930MHz", "document_power": "+22dBm", "document_sensitivity": "-147dBm", "document_distance": "4km at 125KHz", "document_bitrate": "300kbps", "schematic_parameters": "not shown"},
+      "evidence": [{"asset_sha256": "4bf982015f09ceac8bbd0816d8e5051e9b5731bab5bb5f779baf719160637a9a", "page": 1, "locator": "U2 block lacks RF performance table"}]
+    },
+    {
+      "id": "rf.external-antenna",
+      "category": "rf",
+      "subject": "外置 SMA 天线",
+      "statement": "产品正文称默认外置 SMA 天线，原理图仅显示 U2 ANT pin21 的短引出线，没有 SMA 连接器位号、匹配网络或天线规格。",
+      "confidence": "uncertain",
+      "attributes": {"document_connector": "SMA", "document_antenna": "5dBi 195 x 13mm", "schematic_rf_pin": "U2 ANT pin21", "connector_reference": null, "matching": "not shown"},
+      "evidence": [{"asset_sha256": "4bf982015f09ceac8bbd0816d8e5051e9b5731bab5bb5f779baf719160637a9a", "page": 1, "locator": "U2 pin21 ANT without downstream connector"}]
+    },
+    {
+      "id": "power.consumption",
+      "category": "power",
+      "subject": "休眠、待机与收发电流",
+      "statement": "产品正文给出多组 5 V 休眠、待机、接收与发送电流，但原理图没有测试条件、电流测量点或带宽/功率配置。",
+      "confidence": "uncertain",
+      "attributes": {"document_sleep": "5V@26.31uA", "document_standby": "5V@529.34uA", "document_rx": "5V@2.75mA or 8.62mA", "document_tx": "5V@11.08mA or 79.52mA", "schematic_measurement": "not shown"},
+      "evidence": [{"asset_sha256": "4bf982015f09ceac8bbd0816d8e5051e9b5731bab5bb5f779baf719160637a9a", "page": 1, "locator": "+5V/U1/U2 power path lacks current annotations"}]
+    }
+  ],
+  "needs_review": [
+    {
+      "id": "review.internal-radio-chip",
+      "fact_id": "component.internal-radio-chip",
+      "question": "请用 E22-900M22S BOM 或模组规格确认内部射频芯片为 SX1262。",
+      "reason": "原理图只显示完整模组，没有展开内部芯片。",
+      "evidence": [{"asset_sha256": "4bf982015f09ceac8bbd0816d8e5051e9b5731bab5bb5f779baf719160637a9a", "page": 1, "locator": "U2 E22-900M22S"}]
+    },
+    {
+      "id": "review.frequency-performance",
+      "fact_id": "rf.frequency-performance",
+      "question": "请用已确认模组版本的数据手册和测试配置复核频段、功率、灵敏度、距离与比特率。",
+      "reason": "这些参数未印在原理图。",
+      "evidence": [{"asset_sha256": "4bf982015f09ceac8bbd0816d8e5051e9b5731bab5bb5f779baf719160637a9a", "page": 1, "locator": "U2 module block"}]
+    },
+    {
+      "id": "review.external-antenna",
+      "fact_id": "rf.external-antenna",
+      "question": "请用 PCB、BOM 和装配资料确认 SMA 连接器、匹配网络及随附天线规格。",
+      "reason": "原理图在 ANT pin21 后没有画出连接器。",
+      "evidence": [{"asset_sha256": "4bf982015f09ceac8bbd0816d8e5051e9b5731bab5bb5f779baf719160637a9a", "page": 1, "locator": "U2 ANT pin21"}]
+    },
+    {
+      "id": "review.power-consumption",
+      "fact_id": "power.consumption",
+      "question": "请按明确频宽、发射功率、供电和固件模式复测休眠、待机、接收与发送电流。",
+      "reason": "原理图没有电流值或测试条件。",
+      "evidence": [{"asset_sha256": "4bf982015f09ceac8bbd0816d8e5051e9b5731bab5bb5f779baf719160637a9a", "page": 1, "locator": "+5V/U1/U2 power path"}]
+    }
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "dry_run": false,
+  "failed": 0,
+  "published": 1,
+  "results": [
+    {
+      "backup": null,
+      "draft_action": "unchanged",
+      "dry_run": false,
+      "errors": [],
+      "needs_review": 1,
+      "product_id": "unit-glass2-f68c9376b2f6",
+      "product_name": "Unit Glass2",
+      "publish_action": "unchanged",
+      "sha256": "bae587ad23edc072a8ecd0deff25f463d9fe1c72009497375bbfc6af561514b8",
+      "status": "valid",
+      "uncertain_facts": 1
+    }
+  ],
+  "schema_version": 1
+}

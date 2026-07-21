@@ -1,0 +1,21 @@
+{
+  "dry_run": false,
+  "failed": 0,
+  "published": 1,
+  "results": [
+    {
+      "backup": null,
+      "draft_action": "unchanged",
+      "dry_run": false,
+      "errors": [],
+      "needs_review": 11,
+      "product_id": "m5camera-24cee0cc02a5",
+      "product_name": "M5Camera",
+      "publish_action": "unchanged",
+      "sha256": "7ce1c65834cb9900e28535f07a50ef45342f7ea1451fd4584f87b79fdc7fc817",
+      "status": "valid",
+      "uncertain_facts": 11
+    }
+  ],
+  "schema_version": 1
+}

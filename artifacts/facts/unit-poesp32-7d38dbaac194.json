@@ -1,0 +1,269 @@
+{
+  "schema_version": 1,
+  "generator": "schematic_describer",
+  "product": {
+    "product_id": "unit-poesp32-7d38dbaac194",
+    "product_name": "Unit PoESP32",
+    "sku": "U138",
+    "source_path": "unit/poesp32.md",
+    "source_sha256": "c1695baba80160e689b2fd10526d1c34a487e5d3576b6a595eed714642a563a7",
+    "input_sha256": "5b35042f293d7b792aaa9e8b995775639ed92f5c03fbc3e9414ba3bf301b3b54"
+  },
+  "schematic_assets": [
+    {
+      "sha256": "86a065363241b888ca2fd5549bae4bc5f2bd954b28323c0cef3bacf915e69724",
+      "source_url": "https://m5stack-doc.oss-cn-shenzhen.aliyuncs.com/597/SCH_UNIT-PoESP32_sch_01.png",
+      "pages": [1]
+    }
+  ],
+  "summary": "Unit PoESP32（U138）由 U3 ESP-WROOM-32U/D 主控模组、U2 IP101G RMII 以太网 PHY、U1 HBJ-6308ANLF 磁性 RJ45 和 M2 WC-PD06H050A PoE 电源模组组成。ESP32 通过 GPIO21/19/22/25/26/27 连接 RMII，通过 GPIO23/18 连接 MDC/MDIO，并以 GPIO5 控制 PHY RESET_N；PHY 使用 Y1 25MHz 晶振。PoE 输出经 F1 进入 +5V，VR1 AMS1117-3.3 生成 3V3，再由 R20/R21 分成 IO3V3/A3V3；J1 提供 UART/+5V，J2 提供下载口。原理图未明确 ESP-WROOM-32U 与 32D 的实际装配选择、PHY 数字地址、PoE/以太网额定参数和固件协议。",
+  "keywords": [
+    "Unit PoESP32", "U138", "ESP-WROOM-32U/D", "IP101G", "HBJ-6308ANLF",
+    "WC-PD06H050A", "AMS1117-3.3", "RMII", "MDC", "MDIO", "GPIO21 TXEN",
+    "GPIO19 TXD0", "GPIO22 TXD1", "GPIO25 RXD0", "GPIO26 RXD1", "GPIO27 CRS_DV",
+    "GPIO23 MDC", "GPIO18 MDIO", "GPIO5 RESET_N", "GPIO0 REF_CLK_50M", "25MHz",
+    "TD+", "TD-", "RD+", "RD-", "PoE", "+5V", "3V3", "IO3V3", "A3V3",
+    "J1 HY-2.0_UART", "J2 DownloadSocket", "P1 P2 Header 5X2", "UTXD0", "URXD0",
+    "TXD", "RXD", "EN", "G0", "F1 Fuse"
+  ],
+  "components": [
+    {
+      "reference": "U3", "part_number": "ESP-WROOM-32U/D",
+      "role": "ESP32 主控模组，提供 RMII/SMI、UART、PHY 复位、启动与下载信号",
+      "evidence": [{"asset_sha256": "86a065363241b888ca2fd5549bae4bc5f2bd954b28323c0cef3bacf915e69724", "page": 1, "locator": "页面 C1:D2 U3 ESP-WROOM-32U/D，pins 1~39 与 G0/G5/G18/G19/G21/G22/G23/G25/G26/G27、UART、EN"}]
+    },
+    {
+      "reference": "U2", "part_number": "IP101G",
+      "role": "RMII 以太网 PHY，连接 ESP32、25MHz 晶振与 RJ45 MDI 差分对",
+      "evidence": [{"asset_sha256": "86a065363241b888ca2fd5549bae4bc5f2bd954b28323c0cef3bacf915e69724", "page": 1, "locator": "页面 A2:C3 U2 IP101G，TX/RX RMII、MDC/MDIO、RESET_N、MDI_TP/TN/RP/RN、X1/X2、LED/PHY_AD 引脚"}]
+    },
+    {
+      "reference": "U1", "part_number": "HBJ-6308ANLF",
+      "role": "带磁性器件、状态 LED 与 PoE 中心抽头的 RJ45 连接器",
+      "evidence": [{"asset_sha256": "86a065363241b888ca2fd5549bae4bc5f2bd954b28323c0cef3bacf915e69724", "page": 1, "locator": "页面 A1:B2 U1 HBJ-6308ANLF，TD+/TD-/RD+/RD-、VC/VC2、Y/G LED 引脚"}]
+    },
+    {
+      "reference": "M2", "part_number": "WC-PD06H050A",
+      "role": "PoE 受电电源模组，从 VA/VB 输入产生 +5V 与 GND",
+      "evidence": [{"asset_sha256": "86a065363241b888ca2fd5549bae4bc5f2bd954b28323c0cef3bacf915e69724", "page": 1, "locator": "页面 A4 M2 WC-PD06H050A，pins 1~4 VA1/VA2/VB1/VB2，pin 5 GND，pin 6 +5V"}]
+    },
+    {
+      "reference": "VR1", "part_number": "AMS1117-3.3",
+      "role": "将 +5V 稳压为 3V3",
+      "evidence": [{"asset_sha256": "86a065363241b888ca2fd5549bae4bc5f2bd954b28323c0cef3bacf915e69724", "page": 1, "locator": "页面 A1 VR1 AMS1117-3.3，Vin +5V、Vout 3V3、GND"}]
+    },
+    {
+      "reference": "J1", "part_number": "HY-2.0_UART",
+      "role": "四针主机 UART 与 +5V 电源接口",
+      "evidence": [{"asset_sha256": "86a065363241b888ca2fd5549bae4bc5f2bd954b28323c0cef3bacf915e69724", "page": 1, "locator": "页面 B4 J1 HY-2.0_UART，pin 1 RX/TXD_1、pin 2 TX/RXD_1、pin 3 +5V、pin 4 GND"}]
+    },
+    {
+      "reference": "P1/P2", "part_number": "Header 5X2 排针/排母",
+      "role": "芯片板与 PoE 基板之间的十针板间接口，承载 PoE 抽头、+5V、UART、RST、CFG 与 GND",
+      "evidence": [{"asset_sha256": "86a065363241b888ca2fd5549bae4bc5f2bd954b28323c0cef3bacf915e69724", "page": 1, "locator": "页面 B4/C4 P2 Header 5X2 排母与 P1 Header 5X2 排针的 pins 1~10 网络"}]
+    },
+    {
+      "reference": "J2", "part_number": "DownloadSocket",
+      "role": "ESP32 六针下载接口，包含 3V3、UART0、EN、GPIO0 与 GND",
+      "evidence": [{"asset_sha256": "86a065363241b888ca2fd5549bae4bc5f2bd954b28323c0cef3bacf915e69724", "page": 1, "locator": "页面 D4 J2 DownloadSocket，pins 1~6 +3.3V/TXD/RXD/EN/G0/GND"}]
+    },
+    {
+      "reference": "Y1", "part_number": "25MHz 12PF 10PPM",
+      "role": "IP101G 外部 25MHz 晶振",
+      "evidence": [{"asset_sha256": "86a065363241b888ca2fd5549bae4bc5f2bd954b28323c0cef3bacf915e69724", "page": 1, "locator": "页面 A3 Y1 25MHZ 12PF 10PPM，连接 U2 X1/X2，C1/C2 各 20pF 到 GND"}]
+    },
+    {
+      "reference": "F1", "part_number": "Fuse",
+      "role": "M2 +5V 输出到系统 +5V 电源轨的串联保险丝",
+      "evidence": [{"asset_sha256": "86a065363241b888ca2fd5549bae4bc5f2bd954b28323c0cef3bacf915e69724", "page": 1, "locator": "页面 A4 M2 pin 6 +5V-F1 Fuse-+5V"}]
+    },
+    {
+      "reference": "R16/C16", "part_number": "10KΩ/1uF",
+      "role": "ESP32 EN 的 3V3 上拉与对地延时电容",
+      "evidence": [{"asset_sha256": "86a065363241b888ca2fd5549bae4bc5f2bd954b28323c0cef3bacf915e69724", "page": 1, "locator": "页面 C1 3V3-R16 10KΩ-EN-C16 1uF-GND 与 U3 EN pin3"}]
+    },
+    {
+      "reference": "R18/R19", "part_number": "470Ω/20KΩ",
+      "role": "ESP32 GPIO0 与 PHY REF_CLK_50M 共用启动/时钟偏置网络",
+      "evidence": [{"asset_sha256": "86a065363241b888ca2fd5549bae4bc5f2bd954b28323c0cef3bacf915e69724", "page": 1, "locator": "页面 D2 U3 IO0/G0-R18 470Ω-REF_CLK_50M，R19 20KΩ 到 3V3，节点标 1.7V"}]
+    },
+    {
+      "reference": "R20/R21", "part_number": "0Ω",
+      "role": "3V3 到 IO3V3 与 A3V3 的电源分支跳线",
+      "evidence": [{"asset_sha256": "86a065363241b888ca2fd5549bae4bc5f2bd954b28323c0cef3bacf915e69724", "page": 1, "locator": "页面 A2 3V3 经 R20 0Ω 到 IO3V3、经 R21 0Ω 到 A3V3"}]
+    },
+    {
+      "reference": "R4/R5", "part_number": "1KΩ",
+      "role": "U1 LINK/ACT LED 的 3V3 限流电阻",
+      "evidence": [{"asset_sha256": "86a065363241b888ca2fd5549bae4bc5f2bd954b28323c0cef3bacf915e69724", "page": 1, "locator": "页面 B1 U1 Y+/G+ 经 R4/R5 1KΩ 接 3V3，Y-/G- 接 LINKLED/ACTLED"}]
+    }
+  ],
+  "facts": [
+    {
+      "id": "system.poesp32-architecture", "category": "system", "subject": "Unit PoESP32 系统架构",
+      "statement": "芯片板由 U3 ESP-WROOM-32U/D、U2 IP101G、U1 HBJ-6308ANLF、VR1 与 P1 组成；基板由 M2 WC-PD06H050A、F1、P2 与 J1 UART 组成，J2 提供 ESP32 下载。",
+      "confidence": "confirmed",
+      "attributes": {"controller": "U3 ESP-WROOM-32U/D", "phy": "U2 IP101G", "rj45": "U1 HBJ-6308ANLF", "poe": "M2 WC-PD06H050A", "regulator": "VR1 AMS1117-3.3", "host_uart": "J1 HY-2.0_UART", "download": "J2 DownloadSocket"},
+      "evidence": [{"asset_sha256": "86a065363241b888ca2fd5549bae4bc5f2bd954b28323c0cef3bacf915e69724", "page": 1, "locator": "整页 UNIT-PoESP32-CHIP 与 UNIT-PoESP32-BASE 两大分区"}]
+    },
+    {
+      "id": "bus.rmii-map", "category": "bus", "subject": "ESP32 到 IP101G RMII",
+      "statement": "ESP32 GPIO21/GPIO19/GPIO22/GPIO25/GPIO26/GPIO27 分别连接 IP101G TXEN/TXD0/TXD1/RXD0/RXD1/CRS_DV。",
+      "confidence": "confirmed",
+      "attributes": {"tx_en": "U3 GPIO21 pin33 -> U2 TXEN", "txd0": "U3 GPIO19 pin31 -> U2 TXD0 pin9", "txd1": "U3 GPIO22 pin36 -> U2 TXD1", "rxd0": "U3 GPIO25 pin10 -> U2 RXD0", "rxd1": "U3 GPIO26 pin11 -> U2 RXD1", "crs_dv": "U3 GPIO27 pin12 -> U2 CRS_DV"},
+      "evidence": [{"asset_sha256": "86a065363241b888ca2fd5549bae4bc5f2bd954b28323c0cef3bacf915e69724", "page": 1, "locator": "页面 B2:D2 U2 下方 RMII 网络到 U3 G21/G19/G22/G25/G26/G27"}]
+    },
+    {
+      "id": "bus.smi-map", "category": "bus", "subject": "ESP32 到 IP101G SMI 管理总线",
+      "statement": "ESP32 GPIO23 连接 IP101G MDC，GPIO18 连接 IP101G MDIO。",
+      "confidence": "confirmed", "attributes": {"mdc": "U3 GPIO23 pin37 -> U2 MDC pin22", "mdio": "U3 GPIO18 pin30 -> U2 MDIO pin21"},
+      "evidence": [{"asset_sha256": "86a065363241b888ca2fd5549bae4bc5f2bd954b28323c0cef3bacf915e69724", "page": 1, "locator": "页面 C2:D2 MDC/MDIO 网络与 U3 G23/G18"}]
+    },
+    {
+      "id": "clock.phy-crystal", "category": "clock", "subject": "IP101G 25MHz 晶振",
+      "statement": "Y1 标注 25MHz、12PF、10PPM，连接 U2 X1/X2；C1/C2 各 20pF 接地，R2 0Ω 位于晶振支路。",
+      "confidence": "confirmed", "attributes": {"crystal": "Y1 25MHz 12PF 10PPM", "phy_pins": "U2 X1/X2", "load_caps": "C1 20pF,C2 20pF", "series": "R2 0Ω"},
+      "evidence": [{"asset_sha256": "86a065363241b888ca2fd5549bae4bc5f2bd954b28323c0cef3bacf915e69724", "page": 1, "locator": "页面 A3 U2 X1/X2、Y1、C1/C2、R2"}]
+    },
+    {
+      "id": "clock.rmii-reference", "category": "clock", "subject": "RMII 50MHz 参考时钟",
+      "statement": "REF_CLK_50M 连接 IP101G TXCLK/50M_CLKI 与 ESP32 GPIO0，GPIO0 侧串联 R18 470Ω，并由 R19 20KΩ 上拉到 3V3；节点旁标注 1.7V。",
+      "confidence": "confirmed", "attributes": {"net": "REF_CLK_50M", "phy": "U2 TXCLK/50M_CLKI", "esp32": "U3 GPIO0", "series": "R18 470Ω", "pullup": "R19 20KΩ to 3V3", "annotated_voltage": "1.7V"},
+      "evidence": [{"asset_sha256": "86a065363241b888ca2fd5549bae4bc5f2bd954b28323c0cef3bacf915e69724", "page": 1, "locator": "页面 B2/D2 REF_CLK_50M、U2 pin10、U3 G0、R18/R19 与 1.7V 注释"}]
+    },
+    {
+      "id": "reset.phy-reset", "category": "reset", "subject": "IP101G RESET_N",
+      "statement": "ESP32 GPIO5 连接 RESET_N 并驱动 IP101G pin 32 RESET_N，R24 10KΩ 将 RESET_N 下拉到 GND。",
+      "confidence": "confirmed", "attributes": {"controller": "U3 GPIO5 pin29", "phy": "U2 pin32 RESET_N", "pulldown": "R24 10KΩ to GND", "active_level": "low by net name RESET_N"},
+      "evidence": [{"asset_sha256": "86a065363241b888ca2fd5549bae4bc5f2bd954b28323c0cef3bacf915e69724", "page": 1, "locator": "页面 B3/D2 U2 RESET_N、U3 G5 RESET_N 与 R24 10KΩ"}]
+    },
+    {
+      "id": "reset.esp32-enable", "category": "reset", "subject": "ESP32 EN 网络",
+      "statement": "U3 EN pin 3 连接 EN，R16 10KΩ 将 EN 上拉到 3V3，C16 1uF 将 EN 接地；J2 pin 4 引出 EN。",
+      "confidence": "confirmed", "attributes": {"module_pin": "U3 pin 3 EN", "pullup": "R16 10KΩ to 3V3", "capacitor": "C16 1uF to GND", "download": "J2 pin 4 EN"},
+      "evidence": [{"asset_sha256": "86a065363241b888ca2fd5549bae4bc5f2bd954b28323c0cef3bacf915e69724", "page": 1, "locator": "页面 C1/D4 EN、R16/C16、U3 pin3 与 J2 pin4"}]
+    },
+    {
+      "id": "gpio.esp32-boot", "category": "gpio", "subject": "ESP32 GPIO0 启动/时钟共用",
+      "statement": "U3 GPIO0 同时连接 J2 pin 5 G0 与 RMII REF_CLK_50M 偏置网络，因此该脚兼具下载启动控制和 PHY 参考时钟连接。",
+      "confidence": "confirmed", "attributes": {"module_pin": "U3 GPIO0 pin25", "download": "J2 pin5 G0", "clock": "R18 470Ω -> REF_CLK_50M", "bias": "R19 20KΩ to 3V3"},
+      "evidence": [{"asset_sha256": "86a065363241b888ca2fd5549bae4bc5f2bd954b28323c0cef3bacf915e69724", "page": 1, "locator": "页面 D2:D4 U3 G0、R18/R19、REF_CLK_50M 与 J2 G0"}]
+    },
+    {
+      "id": "analog.ethernet-mdi", "category": "analog", "subject": "IP101G 到 RJ45 差分网络",
+      "statement": "U2 MDI_TP/MDI_TN 经 TD+/TD- 连接 U1 TD+/TD-，U2 MDI_RP/MDI_RN 经 RD+/RD- 连接 U1 RD+/RD-；R6/R8/R11/R12 均为 0Ω 串联跳线。",
+      "confidence": "confirmed", "attributes": {"tx": "U2 pins30/29 MDI_TP/TN -> TD+/TD- -> U1 pins1/3", "rx": "U2 pins27/26 MDI_RP/RN -> RD+/RD- -> U1 pins4/6", "series": "R6,R8,R11,R12 0Ω"},
+      "evidence": [{"asset_sha256": "86a065363241b888ca2fd5549bae4bc5f2bd954b28323c0cef3bacf915e69724", "page": 1, "locator": "页面 B1:B3 U1/U2 间 TD+/TD-/RD+/RD- 与 R6/R8/R11/R12"}]
+    },
+    {
+      "id": "interface.rj45-poe", "category": "interface", "subject": "U1 RJ45 与 PoE 抽头",
+      "statement": "U1 HBJ-6308ANLF 提供 TD+/TD-/RD+/RD- 差分接口、LINKLED/ACTLED，以及 VC+/VC-/VC2+/VC2- 四路 PoE 中心抽头。",
+      "confidence": "confirmed", "attributes": {"ethernet": "TD+,TD-,RD+,RD-", "leds": "LINKLED,ACTLED", "poe_taps": "VC+,VC-,VC2+,VC2-", "connector": "HBJ-6308ANLF"},
+      "evidence": [{"asset_sha256": "86a065363241b888ca2fd5549bae4bc5f2bd954b28323c0cef3bacf915e69724", "page": 1, "locator": "页面 A1:B1 U1 HBJ-6308ANLF 全部引脚与网络"}]
+    },
+    {
+      "id": "interface.ethernet-leds", "category": "interface", "subject": "以太网状态 LED",
+      "statement": "U1 Y-/G- 分别连接 LINKLED/ACTLED，Y+/G+ 分别经 R4/R5 1KΩ 接 3V3；这些状态网络连接 U2 LED/PHY_AD 复用引脚。",
+      "confidence": "confirmed", "attributes": {"link": "U1 Y- LINKLED,U1 Y+ via R4 1KΩ to 3V3", "activity": "U1 G- ACTLED,U1 G+ via R5 1KΩ to 3V3", "phy_mux": "LED0/PHY_AD0,LED0/PHY_AD3"},
+      "evidence": [{"asset_sha256": "86a065363241b888ca2fd5549bae4bc5f2bd954b28323c0cef3bacf915e69724", "page": 1, "locator": "页面 B1:B2 U1 LED 引脚、R4/R5 与 U2 PHY_AD0/PHY_AD3"}]
+    },
+    {
+      "id": "power.poe-path", "category": "power", "subject": "PoE 到 +5V 路径",
+      "statement": "U1 的 VC/VC2 抽头经 P1/P2 对应网络进入 M2 VA1/VA2/VB1/VB2，M2 pin 6 输出 +5V 并经 F1 Fuse 进入系统 +5V。",
+      "confidence": "confirmed", "attributes": {"input": "VC-,VC+,VC2-,VC2+", "module": "M2 WC-PD06H050A", "output": "M2 pin6 +5V", "protection": "F1 Fuse", "rail": "+5V"},
+      "evidence": [{"asset_sha256": "86a065363241b888ca2fd5549bae4bc5f2bd954b28323c0cef3bacf915e69724", "page": 1, "locator": "页面 B1/C4 P1/P2 PoE 网络与 A4 M2/F1/+5V"}]
+    },
+    {
+      "id": "power.5v-to-3v3", "category": "power", "subject": "+5V 到 3V3 稳压",
+      "statement": "VR1 AMS1117-3.3 将 +5V 转为 3V3；输入侧 C6 100nF/C7 22uF，输出侧 C8 22uF/C9 100nF 均接地。",
+      "confidence": "confirmed", "attributes": {"regulator": "VR1 AMS1117-3.3", "input": "+5V", "output": "3V3", "input_caps": "C6 100nF,C7 22uF", "output_caps": "C8 22uF,C9 100nF"},
+      "evidence": [{"asset_sha256": "86a065363241b888ca2fd5549bae4bc5f2bd954b28323c0cef3bacf915e69724", "page": 1, "locator": "页面 A1:A2 VR1 与 C6~C9"}]
+    },
+    {
+      "id": "power.phy-rails", "category": "power", "subject": "IP101G IO/模拟电源",
+      "statement": "3V3 经 R20 0Ω 形成 IO3V3、经 R21 0Ω 形成 A3V3；U2 的 IO 电源由 IO3V3 供给，模拟电源由 A3V3 供给。",
+      "confidence": "confirmed", "attributes": {"source": "3V3", "io": "R20 0Ω -> IO3V3", "analog": "R21 0Ω -> A3V3", "phy": "U2 IP101G"},
+      "evidence": [{"asset_sha256": "86a065363241b888ca2fd5549bae4bc5f2bd954b28323c0cef3bacf915e69724", "page": 1, "locator": "页面 A2 R20/R21 与 U2 IO3V3/A3V3 电源节点"}]
+    },
+    {
+      "id": "interface.host-uart", "category": "interface", "subject": "J1 HY-2.0_UART",
+      "statement": "J1 pins 1~4 依次为 RX/TXD_1、TX/RXD_1、VCC/+5V、GND。",
+      "confidence": "confirmed", "attributes": {"pin_1": "RX-TXD_1，模块到主机", "pin_2": "TX-RXD_1，主机到模块", "pin_3": "VCC +5V", "pin_4": "GND"},
+      "evidence": [{"asset_sha256": "86a065363241b888ca2fd5549bae4bc5f2bd954b28323c0cef3bacf915e69724", "page": 1, "locator": "页面 B4 J1 HY-2.0_UART pins 1~4"}]
+    },
+    {
+      "id": "bus.host-uart", "category": "bus", "subject": "ESP32 主机 UART",
+      "statement": "ESP32 GPIO17 连接 TXD 并引到 P1，GPIO16 连接 RXD 并引到 P1；P2 侧 TXD_1/RXD_1 连接 J1 RX/TX。",
+      "confidence": "confirmed", "attributes": {"module_tx": "U3 GPIO17 pin28 TXD -> P1 pin6", "module_rx": "U3 GPIO16 pin27 RXD -> P1 pin4", "base_tx": "P2 pin6 TXD_1 -> J1 pin1 RX", "base_rx": "P2 pin8 RXD_1 -> J1 pin2 TX"},
+      "evidence": [{"asset_sha256": "86a065363241b888ca2fd5549bae4bc5f2bd954b28323c0cef3bacf915e69724", "page": 1, "locator": "页面 D2/C4 U3 IO17/IO16、P1/P2 TXD/RXD 与 B4 J1"}]
+    },
+    {
+      "id": "debug.download-pinout", "category": "debug", "subject": "J2 ESP32 下载接口",
+      "statement": "J2 pins 1~6 依次为 +3.3V、TXD/UTXD0、RXD/URXD0、EN、G0、GND。",
+      "confidence": "confirmed", "attributes": {"pin_1": "+3.3V", "pin_2": "TXD UTXD0", "pin_3": "RXD URXD0", "pin_4": "EN", "pin_5": "G0 GPIO0", "pin_6": "GND"},
+      "evidence": [{"asset_sha256": "86a065363241b888ca2fd5549bae4bc5f2bd954b28323c0cef3bacf915e69724", "page": 1, "locator": "页面 D4 J2 DownloadSocket pins 1~6 与 U3 UTXD0/URXD0/EN/G0"}]
+    },
+    {
+      "id": "protection.visible-coverage", "category": "protection", "subject": "电源与接口保护",
+      "statement": "F1 是 M2 +5V 输出的明确串联保险丝；本页未显示 UART 或以太网差分线的独立 TVS/ESD，也未显示 +5V 反接保护。",
+      "confidence": "confirmed", "attributes": {"fuse": "F1 on M2 +5V output", "uart_tvs": null, "ethernet_tvs": null, "reverse_polarity": null},
+      "evidence": [{"asset_sha256": "86a065363241b888ca2fd5549bae4bc5f2bd954b28323c0cef3bacf915e69724", "page": 1, "locator": "整页 F1、J1 UART、U1-U2 差分路径，无其他保护器件"}]
+    },
+    {
+      "id": "storage.no-external-storage", "category": "storage", "subject": "外部存储器",
+      "statement": "本页未显示独立 Flash、EEPROM、RAM 或 SD 卡；ESP-WROOM 模组内部存储未展开。",
+      "confidence": "confirmed", "attributes": {"external_flash": null, "eeprom": null, "ram": null, "sd": null, "module_internal_storage": "not expanded"},
+      "evidence": [{"asset_sha256": "86a065363241b888ca2fd5549bae4bc5f2bd954b28323c0cef3bacf915e69724", "page": 1, "locator": "整页无独立存储器件，U3 以 ESP-WROOM 模组符号表示"}]
+    },
+    {
+      "id": "component.esp-module-variant", "category": "component", "subject": "ESP-WROOM 实装变体",
+      "statement": "原理图将 U3 标为 ESP-WROOM-32U/D，未明确实际装配 32U 还是 32D，也未展开其 Flash 容量与天线实现。",
+      "confidence": "uncertain", "attributes": {"schematic_label": "ESP-WROOM-32U/D", "assembled_variant": null, "flash_capacity": null, "antenna": null},
+      "evidence": [{"asset_sha256": "86a065363241b888ca2fd5549bae4bc5f2bd954b28323c0cef3bacf915e69724", "page": 1, "locator": "页面 D1:D2 U3 下方型号文字 ESP-WROOM-32U/D"}]
+    },
+    {
+      "id": "address.phy-address", "category": "address", "subject": "IP101G PHY 地址",
+      "statement": "原理图显示 PHY_AD0 与 PHY_AD3 复用/电阻偏置网络，但没有给出最终十进制地址，因此不能仅凭本页确认 ETH_ADDR=1。",
+      "confidence": "uncertain", "attributes": {"phy": "U2 IP101G", "strap_nets": "PHY_AD0,PHY_AD3", "address": null, "candidate_from_product_doc": 1},
+      "evidence": [{"asset_sha256": "86a065363241b888ca2fd5549bae4bc5f2bd954b28323c0cef3bacf915e69724", "page": 1, "locator": "页面 B1:B2 U2 LED0/PHY_AD0、LED0/PHY_AD3 与 R22/R23/LED 网络，无地址数字"}]
+    },
+    {
+      "id": "interface.board-mating-map", "category": "interface", "subject": "P1/P2 板间配接",
+      "statement": "P1 与 P2 的同功能网络呈反向针号排列，但原理图没有直接画出机械配接；实际针脚配对和插接方向需 PCB/结构资料确认。",
+      "confidence": "uncertain", "attributes": {"p1": "VC-,CFG,VC+,RXD,VC2-,TXD,VC2+,RST,+5V,GND", "p2": "+5V,GND,VC2+_1,RST_1,VC2-_1,TXD_1,VC+_1,RXD_1,VC-_1,CFG_1", "mechanical_orientation": null},
+      "evidence": [{"asset_sha256": "86a065363241b888ca2fd5549bae4bc5f2bd954b28323c0cef3bacf915e69724", "page": 1, "locator": "页面 B4/C4 P2 排母与 P1 排针的反向网络排列，无直接连线"}]
+    },
+    {
+      "id": "other.protocol-ratings", "category": "other", "subject": "协议与电气额定参数",
+      "statement": "原理图未标注 UART 波特率/帧格式、ESP-AT 版本、TCP/MQTT/HTTP 功能、以太网 10/100M 能力、PoE 输入范围/功率或无线功能状态。",
+      "confidence": "uncertain", "attributes": {"uart_baud": null, "uart_format": null, "esp_at_version": null, "network_protocols": null, "ethernet_speed": null, "poe_input_range": null, "poe_power": null, "wireless": null},
+      "evidence": [{"asset_sha256": "86a065363241b888ca2fd5549bae4bc5f2bd954b28323c0cef3bacf915e69724", "page": 1, "locator": "整页仅器件型号和硬件连接，无固件、速率或 PoE 额定参数文字"}]
+    }
+  ],
+  "needs_review": [
+    {
+      "id": "review.esp-module-variant", "fact_id": "component.esp-module-variant",
+      "question": "U3 实际装配 ESP-WROOM-32U 还是 ESP-WROOM-32D，其 Flash 与天线配置是什么？",
+      "reason": "原理图用 32U/D 合并标签，需 BOM 或实物确认。",
+      "evidence": [{"asset_sha256": "86a065363241b888ca2fd5549bae4bc5f2bd954b28323c0cef3bacf915e69724", "page": 1, "locator": "页面 U3 型号文字 ESP-WROOM-32U/D"}]
+    },
+    {
+      "id": "review.phy-address", "fact_id": "address.phy-address",
+      "question": "IP101G 的硬件 PHY 地址是否为 1，PHY_AD0/PHY_AD3 及其他 strap 的最终采样状态是什么？",
+      "reason": "图中有复用 strap 网络，但没有地址真值表或最终地址数字。",
+      "evidence": [{"asset_sha256": "86a065363241b888ca2fd5549bae4bc5f2bd954b28323c0cef3bacf915e69724", "page": 1, "locator": "页面 U2 PHY_AD0/PHY_AD3 与 R22/R23"}]
+    },
+    {
+      "id": "review.board-mating-map", "fact_id": "interface.board-mating-map",
+      "question": "P1 排针与 P2 排母实际如何逐针配接和翻转？",
+      "reason": "本页分别列出两侧网络，但未画机械配接关系。",
+      "evidence": [{"asset_sha256": "86a065363241b888ca2fd5549bae4bc5f2bd954b28323c0cef3bacf915e69724", "page": 1, "locator": "页面 P1/P2 Header 5X2 网络排列"}]
+    },
+    {
+      "id": "review.protocol-ratings", "fact_id": "other.protocol-ratings",
+      "question": "当前硬件/固件版本的 UART、ESP-AT、网络协议、以太网速率、PoE 额定值与无线功能状态是什么？",
+      "reason": "这些参数不在原理图中，需固件版本、datasheet 与产品电气规范确认。",
+      "evidence": [{"asset_sha256": "86a065363241b888ca2fd5549bae4bc5f2bd954b28323c0cef3bacf915e69724", "page": 1, "locator": "整页 U3/U2/U1/M2/J1 硬件连接"}]
+    }
+  ]
+}

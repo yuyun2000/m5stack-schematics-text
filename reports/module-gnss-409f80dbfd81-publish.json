@@ -1,0 +1,21 @@
+{
+  "dry_run": false,
+  "failed": 0,
+  "published": 1,
+  "results": [
+    {
+      "backup": null,
+      "draft_action": "unchanged",
+      "dry_run": false,
+      "errors": [],
+      "needs_review": 4,
+      "product_id": "module-gnss-409f80dbfd81",
+      "product_name": "Module GNSS",
+      "publish_action": "unchanged",
+      "sha256": "4af106c981dfbfe5b3f1f52233a105681f202f5b2e5a05090b7018cfe17785e1",
+      "status": "valid",
+      "uncertain_facts": 4
+    }
+  ],
+  "schema_version": 1
+}

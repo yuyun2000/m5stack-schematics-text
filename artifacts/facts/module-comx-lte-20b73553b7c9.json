@@ -1,0 +1,417 @@
+{
+  "schema_version": 1,
+  "generator": "schematic_describer",
+  "product": {
+    "product_id": "module-comx-lte-20b73553b7c9",
+    "product_name": "Module COMX LTE",
+    "sku": "M031-A",
+    "source_path": "module/comx_lte.md",
+    "source_sha256": "421e1a72bf2ce08b11bceff9637e562d6a3fe3c025c8e5e783e49d280ca20376",
+    "input_sha256": "115be8710c5e049addfe04e933f32d423ace7674d99be2354cebd3b5c4d24115"
+  },
+  "schematic_assets": [
+    {
+      "sha256": "2af2c8cc6c5778a3cd6142f2eec8bb229a9448b56cbe1de6f73b3a8c1d11364b",
+      "source_url": "https://static-cdn.m5stack.com/resource/docs/products/module/comx_lte/comx_lte_sch_01.webp",
+      "pages": [1]
+    }
+  ],
+  "summary": "当前唯一原理图资源展示带 J3 Phonejack 的 COMX 通用插接底板：J1 DC 输入的 +12V 经 U7 JW5033H 降压为 +5.4V，S1 在 +12V/+5.4V 之间选择模块供电，J2 M5Stack_BUS 通过 D1/D2 接收 +5.4V，S2 六位拨码把多组 M5-Bus GPIO 路由到 RXD/TXD；U1 MIC、P5 和 J3 提供通用音频连接。页面没有 SIM7600G、MicroSIM、状态 LED、SMA、蜂窝射频或核心 USB 电路，因此 LTE Cat4、频段、速率、语音/SMS、协议和固件能力均列为待确认。",
+  "keywords": [
+    "Module COMX LTE",
+    "M031-A",
+    "COMX baseboard",
+    "SIM7600G",
+    "LTE Cat4",
+    "LTE-TDD",
+    "LTE-FDD",
+    "WCDMA",
+    "GSM",
+    "GPRS",
+    "EDGE",
+    "MicroSIM",
+    "SMA",
+    "Phonejack",
+    "3.5mm headset",
+    "JW5033H",
+    "PWR2.5",
+    "+12V",
+    "+5.4V",
+    "SW-SPDT",
+    "SW DIP-6",
+    "M5Stack_BUS",
+    "SS54",
+    "RXD",
+    "TXD",
+    "G17",
+    "G0",
+    "G13",
+    "G16",
+    "G5",
+    "G15",
+    "G25",
+    "G26",
+    "EN",
+    "MIC",
+    "O+",
+    "IN+",
+    "SS8550 Y2",
+    "UART 115200bps",
+    "AT command",
+    "RNDIS",
+    "ECM",
+    "IPv4",
+    "IPv6",
+    "FOTA",
+    "5-12V"
+  ],
+  "components": [
+    {
+      "reference": "U7",
+      "part_number": "JW5033H",
+      "role": "+12V 到 +5.4V 的底板降压转换器",
+      "evidence": [{"asset_sha256": "2af2c8cc6c5778a3cd6142f2eec8bb229a9448b56cbe1de6f73b3a8c1d11364b", "page": 1, "locator": "左上 U7 JW5033H、L1 与 +12V/+5.4V"}]
+    },
+    {
+      "reference": "J1",
+      "part_number": "PWR2.5",
+      "role": "COMX 底板外部 DC 电源输入插座",
+      "evidence": [{"asset_sha256": "2af2c8cc6c5778a3cd6142f2eec8bb229a9448b56cbe1de6f73b3a8c1d11364b", "page": 1, "locator": "左中 J1 PWR2.5，连接 +12V 与 GND"}]
+    },
+    {
+      "reference": "S1",
+      "part_number": "SW-SPDT",
+      "role": "在 +12V 与 +5.4V 之间选择 P1 插接模块供电",
+      "evidence": [{"asset_sha256": "2af2c8cc6c5778a3cd6142f2eec8bb229a9448b56cbe1de6f73b3a8c1d11364b", "page": 1, "locator": "左中 S1 SW-SPDT、+12V/+5.4V 与 P1"}]
+    },
+    {
+      "reference": "J2",
+      "part_number": "M5Stack_BUS",
+      "role": "30-pin M5-Bus 堆叠连接器",
+      "evidence": [{"asset_sha256": "2af2c8cc6c5778a3cd6142f2eec8bb229a9448b56cbe1de6f73b3a8c1d11364b", "page": 1, "locator": "右侧 J2 M5Stack_BUS pins1-30"}]
+    },
+    {
+      "reference": "S2,S3",
+      "part_number": "SW DIP-6",
+      "role": "M5-Bus UART GPIO 路由与插接模块音频/控制配置拨码开关",
+      "evidence": [{"asset_sha256": "2af2c8cc6c5778a3cd6142f2eec8bb229a9448b56cbe1de6f73b3a8c1d11364b", "page": 1, "locator": "中下 S2/S3 SW DIP-6"}]
+    },
+    {
+      "reference": "D1,D2",
+      "part_number": "SS54",
+      "role": "+5.4V 到 M5-Bus +5V/BATTERY 电源脚的肖特基隔离",
+      "evidence": [{"asset_sha256": "2af2c8cc6c5778a3cd6142f2eec8bb229a9448b56cbe1de6f73b3a8c1d11364b", "page": 1, "locator": "右下 J2 pins28/30 与 +5.4V 之间 D1/D2 SS54"}]
+    },
+    {
+      "reference": "P1,P2,P3,P4,P5",
+      "part_number": "2p/3p/4p module headers",
+      "role": "COMX 插接核心的电源、UART、控制和音频连接器",
+      "evidence": [{"asset_sha256": "2af2c8cc6c5778a3cd6142f2eec8bb229a9448b56cbe1de6f73b3a8c1d11364b", "page": 1, "locator": "左中至左下 P1-P5，2p/3p/4p 接口"}]
+    },
+    {
+      "reference": "Q1,U1",
+      "part_number": "SS8550 Y2 / MIC",
+      "role": "S3 配置网络中的晶体管控制级与底板麦克风",
+      "evidence": [{"asset_sha256": "2af2c8cc6c5778a3cd6142f2eec8bb229a9448b56cbe1de6f73b3a8c1d11364b", "page": 1, "locator": "左下 Q1 SS8550 Y2、U1 MIC、R4-R6 与 S3"}]
+    },
+    {
+      "reference": "J3",
+      "part_number": "Phonejack",
+      "role": "连接 O+、IN+ 与 GND 的底板耳机插座",
+      "evidence": [{"asset_sha256": "2af2c8cc6c5778a3cd6142f2eec8bb229a9448b56cbe1de6f73b3a8c1d11364b", "page": 1, "locator": "页面中上 J3 Phonejack，O+/IN+/GND"}]
+    }
+  ],
+  "facts": [
+    {
+      "id": "system.comx-baseboard",
+      "category": "system",
+      "subject": "COMX LTE 通用插接底板架构",
+      "statement": "页面明确显示 COMX 底板：包含 J1 DC 输入、U7 5.4V 降压、S1 电源选择、J2 M5Stack_BUS、S2/S3 拨码、P1-P5 模块插座、Q1 控制级、U1 MIC 与 J3 Phonejack。",
+      "confidence": "confirmed",
+      "attributes": {"schematic_page_count": 1, "visible_scope": "COMX baseboard", "audio": "U1 MIC+P5+J3 Phonejack", "core_scope": null},
+      "evidence": [{"asset_sha256": "2af2c8cc6c5778a3cd6142f2eec8bb229a9448b56cbe1de6f73b3a8c1d11364b", "page": 1, "locator": "整页 COMX 底板电源、M5-Bus、拨码、插座与 Phonejack"}]
+    },
+    {
+      "id": "power.dc-buck-5v4",
+      "category": "power",
+      "subject": "+12V 到 +5.4V 降压",
+      "statement": "J1 PWR2.5 输入网络标为 +12V；U7 JW5033H 以 R1 100 kΩ 偏置 EN，经 L1 4.7 uH 和 R2/R3 115 kΩ/20 kΩ 反馈输出 +5.4V，输入端 C2/C3 各 10 uF，输出端 C32/C33 各 22 uF并配 C4 100 nF。",
+      "confidence": "confirmed",
+      "attributes": {"input": "+12V", "output": "+5.4V", "converter": "U7 JW5033H", "inductor": "L1 4.7uH", "feedback": "R2 115k,R3 20k", "input_caps": "C2 10uF,C3 10uF", "output_caps": "C32 22uF,C33 22uF,C4 100nF"},
+      "evidence": [{"asset_sha256": "2af2c8cc6c5778a3cd6142f2eec8bb229a9448b56cbe1de6f73b3a8c1d11364b", "page": 1, "locator": "左上 J1/U7/L1/R1-R3/C2-C5/C32-C33"}]
+    },
+    {
+      "id": "power.module-voltage-select",
+      "category": "power",
+      "subject": "P1 插接核心供电电压选择",
+      "statement": "S1 SW-SPDT 的两路输入分别为 +12V 与 +5.4V，公共端连接 P1 2-pin 接口；P2 2-pin 的两脚在该页均标为未连接。",
+      "confidence": "confirmed",
+      "attributes": {"option_a": "+12V", "option_b": "+5.4V", "output_connector": "P1", "unused_connector": "P2"},
+      "evidence": [{"asset_sha256": "2af2c8cc6c5778a3cd6142f2eec8bb229a9448b56cbe1de6f73b3a8c1d11364b", "page": 1, "locator": "左中 S1/P1/P2"}]
+    },
+    {
+      "id": "power.m5bus-feed",
+      "category": "power",
+      "subject": "+5.4V 与 M5-Bus 电源脚",
+      "statement": "+5.4V 通过 D1/D2 两颗 SS54 分别连接 J2 的 +5V 与 BATTERY 电源脚；J2 pins25/27/29 为 HPWR，pin12 为 +3.3V，pin28 为 +5V，pin30 为 BATTERY。",
+      "confidence": "confirmed",
+      "attributes": {"source": "+5.4V", "diodes": "D1,D2 SS54", "logic_rail": "pin12 +3.3V", "power_pins": "pin25 HPWR,pin27 HPWR,pin28 +5V,pin29 HPWR,pin30 BATTERY"},
+      "evidence": [{"asset_sha256": "2af2c8cc6c5778a3cd6142f2eec8bb229a9448b56cbe1de6f73b3a8c1d11364b", "page": 1, "locator": "右侧 J2 pins12/25/27-30 与 D1/D2/+5.4V"}]
+    },
+    {
+      "id": "interface.m5bus-pinout",
+      "category": "interface",
+      "subject": "30-pin M5Stack_BUS",
+      "statement": "J2 pins1/3/5 为 GND；pins2/4/6 为 GPIO35/GPIO36/EN；pins7-24 依次引出 GPIO23/GPIO25、GPIO19/GPIO26、GPIO18/+3.3V、GPIO3/GPIO1、GPIO16/GPIO17、GPIO21/GPIO22、GPIO2/GPIO5、GPIO12/GPIO13、GPIO15/GPIO0；pins25-30 为 HPWR/GPIO34/HPWR/+5V/HPWR/BATTERY。",
+      "confidence": "confirmed",
+      "attributes": {"connector": "J2 M5Stack_BUS", "pins": 30, "ground": "1,3,5", "uart_candidates": "GPIO16,GPIO17,GPIO5,GPIO13,GPIO15,GPIO0", "rails": "pin12 +3.3V,pin28 +5V,pin30 BATTERY"},
+      "evidence": [{"asset_sha256": "2af2c8cc6c5778a3cd6142f2eec8bb229a9448b56cbe1de6f73b3a8c1d11364b", "page": 1, "locator": "右侧 J2 M5Stack_BUS pins1-30"}]
+    },
+    {
+      "id": "interface.uart-dip-routing",
+      "category": "interface",
+      "subject": "M5-Bus UART 拨码路由",
+      "statement": "S2 六位拨码把 G17/G0/G13 三路候选连接到 RXD 公共网络，把 G16/G5/G15 三路候选连接到 TXD 公共网络；P4 2-pin 引出 RXD/TXD。",
+      "confidence": "confirmed",
+      "attributes": {"rx_candidates": "G17,G0,G13", "tx_candidates": "G16,G5,G15", "module_uart_connector": "P4", "switch": "S2 SW DIP-6"},
+      "evidence": [{"asset_sha256": "2af2c8cc6c5778a3cd6142f2eec8bb229a9448b56cbe1de6f73b3a8c1d11364b", "page": 1, "locator": "中下 S2 SW DIP-6、G17/G0/G13/G16/G5/G15 与 RXD/TXD；左下 P4"}]
+    },
+    {
+      "id": "interface.module-headers",
+      "category": "interface",
+      "subject": "P1-P5 插接核心接口",
+      "statement": "P1 为 S1 选择后的两针电源，P2 两针未连接，P3 三针包含 GND 与控制网络，P4 两针为 RXD/TXD，P5 四针包含 O+、IN+ 与两脚 GND；S3 六位拨码连接 EN、MIC、G25、G26、O+、IN+ 等适配网络。",
+      "confidence": "confirmed",
+      "attributes": {"power": "P1", "unused": "P2", "control": "P3", "uart": "P4 RXD/TXD", "audio": "P5 O+/IN+/GND/GND", "configuration_switch": "S3"},
+      "evidence": [{"asset_sha256": "2af2c8cc6c5778a3cd6142f2eec8bb229a9448b56cbe1de6f73b3a8c1d11364b", "page": 1, "locator": "左中/左下 P1-P5、S3、EN/MIC/G25/G26/O+/IN+"}]
+    },
+    {
+      "id": "audio.baseboard-microphone",
+      "category": "audio",
+      "subject": "底板麦克风与音频选择",
+      "statement": "U1 MIC 一端接 GND，信号 MIC 接 S3；S3 还连接 EN、G25、G26、O+ 和 IN+，Q1 SS8550 Y2 与 R4-R6 组成该选择网络的控制级。",
+      "confidence": "confirmed",
+      "attributes": {"microphone": "U1 MIC", "microphone_net": "MIC", "switch": "S3", "audio_nets": "O+,IN+", "control": "Q1 SS8550 Y2,R4-R6"},
+      "evidence": [{"asset_sha256": "2af2c8cc6c5778a3cd6142f2eec8bb229a9448b56cbe1de6f73b3a8c1d11364b", "page": 1, "locator": "左下 U1 MIC、Q1、R4-R6 与 S3"}]
+    },
+    {
+      "id": "audio.phonejack",
+      "category": "audio",
+      "subject": "J3 Phonejack 音频接口",
+      "statement": "J3 标为 Phonejack，其触点网络包括 O+、IN+ 与 GND；O+/IN+ 同时由 P5 引出并连接 S3 配置网络。",
+      "confidence": "confirmed",
+      "attributes": {"connector": "J3 Phonejack", "output": "O+", "input": "IN+", "ground": "GND", "module_header": "P5", "switch": "S3"},
+      "evidence": [{"asset_sha256": "2af2c8cc6c5778a3cd6142f2eec8bb229a9448b56cbe1de6f73b3a8c1d11364b", "page": 1, "locator": "页面中上 J3 Phonejack 与左下 P5/S3 的 O+/IN+ 网络"}]
+    },
+    {
+      "id": "system.lte-core-not-shown",
+      "category": "system",
+      "subject": "SIM7600G LTE 核心小板未覆盖",
+      "statement": "源文档称产品内置 SIM7600G；当前资源没有 SIM7600G、MicroSIM、状态 LED、蜂窝射频、SMA 天线或核心 USB 电路，因此该页不能验证 LTE 核心小板硬件。",
+      "confidence": "uncertain",
+      "attributes": {"documented_module": "SIM7600G", "visible_scope": "COMX baseboard", "visible_module": null},
+      "evidence": [{"asset_sha256": "2af2c8cc6c5778a3cd6142f2eec8bb229a9448b56cbe1de6f73b3a8c1d11364b", "page": 1, "locator": "整页无 SIM7600G、MicroSIM、状态 LED、SMA 或蜂窝核心电路"}]
+    },
+    {
+      "id": "component.documented-sim7600g",
+      "category": "component",
+      "subject": "SIM7600G LTE 通讯模组",
+      "statement": "源文档把 SIM7600G 列为 LTE 核心模组；当前底板图没有该器件的位号、完整子型号、引脚、供电、时钟、复位、USB、UART、SIM 或射频连接。",
+      "confidence": "uncertain",
+      "attributes": {"documented_module": "SIM7600G", "reference": null, "exact_variant": null, "supply": null, "clock": null, "reset": null, "usb": null},
+      "evidence": [{"asset_sha256": "2af2c8cc6c5778a3cd6142f2eec8bb229a9448b56cbe1de6f73b3a8c1d11364b", "page": 1, "locator": "整页未出现 SIM7600G"}]
+    },
+    {
+      "id": "interface.documented-sim-led",
+      "category": "interface",
+      "subject": "MicroSIM 与两路状态 LED",
+      "statement": "源文档称产品使用 MicroSIM 并带两路 LED 状态信号；当前底板图没有 SIM 卡座、SIM 电源与 ESD、卡检测、LED 位号或驱动网络。",
+      "confidence": "uncertain",
+      "attributes": {"documented_sim": "MicroSIM", "documented_status_leds": 2, "sim_connector": null, "sim_protection": null, "led_drivers": null},
+      "evidence": [{"asset_sha256": "2af2c8cc6c5778a3cd6142f2eec8bb229a9448b56cbe1de6f73b3a8c1d11364b", "page": 1, "locator": "整页无 SIM 卡座或状态 LED"}]
+    },
+    {
+      "id": "rf.documented-cellular-bands",
+      "category": "rf",
+      "subject": "SIM7600G 蜂窝频段集合",
+      "statement": "源文档列出 LTE-TDD B34/B38/B39/B40/B41，LTE-FDD B1/B2/B3/B4/B5/B7/B8/B12/B13/B18/B19/B20/B25/B26/B28/B66，WCDMA B1/B2/B4/B5/B6/B8/B19，以及 GSM/GPRS/EDGE 850/900/1800/1900MHz；当前底板图没有蜂窝基带、射频前端、匹配、滤波或天线电路。",
+      "confidence": "uncertain",
+      "attributes": {"documented_lte_tdd": "B34,B38,B39,B40,B41", "documented_lte_fdd": "B1,B2,B3,B4,B5,B7,B8,B12,B13,B18,B19,B20,B25,B26,B28,B66", "documented_wcdma": "B1,B2,B4,B5,B6,B8,B19", "documented_2g_mhz": "850,900,1800,1900", "hardware_variant": null},
+      "evidence": [{"asset_sha256": "2af2c8cc6c5778a3cd6142f2eec8bb229a9448b56cbe1de6f73b3a8c1d11364b", "page": 1, "locator": "整页无蜂窝射频器件、滤波或频段标识"}]
+    },
+    {
+      "id": "interface.documented-lte-cat4",
+      "category": "interface",
+      "subject": "LTE Cat4 峰值速率",
+      "statement": "源文档明确称 LTE Cat4 上行最大 50Mbps、下行最大 150Mbps；当前底板图没有 SIM7600G、高速数据接口、天线或性能测试边界。",
+      "confidence": "uncertain",
+      "attributes": {"documented_category": "LTE Cat4", "documented_uplink_mbps": 50, "documented_downlink_mbps": 150, "test_conditions": null},
+      "evidence": [{"asset_sha256": "2af2c8cc6c5778a3cd6142f2eec8bb229a9448b56cbe1de6f73b3a8c1d11364b", "page": 1, "locator": "整页无 LTE 核心、类别或速率标注"}]
+    },
+    {
+      "id": "interface.documented-legacy-rates",
+      "category": "interface",
+      "subject": "HSPA+、WCDMA、EDGE/GPRS 速率",
+      "statement": "源文档列出 HSPA+ 上行 5.76Mbps/下行 42Mbps、WCDMA 上下行 384Kbps、EDGE/GPRS 上下行 236.8Kbps；当前底板图没有蜂窝协议栈、数据路径或测试条件。",
+      "confidence": "uncertain",
+      "attributes": {"documented_hspa_uplink_mbps": 5.76, "documented_hspa_downlink_mbps": 42, "documented_wcdma_kbps": 384, "documented_edge_gprs_kbps": 236.8, "test_conditions": null},
+      "evidence": [{"asset_sha256": "2af2c8cc6c5778a3cd6142f2eec8bb229a9448b56cbe1de6f73b3a8c1d11364b", "page": 1, "locator": "整页无蜂窝核心或数据速率标注"}]
+    },
+    {
+      "id": "interface.documented-network-protocols",
+      "category": "interface",
+      "subject": "IP、应用层与主机侧协议",
+      "statement": "源文档列出 TCP/IP、IPv4、IPv6、Multi-PDP、FTP、FTPS、HTTP、HTTPS、DNS、TLS、RNDIS、ECM 和 FOTA；底板图不包含 SIM7600G 固件、USB 数据线路或网络协议栈。",
+      "confidence": "uncertain",
+      "attributes": {"documented_protocols": "TCP/IP,IPv4,IPv6,Multi-PDP,FTP,FTPS,HTTP,HTTPS,DNS,TLS,RNDIS,ECM,FOTA", "firmware_version": null, "usb_data_path": null},
+      "evidence": [{"asset_sha256": "2af2c8cc6c5778a3cd6142f2eec8bb229a9448b56cbe1de6f73b3a8c1d11364b", "page": 1, "locator": "整页无网络协议栈或核心 USB 数据接口"}]
+    },
+    {
+      "id": "interface.documented-voice-sms-data",
+      "category": "interface",
+      "subject": "语音、SMS 与蜂窝数据能力",
+      "statement": "源文档称产品支持语音通话、SMS 短信和蜂窝数据传输；图面确认底板存在 MIC、Phonejack 和 O+/IN+ 网络，但没有 SIM7600G 音频引脚、编解码、SIM、协议栈或数据接口，不能从该页证明端到端能力。",
+      "confidence": "uncertain",
+      "attributes": {"documented_voice": true, "documented_sms": true, "documented_cellular_data": true, "baseboard_audio": "U1 MIC,J3 Phonejack,P5 O+/IN+", "core_audio": null, "core_data": null},
+      "evidence": [{"asset_sha256": "2af2c8cc6c5778a3cd6142f2eec8bb229a9448b56cbe1de6f73b3a8c1d11364b", "page": 1, "locator": "U1/J3/P5 仅为底板音频网络，整页无 SIM7600G 核心接口"}]
+    },
+    {
+      "id": "rf.documented-sma-antenna",
+      "category": "rf",
+      "subject": "外置 SMA 蜂窝天线",
+      "statement": "源文档和包装内容称产品搭配 SMA 天线；底板图没有 SMA、IPEX、天线匹配、射频馈线或 ESD 器件。",
+      "confidence": "uncertain",
+      "attributes": {"documented_connector": "SMA", "documented_antenna": "external cellular antenna", "impedance": null, "matching": null, "protection": null},
+      "evidence": [{"asset_sha256": "2af2c8cc6c5778a3cd6142f2eec8bb229a9448b56cbe1de6f73b3a8c1d11364b", "page": 1, "locator": "整页无 SMA、天线匹配或射频保护电路"}]
+    },
+    {
+      "id": "interface.documented-uart-at",
+      "category": "interface",
+      "subject": "UART 115200bps 与 AT 指令",
+      "statement": "源文档称模块采用 UART 115200bps 和 AT 指令控制；底板图只确认 RXD/TXD 路由与拨码候选，不包含串口电平、波特率、帧格式、流控或固件协议。",
+      "confidence": "uncertain",
+      "attributes": {"documented_baud": 115200, "documented_protocol": "AT command", "frame_format": null, "flow_control": null, "at_version": null},
+      "evidence": [{"asset_sha256": "2af2c8cc6c5778a3cd6142f2eec8bb229a9448b56cbe1de6f73b3a8c1d11364b", "page": 1, "locator": "S2/P4 仅显示 RXD/TXD 硬件路由"}]
+    },
+    {
+      "id": "audio.documented-headset",
+      "category": "audio",
+      "subject": "3.5mm 耳机与 17mm 插头适配",
+      "statement": "源文档称 J3 为 3.5mm 耳机孔，需使用 17mm 长的带麦克风插头，并可通过 S3 启用板载麦克风；图面确认 Phonejack、MIC 和选择网络，但没有机械尺寸、触点标准、插入检测或插头兼容表。",
+      "confidence": "uncertain",
+      "attributes": {"documented_jack": "3.5mm", "documented_plug_length": "17mm", "documented_headset_microphone": true, "schematic_connector": "J3 Phonejack", "contact_standard": null, "insert_detect": null},
+      "evidence": [{"asset_sha256": "2af2c8cc6c5778a3cd6142f2eec8bb229a9448b56cbe1de6f73b3a8c1d11364b", "page": 1, "locator": "J3 仅标 Phonejack，U1/S3 为 MIC 选择，无机械尺寸或插头标准"}]
+    },
+    {
+      "id": "power.documented-dc-range",
+      "category": "power",
+      "subject": "DC 5-12V 输入范围",
+      "statement": "源文档称 DC 接口允许 5-12V 输入；原理图把 J1 输入网络直接命名为 +12V，并按 +12V 设计 JW5033H 到 +5.4V 的降压路径，没有标最小 5V、输入容差、欠压锁定或完整允许范围。",
+      "confidence": "uncertain",
+      "attributes": {"documented_input": "5-12V", "schematic_input_label": "+12V", "undervoltage_lockout": null, "tolerance": null},
+      "evidence": [{"asset_sha256": "2af2c8cc6c5778a3cd6142f2eec8bb229a9448b56cbe1de6f73b3a8c1d11364b", "page": 1, "locator": "左侧 J1/U7 输入仅标 +12V"}]
+    },
+    {
+      "id": "interface.fire-routing-perspective",
+      "category": "interface",
+      "subject": "Fire 主机 UART 拨码说明",
+      "statement": "源文档为避免 Fire 的 G16/G17 PSRAM 冲突，要求选择 TX(G0/G13)、RX(G5/G15)；图面网络名则把 G0/G13 归入 RXD 候选、G5/G15 归入 TXD 候选，需确认文档采用主机视角还是模块视角。",
+      "confidence": "uncertain",
+      "attributes": {"documented_avoid": "G16,G17", "documented_tx": "G0,G13", "documented_rx": "G5,G15", "schematic_rxd_candidates": "G17,G0,G13", "schematic_txd_candidates": "G16,G5,G15", "direction_perspective": null},
+      "evidence": [{"asset_sha256": "2af2c8cc6c5778a3cd6142f2eec8bb229a9448b56cbe1de6f73b3a8c1d11364b", "page": 1, "locator": "中下 S2：G17/G0/G13 接 RXD，G16/G5/G15 接 TXD"}]
+    }
+  ],
+  "needs_review": [
+    {
+      "id": "review.lte-core-scope",
+      "fact_id": "system.lte-core-not-shown",
+      "question": "Module COMX LTE 的 SIM7600G 核心小板应使用哪份完整原理图？",
+      "reason": "当前资源只覆盖 COMX 通用底板，不含 LTE 核心、SIM、射频与核心 USB 电路。",
+      "evidence": [{"asset_sha256": "2af2c8cc6c5778a3cd6142f2eec8bb229a9448b56cbe1de6f73b3a8c1d11364b", "page": 1, "locator": "整页无 SIM7600G、MicroSIM、SMA 或蜂窝核心"}]
+    },
+    {
+      "id": "review.sim7600g-module",
+      "fact_id": "component.documented-sim7600g",
+      "question": "M031-A 量产核心的完整 SIM7600G 子型号、硬件版本、电源、时钟、复位和接口定义是什么？",
+      "reason": "底板原理图没有 LTE 模组器件或 BOM 信息。",
+      "evidence": [{"asset_sha256": "2af2c8cc6c5778a3cd6142f2eec8bb229a9448b56cbe1de6f73b3a8c1d11364b", "page": 1, "locator": "整页未出现 SIM7600G"}]
+    },
+    {
+      "id": "review.sim-led",
+      "fact_id": "interface.documented-sim-led",
+      "question": "核心小板的 MicroSIM 接口、热插拔保护和两路 LED 指示含义如何实现？",
+      "reason": "当前底板图没有 SIM 或 LED 电路。",
+      "evidence": [{"asset_sha256": "2af2c8cc6c5778a3cd6142f2eec8bb229a9448b56cbe1de6f73b3a8c1d11364b", "page": 1, "locator": "整页无 SIM 卡座或 LED"}]
+    },
+    {
+      "id": "review.cellular-bands",
+      "fact_id": "rf.documented-cellular-bands",
+      "question": "M031-A 量产版本实际支持哪些 LTE-TDD、LTE-FDD、WCDMA 和 2G 频段及区域认证？",
+      "reason": "底板资源不包含蜂窝射频核心、前端或区域版本信息。",
+      "evidence": [{"asset_sha256": "2af2c8cc6c5778a3cd6142f2eec8bb229a9448b56cbe1de6f73b3a8c1d11364b", "page": 1, "locator": "整页无蜂窝射频电路"}]
+    },
+    {
+      "id": "review.lte-cat4",
+      "fact_id": "interface.documented-lte-cat4",
+      "question": "LTE Cat4 上行 50Mbps、下行 150Mbps 指标适用于哪个 SIM7600G 子型号、网络和测试条件？",
+      "reason": "当前底板图没有 LTE 核心或性能测试边界。",
+      "evidence": [{"asset_sha256": "2af2c8cc6c5778a3cd6142f2eec8bb229a9448b56cbe1de6f73b3a8c1d11364b", "page": 1, "locator": "整页无 LTE 类别或速率标注"}]
+    },
+    {
+      "id": "review.legacy-rates",
+      "fact_id": "interface.documented-legacy-rates",
+      "question": "HSPA+、WCDMA、EDGE/GPRS 的峰值速率适用哪些网络类别和测试条件？",
+      "reason": "当前资源没有蜂窝数据路径或性能测试证据。",
+      "evidence": [{"asset_sha256": "2af2c8cc6c5778a3cd6142f2eec8bb229a9448b56cbe1de6f73b3a8c1d11364b", "page": 1, "locator": "整页无蜂窝数据速率信息"}]
+    },
+    {
+      "id": "review.network-protocols",
+      "fact_id": "interface.documented-network-protocols",
+      "question": "SIM7600G 量产固件实际启用哪些 IP、应用层、USB 网络和 FOTA 能力？",
+      "reason": "协议能力属于核心固件，底板图没有 USB 数据链或协议栈。",
+      "evidence": [{"asset_sha256": "2af2c8cc6c5778a3cd6142f2eec8bb229a9448b56cbe1de6f73b3a8c1d11364b", "page": 1, "locator": "整页无协议栈或核心 USB 数据接口"}]
+    },
+    {
+      "id": "review.voice-sms-data",
+      "fact_id": "interface.documented-voice-sms-data",
+      "question": "SIM7600G 核心如何连接底板 O+/IN+，语音、SMS 与数据能力对应哪些固件和运营商条件？",
+      "reason": "当前页面只显示底板音频，未显示核心音频、SIM 与数据接口。",
+      "evidence": [{"asset_sha256": "2af2c8cc6c5778a3cd6142f2eec8bb229a9448b56cbe1de6f73b3a8c1d11364b", "page": 1, "locator": "U1/J3/P5 底板音频与缺失的 LTE 核心接口"}]
+    },
+    {
+      "id": "review.sma-antenna",
+      "fact_id": "rf.documented-sma-antenna",
+      "question": "LTE 核心小板的 SMA 天线接口、匹配、阻抗和保护电路如何实现？",
+      "reason": "当前底板图没有蜂窝天线或射频匹配电路。",
+      "evidence": [{"asset_sha256": "2af2c8cc6c5778a3cd6142f2eec8bb229a9448b56cbe1de6f73b3a8c1d11364b", "page": 1, "locator": "整页无 SMA、射频匹配或 ESD"}]
+    },
+    {
+      "id": "review.uart-at",
+      "fact_id": "interface.documented-uart-at",
+      "question": "量产固件默认 UART 是否为 115200bps，帧格式、流控及 AT 指令集版本是什么？",
+      "reason": "底板图只画 UART 拨码路由，串口配置取决于 LTE 核心固件。",
+      "evidence": [{"asset_sha256": "2af2c8cc6c5778a3cd6142f2eec8bb229a9448b56cbe1de6f73b3a8c1d11364b", "page": 1, "locator": "S2/P4 RXD/TXD 路由"}]
+    },
+    {
+      "id": "review.headset",
+      "fact_id": "audio.documented-headset",
+      "question": "J3 的 3.5mm 触点标准、17mm 插头机械要求、插入检测和板载/耳机麦克风切换真值是什么？",
+      "reason": "图面只标 Phonejack 和音频网络，未给机械与触点规格。",
+      "evidence": [{"asset_sha256": "2af2c8cc6c5778a3cd6142f2eec8bb229a9448b56cbe1de6f73b3a8c1d11364b", "page": 1, "locator": "J3 Phonejack 与 U1/S3 音频选择网络"}]
+    },
+    {
+      "id": "review.dc-input-range",
+      "fact_id": "power.documented-dc-range",
+      "question": "J1 与 U7 的量产 DC 输入允许范围是否完整覆盖 5-12V？",
+      "reason": "图面只把输入标为 +12V，没有范围、容差或欠压条件。",
+      "evidence": [{"asset_sha256": "2af2c8cc6c5778a3cd6142f2eec8bb229a9448b56cbe1de6f73b3a8c1d11364b", "page": 1, "locator": "J1/U7 输入 +12V"}]
+    },
+    {
+      "id": "review.fire-uart-perspective",
+      "fact_id": "interface.fire-routing-perspective",
+      "question": "Fire 兼容说明中的 TX/RX 是主机视角还是 LTE 核心视角，实际拨码应如何标注？",
+      "reason": "源文档的 TX(G0/G13)、RX(G5/G15) 与图面 RXD/TXD 网络名方向相反。",
+      "evidence": [{"asset_sha256": "2af2c8cc6c5778a3cd6142f2eec8bb229a9448b56cbe1de6f73b3a8c1d11364b", "page": 1, "locator": "S2：G0/G13 位于 RXD 侧，G5/G15 位于 TXD 侧"}]
+    }
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "dry_run": false,
+  "failed": 0,
+  "published": 1,
+  "results": [
+    {
+      "backup": null,
+      "draft_action": "unchanged",
+      "dry_run": false,
+      "errors": [],
+      "needs_review": 3,
+      "product_id": "cap-lora868-cadd64e8b186",
+      "product_name": "Cap LoRa868",
+      "publish_action": "unchanged",
+      "sha256": "46344dcb82b40f0f36836b03bc0b009d9c9b32e1078c8c04ee566c0596e5656c",
+      "status": "valid",
+      "uncertain_facts": 3
+    }
+  ],
+  "schema_version": 1
+}

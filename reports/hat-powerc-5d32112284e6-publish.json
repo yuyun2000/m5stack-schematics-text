@@ -1,0 +1,21 @@
+{
+  "dry_run": false,
+  "failed": 0,
+  "published": 1,
+  "results": [
+    {
+      "backup": null,
+      "draft_action": "unchanged",
+      "dry_run": false,
+      "errors": [],
+      "needs_review": 3,
+      "product_id": "hat-powerc-5d32112284e6",
+      "product_name": "Hat PowerC",
+      "publish_action": "unchanged",
+      "sha256": "dac8a4eb03a2bb556579bda9344ab5ae5c56e5b25ac151229618c05c910353c9",
+      "status": "valid",
+      "uncertain_facts": 3
+    }
+  ],
+  "schema_version": 1
+}

@@ -1,0 +1,21 @@
+{
+  "dry_run": false,
+  "failed": 0,
+  "published": 1,
+  "results": [
+    {
+      "backup": null,
+      "draft_action": "unchanged",
+      "dry_run": false,
+      "errors": [],
+      "needs_review": 2,
+      "product_id": "faces-gamepad-9d8f13459df2",
+      "product_name": "Faces Gamepad",
+      "publish_action": "unchanged",
+      "sha256": "a16f81cada8e907eabdcf793dfc5a0ad78ea1f2eb4250a971aaab7f06899c095",
+      "status": "valid",
+      "uncertain_facts": 2
+    }
+  ],
+  "schema_version": 1
+}

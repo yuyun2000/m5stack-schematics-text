@@ -1,0 +1,21 @@
+{
+  "dry_run": false,
+  "failed": 0,
+  "published": 1,
+  "results": [
+    {
+      "backup": null,
+      "draft_action": "unchanged",
+      "dry_run": false,
+      "errors": [],
+      "needs_review": 7,
+      "product_id": "paper-a89f57fad62a",
+      "product_name": "Paper",
+      "publish_action": "unchanged",
+      "sha256": "88d4ddd348f204c36cb90bce6093ad17d604321b551432cb3786c40871c75779",
+      "status": "valid",
+      "uncertain_facts": 7
+    }
+  ],
+  "schema_version": 1
+}

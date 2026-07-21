@@ -1,0 +1,139 @@
+# StickC RTC 实时时钟
+
+## SetTime()
+
+**功能说明:**
+
+设置结构体变量时间
+
+**函数原型:**
+
+`void SetTime(RTC_TimeTypeDef* RTC_TimeStruct)`
+
+**案例程序:**
+
+```cpp line-num
+#include <M5StickC.h>
+
+RTC_TimeTypeDef TimeStruct;
+void setup() {
+  M5.begin();
+
+  TimeStruct.Hours   = 18;
+  TimeStruct.Minutes = 56;
+  TimeStruct.Seconds = 10;
+  M5.Rtc.SetTime(&TimeStruct);
+}
+void loop(){};
+```
+
+
+## GetTime()
+
+**功能说明:**
+
+获取结构体时间
+
+**函数原型:**
+
+`void GetTime(RTC_TimeTypeDef* RTC_TimeStruct)`
+
+**案例程序:**
+
+```cpp line-num
+#include <M5StickC.h>
+
+RTC_TimeTypeDef TimeStruct;
+void setup() {
+  M5.begin();
+  M5.Lcd.setRotation(3);
+  M5.Lcd.fillScreen(BLACK);
+  
+  M5.Lcd.setTextSize(1);
+  M5.Lcd.setCursor(40, 0, 2);
+  M5.Lcd.println("RTC TEST");
+  
+  TimeStruct.Hours   = 18;
+  TimeStruct.Minutes = 56;
+  TimeStruct.Seconds = 10;
+  M5.Rtc.SetTime(&TimeStruct);
+}
+
+void loop() {
+  M5.Rtc.GetTime(&TimeStruct);
+  M5.Lcd.setCursor(0, 15);
+  M5.Lcd.printf("Time: %02d : %02d : %02d/n",TimeStruct.Hours, TimeStruct.Minutes, TimeStruct.Seconds);
+  delay(500);
+}
+```
+
+## SetData()
+
+**功能说明:**
+
+设置结构体变量日期
+
+**函数原型:**
+
+`void SetData(RTC_TimeTypeDef* RTC_DateStruct)`
+
+**案例程序:**
+
+```cpp line-num
+#include <M5StickC.h>
+
+RTC_TimeTypeDef TimeStruct;
+RTC_DateTypeDef DateStruct;
+void setup() {
+  M5.begin();
+
+  DateStruct.WeekDay = 3;
+  DateStruct.Month = 3;
+  DateStruct.Date = 22;
+  DateStruct.Year = 2019;
+  M5.Rtc.SetData(&DateStruct);
+}
+void loop(){};
+```
+
+
+## GetData()
+
+**功能说明:**
+
+获取结构体变量日期
+
+**函数原型:**
+
+`void GetData(RTC_TimeTypeDef* RTC_DateStruct)`
+
+**案例程序:**
+
+```cpp line-num
+#include <M5StickC.h>
+
+RTC_DateTypeDef DateStruct;
+void setup() {
+  M5.begin();
+  M5.Lcd.setRotation(3);
+  M5.Lcd.fillScreen(BLACK);
+  
+  M5.Lcd.setTextSize(1);
+  M5.Lcd.setCursor(40, 0, 2);
+  M5.Lcd.println("RTC TEST");
+  
+  DateStruct.WeekDay = 3;
+  DateStruct.Month = 3;
+  DateStruct.Date = 22;
+  DateStruct.Year = 2019;
+  M5.Rtc.SetData(&DateStruct);
+}
+
+void loop() {
+  M5.Rtc.GetData(&DateStruct);
+  M5.Lcd.setCursor(0, 15);
+  M5.Lcd.printf("Data:%04d-%02d-%02d/n",DateStruct.Year, DateStruct.Month,DateStruct.Date);
+  M5.Lcd.printf("Week:%d/n",DateStruct.WeekDay);
+  delay(500);
+}
+```

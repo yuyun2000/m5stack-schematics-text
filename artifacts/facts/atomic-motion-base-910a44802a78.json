@@ -1,0 +1,537 @@
+{
+  "schema_version": 1,
+  "generator": "schematic_describer",
+  "product": {
+    "product_id": "atomic-motion-base-910a44802a78",
+    "product_name": "Atomic Motion Base",
+    "sku": "A090",
+    "source_path": "atom/Atomic Motion Base.md",
+    "source_sha256": "102ca413bbdea9890e4acd3e4b498d7d270b321602f5a0f83ff53916b553c289",
+    "input_sha256": "2d50b5d4f9cce7b591c913b62268f244a4e9e60498cba06e4bb03a96a2016f7f"
+  },
+  "schematic_assets": [
+    {
+      "sha256": "cacac3d1e29ea7035c746de97a331103b07bb0ab32a5b1c7d70c35724b57b915",
+      "source_url": "https://static-cdn.m5stack.com/resource/docs/products/atom/Atomic Motion Base/img-e3e37376-655b-4193-aa31-b44c116df5ff.webp",
+      "pages": [
+        1
+      ]
+    }
+  ],
+  "summary": "Atomic Motion Base 由 BT1 16340 电池形成 BAT+，U1 ETA9740 将 BAT+ 转换为 5V，两颗 RZ7899 分别驱动 JP2/JP1 两路直流电机，四个 JP3-JP6 三针接口由 BAT+ 供电。U3 STM32F030F4P6 通过 M1F/M1R 和 M2F/M2R 控制两颗电机驱动器，并以 PA0-PA3 控制四路三针接口。Atom 的 G21/G25 通过 SCL/SDA 连接 STM32，G22/G19 和 G23/G33 分别接到两组 Grove 接口。",
+  "keywords": [
+    "Atomic Motion Base",
+    "A090",
+    "STM32F030F4P6",
+    "ETA9740",
+    "RZ7899",
+    "16340",
+    "BAT+",
+    "5V boost",
+    "M1F",
+    "M1R",
+    "M2F",
+    "M2R",
+    "PA0",
+    "PA1",
+    "PA2",
+    "PA3",
+    "SCL",
+    "SDA",
+    "SWDIO",
+    "SWCLK",
+    "NRST",
+    "JP1 motor",
+    "JP2 motor",
+    "JP3 JP4 JP5 JP6",
+    "GROVE",
+    "GPIO21",
+    "GPIO25",
+    "GPIO22",
+    "GPIO19",
+    "GPIO23",
+    "GPIO33",
+    "Fuse 5A",
+    "SS-12F23",
+    "DSS34"
+  ],
+  "components": [
+    {
+      "reference": "U1",
+      "part_number": "ETA9740",
+      "role": "以 BAT+ 为输入并产生 5V 的升压电源芯片",
+      "evidence": [
+        {
+          "asset_sha256": "cacac3d1e29ea7035c746de97a331103b07bb0ab32a5b1c7d70c35724b57b915",
+          "page": 1,
+          "locator": "第 1 页左上，U1 ETA9740 的 SW/BAT/ISET/PGND/AGND、OUT 与 LED1-LED3"
+        }
+      ]
+    },
+    {
+      "reference": "U2,U4",
+      "part_number": "RZ7899",
+      "role": "分别接收 M2F/M2R 与 M1F/M1R 并驱动 JP1/JP2 的双向电机驱动器",
+      "evidence": [
+        {
+          "asset_sha256": "cacac3d1e29ea7035c746de97a331103b07bb0ab32a5b1c7d70c35724b57b915",
+          "page": 1,
+          "locator": "第 1 页左中，U2/U4 RZ7899 的 OUTF/OUTR、VCC/GND 与 INF/INR"
+        }
+      ]
+    },
+    {
+      "reference": "U3",
+      "part_number": "STM32F030F4P6",
+      "role": "协调两路电机、四路三针输出、Atom I2C 和 SWD 调试的控制器",
+      "evidence": [
+        {
+          "asset_sha256": "cacac3d1e29ea7035c746de97a331103b07bb0ab32a5b1c7d70c35724b57b915",
+          "page": 1,
+          "locator": "第 1 页中央，U3 STM32F030F4P6 的 PA0-PA14、PB1、电源、NRST 与 SWD 网络"
+        }
+      ]
+    },
+    {
+      "reference": "BT1",
+      "part_number": "16340",
+      "role": "为 BAT+ 电源域提供电池连接",
+      "evidence": [
+        {
+          "asset_sha256": "cacac3d1e29ea7035c746de97a331103b07bb0ab32a5b1c7d70c35724b57b915",
+          "page": 1,
+          "locator": "第 1 页上方中右，BT1 16340 上端接 BAT+，下端经 Fuse 5A 接开关"
+        }
+      ]
+    },
+    {
+      "reference": "S?",
+      "part_number": "SS-12F23",
+      "role": "通过电池回路与 GND 的接通或断开控制电源",
+      "evidence": [
+        {
+          "asset_sha256": "cacac3d1e29ea7035c746de97a331103b07bb0ab32a5b1c7d70c35724b57b915",
+          "page": 1,
+          "locator": "第 1 页上方中央，S? SS-12F23，pin2 接 GND、pin3 经 Fuse 5A 接 BT1 下端、pin1 未接外部网络"
+        }
+      ]
+    },
+    {
+      "reference": "Fuse",
+      "part_number": "FUSE 5A",
+      "role": "串联在 BT1 下端与开关 pin3 之间的电池回路保护器件",
+      "evidence": [
+        {
+          "asset_sha256": "cacac3d1e29ea7035c746de97a331103b07bb0ab32a5b1c7d70c35724b57b915",
+          "page": 1,
+          "locator": "第 1 页上方中央，Fuse/FUSE 5A 位于 S? pin3 与 BT1 下端之间"
+        }
+      ]
+    },
+    {
+      "reference": "JP1,JP2",
+      "part_number": "2-pin connector",
+      "role": "分别引出 U2 与 U4 的 OUTF/OUTR 电机输出",
+      "evidence": [
+        {
+          "asset_sha256": "cacac3d1e29ea7035c746de97a331103b07bb0ab32a5b1c7d70c35724b57b915",
+          "page": 1,
+          "locator": "第 1 页左中，JP1/JP2 两针接口与 U2/U4 OUTF/OUTR 并联输出脚"
+        }
+      ]
+    },
+    {
+      "reference": "JP3,JP4,JP5,JP6",
+      "part_number": "3-pin connector",
+      "role": "四路 BAT+ 供电、GND 回路和 STM32 PA0-PA3 控制信号接口",
+      "evidence": [
+        {
+          "asset_sha256": "cacac3d1e29ea7035c746de97a331103b07bb0ab32a5b1c7d70c35724b57b915",
+          "page": 1,
+          "locator": "第 1 页左下，JP3-JP6 的 BAT+/GND 与四条连到 U3 PA0-PA3 的信号线"
+        }
+      ]
+    },
+    {
+      "reference": "ATOM",
+      "part_number": "Atom 9-pin socket",
+      "role": "提供 3V3、5V、GND、I2C 和两组 Grove GPIO",
+      "evidence": [
+        {
+          "asset_sha256": "cacac3d1e29ea7035c746de97a331103b07bb0ab32a5b1c7d70c35724b57b915",
+          "page": 1,
+          "locator": "第 1 页中下 ATOM，pin1-pin9 与 G21/G25/G22/G19/G23/G33、5V、3V3、GND"
+        }
+      ]
+    },
+    {
+      "reference": "J1,J2",
+      "part_number": "GROVE",
+      "role": "两组 IO2/IO1/5V/GND 四针扩展接口",
+      "evidence": [
+        {
+          "asset_sha256": "cacac3d1e29ea7035c746de97a331103b07bb0ab32a5b1c7d70c35724b57b915",
+          "page": 1,
+          "locator": "第 1 页右下，J1/J2 GROVE 的 pin4 IO2、pin3 IO1、pin2 5V、pin1 GND"
+        }
+      ]
+    },
+    {
+      "reference": "J3",
+      "part_number": "SWD",
+      "role": "接出 NRST、SWCLK、SWDIO、3V3 和 GND 的调试接口",
+      "evidence": [
+        {
+          "asset_sha256": "cacac3d1e29ea7035c746de97a331103b07bb0ab32a5b1c7d70c35724b57b915",
+          "page": 1,
+          "locator": "第 1 页右中，J3 SWD，RST/CLK/DIO/VCC/GND 分别接 NRST/SWCLK/SWDIO/3V3/GND"
+        }
+      ]
+    },
+    {
+      "reference": "D1",
+      "part_number": "DSS34",
+      "role": "跨接 BAT+ 与 GND 的二极管",
+      "evidence": [
+        {
+          "asset_sha256": "cacac3d1e29ea7035c746de97a331103b07bb0ab32a5b1c7d70c35724b57b915",
+          "page": 1,
+          "locator": "第 1 页右上，D1 DSS34 连接 BAT+ 与 GND"
+        }
+      ]
+    },
+    {
+      "reference": "L1,R2",
+      "part_number": "3.3uH 4012 / 150KΩ",
+      "role": "ETA9740 的开关电感和 ISET 设定网络",
+      "evidence": [
+        {
+          "asset_sha256": "cacac3d1e29ea7035c746de97a331103b07bb0ab32a5b1c7d70c35724b57b915",
+          "page": 1,
+          "locator": "第 1 页左上，L1 3.3uH 4012 位于 BAT+ 与 U1 SW，R2 150K 从 ISET pin6 接 GND"
+        }
+      ]
+    },
+    {
+      "reference": "C1-C11",
+      "part_number": "106 / 475 / 104",
+      "role": "BAT+、5V、3V3 和 STM32 电源去耦电容组",
+      "evidence": [
+        {
+          "asset_sha256": "cacac3d1e29ea7035c746de97a331103b07bb0ab32a5b1c7d70c35724b57b915",
+          "page": 1,
+          "locator": "第 1 页顶部 C1-C5/C7-C11 与中央 C6，分别连接 BAT+、5V、3V3 和 GND"
+        }
+      ]
+    }
+  ],
+  "facts": [
+    {
+      "id": "system.motion-control-architecture",
+      "category": "system",
+      "subject": "Atomic Motion Base 运动控制架构",
+      "statement": "BT1 建立 BAT+ 电源域，U1 ETA9740 产生 5V；U3 STM32F030F4P6 控制两颗 RZ7899 的两路电机输出和 JP3-JP6 四路三针接口，并通过 SCL/SDA 与 Atom 连接，Atom 另行直连两组 Grove。",
+      "confidence": "confirmed",
+      "attributes": {
+        "battery": "BT1 16340",
+        "boost_converter": "U1 ETA9740",
+        "controller": "U3 STM32F030F4P6",
+        "motor_drivers": "U4/U2 RZ7899",
+        "motor_outputs": "JP2/JP1",
+        "three_pin_outputs": "JP3-JP6",
+        "host_bus": "Atom G21/G25 SCL/SDA"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "cacac3d1e29ea7035c746de97a331103b07bb0ab32a5b1c7d70c35724b57b915",
+          "page": 1,
+          "locator": "第 1 页完整单页原理图，顶部电源、左侧驱动/接口、中央 STM32、右下 Atom/Grove"
+        }
+      ]
+    },
+    {
+      "id": "power.battery-switch-fuse",
+      "category": "power",
+      "subject": "BT1 电池回路、开关和保险丝",
+      "statement": "BT1 16340 上端接 BAT+，下端经 FUSE 5A 接 S? SS-12F23 pin3；开关 pin2 接 GND，pin1 未接外部网络。",
+      "confidence": "confirmed",
+      "attributes": {
+        "battery_positive": "BT1 upper terminal BAT+",
+        "battery_return": "BT1 lower terminal -> FUSE 5A -> switch pin3",
+        "switch_common": "pin2 GND",
+        "unused_contact": "pin1 no external net"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "cacac3d1e29ea7035c746de97a331103b07bb0ab32a5b1c7d70c35724b57b915",
+          "page": 1,
+          "locator": "第 1 页上方中央，BT1/Fuse/S? 到 BAT+ 和 GND 的完整回路"
+        }
+      ]
+    },
+    {
+      "id": "power.eta9740-boost",
+      "category": "power",
+      "subject": "ETA9740 BAT+ 到 5V 转换",
+      "statement": "U1 ETA9740 的 BAT 输入接 BAT+，SW 通过 L1 3.3uH 4012 接 BAT+，OUT pin7 输出 5V；ISET pin6 通过 R2 150KΩ 接 GND，PGND pin8 与 AGND 接 GND。",
+      "confidence": "confirmed",
+      "attributes": {
+        "input": "BAT+",
+        "switch_inductor": "L1 3.3uH 4012",
+        "output": "OUT pin7 5V",
+        "current_set": "ISET pin6 through R2 150K to GND",
+        "grounds": "PGND pin8 and AGND GND"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "cacac3d1e29ea7035c746de97a331103b07bb0ab32a5b1c7d70c35724b57b915",
+          "page": 1,
+          "locator": "第 1 页左上，BAT+/L1/U1 ETA9740/R2 与 5V 输出"
+        }
+      ]
+    },
+    {
+      "id": "power.rail-decoupling",
+      "category": "power",
+      "subject": "BAT+、5V 与 3V3 去耦",
+      "statement": "C1 106 与 C2 475 连接 BAT+ 到 GND；C3/C4/C5 106 和 C11 104 连接 U1 输出 5V 到 GND；C7 475 连接 5V 到 GND；C8 475 与 C9/C10 104 连接 3V3 到 GND；C6 104 位于 STM32 的 3V3-GND。",
+      "confidence": "confirmed",
+      "attributes": {
+        "BAT+": "C1 106, C2 475",
+        "U1_5V_output": "C3/C4/C5 106, C11 104",
+        "5V_distribution": "C7 475",
+        "3V3_distribution": "C8 475, C9/C10 104",
+        "MCU_3V3": "C6 104"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "cacac3d1e29ea7035c746de97a331103b07bb0ab32a5b1c7d70c35724b57b915",
+          "page": 1,
+          "locator": "第 1 页顶部 C1-C5/C7-C11 与 U3/J3 附近 C6"
+        }
+      ]
+    },
+    {
+      "id": "protection.bat-schottky",
+      "category": "protection",
+      "subject": "BAT+ 对地二极管",
+      "statement": "D1 DSS34 连接在 BAT+ 与 GND 之间。",
+      "confidence": "confirmed",
+      "attributes": {
+        "device": "D1 DSS34",
+        "rail": "BAT+",
+        "return": "GND"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "cacac3d1e29ea7035c746de97a331103b07bb0ab32a5b1c7d70c35724b57b915",
+          "page": 1,
+          "locator": "第 1 页右上，D1 DSS34 的 BAT+-GND 连接"
+        }
+      ]
+    },
+    {
+      "id": "component.motor-driver-pin-map",
+      "category": "component",
+      "subject": "RZ7899 双路电机驱动连接",
+      "statement": "U4 VCC pin4 接 BAT+、GND pin3 接 GND，INF pin2=M1F、INR pin1=M1R，OUTF pins5/6 与 OUTR pins7/8 接 JP2；U2 采用同一供电，INF pin2=M2F、INR pin1=M2R，输出接 JP1。",
+      "confidence": "confirmed",
+      "attributes": {
+        "U4_supply": "pin4 BAT+, pin3 GND",
+        "U4_inputs": "pin2 M1F, pin1 M1R",
+        "U4_outputs": "pins5/6 OUTF, pins7/8 OUTR -> JP2",
+        "U2_supply": "pin4 BAT+, pin3 GND",
+        "U2_inputs": "pin2 M2F, pin1 M2R",
+        "U2_outputs": "pins5/6 OUTF, pins7/8 OUTR -> JP1"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "cacac3d1e29ea7035c746de97a331103b07bb0ab32a5b1c7d70c35724b57b915",
+          "page": 1,
+          "locator": "第 1 页左中，U4/U2 RZ7899 与 JP2/JP1、BAT+/GND、M1F/M1R/M2F/M2R"
+        }
+      ]
+    },
+    {
+      "id": "interface.motor-output-connectors",
+      "category": "interface",
+      "subject": "JP1/JP2 电机输出",
+      "statement": "JP2 pin2 接 U4 OUTF pins5/6，pin1 接 U4 OUTR pins7/8；JP1 pin2 接 U2 OUTF pins5/6，pin1 接 U2 OUTR pins7/8。",
+      "confidence": "confirmed",
+      "attributes": {
+        "JP2": "pin2 U4 OUTF, pin1 U4 OUTR",
+        "JP1": "pin2 U2 OUTF, pin1 U2 OUTR"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "cacac3d1e29ea7035c746de97a331103b07bb0ab32a5b1c7d70c35724b57b915",
+          "page": 1,
+          "locator": "第 1 页左中，JP2/JP1 两针编号到 U4/U2 OUTF/OUTR 的线路"
+        }
+      ]
+    },
+    {
+      "id": "gpio.motor-control-map",
+      "category": "gpio",
+      "subject": "STM32 电机控制 GPIO",
+      "statement": "U3 PA4 pin10 输出 M1F，PB1 pin14 输出 M1R，PA6 pin12 输出 M2F，PA7 pin13 输出 M2R，并分别连接 U4/U2 的 INF/INR。",
+      "confidence": "confirmed",
+      "attributes": {
+        "PA4_pin10": "M1F -> U4 INF pin2",
+        "PB1_pin14": "M1R -> U4 INR pin1",
+        "PA6_pin12": "M2F -> U2 INF pin2",
+        "PA7_pin13": "M2R -> U2 INR pin1"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "cacac3d1e29ea7035c746de97a331103b07bb0ab32a5b1c7d70c35724b57b915",
+          "page": 1,
+          "locator": "第 1 页中央 U3 的 PA4/PB1/PA6/PA7 与左侧 U4/U2 同名 M1F/M1R/M2F/M2R 网络"
+        }
+      ]
+    },
+    {
+      "id": "interface.three-pin-output-map",
+      "category": "interface",
+      "subject": "JP3-JP6 三针接口映射",
+      "statement": "JP3 pin3=U3 PA0、pin2=BAT+、pin1=GND；JP4 pin3=PA1、pin2=BAT+、pin1=GND；JP5 pin1=PA2、pin2=BAT+、pin3=GND；JP6 pin1=PA3、pin2=BAT+、pin3=GND。",
+      "confidence": "confirmed",
+      "attributes": {
+        "JP3": "pin3 PA0, pin2 BAT+, pin1 GND",
+        "JP4": "pin3 PA1, pin2 BAT+, pin1 GND",
+        "JP5": "pin1 PA2, pin2 BAT+, pin3 GND",
+        "JP6": "pin1 PA3, pin2 BAT+, pin3 GND"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "cacac3d1e29ea7035c746de97a331103b07bb0ab32a5b1c7d70c35724b57b915",
+          "page": 1,
+          "locator": "第 1 页左下 JP3-JP6 针脚编号、BAT+/GND 与连到 U3 PA0-PA3 的四条信号线"
+        }
+      ]
+    },
+    {
+      "id": "gpio.three-pin-control-map",
+      "category": "gpio",
+      "subject": "STM32 四路三针接口控制",
+      "statement": "U3 PA0 pin6、PA1 pin7、PA2 pin8、PA3 pin9 分别连接 JP3、JP4、JP5、JP6 的信号针。",
+      "confidence": "confirmed",
+      "attributes": {
+        "PA0_pin6": "JP3 pin3",
+        "PA1_pin7": "JP4 pin3",
+        "PA2_pin8": "JP5 pin1",
+        "PA3_pin9": "JP6 pin1"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "cacac3d1e29ea7035c746de97a331103b07bb0ab32a5b1c7d70c35724b57b915",
+          "page": 1,
+          "locator": "第 1 页中央 U3 PA0-PA3 到左下 JP3-JP6 的四条独立线路"
+        }
+      ]
+    },
+    {
+      "id": "bus.atom-stm32-i2c",
+      "category": "bus",
+      "subject": "Atom 与 STM32 的 SCL/SDA 总线",
+      "statement": "Atom G21 pin7 通过 SCL 连接 U3 PA9 pin17，Atom G25 pin5 通过 SDA 连接 U3 PA10 pin18。",
+      "confidence": "confirmed",
+      "attributes": {
+        "SCL": "Atom G21 pin7 <-> U3 PA9 pin17",
+        "SDA": "Atom G25 pin5 <-> U3 PA10 pin18"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "cacac3d1e29ea7035c746de97a331103b07bb0ab32a5b1c7d70c35724b57b915",
+          "page": 1,
+          "locator": "第 1 页中央，ATOM G21/G25 的 SCL/SDA 网络到 U3 PA9/PA10"
+        }
+      ]
+    },
+    {
+      "id": "interface.atom-power-gpio",
+      "category": "interface",
+      "subject": "Atom 电源与 GPIO 针脚",
+      "statement": "Atom pin9=3V3、pin8=G22、pin7=G21/SCL、pin6=G19、pin5=G25/SDA、pin4=G23、pin3=5V、pin2=G33、pin1=GND。",
+      "confidence": "confirmed",
+      "attributes": {
+        "pin9": "3V3",
+        "pin8": "G22",
+        "pin7": "G21 SCL",
+        "pin6": "G19",
+        "pin5": "G25 SDA",
+        "pin4": "G23",
+        "pin3": "5V",
+        "pin2": "G33",
+        "pin1": "GND"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "cacac3d1e29ea7035c746de97a331103b07bb0ab32a5b1c7d70c35724b57b915",
+          "page": 1,
+          "locator": "第 1 页中下 ATOM 符号的 pin1-pin9、G21/G25/G22/G19/G23/G33 与电源标注"
+        }
+      ]
+    },
+    {
+      "id": "interface.grove-connectors",
+      "category": "interface",
+      "subject": "J1/J2 Grove GPIO 映射",
+      "statement": "J1 GROVE 的 pin4 IO2 接 Atom G23 pin4，pin3 IO1 接 G33 pin2，pin2=5V、pin1=GND；J2 的 pin4 IO2 接 G22 pin8，pin3 IO1 接 G19 pin6，pin2=5V、pin1=GND。",
+      "confidence": "confirmed",
+      "attributes": {
+        "J1": "pin4 G23, pin3 G33, pin2 5V, pin1 GND",
+        "J2": "pin4 G22, pin3 G19, pin2 5V, pin1 GND"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "cacac3d1e29ea7035c746de97a331103b07bb0ab32a5b1c7d70c35724b57b915",
+          "page": 1,
+          "locator": "第 1 页右下，ATOM 右侧 G22/G19/G23/G33 到 J2/J1 IO2/IO1 的线路"
+        }
+      ]
+    },
+    {
+      "id": "power.stm32-supply",
+      "category": "power",
+      "subject": "STM32F030F4P6 电源与去耦",
+      "statement": "U3 VDDA pin5 与 VDD pin16 接 3V3，VSS pin15 接 GND，C6 104 连接 3V3 与 GND。",
+      "confidence": "confirmed",
+      "attributes": {
+        "VDDA": "pin5 3V3",
+        "VDD": "pin16 3V3",
+        "VSS": "pin15 GND",
+        "decoupling": "C6 104 from 3V3 to GND"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "cacac3d1e29ea7035c746de97a331103b07bb0ab32a5b1c7d70c35724b57b915",
+          "page": 1,
+          "locator": "第 1 页中央 U3 VDDA/VDD/VSS 与右侧 C6 104 的 3V3-GND 连接"
+        }
+      ]
+    },
+    {
+      "id": "debug.stm32-swd",
+      "category": "debug",
+      "subject": "STM32 SWD 调试接口",
+      "statement": "U3 NRST pin4、PA14/DCK pin20 的 SWCLK、PA13/DIO pin19 的 SWDIO 与 3V3/GND 一同接至 J3 SWD 的 RST/CLK/DIO/VCC/GND。",
+      "confidence": "confirmed",
+      "attributes": {
+        "RST": "U3 NRST pin4",
+        "CLK": "U3 PA14/DCK pin20 SWCLK",
+        "DIO": "U3 PA13/DIO pin19 SWDIO",
+        "VCC": "3V3",
+        "GND": "GND"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "cacac3d1e29ea7035c746de97a331103b07bb0ab32a5b1c7d70c35724b57b915",
+          "page": 1,
+          "locator": "第 1 页中央 U3 NRST/SWCLK/SWDIO 与右中 J3 SWD"
+        }
+      ]
+    }
+  ],
+  "needs_review": []
+}

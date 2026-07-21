@@ -1,0 +1,21 @@
+{
+  "dry_run": false,
+  "failed": 0,
+  "published": 1,
+  "results": [
+    {
+      "backup": null,
+      "draft_action": "unchanged",
+      "dry_run": false,
+      "errors": [],
+      "needs_review": 2,
+      "product_id": "unit-encoder-20eb287ba027",
+      "product_name": "Unit Encoder",
+      "publish_action": "unchanged",
+      "sha256": "4ae0ed2017a755620614a64342d1678461717d95c0fc85b586c4193fef25d9b9",
+      "status": "valid",
+      "uncertain_facts": 2
+    }
+  ],
+  "schema_version": 1
+}

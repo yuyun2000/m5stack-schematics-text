@@ -1,0 +1,21 @@
+{
+  "dry_run": false,
+  "failed": 0,
+  "published": 1,
+  "results": [
+    {
+      "backup": null,
+      "draft_action": "unchanged",
+      "dry_run": false,
+      "errors": [],
+      "needs_review": 6,
+      "product_id": "papercolor-a872f67ef4c9",
+      "product_name": "PaperColor",
+      "publish_action": "unchanged",
+      "sha256": "fc749d56309451dd1825ee8ff9cecd5e2f97866e406e8388a8b80ab6fb84c992",
+      "status": "valid",
+      "uncertain_facts": 6
+    }
+  ],
+  "schema_version": 1
+}

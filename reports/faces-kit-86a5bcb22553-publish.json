@@ -1,0 +1,21 @@
+{
+  "dry_run": false,
+  "failed": 0,
+  "published": 1,
+  "results": [
+    {
+      "backup": null,
+      "draft_action": "unchanged",
+      "dry_run": false,
+      "errors": [],
+      "needs_review": 1,
+      "product_id": "faces-kit-86a5bcb22553",
+      "product_name": "Faces Kit",
+      "publish_action": "unchanged",
+      "sha256": "2f94a0f2d1a3669bbbb51c738c4d25307c0e11ce7b74aa842d22ea00a8682cd0",
+      "status": "valid",
+      "uncertain_facts": 1
+    }
+  ],
+  "schema_version": 1
+}

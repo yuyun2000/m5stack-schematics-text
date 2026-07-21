@@ -1,0 +1,636 @@
+{
+  "schema_version": 1,
+  "generator": "schematic_describer",
+  "product": {
+    "product_id": "module-llm-f66d28e8903c",
+    "product_name": "Module LLM",
+    "sku": "M140",
+    "source_path": "module/Module-LLM.md",
+    "source_sha256": "e07eddde2c93dbc85c24820c2cfaa3afcaefbce4a637cb9649ff1caf71520b71",
+    "input_sha256": "e8840f801a732c7eb1bb722510d8b2ece6e1a5f1d1c5d13a59b0df2d21d6b53f"
+  },
+  "schematic_assets": [
+    {
+      "sha256": "04d8e4d3a1f437648d64f0954da6e7d4209fe030dd80e12e5d0fc21294ab27df",
+      "source_url": "https://m5stack-doc.oss-cn-shenzhen.aliyuncs.com/992/M140_Sch_M5_Module-LLM_page_02.png",
+      "pages": [1]
+    },
+    {
+      "sha256": "d660230e4d50db57eb25c1a5b8f9316e1cded68db9b69c0f3c6db53fd77037fc",
+      "source_url": "https://m5stack-doc.oss-cn-shenzhen.aliyuncs.com/992/M140_Sch_M5_Module-LLM_page_03.png",
+      "pages": [1]
+    },
+    {
+      "sha256": "a26d069d6b4ed101321cf768d1a0ffaea0206507b2c1300b7e61028077627767",
+      "source_url": "https://m5stack-doc.oss-cn-shenzhen.aliyuncs.com/992/M140_Sch_M5_Module-LLM_page_04.png",
+      "pages": [1]
+    },
+    {
+      "sha256": "b3098cc77650a26b76198ae615d4047069e89cf24f3e9c681b172d35b936f3f1",
+      "source_url": "https://m5stack-doc.oss-cn-shenzhen.aliyuncs.com/992/M140_Sch_M5_Module-LLM_page_05.png",
+      "pages": [1]
+    },
+    {
+      "sha256": "00b1d013437da8f15a51912587a12f6c6eaf685c768689d73d16de0b171bcee3",
+      "source_url": "https://m5stack-doc.oss-cn-shenzhen.aliyuncs.com/992/M140_Sch_M5_Module-LLM_page_06.png",
+      "pages": [1]
+    },
+    {
+      "sha256": "3cd38ef8bf5d582ca4f6ded3f8b34f5f26951091096fa3c8fbc35fac9b7ee71a",
+      "source_url": "https://m5stack-doc.oss-cn-shenzhen.aliyuncs.com/992/M140_Sch_M5_Module-LLM_page_07.png",
+      "pages": [1]
+    },
+    {
+      "sha256": "e996fa2558a73720ba0f6b541a2d5ab8057c28f5039b8e41d8241da1263d2408",
+      "source_url": "https://m5stack-doc.oss-cn-shenzhen.aliyuncs.com/992/M140_Sch_M5_Module-LLM_page_08.png",
+      "pages": [1]
+    },
+    {
+      "sha256": "141a3b26d17b1ea2281ff2704819e269f807faf914febf0a5bffb52d34561338",
+      "source_url": "https://m5stack-doc.oss-cn-shenzhen.aliyuncs.com/992/M140_Sch_M5_Module-LLM_page_09.png",
+      "pages": [1]
+    },
+    {
+      "sha256": "225a0cfb34baeb01152e260ae545722a1e21cf41ed2af775108486e605f7f161",
+      "source_url": "https://m5stack-doc.oss-cn-shenzhen.aliyuncs.com/992/M140_Sch_M5_Module-LLM_page_10.png",
+      "pages": [1]
+    }
+  ],
+  "summary": "九张本地原理图页面覆盖 Module LLM 的 AX630C 主控、电源树、启动与时钟、LPDDR4、eMMC、MicroSD、模拟音频、USB Type-C、UART/I2C、M5-Bus、RGB 状态灯及调试 FPC。图面确认 AX630C、MSM421A 系列麦克风、AW8737A 功放、LP5562 和主要接口连线，但 LPDDR4/eMMC 容量、NPU 算力、功耗、扬声器机械规格、网络速率及软件模型能力未直接标注。",
+  "keywords": [
+    "Module LLM",
+    "M140",
+    "AX630C",
+    "LPDDR4",
+    "eMMC 5.1",
+    "MicroSD",
+    "TF card",
+    "MSM421A",
+    "MSM421A3729H9KRMC",
+    "AW8737A",
+    "LP5562",
+    "LED-2020-RGB",
+    "SGM7220",
+    "SGM2578",
+    "AW32901",
+    "SY8089A1AAA",
+    "JW5255A",
+    "WL2811EA-5/TR",
+    "USB Type-C",
+    "USB OTG",
+    "TRM_TXD",
+    "TRM_RXD",
+    "DBG_TXD",
+    "DBG_RXD",
+    "BUS_SCL",
+    "BUS_SDA",
+    "M.BUS_Core2",
+    "EPHY_TX",
+    "EPHY_RX",
+    "24MHz",
+    "32.768kHz",
+    "VCORE_0V8",
+    "VDDR_1V1",
+    "VDD_1V8",
+    "VDD_3V3",
+    "VDD_5V",
+    "StackFlow",
+    "Qwen2.5-0.5B",
+    "KWS",
+    "ASR",
+    "TTS",
+    "3.2 TOPS",
+    "115200 8N1"
+  ],
+  "components": [
+    {
+      "reference": "U1",
+      "part_number": "AX630C",
+      "role": "主 SoC，连接电源、DDR、存储、音频、USB、UART/I2C、以太网 PHY 与启动控制",
+      "evidence": [
+        {"asset_sha256": "04d8e4d3a1f437648d64f0954da6e7d4209fe030dd80e12e5d0fc21294ab27df", "page": 1, "locator": "原 PDF 第2页 U1A/U1L AX630C 电源与地"},
+        {"asset_sha256": "d660230e4d50db57eb25c1a5b8f9316e1cded68db9b69c0f3c6db53fd77037fc", "page": 1, "locator": "原 PDF 第3页 U1B/U1E AX630C 启动、时钟、USB、UART 与 I2C"}
+      ]
+    },
+    {
+      "reference": "U2",
+      "part_number": "AW32901",
+      "role": "VIN_5V 到 VDD_5V 的输入保护与受控通路",
+      "evidence": [
+        {"asset_sha256": "04d8e4d3a1f437648d64f0954da6e7d4209fe030dd80e12e5d0fc21294ab27df", "page": 1, "locator": "原 PDF 第2页右上 U2 AW32901、VIN_5V/VDD_5V 与 OVLO 分压"}
+      ]
+    },
+    {
+      "reference": "U3,U4,U6",
+      "part_number": "SY8089A1AAA",
+      "role": "从 VDD_5V 生成 3.3V、1.8V 和 DDR 1.1V 的三路降压转换器",
+      "evidence": [
+        {"asset_sha256": "04d8e4d3a1f437648d64f0954da6e7d4209fe030dd80e12e5d0fc21294ab27df", "page": 1, "locator": "原 PDF 第2页 U3/U4/U6 SY8089A1AAA 与 L1/L2/L3"}
+      ]
+    },
+    {
+      "reference": "U5,U7",
+      "part_number": "LP5907MFX-1.8/NOPB / JW5255A",
+      "role": "分别生成 AVDD_1V8 模拟电源和 VCORE_0V8 核心电源",
+      "evidence": [
+        {"asset_sha256": "04d8e4d3a1f437648d64f0954da6e7d4209fe030dd80e12e5d0fc21294ab27df", "page": 1, "locator": "原 PDF 第2页 U5 LP5907 与 U7 JW5255A"}
+      ]
+    },
+    {
+      "reference": "X1,Y1",
+      "part_number": "24MHz/12pF/2520 / 32.768kHz/12.5pF/3215",
+      "role": "AX630C 主时钟与低速时钟晶体",
+      "evidence": [
+        {"asset_sha256": "d660230e4d50db57eb25c1a5b8f9316e1cded68db9b69c0f3c6db53fd77037fc", "page": 1, "locator": "原 PDF 第3页右侧 X1 24MHz 与 Y1 32.768kHz"}
+      ]
+    },
+    {
+      "reference": "U8",
+      "part_number": "LPDDR4",
+      "role": "AX630C 外部 LPDDR4 内存器件",
+      "evidence": [
+        {"asset_sha256": "a26d069d6b4ed101321cf768d1a0ffaea0206507b2c1300b7e61028077627767", "page": 1, "locator": "原 PDF 第4页 U8A/U8B/U8C LPDDR4 与 DDR_DQ0-15"}
+      ]
+    },
+    {
+      "reference": "U11",
+      "part_number": "EMMC_V5.1",
+      "role": "AX630C 的 eMMC 5.1 启动与存储器件",
+      "evidence": [
+        {"asset_sha256": "b3098cc77650a26b76198ae615d4047069e89cf24f3e9c681b172d35b936f3f1", "page": 1, "locator": "原 PDF 第5页 U11 EMMC_V5.1、EMMC_D0-7/CMD/CLK/DS/RSTN"}
+      ]
+    },
+    {
+      "reference": "U9,U10,FET3,VT1",
+      "part_number": "WL2811EA-5/TR / MicroSD / CJ2301 / PMBT3904",
+      "role": "MicroSD 卡座及其 IO 电源、卡电源开关和检测链路",
+      "evidence": [
+        {"asset_sha256": "b3098cc77650a26b76198ae615d4047069e89cf24f3e9c681b172d35b936f3f1", "page": 1, "locator": "原 PDF 第5页 U9/U10/FET3/VT1 与 SDCARD 信号"}
+      ]
+    },
+    {
+      "reference": "U12",
+      "part_number": "MSM421A3729H9KRMC",
+      "role": "差分模拟麦克风，连接 AX630C AUDIO_IN_P/N",
+      "evidence": [
+        {"asset_sha256": "00b1d013437da8f15a51912587a12f6c6eaf685c768689d73d16de0b171bcee3", "page": 1, "locator": "原 PDF 第6页 U12 MSM421A3729H9KRMC 与 C128/C132"}
+      ]
+    },
+    {
+      "reference": "U13",
+      "part_number": "AW8737A",
+      "role": "由 AX630C AUDIO_OUT_P/N 驱动的差分扬声器功放",
+      "evidence": [
+        {"asset_sha256": "00b1d013437da8f15a51912587a12f6c6eaf685c768689d73d16de0b171bcee3", "page": 1, "locator": "原 PDF 第6页 U13 AW8737A 与 SPK_VOP/SPK_VON"}
+      ]
+    },
+    {
+      "reference": "J1,U14,U16",
+      "part_number": "USB Type-C / SGM7220 / SGM2578",
+      "role": "USB Type-C 数据、CC/ID 检测和 VBUS 电源角色控制",
+      "evidence": [
+        {"asset_sha256": "3cd38ef8bf5d582ca4f6ded3f8b34f5f26951091096fa3c8fbc35fac9b7ee71a", "page": 1, "locator": "原 PDF 第7页上方 J1/U14/U16、USB_ID、USB_D_P/N 与 VUSB_5V"}
+      ]
+    },
+    {
+      "reference": "U20,U18,U21,U22",
+      "part_number": "LP5562 / LED-2020-RGB",
+      "role": "I2C 控制的三颗共用 RGB 通道状态灯",
+      "evidence": [
+        {"asset_sha256": "3cd38ef8bf5d582ca4f6ded3f8b34f5f26951091096fa3c8fbc35fac9b7ee71a", "page": 1, "locator": "原 PDF 第7页中下 U20 LP5562 与 U18/U21/U22 LED-2020-RGB"}
+      ]
+    },
+    {
+      "reference": "J2",
+      "part_number": "FPC-SMD_8P-P0.50",
+      "role": "引出 EPHY_TX/RX 差分对和 DBG_TXD/RXD 的调试接口",
+      "evidence": [
+        {"asset_sha256": "3cd38ef8bf5d582ca4f6ded3f8b34f5f26951091096fa3c8fbc35fac9b7ee71a", "page": 1, "locator": "原 PDF 第7页左中 J2 FPC 8-pin"}
+      ]
+    },
+    {
+      "reference": "J4,Tie1-Tie8",
+      "part_number": "M.BUS_Core2 / Net-Tie",
+      "role": "M5-Bus 主连接器和终端 UART 引脚选择焊盘",
+      "evidence": [
+        {"asset_sha256": "3cd38ef8bf5d582ca4f6ded3f8b34f5f26951091096fa3c8fbc35fac9b7ee71a", "page": 1, "locator": "原 PDF 第7页底部 J4 与 Tie1-Tie8"}
+      ]
+    },
+    {
+      "reference": "U15,D2,D10,D11",
+      "part_number": "SRV05-4 / WS05DLC-B",
+      "role": "USB、SD 卡和终端 UART 信号的 ESD 保护",
+      "evidence": [
+        {"asset_sha256": "3cd38ef8bf5d582ca4f6ded3f8b34f5f26951091096fa3c8fbc35fac9b7ee71a", "page": 1, "locator": "原 PDF 第7页 U15、D10/D11"},
+        {"asset_sha256": "b3098cc77650a26b76198ae615d4047069e89cf24f3e9c681b172d35b936f3f1", "page": 1, "locator": "原 PDF 第5页 D2 WS05DLC-B 阵列"}
+      ]
+    }
+  ],
+  "facts": [
+    {
+      "id": "system.ax630c-hardware",
+      "category": "system",
+      "subject": "AX630C 主控硬件范围",
+      "statement": "U1 标为 AX630C，其分单元连接电源与地、DDR、eMMC、SD 卡、模拟音频、USB、UART、I2C、以太网 PHY、启动脚、时钟和复位网络。",
+      "confidence": "confirmed",
+      "attributes": {"soc": "AX630C", "schematic_assets": 9},
+      "evidence": [
+        {"asset_sha256": "04d8e4d3a1f437648d64f0954da6e7d4209fe030dd80e12e5d0fc21294ab27df", "page": 1, "locator": "原 PDF 第2页 U1A/U1L"},
+        {"asset_sha256": "d660230e4d50db57eb25c1a5b8f9316e1cded68db9b69c0f3c6db53fd77037fc", "page": 1, "locator": "原 PDF 第3页 U1B/U1E/U1O"}
+      ]
+    },
+    {
+      "id": "power.input-and-rail-tree",
+      "category": "power",
+      "subject": "5V 输入保护与多路 SoC 电源树",
+      "statement": "VIN_5V 经 U2 AW32901 形成 VDD_5V；U3/U4/U6 SY8089A1AAA 分别生成 VDD_3V3、VDD_1V8、VDDR_1V1，U5 LP5907 生成 AVDD_1V8，U7 JW5255A 生成 VCORE_0V8。",
+      "confidence": "confirmed",
+      "attributes": {"input": "VIN_5V", "rails": "VDD_5V,VDD_3V3,VDD_1V8,VDDR_1V1,AVDD_1V8,VCORE_0V8"},
+      "evidence": [
+        {"asset_sha256": "04d8e4d3a1f437648d64f0954da6e7d4209fe030dd80e12e5d0fc21294ab27df", "page": 1, "locator": "原 PDF 第2页 U2-U7 与 L1-L4"}
+      ]
+    },
+    {
+      "id": "clock.main-and-rtc",
+      "category": "clock",
+      "subject": "24MHz 与 32.768kHz 时钟",
+      "statement": "AX_24M_XIN/XOUT 连接 X1 24MHz/12pF/2520 晶体，AX_32K_XIN/XOUT 连接 Y1 32.768kHz/12.5pF/3215 晶体；两组均配置负载电容。",
+      "confidence": "confirmed",
+      "attributes": {"main_clock_mhz": 24, "low_speed_clock_khz": 32.768},
+      "evidence": [
+        {"asset_sha256": "d660230e4d50db57eb25c1a5b8f9316e1cded68db9b69c0f3c6db53fd77037fc", "page": 1, "locator": "原 PDF 第3页右侧 X1/Y1 与 C70/C72-C74"}
+      ]
+    },
+    {
+      "id": "system.boot-strap-and-download",
+      "category": "system",
+      "subject": "eMMC 默认启动与下载模式选择",
+      "statement": "R18/R19/R20 将 AX_BOND0、AX_BOND1、AX_GPIOA3 下拉，AX_GPIOA2_BOOT 由 R17 上拉；图中启动表对应默认 EMMC UDA，按下 GPIOA2_BOOT 到地后进入 USB DL、SD Card 或 UART 下载组合。",
+      "confidence": "confirmed",
+      "attributes": {"default_boot": "EMMC UDA", "download_sources": "USB DL,SD Card,UART"},
+      "evidence": [
+        {"asset_sha256": "d660230e4d50db57eb25c1a5b8f9316e1cded68db9b69c0f3c6db53fd77037fc", "page": 1, "locator": "原 PDF 第3页 AX_BOND0/1、AX_GPIOA2_BOOT、AX_GPIOA3 与 BOOT OPTION 表"}
+      ]
+    },
+    {
+      "id": "reset.mbus-to-soc",
+      "category": "reset",
+      "subject": "M5-Bus 到 AX630C 的复位链路",
+      "statement": "J4 的 MBUS_RST 经 FET1 CJ3139K、FET2 2N7002 与 SYS_RST_IN NetTie 驱动 AX630C 复位输入，R23/C71 提供上拉和 RC 网络。",
+      "confidence": "confirmed",
+      "attributes": {"source_reset": "MBUS_RST", "soc_reset": "SYS_RST_IN"},
+      "evidence": [
+        {"asset_sha256": "d660230e4d50db57eb25c1a5b8f9316e1cded68db9b69c0f3c6db53fd77037fc", "page": 1, "locator": "原 PDF 第3页中部 MBUS_RST、FET1/FET2 与 SYS_RST_IN"},
+        {"asset_sha256": "3cd38ef8bf5d582ca4f6ded3f8b34f5f26951091096fa3c8fbc35fac9b7ee71a", "page": 1, "locator": "原 PDF 第7页 J4 pin6 MBUS_RST"}
+      ]
+    },
+    {
+      "id": "memory.lpddr4-interface",
+      "category": "memory",
+      "subject": "AX630C 外部 LPDDR4",
+      "statement": "U8 标为 LPDDR4，通过 DDR_DQ0-15、DQS0/1、DM0/1、CA0-5、CLK、CKE、CS 与 RESET_N 连接 AX630C，器件使用 VDDR_1V1 与 VDD_1V8 电源。",
+      "confidence": "confirmed",
+      "attributes": {"memory_type": "LPDDR4", "data_bits": 16, "io_rail": "VDDR_1V1", "core_rail": "VDD_1V8"},
+      "evidence": [
+        {"asset_sha256": "a26d069d6b4ed101321cf768d1a0ffaea0206507b2c1300b7e61028077627767", "page": 1, "locator": "原 PDF 第4页 U1D 与 U8A/U8B/U8C DDR 总线"}
+      ]
+    },
+    {
+      "id": "storage.emmc-v5-1",
+      "category": "storage",
+      "subject": "eMMC 5.1 存储接口",
+      "statement": "U11 标为 EMMC_V5.1，通过 EMMC_D0-7、CMD、CLK、DS 与 RSTN 连接 AX630C；VCC 连接 VDD_3V3，VCCQ 连接 VDD_1V8。",
+      "confidence": "confirmed",
+      "attributes": {"interface": "eMMC 5.1", "data_bits": 8, "vcc": "VDD_3V3", "vccq": "VDD_1V8"},
+      "evidence": [
+        {"asset_sha256": "b3098cc77650a26b76198ae615d4047069e89cf24f3e9c681b172d35b936f3f1", "page": 1, "locator": "原 PDF 第5页 U1M/U11 eMMC 总线"}
+      ]
+    },
+    {
+      "id": "storage.microsd-controlled-power",
+      "category": "storage",
+      "subject": "MicroSD 四位总线与受控供电",
+      "statement": "U10 MicroSD 卡座连接 SDCARD_DAT0-3、CMD、CLK 与 SD_DET_N；U9 生成 VDDIO_SDCARD，FET3/VT1 由 SD_PWR_EN 控制 VDD_SDCARD，D2 对卡信号提供 ESD 保护。",
+      "confidence": "confirmed",
+      "attributes": {"data_bits": 4, "card_detect": "SD_DET_N", "power_enable": "SD_PWR_EN"},
+      "evidence": [
+        {"asset_sha256": "b3098cc77650a26b76198ae615d4047069e89cf24f3e9c681b172d35b936f3f1", "page": 1, "locator": "原 PDF 第5页 U9/U10/FET3/VT1/D2"}
+      ]
+    },
+    {
+      "id": "audio.analog-microphone",
+      "category": "audio",
+      "subject": "MSM421A 模拟麦克风输入",
+      "statement": "U12 MSM421A3729H9KRMC 由 AVDD_1V8 经 FB3 滤波供电，其差分输出经 C128/C132 交流耦合到 AX630C AUDIO_IN_P/N。",
+      "confidence": "confirmed",
+      "attributes": {"microphone": "MSM421A3729H9KRMC", "supply": "AVDD_1V8", "soc_input": "AUDIO_IN_P,AUDIO_IN_N"},
+      "evidence": [
+        {"asset_sha256": "00b1d013437da8f15a51912587a12f6c6eaf685c768689d73d16de0b171bcee3", "page": 1, "locator": "原 PDF 第6页 U12/FB3/C128/C132 与 U1F"}
+      ]
+    },
+    {
+      "id": "audio.aw8737a-speaker-path",
+      "category": "audio",
+      "subject": "AW8737A 差分扬声器功放",
+      "statement": "AX630C AUDIO_OUT_P/N 经输入网络送到 U13 AW8737A，AUDIO_AP_EN 控制 AMP_EN，功放由 VDD_5V 供电并通过 FB4/FB5 输出 SPK_VOP/SPK_VON。",
+      "confidence": "confirmed",
+      "attributes": {"amplifier": "AW8737A", "supply": "VDD_5V", "output": "SPK_VOP,SPK_VON"},
+      "evidence": [
+        {"asset_sha256": "00b1d013437da8f15a51912587a12f6c6eaf685c768689d73d16de0b171bcee3", "page": 1, "locator": "原 PDF 第6页 U13、AUDIO_OUT_P/N、AMP_EN 与 SPK_VOP/VON"}
+      ]
+    },
+    {
+      "id": "interface.usb-type-c-role-hardware",
+      "category": "interface",
+      "subject": "USB Type-C 数据与角色控制硬件",
+      "statement": "J1 引出 CC1/CC2、USB_D_E_P/N 与 VUSB_5V；U14 SGM7220 连接 CC1/CC2、USB_ID、SYS_SDA/SCL 和 USB_DET，U16 SGM2578 与 FET4 依据 USB_ID 控制 VIN_5V 到 VUSB_5V 的供电通路，U15/L5 保护并滤波 USB D+/D-。",
+      "confidence": "confirmed",
+      "attributes": {"connector": "USB Type-C", "cc_controller": "SGM7220", "vbus_switch": "SGM2578"},
+      "evidence": [
+        {"asset_sha256": "3cd38ef8bf5d582ca4f6ded3f8b34f5f26951091096fa3c8fbc35fac9b7ee71a", "page": 1, "locator": "原 PDF 第7页上方 J1/U14/U15/U16/L5/FET4"},
+        {"asset_sha256": "d660230e4d50db57eb25c1a5b8f9316e1cded68db9b69c0f3c6db53fd77037fc", "page": 1, "locator": "原 PDF 第3页 U1O USB_D_P/N 与 U1E USB_ID"}
+      ]
+    },
+    {
+      "id": "interface.uart-and-i2c",
+      "category": "interface",
+      "subject": "调试 UART、终端 UART 与系统 I2C",
+      "statement": "AX630C UART0 连接 DBG_TXD/DBG_RXD，UART1 连接 TRM_TXD/TRM_RXD；I2C0 连接 BUS_SCL/BUS_SDA，并由 R24/R69 各 2.2K 上拉到 VDD_3V3。",
+      "confidence": "confirmed",
+      "attributes": {"debug_uart": "DBG_TXD,DBG_RXD", "terminal_uart": "TRM_TXD,TRM_RXD", "i2c": "BUS_SCL,BUS_SDA"},
+      "evidence": [
+        {"asset_sha256": "d660230e4d50db57eb25c1a5b8f9316e1cded68db9b69c0f3c6db53fd77037fc", "page": 1, "locator": "原 PDF 第3页 U1E UART0/UART1/I2C0 与 R24/R69"}
+      ]
+    },
+    {
+      "id": "interface.mbus-net-tie-routing",
+      "category": "interface",
+      "subject": "M5-Bus UART Net-Tie 选择",
+      "statement": "J4 M.BUS_Core2 接入 VIN_5V、MBUS_3V3、MBUS_RST、BUS_SDA/BUS_SCL；Tie1-Tie4 将 TRM_RXD 选择到 BUS_G17/G13/G6/G0，Tie5-Tie8 将 TRM_TXD 选择到 BUS_G18/G7/G14/G10。",
+      "confidence": "confirmed",
+      "attributes": {"rx_candidates": "G17,G13,G6,G0", "tx_candidates": "G18,G7,G14,G10", "method": "Net-Tie cut and jumper"},
+      "evidence": [
+        {"asset_sha256": "3cd38ef8bf5d582ca4f6ded3f8b34f5f26951091096fa3c8fbc35fac9b7ee71a", "page": 1, "locator": "原 PDF 第7页底部 J4 与 Tie1-Tie8"}
+      ]
+    },
+    {
+      "id": "interface.debug-fpc-ephy-uart",
+      "category": "debug",
+      "subject": "调试 FPC 的 EPHY 与内核串口",
+      "statement": "J2 8-pin FPC 引出 EPHY_TX_P/N、EPHY_RX_P/N、DBG_TXD、DBG_RXD 和两脚 GND；EPHY 差分对直接来自 AX630C U1J 内置 PHY 分单元。",
+      "confidence": "confirmed",
+      "attributes": {"connector": "FPC 8-pin 0.50mm", "signals": "EPHY_TX_P/N,EPHY_RX_P/N,DBG_TXD,DBG_RXD"},
+      "evidence": [
+        {"asset_sha256": "3cd38ef8bf5d582ca4f6ded3f8b34f5f26951091096fa3c8fbc35fac9b7ee71a", "page": 1, "locator": "原 PDF 第7页 J2 FPC"},
+        {"asset_sha256": "141a3b26d17b1ea2281ff2704819e269f807faf914febf0a5bffb52d34561338", "page": 1, "locator": "原 PDF 第9页 U1J EPHY_TX/RX"}
+      ]
+    },
+    {
+      "id": "interface.lp5562-rgb-leds",
+      "category": "interface",
+      "subject": "LP5562 驱动三颗并联 RGB LED",
+      "statement": "U20 LP5562 通过 SYS_SDA/SYS_SCL 接入系统 I2C，R/G/B 三路输出分别连接 U18/U21/U22 三颗 LED-2020-RGB 的同名颜色通道，AD0 与 AD1 接地。",
+      "confidence": "confirmed",
+      "attributes": {"driver": "LP5562", "led_count": 3, "led_package": "LED-2020-RGB", "address_pins": "AD0=0,AD1=0"},
+      "evidence": [
+        {"asset_sha256": "3cd38ef8bf5d582ca4f6ded3f8b34f5f26951091096fa3c8fbc35fac9b7ee71a", "page": 1, "locator": "原 PDF 第7页 U20/U18/U21/U22"}
+      ]
+    },
+    {
+      "id": "interface.unused-video-lanes",
+      "category": "interface",
+      "subject": "未连接的 DVP 与 MIPI 并行视频引脚",
+      "statement": "原理图把 AX630C U1G 的 DVP_IN、U1H 的 JMIPI_TX 和最后一页 MIPI_RX 差分引脚全部标为未连接；板上没有由这些引脚构成的摄像头或显示连接器。",
+      "confidence": "confirmed",
+      "attributes": {"unused_interfaces": "DVP_IN,JMIPI_TX,MIPI_RX"},
+      "evidence": [
+        {"asset_sha256": "e996fa2558a73720ba0f6b541a2d5ab8057c28f5039b8e41d8241da1263d2408", "page": 1, "locator": "原 PDF 第8页 U1G/U1H 全部视频信号 NC"},
+        {"asset_sha256": "225a0cfb34baeb01152e260ae545722a1e21cf41ed2af775108486e605f7f161", "page": 1, "locator": "原 PDF 第10页 MIPI_RX 全部差分对 NC"}
+      ]
+    },
+    {
+      "id": "component.documented-soc-performance",
+      "category": "component",
+      "subject": "AX630C CPU 与 NPU 性能",
+      "statement": "正文称 AX630C 包含双 Cortex-A53 1.2GHz，最高 12.8 TOPS INT4 和 3.2 TOPS INT8；原理图只确认器件型号和电气连接，没有 CPU 频率、NPU 架构或算力参数。",
+      "confidence": "uncertain",
+      "attributes": {"documented_cpu": "Dual Cortex-A53 1.2GHz", "documented_int4_tops": 12.8, "documented_int8_tops": 3.2},
+      "evidence": [
+        {"asset_sha256": "04d8e4d3a1f437648d64f0954da6e7d4209fe030dd80e12e5d0fc21294ab27df", "page": 1, "locator": "原 PDF 第2页 U1 仅标 AX630C"}
+      ]
+    },
+    {
+      "id": "memory.documented-4gb-partition",
+      "category": "memory",
+      "subject": "4GB LPDDR4 与 1GB/3GB 分配",
+      "statement": "正文称板载 4GB LPDDR4，其中 1GB 为系统内存、3GB 为硬件加速专用；U8 图符只标 LPDDR4，没有制造商料号、密度、容量或软件内存分区。",
+      "confidence": "uncertain",
+      "attributes": {"documented_total_gb": 4, "documented_system_gb": 1, "documented_accelerator_gb": 3},
+      "evidence": [
+        {"asset_sha256": "a26d069d6b4ed101321cf768d1a0ffaea0206507b2c1300b7e61028077627767", "page": 1, "locator": "原 PDF 第4页 U8 仅标 LPDDR4"}
+      ]
+    },
+    {
+      "id": "storage.documented-32gb-emmc",
+      "category": "storage",
+      "subject": "32GB eMMC 5.1 容量",
+      "statement": "正文称板载 32GB eMMC 5.1；U11 只标 EMMC_V5.1，没有具体料号或容量，因此 32GB 容量和量产颗粒需由 BOM 或器件标识确认。",
+      "confidence": "uncertain",
+      "attributes": {"documented_capacity_gb": 32, "documented_standard": "eMMC 5.1"},
+      "evidence": [
+        {"asset_sha256": "b3098cc77650a26b76198ae615d4047069e89cf24f3e9c681b172d35b936f3f1", "page": 1, "locator": "原 PDF 第5页 U11 仅标 EMMC_V5.1"}
+      ]
+    },
+    {
+      "id": "power.documented-consumption",
+      "category": "power",
+      "subject": "5V 空载与满载功耗",
+      "statement": "正文给出空载 5V@0.5W、满载 5V@1.5W；原理图没有电流检测、负载条件、模型工作负载或测试点，无法验证功耗数值和测量边界。",
+      "confidence": "uncertain",
+      "attributes": {"documented_idle_w": 0.5, "documented_full_load_w": 1.5, "input_v": 5},
+      "evidence": [
+        {"asset_sha256": "04d8e4d3a1f437648d64f0954da6e7d4209fe030dd80e12e5d0fc21294ab27df", "page": 1, "locator": "原 PDF 第2页仅显示电源树，无功耗测量电路"}
+      ]
+    },
+    {
+      "id": "audio.documented-speaker",
+      "category": "audio",
+      "subject": "8ohm 1W 2014 腔体扬声器",
+      "statement": "正文称扬声器为 8ohm、1W、2014 腔体；原理图仅把 AW8737A 输出命名为 SPK_VOP/SPK_VON，没有扬声器器件、连接器、阻抗、功率或机械尺寸。",
+      "confidence": "uncertain",
+      "attributes": {"documented_impedance_ohm": 8, "documented_power_w": 1, "documented_size": "2014 cavity"},
+      "evidence": [
+        {"asset_sha256": "00b1d013437da8f15a51912587a12f6c6eaf685c768689d73d16de0b171bcee3", "page": 1, "locator": "原 PDF 第6页仅显示 SPK_VOP/SPK_VON 输出网络"}
+      ]
+    },
+    {
+      "id": "interface.documented-uart-format",
+      "category": "interface",
+      "subject": "UART 默认 115200 8N1",
+      "statement": "正文称串口默认 115200、8N1 且可调；原理图确认 DBG 与 TRM 两组 UART 信号，但不包含波特率、帧格式、流控策略或固件配置。",
+      "confidence": "uncertain",
+      "attributes": {"documented_baud": 115200, "documented_format": "8N1", "documented_adjustable": true},
+      "evidence": [
+        {"asset_sha256": "d660230e4d50db57eb25c1a5b8f9316e1cded68db9b69c0f3c6db53fd77037fc", "page": 1, "locator": "原 PDF 第3页 UART0/UART1 仅显示电气网络"}
+      ]
+    },
+    {
+      "id": "interface.documented-usb-otg-adb",
+      "category": "interface",
+      "subject": "USB OTG 自动切换与 ADB",
+      "statement": "正文称 Type-C 支持主从自动切换、ADB 调试和外接 USB 摄像头；原理图确认 Type-C、CC/ID 与 VBUS 角色控制硬件，但角色策略、ADB 服务、摄像头兼容和固件行为无法由图面确认。",
+      "confidence": "uncertain",
+      "attributes": {"documented_modes": "USB host,USB device,ADB", "documented_device_example": "USB camera"},
+      "evidence": [
+        {"asset_sha256": "3cd38ef8bf5d582ca4f6ded3f8b34f5f26951091096fa3c8fbc35fac9b7ee71a", "page": 1, "locator": "原 PDF 第7页 Type-C 角色硬件，无软件策略"}
+      ]
+    },
+    {
+      "id": "interface.documented-100m-ethernet",
+      "category": "interface",
+      "subject": "调试套件百兆以太网",
+      "statement": "正文称 LLM 调试套件扩展百兆以太网；板上 J2 只引出 AX630C EPHY_TX/RX 差分对，没有磁性器件、RJ45、链路 LED 或速率标注，完整 100M 接口依赖外部调试板。",
+      "confidence": "uncertain",
+      "attributes": {"documented_rate_mbps": 100, "required_accessory": "LLM debug kit"},
+      "evidence": [
+        {"asset_sha256": "3cd38ef8bf5d582ca4f6ded3f8b34f5f26951091096fa3c8fbc35fac9b7ee71a", "page": 1, "locator": "原 PDF 第7页 J2 仅引出 EPHY 差分对"},
+        {"asset_sha256": "141a3b26d17b1ea2281ff2704819e269f807faf914febf0a5bffb52d34561338", "page": 1, "locator": "原 PDF 第9页 U1J EPHY，无外部磁性器件"}
+      ]
+    },
+    {
+      "id": "system.documented-ai-software-stack",
+      "category": "system",
+      "subject": "Ubuntu、StackFlow 与预装 AI 模型",
+      "statement": "正文称系统内置 Ubuntu 与 StackFlow，预装 Qwen2.5-0.5B，并提供 KWS、ASR、LLM、TTS 和 pipeline；原理图不包含软件镜像、版本、模型文件或运行时配置，实际出厂软件需由镜像清单确认。",
+      "confidence": "uncertain",
+      "attributes": {"documented_os": "Ubuntu", "documented_framework": "StackFlow", "documented_model": "Qwen2.5-0.5B", "documented_pipeline": "KWS,ASR,LLM,TTS"},
+      "evidence": [
+        {"asset_sha256": "04d8e4d3a1f437648d64f0954da6e7d4209fe030dd80e12e5d0fc21294ab27df", "page": 1, "locator": "原理图仅含硬件，未记录软件镜像或模型"}
+      ]
+    },
+    {
+      "id": "storage.documented-upgrade-paths",
+      "category": "storage",
+      "subject": "SD 卡与 Type-C 固件升级",
+      "statement": "正文称 SD 卡支持固件冷升级与热升级，Type-C 也可作为升级接口；原理图确认 MicroSD、USB 下载启动组合和 Type-C 硬件，但升级包格式、热升级流程、回滚与版本兼容由固件决定。",
+      "confidence": "uncertain",
+      "attributes": {"documented_upgrade_media": "SD card,USB Type-C", "documented_modes": "cold update,hot update"},
+      "evidence": [
+        {"asset_sha256": "d660230e4d50db57eb25c1a5b8f9316e1cded68db9b69c0f3c6db53fd77037fc", "page": 1, "locator": "原 PDF 第3页启动表含 USB DL/SD Card"},
+        {"asset_sha256": "b3098cc77650a26b76198ae615d4047069e89cf24f3e9c681b172d35b936f3f1", "page": 1, "locator": "原 PDF 第5页 MicroSD 硬件"}
+      ]
+    },
+    {
+      "id": "interface.documented-rgb-status-semantics",
+      "category": "interface",
+      "subject": "RGB 工作与升级状态含义",
+      "statement": "正文定义红色初始化、绿色就绪，以及蓝闪更新、红色失败、绿色成功；原理图只确认 LP5562 和三颗 RGB LED 的电气连接，颜色状态与闪烁逻辑由软件实现。",
+      "confidence": "uncertain",
+      "attributes": {"documented_work_states": "red initializing,green ready", "documented_update_states": "blue blinking updating,red failed,green success"},
+      "evidence": [
+        {"asset_sha256": "3cd38ef8bf5d582ca4f6ded3f8b34f5f26951091096fa3c8fbc35fac9b7ee71a", "page": 1, "locator": "原 PDF 第7页 LP5562 与 RGB LED，无状态逻辑"}
+      ]
+    }
+  ],
+  "needs_review": [
+    {
+      "id": "review.soc-performance",
+      "fact_id": "component.documented-soc-performance",
+      "question": "AX630C 的 CPU 主频与 INT4/INT8 NPU 算力适用哪些运行条件",
+      "reason": "原理图只确认 AX630C 型号，不含性能参数。",
+      "evidence": [
+        {"asset_sha256": "04d8e4d3a1f437648d64f0954da6e7d4209fe030dd80e12e5d0fc21294ab27df", "page": 1, "locator": "原 PDF 第2页 U1 AX630C"}
+      ]
+    },
+    {
+      "id": "review.lpddr4-capacity",
+      "fact_id": "memory.documented-4gb-partition",
+      "question": "量产 LPDDR4 的具体料号、4GB 容量和 1GB/3GB 分配由哪份 BOM 与软件配置确认",
+      "reason": "U8 图符没有料号、密度或软件分区。",
+      "evidence": [
+        {"asset_sha256": "a26d069d6b4ed101321cf768d1a0ffaea0206507b2c1300b7e61028077627767", "page": 1, "locator": "原 PDF 第4页 U8 LPDDR4"}
+      ]
+    },
+    {
+      "id": "review.emmc-capacity",
+      "fact_id": "storage.documented-32gb-emmc",
+      "question": "量产 eMMC 的具体料号和 32GB 容量是什么",
+      "reason": "U11 只标接口标准 EMMC_V5.1。",
+      "evidence": [
+        {"asset_sha256": "b3098cc77650a26b76198ae615d4047069e89cf24f3e9c681b172d35b936f3f1", "page": 1, "locator": "原 PDF 第5页 U11"}
+      ]
+    },
+    {
+      "id": "review.power-consumption",
+      "fact_id": "power.documented-consumption",
+      "question": "0.5W 空载与 1.5W 满载功耗的模型负载、外设状态和测量边界是什么",
+      "reason": "原理图没有电流检测或性能测试条件。",
+      "evidence": [
+        {"asset_sha256": "04d8e4d3a1f437648d64f0954da6e7d4209fe030dd80e12e5d0fc21294ab27df", "page": 1, "locator": "原 PDF 第2页电源树"}
+      ]
+    },
+    {
+      "id": "review.speaker-spec",
+      "fact_id": "audio.documented-speaker",
+      "question": "量产扬声器是否为 8ohm 1W 2014 腔体及其具体料号和连接方式",
+      "reason": "原理图只有功放差分输出网络。",
+      "evidence": [
+        {"asset_sha256": "00b1d013437da8f15a51912587a12f6c6eaf685c768689d73d16de0b171bcee3", "page": 1, "locator": "原 PDF 第6页 SPK_VOP/SPK_VON"}
+      ]
+    },
+    {
+      "id": "review.uart-format",
+      "fact_id": "interface.documented-uart-format",
+      "question": "TRM UART 与 DBG UART 的默认波特率、帧格式、流控和可调范围是什么",
+      "reason": "原理图只确认 UART 电气网络。",
+      "evidence": [
+        {"asset_sha256": "d660230e4d50db57eb25c1a5b8f9316e1cded68db9b69c0f3c6db53fd77037fc", "page": 1, "locator": "原 PDF 第3页 UART0/UART1"}
+      ]
+    },
+    {
+      "id": "review.usb-otg-adb",
+      "fact_id": "interface.documented-usb-otg-adb",
+      "question": "USB 主从自动切换、ADB 与外设兼容由哪个系统镜像和驱动版本保证",
+      "reason": "原理图只确认 Type-C 角色检测与供电硬件。",
+      "evidence": [
+        {"asset_sha256": "3cd38ef8bf5d582ca4f6ded3f8b34f5f26951091096fa3c8fbc35fac9b7ee71a", "page": 1, "locator": "原 PDF 第7页 Type-C 角色硬件"}
+      ]
+    },
+    {
+      "id": "review.ethernet-debug-kit",
+      "fact_id": "interface.documented-100m-ethernet",
+      "question": "LLM 调试套件如何完成百兆以太网磁性器件、RJ45、PHY 配置与认证",
+      "reason": "主板只在 FPC 上引出 EPHY 差分对。",
+      "evidence": [
+        {"asset_sha256": "3cd38ef8bf5d582ca4f6ded3f8b34f5f26951091096fa3c8fbc35fac9b7ee71a", "page": 1, "locator": "原 PDF 第7页 J2 EPHY_TX/RX"}
+      ]
+    },
+    {
+      "id": "review.ai-software-stack",
+      "fact_id": "system.documented-ai-software-stack",
+      "question": "量产镜像实际预装哪些 Ubuntu、StackFlow、模型和 KWS/ASR/LLM/TTS 版本",
+      "reason": "原理图不能验证软件镜像和模型内容。",
+      "evidence": [
+        {"asset_sha256": "04d8e4d3a1f437648d64f0954da6e7d4209fe030dd80e12e5d0fc21294ab27df", "page": 1, "locator": "硬件原理图无软件版本信息"}
+      ]
+    },
+    {
+      "id": "review.upgrade-paths",
+      "fact_id": "storage.documented-upgrade-paths",
+      "question": "SD 卡冷升级、热升级和 Type-C 升级的包格式、版本兼容与失败回滚流程是什么",
+      "reason": "原理图只确认启动介质和物理接口。",
+      "evidence": [
+        {"asset_sha256": "d660230e4d50db57eb25c1a5b8f9316e1cded68db9b69c0f3c6db53fd77037fc", "page": 1, "locator": "原 PDF 第3页启动模式表"}
+      ]
+    },
+    {
+      "id": "review.rgb-status-semantics",
+      "fact_id": "interface.documented-rgb-status-semantics",
+      "question": "RGB 工作与升级状态定义适用哪些固件版本和异常状态",
+      "reason": "LP5562 电路不包含软件状态机。",
+      "evidence": [
+        {"asset_sha256": "3cd38ef8bf5d582ca4f6ded3f8b34f5f26951091096fa3c8fbc35fac9b7ee71a", "page": 1, "locator": "原 PDF 第7页 U20 与 RGB LED"}
+      ]
+    }
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "dry_run": false,
+  "failed": 0,
+  "published": 1,
+  "results": [
+    {
+      "backup": null,
+      "draft_action": "unchanged",
+      "dry_run": false,
+      "errors": [],
+      "needs_review": 2,
+      "product_id": "hat-vibrator-f6de18d5539b",
+      "product_name": "Hat Vibrator",
+      "publish_action": "unchanged",
+      "sha256": "4a695c26f57883e10eeded10c6f34a1bd261e75b8f120f3541f9ae040d0a1773",
+      "status": "valid",
+      "uncertain_facts": 2
+    }
+  ],
+  "schema_version": 1
+}

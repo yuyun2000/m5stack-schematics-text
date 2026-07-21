@@ -1,0 +1,21 @@
+{
+  "dry_run": false,
+  "failed": 0,
+  "published": 1,
+  "results": [
+    {
+      "backup": null,
+      "draft_action": "unchanged",
+      "dry_run": false,
+      "errors": [],
+      "needs_review": 2,
+      "product_id": "unit-mic-20ab34202cb7",
+      "product_name": "Unit MIC",
+      "publish_action": "unchanged",
+      "sha256": "c794b1c64f2a26e9c0a7a64fd5864b965586d7345557b6e6611a7d2fcb7339c8",
+      "status": "valid",
+      "uncertain_facts": 2
+    }
+  ],
+  "schema_version": 1
+}

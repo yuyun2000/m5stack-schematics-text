@@ -1,0 +1,228 @@
+{
+  "schema_version": 1,
+  "generator": "schematic_describer",
+  "product": {
+    "product_id": "chain-bridge-989d2a56d4ae",
+    "product_name": "Chain Bridge",
+    "sku": "A155",
+    "source_path": "accessory/converter/Chain_Bridge.md",
+    "source_sha256": "3b9c7eb695c70f47952a1c7481ed96a2a7b40c952bf13c1c1d741af779dff912",
+    "input_sha256": "427d8dcea6de1417e6473f06b626ec4b5aecb79f15f17bffacaaaf1b134b03e6"
+  },
+  "schematic_assets": [
+    {
+      "sha256": "2a94bdfb31a9a78bbe6e2889b6b10078fb0bf1d1998d5911c080d2ed2f64c66f",
+      "source_url": "https://m5stack-doc.oss-cn-shenzhen.aliyuncs.com/1154/Chain_Bridge_Schematics.png",
+      "pages": [
+        1
+      ]
+    }
+  ],
+  "summary": "Chain Bridge 是由 J1 和 J2 两只 GROVE_IO 4 Pin 连接器组成的无源直通转接电路。两端的 1~4 脚分别通过同名网络 IO2、IO1、VCC_5V、GND 直接相连。IO2 同时标注 SCL/RX，IO1 同时标注 SDA/TX，表明相同物理通道可承载相应的 I2C 或串行信号名称。",
+  "keywords": [
+    "Chain Bridge",
+    "A155",
+    "GROVE_IO",
+    "HY2.0-4P",
+    "J1",
+    "J2",
+    "IO1",
+    "IO2",
+    "SCL",
+    "SDA",
+    "RX",
+    "TX",
+    "VCC_5V",
+    "GND",
+    "I2C",
+    "UART",
+    "4 Pin",
+    "pass-through"
+  ],
+  "components": [
+    {
+      "reference": "J1",
+      "part_number": "GROVE_IO",
+      "role": "第一只 4 Pin Grove/Chain 连接器，引出 IO2、IO1、VCC_5V、GND",
+      "evidence": [
+        {
+          "asset_sha256": "2a94bdfb31a9a78bbe6e2889b6b10078fb0bf1d1998d5911c080d2ed2f64c66f",
+          "page": 1,
+          "locator": "B2 区域 J1：GROVE_IO 符号，1~4 脚对应 IO2、IO1、VCC、GND"
+        }
+      ]
+    },
+    {
+      "reference": "J2",
+      "part_number": "GROVE_IO",
+      "role": "第二只 4 Pin Grove/Chain 连接器，引出 IO2、IO1、VCC_5V、GND",
+      "evidence": [
+        {
+          "asset_sha256": "2a94bdfb31a9a78bbe6e2889b6b10078fb0bf1d1998d5911c080d2ed2f64c66f",
+          "page": 1,
+          "locator": "C2 区域 J2：GROVE_IO 符号，1~4 脚对应 IO2、IO1、VCC、GND"
+        }
+      ]
+    }
+  ],
+  "facts": [
+    {
+      "id": "system.passive-four-wire-bridge",
+      "category": "system",
+      "subject": "Chain Bridge",
+      "statement": "原理图只绘制 J1 和 J2 两只 GROVE_IO 连接器，四个通道均通过同名网络直接桥接。",
+      "confidence": "confirmed",
+      "attributes": {
+        "connector_1": "J1 GROVE_IO",
+        "connector_2": "J2 GROVE_IO",
+        "channels": "IO2,IO1,VCC_5V,GND",
+        "active_component": null
+      },
+      "evidence": [
+        {
+          "asset_sha256": "2a94bdfb31a9a78bbe6e2889b6b10078fb0bf1d1998d5911c080d2ed2f64c66f",
+          "page": 1,
+          "locator": "B2-C2 区域：整页仅有 J1、J2 及 IO2/IO1/VCC_5V/GND 同名网络"
+        }
+      ]
+    },
+    {
+      "id": "interface.j1-pinout",
+      "category": "interface",
+      "subject": "J1 GROVE_IO",
+      "statement": "J1 的 1 脚连接 IO2，2 脚连接 IO1，3 脚连接 VCC_5V，4 脚连接 GND。",
+      "confidence": "confirmed",
+      "attributes": {
+        "pin_1": "IO2",
+        "pin_2": "IO1",
+        "pin_3": "VCC_5V",
+        "pin_4": "GND"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "2a94bdfb31a9a78bbe6e2889b6b10078fb0bf1d1998d5911c080d2ed2f64c66f",
+          "page": 1,
+          "locator": "B2 区域 J1：1/2/3/4 脚数字与 IO2/IO1/VCC/GND 字段及左侧网络"
+        }
+      ]
+    },
+    {
+      "id": "interface.j2-pinout",
+      "category": "interface",
+      "subject": "J2 GROVE_IO",
+      "statement": "J2 的 1 脚连接 IO2，2 脚连接 IO1，3 脚连接 VCC_5V，4 脚连接 GND。",
+      "confidence": "confirmed",
+      "attributes": {
+        "pin_1": "IO2",
+        "pin_2": "IO1",
+        "pin_3": "VCC_5V",
+        "pin_4": "GND"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "2a94bdfb31a9a78bbe6e2889b6b10078fb0bf1d1998d5911c080d2ed2f64c66f",
+          "page": 1,
+          "locator": "C2 区域 J2：1/2/3/4 脚数字与 IO2/IO1/VCC/GND 字段及左侧网络"
+        }
+      ]
+    },
+    {
+      "id": "key_net.io2-pass-through",
+      "category": "key_net",
+      "subject": "IO2",
+      "statement": "J1.1 与 J2.1 通过 IO2 同名网络直接相连，该网络旁同时标注 SCL/RX。",
+      "confidence": "confirmed",
+      "attributes": {
+        "endpoint_1": "J1.1",
+        "endpoint_2": "J2.1",
+        "network": "IO2",
+        "aliases": "SCL/RX"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "2a94bdfb31a9a78bbe6e2889b6b10078fb0bf1d1998d5911c080d2ed2f64c66f",
+          "page": 1,
+          "locator": "B2 与 C2 区域：J1.1/J2.1 均标注 IO2，左侧均标注 SCL/RX"
+        }
+      ]
+    },
+    {
+      "id": "key_net.io1-pass-through",
+      "category": "key_net",
+      "subject": "IO1",
+      "statement": "J1.2 与 J2.2 通过 IO1 同名网络直接相连，该网络旁同时标注 SDA/TX。",
+      "confidence": "confirmed",
+      "attributes": {
+        "endpoint_1": "J1.2",
+        "endpoint_2": "J2.2",
+        "network": "IO1",
+        "aliases": "SDA/TX"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "2a94bdfb31a9a78bbe6e2889b6b10078fb0bf1d1998d5911c080d2ed2f64c66f",
+          "page": 1,
+          "locator": "B2 与 C2 区域：J1.2/J2.2 均标注 IO1，左侧均标注 SDA/TX"
+        }
+      ]
+    },
+    {
+      "id": "power.vcc5-pass-through",
+      "category": "power",
+      "subject": "VCC_5V",
+      "statement": "J1.3 与 J2.3 通过 VCC_5V 同名网络直接相连。",
+      "confidence": "confirmed",
+      "attributes": {
+        "endpoint_1": "J1.3 VCC",
+        "endpoint_2": "J2.3 VCC",
+        "network": "VCC_5V"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "2a94bdfb31a9a78bbe6e2889b6b10078fb0bf1d1998d5911c080d2ed2f64c66f",
+          "page": 1,
+          "locator": "B2 与 C2 区域：J1.3/J2.3 左侧均标注 VCC_5V"
+        }
+      ]
+    },
+    {
+      "id": "power.gnd-pass-through",
+      "category": "power",
+      "subject": "GND",
+      "statement": "J1.4 与 J2.4 通过 GND 同名网络直接相连。",
+      "confidence": "confirmed",
+      "attributes": {
+        "endpoint_1": "J1.4 GND",
+        "endpoint_2": "J2.4 GND",
+        "network": "GND"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "2a94bdfb31a9a78bbe6e2889b6b10078fb0bf1d1998d5911c080d2ed2f64c66f",
+          "page": 1,
+          "locator": "B2 与 C2 区域：J1.4/J2.4 均连接 GND 符号"
+        }
+      ]
+    },
+    {
+      "id": "bus.dual-use-signal-labels",
+      "category": "bus",
+      "subject": "IO1/IO2 信号别名",
+      "statement": "原理图将 IO2 标注为 SCL/RX，将 IO1 标注为 SDA/TX；连接器之间没有中间方向控制器件。",
+      "confidence": "confirmed",
+      "attributes": {
+        "IO2": "SCL/RX",
+        "IO1": "SDA/TX",
+        "direction_control": null
+      },
+      "evidence": [
+        {
+          "asset_sha256": "2a94bdfb31a9a78bbe6e2889b6b10078fb0bf1d1998d5911c080d2ed2f64c66f",
+          "page": 1,
+          "locator": "B2-C2 区域 J1/J2 左侧：SCL/RX、SDA/TX 与 IO2/IO1 成对标注，整页无其他器件"
+        }
+      ]
+    }
+  ],
+  "needs_review": []
+}

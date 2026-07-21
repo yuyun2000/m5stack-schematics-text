@@ -1,0 +1,21 @@
+{
+  "dry_run": false,
+  "failed": 0,
+  "published": 1,
+  "results": [
+    {
+      "backup": null,
+      "draft_action": "unchanged",
+      "dry_run": false,
+      "errors": [],
+      "needs_review": 1,
+      "product_id": "unit-pbhub-v1-1-b2aa06be0a47",
+      "product_name": "Unit PbHub v1.1",
+      "publish_action": "unchanged",
+      "sha256": "0ec287d5fb8e51942b84804573d716d3b7fc55e0af9bd6e968c1f304b32609f9",
+      "status": "valid",
+      "uncertain_facts": 1
+    }
+  ],
+  "schema_version": 1
+}

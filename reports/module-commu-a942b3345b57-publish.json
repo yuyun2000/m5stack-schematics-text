@@ -1,0 +1,21 @@
+{
+  "dry_run": false,
+  "failed": 0,
+  "published": 1,
+  "results": [
+    {
+      "backup": null,
+      "draft_action": "unchanged",
+      "dry_run": false,
+      "errors": [],
+      "needs_review": 1,
+      "product_id": "module-commu-a942b3345b57",
+      "product_name": "Module COMMU",
+      "publish_action": "unchanged",
+      "sha256": "000e670a62a3ec53a0de484bce2482b42cefc017a97b9cba0f4e9ecd1bf0df48",
+      "status": "valid",
+      "uncertain_facts": 1
+    }
+  ],
+  "schema_version": 1
+}

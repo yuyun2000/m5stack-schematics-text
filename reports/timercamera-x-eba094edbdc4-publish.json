@@ -1,0 +1,21 @@
+{
+  "dry_run": false,
+  "failed": 0,
+  "published": 1,
+  "results": [
+    {
+      "backup": null,
+      "draft_action": "unchanged",
+      "dry_run": false,
+      "errors": [],
+      "needs_review": 4,
+      "product_id": "timercamera-x-eba094edbdc4",
+      "product_name": "TimerCamera-X",
+      "publish_action": "unchanged",
+      "sha256": "682fe02c78ec88267ab95bda451c8a7aafc1996e37af1b75324f074818399a16",
+      "status": "valid",
+      "uncertain_facts": 4
+    }
+  ],
+  "schema_version": 1
+}

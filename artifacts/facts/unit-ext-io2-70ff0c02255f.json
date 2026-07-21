@@ -1,0 +1,206 @@
+{
+  "schema_version": 1,
+  "generator": "schematic_describer",
+  "product": {
+    "product_id": "unit-ext-io2-70ff0c02255f",
+    "product_name": "Unit EXT.IO2",
+    "sku": "U011-B",
+    "source_path": "unit/extio2.md",
+    "source_sha256": "34497e9f759147dbc13ed5a771180dca146466a92e74aa52403cfe9baba44960",
+    "input_sha256": "de8be2847991cc2a4e0e4bae1c80659a679eae1d23e2012e342da25f694fb4e0"
+  },
+  "schematic_assets": [
+    {
+      "sha256": "2eae3ff7db8745c434d716ed794315afddf14865e3ded7d04415153f5655703c",
+      "source_url": "https://m5stack-doc.oss-cn-shenzhen.aliyuncs.com/574/Sch_UNIT-EXTIO2_sch_01.png",
+      "pages": [1]
+    }
+  ],
+  "summary": "Unit EXT.IO2 以 U1 STM32F030F4P6 为控制器，将 PA0 至 PA7 映射为 IO0 至 IO7 并通过 P2 双排针引出。J1 以 SCL、SDA 接入 U1 的 PA9、PA10，P1 提供 SWD 调试与复位连接。接口 VCC 经 U2 HT7533 稳压为 +3.3V，为控制器、I2C 上拉和扩展 IO 电平域供电。",
+  "keywords": ["Unit EXT.IO2", "U011-B", "STM32F030F4P6", "HT7533", "I2C", "0x45", "IIC_SCL", "IIC_SDA", "SCL", "SDA", "IO0", "IO1", "IO2", "IO3", "IO4", "IO5", "IO6", "IO7", "PA0", "PA1", "PA2", "PA3", "PA4", "PA5", "PA6", "PA7", "PA9", "PA10", "P2 Header 5X2", "SWD_5p", "SWCLK", "SWDIO", "NRST", "BOOT0", "VCC", "+3.3V", "ADC", "SERVO", "RGB LED"],
+  "components": [
+    {
+      "reference": "U1",
+      "part_number": "STM32F030F4P6",
+      "role": "八路 IO 扩展与 I2C 通信控制器",
+      "evidence": [{"asset_sha256": "2eae3ff7db8745c434d716ed794315afddf14865e3ded7d04415153f5655703c", "page": 1, "locator": "页 1 网格 B2，U1 器件框下方标注 STM32F030F4P6"}]
+    },
+    {
+      "reference": "U2",
+      "part_number": "HT7533",
+      "role": "VCC 至 +3.3V 线性稳压器",
+      "evidence": [{"asset_sha256": "2eae3ff7db8745c434d716ed794315afddf14865e3ded7d04415153f5655703c", "page": 1, "locator": "页 1 网格 C2，U2 标注 HT7533，VIN 接 VCC、VOUT 接 +3.3V"}]
+    },
+    {
+      "reference": "J1",
+      "part_number": "IIC_Socket_4P",
+      "role": "四针 I2C 与电源接口",
+      "evidence": [{"asset_sha256": "2eae3ff7db8745c434d716ed794315afddf14865e3ded7d04415153f5655703c", "page": 1, "locator": "页 1 网格 C3，J1 标注 IIC_Socket_4P，端子为 IIC_SCL、IIC_SDA、VCC、GND"}]
+    },
+    {
+      "reference": "P1",
+      "part_number": "SWD_5p",
+      "role": "五针 SWD 下载、调试和复位接口",
+      "evidence": [{"asset_sha256": "2eae3ff7db8745c434d716ed794315afddf14865e3ded7d04415153f5655703c", "page": 1, "locator": "页 1 网格 A3-B3，P1 标注 SWD_5p，针脚为 VCC、SWCLK、SWDIO、RST、GND"}]
+    },
+    {
+      "reference": "P2",
+      "part_number": "Header 5X2",
+      "role": "IO0 至 IO7 与电源双排扩展接口",
+      "evidence": [{"asset_sha256": "2eae3ff7db8745c434d716ed794315afddf14865e3ded7d04415153f5655703c", "page": 1, "locator": "页 1 网格 B3，P2 Header 5X2 及 1 至 10 脚网络"}]
+    }
+  ],
+  "facts": [
+    {
+      "id": "system.controller",
+      "category": "system",
+      "subject": "U1",
+      "statement": "U1 的器件型号为 STM32F030F4P6，连接 IO0 至 IO7、I2C、SWD、NRST 和 BOOT0 网络。",
+      "confidence": "confirmed",
+      "attributes": {"reference": "U1", "part_number": "STM32F030F4P6", "io_networks": "IO0,IO1,IO2,IO3,IO4,IO5,IO6,IO7", "host_bus": "I2C", "debug_bus": "SWD"},
+      "evidence": [{"asset_sha256": "2eae3ff7db8745c434d716ed794315afddf14865e3ded7d04415153f5655703c", "page": 1, "locator": "页 1 网格 B2，U1 型号、引脚名和全部网络标注"}]
+    },
+    {
+      "id": "gpio.io0_io3",
+      "category": "gpio",
+      "subject": "U1 的 IO0 至 IO3 映射",
+      "statement": "IO0、IO1、IO2、IO3 分别连接 U1 的 PA0 引脚 6、PA1 引脚 7、PA2 引脚 8、PA3 引脚 9。",
+      "confidence": "confirmed",
+      "attributes": {"IO0": "PA0/pin 6", "IO1": "PA1/pin 7", "IO2": "PA2/pin 8", "IO3": "PA3/pin 9"},
+      "evidence": [{"asset_sha256": "2eae3ff7db8745c434d716ed794315afddf14865e3ded7d04415153f5655703c", "page": 1, "locator": "页 1 网格 B2，U1 左侧 IO0 至 IO3 与 PA0 至 PA3 引脚号"}]
+    },
+    {
+      "id": "gpio.io4_io7",
+      "category": "gpio",
+      "subject": "U1 的 IO4 至 IO7 映射",
+      "statement": "IO4、IO5、IO6、IO7 分别连接 U1 的 PA4 引脚 10、PA5 引脚 11、PA6 引脚 12、PA7 引脚 13。",
+      "confidence": "confirmed",
+      "attributes": {"IO4": "PA4/pin 10", "IO5": "PA5/pin 11", "IO6": "PA6/pin 12", "IO7": "PA7/pin 13"},
+      "evidence": [{"asset_sha256": "2eae3ff7db8745c434d716ed794315afddf14865e3ded7d04415153f5655703c", "page": 1, "locator": "页 1 网格 B2，U1 左下 IO4/PA4 与右下 IO5 至 IO7/PA5 至 PA7 引脚号"}]
+    },
+    {
+      "id": "interface.p2_pinout",
+      "category": "interface",
+      "subject": "P2 IO 扩展接口",
+      "statement": "P2 的 1 至 10 脚依次连接 IO0、IO1、IO2、IO3、IO4、IO5、IO6、IO7、VCC 和 GND。",
+      "confidence": "confirmed",
+      "attributes": {"reference": "P2", "pinout": "1:IO0,2:IO1,3:IO2,4:IO3,5:IO4,6:IO5,7:IO6,8:IO7,9:VCC,10:GND", "signal_direction": "IO0-IO7 bidirectional under U1 control"},
+      "evidence": [{"asset_sha256": "2eae3ff7db8745c434d716ed794315afddf14865e3ded7d04415153f5655703c", "page": 1, "locator": "页 1 网格 B3，P2 Header 5X2 的脚号与两侧 IO、电源网络"}]
+    },
+    {
+      "id": "interface.j1_pinout",
+      "category": "interface",
+      "subject": "J1 I2C 接口",
+      "statement": "J1 的 1 至 4 脚依次为 IIC_SCL、IIC_SDA、VCC 和 GND。",
+      "confidence": "confirmed",
+      "attributes": {"reference": "J1", "pinout": "1:IIC_SCL,2:IIC_SDA,3:VCC,4:GND", "signal_direction": "IIC_SCL/IIC_SDA bidirectional"},
+      "evidence": [{"asset_sha256": "2eae3ff7db8745c434d716ed794315afddf14865e3ded7d04415153f5655703c", "page": 1, "locator": "页 1 网格 C3，J1 IIC_Socket_4P 的 1 至 4 脚文字"}]
+    },
+    {
+      "id": "bus.i2c",
+      "category": "bus",
+      "subject": "U1 与 J1 的 I2C 总线",
+      "statement": "SCL、SDA 分别连接 U1 的 PA9 引脚 17、PA10 引脚 18，并连接 J1 的 IIC_SCL、IIC_SDA；R3、R4 均为 10 kΩ，将两条总线分别上拉至 +3.3V。",
+      "confidence": "confirmed",
+      "attributes": {"controller": "U1", "connector": "J1", "scl": "PA9/pin 17 -> J1 pin 1", "sda": "PA10/pin 18 -> J1 pin 2", "scl_pullup": "R3 10k to +3.3V", "sda_pullup": "R4 10k to +3.3V"},
+      "evidence": [{"asset_sha256": "2eae3ff7db8745c434d716ed794315afddf14865e3ded7d04415153f5655703c", "page": 1, "locator": "页 1 网格 B2-C3，U1 PA9/PA10、SCL/SDA、R3/R4 与 J1 的连接"}]
+    },
+    {
+      "id": "address.i2c",
+      "category": "address",
+      "subject": "Unit EXT.IO2 I2C 地址",
+      "statement": "产品正文标注默认 I2C 地址 0x45 并称地址可配置，但本页原理图未显示地址值或硬件地址选择网络。",
+      "confidence": "uncertain",
+      "attributes": {"documented_default_address": "0x45", "documented_configurable": true, "schematic_address": null, "hardware_address_select": null},
+      "evidence": [{"asset_sha256": "2eae3ff7db8745c434d716ed794315afddf14865e3ded7d04415153f5655703c", "page": 1, "locator": "页 1 网格 B2-C3，完整 I2C 链路仅显示 U1、上拉电阻和 J1，未标注地址"}]
+    },
+    {
+      "id": "power.regulator",
+      "category": "power",
+      "subject": "U2 电源转换",
+      "statement": "U2 HT7533 的 VIN 引脚 2 接 VCC，VOUT 引脚 3 输出 +3.3V，GND 引脚 1 接地。",
+      "confidence": "confirmed",
+      "attributes": {"reference": "U2", "part_number": "HT7533", "input": "VIN/pin 2/VCC", "output": "VOUT/pin 3/+3.3V", "ground": "GND/pin 1"},
+      "evidence": [{"asset_sha256": "2eae3ff7db8745c434d716ed794315afddf14865e3ded7d04415153f5655703c", "page": 1, "locator": "页 1 网格 C2，U2 HT7533 引脚号和 VCC、+3.3V、GND 网络"}]
+    },
+    {
+      "id": "power.regulator_decoupling",
+      "category": "power",
+      "subject": "U2 输入输出电容",
+      "statement": "U2 输入侧 C6 10 uF 连接在 VCC 与 GND 之间；输出侧 C4 100 nF 和 C5 10 uF 并联在 +3.3V 与 GND 之间。",
+      "confidence": "confirmed",
+      "attributes": {"input_capacitor": "C6 10uF", "input_rail": "VCC", "output_capacitors": "C4 100nF,C5 10uF", "output_rail": "+3.3V"},
+      "evidence": [{"asset_sha256": "2eae3ff7db8745c434d716ed794315afddf14865e3ded7d04415153f5655703c", "page": 1, "locator": "页 1 网格 C1-C2，U2 两侧 C4、C5、C6 及电源网络"}]
+    },
+    {
+      "id": "power.mcu",
+      "category": "power",
+      "subject": "U1 供电",
+      "statement": "U1 的 VDDA 引脚 5 和 VDD 引脚 16 连接 +3.3V，VSS 引脚 15 连接 GND。",
+      "confidence": "confirmed",
+      "attributes": {"supply_pins": "VDDA/pin 5,VDD/pin 16", "supply_rail": "+3.3V", "ground_pin": "VSS/pin 15"},
+      "evidence": [{"asset_sha256": "2eae3ff7db8745c434d716ed794315afddf14865e3ded7d04415153f5655703c", "page": 1, "locator": "页 1 网格 B2，U1 VDDA/VDD/VSS 引脚与 +3.3V/GND 网络"}]
+    },
+    {
+      "id": "reset.nrst",
+      "category": "reset",
+      "subject": "U1 NRST",
+      "statement": "U1 NRST 引脚 4 连接 NRST 网络；R2 10 kΩ 将 NRST 上拉至 +3.3V，C1 100 nF 将其连接至 GND，并引出到 P1 的 RST 脚。",
+      "confidence": "confirmed",
+      "attributes": {"mcu_pin": "NRST/pin 4", "pullup": "R2 10k to +3.3V", "capacitor": "C1 100nF to GND", "debug_reset": "P1 pin 4/RST"},
+      "evidence": [{"asset_sha256": "2eae3ff7db8745c434d716ed794315afddf14865e3ded7d04415153f5655703c", "page": 1, "locator": "页 1 网格 B1-B3，R2/C1、U1 NRST 与 P1 RST 网络"}]
+    },
+    {
+      "id": "gpio.boot0",
+      "category": "gpio",
+      "subject": "U1 BOOT0",
+      "statement": "U1 BOOT0 引脚 1 通过 R1 10 kΩ 下拉至 GND。",
+      "confidence": "confirmed",
+      "attributes": {"mcu_pin": "BOOT0/pin 1", "pulldown": "R1 10k to GND"},
+      "evidence": [{"asset_sha256": "2eae3ff7db8745c434d716ed794315afddf14865e3ded7d04415153f5655703c", "page": 1, "locator": "页 1 网格 B1-B2，U1 BOOT0、R1 10KΩ 与 GND"}]
+    },
+    {
+      "id": "debug.swd",
+      "category": "debug",
+      "subject": "U1 与 P1 的 SWD 连接",
+      "statement": "U1 PA14 引脚 20 的 SWCLK 和 PA13 引脚 19 的 SWDIO 分别连接 P1 的 2、3 脚；P1 的 1、4、5 脚分别连接 +3.3V、NRST 和 GND。",
+      "confidence": "confirmed",
+      "attributes": {"connector": "P1", "pinout": "1:+3.3V,2:SWCLK,3:SWDIO,4:NRST,5:GND", "swclk": "U1 PA14/pin 20", "swdio": "U1 PA13/pin 19"},
+      "evidence": [{"asset_sha256": "2eae3ff7db8745c434d716ed794315afddf14865e3ded7d04415153f5655703c", "page": 1, "locator": "页 1 网格 A3-B3，P1 脚号及 U1 PA13/PA14 的 SWDIO/SWCLK 网络"}]
+    },
+    {
+      "id": "clock.external",
+      "category": "clock",
+      "subject": "U1 外部时钟连接",
+      "statement": "U1 的 PF0/OSC_IN 引脚 2 和 PF1/OSC_OUT 引脚 3 在本页未连接外部晶振或时钟器件。",
+      "confidence": "confirmed",
+      "attributes": {"osc_in": "PF0/OSC_IN pin 2 unconnected", "osc_out": "PF1/OSC_OUT pin 3 unconnected", "external_crystal": false},
+      "evidence": [{"asset_sha256": "2eae3ff7db8745c434d716ed794315afddf14865e3ded7d04415153f5655703c", "page": 1, "locator": "页 1 网格 B2，U1 PF0/OSC_IN 与 PF1/OSC_OUT 引脚短线无外接器件"}]
+    },
+    {
+      "id": "system.io_modes",
+      "category": "system",
+      "subject": "IO0 至 IO7 的功能模式",
+      "statement": "产品正文称每路支持数字输入/输出、ADC、SERVO 控制和 RGB LED 控制，但原理图仅确认 IO0 至 IO7 直接连接 U1 的 PA0 至 PA7，未标注固件模式与参数。",
+      "confidence": "uncertain",
+      "attributes": {"documented_modes": "digital input,digital output,ADC,SERVO PWM,RGB LED", "channels": 8, "schematic_mode_configuration": null},
+      "evidence": [{"asset_sha256": "2eae3ff7db8745c434d716ed794315afddf14865e3ded7d04415153f5655703c", "page": 1, "locator": "页 1 网格 B2-B3，U1 PA0 至 PA7 与 P2 IO0 至 IO7 的直接连接，未显示外围模式电路"}]
+    }
+  ],
+  "needs_review": [
+    {
+      "id": "review.i2c_address",
+      "fact_id": "address.i2c",
+      "question": "固件默认 I2C 地址是否为 0x45，地址配置由哪个寄存器或固件机制实现？",
+      "reason": "原理图没有地址值或硬件地址选择网络，地址属于固件行为。",
+      "evidence": [{"asset_sha256": "2eae3ff7db8745c434d716ed794315afddf14865e3ded7d04415153f5655703c", "page": 1, "locator": "页 1 网格 B2-C3，U1 至 J1 的 SCL/SDA 总线区域"}]
+    },
+    {
+      "id": "review.io_modes",
+      "fact_id": "system.io_modes",
+      "question": "各 IO 的数字、ADC、SERVO PWM 和 RGB LED 模式限制及固件版本差异是什么？",
+      "reason": "原理图可确认 GPIO 连接，但无法确认运行时功能、PWM 参数或协议约束。",
+      "evidence": [{"asset_sha256": "2eae3ff7db8745c434d716ed794315afddf14865e3ded7d04415153f5655703c", "page": 1, "locator": "页 1 网格 B2-B3，IO0 至 IO7 的 MCU 与 P2 连接"}]
+    }
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "dry_run": false,
+  "failed": 0,
+  "published": 1,
+  "results": [
+    {
+      "backup": null,
+      "draft_action": "unchanged",
+      "dry_run": false,
+      "errors": [],
+      "needs_review": 2,
+      "product_id": "stickc-03f0da06c74a",
+      "product_name": "StickC",
+      "publish_action": "unchanged",
+      "sha256": "1fba4de20a83d54f78b259a6b09d64faefffa00096e61dbc8b3bff6eeea3fa1b",
+      "status": "valid",
+      "uncertain_facts": 2
+    }
+  ],
+  "schema_version": 1
+}

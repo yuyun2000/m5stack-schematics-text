@@ -1,0 +1,319 @@
+{
+  "schema_version": 1,
+  "generator": "schematic_describer",
+  "product": {
+    "product_id": "base-plc-m12-65acb1fdc778",
+    "product_name": "Base PLC-M12",
+    "sku": "K011-B",
+    "source_path": "base/plc_m12.md",
+    "source_sha256": "5fbaea585b834301419d761411c063402e007bc4b373fe633787b6dfb5d9573c",
+    "input_sha256": "13ea4fb26655c35047423fb9717f10fcabef5a916ad09503fbfc022fac6f2167"
+  },
+  "schematic_assets": [
+    {
+      "sha256": "acb19df9e44355fa0186560215bdde2ea7ffd7e7676619f8d9abc61b1febf848",
+      "source_url": "https://static-cdn.m5stack.com/resource/docs/products/base/plc_m12/plc_m12_sch_01.webp",
+      "pages": [1]
+    }
+  ],
+  "summary": "Base PLC-M12 的板载有源电路以 U6 TPS54360 降压电源为核心，J2 输入经 F1 PPTC-1812 后形成 IN+，再通过 D6 B290B、L1 8.2uH 和输出电容生成 +5V。+5V 送往 J1 M5Stack_BUS、J3 IIC 插座和 D5 电源指示灯，IN+ 同时出现在 J1 的 HPWR pin25。P1 标出 B-/A+/12V+/12V-，P2 标出 I/O1-I/O6，但当前原理图没有画出 RS-485 收发器或这些预留接口的板内连线。",
+  "keywords": [
+    "Base PLC-M12",
+    "K011-B",
+    "TPS54360",
+    "PPTC-1812",
+    "B290B",
+    "IN12/24V",
+    "IN+",
+    "+5V",
+    "HPWR",
+    "M5Stack_BUS",
+    "PWR3.5",
+    "HDR_4P",
+    "HDR_6P",
+    "B-",
+    "A+",
+    "12V+",
+    "12V-",
+    "I/O1",
+    "I/O6",
+    "IIC_Socket_4P",
+    "SDA",
+    "SCL",
+    "GPIO16",
+    "GPIO17",
+    "RS485",
+    "RS485_TX",
+    "RS485_RX",
+    "GPIO21",
+    "GPIO22",
+    "BATTERY",
+    "LED 0603"
+  ],
+  "components": [
+    {
+      "reference": "U6",
+      "part_number": "TPS54360",
+      "role": "将 IN+ 宽压输入降压为 +5V 的开关降压转换器",
+      "evidence": [{"asset_sha256": "acb19df9e44355fa0186560215bdde2ea7ffd7e7676619f8d9abc61b1febf848", "page": 1, "locator": "第 1 页左上 U6 TPS54360，VIN/BOOT/SW/COMP/FB 与外围网络"}]
+    },
+    {
+      "reference": "J2",
+      "part_number": "PWR3.5",
+      "role": "IN12/24V 与 GND 外部直流输入连接器",
+      "evidence": [{"asset_sha256": "acb19df9e44355fa0186560215bdde2ea7ffd7e7676619f8d9abc61b1febf848", "page": 1, "locator": "第 1 页最左上 J2 PWR3.5，正输入经 F1 形成 IN+，回路接 GND"}]
+    },
+    {
+      "reference": "F1",
+      "part_number": "PPTC-1812",
+      "role": "串联在 J2 正输入与 IN+ 之间的自恢复保护器件",
+      "evidence": [{"asset_sha256": "acb19df9e44355fa0186560215bdde2ea7ffd7e7676619f8d9abc61b1febf848", "page": 1, "locator": "第 1 页左上 J2 与 IN+ 之间 F1 PPTC-1812"}]
+    },
+    {
+      "reference": "D6",
+      "part_number": "B290B",
+      "role": "TPS54360 SW 节点到 GND 的续流二极管",
+      "evidence": [{"asset_sha256": "acb19df9e44355fa0186560215bdde2ea7ffd7e7676619f8d9abc61b1febf848", "page": 1, "locator": "第 1 页 U6 右侧 D6 B290B，从 SW/L1 前节点接 GND"}]
+    },
+    {
+      "reference": "L1",
+      "part_number": "8.2uH",
+      "role": "TPS54360 降压级输出电感，连接 SW 节点与 +5V",
+      "evidence": [{"asset_sha256": "acb19df9e44355fa0186560215bdde2ea7ffd7e7676619f8d9abc61b1febf848", "page": 1, "locator": "第 1 页上方 L1 8.2uH，左接 SW 节点，右接 +5V"}]
+    },
+    {
+      "reference": "C1,C2,C3,C5,C6",
+      "part_number": "100nF / 10uF / 10uF / 2.2uF / 2.2uF",
+      "role": "TPS54360 启动、输入和输出滤波电容",
+      "evidence": [{"asset_sha256": "acb19df9e44355fa0186560215bdde2ea7ffd7e7676619f8d9abc61b1febf848", "page": 1, "locator": "第 1 页电源区 C1 100nF BOOT-SW，C5/C6 2.2uF IN+-GND，C2/C3 10uF +5V-GND"}]
+    },
+    {
+      "reference": "R27,C4",
+      "part_number": "12KΩ / 6.8nF",
+      "role": "TPS54360 COMP 引脚补偿网络",
+      "evidence": [{"asset_sha256": "acb19df9e44355fa0186560215bdde2ea7ffd7e7676619f8d9abc61b1febf848", "page": 1, "locator": "第 1 页 U6 COMP pin6 右侧 R27 12KΩ 与 C4 6.8nF"}]
+    },
+    {
+      "reference": "R28,R30",
+      "part_number": "51KΩ / 10KΩ",
+      "role": "TPS54360 +5V 输出反馈分压网络",
+      "evidence": [{"asset_sha256": "acb19df9e44355fa0186560215bdde2ea7ffd7e7676619f8d9abc61b1febf848", "page": 1, "locator": "第 1 页 U6 FB pin5 周围 R28 51KΩ 接 +5V、R30 10KΩ 接 GND"}]
+    },
+    {
+      "reference": "R29",
+      "part_number": "160KΩ",
+      "role": "TPS54360 RT/CLK pin4 到 GND 的频率设定电阻",
+      "evidence": [{"asset_sha256": "acb19df9e44355fa0186560215bdde2ea7ffd7e7676619f8d9abc61b1febf848", "page": 1, "locator": "第 1 页 U6 RT/CLK pin4 下方 R29，标注 160KΩ，接 GND"}]
+    },
+    {
+      "reference": "P1",
+      "part_number": "HDR_4P",
+      "role": "标为 B-、A+、12V+、12V- 的四针预留端子",
+      "evidence": [{"asset_sha256": "acb19df9e44355fa0186560215bdde2ea7ffd7e7676619f8d9abc61b1febf848", "page": 1, "locator": "第 1 页左中 P1 HDR_4P，pin1 B-、pin2 A+、pin3 12V+、pin4 12V-，均为短引线"}]
+    },
+    {
+      "reference": "P2",
+      "part_number": "HDR_6P",
+      "role": "标为 I/O1-I/O6 的六针预留转接接口",
+      "evidence": [{"asset_sha256": "acb19df9e44355fa0186560215bdde2ea7ffd7e7676619f8d9abc61b1febf848", "page": 1, "locator": "第 1 页左中 P2 HDR_6P，pin1-pin6 标注 I/O1-I/O6，均为短引线"}]
+    },
+    {
+      "reference": "J3",
+      "part_number": "IIC_Socket_4P",
+      "role": "引出 SCL、SDA、+5V 与 GND 的四针 I2C 接口",
+      "evidence": [{"asset_sha256": "acb19df9e44355fa0186560215bdde2ea7ffd7e7676619f8d9abc61b1febf848", "page": 1, "locator": "第 1 页右中 J3 IIC_Socket_4P，pin1 SCL、pin2 SDA、pin3 VCC/+5V、pin4 GND"}]
+    },
+    {
+      "reference": "J1",
+      "part_number": "M5Stack_BUS",
+      "role": "30 针主机堆叠总线，提供 GPIO、SDA/SCL、IN+/HPWR、+3.3V、+5V 和 BATTERY 网络",
+      "evidence": [{"asset_sha256": "acb19df9e44355fa0186560215bdde2ea7ffd7e7676619f8d9abc61b1febf848", "page": 1, "locator": "第 1 页右下 J1 M5Stack_BUS，1-30 脚及外侧网络标签"}]
+    },
+    {
+      "reference": "D5,R20",
+      "part_number": "LED 0603 / 4.7KΩ",
+      "role": "+5V 电源指示 LED 和限流电阻",
+      "evidence": [{"asset_sha256": "acb19df9e44355fa0186560215bdde2ea7ffd7e7676619f8d9abc61b1febf848", "page": 1, "locator": "第 1 页右上 +5V-D5 LED 0603-R20 4.7KΩ-GND 支路"}]
+    }
+  ],
+  "facts": [
+    {
+      "id": "system.plc-m12-architecture",
+      "category": "system",
+      "subject": "Base PLC-M12 系统架构",
+      "statement": "Base PLC-M12 主板以 U6 TPS54360 生成 +5V，并通过 J1 M5Stack_BUS 与主机堆叠；板上另有 J3 I2C 接口及 P1/P2 预留转接接口，当前页没有独立主控或 RS-485 收发器。",
+      "confidence": "confirmed",
+      "attributes": {"power_converter": "U6 TPS54360", "host_connector": "J1 M5Stack_BUS", "i2c_connector": "J3 IIC_Socket_4P", "reserved_connectors": "P1 HDR_4P; P2 HDR_6P", "onboard_mcu_shown": false, "rs485_transceiver_shown": false},
+      "evidence": [{"asset_sha256": "acb19df9e44355fa0186560215bdde2ea7ffd7e7676619f8d9abc61b1febf848", "page": 1, "locator": "第 1 页完整单页：左上电源、左中 P1/P2、右中 J3、右下 J1"}]
+    },
+    {
+      "id": "protection.input-pptc",
+      "category": "protection",
+      "subject": "外部电源输入保护",
+      "statement": "J2 的正电源输入先串联 F1 PPTC-1812 后形成 IN+，C5/C6 各 2.2uF 从 IN+ 接 GND。",
+      "confidence": "confirmed",
+      "attributes": {"connector": "J2 PWR3.5", "positive_path": "J2 -> F1 PPTC-1812 -> IN+", "return": "GND", "input_capacitors": "C5/C6 2.2uF"},
+      "evidence": [{"asset_sha256": "acb19df9e44355fa0186560215bdde2ea7ffd7e7676619f8d9abc61b1febf848", "page": 1, "locator": "第 1 页左上 J2/F1/IN+/C5/C6"}]
+    },
+    {
+      "id": "power.tps54360-buck",
+      "category": "power",
+      "subject": "IN+ 到 +5V 降压路径",
+      "statement": "U6 TPS54360 VIN pin2 接 IN+，SW pin8 连接 D6 B290B 与 L1 8.2uH，L1 后形成 +5V；C2/C3 各 10uF 从 +5V 接 GND。",
+      "confidence": "confirmed",
+      "attributes": {"input": "IN+", "converter": "U6 TPS54360", "switch_pin": "U6 pin8 SW", "freewheel_diode": "D6 B290B", "inductor": "L1 8.2uH", "output": "+5V", "output_capacitors": "C2/C3 10uF"},
+      "evidence": [{"asset_sha256": "acb19df9e44355fa0186560215bdde2ea7ffd7e7676619f8d9abc61b1febf848", "page": 1, "locator": "第 1 页左上 U6/D6/L1/C2/C3 与 IN+/+5V"}]
+    },
+    {
+      "id": "power.tps54360-enable",
+      "category": "power",
+      "subject": "TPS54360 使能连接",
+      "statement": "U6 EN pin3 在当前原理图标记为未连接，没有画出外部使能控制网络。",
+      "confidence": "confirmed",
+      "attributes": {"pin": "U6 pin3 EN", "connected": false, "external_enable_shown": false},
+      "evidence": [{"asset_sha256": "acb19df9e44355fa0186560215bdde2ea7ffd7e7676619f8d9abc61b1febf848", "page": 1, "locator": "第 1 页 U6 左侧 EN pin3 短引线及未连接标记"}]
+    },
+    {
+      "id": "power.tps54360-feedback",
+      "category": "power",
+      "subject": "TPS54360 反馈与补偿",
+      "statement": "U6 FB pin5 使用 R28 51KΩ 与 R30 10KΩ 分压；COMP pin6 使用 R27 12KΩ 和 C4 6.8nF，BOOT 与 SW 之间连接 C1 100nF。",
+      "confidence": "confirmed",
+      "attributes": {"feedback_upper": "R28 51KΩ", "feedback_lower": "R30 10KΩ", "compensation": "R27 12KΩ; C4 6.8nF", "bootstrap": "C1 100nF between BOOT and SW"},
+      "evidence": [{"asset_sha256": "acb19df9e44355fa0186560215bdde2ea7ffd7e7676619f8d9abc61b1febf848", "page": 1, "locator": "第 1 页 U6 FB/COMP/BOOT 周围 R28/R30/R27/C4/C1"}]
+    },
+    {
+      "id": "clock.tps54360-rtclk",
+      "category": "clock",
+      "subject": "TPS54360 开关频率设定",
+      "statement": "U6 RT/CLK pin4 通过 R29 160KΩ 接 GND；原理图未直接标出对应开关频率。",
+      "confidence": "confirmed",
+      "attributes": {"pin": "U6 pin4 RT/CLK", "resistor": "R29 160KΩ to GND", "frequency_label_shown": false},
+      "evidence": [{"asset_sha256": "acb19df9e44355fa0186560215bdde2ea7ffd7e7676619f8d9abc61b1febf848", "page": 1, "locator": "第 1 页 U6 RT/CLK pin4 与 R29 160KΩ/GND"}]
+    },
+    {
+      "id": "key_net.input-to-hpwr",
+      "category": "key_net",
+      "subject": "IN+ 与 M5Bus HPWR",
+      "statement": "F1 后的 IN+ 同时连接 U6 VIN 和 J1 pin25；J1 符号内 pin25 标为 HPWR，pin27/pin29 也标为 HPWR。",
+      "confidence": "confirmed",
+      "attributes": {"input_net": "IN+", "buck_destination": "U6 pin2 VIN", "bus_destination": "J1 pin25 HPWR", "other_hpwr_pins": "J1 pin27 and pin29"},
+      "evidence": [{"asset_sha256": "acb19df9e44355fa0186560215bdde2ea7ffd7e7676619f8d9abc61b1febf848", "page": 1, "locator": "第 1 页左上 IN+ 网络及右下 J1 pin25 外侧 IN+、符号内 HPWR"}]
+    },
+    {
+      "id": "power.5v-distribution",
+      "category": "power",
+      "subject": "+5V 电源分配",
+      "statement": "U6 产生的 +5V 连接 J1 M5Stack_BUS pin28、J3 pin3 VCC 和 D5 电源指示支路。",
+      "confidence": "confirmed",
+      "attributes": {"source": "U6/L1 output", "host_bus": "J1 pin28 +5V", "i2c_connector": "J3 pin3 VCC/+5V", "indicator": "D5 LED 0603 with R20 4.7KΩ"},
+      "evidence": [{"asset_sha256": "acb19df9e44355fa0186560215bdde2ea7ffd7e7676619f8d9abc61b1febf848", "page": 1, "locator": "第 1 页 +5V 全局网络：L1 输出、J3 pin3、D5、J1 pin28"}]
+    },
+    {
+      "id": "power.5v-indicator",
+      "category": "power",
+      "subject": "+5V 电源指示",
+      "statement": "D5 LED 0603 与 R20 4.7KΩ 串联在 +5V 和 GND 之间。",
+      "confidence": "confirmed",
+      "attributes": {"rail": "+5V", "led": "D5 LED 0603", "resistor": "R20 4.7KΩ", "return": "GND"},
+      "evidence": [{"asset_sha256": "acb19df9e44355fa0186560215bdde2ea7ffd7e7676619f8d9abc61b1febf848", "page": 1, "locator": "第 1 页右上 +5V-D5-R20-GND 支路"}]
+    },
+    {
+      "id": "interface.i2c-socket",
+      "category": "interface",
+      "subject": "J3 I2C 接口",
+      "statement": "J3 IIC_Socket_4P pin1=SCL、pin2=SDA、pin3=VCC/+5V、pin4=GND；当前页面未画出 SDA/SCL 上拉电阻。",
+      "confidence": "confirmed",
+      "attributes": {"pin1": "SCL", "pin2": "SDA", "pin3": "+5V", "pin4": "GND", "pullups_shown": false, "direction": "SDA bidirectional; SCL clock line"},
+      "evidence": [{"asset_sha256": "acb19df9e44355fa0186560215bdde2ea7ffd7e7676619f8d9abc61b1febf848", "page": 1, "locator": "第 1 页右中 J3 IIC_Socket_4P 1-4 脚及完整页面，无 SDA/SCL 上拉"}]
+    },
+    {
+      "id": "bus.i2c-routing",
+      "category": "bus",
+      "subject": "J3 与 M5Bus I2C 路由",
+      "statement": "SDA 网络连接 J3 pin2 与 J1 M5Stack_BUS pin17/GPIO21，SCL 网络连接 J3 pin1 与 J1 pin18/GPIO22；本页没有板载 I2C 从设备或地址。",
+      "confidence": "confirmed",
+      "attributes": {"controller": "M5Stack host", "sda": "J1 pin17 GPIO21 -> SDA -> J3 pin2", "scl": "J1 pin18 GPIO22 -> SCL -> J3 pin1", "onboard_address_shown": false},
+      "evidence": [{"asset_sha256": "acb19df9e44355fa0186560215bdde2ea7ffd7e7676619f8d9abc61b1febf848", "page": 1, "locator": "第 1 页 J3 SDA/SCL 与 J1 pin17 SDA/GPIO21、pin18 SCL/GPIO22"}]
+    },
+    {
+      "id": "interface.m5stack-bus",
+      "category": "interface",
+      "subject": "J1 M5Stack_BUS",
+      "statement": "J1 是 2x15 的 30 针 M5Stack_BUS，图中标出 GND、GPIO35/36、EN、GPIO23/25/19/26/18/0/16/17/21/5/13/34、SDA、SCL、+3.3V、IN+/HPWR、+5V 与 BATTERY。",
+      "confidence": "confirmed",
+      "attributes": {"connector": "J1 M5Stack_BUS", "pins": 30, "ground_pins": "1,3,5", "i2c": "pin17 SDA/GPIO21; pin18 SCL/GPIO22", "power": "pin12 +3.3V; pin25 IN+/HPWR; pin27/pin29 HPWR; pin28 +5V; pin30 BATTERY"},
+      "evidence": [{"asset_sha256": "acb19df9e44355fa0186560215bdde2ea7ffd7e7676619f8d9abc61b1febf848", "page": 1, "locator": "第 1 页右下 J1 M5Stack_BUS 1-30 脚及外部网络"}]
+    },
+    {
+      "id": "interface.rs485-terminal-visible-labels",
+      "category": "interface",
+      "subject": "P1 四针端子标签",
+      "statement": "P1 HDR_4P pin1-pin4 分别标为 B-、A+、12V+、12V-；四条引线在当前页面均未连接到命名网络。",
+      "confidence": "confirmed",
+      "attributes": {"pin1": "B-", "pin2": "A+", "pin3": "12V+", "pin4": "12V-", "routing_shown": false},
+      "evidence": [{"asset_sha256": "acb19df9e44355fa0186560215bdde2ea7ffd7e7676619f8d9abc61b1febf848", "page": 1, "locator": "第 1 页左中 P1 HDR_4P，B-/A+/12V+/12V- 均为独立短引线"}]
+    },
+    {
+      "id": "interface.io-header-visible-labels",
+      "category": "interface",
+      "subject": "P2 六针 I/O 标签",
+      "statement": "P2 HDR_6P pin1-pin6 分别标为 I/O1、I/O2、I/O3、I/O4、I/O5、I/O6；六条引线在当前页面均未连接到命名网络。",
+      "confidence": "confirmed",
+      "attributes": {"pin1": "I/O1", "pin2": "I/O2", "pin3": "I/O3", "pin4": "I/O4", "pin5": "I/O5", "pin6": "I/O6", "routing_shown": false},
+      "evidence": [{"asset_sha256": "acb19df9e44355fa0186560215bdde2ea7ffd7e7676619f8d9abc61b1febf848", "page": 1, "locator": "第 1 页左中 P2 HDR_6P，I/O1-I/O6 均为独立短引线"}]
+    },
+    {
+      "id": "bus.documented-rs485-routing",
+      "category": "bus",
+      "subject": "可选 RS-485 转接板路由",
+      "statement": "产品正文说明可选 TTL-RS485 转接板使用 G16/G17，但当前原理图没有画出 P1/P2 到 J1 GPIO16/GPIO17 的连接，也没有收发器、DE/RE、A/B 终端或保护电路。",
+      "confidence": "uncertain",
+      "attributes": {"documented_gpio": "GPIO16/GPIO17", "bus_pins_visible": "J1 pin15 GPIO16; J1 pin16 GPIO17", "transceiver_shown": false, "p1_p2_routing_shown": false, "direction_control_shown": false, "termination_shown": false},
+      "evidence": [{"asset_sha256": "acb19df9e44355fa0186560215bdde2ea7ffd7e7676619f8d9abc61b1febf848", "page": 1, "locator": "第 1 页 P1/P2 短引线与 J1 pin15/pin16，页面无连接线或 RS-485 收发器"}]
+    },
+    {
+      "id": "power.p1-12v-routing",
+      "category": "power",
+      "subject": "P1 12V 端子供电来源",
+      "statement": "P1 pin3/pin4 标为 12V+/12V-，但当前页面未显示它们与 J2 IN12/24V、IN+、GND 或其他电源网络的连接。",
+      "confidence": "uncertain",
+      "attributes": {"terminal_positive": "P1 pin3 12V+", "terminal_negative": "P1 pin4 12V-", "input_nets": "J2 IN12/24V; IN+; GND", "explicit_connection_shown": false},
+      "evidence": [{"asset_sha256": "acb19df9e44355fa0186560215bdde2ea7ffd7e7676619f8d9abc61b1febf848", "page": 1, "locator": "第 1 页 P1 12V+/12V- 短引线与左上 J2/IN+ 电源区，二者无连线或同名网络"}]
+    },
+    {
+      "id": "storage.none-shown",
+      "category": "storage",
+      "subject": "板载存储",
+      "statement": "当前完整单页原理图未画出 Flash、PSRAM、EEPROM 或存储卡接口。",
+      "confidence": "confirmed",
+      "attributes": {"flash_shown": false, "psram_shown": false, "eeprom_shown": false, "memory_card_shown": false},
+      "evidence": [{"asset_sha256": "acb19df9e44355fa0186560215bdde2ea7ffd7e7676619f8d9abc61b1febf848", "page": 1, "locator": "第 1 页完整单页器件，仅有电源 IC、连接器和指示 LED，未见存储器件"}]
+    },
+    {
+      "id": "debug.none-shown",
+      "category": "debug",
+      "subject": "专用调试接口",
+      "statement": "当前完整单页原理图未画出 JTAG、SWD、USB-UART 或专用编程调试连接器。",
+      "confidence": "confirmed",
+      "attributes": {"jtag_shown": false, "swd_shown": false, "usb_uart_shown": false, "debug_connector_shown": false},
+      "evidence": [{"asset_sha256": "acb19df9e44355fa0186560215bdde2ea7ffd7e7676619f8d9abc61b1febf848", "page": 1, "locator": "第 1 页完整连接器 J1-J3/P1/P2，无调试接口标注"}]
+    }
+  ],
+  "needs_review": [
+    {
+      "id": "review.rs485-adapter-routing",
+      "fact_id": "bus.documented-rs485-routing",
+      "question": "K011-B 配套 TTL-RS485 转接板的 P1/P2 针脚、收发器型号、GPIO16/GPIO17 方向及 DE/RE 控制关系是什么？",
+      "reason": "当前主板原理图只显示 P1/P2 标签和 J1 GPIO16/GPIO17，没有转接板原理图或电气连接。",
+      "evidence": [{"asset_sha256": "acb19df9e44355fa0186560215bdde2ea7ffd7e7676619f8d9abc61b1febf848", "page": 1, "locator": "第 1 页 P1/P2 与 J1 pin15/pin16，未见中间连接或收发器"}]
+    },
+    {
+      "id": "review.p1-12v-source",
+      "fact_id": "power.p1-12v-routing",
+      "question": "P1 的 12V+ 与 12V- 在 PCB 或配套转接板上实际连接哪个电源输入和回路？",
+      "reason": "P1 只显示 12V+/12V- 标签，当前页面没有到 J2、IN+ 或 GND 的可追踪连接。",
+      "evidence": [{"asset_sha256": "acb19df9e44355fa0186560215bdde2ea7ffd7e7676619f8d9abc61b1febf848", "page": 1, "locator": "第 1 页 P1 pin3/pin4 与左上输入电源区，无连接线"}]
+    }
+  ]
+}

@@ -1,0 +1,163 @@
+{
+  "schema_version": 1,
+  "generator": "schematic_describer",
+  "product": {
+    "product_id": "base26-v1-1-8403a8037d8d",
+    "product_name": "Base26 v1.1",
+    "sku": "K026-B",
+    "source_path": "module/Base26 V1.1.md",
+    "source_sha256": "3583d563d09df16173a63e60da0567b5868c229b3e07ed873c03cc0dbe09e1e6",
+    "input_sha256": "df7b0432d508900320a581a94934a246ec57d9e0e5edb4107d8839a0cca414f2"
+  },
+  "schematic_assets": [
+    {
+      "sha256": "888294553d5334509e36126ecd89cc213e79679566e9c722489f6cd6f4acd52c",
+      "source_url": "https://m5stack-doc.oss-cn-shenzhen.aliyuncs.com/540/Sch_BASE_v1.1_sch_01.png",
+      "pages": [1]
+    }
+  ],
+  "summary": "Base26 v1.1 本体以 U1 MP1584EN 将 J2/M5-Bus 的 IN+ 高压输入降压为 +5V，并通过 J1 M5-Bus pin28 向堆叠系统供电。J1 同时完整导出 M5-Bus GPIO、I2C、3.3V、BAT、HPWR 与 GND。P3/J3 和 P4/J4 分别形成可自定义布线的 UART 与 I2C Grove 接口，P1 仅标出 B、A、12V+、12V- 的四针预留接口；页面没有 MCU 或 RS485 收发器。",
+  "keywords": [
+    "Base26 v1.1", "K026-B", "MP1584EN", "MP1584", "M5Stack_BUS", "IN+", "IN12/24V", "9-24V", "+5V", "+3.3V", "HPWR", "BAT", "PWR3.5", "PPTC-1812", "SS54", "L1 10uH", "R1 52.3KΩ", "R2 10KΩ", "Grove_UART", "Grove_IIC", "RX", "TX", "IIC_SCL", "IIC_SDA", "SDA", "SCL", "B", "A", "12V+", "12V-", "PWR485", "R20 4.7KΩ", "red LED 0603", "5V/2A"
+  ],
+  "components": [
+    {
+      "reference": "U1", "part_number": "MP1584EN", "role": "IN+ 至 +5V 的降压转换器",
+      "evidence": [{"asset_sha256": "888294553d5334509e36126ecd89cc213e79679566e9c722489f6cd6f4acd52c", "page": 1, "locator": "B2-B3，U1 MP1584EN、BST/VIN/SW/FB/FREQ/COMP/GND"}]
+    },
+    {
+      "reference": "J1", "part_number": "M5Stack_BUS", "role": "30 针 M5-Bus 电源、GPIO、I2C 与堆叠接口",
+      "evidence": [{"asset_sha256": "888294553d5334509e36126ecd89cc213e79679566e9c722489f6cd6f4acd52c", "page": 1, "locator": "C3-D4，J1 M5Stack_BUS pins 1-30"}]
+    },
+    {
+      "reference": "J2", "part_number": "PWR3.5", "role": "外部直流电源输入插座，正端经 F1 接 IN+，负端接 GND",
+      "evidence": [{"asset_sha256": "888294553d5334509e36126ecd89cc213e79679566e9c722489f6cd6f4acd52c", "page": 1, "locator": "B1，J2 PWR3.5、IN12/24V、F1、GND"}]
+    },
+    {
+      "reference": "F1", "part_number": "PPTC-1812", "role": "J2 输入至 IN+ 的自恢复保险保护",
+      "evidence": [{"asset_sha256": "888294553d5334509e36126ecd89cc213e79679566e9c722489f6cd6f4acd52c", "page": 1, "locator": "B1-B2，F1 PPTC-1812 串联于 J2 与 IN+"}]
+    },
+    {
+      "reference": "L1/D1", "part_number": "10uH / SS54", "role": "MP1584 Buck 电感与肖特基续流二极管",
+      "evidence": [{"asset_sha256": "888294553d5334509e36126ecd89cc213e79679566e9c722489f6cd6f4acd52c", "page": 1, "locator": "A2-B3，U1 SW-L1 10uH 与 D1 SS54"}]
+    },
+    {
+      "reference": "R1/R2", "part_number": "52.3KΩ / 10KΩ", "role": "MP1584 +5V 输出反馈分压",
+      "evidence": [{"asset_sha256": "888294553d5334509e36126ecd89cc213e79679566e9c722489f6cd6f4acd52c", "page": 1, "locator": "B2-B3，+5V-R1 52.3KΩ-FB-R2 10KΩ-GND"}]
+    },
+    {
+      "reference": "C1-C7/R3/R4", "part_number": "100nF; 22uF x3; 2.2uF x2; 150pF; 100KΩ x2", "role": "MP1584 自举、输入/输出滤波、频率与补偿网络",
+      "evidence": [{"asset_sha256": "888294553d5334509e36126ecd89cc213e79679566e9c722489f6cd6f4acd52c", "page": 1, "locator": "A2-C3，C1-C7、R3/R4 与 U1 电源网络"}]
+    },
+    {
+      "reference": "D5/R20", "part_number": "红灯 0603 / 4.7KΩ", "role": "+5V 电源指示灯与限流电阻",
+      "evidence": [{"asset_sha256": "888294553d5334509e36126ecd89cc213e79679566e9c722489f6cd6f4acd52c", "page": 1, "locator": "B4，+5V-D5 红灯0603-R20 4.7KΩ-GND"}]
+    },
+    {
+      "reference": "P3/J3", "part_number": "Header 4 / Grove_UART", "role": "RX、TX、VCC、GND 四线 UART Grove 转接焊盘",
+      "evidence": [{"asset_sha256": "888294553d5334509e36126ecd89cc213e79679566e9c722489f6cd6f4acd52c", "page": 1, "locator": "A4，P3 Header4 对接 J3 Grove_UART pins RX/TX/VCC/GND"}]
+    },
+    {
+      "reference": "P4/J4", "part_number": "Header 4 / Grove_IIC", "role": "IIC_SCL、IIC_SDA、VCC、GND 四线 I2C Grove 转接焊盘",
+      "evidence": [{"asset_sha256": "888294553d5334509e36126ecd89cc213e79679566e9c722489f6cd6f4acd52c", "page": 1, "locator": "A4，P4 Header4 对接 J4 Grove_IIC pins IIC_SCL/IIC_SDA/VCC/GND"}]
+    },
+    {
+      "reference": "P1", "part_number": "HDR_4P", "role": "B、A、12V+、12V- 的四针 PWR485 预留接口",
+      "evidence": [{"asset_sha256": "888294553d5334509e36126ecd89cc213e79679566e9c722489f6cd6f4acd52c", "page": 1, "locator": "B4，P1 HDR_4P，B/A/12V+/12V-，左侧均为悬空线"}]
+    }
+  ],
+  "facts": [
+    {
+      "id": "system.architecture", "category": "system", "subject": "Base26 电源与扩展架构",
+      "statement": "Base26 v1.1 本页由 MP1584EN 降压电源、M5-Bus、两个 Grove 转接接口和 PWR485 预留端口组成，未画出 MCU、存储器、时钟、复位或通信收发器。",
+      "confidence": "confirmed", "attributes": {"converter": "U1 MP1584EN", "bus": "J1 M5Stack_BUS", "grove": "J3 UART; J4 IIC", "pwr485_header": "P1", "mcu": "none shown", "rs485_transceiver": "none shown"},
+      "evidence": [{"asset_sha256": "888294553d5334509e36126ecd89cc213e79679566e9c722489f6cd6f4acd52c", "page": 1, "locator": "整页电源、接口与 M5-Bus 分区"}]
+    },
+    {
+      "id": "power.input-path", "category": "power", "subject": "外部电源输入",
+      "statement": "J2 PWR3.5 正端经 F1 PPTC-1812 串联到 IN+，负端接 GND；输入区域标注 IN12/24V，C5/C6 各 2.2 µF 从 IN+ 接地。",
+      "confidence": "confirmed", "attributes": {"connector": "J2 PWR3.5", "printed_label": "IN12/24V", "protection": "F1 PPTC-1812", "rail": "IN+", "ground": "J2 pin3 GND", "input_caps": "C5/C6 2.2uF"},
+      "evidence": [{"asset_sha256": "888294553d5334509e36126ecd89cc213e79679566e9c722489f6cd6f4acd52c", "page": 1, "locator": "B1-B2，J2/F1/IN+/C5/C6/GND"}]
+    },
+    {
+      "id": "power.buck-5v", "category": "power", "subject": "MP1584 5 V 降压",
+      "statement": "U1 MP1584EN 的 SW 经 L1 10 µH 形成 +5V 输出，D1 SS54 提供续流路径；R1 52.3 kΩ/R2 10 kΩ 为反馈分压，C2/C3/C4 各 22 µF 滤波。",
+      "confidence": "confirmed", "attributes": {"input": "IN+", "converter": "U1 MP1584EN", "inductor": "L1 10uH", "catch_diode": "D1 SS54", "feedback": "R1 52.3KΩ; R2 10KΩ", "output_caps": "C2/C3/C4 22uF", "output": "+5V"},
+      "evidence": [{"asset_sha256": "888294553d5334509e36126ecd89cc213e79679566e9c722489f6cd6f4acd52c", "page": 1, "locator": "A2-C3，U1/D1/L1/R1/R2/C2-C4/+5V"}]
+    },
+    {
+      "id": "power.indicator", "category": "power", "subject": "5 V 指示灯",
+      "statement": "D5 红色 0603 LED 与 R20 4.7 kΩ 串联连接在 +5V 与 GND 之间，用于显示 +5V 电源状态。",
+      "confidence": "confirmed", "attributes": {"led": "D5 红灯 0603", "resistor": "R20 4.7KΩ", "rail": "+5V", "return": "GND"},
+      "evidence": [{"asset_sha256": "888294553d5334509e36126ecd89cc213e79679566e9c722489f6cd6f4acd52c", "page": 1, "locator": "B4，GND-R20-D5-+5V"}]
+    },
+    {
+      "id": "interface.m5bus-power", "category": "interface", "subject": "M5-Bus 电源引脚",
+      "statement": "J1 pins 25、27、29 的 HPWR 共同连接 IN+，pin28 连接 +5V，pin12 连接 +3.3V，pin30 连接 BAT，pins1/3/5 连接 GND。",
+      "confidence": "confirmed", "attributes": {"hpwr": "pins25/27/29 IN+", "5v": "pin28 +5V", "3v3": "pin12 +3.3V", "battery": "pin30 BAT", "ground": "pins1/3/5 GND"},
+      "evidence": [{"asset_sha256": "888294553d5334509e36126ecd89cc213e79679566e9c722489f6cd6f4acd52c", "page": 1, "locator": "C3-D4，J1 M5Stack_BUS 电源网络标签"}]
+    },
+    {
+      "id": "interface.m5bus-signals", "category": "interface", "subject": "M5-Bus 信号引脚",
+      "statement": "J1 明确导出 SDA pin17、SCL pin18、EN pin6，以及 GPIO35/36/23/25/19/26/18/3/1/16/17/2/5/12/13/15/0/34 等 GPIO 网络。",
+      "confidence": "confirmed", "attributes": {"sda": "pin17", "scl": "pin18", "enable": "pin6 EN", "left_gpio": "pins7/9/11/13/15/19/21/23 = GPIO23/19/18/3/16/2/12/15", "right_gpio": "pins2/4/8/10/14/16/20/22/24/26 = GPIO35/36/25/26/1/17/5/13/0/34"},
+      "evidence": [{"asset_sha256": "888294553d5334509e36126ecd89cc213e79679566e9c722489f6cd6f4acd52c", "page": 1, "locator": "C3-D4，J1 pins 1-30 全部可见网络"}]
+    },
+    {
+      "id": "bus.m5bus-i2c", "category": "bus", "subject": "M5-Bus I2C",
+      "statement": "J1 pin17 标为 SDA，pin18 标为 SCL；本页未将这两个网络直接连接到 J4 的 IIC_SDA/IIC_SCL。",
+      "confidence": "confirmed", "attributes": {"controller": "external M5Stack host", "sda": "J1 pin17 SDA", "scl": "J1 pin18 SCL", "grove_sda": "J4 IIC_SDA separate", "grove_scl": "J4 IIC_SCL separate", "onboard_bridge": "none shown"},
+      "evidence": [{"asset_sha256": "888294553d5334509e36126ecd89cc213e79679566e9c722489f6cd6f4acd52c", "page": 1, "locator": "J1 SDA/SCL 与独立 P4/J4 IIC_SDA/IIC_SCL"}]
+    },
+    {
+      "id": "interface.grove-uart", "category": "interface", "subject": "UART Grove 自定义接口",
+      "statement": "P3 pins1-4 一一连接 J3 Grove_UART pins1-4，J3 信号依次为 RX、TX、VCC、GND；这些信号未在本页直接接到 M5-Bus。",
+      "confidence": "confirmed", "attributes": {"header": "P3 Header4", "connector": "J3 Grove_UART", "pin1": "RX", "pin2": "TX", "pin3": "VCC", "pin4": "GND", "m5bus_connection": "none shown"},
+      "evidence": [{"asset_sha256": "888294553d5334509e36126ecd89cc213e79679566e9c722489f6cd6f4acd52c", "page": 1, "locator": "A4，P3-J3 四条直接连线"}]
+    },
+    {
+      "id": "interface.grove-i2c", "category": "interface", "subject": "I2C Grove 自定义接口",
+      "statement": "P4 pins1-4 一一连接 J4 Grove_IIC pins1-4，J4 信号依次为 IIC_SCL、IIC_SDA、VCC、GND；这些信号未在本页直接接到 M5-Bus。",
+      "confidence": "confirmed", "attributes": {"header": "P4 Header4", "connector": "J4 Grove_IIC", "pin1": "IIC_SCL", "pin2": "IIC_SDA", "pin3": "VCC", "pin4": "GND", "m5bus_connection": "none shown"},
+      "evidence": [{"asset_sha256": "888294553d5334509e36126ecd89cc213e79679566e9c722489f6cd6f4acd52c", "page": 1, "locator": "A4，P4-J4 四条直接连线"}]
+    },
+    {
+      "id": "interface.pwr485-header", "category": "interface", "subject": "PWR485 预留接口",
+      "statement": "P1 HDR_4P 的四个针脚标为 B、A、12V+、12V-，但左侧均为未连接短线，页面未画 RS485 收发器或与 M5-Bus/UART 的连接。",
+      "confidence": "confirmed", "attributes": {"reference": "P1", "pin_labels": "B/A/12V+/12V-", "rs485_transceiver": "none shown", "bus_connection": "none shown", "population_role": "user expansion header"},
+      "evidence": [{"asset_sha256": "888294553d5334509e36126ecd89cc213e79679566e9c722489f6cd6f4acd52c", "page": 1, "locator": "B4，P1 HDR_4P 悬空 B/A/12V+/12V-"}]
+    },
+    {
+      "id": "power.input-range", "category": "power", "subject": "9-24 V 输入范围",
+      "statement": "产品正文给出 9-24 V 输入范围，但原理图只标 IN12/24V 与 P1 的 12V+/12V-，未印出 9 V 下限。",
+      "confidence": "uncertain", "attributes": {"claimed_range": "9-24V", "schematic_label": "IN12/24V", "pwr485_label": "12V+/12V-"},
+      "evidence": [{"asset_sha256": "888294553d5334509e36126ecd89cc213e79679566e9c722489f6cd6f4acd52c", "page": 1, "locator": "J2 输入区 IN12/24V 与 P1 12V+/12V-"}]
+    },
+    {
+      "id": "power.output-current", "category": "power", "subject": "5 V 持续输出电流",
+      "statement": "产品正文称持续输出电流为 2 A，但原理图只标 +5V，未直接标注连续电流额定值或 F1 规格参数。",
+      "confidence": "uncertain", "attributes": {"claimed_current": "2A continuous", "schematic_output": "+5V", "fuse_marking": "PPTC-1812 only"},
+      "evidence": [{"asset_sha256": "888294553d5334509e36126ecd89cc213e79679566e9c722489f6cd6f4acd52c", "page": 1, "locator": "MP1584 +5V 输出级与 F1"}]
+    },
+    {
+      "id": "interface.rs485-adapter", "category": "interface", "subject": "附带 RS485-To-TTL 转接板",
+      "statement": "产品正文称套件附带可焊接的 RS485-To-TTL 转接板，但本页原理图仅提供 P1 B/A/12V+/12V-，无法确认转接板芯片型号、TTL 引脚、电平、方向控制和保护。",
+      "confidence": "uncertain", "attributes": {"claimed_accessory": "RS485-To-TTL board", "schematic_visible": "P1 B/A/12V+/12V- only", "transceiver": "not printed", "ttl_mapping": "not printed", "direction_control": "not printed", "protection": "not printed"},
+      "evidence": [{"asset_sha256": "888294553d5334509e36126ecd89cc213e79679566e9c722489f6cd6f4acd52c", "page": 1, "locator": "P1 HDR_4P，无 RS485 转换电路"}]
+    }
+  ],
+  "needs_review": [
+    {
+      "id": "review.input-range", "fact_id": "power.input-range", "question": "请用 MP1584 设计计算与产品测试规范确认 9-24 V 输入范围。", "reason": "原理图仅标 IN12/24V，未标 9 V 下限。",
+      "evidence": [{"asset_sha256": "888294553d5334509e36126ecd89cc213e79679566e9c722489f6cd6f4acd52c", "page": 1, "locator": "J2/IN12/24V/U1 MP1584EN"}]
+    },
+    {
+      "id": "review.output-current", "fact_id": "power.output-current", "question": "请用 F1 BOM、MP1584 热设计和实测确认 +5V 持续 2 A 能力。", "reason": "电流额定值未印在原理图。",
+      "evidence": [{"asset_sha256": "888294553d5334509e36126ecd89cc213e79679566e9c722489f6cd6f4acd52c", "page": 1, "locator": "F1 与 U1/L1/+5V 电源级"}]
+    },
+    {
+      "id": "review.rs485-adapter", "fact_id": "interface.rs485-adapter", "question": "请读取附带 RS485-To-TTL 转接板原理图/BOM，确认收发器、TTL 映射、方向控制和保护。", "reason": "Base26 本页没有转接板电路。",
+      "evidence": [{"asset_sha256": "888294553d5334509e36126ecd89cc213e79679566e9c722489f6cd6f4acd52c", "page": 1, "locator": "P1 B/A/12V+/12V- 预留接口"}]
+    }
+  ]
+}

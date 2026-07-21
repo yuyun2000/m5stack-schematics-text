@@ -1,0 +1,472 @@
+{
+  "schema_version": 1,
+  "generator": "schematic_describer",
+  "product": {
+    "product_id": "vameter-1ffcc2eeb50a",
+    "product_name": "VAMeter",
+    "sku": "K136",
+    "source_path": "core/VA Meter.md",
+    "source_sha256": "6f66f16283d3ccdd9c0f11d6d38700aca37eef45144356d2b12c3d9ab879d67e",
+    "input_sha256": "d0cf54e2abafad23cabcfac73ffd09e18e8dfeeb447c40e0a02d4e0332103a48"
+  },
+  "schematic_assets": [
+    {
+      "sha256": "6b1f2bf4df0cf37feae98aa54b5720154e9a6c6b32e71f37b047796889f67f27",
+      "source_url": "https://m5stack-doc.oss-cn-shenzhen.aliyuncs.com/518/Sch_VAMeter_V1.2_sch_01.png",
+      "pages": [1]
+    },
+    {
+      "sha256": "fb6e390d8d880aeb546da9a0c8d011b74e9dc49fc488ebb4ceae3ed8b74e25b9",
+      "source_url": "https://m5stack-doc.oss-cn-shenzhen.aliyuncs.com/518/Sch_VAMeter_base_V1.0_sch_01.png",
+      "pages": [1]
+    },
+    {
+      "sha256": "6de4fbef5669146e7fcb1457f2771b21071ef4095d23f1b54016c30a41c60177",
+      "source_url": "https://m5stack.oss-cn-shenzhen.aliyuncs.com/resource/docs/products/core/VA%20Meter/01.png",
+      "pages": [1]
+    }
+  ],
+  "summary": "VAMeter 以 U5 STAMP_S3 为主控，使用两颗 INA226 与 0.01 Ω/1 Ω 串联分流器实现高、低电流量程，并通过 CA-IS3020S I2C 隔离器和 CA-IS3642HW 数字隔离器隔离测量域。输入/输出使用 USB-C 和 Base 端子，LGS5148 从测量输入生成 5 V，主控还连接 ST7789 显示、旋转编码器、蜂鸣器及 BOOT/复位键。随附 Base 使用 5 V 继电器控制 PVOUT 到 VOUT，并提供 GPIO8/GPIO9 Grove 接口。",
+  "keywords": [
+    "VAMeter",
+    "K136",
+    "STAMP_S3",
+    "ESP32S3FN8",
+    "INA226",
+    "CA-IS3020S",
+    "CA-IS3642HW",
+    "LGS5148",
+    "ST7789",
+    "HF3FF/005-1ZTF",
+    "0.01R shunt",
+    "1R shunt",
+    "HICUR",
+    "GPIO46",
+    "FSDA GPIO5",
+    "FSCL GPIO6",
+    "ALERT1 GPIO41",
+    "ALERT2 GPIO40",
+    "BUZ_PWM GPIO14",
+    "EXT_G10",
+    "EXT_G9",
+    "EXT_G8",
+    "EXT_G42",
+    "GPIO10_REL",
+    "USB-C",
+    "FBUS_IN",
+    "FBUS_OUT",
+    "ISO-VIN",
+    "ISO-VOUT",
+    "P5V",
+    "FVDD",
+    "P3V3",
+    "SYS_5V",
+    "2.5uA",
+    "250uA",
+    "8.192A",
+    "81.92mA"
+  ],
+  "components": [
+    {
+      "reference": "U5",
+      "part_number": "STAMP_S3",
+      "role": "ESP32-S3 主控模块，连接隔离测量、显示、编码器、蜂鸣器、USB 和扩展 GPIO",
+      "evidence": [
+        {"asset_sha256": "6b1f2bf4df0cf37feae98aa54b5720154e9a6c6b32e71f37b047796889f67f27", "page": 1, "locator": "C2-D3，U5 STAMP_S3 全部 GPIO 网络"},
+        {"asset_sha256": "6de4fbef5669146e7fcb1457f2771b21071ef4095d23f1b54016c30a41c60177", "page": 1, "locator": "逻辑图顶部 STAMP S3 / ESP32S3FN8"}
+      ]
+    },
+    {
+      "reference": "U3/U4",
+      "part_number": "INA226",
+      "role": "高电流与低电流两路电压/电流监测器",
+      "evidence": [{"asset_sha256": "6b1f2bf4df0cf37feae98aa54b5720154e9a6c6b32e71f37b047796889f67f27", "page": 1, "locator": "B1-C2，U3/U4 INA226、IN+/IN-/VBUS/SCL/SDA/ALERT/A0/A1"}]
+    },
+    {
+      "reference": "R4/R6",
+      "part_number": "R010/1% / 1R/1%",
+      "role": "0.01 Ω 高电流与 1 Ω 低电流串联分流器",
+      "evidence": [{"asset_sha256": "6b1f2bf4df0cf37feae98aa54b5720154e9a6c6b32e71f37b047796889f67f27", "page": 1, "locator": "A1-B2，FBUS_IN-R4-R6-FBUS_OUT 测量路径"}]
+    },
+    {
+      "reference": "Q1",
+      "part_number": "AP50P20Q",
+      "role": "HICUR/RS_SW 控制的 1 Ω 分流器旁路 MOSFET",
+      "evidence": [{"asset_sha256": "6b1f2bf4df0cf37feae98aa54b5720154e9a6c6b32e71f37b047796889f67f27", "page": 1, "locator": "A1-B2，Q1 AP50P20Q、D2 MM5Z12V、RS_SW、R6"}]
+    },
+    {
+      "reference": "U2",
+      "part_number": "CA-IS3020S",
+      "role": "主控 SYS_SDA/SYS_SCL 到测量域 FSDA/FSCL 的双向 I2C 隔离器",
+      "evidence": [{"asset_sha256": "6b1f2bf4df0cf37feae98aa54b5720154e9a6c6b32e71f37b047796889f67f27", "page": 1, "locator": "D1-D2，U2 CA-IS3020S、SYS_SDA/SYS_SCL、FSDA/FSCL"}]
+    },
+    {
+      "reference": "U1",
+      "part_number": "CA-IS3642HW",
+      "role": "HICUR 与两路 INA226 ALERT 的数字隔离器",
+      "evidence": [{"asset_sha256": "6b1f2bf4df0cf37feae98aa54b5720154e9a6c6b32e71f37b047796889f67f27", "page": 1, "locator": "C1-C2，U1 CA-IS3642HW、HICUR、SYS_ALERT1/2、ALERT1/2"}]
+    },
+    {
+      "reference": "U6",
+      "part_number": "LGS5148",
+      "role": "PVIN 输入的降压转换器，生成 P5V",
+      "evidence": [{"asset_sha256": "6b1f2bf4df0cf37feae98aa54b5720154e9a6c6b32e71f37b047796889f67f27", "page": 1, "locator": "A3-A4，D5/R10/U6 LGS5148/WPN3012H4R7MT/P5V"}]
+    },
+    {
+      "reference": "J1/J2",
+      "part_number": "GT-USB-9010AB",
+      "role": "测量输入与输出 USB-C 连接器，承载电源与 USB 数据/CC/SBU 网络",
+      "evidence": [{"asset_sha256": "6b1f2bf4df0cf37feae98aa54b5720154e9a6c6b32e71f37b047796889f67f27", "page": 1, "locator": "A1-B2，J1/J2 GT-USB-9010AB，FBUS_IN/FBUS_OUT 与 USB_*"}]
+    },
+    {
+      "reference": "S1",
+      "part_number": "MK-22D14-G020",
+      "role": "FBUS_IN/PVIN/FGND 供电和隔离模式选择开关",
+      "evidence": [{"asset_sha256": "6b1f2bf4df0cf37feae98aa54b5720154e9a6c6b32e71f37b047796889f67f27", "page": 1, "locator": "B1，S1 MK-22D14-G020、FBUS_IN/PVIN/FGND"}]
+    },
+    {
+      "reference": "J3/J4",
+      "part_number": "CON6",
+      "role": "VAMeter 与 Base 间的两组 6 针电源/GPIO连接器",
+      "evidence": [{"asset_sha256": "6b1f2bf4df0cf37feae98aa54b5720154e9a6c6b32e71f37b047796889f67f27", "page": 1, "locator": "B2-B3，J3/J4 CON6，FBUS/P5V/FGND/EXT_G*"}]
+    },
+    {
+      "reference": "BZ1/Q3",
+      "part_number": "BUZZER / A2N7002",
+      "role": "GPIO14 BUZ_PWM 驱动的蜂鸣器及低边 MOSFET",
+      "evidence": [{"asset_sha256": "6b1f2bf4df0cf37feae98aa54b5720154e9a6c6b32e71f37b047796889f67f27", "page": 1, "locator": "B4-C4，BZ1 BUZZER、Q3 A2N7002、BUZ_PWM、D4"}]
+    },
+    {
+      "reference": "S2",
+      "part_number": "SIQ-02FVS3",
+      "role": "GPIO3/GPIO1/GPIO2 旋转编码器及按压开关",
+      "evidence": [{"asset_sha256": "6b1f2bf4df0cf37feae98aa54b5720154e9a6c6b32e71f37b047796889f67f27", "page": 1, "locator": "C4-D4，S2 SIQ-02FVS3、ENC_A/ENC_B/ENC_S"}]
+    },
+    {
+      "reference": "S3/S4",
+      "part_number": "SW",
+      "role": "SYS_RST 复位键与 SYS_G0 启动键",
+      "evidence": [{"asset_sha256": "6b1f2bf4df0cf37feae98aa54b5720154e9a6c6b32e71f37b047796889f67f27", "page": 1, "locator": "C4，S3 SYS_RST、S4 SYS_G0"}]
+    },
+    {
+      "reference": "LCD (logic diagram)",
+      "part_number": "ST7789",
+      "role": "1.3 英寸 IPS 显示，使用 GPIO33-GPIO38",
+      "evidence": [{"asset_sha256": "6de4fbef5669146e7fcb1457f2771b21071ef4095d23f1b54016c30a41c60177", "page": 1, "locator": "逻辑图下部 1.3-inch IPS-LCD ST7789 与 DATA/SCK/RS/RST/CS/BL"}]
+    },
+    {
+      "reference": "RLY1",
+      "part_number": "HF3FF/005-1ZTF",
+      "role": "Base 上串联控制 PVOUT 到 VOUT 的 5 V 继电器",
+      "evidence": [{"asset_sha256": "fb6e390d8d880aeb546da9a0c8d011b74e9dc49fc488ebb4ceae3ed8b74e25b9", "page": 1, "locator": "B3-C4，RLY1 HF3FF/005-1ZTF、PVOUT/VOUT/SYS_5V"}]
+    },
+    {
+      "reference": "Q1 (Base)",
+      "part_number": "A2N7002",
+      "role": "GPIO10_REL 驱动 Base 继电器线圈的低边 MOSFET",
+      "evidence": [{"asset_sha256": "fb6e390d8d880aeb546da9a0c8d011b74e9dc49fc488ebb4ceae3ed8b74e25b9", "page": 1, "locator": "C3-C4，GPIO10_REL/R1/Q1/D1/RLY1"}]
+    },
+    {
+      "reference": "J3 (Base)",
+      "part_number": "Grove 等高白色",
+      "role": "GPIO9/GPIO8/SYS_5V/FGND Grove 扩展口",
+      "evidence": [{"asset_sha256": "fb6e390d8d880aeb546da9a0c8d011b74e9dc49fc488ebb4ceae3ed8b74e25b9", "page": 1, "locator": "C1，J3 Grove、GPIO9/GPIO8/FU1/SYS_5V/FGND"}]
+    },
+    {
+      "reference": "J4/J5 (Base)",
+      "part_number": "KF2EDGR_3.81mm_2P",
+      "role": "Base PVIN 输入与 VOUT 输出接线端子",
+      "evidence": [{"asset_sha256": "fb6e390d8d880aeb546da9a0c8d011b74e9dc49fc488ebb4ceae3ed8b74e25b9", "page": 1, "locator": "B1-B2，J4 PVIN/PGND、J5 VOUT"}]
+    }
+  ],
+  "facts": [
+    {
+      "id": "system.architecture",
+      "category": "system",
+      "subject": "隔离双量程功率计",
+      "statement": "STAMP_S3 通过隔离 I2C 和数字隔离器控制两颗 INA226；0.01 Ω 与 1 Ω 分流器串联，HICUR 控制 MOSFET 旁路 1 Ω 分流器以切换量程。",
+      "confidence": "confirmed",
+      "attributes": {"controller": "U5 STAMP_S3", "monitors": "U3/U4 INA226", "i2c_isolator": "U2 CA-IS3020S", "digital_isolator": "U1 CA-IS3642HW", "high_current_shunt": "R4 R010/1%", "low_current_shunt": "R6 1R/1%", "range_control": "GPIO46/HICUR"},
+      "evidence": [
+        {"asset_sha256": "6b1f2bf4df0cf37feae98aa54b5720154e9a6c6b32e71f37b047796889f67f27", "page": 1, "locator": "J1/J2 测量路径、U3/U4、U1/U2、Q1 与 U5"},
+        {"asset_sha256": "6de4fbef5669146e7fcb1457f2771b21071ef4095d23f1b54016c30a41c60177", "page": 1, "locator": "内部逻辑图 ISOLATED、INA226、1R/0.01R、MOS、SW:G46"}
+      ]
+    },
+    {
+      "id": "analog.measurement-path",
+      "category": "analog",
+      "subject": "串联分流测量路径",
+      "statement": "FBUS_IN 依次通过 R4 0.01 Ω 和 R6 1 Ω 到 FBUS_OUT；两颗 INA226 分别跨接对应分流段并采样总线电压。",
+      "confidence": "confirmed",
+      "attributes": {"input": "FBUS_IN", "high_current_shunt": "R4 R010/1%", "low_current_shunt": "R6 1R/1%", "output": "FBUS_OUT", "monitors": "U3/U4 INA226"},
+      "evidence": [{"asset_sha256": "6b1f2bf4df0cf37feae98aa54b5720154e9a6c6b32e71f37b047796889f67f27", "page": 1, "locator": "A1-C2，FBUS_IN-R4-R6-FBUS_OUT 与 U3/U4 IN+/IN-/VBUS"}]
+    },
+    {
+      "id": "analog.range-switch",
+      "category": "analog",
+      "subject": "高低电流量程切换",
+      "statement": "HICUR 高电平经隔离器生成 RS_SW，驱动 Q1 AP50P20Q 旁路 R6 1 Ω；低电平时 R6 保持串入测量路径。",
+      "confidence": "confirmed",
+      "attributes": {"controller_gpio": "GPIO46/HICUR", "isolated_net": "RS_SW", "switch": "Q1 AP50P20Q", "bypassed_shunt": "R6 1R/1%", "gate_protection": "D2 MM5Z12V"},
+      "evidence": [{"asset_sha256": "6b1f2bf4df0cf37feae98aa54b5720154e9a6c6b32e71f37b047796889f67f27", "page": 1, "locator": "A1-C2，U1 HICUR/RS_SW 与 Q1/D2/R6"}]
+    },
+    {
+      "id": "analog.ranges",
+      "category": "analog",
+      "subject": "原理图标注量程与分辨率",
+      "statement": "原理图注释给出 HICUR=1 时约 ±8.192 A peak、250 µA/div，HICUR=0 时约 ±81.92 mA peak、2.5 µA/div。",
+      "confidence": "confirmed",
+      "attributes": {"high_current": "HICUR=1; about ±8.192A peak; 250uA/div", "low_current": "HICUR=0; about ±81.92mA peak; 2.5uA/div"},
+      "evidence": [
+        {"asset_sha256": "6b1f2bf4df0cf37feae98aa54b5720154e9a6c6b32e71f37b047796889f67f27", "page": 1, "locator": "C1 左侧 HICUR measurement mode 注释"},
+        {"asset_sha256": "6de4fbef5669146e7fcb1457f2771b21071ef4095d23f1b54016c30a41c60177", "page": 1, "locator": "逻辑图 SW=1/SW=0 MAX/DIV 参数"}
+      ]
+    },
+    {
+      "id": "bus.isolated-i2c",
+      "category": "bus",
+      "subject": "隔离 I2C",
+      "statement": "STAMP_S3 GPIO5/SYS_SDA 与 GPIO6/SYS_SCL 经 U2 CA-IS3020S 转换为测量域 FSDA/FSCL，连接两颗 INA226。",
+      "confidence": "confirmed",
+      "attributes": {"controller": "U5 STAMP_S3", "controller_sda": "GPIO5/SYS_SDA", "controller_scl": "GPIO6/SYS_SCL", "isolator": "U2 CA-IS3020S", "field_sda": "FSDA", "field_scl": "FSCL", "devices": "U3/U4 INA226"},
+      "evidence": [
+        {"asset_sha256": "6b1f2bf4df0cf37feae98aa54b5720154e9a6c6b32e71f37b047796889f67f27", "page": 1, "locator": "D1-D3，U5 G5/G6、U2、U3/U4 FSDA/FSCL"},
+        {"asset_sha256": "6de4fbef5669146e7fcb1457f2771b21071ef4095d23f1b54016c30a41c60177", "page": 1, "locator": "逻辑图 I2C SCL:G6 SDA:G5 与 CA-IS3020S"}
+      ]
+    },
+    {
+      "id": "bus.isolated-alerts",
+      "category": "bus",
+      "subject": "隔离告警与量程控制",
+      "statement": "U1 CA-IS3642HW 隔离 HICUR、SYS_ALERT1/GPIO41 与 SYS_ALERT2/GPIO40，对应测量侧 RS_SW、ALERT1、ALERT2。",
+      "confidence": "confirmed",
+      "attributes": {"isolator": "U1 CA-IS3642HW", "range": "GPIO46 HICUR -> RS_SW", "alert1": "ALERT1 -> SYS_ALERT1/GPIO41", "alert2": "ALERT2 -> SYS_ALERT2/GPIO40"},
+      "evidence": [
+        {"asset_sha256": "6b1f2bf4df0cf37feae98aa54b5720154e9a6c6b32e71f37b047796889f67f27", "page": 1, "locator": "C1-C3，U1 CA-IS3642HW 与 U5 G40/G41/G46"},
+        {"asset_sha256": "6de4fbef5669146e7fcb1457f2771b21071ef4095d23f1b54016c30a41c60177", "page": 1, "locator": "逻辑图 CA-IS3642 SW:G46 ALERT:G41 ALERT2:G40"}
+      ]
+    },
+    {
+      "id": "address.ina-straps",
+      "category": "address",
+      "subject": "INA226 地址脚",
+      "statement": "U3 的 A0/A1 均接 FGND；U4 的地址脚配置与 U3 不同，其中一脚连接 FVDD，形成两组不同硬件地址。",
+      "confidence": "confirmed",
+      "attributes": {"U3": "A0=FGND; A1=FGND", "U4": "one address strap=FVDD; other strap=FGND"},
+      "evidence": [{"asset_sha256": "6b1f2bf4df0cf37feae98aa54b5720154e9a6c6b32e71f37b047796889f67f27", "page": 1, "locator": "B1-C2，U3/U4 pins A0/A1 与 FVDD/FGND"}]
+    },
+    {
+      "id": "interface.measurement-usb-c",
+      "category": "interface",
+      "subject": "测量输入/输出 USB-C",
+      "statement": "J1/J2 均为 GT-USB-9010AB，VBUS 分别接 FBUS_IN/FBUS_OUT；DP/DM、SBU1/2、CC1/2 分别以 USB_* 网络贯通到对应侧。",
+      "confidence": "confirmed",
+      "attributes": {"input": "J1 GT-USB-9010AB, VBUS=FBUS_IN", "output": "J2 GT-USB-9010AB, VBUS=FBUS_OUT", "data": "USB_DP; USB_DM", "sideband": "USB_SBU1; USB_SBU2", "configuration": "USB_CC1; USB_CC2"},
+      "evidence": [{"asset_sha256": "6b1f2bf4df0cf37feae98aa54b5720154e9a6c6b32e71f37b047796889f67f27", "page": 1, "locator": "A1-B2，J1/J2 全部 USB-C 网络"}]
+    },
+    {
+      "id": "power.mode-switch",
+      "category": "power",
+      "subject": "供电/隔离模式选择",
+      "statement": "S1 MK-22D14-G020 在 FBUS_IN、PVIN 与 FGND 网络之间选择主板供电路径，PVIN 随后进入 P5V 降压电路。",
+      "confidence": "confirmed",
+      "attributes": {"reference": "S1", "part_number": "MK-22D14-G020", "nets": "FBUS_IN; PVIN; FGND", "downstream": "U6 LGS5148 -> P5V"},
+      "evidence": [{"asset_sha256": "6b1f2bf4df0cf37feae98aa54b5720154e9a6c6b32e71f37b047796889f67f27", "page": 1, "locator": "B1，S1 FBUS_IN/PVIN/FGND"}]
+    },
+    {
+      "id": "power.5v-regulator",
+      "category": "power",
+      "subject": "PVIN 到 P5V",
+      "statement": "PVIN 经 D5 DSK34 和 R10 0.5 Ω 进入 U6 LGS5148，经 WPN3012H4R7MT 电感输出 P5V。",
+      "confidence": "confirmed",
+      "attributes": {"input": "PVIN", "diode": "D5 DSK34", "input_resistor": "R10 0.5R/1%", "converter": "U6 LGS5148", "inductor": "WPN3012H4R7MT", "output": "P5V"},
+      "evidence": [{"asset_sha256": "6b1f2bf4df0cf37feae98aa54b5720154e9a6c6b32e71f37b047796889f67f27", "page": 1, "locator": "A3-A4，PVIN/D5/R10/U6/电感/P5V"}]
+    },
+    {
+      "id": "power.isolation-domains",
+      "category": "power",
+      "subject": "隔离电源域",
+      "statement": "主控侧使用 P3V3/GND，测量侧使用 FVDD/FGND；CA-IS3020S 和 CA-IS3642HW 分别跨越两电源域。",
+      "confidence": "confirmed",
+      "attributes": {"controller_domain": "P3V3/GND", "field_domain": "FVDD/FGND", "isolators": "U2 CA-IS3020S; U1 CA-IS3642HW"},
+      "evidence": [{"asset_sha256": "6b1f2bf4df0cf37feae98aa54b5720154e9a6c6b32e71f37b047796889f67f27", "page": 1, "locator": "U1/U2 两侧 P3V3/GND 与 FVDD/FGND"}]
+    },
+    {
+      "id": "gpio.measurement",
+      "category": "gpio",
+      "subject": "测量控制 GPIO",
+      "statement": "STAMP_S3 使用 GPIO5 FSDA、GPIO6 FSCL、GPIO41 ALERT1、GPIO40 ALERT2 和 GPIO46 HICUR。",
+      "confidence": "confirmed",
+      "attributes": {"fsda": "GPIO5", "fscl": "GPIO6", "alert1": "GPIO41", "alert2": "GPIO40", "range": "GPIO46"},
+      "evidence": [{"asset_sha256": "6b1f2bf4df0cf37feae98aa54b5720154e9a6c6b32e71f37b047796889f67f27", "page": 1, "locator": "U5 STAMP_S3 G5/G6/G40/G41/G46 网络"}]
+    },
+    {
+      "id": "gpio.expansion",
+      "category": "gpio",
+      "subject": "Base 扩展 GPIO",
+      "statement": "J3/J4 向 Base 引出 EXT_G10、EXT_G9、EXT_G8、EXT_G42；Base 使用 GPIO10_REL 驱动继电器，Grove 使用 GPIO9/GPIO8。",
+      "confidence": "confirmed",
+      "attributes": {"main_connectors": "J3 EXT_G10/EXT_G9/EXT_G8; J4 EXT_G42", "relay": "GPIO10_REL", "grove": "GPIO9; GPIO8"},
+      "evidence": [
+        {"asset_sha256": "6b1f2bf4df0cf37feae98aa54b5720154e9a6c6b32e71f37b047796889f67f27", "page": 1, "locator": "J3/J4 CON6 EXT_G10/G9/G8/G42"},
+        {"asset_sha256": "fb6e390d8d880aeb546da9a0c8d011b74e9dc49fc488ebb4ceae3ed8b74e25b9", "page": 1, "locator": "J1/J3 Base GPIO10_REL/GPIO9/GPIO8"}
+      ]
+    },
+    {
+      "id": "audio.buzzer",
+      "category": "audio",
+      "subject": "蜂鸣器",
+      "statement": "GPIO14/BUZ_PWM 经 R19 5.1 kΩ 驱动 Q3 A2N7002，低边控制 P5V 供电的 BZ1 BUZZER，D4 1N4148WT 提供反向钳位。",
+      "confidence": "confirmed",
+      "attributes": {"gpio": "GPIO14/BUZ_PWM", "gate_resistor": "R19 5.1K/1%", "transistor": "Q3 A2N7002", "buzzer": "BZ1", "supply": "P5V", "flyback": "D4 1N4148WT"},
+      "evidence": [{"asset_sha256": "6b1f2bf4df0cf37feae98aa54b5720154e9a6c6b32e71f37b047796889f67f27", "page": 1, "locator": "B4-C4，P5V/R18/D4/BZ1/Q3/R19/BUZ_PWM"}]
+    },
+    {
+      "id": "interface.encoder",
+      "category": "interface",
+      "subject": "旋转编码器",
+      "statement": "S2 SIQ-02FVS3 的 A/B/S 分别连接 ENC_A/ENC_B/ENC_S，对应 STAMP_S3 GPIO3/GPIO1/GPIO2，并由 R12/R14/R13 5.1 kΩ 上拉。",
+      "confidence": "confirmed",
+      "attributes": {"reference": "S2", "part_number": "SIQ-02FVS3", "a": "GPIO3/ENC_A", "b": "GPIO1/ENC_B", "switch": "GPIO2/ENC_S", "pullups": "R12/R14/R13 5.1K"},
+      "evidence": [{"asset_sha256": "6b1f2bf4df0cf37feae98aa54b5720154e9a6c6b32e71f37b047796889f67f27", "page": 1, "locator": "C3-D4，U5 G1/G2/G3、R12-R14、S2"}]
+    },
+    {
+      "id": "reset.boot",
+      "category": "reset",
+      "subject": "复位与 BOOT",
+      "statement": "S3 按下时将 SYS_RST 拉低，S4 按下时将 SYS_G0 拉低；两网络分别连接 STAMP_S3 EN 与 G0。",
+      "confidence": "confirmed",
+      "attributes": {"reset": "S3 SYS_RST -> U5 EN", "boot": "S4 SYS_G0 -> U5 G0", "active_level": "low"},
+      "evidence": [{"asset_sha256": "6b1f2bf4df0cf37feae98aa54b5720154e9a6c6b32e71f37b047796889f67f27", "page": 1, "locator": "C3-C4，U5 SYS_RST/SYS_G0 与 S3/S4"}]
+    },
+    {
+      "id": "interface.native-usb",
+      "category": "interface",
+      "subject": "STAMP_S3 USB",
+      "statement": "内部逻辑图明确标注 STAMP_S3 USB 仅以 5 V 输入供电，同时 D-/D+ 使用 GPIO19/GPIO20 提供 OTG/Serial。",
+      "confidence": "confirmed",
+      "attributes": {"power": "only 5V in", "dm": "GPIO19", "dp": "GPIO20", "functions": "OTG/Serial"},
+      "evidence": [{"asset_sha256": "6de4fbef5669146e7fcb1457f2771b21071ef4095d23f1b54016c30a41c60177", "page": 1, "locator": "逻辑图顶部 USB ONLY 5V IN、OTG/SERIAL、D-:G19 D+:G20"}]
+    },
+    {
+      "id": "interface.display",
+      "category": "interface",
+      "subject": "1.3 英寸 ST7789 显示",
+      "statement": "内部逻辑图标注 1.3 英寸 IPS-LCD、ST7789，DATA/SCK/RS/RST/CS/BL 分别连接 GPIO35/36/34/33/37/38。",
+      "confidence": "confirmed",
+      "attributes": {"controller": "ST7789", "size": "1.3 inch", "data": "GPIO35", "sck": "GPIO36", "rs": "GPIO34", "reset": "GPIO33", "cs": "GPIO37", "backlight": "GPIO38"},
+      "evidence": [{"asset_sha256": "6de4fbef5669146e7fcb1457f2771b21071ef4095d23f1b54016c30a41c60177", "page": 1, "locator": "逻辑图下部 1.3-inch IPS-LCD ST7789 pin mapping"}]
+    },
+    {
+      "id": "power.input-range",
+      "category": "power",
+      "subject": "测量输入电压范围",
+      "statement": "内部逻辑图明确标注 ISO-VIN 侧输入为 5–24 V。",
+      "confidence": "confirmed",
+      "attributes": {"input": "ISO-VIN/FBUS_IN", "range": "5-24V"},
+      "evidence": [{"asset_sha256": "6de4fbef5669146e7fcb1457f2771b21071ef4095d23f1b54016c30a41c60177", "page": 1, "locator": "逻辑图右侧 5-24V INPUT / ISO-VIN"}]
+    },
+    {
+      "id": "interface.base-terminals",
+      "category": "interface",
+      "subject": "Base 输入输出端子",
+      "statement": "J4 3.81 mm 2P 提供 PVIN 与 PGND，J5 3.81 mm 2P 提供 VOUT。",
+      "confidence": "confirmed",
+      "attributes": {"input": "J4 pin1 PVIN; pin2 PGND", "output": "J5 VOUT", "pitch": "3.81mm"},
+      "evidence": [{"asset_sha256": "fb6e390d8d880aeb546da9a0c8d011b74e9dc49fc488ebb4ceae3ed8b74e25b9", "page": 1, "locator": "B1-B2，J4/J5 KF2EDGR_3.81mm_2P"}]
+    },
+    {
+      "id": "power.base-relay",
+      "category": "power",
+      "subject": "Base 继电器输出",
+      "statement": "RLY1 HF3FF/005-1ZTF 常开触点串联 PVOUT 到 VOUT；5 V 线圈由 GPIO10_REL 经 Q1 A2N7002 低边驱动，D1 1N4148WS 续流。",
+      "confidence": "confirmed",
+      "attributes": {"relay": "RLY1 HF3FF/005-1ZTF", "contact_input": "PVOUT", "contact_output": "VOUT", "coil_supply": "SYS_5V", "driver": "GPIO10_REL -> Q1 A2N7002", "flyback": "D1 1N4148WS"},
+      "evidence": [{"asset_sha256": "fb6e390d8d880aeb546da9a0c8d011b74e9dc49fc488ebb4ceae3ed8b74e25b9", "page": 1, "locator": "B3-C4，RLY1/Q1/D1/R1/PVOUT/VOUT"}]
+    },
+    {
+      "id": "interface.base-grove",
+      "category": "interface",
+      "subject": "Base Grove",
+      "statement": "J3 Grove pins 4/3/2/1 依次为 GPIO9、GPIO8、经 FU1 SMD0805B050TF 保护的 SYS_5V、FGND。",
+      "confidence": "confirmed",
+      "attributes": {"pin4": "GPIO9", "pin3": "GPIO8", "pin2": "SYS_5V via FU1 SMD0805B050TF", "pin1": "FGND"},
+      "evidence": [{"asset_sha256": "fb6e390d8d880aeb546da9a0c8d011b74e9dc49fc488ebb4ceae3ed8b74e25b9", "page": 1, "locator": "C1，J3 Grove pins 1-4 与 FU1"}]
+    },
+    {
+      "id": "address.ina226",
+      "category": "address",
+      "subject": "两颗 INA226 地址",
+      "statement": "产品正文称两颗 INA226 地址为 0x40/0x41；原理图只显示不同 A0/A1 接法，未直接印出十六进制地址，需结合 datasheet 复核对应关系。",
+      "confidence": "uncertain",
+      "attributes": {"claimed_addresses": "0x40; 0x41", "schematic_evidence": "different A0/A1 straps", "devices": "U3/U4 INA226"},
+      "evidence": [{"asset_sha256": "6b1f2bf4df0cf37feae98aa54b5720154e9a6c6b32e71f37b047796889f67f27", "page": 1, "locator": "U3/U4 A0/A1 地址脚，未见 0x40/0x41 文本"}]
+    },
+    {
+      "id": "storage.flash-capacity",
+      "category": "storage",
+      "subject": "Stamp-S3 Flash 容量",
+      "statement": "本地逻辑图确认主控芯片为 ESP32S3FN8，但原理图未单独以容量字段标注 8 MB Flash。",
+      "confidence": "uncertain",
+      "attributes": {"module": "STAMP_S3", "soc": "ESP32S3FN8", "claimed_flash": "8MB"},
+      "evidence": [
+        {"asset_sha256": "6b1f2bf4df0cf37feae98aa54b5720154e9a6c6b32e71f37b047796889f67f27", "page": 1, "locator": "U5 仅标 STAMP_S3"},
+        {"asset_sha256": "6de4fbef5669146e7fcb1457f2771b21071ef4095d23f1b54016c30a41c60177", "page": 1, "locator": "逻辑图标 ESP32S3FN8，未分列 Flash 容量"}
+      ]
+    },
+    {
+      "id": "analog.accuracy",
+      "category": "analog",
+      "subject": "整机采样误差",
+      "statement": "原理图给出量程与分流器，但未直接标注产品正文中的小电流、大电流、µA 级和电压采样误差百分比。",
+      "confidence": "uncertain",
+      "attributes": {"unverified_claims": "1.01% small-current; 0.94% large-current; 0.69% uA-level; 0.11% voltage"},
+      "evidence": [{"asset_sha256": "6b1f2bf4df0cf37feae98aa54b5720154e9a6c6b32e71f37b047796889f67f27", "page": 1, "locator": "测量路径注释仅给 MAX/DIV，不列误差百分比"}]
+    },
+    {
+      "id": "power.output-rating",
+      "category": "power",
+      "subject": "PD 输出与继电器额定能力",
+      "statement": "原理图确认分流器、USB-C、Base 继电器和端子，但未直接列出 24 V@3 A/5 A 热条件或继电器 5–24 V@5 A 整机额定值。",
+      "confidence": "uncertain",
+      "attributes": {"unverified_pd_output": "24V@3A/5A thermal ratings", "unverified_relay": "5-24V@5A"},
+      "evidence": [
+        {"asset_sha256": "6b1f2bf4df0cf37feae98aa54b5720154e9a6c6b32e71f37b047796889f67f27", "page": 1, "locator": "J1/J2/R4/R6 未列整机热额定"},
+        {"asset_sha256": "fb6e390d8d880aeb546da9a0c8d011b74e9dc49fc488ebb4ceae3ed8b74e25b9", "page": 1, "locator": "RLY1/J4/J5 未列整机继电器额定范围"}
+      ]
+    }
+  ],
+  "needs_review": [
+    {
+      "id": "review.ina226-addresses",
+      "fact_id": "address.ina226",
+      "question": "请用 INA226 datasheet 按 U3/U4 的 A0/A1 接法确认 0x40/0x41 对应关系。",
+      "reason": "原理图未直接印出十六进制地址。",
+      "evidence": [{"asset_sha256": "6b1f2bf4df0cf37feae98aa54b5720154e9a6c6b32e71f37b047796889f67f27", "page": 1, "locator": "U3/U4 A0/A1"}]
+    },
+    {
+      "id": "review.flash-capacity",
+      "fact_id": "storage.flash-capacity",
+      "question": "请用 Stamp-S3/ESP32S3FN8 datasheet 或 BOM 确认 8 MB Flash。",
+      "reason": "本地资源未单列容量字段。",
+      "evidence": [{"asset_sha256": "6de4fbef5669146e7fcb1457f2771b21071ef4095d23f1b54016c30a41c60177", "page": 1, "locator": "逻辑图 STAMP S3 / ESP32S3FN8"}]
+    },
+    {
+      "id": "review.accuracy",
+      "fact_id": "analog.accuracy",
+      "question": "请用校准/测试报告复核电流和电压采样误差百分比。",
+      "reason": "这些整机精度指标未印在原理图中。",
+      "evidence": [{"asset_sha256": "6b1f2bf4df0cf37feae98aa54b5720154e9a6c6b32e71f37b047796889f67f27", "page": 1, "locator": "INA226 与分流器测量路径"}]
+    },
+    {
+      "id": "review.output-ratings",
+      "fact_id": "power.output-rating",
+      "question": "请用热测试与继电器/端子 BOM 复核 PD 输出和 Base 继电器额定能力。",
+      "reason": "原理图确认拓扑但不列整机热额定。",
+      "evidence": [
+        {"asset_sha256": "6b1f2bf4df0cf37feae98aa54b5720154e9a6c6b32e71f37b047796889f67f27", "page": 1, "locator": "J1/J2 测量电源路径"},
+        {"asset_sha256": "fb6e390d8d880aeb546da9a0c8d011b74e9dc49fc488ebb4ceae3ed8b74e25b9", "page": 1, "locator": "RLY1/J4/J5 Base 电源路径"}
+      ]
+    }
+  ]
+}

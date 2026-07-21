@@ -1,0 +1,21 @@
+{
+  "dry_run": false,
+  "failed": 0,
+  "published": 1,
+  "results": [
+    {
+      "backup": null,
+      "draft_action": "unchanged",
+      "dry_run": false,
+      "errors": [],
+      "needs_review": 3,
+      "product_id": "unit-thermal2-332816353c42",
+      "product_name": "Unit Thermal2",
+      "publish_action": "unchanged",
+      "sha256": "1f8d2d69e66e54686d7219abe192f25f878cee52d9ad10b92fb3433c14f20725",
+      "status": "valid",
+      "uncertain_facts": 3
+    }
+  ],
+  "schema_version": 1
+}

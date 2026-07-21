@@ -1,0 +1,21 @@
+{
+  "dry_run": false,
+  "failed": 0,
+  "published": 1,
+  "results": [
+    {
+      "backup": null,
+      "draft_action": "unchanged",
+      "dry_run": false,
+      "errors": [],
+      "needs_review": 6,
+      "product_id": "station-bat-19af8aaec9ac",
+      "product_name": "Station-Bat",
+      "publish_action": "unchanged",
+      "sha256": "e3476184bb6b48450e003000b56ccabac77cfd1aba38f5cdc3b2b17eb4296cc6",
+      "status": "valid",
+      "uncertain_facts": 6
+    }
+  ],
+  "schema_version": 1
+}

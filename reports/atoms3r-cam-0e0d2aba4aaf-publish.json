@@ -1,0 +1,21 @@
+{
+  "dry_run": false,
+  "failed": 0,
+  "published": 1,
+  "results": [
+    {
+      "backup": null,
+      "draft_action": "unchanged",
+      "dry_run": false,
+      "errors": [],
+      "needs_review": 5,
+      "product_id": "atoms3r-cam-0e0d2aba4aaf",
+      "product_name": "AtomS3R-CAM",
+      "publish_action": "unchanged",
+      "sha256": "501f951e1047608079a7e2b3f9a18f05c5a1ee14c44187080d3402631e613ee9",
+      "status": "valid",
+      "uncertain_facts": 5
+    }
+  ],
+  "schema_version": 1
+}

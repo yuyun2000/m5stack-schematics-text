@@ -1,0 +1,21 @@
+{
+  "dry_run": false,
+  "failed": 0,
+  "published": 1,
+  "results": [
+    {
+      "backup": null,
+      "draft_action": "unchanged",
+      "dry_run": false,
+      "errors": [],
+      "needs_review": 0,
+      "product_id": "hat-spk2-bc9ad7479cc6",
+      "product_name": "Hat SPK2",
+      "publish_action": "unchanged",
+      "sha256": "6aed50e480ace0734ab46358520c466224970d8ef03fb35ae7535bc874dfc744",
+      "status": "valid",
+      "uncertain_facts": 0
+    }
+  ],
+  "schema_version": 1
+}

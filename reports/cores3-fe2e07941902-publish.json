@@ -1,0 +1,21 @@
+{
+  "dry_run": false,
+  "failed": 0,
+  "published": 1,
+  "results": [
+    {
+      "backup": null,
+      "draft_action": "unchanged",
+      "dry_run": false,
+      "errors": [],
+      "needs_review": 2,
+      "product_id": "cores3-fe2e07941902",
+      "product_name": "CoreS3",
+      "publish_action": "unchanged",
+      "sha256": "2ea1ab680826e488c26c52e05fd53401d15db7972e6281bb3bbc0b070596a4e0",
+      "status": "valid",
+      "uncertain_facts": 2
+    }
+  ],
+  "schema_version": 1
+}

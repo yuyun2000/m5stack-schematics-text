@@ -1,0 +1,21 @@
+{
+  "dry_run": false,
+  "failed": 0,
+  "published": 1,
+  "results": [
+    {
+      "backup": null,
+      "draft_action": "unchanged",
+      "dry_run": false,
+      "errors": [],
+      "needs_review": 2,
+      "product_id": "unit-light-efa135d85ff4",
+      "product_name": "Unit Light",
+      "publish_action": "unchanged",
+      "sha256": "75ab691b98daff3710310106bab17fa1d77bbf2dea05b4b568e4151a205bb55c",
+      "status": "valid",
+      "uncertain_facts": 2
+    }
+  ],
+  "schema_version": 1
+}

@@ -1,0 +1,230 @@
+{
+  "schema_version": 1,
+  "generator": "schematic_describer",
+  "product": {
+    "product_id": "unit-angle-69efbab3ceb4",
+    "product_name": "Unit Angle",
+    "sku": "U005",
+    "source_path": "unit/angle.md",
+    "source_sha256": "99da27a95ec4cc8a4c344f79f534ddcd72f78fdc5fa6acdfd40cc3a407d94747",
+    "input_sha256": "d573a492d1f79159571cb173f701b0c21d9fe05af08a5d8a78e4a1724bbda008"
+  },
+  "schematic_assets": [
+    {
+      "sha256": "874d0912c82b1a0ce63d2bb1e3fee96f311a91832b47a07d64fd99cfaaeeeed2",
+      "source_url": "https://m5stack-doc.oss-cn-shenzhen.aliyuncs.com/800/U005_Sche.jpg",
+      "pages": [1]
+    },
+    {
+      "sha256": "64d6af1fd1e63f29c0b823ff634b2e935e65e5064f07ce9cc9aadb0a96cf72c6",
+      "source_url": "https://static-cdn.m5stack.com/resource/docs/products/unit/angle/angle_sch_02.webp",
+      "pages": [1]
+    }
+  ],
+  "summary": "Unit Angle 是由串联电阻 R1、10KΩ 电位器 R2 和 Grove 4 针连接器 J1 构成的无源模拟输入单元，R2 滑臂直接输出到 J1 pin 1。两张原理图都显示 J1 pin 2 不参与电路、pin 4 接 GND；第二张还将 pin 3 标为 5V，并给出基于 R1/R2 的输出公式。两张页面对 R1 的取值存在冲突：第一页为 4.7KΩ，第二页为 10KΩ，因此实际装配阻值和对应最大输出电压需要按硬件版本确认。",
+  "keywords": [
+    "Unit Angle",
+    "U005",
+    "ANGLE Unit",
+    "R1 4.7KΩ",
+    "R1 10KΩ",
+    "R2 10KΩ",
+    "potentiometer",
+    "Rp",
+    "Uo",
+    "Analog Output",
+    "Grove",
+    "J1",
+    "pin 1",
+    "pin 2 NC",
+    "pin 3 VCC",
+    "pin 3 5V",
+    "pin 4 GND",
+    "2500mV",
+    "5000mV",
+    "voltage divider",
+    "PORT.B"
+  ],
+  "components": [
+    {
+      "reference": "R1",
+      "part_number": "4.7KΩ（source_001）/ 10KΩ（source_002）",
+      "role": "VCC/5V 到 R2 上端的串联电阻；两张原理图标值不一致",
+      "evidence": [
+        {"asset_sha256": "874d0912c82b1a0ce63d2bb1e3fee96f311a91832b47a07d64fd99cfaaeeeed2", "page": 1, "locator": "source_001 页 1 左侧：VCC 下方 R1 标注 4.7KΩ，串接至 R2 上端"},
+        {"asset_sha256": "64d6af1fd1e63f29c0b823ff634b2e935e65e5064f07ce9cc9aadb0a96cf72c6", "page": 1, "locator": "source_002 页 1 左侧 ANGLE Unit 框内：VCC-R1，R1 标注 10KΩ"}
+      ]
+    },
+    {
+      "reference": "R2",
+      "part_number": "10KΩ potentiometer",
+      "role": "上端接 R1、下端接 GND、滑臂输出 Uo 的旋转电位器",
+      "evidence": [
+        {"asset_sha256": "874d0912c82b1a0ce63d2bb1e3fee96f311a91832b47a07d64fd99cfaaeeeed2", "page": 1, "locator": "source_001 页 1 左侧：R2 10KΩ 电位器，上端接 R1、下端 GND、滑臂接 J1 pin 1"},
+        {"asset_sha256": "64d6af1fd1e63f29c0b823ff634b2e935e65e5064f07ce9cc9aadb0a96cf72c6", "page": 1, "locator": "source_002 页 1 左侧：R2 10KΩ potentiometer，滑臂网络标 Uo"}
+      ]
+    },
+    {
+      "reference": "J1",
+      "part_number": "Grove 4P",
+      "role": "引出电位器模拟输出、电源和地；pin 2 未接入内部电路",
+      "evidence": [
+        {"asset_sha256": "874d0912c82b1a0ce63d2bb1e3fee96f311a91832b47a07d64fd99cfaaeeeed2", "page": 1, "locator": "source_001 页 1 右侧：J1 Grove，pins 1/2/3/4 标 I/O/VCC/GND，pin 1 接滑臂、pin 2 线端悬空"},
+        {"asset_sha256": "64d6af1fd1e63f29c0b823ff634b2e935e65e5064f07ce9cc9aadb0a96cf72c6", "page": 1, "locator": "source_002 页 1 中部：J1 Grove，pin 1 Uo、pin 3 5V、pin 4 GND，pin 2 无内部连接"}
+      ]
+    }
+  ],
+  "facts": [
+    {
+      "id": "system.passive-angle-input",
+      "category": "system",
+      "subject": "Unit Angle",
+      "statement": "Unit Angle 的原理图只包含 R1、R2 和 J1：电源经 R1 加到 R2 电位器上端，R2 下端接 GND，滑臂作为模拟输出接 J1 pin 1。",
+      "confidence": "confirmed",
+      "attributes": {"active_ic": null, "series_resistor": "R1", "potentiometer": "R2 10KΩ", "output": "R2 wiper to J1 pin 1", "ground": "R2 low terminal and J1 pin 4"},
+      "evidence": [
+        {"asset_sha256": "874d0912c82b1a0ce63d2bb1e3fee96f311a91832b47a07d64fd99cfaaeeeed2", "page": 1, "locator": "source_001 整页：VCC-R1-R2-GND 与滑臂-J1 pin 1"},
+        {"asset_sha256": "64d6af1fd1e63f29c0b823ff634b2e935e65e5064f07ce9cc9aadb0a96cf72c6", "page": 1, "locator": "source_002 左半页：ANGLE Unit 框内 R1/R2/J1 完整拓扑"}
+      ]
+    },
+    {
+      "id": "component.r1-value-conflict",
+      "category": "component",
+      "subject": "R1 串联电阻",
+      "statement": "source_001 将 R1 标为 4.7KΩ，而 source_002 将 R1 标为 10KΩ；资源中没有版本号或 BOM 信息可判定实际装配值。",
+      "confidence": "uncertain",
+      "attributes": {"reference": "R1", "source_001_value": "4.7KΩ", "source_002_value": "10KΩ", "resolved_value": null, "impact": "output voltage transfer ratio"},
+      "evidence": [
+        {"asset_sha256": "874d0912c82b1a0ce63d2bb1e3fee96f311a91832b47a07d64fd99cfaaeeeed2", "page": 1, "locator": "source_001 页 1 左上：R1 4.7KΩ"},
+        {"asset_sha256": "64d6af1fd1e63f29c0b823ff634b2e935e65e5064f07ce9cc9aadb0a96cf72c6", "page": 1, "locator": "source_002 页 1 左侧：R1 10KΩ"}
+      ]
+    },
+    {
+      "id": "analog.potentiometer-topology",
+      "category": "analog",
+      "subject": "R2 10KΩ 电位器",
+      "statement": "R2 总阻值标为 10KΩ，上端连接 R1，下端连接 GND，滑臂连接 J1 pin 1；source_002 将滑臂以下电阻记为 Rp。",
+      "confidence": "confirmed",
+      "attributes": {"reference": "R2", "total_resistance": "10KΩ", "upper_terminal": "R1 output", "lower_terminal": "GND", "wiper": "J1 pin 1,Uo", "variable_segment_name": "Rp in source_002"},
+      "evidence": [
+        {"asset_sha256": "874d0912c82b1a0ce63d2bb1e3fee96f311a91832b47a07d64fd99cfaaeeeed2", "page": 1, "locator": "source_001 页 1：R2 10KΩ 符号、上下端与滑臂连线"},
+        {"asset_sha256": "64d6af1fd1e63f29c0b823ff634b2e935e65e5064f07ce9cc9aadb0a96cf72c6", "page": 1, "locator": "source_002 页 1：R2 10KΩ potentiometer、Rp 说明与 Uo 输出"}
+      ]
+    },
+    {
+      "id": "interface.grove-pinout",
+      "category": "interface",
+      "subject": "J1 Grove 4P",
+      "statement": "J1 pin 1 为电位器滑臂模拟输出（source_001 标 I，source_002 标 Uo），pin 2 未接内部电路，pin 3 为 VCC/5V 输入，pin 4 为 GND。",
+      "confidence": "confirmed",
+      "attributes": {"pin_1": "analog output; I/Uo", "pin_2": "no internal connection; O label in source_001", "pin_3": "VCC in source_001; 5V in source_002", "pin_4": "GND", "output_direction": "Unit to host", "power_direction": "host to Unit"},
+      "evidence": [
+        {"asset_sha256": "874d0912c82b1a0ce63d2bb1e3fee96f311a91832b47a07d64fd99cfaaeeeed2", "page": 1, "locator": "source_001 页 1 右侧 J1 pins 1~4、I/O/VCC/GND 标签与连线"},
+        {"asset_sha256": "64d6af1fd1e63f29c0b823ff634b2e935e65e5064f07ce9cc9aadb0a96cf72c6", "page": 1, "locator": "source_002 页 1 中部 J1：pin 1 Uo、pin 3 5V、pin 4 GND，pin 2 无内部连线"}
+      ]
+    },
+    {
+      "id": "gpio.analog-output",
+      "category": "gpio",
+      "subject": "J1 pin 1 模拟输出",
+      "statement": "R2 的滑臂直接连接 J1 pin 1，不经过缓冲器、ADC、保护器或串联输出电阻；该针脚输出相对于 GND 的连续模拟电压。",
+      "confidence": "confirmed",
+      "attributes": {"connector_pin": "J1 pin 1", "source": "R2 wiper", "net_name": "Uo in source_002", "reference": "GND at J1 pin 4", "buffer": null, "series_output_component": null},
+      "evidence": [
+        {"asset_sha256": "874d0912c82b1a0ce63d2bb1e3fee96f311a91832b47a07d64fd99cfaaeeeed2", "page": 1, "locator": "source_001 页 1：R2 滑臂到 J1 pin 1 的直接水平连线"},
+        {"asset_sha256": "64d6af1fd1e63f29c0b823ff634b2e935e65e5064f07ce9cc9aadb0a96cf72c6", "page": 1, "locator": "source_002 页 1：R2 滑臂-J1 pin 1-Uo 直接路径"}
+      ]
+    },
+    {
+      "id": "power.supply-path",
+      "category": "power",
+      "subject": "J1 pin 3 到 R1/R2",
+      "statement": "J1 pin 3 为单元供电输入，连接 R1 上端的电源网络；source_001 将其标为 VCC，source_002 明确标为 5V。",
+      "confidence": "confirmed",
+      "attributes": {"connector_pin": "J1 pin 3", "source_001_rail": "VCC", "source_002_rail": "5V", "load": "R1-R2 divider", "ground_return": "J1 pin 4 GND"},
+      "evidence": [
+        {"asset_sha256": "874d0912c82b1a0ce63d2bb1e3fee96f311a91832b47a07d64fd99cfaaeeeed2", "page": 1, "locator": "source_001 页 1：J1 pin 3 VCC 与 R1 上端同名 VCC 网络"},
+        {"asset_sha256": "64d6af1fd1e63f29c0b823ff634b2e935e65e5064f07ce9cc9aadb0a96cf72c6", "page": 1, "locator": "source_002 页 1：J1 pin 3 标 5V，R1 上端标 VCC"}
+      ]
+    },
+    {
+      "id": "analog.source002-output-formula",
+      "category": "analog",
+      "subject": "source_002 的 Uo 计算",
+      "statement": "source_002 印出的计算式为 Uo = 5000mV / (Rp + R1) × Rp，其中 R1=10KΩ、R2 总阻值=10KΩ、Rp 为旋转后滑臂至 GND 的电阻。",
+      "confidence": "confirmed",
+      "attributes": {"asset_scope": "source_002", "formula": "Uo = 5000mV / (Rp + R1) * Rp", "r1": "10KΩ", "r2_total": "10KΩ", "rp_definition": "wiper-to-GND segment after rotation", "supply_in_formula": "5000mV"},
+      "evidence": [{"asset_sha256": "64d6af1fd1e63f29c0b823ff634b2e935e65e5064f07ce9cc9aadb0a96cf72c6", "page": 1, "locator": "source_002 页 1 右侧：Total resistance/Rp/Scale 说明及 Output Voltage 公式"}]
+    },
+    {
+      "id": "analog.maximum-output-conflict",
+      "category": "analog",
+      "subject": "最大模拟输出电压",
+      "statement": "source_002 的 5V、R1=10KΩ、R2=10KΩ 公式与曲线给出约 2500mV 最大输出；source_001 的 R1=4.7KΩ 不符合这一组参数，因此实际硬件最大输出依赖所装 R1 版本。",
+      "confidence": "uncertain",
+      "attributes": {"source_002_maximum": "2500mV", "source_002_supply": "5000mV", "source_002_r1": "10KΩ", "source_001_r1": "4.7KΩ", "resolved_hardware_maximum": null},
+      "evidence": [
+        {"asset_sha256": "874d0912c82b1a0ce63d2bb1e3fee96f311a91832b47a07d64fd99cfaaeeeed2", "page": 1, "locator": "source_001 页 1 左上：R1=4.7KΩ"},
+        {"asset_sha256": "64d6af1fd1e63f29c0b823ff634b2e935e65e5064f07ce9cc9aadb0a96cf72c6", "page": 1, "locator": "source_002 页 1：R1=10KΩ、5000mV 公式及曲线 2500mV 虚线"}
+      ]
+    },
+    {
+      "id": "interface.pin2-no-connect",
+      "category": "interface",
+      "subject": "J1 pin 2",
+      "statement": "两张原理图都没有把 J1 pin 2 连接到 R1/R2 电路；source_001 在连接器内部将该位置标为 O。",
+      "confidence": "confirmed",
+      "attributes": {"connector_pin": "J1 pin 2", "internal_connection": null, "source_001_label": "O", "source_002_label": null},
+      "evidence": [
+        {"asset_sha256": "874d0912c82b1a0ce63d2bb1e3fee96f311a91832b47a07d64fd99cfaaeeeed2", "page": 1, "locator": "source_001 页 1：J1 pin 2 左侧短线悬空、内部字符 O"},
+        {"asset_sha256": "64d6af1fd1e63f29c0b823ff634b2e935e65e5064f07ce9cc9aadb0a96cf72c6", "page": 1, "locator": "source_002 页 1：J1 pin 2 横线无任何内部电路连接"}
+      ]
+    },
+    {
+      "id": "protection.no-protection-shown",
+      "category": "protection",
+      "subject": "模拟输出与电源保护",
+      "statement": "两张原理图均未绘出 TVS、ESD 阵列、保险丝、反接保护或输出限流器件；可见电路仅为 R1、R2 和 J1。",
+      "confidence": "confirmed",
+      "attributes": {"tvs": null, "esd_array": null, "fuse": null, "reverse_polarity_device": null, "visible_components": "R1,R2,J1"},
+      "evidence": [
+        {"asset_sha256": "874d0912c82b1a0ce63d2bb1e3fee96f311a91832b47a07d64fd99cfaaeeeed2", "page": 1, "locator": "source_001 整页：仅 R1/R2/J1 与 VCC/GND"},
+        {"asset_sha256": "64d6af1fd1e63f29c0b823ff634b2e935e65e5064f07ce9cc9aadb0a96cf72c6", "page": 1, "locator": "source_002 左侧 ANGLE Unit 框：仅 R1/R2/J1"}
+      ]
+    },
+    {
+      "id": "key_net.output-index",
+      "category": "key_net",
+      "subject": "Unit Angle 关键连接",
+      "statement": "关键路径为 J1 pin 3 VCC/5V→R1→R2→GND/J1 pin 4，R2 滑臂→J1 pin 1 Uo；J1 pin 2 不连接。",
+      "confidence": "confirmed",
+      "attributes": {"power_path": "J1.3-R1-R2-J1.4/GND", "signal_path": "R2 wiper-J1.1/Uo", "unused_pin": "J1.2", "reference": "GND"},
+      "evidence": [
+        {"asset_sha256": "874d0912c82b1a0ce63d2bb1e3fee96f311a91832b47a07d64fd99cfaaeeeed2", "page": 1, "locator": "source_001 整页直接连线"},
+        {"asset_sha256": "64d6af1fd1e63f29c0b823ff634b2e935e65e5064f07ce9cc9aadb0a96cf72c6", "page": 1, "locator": "source_002 左半页 ANGLE Unit 电路框"}
+      ]
+    }
+  ],
+  "needs_review": [
+    {
+      "id": "review.r1-assembly-value",
+      "fact_id": "component.r1-value-conflict",
+      "question": "当前 U005 硬件版本的 R1 实际装配值是 4.7KΩ 还是 10KΩ？",
+      "reason": "两个产品清单内原理图资源对同一位号 R1 给出不同阻值，且页面没有硬件版本号可用于选择。",
+      "evidence": [
+        {"asset_sha256": "874d0912c82b1a0ce63d2bb1e3fee96f311a91832b47a07d64fd99cfaaeeeed2", "page": 1, "locator": "source_001：R1 4.7KΩ"},
+        {"asset_sha256": "64d6af1fd1e63f29c0b823ff634b2e935e65e5064f07ce9cc9aadb0a96cf72c6", "page": 1, "locator": "source_002：R1 10KΩ"}
+      ]
+    },
+    {
+      "id": "review.maximum-output",
+      "fact_id": "analog.maximum-output-conflict",
+      "question": "当前硬件在 5V 供电、旋钮满量程时的实际 Uo 最大值是否为 2500mV？",
+      "reason": "2500mV 曲线基于 source_002 的 R1=10KΩ，而 source_001 将 R1 标为 4.7KΩ；必须先确认硬件版本和装配值。",
+      "evidence": [
+        {"asset_sha256": "874d0912c82b1a0ce63d2bb1e3fee96f311a91832b47a07d64fd99cfaaeeeed2", "page": 1, "locator": "source_001：R1=4.7KΩ 的分压网络"},
+        {"asset_sha256": "64d6af1fd1e63f29c0b823ff634b2e935e65e5064f07ce9cc9aadb0a96cf72c6", "page": 1, "locator": "source_002：5000mV 公式、R1/R2 均 10KΩ 和 2500mV 曲线"}
+      ]
+    }
+  ]
+}

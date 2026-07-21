@@ -1,0 +1,357 @@
+{
+  "schema_version": 1,
+  "generator": "schematic_describer",
+  "product": {
+    "product_id": "module13-2-4relay-v1-1-965327c80c46",
+    "product_name": "Module13.2 4Relay v1.1",
+    "sku": "M121-V11",
+    "source_path": "module/4Relay Module 13.2_V1.1.md",
+    "source_sha256": "4cbec29cb53f1e76e43e121155f381a40553765936a09339a343e286ade901c6",
+    "input_sha256": "a3ff58b26c03ef8eedfe954806f3b64e4f09d6c46610748ae0168736ba589b52"
+  },
+  "schematic_assets": [
+    {
+      "sha256": "e9746e2be7b233efcace061df02a1452df1e1f1c3159da21066d1be2fd02b1d0",
+      "source_url": "https://m5stack-doc.oss-cn-shenzhen.aliyuncs.com/548/Sch_4Relay_13.2_Module_V1.1_sch_01.png",
+      "pages": [1]
+    }
+  ],
+  "summary": "Module13.2 4Relay v1.1 以 STM32F030F4P6（U1）通过 I2C 接收控制，并以 PA1~PA4 驱动四组 SS8050 Y1 低边晶体管和 5V 继电器线圈。HPWR 经 AOZ1282CI（U2）降压为 3.3V_VCC，再由 SY7088（U3）升压为 +5V；HPWR 还通过 210K/30K 分压送入 PA0 进行电压采样。四路 Kx/KxCOM 触点由 P2/P4/P6/P8 引出，并通过 P3/P5/P7/P9 与 VIN/GND 模式母线配置；P10/P11 提供 HPWR/GND 与外部 VIN/GND 的选择和输入路径。",
+  "keywords": [
+    "Module13.2 4Relay v1.1",
+    "M121-V11",
+    "STM32F030F4P6",
+    "STM32G030F6",
+    "AOZ1282CI",
+    "SY7088",
+    "Relay-SPDT",
+    "SS8050 Y1",
+    "1N4148WS T4",
+    "I2C",
+    "0x26",
+    "SCL",
+    "SDA",
+    "Relay1",
+    "Relay2",
+    "Relay3",
+    "Relay4",
+    "K1COM",
+    "K2COM",
+    "K3COM",
+    "K4COM",
+    "HPWR",
+    "VIN",
+    "3.3V_VCC",
+    "+5V",
+    "PA0",
+    "M5Stack_BUS",
+    "SMF30CA",
+    "DSS34",
+    "DC5521",
+    "SWD"
+  ],
+  "components": [
+    {
+      "reference": "U1",
+      "part_number": "STM32F030F4P6",
+      "role": "主控 MCU，处理 I2C、四路继电器控制、HPWR 电压采样和 SWD",
+      "evidence": [{"asset_sha256": "e9746e2be7b233efcace061df02a1452df1e1f1c3159da21066d1be2fd02b1d0", "page": 1, "locator": "B1-C2 区域 U1 STM32F030F4P6：PA0、Relay1~4、SCL/SDA、SWDIO/SWCLK、BOOT0/NRST"}]
+    },
+    {
+      "reference": "U2",
+      "part_number": "AOZ1282CI",
+      "role": "将 HPWR 降压生成 3.3V_VCC 的开关转换器",
+      "evidence": [{"asset_sha256": "e9746e2be7b233efcace061df02a1452df1e1f1c3159da21066d1be2fd02b1d0", "page": 1, "locator": "D1-D2 区域 U2 AOZ1282CI 与 C5/L1/D5/R7/R8 输入输出网络"}]
+    },
+    {
+      "reference": "U3",
+      "part_number": "SY7088",
+      "role": "由 3.3V_VCC 生成 +5V 的升压转换器",
+      "evidence": [{"asset_sha256": "e9746e2be7b233efcace061df02a1452df1e1f1c3159da21066d1be2fd02b1d0", "page": 1, "locator": "D3 区域 U3 SY7088 与 L2/R9/R17/C9/C12/C13/D6 网络"}]
+    },
+    {
+      "reference": "K1/K2/K3/K4",
+      "part_number": "Relay-SPDT",
+      "role": "四路 5V 线圈机械继电器，分别提供 K1~K4 与 K1COM~K4COM 触点",
+      "evidence": [{"asset_sha256": "e9746e2be7b233efcace061df02a1452df1e1f1c3159da21066d1be2fd02b1d0", "page": 1, "locator": "A1-A4 顶部四组 K1~K4 Relay-SPDT 线圈与触点"}]
+    },
+    {
+      "reference": "Q1/Q2/Q3/Q4",
+      "part_number": "SS8050 Y1",
+      "role": "四路继电器线圈的 NPN 低边驱动晶体管",
+      "evidence": [{"asset_sha256": "e9746e2be7b233efcace061df02a1452df1e1f1c3159da21066d1be2fd02b1d0", "page": 1, "locator": "A1-A4 各继电器线圈下方 Q1~Q4 SS8050 Y1，发射极接 GND"}]
+    },
+    {
+      "reference": "D1/D2/D3/D4",
+      "part_number": "1N4148WS T4",
+      "role": "分别跨接四个继电器线圈的续流二极管",
+      "evidence": [{"asset_sha256": "e9746e2be7b233efcace061df02a1452df1e1f1c3159da21066d1be2fd02b1d0", "page": 1, "locator": "A1-A4 四个线圈左侧 D1~D4 1N4148WS T4 跨线圈连接"}]
+    },
+    {
+      "reference": "J1",
+      "part_number": "M5Stack_BUS",
+      "role": "30 针 M5-Bus 主机接口，使用 GND、3.3V、SDA/GPIO21、SCL/GPIO22、HPWR 和 +5V",
+      "evidence": [{"asset_sha256": "e9746e2be7b233efcace061df02a1452df1e1f1c3159da21066d1be2fd02b1d0", "page": 1, "locator": "B3-C3 区域 J1 M5Stack_BUS 1~30 脚及 GPIO/电源标注"}]
+    },
+    {
+      "reference": "P1",
+      "part_number": "SWD_5p",
+      "role": "MCU SWD 调试接口，引出 3.3V、SWCLK、SWDIO、RST 和 GND",
+      "evidence": [{"asset_sha256": "e9746e2be7b233efcace061df02a1452df1e1f1c3159da21066d1be2fd02b1d0", "page": 1, "locator": "B2 区域 P1 SWD_5p：VCC/SWCLK/SWDIO/RST/GND"}]
+    },
+    {
+      "reference": "P2/P4/P6/P8",
+      "part_number": "Header 2",
+      "role": "四路继电器输出端，分别引出 K1/K1COM 至 K4/K4COM",
+      "evidence": [{"asset_sha256": "e9746e2be7b233efcace061df02a1452df1e1f1c3159da21066d1be2fd02b1d0", "page": 1, "locator": "B4-C4 区域 P2/P4/P6/P8 Header 2 与 K1/K1COM、K2/K2COM、K3/K3COM、K4/K4COM"}]
+    },
+    {
+      "reference": "P3/P5/P7/P9",
+      "part_number": "Header 2X2",
+      "role": "四路继电器有源/无源模式跳线接口，将 Kx/KxCOM 与 VIN/GND 母线配置连接",
+      "evidence": [{"asset_sha256": "e9746e2be7b233efcace061df02a1452df1e1f1c3159da21066d1be2fd02b1d0", "page": 1, "locator": "B4-C4 区域 P3/P5/P7/P9 左侧 Kx/KxCOM、右侧两条 VIN/GND 纵向母线"}]
+    },
+    {
+      "reference": "P10/P11",
+      "part_number": "Header 2X2 / Header 2",
+      "role": "HPWR/GND 到模式母线的跳线选择与外部 VIN/GND 输入接口",
+      "evidence": [{"asset_sha256": "e9746e2be7b233efcace061df02a1452df1e1f1c3159da21066d1be2fd02b1d0", "page": 1, "locator": "C4-D4 区域 P10 Header 2X2 的 HPWR/GND 与 P11 Header 2 的 VIN/GND 母线连接"}]
+    },
+    {
+      "reference": "D7",
+      "part_number": "SMF30CA",
+      "role": "VIN 对 GND 的瞬态电压抑制器",
+      "evidence": [{"asset_sha256": "e9746e2be7b233efcace061df02a1452df1e1f1c3159da21066d1be2fd02b1d0", "page": 1, "locator": "D4 区域 P11 左侧 D7 SMF30CA 跨接 VIN 与 GND"}]
+    },
+    {
+      "reference": "R16/R18/R19",
+      "part_number": "210K / 1K / 30K",
+      "role": "HPWR 到 PA0 的电压采样分压与串联限流网络",
+      "evidence": [{"asset_sha256": "e9746e2be7b233efcace061df02a1452df1e1f1c3159da21066d1be2fd02b1d0", "page": 1, "locator": "C1-C2 区域 HPWR-R16 210K-R19 30K-GND 分压节点，经 R18 1K 到 PA0"}]
+    },
+    {
+      "reference": "L1/D5",
+      "part_number": "6.8uH / DSS34",
+      "role": "AOZ1282CI 降压级输出电感与开关节点二极管",
+      "evidence": [{"asset_sha256": "e9746e2be7b233efcace061df02a1452df1e1f1c3159da21066d1be2fd02b1d0", "page": 1, "locator": "D2 区域 U2.6 LX 至 3.3V_VCC 的 L1 6.8uH 与 LX-GND 的 D5 DSS34"}]
+    },
+    {
+      "reference": "L2",
+      "part_number": "2.2uH/3015",
+      "role": "SY7088 升压级从 3.3V_VCC 到 LX 的储能电感",
+      "evidence": [{"asset_sha256": "e9746e2be7b233efcace061df02a1452df1e1f1c3159da21066d1be2fd02b1d0", "page": 1, "locator": "D3 区域 3.3V_VCC 与 U3 LX 之间 L2 2.2uH/3015"}]
+    }
+  ],
+  "facts": [
+    {
+      "id": "system.four-relay-power-architecture",
+      "category": "system",
+      "subject": "Module13.2 4Relay v1.1",
+      "statement": "U1 STM32F030F4P6 通过 I2C 控制四路继电器驱动；HPWR 经 U2 生成 3.3V_VCC，再经 U3 生成 +5V；VIN/GND 模式母线通过跳线连接继电器触点。",
+      "confidence": "confirmed",
+      "attributes": {"controller": "U1 STM32F030F4P6", "relay_channels": 4, "buck": "U2 AOZ1282CI HPWR to 3.3V_VCC", "boost": "U3 SY7088 3.3V_VCC to +5V", "mode_bus": "VIN/GND", "host": "J1 M5Stack_BUS"},
+      "evidence": [{"asset_sha256": "e9746e2be7b233efcace061df02a1452df1e1f1c3159da21066d1be2fd02b1d0", "page": 1, "locator": "全页四路继电器、U1/J1、U2/U3 与右侧模式跳线/输入母线"}]
+    },
+    {
+      "id": "component.mcu-pin-map",
+      "category": "component",
+      "subject": "U1 STM32F030F4P6",
+      "statement": "U1.6 PA0 接电压采样，U1.7~U1.10 PA1~PA4 分别接 Relay1~Relay4，U1.17 PA9 接 SCL，U1.18 PA10 接 SDA，U1.19/U1.20 接 SWDIO/SWCLK。",
+      "confidence": "confirmed",
+      "attributes": {"pin_6": "PA0 voltage sample", "pin_7": "PA1 Relay1", "pin_8": "PA2 Relay2", "pin_9": "PA3 Relay3", "pin_10": "PA4 Relay4", "pin_17": "PA9 SCL", "pin_18": "PA10 SDA", "pin_19": "PA13 SWDIO", "pin_20": "PA14 SWCLK"},
+      "evidence": [{"asset_sha256": "e9746e2be7b233efcace061df02a1452df1e1f1c3159da21066d1be2fd02b1d0", "page": 1, "locator": "B1-C2 区域 U1 引脚编号、GPIO 名称与网络标签"}]
+    },
+    {
+      "id": "component.mcu-version-conflict",
+      "category": "component",
+      "subject": "MCU 版本",
+      "statement": "原理图 U1 明确标注 STM32F030F4P6，产品正文特性却写 STM32G030F6；无法确认 M121-V11 量产板最终装配型号。",
+      "confidence": "uncertain",
+      "attributes": {"schematic_model": "STM32F030F4P6", "document_feature_model": "STM32G030F6", "production_model": "not confirmed"},
+      "evidence": [{"asset_sha256": "e9746e2be7b233efcace061df02a1452df1e1f1c3159da21066d1be2fd02b1d0", "page": 1, "locator": "B1-C2 区域 U1 器件底部明确标注 STM32F030F4P6"}]
+    },
+    {
+      "id": "bus.i2c-routing",
+      "category": "bus",
+      "subject": "SCL/SDA",
+      "statement": "J1.17 GPIO21/SDA 连接 U1.18 PA10，J1.18 GPIO22/SCL 连接 U1.17 PA9；页面未显示 I2C 上拉或电平转换。",
+      "confidence": "confirmed",
+      "attributes": {"sda": "J1.17 GPIO21 to U1.18 PA10", "scl": "J1.18 GPIO22 to U1.17 PA9", "pullups": "not shown", "level_shifter": "not shown"},
+      "evidence": [{"asset_sha256": "e9746e2be7b233efcace061df02a1452df1e1f1c3159da21066d1be2fd02b1d0", "page": 1, "locator": "B2-B3 区域 U1 SCL/SDA 与 J1.17/J1.18 同名网络"}]
+    },
+    {
+      "id": "address.i2c-0x26",
+      "category": "address",
+      "subject": "模块 I2C 地址",
+      "statement": "产品正文标注 I2C 地址为 0x26，但原理图未标注地址、地址选择网络或固件版本，无法仅由该页确认。",
+      "confidence": "uncertain",
+      "attributes": {"documented_address": "0x26", "schematic_address_label": "not shown", "address_straps": "not shown", "firmware_evidence": "not shown"},
+      "evidence": [{"asset_sha256": "e9746e2be7b233efcace061df02a1452df1e1f1c3159da21066d1be2fd02b1d0", "page": 1, "locator": "全页 U1 与 SCL/SDA 网络，未见 0x26 或地址配置"}]
+    },
+    {
+      "id": "interface.m5bus-used-pins",
+      "category": "interface",
+      "subject": "J1 M5Stack_BUS",
+      "statement": "J1.1/3/5 接 GND，J1.12 接 +3.3V，J1.17 接 SDA，J1.18 接 SCL，J1.25/27/29 接 HPWR，J1.28 接 +5V；其余图示 GPIO 与 BATTERY 脚未连接。",
+      "confidence": "confirmed",
+      "attributes": {"ground": "pins 1,3,5", "3v3": "pin 12", "sda": "pin 17 GPIO21", "scl": "pin 18 GPIO22", "hpwr": "pins 25,27,29", "5v": "pin 28", "battery_pin_30": "NC"},
+      "evidence": [{"asset_sha256": "e9746e2be7b233efcace061df02a1452df1e1f1c3159da21066d1be2fd02b1d0", "page": 1, "locator": "B3-C3 区域 J1 1~30 脚的网络、连接点和未连接短线"}]
+    },
+    {
+      "id": "gpio.relay-drive-channels",
+      "category": "gpio",
+      "subject": "Relay1~Relay4",
+      "statement": "Relay1~Relay4 各经 R1~R4 1K 驱动 Q1~Q4 SS8050 Y1 基极，R10~R13 10K 将基极下拉至 GND；晶体管发射极接地、集电极接继电器线圈低端。",
+      "confidence": "confirmed",
+      "attributes": {"channel_1": "Relay1-R1-Q1-K1", "channel_2": "Relay2-R2-Q2-K2", "channel_3": "Relay3-R3-Q3-K3", "channel_4": "Relay4-R4-Q4-K4", "base_resistors": "R1-R4 1K", "base_pulldowns": "R10-R13 10K"},
+      "evidence": [{"asset_sha256": "e9746e2be7b233efcace061df02a1452df1e1f1c3159da21066d1be2fd02b1d0", "page": 1, "locator": "A1-A4 四组 Relayx/Rx/Qx/R10~R13/线圈完全对称电路"}]
+    },
+    {
+      "id": "protection.relay-flyback",
+      "category": "protection",
+      "subject": "继电器线圈续流",
+      "statement": "D1~D4 1N4148WS T4 分别跨接 K1~K4 的 +5V 线圈两端。",
+      "confidence": "confirmed",
+      "attributes": {"K1": "D1 1N4148WS T4", "K2": "D2 1N4148WS T4", "K3": "D3 1N4148WS T4", "K4": "D4 1N4148WS T4"},
+      "evidence": [{"asset_sha256": "e9746e2be7b233efcace061df02a1452df1e1f1c3159da21066d1be2fd02b1d0", "page": 1, "locator": "A1-A4 D1~D4 与四个继电器线圈并联"}]
+    },
+    {
+      "id": "interface.relay-contact-terminals",
+      "category": "interface",
+      "subject": "四路继电器输出",
+      "statement": "P2 引出 K1/K1COM，P4 引出 K2/K2COM，P6 引出 K3/K3COM，P8 引出 K4/K4COM。",
+      "confidence": "confirmed",
+      "attributes": {"P2": "K1, K1COM", "P4": "K2, K2COM", "P6": "K3, K3COM", "P8": "K4, K4COM"},
+      "evidence": [{"asset_sha256": "e9746e2be7b233efcace061df02a1452df1e1f1c3159da21066d1be2fd02b1d0", "page": 1, "locator": "B4-C4 P2/P4/P6/P8 Header 2 与对应 Kx/KxCOM 网络"}]
+    },
+    {
+      "id": "interface.active-passive-jumpers",
+      "category": "interface",
+      "subject": "P3/P5/P7/P9 模式跳线",
+      "statement": "每路 2×2 跳线的左侧连接 Kx 与 KxCOM，右侧连接两条 VIN/GND 纵向母线，用于配置触点是否带入外部电源。",
+      "confidence": "confirmed",
+      "attributes": {"channel_1": "P3 K1/K1COM to VIN/GND", "channel_2": "P5 K2/K2COM to VIN/GND", "channel_3": "P7 K3/K3COM to VIN/GND", "channel_4": "P9 K4/K4COM to VIN/GND"},
+      "evidence": [{"asset_sha256": "e9746e2be7b233efcace061df02a1452df1e1f1c3159da21066d1be2fd02b1d0", "page": 1, "locator": "B4-C4 P3/P5/P7/P9 的四针网络与右侧两条纵向母线"}]
+    },
+    {
+      "id": "interface.external-vin-selection",
+      "category": "interface",
+      "subject": "P10/P11 外部电源",
+      "statement": "P10 将 HPWR/GND 通过 2×2 跳线连接到右侧 VIN/GND 母线，P11 Header 2 直接连接该两条母线；D7 SMF30CA 跨接 VIN 与 GND。",
+      "confidence": "confirmed",
+      "attributes": {"source_selection": "P10 HPWR/GND to VIN/GND", "external_input": "P11 Header 2", "protection": "D7 SMF30CA VIN-GND"},
+      "evidence": [{"asset_sha256": "e9746e2be7b233efcace061df02a1452df1e1f1c3159da21066d1be2fd02b1d0", "page": 1, "locator": "C4-D4 P10/P11、HPWR/GND、VIN/GND 母线与 D7"}]
+    },
+    {
+      "id": "interface.external-connector-type-conflict",
+      "category": "interface",
+      "subject": "外部电源连接器",
+      "statement": "产品正文规格声明 DC5521 5.5×2.1mm 输入座，但原理图对应外部 VIN/GND 的 P11 标注为 Header 2，无法确认量产板连接器型号。",
+      "confidence": "uncertain",
+      "attributes": {"documented_connector": "DC5521 5.5x2.1mm", "schematic_connector": "P11 Header 2", "production_connector": "not confirmed"},
+      "evidence": [{"asset_sha256": "e9746e2be7b233efcace061df02a1452df1e1f1c3159da21066d1be2fd02b1d0", "page": 1, "locator": "D4 区域外部电源母线末端 P11 明确标注 Header 2"}]
+    },
+    {
+      "id": "power.hpwr-voltage-sense",
+      "category": "analog",
+      "subject": "HPWR 电压采样",
+      "statement": "HPWR 经 R16 210K 与 R19 30K 分压，分压节点再经 R18 1K 连接 U1.6 PA0。",
+      "confidence": "confirmed",
+      "attributes": {"input": "HPWR", "upper_resistor": "R16 210K", "lower_resistor": "R19 30K", "series_resistor": "R18 1K", "adc_pin": "U1.6 PA0", "nominal_divider": "30K/(210K+30K)"},
+      "evidence": [{"asset_sha256": "e9746e2be7b233efcace061df02a1452df1e1f1c3159da21066d1be2fd02b1d0", "page": 1, "locator": "C1-C2 HPWR-R16/R19 分压与 R18-PA0 网络"}]
+    },
+    {
+      "id": "power.buck-hpwr-to-3v3",
+      "category": "power",
+      "subject": "U2 AOZ1282CI 降压级",
+      "statement": "U2 VIN 接 HPWR，EN 经 R14 100K 接 HPWR；LX 经 L1 6.8uH 输出 3.3V_VCC，D5 DSS34 接在 LX 与 GND 之间，R7 200K/R8 62K 构成反馈。",
+      "confidence": "confirmed",
+      "attributes": {"input": "HPWR", "enable": "R14 100K to HPWR", "switch": "U2.6 LX", "inductor": "L1 6.8uH", "diode": "D5 DSS34", "output": "3.3V_VCC", "feedback": "R7 200K / R8 62K", "feedforward": "C8 DNP"},
+      "evidence": [{"asset_sha256": "e9746e2be7b233efcace061df02a1452df1e1f1c3159da21066d1be2fd02b1d0", "page": 1, "locator": "D1-D2 U2 输入、BST/LX/L1/D5、FB/R7/R8/C8 与输出电容"}]
+    },
+    {
+      "id": "power.boost-3v3-to-5v",
+      "category": "power",
+      "subject": "U3 SY7088 升压级",
+      "statement": "3.3V_VCC 经 L2 2.2uH/3015 连接 U3 LX，U3 OUT 产生 +5V；R9 15K 与 R17 4.7K 形成 FB 分压，C12/C13 与 C15 为输出储能，D6 跨接 +5V 与 GND。",
+      "confidence": "confirmed",
+      "attributes": {"input": "3.3V_VCC", "inductor": "L2 2.2uH/3015", "converter": "U3 SY7088", "output": "+5V", "feedback": "R9 15K / R17 4.7K", "output_caps": "C12/C13 22uF/6.3V; C15 100uF/16V", "clamp": "D6 +5V-GND"},
+      "evidence": [{"asset_sha256": "e9746e2be7b233efcace061df02a1452df1e1f1c3159da21066d1be2fd02b1d0", "page": 1, "locator": "D3-D4 U3/L2/R9/R17/C12/C13/D6/C15 的 3.3V_VCC 至 +5V 电路"}]
+    },
+    {
+      "id": "power.rail-distribution",
+      "category": "power",
+      "subject": "3.3V 与 +5V 分配",
+      "statement": "3.3V_VCC 连接 U1 3.3V 供电和 J1.12 +3.3V；+5V 连接四个继电器线圈、J1.28 +5V 和输出滤波网络。",
+      "confidence": "confirmed",
+      "attributes": {"3v3_loads": "U1 VDD/VDDA; J1.12", "5v_loads": "K1-K4 coils; J1.28", "mcu_decoupling": "C2/C3 100nF; C4 10uF"},
+      "evidence": [{"asset_sha256": "e9746e2be7b233efcace061df02a1452df1e1f1c3159da21066d1be2fd02b1d0", "page": 1, "locator": "全页 +3.3V/3.3V_VCC 与 +5V 同名网络在 U1/J1/K1~K4/U3 上的分配"}]
+    },
+    {
+      "id": "other.relay-load-rating",
+      "category": "other",
+      "subject": "继电器负载额定值",
+      "statement": "产品正文声明四通道最大负载为 DC 24V@1A/24W，但原理图中的 K1~K4 仅标注 Relay-SPDT，未给出继电器完整型号或触点额定值。",
+      "confidence": "uncertain",
+      "attributes": {"documented_rating": "DC 24V@1A, 24W", "schematic_relay_label": "Relay-SPDT", "relay_part_number": "not shown", "contact_rating": "not shown"},
+      "evidence": [{"asset_sha256": "e9746e2be7b233efcace061df02a1452df1e1f1c3159da21066d1be2fd02b1d0", "page": 1, "locator": "A1-A4 K1~K4 均只标注 Relay-SPDT，无触点额定参数"}]
+    },
+    {
+      "id": "reset.boot-swd",
+      "category": "reset",
+      "subject": "BOOT0、NRST 与 SWD",
+      "statement": "U1.1 BOOT0 通过 R5 10K 接 GND；NRST 由 R6 10K 上拉到 +3.3V、C1 100nF 对地，并引至 P1 RST；P1 还引出 SWCLK/SWDIO。",
+      "confidence": "confirmed",
+      "attributes": {"boot0": "U1.1 via R5 10K to GND", "nrst_pullup": "R6 10K to +3.3V", "nrst_cap": "C1 100nF to GND", "debug": "P1 SWCLK/SWDIO/RST"},
+      "evidence": [{"asset_sha256": "e9746e2be7b233efcace061df02a1452df1e1f1c3159da21066d1be2fd02b1d0", "page": 1, "locator": "B1-B2 U1 BOOT0/RST、R5/R6/C1 与 P1 SWD_5p"}]
+    },
+    {
+      "id": "clock.external-oscillator-absent",
+      "category": "clock",
+      "subject": "U1 时钟",
+      "statement": "U1.2 PF0/OSC_IN 与 U1.3 PF1/OSC_OUT 未连接，页面未显示外部晶振或谐振器。",
+      "confidence": "confirmed",
+      "attributes": {"osc_in": "U1.2 NC", "osc_out": "U1.3 NC", "external_crystal": "not shown"},
+      "evidence": [{"asset_sha256": "e9746e2be7b233efcace061df02a1452df1e1f1c3159da21066d1be2fd02b1d0", "page": 1, "locator": "B1-B2 U1.2/U1.3 PF0/OSC_IN、PF1/OSC_OUT 未连接标记"}]
+    },
+    {
+      "id": "protection.vin-tvs",
+      "category": "protection",
+      "subject": "VIN 输入保护",
+      "statement": "D7 SMF30CA 跨接 VIN 与 GND，位于 P11 外部输入母线旁。",
+      "confidence": "confirmed",
+      "attributes": {"protector": "D7 SMF30CA", "protected_net": "VIN", "reference": "GND"},
+      "evidence": [{"asset_sha256": "e9746e2be7b233efcace061df02a1452df1e1f1c3159da21066d1be2fd02b1d0", "page": 1, "locator": "D4 D7 SMF30CA 的 VIN-GND 跨接"}]
+    }
+  ],
+  "needs_review": [
+    {
+      "id": "review.mcu-version",
+      "fact_id": "component.mcu-version-conflict",
+      "question": "M121-V11 量产板实际使用 STM32F030F4P6 还是 STM32G030F6？",
+      "reason": "正式原理图 U1 标注 STM32F030F4P6，产品正文特性标注 STM32G030F6。",
+      "evidence": [{"asset_sha256": "e9746e2be7b233efcace061df02a1452df1e1f1c3159da21066d1be2fd02b1d0", "page": 1, "locator": "U1 底部型号 STM32F030F4P6"}]
+    },
+    {
+      "id": "review.i2c-address-0x26",
+      "fact_id": "address.i2c-0x26",
+      "question": "模块 I2C 地址 0x26 是否由 MCU 固件固定实现？",
+      "reason": "原理图仅显示 SCL/SDA，不含地址或固件信息。",
+      "evidence": [{"asset_sha256": "e9746e2be7b233efcace061df02a1452df1e1f1c3159da21066d1be2fd02b1d0", "page": 1, "locator": "U1 与 J1 的 SCL/SDA 网络，未见 0x26"}]
+    },
+    {
+      "id": "review.external-connector",
+      "fact_id": "interface.external-connector-type-conflict",
+      "question": "外部 5~24V 输入的量产连接器是 DC5521 还是 P11 两针端子？",
+      "reason": "正文规格和原理图连接器类型不一致。",
+      "evidence": [{"asset_sha256": "e9746e2be7b233efcace061df02a1452df1e1f1c3159da21066d1be2fd02b1d0", "page": 1, "locator": "D4 P11 标注 Header 2"}]
+    },
+    {
+      "id": "review.relay-rating",
+      "fact_id": "other.relay-load-rating",
+      "question": "K1~K4 实际继电器料号及 DC 24V@1A 触点额定条件是什么？",
+      "reason": "原理图只写 Relay-SPDT，无法核对正文的负载额定值。",
+      "evidence": [{"asset_sha256": "e9746e2be7b233efcace061df02a1452df1e1f1c3159da21066d1be2fd02b1d0", "page": 1, "locator": "A1-A4 K1~K4 Relay-SPDT"}]
+    }
+  ]
+}

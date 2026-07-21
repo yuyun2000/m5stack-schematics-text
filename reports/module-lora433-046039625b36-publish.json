@@ -1,0 +1,21 @@
+{
+  "dry_run": false,
+  "failed": 0,
+  "published": 1,
+  "results": [
+    {
+      "backup": null,
+      "draft_action": "unchanged",
+      "dry_run": false,
+      "errors": [],
+      "needs_review": 4,
+      "product_id": "module-lora433-046039625b36",
+      "product_name": "Module LoRa433",
+      "publish_action": "unchanged",
+      "sha256": "5ba3a3f1ed9e5ac4972e00fd51d0a991017610895523138b1a94059c1854218b",
+      "status": "valid",
+      "uncertain_facts": 4
+    }
+  ],
+  "schema_version": 1
+}

@@ -1,0 +1,21 @@
+{
+  "dry_run": false,
+  "failed": 0,
+  "published": 1,
+  "results": [
+    {
+      "backup": null,
+      "draft_action": "unchanged",
+      "dry_run": false,
+      "errors": [],
+      "needs_review": 2,
+      "product_id": "stamp-c3-mate-47c961525c5c",
+      "product_name": "Stamp-C3 Mate",
+      "publish_action": "unchanged",
+      "sha256": "4cdcf8ab6e7f14c45abd4aaad13652c4c9f9a9825866709189d70bb9363544b4",
+      "status": "valid",
+      "uncertain_facts": 2
+    }
+  ],
+  "schema_version": 1
+}

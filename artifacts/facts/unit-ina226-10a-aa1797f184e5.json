@@ -1,0 +1,721 @@
+{
+  "schema_version": 1,
+  "generator": "schematic_describer",
+  "product": {
+    "product_id": "unit-ina226-10a-aa1797f184e5",
+    "product_name": "Unit INA226-10A",
+    "sku": "U200",
+    "source_path": "unit/Unit_INA226-10A.md",
+    "source_sha256": "1aa8e173413558cc0b64de952372c38ed06e7e0619c215f163b9fe16aba29251",
+    "input_sha256": "dd525e6ebc44343bfb4c7054bbddaf2e55445cc15d3513cce3f86f8d917f2bd0"
+  },
+  "schematic_assets": [
+    {
+      "sha256": "9f0f4b7d428ddce47924456fb544bbb274fdbc79d8b2cfa093a36ae273ee8eed",
+      "source_url": "https://m5stack-doc.oss-cn-shenzhen.aliyuncs.com/1171/SCH_Unit_ina226-10A_SCH_Main_V0.3_20250625_2025_08_11_11_28_32_page_01.png",
+      "pages": [
+        1
+      ]
+    }
+  ],
+  "summary": "Unit INA226-10A 的原理图以隔离边界分为 HOST 主控侧与 INA226 测量侧：M1 B0505ST16-W5 传递隔离 5V 电源，U1 在 HOST_I2C_SDA/SCL 与 IIC_SDA/SCL 之间提供信号隔离。测量侧使用 U2 INA226AIDGSR，借助 R3 5mΩ 分流电阻与 INA_P/INA_N Kelvin 网络测量 VCC_IN 到 VCC_OUT 的电流，并以 I2C 地址 0x41 通信。HOST_5V 和隔离侧 VCC_5V 分别由 U4、U3 XC6228D332VR-G 转换为两侧独立 3.3V 电源，J2 同时引出高电流通道和 PGND。",
+  "keywords": [
+    "Unit INA226-10A",
+    "U200",
+    "INA226",
+    "INA226AIDGSR",
+    "IIC:0x41",
+    "0x41",
+    "CA-IS3020",
+    "ISO1540",
+    "ADuM1250",
+    "B0505ST16-W5",
+    "XC6228D332VR-G",
+    "BSMD1206C-2120T",
+    "LESD3Z5.0CMT1G",
+    "5mR",
+    "INA_P",
+    "INA_N",
+    "VCC_IN",
+    "VCC_OUT",
+    "VCC_5V",
+    "VCC_3V3",
+    "HOST_5V",
+    "HOST_VCC_3V3",
+    "HOST_I2C_SCL",
+    "HOST_I2C_SDA",
+    "IIC_SCL",
+    "IIC_SDA",
+    "PGND",
+    "HOST_GND",
+    "I2C 隔离",
+    "5mΩ 分流电阻"
+  ],
+  "components": [
+    {
+      "reference": "U2",
+      "part_number": "INA226AIDGSR",
+      "role": "分流电压、总线电压与功率监测器",
+      "evidence": [
+        {
+          "asset_sha256": "9f0f4b7d428ddce47924456fb544bbb274fdbc79d8b2cfa093a36ae273ee8eed",
+          "page": 1,
+          "locator": "网格 C3-C4，U2 方框下方标注 INA226AIDGSR，含 VIN-/VIN+/VBUS/SCL/SDA/A0/A1/ALERT"
+        }
+      ]
+    },
+    {
+      "reference": "U1",
+      "part_number": "CA-IS3020/ISO1540/ADuM1250",
+      "role": "HOST 与测量侧之间的双通道 I2C 信号隔离器",
+      "evidence": [
+        {
+          "asset_sha256": "9f0f4b7d428ddce47924456fb544bbb274fdbc79d8b2cfa093a36ae273ee8eed",
+          "page": 1,
+          "locator": "网格 D2，U1 跨越蓝黑隔离虚线，器件值标注 CA-IS3020/ISO1540/ADuM1250"
+        }
+      ]
+    },
+    {
+      "reference": "M1",
+      "part_number": "B0505ST16-W5",
+      "role": "HOST_5V 到隔离侧 VCC_5V 的隔离 DC-DC 模块",
+      "evidence": [
+        {
+          "asset_sha256": "9f0f4b7d428ddce47924456fb544bbb274fdbc79d8b2cfa093a36ae273ee8eed",
+          "page": 1,
+          "locator": "网格 C2，M1 跨越蓝黑隔离虚线，器件值标注 B0505ST16-W5"
+        }
+      ]
+    },
+    {
+      "reference": "U3",
+      "part_number": "XC6228D332VR-G",
+      "role": "测量侧 VCC_5V 到 VCC_3V3 的 LDO",
+      "evidence": [
+        {
+          "asset_sha256": "9f0f4b7d428ddce47924456fb544bbb274fdbc79d8b2cfa093a36ae273ee8eed",
+          "page": 1,
+          "locator": "网格 B3-B4，U3 XC6228D332VR-G，IN/EN 接 VCC_5V，OUT 接 VCC_3V3"
+        }
+      ]
+    },
+    {
+      "reference": "U4",
+      "part_number": "XC6228D332VR-G",
+      "role": "HOST_5V 到 HOST_VCC_3V3 的主控侧 LDO",
+      "evidence": [
+        {
+          "asset_sha256": "9f0f4b7d428ddce47924456fb544bbb274fdbc79d8b2cfa093a36ae273ee8eed",
+          "page": 1,
+          "locator": "网格 A1-A2，U4 XC6228D332VR-G，IN/EN 接 HOST_5V，OUT 接 HOST_VCC_3V3"
+        }
+      ]
+    },
+    {
+      "reference": "FUSE1",
+      "part_number": "BSMD1206C-2120T",
+      "role": "J2 pin1 与 VCC_IN 之间的串联过流保护器件",
+      "evidence": [
+        {
+          "asset_sha256": "9f0f4b7d428ddce47924456fb544bbb274fdbc79d8b2cfa093a36ae273ee8eed",
+          "page": 1,
+          "locator": "网格 C3-C4，FUSE1 标注 BSMD1206C-2120T，串联在 J2 pin1 与 VCC_IN 之间"
+        }
+      ]
+    },
+    {
+      "reference": "R3",
+      "part_number": "5mR",
+      "role": "VCC_IN 与 VCC_OUT 之间的电流检测分流电阻",
+      "evidence": [
+        {
+          "asset_sha256": "9f0f4b7d428ddce47924456fb544bbb274fdbc79d8b2cfa093a36ae273ee8eed",
+          "page": 1,
+          "locator": "网格 C3，R3 垂直跨接 VCC_IN 与 VCC_OUT，阻值标注 5mR"
+        }
+      ]
+    },
+    {
+      "reference": "J1",
+      "part_number": "IIC_Socket_4P",
+      "role": "HOST 侧 Grove/I2C 与 5V 电源接口",
+      "evidence": [
+        {
+          "asset_sha256": "9f0f4b7d428ddce47924456fb544bbb274fdbc79d8b2cfa093a36ae273ee8eed",
+          "page": 1,
+          "locator": "网格 C1，J1 IIC_Socket_4P，四脚连接 HOST_I2C_SCL、HOST_I2C_SDA、HOST_5V、HOST_GND"
+        }
+      ]
+    },
+    {
+      "reference": "J2",
+      "part_number": "THT_Male_P_1x4",
+      "role": "VCC_IN、VCC_OUT 与双 PGND 的四位高电流端子",
+      "evidence": [
+        {
+          "asset_sha256": "9f0f4b7d428ddce47924456fb544bbb274fdbc79d8b2cfa093a36ae273ee8eed",
+          "page": 1,
+          "locator": "网格 C4，J2 THT_Male_P_1x4，pin1 接保险丝、pin2/3 接 PGND、pin4 接 VCC_OUT"
+        }
+      ]
+    },
+    {
+      "reference": "D1",
+      "part_number": "LESD3Z5.0CMT1G",
+      "role": "隔离侧 VCC_5V 对 GND 的瞬态保护器件",
+      "evidence": [
+        {
+          "asset_sha256": "9f0f4b7d428ddce47924456fb544bbb274fdbc79d8b2cfa093a36ae273ee8eed",
+          "page": 1,
+          "locator": "网格 C2，D1 标注 LESD3Z5.0CMT1G，跨接 VCC_5V 与 GND"
+        }
+      ]
+    },
+    {
+      "reference": "D2",
+      "part_number": "BLUE 0603",
+      "role": "HOST_5V 电源指示 LED",
+      "evidence": [
+        {
+          "asset_sha256": "9f0f4b7d428ddce47924456fb544bbb274fdbc79d8b2cfa093a36ae273ee8eed",
+          "page": 1,
+          "locator": "网格 B1-B2，D2 标注 BLUE 0603，与 R13 4.7KΩ 串联在 HOST_5V 与 HOST_GND 之间"
+        }
+      ]
+    },
+    {
+      "reference": "L1",
+      "part_number": "120R@100MHz",
+      "role": "PGND 与测量侧 GND 之间的高频阻抗器件",
+      "evidence": [
+        {
+          "asset_sha256": "9f0f4b7d428ddce47924456fb544bbb274fdbc79d8b2cfa093a36ae273ee8eed",
+          "page": 1,
+          "locator": "网格 A3-A4，L1 标注 120R@100MHz，连接 PGND 与 GND"
+        }
+      ]
+    },
+    {
+      "reference": "L2",
+      "part_number": "6.8uH",
+      "role": "M1 隔离电源输入滤波电感",
+      "evidence": [
+        {
+          "asset_sha256": "9f0f4b7d428ddce47924456fb544bbb274fdbc79d8b2cfa093a36ae273ee8eed",
+          "page": 1,
+          "locator": "网格 C1-C2，L2 标注 6.8uH，串联在 HOST_5V 与 M1 VIN 之间"
+        }
+      ]
+    }
+  ],
+  "facts": [
+    {
+      "id": "system.isolated_architecture",
+      "category": "system",
+      "subject": "HOST 与测量侧隔离架构",
+      "statement": "蓝黑竖向虚线将电路分为 HOST_5V/HOST_GND/HOST_VCC_3V3 域与 VCC_5V/GND/VCC_3V3 测量域；M1 跨域传递电源，U1 跨域传递两路 I2C 信号。",
+      "confidence": "confirmed",
+      "attributes": {
+        "host_power": "HOST_5V,HOST_VCC_3V3,HOST_GND",
+        "measurement_power": "VCC_5V,VCC_3V3,GND",
+        "power_isolator": "M1 B0505ST16-W5",
+        "signal_isolator": "U1 CA-IS3020/ISO1540/ADuM1250"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "9f0f4b7d428ddce47924456fb544bbb274fdbc79d8b2cfa093a36ae273ee8eed",
+          "page": 1,
+          "locator": "整页中央蓝黑隔离虚线，以及跨线的 M1 与 U1"
+        }
+      ]
+    },
+    {
+      "id": "interface.j1_host_i2c",
+      "category": "interface",
+      "subject": "J1 HOST 侧接口",
+      "statement": "J1 的 pin1 至 pin4 依次连接 HOST_I2C_SCL、HOST_I2C_SDA、HOST_5V 和 HOST_GND。",
+      "confidence": "confirmed",
+      "attributes": {
+        "reference": "J1",
+        "part_number": "IIC_Socket_4P",
+        "pinout": "1:HOST_I2C_SCL,2:HOST_I2C_SDA,3:HOST_5V,4:HOST_GND"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "9f0f4b7d428ddce47924456fb544bbb274fdbc79d8b2cfa093a36ae273ee8eed",
+          "page": 1,
+          "locator": "网格 C1，J1 四个脚号及右侧 HOST_I2C_SCL/HOST_I2C_SDA/HOST_5V/HOST_GND 标注"
+        }
+      ]
+    },
+    {
+      "id": "power.host_ldo",
+      "category": "power",
+      "subject": "U4 HOST 侧 3.3V LDO",
+      "statement": "U4 XC6228D332VR-G 的 IN pin1 与 EN pin3 连接 HOST_5V，OUT pin5 输出 HOST_VCC_3V3，GND pin2 连接 HOST_GND，NC pin4 未连接。",
+      "confidence": "confirmed",
+      "attributes": {
+        "reference": "U4",
+        "input": "HOST_5V",
+        "output": "HOST_VCC_3V3",
+        "pinout": "1:IN,2:GND,3:EN,4:NC,5:OUT",
+        "input_capacitor": "C12 4.7uF/16V",
+        "output_capacitor": "C7 4.7uF/16V",
+        "test_point": "TP2"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "9f0f4b7d428ddce47924456fb544bbb274fdbc79d8b2cfa093a36ae273ee8eed",
+          "page": 1,
+          "locator": "网格 A1-A2，U4、C12、C7、HOST_5V、HOST_VCC_3V3 与 TP2"
+        }
+      ]
+    },
+    {
+      "id": "other.host_power_led",
+      "category": "other",
+      "subject": "HOST_5V 指示灯",
+      "statement": "HOST_5V 通过 R13 4.7 kΩ 串联 D2 BLUE 0603 后连接 HOST_GND。",
+      "confidence": "confirmed",
+      "attributes": {
+        "resistor": "R13 4.7kΩ (4701) ±1%",
+        "led": "D2 BLUE 0603",
+        "rail": "HOST_5V"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "9f0f4b7d428ddce47924456fb544bbb274fdbc79d8b2cfa093a36ae273ee8eed",
+          "page": 1,
+          "locator": "网格 B1-B2，HOST_5V-R13-D2-HOST_GND 串联支路"
+        }
+      ]
+    },
+    {
+      "id": "power.m1_input_filter",
+      "category": "power",
+      "subject": "M1 HOST_5V 输入滤波",
+      "statement": "HOST_5V 经 L2 6.8 uH 串联后连接 M1 VIN pin3；C1 10 uF/16V 位于 L2 输入侧，C2 10 uF/16V 位于 L2 输出侧，两者均连接 HOST_GND。",
+      "confidence": "confirmed",
+      "attributes": {
+        "input_rail": "HOST_5V",
+        "series_inductor": "L2 6.8uH",
+        "pre_filter_capacitor": "C1 10uF/16V",
+        "post_filter_capacitor": "C2 10uF/16V",
+        "module_input": "M1 pin3 VIN"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "9f0f4b7d428ddce47924456fb544bbb274fdbc79d8b2cfa093a36ae273ee8eed",
+          "page": 1,
+          "locator": "网格 C1-C2，HOST_5V、C1、L2、C2 与 M1 VIN pin3"
+        }
+      ]
+    },
+    {
+      "id": "power.m1_isolated_output",
+      "category": "power",
+      "subject": "M1 隔离 5V 输出",
+      "statement": "M1 的 VO pin14 连接 VCC_5V，0V pin9、pin15、pin16 连接测量侧 GND；C5 10 uF/16V 跨接 VCC_5V 与 GND，TP3 位于 VCC_5V。",
+      "confidence": "confirmed",
+      "attributes": {
+        "reference": "M1",
+        "part_number": "B0505ST16-W5",
+        "output_pin": "14:VO",
+        "output_rail": "VCC_5V",
+        "return_pins": "9,15,16:0V",
+        "output_capacitor": "C5 10uF/16V",
+        "test_point": "TP3"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "9f0f4b7d428ddce47924456fb544bbb274fdbc79d8b2cfa093a36ae273ee8eed",
+          "page": 1,
+          "locator": "网格 C2，M1 pin9/pin14/pin15/pin16、C5、VCC_5V、GND 与 TP3"
+        }
+      ]
+    },
+    {
+      "id": "power.m1_trim",
+      "category": "power",
+      "subject": "M1 TRIM 网络",
+      "statement": "M1 TRIM pin13 通过 R1 0Ω (0R0) ±1% 连接 VCC_5V；R2 标注 NC，位于 TRIM 与 pin9 的 GND 网络之间。",
+      "confidence": "confirmed",
+      "attributes": {
+        "trim_pin": "M1 pin13 TRIM",
+        "output_link": "R1 0Ω (0R0) ±1%",
+        "ground_option": "R2 NC"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "9f0f4b7d428ddce47924456fb544bbb274fdbc79d8b2cfa093a36ae273ee8eed",
+          "page": 1,
+          "locator": "网格 C2，M1 pin13 TRIM、R1 0Ω、R2 NC 与 VCC_5V/GND"
+        }
+      ]
+    },
+    {
+      "id": "protection.vcc5_tvs",
+      "category": "protection",
+      "subject": "隔离侧 VCC_5V 瞬态保护",
+      "statement": "D1 LESD3Z5.0CMT1G 跨接 VCC_5V 与测量侧 GND。",
+      "confidence": "confirmed",
+      "attributes": {
+        "reference": "D1",
+        "part_number": "LESD3Z5.0CMT1G",
+        "protected_rail": "VCC_5V",
+        "return": "GND"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "9f0f4b7d428ddce47924456fb544bbb274fdbc79d8b2cfa093a36ae273ee8eed",
+          "page": 1,
+          "locator": "网格 C2，TP3 下方 D1 LESD3Z5.0CMT1G 至 GND 支路"
+        }
+      ]
+    },
+    {
+      "id": "component.u1_variant",
+      "category": "component",
+      "subject": "U1 I2C 隔离器装配型号",
+      "statement": "U1 的器件值同时列出 CA-IS3020、ISO1540 和 ADuM1250，无法仅凭该原理图确定实际装配型号。",
+      "confidence": "uncertain",
+      "attributes": {
+        "reference": "U1",
+        "schematic_value": "CA-IS3020/ISO1540/ADuM1250",
+        "populated_part_number": null
+      },
+      "evidence": [
+        {
+          "asset_sha256": "9f0f4b7d428ddce47924456fb544bbb274fdbc79d8b2cfa093a36ae273ee8eed",
+          "page": 1,
+          "locator": "网格 D2，U1 下方器件值 CA-IS3020/ISO1540/ADuM1250"
+        }
+      ]
+    },
+    {
+      "id": "bus.i2c_isolation",
+      "category": "bus",
+      "subject": "U1 隔离 I2C 信号映射",
+      "statement": "HOST_I2C_SDA 连接 U1 pin2 ViA，并由 pin7 VoA 输出为 IIC_SDA；HOST_I2C_SCL 连接 pin3 ViB，并由 pin6 VoB 输出为 IIC_SCL。",
+      "confidence": "confirmed",
+      "attributes": {
+        "sda_path": "HOST_I2C_SDA -> U1 pin2 ViA -> U1 pin7 VoA -> IIC_SDA",
+        "scl_path": "HOST_I2C_SCL -> U1 pin3 ViB -> U1 pin6 VoB -> IIC_SCL"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "9f0f4b7d428ddce47924456fb544bbb274fdbc79d8b2cfa093a36ae273ee8eed",
+          "page": 1,
+          "locator": "网格 D2，U1 左侧 HOST_I2C_SDA/SCL 与右侧 IIC_SDA/SCL 引脚标注"
+        }
+      ]
+    },
+    {
+      "id": "power.u1_dual_supply",
+      "category": "power",
+      "subject": "U1 两侧隔离供电",
+      "statement": "U1 pin1 连接 HOST_VCC_3V3、pin4 连接 HOST_GND，C4 4.7 uF/16V 跨接该侧电源；pin8 连接 VCC_3V3、pin5 连接 GND，C6 4.7 uF/16V 跨接测量侧电源。",
+      "confidence": "confirmed",
+      "attributes": {
+        "host_supply": "pin1 HOST_VCC_3V3,pin4 HOST_GND,C4 4.7uF/16V",
+        "measurement_supply": "pin8 VCC_3V3,pin5 GND,C6 4.7uF/16V"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "9f0f4b7d428ddce47924456fb544bbb274fdbc79d8b2cfa093a36ae273ee8eed",
+          "page": 1,
+          "locator": "网格 D2，U1 pin1/pin4/C4 与 pin8/pin5/C6 两侧供电网络"
+        }
+      ]
+    },
+    {
+      "id": "bus.host_i2c_pullups",
+      "category": "bus",
+      "subject": "HOST 侧 I2C 上拉",
+      "statement": "R4 4.7 kΩ 将 HOST_I2C_SCL 上拉到 HOST_VCC_3V3，R12 4.7 kΩ 将 HOST_I2C_SDA 上拉到 HOST_VCC_3V3。",
+      "confidence": "confirmed",
+      "attributes": {
+        "scl_pullup": "R4 4.7kΩ (4701) ±1%",
+        "sda_pullup": "R12 4.7kΩ (4701) ±1%",
+        "rail": "HOST_VCC_3V3"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "9f0f4b7d428ddce47924456fb544bbb274fdbc79d8b2cfa093a36ae273ee8eed",
+          "page": 1,
+          "locator": "网格 D1，HOST_VCC_3V3 至 R4/HOST_I2C_SCL 与 R12/HOST_I2C_SDA"
+        }
+      ]
+    },
+    {
+      "id": "power.measurement_ldo",
+      "category": "power",
+      "subject": "U3 测量侧 3.3V LDO",
+      "statement": "U3 XC6228D332VR-G 的 IN pin1 与 EN pin3 连接 VCC_5V，OUT pin5 输出 VCC_3V3，GND pin2 连接 GND，NC pin4 未连接。",
+      "confidence": "confirmed",
+      "attributes": {
+        "reference": "U3",
+        "input": "VCC_5V",
+        "output": "VCC_3V3",
+        "pinout": "1:IN,2:GND,3:EN,4:NC,5:OUT",
+        "input_capacitors": "C10 10uF/16V,C11 100nF/16V",
+        "output_capacitors": "C8 100nF/16V,C9 10uF/16V",
+        "test_point": "TP1"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "9f0f4b7d428ddce47924456fb544bbb274fdbc79d8b2cfa093a36ae273ee8eed",
+          "page": 1,
+          "locator": "网格 B3-B4，U3、C10、C11、C8、C9、VCC_5V、VCC_3V3 与 TP1"
+        }
+      ]
+    },
+    {
+      "id": "key_net.ground_coupling",
+      "category": "key_net",
+      "subject": "PGND 与 GND 连接",
+      "statement": "L1 标注 120R@100MHz，串联连接端子侧 PGND 与测量电路 GND。",
+      "confidence": "confirmed",
+      "attributes": {
+        "reference": "L1",
+        "impedance": "120R@100MHz",
+        "net_a": "PGND",
+        "net_b": "GND"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "9f0f4b7d428ddce47924456fb544bbb274fdbc79d8b2cfa093a36ae273ee8eed",
+          "page": 1,
+          "locator": "网格 A3-A4，PGND-L1 120R@100MHz-GND 单独连接"
+        }
+      ]
+    },
+    {
+      "id": "interface.j2_power_path",
+      "category": "interface",
+      "subject": "J2 高电流端子",
+      "statement": "J2 pin1 通过 FUSE1 连接 VCC_IN，pin2 与 pin3 并联连接 PGND，pin4 连接 VCC_OUT。",
+      "confidence": "confirmed",
+      "attributes": {
+        "reference": "J2",
+        "part_number": "THT_Male_P_1x4",
+        "pinout": "1:FUSE1/VCC_IN,2:PGND,3:PGND,4:VCC_OUT"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "9f0f4b7d428ddce47924456fb544bbb274fdbc79d8b2cfa093a36ae273ee8eed",
+          "page": 1,
+          "locator": "网格 C4，J2 pin1-pin4 与左侧 FUSE1、PGND、VCC_OUT 连线"
+        }
+      ]
+    },
+    {
+      "id": "protection.input_fuse",
+      "category": "protection",
+      "subject": "FUSE1 输入过流保护",
+      "statement": "FUSE1 BSMD1206C-2120T 串联在 J2 pin1 与 VCC_IN 网络之间。",
+      "confidence": "confirmed",
+      "attributes": {
+        "reference": "FUSE1",
+        "part_number": "BSMD1206C-2120T",
+        "upstream": "J2 pin1",
+        "downstream": "VCC_IN"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "9f0f4b7d428ddce47924456fb544bbb274fdbc79d8b2cfa093a36ae273ee8eed",
+          "page": 1,
+          "locator": "网格 C3-C4，VCC_IN 与 J2 pin1 之间的 FUSE1 BSMD1206C-2120T"
+        }
+      ]
+    },
+    {
+      "id": "analog.shunt_path",
+      "category": "analog",
+      "subject": "5mΩ 主电流分流路径",
+      "statement": "R3 5mR 连接在 VCC_IN 与 VCC_OUT 之间，构成 J2 pin1 经 FUSE1、R3 到 J2 pin4 的主电流路径。",
+      "confidence": "confirmed",
+      "attributes": {
+        "shunt_reference": "R3",
+        "shunt_resistance_ohm": 0.005,
+        "path": "J2 pin1 -> FUSE1 -> VCC_IN -> R3 -> VCC_OUT -> J2 pin4"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "9f0f4b7d428ddce47924456fb544bbb274fdbc79d8b2cfa093a36ae273ee8eed",
+          "page": 1,
+          "locator": "网格 C3-C4，VCC_IN-R3 5mR-VCC_OUT 与 J2/FUSE1 连接"
+        }
+      ]
+    },
+    {
+      "id": "analog.kelvin_sense",
+      "category": "analog",
+      "subject": "INA226 分流检测网络",
+      "statement": "R10 0R 将 INA_P 连接 VCC_IN，R11 0R 将 INA_N 连接 VCC_OUT；INA_P 连接 U2 VIN+ pin10，INA_N 连接 U2 VIN- pin9。",
+      "confidence": "confirmed",
+      "attributes": {
+        "positive_sense": "VCC_IN -> R10 0R -> INA_P -> U2 pin10 VIN+",
+        "negative_sense": "VCC_OUT -> R11 0R -> INA_N -> U2 pin9 VIN-",
+        "filter_capacitor": "C3 NC across INA_P/INA_N"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "9f0f4b7d428ddce47924456fb544bbb274fdbc79d8b2cfa093a36ae273ee8eed",
+          "page": 1,
+          "locator": "网格 C3-D3，R10/R11、INA_P/INA_N、C3 NC 与 U2 VIN+/VIN-"
+        }
+      ]
+    },
+    {
+      "id": "analog.sense_filter_option",
+      "category": "analog",
+      "subject": "INA_P/INA_N 差分滤波焊位",
+      "statement": "C3 跨接 INA_P 与 INA_N，器件值标注 NC，原理图未给出装配电容值。",
+      "confidence": "confirmed",
+      "attributes": {
+        "reference": "C3",
+        "net_a": "INA_P",
+        "net_b": "INA_N",
+        "schematic_value": "NC"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "9f0f4b7d428ddce47924456fb544bbb274fdbc79d8b2cfa093a36ae273ee8eed",
+          "page": 1,
+          "locator": "网格 C3，INA_P 与 INA_N 之间的 C3，左侧标注 NC"
+        }
+      ]
+    },
+    {
+      "id": "sensor.ina226_pinout",
+      "category": "sensor",
+      "subject": "U2 INA226AIDGSR 引脚映射",
+      "statement": "U2 的 pin10 VIN+ 接 INA_P、pin9 VIN- 接 INA_N、pin8 VBUS 接 VCC_OUT、pin6 VS+ 接 VCC_3V3、pin7 GND 接 GND、pin5 SCL 接 IIC_SCL、pin4 SDA 接 IIC_SDA、pin3 ALERT、pin2 A0、pin1 A1。",
+      "confidence": "confirmed",
+      "attributes": {
+        "reference": "U2",
+        "part_number": "INA226AIDGSR",
+        "pinout": "1:A1,2:A0,3:ALERT,4:SDA,5:SCL,6:VS+,7:GND,8:VBUS,9:VIN-,10:VIN+"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "9f0f4b7d428ddce47924456fb544bbb274fdbc79d8b2cfa093a36ae273ee8eed",
+          "page": 1,
+          "locator": "网格 D3-D4，U2 符号四周的全部脚号、引脚名与网络名"
+        }
+      ]
+    },
+    {
+      "id": "power.ina226_supply",
+      "category": "power",
+      "subject": "INA226 供电与去耦",
+      "statement": "U2 VS+ pin6 连接 VCC_3V3，GND pin7 连接 GND；C13 4.7 uF/16V 跨接 VCC_3V3 与 GND。",
+      "confidence": "confirmed",
+      "attributes": {
+        "supply_pin": "U2 pin6 VS+",
+        "supply_rail": "VCC_3V3",
+        "ground_pin": "U2 pin7 GND",
+        "decoupling_capacitor": "C13 4.7uF/16V"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "9f0f4b7d428ddce47924456fb544bbb274fdbc79d8b2cfa093a36ae273ee8eed",
+          "page": 1,
+          "locator": "网格 D3，U2 pin6/pin7、VCC_3V3、GND 与 C13"
+        }
+      ]
+    },
+    {
+      "id": "bus.ina226_i2c",
+      "category": "bus",
+      "subject": "INA226 I2C 总线",
+      "statement": "U2 SCL pin5 连接 IIC_SCL，SDA pin4 连接 IIC_SDA；R9 4.7 kΩ 将 IIC_SCL 上拉到 VCC_3V3，R8 4.7 kΩ 将 IIC_SDA 上拉到 VCC_3V3。",
+      "confidence": "confirmed",
+      "attributes": {
+        "scl": "U2 pin5 IIC_SCL,R9 4.7kΩ to VCC_3V3",
+        "sda": "U2 pin4 IIC_SDA,R8 4.7kΩ to VCC_3V3"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "9f0f4b7d428ddce47924456fb544bbb274fdbc79d8b2cfa093a36ae273ee8eed",
+          "page": 1,
+          "locator": "网格 D3-D4，U2 SCL/SDA 至 IIC_SCL/IIC_SDA 及 R9/R8 上拉网络"
+        }
+      ]
+    },
+    {
+      "id": "address.ina226_0x41",
+      "category": "address",
+      "subject": "INA226 I2C 地址配置",
+      "statement": "U2 A1 pin1 通过 R6 4.7 kΩ 连接 GND，A0 pin2 通过 R7 4.7 kΩ 连接 VCC_3V3；原理图明确标注 IIC:0x41。",
+      "confidence": "confirmed",
+      "attributes": {
+        "address": "0x41",
+        "a1_configuration": "U2 pin1 -> R6 4.7kΩ -> GND",
+        "a0_configuration": "U2 pin2 -> R7 4.7kΩ -> VCC_3V3"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "9f0f4b7d428ddce47924456fb544bbb274fdbc79d8b2cfa093a36ae273ee8eed",
+          "page": 1,
+          "locator": "网格 D3-D4，U2 A1/A0、R6/R7 与器件下方 IIC:0x41 标注"
+        }
+      ]
+    },
+    {
+      "id": "gpio.ina226_alert",
+      "category": "gpio",
+      "subject": "INA226 ALERT 网络",
+      "statement": "U2 ALERT pin3 通过 R5 4.7 kΩ 连接 GND，且该 ALERT 网络未引出到 J1 或 J2。",
+      "confidence": "confirmed",
+      "attributes": {
+        "alert_pin": "U2 pin3 ALERT",
+        "resistor": "R5 4.7kΩ to GND",
+        "external_connector": null
+      },
+      "evidence": [
+        {
+          "asset_sha256": "9f0f4b7d428ddce47924456fb544bbb274fdbc79d8b2cfa093a36ae273ee8eed",
+          "page": 1,
+          "locator": "网格 D3-D4，U2 ALERT pin3 到 R5 4.7kΩ/GND 的封闭支路"
+        }
+      ]
+    },
+    {
+      "id": "key_net.test_points",
+      "category": "key_net",
+      "subject": "板上电源测试点",
+      "statement": "TP1 连接 VCC_3V3，TP2 连接 HOST_VCC_3V3，TP3 连接 VCC_5V。",
+      "confidence": "confirmed",
+      "attributes": {
+        "TP1": "VCC_3V3",
+        "TP2": "HOST_VCC_3V3",
+        "TP3": "VCC_5V"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "9f0f4b7d428ddce47924456fb544bbb274fdbc79d8b2cfa093a36ae273ee8eed",
+          "page": 1,
+          "locator": "网格 A1-A2 的 TP2、B3-B4 的 TP1、C2 的 TP3"
+        }
+      ]
+    }
+  ],
+  "needs_review": [
+    {
+      "id": "review.u1_populated_variant",
+      "fact_id": "component.u1_variant",
+      "question": "U1 在当前量产版本中实际装配 CA-IS3020、ISO1540 还是 ADuM1250？",
+      "reason": "原理图器件值同时列出三个兼容型号，需用 BOM、贴片资料或实物丝印确定当前装配型号。",
+      "evidence": [
+        {
+          "asset_sha256": "9f0f4b7d428ddce47924456fb544bbb274fdbc79d8b2cfa093a36ae273ee8eed",
+          "page": 1,
+          "locator": "网格 D2，U1 下方标注 CA-IS3020/ISO1540/ADuM1250"
+        }
+      ]
+    }
+  ]
+}

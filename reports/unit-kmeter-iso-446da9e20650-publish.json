@@ -1,0 +1,21 @@
+{
+  "dry_run": false,
+  "failed": 0,
+  "published": 1,
+  "results": [
+    {
+      "backup": null,
+      "draft_action": "unchanged",
+      "dry_run": false,
+      "errors": [],
+      "needs_review": 3,
+      "product_id": "unit-kmeter-iso-446da9e20650",
+      "product_name": "Unit KMeter-ISO",
+      "publish_action": "unchanged",
+      "sha256": "515c6b2d4fd3483cdb8e34eea5b28e3afcdaefe2e8f84c665741732697d1f59f",
+      "status": "valid",
+      "uncertain_facts": 3
+    }
+  ],
+  "schema_version": 1
+}

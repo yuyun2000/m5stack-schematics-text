@@ -1,0 +1,21 @@
+{
+  "dry_run": false,
+  "failed": 0,
+  "published": 1,
+  "results": [
+    {
+      "backup": null,
+      "draft_action": "unchanged",
+      "dry_run": false,
+      "errors": [],
+      "needs_review": 3,
+      "product_id": "atoms3r-m12-864fa7e586d0",
+      "product_name": "AtomS3R-M12 火山引擎语音视觉套件",
+      "publish_action": "unchanged",
+      "sha256": "253c2513169de2e8f1fddec0749baa3f8adf3f0a319fd2139ffd093bb159f864",
+      "status": "valid",
+      "uncertain_facts": 3
+    }
+  ],
+  "schema_version": 1
+}

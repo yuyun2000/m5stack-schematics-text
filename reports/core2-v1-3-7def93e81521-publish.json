@@ -1,0 +1,21 @@
+{
+  "dry_run": false,
+  "failed": 0,
+  "published": 1,
+  "results": [
+    {
+      "backup": null,
+      "draft_action": "unchanged",
+      "dry_run": false,
+      "errors": [],
+      "needs_review": 10,
+      "product_id": "core2-v1-3-7def93e81521",
+      "product_name": "Core2 v1.3",
+      "publish_action": "unchanged",
+      "sha256": "5361d80c53f1e995c0dfa15f6fb4971da34ba015cd11ee0d15089d33a81f4274",
+      "status": "valid",
+      "uncertain_facts": 10
+    }
+  ],
+  "schema_version": 1
+}

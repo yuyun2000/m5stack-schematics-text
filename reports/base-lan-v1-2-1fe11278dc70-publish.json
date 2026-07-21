@@ -1,0 +1,21 @@
+{
+  "dry_run": false,
+  "failed": 0,
+  "published": 1,
+  "results": [
+    {
+      "backup": null,
+      "draft_action": "unchanged",
+      "dry_run": false,
+      "errors": [],
+      "needs_review": 5,
+      "product_id": "base-lan-v1-2-1fe11278dc70",
+      "product_name": "Base LAN v1.2",
+      "publish_action": "unchanged",
+      "sha256": "df854bf4f6e4cf5bfbd28804de6212841a69bab9931ba346a7ce81c9646d1ede",
+      "status": "valid",
+      "uncertain_facts": 5
+    }
+  ],
+  "schema_version": 1
+}

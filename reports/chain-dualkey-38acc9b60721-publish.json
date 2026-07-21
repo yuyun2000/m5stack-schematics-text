@@ -1,0 +1,21 @@
+{
+  "dry_run": false,
+  "failed": 0,
+  "published": 1,
+  "results": [
+    {
+      "backup": null,
+      "draft_action": "unchanged",
+      "dry_run": false,
+      "errors": [],
+      "needs_review": 5,
+      "product_id": "chain-dualkey-38acc9b60721",
+      "product_name": "Chain DualKey",
+      "publish_action": "unchanged",
+      "sha256": "cefd3c19b6427c535f934aa939e5b84808fd7df5dfbb1badb784fa950dbdaf74",
+      "status": "valid",
+      "uncertain_facts": 5
+    }
+  ],
+  "schema_version": 1
+}

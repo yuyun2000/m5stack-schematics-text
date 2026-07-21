@@ -1,0 +1,21 @@
+{
+  "dry_run": false,
+  "failed": 0,
+  "published": 1,
+  "results": [
+    {
+      "backup": null,
+      "draft_action": "unchanged",
+      "dry_run": false,
+      "errors": [],
+      "needs_review": 3,
+      "product_id": "unit-color-c738d15370d3",
+      "product_name": "Unit Color",
+      "publish_action": "unchanged",
+      "sha256": "610faf6eb3d38ea0493f103c03f724e316aae58994ea34eb5407522bba76b521",
+      "status": "valid",
+      "uncertain_facts": 3
+    }
+  ],
+  "schema_version": 1
+}

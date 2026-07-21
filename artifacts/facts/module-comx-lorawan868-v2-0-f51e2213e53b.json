@@ -1,0 +1,388 @@
+{
+  "schema_version": 1,
+  "generator": "schematic_describer",
+  "product": {
+    "product_id": "module-comx-lorawan868-v2-0-f51e2213e53b",
+    "product_name": "Module COMX LoRaWAN868 v2.0",
+    "sku": "M031-C4",
+    "source_path": "module/comx_lorawan868_2.0.md",
+    "source_sha256": "be7dccfcb8d21ba901a76b0512f4030b170a5f48314bf6f6db15b5229cbeb51e",
+    "input_sha256": "b0b200718845e6b61b7f4ed191e23c5132374e99bedab6e6df1f4347ff8049a6"
+  },
+  "schematic_assets": [
+    {
+      "sha256": "d7f894f440e4225d10edda7b5421551a1d31e44e388ebd935600b3839b780753",
+      "source_url": "https://static-cdn.m5stack.com/resource/docs/products/module/comx_lorawan868_2.0/comx_lorawan868_2.0_sch_01.webp",
+      "pages": [1]
+    }
+  ],
+  "summary": "Module COMX LoRaWAN868 v2.0 当前唯一原理图资源展示 COMX 通用插接底板：J1 DC 输入经 U7 JW5033H 生成 +5.4V，S1 选择 +12V 或 +5.4V 送往 P1；J2 M5Stack_BUS 通过 S2 为 RXD/TXD 选择 GPIO，通过 S3、U1 MIC 与 Q1 连接核心板控制和音频端子。页面没有展开 ASR6501 LoRaWAN 核心小板、868MHz 射频链路或 SMA 天线，因此 v2.0 的芯片、协议版本、灵敏度与发射功率仍需核心板资料确认。",
+  "keywords": [
+    "Module COMX LoRaWAN868 v2.0",
+    "M031-C4",
+    "COMX LoRaWAN868 2.0",
+    "COMX baseboard",
+    "ASR6501",
+    "LoRaWAN",
+    "LoRaWAN v1.0.1",
+    "868MHz",
+    "-137dBm",
+    "+21dBm",
+    "SMA antenna",
+    "UART 115200bps",
+    "AT commands",
+    "JW5033H",
+    "+12V",
+    "+5.4V",
+    "+3.3V",
+    "M5Stack_BUS",
+    "PWR2.5",
+    "SW-SPDT",
+    "SW DIP-6",
+    "RXD",
+    "TXD",
+    "G17",
+    "G0",
+    "G13",
+    "G16",
+    "G5",
+    "G15",
+    "G25",
+    "G26",
+    "MIC",
+    "O+",
+    "IN+",
+    "SS8550 Y2",
+    "SS54"
+  ],
+  "components": [
+    {
+      "reference": "U7",
+      "part_number": "JW5033H",
+      "role": "+12V 至 +5.4V 的降压转换器",
+      "evidence": [{"asset_sha256": "d7f894f440e4225d10edda7b5421551a1d31e44e388ebd935600b3839b780753", "page": 1, "locator": "左上 U7 JW5033H pins 1-6，连接 +12V、C1、L1、R1-R3 与 +5.4V"}]
+    },
+    {
+      "reference": "J1/S1",
+      "part_number": "PWR2.5 / SW-SPDT",
+      "role": "DC 电源入口及 +12V/+5.4V 到 P1 的电源选择",
+      "evidence": [{"asset_sha256": "d7f894f440e4225d10edda7b5421551a1d31e44e388ebd935600b3839b780753", "page": 1, "locator": "左中 J1 PWR2.5、S1 SW-SPDT、+12V、+5.4V 与 P1"}]
+    },
+    {
+      "reference": "J2",
+      "part_number": "M5Stack_BUS",
+      "role": "30 针主机总线，提供 GND、3.3V、5V、EN、GPIO 与 UART 候选网络",
+      "evidence": [{"asset_sha256": "d7f894f440e4225d10edda7b5421551a1d31e44e388ebd935600b3839b780753", "page": 1, "locator": "右下 J2 M5Stack_BUS pins 1-30"}]
+    },
+    {
+      "reference": "S2",
+      "part_number": "SW DIP-6",
+      "role": "从三组 M5-Bus GPIO 对中选择 RXD/TXD",
+      "evidence": [{"asset_sha256": "d7f894f440e4225d10edda7b5421551a1d31e44e388ebd935600b3839b780753", "page": 1, "locator": "右下 S2 SW DIP-6，G17/G0/G13 到 RXD，G16/G5/G15 到 TXD"}]
+    },
+    {
+      "reference": "S3",
+      "part_number": "SW DIP-6",
+      "role": "EN、MIC、G25、G26 与核心板控制/音频网络的选择路由",
+      "evidence": [{"asset_sha256": "d7f894f440e4225d10edda7b5421551a1d31e44e388ebd935600b3839b780753", "page": 1, "locator": "下中 S3 SW DIP-6 pins 1-12，连接 EN、MIC、G25、G26、O+、IN+ 与 Q1 偏置节点"}]
+    },
+    {
+      "reference": "Q1",
+      "part_number": "SS8550 Y2",
+      "role": "由 S3/EN 控制 P3 pin3 的 3.3V 高侧驱动",
+      "evidence": [{"asset_sha256": "d7f894f440e4225d10edda7b5421551a1d31e44e388ebd935600b3839b780753", "page": 1, "locator": "下中 Q1 SS8550 Y2、R4 4.7KΩ、R5 1KΩ、R6 4.7KΩ 与 P3/S3"}]
+    },
+    {
+      "reference": "U1",
+      "part_number": "MIC",
+      "role": "板载麦克风，正端连接 MIC 选择网络，负端接地",
+      "evidence": [{"asset_sha256": "d7f894f440e4225d10edda7b5421551a1d31e44e388ebd935600b3839b780753", "page": 1, "locator": "下中 U1 MIC，正端到 S3 pin2/MIC，负端到 GND"}]
+    },
+    {
+      "reference": "P1-P5",
+      "part_number": "2p / 2p / 3p / 2p / 4p",
+      "role": "连接核心小板的电源、控制、UART 与音频端子组",
+      "evidence": [{"asset_sha256": "d7f894f440e4225d10edda7b5421551a1d31e44e388ebd935600b3839b780753", "page": 1, "locator": "左中至左下 P1 2p、P2 2p、P3 3p、P4 2p、P5 4p"}]
+    },
+    {
+      "reference": "D1/D2",
+      "part_number": "SS54",
+      "role": "以相反方向连接 M5-Bus +5V 与底板 +5.4V 电源轨",
+      "evidence": [{"asset_sha256": "d7f894f440e4225d10edda7b5421551a1d31e44e388ebd935600b3839b780753", "page": 1, "locator": "右下 D1/D2 SS54，位于 J2 pin28 +5V 与 +5.4V 之间"}]
+    }
+  ],
+  "facts": [
+    {
+      "id": "system.baseboard-architecture",
+      "category": "system",
+      "subject": "COMX LoRaWAN868 v2.0 插接底板架构",
+      "statement": "本页由 DC 输入与 +5.4V 降压、P1-P5 核心板端子、J2 M5Stack_BUS、S2 UART 选择、S3 控制/音频选择、U1 MIC 和 Q1 控制驱动组成。",
+      "confidence": "confirmed",
+      "attributes": {"dc_input": "J1 PWR2.5", "buck": "U7 JW5033H", "module_connectors": "P1-P5", "host_bus": "J2 M5Stack_BUS", "uart_selector": "S2", "control_audio_selector": "S3", "microphone": "U1 MIC"},
+      "evidence": [{"asset_sha256": "d7f894f440e4225d10edda7b5421551a1d31e44e388ebd935600b3839b780753", "page": 1, "locator": "整页：U7/J1/S1/P1-P5/Q1/U1/S2/S3/J2/D1/D2"}]
+    },
+    {
+      "id": "system.resource-scope",
+      "category": "system",
+      "subject": "原理图资源覆盖范围",
+      "statement": "当前唯一资源覆盖 COMX 通用插接底板，不包含 ASR6501 LoRaWAN 核心小板内部电路；页面未画 ASR6501、868MHz 射频链路或天线接口。",
+      "confidence": "confirmed",
+      "attributes": {"visible_scope": "COMX plug-in baseboard", "core_module_visible": false, "asr6501_visible": false, "rf_visible": false, "antenna_connector_visible": false},
+      "evidence": [{"asset_sha256": "d7f894f440e4225d10edda7b5421551a1d31e44e388ebd935600b3839b780753", "page": 1, "locator": "整页仅底板电源、接口、拨码、MIC 与 M5Stack_BUS，无 LoRaWAN 核心电路"}]
+    },
+    {
+      "id": "power.jw5033-buck",
+      "category": "power",
+      "subject": "U7 +12V 至 +5.4V 降压",
+      "statement": "U7 JW5033H 的 VIN/pin3 接 +12V，EN/pin5 经 R1 100KΩ 接 +12V，SW/pin2 经 L1 4.7uH 输出 +5.4V，BST/pin6 经 C1 100nF 连接 SW 节点，GND/pin1 接地。",
+      "confidence": "confirmed",
+      "attributes": {"converter": "U7 JW5033H", "input": "+12V", "enable": "R1 100KΩ to +12V", "inductor": "L1 4.7uH", "output": "+5.4V", "bootstrap": "C1 100nF between BST and SW"},
+      "evidence": [{"asset_sha256": "d7f894f440e4225d10edda7b5421551a1d31e44e388ebd935600b3839b780753", "page": 1, "locator": "左上 +12V、U7 JW5033H、R1、C1、L1 与 +5.4V"}]
+    },
+    {
+      "id": "power.feedback-filtering",
+      "category": "power",
+      "subject": "U7 反馈与电源滤波",
+      "statement": "R2 115KΩ 从 +5.4V 接到 U7 FB/pin4，R3 20KΩ 从 FB 接地；C2/C3 各 10uF 接在 +12V 与 GND 之间，C32/C33 各 22uF、C4 100nF、C5 33pF 接在 +5.4V 与 GND 之间，C6 220uF 接在 +12V 与 GND 之间。",
+      "confidence": "confirmed",
+      "attributes": {"feedback_upper": "R2 115KΩ", "feedback_lower": "R3 20KΩ", "input_filter": "C2 10uF; C3 10uF; C6 220uF", "output_filter": "C32 22uF; C33 22uF; C4 100nF; C5 33pF"},
+      "evidence": [{"asset_sha256": "d7f894f440e4225d10edda7b5421551a1d31e44e388ebd935600b3839b780753", "page": 1, "locator": "左上 U7 FB/R2/R3 与 C2/C3/C32/C33/C4/C5；左中 C6 220uF"}]
+    },
+    {
+      "id": "power.dc-source-selection",
+      "category": "power",
+      "subject": "J1、S1 与 P1 电源选择",
+      "statement": "J1 PWR2.5 建立 +12V 与 GND；S1 SW-SPDT 的 pin3 接 +12V、pin1 接 +5.4V、公共 pin2 同时连接 P1 pins1/2，因此 P1 两针接收 S1 选中的电源轨。P2 两针均标为未连接。",
+      "confidence": "confirmed",
+      "attributes": {"input_connector": "J1 PWR2.5", "selector": "S1 SW-SPDT", "source_a": "pin3 +12V", "source_b": "pin1 +5.4V", "common": "pin2 -> P1 pins1/2", "unused_connector": "P2 pins1/2 NC"},
+      "evidence": [{"asset_sha256": "d7f894f440e4225d10edda7b5421551a1d31e44e388ebd935600b3839b780753", "page": 1, "locator": "左中 J1、S1、P1、P2 与 +12V/+5.4V/GND"}]
+    },
+    {
+      "id": "power.m5bus-rail-coupling",
+      "category": "power",
+      "subject": "M5-Bus +5V 与 +5.4V 连接",
+      "statement": "J2 pin28 的 +5V 与底板 +5.4V 之间并联 D1、D2 两只 SS54，两个二极管方向相反。",
+      "confidence": "confirmed",
+      "attributes": {"m5bus_pin": "J2 pin28/+5V", "baseboard_rail": "+5.4V", "diodes": "D1 SS54; D2 SS54", "orientation": "opposite directions"},
+      "evidence": [{"asset_sha256": "d7f894f440e4225d10edda7b5421551a1d31e44e388ebd935600b3839b780753", "page": 1, "locator": "右下 J2 pin28 +5V、D1/D2 SS54 与 +5.4V"}]
+    },
+    {
+      "id": "power.m5bus-3v3",
+      "category": "power",
+      "subject": "底板 +3.3V 来源",
+      "statement": "J2 pin12 连接 +3.3V，Q1 发射极与 R4 上端使用该 +3.3V；本页未画从 +12V 或 +5.4V 生成 +3.3V 的本地稳压器。",
+      "confidence": "confirmed",
+      "attributes": {"m5bus_pin": "J2 pin12/+3.3V", "consumers": "Q1 emitter; R4", "local_3v3_regulator_visible": false},
+      "evidence": [{"asset_sha256": "d7f894f440e4225d10edda7b5421551a1d31e44e388ebd935600b3839b780753", "page": 1, "locator": "J2 pin12 +3.3V 与 Q1/R4 +3.3V 网络；整页无 3.3V 稳压器"}]
+    },
+    {
+      "id": "interface.m5bus-used-pins",
+      "category": "interface",
+      "subject": "J2 M5Stack_BUS 已连接针脚",
+      "statement": "J2 pins1/3/5 接 GND，pin6 接 EN，pin8 接 G25，pin10 接 G26，pin12 接 +3.3V，pin15 接 G16，pin16 接 G17，pin20 接 G5，pin22 接 G13，pin23 接 G15，pin24 接 G0，pin28 接 +5V；其余针脚在本页无外部连线。",
+      "confidence": "confirmed",
+      "attributes": {"ground": "pins1/3/5", "enable": "pin6 EN", "gpio": "pin8 G25; pin10 G26; pin15 G16; pin16 G17; pin20 G5; pin22 G13; pin23 G15; pin24 G0", "power": "pin12 +3.3V; pin28 +5V"},
+      "evidence": [{"asset_sha256": "d7f894f440e4225d10edda7b5421551a1d31e44e388ebd935600b3839b780753", "page": 1, "locator": "右下 J2 M5Stack_BUS pins1-30 与外部网络连线"}]
+    },
+    {
+      "id": "interface.uart-selector",
+      "category": "interface",
+      "subject": "S2 UART GPIO 选择",
+      "statement": "S2 的前三路分别把 G17、G0、G13 连接到 RXD 公共网络，后三路分别把 G16、G5、G15 连接到 TXD 公共网络。",
+      "confidence": "confirmed",
+      "attributes": {"rx_options": "switch1 G17; switch2 G0; switch3 G13", "tx_options": "switch4 G16; switch5 G5; switch6 G15", "rx_net": "RXD", "tx_net": "TXD"},
+      "evidence": [{"asset_sha256": "d7f894f440e4225d10edda7b5421551a1d31e44e388ebd935600b3839b780753", "page": 1, "locator": "右下 S2 pins7-12 为 G17/G0/G13/G16/G5/G15，pins6-4 汇入 RXD，pins3-1 汇入 TXD"}]
+    },
+    {
+      "id": "interface.core-connectors",
+      "category": "interface",
+      "subject": "P1-P5 底板端子映射",
+      "statement": "P1 pins1/2 同接 S1 公共电源；P2 pins1/2 未连接；P3 pin1 未连接、pin2 接 GND、pin3 接 Q1/R6 控制节点；P4 pin1 接 RXD、pin2 接 TXD；P5 pin1 接 O+、pin2 未连接、pin3 接 IN+、pin4 接 GND。",
+      "confidence": "confirmed",
+      "attributes": {"P1": "pins1/2 selected supply", "P2": "pins1/2 NC", "P3": "pin1 NC; pin2 GND; pin3 control", "P4": "pin1 RXD; pin2 TXD", "P5": "pin1 O+; pin2 NC; pin3 IN+; pin4 GND"},
+      "evidence": [{"asset_sha256": "d7f894f440e4225d10edda7b5421551a1d31e44e388ebd935600b3839b780753", "page": 1, "locator": "左中至左下 P1-P5 各针脚与网络/未连接标记"}]
+    },
+    {
+      "id": "interface.uart-path",
+      "category": "interface",
+      "subject": "M5-Bus 到 P4 UART 路径",
+      "statement": "S2 选择后的 RXD 与 TXD 公共网络分别连接 P4 pin1 与 pin2，构成 J2 候选 GPIO 到核心板 UART 端子的底板路径。",
+      "confidence": "confirmed",
+      "attributes": {"host_side": "J2 GPIO via S2", "rx_destination": "P4 pin1/RXD", "tx_destination": "P4 pin2/TXD"},
+      "evidence": [{"asset_sha256": "d7f894f440e4225d10edda7b5421551a1d31e44e388ebd935600b3839b780753", "page": 1, "locator": "S2 RXD/TXD 网络标签与左下 P4 pin1 RXD、pin2 TXD"}]
+    },
+    {
+      "id": "gpio.enable-driver",
+      "category": "gpio",
+      "subject": "EN 到 P3 控制驱动",
+      "statement": "Q1 SS8550 Y2 发射极接 +3.3V，基极经 R5 1KΩ 接到由 R4 4.7KΩ 上拉的 S3 pin12 节点，集电极连接 P3 pin3，并由 R6 4.7KΩ 下拉到 GND；S3 第一路可把 J2 EN 接到该基极偏置节点。",
+      "confidence": "confirmed",
+      "attributes": {"transistor": "Q1 SS8550 Y2", "emitter": "+3.3V", "base": "R5 1KΩ to R4 4.7KΩ/S3 pin12", "collector": "P3 pin3 with R6 4.7KΩ to GND", "control": "J2 pin6 EN via S3 switch1"},
+      "evidence": [{"asset_sha256": "d7f894f440e4225d10edda7b5421551a1d31e44e388ebd935600b3839b780753", "page": 1, "locator": "下中 Q1/R4/R5/R6/P3 与 S3 pins1/12、EN"}]
+    },
+    {
+      "id": "audio.microphone-routing",
+      "category": "audio",
+      "subject": "U1 MIC 与 S3 音频/GPIO 路由",
+      "statement": "U1 MIC 正端连接 MIC 并进入 S3 pin2，负端接 GND；S3 switch2 将 MIC 接到 IN+，switch3/4 分别将 G25 接到 O+/IN+，switch5/6 分别将 G26 接到 O+/IN+；O+ 与 IN+ 分别到 P5 pin1 与 pin3。",
+      "confidence": "confirmed",
+      "attributes": {"microphone": "U1 MIC", "microphone_route": "MIC -> S3 switch2 -> IN+", "gpio25_routes": "S3 switch3 -> O+; switch4 -> IN+", "gpio26_routes": "S3 switch5 -> O+; switch6 -> IN+", "module_audio_connector": "P5 pin1 O+; pin3 IN+; pin4 GND"},
+      "evidence": [{"asset_sha256": "d7f894f440e4225d10edda7b5421551a1d31e44e388ebd935600b3839b780753", "page": 1, "locator": "下中 U1 MIC、S3 pins2-11、G25/G26、O+/IN+ 与左下 P5"}]
+    },
+    {
+      "id": "protection.baseboard-visibility",
+      "category": "protection",
+      "subject": "底板输入与接口保护可见性",
+      "statement": "本页未绘制 J1 输入保险丝、TVS、反接保护或浪涌抑制器，P1-P5 与 UART/音频信号也未显示专用 ESD 器件。",
+      "confidence": "confirmed",
+      "attributes": {"input_fuse_visible": false, "input_tvs_visible": false, "reverse_protection_visible": false, "signal_esd_visible": false},
+      "evidence": [{"asset_sha256": "d7f894f440e4225d10edda7b5421551a1d31e44e388ebd935600b3839b780753", "page": 1, "locator": "J1、P1-P5、S2/S3 与 J2 外围；未见保险丝、TVS、反接或 ESD 位号"}]
+    },
+    {
+      "id": "system.complete-core-interconnect",
+      "category": "system",
+      "subject": "底板到 ASR6501 核心小板的完整互连",
+      "statement": "底板页只给出 P1-P5 的底板侧网络，未提供 v2.0 核心小板配对端、连接器定义或 ASR6501 引脚，因此不能确认选定电源、P3 控制、RXD/TXD、O+ 和 IN+ 在核心小板上的最终去向。",
+      "confidence": "uncertain",
+      "attributes": {"baseboard_connectors": "P1-P5", "core_mating_connectors_visible": false, "asr6501_pin_mapping_visible": false},
+      "evidence": [{"asset_sha256": "d7f894f440e4225d10edda7b5421551a1d31e44e388ebd935600b3839b780753", "page": 1, "locator": "P1-P5 仅显示底板侧网络，页面无配对核心板或 ASR6501"}]
+    },
+    {
+      "id": "component.documented-asr6501",
+      "category": "component",
+      "subject": "ASR6501 通信方案",
+      "statement": "v2.0 产品正文记载通信芯片/方案为 ASR6501，但当前底板原理图未出现 ASR6501 位号、封装、引脚、供电、时钟、复位或内部射频连接。",
+      "confidence": "uncertain",
+      "attributes": {"documented_chip": "ASR6501", "schematic_reference": null, "core_board_visible": false},
+      "evidence": [{"asset_sha256": "d7f894f440e4225d10edda7b5421551a1d31e44e388ebd935600b3839b780753", "page": 1, "locator": "整页无 ASR6501 器件方框、位号或引脚"}]
+    },
+    {
+      "id": "power.documented-dc-range",
+      "category": "power",
+      "subject": "DC 输入范围",
+      "statement": "v2.0 产品正文给出外部 DC 输入 5-12V，但原理图将 J1 输入网络标为 +12V，没有标注允许的最小值、最大值、容差或降额条件。",
+      "confidence": "uncertain",
+      "attributes": {"documented_input_range": "5-12V", "schematic_input_label": "+12V", "absolute_max_visible": false},
+      "evidence": [{"asset_sha256": "d7f894f440e4225d10edda7b5421551a1d31e44e388ebd935600b3839b780753", "page": 1, "locator": "J1 PWR2.5 与 U7 输入只标 +12V"}]
+    },
+    {
+      "id": "interface.documented-uart-at",
+      "category": "interface",
+      "subject": "UART 115200bps 与 AT 指令",
+      "statement": "v2.0 产品正文给出 UART 115200bps 并使用 AT 指令集控制；原理图确认底板 RXD/TXD 选择路径，但未标波特率、帧格式、逻辑电平、流控方式或核心板固件版本。",
+      "confidence": "uncertain",
+      "attributes": {"documented_baud": 115200, "documented_protocol": "AT commands", "frame_format": null, "uart_logic_level": null, "firmware_version": null},
+      "evidence": [{"asset_sha256": "d7f894f440e4225d10edda7b5421551a1d31e44e388ebd935600b3839b780753", "page": 1, "locator": "S2/P4 RXD/TXD 路径未标速率、格式、电平或固件"}]
+    },
+    {
+      "id": "rf.documented-lorawan-performance",
+      "category": "rf",
+      "subject": "868MHz LoRaWAN 性能",
+      "statement": "v2.0 产品正文记载 868MHz、LoRaWAN v1.0.1、最小接收灵敏度 -137dBm（SF=12、BW=125KHz）和最大发射功率 +21dBm；底板页没有 ASR6501、射频匹配、滤波、功放、收发切换或测试条件。",
+      "confidence": "uncertain",
+      "attributes": {"documented_frequency": "868MHz", "documented_lorawan_version": "v1.0.1", "documented_sensitivity": "-137dBm at SF=12/BW=125KHz", "documented_max_tx_power": "+21dBm", "rf_path_visible": false},
+      "evidence": [{"asset_sha256": "d7f894f440e4225d10edda7b5421551a1d31e44e388ebd935600b3839b780753", "page": 1, "locator": "整页无 ASR6501、868MHz RF 网络或性能参数"}]
+    },
+    {
+      "id": "rf.documented-sma-antenna",
+      "category": "rf",
+      "subject": "SMA 外置天线",
+      "statement": "v2.0 产品正文和包装内容记载 SMA 天线，但底板原理图未显示 SMA、IPEX、天线匹配、射频馈线或射频 ESD 器件。",
+      "confidence": "uncertain",
+      "attributes": {"documented_antenna": "SMA", "antenna_connector_visible": false, "matching_network_visible": false, "rf_esd_visible": false},
+      "evidence": [{"asset_sha256": "d7f894f440e4225d10edda7b5421551a1d31e44e388ebd935600b3839b780753", "page": 1, "locator": "整页无 SMA/IPEX/ANT 网络、匹配或射频 ESD"}]
+    },
+    {
+      "id": "other.documented-region-support",
+      "category": "other",
+      "subject": "868MHz 国家与地区适用性",
+      "statement": "v2.0 产品正文列出一组 868MHz 支持国家和地区，但底板原理图没有区域配置、认证编号、发射参数限制或法规证据，不能据此确认当前量产硬件在各地区的合规适用性。",
+      "confidence": "uncertain",
+      "attributes": {"documented_region": "868MHz countries and regions list", "regional_configuration_visible": false, "certification_visible": false},
+      "evidence": [{"asset_sha256": "d7f894f440e4225d10edda7b5421551a1d31e44e388ebd935600b3839b780753", "page": 1, "locator": "底板页无区域配置、认证编号或法规参数"}]
+    },
+    {
+      "id": "other.documented-mechanics",
+      "category": "other",
+      "subject": "v2.0 尺寸与重量",
+      "statement": "v2.0 产品正文列出产品尺寸 54.2 x 54.2 x 13.2mm、产品重量 27.4g、毛重 70.4g 和包装尺寸 165 x 60 x 36mm；当前电气原理图未包含这些机械参数。",
+      "confidence": "uncertain",
+      "attributes": {"documented_product_size": "54.2 x 54.2 x 13.2mm", "documented_product_weight": "27.4g", "documented_gross_weight": "70.4g", "documented_package_size": "165 x 60 x 36mm"},
+      "evidence": [{"asset_sha256": "d7f894f440e4225d10edda7b5421551a1d31e44e388ebd935600b3839b780753", "page": 1, "locator": "电气原理图整页未标机械尺寸或重量"}]
+    },
+    {
+      "id": "other.revision-applicability",
+      "category": "other",
+      "subject": "M031-C4 v2.0 图纸适用范围",
+      "statement": "当前资源页没有打印 M031-C4、v2.0、PCB 版本、BOM 版本或 ASR6501 核心板标识，因此该通用底板页与 v2.0 量产底板/核心板版本的对应关系仍需版本化设计资料确认。",
+      "confidence": "uncertain",
+      "attributes": {"product_sku": "M031-C4", "product_version": "v2.0", "sku_printed_on_schematic": false, "pcb_revision_visible": false, "bom_revision_visible": false},
+      "evidence": [{"asset_sha256": "d7f894f440e4225d10edda7b5421551a1d31e44e388ebd935600b3839b780753", "page": 1, "locator": "整页通用底板电路，无 M031-C4/v2.0/PCB/BOM 版本标识"}]
+    }
+  ],
+  "needs_review": [
+    {
+      "id": "review.complete-core-interconnect",
+      "fact_id": "system.complete-core-interconnect",
+      "question": "请提供 M031-C4 v2.0 核心小板原理图或配对连接器定义，确认 P1-P5 到 ASR6501 电源、控制、UART 与辅助端子的完整映射。",
+      "reason": "当前资源只覆盖 COMX 通用底板，核心小板配对端与 ASR6501 引脚均未显示。",
+      "evidence": [{"asset_sha256": "d7f894f440e4225d10edda7b5421551a1d31e44e388ebd935600b3839b780753", "page": 1, "locator": "P1-P5 底板端子与整页缺失的核心小板"}]
+    },
+    {
+      "id": "review.asr6501",
+      "fact_id": "component.documented-asr6501",
+      "question": "请用 M031-C4 量产 BOM、核心小板原理图和器件标识确认 ASR6501 的完整料号、封装与外围连接。",
+      "reason": "底板原理图没有 ASR6501 位号或核心小板电路。",
+      "evidence": [{"asset_sha256": "d7f894f440e4225d10edda7b5421551a1d31e44e388ebd935600b3839b780753", "page": 1, "locator": "整页无 ASR6501 器件"}]
+    },
+    {
+      "id": "review.dc-input-range",
+      "fact_id": "power.documented-dc-range",
+      "question": "请用 JW5033H 设计计算、输入器件额定值和量产测试确认 M031-C4 J1 的正式 5-12V 输入范围及容差。",
+      "reason": "原理图网络只标 +12V，没有给出范围或保护边界。",
+      "evidence": [{"asset_sha256": "d7f894f440e4225d10edda7b5421551a1d31e44e388ebd935600b3839b780753", "page": 1, "locator": "J1 PWR2.5、+12V 与 U7 输入"}]
+    },
+    {
+      "id": "review.uart-at",
+      "fact_id": "interface.documented-uart-at",
+      "question": "请用 v2.0 核心板电平电路、固件和 AT 手册确认 UART 115200bps、帧格式、逻辑电平与流控配置。",
+      "reason": "底板原理图只确认 RXD/TXD 的 GPIO 选择和端子路径。",
+      "evidence": [{"asset_sha256": "d7f894f440e4225d10edda7b5421551a1d31e44e388ebd935600b3839b780753", "page": 1, "locator": "S2、P4 与 RXD/TXD 网络"}]
+    },
+    {
+      "id": "review.lorawan-performance",
+      "fact_id": "rf.documented-lorawan-performance",
+      "question": "请用 M031-C4 核心板原理图、ASR6501 资料和量产射频测试确认 868MHz、LoRaWAN v1.0.1、-137dBm 与 +21dBm 的适用条件。",
+      "reason": "底板页没有 LoRaWAN 核心芯片、射频链路或性能测试条件。",
+      "evidence": [{"asset_sha256": "d7f894f440e4225d10edda7b5421551a1d31e44e388ebd935600b3839b780753", "page": 1, "locator": "整页无 ASR6501、868MHz RF 网络或性能参数"}]
+    },
+    {
+      "id": "review.sma-antenna",
+      "fact_id": "rf.documented-sma-antenna",
+      "question": "请用 v2.0 核心板射频原理图、BOM 和天线规格书确认 SMA 接口、匹配、阻抗与 ESD 保护。",
+      "reason": "当前底板页没有任何天线或射频网络。",
+      "evidence": [{"asset_sha256": "d7f894f440e4225d10edda7b5421551a1d31e44e388ebd935600b3839b780753", "page": 1, "locator": "整页无 SMA/IPEX/ANT 网络"}]
+    },
+    {
+      "id": "review.region-support",
+      "fact_id": "other.documented-region-support",
+      "question": "请用最新 LoRaWAN 区域参数、当地法规和 M031-C4 认证资料复核正文国家/地区列表。",
+      "reason": "电气原理图不能证明区域法规适用性或认证状态。",
+      "evidence": [{"asset_sha256": "d7f894f440e4225d10edda7b5421551a1d31e44e388ebd935600b3839b780753", "page": 1, "locator": "底板页无区域配置或认证信息"}]
+    },
+    {
+      "id": "review.mechanics",
+      "fact_id": "other.documented-mechanics",
+      "question": "请用 v2.0 正式尺寸图、称重记录和包装规范复核 M031-C4 的尺寸与重量。",
+      "reason": "当前证据为电气原理图，不包含机械规格。",
+      "evidence": [{"asset_sha256": "d7f894f440e4225d10edda7b5421551a1d31e44e388ebd935600b3839b780753", "page": 1, "locator": "电气原理图整页"}]
+    },
+    {
+      "id": "review.revision-applicability",
+      "fact_id": "other.revision-applicability",
+      "question": "请用版本化原理图、PCB 文件、BOM 或工程变更记录确认当前通用底板页对应的 M031-C4 v2.0 硬件版本。",
+      "reason": "资源页没有 SKU、v2.0、PCB 或 BOM 版本标识，不能与旧版 868 产品混用。",
+      "evidence": [{"asset_sha256": "d7f894f440e4225d10edda7b5421551a1d31e44e388ebd935600b3839b780753", "page": 1, "locator": "整页无 M031-C4/v2.0/PCB/BOM 版本标识"}]
+    }
+  ]
+}

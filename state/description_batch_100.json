@@ -1,0 +1,914 @@
+{
+  "batch_id": "schematic-rich-100-2026-07-17",
+  "created_at": "2026-07-17T04:05:50+00:00",
+  "manifest_sha256": "1c293a2e1e3ec4ccfc7856509eaddee9069508cb1c3450361126b0b6c054d78a",
+  "policy": {
+    "lease_ttl_minutes": 180,
+    "selection": "missing facts; existing published Markdown first; manifest order",
+    "status_source": "derive from assets, facts, Markdown, and per-product report"
+  },
+  "products": [
+    {
+      "input_sha256": "aa14ca701078e1d51c81f8e18e43e8c4673899d7fa856384cf75281a9b660288",
+      "ordinal": 1,
+      "output_filename": "Atomic ToChain Base.md",
+      "product_id": "atomic-tochain-base-30a3334c64cf",
+      "product_name": "Atomic ToChain Base",
+      "source_path": "accessory/Atomic_ToChain_Base.md",
+      "source_sha256": "ecc8a38b52850b2e90631b4179a2829ed100e56a0b07147d1a4700d65e8c9bca"
+    },
+    {
+      "input_sha256": "c7d69c906f75737799a4bf13b65afde3ad1c2cc508c83a6e67a6a838fe077bd2",
+      "ordinal": 2,
+      "output_filename": "Atomic ToUnit Base.md",
+      "product_id": "atomic-tounit-base-6dd534d15886",
+      "product_name": "Atomic ToUnit Base",
+      "source_path": "accessory/Atomic_ToUnit_Base.md",
+      "source_sha256": "e3b405aec1fc1db42643c4f1fdebd6cf4a7ce06d7eadea25aa1ffcfc8b291fc9"
+    },
+    {
+      "input_sha256": "bc6582aad36f7e46b252979e53570824356a6468dd1c889fb5934670d1fb1afa",
+      "ordinal": 3,
+      "output_filename": "CamModule SC850SL.md",
+      "product_id": "cammodule-sc850sl-002eb6b0807b",
+      "product_name": "CamModule SC850SL",
+      "source_path": "accessory/CamModule_SC850SL.md",
+      "source_sha256": "6aa8b7bc96b668b6294e74790a2728badfa484299704987255af99428e5fa491"
+    },
+    {
+      "input_sha256": "427d8dcea6de1417e6473f06b626ec4b5aecb79f15f17bffacaaaf1b134b03e6",
+      "ordinal": 4,
+      "output_filename": "Chain Bridge.md",
+      "product_id": "chain-bridge-989d2a56d4ae",
+      "product_name": "Chain Bridge",
+      "source_path": "accessory/converter/Chain_Bridge.md",
+      "source_sha256": "3b9c7eb695c70f47952a1c7481ed96a2a7b40c952bf13c1c1d741af779dff912"
+    },
+    {
+      "input_sha256": "56a347025a46e55eaeb953fc02117224f0086cdb84b114f7b31ee1eaea5cc1db",
+      "ordinal": 5,
+      "output_filename": "Chain Return.md",
+      "product_id": "chain-return-0ee11469fa7b",
+      "product_name": "Chain Return",
+      "source_path": "accessory/converter/Chain_Return.md",
+      "source_sha256": "24996ec5dab0541c596077e1a995635f12d8b099347dda3544074f08505768b6"
+    },
+    {
+      "input_sha256": "6030e65c0cc711d5b0a815d63123badf950ca56a4e4db086615410bbf182679e",
+      "ordinal": 6,
+      "output_filename": "ESP32 Downloader Kit.md",
+      "product_id": "esp32-downloader-kit-50ce8c1a6007",
+      "product_name": "ESP32 Downloader Kit",
+      "source_path": "accessory/esp32_downloader_kit.md",
+      "source_sha256": "7f811821f20ab49e0c2064ee6ba6b579c052d016d9395980d381fb6ea0f20ad9"
+    },
+    {
+      "input_sha256": "4218872c87c4fbe0249271de21c063d83624c92ac17fd9cd3a44109a72e10a75",
+      "ordinal": 7,
+      "output_filename": "Grove to USBC.md",
+      "product_id": "grove-to-usbc-a6f4ed3b21ac",
+      "product_name": "Grove to USBC",
+      "source_path": "accessory/Grove2USB-C.md",
+      "source_sha256": "5888417129a92e3cb95a4d138df16a145fb8f3f29160fe8dcbf84d380f6be499"
+    },
+    {
+      "input_sha256": "450501210c84269aa035377296ceaed5d64004c5cae6bcff6191f81c6a0039a6",
+      "ordinal": 8,
+      "output_filename": "Grove Converter.md",
+      "product_id": "grove-converter-2257c4feeecf",
+      "product_name": "Grove Converter",
+      "source_path": "accessory/Grove_Converter.md",
+      "source_sha256": "f557d589a4033f9d5eb86dcba2f68d869fa63c7c415657c7a490ce5e70bf01c2"
+    },
+    {
+      "input_sha256": "a0cb85636d32fba99ea384c121e86fc109f99c65ca51b528b3a151a09107dda7",
+      "ordinal": 9,
+      "output_filename": "StickC-Plus Watch Kit.md",
+      "product_id": "stickc-plus-watch-kit-cf5757c3c407",
+      "product_name": "StickC-Plus Watch Kit",
+      "source_path": "accessory/M5StickC Plus with Watch Accessories.md",
+      "source_sha256": "069049ea841eef1aa6644c7655d71b34dbecbd369ffd52a9616f72215cf211c1"
+    },
+    {
+      "input_sha256": "ee07ab858fce5b0890bfde85cbfc934b2ccad7a55e3248f5093d198b02dc939f",
+      "ordinal": 10,
+      "output_filename": "StickC-Plus2 Watch Kit.md",
+      "product_id": "stickc-plus2-watch-kit-32a0fef6022f",
+      "product_name": "StickC-Plus2 Watch Kit",
+      "source_path": "accessory/M5StickC Plus2 with Watch Accessories.md",
+      "source_sha256": "78443b632ada703102c7027f2f2532456c4d6e550a35d3a5fb8d4b51917069c8"
+    },
+    {
+      "input_sha256": "ea31d1c019888d523adbde605a107b512c55e3c7552f7247c3624c633e699352",
+      "ordinal": 11,
+      "output_filename": "Stamp-S3 GroveBreakOut.md",
+      "product_id": "stamp-s3-grovebreakout-1f94bdf41b56",
+      "product_name": "Stamp-S3 GroveBreakOut",
+      "source_path": "accessory/StampS3 GroveBreakOut.md",
+      "source_sha256": "cf4e94f7bff2dcf40b146f15ad5c4bff69be6fbad3ab83c1f5dd2ba0d91c2938"
+    },
+    {
+      "input_sha256": "c6706ba12651d52104c5152ecc6a3d421ae7ad773e0915e2690a470d8c9ba9ca",
+      "ordinal": 12,
+      "output_filename": "Atom JoyStick.md",
+      "product_id": "atom-joystick-edbf9d8d61f7",
+      "product_name": "Atom JoyStick",
+      "source_path": "app/Atom JoyStick.md",
+      "source_sha256": "077eea4882a938ec5a3d104c06f9248c9f8f097121cdbf0940ff04494f860acb"
+    },
+    {
+      "input_sha256": "19b836708ec29c118adfe4a2a0d9db5a0a6ecd12c47f2e62aa836fabf9867588",
+      "ordinal": 13,
+      "output_filename": "Bala2.md",
+      "product_id": "bala2-73d3062b8111",
+      "product_name": "Bala2",
+      "source_path": "app/bala2.md",
+      "source_sha256": "e88d07caa0ebce9c984eb7baabc6dd5eb0dea3336dfd92ac931677829ead8867"
+    },
+    {
+      "input_sha256": "7c5d65fe01ea95f0baa0e98c95b6f1485db7b0a65b1bbeb7ccf6fc13490aedf8",
+      "ordinal": 14,
+      "output_filename": "Bala2-Fire.md",
+      "product_id": "bala2-fire-a634eb077ea9",
+      "product_name": "Bala2-Fire",
+      "source_path": "app/bala2fire.md",
+      "source_sha256": "de9a42dc2bfbba2cd75e8c1d04b7e1b082cd5ef191b5a874fa19c1858f6dc584"
+    },
+    {
+      "input_sha256": "9709ab6d1f67a0f7ca30302649e40472df6e5480d30cf1dfd0bdc093d38514e2",
+      "ordinal": 15,
+      "output_filename": "BugC2.md",
+      "product_id": "bugc2-9d763b1973a6",
+      "product_name": "BugC2",
+      "source_path": "app/BUGC2.md",
+      "source_sha256": "4fce496285880f264b204d4e9d4065267ea27417205ef941532baedd261da7f2"
+    },
+    {
+      "input_sha256": "a9da5f158d1930b372c3c9eff518326d00ed378cf324d40445084eb9c2810bd3",
+      "ordinal": 16,
+      "output_filename": "PM2.5 Air Quality Kit-SHT30.md",
+      "product_id": "pm2-5-air-quality-kit-sht30-f8c045ee6b54",
+      "product_name": "PM2.5 Air Quality Kit-SHT30",
+      "source_path": "app/PM2.5_Air_Quality_Kit-SHT30.md",
+      "source_sha256": "49677df42d8d2bfc33f3049993bdc176e2e1372a2703b965b288f390a00e8086"
+    },
+    {
+      "input_sha256": "f588eb07f4ab6b3a775e5ced37d788ff66dacb0120c2969f2f568cce6f341187",
+      "ordinal": 17,
+      "output_filename": "Scales Kit.md",
+      "product_id": "scales-kit-1d6fff1475ba",
+      "product_name": "Scales Kit",
+      "source_path": "app/scales_kit.md",
+      "source_sha256": "ec4f5979711083766eb14aea40302187f284953b5226fc5b220404432ef78c4f"
+    },
+    {
+      "input_sha256": "f38110e9d1c16ab66548e9cd0256d5ba1873c2c97102716973e6fcdad6def66a",
+      "ordinal": 18,
+      "output_filename": "StampFly.md",
+      "product_id": "stampfly-156124ab77ad",
+      "product_name": "StampFly",
+      "source_path": "app/Stamp Fly.md",
+      "source_sha256": "57691597cc18b3417fe2fa25535b7834fad6f2af813df6b940753ac731014791"
+    },
+    {
+      "input_sha256": "49fb00d78074de6d63389b0982e6d1759f154ef4f3c837e88699ef7b6d0e5ceb",
+      "ordinal": 19,
+      "output_filename": "Atom DTU LoRaWAN-CN470.md",
+      "product_id": "atom-dtu-lorawan-cn470-98a5914f1c4e",
+      "product_name": "Atom DTU LoRaWAN-CN470",
+      "source_path": "atom/Atom DTU LoRaWAN-CN470.md",
+      "source_sha256": "0e7e9eb34840a86cf4c5679a54d11f6cc2cc6304a24732e0f119ed8ae87c282d"
+    },
+    {
+      "input_sha256": "9d5bd2365b67f92bf11e0d2f6d7f5da5f0b39d42f4adc3cd4d49b31d72a9495a",
+      "ordinal": 20,
+      "output_filename": "Atom DTU LoRaWAN-EU868.md",
+      "product_id": "atom-dtu-lorawan-eu868-a2ca17869da8",
+      "product_name": "Atom DTU LoRaWAN-EU868",
+      "source_path": "atom/Atom DTU LoRaWAN-EU868.md",
+      "source_sha256": "d28d22d6f4f66a0d0f50603d87b2eef8955a29994f826bd2d0a1f44fa6f8800f"
+    },
+    {
+      "input_sha256": "51fdc5894753ad622af7a258d8dc38a384282f326c63acddf035789fb45230e9",
+      "ordinal": 21,
+      "output_filename": "Atom DTU LoRaWAN-US915.md",
+      "product_id": "atom-dtu-lorawan-us915-b4f731cf691f",
+      "product_name": "Atom DTU LoRaWAN-US915",
+      "source_path": "atom/Atom DTU LoRaWAN-US915.md",
+      "source_sha256": "c91a8f84d546208a4010697530366b280554134661fa04e4994b610c7b49eb03"
+    },
+    {
+      "input_sha256": "3d739e7f7fec301f2d7e00c9cff26827f1d628058b3f60b96dc290c213a22292",
+      "ordinal": 22,
+      "output_filename": "Atom DTU NBIoT2.md",
+      "product_id": "atom-dtu-nbiot2-30888e04c136",
+      "product_name": "Atom DTU NBIoT2",
+      "source_path": "atom/Atom DTU_NB_IoT2.md",
+      "source_sha256": "49fe38a2de69a7d2279d23bdfd08f37a85f2e819e4a7a5ff06b071909e312f73"
+    },
+    {
+      "input_sha256": "251e9d9d0e03ec7e8aaa09028dd373dc186a3b046bc885eb02acf204c409ff50",
+      "ordinal": 23,
+      "output_filename": "Atom CAN.md",
+      "product_id": "atom-can-8022ccbcf601",
+      "product_name": "Atom CAN",
+      "source_path": "atom/atom_can.md",
+      "source_sha256": "df4d74a6a9bab9a7537ce049d4f46e773458234b1eabf5fe944344abd6bbc96f"
+    },
+    {
+      "input_sha256": "37aa9cbcd25feddd835dff2bfeeec56dd98e671301217ff21f4bc110a6cfa740",
+      "ordinal": 24,
+      "output_filename": "Atom Display.md",
+      "product_id": "atom-display-10d88169847b",
+      "product_name": "Atom Display",
+      "source_path": "atom/atom_display.md",
+      "source_sha256": "b893c8dc4886e48a7ee1d373e2b007704c8032e4ea7d6dbd70bcda99d34b92b3"
+    },
+    {
+      "input_sha256": "2b8c3918f2a1c13ccbae4fb4ffc9eb4f863ff64d3f63f43bdd14affe373c809e",
+      "ordinal": 25,
+      "output_filename": "Atom Display-Lite.md",
+      "product_id": "atom-display-lite-0734246aa8a5",
+      "product_name": "Atom Display-Lite",
+      "source_path": "atom/atom_display_lite.md",
+      "source_sha256": "107059a77ed22aa30a89ef0fdc914fd96782498e1fc28e4a785b8241ea1129ff"
+    },
+    {
+      "input_sha256": "7f6a91bcdeb76563e72ff616a351bbe03b0db02c6fae12466d1fd89fd843c3a9",
+      "ordinal": 26,
+      "output_filename": "Atom DTU Cat1.md",
+      "product_id": "atom-dtu-cat1-e0915fd91516",
+      "product_name": "Atom DTU Cat1",
+      "source_path": "atom/atom_dtu_cat1.md",
+      "source_sha256": "2cbba3a529822518872c21fec8ea6bf25e063d5af2f4317e7597f364d4d076d5"
+    },
+    {
+      "input_sha256": "2dfcbf9cd367b8ea27f334ab3f1154cbb42acfd797b993d39f554921a618ffca",
+      "ordinal": 27,
+      "output_filename": "Atom DTU LoRaWAN470.md",
+      "product_id": "atom-dtu-lorawan470-8e943f8cb5b9",
+      "product_name": "Atom DTU LoRaWAN470",
+      "source_path": "atom/atom_dtu_lorawan470.md",
+      "source_sha256": "df68d6652531ee17ea8a06db05e0518a9d75b2db55a41f34a5bfbabb2f6cadeb"
+    },
+    {
+      "input_sha256": "5dc30b1c59405a898b05230985ffa958c01d73034a56a282784388d0a3730c2c",
+      "ordinal": 28,
+      "output_filename": "Atom DTU LoRaWAN868.md",
+      "product_id": "atom-dtu-lorawan868-e296ebc8f834",
+      "product_name": "Atom DTU LoRaWAN868",
+      "source_path": "atom/atom_dtu_lorawan868.md",
+      "source_sha256": "94a24f7a1a0c5e61da6b0bbd8ad9a526a6b5bbfaa8a8d6d500fe956c5747327a"
+    },
+    {
+      "input_sha256": "9f67d8eb5ecc04f3d0b7369b09bc41844ae04b70fe1b4b34ebe6743325b59633",
+      "ordinal": 29,
+      "output_filename": "Atom DTU LoRaWAN915.md",
+      "product_id": "atom-dtu-lorawan915-a9d2804d7e36",
+      "product_name": "Atom DTU LoRaWAN915",
+      "source_path": "atom/atom_dtu_lorawan915.md",
+      "source_sha256": "637935afdd2d5f449cd260ebc37caca6ed4cbe4398410cdae923548a12f6f4bc"
+    },
+    {
+      "input_sha256": "b3099d9ae1a9a85603fbd15ce247826bf236f3f113b82682d6004e2db424bb53",
+      "ordinal": 30,
+      "output_filename": "Atom DTU NBIoT.md",
+      "product_id": "atom-dtu-nbiot-7c62c876adb9",
+      "product_name": "Atom DTU NBIoT",
+      "source_path": "atom/atom_dtu_nb.md",
+      "source_sha256": "900e536c0c0ab6799919c3fd8b37dde03fe7efde55cb7ae528077b5e5ec4b9ce"
+    },
+    {
+      "input_sha256": "3b98d49aa42cded6820757b159a20af07fff0a1005cf090177e579b7d02db39a",
+      "ordinal": 31,
+      "output_filename": "Atom DTU NBIoT-CN.md",
+      "product_id": "atom-dtu-nbiot-cn-761b536e6b99",
+      "product_name": "Atom DTU NBIoT-CN",
+      "source_path": "atom/atom_dtu_nb_cn.md",
+      "source_sha256": "9543ee9d9141865ba104b558e20ff769e98c3974f2cac2fdeaac07ecf520e08a"
+    },
+    {
+      "input_sha256": "feb42456c0b385364b44537163e710f579e7dea29103b4bfbc11de58aff34226",
+      "ordinal": 32,
+      "output_filename": "Atom HDriver.md",
+      "product_id": "atom-hdriver-e289df887408",
+      "product_name": "Atom HDriver",
+      "source_path": "atom/atom_hdriver.md",
+      "source_sha256": "6df146f3904895c90418a693ed5fcee0710e0b0db9c22be818f8ba014f907b2b"
+    },
+    {
+      "input_sha256": "ecb091c244a5d173a6f16a56133a6b2a1278ffdb989f9c595f6d3d14cbf25fc8",
+      "ordinal": 33,
+      "output_filename": "Atom Motion.md",
+      "product_id": "atom-motion-3e67d876f82b",
+      "product_name": "Atom Motion",
+      "source_path": "atom/atom_motion.md",
+      "source_sha256": "aa37f41926d678a3eb6ef15c0a885aad74898fb569be248466c49d1859b2100b"
+    },
+    {
+      "input_sha256": "29a7d891a7be75bac829b170c3820d1e8bce4927a60ded9bec729d43160d17b2",
+      "ordinal": 34,
+      "output_filename": "Atom PoE.md",
+      "product_id": "atom-poe-2ad697f37267",
+      "product_name": "Atom PoE",
+      "source_path": "atom/atom_poe.md",
+      "source_sha256": "01f753b19a50ac95be5f627299ff7a15a131b56f92e4f1571dc127c80ea72915"
+    },
+    {
+      "input_sha256": "0262a26a4f32d1cf68b87c9fd70e2526c5a4b1b9e523b7a9fdaaa4e7c39c06d9",
+      "ordinal": 35,
+      "output_filename": "Atom PWM.md",
+      "product_id": "atom-pwm-604957966ccb",
+      "product_name": "Atom PWM",
+      "source_path": "atom/atom_pwm.md",
+      "source_sha256": "82cd1477dad67bc8fd9d8862938985638a669adcbe77494a334a791d1c354799"
+    },
+    {
+      "input_sha256": "659e597ff996d0deed0f80d023fd175b626e52881e13b734aa48099761aeb171",
+      "ordinal": 36,
+      "output_filename": "Atom Socket.md",
+      "product_id": "atom-socket-296cfa94a291",
+      "product_name": "Atom Socket",
+      "source_path": "atom/atom_socket.md",
+      "source_sha256": "18ed767ac9f59f5eee4ca3024371081d2a9e5ab5ef4011e8d3d1d91151622b5a"
+    },
+    {
+      "input_sha256": "3b1b5f65cf367c3d5ce9015d68567ad81e995efa5b922895b8080b4bdb100aee",
+      "ordinal": 37,
+      "output_filename": "Atom Socket-CN.md",
+      "product_id": "atom-socket-cn-7f11d3b719f7",
+      "product_name": "Atom Socket-CN",
+      "source_path": "atom/atom_socket_cn.md",
+      "source_sha256": "ebf27ce15bc032873be2d370a5673c2f665f1c3bff670a13f7d2a96d24b11707"
+    },
+    {
+      "input_sha256": "9f69510511977ba9471790006ea6ee62c289aa05f1821bdad0590d625b34f26d",
+      "ordinal": 38,
+      "output_filename": "Atom SPK.md",
+      "product_id": "atom-spk-9b8445334331",
+      "product_name": "Atom SPK",
+      "source_path": "atom/atom_spk.md",
+      "source_sha256": "7b692926efc3dd50b13a646295cf830b88eb37756810429660d399ee8f2faf7c"
+    },
+    {
+      "input_sha256": "00ad36fe6a93a9a46988f23b205f79762b9d961f7ada21582443ca552274ada1",
+      "ordinal": 39,
+      "output_filename": "Atom Fly.md",
+      "product_id": "atom-fly-1336978a00b2",
+      "product_name": "Atom Fly",
+      "source_path": "atom/atomfly.md",
+      "source_sha256": "f0a269e2c24cd9f7f1ee7452ad4caf98db0454acb5a1ca13c83c4b98379e65bc"
+    },
+    {
+      "input_sha256": "789f7e2b6556b4892b348bde69f5b8b7058b22d61b6e5e309bc07f5f960785a4",
+      "ordinal": 40,
+      "output_filename": "Atom Switch.md",
+      "product_id": "atom-switch-1c4ab8c0f218",
+      "product_name": "Atom Switch",
+      "source_path": "atom/atomhub_switch.md",
+      "source_sha256": "89fb1abc451e711f889023635192b702e4a432d140db8f0b243f3f8777989248"
+    },
+    {
+      "input_sha256": "cbfd21f2f83076a5e0d5da9c49b3b793f47f989a86fe116d13248693e97e2c42",
+      "ordinal": 41,
+      "output_filename": "Atom Switch-D.md",
+      "product_id": "atom-switch-d-7c3e8ae886fb",
+      "product_name": "Atom Switch-D",
+      "source_path": "atom/atomhub_switch_d.md",
+      "source_sha256": "5f371d81649a10b522e4ad0c8ca48b9020319b3ee3dd0ef7afb329379ca490d9"
+    },
+    {
+      "input_sha256": "5b5a3c08fe64c65156970e75a5c8db39c85b1c930929bdd3df10adf31e7a1c55",
+      "ordinal": 42,
+      "output_filename": "Atomic Battery Base.md",
+      "product_id": "atomic-battery-base-cdc6e6b48c99",
+      "product_name": "Atomic Battery Base",
+      "source_path": "atom/Atomic Battery Base.md",
+      "source_sha256": "e8c7cc327453c657ac0b9600ddc76596321a8c1fe059216931b25f24348ef3fe"
+    },
+    {
+      "input_sha256": "ecdca5c93b383eaacc88022691ffed2f39a15adf6fd503529217708495d8854b",
+      "ordinal": 43,
+      "output_filename": "Atomic Display Base.md",
+      "product_id": "atomic-display-base-d9f0339de757",
+      "product_name": "Atomic Display Base",
+      "source_path": "atom/Atomic Display Base.md",
+      "source_sha256": "c5449fcb431532e38512fc4208912ab60fadf2443401ff1c09f59146360f1a41"
+    },
+    {
+      "input_sha256": "25a918f12a389d833a8f828e02f2f23572bd55c2ef5f9c201a95fcd396fc069e",
+      "ordinal": 44,
+      "output_filename": "Atomic GPS Base.md",
+      "product_id": "atomic-gps-base-5a9b55b80f7b",
+      "product_name": "Atomic GPS Base",
+      "source_path": "atom/Atomic GPS Base.md",
+      "source_sha256": "7ed666e072a2cdb7e44b8bac716e07b5e106c185bf13dcb84992a548e6388cbe"
+    },
+    {
+      "input_sha256": "b0aeb67f1f8c54dac87504fa6c4ed235fac5b79315e84329614e778483ab9f91",
+      "ordinal": 45,
+      "output_filename": "Atomic HDriver Base.md",
+      "product_id": "atomic-hdriver-base-4810b53ccf76",
+      "product_name": "Atomic HDriver Base",
+      "source_path": "atom/Atomic H-Driver Base.md",
+      "source_sha256": "d3b77a609a57997929ce97377503e395430469deb4dca86e389c588f03b2b345"
+    },
+    {
+      "input_sha256": "dd10276c18b6dc8cbdeda912b9e64d12b386e772f6c74c66d8dcc803e818c31f",
+      "ordinal": 46,
+      "output_filename": "Atomic Motion Base v1.1.md",
+      "product_id": "atomic-motion-base-v1-1-5a63ca566c77",
+      "product_name": "Atomic Motion Base v1.1",
+      "source_path": "atom/Atomic Motion Base v1.1.md",
+      "source_sha256": "d418e8c0af38b69e55f311ea0bef4e31e26c94fcaa18391b5e5fccd67790b71c"
+    },
+    {
+      "input_sha256": "2d50b5d4f9cce7b591c913b62268f244a4e9e60498cba06e4bb03a96a2016f7f",
+      "ordinal": 47,
+      "output_filename": "Atomic Motion Base.md",
+      "product_id": "atomic-motion-base-910a44802a78",
+      "product_name": "Atomic Motion Base",
+      "source_path": "atom/Atomic Motion Base.md",
+      "source_sha256": "102ca413bbdea9890e4acd3e4b498d7d270b321602f5a0f83ff53916b553c289"
+    },
+    {
+      "input_sha256": "edea9493227f367dbcaf2e4ba7b5df9e5d5e7aa2e638199c94b6232eeb4b9be6",
+      "ordinal": 48,
+      "output_filename": "Atomic PoE Base.md",
+      "product_id": "atomic-poe-base-3b5470e5815f",
+      "product_name": "Atomic PoE Base",
+      "source_path": "atom/Atomic PoE Base.md",
+      "source_sha256": "c31b018687565f2aef5ef0fb762291f04c1f0b91fb3ebc49ba22f94fef636085"
+    },
+    {
+      "input_sha256": "37a42e8142ee389d1c3a9e8a504bc03f35fe40b4f3562a19f5c3c5ab232020a3",
+      "ordinal": 49,
+      "output_filename": "Atomic PWM Base.md",
+      "product_id": "atomic-pwm-base-0d888c312525",
+      "product_name": "Atomic PWM Base",
+      "source_path": "atom/Atomic PWM Base.md",
+      "source_sha256": "8af3db83d499d94ada45581b602b73071a28a21dc9cd4711b1733cb49a8e871c"
+    },
+    {
+      "input_sha256": "b7dbb753c82becb591558c910e35115f8d0349cf456ab25f428f2d71e988b4a3",
+      "ordinal": 50,
+      "output_filename": "Atomic QRCode2 Base.md",
+      "product_id": "atomic-qrcode2-base-06fd4484ce87",
+      "product_name": "Atomic QRCode2 Base",
+      "source_path": "atom/Atomic QRCode2 Base.md",
+      "source_sha256": "3a06ebf188040465b8fb0a0087eb3ae708040683c11298489f80223b64968f3f"
+    },
+    {
+      "input_sha256": "fa55be0168393bc243d65e8340e973e2ba1cff658f1672b5643881654de48781",
+      "ordinal": 51,
+      "output_filename": "Atomic RS232 Base.md",
+      "product_id": "atomic-rs232-base-fe6ddb6b8ad1",
+      "product_name": "Atomic RS232 Base",
+      "source_path": "atom/Atomic RS232 Base.md",
+      "source_sha256": "7824a7fb34a2cb3853650b77e2f80c0f2ea0f9f669bec270fd5d9f9d29dc1c7b"
+    },
+    {
+      "input_sha256": "619ed7ae374854abcfd0411b33bcfcb1bf0f35800cf3c57aec2ea1d09f4e55c7",
+      "ordinal": 52,
+      "output_filename": "Atomic SPK Base.md",
+      "product_id": "atomic-spk-base-f156fbb512e7",
+      "product_name": "Atomic SPK Base",
+      "source_path": "atom/Atomic SPK Base.md",
+      "source_sha256": "d3502fdda63dfbf8dfea82e365bbb0bc2137421113abd914c1c2afd0cdae0a2d"
+    },
+    {
+      "input_sha256": "d83807a5a306fcf8147b7b3f2ae7770ad3a30e73a26f7d64186f6d776b87416c",
+      "ordinal": 53,
+      "output_filename": "Atomic Stepmotor Base.md",
+      "product_id": "atomic-stepmotor-base-0cceb8b75518",
+      "product_name": "Atomic Stepmotor Base",
+      "source_path": "atom/Atomic Stepmotor Base.md",
+      "source_sha256": "c3705ff46ffd84b1018b0a276edccc88974954c5819a5ebc5b2e7fdf75654615"
+    },
+    {
+      "input_sha256": "16545c3de925a1f1de5e1ce913a5f36db3af50227ea4426bfe03db774aef582c",
+      "ordinal": 54,
+      "output_filename": "Atomic TFCard Base.md",
+      "product_id": "atomic-tfcard-base-4b45dc9f4d11",
+      "product_name": "Atomic TFCard Base",
+      "source_path": "atom/Atomic TF-Card Reader.md",
+      "source_sha256": "49acda72eae80f40f8c9cdb5fcec6038738a41aa80c707d6e743923a58d02311"
+    },
+    {
+      "input_sha256": "86446229ee7c9e118912e2a23c07ff747e719b4f5c15db842089c4c031acf7e1",
+      "ordinal": 55,
+      "output_filename": "Atom RS232.md",
+      "product_id": "atom-rs232-86a93d2cd17b",
+      "product_name": "Atom RS232",
+      "source_path": "atom/atomic232.md",
+      "source_sha256": "be1269a22d3564f5b328de3999ef49b6d4349e5d384882ed4f42c408405bfb2e"
+    },
+    {
+      "input_sha256": "7054ad6456c14714c141bcd7927ee97ed3805878941eea21dc21c9b25660b586",
+      "ordinal": 56,
+      "output_filename": "Atom RS485.md",
+      "product_id": "atom-rs485-ab98568a0c94",
+      "product_name": "Atom RS485",
+      "source_path": "atom/atomic485.md",
+      "source_sha256": "35ec6a9ebfcdf132deb82f8e39fecffa651e7db63d5efe911fd9828966f6e76c"
+    },
+    {
+      "input_sha256": "f6b364405bd34f330d599d75e00ccd8b53edbdf4bfe809d4b162ddc8b3d1a736",
+      "ordinal": 57,
+      "output_filename": "Atomic GPS Base v2.0.md",
+      "product_id": "atomic-gps-base-v2-0-3fdbfd29ae64",
+      "product_name": "Atomic GPS Base v2.0",
+      "source_path": "atom/Atomic_GPS_Base_v2.0.md",
+      "source_sha256": "adb46300fe5b03ffba5db7f525d68a3ea60a399f2603e8b16a6614cdaf3718aa"
+    },
+    {
+      "input_sha256": "d8d136e99401a9723eb23e89200da1a34569e192d17161ad8aa8e8e615af77e1",
+      "ordinal": 58,
+      "output_filename": "Atomic Motion Base v1.2.md",
+      "product_id": "atomic-motion-base-v1-2-f5b15b53f382",
+      "product_name": "Atomic Motion Base v1.2",
+      "source_path": "atom/Atomic_Motion_Base_v1.2.md",
+      "source_sha256": "f81e6438d06a5e1e807e91c0dc5ad906d776eb726f7f051c42eff9a81d3c38fc"
+    },
+    {
+      "input_sha256": "9123d538487bacb19c86c16baeadddd2cba3e49f6ea292d9b43b7974c13e4892",
+      "ordinal": 59,
+      "output_filename": "Atom Stepmotor.md",
+      "product_id": "atom-stepmotor-14a76edca66a",
+      "product_name": "Atom Stepmotor",
+      "source_path": "atom/atomic_step_motor.md",
+      "source_sha256": "c9a9a0561cfa924d888d4fd62763aa19ea31e1793f291ee1f53f890cae0cd664"
+    },
+    {
+      "input_sha256": "d34684735fb1bf228e03011528d541d44d4fee47ab7f1448c13940204501e6ef",
+      "ordinal": 60,
+      "output_filename": "Atom GPS.md",
+      "product_id": "atom-gps-a32cc93b32a0",
+      "product_name": "Atom GPS",
+      "source_path": "atom/atomicgps.md",
+      "source_sha256": "f8c3a7511600c0d4387006759f01d8c72fba5969104fa59b53c9af766a024a3e"
+    },
+    {
+      "input_sha256": "d7f5f87aa62b416d549f644d4be45178fa5eb180f0d6b9aae50d6023af3d6820",
+      "ordinal": 61,
+      "output_filename": "Atom TFCard.md",
+      "product_id": "atom-tfcard-5266b3dbdf9d",
+      "product_name": "Atom TFCard",
+      "source_path": "atom/atomictf.md",
+      "source_sha256": "e93ca8aa32461fec969f16c259e6db0688cfa6448e462c8472d1d75e5662bc4a"
+    },
+    {
+      "input_sha256": "3d4886ae2c77caff4fccf5a4c99ab4db8403529e3ed3c158ed3f8b49efe65b9c",
+      "ordinal": 62,
+      "output_filename": "Atomic Port ABC Base.md",
+      "product_id": "atomic-port-abc-base-f732530bbecb",
+      "product_name": "Atomic Port ABC Base",
+      "source_path": "atom/AtomPortABC.md",
+      "source_sha256": "d8c9e17b12770c1312992cd6b40bb181bfe8f44a0628da4386d468c56c3c8aec"
+    },
+    {
+      "input_sha256": "15cb6334c96085c0e342576aaf0d9597de83c5f4e655e24adb7bb379edab1c38",
+      "ordinal": 63,
+      "output_filename": "Tail RS485.md",
+      "product_id": "tail-rs485-35d2ba502abe",
+      "product_name": "Tail RS485",
+      "source_path": "atom/tail485.md",
+      "source_sha256": "11a05a0f801b70bba88dc04e8fdc6ff11bcdd281bed276482ea6b80a081c3519"
+    },
+    {
+      "input_sha256": "879878d1548d41bad99a483d7f804aa8a76f93cc3ee375c5fac7c0cd09bb0a7a",
+      "ordinal": 64,
+      "output_filename": "Tail Bat.md",
+      "product_id": "tail-bat-8596aaaaa9a1",
+      "product_name": "Tail Bat",
+      "source_path": "atom/tailbat.md",
+      "source_sha256": "50cdbef7e87abdbc659d06d3e880ff275bf0eea9fbacf510e0b019018444f3d7"
+    },
+    {
+      "input_sha256": "92692c4fa51ba29056ab5b031fe77714cc18131879cb9869253448e33e393a1b",
+      "ordinal": 65,
+      "output_filename": "Base15.md",
+      "product_id": "base15-2298d127e4b3",
+      "product_name": "Base15",
+      "source_path": "base/base15.md",
+      "source_sha256": "1966806dc949b9b540679c61f38028b22789ba42019351ba1427c5c7641c0d33"
+    },
+    {
+      "input_sha256": "92713b130e5a8c70ae820346292f61092c255f58b32e38e127ecb82a5a572a9c",
+      "ordinal": 66,
+      "output_filename": "Base26.md",
+      "product_id": "base26-5c79b1647571",
+      "product_name": "Base26",
+      "source_path": "base/base26.md",
+      "source_sha256": "30fb23cff75fea66e4b254015d81cec4a2db3e1d094ef300a13928965d8813ed"
+    },
+    {
+      "input_sha256": "cbcf70adb5b50ae718c6ee39cac852e1a78292d4d235c3abb751d2fbe68a0599",
+      "ordinal": 67,
+      "output_filename": "Base AAA.md",
+      "product_id": "base-aaa-4a99b42565c7",
+      "product_name": "Base AAA",
+      "source_path": "base/base_aaa.md",
+      "source_sha256": "7ba4fe4da562b492b63a9c258403e532430668b936ec693a6f1ef39b31a61c67"
+    },
+    {
+      "input_sha256": "67884f824f9d3d959b13d97911c4ce96694238d917769ceaa2e320aade527542",
+      "ordinal": 68,
+      "output_filename": "Base Bottom v1.1.md",
+      "product_id": "base-bottom-v1-1-8ff41491e8be",
+      "product_name": "Base Bottom v1.1",
+      "source_path": "base/BLACK-BOTTOM_V1.1.md",
+      "source_sha256": "6ac02adc70e242e2725ab8cdac5f2365e1245dba66fa74929f751607a8b0d12f"
+    },
+    {
+      "input_sha256": "30a59dee0603faa143a4da11b226df1eb9685cf49cf4dec6fb8d417cd2cd3f82",
+      "ordinal": 69,
+      "output_filename": "Base DIN.md",
+      "product_id": "base-din-9b4ada6f179d",
+      "product_name": "Base DIN",
+      "source_path": "base/DIN BASE.md",
+      "source_sha256": "6b8ca9067e9c3066d743c8b4e7d829e6fbcd49b194cbc7fb567b6d2780724e47"
+    },
+    {
+      "input_sha256": "42b3cb044bbcc6ba763141495d9e63cc1c31ca1a186807007e0231e1445ec21a",
+      "ordinal": 70,
+      "output_filename": "Base DMX.md",
+      "product_id": "base-dmx-a3b4cadace3f",
+      "product_name": "Base DMX",
+      "source_path": "base/DMX_Base.md",
+      "source_sha256": "e2131e1790d56110c716596f0b2ac341e6086de97dd6d69404a15ae0c46a25f4"
+    },
+    {
+      "input_sha256": "49a5884441300fac614cebbdc597280206b2c577537cfe81a53ff9de7f3e1164",
+      "ordinal": 71,
+      "output_filename": "IoT Base CatM.md",
+      "product_id": "iot-base-catm-48c8b724925a",
+      "product_name": "IoT Base CatM",
+      "source_path": "base/iot_base_catm.md",
+      "source_sha256": "0d0e813fedf531f9ec80384a5d8b7a6b8121dbacca8402e0b5b65f5382391916"
+    },
+    {
+      "input_sha256": "0e5ec384a02c2001e7b59a3b6fbd6601104fe6aa0b97ff8be15fc4a211ac737b",
+      "ordinal": 72,
+      "output_filename": "IoTBase NBIoT.md",
+      "product_id": "iotbase-nbiot-c11e4cdf4097",
+      "product_name": "IoTBase NBIoT",
+      "source_path": "base/iot_base_nb.md",
+      "source_sha256": "443c4aedd76a8c335b8e26da65fc73a7dbb886dcd737b77d7fa2663dc42e480c"
+    },
+    {
+      "input_sha256": "8a5a610387b7dec88453a16d643d508c10ea13d21091cc8ba67ac13a3114eef9",
+      "ordinal": 73,
+      "output_filename": "IoT Base NBIoT-CN.md",
+      "product_id": "iot-base-nbiot-cn-fbca1fe6128f",
+      "product_name": "IoT Base NBIoT-CN",
+      "source_path": "base/iot_base_nb_cn.md",
+      "source_sha256": "4be423fd9cda4eabe00bf4c45a14b3258f5bc7259490fb0bcb4c6a67392e254f"
+    },
+    {
+      "input_sha256": "47a9189ed609d1db99d6c0a41fba3e24d511a64d647eb89f1054ef1326de0764",
+      "ordinal": 74,
+      "output_filename": "Base LAN.md",
+      "product_id": "base-lan-3a6ea180faee",
+      "product_name": "Base LAN",
+      "source_path": "base/lan_base.md",
+      "source_sha256": "e3c6a6f1e8b57825eed3ab4462a1a1c7338190f9926667fc956f0b8c1480ace3"
+    },
+    {
+      "input_sha256": "1d8ee268724bec2f1f864206d1cdcbc76627b58e57fdf5ff5ba278621d330295",
+      "ordinal": 75,
+      "output_filename": "Base LAN PoE v1.2.md",
+      "product_id": "base-lan-poe-v1-2-0c51709f4a9c",
+      "product_name": "Base LAN PoE v1.2",
+      "source_path": "base/lan_poe_v12.md",
+      "source_sha256": "2d5f64ffb0426fab5b362be739f618a8f70af8604bd646e14058d07c55e31c61"
+    },
+    {
+      "input_sha256": "dc8857c92ba68acebf5f3b559bbc4cba69e8c75ec8cf7736911a839f63d8d547",
+      "ordinal": 76,
+      "output_filename": "Base LAN v1.2.md",
+      "product_id": "base-lan-v1-2-1fe11278dc70",
+      "product_name": "Base LAN v1.2",
+      "source_path": "base/lan_v12.md",
+      "source_sha256": "e8476c171530aea70414961fe526a99eb2edbd3f1e495829e8a544ecdf95634c"
+    },
+    {
+      "input_sha256": "330fe5cfaa3e1f7e7ba7e8d8c5a9835215367cda91ab5fc6699cf49a3b51fe14",
+      "ordinal": 77,
+      "output_filename": "Base M5GO Bottom.md",
+      "product_id": "base-m5go-bottom-94b45fc18195",
+      "product_name": "Base M5GO Bottom",
+      "source_path": "base/m5go_bottom.md",
+      "source_sha256": "dca69ab37bf0518ed635a12212b477e64e496e6bfd528cc2b44356769d34b788"
+    },
+    {
+      "input_sha256": "22d6942ad468265ef2fcc8c34a772a84e73d45c3c8eb61f6b61312e1ba1f8d94",
+      "ordinal": 78,
+      "output_filename": "Base M5GO Bottom2.md",
+      "product_id": "base-m5go-bottom2-fc60f6c5b664",
+      "product_name": "Base M5GO Bottom2",
+      "source_path": "base/m5go_bottom2.md",
+      "source_sha256": "05b10228f9da949348e5213be639e31fb240a08bb93aacc3ad4efaa071e8a72f"
+    },
+    {
+      "input_sha256": "45489a11406ead3d83006a4cd7d57c9e90155a71134e6e9bcef417f6b32d2929",
+      "ordinal": 79,
+      "output_filename": "Base Node.md",
+      "product_id": "base-node-2f0fc735961b",
+      "product_name": "Base Node",
+      "source_path": "base/node_base.md",
+      "source_sha256": "9ed6fd2d8631d0fb7e6e08e4ccfa3d6384f7f8601061a7f721e04e922acfebd4"
+    },
+    {
+      "input_sha256": "13ea4fb26655c35047423fb9717f10fcabef5a916ad09503fbfc022fac6f2167",
+      "ordinal": 80,
+      "output_filename": "Base PLC-M12.md",
+      "product_id": "base-plc-m12-65acb1fdc778",
+      "product_name": "Base PLC-M12",
+      "source_path": "base/plc_m12.md",
+      "source_sha256": "5fbaea585b834301419d761411c063402e007bc4b373fe633787b6dfb5d9573c"
+    },
+    {
+      "input_sha256": "7a7fcda2c1cc74462be7e389fe95f6aa9cf0ba97658605660c1fcaddc44b171d",
+      "ordinal": 81,
+      "output_filename": "PM2.5 Kit.md",
+      "product_id": "pm2-5-kit-752db3817213",
+      "product_name": "PM2.5 Kit",
+      "source_path": "base/pm2.5.md",
+      "source_sha256": "6aa6d993ae3f4397a27396776a424bc2e8653335732ca04753f73fad9cd1cb18"
+    },
+    {
+      "input_sha256": "e2654a104ff58a2bddfaec072e748654d1a524f42a5c1160bf7ab5452579cd12",
+      "ordinal": 82,
+      "output_filename": "IoT Base Thermal Online CatM.md",
+      "product_id": "iot-base-thermal-online-catm-d6c7a2ed64cc",
+      "product_name": "IoT Base Thermal Online CatM",
+      "source_path": "base/thermalonline_catm.md",
+      "source_sha256": "ec73d9ddb3e41578c02abee48cfccf4c2992a8363e8fa45b99ee258124132e06"
+    },
+    {
+      "input_sha256": "7c8032e63952b60779de2bfd5cb0dc4b1543097b5cb62f2b76d5c4474b8ed7d8",
+      "ordinal": 83,
+      "output_filename": "Base LAN PoE.md",
+      "product_id": "base-lan-poe-329c1d37f3fa",
+      "product_name": "Base LAN PoE",
+      "source_path": "base/w5500PoE.md",
+      "source_sha256": "57aa096bd9fdcc625e4e05ba693be2e3de8d42091bfe40a38d054ad2424dea8d"
+    },
+    {
+      "input_sha256": "e119db15d3efc081fb3e1017daece89cd6fc0f125130fdc29fa1c395af432900",
+      "ordinal": 84,
+      "output_filename": "Cap LoRa868.md",
+      "product_id": "cap-lora868-cadd64e8b186",
+      "product_name": "Cap LoRa868",
+      "source_path": "cap/Cap_LoRa868.md",
+      "source_sha256": "9eddc1c2fa95ac22d54eb7e4fc8e5874931268a1bca0417e178248408bc551b3"
+    },
+    {
+      "input_sha256": "d2ad2e14267177b3256d46600af470d6eb4933dd1af199b269488aa3cd41d031",
+      "ordinal": 85,
+      "output_filename": "Chain DualKey.md",
+      "product_id": "chain-dualkey-38acc9b60721",
+      "product_name": "Chain DualKey",
+      "source_path": "chain/Chain_DualKey.md",
+      "source_sha256": "d813d86181395d7b2ed5392395f106dafdd0eff59f14f80a13d4a51ec4a26279"
+    },
+    {
+      "input_sha256": "f7d8483352876c32281b19b5bd4b40fc085cda46215fee67ff1e663033614ed2",
+      "ordinal": 86,
+      "output_filename": "Chain Joystick.md",
+      "product_id": "chain-joystick-0496041983c4",
+      "product_name": "Chain Joystick",
+      "source_path": "chain/Chain_Joystick.md",
+      "source_sha256": "dc7f386c9e0476c49c14c0d4df0439596e2268e073ffd3633a205f1bbe8f4d6c"
+    },
+    {
+      "input_sha256": "837e92d12daf4bb4deba348eea5a99044925ee26f80cad2ed7aecf322d969f29",
+      "ordinal": 87,
+      "output_filename": "Chain Key.md",
+      "product_id": "chain-key-663f4af06229",
+      "product_name": "Chain Key",
+      "source_path": "chain/Chain_Key.md",
+      "source_sha256": "b47ddef87bfae5a5f5657ab7a5ffd941792b4f29cbb6e651dfa8508aa5a5350c"
+    },
+    {
+      "input_sha256": "7ed9ab3b737ac666033a2f540f4946a4ca4da2e81d5dd56bdd97bef29f1bcf76",
+      "ordinal": 88,
+      "output_filename": "Air Quality.md",
+      "product_id": "air-quality-1ff69f191246",
+      "product_name": "Air Quality",
+      "source_path": "core/Air_Quality.md",
+      "source_sha256": "431f6ba26249458cc38b6f7acec59d7b5599cf9c03fef12d0bc3a3e99fe59c40"
+    },
+    {
+      "input_sha256": "a08336bb88f7c72b8811627a002005a8fce29ba98b5376f01782b297b5cf446f",
+      "ordinal": 89,
+      "output_filename": "Air Quality v1.1.md",
+      "product_id": "air-quality-v1-1-46cfc56dec39",
+      "product_name": "Air Quality v1.1",
+      "source_path": "core/Air_Quality_v1.1.md",
+      "source_sha256": "5a15b5710a48488b19ce2ef065b0586dd49f98e7f8f2bab5ed875fd11aa1bd98"
+    },
+    {
+      "input_sha256": "225f066b82dc23e26e5944ca8c820915485b13c5e60e07d8d69066dee0840002",
+      "ordinal": 90,
+      "output_filename": "Atom-Lite.md",
+      "product_id": "atom-lite-f7be27b3adc3",
+      "product_name": "Atom-Lite",
+      "source_path": "core/ATOM Lite.md",
+      "source_sha256": "fa44326e2b050b752a35b51274fee118cfe88da67c67788ea0bab671c14b02d9"
+    },
+    {
+      "input_sha256": "f8d5197b49c44c950b9d40c0a5d498c3717cc1784372434aab471f414973beee",
+      "ordinal": 91,
+      "output_filename": "Atom-Matrix.md",
+      "product_id": "atom-matrix-3eb9fc4ccc03",
+      "product_name": "Atom-Matrix",
+      "source_path": "core/ATOM Matrix.md",
+      "source_sha256": "c1f363ac3b51f1cea5c91d150b7f7c7a3ab839e76855d4efc5e52539569b15be"
+    },
+    {
+      "input_sha256": "36aaeb3437e3797d3ff41909d13fa08f619b6a79a115d78a1435289442b57732",
+      "ordinal": 92,
+      "output_filename": "AtomU.md",
+      "product_id": "atomu-83b61895ae06",
+      "product_name": "AtomU",
+      "source_path": "core/ATOM U.md",
+      "source_sha256": "033ddf408cf8bb001d93b9104caf00ed4d453d33bd4e09662e935287ba65d566"
+    },
+    {
+      "input_sha256": "9e88d26d91a12e91fc4babb2121c9a441af4c8341a8208b8adcb1700858da6ac",
+      "ordinal": 93,
+      "output_filename": "AtomS3.md",
+      "product_id": "atoms3-183970e4065c",
+      "product_name": "AtomS3",
+      "source_path": "core/AtomS3.md",
+      "source_sha256": "0dd6ed2d6be26962810d666ade70905b41e426b43820ec9b798485f1235a8930"
+    },
+    {
+      "input_sha256": "a7fe6a1b1f61a0ad01d8f081795d47c2dc181f515cc293e474761c2281bce04f",
+      "ordinal": 94,
+      "output_filename": "AtomS3R-CAM.md",
+      "product_id": "atoms3r-cam-0e0d2aba4aaf",
+      "product_name": "AtomS3R-CAM",
+      "source_path": "core/AtomS3R Cam.md",
+      "source_sha256": "9f1739490c88a1aa9031fe7bf328f01c9712c1a021406401087a343aba3c8bff"
+    },
+    {
+      "input_sha256": "357fa2d805d7bc626863ae229a3970fbd7597b59d822e989b9f58e2e1a7cb1d5",
+      "ordinal": 95,
+      "output_filename": "AtomS3R-Ext.md",
+      "product_id": "atoms3r-ext-d9543400b982",
+      "product_name": "AtomS3R-Ext",
+      "source_path": "core/AtomS3R Ext.md",
+      "source_sha256": "0a1f27cf4cf250164677ceb181249fe6da641bcb9f2b092b8bb0d07724d8faa9"
+    },
+    {
+      "input_sha256": "ad91f27b88426bda021db3158312a9f94025419a0f6634160b7de78788dc97f4",
+      "ordinal": 96,
+      "output_filename": "AtomS3R-AI Chatbot.md",
+      "product_id": "atoms3r-ai-chatbot-54b324f77e29",
+      "product_name": "AtomS3R-AI Chatbot",
+      "source_path": "core/AtomS3R-AI Chatbot.md",
+      "source_sha256": "16592dfa648e2b72e1913286f1dc4f2717a9465446b4e0b13b1bba4c43acc53e"
+    },
+    {
+      "input_sha256": "05f994aef0d41fce8c3c8c16293fc64d17a899b446bea8a44ac6a4566f7145d9",
+      "ordinal": 97,
+      "output_filename": "AtomS3R-CAM AI Chatbot.md",
+      "product_id": "atoms3r-cam-ai-chatbot-989c49375129",
+      "product_name": "AtomS3R-CAM AI Chatbot",
+      "source_path": "core/AtomS3R-CAM AI Chatbot.md",
+      "source_sha256": "83072da48ab81450999f940dd54a98f88d0037534e442e86a327500b494c4e21"
+    },
+    {
+      "input_sha256": "b5c482aaaed19cad26663b9e4ca7161899b7b4291a97693eab5f5c795d1b58bd",
+      "ordinal": 98,
+      "output_filename": "AtomS3R-M12 火山引擎语音视觉套件.md",
+      "product_id": "atoms3r-m12-864fa7e586d0",
+      "product_name": "AtomS3R-M12 火山引擎语音视觉套件",
+      "source_path": "core/AtomS3R-M12 Volcengine Kit.md",
+      "source_sha256": "abb933c1c208c612dd3584d524ab9843e77b8efba9288840d6b5674e669b4100"
+    },
+    {
+      "input_sha256": "3d38879bc868829a6f6315f73e4deac627410ebc627ebe1807ec81f0f90e2ea5",
+      "ordinal": 99,
+      "output_filename": "AtomS3R-M12.md",
+      "product_id": "atoms3r-m12-83a8cec27f25",
+      "product_name": "AtomS3R-M12",
+      "source_path": "core/AtomS3R-M12.md",
+      "source_sha256": "8a782038be9b8dfc3c423fa0c581eb814722c129a393e31ab905aaa0de0e55a1"
+    },
+    {
+      "input_sha256": "0e3c238d691e3867ac7e46b58518b07a9b55d31c7f61486406ccebaa2b739797",
+      "ordinal": 100,
+      "output_filename": "AtomS3R.md",
+      "product_id": "atoms3r-494d86750895",
+      "product_name": "AtomS3R",
+      "source_path": "core/AtomS3R.md",
+      "source_sha256": "d2f630a422f47d67e5545a9ec6ecc0d2359a18cf84f4c9a67324cdd84148e43b"
+    }
+  ],
+  "schema_version": 1,
+  "target_count": 100
+}

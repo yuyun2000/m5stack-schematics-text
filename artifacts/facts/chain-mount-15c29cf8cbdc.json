@@ -1,0 +1,146 @@
+{
+  "schema_version": 1,
+  "generator": "schematic_describer",
+  "product": {
+    "product_id": "chain-mount-15c29cf8cbdc",
+    "product_name": "Chain Mount",
+    "sku": "U211",
+    "source_path": "chain/Chain_Mount.md",
+    "source_sha256": "84fa2df1139cb4225f35f0095348f2d96dac59afffa40c0f124d1b3ef78b24e0",
+    "input_sha256": "cc6430aea2b9bab24cff9a46c25115c8d14528d672bddab47a1b97ae9cb9acf1"
+  },
+  "schematic_assets": [
+    {
+      "sha256": "f5cebbb547bcfcb576941a2113a076dddf5d8b5b2e2460abd353f8e3ea9a6e18",
+      "source_url": "https://m5stack-doc.oss-cn-shenzhen.aliyuncs.com/1203/U211_Chain-Mount_SCH_Main_V1.0_20241122_2025_11_11_19_03_01_page_01.png",
+      "pages": [1]
+    }
+  ],
+  "summary": "Chain Mount 是无源四线直通节点，J1 与 J2 两个 GROVE_IO 接口的 IO2、IO1、VCC_5V 和 GND 分别直接相连。原理图未配置主控、收发器、电源转换、保护或信号调理器件，因此不会改变链路协议、电平或信号方向。",
+  "keywords": ["Chain Mount","U211","J1","J2","GROVE_IO","HY2.0-4P","IO1","IO2","VCC_5V","GND","4-wire pass-through","直通","Chain series","无源节点","V1.0"],
+  "components": [
+    {
+      "reference": "J1",
+      "part_number": "GROVE_IO",
+      "role": "四线 Chain/Grove 接口，接点依次标注 IO2、IO1、VCC、GND",
+      "evidence": [{"asset_sha256":"f5cebbb547bcfcb576941a2113a076dddf5d8b5b2e2460abd353f8e3ea9a6e18","page":1,"locator":"B2 区域：J1 GROVE_IO 符号及 IO2/IO1/VCC/GND 四个接点"}]
+    },
+    {
+      "reference": "J2",
+      "part_number": "GROVE_IO",
+      "role": "四线 Chain/Grove 接口，接点依次标注 IO2、IO1、VCC、GND",
+      "evidence": [{"asset_sha256":"f5cebbb547bcfcb576941a2113a076dddf5d8b5b2e2460abd353f8e3ea9a6e18","page":1,"locator":"B3 区域：J2 GROVE_IO 符号及 IO2/IO1/VCC/GND 四个接点"}]
+    }
+  ],
+  "facts": [
+    {
+      "id": "system.passive-chain-node",
+      "category": "system",
+      "subject": "Chain Mount",
+      "statement": "整页电路仅包含 J1、J2 两个 GROVE_IO 接口及四条直连网络，是无源 Chain 直通节点。",
+      "confidence": "confirmed",
+      "attributes": {"connectors":"J1,J2","active_components":"none shown","nets":"IO2,IO1,VCC_5V,GND"},
+      "evidence": [{"asset_sha256":"f5cebbb547bcfcb576941a2113a076dddf5d8b5b2e2460abd353f8e3ea9a6e18","page":1,"locator":"B2-C3：Chain Mount 框内仅 J1/J2 与四条连接线"}]
+    },
+    {
+      "id": "interface.j1-contacts",
+      "category": "interface",
+      "subject": "J1 GROVE_IO",
+      "statement": "J1 的四个接点从上到下标注 IO2、IO1、VCC、GND；VCC 接点使用网络名 VCC_5V。",
+      "confidence": "confirmed",
+      "attributes": {"contact_1_label":"IO2","contact_2_label":"IO1","contact_3_label":"VCC / VCC_5V","contact_4_label":"GND","pin_numbers":"not printed"},
+      "evidence": [{"asset_sha256":"f5cebbb547bcfcb576941a2113a076dddf5d8b5b2e2460abd353f8e3ea9a6e18","page":1,"locator":"B2：J1 符号自上而下 IO2、IO1、VCC、GND"}]
+    },
+    {
+      "id": "interface.j2-contacts",
+      "category": "interface",
+      "subject": "J2 GROVE_IO",
+      "statement": "J2 的四个接点从上到下标注 IO2、IO1、VCC、GND；VCC 接点使用网络名 VCC_5V。",
+      "confidence": "confirmed",
+      "attributes": {"contact_1_label":"IO2","contact_2_label":"IO1","contact_3_label":"VCC / VCC_5V","contact_4_label":"GND","pin_numbers":"not printed"},
+      "evidence": [{"asset_sha256":"f5cebbb547bcfcb576941a2113a076dddf5d8b5b2e2460abd353f8e3ea9a6e18","page":1,"locator":"B3：J2 符号自上而下 IO2、IO1、VCC、GND"}]
+    },
+    {
+      "id": "key_net.direct-parallel",
+      "category": "key_net",
+      "subject": "J1-J2 直通网络",
+      "statement": "J1.IO2 直连 J2.IO2，J1.IO1 直连 J2.IO1，两个 VCC 接点同接 VCC_5V，两个 GND 接点同接 GND。",
+      "confidence": "confirmed",
+      "attributes": {"io2":"J1.IO2-J2.IO2","io1":"J1.IO1-J2.IO1","power":"J1.VCC-J2.VCC=VCC_5V","ground":"J1.GND-J2.GND=GND"},
+      "evidence": [{"asset_sha256":"f5cebbb547bcfcb576941a2113a076dddf5d8b5b2e2460abd353f8e3ea9a6e18","page":1,"locator":"B2-B3：两连接器之间 IO2、IO1、VCC_5V、GND 四条水平直连线"}]
+    },
+    {
+      "id": "power.vcc-pass-through",
+      "category": "power",
+      "subject": "VCC_5V",
+      "statement": "VCC_5V 在 J1 与 J2 之间直接贯通，图中没有稳压器、负载开关、保险丝或去耦电容。",
+      "confidence": "confirmed",
+      "attributes": {"rail":"VCC_5V","source":"external through either connector","conversion":"none shown","switch":"none shown","fuse":"none shown","decoupling":"none shown"},
+      "evidence": [{"asset_sha256":"f5cebbb547bcfcb576941a2113a076dddf5d8b5b2e2460abd353f8e3ea9a6e18","page":1,"locator":"B2-B3：J1.VCC 到 J2.VCC 的 VCC_5V 直线，无串并联器件"}]
+    },
+    {
+      "id": "gpio.io-pass-through",
+      "category": "gpio",
+      "subject": "IO1/IO2",
+      "statement": "IO1 与 IO2 均为端到端铜线直通，图中没有缓冲、反相、电平转换、上拉或下拉器件。",
+      "confidence": "confirmed",
+      "attributes": {"io1":"direct","io2":"direct","buffer":"none shown","level_shifter":"none shown","pull_resistors":"none shown"},
+      "evidence": [{"asset_sha256":"f5cebbb547bcfcb576941a2113a076dddf5d8b5b2e2460abd353f8e3ea9a6e18","page":1,"locator":"B2-B3：IO1/IO2 水平连线中无器件"}]
+    },
+    {
+      "id": "bus.protocol-transparent",
+      "category": "bus",
+      "subject": "IO1/IO2 总线能力",
+      "statement": "原理图仅定义 IO1/IO2 网络名，没有指定 I2C、UART、SPI 或其他协议；由于两线直通，协议由链路两端设备决定。",
+      "confidence": "confirmed",
+      "attributes": {"signal_names":"IO1,IO2","protocol":"not specified on schematic","electrical_path":"transparent pass-through"},
+      "evidence": [{"asset_sha256":"f5cebbb547bcfcb576941a2113a076dddf5d8b5b2e2460abd353f8e3ea9a6e18","page":1,"locator":"B2-B3：信号仅标 IO1/IO2，无协议或方向标注"}]
+    },
+    {
+      "id": "protection.none-shown",
+      "category": "protection",
+      "subject": "接口保护",
+      "statement": "J1/J2 的 IO1、IO2、VCC_5V 与 GND 上均未绘制 ESD、TVS、限流或反接保护器件。",
+      "confidence": "confirmed",
+      "attributes": {"esd":"none shown","tvs":"none shown","current_limit":"none shown","reverse_protection":"none shown"},
+      "evidence": [{"asset_sha256":"f5cebbb547bcfcb576941a2113a076dddf5d8b5b2e2460abd353f8e3ea9a6e18","page":1,"locator":"Chain Mount 框内全部电路，无保护器件符号"}]
+    },
+    {
+      "id": "component.no-active-ic",
+      "category": "component",
+      "subject": "主动器件",
+      "statement": "原理图未绘制主控、协处理器、收发器、存储器或其他 IC。",
+      "confidence": "confirmed",
+      "attributes": {"mcu":"none shown","coprocessor":"none shown","transceiver":"none shown","ic":"none shown"},
+      "evidence": [{"asset_sha256":"f5cebbb547bcfcb576941a2113a076dddf5d8b5b2e2460abd353f8e3ea9a6e18","page":1,"locator":"全页器件检查：仅 J1/J2 连接器"}]
+    },
+    {
+      "id": "clock.reset-none",
+      "category": "clock",
+      "subject": "时钟与复位",
+      "statement": "原理图没有晶振、时钟网络、复位网络、BOOT 或使能信号。",
+      "confidence": "confirmed",
+      "attributes": {"clock":"none shown","crystal":"none shown","reset":"none shown","boot":"none shown","enable":"none shown"},
+      "evidence": [{"asset_sha256":"f5cebbb547bcfcb576941a2113a076dddf5d8b5b2e2460abd353f8e3ea9a6e18","page":1,"locator":"全页网络检查：仅 IO1/IO2/VCC_5V/GND"}]
+    },
+    {
+      "id": "storage.memory-none",
+      "category": "storage",
+      "subject": "存储与内存",
+      "statement": "原理图未绘制 Flash、EEPROM、RAM、SD 卡或其他存储器件。",
+      "confidence": "confirmed",
+      "attributes": {"flash":"none shown","eeprom":"none shown","ram":"none shown","sd":"none shown"},
+      "evidence": [{"asset_sha256":"f5cebbb547bcfcb576941a2113a076dddf5d8b5b2e2460abd353f8e3ea9a6e18","page":1,"locator":"全页器件检查：无存储器"}]
+    },
+    {
+      "id": "other.no-functional-blocks",
+      "category": "other",
+      "subject": "音频/传感器/射频/调试",
+      "statement": "原理图未绘制音频、传感器、模拟采样、射频或专用调试功能块。",
+      "confidence": "confirmed",
+      "attributes": {"audio":"none shown","sensor":"none shown","analog":"none shown","rf":"none shown","debug":"none shown"},
+      "evidence": [{"asset_sha256":"f5cebbb547bcfcb576941a2113a076dddf5d8b5b2e2460abd353f8e3ea9a6e18","page":1,"locator":"全页器件与网络检查：仅无源四线直通"}]
+    }
+  ],
+  "needs_review": []
+}

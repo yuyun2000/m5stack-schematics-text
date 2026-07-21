@@ -1,0 +1,21 @@
+{
+  "dry_run": false,
+  "failed": 0,
+  "published": 1,
+  "results": [
+    {
+      "backup": null,
+      "draft_action": "unchanged",
+      "dry_run": false,
+      "errors": [],
+      "needs_review": 3,
+      "product_id": "unit-proto-342508bb9734",
+      "product_name": "Unit Proto",
+      "publish_action": "unchanged",
+      "sha256": "b4c0b5523ec115a8f2d5c1deca39501a91997904c6ba0c35418aaa7b7bbf1f7e",
+      "status": "valid",
+      "uncertain_facts": 3
+    }
+  ],
+  "schema_version": 1
+}

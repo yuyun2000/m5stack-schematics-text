@@ -1,0 +1,21 @@
+{
+  "dry_run": false,
+  "failed": 0,
+  "published": 1,
+  "results": [
+    {
+      "backup": null,
+      "draft_action": "unchanged",
+      "dry_run": false,
+      "errors": [],
+      "needs_review": 3,
+      "product_id": "hat-env-ii-37219b0722b8",
+      "product_name": "Hat ENV-II",
+      "publish_action": "unchanged",
+      "sha256": "8d57f36de9796aa4b1cb3377cad13098b2f2b71a012760f3bd137d8508500f8e",
+      "status": "valid",
+      "uncertain_facts": 3
+    }
+  ],
+  "schema_version": 1
+}

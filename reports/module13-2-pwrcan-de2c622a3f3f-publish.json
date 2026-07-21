@@ -1,0 +1,21 @@
+{
+  "dry_run": false,
+  "failed": 0,
+  "published": 1,
+  "results": [
+    {
+      "backup": null,
+      "draft_action": "unchanged",
+      "dry_run": false,
+      "errors": [],
+      "needs_review": 3,
+      "product_id": "module13-2-pwrcan-de2c622a3f3f",
+      "product_name": "Module13.2 PwrCAN",
+      "publish_action": "unchanged",
+      "sha256": "cb3df091375e0bf63bc9ec108e89e133ca53d762ee24f33339a657b1f6671835",
+      "status": "valid",
+      "uncertain_facts": 3
+    }
+  ],
+  "schema_version": 1
+}

@@ -1,0 +1,21 @@
+{
+  "dry_run": false,
+  "failed": 0,
+  "published": 1,
+  "results": [
+    {
+      "backup": null,
+      "draft_action": "unchanged",
+      "dry_run": false,
+      "errors": [],
+      "needs_review": 6,
+      "product_id": "station-485-a0c0e6720492",
+      "product_name": "Station-485",
+      "publish_action": "unchanged",
+      "sha256": "20a38b50f49effc71ce830be89e5d29191ba9d642320d4d29f0163e705ba75af",
+      "status": "valid",
+      "uncertain_facts": 6
+    }
+  ],
+  "schema_version": 1
+}

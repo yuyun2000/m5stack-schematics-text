@@ -1,0 +1,21 @@
+{
+  "dry_run": false,
+  "failed": 0,
+  "published": 1,
+  "results": [
+    {
+      "backup": null,
+      "draft_action": "unchanged",
+      "dry_run": false,
+      "errors": [],
+      "needs_review": 4,
+      "product_id": "unit-poesp32-7d38dbaac194",
+      "product_name": "Unit PoESP32",
+      "publish_action": "unchanged",
+      "sha256": "fee3c70ae162126c0a62ee58bcbc06f19d09ac10e605a685aa383b4fb760bc2c",
+      "status": "valid",
+      "uncertain_facts": 4
+    }
+  ],
+  "schema_version": 1
+}

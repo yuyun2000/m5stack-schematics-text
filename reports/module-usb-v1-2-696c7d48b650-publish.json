@@ -1,0 +1,21 @@
+{
+  "dry_run": false,
+  "failed": 0,
+  "published": 1,
+  "results": [
+    {
+      "backup": null,
+      "draft_action": "unchanged",
+      "dry_run": false,
+      "errors": [],
+      "needs_review": 4,
+      "product_id": "module-usb-v1-2-696c7d48b650",
+      "product_name": "Module USB v1.2",
+      "publish_action": "unchanged",
+      "sha256": "7919f5010aac85cd5ed1a08ef96a5dfd7f5a06df7189e576b6943ad9638fdca0",
+      "status": "valid",
+      "uncertain_facts": 4
+    }
+  ],
+  "schema_version": 1
+}

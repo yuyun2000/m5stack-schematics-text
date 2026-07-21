@@ -1,0 +1,21 @@
+{
+  "dry_run": false,
+  "failed": 0,
+  "published": 1,
+  "results": [
+    {
+      "backup": null,
+      "draft_action": "unchanged",
+      "dry_run": false,
+      "errors": [],
+      "needs_review": 3,
+      "product_id": "unit-bldc-driver-fe1397986f4b",
+      "product_name": "Unit BLDC Driver",
+      "publish_action": "unchanged",
+      "sha256": "03d8fc2915a1a9adcf14dc1c0ba720668ae0cc9dcbe86f69edf7a0de1df1075c",
+      "status": "valid",
+      "uncertain_facts": 3
+    }
+  ],
+  "schema_version": 1
+}

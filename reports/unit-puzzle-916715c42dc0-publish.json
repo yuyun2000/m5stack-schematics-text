@@ -1,0 +1,21 @@
+{
+  "dry_run": false,
+  "failed": 0,
+  "published": 1,
+  "results": [
+    {
+      "backup": null,
+      "draft_action": "unchanged",
+      "dry_run": false,
+      "errors": [],
+      "needs_review": 3,
+      "product_id": "unit-puzzle-916715c42dc0",
+      "product_name": "Unit Puzzle",
+      "publish_action": "unchanged",
+      "sha256": "c11ec0496184adaf1db4ff63b1ae7b9a14a322bde1a4eec63fbe8c94f7914458",
+      "status": "valid",
+      "uncertain_facts": 3
+    }
+  ],
+  "schema_version": 1
+}

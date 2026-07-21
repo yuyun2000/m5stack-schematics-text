@@ -1,0 +1,21 @@
+{
+  "dry_run": false,
+  "failed": 0,
+  "published": 1,
+  "results": [
+    {
+      "backup": null,
+      "draft_action": "unchanged",
+      "dry_run": false,
+      "errors": [],
+      "needs_review": 5,
+      "product_id": "tail-bat-8596aaaaa9a1",
+      "product_name": "Tail Bat",
+      "publish_action": "unchanged",
+      "sha256": "1752e5f801dffd1d394ef7f5d51cb05f42dcdccc1662182cd88ced9505b004f5",
+      "status": "valid",
+      "uncertain_facts": 5
+    }
+  ],
+  "schema_version": 1
+}

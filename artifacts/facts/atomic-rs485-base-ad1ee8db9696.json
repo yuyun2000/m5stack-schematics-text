@@ -1,0 +1,618 @@
+{
+  "schema_version": 1,
+  "generator": "schematic_describer",
+  "product": {
+    "product_id": "atomic-rs485-base-ad1ee8db9696",
+    "product_name": "Atomic RS485 Base",
+    "sku": "A131",
+    "source_path": "atom/Atomic RS485 Base.md",
+    "source_sha256": "9f6e136b1e9c56c9c4b0319249f46b9b21f936d2f44ce8ee883759a50dc1ece2",
+    "input_sha256": "2088b1fd03595167e8babd0472d7c8312207d54f5b0b6169d4b6dd227f3fe73e"
+  },
+  "schematic_assets": [
+    {
+      "sha256": "72fa3f8f2f70f0097edc759aa4941778e213c6dfa1130aabdcf80b0b8019cefa",
+      "source_url": "https://static-cdn.m5stack.com/resource/docs/products/atom/Atomic RS485 Base/img-1f833240-7458-4d92-8120-c60a936e1c04.webp",
+      "pages": [
+        1
+      ]
+    }
+  ],
+  "summary": "Atomic RS485 Base 使用 U1 SP3485EN-L/TR 在 3.3V 侧 RX/TX 与 RS485_A/RS485_B 之间完成收发转换，TX 通过 Q1 控制 U1 的 /RE 与 DE，RS-485 端配置偏置、端接焊位和三只 TVS 保护器件。电源部分由 U2 AOZ1282CI 将 J1 输入的 +12V 降压为 +5VIN，并通过 P2 向上层模块供电；U1 的 +3.3V 则来自 P1。J1 为 3.96 mm 四位端子，集中引出 RS485_B、RS485_A、12V+ 和接地的 12V-。",
+  "keywords": [
+    "Atomic RS485 Base",
+    "A131",
+    "SP3485EN-L/TR",
+    "AOZ1282CI",
+    "SS8050 Y1",
+    "SMAJ6.5CA-E3",
+    "B5819W SL",
+    "RS-485",
+    "RS485_A",
+    "RS485_B",
+    "RX",
+    "TX",
+    "/RE",
+    "DE",
+    "DI",
+    "RO",
+    "+12V",
+    "+5VIN",
+    "+3.3V",
+    "HDR_4P_3.96",
+    "120Ω/NC",
+    "4.7uH",
+    "J1",
+    "P1",
+    "P2"
+  ],
+  "components": [
+    {
+      "reference": "U1",
+      "part_number": "SP3485EN-L/TR",
+      "role": "3.3V 逻辑侧与 RS-485 差分总线之间的收发器",
+      "evidence": [
+        {
+          "asset_sha256": "72fa3f8f2f70f0097edc759aa4941778e213c6dfa1130aabdcf80b0b8019cefa",
+          "page": 1,
+          "locator": "页面左上功能区中央 U1，器件值 SP3485EN-L/TR，标有 RO、/RE、DE、DI、A、B、VCC、GND"
+        }
+      ]
+    },
+    {
+      "reference": "Q1",
+      "part_number": "SS8050 Y1",
+      "role": "由 TX 驱动并控制 U1 的 /RE 与 DE 共用节点",
+      "evidence": [
+        {
+          "asset_sha256": "72fa3f8f2f70f0097edc759aa4941778e213c6dfa1130aabdcf80b0b8019cefa",
+          "page": 1,
+          "locator": "页面左上功能区 Q1，器件值 SS8050 Y1，基极经 R5 接 TX，发射极接 GND"
+        }
+      ]
+    },
+    {
+      "reference": "U2",
+      "part_number": "AOZ1282CI",
+      "role": "将 +12V 降压为 +5VIN 的开关稳压器",
+      "evidence": [
+        {
+          "asset_sha256": "72fa3f8f2f70f0097edc759aa4941778e213c6dfa1130aabdcf80b0b8019cefa",
+          "page": 1,
+          "locator": "页面左下电源区 U2，器件值 AOZ1282CI，标有 VIN、EN、BST、LX、FB、GND"
+        }
+      ]
+    },
+    {
+      "reference": "D1",
+      "part_number": "SMAJ6.5CA-E3",
+      "role": "RS485_B 对 GND 的浪涌/瞬态保护",
+      "evidence": [
+        {
+          "asset_sha256": "72fa3f8f2f70f0097edc759aa4941778e213c6dfa1130aabdcf80b0b8019cefa",
+          "page": 1,
+          "locator": "页面上部 RS-485 保护区 D1，位于 RS485_B 与 GND 之间"
+        }
+      ]
+    },
+    {
+      "reference": "D2",
+      "part_number": "SMAJ6.5CA-E3",
+      "role": "RS485_B 与 RS485_A 之间的差模瞬态保护",
+      "evidence": [
+        {
+          "asset_sha256": "72fa3f8f2f70f0097edc759aa4941778e213c6dfa1130aabdcf80b0b8019cefa",
+          "page": 1,
+          "locator": "页面上部 RS-485 保护区 D2，跨接 RS485_B 与 RS485_A"
+        }
+      ]
+    },
+    {
+      "reference": "D3",
+      "part_number": "SMAJ6.5CA-E3",
+      "role": "RS485_A 对 GND 的浪涌/瞬态保护",
+      "evidence": [
+        {
+          "asset_sha256": "72fa3f8f2f70f0097edc759aa4941778e213c6dfa1130aabdcf80b0b8019cefa",
+          "page": 1,
+          "locator": "页面上部 RS-485 保护区 D3，位于 RS485_A 与 GND 之间"
+        }
+      ]
+    },
+    {
+      "reference": "D4",
+      "part_number": "B5819W SL",
+      "role": "AOZ1282CI 降压转换器 LX 开关节点的肖特基续流二极管",
+      "evidence": [
+        {
+          "asset_sha256": "72fa3f8f2f70f0097edc759aa4941778e213c6dfa1130aabdcf80b0b8019cefa",
+          "page": 1,
+          "locator": "页面左下电源区 D4，器件值 B5819W SL，连接 LX 开关节点与 GND"
+        }
+      ]
+    },
+    {
+      "reference": "L1",
+      "part_number": "4.7uH",
+      "role": "AOZ1282CI 降压输出电感",
+      "evidence": [
+        {
+          "asset_sha256": "72fa3f8f2f70f0097edc759aa4941778e213c6dfa1130aabdcf80b0b8019cefa",
+          "page": 1,
+          "locator": "页面左下电源区 L1，标注 4.7uH，位于 LX 与 +5VIN 之间"
+        }
+      ]
+    },
+    {
+      "reference": "R4",
+      "part_number": "120Ω/NC",
+      "role": "跨接 RS485_B 与 RS485_A 的可选端接电阻位置",
+      "evidence": [
+        {
+          "asset_sha256": "72fa3f8f2f70f0097edc759aa4941778e213c6dfa1130aabdcf80b0b8019cefa",
+          "page": 1,
+          "locator": "页面上部 RS-485 总线区 R4，跨接 B/A，阻值标注 120Ω/NC"
+        }
+      ]
+    },
+    {
+      "reference": "J1",
+      "part_number": "HDR_4P_3.96",
+      "role": "RS485_B、RS485_A、12V+、12V- 四位外部端子",
+      "evidence": [
+        {
+          "asset_sha256": "72fa3f8f2f70f0097edc759aa4941778e213c6dfa1130aabdcf80b0b8019cefa",
+          "page": 1,
+          "locator": "页面右上 J1，器件值 HDR_4P_3.96，内部针脚标注 B、A、12V+、12V-"
+        }
+      ]
+    },
+    {
+      "reference": "P1",
+      "part_number": "Header 5",
+      "role": "上层模块的 +3.3V、RX、TX 逻辑侧接口",
+      "evidence": [
+        {
+          "asset_sha256": "72fa3f8f2f70f0097edc759aa4941778e213c6dfa1130aabdcf80b0b8019cefa",
+          "page": 1,
+          "locator": "页面右中 P1 Header 5，1 脚 +3.3V、2 脚 RX、3 脚 TX，4/5 脚 NC"
+        }
+      ]
+    },
+    {
+      "reference": "P2",
+      "part_number": "Header 4",
+      "role": "向上层模块提供 +5VIN 和 GND 的电源接口",
+      "evidence": [
+        {
+          "asset_sha256": "72fa3f8f2f70f0097edc759aa4941778e213c6dfa1130aabdcf80b0b8019cefa",
+          "page": 1,
+          "locator": "页面右中 P2 Header 4，3 脚 +5VIN、4 脚 GND，1/2 脚 NC"
+        }
+      ]
+    }
+  ],
+  "facts": [
+    {
+      "id": "system.architecture",
+      "category": "system",
+      "subject": "Atomic RS485 Base 系统结构",
+      "statement": "电路由 U1 SP3485EN-L/TR 的 3.3V 逻辑到 RS-485 收发链路，以及 U2 AOZ1282CI 的 +12V 到 +5VIN 降压链路组成；两条链路分别连接 P1/P2 与外部端子 J1。",
+      "confidence": "confirmed",
+      "attributes": {
+        "logic_interface": "P1:+3.3V,RX,TX",
+        "power_output_interface": "P2:+5VIN,GND",
+        "field_interface": "J1:RS485_B,RS485_A,12V+,12V-",
+        "transceiver": "U1 SP3485EN-L/TR",
+        "buck_converter": "U2 AOZ1282CI"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "72fa3f8f2f70f0097edc759aa4941778e213c6dfa1130aabdcf80b0b8019cefa",
+          "page": 1,
+          "locator": "整页：左上 U1 收发器区、左下 U2 电源区、右侧 J1/P1/P2 接口区"
+        }
+      ]
+    },
+    {
+      "id": "component.u1_pinout",
+      "category": "component",
+      "subject": "U1 SP3485EN-L/TR",
+      "statement": "U1 引脚标注为 1=RO、2=/RE、3=DE、4=DI、5=GND、6=A、7=B、8=VCC。",
+      "confidence": "confirmed",
+      "attributes": {
+        "reference": "U1",
+        "part_number": "SP3485EN-L/TR",
+        "pinout": "1:RO,2:/RE,3:DE,4:DI,5:GND,6:A,7:B,8:VCC"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "72fa3f8f2f70f0097edc759aa4941778e213c6dfa1130aabdcf80b0b8019cefa",
+          "page": 1,
+          "locator": "页面左上 U1 符号两侧的引脚名称与脚号"
+        }
+      ]
+    },
+    {
+      "id": "bus.rs485_differential",
+      "category": "bus",
+      "subject": "RS-485 差分链路",
+      "statement": "U1 的 B 引脚 7 连接 RS485_B，A 引脚 6 连接 RS485_A；两条网络继续连接到 J1 的 B 与 A 端子。",
+      "confidence": "confirmed",
+      "attributes": {
+        "transceiver": "U1",
+        "b_pin": "7",
+        "b_net": "RS485_B",
+        "a_pin": "6",
+        "a_net": "RS485_A",
+        "connector": "J1"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "72fa3f8f2f70f0097edc759aa4941778e213c6dfa1130aabdcf80b0b8019cefa",
+          "page": 1,
+          "locator": "页面上部 U1 A/B 引脚、RS485_A/RS485_B 网络标号及右上 J1 B/A 端子"
+        }
+      ]
+    },
+    {
+      "id": "gpio.rx_path",
+      "category": "gpio",
+      "subject": "RX 接收路径",
+      "statement": "U1 的 RO 引脚 1 通过 R2 1 kΩ 串联到 RX 网络，RX 网络连接 P1 的 2 脚。",
+      "confidence": "confirmed",
+      "attributes": {
+        "source": "U1 pin 1 RO",
+        "series_resistor": "R2",
+        "series_resistance_ohm": 1000,
+        "net": "RX",
+        "connector_pin": "P1 pin 2"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "72fa3f8f2f70f0097edc759aa4941778e213c6dfa1130aabdcf80b0b8019cefa",
+          "page": 1,
+          "locator": "页面左上 U1 pin 1 RO-R2-RX 链路及页面右中 P1 pin 2 RX"
+        }
+      ]
+    },
+    {
+      "id": "gpio.tx_direction_control",
+      "category": "gpio",
+      "subject": "TX 与收发方向控制",
+      "statement": "TX 网络由 P1 的 3 脚引出，经 R5 1 kΩ 接 Q1 基极；Q1 发射极接 GND，集电极连接 U1 的 /RE 引脚 2 与 DE 引脚 3 共用节点，该节点由 R3 4.7 kΩ 上拉到 +3.3V。",
+      "confidence": "confirmed",
+      "attributes": {
+        "tx_connector_pin": "P1 pin 3",
+        "base_resistor": "R5",
+        "base_resistance_ohm": 1000,
+        "transistor": "Q1 SS8050 Y1",
+        "controlled_pins": "U1 pin 2 /RE,U1 pin 3 DE",
+        "pullup_resistor": "R3",
+        "pullup_resistance_ohm": 4700,
+        "pullup_rail": "+3.3V"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "72fa3f8f2f70f0097edc759aa4941778e213c6dfa1130aabdcf80b0b8019cefa",
+          "page": 1,
+          "locator": "页面左上 TX-R5-Q1-R3 与 U1 /RE、DE 共用节点，以及页面右中 P1 pin 3 TX"
+        }
+      ]
+    },
+    {
+      "id": "key_net.u1_di_ground",
+      "category": "key_net",
+      "subject": "U1 DI 输入",
+      "statement": "U1 的 DI 引脚 4 直接连接 GND。",
+      "confidence": "confirmed",
+      "attributes": {
+        "reference": "U1",
+        "pin": "4",
+        "signal": "DI",
+        "connected_net": "GND"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "72fa3f8f2f70f0097edc759aa4941778e213c6dfa1130aabdcf80b0b8019cefa",
+          "page": 1,
+          "locator": "页面左上 U1 左侧 pin 4 DI 向下连接 GND"
+        }
+      ]
+    },
+    {
+      "id": "power.u1_3v3",
+      "category": "power",
+      "subject": "U1 3.3V 供电",
+      "statement": "U1 的 VCC 引脚 8 连接 +3.3V，GND 引脚 5 连接 GND；C1 100 nF 跨接 +3.3V 与 GND 作为本地去耦。",
+      "confidence": "confirmed",
+      "attributes": {
+        "vcc_pin": "U1 pin 8",
+        "rail": "+3.3V",
+        "ground_pin": "U1 pin 5",
+        "decoupling_capacitor": "C1",
+        "decoupling_nf": 100
+      },
+      "evidence": [
+        {
+          "asset_sha256": "72fa3f8f2f70f0097edc759aa4941778e213c6dfa1130aabdcf80b0b8019cefa",
+          "page": 1,
+          "locator": "页面左上 U1 pin 8 VCC、pin 5 GND 与 C1 100nF"
+        }
+      ]
+    },
+    {
+      "id": "bus.rs485_bias",
+      "category": "bus",
+      "subject": "RS-485 总线偏置",
+      "statement": "R1 4.7 kΩ 将 RS485_B 连接到 GND，R6 4.7 kΩ 将 RS485_A 连接到 +3.3V。",
+      "confidence": "confirmed",
+      "attributes": {
+        "b_bias": "R1 4.7kΩ to GND",
+        "a_bias": "R6 4.7kΩ to +3.3V",
+        "b_net": "RS485_B",
+        "a_net": "RS485_A"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "72fa3f8f2f70f0097edc759aa4941778e213c6dfa1130aabdcf80b0b8019cefa",
+          "page": 1,
+          "locator": "页面上部 U1 A/B 右侧，R1 从 RS485_B 接 GND，R6 从 RS485_A 接 +3.3V"
+        }
+      ]
+    },
+    {
+      "id": "bus.rs485_termination",
+      "category": "bus",
+      "subject": "RS-485 端接电阻 R4",
+      "statement": "R4 跨接 RS485_B 与 RS485_A，标注值为 120Ω/NC；原理图无法确定成品是否实际装配该电阻。",
+      "confidence": "uncertain",
+      "attributes": {
+        "reference": "R4",
+        "nominal_resistance_ohm": 120,
+        "schematic_marking": "120Ω/NC",
+        "population_state": null
+      },
+      "evidence": [
+        {
+          "asset_sha256": "72fa3f8f2f70f0097edc759aa4941778e213c6dfa1130aabdcf80b0b8019cefa",
+          "page": 1,
+          "locator": "页面上部 R4，跨接 RS485_B 与 RS485_A，文字标注 120Ω/NC"
+        }
+      ]
+    },
+    {
+      "id": "protection.rs485_tvs",
+      "category": "protection",
+      "subject": "RS-485 三点 TVS 保护",
+      "statement": "D1、D2、D3 均标注 SMAJ6.5CA-E3；D1 连接 RS485_B 与 GND，D2 跨接 RS485_B 与 RS485_A，D3 连接 RS485_A 与 GND。",
+      "confidence": "confirmed",
+      "attributes": {
+        "part_number": "SMAJ6.5CA-E3",
+        "d1_path": "RS485_B-GND",
+        "d2_path": "RS485_B-RS485_A",
+        "d3_path": "RS485_A-GND"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "72fa3f8f2f70f0097edc759aa4941778e213c6dfa1130aabdcf80b0b8019cefa",
+          "page": 1,
+          "locator": "页面上部 RS485_B/RS485_A 右侧 D1、D2、D3 保护网络"
+        }
+      ]
+    },
+    {
+      "id": "interface.j1_terminal",
+      "category": "interface",
+      "subject": "J1 外部端子",
+      "statement": "J1 为 HDR_4P_3.96 四位端子，按图中自上而下的端子标注依次为 B、A、12V+、12V-；对应网络为 RS485_B、RS485_A、+12V 和 GND。",
+      "confidence": "confirmed",
+      "attributes": {
+        "reference": "J1",
+        "part_number": "HDR_4P_3.96",
+        "pin_labels": "B,A,12V+,12V-",
+        "nets": "RS485_B,RS485_A,+12V,GND"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "72fa3f8f2f70f0097edc759aa4941778e213c6dfa1130aabdcf80b0b8019cefa",
+          "page": 1,
+          "locator": "页面右上 J1 HDR_4P_3.96 端子及左侧网络标号"
+        }
+      ]
+    },
+    {
+      "id": "interface.p1_logic",
+      "category": "interface",
+      "subject": "P1 逻辑接口",
+      "statement": "P1 为 Header 5：1 脚连接 +3.3V，2 脚连接 RX，3 脚连接 TX，4 脚和 5 脚标为未连接。",
+      "confidence": "confirmed",
+      "attributes": {
+        "reference": "P1",
+        "pinout": "1:+3.3V,2:RX,3:TX,4:NC,5:NC"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "72fa3f8f2f70f0097edc759aa4941778e213c6dfa1130aabdcf80b0b8019cefa",
+          "page": 1,
+          "locator": "页面右中 P1 Header 5 的脚号、网络和 NC 标记"
+        }
+      ]
+    },
+    {
+      "id": "interface.p2_power",
+      "category": "interface",
+      "subject": "P2 电源接口",
+      "statement": "P2 为 Header 4：1 脚和 2 脚标为未连接，3 脚连接 +5VIN，4 脚连接 GND。",
+      "confidence": "confirmed",
+      "attributes": {
+        "reference": "P2",
+        "pinout": "1:NC,2:NC,3:+5VIN,4:GND"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "72fa3f8f2f70f0097edc759aa4941778e213c6dfa1130aabdcf80b0b8019cefa",
+          "page": 1,
+          "locator": "页面右中 P2 Header 4 的脚号、+5VIN、GND 和 NC 标记"
+        }
+      ]
+    },
+    {
+      "id": "power.input_12v",
+      "category": "power",
+      "subject": "+12V 输入路径",
+      "statement": "J1 的 12V+ 端连接 +12V 网络，12V- 端连接 GND；+12V 网络直接连接 U2 的 VIN 引脚 5。",
+      "confidence": "confirmed",
+      "attributes": {
+        "input_connector": "J1",
+        "positive_terminal": "12V+",
+        "negative_terminal": "12V-/GND",
+        "input_rail": "+12V",
+        "converter_input": "U2 pin 5 VIN"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "72fa3f8f2f70f0097edc759aa4941778e213c6dfa1130aabdcf80b0b8019cefa",
+          "page": 1,
+          "locator": "页面右上 J1 12V+/12V- 与页面左下 +12V-U2 VIN pin 5 网络"
+        }
+      ]
+    },
+    {
+      "id": "power.input_filter",
+      "category": "power",
+      "subject": "+12V 输入滤波",
+      "statement": "C3 与 C4 均标注 10 uF、10%、35V，并分别跨接 +12V 与 GND。",
+      "confidence": "confirmed",
+      "attributes": {
+        "capacitors": "C3,C4",
+        "capacitance_uf": 10,
+        "tolerance_percent": 10,
+        "voltage_rating_v": 35,
+        "rail": "+12V"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "72fa3f8f2f70f0097edc759aa4941778e213c6dfa1130aabdcf80b0b8019cefa",
+          "page": 1,
+          "locator": "页面左下 +12V 输入端的 C3、C4 及 10uF (106) 10% 35V 标注"
+        }
+      ]
+    },
+    {
+      "id": "power.u2_enable",
+      "category": "power",
+      "subject": "U2 使能",
+      "statement": "U2 的 EN 引脚 4 通过 R7 100 kΩ 连接 +12V。",
+      "confidence": "confirmed",
+      "attributes": {
+        "enable_pin": "U2 pin 4 EN",
+        "pullup_resistor": "R7",
+        "pullup_resistance_ohm": 100000,
+        "pullup_rail": "+12V"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "72fa3f8f2f70f0097edc759aa4941778e213c6dfa1130aabdcf80b0b8019cefa",
+          "page": 1,
+          "locator": "页面左下 U2 EN pin 4 与 R7 100KΩ 到 +12V 的连接"
+        }
+      ]
+    },
+    {
+      "id": "power.buck_switch_node",
+      "category": "power",
+      "subject": "U2 降压开关级",
+      "statement": "U2 的 BST 引脚 1 通过 C2 100 nF 连接 LX 开关节点；LX 引脚 6 连接 D4 B5819W SL 与 L1 4.7 uH，L1 的另一端形成 +5VIN。",
+      "confidence": "confirmed",
+      "attributes": {
+        "bootstrap_pin": "U2 pin 1 BST",
+        "bootstrap_capacitor": "C2 100nF",
+        "switch_pin": "U2 pin 6 LX",
+        "catch_diode": "D4 B5819W SL",
+        "inductor": "L1 4.7uH",
+        "output_rail": "+5VIN"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "72fa3f8f2f70f0097edc759aa4941778e213c6dfa1130aabdcf80b0b8019cefa",
+          "page": 1,
+          "locator": "页面左下 U2 BST/LX、C2、D4、L1 与 +5VIN 开关级"
+        }
+      ]
+    },
+    {
+      "id": "power.feedback_divider",
+      "category": "power",
+      "subject": "U2 反馈分压",
+      "statement": "U2 的 FB 引脚 3 连接 R8 与 R9 的中点；R8 51 kΩ 连接到 +5VIN，R9 10 kΩ 连接到 GND。",
+      "confidence": "confirmed",
+      "attributes": {
+        "feedback_pin": "U2 pin 3 FB",
+        "upper_resistor": "R8 51kΩ",
+        "lower_resistor": "R9 10kΩ",
+        "sense_rail": "+5VIN"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "72fa3f8f2f70f0097edc759aa4941778e213c6dfa1130aabdcf80b0b8019cefa",
+          "page": 1,
+          "locator": "页面左下 U2 FB pin 3、R8 51KΩ、R9 10KΩ 与 +5VIN/GND 网络"
+        }
+      ]
+    },
+    {
+      "id": "power.output_filter",
+      "category": "power",
+      "subject": "+5VIN 输出滤波",
+      "statement": "C5 10 uF 与 C6 100 nF 分别跨接 +5VIN 与 GND。",
+      "confidence": "confirmed",
+      "attributes": {
+        "bulk_capacitor": "C5 10uF",
+        "high_frequency_capacitor": "C6 100nF",
+        "rail": "+5VIN"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "72fa3f8f2f70f0097edc759aa4941778e213c6dfa1130aabdcf80b0b8019cefa",
+          "page": 1,
+          "locator": "页面左下 +5VIN 输出端 C5 10uF 与 C6 100nF 到 GND"
+        }
+      ]
+    },
+    {
+      "id": "key_net.power_distribution",
+      "category": "key_net",
+      "subject": "板级电源分配",
+      "statement": "+12V 从 J1 进入 U2 并转换为 +5VIN 后连接 P2 的 3 脚；P1 的 1 脚连接 +3.3V，并由该电源轨为 U1 供电。",
+      "confidence": "confirmed",
+      "attributes": {
+        "input_path": "J1 12V+ -> +12V -> U2 VIN",
+        "output_path": "U2/L1 -> +5VIN -> P2 pin 3",
+        "logic_supply_path": "P1 pin 1 -> +3.3V -> U1 VCC"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "72fa3f8f2f70f0097edc759aa4941778e213c6dfa1130aabdcf80b0b8019cefa",
+          "page": 1,
+          "locator": "整页电源网络：J1 12V+、U2 降压区、+5VIN/P2 与 +3.3V/P1/U1"
+        }
+      ]
+    }
+  ],
+  "needs_review": [
+    {
+      "id": "review.r4_population",
+      "fact_id": "bus.rs485_termination",
+      "question": "R4 的 120Ω 端接电阻在当前量产版本中是否实际装配？",
+      "reason": "原理图将 R4 标注为 120Ω/NC，只能确认存在该跨线端接位置，无法据此确认 BOM 装配状态。",
+      "evidence": [
+        {
+          "asset_sha256": "72fa3f8f2f70f0097edc759aa4941778e213c6dfa1130aabdcf80b0b8019cefa",
+          "page": 1,
+          "locator": "页面上部 R4 跨接 RS485_B 与 RS485_A，标注 120Ω/NC"
+        }
+      ]
+    }
+  ]
+}

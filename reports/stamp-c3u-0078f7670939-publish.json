@@ -1,0 +1,21 @@
+{
+  "dry_run": false,
+  "failed": 0,
+  "published": 1,
+  "results": [
+    {
+      "backup": null,
+      "draft_action": "unchanged",
+      "dry_run": false,
+      "errors": [],
+      "needs_review": 6,
+      "product_id": "stamp-c3u-0078f7670939",
+      "product_name": "Stamp-C3U",
+      "publish_action": "unchanged",
+      "sha256": "bec29962a237dd6b7c0f3c3ed8d677bc7a1e86b9941be73349aea8ad30244c23",
+      "status": "valid",
+      "uncertain_facts": 6
+    }
+  ],
+  "schema_version": 1
+}

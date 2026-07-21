@@ -1,0 +1,804 @@
+{
+  "schema_version": 1,
+  "generator": "schematic_describer",
+  "product": {
+    "product_id": "cores3-se-de74f0945ee3",
+    "product_name": "CoreS3-SE",
+    "sku": "K128-SE",
+    "source_path": "core/M5CoreS3 SE.md",
+    "source_sha256": "18e6d4750b6456af76725682bf7aea9fcfa2785f32b03a87d7222e127e363a5a",
+    "input_sha256": "e2b777ecb7dcf14cc9044e7275b5d005a05bd2ea2154a78e7dd3e6dfa5c439be"
+  },
+  "schematic_assets": [
+    {
+      "sha256": "e974510ff15232ac15bcffef424b8b013cb4581ea0ed3e274d27d002686013e5",
+      "source_url": "https://m5stack-doc.oss-cn-shenzhen.aliyuncs.com/498/Sch_M5_CoreS3_SE_v1.0_page_01.png",
+      "pages": [1]
+    },
+    {
+      "sha256": "4ff9165256906b2ea9ddac2bba5640d40cb67ebf3b5d80f3c7a9b75bf19280ea",
+      "source_url": "https://m5stack-doc.oss-cn-shenzhen.aliyuncs.com/498/Sch_M5_CoreS3_SE_v1.0_page_02.png",
+      "pages": [1]
+    },
+    {
+      "sha256": "65e4ea191ca214bdf63875732ed2844a424c56bb4c482b1b3f438c34ce2562dc",
+      "source_url": "https://m5stack-doc.oss-cn-shenzhen.aliyuncs.com/498/Sch_M5_CoreS3_SE_v1.0_page_03.png",
+      "pages": [1]
+    },
+    {
+      "sha256": "69f9c9261d2932054f8b6aff4381cc1bd36063c0a559baf58a40e685cdf77900",
+      "source_url": "https://m5stack-doc.oss-cn-shenzhen.aliyuncs.com/498/Sch_M5_CoreS3_SE_v1.0_page_04.png",
+      "pages": [1]
+    },
+    {
+      "sha256": "8d5cbe7e85e37d6afb987ad9794dbcd695a99a0fd01842cd631e1e500f36524a",
+      "source_url": "https://m5stack-doc.oss-cn-shenzhen.aliyuncs.com/498/Sch_M5_CoreS3_SE_v1.0_page_05.png",
+      "pages": [1]
+    },
+    {
+      "sha256": "6ca40da1eb950292350fc35988ac944c0430bec21e61157b9f1f9efd8a089a37",
+      "source_url": "https://m5stack-doc.oss-cn-shenzhen.aliyuncs.com/498/Sch_M5_CoreS3_SE_v1.0_page_06.png",
+      "pages": [1]
+    },
+    {
+      "sha256": "96574466c45825f2aaa607ab18988edcc095d039f8e690e1f4d8e9ffbc10d0e1",
+      "source_url": "https://m5stack-doc.oss-cn-shenzhen.aliyuncs.com/498/Sch_M5_CoreS3_SE_v1.0_page_07.png",
+      "pages": [1]
+    }
+  ],
+  "summary": "CoreS3-SE v1.0 以 ESP32-S3 为主控，集成 GD25Q128/W25Q128 Flash、外部 PSRAM、AXP2101 电源、USB Type-C、BM8563 RTC、AW88298 扬声器功放、ES7210 双麦克风音频、AW9523B IO 扩展、LCD/触摸、microSD 和 M5-Bus；摄像头、MPU6886、BMI270 与 BMM150 电路在图面中灰显禁用。",
+  "keywords": [
+    "CoreS3-SE",
+    "K128-SE",
+    "ESP32-S3",
+    "GD25Q128",
+    "W25Q128",
+    "EPSRAM",
+    "AXP2101",
+    "0x34",
+    "SY7088",
+    "BM8563",
+    "AW88298",
+    "0x36",
+    "ES7210",
+    "0x40",
+    "AW9523B",
+    "0x58",
+    "M5_LCD_10P",
+    "M5_TOUCH_8P",
+    "MicroSD-SPI",
+    "M5.BUS",
+    "ME1502AM5G",
+    "ME1502CM5G",
+    "USB_OTG_EN",
+    "BUS_OUT_EN",
+    "I2C_SYS_SDA",
+    "I2C_SYS_SCL",
+    "MPU6886 disabled",
+    "camera disabled",
+    "BMI270 disabled",
+    "BMM150 disabled"
+  ],
+  "components": [
+    {
+      "reference": "U5",
+      "part_number": "ESP32-S3",
+      "role": "CoreS3-SE 主控制器",
+      "evidence": [
+        {
+          "asset_sha256": "65e4ea191ca214bdf63875732ed2844a424c56bb4c482b1b3f438c34ce2562dc",
+          "page": 1,
+          "locator": "A1-C2 U5 ESP32-S3 主控符号及 GPIO 网络"
+        }
+      ]
+    },
+    {
+      "reference": "U1",
+      "part_number": "AXP2101",
+      "role": "多路电源管理芯片",
+      "evidence": [
+        {
+          "asset_sha256": "e974510ff15232ac15bcffef424b8b013cb4581ea0ed3e274d27d002686013e5",
+          "page": 1,
+          "locator": "A1-D2 U1 AXP2101，图面标注 7-bit I2C 地址 0x34"
+        }
+      ]
+    },
+    {
+      "reference": "U2",
+      "part_number": "LMV331",
+      "role": "AXP_PG 至 ESP_BOOT 的延时比较器",
+      "evidence": [
+        {
+          "asset_sha256": "4ff9165256906b2ea9ddac2bba5640d40cb67ebf3b5d80f3c7a9b75bf19280ea",
+          "page": 1,
+          "locator": "A1-A3 U2 LMV331 与 AXP_PG/ESP_BOOT 网络"
+        }
+      ]
+    },
+    {
+      "reference": "U3",
+      "part_number": "SY7088",
+      "role": "AXP_PS 至 BUS_5V 升压转换器",
+      "evidence": [
+        {
+          "asset_sha256": "4ff9165256906b2ea9ddac2bba5640d40cb67ebf3b5d80f3c7a9b75bf19280ea",
+          "page": 1,
+          "locator": "B1-C3 U3 SY7088、L5、BOOST_EN 与 BUS_5V"
+        }
+      ]
+    },
+    {
+      "reference": "U4",
+      "part_number": "BM8563",
+      "role": "RTC 实时时钟",
+      "evidence": [
+        {
+          "asset_sha256": "4ff9165256906b2ea9ddac2bba5640d40cb67ebf3b5d80f3c7a9b75bf19280ea",
+          "page": 1,
+          "locator": "C1-D3 U4 BM8563、Y1 与 AXP_WAKEUP"
+        }
+      ]
+    },
+    {
+      "reference": "U6",
+      "part_number": "GD25Q128/W25Q128",
+      "role": "128 Mbit 外部 SPI Flash",
+      "evidence": [
+        {
+          "asset_sha256": "65e4ea191ca214bdf63875732ed2844a424c56bb4c482b1b3f438c34ce2562dc",
+          "page": 1,
+          "locator": "A3-B4 U6，标注 GD25Q128/W25Q128/128Mbit/3.3V"
+        }
+      ]
+    },
+    {
+      "reference": "U7",
+      "part_number": "EPSRAM",
+      "role": "外部 PSRAM",
+      "evidence": [
+        {
+          "asset_sha256": "65e4ea191ca214bdf63875732ed2844a424c56bb4c482b1b3f438c34ce2562dc",
+          "page": 1,
+          "locator": "B3-B4 U7 EPSRAM，连接 FLASH_CS1 与共享数据/时钟网络"
+        }
+      ]
+    },
+    {
+      "reference": "U8",
+      "part_number": "AW88298",
+      "role": "I2S 智能扬声器功放",
+      "evidence": [
+        {
+          "asset_sha256": "69f9c9261d2932054f8b6aff4381cc1bd36063c0a559baf58a40e685cdf77900",
+          "page": 1,
+          "locator": "A1-B2 U8 AW88298，图面标注 7-bit I2C 地址 0x36"
+        }
+      ]
+    },
+    {
+      "reference": "U9",
+      "part_number": "ES7210",
+      "role": "多通道音频 ADC 与双麦克风编码器",
+      "evidence": [
+        {
+          "asset_sha256": "69f9c9261d2932054f8b6aff4381cc1bd36063c0a559baf58a40e685cdf77900",
+          "page": 1,
+          "locator": "C1-D4 U9 ES7210，图面标注 7-bit I2C 地址 0x40"
+        }
+      ]
+    },
+    {
+      "reference": "U12/U13",
+      "part_number": "MSM381A3729H9BPC",
+      "role": "双模拟 MEMS 麦克风",
+      "evidence": [
+        {
+          "asset_sha256": "69f9c9261d2932054f8b6aff4381cc1bd36063c0a559baf58a40e685cdf77900",
+          "page": 1,
+          "locator": "C3-D4 U12/U13 麦克风，输出 MIC1_P/N 与 MIC2_P/N"
+        }
+      ]
+    },
+    {
+      "reference": "U10",
+      "part_number": "AW9523B",
+      "role": "LCD、触摸、音频与电源控制 IO 扩展器",
+      "evidence": [
+        {
+          "asset_sha256": "8d5cbe7e85e37d6afb987ad9794dbcd695a99a0fd01842cd631e1e500f36524a",
+          "page": 1,
+          "locator": "A3-B4 U10 AW9523B，图面标注 7-bit I2C 地址 0x58"
+        }
+      ]
+    },
+    {
+      "reference": "LCD1",
+      "part_number": "M5_LCD_10P",
+      "role": "SPI LCD 接口",
+      "evidence": [
+        {
+          "asset_sha256": "8d5cbe7e85e37d6afb987ad9794dbcd695a99a0fd01842cd631e1e500f36524a",
+          "page": 1,
+          "locator": "C3-D4 LCD1 M5_LCD_10P，连接 SPI、RST、VDD_3V3 与 VCC_BL"
+        }
+      ]
+    },
+    {
+      "reference": "CTP1",
+      "part_number": "M5_TOUCH_8P",
+      "role": "电容触摸接口",
+      "evidence": [
+        {
+          "asset_sha256": "8d5cbe7e85e37d6afb987ad9794dbcd695a99a0fd01842cd631e1e500f36524a",
+          "page": 1,
+          "locator": "C4-D4 CTP1 M5_TOUCH_8P，连接 I2C、TOUCH_INT 与 TOUCH_RST"
+        }
+      ]
+    },
+    {
+      "reference": "U11",
+      "part_number": "MicroSD-SPI",
+      "role": "microSD 卡座",
+      "evidence": [
+        {
+          "asset_sha256": "8d5cbe7e85e37d6afb987ad9794dbcd695a99a0fd01842cd631e1e500f36524a",
+          "page": 1,
+          "locator": "C2-D3 U11 MicroSD-SPI，连接 TF_CS、SPI_MOSI/SCK/MISO 与 TF_SW"
+        }
+      ]
+    },
+    {
+      "reference": "U14/U17/U18/U19",
+      "part_number": "ME1502AM5G/ME1502CM5G",
+      "role": "BUS、OTG 与 USB 电源方向控制负载开关",
+      "evidence": [
+        {
+          "asset_sha256": "6ca40da1eb950292350fc35988ac944c0430bec21e61157b9f1f9efd8a089a37",
+          "page": 1,
+          "locator": "A1-C4 Boost/OTG/USB/PMU 四路 U14/U17/U18/U19 电源路径"
+        }
+      ]
+    }
+  ],
+  "facts": [
+    {
+      "id": "system.controller",
+      "category": "system",
+      "subject": "CoreS3-SE 主控制器",
+      "statement": "U5 为 ESP32-S3，GPIO0-46 分别连接启动、M5-Bus、I2C、I2S、USB、SPI Flash/PSRAM 和 SPI 外设网络；部分保留 CAM_* 网络名，但对应摄像头电路在本版本图面中禁用。",
+      "confidence": "confirmed",
+      "attributes": {
+        "reference": "U5",
+        "part_number": "ESP32-S3",
+        "camera_interface": "reserved CAM_* net labels, disabled camera block"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "65e4ea191ca214bdf63875732ed2844a424c56bb4c482b1b3f438c34ce2562dc",
+          "page": 1,
+          "locator": "A1-C2 U5 ESP32-S3 主控符号与全部 GPIO 网络"
+        },
+        {
+          "asset_sha256": "8d5cbe7e85e37d6afb987ad9794dbcd695a99a0fd01842cd631e1e500f36524a",
+          "page": 1,
+          "locator": "A1-B2 灰显摄像头 J2/X2 禁用块"
+        }
+      ]
+    },
+    {
+      "id": "storage.flash",
+      "category": "storage",
+      "subject": "外部 Flash",
+      "statement": "U6 标注 GD25Q128/W25Q128、128 Mbit、3.3 V，nCS=FLASH_CS0、CLK=FLASH_CLK、DI/IO0=FLASH_D、DO/IO1=FLASH_Q、nWP/IO2=FLASH_WP、nHOLD/IO3=FLASH_HD。",
+      "confidence": "confirmed",
+      "attributes": {
+        "reference": "U6",
+        "part_number": "GD25Q128/W25Q128",
+        "capacity_mbit": 128,
+        "chip_select": "FLASH_CS0",
+        "clock": "FLASH_CLK",
+        "io0": "FLASH_D",
+        "io1": "FLASH_Q",
+        "io2": "FLASH_WP",
+        "io3": "FLASH_HD"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "65e4ea191ca214bdf63875732ed2844a424c56bb4c482b1b3f438c34ce2562dc",
+          "page": 1,
+          "locator": "A3-B4 U6 Flash 器件值与六条 FLASH_* 网络"
+        }
+      ]
+    },
+    {
+      "id": "memory.psram",
+      "category": "memory",
+      "subject": "外部 PSRAM",
+      "statement": "U7 EPSRAM 使用 FLASH_CS1 片选，并共享 FLASH_CLK、FLASH_D、FLASH_Q、FLASH_WP、FLASH_HD 信号。",
+      "confidence": "confirmed",
+      "attributes": {
+        "reference": "U7",
+        "part_number": "EPSRAM",
+        "chip_select": "FLASH_CS1",
+        "shared_bus": "FLASH_CLK,FLASH_D,FLASH_Q,FLASH_WP,FLASH_HD"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "65e4ea191ca214bdf63875732ed2844a424c56bb4c482b1b3f438c34ce2562dc",
+          "page": 1,
+          "locator": "B3-B4 U7 EPSRAM 与 FLASH_CS1/CLK/D/Q/WP/HD"
+        }
+      ]
+    },
+    {
+      "id": "clock.main_crystal",
+      "category": "clock",
+      "subject": "ESP32-S3 主晶振",
+      "statement": "X1 为 40 MHz、10 ppm、20 pF 晶振，XTAL_40M_P 侧串联 R33 22 nH，C44/C51 均为 12 pF 并接地。",
+      "confidence": "confirmed",
+      "attributes": {
+        "reference": "X1",
+        "frequency_hz": 40000000,
+        "tolerance_ppm": 10,
+        "load_capacitance_pf": 20,
+        "series_inductor": "R33 22nH",
+        "capacitors": "C44=12pF,C51=12pF"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "65e4ea191ca214bdf63875732ed2844a424c56bb4c482b1b3f438c34ce2562dc",
+          "page": 1,
+          "locator": "C1-D2 X1、R33、C44、C51 与 XTAL_40M_P/N"
+        }
+      ]
+    },
+    {
+      "id": "rf.wifi_antenna",
+      "category": "rf",
+      "subject": "ESP32-S3 天线网络",
+      "statement": "ESP_LNA 经 C68、C69、C86 匹配和 R35 0 Ω 连接 ANT1 PROANT440；J4 IPEX 支路通过 R36=NC 预留，L9/C121 均为 NC。",
+      "confidence": "confirmed",
+      "attributes": {
+        "onboard_antenna": "ANT1 PROANT440",
+        "series_path": "R35 0R",
+        "optional_connector": "J4 IPEX via R36 NC",
+        "optional_matching": "L9 NC,C121 NC"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "65e4ea191ca214bdf63875732ed2844a424c56bb4c482b1b3f438c34ce2562dc",
+          "page": 1,
+          "locator": "D1-D3 ESP_LNA 至 ANT1 PROANT440 与 J4 IPEX 匹配网络"
+        }
+      ]
+    },
+    {
+      "id": "address.axp2101",
+      "category": "address",
+      "subject": "AXP2101 I2C 地址",
+      "statement": "U1 AXP2101 图面标注 7 位 I2C 地址为 0x34。",
+      "confidence": "confirmed",
+      "attributes": {
+        "part_number": "AXP2101",
+        "i2c_address": "0x34"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "e974510ff15232ac15bcffef424b8b013cb4581ea0ed3e274d27d002686013e5",
+          "page": 1,
+          "locator": "A1-B2 U1 上方 I2C ADDR(7bit): 0x34 注记"
+        }
+      ]
+    },
+    {
+      "id": "power.axp2101",
+      "category": "power",
+      "subject": "AXP2101 电源树",
+      "statement": "AXP2101 的 LX1/L1 生成 VDD_3V3，LX3/L3 生成 VCC_3V3；BLDO1=AVDD、BLDO2=DVDD、DLDO1=VCC_BL、ALDO1=VDD_1V8、ALDO2=VDDA_3V3、ALDO3=VDDCAM_3V3、ALDO4=VDD_3V3_SD，VRTC 生成 RTC_VDD。",
+      "confidence": "confirmed",
+      "attributes": {
+        "lx1": "VDD_3V3",
+        "lx3": "VCC_3V3",
+        "bldo1": "AVDD",
+        "bldo2": "DVDD",
+        "dldo1": "VCC_BL",
+        "aldo1": "VDD_1V8",
+        "aldo2": "VDDA_3V3",
+        "aldo3": "VDDCAM_3V3",
+        "aldo4": "VDD_3V3_SD",
+        "vrtc": "RTC_VDD"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "e974510ff15232ac15bcffef424b8b013cb4581ea0ed3e274d27d002686013e5",
+          "page": 1,
+          "locator": "A1-D2 U1 AXP2101 全部 LX/BLDO/DLDO/ALDO/VRTC 输出网络"
+        }
+      ]
+    },
+    {
+      "id": "bus.axp_i2c_note",
+      "category": "bus",
+      "subject": "AXP2101 I2C 绘图注记",
+      "statement": "AXP2101 SDA/SCL 已连接 I2C_SYS_SDA/I2C_SYS_SCL，但图面在两脚旁保留红字 I2C NEED REVERSED，无法仅据页面确认该注记是已处理说明还是待修订项。",
+      "confidence": "uncertain",
+      "attributes": {
+        "sda": "I2C_SYS_SDA",
+        "scl": "I2C_SYS_SCL",
+        "annotation": "I2C NEED REVERSED"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "e974510ff15232ac15bcffef424b8b013cb4581ea0ed3e274d27d002686013e5",
+          "page": 1,
+          "locator": "C1-D2 AXP2101 SDA/SCL 左侧红色 I2C NEED REVERSED 注记"
+        }
+      ]
+    },
+    {
+      "id": "interface.power_buttons",
+      "category": "interface",
+      "subject": "复位与电源按键",
+      "statement": "S1 通过 R38 510 Ω 将 AXP_PG 按下接地，S2 通过 R39 510 Ω 将 PWR_KEY 按下接地；J5 为 VBAT/GND 两针接口。",
+      "confidence": "confirmed",
+      "attributes": {
+        "s1": "AXP_PG via R38 510R",
+        "s2": "PWR_KEY via R39 510R",
+        "battery_connector": "J5 VBAT/GND"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "e974510ff15232ac15bcffef424b8b013cb4581ea0ed3e274d27d002686013e5",
+          "page": 1,
+          "locator": "C3-D4 S1/S2 按键电路与 D2 J5 VBAT/GND 接口"
+        }
+      ]
+    },
+    {
+      "id": "reset.boot_delay",
+      "category": "reset",
+      "subject": "Boot 延时与指示电路",
+      "statement": "AXP_PG 经 D3/R5/D5/R7/R8 RC 网络送入 U2 LMV331，比较器输出 ESP_BOOT，并通过 LED2 GREEN 与 R10 2 kΩ 指示。",
+      "confidence": "confirmed",
+      "attributes": {
+        "input": "AXP_PG",
+        "comparator": "U2 LMV331",
+        "output": "ESP_BOOT",
+        "indicator": "LED2 GREEN via R10 2k"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "4ff9165256906b2ea9ddac2bba5640d40cb67ebf3b5d80f3c7a9b75bf19280ea",
+          "page": 1,
+          "locator": "A1-A3 AXP_PG 延时网络、U2 LMV331、ESP_BOOT 与 LED2"
+        }
+      ]
+    },
+    {
+      "id": "power.bus_boost",
+      "category": "power",
+      "subject": "BUS_5V 升压",
+      "statement": "U3 SY7088 以 AXP_PS 为输入，经 L5 WPN3012H2R2MT 生成 BUS_5V，EN 由 BOOST_EN 经 R13 47 Ω 控制。",
+      "confidence": "confirmed",
+      "attributes": {
+        "converter": "U3 SY7088",
+        "input": "AXP_PS",
+        "inductor": "L5 WPN3012H2R2MT",
+        "output": "BUS_5V",
+        "enable": "BOOST_EN via R13 47R"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "4ff9165256906b2ea9ddac2bba5640d40cb67ebf3b5d80f3c7a9b75bf19280ea",
+          "page": 1,
+          "locator": "B1-C3 U3 SY7088、L5、BOOST_EN 与 BUS_5V"
+        }
+      ]
+    },
+    {
+      "id": "interface.usb",
+      "category": "interface",
+      "subject": "USB Type-C 与测试接口",
+      "statement": "J1 USB-TYPEC 的 DP/DN 连接 USB_D_P/USB_D_N，并经 R47/R25 两只 22 Ω 电阻连接 ESP32 USB_DU_P/USB_DU_N；CC1/CC2 各有 5.1 kΩ 下拉，D4/D6 ESD5Z3V3 提供对地保护，J6 引出 VUSB、GND、USB_D_N 与 USB_D_P。",
+      "confidence": "confirmed",
+      "attributes": {
+        "connector": "J1 USB-TYPEC",
+        "d_plus": "USB_D_P to USB_DU_P via R47 22R",
+        "d_minus": "USB_D_N to USB_DU_N via R25 22R",
+        "cc_pulldowns": "R6=5.1k,R9=5.1k",
+        "esd": "D4,D6 ESD5Z3V3",
+        "header": "J6 VUSB,GND,USB_D_N,USB_D_P"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "4ff9165256906b2ea9ddac2bba5640d40cb67ebf3b5d80f3c7a9b75bf19280ea",
+          "page": 1,
+          "locator": "A3-B4 J1 USB-TYPEC、J6、R25/R47、R6/R9 与 D4/D6"
+        }
+      ]
+    },
+    {
+      "id": "clock.rtc",
+      "category": "clock",
+      "subject": "BM8563 RTC",
+      "statement": "U4 BM8563 通过 I2C_SYS_SCL/I2C_SYS_SDA 接入系统总线，INT 输出 AXP_WAKEUP；Y1 配 C30/C32 两只 6 pF 电容，RTC_VDD 经 D8/R16 供电，BAT1 位置为 NC。",
+      "confidence": "confirmed",
+      "attributes": {
+        "part_number": "BM8563",
+        "scl": "I2C_SYS_SCL",
+        "sda": "I2C_SYS_SDA",
+        "interrupt": "AXP_WAKEUP",
+        "crystal": "Y1",
+        "load_capacitors": "C30=6pF,C32=6pF",
+        "backup_battery": "BAT1 NC"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "4ff9165256906b2ea9ddac2bba5640d40cb67ebf3b5d80f3c7a9b75bf19280ea",
+          "page": 1,
+          "locator": "C1-D3 U4 BM8563、Y1、C30/C32、D8/R16 与 BAT1/NC"
+        }
+      ]
+    },
+    {
+      "id": "address.audio_devices",
+      "category": "address",
+      "subject": "音频器件 I2C 地址",
+      "statement": "AW88298 图面标注 7 位地址 0x36，ES7210 图面标注 7 位地址 0x40。",
+      "confidence": "confirmed",
+      "attributes": {
+        "aw88298": "0x36",
+        "es7210": "0x40"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "69f9c9261d2932054f8b6aff4381cc1bd36063c0a559baf58a40e685cdf77900",
+          "page": 1,
+          "locator": "A1 U8 上方 0x36 注记与 C1 U9 上方 0x40 注记"
+        }
+      ]
+    },
+    {
+      "id": "audio.amplifier",
+      "category": "audio",
+      "subject": "AW88298 扬声器功放",
+      "statement": "U8 AW88298 通过 I2C_SYS_SDA/SCL 配置，I2S_BCK/I2S_WCK/I2S_DATO 接入数字音频，AW_INT/AW_RST 提供中断和复位；VON/VOP 经 FB1/FB2 输出 SPK_VON/SPK_VOP。",
+      "confidence": "confirmed",
+      "attributes": {
+        "part_number": "AW88298",
+        "sda": "I2C_SYS_SDA",
+        "scl": "I2C_SYS_SCL",
+        "i2s": "I2S_BCK,I2S_WCK,I2S_DATO",
+        "interrupt": "AW_INT",
+        "reset": "AW_RST",
+        "outputs": "SPK_VON,SPK_VOP"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "69f9c9261d2932054f8b6aff4381cc1bd36063c0a559baf58a40e685cdf77900",
+          "page": 1,
+          "locator": "A1-B2 U8 AW88298 全部控制、I2S 与差分扬声器输出"
+        }
+      ]
+    },
+    {
+      "id": "audio.codec_microphones",
+      "category": "audio",
+      "subject": "ES7210 双麦克风输入",
+      "statement": "U9 ES7210 的 MCLK 由 ESP_BOOT 经 R34 51 Ω 输入，SCLK/LRCK/SDOUT1 分别接 I2S_BCK/I2S_WCK/I2S_DATI，控制总线为 I2C_SYS_SDA/SCL；U12/U13 两颗 MSM381A3729H9BPC 产生 MIC1_P/N 与 MIC2_P/N。",
+      "confidence": "confirmed",
+      "attributes": {
+        "codec": "ES7210",
+        "mclk": "ESP_BOOT via R34 51R",
+        "bclk": "I2S_BCK",
+        "lrck": "I2S_WCK",
+        "data_out": "I2S_DATI",
+        "microphones": "U12/U13 MSM381A3729H9BPC"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "69f9c9261d2932054f8b6aff4381cc1bd36063c0a559baf58a40e685cdf77900",
+          "page": 1,
+          "locator": "C1-D4 U9 ES7210、R34 与 U12/U13 麦克风网络"
+        }
+      ]
+    },
+    {
+      "id": "audio.aec_feedback",
+      "category": "audio",
+      "subject": "音频回采路径",
+      "statement": "SPK_VOP/SPK_VON 分别经 R40/R42 150 kΩ 和 C102/C104 1 µF 形成 AEC_P/AEC_N，并连接 ES7210 的 MIC3P/MIC3N。",
+      "confidence": "confirmed",
+      "attributes": {
+        "positive_path": "SPK_VOP-R40 150k-C102 1uF-AEC_P",
+        "negative_path": "SPK_VON-R42 150k-C104 1uF-AEC_N",
+        "codec_inputs": "MIC3P,MIC3N"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "69f9c9261d2932054f8b6aff4381cc1bd36063c0a559baf58a40e685cdf77900",
+          "page": 1,
+          "locator": "B2-C3 SPK_VOP/VON 至 AEC_P/N 及 ES7210 MIC3P/N 网络"
+        }
+      ]
+    },
+    {
+      "id": "address.aw9523b",
+      "category": "address",
+      "subject": "AW9523B I2C 地址",
+      "statement": "U10 AW9523B 图面标注 7 位 I2C 地址为 0x58。",
+      "confidence": "confirmed",
+      "attributes": {
+        "part_number": "AW9523B",
+        "i2c_address": "0x58"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "8d5cbe7e85e37d6afb987ad9794dbcd695a99a0fd01842cd631e1e500f36524a",
+          "page": 1,
+          "locator": "A3 U10 上方 I2C ADDR(7bit): 0x58 注记"
+        }
+      ]
+    },
+    {
+      "id": "gpio.aw9523b",
+      "category": "gpio",
+      "subject": "AW9523B 控制映射",
+      "statement": "AW9523B 的 P0_0=TOUCH_RST、P0_1=BUS_OUT_EN、P0_2=AW_RST、P0_3=ES_INT、P0_4=TF_SW、P0_5=USB_OTG_EN；P1_0=CAM_RST、P1_1=LCD_RST、P1_2=TOUCH_INT、P1_3=AW_INT，P1_7=BOOST_EN。CAM_RST 网络被保留，但对应摄像头块在本版本图面中禁用。",
+      "confidence": "confirmed",
+      "attributes": {
+        "p0": "P0_0:TOUCH_RST,P0_1:BUS_OUT_EN,P0_2:AW_RST,P0_3:ES_INT,P0_4:TF_SW,P0_5:USB_OTG_EN",
+        "p1": "P1_0:CAM_RST,P1_1:LCD_RST,P1_2:TOUCH_INT,P1_3:AW_INT,P1_7:BOOST_EN",
+        "camera_block": "disabled"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "8d5cbe7e85e37d6afb987ad9794dbcd695a99a0fd01842cd631e1e500f36524a",
+          "page": 1,
+          "locator": "A3-B4 U10 AW9523B 左侧 P0/P1 网络标注与 A1-B2 灰显摄像头块"
+        }
+      ]
+    },
+    {
+      "id": "interface.lcd_touch",
+      "category": "interface",
+      "subject": "LCD 与触摸接口",
+      "statement": "LCD1 的 MOSI=SPI_MOSI、SCK=SPI_SCK、CS=LCD_CS、RST=LCD_RST、MISO=SPI_MISO，供电为 VDD_3V3 与 VCC_BL；CTP1 的 SDA/SCL=I2C_SYS_SDA/SCL，另有 TOUCH_INT 与 TOUCH_RST。",
+      "confidence": "confirmed",
+      "attributes": {
+        "lcd": "MOSI:SPI_MOSI,SCK:SPI_SCK,CS:LCD_CS,RST:LCD_RST,MISO:SPI_MISO",
+        "lcd_power": "VDD_3V3,VCC_BL",
+        "touch": "SDA:I2C_SYS_SDA,SCL:I2C_SYS_SCL,INT:TOUCH_INT,RST:TOUCH_RST"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "8d5cbe7e85e37d6afb987ad9794dbcd695a99a0fd01842cd631e1e500f36524a",
+          "page": 1,
+          "locator": "C3-D4 LCD1 与 CTP1 引脚网络"
+        }
+      ]
+    },
+    {
+      "id": "storage.microsd",
+      "category": "storage",
+      "subject": "microSD 接口",
+      "statement": "U11 MicroSD-SPI 的 CS=TF_CS、DI=SPI_MOSI、SCLK=SPI_SCK、DO=SPI_MISO，SW 卡检测信号连接 TF_SW，并由 VDD_3V3_SD 供电。",
+      "confidence": "confirmed",
+      "attributes": {
+        "chip_select": "TF_CS",
+        "mosi": "SPI_MOSI",
+        "clock": "SPI_SCK",
+        "miso": "SPI_MISO",
+        "detect": "TF_SW",
+        "supply": "VDD_3V3_SD"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "8d5cbe7e85e37d6afb987ad9794dbcd695a99a0fd01842cd631e1e500f36524a",
+          "page": 1,
+          "locator": "C2-D3 U11 MicroSD-SPI 与 TF_CS/SPI/TF_SW/VDD_3V3_SD"
+        }
+      ]
+    },
+    {
+      "id": "interface.m5_bus",
+      "category": "interface",
+      "subject": "CoreS3-SE 30 Pin M5-Bus",
+      "statement": "BUS1 的 1-30 脚依次为 GND、BUS_ADC1、GND、BUS_PB_IN、GND、AXP_PG、SPI_MOSI、BUS_G5、SPI_MISO、BUS_PB_OUT、SPI_SCK、VCC_3V3、BUS_U0RXD、BUS_U0TXD、BUS_PC_RX、BUS_PC_TX、I2C_SYS_SDA、I2C_SYS_SCL、BUS_PA_SDA、BUS_PA_SCL、BUS_G6、BUS_G7、I2S_DATO、ESP_BOOT、NC、I2S_DATI、NC、BUS_OUT、NC、VBAT。",
+      "confidence": "confirmed",
+      "attributes": {
+        "pinout": "1:GND,2:BUS_ADC1,3:GND,4:BUS_PB_IN,5:GND,6:AXP_PG,7:SPI_MOSI,8:BUS_G5,9:SPI_MISO,10:BUS_PB_OUT,11:SPI_SCK,12:VCC_3V3,13:BUS_U0RXD,14:BUS_U0TXD,15:BUS_PC_RX,16:BUS_PC_TX,17:I2C_SYS_SDA,18:I2C_SYS_SCL,19:BUS_PA_SDA,20:BUS_PA_SCL,21:BUS_G6,22:BUS_G7,23:I2S_DATO,24:ESP_BOOT,25:NC,26:I2S_DATI,27:NC,28:BUS_OUT,29:NC,30:VBAT"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "8d5cbe7e85e37d6afb987ad9794dbcd695a99a0fd01842cd631e1e500f36524a",
+          "page": 1,
+          "locator": "C1-D2 BUS1 M5.BUS 1-30 脚定义"
+        }
+      ]
+    },
+    {
+      "id": "interface.port_a",
+      "category": "interface",
+      "subject": "四针扩展接口",
+      "statement": "J3 GH2.0-4P 的 1-4 脚依次连接 BUS_PA_SCL、BUS_PA_SDA、BUS_OUT 与 GND。",
+      "confidence": "confirmed",
+      "attributes": {
+        "connector": "J3 GH2.0-4P",
+        "pinout": "1:BUS_PA_SCL,2:BUS_PA_SDA,3:BUS_OUT,4:GND"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "8d5cbe7e85e37d6afb987ad9794dbcd695a99a0fd01842cd631e1e500f36524a",
+          "page": 1,
+          "locator": "D1-D2 J3 GH2.0-4P 四针接口"
+        }
+      ]
+    },
+    {
+      "id": "power.direction_control",
+      "category": "power",
+      "subject": "BUS 与 USB 电源方向控制",
+      "statement": "U14 ME1502AM5G 在 BUS_OUT_EN 高有效时连接 BUS_5V 至 BUS_OUT；U19 ME1502CM5G 在 BUS_OUT_EN 低有效时连接 BUS_OUT 至 VBUS；U17/U18 以相同的高/低有效组合由 USB_OTG_EN 控制 BUS_OUT、VUSB 与 VBUS 的方向。",
+      "confidence": "confirmed",
+      "attributes": {
+        "bus_source": "U14 ME1502AM5G high-enable BUS_5V->BUS_OUT",
+        "bus_sink": "U19 ME1502CM5G low-enable BUS_OUT->VBUS",
+        "otg_source": "U17 ME1502AM5G high-enable BUS_OUT->VUSB",
+        "usb_input": "U18 ME1502CM5G low-enable VUSB->VBUS"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "6ca40da1eb950292350fc35988ac944c0430bec21e61157b9f1f9efd8a089a37",
+          "page": 1,
+          "locator": "A1-C4 Boost/OTG/USB/PMU 四路 U14/U17/U18/U19 电源路径与使能极性"
+        }
+      ]
+    },
+    {
+      "id": "system.disabled_blocks",
+      "category": "system",
+      "subject": "CoreS3-SE 禁用外设块",
+      "statement": "U16 MPU6886、J2/X2 摄像头接口与时钟、U15 BMI270 和 U20 BMM150 在 CoreS3-SE v1.0 图面中整体灰显并带禁用边框或未连接标记，不属于本版本的有效实装电路。",
+      "confidence": "confirmed",
+      "attributes": {
+        "disabled_imu": "U16 MPU6886",
+        "disabled_camera": "J2 AFC34-S24FIA-00 and X2 20MHz",
+        "disabled_sensor_hub": "U15 BMI270 and U20 BMM150"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "4ff9165256906b2ea9ddac2bba5640d40cb67ebf3b5d80f3c7a9b75bf19280ea",
+          "page": 1,
+          "locator": "B3-D4 整体灰显的 U16 MPU6886 禁用块"
+        },
+        {
+          "asset_sha256": "8d5cbe7e85e37d6afb987ad9794dbcd695a99a0fd01842cd631e1e500f36524a",
+          "page": 1,
+          "locator": "A1-B2 整体灰显的 J2 摄像头与 X2 CAM_MCLK 禁用块"
+        },
+        {
+          "asset_sha256": "96574466c45825f2aaa607ab18988edcc095d039f8e690e1f4d8e9ffbc10d0e1",
+          "page": 1,
+          "locator": "A1-C4 整体灰显的 U15 BMI270 与 U20 BMM150 禁用块"
+        }
+      ]
+    }
+  ],
+  "needs_review": [
+    {
+      "id": "review.axp_i2c_reversed_note",
+      "fact_id": "bus.axp_i2c_note",
+      "question": "AXP2101 页面的 I2C NEED REVERSED 是已处理的历史注记，还是表示当前 SDA/SCL 网络仍需交换？",
+      "reason": "图面同时给出 SDA=I2C_SYS_SDA、SCL=I2C_SYS_SCL 和红色反转注记，缺少修订状态，无法仅凭页面判定。",
+      "evidence": [
+        {
+          "asset_sha256": "e974510ff15232ac15bcffef424b8b013cb4581ea0ed3e274d27d002686013e5",
+          "page": 1,
+          "locator": "C1-D2 AXP2101 SDA/SCL 旁红色 I2C NEED REVERSED 注记"
+        }
+      ]
+    }
+  ]
+}

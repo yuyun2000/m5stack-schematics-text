@@ -1,0 +1,21 @@
+{
+  "dry_run": false,
+  "failed": 0,
+  "published": 1,
+  "results": [
+    {
+      "backup": null,
+      "draft_action": "unchanged",
+      "dry_run": false,
+      "errors": [],
+      "needs_review": 2,
+      "product_id": "atom-dtu-nbiot-cn-761b536e6b99",
+      "product_name": "Atom DTU NBIoT-CN",
+      "publish_action": "unchanged",
+      "sha256": "0d4876bcd312b778b65a62c729f8fa47b0250442dd66ab44bf037733ad8133b7",
+      "status": "valid",
+      "uncertain_facts": 2
+    }
+  ],
+  "schema_version": 1
+}

@@ -1,0 +1,21 @@
+{
+  "dry_run": false,
+  "failed": 0,
+  "published": 1,
+  "results": [
+    {
+      "backup": null,
+      "draft_action": "unchanged",
+      "dry_run": false,
+      "errors": [],
+      "needs_review": 8,
+      "product_id": "basic-v2-7-27c4169867b7",
+      "product_name": "Basic v2.7",
+      "publish_action": "unchanged",
+      "sha256": "859c5ad236dccac0d6151c688c062bc777fbbcf62bc9289b3147e4ff9900e89f",
+      "status": "valid",
+      "uncertain_facts": 8
+    }
+  ],
+  "schema_version": 1
+}

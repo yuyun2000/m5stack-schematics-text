@@ -1,0 +1,21 @@
+{
+  "dry_run": false,
+  "failed": 0,
+  "published": 1,
+  "results": [
+    {
+      "backup": null,
+      "draft_action": "unchanged",
+      "dry_run": false,
+      "errors": [],
+      "needs_review": 2,
+      "product_id": "module13-2-grbl-372f1e1be2cc",
+      "product_name": "Module13.2 GRBL",
+      "publish_action": "unchanged",
+      "sha256": "675a29fcd0d6d6ba6ff570b082bb3dff21adcf9280f34ec20d244e4c4641e08e",
+      "status": "valid",
+      "uncertain_facts": 2
+    }
+  ],
+  "schema_version": 1
+}

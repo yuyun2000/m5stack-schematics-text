@@ -1,0 +1,21 @@
+{
+  "dry_run": false,
+  "failed": 0,
+  "published": 1,
+  "results": [
+    {
+      "backup": null,
+      "draft_action": "unchanged",
+      "dry_run": false,
+      "errors": [],
+      "needs_review": 3,
+      "product_id": "unit-scales-b8e4bdd6bf8a",
+      "product_name": "Unit Scales",
+      "publish_action": "unchanged",
+      "sha256": "003fd615407c7e54aaefdbb2c5fab7add40f354b403bfe06ae96d264e8698f59",
+      "status": "valid",
+      "uncertain_facts": 3
+    }
+  ],
+  "schema_version": 1
+}

@@ -1,0 +1,21 @@
+{
+  "dry_run": false,
+  "failed": 0,
+  "published": 1,
+  "results": [
+    {
+      "backup": null,
+      "draft_action": "unchanged",
+      "dry_run": false,
+      "errors": [],
+      "needs_review": 11,
+      "product_id": "m5go-iot-kit-v2-7-566311c71a9f",
+      "product_name": "M5GO IoT Kit v2.7",
+      "publish_action": "unchanged",
+      "sha256": "7c95b6b7909a0c72f4086945c3bdcca977e1513471d3b87fb2ca47037efa8235",
+      "status": "valid",
+      "uncertain_facts": 11
+    }
+  ],
+  "schema_version": 1
+}

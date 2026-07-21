@@ -1,0 +1,21 @@
+{
+  "dry_run": false,
+  "failed": 0,
+  "published": 1,
+  "results": [
+    {
+      "backup": null,
+      "draft_action": "unchanged",
+      "dry_run": false,
+      "errors": [],
+      "needs_review": 3,
+      "product_id": "atomic-tfcard-base-4b45dc9f4d11",
+      "product_name": "Atomic TFCard Base",
+      "publish_action": "unchanged",
+      "sha256": "c0b7f4c43186d9f2900e79a3e9cd26da07e2a9a9e16b6e9c112e72ff04645def",
+      "status": "valid",
+      "uncertain_facts": 3
+    }
+  ],
+  "schema_version": 1
+}

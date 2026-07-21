@@ -1,0 +1,21 @@
+{
+  "dry_run": false,
+  "failed": 0,
+  "published": 1,
+  "results": [
+    {
+      "backup": null,
+      "draft_action": "unchanged",
+      "dry_run": false,
+      "errors": [],
+      "needs_review": 7,
+      "product_id": "tab5-keyboard-d4c3f4783ca5",
+      "product_name": "Tab5 Keyboard",
+      "publish_action": "unchanged",
+      "sha256": "b1c74d08e95400c3dfd39ebb38bbc15f9657ef1ffc9e63ef0b681103a4c5d760",
+      "status": "valid",
+      "uncertain_facts": 7
+    }
+  ],
+  "schema_version": 1
+}

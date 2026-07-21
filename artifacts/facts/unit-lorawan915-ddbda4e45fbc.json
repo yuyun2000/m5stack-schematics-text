@@ -1,0 +1,641 @@
+{
+  "schema_version": 1,
+  "generator": "schematic_describer",
+  "product": {
+    "product_id": "unit-lorawan915-ddbda4e45fbc",
+    "product_name": "Unit LoRaWAN915",
+    "sku": "U115",
+    "source_path": "unit/lorawan915.md",
+    "source_sha256": "59d8a7fd8d77ad8b21fd181c92d30501fefba39ccb6fa2d4a1ecccc07eda4955",
+    "input_sha256": "39d5970139396aba04f8dfa5266fb072a03abb366609da245e976054c6bb874e"
+  },
+  "schematic_assets": [
+    {
+      "sha256": "900b529b827b45c2a11b2863953929fb1378fe8c54f9c34000712ddf9bc5e9d7",
+      "source_url": "https://static-cdn.m5stack.com/resource/docs/products/unit/lorawan915/lorawan915_sch_01.webp",
+      "pages": [
+        1
+      ]
+    }
+  ],
+  "summary": "Unit LoRaWAN915（U115）原理图由 M1 Ra-07/Ra-07H 无线模组、AMS1117-3.3 线性稳压器、HY-2.0-4P UART 接口和 IPEX 天线接口组成。J1 输入 +5V，VR1 生成 +3.3V 供给 M1；模块 UART 经 22Ω 串联电阻连接 J1，并引出 SWCLK、SWDIO 和 RESET 测试点。射频输出从 M1 ANT 经 R4 0Ω 接 E1 ANT_IPEX，右上装配表给出 R1/R2/R3 对应 470/868/915，但没有显示实际装配状态。",
+  "keywords": [
+    "Unit LoRaWAN915",
+    "U115",
+    "LoRaWAN915",
+    "US915",
+    "Ra-07",
+    "Ra-07H",
+    "M1",
+    "AMS1117-3.3",
+    "VR1",
+    "HY-2.0_UART",
+    "J1",
+    "UART",
+    "UTXD",
+    "URXD",
+    "R5 22Ω",
+    "R6 22Ω",
+    "+5V",
+    "+3.3V",
+    "ANT",
+    "ANT_IPEX",
+    "E1",
+    "R4 0Ω",
+    "SWCLK",
+    "SWDIO",
+    "SWC",
+    "SWD",
+    "RESET",
+    "JP1",
+    "JP2",
+    "JP3",
+    "JP4",
+    "JP5",
+    "R1 0Ω 470",
+    "R2 0Ω 868",
+    "R3 0Ω 915",
+    "C1 22uF",
+    "C2 22uF",
+    "C3 100nF"
+  ],
+  "components": [
+    {
+      "reference": "M1",
+      "part_number": "Ra-07/Ra-07H",
+      "role": "无线通信模组，连接 3.3V、UART、SWD、复位与 IPEX 天线通道",
+      "evidence": [
+        {
+          "asset_sha256": "900b529b827b45c2a11b2863953929fb1378fe8c54f9c34000712ddf9bc5e9d7",
+          "page": 1,
+          "locator": "页面中央 M1 Ra-07/Ra-07H，pins 1~18 标注 GND/ADC/AUX/SETA/DIO3/SETB/SWCLK/SWDIO/VCC/URX/UTX/P00/P01/P06/P07/RES/GND/ANT"
+        }
+      ]
+    },
+    {
+      "reference": "VR1",
+      "part_number": "AMS1117-3.3",
+      "role": "把 +5V 输入稳压为 +3.3V",
+      "evidence": [
+        {
+          "asset_sha256": "900b529b827b45c2a11b2863953929fb1378fe8c54f9c34000712ddf9bc5e9d7",
+          "page": 1,
+          "locator": "页面左上 VR1 AMS1117-3.3，Vin 接 +5V、Vout 接 +3.3V、GND 接地"
+        }
+      ]
+    },
+    {
+      "reference": "J1",
+      "part_number": "HY-2.0_UART",
+      "role": "四针 UART 与 +5V 电源接口",
+      "evidence": [
+        {
+          "asset_sha256": "900b529b827b45c2a11b2863953929fb1378fe8c54f9c34000712ddf9bc5e9d7",
+          "page": 1,
+          "locator": "页面右侧 J1 HY-2.0_UART，pin 1 RX/UTXD、pin 2 TX/URXD、pin 3 VCC/+5V、pin 4 GND"
+        }
+      ]
+    },
+    {
+      "reference": "E1",
+      "part_number": "ANT_IPEX",
+      "role": "外部射频天线连接器",
+      "evidence": [
+        {
+          "asset_sha256": "900b529b827b45c2a11b2863953929fb1378fe8c54f9c34000712ddf9bc5e9d7",
+          "page": 1,
+          "locator": "页面中右 E1 ANT_IPEX，中心端经 R4 接 M1 ANT，外壳端接 GND"
+        }
+      ]
+    },
+    {
+      "reference": "R4",
+      "part_number": "0Ω",
+      "role": "M1 ANT 与 E1 ANT_IPEX 之间的串联射频跳线",
+      "evidence": [
+        {
+          "asset_sha256": "900b529b827b45c2a11b2863953929fb1378fe8c54f9c34000712ddf9bc5e9d7",
+          "page": 1,
+          "locator": "页面中右 M1 pin 18 ANT-R4 0Ω-E1 ANT_IPEX"
+        }
+      ]
+    },
+    {
+      "reference": "R5",
+      "part_number": "22Ω",
+      "role": "M1 UTX 到 UTXD/J1 RX 的 UART 串联电阻",
+      "evidence": [
+        {
+          "asset_sha256": "900b529b827b45c2a11b2863953929fb1378fe8c54f9c34000712ddf9bc5e9d7",
+          "page": 1,
+          "locator": "页面中央 M1 pin 11 UTX 经 R5 22Ω 接 UTXD，页面右侧 UTXD 接 J1 pin 1 RX"
+        }
+      ]
+    },
+    {
+      "reference": "R6",
+      "part_number": "22Ω",
+      "role": "URXD/J1 TX 到 M1 URX 的 UART 串联电阻",
+      "evidence": [
+        {
+          "asset_sha256": "900b529b827b45c2a11b2863953929fb1378fe8c54f9c34000712ddf9bc5e9d7",
+          "page": 1,
+          "locator": "页面中央 M1 pin 10 URX 经 R6 22Ω 接 URXD，页面右侧 URXD 接 J1 pin 2 TX"
+        }
+      ]
+    },
+    {
+      "reference": "R1/R2/R3",
+      "part_number": "0Ω",
+      "role": "470/868/915 区域版本装配选择表中的电阻选项",
+      "evidence": [
+        {
+          "asset_sha256": "900b529b827b45c2a11b2863953929fb1378fe8c54f9c34000712ddf9bc5e9d7",
+          "page": 1,
+          "locator": "页面右上独立表格：R1 0Ω-470、R2 0Ω-868、R3 0Ω-915"
+        }
+      ]
+    },
+    {
+      "reference": "JP1-JP5",
+      "part_number": null,
+      "role": "+3.3V、GND、SWCLK、SWDIO 和 RESET 测试点",
+      "evidence": [
+        {
+          "asset_sha256": "900b529b827b45c2a11b2863953929fb1378fe8c54f9c34000712ddf9bc5e9d7",
+          "page": 1,
+          "locator": "页面左下 JP1 +3.3V、JP2 GND、JP3 SWC、JP4 SWD、JP5 RESET"
+        }
+      ]
+    },
+    {
+      "reference": "C1/C2",
+      "part_number": "22uF",
+      "role": "AMS1117-3.3 输入与输出端的电源滤波电容",
+      "evidence": [
+        {
+          "asset_sha256": "900b529b827b45c2a11b2863953929fb1378fe8c54f9c34000712ddf9bc5e9d7",
+          "page": 1,
+          "locator": "页面左上 C1 22uF 从 +5V 到 GND，C2 22uF 从 +3.3V 到 GND"
+        }
+      ]
+    },
+    {
+      "reference": "C3",
+      "part_number": "100nF",
+      "role": "J1 +5V 输入端本地去耦电容",
+      "evidence": [
+        {
+          "asset_sha256": "900b529b827b45c2a11b2863953929fb1378fe8c54f9c34000712ddf9bc5e9d7",
+          "page": 1,
+          "locator": "页面右侧 J1 pin 3 +5V 旁 C3 100nF 到 GND"
+        }
+      ]
+    },
+    {
+      "reference": "C4/C5/C6",
+      "part_number": "100nF/10uF/33pF",
+      "role": "M1 +3.3V 电源轨的并联去耦与滤波电容组",
+      "evidence": [
+        {
+          "asset_sha256": "900b529b827b45c2a11b2863953929fb1378fe8c54f9c34000712ddf9bc5e9d7",
+          "page": 1,
+          "locator": "页面中下 +3.3V 公共节点上的 C4 100nF、C5 10uF、C6 33pF，均接 GND"
+        }
+      ]
+    }
+  ],
+  "facts": [
+    {
+      "id": "system.unit-lorawan915-architecture",
+      "category": "system",
+      "subject": "Unit LoRaWAN915 系统架构",
+      "statement": "电路由 M1 Ra-07/Ra-07H 无线模组、VR1 AMS1117-3.3 电源、J1 HY-2.0_UART、E1 ANT_IPEX 与 JP1~JP5 调试测试点组成。",
+      "confidence": "confirmed",
+      "attributes": {
+        "radio_module": "M1 Ra-07/Ra-07H",
+        "regulator": "VR1 AMS1117-3.3",
+        "host_interface": "J1 HY-2.0_UART",
+        "antenna": "E1 ANT_IPEX",
+        "debug": "JP1-JP5"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "900b529b827b45c2a11b2863953929fb1378fe8c54f9c34000712ddf9bc5e9d7",
+          "page": 1,
+          "locator": "整页 VR1/M1/J1/E1/JP1~JP5 功能块及同名网络"
+        }
+      ]
+    },
+    {
+      "id": "component.radio-pin-map",
+      "category": "component",
+      "subject": "M1 Ra-07/Ra-07H 已用引脚",
+      "statement": "M1 VCC pin 9 接 +3.3V，URX pin 10 接 URXD，UTX pin 11 接 UTXD，RES pin 16 接 RESET，ANT pin 18 经 R4 0Ω 接 E1；SWCLK/SWDIO pins 7/8 接 SWC/SWD，GND pins 1/17 接地。",
+      "confidence": "confirmed",
+      "attributes": {
+        "vcc": "pin 9 +3.3V",
+        "uart_rx": "pin 10 URX-URXD",
+        "uart_tx": "pin 11 UTX-UTXD",
+        "reset": "pin 16 RES-RESET",
+        "antenna": "pin 18 ANT-R4-E1",
+        "swclk": "pin 7 SWCLK-SWC",
+        "swdio": "pin 8 SWDIO-SWD",
+        "ground": "pins 1,17"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "900b529b827b45c2a11b2863953929fb1378fe8c54f9c34000712ddf9bc5e9d7",
+          "page": 1,
+          "locator": "页面中央 M1 Ra-07/Ra-07H pins 1~18 的已连接网络"
+        }
+      ]
+    },
+    {
+      "id": "component.radio-unused-pins",
+      "category": "gpio",
+      "subject": "M1 未连接引脚",
+      "statement": "M1 ADC pin 2、AUX pin 3、SETA pin 4、DIO3 pin 5、SETB pin 6、P00 pin 12、P01 pin 13、P06 pin 14 与 P07 pin 15 在本页以未连接标记结束。",
+      "confidence": "confirmed",
+      "attributes": {
+        "left_unconnected": "pin 2 ADC,pin 3 AUX,pin 4 SETA,pin 5 DIO3,pin 6 SETB",
+        "right_unconnected": "pin 12 P00,pin 13 P01,pin 14 P06,pin 15 P07"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "900b529b827b45c2a11b2863953929fb1378fe8c54f9c34000712ddf9bc5e9d7",
+          "page": 1,
+          "locator": "页面中央 M1 pins 2~6 与 pins 12~15 端点的未连接叉号"
+        }
+      ]
+    },
+    {
+      "id": "power.input-regulation",
+      "category": "power",
+      "subject": "+5V 到 +3.3V 电源路径",
+      "statement": "J1 pin 3 VCC 引入 +5V，VR1 AMS1117-3.3 的 Vin 接 +5V、Vout 输出 +3.3V、GND 接地；+3.3V 供给 M1 VCC pin 9。",
+      "confidence": "confirmed",
+      "attributes": {
+        "input": "J1 pin 3 +5V",
+        "regulator": "VR1 AMS1117-3.3",
+        "output": "+3.3V",
+        "load": "M1 pin 9 VCC"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "900b529b827b45c2a11b2863953929fb1378fe8c54f9c34000712ddf9bc5e9d7",
+          "page": 1,
+          "locator": "页面右侧 J1 +5V，同名网络连接左上 VR1 Vin；VR1 Vout +3.3V 连接中央 M1 VCC"
+        }
+      ]
+    },
+    {
+      "id": "power.regulator-capacitors",
+      "category": "power",
+      "subject": "VR1 输入输出滤波",
+      "statement": "C1 22uF 从 +5V 接地，C2 22uF 从 +3.3V 接地，分别位于 AMS1117-3.3 输入和输出侧。",
+      "confidence": "confirmed",
+      "attributes": {
+        "input_capacitor": "C1 22uF +5V-GND",
+        "output_capacitor": "C2 22uF +3.3V-GND"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "900b529b827b45c2a11b2863953929fb1378fe8c54f9c34000712ddf9bc5e9d7",
+          "page": 1,
+          "locator": "页面左上 VR1 两侧 C1/C2 22uF"
+        }
+      ]
+    },
+    {
+      "id": "power.interface-decoupling",
+      "category": "power",
+      "subject": "J1 +5V 去耦",
+      "statement": "J1 pin 3 的 +5V 节点通过 C3 100nF 接地。",
+      "confidence": "confirmed",
+      "attributes": {
+        "connector_pin": "J1 pin 3 VCC",
+        "rail": "+5V",
+        "capacitor": "C3 100nF",
+        "return": "GND"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "900b529b827b45c2a11b2863953929fb1378fe8c54f9c34000712ddf9bc5e9d7",
+          "page": 1,
+          "locator": "页面右侧 J1 pin 3 +5V 与 C3 100nF 到 GND"
+        }
+      ]
+    },
+    {
+      "id": "power.radio-decoupling",
+      "category": "power",
+      "subject": "M1 +3.3V 去耦",
+      "statement": "M1 的 +3.3V 电源节点并联 C4 100nF、C5 10uF 和 C6 33pF 到 GND。",
+      "confidence": "confirmed",
+      "attributes": {
+        "rail": "+3.3V",
+        "capacitors": "C4 100nF,C5 10uF,C6 33pF",
+        "return": "GND"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "900b529b827b45c2a11b2863953929fb1378fe8c54f9c34000712ddf9bc5e9d7",
+          "page": 1,
+          "locator": "页面中下 +3.3V-C4/C5/C6-GND 电容组及 M1 VCC pin 9"
+        }
+      ]
+    },
+    {
+      "id": "interface.grove-uart-pinout",
+      "category": "interface",
+      "subject": "J1 HY-2.0_UART 针脚",
+      "statement": "J1 pins 1~4 依次为 RX、TX、VCC、GND；对应网络依次是 UTXD、URXD、+5V、GND。",
+      "confidence": "confirmed",
+      "attributes": {
+        "pin_1": "RX-UTXD，模块到主机方向",
+        "pin_2": "TX-URXD，主机到模块方向",
+        "pin_3": "VCC +5V，电源输入",
+        "pin_4": "GND"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "900b529b827b45c2a11b2863953929fb1378fe8c54f9c34000712ddf9bc5e9d7",
+          "page": 1,
+          "locator": "页面右侧 J1 HY-2.0_UART pins 1~4 与 UTXD/URXD/+5V/GND"
+        }
+      ]
+    },
+    {
+      "id": "bus.host-radio-uart",
+      "category": "bus",
+      "subject": "主机到 M1 的 UART",
+      "statement": "M1 UTX pin 11 经 R5 22Ω 和 UTXD 接 J1 pin 1 RX；J1 pin 2 TX 经 URXD 和 R6 22Ω 接 M1 URX pin 10。两路 UART 信号均位于 M1 的 +3.3V 供电域，但原理图未单独标注 I/O 电平数值。",
+      "confidence": "confirmed",
+      "attributes": {
+        "module_to_host": "M1 pin 11 UTX-R5 22Ω-UTXD-J1 pin 1 RX",
+        "host_to_module": "J1 pin 2 TX-URXD-R6 22Ω-M1 pin 10 URX",
+        "module_supply_domain": "+3.3V",
+        "explicit_io_level": null
+      },
+      "evidence": [
+        {
+          "asset_sha256": "900b529b827b45c2a11b2863953929fb1378fe8c54f9c34000712ddf9bc5e9d7",
+          "page": 1,
+          "locator": "页面中央 M1 pins 10/11-R6/R5-URXD/UTXD 与页面右侧 J1 pins 2/1"
+        }
+      ]
+    },
+    {
+      "id": "debug.radio-test-pads",
+      "category": "debug",
+      "subject": "M1 调试与控制测试点",
+      "statement": "JP1、JP2、JP3、JP4、JP5 分别引出 +3.3V、GND、SWC、SWD、RESET；SWC、SWD、RESET 分别连接 M1 SWCLK pin 7、SWDIO pin 8、RES pin 16。",
+      "confidence": "confirmed",
+      "attributes": {
+        "power": "JP1 +3.3V",
+        "ground": "JP2 GND",
+        "swclk": "JP3 SWC-M1 pin 7 SWCLK",
+        "swdio": "JP4 SWD-M1 pin 8 SWDIO",
+        "reset": "JP5 RESET-M1 pin 16 RES"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "900b529b827b45c2a11b2863953929fb1378fe8c54f9c34000712ddf9bc5e9d7",
+          "page": 1,
+          "locator": "页面左下 JP1~JP5 与中央 M1 SWCLK/SWDIO/RES 的同名网络"
+        }
+      ]
+    },
+    {
+      "id": "reset.radio-reset",
+      "category": "reset",
+      "subject": "M1 RESET 网络",
+      "statement": "RESET 网络连接 JP5 与 M1 RES pin 16；本页未显示该网络的上拉、下拉、RC 延时或复位开关。",
+      "confidence": "confirmed",
+      "attributes": {
+        "test_point": "JP5",
+        "module_pin": "M1 pin 16 RES",
+        "pull_resistor": null,
+        "rc_delay": null,
+        "switch": null
+      },
+      "evidence": [
+        {
+          "asset_sha256": "900b529b827b45c2a11b2863953929fb1378fe8c54f9c34000712ddf9bc5e9d7",
+          "page": 1,
+          "locator": "页面左下 JP5 RESET 与页面中央 M1 pin 16 RES 同名网络，整页无 RESET 外围器件"
+        }
+      ]
+    },
+    {
+      "id": "rf.antenna-path",
+      "category": "rf",
+      "subject": "射频天线通道",
+      "statement": "M1 ANT pin 18 通过 R4 0Ω 串联连接 E1 ANT_IPEX，E1 的地端接 GND；本页未显示额外匹配网络或射频保护器件。",
+      "confidence": "confirmed",
+      "attributes": {
+        "source": "M1 pin 18 ANT",
+        "series": "R4 0Ω",
+        "connector": "E1 ANT_IPEX",
+        "shield": "GND",
+        "matching_network": null,
+        "rf_protection": null
+      },
+      "evidence": [
+        {
+          "asset_sha256": "900b529b827b45c2a11b2863953929fb1378fe8c54f9c34000712ddf9bc5e9d7",
+          "page": 1,
+          "locator": "页面中右 M1 pin 18 ANT-R4 0Ω-E1 ANT_IPEX-GND"
+        }
+      ]
+    },
+    {
+      "id": "protection.visible-coverage",
+      "category": "protection",
+      "subject": "接口与电源保护",
+      "statement": "本页在 J1 的 +5V、UTXD、URXD 以及 E1 射频通道上均未显示 TVS、ESD、保险丝、反接保护或浪涌保护器件；UART 线上仅有 R5/R6 22Ω 串联电阻。",
+      "confidence": "confirmed",
+      "attributes": {
+        "uart_series": "R5/R6 22Ω",
+        "tvs_esd": null,
+        "fuse": null,
+        "reverse_polarity": null,
+        "surge": null
+      },
+      "evidence": [
+        {
+          "asset_sha256": "900b529b827b45c2a11b2863953929fb1378fe8c54f9c34000712ddf9bc5e9d7",
+          "page": 1,
+          "locator": "整页 J1、VR1、R5/R6、R4/E1 路径，无保护器件符号或位号"
+        }
+      ]
+    },
+    {
+      "id": "clock.no-discrete-clock",
+      "category": "clock",
+      "subject": "时钟电路",
+      "statement": "本页未显示独立晶振、谐振器或外部时钟网络；M1 内部时钟实现未在该模块符号中展开。",
+      "confidence": "confirmed",
+      "attributes": {
+        "external_crystal": null,
+        "external_clock_net": null,
+        "module_internal_clock": "not expanded"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "900b529b827b45c2a11b2863953929fb1378fe8c54f9c34000712ddf9bc5e9d7",
+          "page": 1,
+          "locator": "整页元件与网络；M1 为封装模块符号且无外接 XTAL/CLK 引脚"
+        }
+      ]
+    },
+    {
+      "id": "storage.no-external-storage",
+      "category": "storage",
+      "subject": "外部存储器",
+      "statement": "本页未显示独立 Flash、EEPROM、SD 卡或其他外部存储器；M1 内部存储实现未展开。",
+      "confidence": "confirmed",
+      "attributes": {
+        "external_flash": null,
+        "eeprom": null,
+        "sd_card": null,
+        "module_internal_storage": "not expanded"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "900b529b827b45c2a11b2863953929fb1378fe8c54f9c34000712ddf9bc5e9d7",
+          "page": 1,
+          "locator": "整页仅见 VR1、M1、J1、E1、阻容与测试点，无独立存储器件"
+        }
+      ]
+    },
+    {
+      "id": "bus.no-other-external-bus",
+      "category": "bus",
+      "subject": "其他外部总线",
+      "statement": "本页对外只显示 J1 UART 以及 SWCLK/SWDIO 调试信号，未显示 I2C、SPI、CAN、RS-485、USB、SDIO、MIPI 或 I2S 外部总线。",
+      "confidence": "confirmed",
+      "attributes": {
+        "external_uart": "J1 UTXD/URXD",
+        "debug_bus": "SWCLK/SWDIO",
+        "i2c": null,
+        "spi": null,
+        "can": null,
+        "rs485": null,
+        "usb": null,
+        "sdio": null,
+        "mipi": null,
+        "i2s": null
+      },
+      "evidence": [
+        {
+          "asset_sha256": "900b529b827b45c2a11b2863953929fb1378fe8c54f9c34000712ddf9bc5e9d7",
+          "page": 1,
+          "locator": "整页外部连接仅 J1 UTXD/URXD/+5V/GND、E1 ANT 与 JP1~JP5"
+        }
+      ]
+    },
+    {
+      "id": "rf.region-resistor-table",
+      "category": "rf",
+      "subject": "470/868/915 配置表",
+      "statement": "页面右上表格将 R1 0Ω 对应 470、R2 0Ω 对应 868、R3 0Ω 对应 915，但没有显示三个电阻的电气连接或实际装配状态，无法仅凭本页确认 LoRaWAN915 版本实际装配 R3。",
+      "confidence": "uncertain",
+      "attributes": {
+        "470": "R1 0Ω",
+        "868": "R2 0Ω",
+        "915": "R3 0Ω",
+        "selected_population": null
+      },
+      "evidence": [
+        {
+          "asset_sha256": "900b529b827b45c2a11b2863953929fb1378fe8c54f9c34000712ddf9bc5e9d7",
+          "page": 1,
+          "locator": "页面右上 R1/R2/R3 0Ω 与 470/868/915 独立表格，无外接网络或装配标记"
+        }
+      ]
+    },
+    {
+      "id": "component.radio-internal-silicon",
+      "category": "component",
+      "subject": "M1 内部芯片方案",
+      "statement": "原理图只标出 M1 为 Ra-07/Ra-07H，未展开或标注其内部 MCU/射频收发芯片，因此无法仅凭本页确认 ASR6501、SX1262 或其他内部器件型号。",
+      "confidence": "uncertain",
+      "attributes": {
+        "schematic_module_label": "Ra-07/Ra-07H",
+        "internal_mcu": null,
+        "internal_radio": null
+      },
+      "evidence": [
+        {
+          "asset_sha256": "900b529b827b45c2a11b2863953929fb1378fe8c54f9c34000712ddf9bc5e9d7",
+          "page": 1,
+          "locator": "页面中央 M1 仅标 Ra-07/Ra-07H 与模块级 pins 1~18，无内部器件展开"
+        }
+      ]
+    },
+    {
+      "id": "bus.uart-protocol-parameters",
+      "category": "bus",
+      "subject": "UART 协议参数",
+      "statement": "原理图确认 UTXD/URXD 双线 UART 连接，但未标注波特率、数据格式、AT 指令版本或 LoRaWAN 协议版本，这些参数不能由本页确定。",
+      "confidence": "uncertain",
+      "attributes": {
+        "signals": "UTXD,URXD",
+        "baud_rate": null,
+        "data_format": null,
+        "at_command_version": null,
+        "lorawan_version": null
+      },
+      "evidence": [
+        {
+          "asset_sha256": "900b529b827b45c2a11b2863953929fb1378fe8c54f9c34000712ddf9bc5e9d7",
+          "page": 1,
+          "locator": "页面中央 M1 UTX/URX 经 R5/R6 到 UTXD/URXD，页面右侧 J1；整页无速率或协议文字"
+        }
+      ]
+    }
+  ],
+  "needs_review": [
+    {
+      "id": "review.region-resistor-population",
+      "fact_id": "rf.region-resistor-table",
+      "question": "Unit LoRaWAN915 的实际 BOM 是否装配 R3 0Ω，并且 R1/R2 不装？",
+      "reason": "原理图只有 470/868/915 对应表，没有显示 R1/R2/R3 的连接位置、DNP 标记或装配状态。",
+      "evidence": [
+        {
+          "asset_sha256": "900b529b827b45c2a11b2863953929fb1378fe8c54f9c34000712ddf9bc5e9d7",
+          "page": 1,
+          "locator": "页面右上 R1/R2/R3 0Ω 与 470/868/915 独立表格"
+        }
+      ]
+    },
+    {
+      "id": "review.radio-internal-silicon",
+      "fact_id": "component.radio-internal-silicon",
+      "question": "本硬件版本 M1 的内部主控和射频芯片准确型号是什么？",
+      "reason": "原理图仅给出 Ra-07/Ra-07H 模组名，未展开内部芯片；需要对应 BOM、模组资料或网表确认。",
+      "evidence": [
+        {
+          "asset_sha256": "900b529b827b45c2a11b2863953929fb1378fe8c54f9c34000712ddf9bc5e9d7",
+          "page": 1,
+          "locator": "页面中央 M1 Ra-07/Ra-07H 模块符号"
+        }
+      ]
+    },
+    {
+      "id": "review.uart-protocol-parameters",
+      "fact_id": "bus.uart-protocol-parameters",
+      "question": "该硬件/固件版本的 UART 波特率、数据格式、AT 指令版本与 LoRaWAN 协议版本分别是什么？",
+      "reason": "原理图只给出 UART 电气连接，不包含通信参数或固件协议版本。",
+      "evidence": [
+        {
+          "asset_sha256": "900b529b827b45c2a11b2863953929fb1378fe8c54f9c34000712ddf9bc5e9d7",
+          "page": 1,
+          "locator": "页面中央 M1 UTX/URX 与右侧 J1 RX/TX，整页无 UART/协议参数"
+        }
+      ]
+    }
+  ]
+}

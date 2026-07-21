@@ -1,0 +1,21 @@
+{
+  "dry_run": false,
+  "failed": 0,
+  "published": 1,
+  "results": [
+    {
+      "backup": null,
+      "draft_action": "unchanged",
+      "dry_run": false,
+      "errors": [],
+      "needs_review": 1,
+      "product_id": "base15-v1-1-f39644ff5994",
+      "product_name": "Base15 v1.1",
+      "publish_action": "unchanged",
+      "sha256": "c1b6b735662e567959cefd7e2f31a01eff3665fa3fa6ea3c2aa8c652ec5369f9",
+      "status": "valid",
+      "uncertain_facts": 1
+    }
+  ],
+  "schema_version": 1
+}

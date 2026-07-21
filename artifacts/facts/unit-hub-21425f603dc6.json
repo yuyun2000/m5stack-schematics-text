@@ -1,0 +1,148 @@
+{
+  "schema_version": 1,
+  "generator": "schematic_describer",
+  "product": {
+    "product_id": "unit-hub-21425f603dc6",
+    "product_name": "Unit Hub",
+    "sku": "U006",
+    "source_path": "unit/hub.md",
+    "source_sha256": "88bd96447b3bae1003635a2e8316c1968624de1e03827651c235a6bd5a2cae93",
+    "input_sha256": "46522ec80532caba18589dd5149c5f91b0b8d802afa47f81c93a1b055993a786"
+  },
+  "schematic_assets": [
+    {
+      "sha256": "642d4dd1ea0087772d854b51ffea111b4556a9c3587ab5bf125a41c3e2c4d5d4",
+      "source_url": "https://m5stack-doc.oss-cn-shenzhen.aliyuncs.com/791/UNIT_HUB_page_01.png",
+      "pages": [1]
+    }
+  ],
+  "summary": "Unit Hub 由 J1、J2、J3、J4 四个 IIC_Socket_4P 连接器组成，没有主动 IC 或串联器件。四个接口的 pin 1、2、3、4 分别直接并联为 IIC_SCL、IIC_SDA、VCC、GND，因此所有外设共享同一总线和电源网络。原理图未标出固定输入口与输出口角色，也没有地址隔离、总线缓冲或保护电路。",
+  "keywords": ["Unit Hub", "U006", "IIC_Socket_4P", "J1", "J2", "J3", "J4", "IIC_SCL", "IIC_SDA", "VCC", "GND", "I2C hub", "passive hub", "parallel bus", "four-port", "1-to-3 expansion", "shared I2C", "no address translation", "no bus buffer", "HY2.0-4P"],
+  "components": [
+    {
+      "reference": "J1",
+      "part_number": "IIC_Socket_4P",
+      "role": "四针 I2C 与电源连接器",
+      "evidence": [{"asset_sha256": "642d4dd1ea0087772d854b51ffea111b4556a9c3587ab5bf125a41c3e2c4d5d4", "page": 1, "locator": "页 1 左上 J1，标注 IIC_Socket_4P，针脚为 IIC_SCL、IIC_SDA、VCC、GND"}]
+    },
+    {
+      "reference": "J2",
+      "part_number": "IIC_Socket_4P",
+      "role": "四针 I2C 与电源连接器",
+      "evidence": [{"asset_sha256": "642d4dd1ea0087772d854b51ffea111b4556a9c3587ab5bf125a41c3e2c4d5d4", "page": 1, "locator": "页 1 左中 J2，标注 IIC_Socket_4P，针脚为 IIC_SCL、IIC_SDA、VCC、GND"}]
+    },
+    {
+      "reference": "J3",
+      "part_number": "IIC_Socket_4P",
+      "role": "四针 I2C 与电源连接器",
+      "evidence": [{"asset_sha256": "642d4dd1ea0087772d854b51ffea111b4556a9c3587ab5bf125a41c3e2c4d5d4", "page": 1, "locator": "页 1 左下 J3，标注 IIC_Socket_4P，针脚为 IIC_SCL、IIC_SDA、VCC、GND"}]
+    },
+    {
+      "reference": "J4",
+      "part_number": "IIC_Socket_4P",
+      "role": "四针 I2C 与电源连接器",
+      "evidence": [{"asset_sha256": "642d4dd1ea0087772d854b51ffea111b4556a9c3587ab5bf125a41c3e2c4d5d4", "page": 1, "locator": "页 1 右侧 J4，标注 IIC_Socket_4P，针脚为 IIC_SCL、IIC_SDA、VCC、GND"}]
+    }
+  ],
+  "facts": [
+    {
+      "id": "system.passive_hub",
+      "category": "system",
+      "subject": "Unit Hub 拓扑",
+      "statement": "Unit Hub 是由 J1、J2、J3、J4 四个连接器直接并联形成的无源四口总线节点。",
+      "confidence": "confirmed",
+      "attributes": {"connectors": "J1,J2,J3,J4", "port_count": 4, "topology": "direct parallel", "active_components": false},
+      "evidence": [{"asset_sha256": "642d4dd1ea0087772d854b51ffea111b4556a9c3587ab5bf125a41c3e2c4d5d4", "page": 1, "locator": "页 1 全图，四个 IIC_Socket_4P 之间只有直接连线，没有其他器件"}]
+    },
+    {
+      "id": "interface.j1",
+      "category": "interface",
+      "subject": "J1",
+      "statement": "J1 的 1 至 4 脚依次为 IIC_SCL、IIC_SDA、VCC、GND。",
+      "confidence": "confirmed",
+      "attributes": {"reference": "J1", "pinout": "1:IIC_SCL,2:IIC_SDA,3:VCC,4:GND", "signal_direction": "IIC_SCL/IIC_SDA bidirectional"},
+      "evidence": [{"asset_sha256": "642d4dd1ea0087772d854b51ffea111b4556a9c3587ab5bf125a41c3e2c4d5d4", "page": 1, "locator": "页 1 左上 J1 的脚号与内部网络文字"}]
+    },
+    {
+      "id": "interface.j2",
+      "category": "interface",
+      "subject": "J2",
+      "statement": "J2 的 1 至 4 脚依次为 IIC_SCL、IIC_SDA、VCC、GND。",
+      "confidence": "confirmed",
+      "attributes": {"reference": "J2", "pinout": "1:IIC_SCL,2:IIC_SDA,3:VCC,4:GND", "signal_direction": "IIC_SCL/IIC_SDA bidirectional"},
+      "evidence": [{"asset_sha256": "642d4dd1ea0087772d854b51ffea111b4556a9c3587ab5bf125a41c3e2c4d5d4", "page": 1, "locator": "页 1 左中 J2 的脚号与内部网络文字"}]
+    },
+    {
+      "id": "interface.j3",
+      "category": "interface",
+      "subject": "J3",
+      "statement": "J3 的 1 至 4 脚依次为 IIC_SCL、IIC_SDA、VCC、GND。",
+      "confidence": "confirmed",
+      "attributes": {"reference": "J3", "pinout": "1:IIC_SCL,2:IIC_SDA,3:VCC,4:GND", "signal_direction": "IIC_SCL/IIC_SDA bidirectional"},
+      "evidence": [{"asset_sha256": "642d4dd1ea0087772d854b51ffea111b4556a9c3587ab5bf125a41c3e2c4d5d4", "page": 1, "locator": "页 1 左下 J3 的脚号与内部网络文字"}]
+    },
+    {
+      "id": "interface.j4",
+      "category": "interface",
+      "subject": "J4",
+      "statement": "J4 的 1 至 4 脚依次为 IIC_SCL、IIC_SDA、VCC、GND。",
+      "confidence": "confirmed",
+      "attributes": {"reference": "J4", "pinout": "1:IIC_SCL,2:IIC_SDA,3:VCC,4:GND", "signal_direction": "IIC_SCL/IIC_SDA bidirectional"},
+      "evidence": [{"asset_sha256": "642d4dd1ea0087772d854b51ffea111b4556a9c3587ab5bf125a41c3e2c4d5d4", "page": 1, "locator": "页 1 右侧 J4 的脚号与内部网络文字"}]
+    },
+    {
+      "id": "bus.i2c_parallel",
+      "category": "bus",
+      "subject": "IIC_SCL 与 IIC_SDA",
+      "statement": "J1、J2、J3、J4 的 pin 1 全部直接相连为 IIC_SCL，pin 2 全部直接相连为 IIC_SDA。",
+      "confidence": "confirmed",
+      "attributes": {"scl_connections": "J1.1,J2.1,J3.1,J4.1", "sda_connections": "J1.2,J2.2,J3.2,J4.2", "buffer": null, "switch": null, "address_translation": null},
+      "evidence": [{"asset_sha256": "642d4dd1ea0087772d854b51ffea111b4556a9c3587ab5bf125a41c3e2c4d5d4", "page": 1, "locator": "页 1 四个连接器 pin 1 与 pin 2 的两组连续并联连线和连接点"}]
+    },
+    {
+      "id": "power.parallel",
+      "category": "power",
+      "subject": "VCC 与 GND",
+      "statement": "J1、J2、J3、J4 的 pin 3 全部直接相连为 VCC，pin 4 全部直接相连为 GND。",
+      "confidence": "confirmed",
+      "attributes": {"vcc_connections": "J1.3,J2.3,J3.3,J4.3", "ground_connections": "J1.4,J2.4,J3.4,J4.4", "voltage": null, "power_switch": null},
+      "evidence": [{"asset_sha256": "642d4dd1ea0087772d854b51ffea111b4556a9c3587ab5bf125a41c3e2c4d5d4", "page": 1, "locator": "页 1 四个连接器 pin 3 与 pin 4 的两组连续并联连线和连接点"}]
+    },
+    {
+      "id": "bus.shared_address_domain",
+      "category": "address",
+      "subject": "外设地址域",
+      "statement": "由于四口 SCL/SDA 直接并联且没有地址转换器，所有接入设备位于同一 I2C 地址域，Unit Hub 本身不提供地址选择。",
+      "confidence": "confirmed",
+      "attributes": {"shared_bus": true, "address_translation": false, "hub_address": null, "independent_channels": false},
+      "evidence": [{"asset_sha256": "642d4dd1ea0087772d854b51ffea111b4556a9c3587ab5bf125a41c3e2c4d5d4", "page": 1, "locator": "页 1 全部 SCL/SDA 直连且页面没有 IC、开关或地址配置器件"}]
+    },
+    {
+      "id": "interface.port_roles",
+      "category": "interface",
+      "subject": "输入口与扩展口角色",
+      "statement": "产品正文描述一口扩展为三口，但原理图未标出 J1-J4 中哪个固定作为输入，其余作为输出；电气连接上四口等价。",
+      "confidence": "uncertain",
+      "attributes": {"documented_topology": "1 input to 3 expansion ports", "schematic_input_port": null, "schematic_output_ports": null, "electrically_equivalent": true},
+      "evidence": [{"asset_sha256": "642d4dd1ea0087772d854b51ffea111b4556a9c3587ab5bf125a41c3e2c4d5d4", "page": 1, "locator": "页 1 J1-J4 均使用相同 IIC_Socket_4P 符号并直接并联，无 IN/OUT 标签"}]
+    },
+    {
+      "id": "protection.none_visible",
+      "category": "protection",
+      "subject": "接口保护与隔离",
+      "statement": "本页未显示 ESD/TVS、串联电阻、保险丝、负载开关、总线缓冲器或电源隔离器件。",
+      "confidence": "confirmed",
+      "attributes": {"esd_tvs_visible": false, "series_resistors_visible": false, "fuse_visible": false, "load_switch_visible": false, "bus_buffer_visible": false, "power_isolation_visible": false},
+      "evidence": [{"asset_sha256": "642d4dd1ea0087772d854b51ffea111b4556a9c3587ab5bf125a41c3e2c4d5d4", "page": 1, "locator": "页 1 全图只有 J1-J4 四个连接器与直接导线"}]
+    }
+  ],
+  "needs_review": [
+    {
+      "id": "review.port_roles",
+      "fact_id": "interface.port_roles",
+      "question": "外壳丝印或装配结构是否指定 J1-J4 中某一口为输入、其余三口为扩展输出？",
+      "reason": "原理图显示四口电气等价，没有标注物理输入/输出角色。",
+      "evidence": [{"asset_sha256": "642d4dd1ea0087772d854b51ffea111b4556a9c3587ab5bf125a41c3e2c4d5d4", "page": 1, "locator": "页 1 J1-J4 相同符号和四网并联连接"}]
+    }
+  ]
+}

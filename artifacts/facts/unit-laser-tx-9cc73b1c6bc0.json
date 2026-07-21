@@ -1,0 +1,203 @@
+{
+  "schema_version": 1,
+  "generator": "schematic_describer",
+  "product": {
+    "product_id": "unit-laser-tx-9cc73b1c6bc0",
+    "product_name": "Unit Laser TX",
+    "sku": "U066",
+    "source_path": "unit/laser-tx.md",
+    "source_sha256": "fa45a05d1331cee08cbb8ec8aed33250c52289f4be672a88b0b861c5373cab9f",
+    "input_sha256": "768578872df3cd3ed784e3e619e99985f4e334e80313ac593ff39cbcc7e1c223"
+  },
+  "schematic_assets": [
+    {
+      "sha256": "a2a1ef4141450840929d166ca32d336be0b9995dce1df353c64d5e776320c2c6",
+      "source_url": "https://static-cdn.m5stack.com/resource/docs/products/unit/laser-tx/laser-tx_sch_01.webp",
+      "pages": [1]
+    }
+  ],
+  "summary": "Unit Laser TX 是由外部数字信号直接控制的激光发射单元：J1 pin2 MOSI 经 R1 1KΩ 驱动 Q1 AO3400A，Q1 作为低侧开关控制 VCC 至 D1 Laser 的电流通断。R2 51KΩ 将控制节点下拉，C1 100nF 跨接激光支路，C2 100nF 跨接 VCC 与 GND；J1 pin1 MISO 未接线。完整原理图没有本地主控、总线协议、稳压器或激光电流设定电路，正文所列 DIN/NC、5V 及光学/调制性能需结合 BOM、datasheet 或实测确认。",
+  "keywords": [
+    "Unit Laser TX", "U066", "Laser TX", "D1 Laser", "Q1 AO3400A", "AO3400A", "GROVE_IO", "J1", "MOSI", "MISO", "DIN", "NC", "VCC", "GND", "R1 1KΩ", "R2 51KΩ", "C1 100nF", "C2 100nF", "low-side switch", "低侧开关", "激光二极管", "激光发射", "PORT.B", "5V", "LASER.RX", "gate pulldown", "数字调制"
+  ],
+  "components": [
+    {
+      "reference": "D1",
+      "part_number": "Laser",
+      "role": "由 VCC 供电并经 Q1 低侧开关控制的激光发射器件",
+      "evidence": [{"asset_sha256": "a2a1ef4141450840929d166ca32d336be0b9995dce1df353c64d5e776320c2c6", "page": 1, "locator": "第 1 页左上：D1 标注 Laser，连接 VCC 与 Q1 漏极节点"}]
+    },
+    {
+      "reference": "Q1",
+      "part_number": "AO3400A",
+      "role": "控制 D1 Laser 回路的 N 沟道低侧 MOSFET 开关",
+      "evidence": [{"asset_sha256": "a2a1ef4141450840929d166ca32d336be0b9995dce1df353c64d5e776320c2c6", "page": 1, "locator": "第 1 页左中：Q1 AO3400A，源极接 GND、漏极接 D1、栅极接 R1"}]
+    },
+    {
+      "reference": "J1",
+      "part_number": "GROVE_IO",
+      "role": "四针外部供电与数字控制接口，标注 MISO、MOSI、VCC、GND",
+      "evidence": [{"asset_sha256": "a2a1ef4141450840929d166ca32d336be0b9995dce1df353c64d5e776320c2c6", "page": 1, "locator": "第 1 页右中：J1 GROVE_IO pin1-pin4"}]
+    },
+    {
+      "reference": "R1,R2",
+      "part_number": "1KΩ / 51KΩ",
+      "role": "Q1 栅极串联电阻与控制节点下拉电阻",
+      "evidence": [{"asset_sha256": "a2a1ef4141450840929d166ca32d336be0b9995dce1df353c64d5e776320c2c6", "page": 1, "locator": "第 1 页中央：J1 pin2-R1 1KΩ-Q1 gate，节点经 R2 51KΩ 接 GND"}]
+    },
+    {
+      "reference": "C1",
+      "part_number": "100nF",
+      "role": "跨接 VCC 与 Q1 漏极节点、与 D1 Laser 并联的电容",
+      "evidence": [{"asset_sha256": "a2a1ef4141450840929d166ca32d336be0b9995dce1df353c64d5e776320c2c6", "page": 1, "locator": "第 1 页左上：C1 100nF 与 D1 Laser 两端共节点"}]
+    },
+    {
+      "reference": "C2",
+      "part_number": "100nF",
+      "role": "J1 附近 VCC 至 GND 的电源去耦电容",
+      "evidence": [{"asset_sha256": "a2a1ef4141450840929d166ca32d336be0b9995dce1df353c64d5e776320c2c6", "page": 1, "locator": "第 1 页右侧：C2 100nF 跨接 VCC 与 GND"}]
+    }
+  ],
+  "facts": [
+    {
+      "id": "system.laser-tx-architecture",
+      "category": "system",
+      "subject": "Unit Laser TX 系统结构",
+      "statement": "J1 提供 VCC、GND 和 MOSI 控制输入；MOSI 经 R1 驱动 Q1 AO3400A，Q1 低侧开关控制 D1 Laser。完整单页没有本地主控、协处理器、存储器、通信收发器、电池、充电器或稳压器。",
+      "confidence": "confirmed",
+      "attributes": {"controller": "external via J1 pin2", "emitter": "D1 Laser", "switch": "Q1 AO3400A", "control_path": "J1 MOSI -> R1 -> Q1 gate", "local_mcu": null, "storage": null, "transceiver": null, "battery": null, "regulator": null},
+      "evidence": [{"asset_sha256": "a2a1ef4141450840929d166ca32d336be0b9995dce1df353c64d5e776320c2c6", "page": 1, "locator": "第 1 页完整原理图"}]
+    },
+    {
+      "id": "interface.grove-pinout",
+      "category": "interface",
+      "subject": "J1 GROVE_IO 引脚",
+      "statement": "J1 GROVE_IO 的 pin1=MISO、pin2=MOSI、pin3=VCC、pin4=GND；pin1 MISO 只有连接器侧短线且未连接其他器件，pin2 MOSI 连接控制网络。",
+      "confidence": "confirmed",
+      "attributes": {"pin1": "MISO, no external circuit connection", "pin2": "MOSI, digital control input", "pin3": "VCC, power input", "pin4": "GND"},
+      "evidence": [{"asset_sha256": "a2a1ef4141450840929d166ca32d336be0b9995dce1df353c64d5e776320c2c6", "page": 1, "locator": "第 1 页右中 J1 pin1-pin4 与各网络标注"}]
+    },
+    {
+      "id": "interface.documented-port-aliases",
+      "category": "interface",
+      "subject": "正文 DIN/NC 与原理图 MOSI/MISO 别名",
+      "statement": "正文 Grove 表将黄色触点称为 DIN、白色触点称为 NC；原理图则将 J1 pin2 标为 MOSI、pin1 标为 MISO 且未接。两组名称的对应关系可由触点顺序推对，但图中没有直接打印 DIN 或 NC。",
+      "confidence": "uncertain",
+      "attributes": {"documented_yellow": "DIN", "documented_white": "NC", "schematic_pin2": "MOSI", "schematic_pin1": "MISO unconnected", "din_alias_confirmed_in_schematic": false},
+      "evidence": [{"asset_sha256": "a2a1ef4141450840929d166ca32d336be0b9995dce1df353c64d5e776320c2c6", "page": 1, "locator": "第 1 页 J1 仅标 MISO/MOSI/VCC/GND，无 DIN/NC 文字"}]
+    },
+    {
+      "id": "gpio.digital-control",
+      "category": "gpio",
+      "subject": "MOSI 数字控制输入",
+      "statement": "J1 MOSI pin2 连接控制节点，该节点经 R2 51KΩ 下拉至 GND，并经 R1 1KΩ 串联到 Q1 gate；信号方向为外部主机到 Q1。",
+      "confidence": "confirmed",
+      "attributes": {"input": "J1 pin2 MOSI", "series_resistor": "R1 1KΩ", "pulldown": "R2 51KΩ", "destination": "Q1 gate", "direction": "external host -> Q1"},
+      "evidence": [{"asset_sha256": "a2a1ef4141450840929d166ca32d336be0b9995dce1df353c64d5e776320c2c6", "page": 1, "locator": "第 1 页中央 J1 pin2、R2、R1 与 Q1 gate 连线"}]
+    },
+    {
+      "id": "component.mosfet-low-side",
+      "category": "component",
+      "subject": "Q1 AO3400A 低侧开关",
+      "statement": "Q1 AO3400A 的源极接 GND，漏极接 D1 Laser 下端与 C1 下端，栅极经 R1 接 MOSI 控制节点；Q1 导通时为激光支路提供到 GND 的回路。",
+      "confidence": "confirmed",
+      "attributes": {"part": "Q1 AO3400A", "source": "GND", "drain": "D1 lower/C1 lower", "gate": "R1 from MOSI", "topology": "N-channel low-side switch"},
+      "evidence": [{"asset_sha256": "a2a1ef4141450840929d166ca32d336be0b9995dce1df353c64d5e776320c2c6", "page": 1, "locator": "第 1 页左中 Q1 符号及源/漏/栅三条连接"}]
+    },
+    {
+      "id": "power.laser-current-path",
+      "category": "power",
+      "subject": "激光发射电流路径",
+      "statement": "D1 Laser 上端连接 VCC，下端连接 Q1 漏极；Q1 源极连接 GND，因此受控导通路径为 VCC -> D1 -> Q1 -> GND。原理图未在 D1 主电流路径中显示独立串联限流电阻或恒流驱动 IC。",
+      "confidence": "confirmed",
+      "attributes": {"path": "VCC -> D1 Laser -> Q1 AO3400A -> GND", "series_current_resistor_shown": false, "constant_current_driver_shown": false},
+      "evidence": [{"asset_sha256": "a2a1ef4141450840929d166ca32d336be0b9995dce1df353c64d5e776320c2c6", "page": 1, "locator": "第 1 页左侧 VCC、D1、Q1 与 GND 竖直支路"}]
+    },
+    {
+      "id": "key_net.c1-laser-parallel",
+      "category": "key_net",
+      "subject": "C1 与 D1 并联网络",
+      "statement": "C1 100nF 的上端与 D1 上端同接 VCC，下端与 D1 下端同接 Q1 漏极，因此 C1 与 D1 Laser 电气并联。原理图未说明 C1 对脉冲边沿、EMI 或光输出的定量作用。",
+      "confidence": "confirmed",
+      "attributes": {"capacitor": "C1 100nF", "parallel_component": "D1 Laser", "upper_node": "VCC", "lower_node": "Q1 drain"},
+      "evidence": [{"asset_sha256": "a2a1ef4141450840929d166ca32d336be0b9995dce1df353c64d5e776320c2c6", "page": 1, "locator": "第 1 页左上 C1 与 D1 两端共节点"}]
+    },
+    {
+      "id": "power.vcc-decoupling",
+      "category": "power",
+      "subject": "VCC 输入去耦",
+      "statement": "J1 pin3 引入 VCC、pin4 接 GND；C2 100nF 直接跨接 VCC 与 GND，作为接口附近的电源去耦。",
+      "confidence": "confirmed",
+      "attributes": {"input": "J1 pin3 VCC", "return": "J1 pin4 GND", "decoupling": "C2 100nF"},
+      "evidence": [{"asset_sha256": "a2a1ef4141450840929d166ca32d336be0b9995dce1df353c64d5e776320c2c6", "page": 1, "locator": "第 1 页右侧 J1 VCC/GND 与 C2 100nF"}]
+    },
+    {
+      "id": "protection.default-off-pulldown",
+      "category": "protection",
+      "subject": "控制输入默认关断",
+      "statement": "R2 51KΩ 从 J1 MOSI/R1 输入节点接 GND；当外部控制端不驱动时，该电阻将控制节点保持为低电平侧，避免控制节点悬空。",
+      "confidence": "confirmed",
+      "attributes": {"resistor": "R2 51KΩ", "node": "J1 MOSI and R1 input", "return": "GND", "purpose_from_topology": "control-node pulldown"},
+      "evidence": [{"asset_sha256": "a2a1ef4141450840929d166ca32d336be0b9995dce1df353c64d5e776320c2c6", "page": 1, "locator": "第 1 页中央 R2 51KΩ 从 MOSI 控制节点至 GND"}]
+    },
+    {
+      "id": "protection.unshown-devices",
+      "category": "protection",
+      "subject": "接口与激光支路保护器件",
+      "statement": "完整单页未显示保险丝、TVS/ESD 二极管、反接保护二极管、过流检测、温度检测或激光专用恒流/限流 IC；R1 位于 MOSFET 栅极路径，不在 D1 主电流路径中。",
+      "confidence": "confirmed",
+      "attributes": {"fuse_shown": false, "tvs_esd_shown": false, "reverse_protection_shown": false, "overcurrent_monitor_shown": false, "temperature_monitor_shown": false, "laser_current_driver_shown": false, "r1_location": "gate path"},
+      "evidence": [{"asset_sha256": "a2a1ef4141450840929d166ca32d336be0b9995dce1df353c64d5e776320c2c6", "page": 1, "locator": "第 1 页完整原理图，仅 D1/Q1/R1/R2/C1/C2/J1"}]
+    },
+    {
+      "id": "bus.no-serial-bus",
+      "category": "bus",
+      "subject": "外部通信与调制接口",
+      "statement": "J1 仅有单向 MOSI 控制线进入 Q1，MISO pin1 未接；页面没有 I2C、SPI、UART、CAN、RS-485、USB 或其他协议控制器，也没有地址、寄存器、时钟或片选网络。",
+      "confidence": "confirmed",
+      "attributes": {"control": "single digital MOSI input", "feedback": null, "i2c": null, "spi_controller": null, "uart": null, "can": null, "rs485": null, "usb": null, "address": null},
+      "evidence": [{"asset_sha256": "a2a1ef4141450840929d166ca32d336be0b9995dce1df353c64d5e776320c2c6", "page": 1, "locator": "第 1 页 J1 与全部线路，无总线控制器或协议网络"}]
+    },
+    {
+      "id": "power.documented-5v",
+      "category": "power",
+      "subject": "正文 5V 工作电压",
+      "statement": "正文规格表与 Grove 管脚表将工作电压标为 5V；原理图只使用 VCC 网络名，没有打印 VCC 数值、允许输入范围、静态电流、峰值电流或容差。",
+      "confidence": "uncertain",
+      "attributes": {"documented_voltage": "5V", "schematic_net": "VCC", "schematic_voltage": null, "input_range": null, "current": null, "tolerance": null},
+      "evidence": [{"asset_sha256": "a2a1ef4141450840929d166ca32d336be0b9995dce1df353c64d5e776320c2c6", "page": 1, "locator": "第 1 页 J1/D1/C1/C2 均使用 VCC，整页无电压数字"}]
+    },
+    {
+      "id": "other.optical-and-modulation-specs",
+      "category": "other",
+      "subject": "激光光学与数字调制边界",
+      "statement": "正文称本产品用于自由空间激光通信并可与 LASER.RX 配对；原理图只将 D1 标为 Laser，没有激光器型号、波长、光功率、激光等级、光束发散角、最大占空比、调制频率、传输距离或接收器兼容条件。",
+      "confidence": "uncertain",
+      "attributes": {"documented_application": "free-space laser communication", "documented_pair": "LASER.RX", "laser_part_number": null, "wavelength": null, "optical_power": null, "laser_class": null, "beam_divergence": null, "max_duty_cycle": null, "modulation_frequency": null, "range": null},
+      "evidence": [{"asset_sha256": "a2a1ef4141450840929d166ca32d336be0b9995dce1df353c64d5e776320c2c6", "page": 1, "locator": "第 1 页 D1 仅标 Laser，整页无光学或时序参数"}]
+    }
+  ],
+  "needs_review": [
+    {
+      "id": "review.port-aliases",
+      "fact_id": "interface.documented-port-aliases",
+      "question": "请用 PCB 丝印、接口定义或实板确认正文 DIN/NC 是否分别对应 J1 pin2 MOSI 与 pin1 MISO 未接。",
+      "reason": "原理图只打印 MOSI/MISO，未直接打印 DIN/NC 别名。",
+      "evidence": [{"asset_sha256": "a2a1ef4141450840929d166ca32d336be0b9995dce1df353c64d5e776320c2c6", "page": 1, "locator": "第 1 页 J1 GROVE_IO pin1/pin2"}]
+    },
+    {
+      "id": "review.vcc-rating",
+      "fact_id": "power.documented-5v",
+      "question": "请用当前 U066 BOM、激光器 datasheet 或实板确认 VCC=5V、允许输入范围及工作/峰值电流。",
+      "reason": "原理图仅标 VCC，且没有电源额定值或电流参数。",
+      "evidence": [{"asset_sha256": "a2a1ef4141450840929d166ca32d336be0b9995dce1df353c64d5e776320c2c6", "page": 1, "locator": "第 1 页 J1 pin3 VCC 至 D1/C1/C2"}]
+    },
+    {
+      "id": "review.laser-safety-and-modulation",
+      "fact_id": "other.optical-and-modulation-specs",
+      "question": "请确认 D1 的量产型号、波长、光功率、激光等级、光束发散角、允许占空比/调制频率、传输距离及 LASER.RX 兼容条件。",
+      "reason": "板级原理图不能证明光学性能、激光安全等级或数字调制边界。",
+      "evidence": [{"asset_sha256": "a2a1ef4141450840929d166ca32d336be0b9995dce1df353c64d5e776320c2c6", "page": 1, "locator": "第 1 页 D1 Laser 与 MOSI-Q1 控制路径"}]
+    }
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "dry_run": false,
+  "failed": 0,
+  "published": 1,
+  "results": [
+    {
+      "backup": null,
+      "draft_action": "unchanged",
+      "dry_run": false,
+      "errors": [],
+      "needs_review": 7,
+      "product_id": "iot-base-thermal-online-catm-d6c7a2ed64cc",
+      "product_name": "IoT Base Thermal Online CatM",
+      "publish_action": "unchanged",
+      "sha256": "45edbf3c8ae25d1d4b06064f57e586218bd7cf709f22bc4ffaa789639d4138a3",
+      "status": "valid",
+      "uncertain_facts": 7
+    }
+  ],
+  "schema_version": 1
+}

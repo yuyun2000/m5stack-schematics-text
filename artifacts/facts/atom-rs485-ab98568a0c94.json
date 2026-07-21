@@ -1,0 +1,391 @@
+{
+  "schema_version": 1,
+  "generator": "schematic_describer",
+  "product": {
+    "product_id": "atom-rs485-ab98568a0c94",
+    "product_name": "Atom RS485",
+    "sku": "K045",
+    "source_path": "atom/atomic485.md",
+    "source_sha256": "35ec6a9ebfcdf132deb82f8e39fecffa651e7db63d5efe911fd9828966f6e76c",
+    "input_sha256": "7054ad6456c14714c141bcd7927ee97ed3805878941eea21dc21c9b25660b586"
+  },
+  "schematic_assets": [
+    {
+      "sha256": "72fa3f8f2f70f0097edc759aa4941778e213c6dfa1130aabdcf80b0b8019cefa",
+      "source_url": "https://static-cdn.m5stack.com/resource/docs/products/atom/atomic485/atomic485_sch_01.webp",
+      "pages": [
+        1
+      ]
+    }
+  ],
+  "summary": "Atom RS485 使用 U1 SP3485EN-L/TR 在 Atom 的 RX/TX 与 RS485_A/RS485_B 之间转换，TX 经 Q1 SS8050 Y1 控制并联的 /RE 与 DE，DI 固定接 GND。A/B 总线配置 4.7KΩ 偏置、可选 120Ω 终端和三颗 SMAJ6.5CA-E3 保护器件，并通过 J1 与 12V+/12V- 一起接出。J1 的 +12V 由 U2 AOZ1282CI 降压为 +5VIN，为 Atom P2 提供电源。",
+  "keywords": [
+    "Atom RS485",
+    "K045",
+    "SP3485EN-L/TR",
+    "AOZ1282CI",
+    "SS8050 Y1",
+    "RS-485",
+    "RS485_A",
+    "RS485_B",
+    "RX",
+    "TX",
+    "RO",
+    "DI",
+    "RE",
+    "DE",
+    "auto direction",
+    "120Ω termination",
+    "R4 120R NC",
+    "4.7K bias",
+    "SMAJ6.5CA-E3",
+    "HDR_4P_3.96",
+    "12V+",
+    "12V-",
+    "+12V",
+    "+5VIN",
+    "+3.3V",
+    "B5819W SL",
+    "P1 Header 5",
+    "P2 Header 4"
+  ],
+  "components": [
+    {
+      "reference": "U1",
+      "part_number": "SP3485EN-L/TR",
+      "role": "3.3V UART 与 RS485_A/RS485_B 之间的半双工收发器",
+      "evidence": [
+        {
+          "asset_sha256": "72fa3f8f2f70f0097edc759aa4941778e213c6dfa1130aabdcf80b0b8019cefa",
+          "page": 1,
+          "locator": "第 1 页中上 U1 SP3485EN-L/TR，RO,/RE,DE,DI,VCC,GND,A,B"
+        }
+      ]
+    },
+    {
+      "reference": "Q1",
+      "part_number": "SS8050 Y1",
+      "role": "根据 TX 电平下拉 SP3485 的 /RE 与 DE 公共控制节点",
+      "evidence": [
+        {
+          "asset_sha256": "72fa3f8f2f70f0097edc759aa4941778e213c6dfa1130aabdcf80b0b8019cefa",
+          "page": 1,
+          "locator": "第 1 页左上，TX-R5-Q1 与 R3、U1 /RE/DE 公共节点"
+        }
+      ]
+    },
+    {
+      "reference": "J1",
+      "part_number": "HDR_4P_3.96",
+      "role": "接出 RS485_B、RS485_A、12V+ 和 12V- 的四针端子",
+      "evidence": [
+        {
+          "asset_sha256": "72fa3f8f2f70f0097edc759aa4941778e213c6dfa1130aabdcf80b0b8019cefa",
+          "page": 1,
+          "locator": "第 1 页右上 J1 HDR_4P_3.96，B/A/12V+/12V- 四行网络"
+        }
+      ]
+    },
+    {
+      "reference": "U2",
+      "part_number": "AOZ1282CI",
+      "role": "将 J1 的 +12V 降压为 +5VIN 的 DC-DC 转换器",
+      "evidence": [
+        {
+          "asset_sha256": "72fa3f8f2f70f0097edc759aa4941778e213c6dfa1130aabdcf80b0b8019cefa",
+          "page": 1,
+          "locator": "第 1 页左下 U2 AOZ1282CI 的 VIN/EN/GND、BST/LX/FB 与 +12V/+5VIN"
+        }
+      ]
+    },
+    {
+      "reference": "P1,P2",
+      "part_number": "Header 5 / Header 4",
+      "role": "Atom 侧 +3.3V、RX、TX、+5VIN 和 GND 接口",
+      "evidence": [
+        {
+          "asset_sha256": "72fa3f8f2f70f0097edc759aa4941778e213c6dfa1130aabdcf80b0b8019cefa",
+          "page": 1,
+          "locator": "第 1 页右中，P1 Header 5 与 P2 Header 4 的网络和 no-connect 标记"
+        }
+      ]
+    },
+    {
+      "reference": "R1,R6,R4",
+      "part_number": "4.7KΩ / 4.7KΩ / 120Ω NC",
+      "role": "RS485 B/A 偏置和可选总线终端网络",
+      "evidence": [
+        {
+          "asset_sha256": "72fa3f8f2f70f0097edc759aa4941778e213c6dfa1130aabdcf80b0b8019cefa",
+          "page": 1,
+          "locator": "第 1 页中上，R1 从 B 到 GND、R6 从 A 到 +3.3V、R4 120R/NC 跨 B/A"
+        }
+      ]
+    },
+    {
+      "reference": "D1,D2,D3",
+      "part_number": "SMAJ6.5CA-E3",
+      "role": "RS485_B 对地、B-A 线间和 RS485_A 对地的 TVS 保护",
+      "evidence": [
+        {
+          "asset_sha256": "72fa3f8f2f70f0097edc759aa4941778e213c6dfa1130aabdcf80b0b8019cefa",
+          "page": 1,
+          "locator": "第 1 页中上 D1/D2/D3 SMAJ6.5CA-E3 与 GND/RS485_B/RS485_A"
+        }
+      ]
+    },
+    {
+      "reference": "R2,R3,R5,C1",
+      "part_number": "1KΩ / 4.7KΩ / 1KΩ / 100nF",
+      "role": "SP3485 接收输出、方向控制和 3.3V 去耦网络",
+      "evidence": [
+        {
+          "asset_sha256": "72fa3f8f2f70f0097edc759aa4941778e213c6dfa1130aabdcf80b0b8019cefa",
+          "page": 1,
+          "locator": "第 1 页左上，RO-R2-RX、TX-R5-Q1、R3 上拉与 C1 VCC 去耦"
+        }
+      ]
+    },
+    {
+      "reference": "D4,L1",
+      "part_number": "B5819W SL / 4.7uH",
+      "role": "AOZ1282CI LX 节点的续流二极管和输出电感",
+      "evidence": [
+        {
+          "asset_sha256": "72fa3f8f2f70f0097edc759aa4941778e213c6dfa1130aabdcf80b0b8019cefa",
+          "page": 1,
+          "locator": "第 1 页下方，D4 B5819W SL 从 LX 节点到 GND，L1 4.7uH 从 LX 到 +5VIN"
+        }
+      ]
+    },
+    {
+      "reference": "R7,R8,R9",
+      "part_number": "100KΩ / 51KΩ / 10KΩ",
+      "role": "AOZ1282CI EN 上拉和 +5VIN 反馈分压网络",
+      "evidence": [
+        {
+          "asset_sha256": "72fa3f8f2f70f0097edc759aa4941778e213c6dfa1130aabdcf80b0b8019cefa",
+          "page": 1,
+          "locator": "第 1 页左下，R7 从 +12V 到 EN，R8 从 +5VIN 到 FB，R9 从 FB 到 GND"
+        }
+      ]
+    },
+    {
+      "reference": "C2,C3,C4,C5,C6",
+      "part_number": "100nF / 10uF / 10uF / 10uF / 100nF",
+      "role": "AOZ1282CI BST、自举、输入和输出去耦",
+      "evidence": [
+        {
+          "asset_sha256": "72fa3f8f2f70f0097edc759aa4941778e213c6dfa1130aabdcf80b0b8019cefa",
+          "page": 1,
+          "locator": "第 1 页左下，C2 BST-LX、C3/C4 +12V-GND、C5/C6 +5VIN-GND"
+        }
+      ]
+    }
+  ],
+  "facts": [
+    {
+      "id": "system.rs485-power-architecture",
+      "category": "system",
+      "subject": "Atom RS485 通信与供电架构",
+      "statement": "Atom 的 RX/TX 连接 U1 SP3485EN-L/TR，U1 将信号转换为 RS485_A/RS485_B 并通过 J1 接出；J1 同时输入 +12V/GND，U2 AOZ1282CI 将 +12V 转换为 +5VIN 给 Atom。",
+      "confidence": "confirmed",
+      "attributes": {
+        "transceiver": "U1 SP3485EN-L/TR",
+        "host_signals": "RX, TX",
+        "bus_signals": "RS485_A, RS485_B",
+        "terminal": "J1 HDR_4P_3.96",
+        "dc_dc": "U2 AOZ1282CI",
+        "power_path": "+12V -> U2 -> +5VIN -> P2"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "72fa3f8f2f70f0097edc759aa4941778e213c6dfa1130aabdcf80b0b8019cefa",
+          "page": 1,
+          "locator": "第 1 页完整单页原理图，上方收发器/端子/Atom 与下方 +12V-to-+5VIN 电源"
+        }
+      ]
+    },
+    {
+      "id": "interface.atom-header-map",
+      "category": "interface",
+      "subject": "Atom 连接器映射",
+      "statement": "P1 Header 5 的 pin1=+3.3V、pin2=RX、pin3=TX，pin4/pin5 未连接；P2 Header 4 的 pin1/pin2 未连接、pin3=+5VIN、pin4=GND。",
+      "confidence": "confirmed",
+      "attributes": {
+        "P1": "pin1 +3.3V, pin2 RX, pin3 TX, pin4 NC, pin5 NC",
+        "P2": "pin1 NC, pin2 NC, pin3 +5VIN, pin4 GND"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "72fa3f8f2f70f0097edc759aa4941778e213c6dfa1130aabdcf80b0b8019cefa",
+          "page": 1,
+          "locator": "第 1 页右中 P1/P2 针脚编号、网络与红色 no-connect 标记"
+        }
+      ]
+    },
+    {
+      "id": "bus.rs485-transceiver-map",
+      "category": "bus",
+      "subject": "SP3485EN-L/TR UART 与 RS-485 映射",
+      "statement": "U1 RO pin1 经 R2 1KΩ 连接 RX，DI pin4 固定接 GND，B pin7 连接 RS485_B，A pin6 连接 RS485_A；VCC pin8 接 +3.3V，GND pin5 接 GND。",
+      "confidence": "confirmed",
+      "attributes": {
+        "RO": "pin1 -> R2 1K -> RX",
+        "DI": "pin4 GND",
+        "B": "pin7 RS485_B",
+        "A": "pin6 RS485_A",
+        "VCC": "pin8 +3.3V",
+        "GND": "pin5 GND",
+        "decoupling": "C1 100nF"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "72fa3f8f2f70f0097edc759aa4941778e213c6dfa1130aabdcf80b0b8019cefa",
+          "page": 1,
+          "locator": "第 1 页中上 U1 RO/DI/B/A/VCC/GND 与 R2/C1/RX/RS485_A/RS485_B"
+        }
+      ]
+    },
+    {
+      "id": "gpio.tx-direction-control",
+      "category": "gpio",
+      "subject": "TX 自动方向控制网络",
+      "statement": "U1 /RE pin2 与 DE pin3 并联，公共节点由 R3 4.7KΩ 上拉到 +3.3V，并连接 Q1 集电极；TX 经 R5 1KΩ 驱动 Q1 SS8050 Y1 基极，Q1 发射极接 GND。",
+      "confidence": "confirmed",
+      "attributes": {
+        "control_pins": "/RE pin2 tied to DE pin3",
+        "pullup": "R3 4.7K to +3.3V",
+        "transistor": "Q1 SS8050 Y1",
+        "base_drive": "TX through R5 1K",
+        "emitter": "GND"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "72fa3f8f2f70f0097edc759aa4941778e213c6dfa1130aabdcf80b0b8019cefa",
+          "page": 1,
+          "locator": "第 1 页左上 TX-R5-Q1-R3 与 U1 /RE/DE 公共节点"
+        }
+      ]
+    },
+    {
+      "id": "key_net.rs485-bias-termination",
+      "category": "key_net",
+      "subject": "RS485 A/B 偏置与可选终端",
+      "statement": "R1 4.7KΩ 从 RS485_B 接 GND，R6 4.7KΩ 从 RS485_A 接 +3.3V；R4 120Ω/NC 跨接 RS485_B 与 RS485_A，因此 120Ω 位置标记为不装配。",
+      "confidence": "confirmed",
+      "attributes": {
+        "B_bias": "R1 4.7K RS485_B to GND",
+        "A_bias": "R6 4.7K RS485_A to +3.3V",
+        "termination": "R4 120R/NC across RS485_B and RS485_A",
+        "termination_populated": false
+      },
+      "evidence": [
+        {
+          "asset_sha256": "72fa3f8f2f70f0097edc759aa4941778e213c6dfa1130aabdcf80b0b8019cefa",
+          "page": 1,
+          "locator": "第 1 页中上 R1/R6/R4 与 RS485_B/RS485_A/GND/+3.3V"
+        }
+      ]
+    },
+    {
+      "id": "protection.rs485-tvs-network",
+      "category": "protection",
+      "subject": "RS485 三路 TVS 保护",
+      "statement": "D1 SMAJ6.5CA-E3 连接 RS485_B 与 GND，D2 SMAJ6.5CA-E3 跨接 RS485_B 与 RS485_A，D3 SMAJ6.5CA-E3 连接 RS485_A 与 GND。",
+      "confidence": "confirmed",
+      "attributes": {
+        "B_to_GND": "D1 SMAJ6.5CA-E3",
+        "B_to_A": "D2 SMAJ6.5CA-E3",
+        "A_to_GND": "D3 SMAJ6.5CA-E3"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "72fa3f8f2f70f0097edc759aa4941778e213c6dfa1130aabdcf80b0b8019cefa",
+          "page": 1,
+          "locator": "第 1 页中上 D1/D2/D3 的垂直网络及 RS485_B/RS485_A/GND 节点"
+        }
+      ]
+    },
+    {
+      "id": "interface.rs485-power-terminal",
+      "category": "interface",
+      "subject": "J1 RS-485 与 12V 端子",
+      "statement": "J1 HDR_4P_3.96 从上到下接 RS485_B、RS485_A、+12V 和 GND/12V-。",
+      "confidence": "confirmed",
+      "attributes": {
+        "B": "RS485_B",
+        "A": "RS485_A",
+        "12V+": "+12V",
+        "12V-": "GND"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "72fa3f8f2f70f0097edc759aa4941778e213c6dfa1130aabdcf80b0b8019cefa",
+          "page": 1,
+          "locator": "第 1 页右上 J1 B/A/12V+/12V- 标签与 RS485_B/RS485_A/+12V/GND 网络"
+        }
+      ]
+    },
+    {
+      "id": "power.aoz1282-input-enable",
+      "category": "power",
+      "subject": "AOZ1282CI +12V 输入与使能",
+      "statement": "U2 VIN pin5 接 +12V，EN pin4 通过 R7 100KΩ 接 +12V，GND pin2 接 GND；C3/C4 两个 10uF (106) 10% 35V 电容并联连接 +12V 与 GND。",
+      "confidence": "confirmed",
+      "attributes": {
+        "VIN": "pin5 +12V",
+        "EN": "pin4 through R7 100K to +12V",
+        "GND": "pin2 GND",
+        "input_capacitors": "C3/C4 10uF (106) 10% 35V"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "72fa3f8f2f70f0097edc759aa4941778e213c6dfa1130aabdcf80b0b8019cefa",
+          "page": 1,
+          "locator": "第 1 页左下 +12V、U2 VIN/EN/GND、R7 与 C3/C4"
+        }
+      ]
+    },
+    {
+      "id": "power.aoz1282-buck-output",
+      "category": "power",
+      "subject": "AOZ1282CI +5VIN 降压输出",
+      "statement": "U2 LX pin6 经 L1 4.7uH 输出 +5VIN，D4 B5819W SL 从 LX 节点接 GND，C2 100nF 连接 BST pin1 与 LX；C5 10uF 和 C6 100nF 连接 +5VIN 与 GND。",
+      "confidence": "confirmed",
+      "attributes": {
+        "LX": "pin6",
+        "inductor": "L1 4.7uH to +5VIN",
+        "freewheel_diode": "D4 B5819W SL LX to GND",
+        "bootstrap": "C2 100nF BST pin1 to LX",
+        "output_caps": "C5 10uF, C6 100nF"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "72fa3f8f2f70f0097edc759aa4941778e213c6dfa1130aabdcf80b0b8019cefa",
+          "page": 1,
+          "locator": "第 1 页下方 U2 BST/LX、C2/D4/L1 与 +5VIN/C5/C6"
+        }
+      ]
+    },
+    {
+      "id": "power.aoz1282-feedback",
+      "category": "power",
+      "subject": "AOZ1282CI 输出反馈",
+      "statement": "R8 51KΩ 从 +5VIN 接 U2 FB pin3，R9 10KΩ 从 FB pin3 接 GND。",
+      "confidence": "confirmed",
+      "attributes": {
+        "upper_resistor": "R8 51K +5VIN to FB",
+        "lower_resistor": "R9 10K FB to GND"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "72fa3f8f2f70f0097edc759aa4941778e213c6dfa1130aabdcf80b0b8019cefa",
+          "page": 1,
+          "locator": "第 1 页左下 U2 FB pin3 与 R8/R9/+5VIN/GND"
+        }
+      ]
+    }
+  ],
+  "needs_review": []
+}

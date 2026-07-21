@@ -1,0 +1,21 @@
+{
+  "dry_run": false,
+  "failed": 0,
+  "published": 1,
+  "results": [
+    {
+      "backup": null,
+      "draft_action": "unchanged",
+      "dry_run": false,
+      "errors": [],
+      "needs_review": 4,
+      "product_id": "base-dmx-a3b4cadace3f",
+      "product_name": "Base DMX",
+      "publish_action": "unchanged",
+      "sha256": "2d055307f0753683006e0021f920c62b0cfceed86362da867f37437349c31ed2",
+      "status": "valid",
+      "uncertain_facts": 4
+    }
+  ],
+  "schema_version": 1
+}

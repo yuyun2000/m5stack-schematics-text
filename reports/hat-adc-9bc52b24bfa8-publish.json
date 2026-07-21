@@ -1,0 +1,21 @@
+{
+  "dry_run": false,
+  "failed": 0,
+  "published": 1,
+  "results": [
+    {
+      "backup": null,
+      "draft_action": "unchanged",
+      "dry_run": false,
+      "errors": [],
+      "needs_review": 3,
+      "product_id": "hat-adc-9bc52b24bfa8",
+      "product_name": "Hat ADC",
+      "publish_action": "unchanged",
+      "sha256": "534b702e2323b7ceb4c7f92645b28f497236af76bad1d3cbe4526033bd25dcee",
+      "status": "valid",
+      "uncertain_facts": 3
+    }
+  ],
+  "schema_version": 1
+}

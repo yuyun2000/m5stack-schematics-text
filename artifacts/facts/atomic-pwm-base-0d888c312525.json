@@ -1,0 +1,528 @@
+{
+  "schema_version": 1,
+  "generator": "schematic_describer",
+  "product": {
+    "product_id": "atomic-pwm-base-0d888c312525",
+    "product_name": "Atomic PWM Base",
+    "sku": "A114",
+    "source_path": "atom/Atomic PWM Base.md",
+    "source_sha256": "8af3db83d499d94ada45581b602b73071a28a21dc9cd4711b1733cb49a8e871c",
+    "input_sha256": "37a42e8142ee389d1c3a9e8a504bc03f35fe40b4f3562a19f5c3c5ab232020a3"
+  },
+  "schematic_assets": [
+    {
+      "sha256": "9471fef4dad6c055ec8edaa92026eea7993fdb6e439005a10dc113fb887560ea",
+      "source_url": "https://static-cdn.m5stack.com/resource/docs/products/atom/Atomic PWM Base/img-2d6a7113-0f87-4c13-be7a-4a9eecf72550.webp",
+      "pages": [
+        1
+      ]
+    }
+  ],
+  "summary": "Atomic PWM Base 以 +VIN/DC12~24V 为输入，U1 ME3116AM6G 经 L1 与肖特基二极管降压生成 +5VIN，并以 D3 红色 LED 指示电源。ATOM Header 5 的 G22 输出 PWM，PWM 经下拉后进入 U2 EG27324 INA，OUTA 通过 R7 驱动 Q1 FDD8447L 栅极；Q1 作为低侧开关控制 J1 LED-，J1 LED+ 与 12V+ 共接 +VIN，12V- 接 GND。U2 的 +MOSV 供电节点通过 R5/R6 两只 0Ω 分别连接 +5VIN 和 +3.3V，当前页面没有标注两只电阻的实际装配选项。",
+  "keywords": [
+    "Atomic PWM Base",
+    "A114",
+    "ME3116AM6G",
+    "EG27324",
+    "FDD8447L",
+    "PWM",
+    "G22",
+    "+VIN",
+    "DC12~24V",
+    "+5VIN",
+    "+MOSV",
+    "+3.3V",
+    "LED-",
+    "LED+",
+    "12V+",
+    "12V-",
+    "B5819W SL",
+    "SD24",
+    "L1 10uH",
+    "OUTA",
+    "INA",
+    "R5 0Ω",
+    "R6 0Ω",
+    "HDR_4P_3.96",
+    "P1 Header 5",
+    "P2 Header 4"
+  ],
+  "components": [
+    {
+      "reference": "U1",
+      "part_number": "ME3116AM6G",
+      "role": "将 +VIN/DC12~24V 降压为 +5VIN 的开关稳压器",
+      "evidence": [
+        {
+          "asset_sha256": "9471fef4dad6c055ec8edaa92026eea7993fdb6e439005a10dc113fb887560ea",
+          "page": 1,
+          "locator": "页面左上 U1 ME3116AM6G，VIN/EN/GND/BST/LX/FB 六脚及外围"
+        }
+      ]
+    },
+    {
+      "reference": "D2",
+      "part_number": "SD24",
+      "role": "+VIN 输入节点到 GND 的防护二极管",
+      "evidence": [
+        {
+          "asset_sha256": "9471fef4dad6c055ec8edaa92026eea7993fdb6e439005a10dc113fb887560ea",
+          "page": 1,
+          "locator": "页面左上 +VIN 输入节点下方 D2 SD24 对地"
+        }
+      ]
+    },
+    {
+      "reference": "D1/L1",
+      "part_number": "B5819W SL / 10uH",
+      "role": "ME3116AM6G 降压转换的肖特基续流二极管与输出电感",
+      "evidence": [
+        {
+          "asset_sha256": "9471fef4dad6c055ec8edaa92026eea7993fdb6e439005a10dc113fb887560ea",
+          "page": 1,
+          "locator": "U1 右侧 LX 开关节点、D1 B5819W SL 与 L1 10uH"
+        }
+      ]
+    },
+    {
+      "reference": "D3",
+      "part_number": "红灯 0603",
+      "role": "由 +5VIN 经 R3 驱动的电源指示灯",
+      "evidence": [
+        {
+          "asset_sha256": "9471fef4dad6c055ec8edaa92026eea7993fdb6e439005a10dc113fb887560ea",
+          "page": 1,
+          "locator": "页面上中 +5VIN-R3 1KΩ-D3 红灯 0603-GND"
+        }
+      ]
+    },
+    {
+      "reference": "U2",
+      "part_number": "EG27324",
+      "role": "接收 PWM 并由 OUTA 驱动功率 MOSFET 的双通道栅极驱动器，本设计只使用 A 通道",
+      "evidence": [
+        {
+          "asset_sha256": "9471fef4dad6c055ec8edaa92026eea7993fdb6e439005a10dc113fb887560ea",
+          "page": 1,
+          "locator": "页面左下 U2 EG27324，INA/OUTA/VDD/GND 与未连接的 NC/INB/OUTB"
+        }
+      ]
+    },
+    {
+      "reference": "Q1",
+      "part_number": "FDD8447L",
+      "role": "由 U2 OUTA 驱动的低侧功率 MOSFET，开关 J1 LED-",
+      "evidence": [
+        {
+          "asset_sha256": "9471fef4dad6c055ec8edaa92026eea7993fdb6e439005a10dc113fb887560ea",
+          "page": 1,
+          "locator": "页面中下 Q1 FDD8447L，栅极接 R7/R9，源极 GND，漏极接 J1 LED-"
+        }
+      ]
+    },
+    {
+      "reference": "J1",
+      "part_number": "HDR_4P_3.96",
+      "role": "引出 LED-、LED+、12V+ 和 12V- 的负载/电源端子",
+      "evidence": [
+        {
+          "asset_sha256": "9471fef4dad6c055ec8edaa92026eea7993fdb6e439005a10dc113fb887560ea",
+          "page": 1,
+          "locator": "页面中右 J1 HDR_4P_3.96，四行标注 LED-/LED+/12V+/12V-"
+        }
+      ]
+    },
+    {
+      "reference": "P1",
+      "part_number": "Header 5",
+      "role": "Atom 五针接口，引出 +3.3V 与 G22 PWM，其余三脚未连接",
+      "evidence": [
+        {
+          "asset_sha256": "9471fef4dad6c055ec8edaa92026eea7993fdb6e439005a10dc113fb887560ea",
+          "page": 1,
+          "locator": "页面右下 P1 Header 5，3V3/G22/G19/G23/G33"
+        }
+      ]
+    },
+    {
+      "reference": "P2",
+      "part_number": "Header 4",
+      "role": "Atom 四针接口，引出 +5VIN 与 GND，G21/G25 未连接",
+      "evidence": [
+        {
+          "asset_sha256": "9471fef4dad6c055ec8edaa92026eea7993fdb6e439005a10dc113fb887560ea",
+          "page": 1,
+          "locator": "页面右下 P2 Header 4，G21/G25/5V/GND"
+        }
+      ]
+    },
+    {
+      "reference": "R5/R6",
+      "part_number": "0Ω",
+      "role": "分别把 +5VIN 与 +3.3V 连接到 +MOSV 的供电选择位置",
+      "evidence": [
+        {
+          "asset_sha256": "9471fef4dad6c055ec8edaa92026eea7993fdb6e439005a10dc113fb887560ea",
+          "page": 1,
+          "locator": "页面右上 R5 0Ω 从 +5VIN 到 +MOSV，R6 0Ω 从 +3.3V 到 +MOSV"
+        }
+      ]
+    }
+  ],
+  "facts": [
+    {
+      "id": "system.pwm_power_path",
+      "category": "system",
+      "subject": "PWM 功率路径",
+      "statement": "+VIN/DC12~24V 同时供给 ME3116AM6G 降压电路和 J1 LED+/12V+；Atom G22 的 PWM 经 EG27324 A 通道驱动 FDD8447L，MOSFET 在低侧开关 J1 LED-。",
+      "confidence": "confirmed",
+      "attributes": {
+        "input": "+VIN / DC12~24V",
+        "controller_signal": "P1 G22 -> PWM",
+        "driver": "U2 EG27324 channel A",
+        "switch": "Q1 FDD8447L",
+        "switched_output": "J1 LED-",
+        "positive_output": "J1 LED+/12V+ -> +VIN"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "9471fef4dad6c055ec8edaa92026eea7993fdb6e439005a10dc113fb887560ea",
+          "page": 1,
+          "locator": "整页 +VIN/U1、P1 PWM、U2/Q1 与 J1 负载链路"
+        }
+      ]
+    },
+    {
+      "id": "power.input_protection_filter",
+      "category": "power",
+      "subject": "+VIN 输入防护与滤波",
+      "statement": "+VIN 网络标注 DC12~24V，D2 SD24 从 +VIN 接 GND，C2 100uF 35V 与 C3 100nF 从 +VIN 接 GND。",
+      "confidence": "confirmed",
+      "attributes": {
+        "input_label": "DC12~24V",
+        "protection": "D2 SD24 to GND",
+        "bulk_capacitor": "C2 100uF 35V",
+        "high_frequency_capacitor": "C3 100nF"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "9471fef4dad6c055ec8edaa92026eea7993fdb6e439005a10dc113fb887560ea",
+          "page": 1,
+          "locator": "页面左上 +VIN/DC12~24V 与 D2/C2/C3"
+        }
+      ]
+    },
+    {
+      "id": "power.me3116_input_enable",
+      "category": "power",
+      "subject": "ME3116AM6G 输入与使能",
+      "statement": "U1 VIN 5 脚连接 +VIN，EN 4 脚经 R1 100KΩ 连接 +VIN，GND 2 脚接地。",
+      "confidence": "confirmed",
+      "attributes": {
+        "vin": "pin 5 -> +VIN",
+        "enable": "pin 4 -> R1 100KΩ -> +VIN",
+        "ground": "pin 2 -> GND"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "9471fef4dad6c055ec8edaa92026eea7993fdb6e439005a10dc113fb887560ea",
+          "page": 1,
+          "locator": "U1 左侧 VIN/EN/GND 与 R1"
+        }
+      ]
+    },
+    {
+      "id": "power.me3116_output",
+      "category": "power",
+      "subject": "ME3116AM6G +5VIN 输出",
+      "statement": "U1 LX 6 脚经 L1 10uH 形成 +5VIN，D1 B5819W SL 从开关节点接 GND，C1 100nF 跨接 BST 1 脚与开关节点，C5 22uF 从 +5VIN 接 GND。",
+      "confidence": "confirmed",
+      "attributes": {
+        "switch": "LX pin 6",
+        "inductor": "L1 10uH",
+        "output": "+5VIN",
+        "catch_diode": "D1 B5819W SL",
+        "bootstrap": "C1 100nF",
+        "output_capacitor": "C5 22uF"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "9471fef4dad6c055ec8edaa92026eea7993fdb6e439005a10dc113fb887560ea",
+          "page": 1,
+          "locator": "U1 右侧 BST/LX、C1/D1/L1/+5VIN/C5"
+        }
+      ]
+    },
+    {
+      "id": "power.me3116_feedback",
+      "category": "power",
+      "subject": "ME3116AM6G 反馈网络",
+      "statement": "U1 FB 3 脚连接 R2 56KΩ 与 R4 10KΩ 的 +5VIN 对地分压节点，C4 100pF 与 R2 并联。",
+      "confidence": "confirmed",
+      "attributes": {
+        "upper_resistor": "R2 56KΩ to +5VIN",
+        "lower_resistor": "R4 10KΩ to GND",
+        "feedforward_capacitor": "C4 100pF parallel to R2",
+        "feedback_pin": 3
+      },
+      "evidence": [
+        {
+          "asset_sha256": "9471fef4dad6c055ec8edaa92026eea7993fdb6e439005a10dc113fb887560ea",
+          "page": 1,
+          "locator": "U1 FB 3 脚与 R2/R4/C4"
+        }
+      ]
+    },
+    {
+      "id": "gpio.power_indicator",
+      "category": "gpio",
+      "subject": "+5VIN 电源指示",
+      "statement": "+5VIN 经 R3 1KΩ 和 D3 红灯 0603 接 GND。",
+      "confidence": "confirmed",
+      "attributes": {
+        "source": "+5VIN",
+        "resistor": "R3 1KΩ",
+        "indicator": "D3 red LED 0603",
+        "return": "GND"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "9471fef4dad6c055ec8edaa92026eea7993fdb6e439005a10dc113fb887560ea",
+          "page": 1,
+          "locator": "页面上中 +5VIN-R3-D3-GND"
+        }
+      ]
+    },
+    {
+      "id": "gpio.atom_pwm_mapping",
+      "category": "gpio",
+      "subject": "Atom PWM 映射",
+      "statement": "P1 Header 5 的 1 脚 3V3 接 +3.3V，2 脚 G22 接 PWM，3/4/5 脚 G19/G23/G33 在当前页面标为未连接。",
+      "confidence": "confirmed",
+      "attributes": {
+        "pin1": "3V3 -> +3.3V",
+        "pin2": "G22 -> PWM",
+        "pin3": "G19 not connected",
+        "pin4": "G23 not connected",
+        "pin5": "G33 not connected"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "9471fef4dad6c055ec8edaa92026eea7993fdb6e439005a10dc113fb887560ea",
+          "page": 1,
+          "locator": "页面右下 P1 Header 5 与 +3.3V/PWM/no-connect 标记"
+        }
+      ]
+    },
+    {
+      "id": "interface.atom_power_header",
+      "category": "interface",
+      "subject": "P2 四针电源接口",
+      "statement": "P2 Header 4 的 G21/G25 两脚在当前页面标为未连接，5V 脚接 +5VIN，GND 脚接地。",
+      "confidence": "confirmed",
+      "attributes": {
+        "g21": "not connected",
+        "g25": "not connected",
+        "5v": "+5VIN",
+        "ground": "GND"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "9471fef4dad6c055ec8edaa92026eea7993fdb6e439005a10dc113fb887560ea",
+          "page": 1,
+          "locator": "页面右下 P2 Header 4 与 no-connect/+5VIN/GND"
+        }
+      ]
+    },
+    {
+      "id": "gpio.pwm_input",
+      "category": "gpio",
+      "subject": "EG27324 PWM 输入",
+      "statement": "PWM 网络连接 U2 INA 2 脚，并由 R8 10KΩ 下拉到 GND；INB 4 脚与 NC 1 脚标为未连接。",
+      "confidence": "confirmed",
+      "attributes": {
+        "input": "PWM -> INA pin 2",
+        "pulldown": "R8 10KΩ to GND",
+        "inb_connected": false,
+        "pin1_connected": false
+      },
+      "evidence": [
+        {
+          "asset_sha256": "9471fef4dad6c055ec8edaa92026eea7993fdb6e439005a10dc113fb887560ea",
+          "page": 1,
+          "locator": "页面左下 PWM-R8-U2 INA 与 pin1/INB no-connect"
+        }
+      ]
+    },
+    {
+      "id": "power.eg27324_supply",
+      "category": "power",
+      "subject": "EG27324 驱动电源",
+      "statement": "U2 VDD 6 脚连接 +MOSV，GND 3 脚与 SD 8 脚接 GND，C6 100nF 与 C7 10uF 从 +MOSV 接 GND。",
+      "confidence": "confirmed",
+      "attributes": {
+        "vdd": "pin 6 -> +MOSV",
+        "ground": "pin 3 -> GND",
+        "shutdown_pin": "pin 8 SD -> GND",
+        "decoupling": "C6 100nF; C7 10uF"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "9471fef4dad6c055ec8edaa92026eea7993fdb6e439005a10dc113fb887560ea",
+          "page": 1,
+          "locator": "U2 VDD/GND/SD 与 +MOSV、C6/C7"
+        }
+      ]
+    },
+    {
+      "id": "key_net.mosfet_gate_drive",
+      "category": "key_net",
+      "subject": "FDD8447L 栅极驱动",
+      "statement": "U2 OUTA 7 脚经 R7 10Ω 连接 Q1 FDD8447L 栅极，R9 10KΩ 将栅极下拉到 GND；OUTB 5 脚标为未连接。",
+      "confidence": "confirmed",
+      "attributes": {
+        "driver_output": "U2 OUTA pin 7",
+        "series_resistor": "R7 10Ω",
+        "mosfet": "Q1 FDD8447L",
+        "gate_pulldown": "R9 10KΩ",
+        "outb_connected": false
+      },
+      "evidence": [
+        {
+          "asset_sha256": "9471fef4dad6c055ec8edaa92026eea7993fdb6e439005a10dc113fb887560ea",
+          "page": 1,
+          "locator": "页面中下 U2 OUTA-R7-Q1 gate-R9 与 OUTB no-connect"
+        }
+      ]
+    },
+    {
+      "id": "key_net.low_side_switch",
+      "category": "key_net",
+      "subject": "负载低侧开关",
+      "statement": "Q1 FDD8447L 源极接 GND，漏极连接 J1 LED-；J1 LED+ 与 12V+ 并接 +VIN，12V- 接 GND。",
+      "confidence": "confirmed",
+      "attributes": {
+        "source": "Q1 source -> GND",
+        "drain": "Q1 drain -> J1 LED-",
+        "positive_load": "J1 LED+ and 12V+ -> +VIN",
+        "negative_supply": "J1 12V- -> GND"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "9471fef4dad6c055ec8edaa92026eea7993fdb6e439005a10dc113fb887560ea",
+          "page": 1,
+          "locator": "Q1 源/漏极与 J1 LED-/LED+/12V+/12V-"
+        }
+      ]
+    },
+    {
+      "id": "interface.output_terminal",
+      "category": "interface",
+      "subject": "J1 四针输出端子",
+      "statement": "J1 HDR_4P_3.96 四行从上到下标注 LED-、LED+、12V+、12V-。",
+      "confidence": "confirmed",
+      "attributes": {
+        "line1": "LED-",
+        "line2": "LED+",
+        "line3": "12V+",
+        "line4": "12V-"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "9471fef4dad6c055ec8edaa92026eea7993fdb6e439005a10dc113fb887560ea",
+          "page": 1,
+          "locator": "页面中右 J1 HDR_4P_3.96 四行标签"
+        }
+      ]
+    },
+    {
+      "id": "power.mosv_selection",
+      "category": "power",
+      "subject": "+MOSV 供电选择",
+      "statement": "R5 0Ω 从 +5VIN 连接 +MOSV，R6 0Ω 从 +3.3V 连接 +MOSV；当前页面没有用 DNP 或装配选项标识区分两只电阻。",
+      "confidence": "confirmed",
+      "attributes": {
+        "r5": "+5VIN -> 0Ω -> +MOSV",
+        "r6": "+3.3V -> 0Ω -> +MOSV",
+        "assembly_option_marked": false
+      },
+      "evidence": [
+        {
+          "asset_sha256": "9471fef4dad6c055ec8edaa92026eea7993fdb6e439005a10dc113fb887560ea",
+          "page": 1,
+          "locator": "页面右上 R5/R6 两只 0Ω 汇到 +MOSV"
+        }
+      ]
+    },
+    {
+      "id": "component.grove_not_shown",
+      "category": "component",
+      "subject": "Grove 接口可见性",
+      "statement": "当前页面没有显示独立 Grove 连接器，P2 的 G21/G25 两脚也标为未连接。",
+      "confidence": "confirmed",
+      "attributes": {
+        "grove_connector_shown": false,
+        "g21_connected": false,
+        "g25_connected": false
+      },
+      "evidence": [
+        {
+          "asset_sha256": "9471fef4dad6c055ec8edaa92026eea7993fdb6e439005a10dc113fb887560ea",
+          "page": 1,
+          "locator": "整页无 Grove 方框；右下 P2 G21/G25 为 no-connect"
+        }
+      ]
+    },
+    {
+      "id": "component.load_rating_not_shown",
+      "category": "component",
+      "subject": "负载额定与保护可见性",
+      "statement": "原理图给出 FDD8447L 和 DC12~24V 输入，但没有在页面标注允许的连续电流、功率、散热条件、保险丝、过流检测或负载续流器件。",
+      "confidence": "confirmed",
+      "attributes": {
+        "mosfet": "FDD8447L",
+        "input_range": "DC12~24V",
+        "current_rating_shown": false,
+        "thermal_limit_shown": false,
+        "fuse_shown": false,
+        "current_sense_shown": false,
+        "load_flyback_shown": false
+      },
+      "evidence": [
+        {
+          "asset_sha256": "9471fef4dad6c055ec8edaa92026eea7993fdb6e439005a10dc113fb887560ea",
+          "page": 1,
+          "locator": "整页 Q1/J1 功率路径，未见电流检测、保险丝或负载续流器件"
+        }
+      ]
+    }
+  ],
+  "needs_review": [
+    {
+      "id": "review.mosv_resistor_population",
+      "fact_id": "power.mosv_selection",
+      "question": "R5 与 R6 的实际装配状态是什么，+MOSV 应由 +5VIN 还是 +3.3V 供电？",
+      "reason": "原理图把两只电阻都标为 0Ω 且未标 DNP，同时装配会把 +5VIN 与 +3.3V 直接连接。",
+      "evidence": [
+        {
+          "asset_sha256": "9471fef4dad6c055ec8edaa92026eea7993fdb6e439005a10dc113fb887560ea",
+          "page": 1,
+          "locator": "页面右上 R5/R6 0Ω 汇合 +MOSV"
+        }
+      ]
+    },
+    {
+      "id": "review.grove_and_load_limits",
+      "fact_id": "component.grove_not_shown",
+      "question": "当前 A114 硬件的 Grove 接口位于何处，并请确认 J1 负载的连续电流、功率、散热和感性负载保护限制。",
+      "reason": "当前原理图没有 Grove 连接器，也没有给出功率回路的额定值与负载保护边界。",
+      "evidence": [
+        {
+          "asset_sha256": "9471fef4dad6c055ec8edaa92026eea7993fdb6e439005a10dc113fb887560ea",
+          "page": 1,
+          "locator": "整页 P2 G21/G25 no-connect 与 Q1/J1 功率路径"
+        }
+      ]
+    }
+  ]
+}

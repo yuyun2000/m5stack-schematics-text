@@ -1,0 +1,207 @@
+{
+  "schema_version": 1,
+  "generator": "schematic_describer",
+  "product": {
+    "product_id": "module-lora433-046039625b36",
+    "product_name": "Module LoRa433",
+    "sku": "M005",
+    "source_path": "module/lora.md",
+    "source_sha256": "46fc6b0fadf6541f736a082573ab2574870188b10ff3a3f36e1f27c509d753b5",
+    "input_sha256": "e684ac63169d24d0cb2958dc481f4c5f4b1dae8167f5bea8be55d570da41ef1d"
+  },
+  "schematic_assets": [
+    {
+      "sha256": "527262b7369d077899599a3e8d25ebab57ab5a8665c82d5434c0618df1557591",
+      "source_url": "https://static-cdn.m5stack.com/resource/docs/products/module/lora/lora_sch_01.webp",
+      "pages": [1]
+    }
+  ],
+  "summary": "Module LoRa433 的原理图以 M1 无线模块为核心，通过 SPI 的 MOSI、MISO、SCK、CS 连接 J1 M5Stack_BUS，并以 DIO0 提供 IRQ、RESET 提供复位。J1 pin28 的 +5 V 经 VR1 AMS1117-3.3 线性稳压为 3V3，直接供给 M1。原理图把 M1 标为 Ra-01 Module，而产品正文称 Ra-02 且列出 433 MHz、调制性能和天线能力，因此这些版本与射频参数保留为待确认。",
+  "keywords": [
+    "Module LoRa433", "M005", "Ra-01 Module", "Ra-02", "SX1278", "LoRa433", "433MHz", "M5Stack_BUS", "SPI", "MOSI", "MISO", "SCK", "CS", "NSS", "IRQ", "DIO0", "RST", "RESET", "GPIO23", "GPIO19", "GPIO18", "GPIO5", "GPIO36", "GPIO26", "AMS1117-3.3", "+5V", "3V3", "FSK", "GFSK", "MSK", "GMSK", "LoRa", "OOK", "ANT"
+  ],
+  "components": [
+    {
+      "reference": "M1",
+      "part_number": "Ra-01 Module",
+      "role": "LoRa 无线模块，提供 SPI、DIO0-DIO5、RESET、3V3 与 GND 引脚",
+      "evidence": [{"asset_sha256": "527262b7369d077899599a3e8d25ebab57ab5a8665c82d5434c0618df1557591", "page": 1, "locator": "页面左上 M1 Ra-01 Module pins1-16"}]
+    },
+    {
+      "reference": "J1",
+      "part_number": "M5Stack_BUS",
+      "role": "30 针主机接口，提供 +5 V、GND、SPI、IRQ 与复位信号",
+      "evidence": [{"asset_sha256": "527262b7369d077899599a3e8d25ebab57ab5a8665c82d5434c0618df1557591", "page": 1, "locator": "页面右上 J1 M5Stack_BUS pins1-30"}]
+    },
+    {
+      "reference": "VR1",
+      "part_number": "AMS1117-3.3",
+      "role": "将 M5-Bus +5 V 转换为无线模块使用的 3V3 电源",
+      "evidence": [{"asset_sha256": "527262b7369d077899599a3e8d25ebab57ab5a8665c82d5434c0618df1557591", "page": 1, "locator": "页面左下 VR1 AMS1117-3.3，Vin/Vout/GND"}]
+    },
+    {
+      "reference": "C1",
+      "part_number": null,
+      "role": "AMS1117-3.3 输出 3V3 的对地电容，原理图未标容量",
+      "evidence": [{"asset_sha256": "527262b7369d077899599a3e8d25ebab57ab5a8665c82d5434c0618df1557591", "page": 1, "locator": "页面左下 VR1 Vout/3V3 旁 C1"}]
+    }
+  ],
+  "facts": [
+    {
+      "id": "system.architecture",
+      "category": "system",
+      "subject": "Module LoRa433 系统架构",
+      "statement": "M1 无线模块由 VR1 生成的 3V3 供电，通过 SPI、IRQ 和 RST 直接连接 J1 M5Stack_BUS；页面没有画出协处理器、外部存储器或额外数字总线。",
+      "confidence": "confirmed",
+      "attributes": {"radio_module": "M1 Ra-01 Module", "host": "J1 M5Stack_BUS", "bus": "SPI", "control": "IRQ and RST", "power": "+5V -> VR1 AMS1117-3.3 -> 3V3", "coprocessor": "not shown", "external_storage": "not shown"},
+      "evidence": [{"asset_sha256": "527262b7369d077899599a3e8d25ebab57ab5a8665c82d5434c0618df1557591", "page": 1, "locator": "整页 M1/J1/VR1 电路"}]
+    },
+    {
+      "id": "component.radio-pinout",
+      "category": "component",
+      "subject": "M1 无线模块引脚",
+      "statement": "M1 pins1/2/9/16 为 GND，pin3 为 3V3，pin4 RESET，pin5 DIO0，pins6/7/8 为 DIO1/DIO2/DIO3，pins10/11 为 DIO4/DIO5，pin12 SCK，pin13 MISO，pin14 MOSI，pin15 NSS。",
+      "confidence": "confirmed",
+      "attributes": {"ground": "pins1/2/9/16", "supply": "pin3 3V3", "reset": "pin4 RESET", "interrupt": "pin5 DIO0", "other_dio": "pin6 DIO1; pin7 DIO2; pin8 DIO3; pin10 DIO4; pin11 DIO5", "spi": "pin12 SCK; pin13 MISO; pin14 MOSI; pin15 NSS"},
+      "evidence": [{"asset_sha256": "527262b7369d077899599a3e8d25ebab57ab5a8665c82d5434c0618df1557591", "page": 1, "locator": "左上 M1 pins1-16 labels"}]
+    },
+    {
+      "id": "power.input-regulator",
+      "category": "power",
+      "subject": "+5 V 至 3V3 电源路径",
+      "statement": "J1 pin28 的 +5 V 连接 VR1 AMS1117-3.3 Vin，VR1 Vout 形成 3V3 并连接 M1 pin3；VR1 GND 接地。",
+      "confidence": "confirmed",
+      "attributes": {"input": "+5V from J1 pin28", "regulator": "VR1 AMS1117-3.3", "output": "3V3", "load": "M1 pin3", "ground": "VR1 GND"},
+      "evidence": [{"asset_sha256": "527262b7369d077899599a3e8d25ebab57ab5a8665c82d5434c0618df1557591", "page": 1, "locator": "左下 +5V/VR1/3V3 与左上 M1 pin3"}]
+    },
+    {
+      "id": "power.output-capacitor",
+      "category": "power",
+      "subject": "3V3 输出电容",
+      "statement": "C1 从 VR1 的 3V3 输出接到 GND，页面没有标注 C1 容量，也没有画出独立输入电容。",
+      "confidence": "confirmed",
+      "attributes": {"reference": "C1", "rail": "3V3", "connection": "3V3 to GND", "value": null, "input_capacitor": "not shown"},
+      "evidence": [{"asset_sha256": "527262b7369d077899599a3e8d25ebab57ab5a8665c82d5434c0618df1557591", "page": 1, "locator": "左下 VR1 Vout 旁 C1，容量字段空白"}]
+    },
+    {
+      "id": "bus.spi",
+      "category": "bus",
+      "subject": "M1 与 M5-Bus SPI",
+      "statement": "J1 GPIO23/pin7 的 MOSI 接 M1 MOSI pin14，GPIO19/pin9 的 MISO 接 M1 MISO pin13，GPIO18/pin11 的 SCK 接 M1 SCK pin12，GPIO5/pin20 的 CS 接 M1 NSS pin15。",
+      "confidence": "confirmed",
+      "attributes": {"controller": "host via J1", "device": "M1", "mosi": "J1 pin7 GPIO23 -> M1 pin14 MOSI", "miso": "M1 pin13 MISO -> J1 pin9 GPIO19", "clock": "J1 pin11 GPIO18 SCK -> M1 pin12 SCK", "chip_select": "J1 pin20 GPIO5 CS -> M1 pin15 NSS", "direction": "MOSI/SCK/CS host-to-module; MISO module-to-host", "logic_level": "3V3 module domain"},
+      "evidence": [{"asset_sha256": "527262b7369d077899599a3e8d25ebab57ab5a8665c82d5434c0618df1557591", "page": 1, "locator": "上半页 M1 MOSI/MISO/SCK/NSS 网络到 J1 pins7/9/11/20"}]
+    },
+    {
+      "id": "gpio.interrupt",
+      "category": "gpio",
+      "subject": "LoRa 中断 IRQ",
+      "statement": "M1 DIO0 pin5 通过 IRQ 网络连接 J1 pin4/GPIO36，方向为无线模块向主机输出。",
+      "confidence": "confirmed",
+      "attributes": {"source": "M1 DIO0 pin5", "net": "IRQ", "host_gpio": "GPIO36", "connector_pin": "J1 pin4", "direction": "module-to-host"},
+      "evidence": [{"asset_sha256": "527262b7369d077899599a3e8d25ebab57ab5a8665c82d5434c0618df1557591", "page": 1, "locator": "左上 M1 DIO0/IRQ 与右上 J1 pin4 GPIO36"}]
+    },
+    {
+      "id": "reset.radio",
+      "category": "reset",
+      "subject": "无线模块复位",
+      "statement": "J1 pin10/GPIO26 的 RST 网络直接连接 M1 RESET pin4，页面未画外部上拉、下拉、RC 或保护器件。",
+      "confidence": "confirmed",
+      "attributes": {"host_gpio": "GPIO26", "connector_pin": "J1 pin10", "net": "RST", "target": "M1 RESET pin4", "direction": "host-to-module", "external_bias": "not shown", "rc": "not shown"},
+      "evidence": [{"asset_sha256": "527262b7369d077899599a3e8d25ebab57ab5a8665c82d5434c0618df1557591", "page": 1, "locator": "M1 pin4 RESET/RST 到 J1 pin10 GPIO26"}]
+    },
+    {
+      "id": "gpio.unused-dio",
+      "category": "gpio",
+      "subject": "未连接的 M1 DIO 引脚",
+      "statement": "M1 DIO1 pin6、DIO2 pin7、DIO3 pin8、DIO4 pin10 与 DIO5 pin11 在该页没有连接到 J1 或其他器件。",
+      "confidence": "confirmed",
+      "attributes": {"unconnected": "DIO1 pin6; DIO2 pin7; DIO3 pin8; DIO4 pin10; DIO5 pin11", "connected_dio": "DIO0 pin5 -> IRQ"},
+      "evidence": [{"asset_sha256": "527262b7369d077899599a3e8d25ebab57ab5a8665c82d5434c0618df1557591", "page": 1, "locator": "左上 M1 DIO1-DIO5 pins6-8/10-11 无外接导线"}]
+    },
+    {
+      "id": "interface.m5bus",
+      "category": "interface",
+      "subject": "M5Stack_BUS 已用针脚",
+      "statement": "J1 使用 pins1/3/5 GND、pin4 GPIO36/IRQ、pin7 GPIO23/MOSI、pin9 GPIO19/MISO、pin10 GPIO26/RST、pin11 GPIO18/SCK、pin20 GPIO5/CS 与 pin28 +5 V；其余页面未标外部网络。",
+      "confidence": "confirmed",
+      "attributes": {"ground": "pins1/3/5", "irq": "pin4 GPIO36", "mosi": "pin7 GPIO23", "miso": "pin9 GPIO19", "reset": "pin10 GPIO26", "sck": "pin11 GPIO18", "chip_select": "pin20 GPIO5", "power": "pin28 +5V"},
+      "evidence": [{"asset_sha256": "527262b7369d077899599a3e8d25ebab57ab5a8665c82d5434c0618df1557591", "page": 1, "locator": "右上 J1 M5Stack_BUS pins1-30 外接网络"}]
+    },
+    {
+      "id": "interface.direct-signals",
+      "category": "interface",
+      "subject": "主机信号直连与保护",
+      "statement": "SPI、IRQ 和 RST 均在 M1 与 J1 之间直接连线，页面没有画电平转换、串联电阻、ESD/TVS 或其他接口保护器件。",
+      "confidence": "confirmed",
+      "attributes": {"signals": "MOSI, MISO, SCK, CS, IRQ, RST", "level_shifter": "not shown", "series_resistors": "not shown", "esd_tvs": "not shown"},
+      "evidence": [{"asset_sha256": "527262b7369d077899599a3e8d25ebab57ab5a8665c82d5434c0618df1557591", "page": 1, "locator": "上半页 M1 到 J1 的六条直接网络"}]
+    },
+    {
+      "id": "component.radio-module-variant",
+      "category": "component",
+      "subject": "无线模块型号冲突",
+      "statement": "原理图 M1 明确标为 Ra-01 Module，而产品正文称 Module LoRa433 模块为 Ra-02，当前页面不能确认成品采用哪个模块版本。",
+      "confidence": "uncertain",
+      "attributes": {"schematic_marking": "Ra-01 Module", "document_claim": "Ra-02", "product_sku": "M005", "resolved_variant": null},
+      "evidence": [{"asset_sha256": "527262b7369d077899599a3e8d25ebab57ab5a8665c82d5434c0618df1557591", "page": 1, "locator": "左上 M1 下方文字 Ra-01 Module"}]
+    },
+    {
+      "id": "rf.frequency",
+      "category": "rf",
+      "subject": "433 MHz 工作频率",
+      "statement": "产品名和正文声明 433 MHz，但原理图的 M1 方框、网络与元件值中没有标注频段、射频芯片型号或匹配参数。",
+      "confidence": "uncertain",
+      "attributes": {"document_frequency": "433MHz", "schematic_frequency": null, "schematic_chip": "not printed", "schematic_rf_matching": "not shown"},
+      "evidence": [{"asset_sha256": "527262b7369d077899599a3e8d25ebab57ab5a8665c82d5434c0618df1557591", "page": 1, "locator": "M1 Ra-01 Module symbol has no frequency or RF matching data"}]
+    },
+    {
+      "id": "rf.antenna",
+      "category": "rf",
+      "subject": "内置与外部天线",
+      "statement": "产品正文称模块具有内置 PCB 天线和外部天线接口，但原理图只把 M1 作为完整模块方框，未显示 ANT 引脚、连接器、射频匹配或天线选择网络。",
+      "confidence": "uncertain",
+      "attributes": {"document_internal": "PCB antenna", "document_external": "external antenna interface", "schematic_antenna_pin": "not shown", "schematic_connector": "not shown", "selection_network": "not shown"},
+      "evidence": [{"asset_sha256": "527262b7369d077899599a3e8d25ebab57ab5a8665c82d5434c0618df1557591", "page": 1, "locator": "M1 symbol only shows power, SPI, RESET and DIO pins"}]
+    },
+    {
+      "id": "rf.modulation-performance",
+      "category": "rf",
+      "subject": "调制方式与射频性能",
+      "statement": "产品正文列出 FSK、GFSK、MSK、GMSK、LoRa 和 OOK、-140 dBm 灵敏度及 300 Kbps 比特率，但这些能力和数值未印在原理图。",
+      "confidence": "uncertain",
+      "attributes": {"document_modulations": "FSK/GFSK/MSK/GMSK/LoRa/OOK", "document_sensitivity": "-140dBm", "document_bitrate": "300Kbps", "schematic_parameters": "not shown"},
+      "evidence": [{"asset_sha256": "527262b7369d077899599a3e8d25ebab57ab5a8665c82d5434c0618df1557591", "page": 1, "locator": "M1 Ra-01 Module block lacks performance table"}]
+    }
+  ],
+  "needs_review": [
+    {
+      "id": "review.radio-module-variant",
+      "fact_id": "component.radio-module-variant",
+      "question": "请用 M005 当前硬件版本的 BOM、贴装图或实板标签确认无线模块是 Ra-01 还是 Ra-02。",
+      "reason": "原理图标识与产品正文互相冲突。",
+      "evidence": [{"asset_sha256": "527262b7369d077899599a3e8d25ebab57ab5a8665c82d5434c0618df1557591", "page": 1, "locator": "左上 M1 Ra-01 Module"}]
+    },
+    {
+      "id": "review.frequency",
+      "fact_id": "rf.frequency",
+      "question": "请用已确认的无线模块完整型号、料号或实测配置确认 433 MHz 频段。",
+      "reason": "433 MHz 来自产品正文，原理图未标频段或射频芯片。",
+      "evidence": [{"asset_sha256": "527262b7369d077899599a3e8d25ebab57ab5a8665c82d5434c0618df1557591", "page": 1, "locator": "M1 symbol without frequency marking"}]
+    },
+    {
+      "id": "review.antenna",
+      "fact_id": "rf.antenna",
+      "question": "请用无线模块规格、PCB/BOM 或装配资料确认内置 PCB 天线、外部天线接口及其选择方式。",
+      "reason": "这些射频结构被封装在 M1 方框内，当前原理图没有展示。",
+      "evidence": [{"asset_sha256": "527262b7369d077899599a3e8d25ebab57ab5a8665c82d5434c0618df1557591", "page": 1, "locator": "M1 lacks ANT pin/connector/matching network"}]
+    },
+    {
+      "id": "review.modulation-performance",
+      "fact_id": "rf.modulation-performance",
+      "question": "请在确认无线模块版本后，按对应 datasheet 复核调制方式、灵敏度和最高比特率。",
+      "reason": "性能参数未印在原理图，且 M1 型号存在 Ra-01/Ra-02 冲突。",
+      "evidence": [{"asset_sha256": "527262b7369d077899599a3e8d25ebab57ab5a8665c82d5434c0618df1557591", "page": 1, "locator": "M1 Ra-01 Module block"}]
+    }
+  ]
+}

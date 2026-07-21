@@ -1,0 +1,21 @@
+{
+  "dry_run": false,
+  "failed": 0,
+  "published": 1,
+  "results": [
+    {
+      "backup": null,
+      "draft_action": "unchanged",
+      "dry_run": false,
+      "errors": [],
+      "needs_review": 10,
+      "product_id": "unit-cardkb2-f04738bf1335",
+      "product_name": "Unit CardKB2",
+      "publish_action": "unchanged",
+      "sha256": "190d6ca882de18fe027cf56dba8cf05b22685e79e8650a85dd011240524e1cbf",
+      "status": "valid",
+      "uncertain_facts": 10
+    }
+  ],
+  "schema_version": 1
+}

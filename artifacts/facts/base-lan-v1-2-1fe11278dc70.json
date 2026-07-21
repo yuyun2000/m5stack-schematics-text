@@ -1,0 +1,439 @@
+{
+  "schema_version": 1,
+  "generator": "schematic_describer",
+  "product": {
+    "product_id": "base-lan-v1-2-1fe11278dc70",
+    "product_name": "Base LAN v1.2",
+    "sku": "K012-B-V12",
+    "source_path": "base/lan_v12.md",
+    "source_sha256": "e8476c171530aea70414961fe526a99eb2edbd3f1e495829e8a544ecdf95634c",
+    "input_sha256": "dc8857c92ba68acebf5f3b559bbc4cba69e8c75ec8cf7736911a839f63d8d547"
+  },
+  "schematic_assets": [
+    {
+      "sha256": "c7e3400b1b74c358c88209600540088198a85d7b08c653547a017b5bff3cf603",
+      "source_url": "https://m5stack-doc.oss-cn-shenzhen.aliyuncs.com/999/lan_base_page_01.png",
+      "pages": [1]
+    }
+  ],
+  "summary": "Base LAN v1.2 的本地单页原理图以 U3 W5500 为以太网控制器，通过 M5Stack_BUS 的 GPIO23、GPIO19、GPIO18、GPIO26 构成 SPI，并使用 GPIO13 复位和 GPIO34 中断。W5500 使用 25MHz 晶振，TX/RX 差分线连接 U4 HR911105A 集成磁性器件 RJ45，LINKLED/ACTLED 同样接入该连接器。外部 IN12/24V 经 F1 PPTC 和 U2 TPS54360 降压为 +5V，再由 U1 SPX3819M5-L-3-3 生成 D3V3，并通过 R1/R3 分隔 A3V3/AGND；P2 扩展和配套 RS232/RS485 子板连接未在本页展开。",
+  "keywords": [
+    "Base LAN v1.2", "K012-B-V12", "W5500", "TPS54360", "SPX3819M5-L-3-3", "HR911105A", "M5Stack_BUS", "SPI", "MOSI GPIO23", "MISO GPIO19", "SCLK GPIO18", "SCSn GPIO26", "RSTn GPIO13", "INTn GPIO34", "25MHz", "TXP", "TXN", "RXP", "RXN", "LINKLED", "ACTLED", "IN12/24V", "+5V", "D3V3", "A3V3", "GND", "AGND", "PPTC-1812", "B290B", "IIC_socket_4P", "HDR_6P", "HPWR", "BATTERY", "RS485", "RS232", "RJ45", "PWR3.5", "PMODE", "EXRES1", "LAN_W5500"
+  ],
+  "components": [
+    {
+      "reference": "U3",
+      "part_number": "W5500",
+      "role": "SPI 以太网控制器，连接 M5-Bus、PHY 差分线、25MHz 时钟、复位、中断和状态 LED",
+      "evidence": [{"asset_sha256": "c7e3400b1b74c358c88209600540088198a85d7b08c653547a017b5bff3cf603", "page": 1, "locator": "网格 B2-D3：U3 W5500 48 脚方框及 TX/RX、SPI、XI/XO、RSTn、INTn、LED 引脚"}]
+    },
+    {
+      "reference": "U4",
+      "part_number": "HR911105A",
+      "role": "带隔离磁性器件和 LINK/ACT LED 的 RJ45 以太网连接器",
+      "evidence": [{"asset_sha256": "c7e3400b1b74c358c88209600540088198a85d7b08c653547a017b5bff3cf603", "page": 1, "locator": "网格 C1：U4 HR911105A，TD+/TD-/RD+/RD-、VADD 和 Y/G LED 引脚"}]
+    },
+    {
+      "reference": "U2",
+      "part_number": "TPS54360",
+      "role": "将 IN12/24V 降压为 +5V 的开关降压转换器",
+      "evidence": [{"asset_sha256": "c7e3400b1b74c358c88209600540088198a85d7b08c653547a017b5bff3cf603", "page": 1, "locator": "网格 A1-A3：U2 TPS54360，VIN/BOOT/SW/COMP/FB 与 D1、L1、C1-C3、C8-C10"}]
+    },
+    {
+      "reference": "U1",
+      "part_number": "SPX3819M5-L-3-3",
+      "role": "由 +5V 生成 D3V3 的 3.3V LDO",
+      "evidence": [{"asset_sha256": "c7e3400b1b74c358c88209600540088198a85d7b08c653547a017b5bff3cf603", "page": 1, "locator": "网格 A3：U1 SPX3819M5-L-3-3，IN/EN 接 +5V，OUT 接 D3V3"}]
+    },
+    {
+      "reference": "J1",
+      "part_number": "PWR3.5",
+      "role": "IN12/24V 与 GND 外部直流电源输入连接器",
+      "evidence": [{"asset_sha256": "c7e3400b1b74c358c88209600540088198a85d7b08c653547a017b5bff3cf603", "page": 1, "locator": "网格 A1：J1 PWR3.5，正输入经 F1 形成 IN+，回路接 GND"}]
+    },
+    {
+      "reference": "F1",
+      "part_number": "PPTC-1812",
+      "role": "串联在 J1 正电源输入与 IN+ 之间的自恢复保护器件",
+      "evidence": [{"asset_sha256": "c7e3400b1b74c358c88209600540088198a85d7b08c653547a017b5bff3cf603", "page": 1, "locator": "网格 A1：J1 与 U2 之间 F1 PPTC-1812"}]
+    },
+    {
+      "reference": "D1,L1",
+      "part_number": "B290B / 8.2uH",
+      "role": "TPS54360 降压级的续流二极管与输出电感",
+      "evidence": [{"asset_sha256": "c7e3400b1b74c358c88209600540088198a85d7b08c653547a017b5bff3cf603", "page": 1, "locator": "网格 A2：U2 SW 节点的 D1 B290B 与串向 +5V 的 L1 8.2uH"}]
+    },
+    {
+      "reference": "R1,R3",
+      "part_number": "120Ω/MB / 0Ω",
+      "role": "分别连接 D3V3-A3V3 和 GND-AGND 的电源与地分区桥接器件",
+      "evidence": [{"asset_sha256": "c7e3400b1b74c358c88209600540088198a85d7b08c653547a017b5bff3cf603", "page": 1, "locator": "网格 A3-A4：D3V3-R1 120Ω/MB-A3V3，以及 GND-R3 0Ω-AGND"}]
+    },
+    {
+      "reference": "Y1,R20,C14,C17",
+      "part_number": "25MHz 12PF 10PPM / 1MΩ / 18pF",
+      "role": "W5500 XI/CLKIN 与 XO 的外部晶振、反馈电阻和负载电容网络",
+      "evidence": [{"asset_sha256": "c7e3400b1b74c358c88209600540088198a85d7b08c653547a017b5bff3cf603", "page": 1, "locator": "网格 C3-D3：XO/XI、Y1 25MHz 12PF 10PPM、R20 1MΩ、C14/C17 18pF"}]
+    },
+    {
+      "reference": "R7",
+      "part_number": "10KΩ (103) 4P",
+      "role": "配置 W5500 PMODE3-PMODE0 启动模式的四联电阻阵列",
+      "evidence": [{"asset_sha256": "c7e3400b1b74c358c88209600540088198a85d7b08c653547a017b5bff3cf603", "page": 1, "locator": "网格 B2：U3 上方 R7 四联电阻阵列、D3V3/AGND 与 PMODE3-PMODE0"}]
+    },
+    {
+      "reference": "R8,R13,R16",
+      "part_number": "10KΩ",
+      "role": "分别为 W5500 RSTn、INTn 与 SCSn 信号提供 D3V3 上拉",
+      "evidence": [{"asset_sha256": "c7e3400b1b74c358c88209600540088198a85d7b08c653547a017b5bff3cf603", "page": 1, "locator": "网格 B2-C3：R8 接 RSTn，R13/R16 接 INTn/SCSn，另一端均为 D3V3"}]
+    },
+    {
+      "reference": "R19",
+      "part_number": "12.4KΩ",
+      "role": "W5500 EXRES1 引脚到 AGND 的外部参考电阻",
+      "evidence": [{"asset_sha256": "c7e3400b1b74c358c88209600540088198a85d7b08c653547a017b5bff3cf603", "page": 1, "locator": "网格 C2-D2：U3 EXRES1 经 R19 12.4KΩ 接 AGND"}]
+    },
+    {
+      "reference": "R10,R11,R12,R17,R18,C11,C14,C15,C16",
+      "part_number": "49.9Ω / 6.8nF / 22nF network",
+      "role": "W5500 TX/RX 差分线与 HR911105A 之间的偏置、耦合和端接网络",
+      "evidence": [{"asset_sha256": "c7e3400b1b74c358c88209600540088198a85d7b08c653547a017b5bff3cf603", "page": 1, "locator": "网格 B1-D2：TXP/TXN/RXP/RXN 周围 49.9Ω、6.8nF、22nF 网络"}]
+    },
+    {
+      "reference": "R14,R15",
+      "part_number": "1KΩ",
+      "role": "HR911105A 集成 LINK/ACT LED 的 D3V3 限流电阻",
+      "evidence": [{"asset_sha256": "c7e3400b1b74c358c88209600540088198a85d7b08c653547a017b5bff3cf603", "page": 1, "locator": "网格 B1-C1：LINKLED/ACTLED 与 D3V3 之间 R14/R15 1KΩ"}]
+    },
+    {
+      "reference": "C13",
+      "part_number": "1nF (102) 10% 2000V",
+      "role": "HR911105A 屏蔽/机壳相关节点到 GND 的高压电容耦合",
+      "evidence": [{"asset_sha256": "c7e3400b1b74c358c88209600540088198a85d7b08c653547a017b5bff3cf603", "page": 1, "locator": "网格 C1-D1：U4 pins13/14 区域经 C13 1nF 2000V 接 GND"}]
+    },
+    {
+      "reference": "D2,R9",
+      "part_number": "红灯 0603 / 4.7KΩ",
+      "role": "+5V 电源指示灯及限流电阻",
+      "evidence": [{"asset_sha256": "c7e3400b1b74c358c88209600540088198a85d7b08c653547a017b5bff3cf603", "page": 1, "locator": "网格 B4：D2 红灯 0603 与 R9 4.7KΩ 串接在 +5V 与 GND 之间"}]
+    },
+    {
+      "reference": "J2",
+      "part_number": "IIC_Socket_4P",
+      "role": "引出 SCL、SDA、+5V 与 GND 的四针接口",
+      "evidence": [{"asset_sha256": "c7e3400b1b74c358c88209600540088198a85d7b08c653547a017b5bff3cf603", "page": 1, "locator": "网格 B4-C4：J2 IIC_Socket_4P，pin1 SCL、pin2 SDA、pin3 +5V、pin4 GND"}]
+    },
+    {
+      "reference": "J3",
+      "part_number": "M5Stack_BUS",
+      "role": "30 针主控堆叠总线，承载 W5500 SPI/控制信号和 GND、3.3V、+5V、HPWR、BATTERY 等电源",
+      "evidence": [{"asset_sha256": "c7e3400b1b74c358c88209600540088198a85d7b08c653547a017b5bff3cf603", "page": 1, "locator": "网格 C4-D4：J3 M5Stack_BUS，1-30 脚及 GPIO、电源网络标注"}]
+    },
+    {
+      "reference": "P2",
+      "part_number": "HDR_6P",
+      "role": "标为 I/O_01 至 I/O_06 的六针预留接口",
+      "evidence": [{"asset_sha256": "c7e3400b1b74c358c88209600540088198a85d7b08c653547a017b5bff3cf603", "page": 1, "locator": "网格 A4-B4：P2 HDR_6P，pin1-pin6 分别标 I/O_01-I/O_06，页面未画后续网络"}]
+    }
+  ],
+  "facts": [
+    {
+      "id": "system.base-lan-v12-architecture",
+      "category": "system",
+      "subject": "Base LAN v1.2 系统架构",
+      "statement": "J1 的 IN12/24V 经 U2 TPS54360 产生 +5V，U1 再产生 D3V3/A3V3；外部 M5 主控通过 J3 的 SPI 和控制 GPIO 驱动 U3 W5500，W5500 的 PHY 差分线最终接入 U4 HR911105A RJ45。",
+      "confidence": "confirmed",
+      "attributes": {"input": "J1 IN12/24V", "buck": "U2 TPS54360", "ldo": "U1 SPX3819M5-L-3-3", "ethernet_controller": "U3 W5500", "ethernet_connector": "U4 HR911105A", "host_connector": "J3 M5Stack_BUS"},
+      "evidence": [{"asset_sha256": "c7e3400b1b74c358c88209600540088198a85d7b08c653547a017b5bff3cf603", "page": 1, "locator": "第 1 页完整单页：上方电源、中央 W5500、左侧 HR911105A、右下 M5Stack_BUS"}]
+    },
+    {
+      "id": "power.input-protection",
+      "category": "protection",
+      "subject": "外部直流输入保护",
+      "statement": "J1 正输入先串联 F1 PPTC-1812 后形成 IN+，C9/C10 各 2.2uF 从 IN+ 接 GND，再进入 U2 VIN。",
+      "confidence": "confirmed",
+      "attributes": {"connector": "J1 PWR3.5", "positive_path": "J1 -> F1 PPTC-1812 -> IN+", "return": "GND", "input_capacitors": "C9/C10 2.2uF"},
+      "evidence": [{"asset_sha256": "c7e3400b1b74c358c88209600540088198a85d7b08c653547a017b5bff3cf603", "page": 1, "locator": "网格 A1：J1、F1、IN+、C9/C10 与 U2 VIN"}]
+    },
+    {
+      "id": "power.tps54360-buck",
+      "category": "power",
+      "subject": "IN12/24V 到 +5V 降压",
+      "statement": "U2 TPS54360 以 IN+ 为输入，其 SW pin8 连接 D1 B290B 和 L1 8.2uH；L1 后的 +5V 由 C2/C3 各 10uF 滤波，FB pin5 使用 R4 51KΩ 与 R6 10KΩ 分压。",
+      "confidence": "confirmed",
+      "attributes": {"input_net": "IN+", "output_net": "+5V", "switch_pin": "U2 pin8 SW", "freewheel_diode": "D1 B290B", "inductor": "L1 8.2uH", "output_capacitors": "C2/C3 10uF", "feedback": "R4 51KΩ; R6 10KΩ", "enable_pin": "U2 pin3 EN shown NC"},
+      "evidence": [{"asset_sha256": "c7e3400b1b74c358c88209600540088198a85d7b08c653547a017b5bff3cf603", "page": 1, "locator": "网格 A1-A3：U2、D1/L1/C2/C3/R4/R6，EN pin3 处未连接标记"}]
+    },
+    {
+      "id": "power.tps54360-support-network",
+      "category": "power",
+      "subject": "TPS54360 自举、补偿与频率网络",
+      "statement": "U2 BOOT pin1 与 SW pin8 之间连接 C1 100nF；COMP pin6 连接 R2 12KΩ 与 C8 6.8nF 网络，RT/CLK pin4 通过 R5 160KΩ 接 GND。",
+      "confidence": "confirmed",
+      "attributes": {"bootstrap": "C1 100nF between BOOT and SW", "compensation": "R2 12KΩ and C8 6.8nF", "timing": "R5 160KΩ from RT/CLK to GND", "annotation_values": "R5 red 162K; R4 red 52.6K"},
+      "evidence": [{"asset_sha256": "c7e3400b1b74c358c88209600540088198a85d7b08c653547a017b5bff3cf603", "page": 1, "locator": "网格 A1-A3：U2 周围 C1、R2/C8、R5 及黑色/红色数值标注"}]
+    },
+    {
+      "id": "power.ldo-3v3",
+      "category": "power",
+      "subject": "+5V 到 D3V3 LDO",
+      "statement": "U1 SPX3819M5-L-3-3 的 IN pin1 与 EN pin3 均接 +5V，OUT pin5 输出 D3V3，GND pin2 接 GND，BYP/ADJ pin4 通过 C6 470pF 接 GND；C5/C7 各 100nF 为输入和输出旁路。",
+      "confidence": "confirmed",
+      "attributes": {"input": "+5V", "enable": "+5V", "output": "D3V3", "bypass": "C6 470pF", "input_capacitor": "C5 100nF", "output_capacitors": "C7 100nF; C4 100uF"},
+      "evidence": [{"asset_sha256": "c7e3400b1b74c358c88209600540088198a85d7b08c653547a017b5bff3cf603", "page": 1, "locator": "网格 A3-A4：U1 SPX3819M5-L-3-3 与 C4-C7"}]
+    },
+    {
+      "id": "power.analog-digital-rails",
+      "category": "power",
+      "subject": "W5500 A3V3/D3V3 电源分区",
+      "statement": "U1 输出形成 D3V3，D3V3 经 R1 120Ω/MB 连接 A3V3；数字地 GND 经 R3 0Ω 连接模拟地 AGND。",
+      "confidence": "confirmed",
+      "attributes": {"digital_rail": "D3V3/GND", "analog_rail": "A3V3/AGND", "rail_bridge": "R1 120Ω/MB", "ground_bridge": "R3 0Ω", "bulk_capacitor": "C4 100uF"},
+      "evidence": [{"asset_sha256": "c7e3400b1b74c358c88209600540088198a85d7b08c653547a017b5bff3cf603", "page": 1, "locator": "网格 A3-A4：D3V3-R1-A3V3、GND-R3-AGND 与 C4"}]
+    },
+    {
+      "id": "power.w5500-decoupling",
+      "category": "power",
+      "subject": "W5500 去耦",
+      "statement": "A3V3 侧 C19-C24 均标 100nF 并接 AGND；D3V3 侧 C25 100nF 与 C26 10uF 接 GND，U3 下方 C27 4.7uF 与 C18 10nF 接 AGND。",
+      "confidence": "confirmed",
+      "attributes": {"analog_decoupling": "C19-C24 100nF to AGND", "digital_decoupling": "C25 100nF and C26 10uF to GND", "local_analog": "C27 4.7uF and C18 10nF to AGND"},
+      "evidence": [{"asset_sha256": "c7e3400b1b74c358c88209600540088198a85d7b08c653547a017b5bff3cf603", "page": 1, "locator": "网格 D1-D3：C19-C27/C18 去耦网络"}]
+    },
+    {
+      "id": "bus.w5500-spi",
+      "category": "bus",
+      "subject": "W5500 SPI 主控映射",
+      "statement": "U3 MOSI pin35 接 GPIO23，MISO pin34 接 GPIO19，SCLK pin33 接 GPIO18，SCSn pin32 接 GPIO26；这些网络均进入 J3 M5Stack_BUS。",
+      "confidence": "confirmed",
+      "attributes": {"controller": "external M5Stack host", "device": "U3 W5500", "mosi": "U3 pin35 -> GPIO23 -> J3 pin7", "miso": "U3 pin34 -> GPIO19 -> J3 pin9", "sclk": "U3 pin33 -> GPIO18 -> J3 pin11", "chip_select": "U3 pin32 SCSn -> GPIO26 -> J3 pin10", "logic_rail": "D3V3"},
+      "evidence": [{"asset_sha256": "c7e3400b1b74c358c88209600540088198a85d7b08c653547a017b5bff3cf603", "page": 1, "locator": "网格 C3-C4：U3 MOSI/MISO/SCLK/SCSn pins35-32 与 J3 GPIO23/19/18/26"}]
+    },
+    {
+      "id": "gpio.w5500-control",
+      "category": "gpio",
+      "subject": "W5500 复位、中断和片选映射",
+      "statement": "U3 RSTn pin37 接 GPIO13，INTn pin36 接 GPIO34，SCSn pin32 接 GPIO26；R8、R13、R16 各 10KΩ 将三条信号上拉到 D3V3。",
+      "confidence": "confirmed",
+      "attributes": {"reset": "U3 pin37 RSTn -> GPIO13 -> J3 pin22", "interrupt": "U3 pin36 INTn -> GPIO34 -> J3 pin26", "chip_select": "U3 pin32 SCSn -> GPIO26 -> J3 pin10", "pullups": "R8/R13/R16 10KΩ to D3V3", "active_low": "RSTn, INTn, SCSn"},
+      "evidence": [{"asset_sha256": "c7e3400b1b74c358c88209600540088198a85d7b08c653547a017b5bff3cf603", "page": 1, "locator": "网格 B2-C4：U3 RSTn/INTn/SCSn、GPIO13/34/26、R8/R13/R16 与 J3"}]
+    },
+    {
+      "id": "reset.w5500-hardware-reset",
+      "category": "reset",
+      "subject": "W5500 硬件复位路径",
+      "statement": "W5500 RSTn 由 J3 pin22 的 GPIO13 驱动，并由 R8 10KΩ 保持 D3V3 上拉；当前页面未画出独立复位按钮。",
+      "confidence": "confirmed",
+      "attributes": {"device_pin": "U3 pin37 RSTn", "host_gpio": "GPIO13 / J3 pin22", "pullup": "R8 10KΩ to D3V3", "reset_switch_shown": false},
+      "evidence": [{"asset_sha256": "c7e3400b1b74c358c88209600540088198a85d7b08c653547a017b5bff3cf603", "page": 1, "locator": "网格 B2-C4：U3 RSTn 到 GPIO13/R8/J3 pin22，完整页无复位开关"}]
+    },
+    {
+      "id": "gpio.w5500-mode-straps",
+      "category": "gpio",
+      "subject": "W5500 PMODE 配置",
+      "statement": "U3 PMODE2、PMODE1、PMODE0 通过 R7 的 10KΩ 支路上拉到 D3V3，PMODE3 侧连接到 AGND。",
+      "confidence": "confirmed",
+      "attributes": {"high_straps": "PMODE2, PMODE1, PMODE0 via R7 10KΩ to D3V3", "low_strap": "PMODE3 to AGND", "array": "R7 10KΩ (103) 4P"},
+      "evidence": [{"asset_sha256": "c7e3400b1b74c358c88209600540088198a85d7b08c653547a017b5bff3cf603", "page": 1, "locator": "网格 B2：U3 PMODE3-PMODE0 与 R7、D3V3、AGND 连线"}]
+    },
+    {
+      "id": "clock.w5500-25mhz",
+      "category": "clock",
+      "subject": "W5500 外部时钟",
+      "statement": "U3 XO pin31 与 XI/CLKIN pin30 连接 Y1 25MHz 12PF 10PPM 晶振，R20 1MΩ 跨接两端，C14/C17 各 18pF 接 GND。",
+      "confidence": "confirmed",
+      "attributes": {"frequency": "25MHz", "crystal": "Y1 25MHz 12PF 10PPM", "pins": "XO pin31; XI/CLKIN pin30", "feedback_resistor": "R20 1MΩ", "load_capacitors": "C14/C17 18pF"},
+      "evidence": [{"asset_sha256": "c7e3400b1b74c358c88209600540088198a85d7b08c653547a017b5bff3cf603", "page": 1, "locator": "网格 C3-D3：U3 XO/XI 与 Y1/R20/C14/C17"}]
+    },
+    {
+      "id": "analog.w5500-exres",
+      "category": "analog",
+      "subject": "W5500 EXRES1 外部电阻",
+      "statement": "U3 EXRES1 pin10 通过 R19 12.4KΩ 连接 AGND。",
+      "confidence": "confirmed",
+      "attributes": {"pin": "U3 pin10 EXRES1", "resistor": "R19 12.4KΩ", "reference_ground": "AGND"},
+      "evidence": [{"asset_sha256": "c7e3400b1b74c358c88209600540088198a85d7b08c653547a017b5bff3cf603", "page": 1, "locator": "网格 C2-D2：U3 EXRES1 pin10 经 R19 12.4KΩ 到 AGND"}]
+    },
+    {
+      "id": "bus.w5500-phy-pairs",
+      "category": "bus",
+      "subject": "W5500 PHY 差分对",
+      "statement": "U3 TXN pin1、TXP pin2、RXN pin5、RXP pin6 分别使用 TXN、TXP、RXN、RXP 网络连接 U4 HR911105A 的 TD-/TD+/RD-/RD+。",
+      "confidence": "confirmed",
+      "attributes": {"transmit": "U3 TXN pin1/TXP pin2 -> U4 TD-/TD+", "receive": "U3 RXN pin5/RXP pin6 -> U4 RD-/RD+", "analog_supply": "A3V3/AGND"},
+      "evidence": [{"asset_sha256": "c7e3400b1b74c358c88209600540088198a85d7b08c653547a017b5bff3cf603", "page": 1, "locator": "网格 B1-C2：U3 TXN/TXP/RXN/RXP pins1/2/5/6 到 U4 TD/RD 引脚"}]
+    },
+    {
+      "id": "analog.phy-interface-network",
+      "category": "analog",
+      "subject": "W5500 与 HR911105A 模拟接口",
+      "statement": "TXP/TXN 使用 A3V3 侧 49.9Ω 偏置网络连接 U4 发送绕组；RXP/RXN 通过 C11/C14 6.8nF 串联电容及 R17/R18 49.9Ω、C15 22nF/C16 10nF 网络连接 U4 接收绕组。",
+      "confidence": "confirmed",
+      "attributes": {"tx_bias": "R10 10Ω and R11/R12 49.9Ω to A3V3", "rx_series_capacitors": "C11/C14 6.8nF", "rx_resistors": "R17/R18 49.9Ω", "rx_capacitors": "C15 22nF; C16 10nF"},
+      "evidence": [{"asset_sha256": "c7e3400b1b74c358c88209600540088198a85d7b08c653547a017b5bff3cf603", "page": 1, "locator": "网格 B1-D2：U3/U4 之间 R10-R12、C11/C14、R17/R18、C15/C16"}]
+    },
+    {
+      "id": "interface.ethernet-rj45",
+      "category": "interface",
+      "subject": "HR911105A 以太网接口",
+      "statement": "U4 HR911105A 将 W5500 的 TXP/TXN 与 RXP/RXN 接到其内部发送和接收磁性器件，并集成 LINK 与 ACT 两组 LED；该页没有显示 PoE 取电路径。",
+      "confidence": "confirmed",
+      "attributes": {"connector": "U4 HR911105A", "tx_pair": "TD+/TD-", "rx_pair": "RD+/RD-", "led_signals": "LINKLED, ACTLED", "shield_coupling": "C13 1nF 2000V to GND", "poe_path_shown": false},
+      "evidence": [{"asset_sha256": "c7e3400b1b74c358c88209600540088198a85d7b08c653547a017b5bff3cf603", "page": 1, "locator": "网格 B1-D1：U4 HR911105A 完整符号、C13；完整页无 PoE 取电网络"}]
+    },
+    {
+      "id": "gpio.ethernet-status-leds",
+      "category": "gpio",
+      "subject": "以太网链路和活动指示",
+      "statement": "U3 LINKLED pin25 接 U4 LINKLED，ACTLED pin27 接 U4 ACTLED；U4 LED 另一侧通过 R14/R15 1KΩ 接 D3V3，DUPLED pin26 标记未连接。",
+      "confidence": "confirmed",
+      "attributes": {"link": "U3 pin25 LINKLED -> U4 pin11", "activity": "U3 pin27 ACTLED -> U4 pin10", "led_resistors": "R14/R15 1KΩ to D3V3", "duplex_led": "U3 pin26 DUPLED shown NC"},
+      "evidence": [{"asset_sha256": "c7e3400b1b74c358c88209600540088198a85d7b08c653547a017b5bff3cf603", "page": 1, "locator": "网格 B1-C3：U3 LINKLED/ACTLED/DUPLED 与 U4 LED、R14/R15"}]
+    },
+    {
+      "id": "interface.iic-header",
+      "category": "interface",
+      "subject": "J2 IIC 四针接口",
+      "statement": "J2 IIC_Socket_4P 的 pin1=SCL、pin2=SDA、pin3=+5V、pin4=GND；当前页面未画出 SCL/SDA 上拉电阻。",
+      "confidence": "confirmed",
+      "attributes": {"pin1": "SCL -> J3 pin18", "pin2": "SDA -> J3 pin17", "pin3": "+5V", "pin4": "GND", "pullups_shown": false, "signal_direction": "bidirectional bus lines"},
+      "evidence": [{"asset_sha256": "c7e3400b1b74c358c88209600540088198a85d7b08c653547a017b5bff3cf603", "page": 1, "locator": "网格 B4-C4：J2 pins1-4 与 J3 SDA/SCL 同名网络"}]
+    },
+    {
+      "id": "bus.iic-header",
+      "category": "bus",
+      "subject": "J2 I2C 总线",
+      "statement": "J2 引出 J3 的 SCL 与 SDA 两条总线网络并提供 +5V/GND；原理图未显示板载 I2C 从设备或可见地址。",
+      "confidence": "confirmed",
+      "attributes": {"controller": "external M5Stack host", "clock": "SCL / J3 pin18", "data": "SDA / J3 pin17", "connector_supply": "+5V", "onboard_device_shown": false, "onboard_address_shown": false},
+      "evidence": [{"asset_sha256": "c7e3400b1b74c358c88209600540088198a85d7b08c653547a017b5bff3cf603", "page": 1, "locator": "网格 B4-C4：J2 SCL/SDA/+5V/GND 与完整单页，无 I2C 从设备"}]
+    },
+    {
+      "id": "interface.m5stack-bus-map",
+      "category": "interface",
+      "subject": "J3 M5Stack_BUS 针脚映射",
+      "statement": "J3 pin1/3/5 接 GND，pin7/9/11/10 分别为 GPIO23/19/18/26，pin22 GPIO13，pin26 GPIO34，pin17 SDA，pin18 SCL，pin12/14 为 +3.3V/GPIO1，pin25/27/29 为 IN+/HPWR，pin28 +5V，pin30 BATTERY。",
+      "confidence": "confirmed",
+      "attributes": {"ground": "pins1,3,5", "spi": "pin7 GPIO23, pin9 GPIO19, pin11 GPIO18, pin10 GPIO26", "control": "pin22 GPIO13, pin26 GPIO34", "i2c": "pin17 SDA, pin18 SCL", "power": "pin12 +3.3V, pin25 IN+, pins27/29 HPWR, pin28 +5V, pin30 BATTERY", "other_gpio": "pin2 GPIO35,pin4 GPIO36,pin6 EN,pin8 GPIO25,pin13 GPIO3,pin14 GPIO1,pin15 GPIO16,pin16 GPIO17,pin19 GPIO2,pin20 GPIO5,pin21 GPIO12,pin23 GPIO15,pin24 GPIO0"},
+      "evidence": [{"asset_sha256": "c7e3400b1b74c358c88209600540088198a85d7b08c653547a017b5bff3cf603", "page": 1, "locator": "网格 C4-D4：J3 M5Stack_BUS pins1-30 及左右网络名"}]
+    },
+    {
+      "id": "interface.io-header-unresolved-routing",
+      "category": "interface",
+      "subject": "P2 六针 I/O 接口",
+      "statement": "P2 HDR_6P 的 pin1-pin6 仅标为 I/O_01-I/O_06，当前原理图页面没有显示它们连接到 J3 GPIO、RS-485/RS-232 子板或其他网络。",
+      "confidence": "uncertain",
+      "attributes": {"pin1": "I/O_01", "pin2": "I/O_02", "pin3": "I/O_03", "pin4": "I/O_04", "pin5": "I/O_05", "pin6": "I/O_06", "destination_shown": false},
+      "evidence": [{"asset_sha256": "c7e3400b1b74c358c88209600540088198a85d7b08c653547a017b5bff3cf603", "page": 1, "locator": "网格 A4-B4：P2 HDR_6P，I/O_01-I/O_06 均为短引线，未连接命名网络"}]
+    },
+    {
+      "id": "component.serial-adapters-not-shown",
+      "category": "component",
+      "subject": "RS-485 与 RS-232 转接板可见性",
+      "statement": "当前完整单页主板原理图未画出 RS-485 收发器、RS-232 收发器、A/B 差分网络、RS-232 电平转换、终端电阻或方向控制信号；不能从本页确认配套转接板器件和连接。",
+      "confidence": "confirmed",
+      "attributes": {"rs485_transceiver_shown": false, "rs232_transceiver_shown": false, "rs485_ab_nets_shown": false, "termination_shown": false, "direction_control_shown": false, "reserved_connector": "P2 HDR_6P I/O_01-I/O_06"},
+      "evidence": [{"asset_sha256": "c7e3400b1b74c358c88209600540088198a85d7b08c653547a017b5bff3cf603", "page": 1, "locator": "第 1 页完整单页器件与网络；仅见 P2 I/O_01-I/O_06，未见 RS485、RS232、A/B、DE/RE"}]
+    },
+    {
+      "id": "power.hpwr-input-relationship",
+      "category": "power",
+      "subject": "HPWR 与外部输入关系",
+      "statement": "J3 pin25 明确接 IN+，pins27/29 标为 HPWR；当前页面未显示 HPWR 与 IN+ 之间的同名网络连接或桥接器件。",
+      "confidence": "uncertain",
+      "attributes": {"j3_pin25": "IN+", "j3_pins27_29": "HPWR", "external_input": "J1 -> F1 -> IN+", "explicit_hpwr_bridge_shown": false},
+      "evidence": [{"asset_sha256": "c7e3400b1b74c358c88209600540088198a85d7b08c653547a017b5bff3cf603", "page": 1, "locator": "网格 A1 与 D4：J1/IN+ 及 J3 pins25/27/29 IN+/HPWR"}]
+    },
+    {
+      "id": "power.5v-indicator",
+      "category": "power",
+      "subject": "+5V 电源指示",
+      "statement": "D2 红灯 0603 与 R9 4.7KΩ 串联在 +5V 和 GND 之间，用于指示 +5V 电源轨。",
+      "confidence": "confirmed",
+      "attributes": {"rail": "+5V", "led": "D2 red 0603", "resistor": "R9 4.7KΩ", "return": "GND"},
+      "evidence": [{"asset_sha256": "c7e3400b1b74c358c88209600540088198a85d7b08c653547a017b5bff3cf603", "page": 1, "locator": "网格 B4：+5V-D2-R9-GND 串联支路"}]
+    },
+    {
+      "id": "storage.none-shown",
+      "category": "storage",
+      "subject": "板载存储",
+      "statement": "当前完整单页原理图未画出 Flash、PSRAM、EEPROM、SD 卡或其他板载存储器件。",
+      "confidence": "confirmed",
+      "attributes": {"flash_shown": false, "psram_shown": false, "eeprom_shown": false, "sd_card_shown": false},
+      "evidence": [{"asset_sha256": "c7e3400b1b74c358c88209600540088198a85d7b08c653547a017b5bff3cf603", "page": 1, "locator": "第 1 页完整单页：U1-U4 为电源、W5500 和 HR911105A，未见存储器件"}]
+    },
+    {
+      "id": "debug.none-shown",
+      "category": "debug",
+      "subject": "调试接口",
+      "statement": "当前完整单页原理图未画出 JTAG、SWD、USB-UART 或专用编程调试连接器。",
+      "confidence": "confirmed",
+      "attributes": {"jtag_shown": false, "swd_shown": false, "usb_uart_shown": false, "dedicated_debug_connector_shown": false},
+      "evidence": [{"asset_sha256": "c7e3400b1b74c358c88209600540088198a85d7b08c653547a017b5bff3cf603", "page": 1, "locator": "第 1 页完整单页连接器 J1/J2/J3/P2，未见 JTAG、SWD、USB-UART"}]
+    },
+    {
+      "id": "other.schematic-revision-alignment",
+      "category": "other",
+      "subject": "v1.2 产品与 V1.0 图纸修订对应关系",
+      "statement": "产品清单名称为 Base LAN v1.2、SKU 为 K012-B-V12，但本地原理图标题栏标注 Project LAN_W5500、Revised V1.0、Date 07/30/2018；该页是否精确对应 v1.2 量产硬件无法由页面本身确认。",
+      "confidence": "uncertain",
+      "attributes": {"product_name": "Base LAN v1.2", "sku": "K012-B-V12", "schematic_project": "LAN_W5500", "schematic_revision": "V1.0", "schematic_date": "07/30/2018", "v12_alignment_confirmed": false},
+      "evidence": [{"asset_sha256": "c7e3400b1b74c358c88209600540088198a85d7b08c653547a017b5bff3cf603", "page": 1, "locator": "网格 D3-D4 标题栏：Project Title LAN_W5500.PrjPCB、Revised V1.0、Date 07/30/2018"}]
+    },
+    {
+      "id": "power.documented-input-range",
+      "category": "power",
+      "subject": "外部输入电压范围",
+      "statement": "产品正文写支持 9-24V 输入，原理图页面只标 IN12/24V，且 F1 与 TPS54360 电路未给出整机最低输入、容差、反接保护和持续功率边界。",
+      "confidence": "uncertain",
+      "attributes": {"documented_range": "9-24V", "schematic_label": "IN12/24V", "minimum_input_confirmed": false, "reverse_polarity_protection_shown": false, "continuous_power": null},
+      "evidence": [{"asset_sha256": "c7e3400b1b74c358c88209600540088198a85d7b08c653547a017b5bff3cf603", "page": 1, "locator": "网格 A1-A3：IN12/24V、J1/F1、TPS54360 电源级，图中无 9V 或整机功率说明"}]
+    },
+    {
+      "id": "other.documented-network-capabilities",
+      "category": "other",
+      "subject": "以太网速率与协议能力",
+      "statement": "产品正文列出 RJ45 自适应 10/100M 以及 TCP、UDP、IPv4、ICMP、ARP、IGMP、PPPoE 等协议；原理图只确认 W5500 与物理接口，无法验证固件配置、吞吐量、缓存使用和整机协议行为。",
+      "confidence": "uncertain",
+      "attributes": {"documented_port": "RJ45 adaptive 10/100M", "documented_protocols": "TCP,UDP,IPv4,ICMP,ARP,IGMP,PPPoE", "schematic_controller": "U3 W5500", "firmware_version": null, "measured_throughput": null},
+      "evidence": [{"asset_sha256": "c7e3400b1b74c358c88209600540088198a85d7b08c653547a017b5bff3cf603", "page": 1, "locator": "第 1 页 U3 W5500、U4 HR911105A 与 SPI，图中无协议、速率或吞吐参数表"}]
+    }
+  ],
+  "needs_review": [
+    {
+      "id": "review.io-header-routing",
+      "fact_id": "interface.io-header-unresolved-routing",
+      "question": "P2 的 I/O_01-I/O_06 在 PCB 或配套 TTL-RS485/TTL-RS232 转接板上分别连接哪些 M5-Bus GPIO、供电和串行信号？",
+      "reason": "当前原理图只显示 P2 引脚标签，没有网络去向或转接板原理图。",
+      "evidence": [{"asset_sha256": "c7e3400b1b74c358c88209600540088198a85d7b08c653547a017b5bff3cf603", "page": 1, "locator": "网格 A4-B4：P2 HDR_6P 的 I/O_01-I/O_06 短引线"}]
+    },
+    {
+      "id": "review.hpwr-input-relationship",
+      "fact_id": "power.hpwr-input-relationship",
+      "question": "J3 pins27/29 的 HPWR 是否在 PCB 上连接 J1/F1 后的 IN+，或通过未画出的电源选择路径连接？",
+      "reason": "J3 pin25 明确为 IN+，pins27/29 另标 HPWR，页面没有桥接关系。",
+      "evidence": [{"asset_sha256": "c7e3400b1b74c358c88209600540088198a85d7b08c653547a017b5bff3cf603", "page": 1, "locator": "网格 A1 与 D4：J1/F1/IN+ 和 J3 IN+/HPWR"}]
+    },
+    {
+      "id": "review.schematic-revision",
+      "fact_id": "other.schematic-revision-alignment",
+      "question": "标题栏 Revised V1.0 的 LAN_W5500 图纸是否就是 K012-B-V12 的正式 v1.2 量产原理图？",
+      "reason": "产品版本和图纸修订号不一致，需要正式版本记录、BOM 或 PCB 文件闭环。",
+      "evidence": [{"asset_sha256": "c7e3400b1b74c358c88209600540088198a85d7b08c653547a017b5bff3cf603", "page": 1, "locator": "网格 D3-D4 标题栏 Revised V1.0、LAN_W5500、07/30/2018"}]
+    },
+    {
+      "id": "review.input-voltage-range",
+      "fact_id": "power.documented-input-range",
+      "question": "K012-B-V12 的认证输入范围究竟是 9-24V 还是图纸标注的 12/24V，最低启动电压、容差和持续功率是多少？",
+      "reason": "正文与图纸标注不同，且原理图不能证明整机工作边界。",
+      "evidence": [{"asset_sha256": "c7e3400b1b74c358c88209600540088198a85d7b08c653547a017b5bff3cf603", "page": 1, "locator": "网格 A1-A3：IN12/24V 输入与 TPS54360 电源级"}]
+    },
+    {
+      "id": "review.network-capabilities",
+      "fact_id": "other.documented-network-capabilities",
+      "question": "v1.2 当前固件和整机测试确认的端口速率、协议集、缓存配置与持续吞吐量分别是什么？",
+      "reason": "这些是控制器配置和系统性能，单页连接原理图无法验证。",
+      "evidence": [{"asset_sha256": "c7e3400b1b74c358c88209600540088198a85d7b08c653547a017b5bff3cf603", "page": 1, "locator": "第 1 页 U3 W5500、U4 HR911105A 与 SPI/PHY 连接"}]
+    }
+  ]
+}

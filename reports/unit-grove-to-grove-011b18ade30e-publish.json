@@ -1,0 +1,21 @@
+{
+  "dry_run": false,
+  "failed": 0,
+  "published": 1,
+  "results": [
+    {
+      "backup": null,
+      "draft_action": "unchanged",
+      "dry_run": false,
+      "errors": [],
+      "needs_review": 1,
+      "product_id": "unit-grove-to-grove-011b18ade30e",
+      "product_name": "Unit Grove to Grove",
+      "publish_action": "unchanged",
+      "sha256": "9360ef3876b0ad01f02093429fa87312805c58841af6b8c690c9713e4e7670a5",
+      "status": "valid",
+      "uncertain_facts": 1
+    }
+  ],
+  "schema_version": 1
+}

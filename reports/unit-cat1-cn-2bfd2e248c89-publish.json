@@ -1,0 +1,21 @@
+{
+  "dry_run": false,
+  "failed": 0,
+  "published": 1,
+  "results": [
+    {
+      "backup": null,
+      "draft_action": "unchanged",
+      "dry_run": false,
+      "errors": [],
+      "needs_review": 8,
+      "product_id": "unit-cat1-cn-2bfd2e248c89",
+      "product_name": "Unit Cat1-CN",
+      "publish_action": "unchanged",
+      "sha256": "3293695188dbaf09483b8e965ae0a0f3df286f8b9132428220abe45bc653f51b",
+      "status": "valid",
+      "uncertain_facts": 8
+    }
+  ],
+  "schema_version": 1
+}

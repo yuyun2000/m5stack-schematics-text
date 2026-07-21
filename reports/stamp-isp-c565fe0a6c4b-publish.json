@@ -1,0 +1,21 @@
+{
+  "dry_run": false,
+  "failed": 0,
+  "published": 1,
+  "results": [
+    {
+      "backup": null,
+      "draft_action": "unchanged",
+      "dry_run": false,
+      "errors": [],
+      "needs_review": 4,
+      "product_id": "stamp-isp-c565fe0a6c4b",
+      "product_name": "Stamp ISP",
+      "publish_action": "unchanged",
+      "sha256": "3a5293b1d13095a0773e3e57acdeca228c8c7df13ed496f340401de12d41580f",
+      "status": "valid",
+      "uncertain_facts": 4
+    }
+  ],
+  "schema_version": 1
+}

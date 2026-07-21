@@ -1,0 +1,833 @@
+{
+  "schema_version": 1,
+  "generator": "schematic_describer",
+  "product": {
+    "product_id": "atom-display-lite-0734246aa8a5",
+    "product_name": "Atom Display-Lite",
+    "sku": "K115-B",
+    "source_path": "atom/atom_display_lite.md",
+    "source_sha256": "107059a77ed22aa30a89ef0fdc914fd96782498e1fc28e4a785b8241ea1129ff",
+    "input_sha256": "2b8c3918f2a1c13ccbae4fb4ffc9eb4f863ff64d3f63f43bdd14affe373c809e"
+  },
+  "schematic_assets": [
+    {
+      "sha256": "0d5a11986a3c2cf0d6c41bafeac81b18220623b371e82ed2ff6dc4711c8c1242",
+      "source_url": "https://static-cdn.m5stack.com/resource/docs/products/atom/atom_display/atom_display_sch_03.webp",
+      "pages": [
+        1
+      ]
+    }
+  ],
+  "summary": "当前本地资源是一张 Atom Display-Lite 系统框图：M5Atom 通过 SPI 驱动 FPGA 内的 SPI Slave、命令和流式读写逻辑，并通过 I2C 控制 HDMI Transceiver IC。像素数据经嵌入式 SDRAM、AXI4、Frame Buffer Reader、Async FIFO 和 Video Signal Generator 形成视频链路，再由 HDMI Transceiver IC 通过 TMDS 输出到 HDMI Connector。框图同时给出两路晶振、GOWIN PLL、70 MHz 主时钟和 140 MHz SDRAM 时钟，但未提供物理位号、具体芯片型号、GPIO、电源轨或保护电路。",
+  "keywords": [
+    "Atom Display-Lite",
+    "K115-B",
+    "M5Atom",
+    "FPGA",
+    "HDMI Connector",
+    "HDMI Transceiver IC",
+    "TMDS",
+    "I2C",
+    "SPI",
+    "SPI Slave",
+    "Command",
+    "Stream Reader",
+    "Stream Writer",
+    "Pixel Data",
+    "AXI4",
+    "AXI SDRAM Controller",
+    "SDRAM Controller",
+    "Embedded SDRAM",
+    "Frame Buffer Reader",
+    "Async FIFO",
+    "Video Signal Generator",
+    "GOWIN PLL",
+    "GOWIN IP",
+    "Chisel",
+    "Video Clock",
+    "Main Clock",
+    "SDRAM Clock",
+    "SPI Clock",
+    "70 MHz",
+    "140 MHz"
+  ],
+  "components": [
+    {
+      "reference": "M5Atom",
+      "part_number": null,
+      "role": "框图中的外部主控模块，通过 SPI 连接 FPGA，并通过 I2C 控制 HDMI Transceiver IC",
+      "evidence": [
+        {
+          "asset_sha256": "0d5a11986a3c2cf0d6c41bafeac81b18220623b371e82ed2ff6dc4711c8c1242",
+          "page": 1,
+          "locator": "页面底部紫色 M5Atom 方框；向上标注 SPI，右侧回路标注 I2C"
+        }
+      ]
+    },
+    {
+      "reference": "HDMI Connector",
+      "part_number": null,
+      "role": "接收 HDMI Transceiver IC 输出的 TMDS 信号",
+      "evidence": [
+        {
+          "asset_sha256": "0d5a11986a3c2cf0d6c41bafeac81b18220623b371e82ed2ff6dc4711c8c1242",
+          "page": 1,
+          "locator": "页面顶部紫色 HDMI Connector 方框及其下方 TMDS 箭头"
+        }
+      ]
+    },
+    {
+      "reference": "HDMI Transceiver IC",
+      "part_number": null,
+      "role": "接收视频信号和 I2C 控制，并向 HDMI Connector 输出 TMDS",
+      "evidence": [
+        {
+          "asset_sha256": "0d5a11986a3c2cf0d6c41bafeac81b18220623b371e82ed2ff6dc4711c8c1242",
+          "page": 1,
+          "locator": "页面上部紫色 HDMI Transceiver IC 方框；下方 Video... 输入、右侧 I2C、上方 TMDS"
+        }
+      ]
+    },
+    {
+      "reference": "Crystal (Video Clock)",
+      "part_number": null,
+      "role": "为图中 Video Clock... 时钟域提供外部晶振输入",
+      "evidence": [
+        {
+          "asset_sha256": "0d5a11986a3c2cf0d6c41bafeac81b18220623b371e82ed2ff6dc4711c8c1242",
+          "page": 1,
+          "locator": "页面左上第一枚紫色 Crystal... 方框，箭头指向 Video Clock... 虚线框"
+        }
+      ]
+    },
+    {
+      "reference": "Crystal (PLL input)",
+      "part_number": null,
+      "role": "向 GOWIN PLL 提供外部晶振输入",
+      "evidence": [
+        {
+          "asset_sha256": "0d5a11986a3c2cf0d6c41bafeac81b18220623b371e82ed2ff6dc4711c8c1242",
+          "page": 1,
+          "locator": "页面左侧第二枚紫色 Crystal... 方框，连线向下后进入 GOWIN PLL"
+        }
+      ]
+    },
+    {
+      "reference": "GOWIN PLL",
+      "part_number": null,
+      "role": "GOWIN IP 时钟模块，输出图示 70 MHz 和 140 MHz 时钟",
+      "evidence": [
+        {
+          "asset_sha256": "0d5a11986a3c2cf0d6c41bafeac81b18220623b371e82ed2ff6dc4711c8c1242",
+          "page": 1,
+          "locator": "页面左中蓝灰色 GOWIN PLL 方框；输出支路旁标注 70[MHz] 和 140[MHz]"
+        }
+      ]
+    },
+    {
+      "reference": "Embedded SDRAM",
+      "part_number": null,
+      "role": "由 SDRAM Controller 访问的帧数据存储硬件",
+      "evidence": [
+        {
+          "asset_sha256": "0d5a11986a3c2cf0d6c41bafeac81b18220623b371e82ed2ff6dc4711c8c1242",
+          "page": 1,
+          "locator": "页面下部紫色 Embedded SDRAM 方框，与 SDRAM Controller 之间为双向 SDRAM... 连线"
+        }
+      ]
+    },
+    {
+      "reference": "SDRAM Controller",
+      "part_number": null,
+      "role": "GOWIN IP 存储控制器，连接 AXI SDRAM 控制桥与 Embedded SDRAM",
+      "evidence": [
+        {
+          "asset_sha256": "0d5a11986a3c2cf0d6c41bafeac81b18220623b371e82ed2ff6dc4711c8c1242",
+          "page": 1,
+          "locator": "页面下部蓝灰色 SDRAM Controller 方框；上接 AXI SDRAM Controller B...，下接 Embedded SDRAM"
+        }
+      ]
+    },
+    {
+      "reference": "AXI SDRAM Controller B...",
+      "part_number": null,
+      "role": "Chisel 侧 AXI4 到 SDRAM Controller 接口的桥接模块",
+      "evidence": [
+        {
+          "asset_sha256": "0d5a11986a3c2cf0d6c41bafeac81b18220623b371e82ed2ff6dc4711c8c1242",
+          "page": 1,
+          "locator": "页面中央偏下绿色 AXI SDRAM Controller B... 方框；上接 AXI4， 下接 SDRC s..."
+        }
+      ]
+    },
+    {
+      "reference": "AXI4 interconnect (unlabeled)",
+      "part_number": null,
+      "role": "汇聚 Frame Buffer Reader、Stream Reader、Stream Writer 与 SDRAM 控制桥的 AXI4 通路",
+      "evidence": [
+        {
+          "asset_sha256": "0d5a11986a3c2cf0d6c41bafeac81b18220623b371e82ed2ff6dc4711c8c1242",
+          "page": 1,
+          "locator": "页面中央绿色梯形总线符号；相邻三条客户端连线和向下桥接连线均标注 AXI4"
+        }
+      ]
+    },
+    {
+      "reference": "Frame Buffer Reader",
+      "part_number": null,
+      "role": "通过 AXI4 读取帧缓冲，并向 Async FIFO 输出视频数据",
+      "evidence": [
+        {
+          "asset_sha256": "0d5a11986a3c2cf0d6c41bafeac81b18220623b371e82ed2ff6dc4711c8c1242",
+          "page": 1,
+          "locator": "页面中央绿色 Frame Buffer Reader 方框；下接 AXI4，上接 Video... 到 Async FIFO"
+        }
+      ]
+    },
+    {
+      "reference": "Async FIFO",
+      "part_number": null,
+      "role": "位于主时钟与视频时钟链路之间的异步 FIFO",
+      "evidence": [
+        {
+          "asset_sha256": "0d5a11986a3c2cf0d6c41bafeac81b18220623b371e82ed2ff6dc4711c8c1242",
+          "page": 1,
+          "locator": "页面中上部竖向绿色 Async FIFO 方框，位于 Frame Buffer Reader 与 Video Signal Generator 之间"
+        }
+      ]
+    },
+    {
+      "reference": "Video Signal Generator",
+      "part_number": null,
+      "role": "接收 Async FIFO 的视频数据并输出 Video... 到 HDMI Transceiver IC",
+      "evidence": [
+        {
+          "asset_sha256": "0d5a11986a3c2cf0d6c41bafeac81b18220623b371e82ed2ff6dc4711c8c1242",
+          "page": 1,
+          "locator": "页面上部绿色 Video Signal Generator 方框；下接 Async FIFO，上接 HDMI Transceiver IC"
+        }
+      ]
+    },
+    {
+      "reference": "Stream Reader",
+      "part_number": null,
+      "role": "接收 Command... 控制，通过 AXI4 访问存储通路，并返回 Pixel Data",
+      "evidence": [
+        {
+          "asset_sha256": "0d5a11986a3c2cf0d6c41bafeac81b18220623b371e82ed2ff6dc4711c8c1242",
+          "page": 1,
+          "locator": "页面右中绿色 Stream Reader 方框；左接 AXI4，底部接 Command，右侧回路标注 Pixel Data"
+        }
+      ]
+    },
+    {
+      "reference": "Stream Writer",
+      "part_number": null,
+      "role": "接收 Command... 控制并通过 AXI4 向存储通路写入流数据",
+      "evidence": [
+        {
+          "asset_sha256": "0d5a11986a3c2cf0d6c41bafeac81b18220623b371e82ed2ff6dc4711c8c1242",
+          "page": 1,
+          "locator": "页面右中绿色 Stream Writer 方框；左侧连线标注 AXI4，下方控制连线标注 Command"
+        }
+      ]
+    },
+    {
+      "reference": "Command...",
+      "part_number": null,
+      "role": "在 SPI Slave 与 Stream Reader/Stream Writer 之间分发命令并接收像素数据",
+      "evidence": [
+        {
+          "asset_sha256": "0d5a11986a3c2cf0d6c41bafeac81b18220623b371e82ed2ff6dc4711c8c1242",
+          "page": 1,
+          "locator": "页面右中下绿色 Command... 方框；下接 SPI Slave，上接两条 Command 支路，右侧接 Pixel Data 回路"
+        }
+      ]
+    },
+    {
+      "reference": "SPI Slave",
+      "part_number": null,
+      "role": "接收 M5Atom SPI，并与 Command... 模块交换命令通道",
+      "evidence": [
+        {
+          "asset_sha256": "0d5a11986a3c2cf0d6c41bafeac81b18220623b371e82ed2ff6dc4711c8c1242",
+          "page": 1,
+          "locator": "页面右下绿色 SPI Slave 方框；下方连接标注 SPI，上方双向连接标注 Command..."
+        }
+      ]
+    }
+  ],
+  "facts": [
+    {
+      "id": "system.end_to_end_video_path",
+      "category": "system",
+      "subject": "端到端视频路径",
+      "statement": "框图显示 M5Atom 的 SPI 数据进入 FPGA 后，经命令与流式读写逻辑访问 Embedded SDRAM；显示读取链依次经过 Frame Buffer Reader、Async FIFO、Video Signal Generator 和 HDMI Transceiver IC，最终以 TMDS 到达 HDMI Connector。",
+      "confidence": "confirmed",
+      "attributes": {
+        "controller": "M5Atom",
+        "input_bus": "SPI",
+        "memory": "Embedded SDRAM",
+        "output_signal": "TMDS",
+        "output_connector": "HDMI Connector"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "0d5a11986a3c2cf0d6c41bafeac81b18220623b371e82ed2ff6dc4711c8c1242",
+          "page": 1,
+          "locator": "整页框图：底部 M5Atom 到右侧 SPI/Command/Stream、中部 SDRAM/Frame Buffer、顶部视频与 TMDS 链路"
+        }
+      ]
+    },
+    {
+      "id": "system.fpga_partition",
+      "category": "system",
+      "subject": "FPGA 功能分区",
+      "statement": "FPGA 虚线边界包含视频、帧缓冲、流式读写、命令、SPI、AXI/SDRAM 控制与 PLL 功能；M5Atom、两枚晶振、HDMI Transceiver IC、HDMI Connector 和 Embedded SDRAM 以硬件方框表示。",
+      "confidence": "confirmed",
+      "attributes": {
+        "boundary": "FPGA...",
+        "external_controller": "M5Atom",
+        "external_video_ic": "HDMI Transceiver IC",
+        "external_memory": "Embedded SDRAM"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "0d5a11986a3c2cf0d6c41bafeac81b18220623b371e82ed2ff6dc4711c8c1242",
+          "page": 1,
+          "locator": "整页最外层 FPGA... 虚线框、各子时钟域虚线框与紫/绿/蓝灰图例"
+        }
+      ]
+    },
+    {
+      "id": "system.block_type_legend",
+      "category": "system",
+      "subject": "框图颜色图例",
+      "statement": "图例把绿色方框标为 Chisel part、紫色方框标为 Hardware、蓝灰色方框标为 GOWIN IP。",
+      "confidence": "confirmed",
+      "attributes": {
+        "green": "Chisel part",
+        "purple": "Hardware",
+        "blue_gray": "GOWIN IP"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "0d5a11986a3c2cf0d6c41bafeac81b18220623b371e82ed2ff6dc4711c8c1242",
+          "page": 1,
+          "locator": "页面右上图例：Chisel part、Hardware、GOWIN IP"
+        }
+      ]
+    },
+    {
+      "id": "interface.m5atom_spi",
+      "category": "interface",
+      "subject": "M5Atom 到 FPGA 的 SPI 接口",
+      "statement": "M5Atom 通过标注 SPI 的连接进入 FPGA 的 SPI Clock... 区域，并连接 SPI Slave。",
+      "confidence": "confirmed",
+      "attributes": {
+        "source": "M5Atom",
+        "destination": "SPI Slave",
+        "bus": "SPI",
+        "clock_domain": "SPI Clock..."
+      },
+      "evidence": [
+        {
+          "asset_sha256": "0d5a11986a3c2cf0d6c41bafeac81b18220623b371e82ed2ff6dc4711c8c1242",
+          "page": 1,
+          "locator": "页面底部 M5Atom 向上到 SPI Slave 的竖直连线，两处均标注 SPI"
+        }
+      ]
+    },
+    {
+      "id": "bus.m5atom_i2c_video_control",
+      "category": "bus",
+      "subject": "M5Atom 到 HDMI Transceiver IC 的 I2C",
+      "statement": "M5Atom 通过页面右侧回路连接 HDMI Transceiver IC，回路两端均标注 I2C。",
+      "confidence": "confirmed",
+      "attributes": {
+        "controller": "M5Atom",
+        "device": "HDMI Transceiver IC",
+        "bus": "I2C",
+        "address": null
+      },
+      "evidence": [
+        {
+          "asset_sha256": "0d5a11986a3c2cf0d6c41bafeac81b18220623b371e82ed2ff6dc4711c8c1242",
+          "page": 1,
+          "locator": "页面最右侧从 M5Atom 绕行到 HDMI Transceiver IC 的 I2C 连线"
+        }
+      ]
+    },
+    {
+      "id": "bus.spi_command_exchange",
+      "category": "bus",
+      "subject": "SPI Slave 命令通道",
+      "statement": "SPI Slave 与 Command... 方框之间是双向连接，连线标注 Command...。",
+      "confidence": "confirmed",
+      "attributes": {
+        "endpoint_a": "SPI Slave",
+        "endpoint_b": "Command...",
+        "signal": "Command...",
+        "direction": "bidirectional"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "0d5a11986a3c2cf0d6c41bafeac81b18220623b371e82ed2ff6dc4711c8c1242",
+          "page": 1,
+          "locator": "页面右中下 Command... 与 SPI Slave 之间的上下双箭头"
+        }
+      ]
+    },
+    {
+      "id": "key_net.command_to_stream_writer",
+      "category": "key_net",
+      "subject": "Stream Writer 命令控制",
+      "statement": "Command... 方框向 Stream Writer 提供一条标注 Command 的控制连接。",
+      "confidence": "confirmed",
+      "attributes": {
+        "source": "Command...",
+        "destination": "Stream Writer",
+        "signal": "Command"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "0d5a11986a3c2cf0d6c41bafeac81b18220623b371e82ed2ff6dc4711c8c1242",
+          "page": 1,
+          "locator": "页面右中 Command... 左上支路到 Stream Writer，支路旁标注 Command"
+        }
+      ]
+    },
+    {
+      "id": "key_net.command_to_stream_reader",
+      "category": "key_net",
+      "subject": "Stream Reader 命令控制",
+      "statement": "Command... 方框向 Stream Reader 提供另一条标注 Command 的控制连接。",
+      "confidence": "confirmed",
+      "attributes": {
+        "source": "Command...",
+        "destination": "Stream Reader",
+        "signal": "Command"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "0d5a11986a3c2cf0d6c41bafeac81b18220623b371e82ed2ff6dc4711c8c1242",
+          "page": 1,
+          "locator": "页面右中 Command... 右上支路绕行至 Stream Reader 底部，支路旁标注 Command"
+        }
+      ]
+    },
+    {
+      "id": "key_net.stream_reader_pixel_data",
+      "category": "key_net",
+      "subject": "Stream Reader 像素数据回路",
+      "statement": "Stream Reader 的右侧回路标注 Pixel Data，并指向 Command... 方框。",
+      "confidence": "confirmed",
+      "attributes": {
+        "source": "Stream Reader",
+        "destination": "Command...",
+        "signal": "Pixel Data"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "0d5a11986a3c2cf0d6c41bafeac81b18220623b371e82ed2ff6dc4711c8c1242",
+          "page": 1,
+          "locator": "页面右中 Stream Reader 右侧向下回路，标注 Pixel Data，箭头进入 Command... 右侧"
+        }
+      ]
+    },
+    {
+      "id": "bus.stream_writer_axi4",
+      "category": "bus",
+      "subject": "Stream Writer AXI4 连接",
+      "statement": "Stream Writer 通过标注 AXI4 的连线连接中央 AXI4 汇聚通路。",
+      "confidence": "confirmed",
+      "attributes": {
+        "client": "Stream Writer",
+        "bus": "AXI4",
+        "peer": "AXI4 interconnect (unlabeled)"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "0d5a11986a3c2cf0d6c41bafeac81b18220623b371e82ed2ff6dc4711c8c1242",
+          "page": 1,
+          "locator": "页面中央偏右 Stream Writer 左侧至绿色梯形符号的连线，标注 AXI4"
+        }
+      ]
+    },
+    {
+      "id": "bus.stream_reader_axi4",
+      "category": "bus",
+      "subject": "Stream Reader AXI4 连接",
+      "statement": "Stream Reader 通过标注 AXI4 的连线连接中央 AXI4 汇聚通路。",
+      "confidence": "confirmed",
+      "attributes": {
+        "client": "Stream Reader",
+        "bus": "AXI4",
+        "peer": "AXI4 interconnect (unlabeled)"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "0d5a11986a3c2cf0d6c41bafeac81b18220623b371e82ed2ff6dc4711c8c1242",
+          "page": 1,
+          "locator": "页面中央偏右 Stream Reader 左侧至绿色梯形符号的连线，标注 AXI4"
+        }
+      ]
+    },
+    {
+      "id": "bus.frame_buffer_reader_axi4",
+      "category": "bus",
+      "subject": "Frame Buffer Reader AXI4 连接",
+      "statement": "Frame Buffer Reader 通过竖直 AXI4 连线连接中央 AXI4 汇聚通路。",
+      "confidence": "confirmed",
+      "attributes": {
+        "client": "Frame Buffer Reader",
+        "bus": "AXI4",
+        "peer": "AXI4 interconnect (unlabeled)"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "0d5a11986a3c2cf0d6c41bafeac81b18220623b371e82ed2ff6dc4711c8c1242",
+          "page": 1,
+          "locator": "页面中央 Frame Buffer Reader 下方竖直连线至绿色梯形符号，旁标 AXI4"
+        }
+      ]
+    },
+    {
+      "id": "memory.axi_sdram_bridge",
+      "category": "memory",
+      "subject": "AXI4 到 SDRAM 控制桥",
+      "statement": "中央 AXI4 汇聚通路通过双向 AXI4 连接 AXI SDRAM Controller B...。",
+      "confidence": "confirmed",
+      "attributes": {
+        "upstream": "AXI4 interconnect (unlabeled)",
+        "bridge": "AXI SDRAM Controller B...",
+        "bus": "AXI4",
+        "direction": "bidirectional"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "0d5a11986a3c2cf0d6c41bafeac81b18220623b371e82ed2ff6dc4711c8c1242",
+          "page": 1,
+          "locator": "页面中央绿色梯形符号与 AXI SDRAM Controller B... 之间的上下双箭头，标注 AXI4"
+        }
+      ]
+    },
+    {
+      "id": "memory.sdram_controller_chain",
+      "category": "memory",
+      "subject": "SDRAM 控制器链路",
+      "statement": "AXI SDRAM Controller B... 与 SDRAM Controller 之间是双向连接，连线标签在图中显示为 SDRC s...。",
+      "confidence": "confirmed",
+      "attributes": {
+        "endpoint_a": "AXI SDRAM Controller B...",
+        "endpoint_b": "SDRAM Controller",
+        "visible_signal_label": "SDRC s...",
+        "direction": "bidirectional"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "0d5a11986a3c2cf0d6c41bafeac81b18220623b371e82ed2ff6dc4711c8c1242",
+          "page": 1,
+          "locator": "页面中央偏下 AXI SDRAM Controller B... 与 SDRAM Controller 之间的上下双箭头"
+        }
+      ]
+    },
+    {
+      "id": "memory.embedded_sdram_link",
+      "category": "memory",
+      "subject": "Embedded SDRAM 接口",
+      "statement": "SDRAM Controller 与 Embedded SDRAM 之间是双向连接，框图在该通路旁标出 SDRAM... 和 Up to 280[MB/...。",
+      "confidence": "confirmed",
+      "attributes": {
+        "controller": "SDRAM Controller",
+        "memory": "Embedded SDRAM",
+        "visible_bus_label": "SDRAM...",
+        "visible_throughput_label": "Up to 280[MB/...",
+        "direction": "bidirectional"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "0d5a11986a3c2cf0d6c41bafeac81b18220623b371e82ed2ff6dc4711c8c1242",
+          "page": 1,
+          "locator": "页面下部 SDRAM Controller 与 Embedded SDRAM 之间的上下双箭头及相邻截断标签"
+        }
+      ]
+    },
+    {
+      "id": "key_net.frame_buffer_to_async_fifo",
+      "category": "key_net",
+      "subject": "帧缓冲视频数据",
+      "statement": "Frame Buffer Reader 向上输出一条标注 Video... 的连接到 Async FIFO。",
+      "confidence": "confirmed",
+      "attributes": {
+        "source": "Frame Buffer Reader",
+        "destination": "Async FIFO",
+        "visible_signal_label": "Video..."
+      },
+      "evidence": [
+        {
+          "asset_sha256": "0d5a11986a3c2cf0d6c41bafeac81b18220623b371e82ed2ff6dc4711c8c1242",
+          "page": 1,
+          "locator": "页面中部 Frame Buffer Reader 到 Async FIFO 的向上箭头，旁标 Video..."
+        }
+      ]
+    },
+    {
+      "id": "key_net.async_fifo_to_video_generator",
+      "category": "key_net",
+      "subject": "异步 FIFO 视频输出",
+      "statement": "Async FIFO 的输出向上进入 Video Signal Generator。",
+      "confidence": "confirmed",
+      "attributes": {
+        "source": "Async FIFO",
+        "destination": "Video Signal Generator"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "0d5a11986a3c2cf0d6c41bafeac81b18220623b371e82ed2ff6dc4711c8c1242",
+          "page": 1,
+          "locator": "页面中上部 Async FIFO 到 Video Signal Generator 的向上箭头"
+        }
+      ]
+    },
+    {
+      "id": "key_net.video_generator_to_transceiver",
+      "category": "key_net",
+      "subject": "视频发生器到转换芯片",
+      "statement": "Video Signal Generator 通过一条标注 Video... 的向上连接进入 HDMI Transceiver IC。",
+      "confidence": "confirmed",
+      "attributes": {
+        "source": "Video Signal Generator",
+        "destination": "HDMI Transceiver IC",
+        "visible_signal_label": "Video..."
+      },
+      "evidence": [
+        {
+          "asset_sha256": "0d5a11986a3c2cf0d6c41bafeac81b18220623b371e82ed2ff6dc4711c8c1242",
+          "page": 1,
+          "locator": "页面上部 Video Signal Generator 到 HDMI Transceiver IC 的向上箭头，旁标 Video..."
+        }
+      ]
+    },
+    {
+      "id": "interface.tmds_output",
+      "category": "interface",
+      "subject": "TMDS 输出",
+      "statement": "HDMI Transceiver IC 向 HDMI Connector 输出标注 TMDS 的信号。",
+      "confidence": "confirmed",
+      "attributes": {
+        "source": "HDMI Transceiver IC",
+        "destination": "HDMI Connector",
+        "signal": "TMDS"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "0d5a11986a3c2cf0d6c41bafeac81b18220623b371e82ed2ff6dc4711c8c1242",
+          "page": 1,
+          "locator": "页面顶部 HDMI Transceiver IC 到 HDMI Connector 的向上箭头，旁标 TMDS"
+        }
+      ]
+    },
+    {
+      "id": "clock.video_crystal_input",
+      "category": "clock",
+      "subject": "视频时钟晶振输入",
+      "statement": "页面左上第一枚 Crystal... 通过箭头进入 Video Clock... 虚线时钟域。",
+      "confidence": "confirmed",
+      "attributes": {
+        "source": "Crystal (Video Clock)",
+        "clock_domain": "Video Clock...",
+        "frequency": null
+      },
+      "evidence": [
+        {
+          "asset_sha256": "0d5a11986a3c2cf0d6c41bafeac81b18220623b371e82ed2ff6dc4711c8c1242",
+          "page": 1,
+          "locator": "页面左上第一枚 Crystal... 到 Video Clock... 虚线框的水平箭头"
+        }
+      ]
+    },
+    {
+      "id": "clock.pll_crystal_input",
+      "category": "clock",
+      "subject": "GOWIN PLL 晶振输入",
+      "statement": "页面左侧第二枚 Crystal... 连接 GOWIN PLL 输入。",
+      "confidence": "confirmed",
+      "attributes": {
+        "source": "Crystal (PLL input)",
+        "destination": "GOWIN PLL",
+        "frequency": null
+      },
+      "evidence": [
+        {
+          "asset_sha256": "0d5a11986a3c2cf0d6c41bafeac81b18220623b371e82ed2ff6dc4711c8c1242",
+          "page": 1,
+          "locator": "页面左侧第二枚 Crystal... 向下再向右进入 GOWIN PLL 的箭头"
+        }
+      ]
+    },
+    {
+      "id": "clock.main_70mhz",
+      "category": "clock",
+      "subject": "70 MHz 主时钟",
+      "statement": "GOWIN PLL 的一条输出进入 Main Clock... 虚线时钟域，旁边标注 70[MHz]。",
+      "confidence": "confirmed",
+      "attributes": {
+        "source": "GOWIN PLL",
+        "clock_domain": "Main Clock...",
+        "frequency_mhz": 70
+      },
+      "evidence": [
+        {
+          "asset_sha256": "0d5a11986a3c2cf0d6c41bafeac81b18220623b371e82ed2ff6dc4711c8c1242",
+          "page": 1,
+          "locator": "页面左中 GOWIN PLL 右下输出到 Main Clock... 虚线框，支路旁标注 70[MHz]"
+        }
+      ]
+    },
+    {
+      "id": "clock.sdram_140mhz",
+      "category": "clock",
+      "subject": "140 MHz SDRAM 时钟",
+      "statement": "GOWIN PLL 的另一条输出进入 SDRAM Clock... 虚线时钟域，旁边标注 140[MHz]。",
+      "confidence": "confirmed",
+      "attributes": {
+        "source": "GOWIN PLL",
+        "clock_domain": "SDRAM Clock...",
+        "frequency_mhz": 140
+      },
+      "evidence": [
+        {
+          "asset_sha256": "0d5a11986a3c2cf0d6c41bafeac81b18220623b371e82ed2ff6dc4711c8c1242",
+          "page": 1,
+          "locator": "页面左下 GOWIN PLL 输出沿左侧下行进入 SDRAM Clock... 虚线框，旁标 140[MHz]"
+        }
+      ]
+    },
+    {
+      "id": "clock.video_domain_crossing",
+      "category": "clock",
+      "subject": "视频时钟域跨越",
+      "statement": "Async FIFO 位于 Main Clock... 与 Video Clock... 区域之间的视频通路上，连接 Frame Buffer Reader 和 Video Signal Generator。",
+      "confidence": "confirmed",
+      "attributes": {
+        "source_domain": "Main Clock...",
+        "destination_domain": "Video Clock...",
+        "crossing_block": "Async FIFO"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "0d5a11986a3c2cf0d6c41bafeac81b18220623b371e82ed2ff6dc4711c8c1242",
+          "page": 1,
+          "locator": "页面中央 Frame Buffer Reader、Async FIFO、Video Signal Generator 及两层虚线时钟域边界"
+        }
+      ]
+    },
+    {
+      "id": "clock.spi_domain",
+      "category": "clock",
+      "subject": "SPI 时钟域",
+      "statement": "SPI Slave 单独位于标注 SPI Clock... 的虚线区域内，并由 M5Atom 的 SPI 连接进入。",
+      "confidence": "confirmed",
+      "attributes": {
+        "clock_domain": "SPI Clock...",
+        "block": "SPI Slave",
+        "external_source": "M5Atom"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "0d5a11986a3c2cf0d6c41bafeac81b18220623b371e82ed2ff6dc4711c8c1242",
+          "page": 1,
+          "locator": "页面右下 SPI Clock... 虚线框、其中的 SPI Slave 与下方 M5Atom SPI 连线"
+        }
+      ]
+    },
+    {
+      "id": "power.not_exposed",
+      "category": "power",
+      "subject": "电源拓扑可见性",
+      "statement": "当前页面是系统框图，没有显示电源输入、电压轨、稳压器、负载开关、使能或保护器件。",
+      "confidence": "confirmed",
+      "attributes": {
+        "power_input_shown": false,
+        "rails_shown": false,
+        "regulators_shown": false,
+        "protection_shown": false
+      },
+      "evidence": [
+        {
+          "asset_sha256": "0d5a11986a3c2cf0d6c41bafeac81b18220623b371e82ed2ff6dc4711c8c1242",
+          "page": 1,
+          "locator": "整页框图仅显示功能、数据总线和时钟域，未见电源网络或电源器件"
+        }
+      ]
+    },
+    {
+      "id": "component.identifiers_not_exposed",
+      "category": "component",
+      "subject": "物理器件标识可见性",
+      "statement": "当前页面没有显示物理位号，也没有给出 M5Atom、HDMI Transceiver IC、Embedded SDRAM 或两枚晶振的具体料号。",
+      "confidence": "confirmed",
+      "attributes": {
+        "reference_designators_shown": false,
+        "physical_part_numbers_shown": false
+      },
+      "evidence": [
+        {
+          "asset_sha256": "0d5a11986a3c2cf0d6c41bafeac81b18220623b371e82ed2ff6dc4711c8c1242",
+          "page": 1,
+          "locator": "整页紫色硬件方框只显示功能名称，未见 U/J/Y 等位号或具体型号"
+        }
+      ]
+    },
+    {
+      "id": "gpio.address_reset_not_exposed",
+      "category": "other",
+      "subject": "GPIO、地址和复位信息可见性",
+      "statement": "当前页面没有显示 SPI/I2C 的引脚号、HDMI Transceiver IC 的 I2C 地址、复位网络、启动模式或调试接口。",
+      "confidence": "confirmed",
+      "attributes": {
+        "gpio_shown": false,
+        "i2c_address_shown": false,
+        "reset_shown": false,
+        "boot_shown": false,
+        "debug_shown": false
+      },
+      "evidence": [
+        {
+          "asset_sha256": "0d5a11986a3c2cf0d6c41bafeac81b18220623b371e82ed2ff6dc4711c8c1242",
+          "page": 1,
+          "locator": "整页框图的接口只标注 SPI、I2C、AXI4、TMDS 等总线名称，未见引脚、地址、复位或调试标注"
+        }
+      ]
+    }
+  ],
+  "needs_review": [
+    {
+      "id": "review.physical_schematic_required",
+      "fact_id": null,
+      "question": "是否有 Atom Display-Lite 对应硬件版本的完整电路原理图或网表，可用于确认物理位号、芯片料号、引脚、电源与保护电路？",
+      "reason": "当前唯一资源是系统框图，无法从该页完成器件级和网络级核对。",
+      "evidence": [
+        {
+          "asset_sha256": "0d5a11986a3c2cf0d6c41bafeac81b18220623b371e82ed2ff6dc4711c8c1242",
+          "page": 1,
+          "locator": "整页系统框图；无位号、引脚和电源网络"
+        }
+      ]
+    },
+    {
+      "id": "review.truncated_labels",
+      "fact_id": null,
+      "question": "能否提供未截断的原始框图，以确认 AXI SDRAM Controller B...、Command...、SDRC s...、Video... 等标签的完整名称？",
+      "reason": "当前图片中的多个模块名和网络名以省略号显示，不能安全还原完整文本。",
+      "evidence": [
+        {
+          "asset_sha256": "0d5a11986a3c2cf0d6c41bafeac81b18220623b371e82ed2ff6dc4711c8c1242",
+          "page": 1,
+          "locator": "页面中央及右侧多个模块和连线标签以 ... 截断"
+        }
+      ]
+    }
+  ]
+}

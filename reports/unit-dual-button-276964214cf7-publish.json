@@ -1,0 +1,21 @@
+{
+  "dry_run": false,
+  "failed": 0,
+  "published": 1,
+  "results": [
+    {
+      "backup": null,
+      "draft_action": "unchanged",
+      "dry_run": false,
+      "errors": [],
+      "needs_review": 2,
+      "product_id": "unit-dual-button-276964214cf7",
+      "product_name": "Unit Dual Button",
+      "publish_action": "unchanged",
+      "sha256": "9b394b2c591454bd71bf03c98a4c47b4608b9f5ed43dc6505168637b1666aa05",
+      "status": "valid",
+      "uncertain_facts": 2
+    }
+  ],
+  "schema_version": 1
+}

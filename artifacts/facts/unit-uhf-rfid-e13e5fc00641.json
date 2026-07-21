@@ -1,0 +1,231 @@
+{
+  "schema_version": 1,
+  "generator": "schematic_describer",
+  "product": {
+    "product_id": "unit-uhf-rfid-e13e5fc00641",
+    "product_name": "Unit UHF-RFID",
+    "sku": "U107",
+    "source_path": "unit/uhf_rfid.md",
+    "source_sha256": "e679299aa582c74e9f977e559cc50e069dd75abc0c3789e21442bb984f8c4328",
+    "input_sha256": "9b3f97ef3a18359384076f9947633072c68e8303b6839b9d6512c32cf8290e16"
+  },
+  "schematic_assets": [
+    {
+      "sha256": "1ab6b15636fa568a56d6457d30203e14aeb3ec7629af0dd0c5666a72a8da5110",
+      "source_url": "https://static-cdn.m5stack.com/resource/docs/products/unit/uhf_rfid/uhf_rfid_sch_01.webp",
+      "pages": [1]
+    }
+  ],
+  "summary": "Unit UHF-RFID 的单页原理图只展开射频模块侧 P1 五针排针与主机侧 J1 HY2.0 UART 接口。P1 TXD/RXD 分别交叉连接 J1 RX/TX，两个接口共享 +5V 和 GND；P1 EN 由 R1 10K 上拉至 +5V，C1 100nF 与 C2 22uF 跨接在 +5V 与 GND 之间。图面没有 JRD-4035 模块内部、陶瓷天线、射频链路或固件协议，因此频段、功率、距离、空中协议、UART 参数、标签缓存和机械规格仍需结合正式模块资料确认。",
+  "keywords": [
+    "Unit UHF-RFID",
+    "U107",
+    "UHF RFID",
+    "JRD-4035",
+    "840-960MHz",
+    "922MHz",
+    "18-26dBm",
+    "EPCglobal UHF Class 1 Gen 2",
+    "ISO/IEC 18000-6C",
+    "UART",
+    "115200bps",
+    "HY2.0-4P",
+    "PORT.C",
+    "Header 5",
+    "P1",
+    "J1",
+    "TXD",
+    "RXD",
+    "EN",
+    "+5V",
+    "R1 10K",
+    "C1 100nF",
+    "C2 22uF",
+    "ceramic antenna",
+    "200 tags"
+  ],
+  "components": [
+    {
+      "reference": "P1",
+      "part_number": "Header 5",
+      "role": "射频模块侧的 +5V、TXD、RXD、EN、GND 五针连接器",
+      "evidence": [
+        {"asset_sha256": "1ab6b15636fa568a56d6457d30203e14aeb3ec7629af0dd0c5666a72a8da5110", "page": 1, "locator": "左侧 P1 Header 5 pins1-5"}
+      ]
+    },
+    {
+      "reference": "J1",
+      "part_number": "HY-2.0_UART",
+      "role": "主机侧 +5V、GND 与 UART RX/TX 四针接口",
+      "evidence": [
+        {"asset_sha256": "1ab6b15636fa568a56d6457d30203e14aeb3ec7629af0dd0c5666a72a8da5110", "page": 1, "locator": "中右 J1 HY-2.0_UART pins1-4"}
+      ]
+    },
+    {
+      "reference": "R1",
+      "part_number": "10Kohm",
+      "role": "P1 EN 到 +5V 的上拉电阻",
+      "evidence": [
+        {"asset_sha256": "1ab6b15636fa568a56d6457d30203e14aeb3ec7629af0dd0c5666a72a8da5110", "page": 1, "locator": "P1 pin2 EN 右侧 R1 10Kohm"}
+      ]
+    },
+    {
+      "reference": "C1,C2",
+      "part_number": "100nF / 22uF",
+      "role": "跨接 +5V 与 GND 的电容",
+      "evidence": [
+        {"asset_sha256": "1ab6b15636fa568a56d6457d30203e14aeb3ec7629af0dd0c5666a72a8da5110", "page": 1, "locator": "右侧 +5V 到 GND 的 C1 100nF 与 C2 22uF"}
+      ]
+    }
+  ],
+  "facts": [
+    {
+      "id": "interface.module-header-p1",
+      "category": "interface",
+      "subject": "P1 五针模块接口",
+      "statement": "P1 标为 Header 5，pin5 为 VCC 并接 +5V，pin4 为 TXD，pin3 为 RXD，pin2 为 EN，pin1 为 GND。",
+      "confidence": "confirmed",
+      "attributes": {"connector": "P1 Header 5", "pin5": "VCC/+5V", "pin4": "TXD", "pin3": "RXD", "pin2": "EN", "pin1": "GND"},
+      "evidence": [
+        {"asset_sha256": "1ab6b15636fa568a56d6457d30203e14aeb3ec7629af0dd0c5666a72a8da5110", "page": 1, "locator": "左侧 P1 Header 5 pins1-5"}
+      ]
+    },
+    {
+      "id": "interface.hy2-uart-j1",
+      "category": "interface",
+      "subject": "J1 HY2.0 UART 接口",
+      "statement": "J1 标为 HY-2.0_UART，pin1 为 RX，pin2 为 TX，pin3 为 VCC 并接 +5V，pin4 为 GND。",
+      "confidence": "confirmed",
+      "attributes": {"connector": "J1 HY-2.0_UART", "pin1": "RX", "pin2": "TX", "pin3": "VCC/+5V", "pin4": "GND"},
+      "evidence": [
+        {"asset_sha256": "1ab6b15636fa568a56d6457d30203e14aeb3ec7629af0dd0c5666a72a8da5110", "page": 1, "locator": "中右 J1 HY-2.0_UART pins1-4"}
+      ]
+    },
+    {
+      "id": "bus.uart-cross-connection",
+      "category": "bus",
+      "subject": "P1 与 J1 的 UART 交叉连接",
+      "statement": "P1 pin4 TXD 直接连接 J1 pin1 RX，P1 pin3 RXD 直接连接 J1 pin2 TX。",
+      "confidence": "confirmed",
+      "attributes": {"module_tx": "P1.4 TXD", "host_rx": "J1.1 RX", "module_rx": "P1.3 RXD", "host_tx": "J1.2 TX"},
+      "evidence": [
+        {"asset_sha256": "1ab6b15636fa568a56d6457d30203e14aeb3ec7629af0dd0c5666a72a8da5110", "page": 1, "locator": "P1 TXD/RXD 到 J1 RX/TX 的两条水平网络"}
+      ]
+    },
+    {
+      "id": "power.five-volt-distribution",
+      "category": "power",
+      "subject": "+5V 与 GND 分配",
+      "statement": "+5V 网络连接 P1 pin5 VCC、J1 pin3 VCC、R1 上拉端以及 C1/C2 上端；P1 pin1、J1 pin4 与 C1/C2 下端均接 GND。",
+      "confidence": "confirmed",
+      "attributes": {"supply": "+5V", "supply_pins": "P1.5,J1.3", "ground_pins": "P1.1,J1.4", "decoupling": "C1,C2"},
+      "evidence": [
+        {"asset_sha256": "1ab6b15636fa568a56d6457d30203e14aeb3ec7629af0dd0c5666a72a8da5110", "page": 1, "locator": "+5V 与 GND 电源符号及 P1/J1/C1/C2 网络"}
+      ]
+    },
+    {
+      "id": "reset.enable-pullup",
+      "category": "reset",
+      "subject": "P1 EN 默认上拉",
+      "statement": "P1 pin2 EN 通过 R1 10Kohm 上拉到 +5V。",
+      "confidence": "confirmed",
+      "attributes": {"enable_pin": "P1.2 EN", "pullup": "R1 10Kohm", "rail": "+5V"},
+      "evidence": [
+        {"asset_sha256": "1ab6b15636fa568a56d6457d30203e14aeb3ec7629af0dd0c5666a72a8da5110", "page": 1, "locator": "P1 pin2 EN、R1 10Kohm 与 +5V"}
+      ]
+    },
+    {
+      "id": "power.five-volt-capacitors",
+      "category": "power",
+      "subject": "+5V 对地电容",
+      "statement": "C1 100nF 与 C2 22uF 均跨接在 +5V 与 GND 之间。",
+      "confidence": "confirmed",
+      "attributes": {"rail": "+5V", "capacitor_1": "C1 100nF", "capacitor_2": "C2 22uF"},
+      "evidence": [
+        {"asset_sha256": "1ab6b15636fa568a56d6457d30203e14aeb3ec7629af0dd0c5666a72a8da5110", "page": 1, "locator": "右侧 C1 100nF、C2 22uF 与 +5V/GND"}
+      ]
+    },
+    {
+      "id": "system.documented-jrd4035-module",
+      "category": "system",
+      "subject": "JRD-4035 UHF RFID 模块与陶瓷天线",
+      "statement": "源文档称 Unit UHF-RFID 采用 JRD-4035 模块方案并内置陶瓷天线；当前原理图只画到 P1 Header 5，没有 JRD-4035 型号、模块内部电路或天线连接。",
+      "confidence": "uncertain",
+      "attributes": {"documented_module": "JRD-4035", "documented_antenna": "integrated ceramic antenna", "schematic_boundary": "P1 Header 5"},
+      "evidence": [
+        {"asset_sha256": "1ab6b15636fa568a56d6457d30203e14aeb3ec7629af0dd0c5666a72a8da5110", "page": 1, "locator": "左侧 P1 Header 5，页面无 JRD-4035 或天线图符"}
+      ]
+    },
+    {
+      "id": "rf.documented-band-power-protocol",
+      "category": "rf",
+      "subject": "UHF 频段、天线、功率、距离与空中协议",
+      "statement": "源文档称工作频谱为 840-960MHz、天线频率固定 922MHz、输出功率 18-26dBm、标称检测距离 1m，并支持 EPCglobal UHF Class 1 Gen 2 与 ISO/IEC 18000-6C；当前接口原理图没有 RF 收发器、匹配网络、天线或测试条件。",
+      "confidence": "uncertain",
+      "attributes": {"documented_band_mhz": "840-960", "documented_antenna_mhz": 922, "documented_output_dbm": "18-26", "documented_distance_m": 1, "documented_protocols": "EPCglobal UHF Class 1 Gen 2,ISO/IEC 18000-6C"},
+      "evidence": [
+        {"asset_sha256": "1ab6b15636fa568a56d6457d30203e14aeb3ec7629af0dd0c5666a72a8da5110", "page": 1, "locator": "页面仅有 P1/J1 UART 与电源，无 RF 器件和天线"}
+      ]
+    },
+    {
+      "id": "bus.documented-uart-protocol",
+      "category": "bus",
+      "subject": "UART 波特率、AT 指令与标签缓存",
+      "statement": "源文档称 UART 默认波特率为 115200bps、模块封装 AT 指令集且标签缓存最多容纳 200 个标签；原理图仅确认 TXD/RXD 连线，不包含波特率、数据格式、命令集或缓存实现。",
+      "confidence": "uncertain",
+      "attributes": {"documented_baud": 115200, "documented_command_set": "AT", "documented_tag_cache": 200},
+      "evidence": [
+        {"asset_sha256": "1ab6b15636fa568a56d6457d30203e14aeb3ec7629af0dd0c5666a72a8da5110", "page": 1, "locator": "P1 TXD/RXD 到 J1 RX/TX，仅显示物理网络"}
+      ]
+    },
+    {
+      "id": "system.documented-mechanical",
+      "category": "system",
+      "subject": "外壳、尺寸与重量",
+      "statement": "源文档称外壳为 Plastic PC，产品尺寸 56.0x48.0x11.5mm、重量 41.0g，包装尺寸 88.0x61.0x21.0mm、毛重 58.8g；当前电气原理图没有板框、外壳、机械公差或质量信息。",
+      "confidence": "uncertain",
+      "attributes": {"documented_material": "Plastic PC", "documented_product_size_mm": "56.0x48.0x11.5", "documented_product_weight_g": 41.0, "documented_package_size_mm": "88.0x61.0x21.0", "documented_gross_weight_g": 58.8},
+      "evidence": [
+        {"asset_sha256": "1ab6b15636fa568a56d6457d30203e14aeb3ec7629af0dd0c5666a72a8da5110", "page": 1, "locator": "电气原理图无板框、外壳与机械尺寸"}
+      ]
+    }
+  ],
+  "needs_review": [
+    {
+      "id": "review.jrd4035-module",
+      "fact_id": "system.documented-jrd4035-module",
+      "question": "确认当前 U107 量产版本的 UHF 模块具体型号及内置陶瓷天线连接",
+      "reason": "原理图只到 P1 接口，没有 JRD-4035 或天线图符。",
+      "evidence": [
+        {"asset_sha256": "1ab6b15636fa568a56d6457d30203e14aeb3ec7629af0dd0c5666a72a8da5110", "page": 1, "locator": "P1 Header 5，页面无射频模块内部"}
+      ]
+    },
+    {
+      "id": "review.rf-performance-protocol",
+      "fact_id": "rf.documented-band-power-protocol",
+      "question": "以 JRD-4035 正式规格和量产测试确认频段、922MHz 天线、输出功率、读取距离及空中协议",
+      "reason": "当前图面没有 RF 器件、匹配网络、天线或测量条件。",
+      "evidence": [
+        {"asset_sha256": "1ab6b15636fa568a56d6457d30203e14aeb3ec7629af0dd0c5666a72a8da5110", "page": 1, "locator": "页面仅有 UART 与 +5V 接口"}
+      ]
+    },
+    {
+      "id": "review.uart-protocol",
+      "fact_id": "bus.documented-uart-protocol",
+      "question": "确认 UART 帧格式、默认 115200bps、AT 指令版本与 200 标签缓存上限",
+      "reason": "原理图只能确认 TXD/RXD 网络，不能确认软件协议和缓存。",
+      "evidence": [
+        {"asset_sha256": "1ab6b15636fa568a56d6457d30203e14aeb3ec7629af0dd0c5666a72a8da5110", "page": 1, "locator": "P1 TXD/RXD 与 J1 RX/TX"}
+      ]
+    },
+    {
+      "id": "review.mechanical",
+      "fact_id": "system.documented-mechanical",
+      "question": "确认当前量产外壳材质、56.0x48.0x11.5mm 外形与 41.0g 重量",
+      "reason": "当前电气原理图没有外壳和机械信息。",
+      "evidence": [
+        {"asset_sha256": "1ab6b15636fa568a56d6457d30203e14aeb3ec7629af0dd0c5666a72a8da5110", "page": 1, "locator": "页面无板框与机械尺寸"}
+      ]
+    }
+  ]
+}

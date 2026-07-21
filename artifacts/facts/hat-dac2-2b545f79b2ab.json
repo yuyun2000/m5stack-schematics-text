@@ -1,0 +1,335 @@
+{
+  "schema_version": 1,
+  "generator": "schematic_describer",
+  "product": {
+    "product_id": "hat-dac2-2b545f79b2ab",
+    "product_name": "Hat DAC2",
+    "sku": "U068-B",
+    "source_path": "hat/Hat-DAC2.md",
+    "source_sha256": "3ed57d20321edec5fad7b3a595dab2da9baa53cff8a8190d2bc424bd399b94ca",
+    "input_sha256": "3c545a962b64438958fdfee089b77a31552aa8375101118eb8375481ebddde61"
+  },
+  "schematic_assets": [
+    {
+      "sha256": "f33e0496d5916543dd88572b222243372eeaaa1a72d0cbff65a9a0f36fef3617",
+      "source_url": "https://m5stack-doc.oss-cn-shenzhen.aliyuncs.com/581/SCH_StickHat_DAC2_sch_01.png",
+      "pages": [1]
+    }
+  ],
+  "summary": "Hat DAC2 以 GP8413（U1）通过 I2C 接收数据并产生 VOUT0、VOUT1 两路模拟输出，默认地址网络将 A2/A1/A0 配置为 0/0/1，对应图中标注的 0x59。P2 STICKIO 的 5VOUT 经 TPS61040DBVR（U2）、L1 和 D3 升压生成 VCC_12V，供 U1 与输出级使用；+3.3V 用于 I2C 上拉和地址跳线。两路输出各配置 100nF 电容与 12V TVS 后由 P1 引出，5V 输入侧另有 5V TVS 和滤波电容。",
+  "keywords": [
+    "Hat DAC2",
+    "U068-B",
+    "GP8413",
+    "TPS61040DBVR",
+    "U1",
+    "U2",
+    "I2C",
+    "SCL",
+    "SDA",
+    "G26",
+    "G0",
+    "A0",
+    "A1",
+    "A2",
+    "0x58",
+    "0x59",
+    "VOUT0",
+    "VOUT1",
+    "VCC_5V",
+    "VCC_12V",
+    "+3.3V",
+    "L1 10uH2520",
+    "D3 1N5819WS",
+    "TVS 5V",
+    "TVS 12V",
+    "R1 1MΩ",
+    "R2 115K",
+    "R15 10K",
+    "R16 10K",
+    "STICKIO",
+    "双路 DAC",
+    "0~10V"
+  ],
+  "components": [
+    {
+      "reference": "U1",
+      "part_number": "GP8413",
+      "role": "I2C 双路数模转换器，连接地址位 A0/A1/A2 并输出 VOUT0/VOUT1",
+      "evidence": [{"asset_sha256": "f33e0496d5916543dd88572b222243372eeaaa1a72d0cbff65a9a0f36fef3617", "page": 1, "locator": "B2-B3 区域 U1 GP8413：1~10 脚 SCLK/SDA/A0/A1/VCC/GND/VOUT1/VOUT0/A2/V5V"}]
+    },
+    {
+      "reference": "U2",
+      "part_number": "TPS61040DBVR",
+      "role": "将 VCC_5V 升压为 VCC_12V 的开关升压转换器",
+      "evidence": [{"asset_sha256": "f33e0496d5916543dd88572b222243372eeaaa1a72d0cbff65a9a0f36fef3617", "page": 1, "locator": "C2-C3 区域 U2 TPS61040DBVR：Vin/EN/SW/FB/GND 与 L1、D3、R1/R2 连接"}]
+    },
+    {
+      "reference": "P1",
+      "part_number": "Header 4",
+      "role": "四针双路模拟输出端，分别引出 VOUT0/GND 和 VOUT1/GND",
+      "evidence": [{"asset_sha256": "f33e0496d5916543dd88572b222243372eeaaa1a72d0cbff65a9a0f36fef3617", "page": 1, "locator": "B3-B4 区域 P1 Header 4：1 VOUT0、2 GND、3 VOUT1、4 GND"}]
+    },
+    {
+      "reference": "P2",
+      "part_number": "STICKIO",
+      "role": "8 针主机接口，引入 GND、VCC_5V、SCL/G26、SDA/G0 和 +3.3V",
+      "evidence": [{"asset_sha256": "f33e0496d5916543dd88572b222243372eeaaa1a72d0cbff65a9a0f36fef3617", "page": 1, "locator": "C3-B4 区域 P2 STICKIO：1~8 脚及 GND/5VOUT/G26/G36/G0/BAT/3V3/5VIN"}]
+    },
+    {
+      "reference": "JP1/JP2/JP3",
+      "part_number": "0R / NC / NC",
+      "role": "A0/A1/A2 地址位至 +3.3V 的可配置跳线，默认仅 JP1 装 0R",
+      "evidence": [{"asset_sha256": "f33e0496d5916543dd88572b222243372eeaaa1a72d0cbff65a9a0f36fef3617", "page": 1, "locator": "B1-B2 区域地址网络：JP1 0R 对应 A0，JP2 NC 对应 A1，JP3 NC 对应 A2，左端均接 +3.3V"}]
+    },
+    {
+      "reference": "R3/R4/R5",
+      "part_number": "10K / 10K / 10K",
+      "role": "分别将地址位 A0、A1、A2 下拉至 GND",
+      "evidence": [{"asset_sha256": "f33e0496d5916543dd88572b222243372eeaaa1a72d0cbff65a9a0f36fef3617", "page": 1, "locator": "B1-B2 区域 JP1~JP3 右侧：R3/R4/R5 均标注 10K，并连接地址位与公共 GND"}]
+    },
+    {
+      "reference": "R16/R15",
+      "part_number": "10K / 10K",
+      "role": "分别将 SCL 与 SDA 上拉至 +3.3V",
+      "evidence": [{"asset_sha256": "f33e0496d5916543dd88572b222243372eeaaa1a72d0cbff65a9a0f36fef3617", "page": 1, "locator": "B2 区域 U1 左上：R16 10K 接 SCL，R15 10K 接 SDA，两者上端接 +3.3V"}]
+    },
+    {
+      "reference": "L1",
+      "part_number": "10uH2520",
+      "role": "TPS61040 升压级的输入至开关节点电感",
+      "evidence": [{"asset_sha256": "f33e0496d5916543dd88572b222243372eeaaa1a72d0cbff65a9a0f36fef3617", "page": 1, "locator": "C2 区域 VCC_5V 与 U2.1 SW/D3 阳极节点之间：L1 10uH2520"}]
+    },
+    {
+      "reference": "D3",
+      "part_number": "1N5819WS",
+      "role": "升压级从 SW 节点到 VCC_12V 的整流二极管",
+      "evidence": [{"asset_sha256": "f33e0496d5916543dd88572b222243372eeaaa1a72d0cbff65a9a0f36fef3617", "page": 1, "locator": "C2-C3 区域 L1/U2.1 SW 节点与 VCC_12V 之间：D3 1N5819WS"}]
+    },
+    {
+      "reference": "R1/R2/C4",
+      "part_number": "1MΩ / 115K / 22pF",
+      "role": "VCC_12V 到 U2 FB 的反馈分压及并联补偿网络",
+      "evidence": [{"asset_sha256": "f33e0496d5916543dd88572b222243372eeaaa1a72d0cbff65a9a0f36fef3617", "page": 1, "locator": "C3 区域 U2.3 FB 右侧：R1 1MΩ/C4 22pF 至 VCC_12V，R2 115K 至 GND"}]
+    },
+    {
+      "reference": "D4",
+      "part_number": "TVS 5V",
+      "role": "VCC_5V 输入对 GND 的瞬态保护器件",
+      "evidence": [{"asset_sha256": "f33e0496d5916543dd88572b222243372eeaaa1a72d0cbff65a9a0f36fef3617", "page": 1, "locator": "C2 区域 U2 输入左侧：D4 TVS 5V 跨接 VCC_5V 与 GND"}]
+    },
+    {
+      "reference": "D1/D2",
+      "part_number": "TVS 12V / TVS 12V",
+      "role": "分别对 VOUT1 与 VOUT0 提供对地瞬态保护",
+      "evidence": [{"asset_sha256": "f33e0496d5916543dd88572b222243372eeaaa1a72d0cbff65a9a0f36fef3617", "page": 1, "locator": "B3 区域 U1 输出右侧：D1 TVS 12V 位于 VOUT1-GND，D2 TVS 12V 位于 VOUT0-GND"}]
+    },
+    {
+      "reference": "C6/C7/C5",
+      "part_number": "22uF/16V / 100nF / 22uF/16V",
+      "role": "VCC_5V 输入与 VCC_12V 输出的滤波/储能电容",
+      "evidence": [{"asset_sha256": "f33e0496d5916543dd88572b222243372eeaaa1a72d0cbff65a9a0f36fef3617", "page": 1, "locator": "C2-C3 区域：C6 22uF/16V、C7 100nF 跨接 VCC_5V-GND，C5 22uF/16V 跨接 VCC_12V-GND"}]
+    },
+    {
+      "reference": "C2/C3",
+      "part_number": "100nF / 100nF",
+      "role": "VOUT1 与 VOUT0 各自的对地电容",
+      "evidence": [{"asset_sha256": "f33e0496d5916543dd88572b222243372eeaaa1a72d0cbff65a9a0f36fef3617", "page": 1, "locator": "B3 区域 U1 输出右侧：C2 100nF 跨接 VOUT1-GND，C3 100nF 跨接 VOUT0-GND"}]
+    },
+    {
+      "reference": "C1/C9",
+      "part_number": "1uF / 100nF",
+      "role": "U1 V5V 引脚与 VCC_12V 供电的对地去耦电容",
+      "evidence": [{"asset_sha256": "f33e0496d5916543dd88572b222243372eeaaa1a72d0cbff65a9a0f36fef3617", "page": 1, "locator": "B2-B3 区域 U1：C1 1uF 从 U1.10 V5V 接地；C9 100nF 从 U1.5 VCC/VCC_12V 接地"}]
+    }
+  ],
+  "facts": [
+    {
+      "id": "system.dual-dac-architecture",
+      "category": "system",
+      "subject": "Hat DAC2",
+      "statement": "U1 GP8413 通过 P2 的 SCL/SDA 接收 I2C 数据并产生 VOUT0/VOUT1；P2 的 VCC_5V 经 U2 TPS61040DBVR 升压为 VCC_12V，为 U1 和模拟输出级供电。",
+      "confidence": "confirmed",
+      "attributes": {"dac": "U1 GP8413", "boost_converter": "U2 TPS61040DBVR", "input_rail": "VCC_5V", "dac_rail": "VCC_12V", "outputs": "VOUT0, VOUT1", "host_bus": "I2C SCL/SDA"},
+      "evidence": [{"asset_sha256": "f33e0496d5916543dd88572b222243372eeaaa1a72d0cbff65a9a0f36fef3617", "page": 1, "locator": "B1-C4 全部电路：P2、U2 升压级、U1 GP8413、地址网络与 P1 输出端"}]
+    },
+    {
+      "id": "component.gp8413-pinout",
+      "category": "component",
+      "subject": "U1 GP8413",
+      "statement": "U1.1 SCLK、U1.2 SDA 连接 I2C；U1.3/U1.4/U1.9 分别接 A0/A1/A2；U1.5 VCC 接 VCC_12V，U1.6 GND 接地；U1.7/U1.8 分别输出 VOUT1/VOUT0，U1.10 V5V 通过 C1 1uF 接地。",
+      "confidence": "confirmed",
+      "attributes": {"pin_1": "SCLK SCL", "pin_2": "SDA", "pin_3": "A0", "pin_4": "A1", "pin_5": "VCC VCC_12V", "pin_6": "GND", "pin_7": "VOUT1", "pin_8": "VOUT0", "pin_9": "A2", "pin_10": "V5V C1 1uF to GND"},
+      "evidence": [{"asset_sha256": "f33e0496d5916543dd88572b222243372eeaaa1a72d0cbff65a9a0f36fef3617", "page": 1, "locator": "B2-B3 区域 U1 GP8413 的 1~10 脚编号、名称和相邻网络"}]
+    },
+    {
+      "id": "interface.stickio-pinout",
+      "category": "interface",
+      "subject": "P2 STICKIO",
+      "statement": "P2.1~P2.8 依次为 GND、5VOUT/VCC_5V、G26/SCL、G36/NC、G0/SDA、BAT/NC、3V3/+3.3V、5VIN/NC。",
+      "confidence": "confirmed",
+      "attributes": {"pin_1": "GND", "pin_2": "5VOUT VCC_5V", "pin_3": "G26 SCL", "pin_4": "G36 NC", "pin_5": "G0 SDA", "pin_6": "BAT NC", "pin_7": "3V3 +3.3V", "pin_8": "5VIN NC"},
+      "evidence": [{"asset_sha256": "f33e0496d5916543dd88572b222243372eeaaa1a72d0cbff65a9a0f36fef3617", "page": 1, "locator": "C3-B4 区域 P2 STICKIO：1~8 脚符号内名称、左侧网络及 4/6/8 脚未连接标记"}]
+    },
+    {
+      "id": "interface.output-header-pinout",
+      "category": "interface",
+      "subject": "P1 Header 4",
+      "statement": "P1.1 接 VOUT0，P1.2 接 GND，P1.3 接 VOUT1，P1.4 接 GND。",
+      "confidence": "confirmed",
+      "attributes": {"pin_1": "VOUT0", "pin_2": "GND", "pin_3": "VOUT1", "pin_4": "GND", "direction": "analog outputs"},
+      "evidence": [{"asset_sha256": "f33e0496d5916543dd88572b222243372eeaaa1a72d0cbff65a9a0f36fef3617", "page": 1, "locator": "B3-B4 区域 P1 Header 4：四个引脚与左侧 VOUT0/GND/VOUT1/GND 连线"}]
+    },
+    {
+      "id": "bus.i2c-routing",
+      "category": "bus",
+      "subject": "I2C SCL/SDA",
+      "statement": "SCL 同名网络连接 P2.3 G26 与 U1.1 SCLK，SDA 连接 P2.5 G0 与 U1.2 SDA。",
+      "confidence": "confirmed",
+      "attributes": {"scl": "P2.3 G26 to U1.1 SCLK", "sda": "P2.5 G0 to U1.2 SDA", "direction": "bidirectional"},
+      "evidence": [{"asset_sha256": "f33e0496d5916543dd88572b222243372eeaaa1a72d0cbff65a9a0f36fef3617", "page": 1, "locator": "B2-B4 区域 U1.1/U1.2 与 P2.3/P2.5 的 SCL/SDA 同名网络"}]
+    },
+    {
+      "id": "bus.i2c-pullups",
+      "category": "bus",
+      "subject": "I2C 上拉",
+      "statement": "R16 10K 将 SCL 上拉至 +3.3V，R15 10K 将 SDA 上拉至 +3.3V。",
+      "confidence": "confirmed",
+      "attributes": {"scl_pullup": "R16 10K to +3.3V", "sda_pullup": "R15 10K to +3.3V", "logic_rail": "+3.3V"},
+      "evidence": [{"asset_sha256": "f33e0496d5916543dd88572b222243372eeaaa1a72d0cbff65a9a0f36fef3617", "page": 1, "locator": "B2 区域 R16/R15：上端共同连接 +3.3V，下端分别连接 SCL/SDA"}]
+    },
+    {
+      "id": "address.default-0x59",
+      "category": "address",
+      "subject": "GP8413 默认 I2C 地址",
+      "statement": "默认配置中 JP1 装 0R 将 A0 拉高，JP2/JP3 标为 NC，R3/R4/R5 各 10K 将 A0/A1/A2 下拉；原理图文字明确标注 A0=1、A1=0、A2=0 时地址为 0x59（default）。",
+      "confidence": "confirmed",
+      "attributes": {"A0": "1 via JP1 0R to +3.3V", "A1": "0 via R4 10K to GND; JP2 NC", "A2": "0 via R5 10K to GND; JP3 NC", "address_7bit": "0x59", "default": true},
+      "evidence": [{"asset_sha256": "f33e0496d5916543dd88572b222243372eeaaa1a72d0cbff65a9a0f36fef3617", "page": 1, "locator": "B1-B2 地址区域：JP1 0R、JP2/JP3 NC、R3/R4/R5 10K 及文字 A0=1 A1=0 A2=0 add=0x59 (default)"}]
+    },
+    {
+      "id": "address.all-low-0x58",
+      "category": "address",
+      "subject": "GP8413 全低地址",
+      "statement": "原理图文字明确标注 A0=0、A1=0、A2=0 时 I2C 地址为 0x58。",
+      "confidence": "confirmed",
+      "attributes": {"A0": 0, "A1": 0, "A2": 0, "address_7bit": "0x58"},
+      "evidence": [{"asset_sha256": "f33e0496d5916543dd88572b222243372eeaaa1a72d0cbff65a9a0f36fef3617", "page": 1, "locator": "B1-B2 地址网络下方文字：A0=0 A1=0 A2=0 add=0x58"}]
+    },
+    {
+      "id": "gpio.address-strap-topology",
+      "category": "gpio",
+      "subject": "A0/A1/A2 地址配置",
+      "statement": "A0、A1、A2 各通过 R3、R4、R5 10K 下拉至 GND，并可分别通过 JP1、JP2、JP3 接至 +3.3V；默认 JP1 为 0R，JP2/JP3 为 NC。",
+      "confidence": "confirmed",
+      "attributes": {"A0": "R3 10K pulldown; JP1 0R to +3.3V", "A1": "R4 10K pulldown; JP2 NC to +3.3V", "A2": "R5 10K pulldown; JP3 NC to +3.3V"},
+      "evidence": [{"asset_sha256": "f33e0496d5916543dd88572b222243372eeaaa1a72d0cbff65a9a0f36fef3617", "page": 1, "locator": "B1-B2 区域三组并列 JP1/R3、JP2/R4、JP3/R5 地址配置网络"}]
+    },
+    {
+      "id": "power.boost-input-enable",
+      "category": "power",
+      "subject": "U2 输入与使能",
+      "statement": "U2.5 Vin 与 U2.4 EN 均直接连接 VCC_5V，U2.2 GND 接地；VCC_5V 来自 P2.2 5VOUT。",
+      "confidence": "confirmed",
+      "attributes": {"vin": "U2.5 VCC_5V", "enable": "U2.4 tied to VCC_5V", "ground": "U2.2 GND", "source": "P2.2 5VOUT"},
+      "evidence": [{"asset_sha256": "f33e0496d5916543dd88572b222243372eeaaa1a72d0cbff65a9a0f36fef3617", "page": 1, "locator": "C2-C4 区域 P2.2 VCC_5V 与 U2.5 Vin/U2.4 EN 同名网络，U2.2 接 GND"}]
+    },
+    {
+      "id": "power.boost-switching-stage",
+      "category": "power",
+      "subject": "TPS61040 升压级",
+      "statement": "VCC_5V 经 L1 10uH2520 到 U2.1 SW 节点，D3 1N5819WS 从 SW 节点连接 VCC_12V，C5 22uF/16V 跨接 VCC_12V 与 GND。",
+      "confidence": "confirmed",
+      "attributes": {"inductor": "L1 10uH2520", "switch_node": "U2.1 SW", "rectifier": "D3 1N5819WS", "output_rail": "VCC_12V", "output_capacitor": "C5 22uF/16V"},
+      "evidence": [{"asset_sha256": "f33e0496d5916543dd88572b222243372eeaaa1a72d0cbff65a9a0f36fef3617", "page": 1, "locator": "C2-C3 区域 VCC_5V-L1-U2.1/D3-VCC_12V-C5 升压路径"}]
+    },
+    {
+      "id": "power.boost-feedback",
+      "category": "power",
+      "subject": "U2 FB 网络",
+      "statement": "R1 1MΩ 从 VCC_12V 接到 U2.3 FB，R2 115K 从 FB 接至 GND，C4 22pF 与 R1 并联。",
+      "confidence": "confirmed",
+      "attributes": {"upper_resistor": "R1 1MΩ", "lower_resistor": "R2 115K", "feedforward_capacitor": "C4 22pF", "feedback_pin": "U2.3 FB", "regulated_net": "VCC_12V"},
+      "evidence": [{"asset_sha256": "f33e0496d5916543dd88572b222243372eeaaa1a72d0cbff65a9a0f36fef3617", "page": 1, "locator": "C3 区域 U2.3 FB 右侧 R1/R2/C4 与 VCC_12V/GND 连接"}]
+    },
+    {
+      "id": "power.input-filter-protection",
+      "category": "power",
+      "subject": "VCC_5V 输入",
+      "statement": "D4 TVS 5V、C7 100nF 与 C6 22uF/16V 均跨接 VCC_5V 和 GND，位于 U2 输入侧。",
+      "confidence": "confirmed",
+      "attributes": {"tvs": "D4 TVS 5V", "high_frequency_capacitor": "C7 100nF", "bulk_capacitor": "C6 22uF/16V", "protected_net": "VCC_5V"},
+      "evidence": [{"asset_sha256": "f33e0496d5916543dd88572b222243372eeaaa1a72d0cbff65a9a0f36fef3617", "page": 1, "locator": "C2 区域 U2 左侧 D4/C7/C6 的 VCC_5V-GND 并联网络"}]
+    },
+    {
+      "id": "power.gp8413-supply",
+      "category": "power",
+      "subject": "U1 VCC_12V 供电",
+      "statement": "U1.5 VCC 接 VCC_12V、U1.6 GND 接地，C9 100nF 跨接 VCC_12V 与 GND；U1.10 V5V 通过 C1 1uF 接地。",
+      "confidence": "confirmed",
+      "attributes": {"vcc": "U1.5 VCC_12V", "ground": "U1.6 GND", "vcc_decoupling": "C9 100nF", "v5v_capacitor": "U1.10 V5V via C1 1uF to GND"},
+      "evidence": [{"asset_sha256": "f33e0496d5916543dd88572b222243372eeaaa1a72d0cbff65a9a0f36fef3617", "page": 1, "locator": "B2-B3 区域 U1.5/U1.6/U1.10 与 C9/C1 的供电连接"}]
+    },
+    {
+      "id": "analog.dual-output-routing",
+      "category": "analog",
+      "subject": "VOUT0/VOUT1",
+      "statement": "U1.8 VOUT0 连接 P1.1，U1.7 VOUT1 连接 P1.3；P1.2 与 P1.4 均为 GND 返回端。",
+      "confidence": "confirmed",
+      "attributes": {"channel_0": "U1.8 VOUT0 to P1.1", "channel_0_ground": "P1.2 GND", "channel_1": "U1.7 VOUT1 to P1.3", "channel_1_ground": "P1.4 GND"},
+      "evidence": [{"asset_sha256": "f33e0496d5916543dd88572b222243372eeaaa1a72d0cbff65a9a0f36fef3617", "page": 1, "locator": "B3-B4 区域 U1.7/U1.8 至 P1.1/P1.3 的 VOUT1/VOUT0 同名网络及 P1 地线"}]
+    },
+    {
+      "id": "protection.output-tvs-filter",
+      "category": "protection",
+      "subject": "双路模拟输出保护",
+      "statement": "VOUT1 通过 C2 100nF 和 D1 TVS 12V 对地，VOUT0 通过 C3 100nF 和 D2 TVS 12V 对地。",
+      "confidence": "confirmed",
+      "attributes": {"VOUT1_capacitor": "C2 100nF", "VOUT1_tvs": "D1 TVS 12V", "VOUT0_capacitor": "C3 100nF", "VOUT0_tvs": "D2 TVS 12V"},
+      "evidence": [{"asset_sha256": "f33e0496d5916543dd88572b222243372eeaaa1a72d0cbff65a9a0f36fef3617", "page": 1, "locator": "B3 区域 U1 输出右侧两组 C2/D1 与 C3/D2 对地支路"}]
+    },
+    {
+      "id": "analog.output-range-0-10v",
+      "category": "analog",
+      "subject": "VOUT0/VOUT1 输出范围",
+      "statement": "产品正文声明两路输出支持 0~10V，但原理图仅显示 VCC_12V 供电、GP8413 型号和输出网络，未直接标注 0~10V 量程或转换比例。",
+      "confidence": "uncertain",
+      "attributes": {"documented_range": "0~10V", "supply_rail": "VCC_12V", "schematic_range_label": "not shown", "conversion_scale": "not shown"},
+      "evidence": [{"asset_sha256": "f33e0496d5916543dd88572b222243372eeaaa1a72d0cbff65a9a0f36fef3617", "page": 1, "locator": "B2-B4 区域 U1 GP8413、VCC_12V 与 VOUT0/VOUT1 路径，未见 0~10V 标注"}]
+    },
+    {
+      "id": "protection.short-circuit-claim",
+      "category": "protection",
+      "subject": "模拟输出短路保护",
+      "statement": "产品正文声明支持输出短路保护；原理图显示 GP8413 与输出 TVS/电容，但没有独立的短路检测、限流或关断器件，无法仅由该页确认保护行为。",
+      "confidence": "uncertain",
+      "attributes": {"documented_feature": "output short-circuit protection", "dedicated_detector": "not shown", "dedicated_current_limiter": "not shown", "output_tvs": "D1/D2 TVS 12V"},
+      "evidence": [{"asset_sha256": "f33e0496d5916543dd88572b222243372eeaaa1a72d0cbff65a9a0f36fef3617", "page": 1, "locator": "B3-B4 区域 U1 VOUT0/VOUT1 至 P1 的完整输出路径，仅见 C2/C3 与 D1/D2"}]
+    },
+    {
+      "id": "clock-reset.external-circuits-absent",
+      "category": "clock",
+      "subject": "U1 时钟与复位",
+      "statement": "该页 U1 GP8413 周边未显示外部晶振、时钟输入、复位网络、BOOT 或调试接口。",
+      "confidence": "confirmed",
+      "attributes": {"external_clock": "not shown", "reset_network": "not shown", "boot_network": "not shown", "debug_connector": "not shown"},
+      "evidence": [{"asset_sha256": "f33e0496d5916543dd88572b222243372eeaaa1a72d0cbff65a9a0f36fef3617", "page": 1, "locator": "全页 U1 十脚符号及周边地址、I2C、供电和输出电路，无时钟/复位/BOOT/调试器件"}]
+    }
+  ],
+  "needs_review": [
+    {
+      "id": "review.output-range-0-10v",
+      "fact_id": "analog.output-range-0-10v",
+      "question": "VOUT0/VOUT1 的 0~10V 输出范围应由哪一版 GP8413 数据手册与寄存器配置确认？",
+      "reason": "原理图可确认 GP8413 使用 VCC_12V 并引出两路输出，但没有标注输出范围或数字码到电压的换算关系。",
+      "evidence": [{"asset_sha256": "f33e0496d5916543dd88572b222243372eeaaa1a72d0cbff65a9a0f36fef3617", "page": 1, "locator": "B2-B4 区域 U1、VCC_12V、VOUT0/VOUT1 与 P1 输出链路"}]
+    },
+    {
+      "id": "review.short-circuit-protection",
+      "fact_id": "protection.short-circuit-claim",
+      "question": "输出短路保护是否为 GP8413 内部功能，其触发和恢复条件是什么？",
+      "reason": "本页输出路径没有独立短路检测或限流器件，无法从原理图确认产品正文声明的保护机制。",
+      "evidence": [{"asset_sha256": "f33e0496d5916543dd88572b222243372eeaaa1a72d0cbff65a9a0f36fef3617", "page": 1, "locator": "B3-B4 区域 U1.7/U1.8 至 P1 的输出路径，仅显示 C2/C3、D1/D2"}]
+    }
+  ]
+}

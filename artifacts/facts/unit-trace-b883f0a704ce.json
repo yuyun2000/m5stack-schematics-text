@@ -1,0 +1,167 @@
+{
+  "schema_version": 1,
+  "generator": "schematic_describer",
+  "product": {
+    "product_id": "unit-trace-b883f0a704ce",
+    "product_name": "Unit Trace",
+    "sku": "A048",
+    "source_path": "unit/trace.md",
+    "source_sha256": "dcdde54703c0c02f9a6874e8595cb9655e3cf7436f4151511b767acd4dcad015",
+    "input_sha256": "d0118e3ed516100abce9990518b0a4a2ef8b3c728394afda55586313ded96a85"
+  },
+  "schematic_assets": [
+    {
+      "sha256": "02d7a98e11c9d0aa86d64aa0b78458e406866569927f7fbe7d653b1dc0bb3535",
+      "source_url": "https://static-cdn.m5stack.com/resource/docs/products/unit/trace/trace_sch_01.webp",
+      "pages": [1]
+    }
+  ],
+  "summary": "Unit Trace 的本地资源是一张高层信号映射图：四个 SensorArray[0-3] 的 ADIN0-3 分别进入 ATMEGA328 PC0-PC3，四个 LED1-4 分别连接 PD2-PD5。右侧 ESP32 图块表示主机接口，标出 G22/IIC_SCL、G21/IIC_SDA、VCC 与 GND。图中同时把 I2C 连到 ATMEGA328 PD4/PD5，与 LED3/LED4 的 PD4/PD5 重复，实际引脚、0x5A 地址和器件级电路需要复核。",
+  "keywords": [
+    "Unit Trace", "A048", "ATMEGA328", "MEGA328", "SensorArray[0]", "SensorArray[1]", "SensorArray[2]", "SensorArray[3]", "ADIN0", "ADIN1", "ADIN2", "ADIN3", "PC0", "PC1", "PC2", "PC3", "PD2", "PD3", "PD4", "PD5", "LED1", "LED2", "LED3", "LED4", "IIC_SCL", "IIC_SDA", "G22", "G21", "0x5A", "PORT.A", "VCC", "GND", "line tracking", "infrared sensor array"
+  ],
+  "components": [
+    {
+      "reference": "MCU block",
+      "part_number": "ATMEGA328",
+      "role": "采集四路 ADIN 信号、驱动四路 LED，并与外部主机交换 I2C 信号的板载控制器",
+      "evidence": [{"asset_sha256": "02d7a98e11c9d0aa86d64aa0b78458e406866569927f7fbe7d653b1dc0bb3535", "page": 1, "locator": "页面中央 ATMEGA328 方框，左侧 PC0-PC3，右侧 PD2-PD5 与上方 I2C 连线"}]
+    },
+    {
+      "reference": "SensorArray[0-3]",
+      "part_number": null,
+      "role": "四路地面反射传感阵列块，输出 ADIN0-ADIN3",
+      "evidence": [{"asset_sha256": "02d7a98e11c9d0aa86d64aa0b78458e406866569927f7fbe7d653b1dc0bb3535", "page": 1, "locator": "页面左侧四个 SensorArray[0]/[1]/[2]/[3] 方框与 ADIN0-ADIN3"}]
+    },
+    {
+      "reference": "LED1-LED4",
+      "part_number": null,
+      "role": "由 ATMEGA328 PD2-PD5 分别驱动的四个 LED 图块",
+      "evidence": [{"asset_sha256": "02d7a98e11c9d0aa86d64aa0b78458e406866569927f7fbe7d653b1dc0bb3535", "page": 1, "locator": "页面右下 LED1/LED2/LED3/LED4 图标与 ATMEGA328 PD2/PD3/PD4/PD5 连线"}]
+    },
+    {
+      "reference": "Host block",
+      "part_number": "ESP32",
+      "role": "外部主机端接口表示，接收 IIC_SCL/IIC_SDA 并提供 VCC/GND",
+      "evidence": [{"asset_sha256": "02d7a98e11c9d0aa86d64aa0b78458e406866569927f7fbe7d653b1dc0bb3535", "page": 1, "locator": "页面右上红色 ESP32 图块，G22/IIC_SCL、G21/IIC_SDA、VCC、GND"}]
+    }
+  ],
+  "facts": [
+    {
+      "id": "system.trace-block-architecture",
+      "category": "system",
+      "subject": "Unit Trace",
+      "statement": "图示系统由四个 SensorArray 输入、一个 ATMEGA328 控制块、四个 LED 输出和一个 ESP32 主机接口块组成；页面未展开电阻、电容、传感器型号、电源转换、晶振、复位或保护器件。",
+      "confidence": "confirmed",
+      "attributes": {"controller": "ATMEGA328", "sensor_channels": 4, "sensor_blocks": "SensorArray[0-3]", "led_channels": 4, "host_block": "ESP32", "schematic_level": "block/net mapping", "passives_shown": false, "clock_shown": false, "reset_shown": false, "protection_shown": false},
+      "evidence": [{"asset_sha256": "02d7a98e11c9d0aa86d64aa0b78458e406866569927f7fbe7d653b1dc0bb3535", "page": 1, "locator": "整页仅含 SensorArray、ATMEGA328、ESP32 和 LED 图块及网络线"}]
+    },
+    {
+      "id": "analog.sensor-array-0-1",
+      "category": "analog",
+      "subject": "SensorArray[0]/[1]",
+      "statement": "SensorArray[0] 输出 ADIN0 并连接 ATMEGA328 PC0；SensorArray[1] 输出 ADIN1 并连接 PC1。",
+      "confidence": "confirmed",
+      "attributes": {"channel_0": "SensorArray[0] ADIN0 -> ATMEGA328 PC0", "channel_1": "SensorArray[1] ADIN1 -> ATMEGA328 PC1", "direction": "sensor to MCU analog input"},
+      "evidence": [{"asset_sha256": "02d7a98e11c9d0aa86d64aa0b78458e406866569927f7fbe7d653b1dc0bb3535", "page": 1, "locator": "页面左上 SensorArray[0]/[1] 的 ADIN0/ADIN1 到中央 PC0/PC1 连线"}]
+    },
+    {
+      "id": "analog.sensor-array-2-3",
+      "category": "analog",
+      "subject": "SensorArray[2]/[3]",
+      "statement": "SensorArray[2] 输出 ADIN2 并连接 ATMEGA328 PC2；SensorArray[3] 输出 ADIN3 并连接 PC3。",
+      "confidence": "confirmed",
+      "attributes": {"channel_2": "SensorArray[2] ADIN2 -> ATMEGA328 PC2", "channel_3": "SensorArray[3] ADIN3 -> ATMEGA328 PC3", "direction": "sensor to MCU analog input"},
+      "evidence": [{"asset_sha256": "02d7a98e11c9d0aa86d64aa0b78458e406866569927f7fbe7d653b1dc0bb3535", "page": 1, "locator": "页面左下 SensorArray[2]/[3] 的 ADIN2/ADIN3 到中央 PC2/PC3 连线"}]
+    },
+    {
+      "id": "gpio.led-output-map",
+      "category": "gpio",
+      "subject": "LED1-LED4",
+      "statement": "图中 ATMEGA328 PD2 连接 LED1，PD3 连接 LED2，PD4 连接 LED3，PD5 连接 LED4。",
+      "confidence": "confirmed",
+      "attributes": {"PD2": "LED1", "PD3": "LED2", "PD4": "LED3", "PD5": "LED4", "direction": "MCU to LED blocks"},
+      "evidence": [{"asset_sha256": "02d7a98e11c9d0aa86d64aa0b78458e406866569927f7fbe7d653b1dc0bb3535", "page": 1, "locator": "页面中央右侧 PD2-PD5 四条线分别到右下 LED1-LED4"}]
+    },
+    {
+      "id": "bus.host-i2c-visible-map",
+      "category": "bus",
+      "subject": "ATMEGA328 到 ESP32 I2C",
+      "statement": "页面把 ATMEGA328 上方 PD4 连到 ESP32 G22/IIC_SCL，把上方 PD5 连到 ESP32 G21/IIC_SDA；两线构成图示主机通信路径。",
+      "confidence": "confirmed",
+      "attributes": {"controller": "ATMEGA328 block", "host": "ESP32 block", "SCL": "ATMEGA328 PD4 -> ESP32 G22 IIC_SCL", "SDA": "ATMEGA328 PD5 -> ESP32 G21 IIC_SDA", "direction": "bidirectional bus as drawn"},
+      "evidence": [{"asset_sha256": "02d7a98e11c9d0aa86d64aa0b78458e406866569927f7fbe7d653b1dc0bb3535", "page": 1, "locator": "页面中央上方 PD4/PD5 到右上 G22/IIC_SCL、G21/IIC_SDA 连线"}]
+    },
+    {
+      "id": "interface.host-power-bus",
+      "category": "interface",
+      "subject": "ESP32 主机接口块",
+      "statement": "主机接口块明确标注 G22/IIC_SCL、G21/IIC_SDA、VCC 和 GND，VCC/GND 作为该图唯一可见电源端。",
+      "confidence": "confirmed",
+      "attributes": {"signal_1": "G22 IIC_SCL", "signal_2": "G21 IIC_SDA", "power": "VCC", "ground": "GND", "connector_reference": null},
+      "evidence": [{"asset_sha256": "02d7a98e11c9d0aa86d64aa0b78458e406866569927f7fbe7d653b1dc0bb3535", "page": 1, "locator": "页面右上 ESP32 图块左侧四条 G22/G21/VCC/GND 连接"}]
+    },
+    {
+      "id": "gpio.pd4-pd5-duplicate-map",
+      "category": "gpio",
+      "subject": "PD4/PD5 重复占用",
+      "statement": "同一页面将 PD4/PD5 同时画为 IIC_SCL/IIC_SDA 主机通信线和 LED3/LED4 输出，映射存在自相冲突，无法确定实际 ATMEGA328 固件/PCB 使用的 I2C 与 LED 引脚。",
+      "confidence": "uncertain",
+      "attributes": {"PD4_use_1": "IIC_SCL to ESP32 G22", "PD4_use_2": "LED3", "PD5_use_1": "IIC_SDA to ESP32 G21", "PD5_use_2": "LED4", "confirmed_actual_map": null},
+      "evidence": [{"asset_sha256": "02d7a98e11c9d0aa86d64aa0b78458e406866569927f7fbe7d653b1dc0bb3535", "page": 1, "locator": "页面中央 ATMEGA328 右侧，上方 PD4/PD5 接 I2C、下方 PD4/PD5 接 LED3/LED4"}]
+    },
+    {
+      "id": "address.documented-i2c-address",
+      "category": "address",
+      "subject": "Unit Trace I2C 地址",
+      "statement": "正文给出 I2C 地址 0x5A，但本地映射图没有地址值、地址选择电阻或固件常量，因此 0x5A 不能作为原理图确认事实。",
+      "confidence": "uncertain",
+      "attributes": {"documented_address": "0x5A", "schematic_address_label": null, "address_select": null, "firmware_defined": true},
+      "evidence": [{"asset_sha256": "02d7a98e11c9d0aa86d64aa0b78458e406866569927f7fbe7d653b1dc0bb3535", "page": 1, "locator": "整页 IIC_SCL/IIC_SDA 连线，无 0x5A 或地址绑带"}]
+    },
+    {
+      "id": "sensor.sensor-array-implementation",
+      "category": "sensor",
+      "subject": "四路红外传感器与 11mm 范围",
+      "statement": "正文称有四组红外发光 LED/光电晶体管且反射面距离小于 11mm；页面只以 SensorArray[0-3] 方框表示，没有发射/接收器型号、阻值、光学布局、阈值或距离参数。",
+      "confidence": "uncertain",
+      "attributes": {"documented_channels": 4, "documented_emitter": "infrared LED", "documented_receiver": "phototransistor", "documented_range": "less than 11mm", "schematic_part_numbers": null, "thresholds": null, "optical_geometry": null},
+      "evidence": [{"asset_sha256": "02d7a98e11c9d0aa86d64aa0b78458e406866569927f7fbe7d653b1dc0bb3535", "page": 1, "locator": "页面左侧 SensorArray[0-3] 仅为方框，无内部器件或距离标注"}]
+    },
+    {
+      "id": "component.led-physical-role",
+      "category": "component",
+      "subject": "LED1-LED4 物理器件角色",
+      "statement": "图中 LED1-LED4 用黄色通用 LED 图标表示并连接 PD2-PD5，但没有型号、波长、颜色、限流电阻或说明其是红外发射灯还是状态灯，物理角色需复核。",
+      "confidence": "uncertain",
+      "attributes": {"references": "LED1-LED4", "schematic_color": "yellow graphic", "part_number": null, "wavelength": null, "current_limit": null, "confirmed_role": null},
+      "evidence": [{"asset_sha256": "02d7a98e11c9d0aa86d64aa0b78458e406866569927f7fbe7d653b1dc0bb3535", "page": 1, "locator": "页面右下 LED1-LED4 通用图标，无器件参数"}]
+    },
+    {
+      "id": "debug.documented-isp",
+      "category": "debug",
+      "subject": "Mega328 ISP 下载接口",
+      "statement": "正文另行提到 Mega328 ISP 下载接口，但当前资源页面没有 ISP 连接器、MOSI/MISO/SCK/RESET/VCC/GND 网络或针脚定义，无法由本地图复核。",
+      "confidence": "uncertain",
+      "attributes": {"documented_interface": "Mega328 ISP", "connector_reference": null, "MOSI": null, "MISO": null, "SCK": null, "RESET": null, "pinout_on_schematic": false},
+      "evidence": [{"asset_sha256": "02d7a98e11c9d0aa86d64aa0b78458e406866569927f7fbe7d653b1dc0bb3535", "page": 1, "locator": "整页仅有 SensorArray/ATMEGA328/ESP32/LED 映射，无 ISP 图块"}]
+    },
+    {
+      "id": "power.vcc-voltage-and-colors",
+      "category": "power",
+      "subject": "VCC 电压与 Grove 线色",
+      "statement": "正文 Grove 表写 5V 及 Black/Red/Yellow/White 线色，但页面只标 VCC/GND/G22/G21，没有电压数值、连接器针号或线色，无法仅凭本地图确认 5V 与线缆对应。",
+      "confidence": "uncertain",
+      "attributes": {"schematic_power": "VCC", "schematic_voltage": null, "documented_voltage": "5V", "schematic_signals": "G22 IIC_SCL,G21 IIC_SDA", "color_labels": null, "documented_colors": "Black,Red,Yellow,White"},
+      "evidence": [{"asset_sha256": "02d7a98e11c9d0aa86d64aa0b78458e406866569927f7fbe7d653b1dc0bb3535", "page": 1, "locator": "页面右上主机块仅标 G22/G21/VCC/GND"}]
+    }
+  ],
+  "needs_review": [
+    {"id": "review.pd4-pd5-conflict", "fact_id": "gpio.pd4-pd5-duplicate-map", "question": "请用 PCB 网表、ATMEGA328 固件或正式电路图确认 I2C 与 LED1-4 的实际引脚，特别是 PD4/PD5 重复占用。", "reason": "当前页面同一引脚被画到两个不同功能。", "evidence": [{"asset_sha256": "02d7a98e11c9d0aa86d64aa0b78458e406866569927f7fbe7d653b1dc0bb3535", "page": 1, "locator": "ATMEGA328 右侧两组 PD4/PD5 连线"}]},
+    {"id": "review.i2c-address", "fact_id": "address.documented-i2c-address", "question": "请用 MEGA328 内置固件确认 Unit Trace 的 I2C 地址是否固定为 0x5A。", "reason": "地址由固件定义且未打印在图中。", "evidence": [{"asset_sha256": "02d7a98e11c9d0aa86d64aa0b78458e406866569927f7fbe7d653b1dc0bb3535", "page": 1, "locator": "I2C 连线无地址值"}]},
+    {"id": "review.sensor-array", "fact_id": "sensor.sensor-array-implementation", "question": "请提供器件级原理图/BOM/光学设计，确认四路红外发射接收器、阈值、阻值与小于 11mm 工作范围。", "reason": "当前页面只显示 SensorArray 方框。", "evidence": [{"asset_sha256": "02d7a98e11c9d0aa86d64aa0b78458e406866569927f7fbe7d653b1dc0bb3535", "page": 1, "locator": "SensorArray[0-3] 方框"}]},
+    {"id": "review.led-role", "fact_id": "component.led-physical-role", "question": "请用 BOM 或实板确认 LED1-LED4 的型号、波长、限流与其是否为红外发射灯。", "reason": "图中只有通用 LED 图标。", "evidence": [{"asset_sha256": "02d7a98e11c9d0aa86d64aa0b78458e406866569927f7fbe7d653b1dc0bb3535", "page": 1, "locator": "LED1-LED4 图标"}]},
+    {"id": "review.isp", "fact_id": "debug.documented-isp", "question": "请提供当前硬件版本的 ISP 连接器位号与完整 pinout。", "reason": "本地资源页没有 ISP 电路。", "evidence": [{"asset_sha256": "02d7a98e11c9d0aa86d64aa0b78458e406866569927f7fbe7d653b1dc0bb3535", "page": 1, "locator": "整页无 ISP 图块"}]},
+    {"id": "review.vcc-colors", "fact_id": "power.vcc-voltage-and-colors", "question": "请用连接器/线缆规范确认 VCC 是否为 5V，以及 Black/Red/Yellow/White 与 GND/VCC/SDA/SCL 的对应。", "reason": "页面无电压数值、针号和线色。", "evidence": [{"asset_sha256": "02d7a98e11c9d0aa86d64aa0b78458e406866569927f7fbe7d653b1dc0bb3535", "page": 1, "locator": "ESP32 主机块 G22/G21/VCC/GND"}]}
+  ]
+}

@@ -1,0 +1,556 @@
+{
+  "schema_version": 1,
+  "generator": "schematic_describer",
+  "product": {
+    "product_id": "station-485-a0c0e6720492",
+    "product_name": "Station-485",
+    "sku": "K123",
+    "source_path": "core/station_485.md",
+    "source_sha256": "ad65a054b6b06342501d1cc86f2b7a58ebcd4c728265adfdd14f6a7f6958778e",
+    "input_sha256": "5dcc278a3d41ce19e0ec39e6978764d942eb1f17461273aa40da14aa5f02b84c"
+  },
+  "schematic_assets": [
+    {
+      "sha256": "9abe5c6bdfb6898cc836353d20cf9f6283c3f27c2e0068ce6d19f3823210a743",
+      "source_url": "https://m5stack-doc.oss-cn-shenzhen.aliyuncs.com/521/Sch_M5Station_v1.3_sch_01.png",
+      "pages": [1]
+    },
+    {
+      "sha256": "cc25a3bc6d25ed4e4f29d4a1ef657523923c972e5e4182afa3076152ab6f365e",
+      "source_url": "https://m5stack-doc.oss-cn-shenzhen.aliyuncs.com/521/Sch_M5Station_v1.3_sch_02.png",
+      "pages": [1]
+    },
+    {
+      "sha256": "5b1d9bbc2949194dc3d09127d66ad87203165cf372825fffdf48129ebd0d46fc",
+      "source_url": "https://m5stack-doc.oss-cn-shenzhen.aliyuncs.com/521/Sch_M5Station_v1.3_sch_03.png",
+      "pages": [1]
+    }
+  ],
+  "summary": "Station-485 以 U3 ESP32-D0WDQ6 为主控，配套 W25Q128、CH9102F、MPU-6886、BM8563、SPI TFT、7 颗 SK6812 和三枚用户按键。AXP192 管理 USB/电池输入及主控、RTC、背光电源，SCT12A0DHKR 提供电池升压，SY8303 将 PWR485 输入降压到 5 V。六路 Grove/USB-A 负载由 SGM2553D 分路，INA3221 0x40/0x41 和 INA199 采样；SP3485 提供带保护的 RS-485。",
+  "keywords": [
+    "Station-485",
+    "K123",
+    "ESP32-D0WDQ6",
+    "W25Q128JVPIQ",
+    "CH9102F",
+    "MPU-6886",
+    "BM8563",
+    "AXP192",
+    "SP3485",
+    "SY8303",
+    "SCT12A0DHKR",
+    "INA3221",
+    "INA199A1DCKR",
+    "SGM2553DYTD16G/TR",
+    "0x40",
+    "0x41",
+    "RS485",
+    "PWR485",
+    "USB Type-C",
+    "USB-A power output",
+    "HY2.0-4P",
+    "SK6812_3535",
+    "GPIO37",
+    "GPIO38",
+    "GPIO39",
+    "GPIO21",
+    "GPIO22",
+    "GPIO2",
+    "GPIO1",
+    "GPIO3",
+    "BUS_P050",
+    "USB_P050",
+    "SYS_BAT",
+    "MCU_VDD",
+    "LCD_BL",
+    "RTC_VDD",
+    "32.768K"
+  ],
+  "components": [
+    {
+      "reference": "UE1",
+      "part_number": "SP3485",
+      "role": "GPIO1/GPIO3/GPIO2 控制的半双工 RS-485 收发器",
+      "evidence": [{"asset_sha256": "9abe5c6bdfb6898cc836353d20cf9f6283c3f27c2e0068ce6d19f3823210a743", "page": 1, "locator": "A2，UE1 RS-485 收发器，GPIO3/GPIO1/GPIO2 与 RS_A/RS_B"}]
+    },
+    {
+      "reference": "JE1/JE2",
+      "part_number": "HT3.96_4P / 1.25MM_4P_立贴",
+      "role": "外部和内部 PWR485 连接器，提供 RS_A、RS_B、VIN_12V 与 GND",
+      "evidence": [{"asset_sha256": "9abe5c6bdfb6898cc836353d20cf9f6283c3f27c2e0068ce6d19f3823210a743", "page": 1, "locator": "A1-B1，JE1/JE2 PWR485 连接器"}]
+    },
+    {
+      "reference": "UE2",
+      "part_number": "SY8303",
+      "role": "VIN_12V 到 USB_P050 的降压转换器",
+      "evidence": [{"asset_sha256": "9abe5c6bdfb6898cc836353d20cf9f6283c3f27c2e0068ce6d19f3823210a743", "page": 1, "locator": "B1-B2，UE2 SY8303、L4 10UH、VIN_12V/USB_P050"}]
+    },
+    {
+      "reference": "U3",
+      "part_number": "ESP32-D0WDQ6",
+      "role": "系统主控，连接显示、USB-UART、I2C、RS-485、按键、RGB 和 Grove GPIO",
+      "evidence": [{"asset_sha256": "cc25a3bc6d25ed4e4f29d4a1ef657523923c972e5e4182afa3076152ab6f365e", "page": 1, "locator": "A3-C4，U3 ESP32-D0WDQ6 全部 GPIO 网络"}]
+    },
+    {
+      "reference": "U4",
+      "part_number": "W25Q128JVPIQ",
+      "role": "ESP32 外部 SPI Flash",
+      "evidence": [{"asset_sha256": "cc25a3bc6d25ed4e4f29d4a1ef657523923c972e5e4182afa3076152ab6f365e", "page": 1, "locator": "C3-D3，U4 W25Q128JVPIQ、GPIO6/7/8/9/10/11"}]
+    },
+    {
+      "reference": "U1",
+      "part_number": "CH9102F",
+      "role": "USB 转 UART 下载桥接器，带 DTR/RTS 自动下载控制",
+      "evidence": [{"asset_sha256": "cc25a3bc6d25ed4e4f29d4a1ef657523923c972e5e4182afa3076152ab6f365e", "page": 1, "locator": "A2-B3，U1 CH9102F、SER_DP/DM、GPIO1/GPIO3、DTR/RTS"}]
+    },
+    {
+      "reference": "J1",
+      "part_number": "TYPEC",
+      "role": "USB 供电与 CH9102F 数据接口",
+      "evidence": [{"asset_sha256": "cc25a3bc6d25ed4e4f29d4a1ef657523923c972e5e4182afa3076152ab6f365e", "page": 1, "locator": "A1，J1 TYPEC、USB_P050、SER_DP/SER_DM、FU1"}]
+    },
+    {
+      "reference": "ANT1/ANT2",
+      "part_number": "五金3D天线 / KH-IPEX-K501-29",
+      "role": "板载与 IPEX 可选射频天线路径",
+      "evidence": [{"asset_sha256": "cc25a3bc6d25ed4e4f29d4a1ef657523923c972e5e4182afa3076152ab6f365e", "page": 1, "locator": "A3-A4，ANT1 五金3D天线、ANT2 KH-IPEX-K501-29、R12 DNP/R53 0R"}]
+    },
+    {
+      "reference": "X1",
+      "part_number": "X2520M4B40S",
+      "role": "ESP32 40 MHz 主晶体",
+      "evidence": [{"asset_sha256": "cc25a3bc6d25ed4e4f29d4a1ef657523923c972e5e4182afa3076152ab6f365e", "page": 1, "locator": "B3-C4，X1 X2520M4B40S、XTAL_P/XTAL_N"}]
+    },
+    {
+      "reference": "U2",
+      "part_number": "MPU-6886",
+      "role": "系统 I2C 惯性传感器",
+      "evidence": [{"asset_sha256": "cc25a3bc6d25ed4e4f29d4a1ef657523923c972e5e4182afa3076152ab6f365e", "page": 1, "locator": "C2-C3，U2 MPU-6886、GPIO21/GPIO22/GPIO27"}]
+    },
+    {
+      "reference": "LED1-LED7",
+      "part_number": "SK6812_3535",
+      "role": "GPIO4 驱动的七颗串联可寻址 RGB LED",
+      "evidence": [{"asset_sha256": "cc25a3bc6d25ed4e4f29d4a1ef657523923c972e5e4182afa3076152ab6f365e", "page": 1, "locator": "C1-D3，LED1-LED7 SK6812_3535 串联链"}]
+    },
+    {
+      "reference": "S1/S2/S3/S4",
+      "part_number": "SW",
+      "role": "GPIO37/GPIO38/GPIO39 三枚用户按键与 PWR_KEY 电源按键",
+      "evidence": [{"asset_sha256": "cc25a3bc6d25ed4e4f29d4a1ef657523923c972e5e4182afa3076152ab6f365e", "page": 1, "locator": "C1，S1 GPIO37、S2 GPIO38、S3 GPIO39、S4 PWR_KEY"}]
+    },
+    {
+      "reference": "J2",
+      "part_number": "FPC_8P后翻",
+      "role": "SPI TFT 显示与背光连接器",
+      "evidence": [{"asset_sha256": "cc25a3bc6d25ed4e4f29d4a1ef657523923c972e5e4182afa3076152ab6f365e", "page": 1, "locator": "C4-D4，J2 FPC_8P，SCK/MOSI/RS/CS/RESET/LEDA/VDD"}]
+    },
+    {
+      "reference": "U7",
+      "part_number": "AXP192",
+      "role": "USB/电池输入、电池充电、系统电源、RTC 与 LCD 背光管理 PMIC",
+      "evidence": [{"asset_sha256": "5b1d9bbc2949194dc3d09127d66ad87203165cf372825fffdf48129ebd0d46fc", "page": 1, "locator": "A2-C2，U7 AXP192 全部电源、I2C 与 GPIO 网络"}]
+    },
+    {
+      "reference": "U5",
+      "part_number": "BM8563",
+      "role": "低功耗 I2C RTC，INT 参与电源唤醒",
+      "evidence": [{"asset_sha256": "5b1d9bbc2949194dc3d09127d66ad87203165cf372825fffdf48129ebd0d46fc", "page": 1, "locator": "C1-D1，U5 BM8563、GPIO21/GPIO22、PWR_KEY、RTC_VDD"}]
+    },
+    {
+      "reference": "X2",
+      "part_number": "32.768K",
+      "role": "BM8563 RTC 晶体",
+      "evidence": [{"asset_sha256": "5b1d9bbc2949194dc3d09127d66ad87203165cf372825fffdf48129ebd0d46fc", "page": 1, "locator": "D1，X2 32.768K、C28/C29 6PF"}]
+    },
+    {
+      "reference": "U6",
+      "part_number": "SCT12A0DHKR",
+      "role": "SYS_BAT 到 BUS_P050 的升压转换器",
+      "evidence": [{"asset_sha256": "5b1d9bbc2949194dc3d09127d66ad87203165cf372825fffdf48129ebd0d46fc", "page": 1, "locator": "C2-D3，U6 SCT12A0DHKR、L2、SYS_BAT/BUS_P050"}]
+    },
+    {
+      "reference": "U8/U16",
+      "part_number": "INA3221",
+      "role": "六路 Grove 分支电压电流监测器，地址 0x41 与 0x40",
+      "evidence": [{"asset_sha256": "5b1d9bbc2949194dc3d09127d66ad87203165cf372825fffdf48129ebd0d46fc", "page": 1, "locator": "A3-A4，U8 INA3221 0X41、U16 INA3221 0X40"}]
+    },
+    {
+      "reference": "U9/U11/U12/U13/U14/U10",
+      "part_number": "SGM2553DYTD16G/TR",
+      "role": "Port A、B1、B2、C1、C2 与 USB-A 六路独立负载开关",
+      "evidence": [{"asset_sha256": "5b1d9bbc2949194dc3d09127d66ad87203165cf372825fffdf48129ebd0d46fc", "page": 1, "locator": "A3-D4，六颗 SGM2553DYTD16G/TR 与 PS0-PS4/SP1-SP7"}]
+    },
+    {
+      "reference": "U15",
+      "part_number": "INA199A1DCKR",
+      "role": "USB-A 输出电流采样放大器",
+      "evidence": [{"asset_sha256": "5b1d9bbc2949194dc3d09127d66ad87203165cf372825fffdf48129ebd0d46fc", "page": 1, "locator": "D3-D4，U15 INA199A1DCKR、SP7/SN7/MCU_VDD"}]
+    },
+    {
+      "reference": "J4/J5/J6/J7/J8/J9",
+      "part_number": "GROVE",
+      "role": "Port A1/A2/B1/B2/C1/C2 六组 Grove 扩展接口",
+      "evidence": [{"asset_sha256": "5b1d9bbc2949194dc3d09127d66ad87203165cf372825fffdf48129ebd0d46fc", "page": 1, "locator": "A4-D4，J4-J9 Grove 接口及 GPIO/5V/GND"}]
+    },
+    {
+      "reference": "J3",
+      "part_number": "USB-A",
+      "role": "仅电源输出的 USB Type-A 连接器",
+      "evidence": [{"asset_sha256": "5b1d9bbc2949194dc3d09127d66ad87203165cf372825fffdf48129ebd0d46fc", "page": 1, "locator": "D4，J3 USB-A，VCC=SN7，DM/DP 未连接"}]
+    },
+    {
+      "reference": "JE3",
+      "part_number": "1.25MM_4P_立贴",
+      "role": "内部 SYS_BAT 电池连接器",
+      "evidence": [{"asset_sha256": "5b1d9bbc2949194dc3d09127d66ad87203165cf372825fffdf48129ebd0d46fc", "page": 1, "locator": "A1，JE3 1.25MM_4P_立贴、SYS_BAT/GND"}]
+    }
+  ],
+  "facts": [
+    {
+      "id": "system.architecture",
+      "category": "system",
+      "subject": "系统架构",
+      "statement": "ESP32-D0WDQ6 连接外部 Flash、CH9102F、MPU-6886、BM8563、SPI TFT、7 颗 RGB、按键和 RS-485；AXP192 与 SCT12A0DHKR 管理 USB/电池/端口电源。",
+      "confidence": "confirmed",
+      "attributes": {"controller": "U3 ESP32-D0WDQ6", "flash": "U4 W25Q128JVPIQ", "usb_uart": "U1 CH9102F", "imu": "U2 MPU-6886", "rtc": "U5 BM8563", "pmic": "U7 AXP192", "boost": "U6 SCT12A0DHKR", "rs485": "UE1 SP3485"},
+      "evidence": [
+        {"asset_sha256": "9abe5c6bdfb6898cc836353d20cf9f6283c3f27c2e0068ce6d19f3823210a743", "page": 1, "locator": "PWR485 与 SY8303 子板"},
+        {"asset_sha256": "cc25a3bc6d25ed4e4f29d4a1ef657523923c972e5e4182afa3076152ab6f365e", "page": 1, "locator": "ESP32、Flash、USB-UART、IMU、显示与人机接口"},
+        {"asset_sha256": "5b1d9bbc2949194dc3d09127d66ad87203165cf372825fffdf48129ebd0d46fc", "page": 1, "locator": "AXP192、RTC、升压与分路电源"}
+      ]
+    },
+    {
+      "id": "bus.system-i2c",
+      "category": "bus",
+      "subject": "系统 I2C",
+      "statement": "ESP32 GPIO22/SCL 与 GPIO21/SDA 连接 MPU-6886、AXP192、BM8563 和两颗 INA3221。",
+      "confidence": "confirmed",
+      "attributes": {"controller": "U3 ESP32-D0WDQ6", "scl": "GPIO22", "sda": "GPIO21", "devices": "U2 MPU-6886; U7 AXP192; U5 BM8563; U8/U16 INA3221"},
+      "evidence": [
+        {"asset_sha256": "cc25a3bc6d25ed4e4f29d4a1ef657523923c972e5e4182afa3076152ab6f365e", "page": 1, "locator": "U3/U2 GPIO21/GPIO22 与 I2C 上拉"},
+        {"asset_sha256": "5b1d9bbc2949194dc3d09127d66ad87203165cf372825fffdf48129ebd0d46fc", "page": 1, "locator": "U7/U5/U8/U16 SDA/SCK"}
+      ]
+    },
+    {
+      "id": "address.ina3221",
+      "category": "address",
+      "subject": "INA3221 地址",
+      "statement": "U16 INA3221 原理图标注地址 0x40，U8 INA3221 标注地址 0x41。",
+      "confidence": "confirmed",
+      "attributes": {"U16": "0x40", "U8": "0x41"},
+      "evidence": [{"asset_sha256": "5b1d9bbc2949194dc3d09127d66ad87203165cf372825fffdf48129ebd0d46fc", "page": 1, "locator": "A3-A4，U16 0X40、U8 0X41"}]
+    },
+    {
+      "id": "bus.rs485",
+      "category": "bus",
+      "subject": "PWR485 通信",
+      "statement": "SP3485 的 RO 通过 D1 连接 GPIO3，DI 连接 GPIO1，RE/DE 共用 GPIO2；A/B 连接 RS_A/RS_B。",
+      "confidence": "confirmed",
+      "attributes": {"transceiver": "UE1 SP3485", "rx": "GPIO3 via DE1 1N4148WS", "tx": "GPIO1", "direction": "GPIO2", "a": "RS_A", "b": "RS_B", "supply": "MCU_VDD"},
+      "evidence": [{"asset_sha256": "9abe5c6bdfb6898cc836353d20cf9f6283c3f27c2e0068ce6d19f3823210a743", "page": 1, "locator": "A2，UE1 RO/RE/DE/DI/A/B 网络"}]
+    },
+    {
+      "id": "interface.pwr485",
+      "category": "interface",
+      "subject": "PWR485 外部接口",
+      "statement": "JE1 HT3.96-4P pins 4/3/2/1 依次为 RS_B、RS_A、VIN_12V、GND；JE2 提供同组内部信号。",
+      "confidence": "confirmed",
+      "attributes": {"external": "JE1 HT3.96_4P", "pin4": "RS_B", "pin3": "RS_A", "pin2": "VIN_12V", "pin1": "GND", "internal": "JE2 1.25MM_4P_立贴"},
+      "evidence": [{"asset_sha256": "9abe5c6bdfb6898cc836353d20cf9f6283c3f27c2e0068ce6d19f3823210a743", "page": 1, "locator": "A1-B1，JE1/JE2"}]
+    },
+    {
+      "id": "protection.rs485",
+      "category": "protection",
+      "subject": "RS-485 保护与偏置",
+      "statement": "RS_A/RS_B 侧配置多颗 PESD05CLP 类 TVS，RE7 5.1 kΩ 上拉 RS_A，RE3 5.1 kΩ 下拉 RS_B；RE1 22 kΩ 下拉方向控制。",
+      "confidence": "confirmed",
+      "attributes": {"line_tvs": "multiple PESD05CLP devices", "a_bias": "RE7 5.1K to MCU_VDD", "b_bias": "RE3 5.1K to GND", "direction_pulldown": "RE1 22K"},
+      "evidence": [{"asset_sha256": "9abe5c6bdfb6898cc836353d20cf9f6283c3f27c2e0068ce6d19f3823210a743", "page": 1, "locator": "UE1 右侧 RS_A/RS_B TVS 与 RE7/RE3，RE1"}]
+    },
+    {
+      "id": "power.pwr485-buck",
+      "category": "power",
+      "subject": "PWR485 降压",
+      "statement": "VIN_12V 经 FE1 自恢复保险丝进入 UE2 SY8303，经 L4 10 µH 输出 USB_P050，并经 FE2 自恢复保险丝保护输出。",
+      "confidence": "confirmed",
+      "attributes": {"input": "VIN_12V", "input_fuse": "FE1 BSMD0805-050-24V", "converter": "UE2 SY8303", "inductor": "L4 10UH", "output_fuse": "FE2 BSMD0805-110-6V", "output": "USB_P050"},
+      "evidence": [{"asset_sha256": "9abe5c6bdfb6898cc836353d20cf9f6283c3f27c2e0068ce6d19f3823210a743", "page": 1, "locator": "B1-B2，FE1/UE2/L4/FE2"}]
+    },
+    {
+      "id": "interface.usb-c",
+      "category": "interface",
+      "subject": "USB Type-C",
+      "statement": "J1 TYPEC 的 VCC 经 FU1 接 USB_P050，CC1/CC2 各通过 5.1 kΩ 接地，DP/DM 连接 SER_DP/SER_DM。",
+      "confidence": "confirmed",
+      "attributes": {"reference": "J1", "power": "USB_P050 via FU1 BSMD0805-110-6V", "dp": "SER_DP", "dm": "SER_DM", "cc1": "5.1K to GND", "cc2": "5.1K to GND"},
+      "evidence": [{"asset_sha256": "cc25a3bc6d25ed4e4f29d4a1ef657523923c972e5e4182afa3076152ab6f365e", "page": 1, "locator": "A1，J1 TYPEC/FU1/R1/R2"}]
+    },
+    {
+      "id": "debug.usb-uart",
+      "category": "debug",
+      "subject": "USB-UART 下载",
+      "statement": "U1 CH9102F 将 SER_DP/DM 转换为 GPIO1 TX 与 GPIO3 RX，DTR/RTS 经双晶体管电路控制 MCU_RST 与 GPIO0。",
+      "confidence": "confirmed",
+      "attributes": {"reference": "U1", "part_number": "CH9102F", "usb": "SER_DP; SER_DM", "uart_tx_to_esp": "GPIO3", "uart_rx_from_esp": "GPIO1", "auto_program": "DTR/RTS -> MCU_RST/GPIO0"},
+      "evidence": [{"asset_sha256": "cc25a3bc6d25ed4e4f29d4a1ef657523923c972e5e4182afa3076152ab6f365e", "page": 1, "locator": "A2-B3，U1 CH9102F、D3、Q1/Q2、DTR/RTS"}]
+    },
+    {
+      "id": "storage.flash",
+      "category": "storage",
+      "subject": "外部 Flash",
+      "statement": "U4 W25Q128JVPIQ 通过 GPIO6/7/8/9/10/11 对应的 SPI 存储总线连接 ESP32。",
+      "confidence": "confirmed",
+      "attributes": {"reference": "U4", "part_number": "W25Q128JVPIQ", "cs": "GPIO11", "clock": "GPIO6", "data": "GPIO7; GPIO8; GPIO9; GPIO10"},
+      "evidence": [{"asset_sha256": "cc25a3bc6d25ed4e4f29d4a1ef657523923c972e5e4182afa3076152ab6f365e", "page": 1, "locator": "C3-D3，U4 W25Q128JVPIQ pins CS#/SCLK/SI/SO/WP#/HOLD#"}]
+    },
+    {
+      "id": "sensor.imu",
+      "category": "sensor",
+      "subject": "MPU-6886",
+      "statement": "U2 MPU-6886 由 MCU_VDD 供电，SCL/SDA 连接 GPIO22/GPIO21，INT 连接 GPIO27，AD0 接 MCU_VDD。",
+      "confidence": "confirmed",
+      "attributes": {"reference": "U2", "part_number": "MPU-6886", "scl": "GPIO22", "sda": "GPIO21", "interrupt": "GPIO27", "ad0": "MCU_VDD"},
+      "evidence": [{"asset_sha256": "cc25a3bc6d25ed4e4f29d4a1ef657523923c972e5e4182afa3076152ab6f365e", "page": 1, "locator": "C2-C3，U2 SCL/SDA/INT/AD0"}]
+    },
+    {
+      "id": "gpio.buttons",
+      "category": "gpio",
+      "subject": "物理按键",
+      "statement": "S1/S2/S3 按下时分别将 GPIO37/GPIO38/GPIO39 拉低，三路各由 5.1 kΩ 上拉到 MCU_VDD；S4 将 PWR_KEY 拉低。",
+      "confidence": "confirmed",
+      "attributes": {"S1": "GPIO37", "S2": "GPIO38", "S3": "GPIO39", "S4": "PWR_KEY", "active_level": "low"},
+      "evidence": [{"asset_sha256": "cc25a3bc6d25ed4e4f29d4a1ef657523923c972e5e4182afa3076152ab6f365e", "page": 1, "locator": "C1，R3/R4/R5、S1/S2/S3/S4"}]
+    },
+    {
+      "id": "gpio.rgb",
+      "category": "gpio",
+      "subject": "七颗 RGB LED",
+      "statement": "GPIO4 驱动 LED1，LED1 至 LED7 以 DOUT→DIN 串联，全部由 MCU_VDD 供电。",
+      "confidence": "confirmed",
+      "attributes": {"data_gpio": "GPIO4", "devices": "LED1-LED7 SK6812_3535", "count": 7, "supply": "MCU_VDD"},
+      "evidence": [{"asset_sha256": "cc25a3bc6d25ed4e4f29d4a1ef657523923c972e5e4182afa3076152ab6f365e", "page": 1, "locator": "C1-D3，GPIO4 与 LED1-LED7 串联链"}]
+    },
+    {
+      "id": "interface.tft",
+      "category": "interface",
+      "subject": "TFT 显示接口",
+      "statement": "J2 FPC pins 6/5/4/8/3/1 分别为 GPIO18 SCK、GPIO23 MOSI、GPIO19 RS、GPIO5 CS、GPIO15 RESET、LCD_BL LEDA；VDD 为 MCU_VDD。",
+      "confidence": "confirmed",
+      "attributes": {"reference": "J2", "sck": "GPIO18", "mosi": "GPIO23", "dc_rs": "GPIO19", "cs": "GPIO5", "reset": "GPIO15", "backlight": "LCD_BL", "vdd": "MCU_VDD"},
+      "evidence": [{"asset_sha256": "cc25a3bc6d25ed4e4f29d4a1ef657523923c972e5e4182afa3076152ab6f365e", "page": 1, "locator": "C4-D4，J2 FPC_8P pin labels"}]
+    },
+    {
+      "id": "rf.antenna-selection",
+      "category": "rf",
+      "subject": "射频天线选择",
+      "statement": "ESP32 LNA_IN 经 L1/C12/C13 匹配网络后，R53 0 Ω 路径连接 ANT1 五金3D天线；通往 ANT2 KH-IPEX-K501-29 的 R12 标为 DNP。",
+      "confidence": "confirmed",
+      "attributes": {"internal": "ANT1 五金3D天线 via R53 0R", "external": "ANT2 KH-IPEX-K501-29 via R12 DNP", "matching": "L1 2.2nH; C12 2.4pF; C13 2.0pF"},
+      "evidence": [{"asset_sha256": "cc25a3bc6d25ed4e4f29d4a1ef657523923c972e5e4182afa3076152ab6f365e", "page": 1, "locator": "A3-A4，L1/C12/C13/R53/R12/ANT1/ANT2"}]
+    },
+    {
+      "id": "clock.main",
+      "category": "clock",
+      "subject": "ESP32 主时钟",
+      "statement": "X1 标注 X2520M4B40S，连接 ESP32 XTAL_P/XTAL_N，串联 R13 51 Ω。",
+      "confidence": "confirmed",
+      "attributes": {"reference": "X1", "part_number": "X2520M4B40S", "nets": "XTAL_P; XTAL_N", "series_resistor": "R13 51R/1%"},
+      "evidence": [{"asset_sha256": "cc25a3bc6d25ed4e4f29d4a1ef657523923c972e5e4182afa3076152ab6f365e", "page": 1, "locator": "B3-C4，X1/R13/XTAL_P/XTAL_N"}]
+    },
+    {
+      "id": "power.axp192",
+      "category": "power",
+      "subject": "AXP192 电源管理",
+      "statement": "U7 AXP192 接收 USB_P050 与 SYS_BAT，DCDC1 经 L3 输出 MCU_VDD，LDO1 输出 RTC_VDD，LDO3 经 R26 输出 LCD_BL，并连接 GPIO21/22 I2C。",
+      "confidence": "confirmed",
+      "attributes": {"reference": "U7", "part_number": "AXP192", "usb_input": "USB_P050", "battery": "SYS_BAT", "dcdc1": "MCU_VDD via L3", "ldo1": "RTC_VDD", "ldo3": "LCD_BL via R26 4.7R", "sda": "GPIO21", "scl": "GPIO22"},
+      "evidence": [{"asset_sha256": "5b1d9bbc2949194dc3d09127d66ad87203165cf372825fffdf48129ebd0d46fc", "page": 1, "locator": "A2-C2，U7 AXP192 ACIN/BAT/DCDC1/LDO1/LDO3/SDA/SCK"}]
+    },
+    {
+      "id": "power.usb-bus-or",
+      "category": "power",
+      "subject": "USB 5 V 到端口总线",
+      "statement": "USB_P050 经 D2 DSK34 直接馈入 BUS_P050，BUS_P050 为 Grove 与 USB-A 负载开关的输入电源。",
+      "confidence": "confirmed",
+      "attributes": {"input": "USB_P050", "diode": "D2 DSK34", "output": "BUS_P050", "consumers": "U9/U10/U11/U12/U13/U14 SGM2553"},
+      "evidence": [{"asset_sha256": "5b1d9bbc2949194dc3d09127d66ad87203165cf372825fffdf48129ebd0d46fc", "page": 1, "locator": "B1 D2 USB_P050→BUS_P050 与右侧负载开关输入"}]
+    },
+    {
+      "id": "power.battery-boost",
+      "category": "power",
+      "subject": "电池升压",
+      "statement": "U6 SCT12A0DHKR 由 SYS_BAT 供电，经 L2 1.5 µH 升压输出 BUS_P050，B5T_EN 通过 Q3/Q4 控制使能。",
+      "confidence": "confirmed",
+      "attributes": {"reference": "U6", "part_number": "SCT12A0DHKR", "input": "SYS_BAT", "inductor": "L2 1.5uH", "output": "BUS_P050", "enable": "B5T_EN via Q3/Q4"},
+      "evidence": [{"asset_sha256": "5b1d9bbc2949194dc3d09127d66ad87203165cf372825fffdf48129ebd0d46fc", "page": 1, "locator": "C2-D3，U6/L2/Q3/Q4/SYS_BAT/BUS_P050"}]
+    },
+    {
+      "id": "power.grove-switches",
+      "category": "power",
+      "subject": "Grove 分路电源",
+      "statement": "Port A1/A2 共用 U9 开关供电，Port B1/B2/C1/C2 分别由 U11/U12/U13/U14 开关供电；PS0-PS4 控制各 SGM2553D EN。",
+      "confidence": "confirmed",
+      "attributes": {"port_a_shared": "U9 controlled by PS0, outputs SP1/SP2", "port_b1": "U11 PS1/SP3", "port_b2": "U12 PS2/SP4", "port_c1": "U13 PS3/SP5", "port_c2": "U14 PS4/SP6"},
+      "evidence": [{"asset_sha256": "5b1d9bbc2949194dc3d09127d66ad87203165cf372825fffdf48129ebd0d46fc", "page": 1, "locator": "A3-D4，U9/U11/U12/U13/U14 与 J4-J9"}]
+    },
+    {
+      "id": "interface.grove-map",
+      "category": "interface",
+      "subject": "六路 Grove GPIO",
+      "statement": "Port A1/A2 共用 GPIO33/GPIO32；B1 使用 GPIO35/GPIO25，B2 使用 GPIO36/GPIO26，C1 使用 GPIO13/GPIO14，C2 使用 GPIO16/GPIO17。",
+      "confidence": "confirmed",
+      "attributes": {"A1": "GPIO33/GPIO32", "A2": "GPIO33/GPIO32", "B1": "GPIO35/GPIO25", "B2": "GPIO36/GPIO26", "C1": "GPIO13/GPIO14", "C2": "GPIO16/GPIO17"},
+      "evidence": [{"asset_sha256": "5b1d9bbc2949194dc3d09127d66ad87203165cf372825fffdf48129ebd0d46fc", "page": 1, "locator": "J4-J9 IO2/IO1 网络"}]
+    },
+    {
+      "id": "analog.grove-monitoring",
+      "category": "analog",
+      "subject": "Grove 电压电流监测",
+      "statement": "U16 INA3221 0x40 监测 SN1/SN2/SN3，U8 INA3221 0x41 监测 SN4/SN5/SN6，各通道使用 R1206 0.01 Ω/1%/1W 分流电阻。",
+      "confidence": "confirmed",
+      "attributes": {"U16_0x40": "SN1; SN2; SN3", "U8_0x41": "SN4; SN5; SN6", "shunts": "R39-R43 and associated R1206 0.01R/1%/1W"},
+      "evidence": [{"asset_sha256": "5b1d9bbc2949194dc3d09127d66ad87203165cf372825fffdf48129ebd0d46fc", "page": 1, "locator": "A3-D4，U16/U8 与 SN1-SN6 分流网络"}]
+    },
+    {
+      "id": "interface.usb-a-power",
+      "category": "interface",
+      "subject": "USB-A 电源输出",
+      "statement": "J3 USB-A 的 VCC 连接 SN7，GND/SHIELD 接地，DM 与 DP 均未连接，因此原理图仅实现供电输出。",
+      "confidence": "confirmed",
+      "attributes": {"reference": "J3", "vcc": "SN7", "dm": "NC", "dp": "NC", "ground": "GND", "shield": "GND"},
+      "evidence": [{"asset_sha256": "5b1d9bbc2949194dc3d09127d66ad87203165cf372825fffdf48129ebd0d46fc", "page": 1, "locator": "D4，J3 USB-A pins VCC/DM/DP/GND/SHIELD"}]
+    },
+    {
+      "id": "analog.usb-current",
+      "category": "analog",
+      "subject": "USB-A 电流采样",
+      "statement": "U10 SGM2553D 受 GPIO12 控制并经 SP7/SN7 向 USB-A 供电，U15 INA199A1DCKR 跨分流电阻采样并输出 MCU_VDD 域信号。",
+      "confidence": "confirmed",
+      "attributes": {"switch": "U10 SGM2553DYTD16G/TR", "enable": "GPIO12", "shunt_nets": "SP7; SN7", "amplifier": "U15 INA199A1DCKR", "load": "J3 USB-A"},
+      "evidence": [{"asset_sha256": "5b1d9bbc2949194dc3d09127d66ad87203165cf372825fffdf48129ebd0d46fc", "page": 1, "locator": "D3-D4，U10/U15/SP7/SN7/J3"}]
+    },
+    {
+      "id": "sensor.rtc",
+      "category": "sensor",
+      "subject": "BM8563 RTC",
+      "statement": "U5 BM8563 由 RTC_VDD 供电，SDA/SCL 连接 GPIO21/GPIO22，INT 通过 P 沟道器件连接 PWR_KEY/AXP_PWR 唤醒链路。",
+      "confidence": "confirmed",
+      "attributes": {"reference": "U5", "part_number": "BM8563", "supply": "RTC_VDD", "sda": "GPIO21", "scl": "GPIO22", "interrupt": "INT -> PMOS -> PWR_KEY/AXP_PWR"},
+      "evidence": [{"asset_sha256": "5b1d9bbc2949194dc3d09127d66ad87203165cf372825fffdf48129ebd0d46fc", "page": 1, "locator": "C1-D1，U5 BM8563 与 INT/PWR_KEY/AXP_PWR"}]
+    },
+    {
+      "id": "clock.rtc",
+      "category": "clock",
+      "subject": "RTC 晶体",
+      "statement": "X2 为 BM8563 提供 32.768 kHz 时钟，C28/C29 均标注 6 pF。",
+      "confidence": "confirmed",
+      "attributes": {"reference": "X2", "frequency": "32.768K", "capacitors": "C28 6PF; C29 6PF", "device": "U5 BM8563"},
+      "evidence": [{"asset_sha256": "5b1d9bbc2949194dc3d09127d66ad87203165cf372825fffdf48129ebd0d46fc", "page": 1, "locator": "D1，X2 32.768K、C28/C29"}]
+    },
+    {
+      "id": "component.soc-version",
+      "category": "component",
+      "subject": "ESP32 芯片版本",
+      "statement": "原理图 U3 标注 ESP32-D0WDQ6，产品正文标注 ESP32-D0WDQ6-V3；是否为 V3 修订需由 BOM 复核。",
+      "confidence": "uncertain",
+      "attributes": {"reference": "U3", "schematic_model": "ESP32-D0WDQ6", "document_model": "ESP32-D0WDQ6-V3"},
+      "evidence": [{"asset_sha256": "cc25a3bc6d25ed4e4f29d4a1ef657523923c972e5e4182afa3076152ab6f365e", "page": 1, "locator": "U3 顶部型号 ESP32-D0WDQ6"}]
+    },
+    {
+      "id": "storage.flash-capacity",
+      "category": "storage",
+      "subject": "Flash 容量",
+      "statement": "原理图确认 U4 型号 W25Q128JVPIQ，但未直接以容量字段写出 16 MB。",
+      "confidence": "uncertain",
+      "attributes": {"reference": "U4", "part_number": "W25Q128JVPIQ", "claimed_capacity": "16MB"},
+      "evidence": [{"asset_sha256": "cc25a3bc6d25ed4e4f29d4a1ef657523923c972e5e4182afa3076152ab6f365e", "page": 1, "locator": "U4 仅标 W25Q128JVPIQ"}]
+    },
+    {
+      "id": "interface.display-spec",
+      "category": "interface",
+      "subject": "TFT 型号与显示规格",
+      "statement": "原理图只显示 J2 FPC 与 SPI/控制信号，未直接标注 ST7789V2、1.14 英寸或 240×135。",
+      "confidence": "uncertain",
+      "attributes": {"confirmed_connector": "J2 FPC_8P后翻", "unverified_claims": "ST7789V2; 1.14 inch; 240x135 IPS"},
+      "evidence": [{"asset_sha256": "cc25a3bc6d25ed4e4f29d4a1ef657523923c972e5e4182afa3076152ab6f365e", "page": 1, "locator": "J2 只列 SCK/MOSI/RS/CS/RESET/LEDA/VDD"}]
+    },
+    {
+      "id": "address.axp-rtc-imu",
+      "category": "address",
+      "subject": "AXP192/BM8563/MPU-6886 地址",
+      "statement": "AXP192、BM8563 与 MPU-6886 连接系统 I2C，但原理图未直接印出其 7-bit 地址。",
+      "confidence": "uncertain",
+      "attributes": {"devices": "U7 AXP192; U5 BM8563; U2 MPU-6886", "addresses": "not printed"},
+      "evidence": [
+        {"asset_sha256": "cc25a3bc6d25ed4e4f29d4a1ef657523923c972e5e4182afa3076152ab6f365e", "page": 1, "locator": "U2 MPU-6886 I2C，无地址文本"},
+        {"asset_sha256": "5b1d9bbc2949194dc3d09127d66ad87203165cf372825fffdf48129ebd0d46fc", "page": 1, "locator": "U7/U5 I2C，无地址文本"}
+      ]
+    },
+    {
+      "id": "power.pwr485-rating",
+      "category": "power",
+      "subject": "PWR485 输入额定范围",
+      "statement": "原理图使用 VIN_12V 网络名并给出 SY8303 电路，但未直接列出产品正文所述 9–24 V@1 A 输入范围。",
+      "confidence": "uncertain",
+      "attributes": {"net": "VIN_12V", "converter": "UE2 SY8303", "unverified_rating": "9-24V@1A"},
+      "evidence": [{"asset_sha256": "9abe5c6bdfb6898cc836353d20cf9f6283c3f27c2e0068ce6d19f3823210a743", "page": 1, "locator": "JE1/JE2 VIN_12V 与 UE2，未印输入范围"}]
+    },
+    {
+      "id": "power.battery-spec",
+      "category": "power",
+      "subject": "内部电池规格",
+      "statement": "原理图确认 JE3 SYS_BAT 电池接口及 AXP192 充电/供电路径，但未标注电池化学体系、标称电压或容量。",
+      "confidence": "uncertain",
+      "attributes": {"connector": "JE3 1.25MM_4P_立贴", "net": "SYS_BAT", "manager": "U7 AXP192", "capacity": "not printed"},
+      "evidence": [{"asset_sha256": "5b1d9bbc2949194dc3d09127d66ad87203165cf372825fffdf48129ebd0d46fc", "page": 1, "locator": "A1-A2，JE3/SYS_BAT/U7 BAT pins"}]
+    }
+  ],
+  "needs_review": [
+    {
+      "id": "review.soc-version",
+      "fact_id": "component.soc-version",
+      "question": "Station-485 K123 实际装配是否为 ESP32-D0WDQ6-V3？",
+      "reason": "原理图型号未带 -V3，正文带 -V3。",
+      "evidence": [{"asset_sha256": "cc25a3bc6d25ed4e4f29d4a1ef657523923c972e5e4182afa3076152ab6f365e", "page": 1, "locator": "U3 ESP32-D0WDQ6"}]
+    },
+    {
+      "id": "review.flash-capacity",
+      "fact_id": "storage.flash-capacity",
+      "question": "请用 W25Q128JVPIQ datasheet/BOM 确认 16 MB Flash。",
+      "reason": "原理图只给出器件型号。",
+      "evidence": [{"asset_sha256": "cc25a3bc6d25ed4e4f29d4a1ef657523923c972e5e4182afa3076152ab6f365e", "page": 1, "locator": "U4 W25Q128JVPIQ"}]
+    },
+    {
+      "id": "review.display-spec",
+      "fact_id": "interface.display-spec",
+      "question": "请用 LCD FPC/BOM 确认 ST7789V2、1.14 英寸和 240×135 IPS。",
+      "reason": "原理图只提供连接器与信号。",
+      "evidence": [{"asset_sha256": "cc25a3bc6d25ed4e4f29d4a1ef657523923c972e5e4182afa3076152ab6f365e", "page": 1, "locator": "J2 FPC_8P后翻"}]
+    },
+    {
+      "id": "review.i2c-addresses",
+      "fact_id": "address.axp-rtc-imu",
+      "question": "请用 AXP192、BM8563、MPU-6886 datasheet 复核 7-bit I2C 地址。",
+      "reason": "这些地址未印在原理图中。",
+      "evidence": [
+        {"asset_sha256": "cc25a3bc6d25ed4e4f29d4a1ef657523923c972e5e4182afa3076152ab6f365e", "page": 1, "locator": "U2 MPU-6886"},
+        {"asset_sha256": "5b1d9bbc2949194dc3d09127d66ad87203165cf372825fffdf48129ebd0d46fc", "page": 1, "locator": "U7 AXP192 与 U5 BM8563"}
+      ]
+    },
+    {
+      "id": "review.pwr485-rating",
+      "fact_id": "power.pwr485-rating",
+      "question": "请用 SY8303 电源设计/BOM 复核 9–24 V@1 A PWR485 输入额定值。",
+      "reason": "原理图只标 VIN_12V 网络名。",
+      "evidence": [{"asset_sha256": "9abe5c6bdfb6898cc836353d20cf9f6283c3f27c2e0068ce6d19f3823210a743", "page": 1, "locator": "JE1/JE2/UE2 VIN_12V"}]
+    },
+    {
+      "id": "review.battery-spec",
+      "fact_id": "power.battery-spec",
+      "question": "请用电池/BOM 确认 JE3 适配电池的电压、化学体系和容量。",
+      "reason": "原理图仅显示 SYS_BAT 电气路径。",
+      "evidence": [{"asset_sha256": "5b1d9bbc2949194dc3d09127d66ad87203165cf372825fffdf48129ebd0d46fc", "page": 1, "locator": "JE3 SYS_BAT"}]
+    }
+  ]
+}

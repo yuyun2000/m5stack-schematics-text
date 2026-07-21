@@ -1,0 +1,162 @@
+{
+  "schema_version": 1,
+  "generator": "schematic_describer",
+  "product": {
+    "product_id": "unit-hex-3391bac05f15",
+    "product_name": "Unit HEX",
+    "sku": "A045",
+    "source_path": "unit/hex.md",
+    "source_sha256": "128ca49efdaba8c6ae91b77fd740021ccdbbc98fc237a849547650ea5618e60b",
+    "input_sha256": "27271c24022d21096748f3c0170e5c72ca4f75a493059c22651adaf3094eab30"
+  },
+  "schematic_assets": [
+    {
+      "sha256": "3a1f41bc6f54d3b8ac3a69f13186cc324fb246f26a9d1c26171c00fd2fbb12dc",
+      "source_url": "https://static-cdn.m5stack.com/resource/docs/products/unit/hex/hex_04.webp",
+      "pages": [1]
+    }
+  ],
+  "summary": "Unit HEX 的本地资源为 HEX PIN Layout 连接布局图，显示 IN、OUT、PWR 三组接口以及首颗和末颗 LED 的数据方向。IN 的 DATA 进入 1st LED，Last LED 的数据输出到 OUT 的 DATA，从而支持数据级联。图中仅标注 VCC、GND、DATA，没有 LED 型号、数量、供电电压、保护或去耦电路。",
+  "keywords": ["Unit HEX", "A045", "HEX PIN Layout", "IN", "OUT", "PWR", "DATA", "VCC", "GND", "1st LED", "Last LED", "LED Signal", "RGB LED", "SK6812", "SK6812 x 37", "37 LEDs", "5V", "PORT.B", "daisy-chain", "cascade input", "cascade output", "single-wire LED data", "16.7 million colors"],
+  "components": [
+    {
+      "reference": "IN",
+      "part_number": null,
+      "role": "四位电源与 LED 数据输入接口",
+      "evidence": [{"asset_sha256": "3a1f41bc6f54d3b8ac3a69f13186cc324fb246f26a9d1c26171c00fd2fbb12dc", "page": 1, "locator": "页 1 左侧标注 IN 的四位连接器，前三位文字为 GND、VCC、DATA"}]
+    },
+    {
+      "reference": "OUT",
+      "part_number": null,
+      "role": "四位 LED 数据级联输出与电源接口",
+      "evidence": [{"asset_sha256": "3a1f41bc6f54d3b8ac3a69f13186cc324fb246f26a9d1c26171c00fd2fbb12dc", "page": 1, "locator": "页 1 右侧标注 OUT 的四位连接器，后三位文字为 DATA、VCC、GND"}]
+    },
+    {
+      "reference": "PWR",
+      "part_number": null,
+      "role": "独立电源连接器",
+      "evidence": [{"asset_sha256": "3a1f41bc6f54d3b8ac3a69f13186cc324fb246f26a9d1c26171c00fd2fbb12dc", "page": 1, "locator": "页 1 下中部标注 PWR 的三位连接器，可见 GND、VCC 标签"}]
+    },
+    {
+      "reference": "1st LED ... Last LED",
+      "part_number": null,
+      "role": "板载串行 RGB LED 数据链",
+      "evidence": [{"asset_sha256": "3a1f41bc6f54d3b8ac3a69f13186cc324fb246f26a9d1c26171c00fd2fbb12dc", "page": 1, "locator": "页 1 六边形轮廓顶部与左下分别标注 1st LED、Last LED，并以红线表示数据链端点"}]
+    }
+  ],
+  "facts": [
+    {
+      "id": "system.topology",
+      "category": "system",
+      "subject": "Unit HEX LED 级联结构",
+      "statement": "连接布局图显示 IN、OUT、PWR 三组接口和从 1st LED 到 Last LED 的板载 LED 数据链。",
+      "confidence": "confirmed",
+      "attributes": {"input_connector": "IN", "output_connector": "OUT", "power_connector": "PWR", "chain_start": "1st LED", "chain_end": "Last LED"},
+      "evidence": [{"asset_sha256": "3a1f41bc6f54d3b8ac3a69f13186cc324fb246f26a9d1c26171c00fd2fbb12dc", "page": 1, "locator": "页 1 完整 HEX PIN Layout，IN/OUT/PWR 与首末 LED 标签"}]
+    },
+    {
+      "id": "interface.in",
+      "category": "interface",
+      "subject": "IN 输入接口",
+      "statement": "IN 为四位连接器；按图中从上到下的位置，前三位依次标注 GND、VCC、DATA，第四位未标注网络名。",
+      "confidence": "confirmed",
+      "attributes": {"reference": "IN", "position_order_top_to_bottom": "1:GND,2:VCC,3:DATA,4:unlabeled", "data_direction": "input to 1st LED"},
+      "evidence": [{"asset_sha256": "3a1f41bc6f54d3b8ac3a69f13186cc324fb246f26a9d1c26171c00fd2fbb12dc", "page": 1, "locator": "页 1 左侧 IN 四个触点及其右侧 GND、VCC、DATA 标签"}]
+    },
+    {
+      "id": "interface.out",
+      "category": "interface",
+      "subject": "OUT 级联接口",
+      "statement": "OUT 为四位连接器；按图中从上到下的位置，第一位未标注网络名，后续三位依次标注 DATA、VCC、GND。",
+      "confidence": "confirmed",
+      "attributes": {"reference": "OUT", "position_order_top_to_bottom": "1:unlabeled,2:DATA,3:VCC,4:GND", "data_direction": "output from Last LED"},
+      "evidence": [{"asset_sha256": "3a1f41bc6f54d3b8ac3a69f13186cc324fb246f26a9d1c26171c00fd2fbb12dc", "page": 1, "locator": "页 1 右侧 OUT 四个触点及其右侧 DATA、VCC、GND 标签"}]
+    },
+    {
+      "id": "interface.pwr",
+      "category": "interface",
+      "subject": "PWR 电源接口",
+      "statement": "PWR 为三位连接器，图中前两位分别标注 GND、VCC，第三位未标注网络名。",
+      "confidence": "confirmed",
+      "attributes": {"reference": "PWR", "position_order_left_to_right": "1:GND,2:VCC,3:unlabeled"},
+      "evidence": [{"asset_sha256": "3a1f41bc6f54d3b8ac3a69f13186cc324fb246f26a9d1c26171c00fd2fbb12dc", "page": 1, "locator": "页 1 下中部 PWR 三个触点及下方 GND、VCC 标签"}]
+    },
+    {
+      "id": "bus.led_data",
+      "category": "bus",
+      "subject": "串行 LED DATA 路径",
+      "statement": "红色路径显示 IN 的 DATA 进入 1st LED；另一段红色路径从 Last LED 到 OUT 的 DATA，因此 OUT 可继续驱动下一级灯板。",
+      "confidence": "confirmed",
+      "attributes": {"input_path": "IN DATA -> 1st LED", "output_path": "Last LED -> OUT DATA", "topology": "serial daisy-chain", "protocol": null},
+      "evidence": [{"asset_sha256": "3a1f41bc6f54d3b8ac3a69f13186cc324fb246f26a9d1c26171c00fd2fbb12dc", "page": 1, "locator": "页 1 两条红色数据路径，分别连接 IN DATA 与 1st LED、Last LED 与 OUT DATA"}]
+    },
+    {
+      "id": "power.connector_rails",
+      "category": "power",
+      "subject": "接口电源网络",
+      "statement": "IN、OUT 均标注 VCC 和 GND；PWR 也标注 VCC 和 GND。布局图未给出 VCC 的数值、电源分配电路或电流额定值。",
+      "confidence": "confirmed",
+      "attributes": {"connectors_with_vcc_gnd": "IN,OUT,PWR", "rail_name": "VCC", "voltage": null, "current_rating": null},
+      "evidence": [{"asset_sha256": "3a1f41bc6f54d3b8ac3a69f13186cc324fb246f26a9d1c26171c00fd2fbb12dc", "page": 1, "locator": "页 1 IN、OUT、PWR 三处 VCC/GND 标签"}]
+    },
+    {
+      "id": "component.led_array",
+      "category": "component",
+      "subject": "板载 RGB LED 型号与数量",
+      "statement": "产品正文标注 SK6812 × 37，但连接布局图只显示 1st LED 和 Last LED 端点，没有 LED 型号、总数或逐颗位号。",
+      "confidence": "uncertain",
+      "attributes": {"documented_part_number": "SK6812", "documented_quantity": 37, "schematic_part_number": null, "schematic_quantity": null},
+      "evidence": [{"asset_sha256": "3a1f41bc6f54d3b8ac3a69f13186cc324fb246f26a9d1c26171c00fd2fbb12dc", "page": 1, "locator": "页 1 仅标注 1st LED 与 Last LED，未出现 SK6812、37 或 LED 位号"}]
+    },
+    {
+      "id": "power.documented_voltage",
+      "category": "power",
+      "subject": "Unit HEX 供电电压",
+      "statement": "产品正文的 Grove 管脚表将电源标为 5V，但布局图只使用 VCC 网络名，无法仅由该图确认电压值。",
+      "confidence": "uncertain",
+      "attributes": {"documented_voltage_v": 5, "schematic_rail": "VCC", "schematic_voltage": null},
+      "evidence": [{"asset_sha256": "3a1f41bc6f54d3b8ac3a69f13186cc324fb246f26a9d1c26171c00fd2fbb12dc", "page": 1, "locator": "页 1 IN、OUT、PWR 均只标注 VCC，未标注 5V"}]
+    },
+    {
+      "id": "other.color_capability",
+      "category": "other",
+      "subject": "RGB LED 色彩能力",
+      "statement": "产品正文称支持 16.7 万色，但连接布局图没有颜色深度、PWM 位数或 LED 电气参数。",
+      "confidence": "uncertain",
+      "attributes": {"documented_color_count_text": "16.7 万色", "schematic_color_depth": null, "schematic_pwm_bits": null},
+      "evidence": [{"asset_sha256": "3a1f41bc6f54d3b8ac3a69f13186cc324fb246f26a9d1c26171c00fd2fbb12dc", "page": 1, "locator": "页 1 HEX PIN Layout 仅显示连接关系，没有颜色或 PWM 参数"}]
+    },
+    {
+      "id": "other.schematic_scope",
+      "category": "other",
+      "subject": "本地资源覆盖范围",
+      "statement": "本地页面标题为 HEX PIN Layout，未显示 IC/LED 位号、阻容、保护器件、去耦器件、时钟、复位或调试接口。",
+      "confidence": "confirmed",
+      "attributes": {"resource_type": "pin layout", "component_designators_visible": false, "passive_values_visible": false, "protection_visible": false, "debug_visible": false},
+      "evidence": [{"asset_sha256": "3a1f41bc6f54d3b8ac3a69f13186cc324fb246f26a9d1c26171c00fd2fbb12dc", "page": 1, "locator": "页 1 完整 HEX PIN Layout 页面，仅含连接器、VCC/GND/DATA 与首末 LED 示意"}]
+    }
+  ],
+  "needs_review": [
+    {
+      "id": "review.led_array",
+      "fact_id": "component.led_array",
+      "question": "当前 A045 硬件版本是否确实装配 37 颗 SK6812，逐颗数据顺序是什么？",
+      "reason": "布局图只给出首末 LED 和数据方向，没有型号、数量或完整排列。",
+      "evidence": [{"asset_sha256": "3a1f41bc6f54d3b8ac3a69f13186cc324fb246f26a9d1c26171c00fd2fbb12dc", "page": 1, "locator": "页 1 1st LED、Last LED 与红色数据路径"}]
+    },
+    {
+      "id": "review.supply_voltage",
+      "fact_id": "power.documented_voltage",
+      "question": "IN、OUT、PWR 的 VCC 额定电压与允许电流是否均为 5V 电源域？",
+      "reason": "布局图只标 VCC/GND，没有电压值、电流额定或保护电路。",
+      "evidence": [{"asset_sha256": "3a1f41bc6f54d3b8ac3a69f13186cc324fb246f26a9d1c26171c00fd2fbb12dc", "page": 1, "locator": "页 1 三组接口的 VCC/GND 标签"}]
+    },
+    {
+      "id": "review.color_capability",
+      "fact_id": "other.color_capability",
+      "question": "正文中的“16.7 万色”对应的实际 RGB/PWM 位深和控制限制是什么？",
+      "reason": "布局图不包含 LED 数据手册参数或颜色深度信息。",
+      "evidence": [{"asset_sha256": "3a1f41bc6f54d3b8ac3a69f13186cc324fb246f26a9d1c26171c00fd2fbb12dc", "page": 1, "locator": "页 1 完整连接布局图没有颜色或 PWM 标注"}]
+    }
+  ]
+}

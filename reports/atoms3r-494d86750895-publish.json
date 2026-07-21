@@ -1,0 +1,21 @@
+{
+  "dry_run": false,
+  "failed": 0,
+  "published": 1,
+  "results": [
+    {
+      "backup": null,
+      "draft_action": "unchanged",
+      "dry_run": false,
+      "errors": [],
+      "needs_review": 6,
+      "product_id": "atoms3r-494d86750895",
+      "product_name": "AtomS3R",
+      "publish_action": "unchanged",
+      "sha256": "eb97dad06d8e4601944ce9a21a71751f11838b7f83b7cdb281bba51f3028d5e5",
+      "status": "valid",
+      "uncertain_facts": 6
+    }
+  ],
+  "schema_version": 1
+}

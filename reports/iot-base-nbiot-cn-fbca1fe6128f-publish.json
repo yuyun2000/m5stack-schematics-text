@@ -1,0 +1,21 @@
+{
+  "dry_run": false,
+  "failed": 0,
+  "published": 1,
+  "results": [
+    {
+      "backup": null,
+      "draft_action": "unchanged",
+      "dry_run": false,
+      "errors": [],
+      "needs_review": 5,
+      "product_id": "iot-base-nbiot-cn-fbca1fe6128f",
+      "product_name": "IoT Base NBIoT-CN",
+      "publish_action": "unchanged",
+      "sha256": "ca4ea3780c71f286fab94adfa448b3dbfb79dc391d4efd7764a6fa74aef31c26",
+      "status": "valid",
+      "uncertain_facts": 5
+    }
+  ],
+  "schema_version": 1
+}

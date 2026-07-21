@@ -1,0 +1,21 @@
+{
+  "dry_run": false,
+  "failed": 0,
+  "published": 1,
+  "results": [
+    {
+      "backup": null,
+      "draft_action": "unchanged",
+      "dry_run": false,
+      "errors": [],
+      "needs_review": 4,
+      "product_id": "unit-cam-0e7a4ce648c7",
+      "product_name": "Unit CAM",
+      "publish_action": "unchanged",
+      "sha256": "a77a39b8cad862eb1b02fd7632ad47f0777ecd4fb6f348c6d11afb2382ce7c14",
+      "status": "valid",
+      "uncertain_facts": 4
+    }
+  ],
+  "schema_version": 1
+}

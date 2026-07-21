@@ -1,0 +1,21 @@
+{
+  "dry_run": false,
+  "failed": 0,
+  "published": 1,
+  "results": [
+    {
+      "backup": null,
+      "draft_action": "unchanged",
+      "dry_run": false,
+      "errors": [],
+      "needs_review": 3,
+      "product_id": "unit-lorawan-cn470-6c30432ff630",
+      "product_name": "Unit LoRaWAN-CN470",
+      "publish_action": "unchanged",
+      "sha256": "6d0ac0c9f4cfa909025d5ea7bdb6947f11e7be01cc357e41811b18214cb1366a",
+      "status": "valid",
+      "uncertain_facts": 3
+    }
+  ],
+  "schema_version": 1
+}

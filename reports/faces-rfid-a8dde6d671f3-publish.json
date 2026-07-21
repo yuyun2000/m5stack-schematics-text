@@ -1,0 +1,21 @@
+{
+  "dry_run": false,
+  "failed": 0,
+  "published": 1,
+  "results": [
+    {
+      "backup": null,
+      "draft_action": "unchanged",
+      "dry_run": false,
+      "errors": [],
+      "needs_review": 7,
+      "product_id": "faces-rfid-a8dde6d671f3",
+      "product_name": "Faces RFID",
+      "publish_action": "unchanged",
+      "sha256": "582d0abd612e4e8d784ba8ba13a100d8a6e8a0c17852ddf284d8921cf026435b",
+      "status": "valid",
+      "uncertain_facts": 7
+    }
+  ],
+  "schema_version": 1
+}

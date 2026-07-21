@@ -1,0 +1,21 @@
+{
+  "dry_run": false,
+  "failed": 0,
+  "published": 1,
+  "results": [
+    {
+      "backup": null,
+      "draft_action": "unchanged",
+      "dry_run": false,
+      "errors": [],
+      "needs_review": 0,
+      "product_id": "bugc2-9d763b1973a6",
+      "product_name": "BugC2",
+      "publish_action": "unchanged",
+      "sha256": "e8f8acfae052807422bb10982a1e6bbd44e58e2fdc0e7f0bcd290d45385fd9c2",
+      "status": "valid",
+      "uncertain_facts": 0
+    }
+  ],
+  "schema_version": 1
+}

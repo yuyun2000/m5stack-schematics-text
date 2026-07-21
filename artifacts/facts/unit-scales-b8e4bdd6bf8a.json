@@ -1,0 +1,314 @@
+{
+  "schema_version": 1,
+  "generator": "schematic_describer",
+  "product": {
+    "product_id": "unit-scales-b8e4bdd6bf8a",
+    "product_name": "Unit Scales",
+    "sku": "U108",
+    "source_path": "unit/UNIT Scales.md",
+    "source_sha256": "584ce86717ba8017c28a1b02edced4a510fcca6372928ea91502ab1096a65129",
+    "input_sha256": "b715a43470b7aa9fe4328a4795e8ea089e2da2336f1c880813a413130e04a8b9"
+  },
+  "schematic_assets": [
+    {
+      "sha256": "ad6ae5355bea90eed10b704b0877f2a79d7fd914ad34fd9358d758c8b8976c15",
+      "source_url": "https://m5stack-doc.oss-cn-shenzhen.aliyuncs.com/592/Sch_UNIT-Scales_sch_01.png",
+      "pages": [1]
+    }
+  ],
+  "summary": "Unit Scales 以 U1 STM32F030F4P6（原理图备注 XM1008F6P6）为主控，通过 J1 Grove 的 I2C_CLK/I2C_DATA 与外部主机通信。U2 HX711 连接 J3 四线称重桥，DOUT/PD_SCK 分别形成 HX711_SDA/HX711_CLK 并接到 U1 PA3/PA4，Q1 S8550 Y2 与 R1/R4 构成 HX711 模拟供电反馈。+5V 经 VR1 HT7333 生成 +3.3V，板上另有 SK6812 RGB、key 按键以及 J2 SWD 下载口。原理图没有标注 I2C 地址、称重量程、ADC 位数/增益/采样率或称重误差，这些正文参数需另行确认。",
+  "keywords": [
+    "Unit Scales",
+    "U108",
+    "STM32F030F4P6",
+    "XM1008F6P6",
+    "HX711",
+    "HT7333",
+    "S8550 Y2",
+    "SK6812",
+    "I2C",
+    "0x26",
+    "I2C_CLK",
+    "I2C_DATA",
+    "PA9",
+    "PA10",
+    "HX711_SDA",
+    "HX711_CLK",
+    "PA3",
+    "PA4",
+    "PA7 LED",
+    "PA2 key",
+    "SWCLK",
+    "SWDIO",
+    "NRST",
+    "BOOT0",
+    "Grove-4P(RED)",
+    "J1",
+    "J2 SIP-5",
+    "J3 SIP-4",
+    "RED WHITE BLUE GREEN",
+    "+5V",
+    "+3.3V",
+    "R6 R7 4.7K",
+    "R2 R3 4.7K",
+    "R1 20K",
+    "R4 8.2K",
+    "20kg load cell",
+    "24bit ADC",
+    "10SPS",
+    "tare button",
+    "weighing bridge"
+  ],
+  "components": [
+    {
+      "reference": "U1",
+      "part_number": "STM32F030F4P6（备注 XM1008F6P6）",
+      "role": "主控 MCU，连接主机 I2C、HX711、RGB、按键、SWD、复位和 BOOT0",
+      "evidence": [{"asset_sha256": "ad6ae5355bea90eed10b704b0877f2a79d7fd914ad34fd9358d758c8b8976c15", "page": 1, "locator": "第 1 页网格 A3，U1 STM32F030F4P6（备注 XM1008F6P6），pins1-20"}]
+    },
+    {
+      "reference": "U2",
+      "part_number": "HX711",
+      "role": "称重桥模拟前端与 ADC，连接 J3、模拟电源反馈和 HX711_SDA/HX711_CLK",
+      "evidence": [{"asset_sha256": "ad6ae5355bea90eed10b704b0877f2a79d7fd914ad34fd9358d758c8b8976c15", "page": 1, "locator": "第 1 页网格 B3-C3，U2 HX711 pins1-16，VSUP/BASE/AVDD/VFB/AGND/VBG/INNA/INPA/INPB/INNB/PD_SCK/DOUT/XO/XI/RATE/DVDD"}]
+    },
+    {
+      "reference": "VR1",
+      "part_number": "HT7333",
+      "role": "将 +5V 转换为 +3.3V 的稳压器",
+      "evidence": [{"asset_sha256": "ad6ae5355bea90eed10b704b0877f2a79d7fd914ad34fd9358d758c8b8976c15", "page": 1, "locator": "第 1 页网格 A2，VR1 HT7333，Vin/Vout/GND 与 C1/C3"}]
+    },
+    {
+      "reference": "Q1",
+      "part_number": "S8550 Y2",
+      "role": "由 HX711 BASE 控制、参与 AVDD/称重桥激励供电的 PNP 晶体管",
+      "evidence": [{"asset_sha256": "ad6ae5355bea90eed10b704b0877f2a79d7fd914ad34fd9358d758c8b8976c15", "page": 1, "locator": "第 1 页网格 B3，Q1 S8550 Y2 位于 +3.3V、U2 BASE/AVDD 与 R1/R4 反馈网络"}]
+    },
+    {
+      "reference": "J1",
+      "part_number": "Grove-4P(RED)",
+      "role": "主机 I2C 与电源接口，pin1 I2C_CLK、pin2 I2C_DATA、pin3 +5V、pin4 GND",
+      "evidence": [{"asset_sha256": "ad6ae5355bea90eed10b704b0877f2a79d7fd914ad34fd9358d758c8b8976c15", "page": 1, "locator": "第 1 页网格 A1，J1 Grove-4P(RED) pins1-4 与 I2C_CLK/I2C_DATA/+5/GND"}]
+    },
+    {
+      "reference": "J2",
+      "part_number": "SIP-5",
+      "role": "+3.3V、SWCLK、SWDIO、NRST、GND 调试/下载接口",
+      "evidence": [{"asset_sha256": "ad6ae5355bea90eed10b704b0877f2a79d7fd914ad34fd9358d758c8b8976c15", "page": 1, "locator": "第 1 页网格 A4，J2 SIP-5 pins1-5 与 +3.3/SWCLK/SWDIO/NRST/GND"}]
+    },
+    {
+      "reference": "J3",
+      "part_number": "SIP-4",
+      "role": "四线称重传感器接口，pin4 RED、pin3 WHITE、pin2 BLUE、pin1 GREEN",
+      "evidence": [{"asset_sha256": "ad6ae5355bea90eed10b704b0877f2a79d7fd914ad34fd9358d758c8b8976c15", "page": 1, "locator": "第 1 页网格 C2，J3 SIP-4 pins4/3/2/1 标注 RED/WHITE/BLUE/GREEN，并连接 U2 模拟前端网络"}]
+    },
+    {
+      "reference": "LED1",
+      "part_number": "sk6812",
+      "role": "+5V 供电、由 U1 PA7/LED 网络驱动的可编程 RGB LED",
+      "evidence": [{"asset_sha256": "ad6ae5355bea90eed10b704b0877f2a79d7fd914ad34fd9358d758c8b8976c15", "page": 1, "locator": "第 1 页网格 B1，LED1 sk6812，VDD pin1、DOUT pin2、VSS pin3、DIN pin4"}]
+    },
+    {
+      "reference": "SW1",
+      "part_number": null,
+      "role": "按下将 key/PA2 接到 GND 的按键",
+      "evidence": [{"asset_sha256": "ad6ae5355bea90eed10b704b0877f2a79d7fd914ad34fd9358d758c8b8976c15", "page": 1, "locator": "第 1 页网格 C1，SW1 位于 key 与 GND 之间"}]
+    },
+    {
+      "reference": "R6,R7",
+      "part_number": "4.7KΩ",
+      "role": "I2C_DATA 与 I2C_CLK 到 +3.3V 的上拉电阻",
+      "evidence": [{"asset_sha256": "ad6ae5355bea90eed10b704b0877f2a79d7fd914ad34fd9358d758c8b8976c15", "page": 1, "locator": "第 1 页网格 A1，R6/R7 4.7KΩ 从 I2C_DATA/I2C_CLK 接 +3.3V"}]
+    },
+    {
+      "reference": "R2,R3",
+      "part_number": "4.7KΩ",
+      "role": "HX711_SDA 与 HX711_CLK 到 +3.3V 的上拉电阻",
+      "evidence": [{"asset_sha256": "ad6ae5355bea90eed10b704b0877f2a79d7fd914ad34fd9358d758c8b8976c15", "page": 1, "locator": "第 1 页网格 C4，R2/R3 4.7KΩ 从 HX711_SDA/HX711_CLK 接 +3.3V"}]
+    },
+    {
+      "reference": "R1,R4,C5,C6",
+      "part_number": "20KΩ / 8.2KΩ / 1uF / 1uF",
+      "role": "HX711 AVDD/VFB/VBG 模拟电源反馈与旁路网络",
+      "evidence": [{"asset_sha256": "ad6ae5355bea90eed10b704b0877f2a79d7fd914ad34fd9358d758c8b8976c15", "page": 1, "locator": "第 1 页网格 B3-C3，U2 左侧 Q1、R1 20KΩ、R4 8.2KΩ、C5/C6 1uF"}]
+    }
+  ],
+  "facts": [
+    {
+      "id": "system.scales-architecture",
+      "category": "system",
+      "subject": "Unit Scales 系统架构",
+      "statement": "U1 STM32F030F4P6 作为主控，以 I2C 对外通信，以两线 HX711_SDA/HX711_CLK 连接 U2 HX711；U2 接 J3 四线称重桥并配有 Q1 模拟供电网络。VR1 生成 3.3V，LED1、SW1 和 J2 分别提供 RGB 状态、按键与 SWD 调试。",
+      "confidence": "confirmed",
+      "attributes": {"controller": "U1 STM32F030F4P6（备注 XM1008F6P6）", "adc": "U2 HX711", "load_cell": "J3 SIP-4", "host_bus": "I2C via J1", "indicator": "LED1 sk6812", "button": "SW1 key", "debug": "J2 SIP-5 SWD", "power": "+5V -> VR1 HT7333 -> +3.3V"},
+      "evidence": [{"asset_sha256": "ad6ae5355bea90eed10b704b0877f2a79d7fd914ad34fd9358d758c8b8976c15", "page": 1, "locator": "第 1 页完整 A1-C4，J1/VR1/U1/LED1/SW1/J3/U2/J2"}]
+    },
+    {
+      "id": "power.five-to-three3",
+      "category": "power",
+      "subject": "+5V 至 +3.3V 电源",
+      "statement": "J1 pin3 引入 +5V，连接 VR1 HT7333 Vin；VR1 Vout 输出 +3.3V，GND 端接地。C1 22uF 位于 +5V 输入侧，C3 22uF 位于 +3.3V 输出侧。",
+      "confidence": "confirmed",
+      "attributes": {"input": "J1 pin3 +5V", "regulator": "VR1 HT7333", "output": "+3.3V", "input_cap": "C1 22uF", "output_cap": "C3 22uF", "ground": "GND"},
+      "evidence": [{"asset_sha256": "ad6ae5355bea90eed10b704b0877f2a79d7fd914ad34fd9358d758c8b8976c15", "page": 1, "locator": "第 1 页网格 A1-A2，J1 +5、VR1 HT7333、C1/C3 与 +3.3"}]
+    },
+    {
+      "id": "component.mcu-pin-map",
+      "category": "component",
+      "subject": "STM32F030F4P6 关键引脚映射",
+      "statement": "U1 pin1 BOOT0 接 GND，pin4 NRST 接复位网络，pin5 VDDA 与 pin16 VDD 接 +3.3V，pin15 VSS 接 GND；PA2 pin8=key、PA3 pin9=HX711_SDA、PA4 pin10=HX711_CLK、PA7 pin13=LED、PA9 pin17=I2C_CLK、PA10 pin18=I2C_DATA、PA13 pin19=SWDIO、PA14 pin20=SWCLK。",
+      "confidence": "confirmed",
+      "attributes": {"boot": "pin1 BOOT0 -> GND", "reset": "pin4 NRST", "analog_supply": "pin5 VDDA -> +3.3V", "digital_supply": "pin16 VDD -> +3.3V", "ground": "pin15 VSS", "key": "pin8 PA2", "hx711": "pin9 PA3/HX711_SDA; pin10 PA4/HX711_CLK", "led": "pin13 PA7/LED", "i2c": "pin17 PA9/I2C_CLK; pin18 PA10/I2C_DATA", "swd": "pin19 PA13/SWDIO; pin20 PA14/SWCLK"},
+      "evidence": [{"asset_sha256": "ad6ae5355bea90eed10b704b0877f2a79d7fd914ad34fd9358d758c8b8976c15", "page": 1, "locator": "第 1 页网格 A3，U1 pins1-20 及左右网络标签"}]
+    },
+    {
+      "id": "interface.grove-i2c",
+      "category": "interface",
+      "subject": "J1 Grove I2C 接口",
+      "statement": "J1 Grove-4P(RED) pin1=I2C_CLK、pin2=I2C_DATA、pin3=+5V、pin4=GND；R7 4.7KΩ 将 I2C_CLK 上拉到 +3.3V，R6 4.7KΩ 将 I2C_DATA 上拉到 +3.3V。",
+      "confidence": "confirmed",
+      "attributes": {"connector": "J1 Grove-4P(RED)", "pin1": "I2C_CLK -> U1 PA9 pin17", "pin2": "I2C_DATA -> U1 PA10 pin18", "pin3": "+5V", "pin4": "GND", "clock_pullup": "R7 4.7K to +3.3V", "data_pullup": "R6 4.7K to +3.3V"},
+      "evidence": [{"asset_sha256": "ad6ae5355bea90eed10b704b0877f2a79d7fd914ad34fd9358d758c8b8976c15", "page": 1, "locator": "第 1 页网格 A1 J1/R6/R7 与网格 A3 U1 PA9/PA10 同名网络"}]
+    },
+    {
+      "id": "bus.mcu-to-hx711",
+      "category": "bus",
+      "subject": "U1 与 HX711 两线接口",
+      "statement": "U2 DOUT pin12 形成 HX711_SDA 并连接 U1 PA3 pin9；U2 PD_SCK pin11 形成 HX711_CLK 并连接 U1 PA4 pin10。R2/R3 各 4.7KΩ 将两路网络上拉到 +3.3V。",
+      "confidence": "confirmed",
+      "attributes": {"data": "U2 pin12 DOUT/HX711_SDA -> U1 pin9 PA3", "clock": "U2 pin11 PD_SCK/HX711_CLK -> U1 pin10 PA4", "data_pullup": "R2 4.7K to +3.3V", "clock_pullup": "R3 4.7K to +3.3V"},
+      "evidence": [{"asset_sha256": "ad6ae5355bea90eed10b704b0877f2a79d7fd914ad34fd9358d758c8b8976c15", "page": 1, "locator": "第 1 页网格 C3-C4 U2 DOUT/PD_SCK、R2/R3 与网格 A3 U1 PA3/PA4"}]
+    },
+    {
+      "id": "analog.hx711-power-reference",
+      "category": "analog",
+      "subject": "HX711 模拟与数字电源",
+      "statement": "U2 VSUP pin1 与 DVDD pin16 接 +3.3V；BASE pin2 驱动 Q1 S8550 Y2，Q1 参与 AVDD pin3 输出。R1 20KΩ 与 R4 8.2KΩ 构成 AVDD 至 GND 的反馈分压并接 VFB pin4，C5 1uF 位于模拟供电节点，C6 1uF 连接 VBG pin6 的旁路网络。",
+      "confidence": "confirmed",
+      "attributes": {"adc": "U2 HX711", "supply": "VSUP pin1,DVDD pin16 -> +3.3V", "pass_transistor": "Q1 S8550 Y2 via BASE pin2", "analog_output": "AVDD pin3", "feedback": "R1 20K,R4 8.2K -> VFB pin4", "bypass": "C5 1uF,C6 1uF/VBG pin6"},
+      "evidence": [{"asset_sha256": "ad6ae5355bea90eed10b704b0877f2a79d7fd914ad34fd9358d758c8b8976c15", "page": 1, "locator": "第 1 页网格 B3-C3，Q1/U2 pins1-6/R1/R4/C5/C6"}]
+    },
+    {
+      "id": "analog.load-cell-interface",
+      "category": "analog",
+      "subject": "J3 四线称重桥输入",
+      "statement": "J3 SIP-4 依次将 pin4 RED、pin3 WHITE、pin2 BLUE、pin1 GREEN 引入 HX711 模拟网络；图中可见这些线路连接 AVDD/AGND 与 INNA/INPA 输入支路，GREEN 路包含 R5 1KΩ，输入网络另配置 C7 100nF。",
+      "confidence": "confirmed",
+      "attributes": {"connector": "J3 SIP-4", "pin4": "RED", "pin3": "WHITE", "pin2": "BLUE", "pin1": "GREEN", "adc_inputs": "U2 INNA pin7,INPA pin8", "series_resistor": "R5 1K on GREEN path", "filter": "C7 100nF"},
+      "evidence": [{"asset_sha256": "ad6ae5355bea90eed10b704b0877f2a79d7fd914ad34fd9358d758c8b8976c15", "page": 1, "locator": "第 1 页网格 C2-C3，J3 RED/WHITE/BLUE/GREEN 至 U2 AVDD/AGND/INNA/INPA，R5/C7"}]
+    },
+    {
+      "id": "analog.hx711-channel-b-grounding",
+      "category": "analog",
+      "subject": "HX711 B 通道连接",
+      "statement": "U2 INPB pin9 与 INNB pin10 在原理图右侧汇接到 GND，因此板级称重输入使用 A 通道 INPA/INNA，B 通道没有引到 J3。",
+      "confidence": "confirmed",
+      "attributes": {"channel_a": "INNA pin7,INPA pin8 -> J3 network", "channel_b_positive": "INPB pin9 -> GND", "channel_b_negative": "INNB pin10 -> GND", "external_channel_b": false},
+      "evidence": [{"asset_sha256": "ad6ae5355bea90eed10b704b0877f2a79d7fd914ad34fd9358d758c8b8976c15", "page": 1, "locator": "第 1 页网格 C3，U2 pins9/10 INPB/INNB 右侧公共节点与 GND"}]
+    },
+    {
+      "id": "gpio.tare-button",
+      "category": "gpio",
+      "subject": "SW1 key 按键",
+      "statement": "U1 PA2 pin8 连接 key 网络，SW1 按下时将 key 接到 GND；原理图没有画出 key 的外部上拉、滤波或 ESD 器件。",
+      "confidence": "confirmed",
+      "attributes": {"mcu_pin": "U1 pin8 PA2", "net": "key", "switch": "SW1 to GND", "external_pullup": null, "filter": null, "esd": null},
+      "evidence": [{"asset_sha256": "ad6ae5355bea90eed10b704b0877f2a79d7fd914ad34fd9358d758c8b8976c15", "page": 1, "locator": "第 1 页网格 C1 SW1/key/GND 与网格 A3 U1 PA2/key"}]
+    },
+    {
+      "id": "gpio.rgb-led",
+      "category": "gpio",
+      "subject": "SK6812 状态灯",
+      "statement": "LED1 sk6812 VDD pin1 接 +5V、VSS pin3 接 GND、DIN pin4 接 LED 网络和 U1 PA7 pin13；DOUT pin2 标为 OUT 并带未连接标记。",
+      "confidence": "confirmed",
+      "attributes": {"reference": "LED1 sk6812", "supply": "pin1 VDD -> +5V", "ground": "pin3 VSS -> GND", "data_in": "pin4 DIN/LED <- U1 pin13 PA7", "data_out": "pin2 DOUT/OUT -> NC"},
+      "evidence": [{"asset_sha256": "ad6ae5355bea90eed10b704b0877f2a79d7fd914ad34fd9358d758c8b8976c15", "page": 1, "locator": "第 1 页网格 B1 LED1 sk6812 pins1-4 与网格 A3 U1 PA7/LED"}]
+    },
+    {
+      "id": "debug.swd-header",
+      "category": "debug",
+      "subject": "J2 SWD 下载接口",
+      "statement": "J2 SIP-5 pin1=+3.3V、pin2=SWCLK、pin3=SWDIO、pin4=NRST、pin5=GND；SWCLK/SWDIO/NRST 分别连接 U1 PA14 pin20、PA13 pin19、NRST pin4。",
+      "confidence": "confirmed",
+      "attributes": {"pin1": "+3.3V", "pin2": "SWCLK -> U1 PA14 pin20", "pin3": "SWDIO -> U1 PA13 pin19", "pin4": "NRST -> U1 pin4", "pin5": "GND", "interface": "SWD"},
+      "evidence": [{"asset_sha256": "ad6ae5355bea90eed10b704b0877f2a79d7fd914ad34fd9358d758c8b8976c15", "page": 1, "locator": "第 1 页网格 A4 J2 SIP-5、R8 与网格 A3 U1 SWCLK/SWDIO/NRST"}]
+    },
+    {
+      "id": "reset.mcu-reset-boot",
+      "category": "reset",
+      "subject": "U1 复位与启动配置",
+      "statement": "U1 NRST pin4 通过 R8 10KΩ 上拉到 +3.3V，并由 C2 1uF 接 GND，同时引至 J2 pin4；BOOT0 pin1 直接接 GND。",
+      "confidence": "confirmed",
+      "attributes": {"reset_pin": "U1 pin4 NRST", "pullup": "R8 10K to +3.3V", "capacitor": "C2 1uF to GND", "debug_pin": "J2 pin4", "boot0": "U1 pin1 -> GND"},
+      "evidence": [{"asset_sha256": "ad6ae5355bea90eed10b704b0877f2a79d7fd914ad34fd9358d758c8b8976c15", "page": 1, "locator": "第 1 页网格 A3-A4，U1 BOOT0/NRST、C2、R8、J2 pin4 与 GND/+3.3V"}]
+    },
+    {
+      "id": "clock.no-external-crystal",
+      "category": "clock",
+      "subject": "U1 时钟器件",
+      "statement": "U1 PF0/OSC_IN pin2 与 PF1/OSC_OUT pin3 在本页没有连接外部晶振、谐振器或负载电容，原理图未显示独立时钟器件。",
+      "confidence": "confirmed",
+      "attributes": {"osc_in": "U1 pin2 PF0/OSC_IN unconnected", "osc_out": "U1 pin3 PF1/OSC_OUT unconnected", "external_crystal": null, "load_capacitors": null},
+      "evidence": [{"asset_sha256": "ad6ae5355bea90eed10b704b0877f2a79d7fd914ad34fd9358d758c8b8976c15", "page": 1, "locator": "第 1 页网格 A3，U1 pins2/3 PF0/OSC_IN 与 PF1/OSC_OUT 无外接线路"}]
+    },
+    {
+      "id": "protection.external-interface-boundary",
+      "category": "protection",
+      "subject": "Grove 与称重接口保护边界",
+      "statement": "J1 的 +5V、I2C_CLK、I2C_DATA 以及 J3 的四线称重桥均直接进入电源、上拉或模拟网络；本页没有显示保险丝、反接保护、TVS/ESD 二极管或共模滤波器。",
+      "confidence": "confirmed",
+      "attributes": {"interfaces": "J1,J3", "fuse": null, "reverse_protection": null, "tvs_esd": null, "common_mode_filter": null, "i2c_series_resistors": null},
+      "evidence": [{"asset_sha256": "ad6ae5355bea90eed10b704b0877f2a79d7fd914ad34fd9358d758c8b8976c15", "page": 1, "locator": "第 1 页完整 J1 与 J3 外部接口路径，未见专用保护符号"}]
+    },
+    {
+      "id": "address.documented-i2c-address",
+      "category": "address",
+      "subject": "正文中的 I2C 地址 0x26",
+      "statement": "产品正文标称 Unit Scales 的 I2C 地址为 0x26；本页原理图只显示 U1 PA9/PA10 与 J1 的 I2C_CLK/I2C_DATA 连接，没有地址电阻、拨码配置、地址文字或固件寄存器信息。",
+      "confidence": "uncertain",
+      "attributes": {"documented_address": "0x26", "controller": "U1 STM32F030F4P6", "scl": "PA9/I2C_CLK", "sda": "PA10/I2C_DATA", "schematic_address": null, "address_selector": null},
+      "evidence": [{"asset_sha256": "ad6ae5355bea90eed10b704b0877f2a79d7fd914ad34fd9358d758c8b8976c15", "page": 1, "locator": "第 1 页网格 A1/A3 J1、R6/R7、U1 PA9/PA10，图中无 0x26 或地址配置"}]
+    },
+    {
+      "id": "analog.documented-hx711-performance",
+      "category": "analog",
+      "subject": "正文中的 HX711 采集参数",
+      "statement": "产品正文称 HX711 为 24bit ADC，支持 32/64/128 增益并以 10SPS 输出；原理图确认 U2 型号与 RATE/XI/XO/输入连接，但没有打印位数、增益、采样率或固件配置。",
+      "confidence": "uncertain",
+      "attributes": {"adc": "U2 HX711", "documented_resolution": "24bit", "documented_gain": "32,64,128", "documented_rate": "10SPS", "schematic_resolution": null, "schematic_gain": null, "rate_setting_text": null},
+      "evidence": [{"asset_sha256": "ad6ae5355bea90eed10b704b0877f2a79d7fd914ad34fd9358d758c8b8976c15", "page": 1, "locator": "第 1 页网格 B3-C3 U2 HX711，图中无 24bit/增益/SPS 文字"}]
+    },
+    {
+      "id": "sensor.documented-load-range-error",
+      "category": "sensor",
+      "subject": "正文中的 20kg 量程与误差",
+      "statement": "产品正文称集成 0-20kg 称重传感器，并给出 50g 至 1000g 的绝对/相对误差表；本页原理图只显示 J3 四线桥接线，没有传感器型号、额定量程、灵敏度、激励电压、校准系数或误差条件。",
+      "confidence": "uncertain",
+      "attributes": {"documented_range": "0-20kg", "documented_error_points": "50g,100g,250g,500g,1000g", "connector": "J3 RED/WHITE/BLUE/GREEN", "sensor_model": null, "rated_output": null, "calibration": null, "test_conditions": null},
+      "evidence": [{"asset_sha256": "ad6ae5355bea90eed10b704b0877f2a79d7fd914ad34fd9358d758c8b8976c15", "page": 1, "locator": "第 1 页网格 C2-C3 J3 与 HX711 模拟网络，图中无传感器规格或误差表"}]
+    }
+  ],
+  "needs_review": [
+    {
+      "id": "review.i2c-address",
+      "fact_id": "address.documented-i2c-address",
+      "question": "请用 U108 当前内置固件、通信协议或 I2C 扫描确认默认地址 0x26 及地址修改/持久化规则。",
+      "reason": "板级原理图没有地址文字或硬件地址配置。",
+      "evidence": [{"asset_sha256": "ad6ae5355bea90eed10b704b0877f2a79d7fd914ad34fd9358d758c8b8976c15", "page": 1, "locator": "第 1 页 J1 I2C 与 U1 PA9/PA10"}]
+    },
+    {
+      "id": "review.hx711-performance",
+      "fact_id": "analog.documented-hx711-performance",
+      "question": "请用 HX711 料号资料和当前固件配置确认 ADC 位数、实际增益、RATE 状态与输出采样率。",
+      "reason": "原理图未打印 24bit、32/64/128 增益或 10SPS 配置结果。",
+      "evidence": [{"asset_sha256": "ad6ae5355bea90eed10b704b0877f2a79d7fd914ad34fd9358d758c8b8976c15", "page": 1, "locator": "第 1 页 U2 HX711 及 RATE/XI/XO/PD_SCK/DOUT"}]
+    },
+    {
+      "id": "review.load-cell-rating",
+      "fact_id": "sensor.documented-load-range-error",
+      "question": "请用量产称重传感器规格书和校准/测试记录确认 0-20kg 量程、灵敏度、激励条件与正文误差数据。",
+      "reason": "原理图只显示四线桥连接，不能证明机械量程和整机测量误差。",
+      "evidence": [{"asset_sha256": "ad6ae5355bea90eed10b704b0877f2a79d7fd914ad34fd9358d758c8b8976c15", "page": 1, "locator": "第 1 页 J3 RED/WHITE/BLUE/GREEN 与 U2 模拟输入"}]
+    }
+  ]
+}

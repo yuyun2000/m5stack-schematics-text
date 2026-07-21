@@ -1,0 +1,21 @@
+{
+  "dry_run": false,
+  "failed": 0,
+  "published": 1,
+  "results": [
+    {
+      "backup": null,
+      "draft_action": "unchanged",
+      "dry_run": false,
+      "errors": [],
+      "needs_review": 3,
+      "product_id": "unit-cams3-5mp-7f472b7f6963",
+      "product_name": "Unit CamS3-5MP",
+      "publish_action": "unchanged",
+      "sha256": "bcba51ade29738ee7a419a68a1a05d6ecd8444a6fd37cf272077f3050f455f23",
+      "status": "valid",
+      "uncertain_facts": 3
+    }
+  ],
+  "schema_version": 1
+}

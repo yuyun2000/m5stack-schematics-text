@@ -1,0 +1,21 @@
+{
+  "dry_run": false,
+  "failed": 0,
+  "published": 1,
+  "results": [
+    {
+      "backup": null,
+      "draft_action": "unchanged",
+      "dry_run": false,
+      "errors": [],
+      "needs_review": 1,
+      "product_id": "stamp-pico-2def1461ad81",
+      "product_name": "Stamp-Pico",
+      "publish_action": "unchanged",
+      "sha256": "7f8978691ac4d01abb4c2d3b7c3713ea125021016480ade606da7d6901ab6bdd",
+      "status": "valid",
+      "uncertain_facts": 1
+    }
+  ],
+  "schema_version": 1
+}

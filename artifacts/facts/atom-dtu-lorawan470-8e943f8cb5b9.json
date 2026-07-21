@@ -1,0 +1,749 @@
+{
+  "schema_version": 1,
+  "generator": "schematic_describer",
+  "product": {
+    "product_id": "atom-dtu-lorawan470-8e943f8cb5b9",
+    "product_name": "Atom DTU LoRaWAN470",
+    "sku": "K062",
+    "source_path": "atom/atom_dtu_lorawan470.md",
+    "source_sha256": "df68d6652531ee17ea8a06db05e0518a9d75b2db55a41f34a5bfbabb2f6cadeb",
+    "input_sha256": "2dfcbf9cd367b8ea27f334ab3f1154cbb42acfd797b993d39f554921a618ffca"
+  },
+  "schematic_assets": [
+    {
+      "sha256": "413dc7fd72cad70452238a33b69a91afd73bdebe5f386c378c1ecc754444247f",
+      "source_url": "https://static-cdn.m5stack.com/resource/docs/products/atom/atom_dtu_lorawan470/atom_dtu_lorawan470_sch_01.webp",
+      "pages": [
+        1
+      ]
+    }
+  ],
+  "summary": "Atom DTU LoRaWAN470 原理图以 P1 四针端子的 +VIN 为电源入口，经过 F1、SS54 防护和 U1 MP1584EN 降压生成 +5V；板上 +3.3V 为 M1 Ra-07/Ra-07H 无线模块和 U2 SP3485EN-L/TR 供电。M1 通过 UTX/URX 串口连接 Atom-5Pin，并经 R8 0Ω 接到 E1 SMA 天线座，同时引出 SWC、SWD 与 RESET 测试点。RS485 由 TX 驱动 Q1 自动控制 /RE 与 DE，A/B 侧配置偏置、120Ω/NC 可选终端和三只 SP4021-01FTG-C 防护器件，最终与 +VIN/GND 一起接到 P1。",
+  "keywords": [
+    "Atom DTU LoRaWAN470",
+    "K062",
+    "Ra-07",
+    "Ra-07H",
+    "MP1584EN",
+    "SP3485EN-L/TR",
+    "SS8050 Y1",
+    "SP4021-01FTG-C",
+    "ANT_SMA-KWE",
+    "RS485_A",
+    "RS485_B",
+    "UTXD",
+    "URXD",
+    "SWC",
+    "SWD",
+    "RESET",
+    "+VIN",
+    "+5V",
+    "+3.3V",
+    "Atom-4Pin",
+    "Atom-5Pin",
+    "HY-2.0_IIC",
+    "IIC_SCL",
+    "IIC_SDA",
+    "G21",
+    "G25",
+    "G22",
+    "G19",
+    "G23",
+    "G33",
+    "120Ω/NC",
+    "470",
+    "868",
+    "915"
+  ],
+  "components": [
+    {
+      "reference": "F1",
+      "part_number": "1.5A/24V",
+      "role": "+VIN 输入串联保护器件",
+      "evidence": [
+        {
+          "asset_sha256": "413dc7fd72cad70452238a33b69a91afd73bdebe5f386c378c1ecc754444247f",
+          "page": 1,
+          "locator": "左上电源区：+VIN 后串联 F1，标注 1.5A/24V"
+        }
+      ]
+    },
+    {
+      "reference": "U1",
+      "part_number": "MP1584EN",
+      "role": "将受保护的 +VIN 降压为 +5V 的开关稳压器",
+      "evidence": [
+        {
+          "asset_sha256": "413dc7fd72cad70452238a33b69a91afd73bdebe5f386c378c1ecc754444247f",
+          "page": 1,
+          "locator": "左上电源区黄色 U1 MP1584EN，VIN/SW/FB/BST/COMP/FREQ 引脚及外围"
+        }
+      ]
+    },
+    {
+      "reference": "D1-D2",
+      "part_number": "SS54",
+      "role": "MP1584EN 开关节点续流与 +VIN 输入对地防护",
+      "evidence": [
+        {
+          "asset_sha256": "413dc7fd72cad70452238a33b69a91afd73bdebe5f386c378c1ecc754444247f",
+          "page": 1,
+          "locator": "左上电源区：D1 SS54 位于 SW 节点与 GND，D2 SS54 位于 F1 后输入节点与 GND"
+        }
+      ]
+    },
+    {
+      "reference": "L1",
+      "part_number": "10uH",
+      "role": "MP1584EN SW 输出到 +5V 的降压电感",
+      "evidence": [
+        {
+          "asset_sha256": "413dc7fd72cad70452238a33b69a91afd73bdebe5f386c378c1ecc754444247f",
+          "page": 1,
+          "locator": "左上电源区 U1 SW 引脚右侧 L1 10uH，后接 +5V"
+        }
+      ]
+    },
+    {
+      "reference": "M1",
+      "part_number": "Ra-07/Ra-07H",
+      "role": "无线通信模块，连接 UART、SWC/SWD、RESET、+3.3V 和 SMA 天线",
+      "evidence": [
+        {
+          "asset_sha256": "413dc7fd72cad70452238a33b69a91afd73bdebe5f386c378c1ecc754444247f",
+          "page": 1,
+          "locator": "页面中央 M1 Ra-07/Ra-07H，18 针方框及 UTX/URX/ANT/SWCLK/SWDIO/RES/VCC"
+        }
+      ]
+    },
+    {
+      "reference": "E1",
+      "part_number": "ANT_SMA-KWE",
+      "role": "经 R8 0Ω 连接 M1 ANT 的外部天线座",
+      "evidence": [
+        {
+          "asset_sha256": "413dc7fd72cad70452238a33b69a91afd73bdebe5f386c378c1ecc754444247f",
+          "page": 1,
+          "locator": "页面中央偏右 E1 ANT_SMA-KWE；中心端经 R8 0Ω 接 M1 ANT，外壳多点接 GND"
+        }
+      ]
+    },
+    {
+      "reference": "U2",
+      "part_number": "SP3485EN-L/TR",
+      "role": "3.3V RS485 收发器，连接 RX/TX 控制逻辑与 RS485_A/RS485_B",
+      "evidence": [
+        {
+          "asset_sha256": "413dc7fd72cad70452238a33b69a91afd73bdebe5f386c378c1ecc754444247f",
+          "page": 1,
+          "locator": "左下黄色 U2 SP3485EN-L/TR，RO-/RE/DE/DI、A/B、VCC/GND 引脚"
+        }
+      ]
+    },
+    {
+      "reference": "Q1",
+      "part_number": "SS8050 Y1",
+      "role": "由 TX 经 R15 驱动，控制 U2 的 /RE 与 DE 共节点",
+      "evidence": [
+        {
+          "asset_sha256": "413dc7fd72cad70452238a33b69a91afd73bdebe5f386c378c1ecc754444247f",
+          "page": 1,
+          "locator": "左下 Q1 SS8050 Y1；基极经 R15 1KΩ 接 TX，发射极接 GND，集电极接 /RE/DE"
+        }
+      ]
+    },
+    {
+      "reference": "D3-D5",
+      "part_number": "SP4021-01FTG-C",
+      "role": "RS485_B 对地、A/B 之间和 RS485_A 对地的三级防护",
+      "evidence": [
+        {
+          "asset_sha256": "413dc7fd72cad70452238a33b69a91afd73bdebe5f386c378c1ecc754444247f",
+          "page": 1,
+          "locator": "页面下中右 D3、D4、D5 SP4021-01FTG-C，分别跨 GND-B、B-A、A-GND"
+        }
+      ]
+    },
+    {
+      "reference": "R14",
+      "part_number": "120Ω/NC",
+      "role": "跨接 RS485_B 与 RS485_A 的可选终端电阻",
+      "evidence": [
+        {
+          "asset_sha256": "413dc7fd72cad70452238a33b69a91afd73bdebe5f386c378c1ecc754444247f",
+          "page": 1,
+          "locator": "页面下中 R14 120Ω/NC，竖直跨接 RS485_B 与 RS485_A"
+        }
+      ]
+    },
+    {
+      "reference": "P1",
+      "part_number": "HDR_4P",
+      "role": "引出 RS485_B、RS485_A、+VIN 与 GND 的四针端子",
+      "evidence": [
+        {
+          "asset_sha256": "413dc7fd72cad70452238a33b69a91afd73bdebe5f386c378c1ecc754444247f",
+          "page": 1,
+          "locator": "页面右中 P1 HDR_4P，端子标注 B、A、12V+、12V-"
+        }
+      ]
+    },
+    {
+      "reference": "J1",
+      "part_number": "HY-2.0_IIC",
+      "role": "引出 IIC_SCL、IIC_SDA、+5V 与 GND 的四针接口",
+      "evidence": [
+        {
+          "asset_sha256": "413dc7fd72cad70452238a33b69a91afd73bdebe5f386c378c1ecc754444247f",
+          "page": 1,
+          "locator": "页面右中下 J1 HY-2.0_IIC，1-4 脚依次 IIC_SCL、IIC_SDA、VCC、GND"
+        }
+      ]
+    },
+    {
+      "reference": "P2",
+      "part_number": "Atom-5Pin",
+      "role": "连接 Atom 的 3V3、G22/G19 UART 和 G23/G33 RS485 控制信号",
+      "evidence": [
+        {
+          "asset_sha256": "413dc7fd72cad70452238a33b69a91afd73bdebe5f386c378c1ecc754444247f",
+          "page": 1,
+          "locator": "页面右下 P2 Atom-5Pin，G22/G19/G23/G33 分别接 URXD/UTXD/TX/RX"
+        }
+      ]
+    },
+    {
+      "reference": "P3",
+      "part_number": "Atom-4Pin",
+      "role": "连接 Atom 的 G21、G25、+5V 和 GND",
+      "evidence": [
+        {
+          "asset_sha256": "413dc7fd72cad70452238a33b69a91afd73bdebe5f386c378c1ecc754444247f",
+          "page": 1,
+          "locator": "页面右下 P3 Atom-4Pin，1-4 脚为 G21、G25、5V、GND"
+        }
+      ]
+    },
+    {
+      "reference": "JP1-JP5",
+      "part_number": null,
+      "role": "引出 +3.3V、GND、SWC、SWD 与 RESET 的调试/测试连接点",
+      "evidence": [
+        {
+          "asset_sha256": "413dc7fd72cad70452238a33b69a91afd73bdebe5f386c378c1ecc754444247f",
+          "page": 1,
+          "locator": "页面左中竖排 JP1-JP5，对应网络 +3.3V、GND、SWC、SWD、RESET"
+        }
+      ]
+    }
+  ],
+  "facts": [
+    {
+      "id": "system.functional_partition",
+      "category": "system",
+      "subject": "系统功能分区",
+      "statement": "原理图由 +VIN 到 +5V 的 MP1584EN 电源、+3.3V 供电的 Ra-07/Ra-07H 无线模块、SP3485EN-L/TR RS485 接口、SMA 天线、Atom 插针、I2C 接口和四针电源/总线端子组成。",
+      "confidence": "confirmed",
+      "attributes": {
+        "radio_module": "M1 Ra-07/Ra-07H",
+        "buck_converter": "U1 MP1584EN",
+        "rs485_transceiver": "U2 SP3485EN-L/TR",
+        "antenna_connector": "E1 ANT_SMA-KWE"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "413dc7fd72cad70452238a33b69a91afd73bdebe5f386c378c1ecc754444247f",
+          "page": 1,
+          "locator": "整页原理图：左上电源、中央 M1、左下 RS485、右侧连接器"
+        }
+      ]
+    },
+    {
+      "id": "power.vin_entry",
+      "category": "power",
+      "subject": "+VIN 输入路径",
+      "statement": "P1 的 12V+ 端连接 +VIN，+VIN 先串联 F1 1.5A/24V，再进入 U1 MP1584EN 的 VIN 引脚；P1 的 12V- 端接 GND。",
+      "confidence": "confirmed",
+      "attributes": {
+        "connector": "P1",
+        "positive_terminal": "12V+",
+        "negative_terminal": "12V-",
+        "input_net": "+VIN",
+        "series_protection": "F1 1.5A/24V"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "413dc7fd72cad70452238a33b69a91afd73bdebe5f386c378c1ecc754444247f",
+          "page": 1,
+          "locator": "右中 P1 +VIN/GND 端子与左上 +VIN-F1-U1 VIN 电源链"
+        }
+      ]
+    },
+    {
+      "id": "protection.vin_ss54",
+      "category": "protection",
+      "subject": "+VIN 输入防护",
+      "statement": "F1 后的输入节点通过 D2 SS54 和 C2 10uF 分别接 GND。",
+      "confidence": "confirmed",
+      "attributes": {
+        "node": "F1 output / U1 VIN",
+        "diode": "D2 SS54",
+        "capacitor": "C2 10uF",
+        "reference": "GND"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "413dc7fd72cad70452238a33b69a91afd73bdebe5f386c378c1ecc754444247f",
+          "page": 1,
+          "locator": "左上 F1 后节点：D2 SS54 对地、C2 10uF 对地"
+        }
+      ]
+    },
+    {
+      "id": "power.mp1584_output",
+      "category": "power",
+      "subject": "MP1584EN +5V 输出",
+      "statement": "U1 MP1584EN 的 SW 引脚经 L1 10uH 到 +5V，+5V 输出端由 C3、C4、C5 三只 22uF 电容对地滤波。",
+      "confidence": "confirmed",
+      "attributes": {
+        "converter": "U1 MP1584EN",
+        "switch_pin": 1,
+        "inductor": "L1 10uH",
+        "output_net": "+5V",
+        "output_capacitors": "C3/C4/C5 22uF"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "413dc7fd72cad70452238a33b69a91afd73bdebe5f386c378c1ecc754444247f",
+          "page": 1,
+          "locator": "左上 U1 SW-L1-+5V 路径及 C3/C4/C5 对地电容"
+        }
+      ]
+    },
+    {
+      "id": "power.mp1584_feedback",
+      "category": "power",
+      "subject": "MP1584EN 反馈分压",
+      "statement": "U1 FB 引脚连接 R4 51KΩ 与 R5 10KΩ 的分压节点，R4 上端接 +5V，R5 下端接 GND。",
+      "confidence": "confirmed",
+      "attributes": {
+        "feedback_pin": 4,
+        "upper_resistor": "R4 51KΩ",
+        "lower_resistor": "R5 10KΩ",
+        "sense_net": "+5V"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "413dc7fd72cad70452238a33b69a91afd73bdebe5f386c378c1ecc754444247f",
+          "page": 1,
+          "locator": "左上 U1 FB 引脚至 R4/R5 分压网络"
+        }
+      ]
+    },
+    {
+      "id": "power.mp1584_support_networks",
+      "category": "power",
+      "subject": "MP1584EN 支持网络",
+      "statement": "U1 BST 通过 C1 100nF 接 SW 节点，D1 SS54 跨接 SW 节点与 GND；FREQ 经 R6 100KΩ 接地，COMP 经 C6 150pF 与 R7 100KΩ 串联接地，EN 标为未连接。",
+      "confidence": "confirmed",
+      "attributes": {
+        "bootstrap_capacitor": "C1 100nF",
+        "freewheel_diode": "D1 SS54",
+        "frequency_resistor": "R6 100KΩ",
+        "compensation": "C6 150pF + R7 100KΩ",
+        "enable_connected": false
+      },
+      "evidence": [
+        {
+          "asset_sha256": "413dc7fd72cad70452238a33b69a91afd73bdebe5f386c378c1ecc754444247f",
+          "page": 1,
+          "locator": "左上 U1 的 BST、SW、FREQ、COMP、EN 周边；EN 引脚旁为 no-connect 标记"
+        }
+      ]
+    },
+    {
+      "id": "power.radio_3v3",
+      "category": "power",
+      "subject": "M1 3.3V 供电",
+      "statement": "M1 VCC 9 脚连接 +3.3V，并由 C7 100nF、C8 10uF、C9 33pF 对地去耦。",
+      "confidence": "confirmed",
+      "attributes": {
+        "component": "M1",
+        "vcc_pin": 9,
+        "rail": "+3.3V",
+        "decoupling": "C7 100nF; C8 10uF; C9 33pF"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "413dc7fd72cad70452238a33b69a91afd73bdebe5f386c378c1ecc754444247f",
+          "page": 1,
+          "locator": "页面中央 M1 VCC 9 脚及左侧 +3.3V、C7/C8/C9"
+        }
+      ]
+    },
+    {
+      "id": "debug.radio_test_points",
+      "category": "debug",
+      "subject": "无线模块调试测试点",
+      "statement": "M1 SWCLK 7 脚连接 SWC，SWDIO 8 脚连接 SWD，RES 16 脚连接 RESET；JP3、JP4、JP5 分别引出 SWC、SWD、RESET，JP1 和 JP2 引出 +3.3V 与 GND。",
+      "confidence": "confirmed",
+      "attributes": {
+        "swclk": "M1 pin 7 -> SWC -> JP3",
+        "swdio": "M1 pin 8 -> SWD -> JP4",
+        "reset": "M1 pin 16 -> RESET -> JP5",
+        "power_test": "JP1 +3.3V; JP2 GND"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "413dc7fd72cad70452238a33b69a91afd73bdebe5f386c378c1ecc754444247f",
+          "page": 1,
+          "locator": "页面中央 M1 SWCLK/SWDIO/RES 网络与左中 JP1-JP5 引出"
+        }
+      ]
+    },
+    {
+      "id": "rf.sma_path",
+      "category": "rf",
+      "subject": "M1 天线通路",
+      "statement": "M1 ANT 18 脚经 R8 0Ω 连接 E1 ANT_SMA-KWE 中心端，E1 的外壳端多点接 GND；M1 GND 17 脚也接地。",
+      "confidence": "confirmed",
+      "attributes": {
+        "source": "M1 ANT pin 18",
+        "series_resistor": "R8 0Ω",
+        "connector": "E1 ANT_SMA-KWE",
+        "module_ground_pin": 17
+      },
+      "evidence": [
+        {
+          "asset_sha256": "413dc7fd72cad70452238a33b69a91afd73bdebe5f386c378c1ecc754444247f",
+          "page": 1,
+          "locator": "页面中央 M1 18/17 脚、R8 0Ω 与 E1 ANT_SMA-KWE"
+        }
+      ]
+    },
+    {
+      "id": "bus.radio_uart",
+      "category": "bus",
+      "subject": "M1 UART 串口",
+      "statement": "M1 UTX 11 脚经 R9 22Ω 输出到 UTXD，M1 URX 10 脚经 R10 22Ω 连接 URXD。",
+      "confidence": "confirmed",
+      "attributes": {
+        "transmit": "M1 pin 11 UTX -> R9 22Ω -> UTXD",
+        "receive": "URXD -> R10 22Ω -> M1 pin 10 URX"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "413dc7fd72cad70452238a33b69a91afd73bdebe5f386c378c1ecc754444247f",
+          "page": 1,
+          "locator": "页面中央 M1 UTX/URX 右侧 R9/R10 22Ω 与 UTXD/URXD 网络"
+        }
+      ]
+    },
+    {
+      "id": "gpio.atom5pin_mapping",
+      "category": "gpio",
+      "subject": "Atom-5Pin 映射",
+      "statement": "P2 Atom-5Pin 的 1-5 脚依次为 3V3、G22、G19、G23、G33；G22 接 URXD，G19 接 UTXD，G23 接 TX，G33 接 RX。",
+      "confidence": "confirmed",
+      "attributes": {
+        "pin1": "3V3",
+        "pin2": "G22 -> URXD",
+        "pin3": "G19 -> UTXD",
+        "pin4": "G23 -> TX",
+        "pin5": "G33 -> RX"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "413dc7fd72cad70452238a33b69a91afd73bdebe5f386c378c1ecc754444247f",
+          "page": 1,
+          "locator": "页面右下 P2 Atom-5Pin 与右侧 URXD/UTXD/TX/RX 网络"
+        }
+      ]
+    },
+    {
+      "id": "gpio.atom4pin_mapping",
+      "category": "gpio",
+      "subject": "Atom-4Pin 映射",
+      "statement": "P3 Atom-4Pin 的 1-4 脚依次为 G21、G25、5V、GND。",
+      "confidence": "confirmed",
+      "attributes": {
+        "pin1": "G21",
+        "pin2": "G25",
+        "pin3": "5V",
+        "pin4": "GND"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "413dc7fd72cad70452238a33b69a91afd73bdebe5f386c378c1ecc754444247f",
+          "page": 1,
+          "locator": "页面右下 P3 Atom-4Pin，方框内外均标注 G21/G25/5V/GND"
+        }
+      ]
+    },
+    {
+      "id": "interface.i2c_connector",
+      "category": "interface",
+      "subject": "J1 I2C 接口",
+      "statement": "J1 HY-2.0_IIC 的 1-4 脚依次为 IIC_SCL、IIC_SDA、VCC、GND；IIC_SCL 接 G21，IIC_SDA 接 G25，VCC 接 +5V。",
+      "confidence": "confirmed",
+      "attributes": {
+        "pin1": "IIC_SCL / G21",
+        "pin2": "IIC_SDA / G25",
+        "pin3": "VCC / +5V",
+        "pin4": "GND",
+        "local_decoupling": "C10 100nF from +5V to GND"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "413dc7fd72cad70452238a33b69a91afd73bdebe5f386c378c1ecc754444247f",
+          "page": 1,
+          "locator": "页面右中下 J1 HY-2.0_IIC、G21/G25/+5V/GND 与 C10 100nF"
+        }
+      ]
+    },
+    {
+      "id": "power.rs485_3v3",
+      "category": "power",
+      "subject": "U2 3.3V 供电",
+      "statement": "U2 SP3485EN-L/TR 的 VCC 8 脚连接 +3.3V，GND 5 脚接地，C11 100nF 跨接 +3.3V 与 GND。",
+      "confidence": "confirmed",
+      "attributes": {
+        "vcc_pin": 8,
+        "gnd_pin": 5,
+        "rail": "+3.3V",
+        "decoupling": "C11 100nF"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "413dc7fd72cad70452238a33b69a91afd73bdebe5f386c378c1ecc754444247f",
+          "page": 1,
+          "locator": "左下 U2 VCC/GND 与 C11 100nF"
+        }
+      ]
+    },
+    {
+      "id": "key_net.rs485_direction_control",
+      "category": "key_net",
+      "subject": "RS485 方向控制",
+      "statement": "TX 经 R15 1KΩ 驱动 Q1 SS8050 Y1 基极；Q1 发射极接 GND，集电极连接 U2 的 /RE 2 脚和 DE 3 脚共节点，该节点由 R13 4.7KΩ 上拉到 +3.3V。",
+      "confidence": "confirmed",
+      "attributes": {
+        "control_net": "TX",
+        "base_resistor": "R15 1KΩ",
+        "transistor": "Q1 SS8050 Y1",
+        "controlled_pins": "U2 /RE pin 2 and DE pin 3",
+        "pullup": "R13 4.7KΩ to +3.3V"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "413dc7fd72cad70452238a33b69a91afd73bdebe5f386c378c1ecc754444247f",
+          "page": 1,
+          "locator": "左下 TX-R15-Q1 与 U2 /RE/DE 共节点、R13 上拉"
+        }
+      ]
+    },
+    {
+      "id": "key_net.rs485_di_grounded",
+      "category": "key_net",
+      "subject": "U2 驱动输入",
+      "statement": "U2 的 DI 4 脚直接连接 GND。",
+      "confidence": "confirmed",
+      "attributes": {
+        "component": "U2 SP3485EN-L/TR",
+        "pin": 4,
+        "signal": "DI",
+        "connection": "GND"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "413dc7fd72cad70452238a33b69a91afd73bdebe5f386c378c1ecc754444247f",
+          "page": 1,
+          "locator": "左下 U2 DI 4 脚向左再向下连接 GND"
+        }
+      ]
+    },
+    {
+      "id": "key_net.rs485_receiver",
+      "category": "key_net",
+      "subject": "U2 接收输出",
+      "statement": "U2 的 RO 1 脚经 R12 1KΩ 连接 RX 网络，RX 再连接 P2 Atom-5Pin 的 G33。",
+      "confidence": "confirmed",
+      "attributes": {
+        "source": "U2 RO pin 1",
+        "series_resistor": "R12 1KΩ",
+        "net": "RX",
+        "atom_gpio": "G33"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "413dc7fd72cad70452238a33b69a91afd73bdebe5f386c378c1ecc754444247f",
+          "page": 1,
+          "locator": "左下 U2 RO-R12-RX 与右下 P2 G33-RX"
+        }
+      ]
+    },
+    {
+      "id": "bus.rs485_ab",
+      "category": "bus",
+      "subject": "RS485 A/B 差分网络",
+      "statement": "U2 B 7 脚连接 RS485_B，U2 A 6 脚连接 RS485_A，两条网络均引到 P1 的 B、A 端子。",
+      "confidence": "confirmed",
+      "attributes": {
+        "b_path": "U2 pin 7 -> RS485_B -> P1 B",
+        "a_path": "U2 pin 6 -> RS485_A -> P1 A"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "413dc7fd72cad70452238a33b69a91afd73bdebe5f386c378c1ecc754444247f",
+          "page": 1,
+          "locator": "页面下中 U2 A/B 到 RS485_A/RS485_B，以及右中 P1 B/A"
+        }
+      ]
+    },
+    {
+      "id": "bus.rs485_bias",
+      "category": "bus",
+      "subject": "RS485 偏置",
+      "statement": "RS485_B 通过 R11 4.7KΩ 接 GND，RS485_A 通过 R16 4.7KΩ 接 +3.3V。",
+      "confidence": "confirmed",
+      "attributes": {
+        "b_bias": "R11 4.7KΩ to GND",
+        "a_bias": "R16 4.7KΩ to +3.3V"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "413dc7fd72cad70452238a33b69a91afd73bdebe5f386c378c1ecc754444247f",
+          "page": 1,
+          "locator": "页面下中 R11 从 RS485_B 接 GND，R16 从 RS485_A 接 +3.3V"
+        }
+      ]
+    },
+    {
+      "id": "bus.rs485_optional_termination",
+      "category": "bus",
+      "subject": "RS485 可选终端",
+      "statement": "R14 标注 120Ω/NC，并跨接 RS485_B 与 RS485_A。",
+      "confidence": "confirmed",
+      "attributes": {
+        "component": "R14",
+        "value": "120Ω/NC",
+        "endpoint_a": "RS485_B",
+        "endpoint_b": "RS485_A"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "413dc7fd72cad70452238a33b69a91afd73bdebe5f386c378c1ecc754444247f",
+          "page": 1,
+          "locator": "页面下中 R14 120Ω/NC 竖跨 A/B 网络"
+        }
+      ]
+    },
+    {
+      "id": "protection.rs485_sp4021",
+      "category": "protection",
+      "subject": "RS485 防护网络",
+      "statement": "D3、D4、D5 均标注 SP4021-01FTG-C；D3 跨 GND 与 RS485_B，D4 跨 RS485_B 与 RS485_A，D5 跨 RS485_A 与 GND。",
+      "confidence": "confirmed",
+      "attributes": {
+        "d3": "GND to RS485_B",
+        "d4": "RS485_B to RS485_A",
+        "d5": "RS485_A to GND",
+        "part_number": "SP4021-01FTG-C"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "413dc7fd72cad70452238a33b69a91afd73bdebe5f386c378c1ecc754444247f",
+          "page": 1,
+          "locator": "页面下中右 D3-D5 与 RS485_B/RS485_A/GND 三节点"
+        }
+      ]
+    },
+    {
+      "id": "interface.p1_terminal",
+      "category": "interface",
+      "subject": "P1 四针端子",
+      "statement": "P1 HDR_4P 从上到下标注 B、A、12V+、12V-，分别连接 RS485_B、RS485_A、+VIN 与 GND。",
+      "confidence": "confirmed",
+      "attributes": {
+        "terminal_b": "RS485_B",
+        "terminal_a": "RS485_A",
+        "terminal_12v_plus": "+VIN",
+        "terminal_12v_minus": "GND"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "413dc7fd72cad70452238a33b69a91afd73bdebe5f386c378c1ecc754444247f",
+          "page": 1,
+          "locator": "页面右中 P1 HDR_4P 及左侧四条网络"
+        }
+      ]
+    },
+    {
+      "id": "power.bulk_3v3",
+      "category": "power",
+      "subject": "+3.3V 储能电容",
+      "statement": "C12 100uF 跨接 +3.3V 与 GND。",
+      "confidence": "confirmed",
+      "attributes": {
+        "component": "C12",
+        "value": "100uF",
+        "rail": "+3.3V"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "413dc7fd72cad70452238a33b69a91afd73bdebe5f386c378c1ecc754444247f",
+          "page": 1,
+          "locator": "页面右下 C12 100uF，连接 +3.3V 与 GND"
+        }
+      ]
+    },
+    {
+      "id": "other.band_option_table",
+      "category": "other",
+      "subject": "频段装配标注表",
+      "statement": "页面右上独立表格显示 R1 0Ω 对应 470、R2 0Ω 对应 868、R3 0Ω 对应 915；该表格未画出与主电路的连线。",
+      "confidence": "confirmed",
+      "attributes": {
+        "r1": "0Ω -> 470",
+        "r2": "0Ω -> 868",
+        "r3": "0Ω -> 915",
+        "connected_in_page": false
+      },
+      "evidence": [
+        {
+          "asset_sha256": "413dc7fd72cad70452238a33b69a91afd73bdebe5f386c378c1ecc754444247f",
+          "page": 1,
+          "locator": "页面右上 R1/R2/R3 与 470/868/915 三行独立表格"
+        }
+      ]
+    }
+  ],
+  "needs_review": [
+    {
+      "id": "review.radio_module_variant",
+      "fact_id": null,
+      "question": "K062 当前硬件版本实际装配的是 Ra-07 还是 Ra-07H，且其内部通信芯片型号是什么？",
+      "reason": "M1 在原理图中并列标为 Ra-07/Ra-07H，页面未显示内部芯片型号。",
+      "evidence": [
+        {
+          "asset_sha256": "413dc7fd72cad70452238a33b69a91afd73bdebe5f386c378c1ecc754444247f",
+          "page": 1,
+          "locator": "页面中央 M1 方框下方型号标注 Ra-07/Ra-07H"
+        }
+      ]
+    },
+    {
+      "id": "review.band_resistor_population",
+      "fact_id": null,
+      "question": "470 MHz 版本的 R1/R2/R3 实际装配状态和对应配置网络是什么？",
+      "reason": "页面仅给出 R1/R2/R3 与 470/868/915 的独立装配表，没有画出它们与 M1 的连接。",
+      "evidence": [
+        {
+          "asset_sha256": "413dc7fd72cad70452238a33b69a91afd73bdebe5f386c378c1ecc754444247f",
+          "page": 1,
+          "locator": "页面右上 R1/R2/R3 0Ω 与 470/868/915 表格"
+        }
+      ]
+    }
+  ]
+}

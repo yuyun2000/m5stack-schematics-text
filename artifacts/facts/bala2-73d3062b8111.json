@@ -1,0 +1,614 @@
+{
+  "schema_version": 1,
+  "generator": "schematic_describer",
+  "product": {
+    "product_id": "bala2-73d3062b8111",
+    "product_name": "Bala2",
+    "sku": "K014-C",
+    "source_path": "app/bala2.md",
+    "source_sha256": "e88d07caa0ebce9c984eb7baabc6dd5eb0dea3336dfd92ac931677829ead8867",
+    "input_sha256": "19b836708ec29c118adfe4a2a0d9db5a0a6ecd12c47f2e62aa836fabf9867588"
+  },
+  "schematic_assets": [
+    {
+      "sha256": "912c12152f1b860780a4bf59d793b269e0db52cb32e4bf1a9696438d96fab8c3",
+      "source_url": "https://static-cdn.m5stack.com/resource/docs/products/app/bala2/bala2_sch_01.webp",
+      "pages": [
+        1
+      ]
+    }
+  ],
+  "summary": "Bala2 底座以 STM32F030C8T6（U4）为控制器，通过 MCU_SCL/MCU_SDA 与 M5-BUS 主机通信，并控制 DRV8833PWP（U3）双电机驱动、两组编码器和八路舵机信号。电池 VBAT_P037 经 PWR_SW 开关路径形成 SVR_P037，TPS61088（U2）再生成 DRV_P060 约 6V 电机驱动电源；CORE_P050 另经欠压/开关与 SPX3819（U1）生成 MCU_P033。两只电机连接器同时引出电机和编码器，PORTB/PORTC 直接转接 M5-BUS GPIO 与 5V。",
+  "keywords": [
+    "Bala2",
+    "K014-C",
+    "STM32F030C8T6",
+    "DRV8833PWP",
+    "TPS61088",
+    "SPX3819",
+    "M5_BUS",
+    "MCU_SCL",
+    "MCU_SDA",
+    "CORE_SCL",
+    "CORE_SDA",
+    "DRV_P060",
+    "SVR_P037",
+    "MCU_P033",
+    "CORE_P050",
+    "M0_P",
+    "M0_N",
+    "M1_P",
+    "M1_N",
+    "M0_EA",
+    "M0_EB",
+    "M1_EA",
+    "M1_EB",
+    "SERVO_MAIN",
+    "SERVO_OTTO",
+    "PORTB",
+    "PORTC",
+    "SWDIO",
+    "SWCLK",
+    "0x3A"
+  ],
+  "components": [
+    {
+      "reference": "U4",
+      "part_number": "STM32F030C8T6",
+      "role": "底座主控，管理电机、编码器、舵机、I2C 和状态 LED",
+      "evidence": [
+        {
+          "asset_sha256": "912c12152f1b860780a4bf59d793b269e0db52cb32e4bf1a9696438d96fab8c3",
+          "page": 1,
+          "locator": "MCU 区域 U4：STM32F030C8T6，PA/PB/PF、SWD、MCU_SCL/SDA、电机/舵机网络"
+        }
+      ]
+    },
+    {
+      "reference": "U3",
+      "part_number": "DRV8833PWP",
+      "role": "双路 H 桥电机驱动器，输出 M0_P/N 与 M1_P/N",
+      "evidence": [
+        {
+          "asset_sha256": "912c12152f1b860780a4bf59d793b269e0db52cb32e4bf1a9696438d96fab8c3",
+          "page": 1,
+          "locator": "DRIVER 区域 U3：DRV8833PWP，AIN1/2、BIN1/2、AOUT1/2、BOUT1/2、nSLEEP/nFAULT、VM/VINT"
+        }
+      ]
+    },
+    {
+      "reference": "U2",
+      "part_number": "TPS61088",
+      "role": "SVR_P037 到 DRV_P060 的 6V 升压转换器",
+      "evidence": [
+        {
+          "asset_sha256": "912c12152f1b860780a4bf59d793b269e0db52cb32e4bf1a9696438d96fab8c3",
+          "page": 1,
+          "locator": "6V BOOST 区域 U2：TPS61088，L1 2.2uH、SW/VOUT/FB/EN/ILIM/MODE/COMP 与 DRV_P060"
+        }
+      ]
+    },
+    {
+      "reference": "U1",
+      "part_number": "SPX3819",
+      "role": "SYS_P050 到 MCU_P033 的低压差稳压器",
+      "evidence": [
+        {
+          "asset_sha256": "912c12152f1b860780a4bf59d793b269e0db52cb32e4bf1a9696438d96fab8c3",
+          "page": 1,
+          "locator": "UVP+LDO 区域 U1：SPX3819，IN/EN/OUT/BYP/GND，输入 SYS_P050、输出 MCU_P033"
+        }
+      ]
+    },
+    {
+      "reference": "Q1/Q3",
+      "part_number": "WSP4407 / S8050",
+      "role": "VBAT_P037 到 SVR_P037 的电源开关控制路径",
+      "evidence": [
+        {
+          "asset_sha256": "912c12152f1b860780a4bf59d793b269e0db52cb32e4bf1a9696438d96fab8c3",
+          "page": 1,
+          "locator": "PWR_SW 区域：VBAT_P037-Q1(WSP4407)-SVR_P037，Q3 S8050 与 MCU_P033/R5/R6 控制"
+        }
+      ]
+    },
+    {
+      "reference": "Q2/Q4",
+      "part_number": "CJ3401 / S8050",
+      "role": "CORE_P050 欠压/开关控制并向 SYS_P050 供电",
+      "evidence": [
+        {
+          "asset_sha256": "912c12152f1b860780a4bf59d793b269e0db52cb32e4bf1a9696438d96fab8c3",
+          "page": 1,
+          "locator": "UVP+LDO 区域：CORE_P050-Q2(CJ3401)-SYS_P050，Q4 S8050 与 R2/R3/R4 控制"
+        }
+      ]
+    },
+    {
+      "reference": "BUS1",
+      "part_number": "M5_BUS",
+      "role": "M5 主机与底座的 30 Pin 电源、I2C、UART、GPIO 总线",
+      "evidence": [
+        {
+          "asset_sha256": "912c12152f1b860780a4bf59d793b269e0db52cb32e4bf1a9696438d96fab8c3",
+          "page": 1,
+          "locator": "M5_BUS 区域 BUS1：1~30 脚的 BAT/5V/HPWR/GPIO/I2C/UART/3.3V/GND 标注"
+        }
+      ]
+    },
+    {
+      "reference": "J2",
+      "part_number": "ZH1.5_6PIN",
+      "role": "M0 电机与编码器连接器",
+      "evidence": [
+        {
+          "asset_sha256": "912c12152f1b860780a4bf59d793b269e0db52cb32e4bf1a9696438d96fab8c3",
+          "page": 1,
+          "locator": "MOTOR CONNECTOR 区域 J2：M0_P/M0_N、M0_EA/M0_EB、ENC_P050/GND 到 M+/M-/A/B/E+/E-"
+        }
+      ]
+    },
+    {
+      "reference": "J3",
+      "part_number": "ZH1.5_6PIN",
+      "role": "M1 电机与编码器连接器",
+      "evidence": [
+        {
+          "asset_sha256": "912c12152f1b860780a4bf59d793b269e0db52cb32e4bf1a9696438d96fab8c3",
+          "page": 1,
+          "locator": "MOTOR CONNECTOR 区域 J3：M1_P/M1_N、M1_EA/M1_EB、ENC_P050/GND 到 M+/M-/A/B/E+/E-"
+        }
+      ]
+    },
+    {
+      "reference": "J4",
+      "part_number": "SERVO_4X",
+      "role": "四路外部主舵机接口，提供 SVR_MAIN1~4、SVR_P037 和 GND",
+      "evidence": [
+        {
+          "asset_sha256": "912c12152f1b860780a4bf59d793b269e0db52cb32e4bf1a9696438d96fab8c3",
+          "page": 1,
+          "locator": "SERVO_MAIN 区域 J4：S1~S4、VCC、GND 与 SVR_MAIN1~4、R25~R28 100R、SVR_P037"
+        }
+      ]
+    },
+    {
+      "reference": "J5",
+      "part_number": "SERVO_4X",
+      "role": "四路内部 OTTO 舵机接口，提供 SVR_OTTO1~4、SVR_P037 和 GND",
+      "evidence": [
+        {
+          "asset_sha256": "912c12152f1b860780a4bf59d793b269e0db52cb32e4bf1a9696438d96fab8c3",
+          "page": 1,
+          "locator": "SERVO_OTTO 区域 J5：S1~S4、VCC、GND 与 SVR_OTTO1~4、SVR_P037"
+        }
+      ]
+    },
+    {
+      "reference": "J6",
+      "part_number": "GROVE PORTB",
+      "role": "PORTB GPIO/ADC/DAC 与 5V 接口",
+      "evidence": [
+        {
+          "asset_sha256": "912c12152f1b860780a4bf59d793b269e0db52cb32e4bf1a9696438d96fab8c3",
+          "page": 1,
+          "locator": "GROVE 区域 J6 PORTB：IO2 CORE_G36、IO1 CORE_G26、5V CORE_P050、GND"
+        }
+      ]
+    },
+    {
+      "reference": "J7",
+      "part_number": "GROVE PORTC",
+      "role": "PORTC UART 与 5V 接口",
+      "evidence": [
+        {
+          "asset_sha256": "912c12152f1b860780a4bf59d793b269e0db52cb32e4bf1a9696438d96fab8c3",
+          "page": 1,
+          "locator": "GROVE 区域 J7 PORTC：IO2 CORE_G16、IO1 CORE_G17、5V CORE_P050、GND"
+        }
+      ]
+    },
+    {
+      "reference": "ISP1",
+      "part_number": "SWD",
+      "role": "STM32 调试接口，引出 RST、CLK、DIO、VCC、GND",
+      "evidence": [
+        {
+          "asset_sha256": "912c12152f1b860780a4bf59d793b269e0db52cb32e4bf1a9696438d96fab8c3",
+          "page": 1,
+          "locator": "MCU 左侧 ISP1 SWD：CORE_RST/SWCLK/SWDIO/MCU_P033/GND"
+        }
+      ]
+    },
+    {
+      "reference": "U5",
+      "part_number": "DNP",
+      "role": "未装配的可选 IMU 器件位，SCL/SDA 与去耦同样标 DNP",
+      "evidence": [
+        {
+          "asset_sha256": "912c12152f1b860780a4bf59d793b269e0db52cb32e4bf1a9696438d96fab8c3",
+          "page": 1,
+          "locator": "IMU 区域 U5：器件上方 DNP，R29/R30 与 C15/C17 亦标 DNP"
+        }
+      ]
+    },
+    {
+      "reference": "LED1/R9",
+      "part_number": "LED / 1KΩ",
+      "role": "由 SYS_LED 网络控制的系统状态指示灯",
+      "evidence": [
+        {
+          "asset_sha256": "912c12152f1b860780a4bf59d793b269e0db52cb32e4bf1a9696438d96fab8c3",
+          "page": 1,
+          "locator": "M5_BUS 与 SWD 之间：SYS_LED-R9 1KΩ-LED1-GND"
+        }
+      ]
+    }
+  ],
+  "facts": [
+    {
+      "id": "system.base-controller-architecture",
+      "category": "system",
+      "subject": "Bala2 底座",
+      "statement": "U4 STM32F030C8T6 通过 M5_BUS 与主机连接，控制 U3 DRV8833PWP、两组电机编码器、八路舵机和状态 LED；底座电源由电池开关、6V 升压和 MCU 3.3V LDO 分区组成。",
+      "confidence": "confirmed",
+      "attributes": {
+        "mcu": "U4 STM32F030C8T6",
+        "motor_driver": "U3 DRV8833PWP",
+        "host_bus": "BUS1 M5_BUS",
+        "motor_connectors": "J2,J3",
+        "servos": "J4,J5",
+        "power": "U2 TPS61088,U1 SPX3819"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "912c12152f1b860780a4bf59d793b269e0db52cb32e4bf1a9696438d96fab8c3",
+          "page": 1,
+          "locator": "整页 U4/U3/U2/U1/BUS1/J2~J7 功能块及同名网络"
+        }
+      ]
+    },
+    {
+      "id": "power.battery-switch",
+      "category": "power",
+      "subject": "VBAT_P037 到 SVR_P037",
+      "statement": "VBAT_P037 经 Q1 WSP4407 形成 SVR_P037；Q3 S8050 的控制网络连接 MCU_P033，并配 R1/R5/R6 与 C2/C4。",
+      "confidence": "confirmed",
+      "attributes": {
+        "input": "VBAT_P037",
+        "switch": "Q1 WSP4407",
+        "control": "Q3 S8050,MCU_P033",
+        "output": "SVR_P037"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "912c12152f1b860780a4bf59d793b269e0db52cb32e4bf1a9696438d96fab8c3",
+          "page": 1,
+          "locator": "PWR_SW 区域 VBAT_P037-Q1-SVR_P037 与 Q3/MCU_P033 控制支路"
+        }
+      ]
+    },
+    {
+      "id": "power.motor-6v-boost",
+      "category": "power",
+      "subject": "U2 TPS61088",
+      "statement": "U2 以 SVR_P037 为 VIN，经 L1 2.2uH 和开关网络输出 DRV_P060；反馈使用 R11 4.7KΩ、R12 1.2KΩ，ILIM/MODE/COMP 使用 R13/C9/C10 等外围。",
+      "confidence": "confirmed",
+      "attributes": {
+        "input": "SVR_P037",
+        "inductor": "L1 2.2uH",
+        "output": "DRV_P060",
+        "feedback": "R11 4.7KΩ,R12 1.2KΩ",
+        "controller": "TPS61088"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "912c12152f1b860780a4bf59d793b269e0db52cb32e4bf1a9696438d96fab8c3",
+          "page": 1,
+          "locator": "6V BOOST 区域 U2、L1、DRV_P060、R11/R12/R13/C9/C10"
+        }
+      ]
+    },
+    {
+      "id": "power.mcu-3v3-ldo",
+      "category": "power",
+      "subject": "U1 SPX3819",
+      "statement": "CORE_P050 经 Q2/Q4 欠压开关形成 SYS_P050，U1 SPX3819 再从 SYS_P050 输出 MCU_P033。",
+      "confidence": "confirmed",
+      "attributes": {
+        "source": "CORE_P050",
+        "uv_switch": "Q2 CJ3401,Q4 S8050",
+        "intermediate": "SYS_P050",
+        "ldo": "U1 SPX3819",
+        "output": "MCU_P033"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "912c12152f1b860780a4bf59d793b269e0db52cb32e4bf1a9696438d96fab8c3",
+          "page": 1,
+          "locator": "UVP+LDO 区域 CORE_P050-Q2/Q4-SYS_P050-U1-MCU_P033"
+        }
+      ]
+    },
+    {
+      "id": "bus.host-i2c-path",
+      "category": "bus",
+      "subject": "CORE_SCL/SDA 到 MCU_SCL/SDA",
+      "statement": "BUS1 的 CORE_SCL 和 CORE_SDA 分别经 R17、R18 22Ω 串联到 MCU_SCL、MCU_SDA；R14、R15 4.7KΩ 将主机侧信号上拉到 MCU_P033，U4 PB10/PB11 接 MCU_SCL/MCU_SDA。",
+      "confidence": "confirmed",
+      "attributes": {
+        "scl": "CORE_SCL-R17 22Ω-MCU_SCL-U4 PB10",
+        "sda": "CORE_SDA-R18 22Ω-MCU_SDA-U4 PB11",
+        "pullups": "R14/R15 4.7KΩ to MCU_P033"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "912c12152f1b860780a4bf59d793b269e0db52cb32e4bf1a9696438d96fab8c3",
+          "page": 1,
+          "locator": "MCU 区域 U4 下方 R14/R15/R17/R18 与 BUS1 CORE_SCL/SDA、U4 PB10/PB11"
+        }
+      ]
+    },
+    {
+      "id": "address.stm32-i2c",
+      "category": "address",
+      "subject": "Bala2 底座 STM32 I2C 地址",
+      "statement": "原理图显示 STM32 通过 MCU_SCL/MCU_SDA 通信，但页面没有地址值或硬件地址绑定位，因此仅凭此页无法确认 0x3A。",
+      "confidence": "uncertain",
+      "attributes": {
+        "documented_address": "0x3A",
+        "schematic_address_label": null,
+        "address_source": "firmware-controlled"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "912c12152f1b860780a4bf59d793b269e0db52cb32e4bf1a9696438d96fab8c3",
+          "page": 1,
+          "locator": "MCU/M5_BUS 区域 U4 PB10/PB11 与 CORE_SCL/SDA；整页无 0x3A 或地址选择标注"
+        }
+      ]
+    },
+    {
+      "id": "bus.motor-driver-inputs",
+      "category": "bus",
+      "subject": "U4 到 U3 电机控制",
+      "statement": "U4 PA8/PA9 连接 DRV_M1_A/DRV_M1_B，PA11/PA10 连接 DRV_M0_A/DRV_M0_B；PF6/PF7 分别连接 DRV_EN/DRV_FLT。",
+      "confidence": "confirmed",
+      "attributes": {
+        "motor_1": "PA8 DRV_M1_A,PA9 DRV_M1_B",
+        "motor_0": "PA11 DRV_M0_A,PA10 DRV_M0_B",
+        "enable": "PF6 DRV_EN",
+        "fault": "PF7 DRV_FLT"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "912c12152f1b860780a4bf59d793b269e0db52cb32e4bf1a9696438d96fab8c3",
+          "page": 1,
+          "locator": "MCU 区域 U4 左侧 PA8~PA11/PF6/PF7 与 DRIVER 区域 U3 AIN/BIN/nSLEEP/nFAULT"
+        }
+      ]
+    },
+    {
+      "id": "interface.motor0-connector",
+      "category": "interface",
+      "subject": "J2 M0",
+      "statement": "J2 的 M+/M- 接 M0_P/M0_N，A/B 经 R21/R22 1KΩ 接 M0_EA/M0_EB，E+ 接 ENC_P050，E- 和 SHELL 接 GND。",
+      "confidence": "confirmed",
+      "attributes": {
+        "motor_positive": "M0_P",
+        "motor_negative": "M0_N",
+        "encoder_A": "M0_EA via R21 1KΩ",
+        "encoder_B": "M0_EB via R22 1KΩ",
+        "encoder_supply": "ENC_P050",
+        "encoder_return": "GND"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "912c12152f1b860780a4bf59d793b269e0db52cb32e4bf1a9696438d96fab8c3",
+          "page": 1,
+          "locator": "MOTOR CONNECTOR 区域 J2 M0：M+/M-/A/B/E+/E-/SHELL 与左侧网络"
+        }
+      ]
+    },
+    {
+      "id": "interface.motor1-connector",
+      "category": "interface",
+      "subject": "J3 M1",
+      "statement": "J3 的 M+/M- 接 M1_P/M1_N，A/B 经 R23/R24 1KΩ 接 M1_EA/M1_EB，E+ 接 ENC_P050，E- 和 SHELL 接 GND。",
+      "confidence": "confirmed",
+      "attributes": {
+        "motor_positive": "M1_P",
+        "motor_negative": "M1_N",
+        "encoder_A": "M1_EA via R23 1KΩ",
+        "encoder_B": "M1_EB via R24 1KΩ",
+        "encoder_supply": "ENC_P050",
+        "encoder_return": "GND"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "912c12152f1b860780a4bf59d793b269e0db52cb32e4bf1a9696438d96fab8c3",
+          "page": 1,
+          "locator": "MOTOR CONNECTOR 区域 J3 M1：M+/M-/A/B/E+/E-/SHELL 与左侧网络"
+        }
+      ]
+    },
+    {
+      "id": "gpio.encoder-inputs",
+      "category": "gpio",
+      "subject": "M0/M1 编码器到 U4",
+      "statement": "U4 PB13/PB12 接 M0_EA/M0_EB，PB15/PB14 接 M1_EA/M1_EB。",
+      "confidence": "confirmed",
+      "attributes": {
+        "M0_EA": "U4 PB13",
+        "M0_EB": "U4 PB12",
+        "M1_EA": "U4 PB15",
+        "M1_EB": "U4 PB14"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "912c12152f1b860780a4bf59d793b269e0db52cb32e4bf1a9696438d96fab8c3",
+          "page": 1,
+          "locator": "MCU 区域 U4 右侧 PB12~PB15 与 MOTOR CONNECTOR 同名 M0/M1_EA/EB 网络"
+        }
+      ]
+    },
+    {
+      "id": "gpio.servo-main-map",
+      "category": "gpio",
+      "subject": "J4 SERVO_MAIN",
+      "statement": "U4 PB4/PB5/PB8/PB9 连接 SVR_MAIN1/2/3/4，分别经 R25/R26/R27/R28 100R 到 J4 S1/S2/S3/S4；J4 VCC 接 SVR_P037，GND 接地。",
+      "confidence": "confirmed",
+      "attributes": {
+        "S1": "U4 PB4 SVR_MAIN1 via R25 100R",
+        "S2": "U4 PB5 SVR_MAIN2 via R26 100R",
+        "S3": "U4 PB8 SVR_MAIN3 via R27 100R",
+        "S4": "U4 PB9 SVR_MAIN4 via R28 100R",
+        "power": "SVR_P037"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "912c12152f1b860780a4bf59d793b269e0db52cb32e4bf1a9696438d96fab8c3",
+          "page": 1,
+          "locator": "MCU U4 PB4/PB5/PB8/PB9 与 SERVO_MAIN J4/R25~R28/SVR_P037"
+        }
+      ]
+    },
+    {
+      "id": "gpio.servo-otto-map",
+      "category": "gpio",
+      "subject": "J5 SERVO_OTTO",
+      "statement": "U4 PA3、PA7、PB0、PB1 分别连接 SVR_OTTO1/2/3/4，并直接到 J5 S1/S2/S3/S4；J5 VCC 接 SVR_P037，GND 接地。",
+      "confidence": "confirmed",
+      "attributes": {
+        "S1": "U4 PA3 SVR_OTTO1",
+        "S2": "U4 PA7 SVR_OTTO2",
+        "S3": "U4 PB0 SVR_OTTO3",
+        "S4": "U4 PB1 SVR_OTTO4",
+        "power": "SVR_P037"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "912c12152f1b860780a4bf59d793b269e0db52cb32e4bf1a9696438d96fab8c3",
+          "page": 1,
+          "locator": "MCU U4 PA3/PA7/PB0/PB1 与 SERVO_OTTO J5/SVR_OTTO1~4/SVR_P037"
+        }
+      ]
+    },
+    {
+      "id": "interface.portb",
+      "category": "interface",
+      "subject": "J6 PORTB",
+      "statement": "J6 的 IO2 接 CORE_G36，IO1 接 CORE_G26，5V 接 CORE_P050，GND 接地。",
+      "confidence": "confirmed",
+      "attributes": {
+        "IO2": "CORE_G36",
+        "IO1": "CORE_G26",
+        "5V": "CORE_P050",
+        "GND": "GND"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "912c12152f1b860780a4bf59d793b269e0db52cb32e4bf1a9696438d96fab8c3",
+          "page": 1,
+          "locator": "GROVE 区域 J6 PORTB：4/3/2/1 脚与 CORE_G36/CORE_G26/CORE_P050/GND"
+        }
+      ]
+    },
+    {
+      "id": "interface.portc",
+      "category": "interface",
+      "subject": "J7 PORTC",
+      "statement": "J7 的 IO2 接 CORE_G16，IO1 接 CORE_G17，5V 接 CORE_P050，GND 接地。",
+      "confidence": "confirmed",
+      "attributes": {
+        "IO2": "CORE_G16",
+        "IO1": "CORE_G17",
+        "5V": "CORE_P050",
+        "GND": "GND"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "912c12152f1b860780a4bf59d793b269e0db52cb32e4bf1a9696438d96fab8c3",
+          "page": 1,
+          "locator": "GROVE 区域 J7 PORTC：4/3/2/1 脚与 CORE_G16/CORE_G17/CORE_P050/GND"
+        }
+      ]
+    },
+    {
+      "id": "debug.swd-interface",
+      "category": "debug",
+      "subject": "ISP1 SWD",
+      "statement": "ISP1 的 RST 接 CORE_RST/U4 NRST，CLK 接 SWCLK/U4 PA14，DIO 接 SWDIO/U4 PA13，VCC 接 MCU_P033，GND 接地。",
+      "confidence": "confirmed",
+      "attributes": {
+        "RST": "CORE_RST U4 NRST",
+        "CLK": "SWCLK U4 PA14",
+        "DIO": "SWDIO U4 PA13",
+        "VCC": "MCU_P033",
+        "GND": "GND"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "912c12152f1b860780a4bf59d793b269e0db52cb32e4bf1a9696438d96fab8c3",
+          "page": 1,
+          "locator": "MCU 左侧 ISP1 SWD 与 U4 NRST/PA13/PA14、MCU_P033/GND"
+        }
+      ]
+    },
+    {
+      "id": "sensor.optional-imu-dnp",
+      "category": "sensor",
+      "subject": "U5 可选 IMU",
+      "statement": "U5 器件位标注 DNP，其 SCL/SDA 串联位 R29/R30 与去耦 C15/C17 也标注 DNP，因此该页定义的 U5 IMU 支路不装配。",
+      "confidence": "confirmed",
+      "attributes": {
+        "device": "U5 DNP",
+        "i2c_links": "R29/R30 DNP",
+        "decoupling": "C15/C17 DNP",
+        "bus": "IMU_SCL,IMU_SDA"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "912c12152f1b860780a4bf59d793b269e0db52cb32e4bf1a9696438d96fab8c3",
+          "page": 1,
+          "locator": "IMU 区域 U5 上方 DNP、R29/R30 DNP、C15/C17 DNP 标注"
+        }
+      ]
+    },
+    {
+      "id": "gpio.system-led",
+      "category": "gpio",
+      "subject": "LED1",
+      "statement": "U4 PA15 连接 SYS_LED，SYS_LED 经 R9 1KΩ 和 LED1 接 GND。",
+      "confidence": "confirmed",
+      "attributes": {
+        "mcu_pin": "U4 PA15",
+        "network": "SYS_LED",
+        "resistor": "R9 1KΩ",
+        "indicator": "LED1"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "912c12152f1b860780a4bf59d793b269e0db52cb32e4bf1a9696438d96fab8c3",
+          "page": 1,
+          "locator": "MCU U4 PA15 SYS_LED 与页面中央 SYS_LED-R9-LED1-GND 支路"
+        }
+      ]
+    }
+  ],
+  "needs_review": [
+    {
+      "id": "review.stm32-i2c-address",
+      "fact_id": "address.stm32-i2c",
+      "question": "请用 Bala2 STM32 固件或主机通信协议确认底座 I2C 地址是否固定为 0x3A。",
+      "reason": "STM32 的从机地址由固件决定，原理图只显示 SCL/SDA 物理网络，无法证明 0x3A。",
+      "evidence": [
+        {
+          "asset_sha256": "912c12152f1b860780a4bf59d793b269e0db52cb32e4bf1a9696438d96fab8c3",
+          "page": 1,
+          "locator": "M5_BUS 与 MCU 区域的 CORE_SCL/SDA、MCU_SCL/SDA 网络，整页无地址标注"
+        }
+      ]
+    }
+  ]
+}

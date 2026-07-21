@@ -1,0 +1,21 @@
+{
+  "dry_run": false,
+  "failed": 0,
+  "published": 1,
+  "results": [
+    {
+      "backup": null,
+      "draft_action": "unchanged",
+      "dry_run": false,
+      "errors": [],
+      "needs_review": 3,
+      "product_id": "module-comx-zigbee-02106baaddac",
+      "product_name": "Module COMX Zigbee",
+      "publish_action": "unchanged",
+      "sha256": "f54a9d07bf2a5fd77bb34cacd9cb054ba26286d5d9c545e91bd8b26dbfd84c0a",
+      "status": "valid",
+      "uncertain_facts": 3
+    }
+  ],
+  "schema_version": 1
+}

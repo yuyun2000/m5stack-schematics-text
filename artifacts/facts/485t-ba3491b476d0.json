@@ -1,0 +1,122 @@
+{
+  "schema_version": 1,
+  "generator": "schematic_describer",
+  "product": {
+    "product_id": "485t-ba3491b476d0",
+    "product_name": "485T",
+    "sku": "A071",
+    "source_path": "accessory/485t.md",
+    "source_sha256": "b188913358e04e7c187fc0718c0dde36946a35a77d99ba9ab625954793e70db9",
+    "input_sha256": "c8391c72319a9f8ffc0d1f7081250d31bb168ae33f828cb4bc870cbfc021e1bd"
+  },
+  "schematic_assets": [
+    {
+      "sha256": "3bf44484efeb51773f0ebda50d64d6ed893ab07335e91748817119091354a64f",
+      "source_url": "https://m5stack-doc.oss-cn-shenzhen.aliyuncs.com/1108/A071-SCH_485T_page_01.png",
+      "pages": [1]
+    }
+  ],
+  "summary": "485T 将三组 4 Pin 接口的 B、A、VCC 和 GND 分别并联，并通过拨动开关选择是否在 A/B 之间接入 120R 终端电阻；板上另有由 VCC 供电的红色 LED 指示支路。",
+  "keywords": ["485T", "A071", "RS-485", "120R", "终端电阻", "P1", "P2", "P3", "S1", "SW-PWR", "VCC", "GND", "A", "B", "RED 0603"],
+  "components": [
+    {
+      "reference": "P1",
+      "part_number": "HT3.964P",
+      "role": "4 Pin 接口，连接 B、A、VCC、GND",
+      "evidence": [{"asset_sha256": "3bf44484efeb51773f0ebda50d64d6ed893ab07335e91748817119091354a64f", "page": 1, "locator": "C2 区域：P1 符号及其 1~4 脚网络标注"}]
+    },
+    {
+      "reference": "P2",
+      "part_number": "HT3.964P",
+      "role": "4 Pin 接口，连接 B、A、VCC、GND",
+      "evidence": [{"asset_sha256": "3bf44484efeb51773f0ebda50d64d6ed893ab07335e91748817119091354a64f", "page": 1, "locator": "C3 区域：P2 符号及其 1~4 脚网络标注"}]
+    },
+    {
+      "reference": "P3",
+      "part_number": "3.96 4P",
+      "role": "4 Pin 接口，连接 B、A、VCC、GND",
+      "evidence": [{"asset_sha256": "3bf44484efeb51773f0ebda50d64d6ed893ab07335e91748817119091354a64f", "page": 1, "locator": "B2 区域：P3 符号及其 1~4 脚网络标注"}]
+    },
+    {
+      "reference": "S1",
+      "part_number": "SW-PWR",
+      "role": "选择接通或断开 120R A/B 终端电阻支路",
+      "evidence": [{"asset_sha256": "3bf44484efeb51773f0ebda50d64d6ed893ab07335e91748817119091354a64f", "page": 1, "locator": "B2-C2 区域：S1 三脚开关符号、1/2/3 脚及相邻连线"}]
+    },
+    {
+      "reference": "R1",
+      "part_number": "120R",
+      "role": "A/B 总线终端电阻",
+      "evidence": [{"asset_sha256": "3bf44484efeb51773f0ebda50d64d6ed893ab07335e91748817119091354a64f", "page": 1, "locator": "B2-C2 区域：R1 标注 120R，一端连接 B，另一端连接 S1.1"}]
+    },
+    {
+      "reference": "R2",
+      "part_number": "4.7K",
+      "role": "D1 红色 LED 的串联限流电阻",
+      "evidence": [{"asset_sha256": "3bf44484efeb51773f0ebda50d64d6ed893ab07335e91748817119091354a64f", "page": 1, "locator": "B3 区域：VCC、R2 4.7K、D1 与 GND 串联支路"}]
+    },
+    {
+      "reference": "D1",
+      "part_number": "RED 0603",
+      "role": "VCC 电源红色 LED 指示器",
+      "evidence": [{"asset_sha256": "3bf44484efeb51773f0ebda50d64d6ed893ab07335e91748817119091354a64f", "page": 1, "locator": "B3 区域：D1 标注 RED 0603，位于 R2 与 GND 之间"}]
+    }
+  ],
+  "facts": [
+    {
+      "id": "interface.p1-pinout",
+      "category": "interface",
+      "subject": "P1",
+      "statement": "P1 的 1 脚连接 GND，2 脚连接 VCC，3 脚连接 A，4 脚连接 B。",
+      "confidence": "confirmed",
+      "attributes": {"pin_1": "GND", "pin_2": "VCC", "pin_3": "A", "pin_4": "B", "connector": "HT3.964P"},
+      "evidence": [{"asset_sha256": "3bf44484efeb51773f0ebda50d64d6ed893ab07335e91748817119091354a64f", "page": 1, "locator": "C2 区域：P1 的 1~4 脚与 GND、VCC、A、B 连线"}]
+    },
+    {
+      "id": "interface.p2-pinout",
+      "category": "interface",
+      "subject": "P2",
+      "statement": "P2 的 1 脚连接 GND，2 脚连接 VCC，3 脚连接 A，4 脚连接 B。",
+      "confidence": "confirmed",
+      "attributes": {"pin_1": "GND", "pin_2": "VCC", "pin_3": "A", "pin_4": "B", "connector": "HT3.964P"},
+      "evidence": [{"asset_sha256": "3bf44484efeb51773f0ebda50d64d6ed893ab07335e91748817119091354a64f", "page": 1, "locator": "C3 区域：P2 的 1~4 脚与 GND、VCC、A、B 连线"}]
+    },
+    {
+      "id": "interface.p3-pinout",
+      "category": "interface",
+      "subject": "P3",
+      "statement": "P3 的 1 脚连接 B，2 脚连接 A，3 脚连接 VCC，4 脚连接 GND。",
+      "confidence": "confirmed",
+      "attributes": {"pin_1": "B", "pin_2": "A", "pin_3": "VCC", "pin_4": "GND", "connector": "3.96 4P"},
+      "evidence": [{"asset_sha256": "3bf44484efeb51773f0ebda50d64d6ed893ab07335e91748817119091354a64f", "page": 1, "locator": "B2 区域：P3 的 1~4 脚下方 B、A、VCC、GND 标注"}]
+    },
+    {
+      "id": "bus.parallel-ports",
+      "category": "bus",
+      "subject": "P1、P2、P3",
+      "statement": "三组接口的 B、A、VCC、GND 分别直接并联。",
+      "confidence": "confirmed",
+      "attributes": {"B": "P1.4, P2.4, P3.1", "A": "P1.3, P2.3, P3.2", "VCC": "P1.2, P2.2, P3.3", "GND": "P1.1, P2.1, P3.4"},
+      "evidence": [{"asset_sha256": "3bf44484efeb51773f0ebda50d64d6ed893ab07335e91748817119091354a64f", "page": 1, "locator": "B2-C3 区域：P1、P2、P3 之间的 B/A 水平连线及 VCC/GND 同名网络标注"}]
+    },
+    {
+      "id": "bus.switchable-termination",
+      "category": "bus",
+      "subject": "A/B 终端支路",
+      "statement": "R1 为 120R；R1 一端连接 B，另一端连接 S1 的 1 脚，S1 的 2 脚连接 A，3 脚未接线。S1 接通 1-2 时，120R 跨接在 B 与 A 之间；S1 切向 3 脚时该支路断开。",
+      "confidence": "confirmed",
+      "attributes": {"resistance": "120R", "switch": "S1", "enabled_contact": "S1.1-S1.2", "open_contact": "S1.2-S1.3"},
+      "evidence": [{"asset_sha256": "3bf44484efeb51773f0ebda50d64d6ed893ab07335e91748817119091354a64f", "page": 1, "locator": "B2-C2 区域：B-R1(120R)-S1.1、S1.2-A 的连线，S1.3 无外接连线"}]
+    },
+    {
+      "id": "power.red-indicator",
+      "category": "power",
+      "subject": "VCC 指示支路",
+      "statement": "VCC 经 R2（4.7K）和 D1（RED 0603）串联至 GND，构成红色 LED 指示支路。",
+      "confidence": "confirmed",
+      "attributes": {"supply": "VCC", "series_resistor": "R2 4.7K", "indicator": "D1 RED 0603", "return": "GND"},
+      "evidence": [{"asset_sha256": "3bf44484efeb51773f0ebda50d64d6ed893ab07335e91748817119091354a64f", "page": 1, "locator": "B3 区域：VCC-R2(4.7K)-D1(RED 0603)-GND 竖直串联支路"}]
+    }
+  ],
+  "needs_review": []
+}

@@ -1,0 +1,276 @@
+{
+  "schema_version": 1,
+  "generator": "schematic_describer",
+  "product": {
+    "product_id": "hat-mini-joyc-2b282d3bc3f8",
+    "product_name": "Hat Mini JoyC",
+    "sku": "U156",
+    "source_path": "hat/MiniJoyC.md",
+    "source_sha256": "71bbb3a2d61f7c4e5c7475567797647f4015a4de79c3624e25fa17b1906cf386",
+    "input_sha256": "017b6f13c98bf8614c024e04d269898f80e69d5f683e8b76a34050ab78ca1b7a"
+  },
+  "schematic_assets": [
+    {
+      "sha256": "0fa4b2411eafc14741fd7b06503dfb1c87d15e23c7361c6cad60baa4eed94b37",
+      "source_url": "https://m5stack-doc.oss-cn-shenzhen.aliyuncs.com/610/SCH_HAT_MiniJoyC_V1.0_sch_01.png",
+      "pages": [1]
+    }
+  ],
+  "summary": "Hat Mini JoyC 以 STM32F030F4P6（U1）为主控，PA1/PA2 连接 RKJXV1224005 双轴摇杆，PA3 连接中心按键 BTN，PA6 驱动 SK6812-3535（U2）。PA9/PA10 的 SCL/SDA 同时连接 8 针 HAT 接口 P1 和 GROVE J1，J2 提供 SWD 调试。3V3 为 MCU、摇杆和 RGB LED 供电，5V 仅在 HAT 与 GROVE 间分配，BAT 连接 HAT 与 J3；原理图未显示充电器或电源转换器。",
+  "keywords": [
+    "Hat Mini JoyC",
+    "U156",
+    "STM32F030F4P6",
+    "RKJXV1224005",
+    "SK6812-3535",
+    "PA1",
+    "PA2",
+    "PA3",
+    "PA6",
+    "BTN",
+    "RGB",
+    "I2C",
+    "SCL",
+    "SDA",
+    "0x54",
+    "GROVE",
+    "SWD_5P",
+    "SWCLK",
+    "SWDIO",
+    "NRST",
+    "BOOT0",
+    "3V3",
+    "5V",
+    "BAT",
+    "200mAh",
+    "双轴摇杆",
+    "中心按键"
+  ],
+  "components": [
+    {
+      "reference": "U1",
+      "part_number": "STM32F030F4P6",
+      "role": "主控 MCU，采集摇杆 X/Y 与按键，驱动 RGB LED，并提供 I2C 与 SWD",
+      "evidence": [{"asset_sha256": "0fa4b2411eafc14741fd7b06503dfb1c87d15e23c7361c6cad60baa4eed94b37", "page": 1, "locator": "B1-C2 区域 U1 STM32F030F4P6：PA1/PA2/BTN/RGB/SCL/SDA/SWDIO/SWCLK/BOOT0/NRST 与电源引脚"}]
+    },
+    {
+      "reference": "SW1",
+      "part_number": "RKJXV1224005",
+      "role": "双轴摇杆与中心按键组件，轴信号连接 PA1/PA2，按键信号连接 BTN",
+      "evidence": [{"asset_sha256": "0fa4b2411eafc14741fd7b06503dfb1c87d15e23c7361c6cad60baa4eed94b37", "page": 1, "locator": "A2-B3 区域 SW1 RKJXV1224005：两组电位器端子与底部按钮触点"}]
+    },
+    {
+      "reference": "U2",
+      "part_number": "SK6812-3535",
+      "role": "单颗可编程 RGB LED，DI 接 RGB，VDD 接 3V3，GND 接地",
+      "evidence": [{"asset_sha256": "0fa4b2411eafc14741fd7b06503dfb1c87d15e23c7361c6cad60baa4eed94b37", "page": 1, "locator": "B3 区域 U2 SK6812-3535：1 DO、2 GND、3 DI/RGB、4 VDD/3V3"}]
+    },
+    {
+      "reference": "P1",
+      "part_number": "Header 8H",
+      "role": "8 针 HAT 主机接口，引出 GND、5V、SCL、SDA、BAT、3V3",
+      "evidence": [{"asset_sha256": "0fa4b2411eafc14741fd7b06503dfb1c87d15e23c7361c6cad60baa4eed94b37", "page": 1, "locator": "D3 区域 P1 Header 8H：8 GND、7 5V、6 SCL、5 G36、4 SDA、3 BAT、2 3V3、1 5VIN"}]
+    },
+    {
+      "reference": "J1",
+      "part_number": "GROVE",
+      "role": "四针 I2C 与 5V 扩展接口，引出 SCL、SDA、5V 和 GND",
+      "evidence": [{"asset_sha256": "0fa4b2411eafc14741fd7b06503dfb1c87d15e23c7361c6cad60baa4eed94b37", "page": 1, "locator": "D2 区域 J1 GROVE：IO2/SCL、IO1/SDA、5V、GND"}]
+    },
+    {
+      "reference": "J2",
+      "part_number": "SWD_5P",
+      "role": "五针 SWD 调试接口，引出 3V3、MCU_SWCLK、MCU_SWDIO、NRST 和 GND",
+      "evidence": [{"asset_sha256": "0fa4b2411eafc14741fd7b06503dfb1c87d15e23c7361c6cad60baa4eed94b37", "page": 1, "locator": "D1 区域 J2 SWD_5P：VCC/SWCLK/SWDIO/NRST/GND"}]
+    },
+    {
+      "reference": "J3",
+      "part_number": null,
+      "role": "BAT/GND 电池连接器",
+      "evidence": [{"asset_sha256": "0fa4b2411eafc14741fd7b06503dfb1c87d15e23c7361c6cad60baa4eed94b37", "page": 1, "locator": "D4 区域 J3：左侧 BAT/GND 网络，符号内 +、-、3、4 标记"}]
+    },
+    {
+      "reference": "R1/R4/R5",
+      "part_number": "10K / 10K / 10K",
+      "role": "BTN 上拉、BOOT0 下拉与 NRST 上拉电阻",
+      "evidence": [{"asset_sha256": "0fa4b2411eafc14741fd7b06503dfb1c87d15e23c7361c6cad60baa4eed94b37", "page": 1, "locator": "B2 R1 10K 从 BTN 至 3V3；C2 R4 10K 从 BOOT0 至 GND；C2 R5 10K 从 NRST 至 3V3"}]
+    },
+    {
+      "reference": "C1/C2/C3/C4/C6",
+      "part_number": "100nF / 100nF / 10uF / 1uF / 100nF",
+      "role": "NRST、MCU、GROVE 5V 与 RGB LED 的去耦/滤波电容",
+      "evidence": [{"asset_sha256": "0fa4b2411eafc14741fd7b06503dfb1c87d15e23c7361c6cad60baa4eed94b37", "page": 1, "locator": "页面 C1 NRST 100nF、C2/C3 MCU 100nF/10uF、C4 GROVE 1uF、C6 U2 100nF"}]
+    }
+  ],
+  "facts": [
+    {
+      "id": "system.controller-input-output-architecture",
+      "category": "system",
+      "subject": "Hat Mini JoyC",
+      "statement": "U1 STM32F030F4P6 采集 SW1 的 PA1/PA2 双轴与 BTN 按键，使用 PA6/RGB 驱动 U2 SK6812-3535，并通过 PA9/SCL、PA10/SDA 连接 HAT 与 GROVE。",
+      "confidence": "confirmed",
+      "attributes": {"controller": "U1 STM32F030F4P6", "joystick": "SW1 RKJXV1224005", "x_y": "PA1, PA2", "button": "PA3 BTN", "rgb": "PA6 RGB to U2", "i2c": "PA9 SCL; PA10 SDA"},
+      "evidence": [{"asset_sha256": "0fa4b2411eafc14741fd7b06503dfb1c87d15e23c7361c6cad60baa4eed94b37", "page": 1, "locator": "全页 MCU、SW1、U2、P1、J1 的同名 GPIO、总线和电源网络"}]
+    },
+    {
+      "id": "component.mcu-pin-map",
+      "category": "component",
+      "subject": "U1 STM32F030F4P6",
+      "statement": "U1.7 PA1 接 PA1 摇杆轴，U1.8 PA2 接 PA2 摇杆轴，U1.9 PA3 接 BTN，U1.12 PA6 接 RGB；U1.17 PA9 接 SCL，U1.18 PA10 接 SDA，U1.19 PA13 接 MCU_SWDIO，U1.20 PA14 接 MCU_SWCLK。",
+      "confidence": "confirmed",
+      "attributes": {"pin_7": "PA1 joystick", "pin_8": "PA2 joystick", "pin_9": "PA3 BTN", "pin_12": "PA6 RGB", "pin_17": "PA9 SCL", "pin_18": "PA10 SDA", "pin_19": "PA13 MCU_SWDIO", "pin_20": "PA14 MCU_SWCLK"},
+      "evidence": [{"asset_sha256": "0fa4b2411eafc14741fd7b06503dfb1c87d15e23c7361c6cad60baa4eed94b37", "page": 1, "locator": "B1-C2 区域 U1 左右侧引脚编号、GPIO 名称和网络标签"}]
+    },
+    {
+      "id": "analog.joystick-axis-wiring",
+      "category": "analog",
+      "subject": "SW1 双轴电位器",
+      "statement": "SW1 一轴两端接 3V3/GND、滑动端接 PA1；另一轴两端接 3V3/GND、滑动端接 PA2。",
+      "confidence": "confirmed",
+      "attributes": {"axis_1_wiper": "PA1", "axis_1_ends": "3V3, GND", "axis_2_wiper": "PA2", "axis_2_ends": "3V3, GND"},
+      "evidence": [{"asset_sha256": "0fa4b2411eafc14741fd7b06503dfb1c87d15e23c7361c6cad60baa4eed94b37", "page": 1, "locator": "A2-B3 区域 SW1 的水平与垂直两组电位器端子及 PA1/PA2/3V3/GND 标签"}]
+    },
+    {
+      "id": "gpio.joystick-button",
+      "category": "gpio",
+      "subject": "SW1 中心按键",
+      "statement": "BTN 通过 R1 10K 上拉至 3V3，SW1 按钮触点动作时将 BTN 接 GND；BTN 连接 U1.9 PA3。",
+      "confidence": "confirmed",
+      "attributes": {"signal": "BTN", "mcu_pin": "U1.9 PA3", "pullup": "R1 10K to 3V3", "active_level": "low", "switch_return": "GND"},
+      "evidence": [{"asset_sha256": "0fa4b2411eafc14741fd7b06503dfb1c87d15e23c7361c6cad60baa4eed94b37", "page": 1, "locator": "B2-B3 区域 SW1 底部按钮、BTN 网络、R1 10K/3V3 与 GND 触点"}]
+    },
+    {
+      "id": "gpio.rgb-led-routing",
+      "category": "gpio",
+      "subject": "U2 SK6812-3535",
+      "statement": "U1.12 PA6 的 RGB 网络连接 U2.3 DI；U2.4 VDD 接 3V3、U2.2 GND 接地，U2.1 DO 未连接，C6 100nF 跨接 3V3 与 GND。",
+      "confidence": "confirmed",
+      "attributes": {"data_input": "U2.3 DI RGB from U1.12 PA6", "supply": "U2.4 VDD 3V3", "ground": "U2.2 GND", "data_output": "U2.1 DO NC", "decoupling": "C6 100nF"},
+      "evidence": [{"asset_sha256": "0fa4b2411eafc14741fd7b06503dfb1c87d15e23c7361c6cad60baa4eed94b37", "page": 1, "locator": "B3 区域 U2 SK6812-3535 的 DO/GND/DI/VDD 与 RGB/3V3/C6 网络"}]
+    },
+    {
+      "id": "interface.hat-pinout",
+      "category": "interface",
+      "subject": "P1 Header 8H",
+      "statement": "P1.8~P1.1 依次为 GND、5V、SCL、G36/未连接、SDA、BAT、3V3、5VIN/未连接。",
+      "confidence": "confirmed",
+      "attributes": {"pin_8": "GND", "pin_7": "5V", "pin_6": "SCL", "pin_5": "G36 NC", "pin_4": "SDA", "pin_3": "BAT", "pin_2": "3V3", "pin_1": "5VIN NC"},
+      "evidence": [{"asset_sha256": "0fa4b2411eafc14741fd7b06503dfb1c87d15e23c7361c6cad60baa4eed94b37", "page": 1, "locator": "D3 区域 P1 Header 8H 的 8~1 脚编号、左侧网络与 G36/5VIN 未连接标记"}]
+    },
+    {
+      "id": "interface.grove-pinout",
+      "category": "interface",
+      "subject": "J1 GROVE",
+      "statement": "J1 IO2 接 SCL，IO1 接 SDA，5V 接 5V，GND 接 GND；C4 1uF 跨接 5V 与 GND。",
+      "confidence": "confirmed",
+      "attributes": {"IO2": "SCL", "IO1": "SDA", "5V": "5V", "GND": "GND", "port_capacitor": "C4 1uF"},
+      "evidence": [{"asset_sha256": "0fa4b2411eafc14741fd7b06503dfb1c87d15e23c7361c6cad60baa4eed94b37", "page": 1, "locator": "D2 区域 J1 GROVE 与右侧 SCL/SDA/5V/C4/GND 网络"}]
+    },
+    {
+      "id": "bus.i2c-routing",
+      "category": "bus",
+      "subject": "SCL/SDA",
+      "statement": "SCL 连接 U1.17 PA9、P1.6 与 J1 IO2；SDA 连接 U1.18 PA10、P1.4 与 J1 IO1。该页未显示 I2C 上拉或电平转换器。",
+      "confidence": "confirmed",
+      "attributes": {"scl": "U1.17 PA9; P1.6; J1 IO2", "sda": "U1.18 PA10; P1.4; J1 IO1", "pullups": "not shown", "level_shifter": "not shown"},
+      "evidence": [{"asset_sha256": "0fa4b2411eafc14741fd7b06503dfb1c87d15e23c7361c6cad60baa4eed94b37", "page": 1, "locator": "页面 U1、P1、J1 的 SCL/SDA 同名网络"}]
+    },
+    {
+      "id": "address.i2c-0x54",
+      "category": "address",
+      "subject": "Hat Mini JoyC I2C 地址",
+      "statement": "产品正文标注 I2C 地址为 0x54，但原理图未标注 0x54、地址选择网络或固件版本，无法仅由该页确认地址。",
+      "confidence": "uncertain",
+      "attributes": {"documented_address": "0x54", "schematic_address_label": "not shown", "address_straps": "not shown", "firmware_evidence": "not shown"},
+      "evidence": [{"asset_sha256": "0fa4b2411eafc14741fd7b06503dfb1c87d15e23c7361c6cad60baa4eed94b37", "page": 1, "locator": "全页 U1 与 SCL/SDA 网络，未见 0x54 或地址配置"}]
+    },
+    {
+      "id": "debug.swd-pinout",
+      "category": "debug",
+      "subject": "J2 SWD_5P",
+      "statement": "J2 依次引出 3V3/VCC、MCU_SWCLK、MCU_SWDIO、NRST 和 GND，分别连接 U1 PA14、PA13 与复位网络。",
+      "confidence": "confirmed",
+      "attributes": {"VCC": "3V3", "SWCLK": "U1.20 PA14 MCU_SWCLK", "SWDIO": "U1.19 PA13 MCU_SWDIO", "NRST": "U1.4 NRST", "GND": "GND"},
+      "evidence": [{"asset_sha256": "0fa4b2411eafc14741fd7b06503dfb1c87d15e23c7361c6cad60baa4eed94b37", "page": 1, "locator": "D1 区域 J2 与 C1-C2 区域 U1 SWDIO/SWCLK/NRST 同名网络"}]
+    },
+    {
+      "id": "reset.boot-reset-networks",
+      "category": "reset",
+      "subject": "BOOT0 与 NRST",
+      "statement": "U1.1 BOOT0 通过 R4 10K 下拉至 GND；U1.4 NRST 通过 R5 10K 上拉至 3V3，并由 C1 100nF 对地。",
+      "confidence": "confirmed",
+      "attributes": {"boot0": "U1.1 via R4 10K to GND", "nrst": "U1.4 via R5 10K to 3V3", "reset_capacitor": "C1 100nF to GND"},
+      "evidence": [{"asset_sha256": "0fa4b2411eafc14741fd7b06503dfb1c87d15e23c7361c6cad60baa4eed94b37", "page": 1, "locator": "C2 区域 U1 BOOT0/R4 与 NRST/R5/C1 网络"}]
+    },
+    {
+      "id": "clock.external-oscillator-absent",
+      "category": "clock",
+      "subject": "U1 时钟",
+      "statement": "U1.2 PF0-OSC_IN 与 U1.3 PF1-OSC_OUT 未连接，页面未显示外部晶振或谐振器。",
+      "confidence": "confirmed",
+      "attributes": {"osc_in": "U1.2 PF0-OSC_IN NC", "osc_out": "U1.3 PF1-OSC_OUT NC", "external_crystal": "not shown"},
+      "evidence": [{"asset_sha256": "0fa4b2411eafc14741fd7b06503dfb1c87d15e23c7361c6cad60baa4eed94b37", "page": 1, "locator": "B2 区域 U1 右上 PF0-OSC_IN/PF1-OSC_OUT 短线无连接"}]
+    },
+    {
+      "id": "power.3v3-rail",
+      "category": "power",
+      "subject": "3V3 电源轨",
+      "statement": "P1.2 的 3V3 连接 U1 VDD/VDDA、SW1 两轴端点、U2 VDD、BTN 上拉和 J2 VCC；C2 100nF、C3 10uF 与 C6 100nF 对地去耦。",
+      "confidence": "confirmed",
+      "attributes": {"source": "P1.2 3V3", "mcu": "U1.16 VDD; U1.5 VDDA", "joystick": "SW1 axis endpoints", "rgb": "U2.4 VDD", "debug": "J2 VCC", "capacitors": "C2 100nF; C3 10uF; C6 100nF"},
+      "evidence": [{"asset_sha256": "0fa4b2411eafc14741fd7b06503dfb1c87d15e23c7361c6cad60baa4eed94b37", "page": 1, "locator": "全页 3V3 同名网络在 P1/U1/SW1/U2/J2 与电容上的连接"}]
+    },
+    {
+      "id": "power.5v-distribution",
+      "category": "power",
+      "subject": "5V 电源轨",
+      "statement": "P1.7 的 5V 直接连接 J1 GROVE 的 5V，并由 C4 1uF 对地；页面未显示 5V 到 3V3 的板载转换器。",
+      "confidence": "confirmed",
+      "attributes": {"source": "P1.7 5V", "load": "J1 5V", "capacitor": "C4 1uF", "3v3_converter": "not shown"},
+      "evidence": [{"asset_sha256": "0fa4b2411eafc14741fd7b06503dfb1c87d15e23c7361c6cad60baa4eed94b37", "page": 1, "locator": "D2-D3 区域 P1.7 与 J1/C4 的 5V 同名网络"}]
+    },
+    {
+      "id": "power.battery-path",
+      "category": "power",
+      "subject": "BAT 电池路径",
+      "statement": "P1.3 BAT 连接 J3 的 BAT，J3 同时引出 GND；页面未显示充电器、保护 IC、负载开关或 BAT 到 3V3/5V 的转换路径。",
+      "confidence": "confirmed",
+      "attributes": {"host_battery": "P1.3 BAT", "battery_connector": "J3 BAT/GND", "charger": "not shown", "protection_ic": "not shown", "converter": "not shown"},
+      "evidence": [{"asset_sha256": "0fa4b2411eafc14741fd7b06503dfb1c87d15e23c7361c6cad60baa4eed94b37", "page": 1, "locator": "D3-D4 区域 P1.3 BAT 与 J3 BAT/GND，同页无充电或转换器件"}]
+    },
+    {
+      "id": "power.battery-capacity-200mah",
+      "category": "power",
+      "subject": "内置电池容量",
+      "statement": "产品正文声明内置 200mAh 聚合物锂电池，但原理图仅显示 J3 BAT/GND 接口，未标注电池容量、化学体系或额定电压。",
+      "confidence": "uncertain",
+      "attributes": {"documented_capacity": "200mAh", "schematic_capacity": "not shown", "chemistry": "not shown", "voltage": "not shown"},
+      "evidence": [{"asset_sha256": "0fa4b2411eafc14741fd7b06503dfb1c87d15e23c7361c6cad60baa4eed94b37", "page": 1, "locator": "D4 区域 J3 仅标注 BAT/GND，无容量或电池参数"}]
+    },
+    {
+      "id": "protection.no-dedicated-interface-protection",
+      "category": "protection",
+      "subject": "接口保护",
+      "statement": "HAT、GROVE、SWD 和电池接口路径上未显示 TVS、保险丝或专用反接保护器件。",
+      "confidence": "confirmed",
+      "attributes": {"tvs": "not shown", "fuse": "not shown", "reverse_polarity": "not shown"},
+      "evidence": [{"asset_sha256": "0fa4b2411eafc14741fd7b06503dfb1c87d15e23c7361c6cad60baa4eed94b37", "page": 1, "locator": "全页 P1/J1/J2/J3 的完整可见连接路径"}]
+    }
+  ],
+  "needs_review": [
+    {
+      "id": "review.i2c-address-0x54",
+      "fact_id": "address.i2c-0x54",
+      "question": "Hat Mini JoyC 的 I2C 从设备地址 0x54 是否由 STM32 固件固定实现？",
+      "reason": "产品正文给出 0x54，但原理图没有地址标注、地址选择或固件版本信息。",
+      "evidence": [{"asset_sha256": "0fa4b2411eafc14741fd7b06503dfb1c87d15e23c7361c6cad60baa4eed94b37", "page": 1, "locator": "U1 与 SCL/SDA 网络，未见 0x54"}]
+    },
+    {
+      "id": "review.battery-capacity",
+      "fact_id": "power.battery-capacity-200mah",
+      "question": "J3 所接内置电池的额定容量、化学体系和电压是否为正文所述 200mAh 聚合物锂电池？",
+      "reason": "原理图仅显示 BAT/GND 接口，没有电池规格或充电/保护信息。",
+      "evidence": [{"asset_sha256": "0fa4b2411eafc14741fd7b06503dfb1c87d15e23c7361c6cad60baa4eed94b37", "page": 1, "locator": "D4 区域 J3 BAT/GND"}]
+    }
+  ]
+}

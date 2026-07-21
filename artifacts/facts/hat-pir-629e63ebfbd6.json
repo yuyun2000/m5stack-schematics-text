@@ -1,0 +1,34 @@
+{
+  "schema_version": 1,
+  "generator": "schematic_describer",
+  "product": {
+    "product_id": "hat-pir-629e63ebfbd6",
+    "product_name": "Hat PIR",
+    "sku": "U054",
+    "source_path": "hat/hat-pir.md",
+    "source_sha256": "9e8cdaa1aa565eadb740a6a9da8989b358ff5a125500b4aa618483363842d03c",
+    "input_sha256": "1697a48171bc2d0eea49b4664d32276d2d73690c8f0f6e7ef46333c2e225a469"
+  },
+  "schematic_assets": [
+    {"sha256":"d3d39d138016fbde223e7644c4ffb305d16301db7ae2d44f2664fc86a616acdb","source_url":"https://m5stack-doc.oss-cn-shenzhen.aliyuncs.com/853/StickHat_PIR_page_01.png","pages":[1]}
+  ],
+  "summary": "Hat PIR 以 U1 PIR_AS312 被动红外传感器为核心，由 P1 STICKIO pin7 的 +3.3V 供电。传感器 OUT pin2 经 R1 1KΩ串联到 P1 pin4/G36，供主机读取数字检测信号；C1 100nF 对电源去耦。其余 STICKIO 信号未接入本页电路。",
+  "keywords": ["Hat PIR","U054","PIR_AS312","PIR sensor","G36 OUT","+3.3V","STICKIO","R1 1K","C1 100nF","P1 pin4","P1 pin7","digital output","L=12M /3.3V","passive infrared","motion detection"],
+  "components": [
+    {"reference":"U1","part_number":"PIR_AS312","role":"被动红外检测传感器，输出数字检测信号","evidence":[{"asset_sha256":"d3d39d138016fbde223e7644c4ffb305d16301db7ae2d44f2664fc86a616acdb","page":1,"locator":"第1页网格 B2：U1 PIR_AS312 pins1-3"}]},
+    {"reference":"P1","part_number":"STICKIO","role":"主机 3.3V、GND 与 G36 输出接口","evidence":[{"asset_sha256":"d3d39d138016fbde223e7644c4ffb305d16301db7ae2d44f2664fc86a616acdb","page":1,"locator":"第1页网格 B3：P1 STICKIO pins1-8"}]},
+    {"reference":"R1","part_number":"1KΩ","role":"PIR OUT 到 G36 的串联电阻","evidence":[{"asset_sha256":"d3d39d138016fbde223e7644c4ffb305d16301db7ae2d44f2664fc86a616acdb","page":1,"locator":"第1页网格 B2：R1 1KΩ"}]},
+    {"reference":"C1","part_number":"100nF","role":"PIR_AS312 3.3V 电源去耦","evidence":[{"asset_sha256":"d3d39d138016fbde223e7644c4ffb305d16301db7ae2d44f2664fc86a616acdb","page":1,"locator":"第1页网格 B2：C1 100nF"}]}
+  ],
+  "facts": [
+    {"id":"system.hat-pir-architecture","category":"system","subject":"Hat PIR 架构","statement":"P1 提供 +3.3V 和 GND，U1 PIR_AS312 产生检测输出，R1 将 OUT 串联连接到主机 G36，C1 提供电源去耦。","confidence":"confirmed","attributes":{"sensor":"U1 PIR_AS312","host":"P1 STICKIO","output":"G36","rail":"+3.3V"},"evidence":[{"asset_sha256":"d3d39d138016fbde223e7644c4ffb305d16301db7ae2d44f2664fc86a616acdb","page":1,"locator":"第1页完整单页"}]},
+    {"id":"sensor.pir-as312","category":"sensor","subject":"PIR_AS312 连接","statement":"U1 PIR_AS312 VCC pin1 接 +3.3V，OUT pin2 连接 R1，GND pin3 接地。","confidence":"confirmed","attributes":{"device":"U1 PIR_AS312","pin1":"VCC / +3.3V","pin2":"OUT","pin3":"GND"},"evidence":[{"asset_sha256":"d3d39d138016fbde223e7644c4ffb305d16301db7ae2d44f2664fc86a616acdb","page":1,"locator":"第1页 B2：U1 pins1-3"}]},
+    {"id":"gpio.pir-output","category":"gpio","subject":"PIR 数字输出","statement":"U1 OUT pin2 经 R1 1KΩ串联连接 P1 pin4/G36，信号方向为传感器到主机输入。","confidence":"confirmed","attributes":{"source":"U1 OUT pin2","series":"R1 1KΩ","destination":"P1 pin4 / G36","direction":"sensor output to host input","logic_rail":"+3.3V"},"evidence":[{"asset_sha256":"d3d39d138016fbde223e7644c4ffb305d16301db7ae2d44f2664fc86a616acdb","page":1,"locator":"第1页 U1 OUT、R1 与 P1 G36"}]},
+    {"id":"power.sensor-rail","category":"power","subject":"PIR 3.3V 供电","statement":"P1 pin7/3V3 连接 +3.3V并供给 U1 VCC pin1；C1 100nF 从 +3.3V 对地去耦。","confidence":"confirmed","attributes":{"input":"P1 pin7 3V3","rail":"+3.3V","load":"U1 VCC pin1","decoupling":"C1 100nF"},"evidence":[{"asset_sha256":"d3d39d138016fbde223e7644c4ffb305d16301db7ae2d44f2664fc86a616acdb","page":1,"locator":"第1页 P1 pin7、U1 VCC、C1"}]},
+    {"id":"interface.host-p1","category":"interface","subject":"P1 STICKIO 接口","statement":"P1 pin1 为 GND、pin4 G36 为 PIR OUT、pin7 3V3 接 +3.3V；pins2 5VOUT、3 G26、5 G0、6 BAT、8 5VIN 未接入本页功能网络。","confidence":"confirmed","attributes":{"pin1":"GND","pin2":"5VOUT unused","pin3":"G26 unused","pin4":"G36 / PIR OUT","pin5":"G0 unused","pin6":"BAT unused","pin7":"3V3 / +3.3V","pin8":"5VIN unused"},"evidence":[{"asset_sha256":"d3d39d138016fbde223e7644c4ffb305d16301db7ae2d44f2664fc86a616acdb","page":1,"locator":"第1页 B3：P1 pins1-8"}]},
+    {"id":"other.schematic-note","category":"other","subject":"原理图传感器注记","statement":"U1 上方原理图注记原文为 L=12M /3.3V。","confidence":"confirmed","attributes":{"note":"L=12M /3.3V"},"evidence":[{"asset_sha256":"d3d39d138016fbde223e7644c4ffb305d16301db7ae2d44f2664fc86a616acdb","page":1,"locator":"第1页 B2：U1 上方蓝色 L=12M /3.3V 注记"}]},
+    {"id":"protection.visibility","category":"protection","subject":"接口保护可见性","statement":"本页未画 P1、G36 OUT 或 +3.3V 上的 TVS、ESD、保险丝；OUT 路径仅有 R1 1KΩ串联。","confidence":"confirmed","attributes":{"tvs_esd_shown":false,"fuse_shown":false,"output_series":"R1 1KΩ"},"evidence":[{"asset_sha256":"d3d39d138016fbde223e7644c4ffb305d16301db7ae2d44f2664fc86a616acdb","page":1,"locator":"第1页完整单页保护器件范围"}]},
+    {"id":"clock.visibility","category":"clock","subject":"外部时钟可见性","statement":"本页未画独立晶体、晶振或外部时钟输入器件。","confidence":"confirmed","attributes":{"crystal_shown":false,"oscillator_shown":false},"evidence":[{"asset_sha256":"d3d39d138016fbde223e7644c4ffb305d16301db7ae2d44f2664fc86a616acdb","page":1,"locator":"第1页完整单页，无 X/Y 位号"}]}
+  ],
+  "needs_review": []
+}

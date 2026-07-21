@@ -1,0 +1,21 @@
+{
+  "dry_run": false,
+  "failed": 0,
+  "published": 1,
+  "results": [
+    {
+      "backup": null,
+      "draft_action": "unchanged",
+      "dry_run": false,
+      "errors": [],
+      "needs_review": 5,
+      "product_id": "module-hmi-3a13e8f227d3",
+      "product_name": "Module HMI",
+      "publish_action": "unchanged",
+      "sha256": "db5081ea7bffc22ff7b1d343ecfac2dfb1fc641d16a2483cb24d41c7402b51bb",
+      "status": "valid",
+      "uncertain_facts": 5
+    }
+  ],
+  "schema_version": 1
+}

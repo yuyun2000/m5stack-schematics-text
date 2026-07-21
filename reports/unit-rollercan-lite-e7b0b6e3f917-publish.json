@@ -1,0 +1,21 @@
+{
+  "dry_run": false,
+  "failed": 0,
+  "published": 1,
+  "results": [
+    {
+      "backup": null,
+      "draft_action": "unchanged",
+      "dry_run": false,
+      "errors": [],
+      "needs_review": 8,
+      "product_id": "unit-rollercan-lite-e7b0b6e3f917",
+      "product_name": "Unit RollerCAN-Lite",
+      "publish_action": "unchanged",
+      "sha256": "93c337ff13b6f0d12ec5c54b0e747b9c8e11fffdd1d7878e3d73b375edb15106",
+      "status": "valid",
+      "uncertain_facts": 8
+    }
+  ],
+  "schema_version": 1
+}

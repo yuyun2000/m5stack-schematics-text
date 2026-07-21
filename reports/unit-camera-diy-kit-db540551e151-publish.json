@@ -1,0 +1,21 @@
+{
+  "dry_run": false,
+  "failed": 0,
+  "published": 1,
+  "results": [
+    {
+      "backup": null,
+      "draft_action": "unchanged",
+      "dry_run": false,
+      "errors": [],
+      "needs_review": 5,
+      "product_id": "unit-camera-diy-kit-db540551e151",
+      "product_name": "Unit Camera DIY Kit",
+      "publish_action": "unchanged",
+      "sha256": "08925575a843c2d80194b23d00371fb27be85a86977755aa786a4f7c5ffdc3dd",
+      "status": "valid",
+      "uncertain_facts": 5
+    }
+  ],
+  "schema_version": 1
+}

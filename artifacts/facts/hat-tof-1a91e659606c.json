@@ -1,0 +1,36 @@
+{
+  "schema_version": 1,
+  "generator": "schematic_describer",
+  "product": {
+    "product_id": "hat-tof-1a91e659606c",
+    "product_name": "Hat ToF",
+    "sku": "U072",
+    "source_path": "hat/hat-tof.md",
+    "source_sha256": "241ec0219f0cda3cd1a82ab7ac924f74e17ee31f3068b87b42b7d063fc094e9b",
+    "input_sha256": "657622b04bb4890de2e2cd127a9f3de3b0bde6d8162edfda152097b93eeddf62"
+  },
+  "schematic_assets": [
+    {"sha256":"166f1e2ac0d4d4a6ccf955e95462ec35325d0ed68467b556d38d0389c0928368","source_url":"https://static-cdn.m5stack.com/resource/docs/products/hat/hat-tof/hat-tof_sch_01.webp","pages":[1]}
+  ],
+  "summary": "Hat ToF 以 VL53L0X 激光测距传感器为核心，通过主机连接器的 G26/SCL 与 G0/SDA 接入 I2C。R1、R2 均为 2KΩ，分别将 SCL、SDA 上拉到 +3.3V；主机 3V3 和 GND 为传感器供电。该简化原理图没有画 XSHUT、GPIO1、去耦、保护或其他功能器件。",
+  "keywords": ["Hat ToF","U072","VL53L0X","I2C","0x29","G26 SCL","G0 SDA","+3.3V","R1 2K","R2 2K","laser ranging","time of flight","ToF sensor","3V3","GND","XSHUT not shown","GPIO1 not shown"],
+  "components": [
+    {"reference":"SENSOR","part_number":"VL53L0X","role":"I2C 激光飞行时间测距传感器；图中未打印器件位号","evidence":[{"asset_sha256":"166f1e2ac0d4d4a6ccf955e95462ec35325d0ed68467b556d38d0389c0928368","page":1,"locator":"第1页左侧：VL53L0X 方框及 SCL/SDA"}]},
+    {"reference":"R1","part_number":"2KΩ","role":"SCL 上拉到 +3.3V","evidence":[{"asset_sha256":"166f1e2ac0d4d4a6ccf955e95462ec35325d0ed68467b556d38d0389c0928368","page":1,"locator":"第1页上部：R1 2KΩ"}]},
+    {"reference":"R2","part_number":"2KΩ","role":"SDA 上拉到 +3.3V","evidence":[{"asset_sha256":"166f1e2ac0d4d4a6ccf955e95462ec35325d0ed68467b556d38d0389c0928368","page":1,"locator":"第1页上部：R2 2KΩ"}]},
+    {"reference":"HOST","part_number":null,"role":"GND、3V3、G26、G0 等主机触点接口；图中未打印连接器位号","evidence":[{"asset_sha256":"166f1e2ac0d4d4a6ccf955e95462ec35325d0ed68467b556d38d0389c0928368","page":1,"locator":"第1页右侧：GND/5V0/G26/G36/G0/BAT/3V3/5V1 contacts"}]}
+  ],
+  "facts": [
+    {"id":"system.hat-tof-architecture","category":"system","subject":"Hat ToF 架构","statement":"VL53L0X 通过 G26/SCL 与 G0/SDA 连接主机 I2C，R1/R2 提供 3.3V 上拉，主机 3V3/GND 提供电源。","confidence":"confirmed","attributes":{"sensor":"VL53L0X","bus":"I2C","scl":"G26","sda":"G0","rail":"+3.3V"},"evidence":[{"asset_sha256":"166f1e2ac0d4d4a6ccf955e95462ec35325d0ed68467b556d38d0389c0928368","page":1,"locator":"第1页完整单页"}]},
+    {"id":"sensor.vl53l0x","category":"sensor","subject":"VL53L0X 连接","statement":"原理图中的 VL53L0X 方框仅画出 SCL 与 SDA 两条信号，分别连接 G26 与 G0；未画 XSHUT 或 GPIO1。","confidence":"confirmed","attributes":{"device":"VL53L0X","scl":"G26","sda":"G0","xshut_shown":false,"gpio1_shown":false,"reference_designator_shown":false},"evidence":[{"asset_sha256":"166f1e2ac0d4d4a6ccf955e95462ec35325d0ed68467b556d38d0389c0928368","page":1,"locator":"第1页左侧 VL53L0X block"}]},
+    {"id":"bus.i2c","category":"bus","subject":"VL53L0X I2C 总线","statement":"主机 G26 接 VL53L0X SCL，G0 接 VL53L0X SDA；R1/R2 2KΩ分别将 SCL/SDA 上拉到 +3.3V。","confidence":"confirmed","attributes":{"scl":"G26 -> VL53L0X SCL","sda":"G0 -> VL53L0X SDA","pullup_scl":"R1 2KΩ to +3.3V","pullup_sda":"R2 2KΩ to +3.3V","logic_level":"+3.3V","direction":"bidirectional"},"evidence":[{"asset_sha256":"166f1e2ac0d4d4a6ccf955e95462ec35325d0ed68467b556d38d0389c0928368","page":1,"locator":"第1页 R1/R2、SCL/SDA、G26/G0"}]},
+    {"id":"address.vl53l0x","category":"address","subject":"VL53L0X I2C 地址","statement":"产品正文标称 VL53L0X I2C 地址为 0x29；原理图显示 I2C 连接但未打印地址数值。","confidence":"uncertain","attributes":{"device":"VL53L0X","documented_address":"0x29","explicit_address_on_schematic":false},"evidence":[{"asset_sha256":"166f1e2ac0d4d4a6ccf955e95462ec35325d0ed68467b556d38d0389c0928368","page":1,"locator":"第1页 VL53L0X SCL/SDA"}]},
+    {"id":"power.sensor-rail","category":"power","subject":"VL53L0X 3.3V 供电","statement":"主机连接器 3V3 触点连接 +3.3V，GND 触点接地；+3.3V 同时供给 R1/R2 上拉。","confidence":"confirmed","attributes":{"input":"HOST 3V3","rail":"+3.3V","ground":"HOST GND","pullup_loads":"R1,R2","sensor_power_pins":"not expanded in simplified schematic"},"evidence":[{"asset_sha256":"166f1e2ac0d4d4a6ccf955e95462ec35325d0ed68467b556d38d0389c0928368","page":1,"locator":"第1页 HOST 3V3/GND 与 +3.3V rails"}]},
+    {"id":"interface.host-contacts","category":"interface","subject":"主机触点映射","statement":"主机接口依次标出 GND、5V0、G26、G36、G0、BAT、3V3、5V1；本页功能连接使用 GND、G26/SCL、G0/SDA 与 3V3。","confidence":"confirmed","attributes":{"contacts":"GND,5V0,G26,G36,G0,BAT,3V3,5V1","used":"GND,G26,G0,3V3","unused_in_function":"5V0,G36,BAT,5V1","reference_designator_shown":false},"evidence":[{"asset_sha256":"166f1e2ac0d4d4a6ccf955e95462ec35325d0ed68467b556d38d0389c0928368","page":1,"locator":"第1页右侧 host contacts"}]},
+    {"id":"protection.visibility","category":"protection","subject":"保护与去耦可见性","statement":"本页未画 TVS、ESD、保险丝、串联保护或电源去耦器件。","confidence":"confirmed","attributes":{"tvs_esd_shown":false,"fuse_shown":false,"series_protection_shown":false,"decoupling_shown":false},"evidence":[{"asset_sha256":"166f1e2ac0d4d4a6ccf955e95462ec35325d0ed68467b556d38d0389c0928368","page":1,"locator":"第1页完整单页器件范围"}]},
+    {"id":"clock.visibility","category":"clock","subject":"外部时钟可见性","statement":"本页未画独立晶体、晶振或外部时钟输入器件。","confidence":"confirmed","attributes":{"crystal_shown":false,"oscillator_shown":false},"evidence":[{"asset_sha256":"166f1e2ac0d4d4a6ccf955e95462ec35325d0ed68467b556d38d0389c0928368","page":1,"locator":"第1页完整单页，无 X/Y 位号"}]}
+  ],
+  "needs_review": [
+    {"id":"review.i2c-address","fact_id":"address.vl53l0x","question":"U072 当前 VL53L0X 的 I2C 地址是否固定为 0x29？","reason":"地址来自产品正文，原理图未打印地址数值。","evidence":[{"asset_sha256":"166f1e2ac0d4d4a6ccf955e95462ec35325d0ed68467b556d38d0389c0928368","page":1,"locator":"第1页 VL53L0X SCL/SDA"}]}
+  ]
+}

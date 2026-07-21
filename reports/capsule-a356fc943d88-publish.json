@@ -1,0 +1,21 @@
+{
+  "dry_run": false,
+  "failed": 0,
+  "published": 1,
+  "results": [
+    {
+      "backup": null,
+      "draft_action": "unchanged",
+      "dry_run": false,
+      "errors": [],
+      "needs_review": 3,
+      "product_id": "capsule-a356fc943d88",
+      "product_name": "Capsule",
+      "publish_action": "unchanged",
+      "sha256": "8ede101394ef103564bddb5797beedfddc71a15c7dd3060781b0d78d06429cca",
+      "status": "valid",
+      "uncertain_facts": 3
+    }
+  ],
+  "schema_version": 1
+}

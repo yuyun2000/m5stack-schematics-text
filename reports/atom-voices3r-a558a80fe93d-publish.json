@@ -1,0 +1,21 @@
+{
+  "dry_run": false,
+  "failed": 0,
+  "published": 1,
+  "results": [
+    {
+      "backup": null,
+      "draft_action": "unchanged",
+      "dry_run": false,
+      "errors": [],
+      "needs_review": 4,
+      "product_id": "atom-voices3r-a558a80fe93d",
+      "product_name": "Atom VoiceS3R",
+      "publish_action": "unchanged",
+      "sha256": "daeec0d32e400617f0b9532d9513025fad15bb3a0154d2a62d457865fbfa149e",
+      "status": "valid",
+      "uncertain_facts": 4
+    }
+  ],
+  "schema_version": 1
+}

@@ -1,0 +1,21 @@
+{
+  "dry_run": false,
+  "failed": 0,
+  "published": 1,
+  "results": [
+    {
+      "backup": null,
+      "draft_action": "unchanged",
+      "dry_run": false,
+      "errors": [],
+      "needs_review": 5,
+      "product_id": "module-lora868-v1-1-6677d43231dd",
+      "product_name": "Module LoRa868 v1.1",
+      "publish_action": "unchanged",
+      "sha256": "5e38e6c0f3788e7062a1d7033e117d04e475efa7cef0c493e80329c59ebf9254",
+      "status": "valid",
+      "uncertain_facts": 5
+    }
+  ],
+  "schema_version": 1
+}

@@ -1,0 +1,21 @@
+{
+  "dry_run": false,
+  "failed": 0,
+  "published": 1,
+  "results": [
+    {
+      "backup": null,
+      "draft_action": "unchanged",
+      "dry_run": false,
+      "errors": [],
+      "needs_review": 3,
+      "product_id": "atom-socket-296cfa94a291",
+      "product_name": "Atom Socket",
+      "publish_action": "unchanged",
+      "sha256": "69fb431e7f0e60a32fa83dd99d0db9f4dcda3fcf75d0bc6f3ed9ed18b22ec985",
+      "status": "valid",
+      "uncertain_facts": 3
+    }
+  ],
+  "schema_version": 1
+}

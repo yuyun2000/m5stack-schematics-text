@@ -1,0 +1,21 @@
+{
+  "dry_run": false,
+  "failed": 0,
+  "published": 1,
+  "results": [
+    {
+      "backup": null,
+      "draft_action": "unchanged",
+      "dry_run": false,
+      "errors": [],
+      "needs_review": 4,
+      "product_id": "unit-vmeter-9e126bbd9b81",
+      "product_name": "Unit VMeter",
+      "publish_action": "unchanged",
+      "sha256": "cbc1d14bd3f612f8e3a84e7859e45caf4ccf77b476455d870e0837082e0f246c",
+      "status": "valid",
+      "uncertain_facts": 4
+    }
+  ],
+  "schema_version": 1
+}

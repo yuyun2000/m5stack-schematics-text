@@ -1,0 +1,21 @@
+{
+  "dry_run": false,
+  "failed": 0,
+  "published": 1,
+  "results": [
+    {
+      "backup": null,
+      "draft_action": "unchanged",
+      "dry_run": false,
+      "errors": [],
+      "needs_review": 12,
+      "product_id": "module-llm-kit-6dad0f809655",
+      "product_name": "Module LLM Kit",
+      "publish_action": "unchanged",
+      "sha256": "5c0eeb79c5fed88b10400efbcadce6edf4d644c4eec9fd696318711f66c88a6c",
+      "status": "valid",
+      "uncertain_facts": 12
+    }
+  ],
+  "schema_version": 1
+}

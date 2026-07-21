@@ -1,0 +1,392 @@
+{
+  "schema_version": 1,
+  "generator": "schematic_describer",
+  "product": {
+    "product_id": "atomic-gps-base-5a9b55b80f7b",
+    "product_name": "Atomic GPS Base",
+    "sku": "A134",
+    "source_path": "atom/Atomic GPS Base.md",
+    "source_sha256": "7ed666e072a2cdb7e44b8bac716e07b5e106c185bf13dcb84992a548e6388cbe",
+    "input_sha256": "25a918f12a389d833a8f828e02f2f23572bd55c2ef5f9c201a95fcd396fc069e"
+  },
+  "schematic_assets": [
+    {
+      "sha256": "8484b4e774d1e545bf2222560052662d903c68f5f2d50ba71d36fc8fcaf011f8",
+      "source_url": "https://static-cdn.m5stack.com/resource/docs/products/atom/Atomic GPS Base/img-c6106d8c-5518-4355-a565-69c615bef0c8.webp",
+      "pages": [
+        1
+      ]
+    }
+  ],
+  "summary": "当前本地原理图只覆盖 Atomic GPS Base 的 microSD 与排针子电路。U1 TF-015 由 +3.3V 供电，通过 CS、MOSI、CLK、MISO 四条 SPI 网络连接；Rp1 为 4.7KΩ 四联电阻，其中 MISO/CLK/MOSI 上拉到 +3.3V，CS 下拉到 GND。P1 引出 +3.3V、GPS_T、MOSI、CLK、MISO，P2/P3 引出 +5VIN、GND 和 GPS_T；页面没有显示 GPS 芯片、天线、PPS、备份电池、状态指示或电源转换电路。",
+  "keywords": [
+    "Atomic GPS Base",
+    "A134",
+    "TF-015",
+    "microSD",
+    "SPI",
+    "CS",
+    "MOSI",
+    "CLK",
+    "MISO",
+    "GPS_T",
+    "+3.3V",
+    "+5VIN",
+    "Rp1",
+    "4.7KΩ",
+    "P1 Header 5",
+    "P2 Header 4",
+    "P3 Header 4",
+    "C1 100nF",
+    "C2 100nF",
+    "GPS circuit not shown"
+  ],
+  "components": [
+    {
+      "reference": "U1",
+      "part_number": "TF-015",
+      "role": "由 +3.3V 供电并通过四线 SPI 连接的 microSD 卡座",
+      "evidence": [
+        {
+          "asset_sha256": "8484b4e774d1e545bf2222560052662d903c68f5f2d50ba71d36fc8fcaf011f8",
+          "page": 1,
+          "locator": "页面左侧黄色 U1 TF-015，CS/MOSI/VCC/CLK/GND/MISO 引脚"
+        }
+      ]
+    },
+    {
+      "reference": "Rp1",
+      "part_number": "4.7KΩ (472) ±5%",
+      "role": "为 MISO、CLK、MOSI 提供 +3.3V 上拉，并为 CS 提供 GND 下拉的四联电阻阵列",
+      "evidence": [
+        {
+          "asset_sha256": "8484b4e774d1e545bf2222560052662d903c68f5f2d50ba71d36fc8fcaf011f8",
+          "page": 1,
+          "locator": "U1 左上 Rp1 四联阵列，8/7/6 接 +3.3V，5 接 GND，1/2/3/4 分别接 MISO/CLK/MOSI/CS"
+        }
+      ]
+    },
+    {
+      "reference": "P1",
+      "part_number": "Header 5",
+      "role": "引出 +3.3V、GPS_T 和 microSD SPI 的 MOSI/CLK/MISO",
+      "evidence": [
+        {
+          "asset_sha256": "8484b4e774d1e545bf2222560052662d903c68f5f2d50ba71d36fc8fcaf011f8",
+          "page": 1,
+          "locator": "页面右上 P1 Header 5，1-5 脚为 +3.3V/GPS_T/MOSI/CLK/MISO"
+        }
+      ]
+    },
+    {
+      "reference": "P2",
+      "part_number": "Header 4",
+      "role": "引出 +5VIN 与 GND，1/2 脚在当前页面未连接",
+      "evidence": [
+        {
+          "asset_sha256": "8484b4e774d1e545bf2222560052662d903c68f5f2d50ba71d36fc8fcaf011f8",
+          "page": 1,
+          "locator": "页面右上 P2 Header 4，1/2 脚 no-connect，3 +5VIN，4 GND"
+        }
+      ]
+    },
+    {
+      "reference": "P3",
+      "part_number": "Header 4",
+      "role": "引出 +5VIN、GPS_T 与 GND，2 脚在当前页面未连接",
+      "evidence": [
+        {
+          "asset_sha256": "8484b4e774d1e545bf2222560052662d903c68f5f2d50ba71d36fc8fcaf011f8",
+          "page": 1,
+          "locator": "页面右下 P3 Header 4，1 +5VIN，2 no-connect，3 GPS_T，4 GND"
+        }
+      ]
+    },
+    {
+      "reference": "C1/C2",
+      "part_number": "100nF (104) 10% 50V",
+      "role": "分别对 +3.3V 与 +5VIN 进行对地去耦",
+      "evidence": [
+        {
+          "asset_sha256": "8484b4e774d1e545bf2222560052662d903c68f5f2d50ba71d36fc8fcaf011f8",
+          "page": 1,
+          "locator": "页面右侧 C1 从 +3.3V 到 GND，C2 从 +5VIN 到 GND"
+        }
+      ]
+    }
+  ],
+  "facts": [
+    {
+      "id": "system.current_schematic_scope",
+      "category": "system",
+      "subject": "当前原理图覆盖范围",
+      "statement": "当前唯一页面包含 U1 TF-015 microSD 卡座、Rp1 偏置阵列、P1/P2/P3 排针和 C1/C2 去耦，没有出现 GPS 接收器或射频电路。",
+      "confidence": "confirmed",
+      "attributes": {
+        "storage_shown": true,
+        "headers_shown": true,
+        "gps_receiver_shown": false,
+        "rf_path_shown": false
+      },
+      "evidence": [
+        {
+          "asset_sha256": "8484b4e774d1e545bf2222560052662d903c68f5f2d50ba71d36fc8fcaf011f8",
+          "page": 1,
+          "locator": "整页仅有 TF-015、Rp1、P1/P2/P3 和 C1/C2"
+        }
+      ]
+    },
+    {
+      "id": "storage.microsd_pinout",
+      "category": "storage",
+      "subject": "TF-015 microSD 引脚",
+      "statement": "U1 TF-015 的 2 脚为 CS，3 脚为 MOSI，4 脚为 VCC，5 脚为 CLK，6 脚为 GND，7 脚为 MISO。",
+      "confidence": "confirmed",
+      "attributes": {
+        "pin2": "CS",
+        "pin3": "MOSI",
+        "pin4": "VCC",
+        "pin5": "CLK",
+        "pin6": "GND",
+        "pin7": "MISO"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "8484b4e774d1e545bf2222560052662d903c68f5f2d50ba71d36fc8fcaf011f8",
+          "page": 1,
+          "locator": "页面左侧 U1 TF-015 方框内 2-7 脚标签"
+        }
+      ]
+    },
+    {
+      "id": "power.microsd_3v3",
+      "category": "power",
+      "subject": "microSD 供电",
+      "statement": "U1 VCC 4 脚连接 +3.3V，GND 6 脚连接 GND。",
+      "confidence": "confirmed",
+      "attributes": {
+        "component": "U1 TF-015",
+        "supply": "+3.3V on pin 4",
+        "ground": "GND on pin 6"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "8484b4e774d1e545bf2222560052662d903c68f5f2d50ba71d36fc8fcaf011f8",
+          "page": 1,
+          "locator": "U1 4 脚 +3.3V 与 6 脚 GND"
+        }
+      ]
+    },
+    {
+      "id": "bus.microsd_spi",
+      "category": "bus",
+      "subject": "microSD SPI 网络",
+      "statement": "U1 使用 CS、MOSI、CLK、MISO 四条 SPI 网络；P1 引出 MOSI、CLK、MISO，但当前页面没有在 P1 上引出 CS。",
+      "confidence": "confirmed",
+      "attributes": {
+        "chip_select": "CS -> U1 pin 2",
+        "controller_to_card": "MOSI -> U1 pin 3",
+        "clock": "CLK -> U1 pin 5",
+        "card_to_controller": "MISO -> U1 pin 7",
+        "p1_cs_shown": false
+      },
+      "evidence": [
+        {
+          "asset_sha256": "8484b4e774d1e545bf2222560052662d903c68f5f2d50ba71d36fc8fcaf011f8",
+          "page": 1,
+          "locator": "U1 左侧 CS/MOSI/CLK/MISO 与右上 P1 MOSI/CLK/MISO"
+        }
+      ]
+    },
+    {
+      "id": "gpio.spi_bias_network",
+      "category": "gpio",
+      "subject": "SPI 偏置网络",
+      "statement": "Rp1 的 1/2/3 路分别把 MISO、CLK、MOSI 经 4.7KΩ 上拉到 +3.3V，第 4 路把 CS 经 4.7KΩ 下拉到 GND。",
+      "confidence": "confirmed",
+      "attributes": {
+        "miso": "Rp1 pins 1-8, 4.7KΩ pull-up to +3.3V",
+        "clk": "Rp1 pins 2-7, 4.7KΩ pull-up to +3.3V",
+        "mosi": "Rp1 pins 3-6, 4.7KΩ pull-up to +3.3V",
+        "cs": "Rp1 pins 4-5, 4.7KΩ pull-down to GND"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "8484b4e774d1e545bf2222560052662d903c68f5f2d50ba71d36fc8fcaf011f8",
+          "page": 1,
+          "locator": "U1 左上 Rp1：8/7/6 接 +3.3V、5 接 GND，1/2/3/4 接 MISO/CLK/MOSI/CS"
+        }
+      ]
+    },
+    {
+      "id": "interface.p1_header",
+      "category": "interface",
+      "subject": "P1 五针排针",
+      "statement": "P1 Header 5 的 1-5 脚依次为 +3.3V、GPS_T、MOSI、CLK、MISO。",
+      "confidence": "confirmed",
+      "attributes": {
+        "pin1": "+3.3V",
+        "pin2": "GPS_T",
+        "pin3": "MOSI",
+        "pin4": "CLK",
+        "pin5": "MISO"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "8484b4e774d1e545bf2222560052662d903c68f5f2d50ba71d36fc8fcaf011f8",
+          "page": 1,
+          "locator": "页面右上 P1 Header 5 与 1-5 脚网络"
+        }
+      ]
+    },
+    {
+      "id": "interface.p2_header",
+      "category": "interface",
+      "subject": "P2 四针排针",
+      "statement": "P2 Header 4 的 1/2 脚标为未连接，3 脚接 +5VIN，4 脚接 GND。",
+      "confidence": "confirmed",
+      "attributes": {
+        "pin1": "not connected",
+        "pin2": "not connected",
+        "pin3": "+5VIN",
+        "pin4": "GND"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "8484b4e774d1e545bf2222560052662d903c68f5f2d50ba71d36fc8fcaf011f8",
+          "page": 1,
+          "locator": "页面右上 P2 Header 4 与 no-connect/+5VIN/GND"
+        }
+      ]
+    },
+    {
+      "id": "interface.p3_header",
+      "category": "interface",
+      "subject": "P3 四针排针",
+      "statement": "P3 Header 4 的 1 脚接 +5VIN，2 脚标为未连接，3 脚接 GPS_T，4 脚接 GND。",
+      "confidence": "confirmed",
+      "attributes": {
+        "pin1": "+5VIN",
+        "pin2": "not connected",
+        "pin3": "GPS_T",
+        "pin4": "GND"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "8484b4e774d1e545bf2222560052662d903c68f5f2d50ba71d36fc8fcaf011f8",
+          "page": 1,
+          "locator": "页面右下 P3 Header 4 与 +5VIN/no-connect/GPS_T/GND"
+        }
+      ]
+    },
+    {
+      "id": "key_net.gps_t_header_path",
+      "category": "key_net",
+      "subject": "GPS_T 排针网络",
+      "statement": "GPS_T 同时连接 P1 2 脚与 P3 3 脚；当前页面没有显示 GPS_T 的源器件。",
+      "confidence": "confirmed",
+      "attributes": {
+        "p1": "pin 2",
+        "p3": "pin 3",
+        "source_component_shown": false
+      },
+      "evidence": [
+        {
+          "asset_sha256": "8484b4e774d1e545bf2222560052662d903c68f5f2d50ba71d36fc8fcaf011f8",
+          "page": 1,
+          "locator": "页面右侧 P1 pin 2 与 P3 pin 3 的 GPS_T 标签"
+        }
+      ]
+    },
+    {
+      "id": "power.header_decoupling",
+      "category": "power",
+      "subject": "排针电源去耦",
+      "statement": "C1 100nF (104) 10% 50V 从 +3.3V 接 GND，C2 同规格从 +5VIN 接 GND。",
+      "confidence": "confirmed",
+      "attributes": {
+        "c1": "100nF (104) 10% 50V, +3.3V to GND",
+        "c2": "100nF (104) 10% 50V, +5VIN to GND"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "8484b4e774d1e545bf2222560052662d903c68f5f2d50ba71d36fc8fcaf011f8",
+          "page": 1,
+          "locator": "页面右侧 C1 +3.3V-GND 与 C2 +5VIN-GND"
+        }
+      ]
+    },
+    {
+      "id": "component.gps_subsystem_not_shown",
+      "category": "component",
+      "subject": "GPS 主电路可见性",
+      "statement": "当前页面没有显示 GPS 接收器型号、天线与射频匹配、PPS、备份电池、Flash、UART 接收端、状态指示或 GPS 电源转换。",
+      "confidence": "confirmed",
+      "attributes": {
+        "gps_receiver_shown": false,
+        "antenna_shown": false,
+        "pps_shown": false,
+        "backup_battery_shown": false,
+        "flash_shown": false,
+        "uart_rx_shown": false,
+        "indicators_shown": false,
+        "gps_power_conversion_shown": false
+      },
+      "evidence": [
+        {
+          "asset_sha256": "8484b4e774d1e545bf2222560052662d903c68f5f2d50ba71d36fc8fcaf011f8",
+          "page": 1,
+          "locator": "整页只出现 TF-015、Rp1、P1/P2/P3 和 C1/C2"
+        }
+      ]
+    },
+    {
+      "id": "component.header_roles_not_labeled",
+      "category": "component",
+      "subject": "排针用途可见性",
+      "statement": "P1/P2/P3 仅标为 Header 5/Header 4，没有在当前页面标明各排针对应的 Atom 主机型号、板间连接对象或连接器方向。",
+      "confidence": "confirmed",
+      "attributes": {
+        "p1_role_shown": false,
+        "p2_role_shown": false,
+        "p3_role_shown": false,
+        "mating_orientation_shown": false
+      },
+      "evidence": [
+        {
+          "asset_sha256": "8484b4e774d1e545bf2222560052662d903c68f5f2d50ba71d36fc8fcaf011f8",
+          "page": 1,
+          "locator": "页面右侧 P1/P2/P3 下方仅标 Header 5/Header 4"
+        }
+      ]
+    }
+  ],
+  "needs_review": [
+    {
+      "id": "review.full_gps_schematic",
+      "fact_id": "component.gps_subsystem_not_shown",
+      "question": "是否有 A134 当前硬件版本的完整 GPS 主电路原理图，可确认接收器型号、UART/PPS、天线、备份电池、Flash、指示灯与电源？",
+      "reason": "当前唯一资源只覆盖 microSD 和排针子电路，无法完成 GPS 功能链的器件级核对。",
+      "evidence": [
+        {
+          "asset_sha256": "8484b4e774d1e545bf2222560052662d903c68f5f2d50ba71d36fc8fcaf011f8",
+          "page": 1,
+          "locator": "整页无 GPS 接收器、天线、PPS 或备份电源器件"
+        }
+      ]
+    },
+    {
+      "id": "review.header_roles",
+      "fact_id": "component.header_roles_not_labeled",
+      "question": "P1、P2、P3 分别连接哪种 Atom 主机或哪块子板，实际插接方向与完整针脚定义是什么？",
+      "reason": "页面只给出本地针号和网络，没有连接器用途或配对关系。",
+      "evidence": [
+        {
+          "asset_sha256": "8484b4e774d1e545bf2222560052662d903c68f5f2d50ba71d36fc8fcaf011f8",
+          "page": 1,
+          "locator": "页面右侧 P1/P2/P3 仅标 Header 5/Header 4"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "dry_run": false,
+  "failed": 0,
+  "published": 1,
+  "results": [
+    {
+      "backup": null,
+      "draft_action": "unchanged",
+      "dry_run": false,
+      "errors": [],
+      "needs_review": 4,
+      "product_id": "module13-2-4relay-v1-1-965327c80c46",
+      "product_name": "Module13.2 4Relay v1.1",
+      "publish_action": "unchanged",
+      "sha256": "6fd785e1cb7c09097b63e510df62d9d88e9712999da2a767d4011236903975ea",
+      "status": "valid",
+      "uncertain_facts": 4
+    }
+  ],
+  "schema_version": 1
+}

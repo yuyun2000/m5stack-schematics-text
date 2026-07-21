@@ -1,0 +1,21 @@
+{
+  "dry_run": false,
+  "failed": 0,
+  "published": 1,
+  "results": [
+    {
+      "backup": null,
+      "draft_action": "unchanged",
+      "dry_run": false,
+      "errors": [],
+      "needs_review": 4,
+      "product_id": "module-fan-v1-1-fb76038d1490",
+      "product_name": "Module Fan v1.1",
+      "publish_action": "unchanged",
+      "sha256": "61af954ebfa156d515e04fc639b1d7cf1770ad406badce13f975b84216d4a3d3",
+      "status": "valid",
+      "uncertain_facts": 4
+    }
+  ],
+  "schema_version": 1
+}

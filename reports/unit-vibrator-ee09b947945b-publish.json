@@ -1,0 +1,21 @@
+{
+  "dry_run": false,
+  "failed": 0,
+  "published": 1,
+  "results": [
+    {
+      "backup": null,
+      "draft_action": "unchanged",
+      "dry_run": false,
+      "errors": [],
+      "needs_review": 5,
+      "product_id": "unit-vibrator-ee09b947945b",
+      "product_name": "Unit Vibrator",
+      "publish_action": "unchanged",
+      "sha256": "04e728afaaa913283667745466283ebac653642d632248dc33dc97d8a1aa15e0",
+      "status": "valid",
+      "uncertain_facts": 5
+    }
+  ],
+  "schema_version": 1
+}

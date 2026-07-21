@@ -1,0 +1,426 @@
+{
+  "schema_version": 1,
+  "generator": "schematic_describer",
+  "product": {
+    "product_id": "unit-cat1-cn-2bfd2e248c89",
+    "product_name": "Unit Cat1-CN",
+    "sku": "U204",
+    "source_path": "unit/Unit_Cat1-CN.md",
+    "source_sha256": "bf940dfe6b2afcbc8dfac0adf13e677ccdc5c2881ab51b5d2e9b9604a5202f71",
+    "input_sha256": "f021eabd862775dd2132f92ebc1848d50c6e6cfbf755305d757c92a0755379f2"
+  },
+  "schematic_assets": [
+    {
+      "sha256": "5c3a6c8ae3f526f13acd298e20d1b5efdee492c166850c60b1a17dc2e5ee393a",
+      "source_url": "https://m5stack-doc.oss-cn-shenzhen.aliyuncs.com/1189/SCH_Unit_Cat.1_SCH_V0.2_20250909_2025_09_09_14_17_11_page_01.png",
+      "pages": [1]
+    }
+  ],
+  "summary": "Unit Cat1-CN 单页原理图以 U2 ML307 蜂窝模组为核心。U1 SY8003ADFC 将 J1 的 +5V 转换为 +3.6V，供 U2 VBAT pins42/43；U2 VDD_EXT pin24 输出 +1.8V。UART0_RXD/TXD 经 Q2/Q3 SS8050 与 3.6V/1.8V 电阻网络连接 J1 HY-2.0_UART，J1 pin1 的 RX 字段接 NB_TX，pin2 的 TX 字段接 NB_RX。U3 Nano SIM 使用 SIM0_DATA/CLK/RST/VCC，配置 22Ω 串阻、33pF 滤波、10uF 去耦和 U4 SMF05CT1G 防护；SIM1 信号只引出网络而未接第二卡座。ANT_MAIN pin35 直接连接 E1 ANT_IPEX；NETLIGHT 经 Q1 驱动 D1。图面只标 ML307，而正文称 ML307R-DL；图面只画 IPEX，而正文称 SMA 天线。因此模组后缀、蜂窝频段/速率/协议、UART 配置、功耗、SMA 馈线和产品级兼容参数均需另行确认。",
+  "keywords": [
+    "Unit Cat1-CN",
+    "U204",
+    "ML307",
+    "ML307R-DL",
+    "LTE Cat.1",
+    "3GPP R13",
+    "LTE-FDD",
+    "LTE-TDD",
+    "B1",
+    "B3",
+    "B5",
+    "B8",
+    "B34",
+    "B38",
+    "B39",
+    "B40",
+    "B41",
+    "SY8003ADFC",
+    "WPN3012H2R2MT",
+    "+5V",
+    "+3.6V",
+    "+1.8V",
+    "VBAT",
+    "VDD_EXT",
+    "HY-2.0_UART",
+    "NB_TX",
+    "NB_RX",
+    "ML_UART_TXD",
+    "ML_UART_RXD",
+    "Nano SIM",
+    "SIM0_DATA",
+    "SIM0_CLK",
+    "SIM0_RST",
+    "SMF05CT1G",
+    "ANT_IPEX",
+    "SMA",
+    "NETLIGHT",
+    "115200 8N1",
+    "460800",
+    "TCP",
+    "UDP",
+    "HTTP",
+    "HTTPS",
+    "MQTT",
+    "MQTTS"
+  ],
+  "components": [
+    {
+      "reference": "U2",
+      "part_number": "ML307",
+      "role": "图面蜂窝通信模组，提供 VBAT/VDD_EXT、UART、USB、SIM、ANT_MAIN 与控制/状态信号",
+      "evidence": [{"asset_sha256": "5c3a6c8ae3f526f13acd298e20d1b5efdee492c166850c60b1a17dc2e5ee393a", "page": 1, "locator": "第 1 页网格 1B-4D，U2A/U2B/U2C 均标 ML307"}]
+    },
+    {
+      "reference": "U1",
+      "part_number": "SY8003ADFC",
+      "role": "把 +5V 降压为 +3.6V 的模组电源转换器",
+      "evidence": [{"asset_sha256": "5c3a6c8ae3f526f13acd298e20d1b5efdee492c166850c60b1a17dc2e5ee393a", "page": 1, "locator": "第 1 页网格 1A-2A，U1 SY8003ADFC"}]
+    },
+    {
+      "reference": "U3",
+      "part_number": "SIM",
+      "role": "连接 U2 SIM0_DATA/CLK/RST/VCC 的 Nano SIM 卡座",
+      "evidence": [{"asset_sha256": "5c3a6c8ae3f526f13acd298e20d1b5efdee492c166850c60b1a17dc2e5ee393a", "page": 1, "locator": "第 1 页网格 1D-2D，Nano SIM 分区 U3"}]
+    },
+    {
+      "reference": "U4",
+      "part_number": "SMF05CT1G",
+      "role": "SIM0 接口多通道瞬态保护阵列",
+      "evidence": [{"asset_sha256": "5c3a6c8ae3f526f13acd298e20d1b5efdee492c166850c60b1a17dc2e5ee393a", "page": 1, "locator": "第 1 页网格 2D，U4 SMF05CT1G"}]
+    },
+    {
+      "reference": "E1",
+      "part_number": "ANT_IPEX",
+      "role": "U2 ANT_MAIN pin35 的 IPEX 射频连接器",
+      "evidence": [{"asset_sha256": "5c3a6c8ae3f526f13acd298e20d1b5efdee492c166850c60b1a17dc2e5ee393a", "page": 1, "locator": "第 1 页网格 1B，E1 ANT_IPEX 与 U2 ANT_MAIN pin35"}]
+    },
+    {
+      "reference": "Q2/Q3",
+      "part_number": "SS8050 Y1",
+      "role": "NB_RX/NB_TX 与 ML_UART_RXD/ML_UART_TXD 之间的双路 UART 电平转换",
+      "evidence": [{"asset_sha256": "5c3a6c8ae3f526f13acd298e20d1b5efdee492c166850c60b1a17dc2e5ee393a", "page": 1, "locator": "第 1 页网格 3D，Level 分区 Q2/Q3"}]
+    },
+    {
+      "reference": "J1",
+      "part_number": "HY-2.0_UART",
+      "role": "外部 +5V/GND 与 NB_TX/NB_RX UART 接口",
+      "evidence": [{"asset_sha256": "5c3a6c8ae3f526f13acd298e20d1b5efdee492c166850c60b1a17dc2e5ee393a", "page": 1, "locator": "第 1 页网格 4D，J1 HY-2.0_UART pins1-4"}]
+    },
+    {
+      "reference": "Q1/D1",
+      "part_number": "SS8050 Y1 / LED 0603",
+      "role": "U2 NETLIGHT 控制的低侧网络状态指示支路",
+      "evidence": [{"asset_sha256": "5c3a6c8ae3f526f13acd298e20d1b5efdee492c166850c60b1a17dc2e5ee393a", "page": 1, "locator": "第 1 页网格 3A-4A，NET LIGHT 分区"}]
+    },
+    {
+      "reference": "TP1-TP8",
+      "part_number": "Test Point",
+      "role": "引出调试 UART、USB、VDD_EXT、RESET 和 PWR_ON/OFF 信号",
+      "evidence": [{"asset_sha256": "5c3a6c8ae3f526f13acd298e20d1b5efdee492c166850c60b1a17dc2e5ee393a", "page": 1, "locator": "第 1 页 U2A/U2C 周围 TP1-TP8"}]
+    }
+  ],
+  "facts": [
+    {
+      "id": "system.cat1-unit-architecture",
+      "category": "system",
+      "subject": "Unit Cat1-CN 图面架构",
+      "statement": "U2 ML307 连接 U3 SIM0 卡座、E1 ANT_IPEX、Q2/Q3 UART 电平转换、Q1/D1 NETLIGHT 指示和 TP1-TP8 测试点；U1 从 J1 +5V 生成 +3.6V，J1 提供主机 UART 与电源。",
+      "confidence": "confirmed",
+      "attributes": {"cellular_module": "U2 ML307", "power": "+5V -> U1 SY8003ADFC -> +3.6V", "sim": "U3 SIM0", "rf": "E1 ANT_IPEX", "uart": "J1 <-> Q2/Q3 <-> U2 UART0", "indicator": "Q1/D1 NETLIGHT"},
+      "evidence": [{"asset_sha256": "5c3a6c8ae3f526f13acd298e20d1b5efdee492c166850c60b1a17dc2e5ee393a", "page": 1, "locator": "第 1 页完整 DCDC/4G ANT/4G UART/Nano SIM/Level/GROVE 分区"}]
+    },
+    {
+      "id": "component.schematic-module-model",
+      "category": "component",
+      "subject": "图面 U2 蜂窝模组",
+      "statement": "分体器件 U2A/U2B/U2C 的器件值均标为 ML307，图面没有打印 R-DL 后缀。",
+      "confidence": "confirmed",
+      "attributes": {"reference": "U2", "schematic_part_number": "ML307", "suffix_shown": false, "units": "U2A,U2B,U2C"},
+      "evidence": [{"asset_sha256": "5c3a6c8ae3f526f13acd298e20d1b5efdee492c166850c60b1a17dc2e5ee393a", "page": 1, "locator": "第 1 页 U2A/U2B/U2C 底部均标 ML307"}]
+    },
+    {
+      "id": "power.five-to-three-six-buck",
+      "category": "power",
+      "subject": "+5V 到 +3.6V 降压",
+      "statement": "+5V 接 U1 SY8003ADFC IN pin3 与 EN pin7，LX pin6 经 L1 WPN3012H2R2MT 输出 +3.6V；FB pin1 使用 R1 51KΩ、R2 10KΩ 和 C2 22pF，PG pin2 标未连接。",
+      "confidence": "confirmed",
+      "attributes": {"input": "+5V", "converter": "U1 SY8003ADFC", "enable": "+5V", "inductor": "L1 WPN3012H2R2MT", "output": "+3.6V", "feedback": "R1 51KΩ,R2 10KΩ,C2 22pF", "power_good": "PG pin2 NC"},
+      "evidence": [{"asset_sha256": "5c3a6c8ae3f526f13acd298e20d1b5efdee492c166850c60b1a17dc2e5ee393a", "page": 1, "locator": "第 1 页网格 1A-2A，DCDC 分区 U1/L1/R1/R2/C2"}]
+    },
+    {
+      "id": "power.buck-filtering",
+      "category": "power",
+      "subject": "DCDC 输入输出滤波",
+      "statement": "+5V 输入侧 C1=22uF；+3.6V 输出侧 C3/C4 各 10uF、C5=100nF。",
+      "confidence": "confirmed",
+      "attributes": {"input_cap": "C1 22uF", "output_caps": "C3 10uF,C4 10uF,C5 100nF"},
+      "evidence": [{"asset_sha256": "5c3a6c8ae3f526f13acd298e20d1b5efdee492c166850c60b1a17dc2e5ee393a", "page": 1, "locator": "第 1 页 DCDC 分区 C1/C3/C4/C5"}]
+    },
+    {
+      "id": "power.module-vbat",
+      "category": "power",
+      "subject": "U2 VBAT 供电",
+      "statement": "+3.6V 接 U2 VBAT pins42/43，C9 220uF 从该电源轨对地。",
+      "confidence": "confirmed",
+      "attributes": {"rail": "+3.6V", "module_pins": "U2 pins42,43 VBAT", "bulk_cap": "C9 220uF"},
+      "evidence": [{"asset_sha256": "5c3a6c8ae3f526f13acd298e20d1b5efdee492c166850c60b1a17dc2e5ee393a", "page": 1, "locator": "第 1 页网格 1B-2B，U2A VBAT pins42/43 与 C9"}]
+    },
+    {
+      "id": "power.module-vdd-ext",
+      "category": "power",
+      "subject": "U2 VDD_EXT 1.8V",
+      "statement": "U2 VDD_EXT pin24 形成 +1.8V 并连接 TP6，C6 10uF 从 +1.8V 对地。",
+      "confidence": "confirmed",
+      "attributes": {"source": "U2.VDD_EXT pin24", "rail": "+1.8V", "testpoint": "TP6", "capacitor": "C6 10uF"},
+      "evidence": [{"asset_sha256": "5c3a6c8ae3f526f13acd298e20d1b5efdee492c166850c60b1a17dc2e5ee393a", "page": 1, "locator": "第 1 页网格 1B-2C，U2A VDD_EXT/TP6/C6"}]
+    },
+    {
+      "id": "interface.grove-pinout",
+      "category": "interface",
+      "subject": "J1 HY-2.0_UART",
+      "statement": "J1 pin1 的器件字段标 RX、网络为 NB_TX；pin2 的器件字段标 TX、网络为 NB_RX；pin3=+5V，pin4=GND。",
+      "confidence": "confirmed",
+      "attributes": {"pin1": "RX field / NB_TX net", "pin2": "TX field / NB_RX net", "pin3": "+5V", "pin4": "GND"},
+      "evidence": [{"asset_sha256": "5c3a6c8ae3f526f13acd298e20d1b5efdee492c166850c60b1a17dc2e5ee393a", "page": 1, "locator": "第 1 页网格 4D，J1 HY-2.0_UART pins1-4"}]
+    },
+    {
+      "id": "bus.module-uart0",
+      "category": "bus",
+      "subject": "U2 UART0",
+      "statement": "U2 UART0_RXD pin17 形成 ML_UART_RXD，UART0_TXD pin18 形成 ML_UART_TXD；两条网络分别进入 Q2/Q3 电平转换。",
+      "confidence": "confirmed",
+      "attributes": {"module_rx": "U2.UART0_RXD pin17 -> ML_UART_RXD -> Q2", "module_tx": "U2.UART0_TXD pin18 -> ML_UART_TXD -> Q3"},
+      "evidence": [{"asset_sha256": "5c3a6c8ae3f526f13acd298e20d1b5efdee492c166850c60b1a17dc2e5ee393a", "page": 1, "locator": "第 1 页网格 3B-4D，U2C UART0_RXD/TXD 与 Level 分区"}]
+    },
+    {
+      "id": "bus.uart-level-shift",
+      "category": "bus",
+      "subject": "3.6V/1.8V UART 电平转换",
+      "statement": "NB_RX 与 ML_UART_RXD 之间使用 Q2 SS8050 Y1，3.6V 侧由 R8 4.7KΩ 上拉、1.8V 侧由 R9 4.7KΩ 上拉，Q2 基极经 R7 4.7KΩ 接 +1.8V；NB_TX 与 ML_UART_TXD 之间的 Q3/R14/R15/R11 使用相同结构。",
+      "confidence": "confirmed",
+      "attributes": {"rx_path": "NB_RX <-> Q2 <-> ML_UART_RXD", "rx_resistors": "R8 4.7K to +3.6V,R9 4.7K to +1.8V,R7 4.7K base", "tx_path": "NB_TX <-> Q3 <-> ML_UART_TXD", "tx_resistors": "R14 4.7K to +3.6V,R15 4.7K to +1.8V,R11 4.7K base"},
+      "evidence": [{"asset_sha256": "5c3a6c8ae3f526f13acd298e20d1b5efdee492c166850c60b1a17dc2e5ee393a", "page": 1, "locator": "第 1 页网格 3D，Level 分区 Q2/Q3/R7-R9/R11/R14/R15"}]
+    },
+    {
+      "id": "interface.nano-sim0-pinout",
+      "category": "interface",
+      "subject": "U3 Nano SIM 与 U2 SIM0",
+      "statement": "Nano SIM 分区的 U3 pin7 IO、pin3 CLK、pin2 RST、pin1 VCC 分别连接 SIM0_DAT、SIM0_CLK、SIM0_RST、SIM_VCC；U2 对应引脚为 SIM0_DATA pin11、SIM0_CLK pin13、SIM0_RST pin12、SIM0_VCC pin14。",
+      "confidence": "confirmed",
+      "attributes": {"data": "U2.11 SIM0_DATA -> U3.7 IO", "clock": "U2.13 SIM0_CLK -> U3.3 CLK", "reset": "U2.12 SIM0_RST -> U3.2 RST", "supply": "U2.14 SIM0_VCC -> U3.1 VCC", "form_factor_label": "Nano SIM"},
+      "evidence": [{"asset_sha256": "5c3a6c8ae3f526f13acd298e20d1b5efdee492c166850c60b1a17dc2e5ee393a", "page": 1, "locator": "第 1 页网格 1D-2D，U2B SIM0 与 U3 Nano SIM"}]
+    },
+    {
+      "id": "protection.sim0-filtering",
+      "category": "protection",
+      "subject": "SIM0 保护与滤波",
+      "statement": "SIM0_DAT/CLK/RST 分别串联 R10/R12/R13 22Ω，并由 C7/C8/C10 各 33pF 对地；U4 SMF05CT1G 跨接 SIM_VCC 与三条信号，C11 10uF 为 SIM_VCC 去耦。",
+      "confidence": "confirmed",
+      "attributes": {"series_resistors": "R10,R12,R13 22Ω", "signal_caps": "C7,C8,C10 33pF", "protection": "U4 SMF05CT1G", "supply_cap": "C11 10uF"},
+      "evidence": [{"asset_sha256": "5c3a6c8ae3f526f13acd298e20d1b5efdee492c166850c60b1a17dc2e5ee393a", "page": 1, "locator": "第 1 页网格 2D，U4/R10/R12/R13/C7/C8/C10/C11"}]
+    },
+    {
+      "id": "interface.sim1-unconnected",
+      "category": "interface",
+      "subject": "U2 SIM1 信号",
+      "statement": "U2 SIM1_VCC pin65、SIM1_RST pin63、SIM1_DATA pin64 与 SIM1_CLK pin62 只形成同名网络，当前页没有第二个 SIM 卡座或外部连接器。",
+      "confidence": "confirmed",
+      "attributes": {"signals": "SIM1_VCC,SIM1_RST,SIM1_DATA,SIM1_CLK", "module_pins": "65,63,64,62", "second_socket_shown": false},
+      "evidence": [{"asset_sha256": "5c3a6c8ae3f526f13acd298e20d1b5efdee492c166850c60b1a17dc2e5ee393a", "page": 1, "locator": "第 1 页网格 1D，U2B SIM1 nets，无第二卡座"}]
+    },
+    {
+      "id": "rf.main-antenna-ipex",
+      "category": "rf",
+      "subject": "U2 ANT_MAIN 到 E1",
+      "statement": "U2 ANT_MAIN pin35 直接连接 E1 ANT_IPEX 中心端，E1 地端接 GND；页面未绘制分立匹配、射频开关或天线 ESD 器件。",
+      "confidence": "confirmed",
+      "attributes": {"module_pin": "U2.ANT_MAIN pin35", "connector": "E1 ANT_IPEX", "shield": "GND", "matching_shown": false, "rf_switch_shown": false, "rf_esd_shown": false},
+      "evidence": [{"asset_sha256": "5c3a6c8ae3f526f13acd298e20d1b5efdee492c166850c60b1a17dc2e5ee393a", "page": 1, "locator": "第 1 页网格 1B，U2A ANT_MAIN pin35 与 E1 ANT_IPEX"}]
+    },
+    {
+      "id": "component.netlight-indicator",
+      "category": "component",
+      "subject": "NETLIGHT 指示电路",
+      "statement": "U2 NETLIGHT pin16 经 R4 1KΩ 驱动 Q1 SS8050 Y1，R5 10KΩ 将基极节点下拉；Q1 导通时形成 +5V-R3 1KΩ-D1 0603-Q1-GND 电流路径。",
+      "confidence": "confirmed",
+      "attributes": {"source": "U2.NETLIGHT pin16", "base_resistor": "R4 1KΩ", "base_pulldown": "R5 10KΩ", "transistor": "Q1 SS8050 Y1", "led_path": "+5V -> R3 1KΩ -> D1 0603 -> Q1 -> GND"},
+      "evidence": [{"asset_sha256": "5c3a6c8ae3f526f13acd298e20d1b5efdee492c166850c60b1a17dc2e5ee393a", "page": 1, "locator": "第 1 页网格 3A-4A，NET LIGHT 分区"}]
+    },
+    {
+      "id": "debug.control-testpoints",
+      "category": "debug",
+      "subject": "RESET/PWR_ON_OFF 测试点",
+      "statement": "U2 RESET pin15 通过 ML_RST 接 TP7；U2 PWR_ON/OFF pin7 通过 ML_PWR 接 TP8，并由 R6 4.7KΩ 下拉到 GND。",
+      "confidence": "confirmed",
+      "attributes": {"reset": "U2.15 RESET -> ML_RST -> TP7", "power_control": "U2.7 PWR_ON/OFF -> ML_PWR -> TP8", "power_control_pulldown": "R6 4.7KΩ"},
+      "evidence": [{"asset_sha256": "5c3a6c8ae3f526f13acd298e20d1b5efdee492c166850c60b1a17dc2e5ee393a", "page": 1, "locator": "第 1 页网格 1B-2C，TP7/TP8/ML_RST/ML_PWR/R6"}]
+    },
+    {
+      "id": "debug.module-debug-usb-testpoints",
+      "category": "debug",
+      "subject": "U2 调试 UART 与 USB 测试点",
+      "statement": "U2 DBG_RXD pin38 接 ML_DBG_RXD/TP1，DBG_TXD pin39 接 ML_DBG_TXD/TP3；USB_VBUS pin61 接 TP2，USB_DP pin59 通过 USB_D_4G_N 接 TP4，USB_DM pin60 通过 USB_D_4G_P 接 TP5。",
+      "confidence": "confirmed",
+      "attributes": {"debug_rx": "U2.38 -> ML_DBG_RXD -> TP1", "debug_tx": "U2.39 -> ML_DBG_TXD -> TP3", "usb_vbus": "U2.61 -> TP2", "usb_dp_net": "U2.59 USB_DP -> USB_D_4G_N -> TP4", "usb_dm_net": "U2.60 USB_DM -> USB_D_4G_P -> TP5"},
+      "evidence": [{"asset_sha256": "5c3a6c8ae3f526f13acd298e20d1b5efdee492c166850c60b1a17dc2e5ee393a", "page": 1, "locator": "第 1 页网格 3B-4B，U2C DBG/USB 与 TP1-TP5"}]
+    },
+    {
+      "id": "interface.unused-module-functions",
+      "category": "interface",
+      "subject": "U2 未连接功能",
+      "statement": "U2 BOOT_MODE pin82、WAKEUP_OUT pin49、GPIO0-GPIO3、ADC、UART1_RXD/TXD、PWM0/PWM1、MIC_P/MIC_N 与 SPK_P/SPK_N 在本页标未连接；STATE pin25 也没有外部网络。",
+      "confidence": "confirmed",
+      "attributes": {"control": "BOOT_MODE82,WAKEUP_OUT49,STATE25", "gpio": "GPIO0-3", "analog": "ADC9", "secondary_uart": "UART1_RXD28,UART1_TXD29", "pwm": "PWM0 74,PWM1 75", "audio": "MIC_P3,MIC_N4,SPK_P5,SPK_N6"},
+      "evidence": [{"asset_sha256": "5c3a6c8ae3f526f13acd298e20d1b5efdee492c166850c60b1a17dc2e5ee393a", "page": 1, "locator": "第 1 页 U2A/U2C 红色未连接叉号与无外部网络引脚"}]
+    },
+    {
+      "id": "clock.external-clock-not-shown",
+      "category": "clock",
+      "subject": "外部时钟源",
+      "statement": "完整单页未显示 U2 外部晶振、振荡器或时钟输入网络，模组内部时钟实现未展开。",
+      "confidence": "confirmed",
+      "attributes": {"crystal_shown": false, "oscillator_shown": false, "external_clock_net_shown": false},
+      "evidence": [{"asset_sha256": "5c3a6c8ae3f526f13acd298e20d1b5efdee492c166850c60b1a17dc2e5ee393a", "page": 1, "locator": "第 1 页完整图无 Y/X/CLK 源器件"}]
+    },
+    {
+      "id": "memory.external-storage-not-shown",
+      "category": "memory",
+      "subject": "外部存储器",
+      "statement": "完整单页未显示独立 Flash、EEPROM、RAM、SD 卡或其他外部存储器件。",
+      "confidence": "confirmed",
+      "attributes": {"flash_shown": false, "eeprom_shown": false, "ram_shown": false, "sd_card_shown": false},
+      "evidence": [{"asset_sha256": "5c3a6c8ae3f526f13acd298e20d1b5efdee492c166850c60b1a17dc2e5ee393a", "page": 1, "locator": "第 1 页完整器件范围无外部存储器"}]
+    },
+    {
+      "id": "component.documented-ml307r-dl-variant",
+      "category": "component",
+      "subject": "ML307R-DL 具体模组版本",
+      "statement": "正文与规格表称通信模组为 ML307R-DL，原理图 U2A/U2B/U2C 只标 ML307，没有 R-DL 后缀或其他版本识别信息。",
+      "confidence": "uncertain",
+      "attributes": {"documented_part_number": "ML307R-DL", "schematic_part_number": "ML307", "variant_confirmed": false},
+      "evidence": [{"asset_sha256": "5c3a6c8ae3f526f13acd298e20d1b5efdee492c166850c60b1a17dc2e5ee393a", "page": 1, "locator": "第 1 页 U2A/U2B/U2C 器件值 ML307"}]
+    },
+    {
+      "id": "rf.documented-bands-rates-standard",
+      "category": "rf",
+      "subject": "LTE 频段、理论速率与 3GPP 版本",
+      "statement": "正文列出 LTE-FDD B1/B3/B5/B8、LTE-TDD B34/B38/B39/B40/B41、FDD 10Mbps 下行/5Mbps 上行、TDD 9.010Mbps 下行/3.096Mbps 上行及 3GPP R13；原理图只标 ML307 与 ANT_IPEX，没有这些无线能力参数。",
+      "confidence": "uncertain",
+      "attributes": {"documented_fdd_bands": "B1,B3,B5,B8", "documented_tdd_bands": "B34,B38,B39,B40,B41", "documented_fdd_rate": "10Mbps DL,5Mbps UL", "documented_tdd_rate": "9.010Mbps DL,3.096Mbps UL", "documented_3gpp": "R13", "schematic_confirms_specs": false},
+      "evidence": [{"asset_sha256": "5c3a6c8ae3f526f13acd298e20d1b5efdee492c166850c60b1a17dc2e5ee393a", "page": 1, "locator": "第 1 页 U2 ML307 与 E1 ANT_IPEX，无频段/速率/3GPP 表"}]
+    },
+    {
+      "id": "other.documented-network-protocols-sockets",
+      "category": "other",
+      "subject": "网络协议与 Socket 并发",
+      "statement": "正文称支持最多 6 路 Socket 并发，以及 IPv4/IPv6/PING/NTP/DNS/TCP/UDP/HTTP/HTTPS/MQTT/MQTTS；原理图不包含协议栈、Socket 数量或固件版本。",
+      "confidence": "uncertain",
+      "attributes": {"documented_socket_concurrency": 6, "documented_protocols": "IPv4,IPv6,PING,NTP,DNS,TCP,UDP,HTTP,HTTPS,MQTT,MQTTS", "schematic_confirms_firmware": false},
+      "evidence": [{"asset_sha256": "5c3a6c8ae3f526f13acd298e20d1b5efdee492c166850c60b1a17dc2e5ee393a", "page": 1, "locator": "第 1 页 U2 仅有硬件引脚与网络，无协议栈信息"}]
+    },
+    {
+      "id": "bus.documented-uart-configuration",
+      "category": "bus",
+      "subject": "UART 波特率与帧格式",
+      "statement": "正文称默认 UART 为 115200bps@8N1、支持修改，并建议最高 460800、不建议 921600；原理图只确认 UART0 电气路径，没有波特率、帧格式或丢包边界。",
+      "confidence": "uncertain",
+      "attributes": {"documented_default": "115200bps 8N1", "documented_recommended_max": "460800bps", "documented_not_recommended": "921600bps", "schematic_uart_timing": false},
+      "evidence": [{"asset_sha256": "5c3a6c8ae3f526f13acd298e20d1b5efdee492c166850c60b1a17dc2e5ee393a", "page": 1, "locator": "第 1 页 U2 UART0、Q2/Q3 与 J1，无速率文字"}]
+    },
+    {
+      "id": "power.documented-consumption",
+      "category": "power",
+      "subject": "正文工作、待机与休眠电流",
+      "statement": "正文列出 TCP 发送瞬时电流 5V@171.91mA 与 5V@831.12mA、待机 5V@9.96mA、休眠 5V@1.48mA；原理图未给网络条件、发射功率、固件状态、时间窗口或电流测试点。",
+      "confidence": "uncertain",
+      "attributes": {"documented_tx_case_1": "5V@171.91mA", "documented_tx_case_2": "5V@831.12mA", "documented_standby": "5V@9.96mA", "documented_sleep": "5V@1.48mA", "measurement_conditions_shown": false},
+      "evidence": [{"asset_sha256": "5c3a6c8ae3f526f13acd298e20d1b5efdee492c166850c60b1a17dc2e5ee393a", "page": 1, "locator": "第 1 页 +5V/DCDC/U2 电源路径，无电流或测试条件"}]
+    },
+    {
+      "id": "rf.documented-sma-antenna",
+      "category": "rf",
+      "subject": "SMA 天线与 IPEX 板端关系",
+      "statement": "正文称板载 SMA 天线接口并随附 850~2700MHz、3dBi、VSWR≤1.5 的 SMA 内螺内针胶棒天线；原理图只显示 E1 ANT_IPEX，没有 SMA 位号、IPEX-SMA 馈线、天线增益或驻波参数。",
+      "confidence": "uncertain",
+      "attributes": {"documented_board_interface": "SMA", "documented_antenna_band": "850-2700MHz", "documented_gain": "3dBi", "documented_vswr": "<=1.5", "schematic_connector": "E1 ANT_IPEX", "pigtail_shown": false},
+      "evidence": [{"asset_sha256": "5c3a6c8ae3f526f13acd298e20d1b5efdee492c166850c60b1a17dc2e5ee393a", "page": 1, "locator": "第 1 页唯一射频接口 E1 ANT_IPEX"}]
+    },
+    {
+      "id": "other.documented-sim-operator-compatibility",
+      "category": "other",
+      "subject": "Nano-SIM 与中国运营商兼容",
+      "statement": "正文称支持中国移动、中国联通、中国电信等主流运营商的 Cat1 Nano-SIM 并要求开通数据业务；原理图确认 Nano SIM0 电气接口，但不能确认运营商入网、卡配置、频段覆盖或业务开通状态。",
+      "confidence": "uncertain",
+      "attributes": {"documented_form_factor": "Nano-SIM", "documented_operators": "China Mobile,China Unicom,China Telecom", "required_service": "LTE Cat1 data", "schematic_form_factor_label": "Nano SIM", "operator_certification_shown": false},
+      "evidence": [{"asset_sha256": "5c3a6c8ae3f526f13acd298e20d1b5efdee492c166850c60b1a17dc2e5ee393a", "page": 1, "locator": "第 1 页 Nano SIM 电路，无运营商或认证信息"}]
+    },
+    {
+      "id": "other.documented-mechanics",
+      "category": "other",
+      "subject": "产品与天线机械参数",
+      "statement": "正文列出产品尺寸 71.4 x 24.0 x 8.0mm、重量 13.1g、包装尺寸 138.0 x 93.0 x 10.0mm、毛重 26.4g，并称胶棒天线尺寸 108 x 10mm；当前电气图没有板框、外壳或天线机械尺寸。",
+      "confidence": "uncertain",
+      "attributes": {"documented_product_size": "71.4 x 24.0 x 8.0mm", "documented_product_weight": "13.1g", "documented_package_size": "138.0 x 93.0 x 10.0mm", "documented_gross_weight": "26.4g", "documented_antenna_size": "108 x 10mm"},
+      "evidence": [{"asset_sha256": "5c3a6c8ae3f526f13acd298e20d1b5efdee492c166850c60b1a17dc2e5ee393a", "page": 1, "locator": "第 1 页电气图无机械尺寸或重量"}]
+    }
+  ],
+  "needs_review": [
+    {
+      "id": "review.ml307r-dl-variant",
+      "fact_id": "component.documented-ml307r-dl-variant",
+      "question": "请依据 U204 量产 BOM、U2 丝印或模组证书确认具体料号为 ML307R-DL。",
+      "reason": "正文给出 ML307R-DL，原理图只标 ML307，无法区分变体。",
+      "evidence": [{"asset_sha256": "5c3a6c8ae3f526f13acd298e20d1b5efdee492c166850c60b1a17dc2e5ee393a", "page": 1, "locator": "第 1 页 U2A/U2B/U2C ML307"}]
+    },
+    {
+      "id": "review.bands-rates-standard",
+      "fact_id": "rf.documented-bands-rates-standard",
+      "question": "请依据确认后的 ML307R-DL datasheet、认证资料和网络实测确认频段、3GPP R13 与 FDD/TDD 最大速率。",
+      "reason": "这些无线规格未打印在原理图上，且模组具体后缀仍待确认。",
+      "evidence": [{"asset_sha256": "5c3a6c8ae3f526f13acd298e20d1b5efdee492c166850c60b1a17dc2e5ee393a", "page": 1, "locator": "第 1 页 U2 ML307 与 E1 ANT_IPEX"}]
+    },
+    {
+      "id": "review.network-protocols-sockets",
+      "fact_id": "other.documented-network-protocols-sockets",
+      "question": "请依据 U204 当前模组固件和 AT 手册确认协议栈版本、各协议能力及最多 6 路 Socket 的限制条件。",
+      "reason": "协议与并发数属于模组固件能力，原理图不能证明。",
+      "evidence": [{"asset_sha256": "5c3a6c8ae3f526f13acd298e20d1b5efdee492c166850c60b1a17dc2e5ee393a", "page": 1, "locator": "第 1 页 U2 硬件引脚图"}]
+    },
+    {
+      "id": "review.uart-configuration",
+      "fact_id": "bus.documented-uart-configuration",
+      "question": "请用 U204 当前固件和逻辑分析确认默认 115200 8N1、可配置范围、460800 建议上限及 921600 丢包边界。",
+      "reason": "原理图只确认电平转换和 UART 连线，不含串口时序或缓存能力。",
+      "evidence": [{"asset_sha256": "5c3a6c8ae3f526f13acd298e20d1b5efdee492c166850c60b1a17dc2e5ee393a", "page": 1, "locator": "第 1 页 U2 UART0/Q2/Q3/J1"}]
+    },
+    {
+      "id": "review.power-consumption",
+      "fact_id": "power.documented-consumption",
+      "question": "请按明确运营商、频段、信号强度、发射功率和时间窗口实测并确认 171.91mA、831.12mA、9.96mA、1.48mA 参数。",
+      "reason": "正文缺少完整测试边界，原理图没有电流标注。",
+      "evidence": [{"asset_sha256": "5c3a6c8ae3f526f13acd298e20d1b5efdee492c166850c60b1a17dc2e5ee393a", "page": 1, "locator": "第 1 页 +5V 到 U2 电源链"}]
+    },
+    {
+      "id": "review.sma-antenna",
+      "fact_id": "rf.documented-sma-antenna",
+      "question": "请用 U204 BOM/装配图确认 E1 IPEX 到 SMA 的馈线、板端 SMA 结构及随附天线的频段、增益和 VSWR。",
+      "reason": "原理图只画 E1 ANT_IPEX，正文称板载 SMA 且给出天线性能。",
+      "evidence": [{"asset_sha256": "5c3a6c8ae3f526f13acd298e20d1b5efdee492c166850c60b1a17dc2e5ee393a", "page": 1, "locator": "第 1 页 E1 ANT_IPEX"}]
+    },
+    {
+      "id": "review.sim-operator-compatibility",
+      "fact_id": "other.documented-sim-operator-compatibility",
+      "question": "请依据 U204 认证、支持频段和运营商网络测试确认三大运营商 Nano-SIM 的版本与业务兼容范围。",
+      "reason": "图面只确认 SIM0 电气接口，不能证明运营商接入和业务状态。",
+      "evidence": [{"asset_sha256": "5c3a6c8ae3f526f13acd298e20d1b5efdee492c166850c60b1a17dc2e5ee393a", "page": 1, "locator": "第 1 页 Nano SIM 分区"}]
+    },
+    {
+      "id": "review.mechanics",
+      "fact_id": "other.documented-mechanics",
+      "question": "请用 U204 正式结构图、称重记录和天线规格书复核产品、包装和胶棒天线机械参数。",
+      "reason": "当前证据为电气原理图，不包含板框、外壳或天线尺寸。",
+      "evidence": [{"asset_sha256": "5c3a6c8ae3f526f13acd298e20d1b5efdee492c166850c60b1a17dc2e5ee393a", "page": 1, "locator": "第 1 页电气图"}]
+    }
+  ]
+}

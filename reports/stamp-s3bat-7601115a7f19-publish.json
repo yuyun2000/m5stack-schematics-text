@@ -1,0 +1,21 @@
+{
+  "dry_run": false,
+  "failed": 0,
+  "published": 1,
+  "results": [
+    {
+      "backup": null,
+      "draft_action": "unchanged",
+      "dry_run": false,
+      "errors": [],
+      "needs_review": 10,
+      "product_id": "stamp-s3bat-7601115a7f19",
+      "product_name": "Stamp-S3Bat",
+      "publish_action": "unchanged",
+      "sha256": "dba22a15a1d065dcb6518276f9a311a78db2a5fef235cae596203edf049eec4f",
+      "status": "valid",
+      "uncertain_facts": 10
+    }
+  ],
+  "schema_version": 1
+}

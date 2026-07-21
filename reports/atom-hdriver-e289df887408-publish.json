@@ -1,0 +1,21 @@
+{
+  "dry_run": false,
+  "failed": 0,
+  "published": 1,
+  "results": [
+    {
+      "backup": null,
+      "draft_action": "unchanged",
+      "dry_run": false,
+      "errors": [],
+      "needs_review": 0,
+      "product_id": "atom-hdriver-e289df887408",
+      "product_name": "Atom HDriver",
+      "publish_action": "unchanged",
+      "sha256": "d6bf3f363954d5b66b23755e9b34b63e797083fae467e3deefa59d1d92f52c18",
+      "status": "valid",
+      "uncertain_facts": 0
+    }
+  ],
+  "schema_version": 1
+}

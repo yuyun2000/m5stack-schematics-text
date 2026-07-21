@@ -1,0 +1,21 @@
+{
+  "dry_run": false,
+  "failed": 0,
+  "published": 1,
+  "results": [
+    {
+      "backup": null,
+      "draft_action": "unchanged",
+      "dry_run": false,
+      "errors": [],
+      "needs_review": 4,
+      "product_id": "unit-joystick-3a33915b6406",
+      "product_name": "Unit Joystick",
+      "publish_action": "unchanged",
+      "sha256": "b7a447b3262816bcdd68b2ab4d24a679527be55eba33fc3bf0fa2b4f97e02f9e",
+      "status": "valid",
+      "uncertain_facts": 4
+    }
+  ],
+  "schema_version": 1
+}

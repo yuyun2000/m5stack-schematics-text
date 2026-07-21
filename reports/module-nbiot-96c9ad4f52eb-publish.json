@@ -1,0 +1,21 @@
+{
+  "dry_run": false,
+  "failed": 0,
+  "published": 1,
+  "results": [
+    {
+      "backup": null,
+      "draft_action": "unchanged",
+      "dry_run": false,
+      "errors": [],
+      "needs_review": 3,
+      "product_id": "module-nbiot-96c9ad4f52eb",
+      "product_name": "Module NBIoT",
+      "publish_action": "unchanged",
+      "sha256": "0c8884e68023bb84b0292d76ed34a98f005f654f618ca33d2b51743331448ed4",
+      "status": "valid",
+      "uncertain_facts": 3
+    }
+  ],
+  "schema_version": 1
+}

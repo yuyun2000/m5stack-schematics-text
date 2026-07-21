@@ -1,0 +1,21 @@
+{
+  "dry_run": false,
+  "failed": 0,
+  "published": 1,
+  "results": [
+    {
+      "backup": null,
+      "draft_action": "unchanged",
+      "dry_run": false,
+      "errors": [],
+      "needs_review": 4,
+      "product_id": "module-gsm-0ac1e8c6b626",
+      "product_name": "Module GSM",
+      "publish_action": "unchanged",
+      "sha256": "6d4a26fdbf91aa1eea10128f627a27dd79f3dec03e418d3d8d523105f56089a4",
+      "status": "valid",
+      "uncertain_facts": 4
+    }
+  ],
+  "schema_version": 1
+}

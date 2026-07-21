@@ -1,0 +1,21 @@
+{
+  "dry_run": false,
+  "failed": 0,
+  "published": 1,
+  "results": [
+    {
+      "backup": null,
+      "draft_action": "unchanged",
+      "dry_run": false,
+      "errors": [],
+      "needs_review": 3,
+      "product_id": "hat-servo-35c2561dfa31",
+      "product_name": "Hat Servo",
+      "publish_action": "unchanged",
+      "sha256": "aea7f846c1c685a449e1d2ba6688598e7780f459719c1b645c172f646093c769",
+      "status": "valid",
+      "uncertain_facts": 3
+    }
+  ],
+  "schema_version": 1
+}

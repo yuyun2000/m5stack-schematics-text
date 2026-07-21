@@ -1,0 +1,21 @@
+{
+  "dry_run": false,
+  "failed": 0,
+  "published": 1,
+  "results": [
+    {
+      "backup": null,
+      "draft_action": "unchanged",
+      "dry_run": false,
+      "errors": [],
+      "needs_review": 0,
+      "product_id": "atom-rs485-ab98568a0c94",
+      "product_name": "Atom RS485",
+      "publish_action": "unchanged",
+      "sha256": "96d5299ace22f406a2fe5684fde7132ea2233ce62ac1a7f13d4c3e8d572a777b",
+      "status": "valid",
+      "uncertain_facts": 0
+    }
+  ],
+  "schema_version": 1
+}

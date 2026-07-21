@@ -1,0 +1,21 @@
+{
+  "dry_run": false,
+  "failed": 0,
+  "published": 1,
+  "results": [
+    {
+      "backup": null,
+      "draft_action": "unchanged",
+      "dry_run": false,
+      "errors": [],
+      "needs_review": 3,
+      "product_id": "atom-motion-3e67d876f82b",
+      "product_name": "Atom Motion",
+      "publish_action": "unchanged",
+      "sha256": "321ad826abe0f4675584baf0d70bd04fdabcf01ef800b8258ca0a6e3f74433e9",
+      "status": "valid",
+      "uncertain_facts": 3
+    }
+  ],
+  "schema_version": 1
+}

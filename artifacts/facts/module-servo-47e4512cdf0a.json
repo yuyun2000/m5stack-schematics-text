@@ -1,0 +1,279 @@
+{
+  "schema_version": 1,
+  "generator": "schematic_describer",
+  "product": {
+    "product_id": "module-servo-47e4512cdf0a",
+    "product_name": "Module Servo",
+    "sku": "M014",
+    "source_path": "module/servo.md",
+    "source_sha256": "bb9932fc06e33e20f30115b484678405ea3a52e56132eb48c58c37364c49a4eb",
+    "input_sha256": "43b2c036d5a3da6fc732f35e6901a7b237fc4ea65f654beb89bdeafb146e1e5e"
+  },
+  "schematic_assets": [
+    {
+      "sha256": "6fdc02048c87a6c7bfd12ce4c8c24902d2502095362098e407ff295e339f496b",
+      "source_url": "https://static-cdn.m5stack.com/resource/docs/products/module/servo/servo_sch_01.webp",
+      "pages": [1]
+    }
+  ],
+  "summary": "Module Servo 以 U2 ATMEGA328 为 12 路舵机控制器，CH0–CH11 分别连接 P2–P13 三针接口，每路同时提供 VCC 与 GND。U2 通过 SDA/SCL 与 J4 M5Stack_BUS 通信，RESET 连接主机 EN，J1 提供 ISP，Y1 16 MHz 晶振提供时钟。P1 外部 VCC 经 U1 LM2596SX-5.0/NOPB 转换为 +5 V，为 U2、ISP 与 M5-Bus 供电；舵机接口自身使用原始 VCC。",
+  "keywords": [
+    "Module Servo", "M014", "ATMEGA328", "LM2596SX-5.0/NOPB", "16MHz", "I2C", "0x53", "SDA", "SCL", "GPIO21", "GPIO22", "RESET", "EN", "ISP_Download", "MOSI", "MISO", "SCK", "CH0", "CH1", "CH2", "CH3", "CH4", "CH5", "CH6", "CH7", "CH8", "CH9", "CH10", "CH11", "P2-P13", "servo", "VCC", "+5V", "+3V3", "M5Stack_BUS", "XT30", "DC 5-7V", "14W", "L1 0630/330", "R1/R2 470Ω"
+  ],
+  "components": [
+    {
+      "reference": "U2",
+      "part_number": "ATMEGA328",
+      "role": "12 路舵机 PWM 控制与 I2C 从机 MCU",
+      "evidence": [{"asset_sha256": "6fdc02048c87a6c7bfd12ce4c8c24902d2502095362098e407ff295e339f496b", "page": 1, "locator": "中央 U2 ATMEGA328 pins1-32"}]
+    },
+    {
+      "reference": "U1",
+      "part_number": "LM2596SX-5.0/NOPB",
+      "role": "从外部 VCC 产生 +5 V 的固定输出开关稳压器",
+      "evidence": [{"asset_sha256": "6fdc02048c87a6c7bfd12ce4c8c24902d2502095362098e407ff295e339f496b", "page": 1, "locator": "左上 U1 LM2596SX-5.0/NOPB/L1/C1-C4"}]
+    },
+    {
+      "reference": "P2-P13",
+      "part_number": "Header 3",
+      "role": "12 组舵机接口，每组提供 GND、VCC 与 CH0-CH11 控制信号",
+      "evidence": [{"asset_sha256": "6fdc02048c87a6c7bfd12ce4c8c24902d2502095362098e407ff295e339f496b", "page": 1, "locator": "左侧 P2-P13 Header 3、CH0-CH11"}]
+    },
+    {
+      "reference": "P1",
+      "part_number": "Header 2",
+      "role": "外部 VCC 与 GND 两针电源输入接口",
+      "evidence": [{"asset_sha256": "6fdc02048c87a6c7bfd12ce4c8c24902d2502095362098e407ff295e339f496b", "page": 1, "locator": "左上 P1 Header 2/VCC/GND"}]
+    },
+    {
+      "reference": "J1",
+      "part_number": "ISP_Download",
+      "role": "ATMEGA328 的 +5 V、RESET、SCK、MISO、MOSI、GND 六针下载接口",
+      "evidence": [{"asset_sha256": "6fdc02048c87a6c7bfd12ce4c8c24902d2502095362098e407ff295e339f496b", "page": 1, "locator": "右上 J1 ISP_Download pins1-6"}]
+    },
+    {
+      "reference": "J4",
+      "part_number": "M5Stack_BUS",
+      "role": "30 针主机接口，提供 +5 V、+3V3、I2C、EN 与 GPIO 网络",
+      "evidence": [{"asset_sha256": "6fdc02048c87a6c7bfd12ce4c8c24902d2502095362098e407ff295e339f496b", "page": 1, "locator": "右下 J4 M5Stack_BUS pins1-30"}]
+    },
+    {
+      "reference": "Y1/C5/C6",
+      "part_number": "16MHz / 22pF / 22pF",
+      "role": "ATMEGA328 外部 16 MHz 晶振与负载电容",
+      "evidence": [{"asset_sha256": "6fdc02048c87a6c7bfd12ce4c8c24902d2502095362098e407ff295e339f496b", "page": 1, "locator": "上中 Y1 16MHz/C5/C6/XTAL1/XTAL2"}]
+    },
+    {
+      "reference": "R1/R2/R3/R7",
+      "part_number": "470Ω / 470Ω / 470Ω / 10KΩ",
+      "role": "SDA/SCL/RESET 串联电阻与 RESET/EN 的 3.3 V 上拉",
+      "evidence": [{"asset_sha256": "6fdc02048c87a6c7bfd12ce4c8c24902d2502095362098e407ff295e339f496b", "page": 1, "locator": "中右 SDA/R1、SCL/R2、RESET/R3、EN/R7"}]
+    },
+    {
+      "reference": "R4-R6",
+      "part_number": "0Ω",
+      "role": "U2 PB0/PB1/PB2 到 GND 的三个 0 Ω 配置位置",
+      "evidence": [{"asset_sha256": "6fdc02048c87a6c7bfd12ce4c8c24902d2502095362098e407ff295e339f496b", "page": 1, "locator": "中左 R4/R5/R6 0Ω to GND at U2 PB0-PB2"}]
+    },
+    {
+      "reference": "L1/C1-C4",
+      "part_number": "0630/330 / 100uF/100nF",
+      "role": "LM2596 输入输出储能、滤波与去耦网络",
+      "evidence": [{"asset_sha256": "6fdc02048c87a6c7bfd12ce4c8c24902d2502095362098e407ff295e339f496b", "page": 1, "locator": "左上 L1 0630/330/C1-C4/VCC/+5V"}]
+    }
+  ],
+  "facts": [
+    {
+      "id": "system.architecture",
+      "category": "system",
+      "subject": "Module Servo 系统架构",
+      "statement": "U2 ATMEGA328 控制 P2-P13 十二路舵机接口，通过 I2C 连接 J4 主机并通过 J1 ISP 编程；U1 将外部 VCC 转换为系统 +5 V。",
+      "confidence": "confirmed",
+      "attributes": {"controller": "U2 ATMEGA328", "channels": "P2-P13 / CH0-CH11", "host": "J4 M5Stack_BUS", "bus": "I2C", "debug": "J1 ISP_Download", "power": "P1 VCC -> U1 LM2596SX-5.0/NOPB -> +5V"},
+      "evidence": [{"asset_sha256": "6fdc02048c87a6c7bfd12ce4c8c24902d2502095362098e407ff295e339f496b", "page": 1, "locator": "整页 P1/U1/P2-P13/U2/J1/J4"}]
+    },
+    {
+      "id": "component.channel-mapping",
+      "category": "component",
+      "subject": "ATMEGA328 舵机通道映射",
+      "statement": "CH0-CH3 连接 U2 PD0-PD3 pins30/31/32/1，CH4-CH7 连接 PD4-PD7 pins2/9/10/11，CH8-CH11 连接 PC0-PC3 pins23-26。",
+      "confidence": "confirmed",
+      "attributes": {"ch0_ch3": "CH0 PD0 pin30; CH1 PD1 pin31; CH2 PD2 pin32; CH3 PD3 pin1", "ch4_ch7": "CH4 PD4 pin2; CH5 PD5 pin9; CH6 PD6 pin10; CH7 PD7 pin11", "ch8_ch11": "CH8 PC0 pin23; CH9 PC1 pin24; CH10 PC2 pin25; CH11 PC3 pin26"},
+      "evidence": [{"asset_sha256": "6fdc02048c87a6c7bfd12ce4c8c24902d2502095362098e407ff295e339f496b", "page": 1, "locator": "U2 left-side CH0-CH11 pin labels"}]
+    },
+    {
+      "id": "interface.servo-headers",
+      "category": "interface",
+      "subject": "12 组三针舵机接口",
+      "statement": "P2-P13 每个 Header 3 的 pin1 接 GND、pin2 接 VCC、pin3 分别接 CH0-CH11。",
+      "confidence": "confirmed",
+      "attributes": {"connectors": "P2-P13", "ground": "pin1", "power": "pin2 VCC", "signal": "pin3 CH0-CH11", "count": 12},
+      "evidence": [{"asset_sha256": "6fdc02048c87a6c7bfd12ce4c8c24902d2502095362098e407ff295e339f496b", "page": 1, "locator": "Left P2-P13 Header 3 rows"}]
+    },
+    {
+      "id": "power.external-input",
+      "category": "power",
+      "subject": "外部 VCC 输入",
+      "statement": "P1 Header 2 pin1 接 VCC、pin2 接 GND；VCC 同时进入 U1 VIN 并直接供给 P2-P13 舵机接口 pin2。",
+      "confidence": "confirmed",
+      "attributes": {"connector": "P1 Header 2", "positive": "pin1 VCC", "negative": "pin2 GND", "loads": "U1 VIN pin1 and servo headers pin2"},
+      "evidence": [{"asset_sha256": "6fdc02048c87a6c7bfd12ce4c8c24902d2502095362098e407ff295e339f496b", "page": 1, "locator": "P1 VCC/GND; U1 VIN; P2-P13 VCC"}]
+    },
+    {
+      "id": "power.regulator",
+      "category": "power",
+      "subject": "LM2596 固定 5 V 输出",
+      "statement": "U1 LM2596SX-5.0/NOPB VIN pin1 接 VCC、ON/OFF pin5 未外接、GND pin3 接地、OUT pin2 经 L1 输出 +5 V，FB pin4 取样输出节点。",
+      "confidence": "confirmed",
+      "attributes": {"input": "VCC -> VIN pin1", "converter": "U1 LM2596SX-5.0/NOPB", "enable": "ON/OFF pin5 not connected", "ground": "pin3", "switch_output": "OUT pin2 -> L1", "feedback": "FB pin4 -> +5V", "output": "+5V"},
+      "evidence": [{"asset_sha256": "6fdc02048c87a6c7bfd12ce4c8c24902d2502095362098e407ff295e339f496b", "page": 1, "locator": "Left top U1/L1/+5V"}]
+    },
+    {
+      "id": "power.filtering",
+      "category": "power",
+      "subject": "稳压器输入输出滤波",
+      "statement": "VCC 输入配置 C3 100 nF 与 C1 100 uF，+5 V 输出配置 C4 100 nF 与 C2 100 uF，L1 标记 0630/330。",
+      "confidence": "confirmed",
+      "attributes": {"input_caps": "C3 100nF; C1 100uF", "output_caps": "C4 100nF; C2 100uF", "inductor": "L1 0630/330", "input_rail": "VCC", "output_rail": "+5V"},
+      "evidence": [{"asset_sha256": "6fdc02048c87a6c7bfd12ce4c8c24902d2502095362098e407ff295e339f496b", "page": 1, "locator": "Left top C1-C4/L1/VCC/+5V"}]
+    },
+    {
+      "id": "power.mcu",
+      "category": "power",
+      "subject": "ATMEGA328 5 V 供电",
+      "statement": "U2 VCC pins4/6 与 AVCC pin18 接 +5 V，GND pins3/5/21 接地；J1 ISP pin1 和 J4 pin28 也接 +5 V。",
+      "confidence": "confirmed",
+      "attributes": {"mcu_vcc": "pins4/6 +5V", "mcu_avcc": "pin18 +5V", "mcu_ground": "pins3/5/21", "isp": "J1 pin1 +5V", "m5bus": "J4 pin28 +5V"},
+      "evidence": [{"asset_sha256": "6fdc02048c87a6c7bfd12ce4c8c24902d2502095362098e407ff295e339f496b", "page": 1, "locator": "U2 power pins; J1 VCC; J4 +5V"}]
+    },
+    {
+      "id": "bus.i2c",
+      "category": "bus",
+      "subject": "ATMEGA328 I2C",
+      "statement": "U2 SDA pin27 经 R1 470 Ω 连接 GPIO21/J4 pin17，SCL pin28 经 R2 470 Ω 连接 GPIO22/J4 pin18；页面未画 I2C 上拉。",
+      "confidence": "confirmed",
+      "attributes": {"device": "U2 ATMEGA328", "sda": "pin27 -> R1 470Ω -> GPIO21/J4 pin17", "scl": "pin28 -> R2 470Ω -> GPIO22/J4 pin18", "pullups": "not shown", "direction": "bidirectional SDA; host clock SCL"},
+      "evidence": [{"asset_sha256": "6fdc02048c87a6c7bfd12ce4c8c24902d2502095362098e407ff295e339f496b", "page": 1, "locator": "U2 SDA/SCL and R1/R2 to J4 GPIO21/GPIO22"}]
+    },
+    {
+      "id": "reset.mcu",
+      "category": "reset",
+      "subject": "ATMEGA328 RESET 与主机 EN",
+      "statement": "U2 RESET pin29 经 R3 470 Ω 连接 J4 EN pin6，R7 10 kΩ 将 EN 侧上拉到 +3V3；RESET 同时连接 J1 ISP pin2。",
+      "confidence": "confirmed",
+      "attributes": {"target": "U2 RESET pin29", "series": "R3 470Ω", "host": "J4 pin6 EN", "pullup": "R7 10K to +3V3", "debug": "J1 pin2 RESET"},
+      "evidence": [{"asset_sha256": "6fdc02048c87a6c7bfd12ce4c8c24902d2502095362098e407ff295e339f496b", "page": 1, "locator": "U2 RESET/R3/EN/R7/+3V3; J1 RESET"}]
+    },
+    {
+      "id": "clock.mcu",
+      "category": "clock",
+      "subject": "16 MHz MCU 时钟",
+      "statement": "U2 XTAL1 pin7 与 XTAL2 pin8 连接 Y1 16 MHz 晶振，C5/C6 各 22 pF 对地。",
+      "confidence": "confirmed",
+      "attributes": {"xtal1": "U2 pin7", "xtal2": "U2 pin8", "crystal": "Y1 16MHz", "load_caps": "C5/C6 22pF to GND"},
+      "evidence": [{"asset_sha256": "6fdc02048c87a6c7bfd12ce4c8c24902d2502095362098e407ff295e339f496b", "page": 1, "locator": "Top middle U2 XTAL1/XTAL2/Y1/C5/C6"}]
+    },
+    {
+      "id": "debug.isp",
+      "category": "debug",
+      "subject": "ATMEGA328 ISP 下载口",
+      "statement": "J1 ISP_Download pins1-6 分别为 +5 V、RESET、SCK、MISO、MOSI、GND，并连接 U2 对应引脚。",
+      "confidence": "confirmed",
+      "attributes": {"pin1": "+5V", "pin2": "RESET", "pin3": "SCK", "pin4": "MISO", "pin5": "MOSI", "pin6": "GND", "device": "U2 ATMEGA328"},
+      "evidence": [{"asset_sha256": "6fdc02048c87a6c7bfd12ce4c8c24902d2502095362098e407ff295e339f496b", "page": 1, "locator": "Right top J1 ISP_Download and U2 SPI/reset labels"}]
+    },
+    {
+      "id": "gpio.pb-straps",
+      "category": "gpio",
+      "subject": "PB0/PB1/PB2 下拉配置",
+      "statement": "U2 PB0 pin12、PB1 pin13、PB2 pin14 分别通过 R4/R5/R6 0 Ω 直接接 GND。",
+      "confidence": "confirmed",
+      "attributes": {"pb0": "pin12 -> R4 0Ω -> GND", "pb1": "pin13 -> R5 0Ω -> GND", "pb2": "pin14 -> R6 0Ω -> GND"},
+      "evidence": [{"asset_sha256": "6fdc02048c87a6c7bfd12ce4c8c24902d2502095362098e407ff295e339f496b", "page": 1, "locator": "Middle left R4-R6/U2 PB0-PB2"}]
+    },
+    {
+      "id": "interface.m5bus",
+      "category": "interface",
+      "subject": "M5Stack_BUS 使用网络",
+      "statement": "J4 使用 pins1/3/5 GND、pin6 EN/RESET、pin12 +3V3、pin17 GPIO21/SDA、pin18 GPIO22/SCL 与 pin28 +5 V；其余页面未连接功能网络。",
+      "confidence": "confirmed",
+      "attributes": {"ground": "pins1/3/5", "reset": "pin6 EN", "3v3": "pin12", "i2c": "pin17 GPIO21 SDA; pin18 GPIO22 SCL", "5v": "pin28"},
+      "evidence": [{"asset_sha256": "6fdc02048c87a6c7bfd12ce4c8c24902d2502095362098e407ff295e339f496b", "page": 1, "locator": "Right bottom J4 M5Stack_BUS pins1-30"}]
+    },
+    {
+      "id": "protection.power-path",
+      "category": "protection",
+      "subject": "外部电源保护",
+      "statement": "P1 到舵机 VCC 和 U1 的路径上未画保险丝、TVS、反接保护或独立负载开关。",
+      "confidence": "confirmed",
+      "attributes": {"fuse": "not shown", "tvs": "not shown", "reverse_protection": "not shown", "load_switch": "not shown", "path": "P1 VCC directly to servo headers and U1 VIN"},
+      "evidence": [{"asset_sha256": "6fdc02048c87a6c7bfd12ce4c8c24902d2502095362098e407ff295e339f496b", "page": 1, "locator": "P1/VCC/U1/P2-P13 direct path"}]
+    },
+    {
+      "id": "address.i2c",
+      "category": "address",
+      "subject": "Module Servo I2C 地址",
+      "statement": "产品正文声明 I2C 地址为 0x53，但原理图只显示 ATMEGA328 SDA/SCL，数值地址由固件实现且未打印在页面。",
+      "confidence": "uncertain",
+      "attributes": {"document_address": "0x53", "device": "U2 ATMEGA328", "schematic_address": "not printed", "implementation": "firmware-dependent"},
+      "evidence": [{"asset_sha256": "6fdc02048c87a6c7bfd12ce4c8c24902d2502095362098e407ff295e339f496b", "page": 1, "locator": "U2 SDA/SCL without address label"}]
+    },
+    {
+      "id": "power.input-connectors",
+      "category": "power",
+      "subject": "XT30 与 5.5×2.1 mm 输入接口",
+      "statement": "产品正文称具有 XT30 母头和 5.5×2.1 mm 适配器接口，但原理图只画 P1 Header 2，未给两个连接器位号或机械规格。",
+      "confidence": "uncertain",
+      "attributes": {"document_connector_1": "XT30 female", "document_connector_2": "5.5mm x 2.1mm", "schematic_connector": "P1 Header 2", "connector_references": "not shown separately"},
+      "evidence": [{"asset_sha256": "6fdc02048c87a6c7bfd12ce4c8c24902d2502095362098e407ff295e339f496b", "page": 1, "locator": "P1 Header 2 is only external power connector shown"}]
+    },
+    {
+      "id": "power.input-range",
+      "category": "power",
+      "subject": "DC 5–7 V 输入范围",
+      "statement": "产品正文声明 DC 5–7 V 输入，原理图仅用 VCC 网络名连接 P1、舵机和 U1，没有打印允许输入范围。",
+      "confidence": "uncertain",
+      "attributes": {"document_range": "DC5-7V", "schematic_rail": "VCC", "minimum": "not printed", "maximum": "not printed"},
+      "evidence": [{"asset_sha256": "6fdc02048c87a6c7bfd12ce4c8c24902d2502095362098e407ff295e339f496b", "page": 1, "locator": "P1/VCC/U1 input path lacks voltage range"}]
+    },
+    {
+      "id": "power.maximum-output",
+      "category": "power",
+      "subject": "14 W 最大功率",
+      "statement": "产品正文称最大功率 14 W，但原理图没有电流额定值、铜箔/连接器限制、散热条件或功率标注。",
+      "confidence": "uncertain",
+      "attributes": {"document_power": "14W", "schematic_current": "not shown", "connector_rating": "not shown", "thermal_conditions": "not shown"},
+      "evidence": [{"asset_sha256": "6fdc02048c87a6c7bfd12ce4c8c24902d2502095362098e407ff295e339f496b", "page": 1, "locator": "VCC/servo headers/U1 path lacks power rating"}]
+    }
+  ],
+  "needs_review": [
+    {
+      "id": "review.i2c-address",
+      "fact_id": "address.i2c",
+      "question": "请用 ATMEGA328 内置固件或 I2C 扫描确认 Module Servo 地址为 0x53。",
+      "reason": "地址由固件实现，未印在原理图。",
+      "evidence": [{"asset_sha256": "6fdc02048c87a6c7bfd12ce4c8c24902d2502095362098e407ff295e339f496b", "page": 1, "locator": "U2 SDA/SCL"}]
+    },
+    {
+      "id": "review.input-connectors",
+      "fact_id": "power.input-connectors",
+      "question": "请用 PCB/BOM/装配资料确认 XT30 与 5.5×2.1 mm 两种电源连接器的位号和极性。",
+      "reason": "当前原理图只显示通用两针 P1。",
+      "evidence": [{"asset_sha256": "6fdc02048c87a6c7bfd12ce4c8c24902d2502095362098e407ff295e339f496b", "page": 1, "locator": "P1 Header 2"}]
+    },
+    {
+      "id": "review.input-range",
+      "fact_id": "power.input-range",
+      "question": "请用舵机电源规格、U1 输入要求和实板测试确认 DC 5–7 V 输入边界。",
+      "reason": "允许电压范围未标在原理图。",
+      "evidence": [{"asset_sha256": "6fdc02048c87a6c7bfd12ce4c8c24902d2502095362098e407ff295e339f496b", "page": 1, "locator": "P1/VCC/U1"}]
+    },
+    {
+      "id": "review.maximum-output",
+      "fact_id": "power.maximum-output",
+      "question": "请按连接器、电源走线、散热和多舵机负载条件复核 14 W 最大功率。",
+      "reason": "原理图没有额定电流或热条件。",
+      "evidence": [{"asset_sha256": "6fdc02048c87a6c7bfd12ce4c8c24902d2502095362098e407ff295e339f496b", "page": 1, "locator": "VCC and P2-P13 servo power distribution"}]
+    }
+  ]
+}

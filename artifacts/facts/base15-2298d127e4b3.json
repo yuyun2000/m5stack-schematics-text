@@ -1,0 +1,475 @@
+{
+  "schema_version": 1,
+  "generator": "schematic_describer",
+  "product": {
+    "product_id": "base15-2298d127e4b3",
+    "product_name": "Base15",
+    "sku": "K025",
+    "source_path": "base/base15.md",
+    "source_sha256": "1966806dc949b9b540679c61f38028b22789ba42019351ba1427c5c7641c0d33",
+    "input_sha256": "92692c4fa51ba29056ab5b031fe77714cc18131879cb9869253448e33e393a1b"
+  },
+  "schematic_assets": [
+    {
+      "sha256": "f824968723ef24fd225e1bbabcac465ffe51e5e0f92e10ee6eb5143ca01f2f17",
+      "source_url": "https://m5stack-doc.oss-cn-shenzhen.aliyuncs.com/1002/K025-BASE15_page_01.png",
+      "pages": [
+        1
+      ]
+    }
+  ],
+  "summary": "Base15 通过 J2 PWR3.5 接收标注为 IN12/24V 的电源，经 F1 PPTC-1812 和 U6 TPS54360 降压为 +5V，并把 IN+ 与 +5V 分别接入 M5Stack_BUS 的 HPWR 和 +5V 针脚。J1 完整引出 30 针 M5Stack_BUS 的 GPIO、SDA/SCL、3.3V、5V、BAT、HPWR 和 GND。P3/J3 提供四针 RX/TX/VCC/GND 对接，P4/J4 提供 IIC_SCL/IIC_SDA/VCC/GND 对接。R28 与 R29 的主标值和红色注释值不一致，实际装配值需要确认。",
+  "keywords": [
+    "Base15",
+    "K025",
+    "TPS54360",
+    "PWR3.5",
+    "IN12/24V",
+    "IN+",
+    "PPTC-1812",
+    "M5Stack_BUS",
+    "HPWR",
+    "+5V",
+    "+3.3V",
+    "BAT",
+    "SDA",
+    "SCL",
+    "GPIO21",
+    "GPIO22",
+    "Grove_UART",
+    "Grove_IIC",
+    "RX",
+    "TX",
+    "IIC_SCL",
+    "IIC_SDA",
+    "B290B",
+    "8.2uH",
+    "R28 51K 52.6K",
+    "R29 160K 162K",
+    "LED red 0603"
+  ],
+  "components": [
+    {
+      "reference": "U6",
+      "part_number": "TPS54360",
+      "role": "将 IN+ 输入降压为 +5V 的 DC-DC 转换器",
+      "evidence": [
+        {
+          "asset_sha256": "f824968723ef24fd225e1bbabcac465ffe51e5e0f92e10ee6eb5143ca01f2f17",
+          "page": 1,
+          "locator": "第 1 页 A1-A3，U6 TPS54360 的 BOOT/VIN/EN/RT-CLK/FB/COMP/GND/PWRPD/SW"
+        }
+      ]
+    },
+    {
+      "reference": "J2",
+      "part_number": "PWR3.5",
+      "role": "IN12/24V 直流电源输入插座",
+      "evidence": [
+        {
+          "asset_sha256": "f824968723ef24fd225e1bbabcac465ffe51e5e0f92e10ee6eb5143ca01f2f17",
+          "page": 1,
+          "locator": "第 1 页 A1，J2 PWR3.5，pin1 经 F1 接 IN+，pin2/pin3 接 GND"
+        }
+      ]
+    },
+    {
+      "reference": "F1",
+      "part_number": "PPTC-1812",
+      "role": "串联在 J2 pin1 与 IN+ 之间的输入保护器件",
+      "evidence": [
+        {
+          "asset_sha256": "f824968723ef24fd225e1bbabcac465ffe51e5e0f92e10ee6eb5143ca01f2f17",
+          "page": 1,
+          "locator": "第 1 页 A1，F1 PPTC-1812 位于 J2 pin1 和 IN+ 之间"
+        }
+      ]
+    },
+    {
+      "reference": "J1",
+      "part_number": "M5Stack_BUS",
+      "role": "引出 30 针 M5Stack 总线的 GPIO、电源、地、HPWR 和 BAT",
+      "evidence": [
+        {
+          "asset_sha256": "f824968723ef24fd225e1bbabcac465ffe51e5e0f92e10ee6eb5143ca01f2f17",
+          "page": 1,
+          "locator": "第 1 页 C4-D4，J1 M5Stack_BUS pin1-pin30 的全部名称与外部网络标签"
+        }
+      ]
+    },
+    {
+      "reference": "P3,J3",
+      "part_number": "Header 4 / Grove_UART",
+      "role": "一一对应的 RX、TX、VCC、GND 四针接口",
+      "evidence": [
+        {
+          "asset_sha256": "f824968723ef24fd225e1bbabcac465ffe51e5e0f92e10ee6eb5143ca01f2f17",
+          "page": 1,
+          "locator": "第 1 页 C2，P3 Header 4 与 J3 Grove_UART pins1-4 直连，J3 标注 RX/TX/VCC/GND"
+        }
+      ]
+    },
+    {
+      "reference": "P4,J4",
+      "part_number": "Header 4 / Grove_IIC",
+      "role": "一一对应的 IIC_SCL、IIC_SDA、VCC、GND 四针接口",
+      "evidence": [
+        {
+          "asset_sha256": "f824968723ef24fd225e1bbabcac465ffe51e5e0f92e10ee6eb5143ca01f2f17",
+          "page": 1,
+          "locator": "第 1 页 C2，P4 Header 4 与 J4 Grove_IIC pins1-4 直连，J4 标注 IIC_SCL/IIC_SDA/VCC/GND"
+        }
+      ]
+    },
+    {
+      "reference": "L1,D6,C1",
+      "part_number": "8.2uH / B290B / 100nF",
+      "role": "TPS54360 SW 输出电感、续流二极管和 BOOT 自举电容",
+      "evidence": [
+        {
+          "asset_sha256": "f824968723ef24fd225e1bbabcac465ffe51e5e0f92e10ee6eb5143ca01f2f17",
+          "page": 1,
+          "locator": "第 1 页 A2-A3，L1 连接 SW 与 +5V，D6 连接 SW 与 GND，C1 连接 BOOT 与 SW"
+        }
+      ]
+    },
+    {
+      "reference": "R27,C4",
+      "part_number": "12KΩ / 6.8nF",
+      "role": "TPS54360 COMP pin6 到 GND 的串联补偿网络",
+      "evidence": [
+        {
+          "asset_sha256": "f824968723ef24fd225e1bbabcac465ffe51e5e0f92e10ee6eb5143ca01f2f17",
+          "page": 1,
+          "locator": "第 1 页 A2，U6 COMP pin6 经 R27 12K 与 C4 6.8nF 串联到 GND"
+        }
+      ]
+    },
+    {
+      "reference": "R28,R30",
+      "part_number": "51KΩ (red 52.6KΩ) / 10KΩ",
+      "role": "+5V 到 TPS54360 FB pin5 的反馈分压网络；R28 标注存在冲突",
+      "evidence": [
+        {
+          "asset_sha256": "f824968723ef24fd225e1bbabcac465ffe51e5e0f92e10ee6eb5143ca01f2f17",
+          "page": 1,
+          "locator": "第 1 页 A2，R28 主标 51K、旁有红字 52.6K，R30 10K 连接 FB 与 GND"
+        }
+      ]
+    },
+    {
+      "reference": "R29",
+      "part_number": "160KΩ (red 162KΩ)",
+      "role": "TPS54360 RT/CLK pin4 到 GND 的频率设定电阻；标注存在冲突",
+      "evidence": [
+        {
+          "asset_sha256": "f824968723ef24fd225e1bbabcac465ffe51e5e0f92e10ee6eb5143ca01f2f17",
+          "page": 1,
+          "locator": "第 1 页 A2，R29 主标 160K，旁有红字 162K，连接 RT/CLK 与 GND"
+        }
+      ]
+    },
+    {
+      "reference": "C2,C3,C5,C6",
+      "part_number": "10uF / 10uF / 2.2uF / 2.2uF",
+      "role": "TPS54360 +5V 输出和 IN+ 输入去耦",
+      "evidence": [
+        {
+          "asset_sha256": "f824968723ef24fd225e1bbabcac465ffe51e5e0f92e10ee6eb5143ca01f2f17",
+          "page": 1,
+          "locator": "第 1 页 A1-A3，C5/C6 2.2uF 从 IN+ 到 GND，C2/C3 10uF 从 +5V 到 GND"
+        }
+      ]
+    },
+    {
+      "reference": "D5,R20",
+      "part_number": "red 0603 / 4.7KΩ",
+      "role": "+5V 电源指示灯和串联电阻",
+      "evidence": [
+        {
+          "asset_sha256": "f824968723ef24fd225e1bbabcac465ffe51e5e0f92e10ee6eb5143ca01f2f17",
+          "page": 1,
+          "locator": "第 1 页 C2，+5V 经 D5 红灯0603 和 R20 4.7K 接 GND"
+        }
+      ]
+    }
+  ],
+  "facts": [
+    {
+      "id": "system.base15-power-bus-architecture",
+      "category": "system",
+      "subject": "Base15 电源与总线架构",
+      "statement": "J2 输入经 F1 形成 IN+，U6 TPS54360 把 IN+ 转换为 +5V；IN+ 接 J1 HPWR pins25/27/29，+5V 接 J1 pin28。J1 还引出 3.3V、BAT、GPIO、SDA/SCL 和 GND，P3/P4 分别与 Grove_UART/Grove_IIC 四针接口直连。",
+      "confidence": "confirmed",
+      "attributes": {
+        "input": "J2 PWR3.5 IN12/24V",
+        "input_protection": "F1 PPTC-1812",
+        "buck": "U6 TPS54360",
+        "bus": "J1 M5Stack_BUS",
+        "HPWR": "pins25/27/29 IN+",
+        "+5V": "pin28",
+        "auxiliary_headers": "P3/J3 UART, P4/J4 IIC"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "f824968723ef24fd225e1bbabcac465ffe51e5e0f92e10ee6eb5143ca01f2f17",
+          "page": 1,
+          "locator": "第 1 页完整单页原理图，A区电源、C2接口与 C4-D4 M5Stack_BUS"
+        }
+      ]
+    },
+    {
+      "id": "interface.dc-input",
+      "category": "interface",
+      "subject": "J2 IN12/24V 输入",
+      "statement": "J2 PWR3.5 的 pin1 经 F1 PPTC-1812 连接 IN+，pin2 与 pin3 接 GND；原理图把该输入区标记为 IN12/24V。",
+      "confidence": "confirmed",
+      "attributes": {
+        "pin1": "F1 PPTC-1812 -> IN+",
+        "pin2": "GND",
+        "pin3": "GND",
+        "label": "IN12/24V"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "f824968723ef24fd225e1bbabcac465ffe51e5e0f92e10ee6eb5143ca01f2f17",
+          "page": 1,
+          "locator": "第 1 页 A1，IN12/24V 标题、J2 pin1-pin3、F1、IN+ 与 GND"
+        }
+      ]
+    },
+    {
+      "id": "power.tps54360-input-ground",
+      "category": "power",
+      "subject": "TPS54360 输入、接地与使能",
+      "statement": "U6 VIN pin2 接 IN+，GND pin7 与 PWRPD pin9 接 GND；EN pin3 带 no-connect 标记。C5/C6 两个 2.2uF 电容连接 IN+ 与 GND。",
+      "confidence": "confirmed",
+      "attributes": {
+        "VIN": "pin2 IN+",
+        "GND": "pin7 GND",
+        "PWRPD": "pin9 GND",
+        "EN": "pin3 no-connect",
+        "input_caps": "C5/C6 2.2uF"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "f824968723ef24fd225e1bbabcac465ffe51e5e0f92e10ee6eb5143ca01f2f17",
+          "page": 1,
+          "locator": "第 1 页 A1-A2，U6 VIN/EN/GND/PWRPD 与 IN+/C5/C6/GND"
+        }
+      ]
+    },
+    {
+      "id": "power.tps54360-buck-output",
+      "category": "power",
+      "subject": "TPS54360 +5V 降压输出",
+      "statement": "U6 SW pin8 经 L1 8.2uH 输出 +5V，D6 B290B 从 SW 节点接 GND，C1 100nF 连接 BOOT pin1 与 SW；C2/C3 两个 10uF 电容连接 +5V 与 GND。",
+      "confidence": "confirmed",
+      "attributes": {
+        "SW": "pin8",
+        "inductor": "L1 8.2uH to +5V",
+        "freewheel_diode": "D6 B290B SW to GND",
+        "bootstrap": "C1 100nF BOOT pin1 to SW",
+        "output_caps": "C2/C3 10uF"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "f824968723ef24fd225e1bbabcac465ffe51e5e0f92e10ee6eb5143ca01f2f17",
+          "page": 1,
+          "locator": "第 1 页 A2-A3，U6 BOOT/SW、C1/D6/L1 与 +5V/C2/C3"
+        }
+      ]
+    },
+    {
+      "id": "power.compensation-network",
+      "category": "power",
+      "subject": "TPS54360 COMP 补偿网络",
+      "statement": "U6 COMP pin6 经 R27 12KΩ 与 C4 6.8nF 串联连接到 GND。",
+      "confidence": "confirmed",
+      "attributes": {
+        "COMP": "pin6",
+        "resistor": "R27 12K",
+        "capacitor": "C4 6.8nF",
+        "return": "GND"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "f824968723ef24fd225e1bbabcac465ffe51e5e0f92e10ee6eb5143ca01f2f17",
+          "page": 1,
+          "locator": "第 1 页 A2，U6 COMP-R27-C4-GND 串联支路"
+        }
+      ]
+    },
+    {
+      "id": "interface.uart-header-pair",
+      "category": "interface",
+      "subject": "P3/J3 UART 四针对接",
+      "statement": "P3 Header 4 与 J3 Grove_UART 一一对应：pin1=RX、pin2=TX、pin3=VCC、pin4=GND。当前页面未画出这四条线到 J1 M5Stack_BUS 的连接。",
+      "confidence": "confirmed",
+      "attributes": {
+        "pin1": "RX",
+        "pin2": "TX",
+        "pin3": "VCC",
+        "pin4": "GND",
+        "bus_connection_shown": false
+      },
+      "evidence": [
+        {
+          "asset_sha256": "f824968723ef24fd225e1bbabcac465ffe51e5e0f92e10ee6eb5143ca01f2f17",
+          "page": 1,
+          "locator": "第 1 页 C2，P3/J3 四条局部直连线与 J3 RX/TX/VCC/GND 标注"
+        }
+      ]
+    },
+    {
+      "id": "interface.iic-header-pair",
+      "category": "interface",
+      "subject": "P4/J4 IIC 四针对接",
+      "statement": "P4 Header 4 与 J4 Grove_IIC 一一对应：pin1=IIC_SCL、pin2=IIC_SDA、pin3=VCC、pin4=GND。当前页面未画出这四条线到 J1 M5Stack_BUS 的连接。",
+      "confidence": "confirmed",
+      "attributes": {
+        "pin1": "IIC_SCL",
+        "pin2": "IIC_SDA",
+        "pin3": "VCC",
+        "pin4": "GND",
+        "bus_connection_shown": false
+      },
+      "evidence": [
+        {
+          "asset_sha256": "f824968723ef24fd225e1bbabcac465ffe51e5e0f92e10ee6eb5143ca01f2f17",
+          "page": 1,
+          "locator": "第 1 页 C2，P4/J4 四条局部直连线与 J4 IIC_SCL/IIC_SDA/VCC/GND 标注"
+        }
+      ]
+    },
+    {
+      "id": "interface.m5bus-power-map",
+      "category": "interface",
+      "subject": "M5Stack_BUS 电源与地针脚",
+      "statement": "J1 pins1/3/5 接 GND，pin12=+3.3V，pins25/27/29=HPWR 并接 IN+，pin28=+5V，pin30=BATTERY/BAT。",
+      "confidence": "confirmed",
+      "attributes": {
+        "GND": "pins1,3,5",
+        "+3.3V": "pin12",
+        "HPWR": "pins25,27,29 IN+",
+        "+5V": "pin28",
+        "BATTERY": "pin30 BAT"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "f824968723ef24fd225e1bbabcac465ffe51e5e0f92e10ee6eb5143ca01f2f17",
+          "page": 1,
+          "locator": "第 1 页 C4-D4，J1 GND/+3.3V/HPWR/+5V/BATTERY 针脚和外部网络"
+        }
+      ]
+    },
+    {
+      "id": "interface.m5bus-gpio-map-a",
+      "category": "interface",
+      "subject": "M5Stack_BUS GPIO pins2-16",
+      "statement": "J1 pin2=GPIO35、pin4=GPIO36、pin6=EN、pin7=GPIO23、pin8=GPIO25、pin9=GPIO19、pin10=GPIO26、pin11=GPIO18、pin13=GPIO3、pin14=GPIO1、pin15=GPIO16、pin16=GPIO17。",
+      "confidence": "confirmed",
+      "attributes": {
+        "pin2": "GPIO35",
+        "pin4": "GPIO36",
+        "pin6": "EN",
+        "pin7": "GPIO23",
+        "pin8": "GPIO25",
+        "pin9": "GPIO19",
+        "pin10": "GPIO26",
+        "pin11": "GPIO18",
+        "pin13": "GPIO3",
+        "pin14": "GPIO1",
+        "pin15": "GPIO16",
+        "pin16": "GPIO17"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "f824968723ef24fd225e1bbabcac465ffe51e5e0f92e10ee6eb5143ca01f2f17",
+          "page": 1,
+          "locator": "第 1 页 C4，J1 pins2-16 的内部和外部 GPIO 标签"
+        }
+      ]
+    },
+    {
+      "id": "interface.m5bus-gpio-map-b",
+      "category": "interface",
+      "subject": "M5Stack_BUS GPIO pins17-26",
+      "statement": "J1 pin17=SDA/GPIO21、pin18=SCL/GPIO22、pin19=GPIO2、pin20=GPIO5、pin21=GPIO12、pin22=GPIO13、pin23=GPIO15、pin24=GPIO0、pin26=GPIO34。",
+      "confidence": "confirmed",
+      "attributes": {
+        "pin17": "SDA / GPIO21",
+        "pin18": "SCL / GPIO22",
+        "pin19": "GPIO2",
+        "pin20": "GPIO5",
+        "pin21": "GPIO12",
+        "pin22": "GPIO13",
+        "pin23": "GPIO15",
+        "pin24": "GPIO0",
+        "pin26": "GPIO34"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "f824968723ef24fd225e1bbabcac465ffe51e5e0f92e10ee6eb5143ca01f2f17",
+          "page": 1,
+          "locator": "第 1 页 C4-D4，J1 pins17-26 的内部和外部 GPIO/SDA/SCL 标签"
+        }
+      ]
+    },
+    {
+      "id": "interface.power-indicator",
+      "category": "interface",
+      "subject": "+5V 红色指示灯",
+      "statement": "+5V 经 D5 红灯 0603 和 R20 4.7KΩ 串联连接到 GND。",
+      "confidence": "confirmed",
+      "attributes": {
+        "rail": "+5V",
+        "indicator": "D5 red 0603",
+        "resistor": "R20 4.7K",
+        "return": "GND"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "f824968723ef24fd225e1bbabcac465ffe51e5e0f92e10ee6eb5143ca01f2f17",
+          "page": 1,
+          "locator": "第 1 页 C2，+5V-D5-R20-GND 指示支路"
+        }
+      ]
+    },
+    {
+      "id": "other.feedback-rt-value-conflict",
+      "category": "other",
+      "subject": "R28 与 R29 阻值标注冲突",
+      "statement": "R28 元件主标为 51KΩ，旁有红色 52.6K 注释；R29 元件主标为 160KΩ，旁有红色 162K 注释。当前原理图无法确定实际装配采用哪组数值。",
+      "confidence": "uncertain",
+      "attributes": {
+        "R28_primary": "51KΩ",
+        "R28_red_annotation": "52.6KΩ",
+        "R29_primary": "160KΩ",
+        "R29_red_annotation": "162KΩ"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "f824968723ef24fd225e1bbabcac465ffe51e5e0f92e10ee6eb5143ca01f2f17",
+          "page": 1,
+          "locator": "第 1 页 A2，R28/R29 蓝色主标值与相邻红色替代数值"
+        }
+      ]
+    }
+  ],
+  "needs_review": [
+    {
+      "id": "review.r28-r29-assembly-values",
+      "fact_id": "other.feedback-rt-value-conflict",
+      "question": "Base15 当前硬件版本中 R28 和 R29 的实际装配值分别是 51KΩ/160KΩ，还是红色注释的 52.6KΩ/162KΩ？",
+      "reason": "原理图同一位置给出两组不一致数值，需通过 BOM、PCB 设计资料或实物确认。",
+      "evidence": [
+        {
+          "asset_sha256": "f824968723ef24fd225e1bbabcac465ffe51e5e0f92e10ee6eb5143ca01f2f17",
+          "page": 1,
+          "locator": "第 1 页 A2，R28/R29 主标与红色注释"
+        }
+      ]
+    }
+  ]
+}

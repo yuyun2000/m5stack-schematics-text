@@ -1,0 +1,21 @@
+{
+  "dry_run": false,
+  "failed": 0,
+  "published": 1,
+  "results": [
+    {
+      "backup": null,
+      "draft_action": "unchanged",
+      "dry_run": false,
+      "errors": [],
+      "needs_review": 1,
+      "product_id": "atom-pwm-604957966ccb",
+      "product_name": "Atom PWM",
+      "publish_action": "unchanged",
+      "sha256": "9608278e51b966a4defb9e5ba4b8e628aae56dba6eee60af0cbeb0ef18c171bc",
+      "status": "valid",
+      "uncertain_facts": 1
+    }
+  ],
+  "schema_version": 1
+}

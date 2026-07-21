@@ -1,0 +1,488 @@
+{
+  "schema_version": 1,
+  "generator": "schematic_describer",
+  "product": {
+    "product_id": "unit-mini-pdm-2175a10d1184",
+    "product_name": "Unit Mini PDM",
+    "sku": "U089",
+    "source_path": "unit/pdm.md",
+    "source_sha256": "bc2f4c65c694a6817a0da60f94661def4f4f9efd4f549725e7bcb574a2140a31",
+    "input_sha256": "4e41d4f38b9fae597b3fb4169f15b738d85d17eca5e8ad8586e82ead3f42d95f"
+  },
+  "schematic_assets": [
+    {
+      "sha256": "23bc130350bc28c060e2f9dfda05405a6d02103782a569ef3978835eb6b78d28",
+      "source_url": "https://static-cdn.m5stack.com/resource/docs/products/unit/pdm/pdm_sch_01.webp",
+      "pages": [
+        1
+      ]
+    }
+  ],
+  "summary": "Unit Mini PDM 以 U1 SPM1423HM4H-B 数字 MEMS 麦克风输出 PDM 音频，不含独立 MCU、存储器或晶振。J1 pin 1 的 CLK 直接输入 U1 pin 4，U1 pin 5 的 DAT 直接输出到 J1 pin 2，SELECT pin 2 与 GND 相连。J1 输入的 +5V 由 U3 HT7333 稳压为 +3.3V 给麦克风供电，C5、C6、C7 分别完成输入和输出去耦。",
+  "keywords": [
+    "Unit Mini PDM",
+    "U089",
+    "SPM1423HM4H-B",
+    "SPM1423",
+    "HT7333",
+    "U1",
+    "U3",
+    "J1",
+    "HY-2.0_A",
+    "PDM",
+    "CLK",
+    "DAT",
+    "SELECT",
+    "+5V",
+    "+3.3V",
+    "C5 1uF",
+    "C6 1uF",
+    "C7 100nF",
+    "digital MEMS microphone",
+    "PDM clock input",
+    "PDM data output",
+    "Grove PORT.B",
+    "LDO",
+    "audio capture",
+    "GND"
+  ],
+  "components": [
+    {
+      "reference": "U1",
+      "part_number": "SPM1423HM4H-B",
+      "role": "数字 MEMS 麦克风，将声音转换为由 CLK 驱动的 DAT PDM 数据流",
+      "evidence": [
+        {
+          "asset_sha256": "23bc130350bc28c060e2f9dfda05405a6d02103782a569ef3978835eb6b78d28",
+          "page": 1,
+          "locator": "页面中央 U1 SPM1423HM4H-B：pin 1/3 GND、pin 2 SELECT、pin 4 CLK、pin 5 DAT、pin 6 3V3"
+        }
+      ]
+    },
+    {
+      "reference": "U3",
+      "part_number": "HT7333",
+      "role": "将 +5V 输入稳压为 +3.3V 的三引脚 LDO",
+      "evidence": [
+        {
+          "asset_sha256": "23bc130350bc28c060e2f9dfda05405a6d02103782a569ef3978835eb6b78d28",
+          "page": 1,
+          "locator": "页面上部 U3 HT7333：pin 2 VIN 接 +5V、pin 1 GND、pin 3 VOUT 接 +3.3V"
+        }
+      ]
+    },
+    {
+      "reference": "J1",
+      "part_number": "HY-2.0_A",
+      "role": "4 针 Grove 接口，引入 PDM CLK 与 +5V/GND，并输出 DAT",
+      "evidence": [
+        {
+          "asset_sha256": "23bc130350bc28c060e2f9dfda05405a6d02103782a569ef3978835eb6b78d28",
+          "page": 1,
+          "locator": "页面下部 J1 HY-2.0_A：pin 1 CLK、pin 2 DAT、pin 3 VCC 接 +5V、pin 4 GND"
+        }
+      ]
+    },
+    {
+      "reference": "C5/C6/C7",
+      "part_number": "1uF / 1uF / 100nF",
+      "role": "HT7333 输入与 +3.3V 输出的电源去耦和稳定电容",
+      "evidence": [
+        {
+          "asset_sha256": "23bc130350bc28c060e2f9dfda05405a6d02103782a569ef3978835eb6b78d28",
+          "page": 1,
+          "locator": "页面上部 C5 1uF 接 +5V-GND，C6 1uF 与 C7 100nF 接 +3.3V-GND"
+        }
+      ]
+    }
+  ],
+  "facts": [
+    {
+      "id": "system.pdm-microphone-architecture",
+      "category": "system",
+      "subject": "Unit Mini PDM",
+      "statement": "整板由 U1 数字 MEMS 麦克风、U3 3.3V LDO、一个 4 针接口和三颗去耦电容组成；原理图未显示 MCU、协处理器、存储器、外部晶振、复位或调试接口。",
+      "confidence": "confirmed",
+      "attributes": {
+        "microphone": "U1 SPM1423HM4H-B",
+        "regulator": "U3 HT7333",
+        "interface": "J1 HY-2.0_A",
+        "controller": null,
+        "storage": null,
+        "external_clock_source": "host via J1 CLK",
+        "reset": null
+      },
+      "evidence": [
+        {
+          "asset_sha256": "23bc130350bc28c060e2f9dfda05405a6d02103782a569ef3978835eb6b78d28",
+          "page": 1,
+          "locator": "整页 U3/C5-C7、U1、J1 构成全部可见电路，无其他 IC 或接口"
+        }
+      ]
+    },
+    {
+      "id": "audio.microphone-pinout",
+      "category": "audio",
+      "subject": "U1 SPM1423HM4H-B",
+      "statement": "U1 pin 1 和 pin 3 标注 GND，pin 2 为 SELECT，pin 4 为 CLK，pin 5 为 DAT，pin 6 为 3V3。",
+      "confidence": "confirmed",
+      "attributes": {
+        "pin_1": "GND",
+        "pin_2": "SELECT",
+        "pin_3": "GND",
+        "pin_4": "CLK",
+        "pin_5": "DAT",
+        "pin_6": "+3.3V"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "23bc130350bc28c060e2f9dfda05405a6d02103782a569ef3978835eb6b78d28",
+          "page": 1,
+          "locator": "页面中央 U1 六引脚符号及 GND/SELECT/CLK/DAT/3V3 标签"
+        }
+      ]
+    },
+    {
+      "id": "bus.pdm-interface",
+      "category": "bus",
+      "subject": "PDM CLK/DAT",
+      "statement": "CLK 从 J1 pin 1 输入并直接连接 U1 CLK pin 4，DAT 从 U1 DAT pin 5 输出并直接连接 J1 pin 2；两条信号均未经过缓冲或电平转换。",
+      "confidence": "confirmed",
+      "attributes": {
+        "clock": "J1 pin 1 CLK -> U1 pin 4 CLK",
+        "data": "U1 pin 5 DAT -> J1 pin 2 DAT",
+        "clock_direction": "host to microphone",
+        "data_direction": "microphone to host",
+        "buffer": null,
+        "level_shifter": null
+      },
+      "evidence": [
+        {
+          "asset_sha256": "23bc130350bc28c060e2f9dfda05405a6d02103782a569ef3978835eb6b78d28",
+          "page": 1,
+          "locator": "页面中央 U1 CLK/DAT 同名网络与页面下部 J1 pin 1/pin 2"
+        }
+      ]
+    },
+    {
+      "id": "clock.pdm-clock-path",
+      "category": "clock",
+      "subject": "CLK",
+      "statement": "板上没有本地振荡器，PDM CLK 必须由外部主机从 J1 pin 1 提供给 U1 pin 4。",
+      "confidence": "confirmed",
+      "attributes": {
+        "net": "CLK",
+        "source": "external host via J1 pin 1",
+        "destination": "U1 pin 4",
+        "local_oscillator": null,
+        "direction": "input"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "23bc130350bc28c060e2f9dfda05405a6d02103782a569ef3978835eb6b78d28",
+          "page": 1,
+          "locator": "页面 U1 pin 4 CLK 与 J1 pin 1 CLK；整页无晶振或时钟发生器"
+        }
+      ]
+    },
+    {
+      "id": "audio.pdm-data-path",
+      "category": "audio",
+      "subject": "DAT",
+      "statement": "U1 pin 5 的 DAT 网络直连 J1 pin 2，是麦克风到外部主机的 PDM 音频数据输出。",
+      "confidence": "confirmed",
+      "attributes": {
+        "net": "DAT",
+        "source": "U1 pin 5",
+        "destination": "J1 pin 2",
+        "direction": "output"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "23bc130350bc28c060e2f9dfda05405a6d02103782a569ef3978835eb6b78d28",
+          "page": 1,
+          "locator": "页面中央 U1 pin 5 DAT 与页面下部 J1 pin 2 DAT 同名网络"
+        }
+      ]
+    },
+    {
+      "id": "gpio.select-grounded",
+      "category": "gpio",
+      "subject": "U1 SELECT",
+      "statement": "U1 SELECT pin 2 与 U1 的 pin 1、pin 3 共接 GND，板上没有用于更改 SELECT 电平的跳线或电阻。",
+      "confidence": "confirmed",
+      "attributes": {
+        "pin": "U1 pin 2 SELECT",
+        "level": "GND",
+        "strap": "hard-wired low",
+        "configuration_jumper": null
+      },
+      "evidence": [
+        {
+          "asset_sha256": "23bc130350bc28c060e2f9dfda05405a6d02103782a569ef3978835eb6b78d28",
+          "page": 1,
+          "locator": "页面中央 U1 左侧 pin 1/2/3 公共接地连线和 GND 符号"
+        }
+      ]
+    },
+    {
+      "id": "interface.j1-pinout",
+      "category": "interface",
+      "subject": "J1 HY-2.0_A",
+      "statement": "J1 pin 1 为 CLK，pin 2 为 DAT，pin 3 为接入板内 +5V 的 VCC，pin 4 为 GND。",
+      "confidence": "confirmed",
+      "attributes": {
+        "reference": "J1",
+        "part_number": "HY-2.0_A",
+        "pin_1": "CLK input",
+        "pin_2": "DAT output",
+        "pin_3": "+5V power input",
+        "pin_4": "GND"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "23bc130350bc28c060e2f9dfda05405a6d02103782a569ef3978835eb6b78d28",
+          "page": 1,
+          "locator": "页面下部 J1 HY-2.0_A 的 CLK/DAT/VCC/GND 与 pin 1-4 标注，VCC 外部网络标 +5V"
+        }
+      ]
+    },
+    {
+      "id": "power.ht7333-regulation",
+      "category": "power",
+      "subject": "U3 HT7333",
+      "statement": "U3 pin 2 VIN 接 +5V，pin 1 接 GND，pin 3 VOUT 生成 +3.3V，构成麦克风的本地 3.3V LDO 电源。",
+      "confidence": "confirmed",
+      "attributes": {
+        "reference": "U3",
+        "part_number": "HT7333",
+        "input": "+5V at pin 2 VIN",
+        "ground": "pin 1 GND",
+        "output": "+3.3V at pin 3 VOUT",
+        "enable": null
+      },
+      "evidence": [
+        {
+          "asset_sha256": "23bc130350bc28c060e2f9dfda05405a6d02103782a569ef3978835eb6b78d28",
+          "page": 1,
+          "locator": "页面上部 U3 HT7333 的 VIN/VOUT/GND pin 编号及 +5V/+3.3V 网络"
+        }
+      ]
+    },
+    {
+      "id": "power.ldo-decoupling",
+      "category": "power",
+      "subject": "C5/C6/C7",
+      "statement": "C5 1uF 从 +5V 接 GND；C6 1uF 与 C7 100nF 从 +3.3V 接 GND，分别为 HT7333 输入和输出提供去耦。",
+      "confidence": "confirmed",
+      "attributes": {
+        "input_capacitor": "C5 1uF, +5V to GND",
+        "output_bulk": "C6 1uF, +3.3V to GND",
+        "output_high_frequency": "C7 100nF, +3.3V to GND"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "23bc130350bc28c060e2f9dfda05405a6d02103782a569ef3978835eb6b78d28",
+          "page": 1,
+          "locator": "页面上部 U3 两侧 C5 1uF、C6 1uF、C7 100nF 及电源/地连接"
+        }
+      ]
+    },
+    {
+      "id": "key_net.five-volt-input",
+      "category": "key_net",
+      "subject": "+5V",
+      "statement": "+5V 网络从 J1 pin 3 连接 U3 VIN pin 2 和 C5 上端，不直接连接 U1。",
+      "confidence": "confirmed",
+      "attributes": {
+        "net": "+5V",
+        "source": "J1 pin 3",
+        "loads": "U3 pin 2 VIN,C5 1uF",
+        "microphone_direct_supply": false
+      },
+      "evidence": [
+        {
+          "asset_sha256": "23bc130350bc28c060e2f9dfda05405a6d02103782a569ef3978835eb6b78d28",
+          "page": 1,
+          "locator": "页面 J1 pin 3 +5V 同名网络与页面上部 U3 VIN/C5"
+        }
+      ]
+    },
+    {
+      "id": "key_net.three-volt-three-supply",
+      "category": "key_net",
+      "subject": "+3.3V",
+      "statement": "+3.3V 由 U3 VOUT pin 3 生成，连接 U1 pin 6 3V3 以及 C6/C7 上端。",
+      "confidence": "confirmed",
+      "attributes": {
+        "net": "+3.3V",
+        "source": "U3 pin 3 VOUT",
+        "microphone_supply": "U1 pin 6 3V3",
+        "decoupling": "C6 1uF,C7 100nF"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "23bc130350bc28c060e2f9dfda05405a6d02103782a569ef3978835eb6b78d28",
+          "page": 1,
+          "locator": "页面上部 U3 VOUT/C6/C7 +3.3V 标签与中央 U1 pin 6 +3.3V 标签"
+        }
+      ]
+    },
+    {
+      "id": "protection.no-interface-protection",
+      "category": "protection",
+      "subject": "J1 CLK/DAT/+5V",
+      "statement": "本页未显示 J1 的 CLK、DAT 或 +5V 上有 TVS/ESD 阵列、串联信号电阻、保险丝或反接保护；CLK/DAT 直接连接 U1，+5V 直接连接 U3。",
+      "confidence": "confirmed",
+      "attributes": {
+        "tv_esd": null,
+        "clock_series_resistor": null,
+        "data_series_resistor": null,
+        "fuse": null,
+        "reverse_polarity_protection": null
+      },
+      "evidence": [
+        {
+          "asset_sha256": "23bc130350bc28c060e2f9dfda05405a6d02103782a569ef3978835eb6b78d28",
+          "page": 1,
+          "locator": "整页 J1-U1/U3 信号与电源路径，无保护器件位号"
+        }
+      ]
+    },
+    {
+      "id": "audio.select-slot-meaning",
+      "category": "audio",
+      "subject": "SELECT=GND 的 PDM 时隙",
+      "statement": "原理图确认 SELECT pin 2 接 GND，但未标注该电平对应 DAT 的上升沿/下降沿、左/右声道或时隙定义，因此具体声道配置不能仅凭本页确定。",
+      "confidence": "uncertain",
+      "attributes": {
+        "select_level": "GND",
+        "edge_or_slot": null,
+        "left_right_channel": null,
+        "requires_datasheet": "SPM1423HM4H-B"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "23bc130350bc28c060e2f9dfda05405a6d02103782a569ef3978835eb6b78d28",
+          "page": 1,
+          "locator": "页面中央 U1 SELECT pin 2 接 GND；整页无 L/R 或时钟沿注释"
+        }
+      ]
+    },
+    {
+      "id": "clock.pdm-operating-ranges",
+      "category": "clock",
+      "subject": "PDM CLK 工作区间",
+      "statement": "产品正文描述时钟相关的断电、激活和休眠状态，但原理图未给出 CLK 频率范围、状态切换阈值或启动时序，不能由本页确定这些参数。",
+      "confidence": "uncertain",
+      "attributes": {
+        "clock_net": "CLK",
+        "active_frequency_range": null,
+        "sleep_threshold": null,
+        "power_down_threshold": null,
+        "startup_timing": null
+      },
+      "evidence": [
+        {
+          "asset_sha256": "23bc130350bc28c060e2f9dfda05405a6d02103782a569ef3978835eb6b78d28",
+          "page": 1,
+          "locator": "页面 U1 pin 4 CLK 与 J1 pin 1 CLK，无频率或功耗模式参数"
+        }
+      ]
+    },
+    {
+      "id": "audio.performance-specifications",
+      "category": "audio",
+      "subject": "SPM1423 音频性能",
+      "statement": "正文列出灵敏度、信噪比、失真和工作电流，但原理图只给出型号与连接，未标注这些性能值或测试条件，因此不能作为原理图确认事实。",
+      "confidence": "uncertain",
+      "attributes": {
+        "document_sensitivity": "-22dBFS at 94dB SPL,1kHz typical",
+        "document_snr": "61.4dB A-weighted typical",
+        "document_thd": "1% at 100dB SPL,1kHz typical",
+        "document_current": "600uA",
+        "schematic_performance_values": null
+      },
+      "evidence": [
+        {
+          "asset_sha256": "23bc130350bc28c060e2f9dfda05405a6d02103782a569ef3978835eb6b78d28",
+          "page": 1,
+          "locator": "页面中央仅标 U1 SPM1423HM4H-B 及引脚连接，无灵敏度/SNR/THD/电流注释"
+        }
+      ]
+    },
+    {
+      "id": "interface.grove-color-mapping",
+      "category": "interface",
+      "subject": "J1 Grove 线色映射",
+      "statement": "原理图给出 J1 pin 1-4 的 CLK/DAT/+5V/GND 电气定义，但未标注 Black/Red/Yellow/White 线色，无法仅凭本页验证正文线色映射。",
+      "confidence": "uncertain",
+      "attributes": {
+        "electrical_pinout": "pin1 CLK,pin2 DAT,pin3 +5V,pin4 GND",
+        "color_labels_on_schematic": null,
+        "document_colors": "Black,Red,Yellow,White"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "23bc130350bc28c060e2f9dfda05405a6d02103782a569ef3978835eb6b78d28",
+          "page": 1,
+          "locator": "页面下部 J1 仅显示 CLK/DAT/VCC/GND 与 pin 编号，无线色文字"
+        }
+      ]
+    }
+  ],
+  "needs_review": [
+    {
+      "id": "review.select-slot-meaning",
+      "fact_id": "audio.select-slot-meaning",
+      "question": "请依据 SPM1423HM4H-B datasheet 确认 SELECT=GND 对应的 PDM 时钟沿、时隙或左右声道定义。",
+      "reason": "原理图只证明 SELECT 电平，不包含协议时隙语义。",
+      "evidence": [
+        {
+          "asset_sha256": "23bc130350bc28c060e2f9dfda05405a6d02103782a569ef3978835eb6b78d28",
+          "page": 1,
+          "locator": "U1 SELECT pin 2 接 GND，无 L/R 或 edge 标注"
+        }
+      ]
+    },
+    {
+      "id": "review.pdm-operating-ranges",
+      "fact_id": "clock.pdm-operating-ranges",
+      "question": "请用麦克风 datasheet 确认 CLK 的工作频率、休眠/断电阈值和启动时序。",
+      "reason": "原理图没有任何 CLK 数值或模式切换参数。",
+      "evidence": [
+        {
+          "asset_sha256": "23bc130350bc28c060e2f9dfda05405a6d02103782a569ef3978835eb6b78d28",
+          "page": 1,
+          "locator": "U1 pin 4 与 J1 pin 1 的 CLK 直连，无频率注释"
+        }
+      ]
+    },
+    {
+      "id": "review.audio-performance",
+      "fact_id": "audio.performance-specifications",
+      "question": "请依据对应批次 SPM1423HM4H-B datasheet 或测试报告复核灵敏度、SNR、THD 和工作电流。",
+      "reason": "这些参数未出现在原理图，且需要明确测试条件。",
+      "evidence": [
+        {
+          "asset_sha256": "23bc130350bc28c060e2f9dfda05405a6d02103782a569ef3978835eb6b78d28",
+          "page": 1,
+          "locator": "U1 仅有型号和电气连接，无音频性能参数"
+        }
+      ]
+    },
+    {
+      "id": "review.grove-color-mapping",
+      "fact_id": "interface.grove-color-mapping",
+      "question": "请结合 Grove 线缆规范与连接器方向确认 Black/Red/Yellow/White 对应 J1 pin 1-4。",
+      "reason": "原理图没有线色标签。",
+      "evidence": [
+        {
+          "asset_sha256": "23bc130350bc28c060e2f9dfda05405a6d02103782a569ef3978835eb6b78d28",
+          "page": 1,
+          "locator": "J1 HY-2.0_A 仅显示电气 pinout"
+        }
+      ]
+    }
+  ]
+}

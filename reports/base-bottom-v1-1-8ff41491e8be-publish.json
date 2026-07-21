@@ -1,0 +1,21 @@
+{
+  "dry_run": false,
+  "failed": 0,
+  "published": 1,
+  "results": [
+    {
+      "backup": null,
+      "draft_action": "unchanged",
+      "dry_run": false,
+      "errors": [],
+      "needs_review": 2,
+      "product_id": "base-bottom-v1-1-8ff41491e8be",
+      "product_name": "Base Bottom v1.1",
+      "publish_action": "unchanged",
+      "sha256": "ccca15e1040f4f0dacc7cd8e2edefc25271280a47e6a9ddbfeb4a9917d28c1e3",
+      "status": "valid",
+      "uncertain_facts": 2
+    }
+  ],
+  "schema_version": 1
+}

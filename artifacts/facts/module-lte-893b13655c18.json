@@ -1,0 +1,720 @@
+{
+  "schema_version": 1,
+  "generator": "schematic_describer",
+  "product": {
+    "product_id": "module-lte-893b13655c18",
+    "product_name": "Module LTE",
+    "sku": "M027",
+    "source_path": "module/lte.md",
+    "source_sha256": "61c421174f33636f2f9b3e428535fe25a7205a69181dc27211ebf7d75fb3d6e4",
+    "input_sha256": "af77f465d0493e66a6fa696837e6f10e65a79407a4053ffdd735a009b1391fe4"
+  },
+  "schematic_assets": [
+    {
+      "sha256": "2a5aa3d243864df9f47ccaf015a81286e51c9746d8e2fd30c542cbe2ed8ff1ed",
+      "source_url": "https://m5stack.oss-cn-shenzhen.aliyuncs.com/resource/docs/schematic/Modules/module_lte_sch.pdf",
+      "pages": [1, 2, 3, 4]
+    }
+  ],
+  "summary": "Module LTE 以 M8321 蜂窝通信模块为核心，通过 TXS0104E 电平转换器把主通信 UART 接到 M5-Bus 的 GPIO16/GPIO17，并从 M5-Bus 5V 经 JW5033H 生成约 4V 的 VBAT 模组电源。电路提供双 IPEX 主/分集天线、Nano SIM 接口、USB 与调试信号、三路状态指示和开关机控制。独立的 TLV320AIC3100 音频编解码器通过 PCM、MCLK 和 I2C 与 M8321 连接，驱动板载麦克风和扬声器，外部低速接口和音频端口均配置了可见的 TVS 防护。",
+  "keywords": [
+    "Module LTE",
+    "M027",
+    "M8321",
+    "TXS0104E",
+    "TLV320AIC3100",
+    "JW5033H",
+    "LTE",
+    "M5-Bus",
+    "UART0",
+    "UART2",
+    "GPIO16",
+    "GPIO17",
+    "I2C",
+    "PCM",
+    "MCLK",
+    "USB_DP",
+    "USB_DN",
+    "USIM",
+    "SIM_IO",
+    "SIM_CLK",
+    "SIM_RST",
+    "SIM_VCC",
+    "MAIN_ANT",
+    "DIV_ANT",
+    "IPEX",
+    "VBAT",
+    "+4V",
+    "PWR_KEY",
+    "S_PWR",
+    "NET_STA",
+    "MOD_STA",
+    "MIC_P",
+    "MIC_N",
+    "SPK_P",
+    "SPK_N",
+    "SMF05CT1G"
+  ],
+  "components": [
+    {
+      "reference": "U4",
+      "part_number": "M8321",
+      "role": "LTE 蜂窝通信核心模组",
+      "evidence": [
+        {
+          "asset_sha256": "2a5aa3d243864df9f47ccaf015a81286e51c9746d8e2fd30c542cbe2ed8ff1ed",
+          "page": 1,
+          "locator": "网格 2A-3D，U4 M8321 的电源、UART、USB、USIM、PCM、I2C、射频和控制引脚"
+        }
+      ]
+    },
+    {
+      "reference": "U3",
+      "part_number": "TXS0104E",
+      "role": "VDD_EXT 与 3.3V 域之间的四通道双向电平转换器",
+      "evidence": [
+        {
+          "asset_sha256": "2a5aa3d243864df9f47ccaf015a81286e51c9746d8e2fd30c542cbe2ed8ff1ed",
+          "page": 1,
+          "locator": "网格 1A，U3 TXS0104E，VCCA=VDD_EXT、VCCB=+3.3V，连接 DEBUG_RXD/TXD 与 UART0_RXD/TXD"
+        }
+      ]
+    },
+    {
+      "reference": "U1",
+      "part_number": "tlv320aic3100",
+      "role": "PCM/I2C 音频编解码器、麦克风输入和差分扬声器驱动",
+      "evidence": [
+        {
+          "asset_sha256": "2a5aa3d243864df9f47ccaf015a81286e51c9746d8e2fd30c542cbe2ed8ff1ed",
+          "page": 2,
+          "locator": "网格 2A-3C，U1 tlv320aic3100 的 PCM、I2C、RESET、MIC1 和 SPK 引脚"
+        }
+      ]
+    },
+    {
+      "reference": "U7",
+      "part_number": "JW5033H",
+      "role": "M5-Bus 5V 到 LTE 模组 VBAT 的降压转换器",
+      "evidence": [
+        {
+          "asset_sha256": "2a5aa3d243864df9f47ccaf015a81286e51c9746d8e2fd30c542cbe2ed8ff1ed",
+          "page": 4,
+          "locator": "网格 1A-2B，U7 JW5033H、L1、+5V 输入及 +4V/VBAT 输出"
+        }
+      ]
+    },
+    {
+      "reference": "J1",
+      "part_number": "M5Stack_BUS",
+      "role": "30 针 M5-Bus 主机、电源和扩展接口",
+      "evidence": [
+        {
+          "asset_sha256": "2a5aa3d243864df9f47ccaf015a81286e51c9746d8e2fd30c542cbe2ed8ff1ed",
+          "page": 1,
+          "locator": "网格 4C-D，J1 M5Stack_BUS，GPIO16、GPIO17、S_PWR、+3.3V、+5V、GND 等引脚"
+        }
+      ]
+    },
+    {
+      "reference": "U6",
+      "part_number": "SIM",
+      "role": "Nano SIM 卡连接器",
+      "evidence": [
+        {
+          "asset_sha256": "2a5aa3d243864df9f47ccaf015a81286e51c9746d8e2fd30c542cbe2ed8ff1ed",
+          "page": 1,
+          "locator": "网格 1D，U6 SIM，CLK、RST、VCC、IO、VPP 和 GND 引脚"
+        }
+      ]
+    },
+    {
+      "reference": "U5",
+      "part_number": "SMF05CT1G",
+      "role": "SIM_CLK、SIM_RST、SIM_VCC 和 SIM_IO 多通道 TVS 防护器件",
+      "evidence": [
+        {
+          "asset_sha256": "2a5aa3d243864df9f47ccaf015a81286e51c9746d8e2fd30c542cbe2ed8ff1ed",
+          "page": 1,
+          "locator": "网格 1C-D，U5 SMF05CT1G 接入 SIM_IO、SIM_CLK、SIM_RST、SIM_VCC"
+        }
+      ]
+    },
+    {
+      "reference": "E1",
+      "part_number": "ANT_IPEX",
+      "role": "LTE 分集天线接口",
+      "evidence": [
+        {
+          "asset_sha256": "2a5aa3d243864df9f47ccaf015a81286e51c9746d8e2fd30c542cbe2ed8ff1ed",
+          "page": 1,
+          "locator": "网格 4B，E1 ANT_IPEX 经 R12 0Ω 连接 U4 DIV_ANT"
+        }
+      ]
+    },
+    {
+      "reference": "E2",
+      "part_number": "ANT_IPEX",
+      "role": "LTE 主天线接口",
+      "evidence": [
+        {
+          "asset_sha256": "2a5aa3d243864df9f47ccaf015a81286e51c9746d8e2fd30c542cbe2ed8ff1ed",
+          "page": 1,
+          "locator": "网格 4B-C，E2 ANT_IPEX 经 R17 0Ω 连接 U4 MAIN_ANT"
+        }
+      ]
+    },
+    {
+      "reference": "S1",
+      "part_number": "SW-PB",
+      "role": "LTE 模组开关机按键",
+      "evidence": [
+        {
+          "asset_sha256": "2a5aa3d243864df9f47ccaf015a81286e51c9746d8e2fd30c542cbe2ed8ff1ed",
+          "page": 1,
+          "locator": "网格 1C，S1 SW-PB、S_PWR、R19 和 Q3/PWR_KEY 控制电路"
+        }
+      ]
+    },
+    {
+      "reference": "Q3",
+      "part_number": "SS8050 Y1",
+      "role": "由 S_PWR 控制的 PWR_KEY 下拉晶体管",
+      "evidence": [
+        {
+          "asset_sha256": "2a5aa3d243864df9f47ccaf015a81286e51c9746d8e2fd30c542cbe2ed8ff1ed",
+          "page": 1,
+          "locator": "网格 1C，Q3 SS8050 Y1，基极经 R18 接 S_PWR，集电极接 PWR_KEY，发射极接 GND"
+        }
+      ]
+    },
+    {
+      "reference": "Q2",
+      "part_number": "SS8050 Y1",
+      "role": "MOD_STA 状态 LED 低端驱动晶体管",
+      "evidence": [
+        {
+          "asset_sha256": "2a5aa3d243864df9f47ccaf015a81286e51c9746d8e2fd30c542cbe2ed8ff1ed",
+          "page": 1,
+          "locator": "网格 1B，Q2 由 MOD_STA 经 R15 驱动并控制 D6"
+        }
+      ]
+    },
+    {
+      "reference": "Q1",
+      "part_number": "SS8050 Y1",
+      "role": "NET_STA 状态 LED 低端驱动晶体管",
+      "evidence": [
+        {
+          "asset_sha256": "2a5aa3d243864df9f47ccaf015a81286e51c9746d8e2fd30c542cbe2ed8ff1ed",
+          "page": 1,
+          "locator": "网格 1B，Q1 由 NET_STA 经 R16 驱动并控制 D7"
+        }
+      ]
+    },
+    {
+      "reference": "D5",
+      "part_number": "红灯 0603",
+      "role": "VBAT 电源指示 LED",
+      "evidence": [
+        {
+          "asset_sha256": "2a5aa3d243864df9f47ccaf015a81286e51c9746d8e2fd30c542cbe2ed8ff1ed",
+          "page": 1,
+          "locator": "网格 2A，D5 红灯 0603 从 VBAT 经 R10 1kΩ 接地"
+        }
+      ]
+    },
+    {
+      "reference": "U2",
+      "part_number": "MIC",
+      "role": "板载模拟麦克风",
+      "evidence": [
+        {
+          "asset_sha256": "2a5aa3d243864df9f47ccaf015a81286e51c9746d8e2fd30c542cbe2ed8ff1ed",
+          "page": 2,
+          "locator": "网格 1C-D，U2 MIC 连接 MIC_P、MIC_N 并由 D1/D2 防护"
+        }
+      ]
+    },
+    {
+      "reference": "LS1",
+      "part_number": "Speaker",
+      "role": "板载差分扬声器",
+      "evidence": [
+        {
+          "asset_sha256": "2a5aa3d243864df9f47ccaf015a81286e51c9746d8e2fd30c542cbe2ed8ff1ed",
+          "page": 2,
+          "locator": "网格 3C-D，LS1 Speaker 经 R7/R9 连接 SPK_P/SPK_N 并由 D3/D4 防护"
+        }
+      ]
+    },
+    {
+      "reference": "D1,D2",
+      "part_number": "TVS",
+      "role": "麦克风差分输入静电防护",
+      "evidence": [
+        {
+          "asset_sha256": "2a5aa3d243864df9f47ccaf015a81286e51c9746d8e2fd30c542cbe2ed8ff1ed",
+          "page": 2,
+          "locator": "网格 1C-D，D1/D2 分别从 MIC_P/MIC_N 接地"
+        }
+      ]
+    },
+    {
+      "reference": "D3,D4",
+      "part_number": "TVS",
+      "role": "扬声器差分输出静电防护",
+      "evidence": [
+        {
+          "asset_sha256": "2a5aa3d243864df9f47ccaf015a81286e51c9746d8e2fd30c542cbe2ed8ff1ed",
+          "page": 2,
+          "locator": "网格 3C-D，D3/D4 分别从 SPK_P/SPK_N 接地"
+        }
+      ]
+    }
+  ],
+  "facts": [
+    {
+      "id": "system.lte-core",
+      "category": "system",
+      "subject": "M8321 LTE 核心架构",
+      "statement": "U4 M8321 集成主/分集射频、USIM、USB、UART0、UART1 调试、UART2、PCM、I2C、开关机和状态接口，是 Module LTE 的通信核心。",
+      "confidence": "confirmed",
+      "attributes": {
+        "reference": "U4",
+        "part_number": "M8321",
+        "main_power": "VBAT",
+        "io_power": "VDD_EXT"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "2a5aa3d243864df9f47ccaf015a81286e51c9746d8e2fd30c542cbe2ed8ff1ed",
+          "page": 1,
+          "locator": "网格 2A-3D，U4 M8321 完整符号与外围网络"
+        }
+      ]
+    },
+    {
+      "id": "power.main-5v-to-vbat",
+      "category": "power",
+      "subject": "LTE 主电源转换",
+      "statement": "M5-Bus 的 +5V 进入 U7 JW5033H 降压电路，经 L1 4.7uH 输出标注为 +4V 的 VBAT 电源轨。",
+      "confidence": "confirmed",
+      "attributes": {
+        "converter": "U7 JW5033H",
+        "input_voltage": "+5V",
+        "output_voltage": "+4V",
+        "output_net": "VBAT",
+        "inductor": "L1 4.7uH"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "2a5aa3d243864df9f47ccaf015a81286e51c9746d8e2fd30c542cbe2ed8ff1ed",
+          "page": 4,
+          "locator": "网格 1A-2B，+5V、U7、L1、+4V 与 VBAT 连续电源路径"
+        }
+      ]
+    },
+    {
+      "id": "power.m8321-vbat-pins",
+      "category": "power",
+      "subject": "M8321 VBAT 供电",
+      "statement": "VBAT 连接 U4 的 VBAT_BB 引脚 18/19 和 VBAT_RF 引脚 38/39，并配置 C19、C20、C25-C28 去耦。",
+      "confidence": "confirmed",
+      "attributes": {
+        "baseband_pins": "18,19",
+        "rf_pins": "38,39",
+        "net": "VBAT",
+        "bulk_capacitance": "C19=100uF, C20=680uF"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "2a5aa3d243864df9f47ccaf015a81286e51c9746d8e2fd30c542cbe2ed8ff1ed",
+          "page": 1,
+          "locator": "网格 2B-D，U4 VBAT_BB/VBAT_RF 引脚及底部 VBAT 去耦电容组"
+        }
+      ]
+    },
+    {
+      "id": "bus.host-uart-level-shift",
+      "category": "bus",
+      "subject": "M5-Bus 主通信 UART",
+      "statement": "U4 UART0_TXD 经 U3 第三通道和 R20 0Ω 接 M5-Bus GPIO16；U4 UART0_RXD 经 U3 第四通道和 R21 0Ω 接 M5-Bus GPIO17。",
+      "confidence": "confirmed",
+      "attributes": {
+        "modem_tx": "U4 pin29 UART0_TXD",
+        "host_gpio_rx": "J1 pin15 GPIO16",
+        "modem_rx": "U4 pin30 UART0_RXD",
+        "host_gpio_tx": "J1 pin16 GPIO17",
+        "level_shifter": "U3 TXS0104E"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "2a5aa3d243864df9f47ccaf015a81286e51c9746d8e2fd30c542cbe2ed8ff1ed",
+          "page": 1,
+          "locator": "网格 1A 的 U3 A3/A4-B3/B4、网格 2C 的 U4 UART0 与网格 4C 的 J1 GPIO16/GPIO17"
+        }
+      ]
+    },
+    {
+      "id": "bus.debug-uart",
+      "category": "debug",
+      "subject": "M8321 调试串口",
+      "statement": "U4 UART1_RXD 和 UART1_TXD 分别形成 DEBUG_RXD、DEBUG_TXD，并通过 U3 TXS0104E 在 VDD_EXT 与 3.3V 电平域间转换。",
+      "confidence": "confirmed",
+      "attributes": {
+        "modem_rx_pin": 3,
+        "modem_tx_pin": 4,
+        "rx_net": "DEBUG_RXD",
+        "tx_net": "DEBUG_TXD",
+        "level_shifter": "U3 TXS0104E"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "2a5aa3d243864df9f47ccaf015a81286e51c9746d8e2fd30c542cbe2ed8ff1ed",
+          "page": 1,
+          "locator": "网格 1A U3 A1/A2-B1/B2 与网格 2B U4 UART1_RXD/UART1_TXD"
+        }
+      ]
+    },
+    {
+      "id": "bus.secondary-uart",
+      "category": "bus",
+      "subject": "M8321 UART2",
+      "statement": "U4 直接引出 UART2_RXD 和 UART2_TXD，分别位于引脚 14 和 15。",
+      "confidence": "confirmed",
+      "attributes": {
+        "rx_pin": 14,
+        "tx_pin": 15,
+        "rx_net": "UART2_RXD",
+        "tx_net": "UART2_TXD"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "2a5aa3d243864df9f47ccaf015a81286e51c9746d8e2fd30c542cbe2ed8ff1ed",
+          "page": 1,
+          "locator": "网格 2B-C，U4 左侧引脚 14 UART2_RXD 与引脚 15 UART2_TXD"
+        }
+      ]
+    },
+    {
+      "id": "interface.m5-bus",
+      "category": "interface",
+      "subject": "M5Stack 30 针总线",
+      "statement": "J1 为 M5Stack_BUS，原理图实际使用 GND、GPIO16、GPIO17、GPIO2/S_PWR、+3.3V 和 +5V；HPWR 引脚 27/29 在本页标记为未连接。",
+      "confidence": "confirmed",
+      "attributes": {
+        "connector": "J1",
+        "gnd_pins": "1,3,5",
+        "gpio16_pin": 15,
+        "gpio17_pin": 16,
+        "s_pwr_pin": 19,
+        "three_v_three_pin": 14,
+        "five_v_pin": 30
+      },
+      "evidence": [
+        {
+          "asset_sha256": "2a5aa3d243864df9f47ccaf015a81286e51c9746d8e2fd30c542cbe2ed8ff1ed",
+          "page": 1,
+          "locator": "网格 4C-D，J1 M5Stack_BUS 全部 30 针及连接/未连接标记"
+        }
+      ]
+    },
+    {
+      "id": "gpio.power-key-control",
+      "category": "gpio",
+      "subject": "M8321 开关机控制",
+      "statement": "M5-Bus 的 S_PWR 经 R22 0Ω 驱动 Q3 基极，Q3 导通时把 U4 PWR_KEY 拉向 GND；板载 S1 与 R19 组成同一 S_PWR 按键网络。",
+      "confidence": "confirmed",
+      "attributes": {
+        "host_net": "S_PWR",
+        "modem_pin": "U4 pin17 PWR_KEY",
+        "transistor": "Q3 SS8050 Y1",
+        "base_resistor": "R18 1kΩ",
+        "bus_link": "R22 0Ω"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "2a5aa3d243864df9f47ccaf015a81286e51c9746d8e2fd30c542cbe2ed8ff1ed",
+          "page": 1,
+          "locator": "网格 1C 的 S1/Q3/PWR_KEY 与网格 4C 的 J1 pin19、R22、S_PWR"
+        }
+      ]
+    },
+    {
+      "id": "interface.sim",
+      "category": "interface",
+      "subject": "Nano SIM 信号连接",
+      "statement": "U6 SIM 卡座的 SIM_IO、SIM_RST、SIM_CLK 和 SIM_VCC 分别经 33Ω 串联电阻连接 U4 的 USIM_DATA、USIM_RST、USIM_CLK 和 USIM_VDD。",
+      "confidence": "confirmed",
+      "attributes": {
+        "connector": "U6",
+        "io": "SIM_IO to USIM_DATA",
+        "reset": "SIM_RST to USIM_RST",
+        "clock": "SIM_CLK to USIM_CLK",
+        "supply": "SIM_VCC to USIM_VDD",
+        "series_resistance": "33Ω"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "2a5aa3d243864df9f47ccaf015a81286e51c9746d8e2fd30c542cbe2ed8ff1ed",
+          "page": 1,
+          "locator": "网格 1C-D 的 U6 和 R24 电阻阵列，与网格 2C-D 的 U4 USIM 引脚"
+        }
+      ]
+    },
+    {
+      "id": "protection.sim-tvs",
+      "category": "protection",
+      "subject": "SIM 接口防护",
+      "statement": "U5 SMF05CT1G 对 SIM_IO、SIM_RST、SIM_CLK 和 SIM_VCC 提供接地 TVS 箝位，SIM_CLK/RST/VCC 另各有 33pF 对地电容。",
+      "confidence": "confirmed",
+      "attributes": {
+        "protector": "U5 SMF05CT1G",
+        "protected_nets": "SIM_IO, SIM_RST, SIM_CLK, SIM_VCC",
+        "capacitors": "C22=33pF, C23=33pF, C24=33pF"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "2a5aa3d243864df9f47ccaf015a81286e51c9746d8e2fd30c542cbe2ed8ff1ed",
+          "page": 1,
+          "locator": "网格 1C-D，U5 SMF05CT1G、C22、C23、C24 与 SIM 网络"
+        }
+      ]
+    },
+    {
+      "id": "rf.dual-antenna",
+      "category": "rf",
+      "subject": "LTE 主天线和分集天线",
+      "statement": "U4 MAIN_ANT 经 R17 0Ω 连接 E2 ANT_IPEX，DIV_ANT 经 R12 0Ω 连接 E1 ANT_IPEX，两路接口均以独立 IPEX 连接器引出。",
+      "confidence": "confirmed",
+      "attributes": {
+        "main_pin": "U4 pin47 MAIN_ANT",
+        "main_connector": "E2",
+        "diversity_pin": "U4 pin58 DIV_ANT",
+        "diversity_connector": "E1",
+        "series_links": "R17=0Ω, R12=0Ω"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "2a5aa3d243864df9f47ccaf015a81286e51c9746d8e2fd30c542cbe2ed8ff1ed",
+          "page": 1,
+          "locator": "网格 3B-4C，U4 MAIN_ANT/DIV_ANT、R12、R17、E1、E2"
+        }
+      ]
+    },
+    {
+      "id": "interface.usb",
+      "category": "interface",
+      "subject": "M8321 USB 数据接口",
+      "statement": "U4 USB_IN 和 USB_DP 分别连接外部网络 USB_DN 与 USB_DP，邻近引脚 76、77 为地，原理图未在该页画出 USB 连接器。",
+      "confidence": "confirmed",
+      "attributes": {
+        "dm_pin": "U4 pin74 USB_IN",
+        "dm_net": "USB_DN",
+        "dp_pin": "U4 pin75 USB_DP",
+        "dp_net": "USB_DP"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "2a5aa3d243864df9f47ccaf015a81286e51c9746d8e2fd30c542cbe2ed8ff1ed",
+          "page": 1,
+          "locator": "网格 2A-3A，U4 顶部引脚 74 USB_IN、75 USB_DP 及 USB_DN/USB_DP 网络"
+        }
+      ]
+    },
+    {
+      "id": "gpio.status-leds",
+      "category": "gpio",
+      "subject": "模组状态指示",
+      "statement": "MOD_STA 经 R15 驱动 Q2 并控制 D6，NET_STA 经 R16 驱动 Q1 并控制 D7；D5 则从 VBAT 经 R10 1kΩ 直接接地作为电源指示。",
+      "confidence": "confirmed",
+      "attributes": {
+        "module_status": "MOD_STA -> R15 -> Q2 -> D6",
+        "network_status": "NET_STA -> R16 -> Q1 -> D7",
+        "power_indicator": "VBAT -> D5 -> R10 1kΩ -> GND"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "2a5aa3d243864df9f47ccaf015a81286e51c9746d8e2fd30c542cbe2ed8ff1ed",
+          "page": 1,
+          "locator": "网格 1A-B 的 D6/Q2、D7/Q1 与网格 2A 的 D5/R10"
+        }
+      ]
+    },
+    {
+      "id": "bus.audio-pcm",
+      "category": "audio",
+      "subject": "M8321 与音频编解码器 PCM 总线",
+      "statement": "U4 的 PCM_DIN、PCM_DOUT、PCM_FS、PCM_CLK 和 MCLK 通过层次 Harness 连接到 U1 TLV320AIC3100 的 DOUT、DIN、WCLK、BCLK 和 MCLK。",
+      "confidence": "confirmed",
+      "attributes": {
+        "modem_pcm_pins": "21 PCM_DIN, 22 PCM_DOUT, 23 PCM_FS, 24 PCM_CLK",
+        "modem_mclk_pin": 73,
+        "codec": "U1 tlv320aic3100",
+        "nets": "PCM_DIN, PCM_DOUT, PCM_FS, PCM_CLK, MCLK"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "2a5aa3d243864df9f47ccaf015a81286e51c9746d8e2fd30c542cbe2ed8ff1ed",
+          "page": 1,
+          "locator": "网格 2C-D 的 U4 PCM 引脚、网格 3A-4A 的 LTE_Module Harness"
+        },
+        {
+          "asset_sha256": "2a5aa3d243864df9f47ccaf015a81286e51c9746d8e2fd30c542cbe2ed8ff1ed",
+          "page": 2,
+          "locator": "网格 1A-3B 的 CODEC_Module Harness 和 U1 DOUT/DIN/WCLK/BCLK/MCLK"
+        }
+      ]
+    },
+    {
+      "id": "bus.audio-i2c",
+      "category": "bus",
+      "subject": "音频编解码器控制总线",
+      "statement": "U4 I2C1_SDA 和 I2C1_SCL 形成 I2C_SDA、I2C_SCL，并连接 U1 TLV320AIC3100 的 SDA、SCL。",
+      "confidence": "confirmed",
+      "attributes": {
+        "controller": "U4 M8321",
+        "device": "U1 tlv320aic3100",
+        "sda": "I2C_SDA",
+        "scl": "I2C_SCL"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "2a5aa3d243864df9f47ccaf015a81286e51c9746d8e2fd30c542cbe2ed8ff1ed",
+          "page": 1,
+          "locator": "网格 2B 的 U4 I2C1_SDA/SCL 与网格 4A Harness"
+        },
+        {
+          "asset_sha256": "2a5aa3d243864df9f47ccaf015a81286e51c9746d8e2fd30c542cbe2ed8ff1ed",
+          "page": 2,
+          "locator": "网格 1A-2B Harness 到 U1 pin9 SDA、pin10 SCL"
+        }
+      ]
+    },
+    {
+      "id": "reset.audio-codec",
+      "category": "reset",
+      "subject": "TLV320AIC3100 复位",
+      "statement": "CODEC_RST 连接 U1 RESET，引脚通过 R2 100kΩ 上拉到 VDD_EXT，并预留 R1 0Ω 到 GND 的装配位置。",
+      "confidence": "confirmed",
+      "attributes": {
+        "net": "CODEC_RST",
+        "codec_pin": "U1 pin31 RESET",
+        "pullup": "R2 100kΩ to VDD_EXT",
+        "optional_pulldown": "R1 0Ω"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "2a5aa3d243864df9f47ccaf015a81286e51c9746d8e2fd30c542cbe2ed8ff1ed",
+          "page": 2,
+          "locator": "网格 2A-3A，CODEC_RST、U1 RESET、R1 和 R2"
+        }
+      ]
+    },
+    {
+      "id": "audio.microphone-input",
+      "category": "audio",
+      "subject": "板载麦克风输入",
+      "statement": "U2 板载麦克风输出 MIC_P/MIC_N，经 R6/R8 0Ω 和 C6/C7 1uF 交流耦合连接 U1 MIC1LP/MIC1LM；D1/D2 对两路麦克风线提供 TVS 防护。",
+      "confidence": "confirmed",
+      "attributes": {
+        "microphone": "U2 MIC",
+        "codec_inputs": "U1 MIC1LP, MIC1LM",
+        "coupling": "C6=1uF, C7=1uF",
+        "protection": "D1,D2 TVS"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "2a5aa3d243864df9f47ccaf015a81286e51c9746d8e2fd30c542cbe2ed8ff1ed",
+          "page": 2,
+          "locator": "网格 1B-D，U1 MIC1 输入偏置网络、U2、R6/R8、C6/C7、D1/D2"
+        }
+      ]
+    },
+    {
+      "id": "audio.speaker-output",
+      "category": "audio",
+      "subject": "板载扬声器输出",
+      "statement": "U1 的 SPKP/SPKM 差分输出形成 SPK_P/SPK_N，经 R7/R9 0Ω 驱动 LS1；D3/D4 分别从 SPK_P/SPK_N 接地提供 TVS 防护。",
+      "confidence": "confirmed",
+      "attributes": {
+        "codec_outputs": "U1 SPKP, SPKM",
+        "speaker": "LS1",
+        "series_links": "R7=0Ω, R9=0Ω",
+        "protection": "D3,D4 TVS"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "2a5aa3d243864df9f47ccaf015a81286e51c9746d8e2fd30c542cbe2ed8ff1ed",
+          "page": 2,
+          "locator": "网格 3B-D，U1 SPKP/SPKM、SPK_P/SPK_N、R7/R9、LS1、D3/D4"
+        }
+      ]
+    },
+    {
+      "id": "power.audio-domains",
+      "category": "power",
+      "subject": "音频编解码器电源域",
+      "statement": "U1 IOVDD/DVDD 使用 VDD_EXT，HPVDD 和 AVDD 使用 +3.3V，SPKVDD 使用 +5V，并分别配置本地去耦。",
+      "confidence": "confirmed",
+      "attributes": {
+        "digital_io_supply": "VDD_EXT",
+        "headphone_analog_supply": "+3.3V",
+        "speaker_supply": "+5V",
+        "codec": "U1 tlv320aic3100"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "2a5aa3d243864df9f47ccaf015a81286e51c9746d8e2fd30c542cbe2ed8ff1ed",
+          "page": 2,
+          "locator": "网格 2A-3C，U1 IOVDD/DVDD、HPVDD、AVDD、SPKVDD 与 C1/C3-C5/C8/C9"
+        }
+      ]
+    },
+    {
+      "id": "key-net.vdd-ext",
+      "category": "key_net",
+      "subject": "VDD_EXT I/O 电源轨",
+      "statement": "U4 VDD_EXT 引脚 61 输出到 VDD_EXT 网络，该网络为 U3 TXS0104E 的 VCCA、U1 TLV320AIC3100 的数字 I/O 电源和 CODEC_RST 上拉供电。",
+      "confidence": "confirmed",
+      "attributes": {
+        "source": "U4 pin61 VDD_EXT",
+        "consumers": "U3 VCCA, U1 IOVDD/DVDD, R2 CODEC_RST pull-up"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "2a5aa3d243864df9f47ccaf015a81286e51c9746d8e2fd30c542cbe2ed8ff1ed",
+          "page": 1,
+          "locator": "网格 3A-B，U4 pin61 VDD_EXT 与 C14；网格 1A U3 VCCA"
+        },
+        {
+          "asset_sha256": "2a5aa3d243864df9f47ccaf015a81286e51c9746d8e2fd30c542cbe2ed8ff1ed",
+          "page": 2,
+          "locator": "网格 2A-3B，U1 IOVDD/DVDD 和 R2 上拉均连接 VDD_EXT"
+        }
+      ]
+    },
+    {
+      "id": "system.hierarchical-partitions",
+      "category": "system",
+      "subject": "原理图层次分区",
+      "statement": "顶层页将设计划分为 U_Power、U_LTE_Module 和 U_Codec 三个功能分区，LTE_Module 与 CODEC_Module 通过层次 Harness 相连。",
+      "confidence": "confirmed",
+      "attributes": {
+        "power_sheet": "Power.SchDoc",
+        "lte_sheet": "LTE_Module.SchDoc",
+        "codec_sheet": "Codec.SchDoc",
+        "interconnect": "LTE_Module to CODEC_Module"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "2a5aa3d243864df9f47ccaf015a81286e51c9746d8e2fd30c542cbe2ed8ff1ed",
+          "page": 3,
+          "locator": "网格 1A-3B，U_Power、U_LTE_Module、U_Codec 层次块和 Harness"
+        }
+      ]
+    }
+  ],
+  "needs_review": []
+}

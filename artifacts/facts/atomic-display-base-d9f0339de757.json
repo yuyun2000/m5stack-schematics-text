@@ -1,0 +1,411 @@
+{
+  "schema_version": 1,
+  "generator": "schematic_describer",
+  "product": {
+    "product_id": "atomic-display-base-d9f0339de757",
+    "product_name": "Atomic Display Base",
+    "sku": "A115",
+    "source_path": "atom/Atomic Display Base.md",
+    "source_sha256": "c5449fcb431532e38512fc4208912ab60fadf2443401ff1c09f59146360f1a41",
+    "input_sha256": "ecdca5c93b383eaacc88022691ffed2f39a15adf6fd503529217708495d8854b"
+  },
+  "schematic_assets": [
+    {
+      "sha256": "f1897d180c6bb2fe8600104f62c7814079568a7c58ac70d75712aacb97780eb9",
+      "source_url": "https://static-cdn.m5stack.com/resource/docs/products/atom/Atomic Display Base/img-3f5ac8bb-5276-4d1d-9edb-2921f8aab2f2.jpg",
+      "pages": [
+        1
+      ]
+    }
+  ],
+  "summary": "当前唯一的本地原理图页显示 ESP32-V3-02 控制器、板载与预留外部天线、Atom 4/5 Pin、Grove 接口、用户按键和手动复位。该页未显示 Atomic Display Base 产品正文所述 GW1NR-9C FPGA、LT8618SX、RGB 视频总线、电源转换或显示输出连接器，因此只能记录页面中可见的控制器事实，无法确认产品核心显示桥接子系统。",
+  "keywords": [
+    "Atomic Display Base",
+    "A115",
+    "ESP32-V3-02",
+    "PROANT_440",
+    "IPEX",
+    "ANT_LNA",
+    "VCC_3V3",
+    "BUTTON_G39",
+    "ESP32_EN",
+    "GPIO0",
+    "GROVE_G32",
+    "GROVE_G26",
+    "CONN_GP21",
+    "CONN_GP25",
+    "CONN_GP22",
+    "CONN_GP19",
+    "CONN_GP5",
+    "CONN_GP33",
+    "U0RXD",
+    "U0TXD",
+    "GW1NR-9C",
+    "LT8618SX"
+  ],
+  "components": [
+    {
+      "reference": "U1",
+      "part_number": "ESP32-V3-02",
+      "role": "页面中的 ESP32 控制器，连接 UART、按键、天线与扩展接口",
+      "evidence": [
+        {
+          "asset_sha256": "f1897d180c6bb2fe8600104f62c7814079568a7c58ac70d75712aacb97780eb9",
+          "page": 1,
+          "locator": "左上 U1 ESP32-V3-02：LNA_IN/EN、GPIO、U0RXD/U0TXD、VCC_3V3 与 GND"
+        }
+      ]
+    },
+    {
+      "reference": "ANT1",
+      "part_number": "PROANT_440",
+      "role": "ESP32 板载天线",
+      "evidence": [
+        {
+          "asset_sha256": "f1897d180c6bb2fe8600104f62c7814079568a7c58ac70d75712aacb97780eb9",
+          "page": 1,
+          "locator": "上部中央 ANT1 PROANT_440，连接 ANT_LNA 匹配网络"
+        }
+      ]
+    },
+    {
+      "reference": "J5",
+      "part_number": "IPEX",
+      "role": "预留外部天线连接器，信号路径中的 C25 标为 NC",
+      "evidence": [
+        {
+          "asset_sha256": "f1897d180c6bb2fe8600104f62c7814079568a7c58ac70d75712aacb97780eb9",
+          "page": 1,
+          "locator": "上部 J5 IPEX：外壳 pins 2/3 接 GND，pin 1 经 C25 NC 到 ANT_LNA"
+        }
+      ]
+    },
+    {
+      "reference": "J2",
+      "part_number": "5P-2.54",
+      "role": "Atom 5 Pin 的 3.3V 与 GPIO22/19/5/33 接口",
+      "evidence": [
+        {
+          "asset_sha256": "f1897d180c6bb2fe8600104f62c7814079568a7c58ac70d75712aacb97780eb9",
+          "page": 1,
+          "locator": "右上 J2 5P-2.54，pins 1~5 为 VCC_3V3/CONN_GP22/CONN_GP19/CONN_GP5/CONN_GP33"
+        }
+      ]
+    },
+    {
+      "reference": "J1",
+      "part_number": "4PIN-2.54",
+      "role": "Atom 4 Pin 的 GPIO21/GPIO25/5V/GND 接口",
+      "evidence": [
+        {
+          "asset_sha256": "f1897d180c6bb2fe8600104f62c7814079568a7c58ac70d75712aacb97780eb9",
+          "page": 1,
+          "locator": "右侧 J1 4PIN-2.54，pins 1~4 为 CONN_GP21/CONN_GP25/VUSB_5V/GND"
+        }
+      ]
+    },
+    {
+      "reference": "J3",
+      "part_number": "PH2.0_4P_SMT",
+      "role": "Grove GPIO32/GPIO26 与 5V/GND 接口",
+      "evidence": [
+        {
+          "asset_sha256": "f1897d180c6bb2fe8600104f62c7814079568a7c58ac70d75712aacb97780eb9",
+          "page": 1,
+          "locator": "右侧 J3 PH2.0_4P_SMT，pins 1~4 为 GROVE_G32/GROVE_G26/VUSB_5V/GND"
+        }
+      ]
+    },
+    {
+      "reference": "S2",
+      "part_number": "SMT_SW_PTS_820",
+      "role": "GPIO39 用户按键，按下接地",
+      "evidence": [
+        {
+          "asset_sha256": "f1897d180c6bb2fe8600104f62c7814079568a7c58ac70d75712aacb97780eb9",
+          "page": 1,
+          "locator": "左下 BUTTON_G39-R1 5.1KΩ-S2 SMT_SW_PTS_820-GND"
+        }
+      ]
+    },
+    {
+      "reference": "S1",
+      "part_number": "SMT_SW_TS_015",
+      "role": "ESP32_EN 复位按键，按下接地",
+      "evidence": [
+        {
+          "asset_sha256": "f1897d180c6bb2fe8600104f62c7814079568a7c58ac70d75712aacb97780eb9",
+          "page": 1,
+          "locator": "下部 ESP32_EN-R2 5.1KΩ-C14 470nF-S1 SMT_SW_TS_015-GND，C13 NC"
+        }
+      ]
+    },
+    {
+      "reference": "C25/C26/L1/C1/C2",
+      "part_number": "Antenna matching network",
+      "role": "板载天线与 IPEX 之间的可配置射频匹配网络",
+      "evidence": [
+        {
+          "asset_sha256": "f1897d180c6bb2fe8600104f62c7814079568a7c58ac70d75712aacb97780eb9",
+          "page": 1,
+          "locator": "上部 ANT_LNA-C25 NC-C26 0R-L1 TBD/NC-C1 TBD/0R-C2 TBD/NC-ANT1"
+        }
+      ]
+    }
+  ],
+  "facts": [
+    {
+      "id": "system.local-controller-page",
+      "category": "system",
+      "subject": "Atomic Display Base 当前本地原理图范围",
+      "statement": "唯一资源页包含 ESP32-V3-02、天线、Atom/Grove 接口、用户按键、手动复位与 VCC_3V3 去耦，没有显示 FPGA 或视频输出电路。",
+      "confidence": "confirmed",
+      "attributes": {
+        "local_assets": 1,
+        "page_1": "ESP32-V3-02,antenna,Atom connectors,Grove,button,reset,3V3 decoupling"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "f1897d180c6bb2fe8600104f62c7814079568a7c58ac70d75712aacb97780eb9",
+          "page": 1,
+          "locator": "source_001 全页：U1、ANT1/J5、J1/J2/J3、S1/S2 与 C3~C12"
+        }
+      ]
+    },
+    {
+      "id": "gpio.esp32-connected-map",
+      "category": "gpio",
+      "subject": "U1 ESP32-V3-02 已连接 GPIO",
+      "statement": "U1 的 IO39 接 BUTTON_G39，IO32/IO26 接 GROVE_G32/GROVE_G26，IO33/IO25/IO5/IO19/IO22/IO21 接 CONN_GP33/25/5/19/22/21，IO27 接 SK_DIN，IO0 接 GPIO0，U0RXD/U0TXD 接同名 UART 网络。",
+      "confidence": "confirmed",
+      "attributes": {
+        "GPIO39": "BUTTON_G39",
+        "GPIO32": "GROVE_G32",
+        "GPIO26": "GROVE_G26",
+        "GPIO33": "CONN_GP33",
+        "GPIO25": "CONN_GP25",
+        "GPIO5": "CONN_GP5",
+        "GPIO19": "CONN_GP19",
+        "GPIO22": "CONN_GP22",
+        "GPIO21": "CONN_GP21",
+        "GPIO27": "SK_DIN",
+        "GPIO0": "GPIO0",
+        "UART": "U0RXD,U0TXD"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "f1897d180c6bb2fe8600104f62c7814079568a7c58ac70d75712aacb97780eb9",
+          "page": 1,
+          "locator": "左上 U1 pins 8/12~16/23/34/38~42 的网络标签"
+        }
+      ]
+    },
+    {
+      "id": "power.esp32-3v3-decoupling",
+      "category": "power",
+      "subject": "ESP32 VCC_3V3 电源域",
+      "statement": "VCC_3V3 连接 U1 的 VDDA pins 1/43/46、VDDA3P3 pins 3/4、VDD3P3_CPU pin 37 与 VDD3P3_RTC pin 19；C3/C4 各 4.7uF，C5~C12 各 470nF 接在 VCC_3V3 与 GND 之间。",
+      "confidence": "confirmed",
+      "attributes": {
+        "analog_supply": "U1 pins 1,43,46",
+        "analog_3v3": "U1 pins 3,4",
+        "cpu_supply": "U1 pin 37",
+        "rtc_supply": "U1 pin 19",
+        "bulk_decoupling": "C3/C4 4.7uF/6.3V",
+        "local_decoupling": "C5-C12 470nF/10V"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "f1897d180c6bb2fe8600104f62c7814079568a7c58ac70d75712aacb97780eb9",
+          "page": 1,
+          "locator": "左侧 U1 VCC_3V3 电源引脚与中下部 C3~C12 去耦阵列"
+        }
+      ]
+    },
+    {
+      "id": "interface.atom-5pin",
+      "category": "interface",
+      "subject": "J2 Atom 5 Pin",
+      "statement": "J2 pins 1~5 依次连接 VCC_3V3、CONN_GP22、CONN_GP19、CONN_GP5、CONN_GP33；R6 标为 NC，预留在 CONN_GP23 与 CONN_GP5 之间。",
+      "confidence": "confirmed",
+      "attributes": {
+        "pin_1": "VCC_3V3",
+        "pin_2": "CONN_GP22",
+        "pin_3": "CONN_GP19",
+        "pin_4": "CONN_GP5",
+        "pin_5": "CONN_GP33",
+        "optional_link": "R6 NC between CONN_GP23 and CONN_GP5"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "f1897d180c6bb2fe8600104f62c7814079568a7c58ac70d75712aacb97780eb9",
+          "page": 1,
+          "locator": "右上 J2 5P-2.54 与 R6 NC、CONN_GP23/GP5"
+        }
+      ]
+    },
+    {
+      "id": "interface.atom-4pin",
+      "category": "interface",
+      "subject": "J1 Atom 4 Pin",
+      "statement": "J1 pins 1~4 依次连接 CONN_GP21、CONN_GP25、VUSB_5V 与 GND。",
+      "confidence": "confirmed",
+      "attributes": {
+        "pin_1": "CONN_GP21",
+        "pin_2": "CONN_GP25",
+        "pin_3": "VUSB_5V",
+        "pin_4": "GND"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "f1897d180c6bb2fe8600104f62c7814079568a7c58ac70d75712aacb97780eb9",
+          "page": 1,
+          "locator": "右侧 J1 4PIN-2.54 pins 1~4 与左侧网络"
+        }
+      ]
+    },
+    {
+      "id": "interface.grove-port",
+      "category": "interface",
+      "subject": "J3 Grove 接口",
+      "statement": "J3 pins 1~4 依次连接 GROVE_G32、GROVE_G26、VUSB_5V 与 GND，对应 U1 GPIO32、GPIO26、5V 和地。",
+      "confidence": "confirmed",
+      "attributes": {
+        "pin_1": "GROVE_G32 U1 IO32",
+        "pin_2": "GROVE_G26 U1 IO26",
+        "pin_3": "VUSB_5V",
+        "pin_4": "GND"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "f1897d180c6bb2fe8600104f62c7814079568a7c58ac70d75712aacb97780eb9",
+          "page": 1,
+          "locator": "右侧 J3 PH2.0_4P_SMT 与左上 U1 IO32/IO26 的 GROVE_G32/GROVE_G26 网络"
+        }
+      ]
+    },
+    {
+      "id": "gpio.user-button",
+      "category": "gpio",
+      "subject": "BUTTON_G39",
+      "statement": "U1 IO39 连接 BUTTON_G39，R1 5.1KΩ 将该网络上拉到 VCC_3V3，S2 SMT_SW_PTS_820 按键将该网络接到 GND。",
+      "confidence": "confirmed",
+      "attributes": {
+        "mcu_pin": "U1 IO39",
+        "network": "BUTTON_G39",
+        "pullup": "R1 5.1KΩ to VCC_3V3",
+        "switch": "S2 SMT_SW_PTS_820 to GND"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "f1897d180c6bb2fe8600104f62c7814079568a7c58ac70d75712aacb97780eb9",
+          "page": 1,
+          "locator": "U1 pin 8 SENSOR_VN/IO39 与左下 BUTTON_G39-R1-S2-GND"
+        }
+      ]
+    },
+    {
+      "id": "reset.manual-reset",
+      "category": "reset",
+      "subject": "ESP32_EN 手动复位",
+      "statement": "U1 EN pin 9 连接 ESP32_EN，R2 5.1KΩ 上拉到 VCC_3V3，C14 470nF 接 GND，S1 SMT_SW_TS_015 按下时接 GND；跨按键的 C13 标为 NC。",
+      "confidence": "confirmed",
+      "attributes": {
+        "mcu_pin": "U1 pin 9 EN",
+        "network": "ESP32_EN",
+        "pullup": "R2 5.1KΩ",
+        "capacitor": "C14 470nF/10V",
+        "switch": "S1 SMT_SW_TS_015",
+        "optional_capacitor": "C13 NC"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "f1897d180c6bb2fe8600104f62c7814079568a7c58ac70d75712aacb97780eb9",
+          "page": 1,
+          "locator": "U1 pin 9 EN 与下部 ESP32_EN-R2-C14-S1-C13-GND"
+        }
+      ]
+    },
+    {
+      "id": "rf.pcb-antenna-path",
+      "category": "rf",
+      "subject": "ESP32 板载天线路径",
+      "statement": "U1 LNA_IN pin 2 的 ANT_LNA 网络经 C26 0R、C1 TBD/0R 到 ANT1 PROANT_440；L1 与 C2 为到 GND 的 TBD/NC 匹配位。",
+      "confidence": "confirmed",
+      "attributes": {
+        "radio_pin": "U1 pin 2 LNA_IN",
+        "net": "ANT_LNA",
+        "series_1": "C26 0R",
+        "series_2": "C1 TBD/0R",
+        "shunt_1": "L1 TBD/NC to GND",
+        "shunt_2": "C2 TBD/NC to GND",
+        "antenna": "ANT1 PROANT_440"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "f1897d180c6bb2fe8600104f62c7814079568a7c58ac70d75712aacb97780eb9",
+          "page": 1,
+          "locator": "上部 U1 LNA_IN-ANT_LNA-C26-L1-C1-C2-ANT1 PROANT_440"
+        }
+      ]
+    },
+    {
+      "id": "rf.optional-ipex",
+      "category": "rf",
+      "subject": "J5 IPEX 预留路径",
+      "statement": "J5 IPEX 的信号 pin 1 通过 C25 连接 ANT_LNA，C25 标为 NC；J5 外壳 pins 2/3 接 GND。",
+      "confidence": "confirmed",
+      "attributes": {
+        "connector": "J5 IPEX",
+        "signal_pin": "pin 1",
+        "link": "C25 NC to ANT_LNA",
+        "ground_pins": "2,3"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "f1897d180c6bb2fe8600104f62c7814079568a7c58ac70d75712aacb97780eb9",
+          "page": 1,
+          "locator": "上部 J5 IPEX-C25 NC-ANT_LNA 与两侧 GND"
+        }
+      ]
+    },
+    {
+      "id": "other.resource-product-mismatch",
+      "category": "other",
+      "subject": "Atomic Display Base 原理图资源覆盖范围",
+      "statement": "当前资源页未显示产品正文中的 GW1NR-9C、LT8618SX、RGB 视频总线、电源转换或显示输出连接器，且页面最高层器件为 ESP32-V3-02；无法由此资源确认 Atomic Display Base 的核心硬件。",
+      "confidence": "uncertain",
+      "attributes": {
+        "local_assets": 1,
+        "gw1nr_9c_visible": false,
+        "lt8618sx_visible": false,
+        "rgb_bus_visible": false,
+        "display_connector_visible": false,
+        "highest_level_component": "ESP32-V3-02",
+        "resource_association_requires_review": true
+      },
+      "evidence": [
+        {
+          "asset_sha256": "f1897d180c6bb2fe8600104f62c7814079568a7c58ac70d75712aacb97780eb9",
+          "page": 1,
+          "locator": "source_001 全页：U1 为 ESP32-V3-02，外围为天线、Atom/Grove 接口、按键和复位；未见 GW1NR-9C、LT8618SX、RGB 或显示输出连接器"
+        }
+      ]
+    }
+  ],
+  "needs_review": [
+    {
+      "id": "review.atomic-display-base-resource",
+      "fact_id": "other.resource-product-mismatch",
+      "question": "请核对 Atomic Display Base 的原理图图片 URL，或补充 Sch_AtomDisplay.pdf 中包含 GW1NR-9C、LT8618SX、RGB 总线、电源和显示输出连接器的页面。",
+      "reason": "当前唯一图片看起来属于 ESP32 Atom 控制器页面，不能支持产品核心显示桥接、电源与输出接口描述；旧发布文档中的相关内容因此不能继续作为已确认事实。",
+      "evidence": [
+        {
+          "asset_sha256": "f1897d180c6bb2fe8600104f62c7814079568a7c58ac70d75712aacb97780eb9",
+          "page": 1,
+          "locator": "source_001 全页的器件与网络范围"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "dry_run": false,
+  "failed": 0,
+  "published": 1,
+  "results": [
+    {
+      "backup": null,
+      "draft_action": "unchanged",
+      "dry_run": false,
+      "errors": [],
+      "needs_review": 4,
+      "product_id": "unit-lorawan868-9340b4ba3b1b",
+      "product_name": "Unit LoRaWAN868",
+      "publish_action": "unchanged",
+      "sha256": "8621449cd68250cf3379ab188395dc7bd7b6c881b205cf155d206720829f9d92",
+      "status": "valid",
+      "uncertain_facts": 4
+    }
+  ],
+  "schema_version": 1
+}

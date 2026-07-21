@@ -1,0 +1,230 @@
+{
+  "schema_version": 1,
+  "generator": "schematic_describer",
+  "product": {
+    "product_id": "unit-extencoder-afea3e9f9b59",
+    "product_name": "Unit ExtEncoder",
+    "sku": "U161",
+    "source_path": "unit/ExtEncoder Unit.md",
+    "source_sha256": "ad0eb4f1c5b0c86d45c34a55eeec410da5395785a4f70b907998250cdde7f3b9",
+    "input_sha256": "5f1d7117059f37acacf364ec10a593ab5f7e05521ce301ee36951776eecd9f9f"
+  },
+  "schematic_assets": [
+    {
+      "sha256": "db8136665eae5ac861966fedc84e74452ef569efff09eeb7c0abdb0ed28184f9",
+      "source_url": "https://m5stack-doc.oss-cn-shenzhen.aliyuncs.com/616/SCH_UNIT_EXTEncoder_sch_01.png",
+      "pages": [1]
+    }
+  ],
+  "summary": "Unit ExtEncoder 以 U1 STM32F030F4P6 为控制器，从 P6 接收 A1、B1、Z1 三路编码器信号，并通过 J1 Grove 接口的 SCL、SDA 与主机通信。VCC_5V 经 U2 HX6306 转换为 3V3，分别为控制器和输入上拉网络供电。板上还提供 J2 五针 SWD 调试接口、NRST 复位网络、BOOT0 下拉以及 P6 电源入口的 5 V TVS 保护。",
+  "keywords": ["Unit ExtEncoder", "U161", "STM32F030F4P6", "HX6306", "GROVE 4P", "I2C", "0x59", "SCL", "SDA", "A1", "B1", "Z1", "ABZ encoder", "P6", "J1", "J2", "SWD_5P", "MCU_SWDIO", "MCU_SWCLK", "NRST", "BOOT0", "VCC_5V", "3V3", "TVS 5V", "PA4", "PA6", "PA7", "PA9", "PA10", "PA13", "PA14", "12-bit"],
+  "components": [
+    {
+      "reference": "U1",
+      "part_number": "STM32F030F4P6",
+      "role": "编码器信号采集与 I2C 通信控制器",
+      "evidence": [{"asset_sha256": "db8136665eae5ac861966fedc84e74452ef569efff09eeb7c0abdb0ed28184f9", "page": 1, "locator": "页 1 网格 C1-C2，U1 器件框下方标注 STM32F030F4P6"}]
+    },
+    {
+      "reference": "U2",
+      "part_number": "HX6306",
+      "role": "VCC_5V 至 3V3 电源转换器",
+      "evidence": [{"asset_sha256": "db8136665eae5ac861966fedc84e74452ef569efff09eeb7c0abdb0ed28184f9", "page": 1, "locator": "页 1 网格 B2，U2 标注 HX6306，VIN/VOUT 分别连接 VCC_5V/3V3"}]
+    },
+    {
+      "reference": "J1",
+      "part_number": "GROVE 4P",
+      "role": "主机侧 I2C 与 5 V 电源接口",
+      "evidence": [{"asset_sha256": "db8136665eae5ac861966fedc84e74452ef569efff09eeb7c0abdb0ed28184f9", "page": 1, "locator": "页 1 网格 B1，J1 GROVE 4P，端子标注 SCL、SDA、5V、GND"}]
+    },
+    {
+      "reference": "P6",
+      "part_number": "Header 5",
+      "role": "A/B/Z 编码器信号与 5 V 电源输入接口",
+      "evidence": [{"asset_sha256": "db8136665eae5ac861966fedc84e74452ef569efff09eeb7c0abdb0ed28184f9", "page": 1, "locator": "页 1 网格 B3，P6 Header 5，1 至 5 脚连接 A1、B1、Z1、VCC_5V、GND"}]
+    },
+    {
+      "reference": "J2",
+      "part_number": "SWD_5P",
+      "role": "五针 SWD 调试与复位接口",
+      "evidence": [{"asset_sha256": "db8136665eae5ac861966fedc84e74452ef569efff09eeb7c0abdb0ed28184f9", "page": 1, "locator": "页 1 网格 C3，J2 SWD_5P，端子标注 VCC、SWCLK、SWDIO、NRST、GND"}]
+    },
+    {
+      "reference": "D1",
+      "part_number": "TVS 5V",
+      "role": "P6 的 VCC_5V 对地瞬态保护器件",
+      "evidence": [{"asset_sha256": "db8136665eae5ac861966fedc84e74452ef569efff09eeb7c0abdb0ed28184f9", "page": 1, "locator": "页 1 网格 B3，D1 标注 TVS 5V，跨接 VCC_5V 与 GND"}]
+    }
+  ],
+  "facts": [
+    {
+      "id": "system.controller",
+      "category": "system",
+      "subject": "U1",
+      "statement": "U1 的器件型号为 STM32F030F4P6，连接三路编码器输入、I2C 和 SWD 网络。",
+      "confidence": "confirmed",
+      "attributes": {"reference": "U1", "part_number": "STM32F030F4P6", "encoder_inputs": "A1,B1,Z1", "host_bus": "I2C", "debug_bus": "SWD"},
+      "evidence": [{"asset_sha256": "db8136665eae5ac861966fedc84e74452ef569efff09eeb7c0abdb0ed28184f9", "page": 1, "locator": "页 1 网格 C1-C2，U1 型号及左右两侧网络标注"}]
+    },
+    {
+      "id": "gpio.encoder_inputs",
+      "category": "gpio",
+      "subject": "U1 编码器输入映射",
+      "statement": "Z1、A1、B1 分别连接 U1 的 PA4 引脚 10、PA6 引脚 12、PA7 引脚 13。",
+      "confidence": "confirmed",
+      "attributes": {"Z1": "PA4/pin 10", "A1": "PA6/pin 12", "B1": "PA7/pin 13"},
+      "evidence": [{"asset_sha256": "db8136665eae5ac861966fedc84e74452ef569efff09eeb7c0abdb0ed28184f9", "page": 1, "locator": "页 1 网格 C1，U1 左侧 Z1/A1/B1 网络与 PA4/PA6/PA7 引脚号"}]
+    },
+    {
+      "id": "interface.p6",
+      "category": "interface",
+      "subject": "P6 编码器接口",
+      "statement": "P6 的 1 至 5 脚依次连接 A1、B1、Z1、VCC_5V 和 GND；A1、B1、Z1 为流向 U1 的输入网络。",
+      "confidence": "confirmed",
+      "attributes": {"reference": "P6", "pinout": "1:A1,2:B1,3:Z1,4:VCC_5V,5:GND", "signal_direction": "A1/B1/Z1: input to U1", "signal_level_rail": "3V3 pull-up"},
+      "evidence": [{"asset_sha256": "db8136665eae5ac861966fedc84e74452ef569efff09eeb7c0abdb0ed28184f9", "page": 1, "locator": "页 1 网格 B3，P6 脚号、A1/B1/Z1/VCC_5V 网络及第 5 脚接地连线"}]
+    },
+    {
+      "id": "analog.encoder_filter",
+      "category": "analog",
+      "subject": "A1/B1/Z1 输入整形",
+      "statement": "A1、B1、Z1 各由一只 10 kΩ 电阻上拉至 3V3，并各由一只 100 nF 电容连接 GND：对应关系为 A1-R1/C4、B1-R2/C6、Z1-R8/C12。",
+      "confidence": "confirmed",
+      "attributes": {"A1_network": "R1 10k pull-up,C4 100nF to GND", "B1_network": "R2 10k pull-up,C6 100nF to GND", "Z1_network": "R8 10k pull-up,C12 100nF to GND", "pullup_rail": "3V3"},
+      "evidence": [{"asset_sha256": "db8136665eae5ac861966fedc84e74452ef569efff09eeb7c0abdb0ed28184f9", "page": 1, "locator": "页 1 网格 B3，R1/R2/R8、C4/C6/C12 与 A1/B1/Z1 的连接"}]
+    },
+    {
+      "id": "interface.grove_j1",
+      "category": "interface",
+      "subject": "J1 Grove 接口",
+      "statement": "J1 的四个端子依次标注 SCL、SDA、5V 和 GND，对应网络为 SCL、SDA、VCC_5V 和 GND。",
+      "confidence": "confirmed",
+      "attributes": {"reference": "J1", "terminals": "SCL,SDA,5V,GND", "networks": "SCL,SDA,VCC_5V,GND", "signal_direction": "SCL/SDA bidirectional"},
+      "evidence": [{"asset_sha256": "db8136665eae5ac861966fedc84e74452ef569efff09eeb7c0abdb0ed28184f9", "page": 1, "locator": "页 1 网格 B1，J1 GROVE 4P 端子文字与右侧网络"}]
+    },
+    {
+      "id": "bus.i2c",
+      "category": "bus",
+      "subject": "U1 与 J1 的 I2C 总线",
+      "statement": "J1 的 SCL、SDA 网络分别连接 U1 的 PA9 引脚 17、PA10 引脚 18；R15、R16 均为 10 kΩ，并将 SCL、SDA 上拉至 3V3。",
+      "confidence": "confirmed",
+      "attributes": {"controller": "U1", "connector": "J1", "scl": "PA9/pin 17", "sda": "PA10/pin 18", "scl_pullup": "R15 10k to 3V3", "sda_pullup": "R16 10k to 3V3"},
+      "evidence": [{"asset_sha256": "db8136665eae5ac861966fedc84e74452ef569efff09eeb7c0abdb0ed28184f9", "page": 1, "locator": "页 1 网格 B1 与 C1，J1 SCL/SDA、R15/R16 及 U1 PA9/PA10 网络标注"}]
+    },
+    {
+      "id": "address.i2c",
+      "category": "address",
+      "subject": "Unit ExtEncoder I2C 地址",
+      "statement": "产品正文给出 I2C 地址 0x59，但本页原理图没有地址标注或地址选择网络，无法仅由原理图确认。",
+      "confidence": "uncertain",
+      "attributes": {"documented_address": "0x59", "schematic_address": null},
+      "evidence": [{"asset_sha256": "db8136665eae5ac861966fedc84e74452ef569efff09eeb7c0abdb0ed28184f9", "page": 1, "locator": "页 1 网格 B1-C1，完整 SCL/SDA 链路仅显示上拉与 U1 引脚，未显示地址值或地址选择网络"}]
+    },
+    {
+      "id": "power.regulator",
+      "category": "power",
+      "subject": "U2 电源转换",
+      "statement": "U2 HX6306 的 VIN 引脚 3 接 VCC_5V，VOUT 引脚 2 输出 3V3，GND 引脚 1 接地。",
+      "confidence": "confirmed",
+      "attributes": {"reference": "U2", "part_number": "HX6306", "vin_pin": 3, "input_rail": "VCC_5V", "vout_pin": 2, "output_rail": "3V3", "gnd_pin": 1},
+      "evidence": [{"asset_sha256": "db8136665eae5ac861966fedc84e74452ef569efff09eeb7c0abdb0ed28184f9", "page": 1, "locator": "页 1 网格 B2，U2 VIN/VOUT/GND 引脚号及 VCC_5V、3V3、GND 网络"}]
+    },
+    {
+      "id": "power.regulator_decoupling",
+      "category": "power",
+      "subject": "U2 输入输出去耦",
+      "statement": "U2 输入侧 C5 为 100 nF，跨接 VCC_5V 与 GND；输出侧 C7 100 nF 和 C8 10 uF 并联在 3V3 与 GND 之间。",
+      "confidence": "confirmed",
+      "attributes": {"input_capacitor": "C5 100nF", "output_capacitors": "C7 100nF,C8 10uF", "input_rail": "VCC_5V", "output_rail": "3V3"},
+      "evidence": [{"asset_sha256": "db8136665eae5ac861966fedc84e74452ef569efff09eeb7c0abdb0ed28184f9", "page": 1, "locator": "页 1 网格 B2，U2 左右两侧 C5、C7、C8 及电源网络"}]
+    },
+    {
+      "id": "power.mcu",
+      "category": "power",
+      "subject": "U1 供电",
+      "statement": "U1 的 VDD 引脚 16 和 VDDA 引脚 5 连接 3V3，VSS 引脚 15 连接 GND。",
+      "confidence": "confirmed",
+      "attributes": {"supply_pins": "VDD/pin 16,VDDA/pin 5", "supply_rail": "3V3", "ground_pin": "VSS/pin 15"},
+      "evidence": [{"asset_sha256": "db8136665eae5ac861966fedc84e74452ef569efff09eeb7c0abdb0ed28184f9", "page": 1, "locator": "页 1 网格 C1-C2，U1 VDD/VDDA/VSS 引脚及 3V3/GND 网络"}]
+    },
+    {
+      "id": "power.mcu_decoupling",
+      "category": "power",
+      "subject": "U1 电源去耦",
+      "statement": "C10 100 nF 与 C11 10 uF 并联在 U1 的 3V3 供电节点和 GND 之间。",
+      "confidence": "confirmed",
+      "attributes": {"capacitors": "C10 100nF,C11 10uF", "rail": "3V3"},
+      "evidence": [{"asset_sha256": "db8136665eae5ac861966fedc84e74452ef569efff09eeb7c0abdb0ed28184f9", "page": 1, "locator": "页 1 网格 C1，U1 VDD/VDDA 左侧 C10、C11 与 GND"}]
+    },
+    {
+      "id": "protection.vcc_5v",
+      "category": "protection",
+      "subject": "P6 VCC_5V 保护",
+      "statement": "D1 标注为 TVS 5V，跨接 P6 的 VCC_5V 网络与 GND。",
+      "confidence": "confirmed",
+      "attributes": {"reference": "D1", "part_number": "TVS 5V", "protected_net": "VCC_5V", "return_net": "GND"},
+      "evidence": [{"asset_sha256": "db8136665eae5ac861966fedc84e74452ef569efff09eeb7c0abdb0ed28184f9", "page": 1, "locator": "页 1 网格 B3，P6 下方 D1 与 VCC_5V/GND 连线"}]
+    },
+    {
+      "id": "reset.nrst",
+      "category": "reset",
+      "subject": "U1 NRST",
+      "statement": "U1 NRST 引脚 4 连接 NRST 网络；R7 10 kΩ 将其上拉至 3V3，C9 100 nF 将其连接至 GND，并引出到 J2。",
+      "confidence": "confirmed",
+      "attributes": {"mcu_pin": "NRST/pin 4", "pullup": "R7 10k to 3V3", "capacitor": "C9 100nF to GND", "debug_connector": "J2"},
+      "evidence": [{"asset_sha256": "db8136665eae5ac861966fedc84e74452ef569efff09eeb7c0abdb0ed28184f9", "page": 1, "locator": "页 1 网格 C2-C3，U1 NRST、R7、C9 与 J2 NRST 网络"}]
+    },
+    {
+      "id": "gpio.boot0",
+      "category": "gpio",
+      "subject": "U1 BOOT0",
+      "statement": "U1 BOOT0 引脚 1 通过 R6 10 kΩ 下拉至 GND。",
+      "confidence": "confirmed",
+      "attributes": {"mcu_pin": "BOOT0/pin 1", "pulldown": "R6 10k to GND"},
+      "evidence": [{"asset_sha256": "db8136665eae5ac861966fedc84e74452ef569efff09eeb7c0abdb0ed28184f9", "page": 1, "locator": "页 1 网格 C2，U1 BOOT0 引脚 1、R6 10K 与 GND"}]
+    },
+    {
+      "id": "debug.swd",
+      "category": "debug",
+      "subject": "U1 与 J2 的 SWD 接口",
+      "statement": "U1 PA13 引脚 19 的 MCU_SWDIO 和 PA14 引脚 20 的 MCU_SWCLK 引出到 J2；J2 还引出 3V3、NRST 和 GND。",
+      "confidence": "confirmed",
+      "attributes": {"swdio": "U1 PA13/pin 19 -> J2 MCU_SWDIO", "swclk": "U1 PA14/pin 20 -> J2 MCU_SWCLK", "connector_signals": "3V3,MCU_SWCLK,MCU_SWDIO,NRST,GND"},
+      "evidence": [{"asset_sha256": "db8136665eae5ac861966fedc84e74452ef569efff09eeb7c0abdb0ed28184f9", "page": 1, "locator": "页 1 网格 C1 与 C3，U1 PA13/PA14 网络及 J2 SWD_5P 端子"}]
+    },
+    {
+      "id": "clock.external",
+      "category": "clock",
+      "subject": "U1 时钟连接",
+      "statement": "U1 的 PF0-OSC_IN 引脚 2 和 PF1-OSC_OUT 引脚 3 在本页未连接外部晶振或时钟器件。",
+      "confidence": "confirmed",
+      "attributes": {"osc_in": "PF0-OSC_IN/pin 2 unconnected", "osc_out": "PF1-OSC_OUT/pin 3 unconnected", "external_crystal": false},
+      "evidence": [{"asset_sha256": "db8136665eae5ac861966fedc84e74452ef569efff09eeb7c0abdb0ed28184f9", "page": 1, "locator": "页 1 网格 C2，U1 PF0-OSC_IN 与 PF1-OSC_OUT 引脚短线无外接器件"}]
+    },
+    {
+      "id": "system.sampling_resolution",
+      "category": "system",
+      "subject": "编码器采样精度",
+      "statement": "产品正文描述 12 位采样精度，但本页原理图未标注采样位数或相应配置，无法仅由原理图确认。",
+      "confidence": "uncertain",
+      "attributes": {"documented_resolution_bits": 12, "schematic_resolution_bits": null},
+      "evidence": [{"asset_sha256": "db8136665eae5ac861966fedc84e74452ef569efff09eeb7c0abdb0ed28184f9", "page": 1, "locator": "页 1 网格 B3-C2，A1/B1/Z1 输入链路与 U1 连接未标注采样位数"}]
+    }
+  ],
+  "needs_review": [
+    {
+      "id": "review.i2c_address",
+      "fact_id": "address.i2c",
+      "question": "固件定义的 Unit ExtEncoder I2C 从机地址是否为产品正文所列 0x59？",
+      "reason": "原理图仅显示 I2C 物理连接，没有地址值、地址选择引脚或固件定义。",
+      "evidence": [{"asset_sha256": "db8136665eae5ac861966fedc84e74452ef569efff09eeb7c0abdb0ed28184f9", "page": 1, "locator": "页 1 网格 B1-C1，J1 至 U1 的 SCL/SDA 完整连接区域"}]
+    },
+    {
+      "id": "review.sampling_resolution",
+      "fact_id": "system.sampling_resolution",
+      "question": "产品正文所述 12 位采样精度具体由固件计数范围还是其他处理逻辑实现？",
+      "reason": "原理图只显示数字输入的 RC 网络及 MCU 引脚，未给出采样分辨率定义。",
+      "evidence": [{"asset_sha256": "db8136665eae5ac861966fedc84e74452ef569efff09eeb7c0abdb0ed28184f9", "page": 1, "locator": "页 1 网格 B3-C2，P6 A1/B1/Z1 至 U1 的信号链路"}]
+    }
+  ]
+}

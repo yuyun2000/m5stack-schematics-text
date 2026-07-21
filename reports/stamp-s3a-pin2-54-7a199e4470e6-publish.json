@@ -1,0 +1,21 @@
+{
+  "dry_run": false,
+  "failed": 0,
+  "published": 1,
+  "results": [
+    {
+      "backup": null,
+      "draft_action": "unchanged",
+      "dry_run": false,
+      "errors": [],
+      "needs_review": 4,
+      "product_id": "stamp-s3a-pin2-54-7a199e4470e6",
+      "product_name": "Stamp-S3A PIN2.54",
+      "publish_action": "unchanged",
+      "sha256": "a610231c920ddabeed5556d28af8b1fb7a701de7dd7545bf0604690eeeab6cbf",
+      "status": "valid",
+      "uncertain_facts": 4
+    }
+  ],
+  "schema_version": 1
+}

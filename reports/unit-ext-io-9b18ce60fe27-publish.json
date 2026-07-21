@@ -1,0 +1,21 @@
+{
+  "dry_run": false,
+  "failed": 0,
+  "published": 1,
+  "results": [
+    {
+      "backup": null,
+      "draft_action": "unchanged",
+      "dry_run": false,
+      "errors": [],
+      "needs_review": 2,
+      "product_id": "unit-ext-io-9b18ce60fe27",
+      "product_name": "Unit EXT.IO",
+      "publish_action": "unchanged",
+      "sha256": "7fe176e4a2832108d061d906d0e0a24503af9adda0b3d85d34fc9c7df3ac61bf",
+      "status": "valid",
+      "uncertain_facts": 2
+    }
+  ],
+  "schema_version": 1
+}

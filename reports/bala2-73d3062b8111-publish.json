@@ -1,0 +1,21 @@
+{
+  "dry_run": false,
+  "failed": 0,
+  "published": 1,
+  "results": [
+    {
+      "backup": null,
+      "draft_action": "unchanged",
+      "dry_run": false,
+      "errors": [],
+      "needs_review": 1,
+      "product_id": "bala2-73d3062b8111",
+      "product_name": "Bala2",
+      "publish_action": "unchanged",
+      "sha256": "3da7d464c1a057b29b10e17b791d40c97b346c39feb40539b28ba909c9f999e1",
+      "status": "valid",
+      "uncertain_facts": 1
+    }
+  ],
+  "schema_version": 1
+}

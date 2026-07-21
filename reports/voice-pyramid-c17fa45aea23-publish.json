@@ -1,0 +1,21 @@
+{
+  "dry_run": false,
+  "failed": 0,
+  "published": 1,
+  "results": [
+    {
+      "backup": null,
+      "draft_action": "unchanged",
+      "dry_run": false,
+      "errors": [],
+      "needs_review": 5,
+      "product_id": "voice-pyramid-c17fa45aea23",
+      "product_name": "Voice Pyramid",
+      "publish_action": "unchanged",
+      "sha256": "83601e13651270608665364cbe9712e2d2ac7ed81e7f2d420dd145075cf39db7",
+      "status": "valid",
+      "uncertain_facts": 5
+    }
+  ],
+  "schema_version": 1
+}

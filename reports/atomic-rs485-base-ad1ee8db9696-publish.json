@@ -1,0 +1,21 @@
+{
+  "dry_run": false,
+  "failed": 0,
+  "published": 1,
+  "results": [
+    {
+      "backup": null,
+      "draft_action": "unchanged",
+      "dry_run": false,
+      "errors": [],
+      "needs_review": 1,
+      "product_id": "atomic-rs485-base-ad1ee8db9696",
+      "product_name": "Atomic RS485 Base",
+      "publish_action": "unchanged",
+      "sha256": "7b6c9cb0bbd3af45160fdd98a2cf406fdab28cbe5d953a95f6d0e409b55fe6bf",
+      "status": "valid",
+      "uncertain_facts": 1
+    }
+  ],
+  "schema_version": 1
+}

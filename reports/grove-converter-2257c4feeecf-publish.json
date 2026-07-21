@@ -1,0 +1,21 @@
+{
+  "dry_run": false,
+  "failed": 0,
+  "published": 1,
+  "results": [
+    {
+      "backup": null,
+      "draft_action": "unchanged",
+      "dry_run": false,
+      "errors": [],
+      "needs_review": 0,
+      "product_id": "grove-converter-2257c4feeecf",
+      "product_name": "Grove Converter",
+      "publish_action": "unchanged",
+      "sha256": "5bfb6d7566ae0f86beb0abbe7b1bb79ca44c15db8252ff0fd33a394ad7d8dc5f",
+      "status": "valid",
+      "uncertain_facts": 0
+    }
+  ],
+  "schema_version": 1
+}

@@ -1,0 +1,21 @@
+{
+  "dry_run": false,
+  "failed": 0,
+  "published": 1,
+  "results": [
+    {
+      "backup": null,
+      "draft_action": "unchanged",
+      "dry_run": false,
+      "errors": [],
+      "needs_review": 1,
+      "product_id": "stamp-s3-pin2-54-5c5f339edd77",
+      "product_name": "Stamp-S3 PIN2.54",
+      "publish_action": "unchanged",
+      "sha256": "2ae04486609a1379685d813f695bfed91110dcd22cb888b511a611acfe2fce76",
+      "status": "valid",
+      "uncertain_facts": 1
+    }
+  ],
+  "schema_version": 1
+}

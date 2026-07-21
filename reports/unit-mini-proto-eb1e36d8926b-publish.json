@@ -1,0 +1,21 @@
+{
+  "dry_run": false,
+  "failed": 0,
+  "published": 1,
+  "results": [
+    {
+      "backup": null,
+      "draft_action": "unchanged",
+      "dry_run": false,
+      "errors": [],
+      "needs_review": 3,
+      "product_id": "unit-mini-proto-eb1e36d8926b",
+      "product_name": "Unit Mini Proto",
+      "publish_action": "unchanged",
+      "sha256": "821f5f0b84b38e4099813301cad57a7dfa725ab6c215eb287c34cdc37eb6a473",
+      "status": "valid",
+      "uncertain_facts": 3
+    }
+  ],
+  "schema_version": 1
+}

@@ -1,0 +1,21 @@
+{
+  "dry_run": false,
+  "failed": 0,
+  "published": 1,
+  "results": [
+    {
+      "backup": null,
+      "draft_action": "unchanged",
+      "dry_run": false,
+      "errors": [],
+      "needs_review": 11,
+      "product_id": "cores3-thread-br-3d5cedb82525",
+      "product_name": "CoreS3 Thread BR",
+      "publish_action": "unchanged",
+      "sha256": "8904b20fc4e24aa07ae3db4e1a8227ef97d7095d899458a373fd354b29e7ad85",
+      "status": "valid",
+      "uncertain_facts": 11
+    }
+  ],
+  "schema_version": 1
+}

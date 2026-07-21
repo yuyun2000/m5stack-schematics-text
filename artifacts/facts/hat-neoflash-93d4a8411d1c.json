@@ -1,0 +1,178 @@
+{
+  "schema_version": 1,
+  "generator": "schematic_describer",
+  "product": {
+    "product_id": "hat-neoflash-93d4a8411d1c",
+    "product_name": "Hat NeoFlash",
+    "sku": "U071",
+    "source_path": "hat/hat-neoflash.md",
+    "source_sha256": "2be120a1cd8f1442d2c0662ff5a3915e9d6b720db0641b221ee77e6f7da82b36",
+    "input_sha256": "ab4bb89ea9ddcca7495f9eb7cebe4121f4492d1ae1402b7e30273be65d26a1cf"
+  },
+  "schematic_assets": [
+    {
+      "sha256": "80b8ac7a8a9d4932e486eef3a63d2a062847bbf5130159a766c4cd4535779cd4",
+      "source_url": "https://static-cdn.m5stack.com/resource/docs/products/hat/hat-neoflash/hat-neoflash_sch_01.webp",
+      "pages": [1]
+    }
+  ],
+  "summary": "Hat NeoFlash 的本地资源显示 126 个 RGB 像素按编号 1 至 126 串联，数据从 StickIO G26 输入到第 1 个像素并沿链传递。灯链使用 StickIO 的 5VO 与 GND 供电，G36、G0、BAT、3V3 和 5V1 未接入该功能图。资源未展开像素内部器件、去耦或保护电路，也未直接标注 WS2812 料号和 7×18 物理排列。",
+  "keywords": [
+    "Hat NeoFlash",
+    "U071",
+    "126 RGB",
+    "RGB1-RGB126",
+    "G26",
+    "DATA",
+    "5VO",
+    "GND",
+    "STICKIO",
+    "WS2812",
+    "7x18 matrix",
+    "daisy chain",
+    "single-wire RGB",
+    "G36",
+    "G0",
+    "BAT",
+    "3V3",
+    "5V1",
+    "24-bit RGB",
+    "LED matrix"
+  ],
+  "components": [
+    {
+      "reference": "RGB1-RGB126",
+      "part_number": null,
+      "role": "126 个串联可寻址 RGB 像素；资源未标具体器件型号",
+      "evidence": [{"asset_sha256": "80b8ac7a8a9d4932e486eef3a63d2a062847bbf5130159a766c4cd4535779cd4", "page": 1, "locator": "左上 RGB 像素链，编号 1、2、…、125、126"}]
+    },
+    {
+      "reference": "HAT interface",
+      "part_number": "StickIO 8-pin",
+      "role": "提供 G26 数据、5VO 电源与 GND",
+      "evidence": [{"asset_sha256": "80b8ac7a8a9d4932e486eef3a63d2a062847bbf5130159a766c4cd4535779cd4", "page": 1, "locator": "右侧 8 针括号 GND/5VO/G26/G36/G0/BAT/3V3/5V1"}]
+    }
+  ],
+  "facts": [
+    {
+      "id": "system.architecture",
+      "category": "system",
+      "subject": "RGB 灯链架构",
+      "statement": "Hat NeoFlash 由 126 个 RGB 像素组成单向串联数据链，第 1 个像素接收 G26 数据，数据依次传递到第 126 个像素。",
+      "confidence": "confirmed",
+      "attributes": {"pixel_count": 126, "first_pixel": "RGB1", "last_pixel": "RGB126", "data_input": "G26", "topology": "daisy chain"},
+      "evidence": [{"asset_sha256": "80b8ac7a8a9d4932e486eef3a63d2a062847bbf5130159a766c4cd4535779cd4", "page": 1, "locator": "RGB1→RGB2→…→RGB125→RGB126 串联图"}]
+    },
+    {
+      "id": "component.pixel-count",
+      "category": "component",
+      "subject": "RGB 像素数量",
+      "statement": "功能图明确标出像素编号从 1 到 126，共 126 个 RGB 元件。",
+      "confidence": "confirmed",
+      "attributes": {"count": 126, "references": "RGB1-RGB126"},
+      "evidence": [{"asset_sha256": "80b8ac7a8a9d4932e486eef3a63d2a062847bbf5130159a766c4cd4535779cd4", "page": 1, "locator": "顶部编号 126、125、…、2、1"}]
+    },
+    {
+      "id": "bus.rgb-data",
+      "category": "bus",
+      "subject": "RGB 单线数据",
+      "statement": "G26 连接 RGB1 的数据输入，RGB1 输出连接 RGB2，后续像素同样逐级串接。",
+      "confidence": "confirmed",
+      "attributes": {"controller_pin": "G26", "entry": "RGB1", "direction": "G26 -> RGB1 -> RGB2 -> ... -> RGB126"},
+      "evidence": [{"asset_sha256": "80b8ac7a8a9d4932e486eef3a63d2a062847bbf5130159a766c4cd4535779cd4", "page": 1, "locator": "G26 线连接 RGB1，像素之间三线串接"}]
+    },
+    {
+      "id": "gpio.data",
+      "category": "gpio",
+      "subject": "数据 GPIO",
+      "statement": "Hat NeoFlash 唯一使用的主机控制信号为 G26。",
+      "confidence": "confirmed",
+      "attributes": {"data_gpio": "G26", "unused_gpio_labels": "G36; G0"},
+      "evidence": [{"asset_sha256": "80b8ac7a8a9d4932e486eef3a63d2a062847bbf5130159a766c4cd4535779cd4", "page": 1, "locator": "右侧 G26 有连线，G36/G0 为短引脚无功能连线"}]
+    },
+    {
+      "id": "power.led-supply",
+      "category": "power",
+      "subject": "LED 灯链供电",
+      "statement": "RGB 灯链电源连接 StickIO 5VO，回流连接 GND。",
+      "confidence": "confirmed",
+      "attributes": {"supply": "5VO", "return": "GND", "consumers": "RGB1-RGB126"},
+      "evidence": [{"asset_sha256": "80b8ac7a8a9d4932e486eef3a63d2a062847bbf5130159a766c4cd4535779cd4", "page": 1, "locator": "RGB1 供电/地线连接右侧 5VO/GND"}]
+    },
+    {
+      "id": "interface.stickio",
+      "category": "interface",
+      "subject": "StickIO 使用情况",
+      "statement": "功能图列出 GND、5VO、G26、G36、G0、BAT、3V3、5V1 八个 HAT 位置，其中仅 GND、5VO 与 G26 连接灯链。",
+      "confidence": "confirmed",
+      "attributes": {"used": "GND; 5VO; G26", "unused": "G36; G0; BAT; 3V3; 5V1"},
+      "evidence": [{"asset_sha256": "80b8ac7a8a9d4932e486eef3a63d2a062847bbf5130159a766c4cd4535779cd4", "page": 1, "locator": "右侧八项 StickIO 标签及连线"}]
+    },
+    {
+      "id": "component.pixel-model",
+      "category": "component",
+      "subject": "RGB 像素型号",
+      "statement": "产品正文称灯珠为 WS2812，但本地功能图只标 RGB，未显示具体型号、封装或订货料号。",
+      "confidence": "uncertain",
+      "attributes": {"document_model": "WS2812", "schematic_marking": "RGB", "count": 126},
+      "evidence": [{"asset_sha256": "80b8ac7a8a9d4932e486eef3a63d2a062847bbf5130159a766c4cd4535779cd4", "page": 1, "locator": "像素图标下只写 RGB"}]
+    },
+    {
+      "id": "interface.matrix-geometry",
+      "category": "interface",
+      "subject": "7×18 物理矩阵",
+      "statement": "功能图确认 126 个串联像素，但未画出产品正文所述 7×18 行列物理排列或像素编号到行列的映射。",
+      "confidence": "uncertain",
+      "attributes": {"confirmed_count": 126, "claimed_geometry": "7x18", "row_column_mapping": "not shown"},
+      "evidence": [{"asset_sha256": "80b8ac7a8a9d4932e486eef3a63d2a062847bbf5130159a766c4cd4535779cd4", "page": 1, "locator": "资源只画一维 RGB1-RGB126 链"}]
+    },
+    {
+      "id": "bus.pixel-protocol",
+      "category": "bus",
+      "subject": "像素数据协议",
+      "statement": "本地资源未直接标注 24 位 RGB 帧格式、每色 8 位、时序、电平阈值或颜色顺序。",
+      "confidence": "uncertain",
+      "attributes": {"claimed_frame": "24-bit RGB", "claimed_channel_bits": "8 bits per color", "timing": "not shown", "color_order": "not shown"},
+      "evidence": [{"asset_sha256": "80b8ac7a8a9d4932e486eef3a63d2a062847bbf5130159a766c4cd4535779cd4", "page": 1, "locator": "G26 到 RGB 链无协议或时序文本"}]
+    },
+    {
+      "id": "power.current-decoupling",
+      "category": "power",
+      "subject": "整板功耗与去耦",
+      "statement": "功能图未显示每颗 RGB 的去耦电容、电源走线分配、限流/保险丝或 126 颗全亮时的最大电流。",
+      "confidence": "uncertain",
+      "attributes": {"decoupling": "not shown", "protection": "not shown", "maximum_current": "not shown", "supply_net": "5VO"},
+      "evidence": [{"asset_sha256": "80b8ac7a8a9d4932e486eef3a63d2a062847bbf5130159a766c4cd4535779cd4", "page": 1, "locator": "简化功能图只显示 RGB 链、5VO、GND、G26"}]
+    }
+  ],
+  "needs_review": [
+    {
+      "id": "review.pixel-model",
+      "fact_id": "component.pixel-model",
+      "question": "请用 BOM/PCB 确认 126 颗 RGB 的具体 WS2812 型号与封装。",
+      "reason": "本地资源只写 RGB。",
+      "evidence": [{"asset_sha256": "80b8ac7a8a9d4932e486eef3a63d2a062847bbf5130159a766c4cd4535779cd4", "page": 1, "locator": "RGB 像素图标"}]
+    },
+    {
+      "id": "review.matrix-geometry",
+      "fact_id": "interface.matrix-geometry",
+      "question": "请用 PCB/编号图确认 7×18 排列和 RGB1-RGB126 行列映射。",
+      "reason": "功能图仅画一维串联链。",
+      "evidence": [{"asset_sha256": "80b8ac7a8a9d4932e486eef3a63d2a062847bbf5130159a766c4cd4535779cd4", "page": 1, "locator": "RGB1-RGB126 一维链"}]
+    },
+    {
+      "id": "review.pixel-protocol",
+      "fact_id": "bus.pixel-protocol",
+      "question": "请用确认后的像素 datasheet 复核 24 位帧、颜色顺序和时序。",
+      "reason": "资源未标协议细节。",
+      "evidence": [{"asset_sha256": "80b8ac7a8a9d4932e486eef3a63d2a062847bbf5130159a766c4cd4535779cd4", "page": 1, "locator": "G26 数据链"}]
+    },
+    {
+      "id": "review.power-design",
+      "fact_id": "power.current-decoupling",
+      "question": "请用完整原理图/BOM 确认去耦、保护和最大电流预算。",
+      "reason": "当前资源是简化功能图，不包含电源细节。",
+      "evidence": [{"asset_sha256": "80b8ac7a8a9d4932e486eef3a63d2a062847bbf5130159a766c4cd4535779cd4", "page": 1, "locator": "5VO/GND 到 RGB 链"}]
+    }
+  ]
+}

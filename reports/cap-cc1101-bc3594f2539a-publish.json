@@ -1,0 +1,21 @@
+{
+  "dry_run": false,
+  "failed": 0,
+  "published": 1,
+  "results": [
+    {
+      "backup": null,
+      "draft_action": "unchanged",
+      "dry_run": false,
+      "errors": [],
+      "needs_review": 1,
+      "product_id": "cap-cc1101-bc3594f2539a",
+      "product_name": "Cap CC1101",
+      "publish_action": "unchanged",
+      "sha256": "20338e3576f92922e60ae852de80ba00b6dfb355b37cabe1d512c0efa0f547c4",
+      "status": "valid",
+      "uncertain_facts": 1
+    }
+  ],
+  "schema_version": 1
+}

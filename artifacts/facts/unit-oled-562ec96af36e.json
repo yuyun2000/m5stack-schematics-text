@@ -1,0 +1,213 @@
+{
+  "schema_version": 1,
+  "generator": "schematic_describer",
+  "product": {
+    "product_id": "unit-oled-562ec96af36e",
+    "product_name": "Unit OLED",
+    "sku": "U119",
+    "source_path": "unit/oled.md",
+    "source_sha256": "8bb338553487160d0b7a3fcc727571eb149a00543cf2d0310d25f4ea3bc19604",
+    "input_sha256": "c0944dde32503d74f68af98eb1f1adbf5df399073805ec921cf6fe14d0f5d622"
+  },
+  "schematic_assets": [
+    {
+      "sha256": "65164012e7d72976a990203d92f0b1d9f6fb52f4a609530d3d80f0e6fc0d8a8d",
+      "source_url": "https://m5stack-doc.oss-cn-shenzhen.aliyuncs.com/594/Sch_UNIT_OLED_v1.1_sch_01.png",
+      "pages": [1]
+    }
+  ],
+  "summary": "Unit OLED 通过 J1（HY-2.0_IIC）接入 5V、GND、SCL 和 SDA，板上以 4.7KΩ 电阻将两条 I2C 信号上拉到 3.3V。HT7533 将 5V 转换为 3.3V，SGM6601YTN5G/TR 升压电路产生标注为 8.5~9.5V 的 +9V，分别为 OLED_SH1107 模块的逻辑与高压部分供电。显示模块 U1 的 CLK/DIN 分别连接 SCL/SDA；原理图没有标出可直接复核的 I2C 地址。",
+  "keywords": [
+    "Unit OLED", "U119", "OLED_SH1107", "SH1107", "U1", "HT7533", "U2", "SGM6601YTN5G/TR", "U3", "HY-2.0_IIC", "J1", "I2C", "IIC_SCL", "IIC_SDA", "SCL", "SDA", "0x3C", "+5V", "+3.3V", "+9V", "8.5~9.5V", "VPP", "VCCOMH", "VDD", "IREF", "CLK", "DIN", "RST", "IM1", "R5", "R6", "4.7KΩ", "L1", "10uH", "D1", "1N4148WS T4"
+  ],
+  "components": [
+    {
+      "reference": "U1",
+      "part_number": "OLED_SH1107",
+      "role": "OLED 显示模块，使用 CLK/DIN 引脚接收 SCL/SDA，并由 +3.3V 与 +9V 电源轨供电",
+      "evidence": [{"asset_sha256": "65164012e7d72976a990203d92f0b1d9f6fb52f4a609530d3d80f0e6fc0d8a8d", "page": 1, "locator": "B3-B4：U1 符号标注 OLED_SH1107，列出 1~12 脚名称及相邻网络"}]
+    },
+    {
+      "reference": "U2",
+      "part_number": "HT7533",
+      "role": "将 +5V 转换为 +3.3V 的三端稳压器",
+      "evidence": [{"asset_sha256": "65164012e7d72976a990203d92f0b1d9f6fb52f4a609530d3d80f0e6fc0d8a8d", "page": 1, "locator": "B1-B2：U2 HT7533，VIN.2 接 +5V、VOUT.3 接 +3.3V、GND.1 接地"}]
+    },
+    {
+      "reference": "U3",
+      "part_number": "SGM6601YTN5G/TR",
+      "role": "配合 L1、D1 和反馈分压网络将 +5V 升压至 +9V",
+      "evidence": [{"asset_sha256": "65164012e7d72976a990203d92f0b1d9f6fb52f4a609530d3d80f0e6fc0d8a8d", "page": 1, "locator": "C1-C2：U3 SGM6601YTN5G/TR 及 Vin、SW、FB、EN、GND 引脚与外围升压网络"}]
+    },
+    {
+      "reference": "J1",
+      "part_number": "HY-2.0_IIC",
+      "role": "4 Pin 外部 I2C 与电源连接器",
+      "evidence": [{"asset_sha256": "65164012e7d72976a990203d92f0b1d9f6fb52f4a609530d3d80f0e6fc0d8a8d", "page": 1, "locator": "C3：J1 HY-2.0_IIC，1~4 脚分别标注 IIC_SCL、IIC_SDA、VCC、GND"}]
+    },
+    {
+      "reference": "L1",
+      "part_number": "10uH",
+      "role": "U3 升压转换器的储能电感",
+      "evidence": [{"asset_sha256": "65164012e7d72976a990203d92f0b1d9f6fb52f4a609530d3d80f0e6fc0d8a8d", "page": 1, "locator": "C1-C2：L1 标注 10uH，位于 +5V/Vin 与 D1、U3.SW 组成的开关节点之间"}]
+    },
+    {
+      "reference": "D1",
+      "part_number": "1N4148WS T4",
+      "role": "升压转换器的整流二极管，将开关节点连接到 +9V 输出",
+      "evidence": [{"asset_sha256": "65164012e7d72976a990203d92f0b1d9f6fb52f4a609530d3d80f0e6fc0d8a8d", "page": 1, "locator": "C2：D1 标注 1N4148WS T4，左接 L1/U3.SW 节点，右接 8.5~9.5V 输出"}]
+    },
+    {
+      "reference": "R5",
+      "part_number": "4.7KΩ",
+      "role": "SCL 到 +3.3V 的上拉电阻",
+      "evidence": [{"asset_sha256": "65164012e7d72976a990203d92f0b1d9f6fb52f4a609530d3d80f0e6fc0d8a8d", "page": 1, "locator": "C3：R5 4.7KΩ 从 +3.3V 连接至 SCL"}]
+    },
+    {
+      "reference": "R6",
+      "part_number": "4.7KΩ",
+      "role": "SDA 到 +3.3V 的上拉电阻",
+      "evidence": [{"asset_sha256": "65164012e7d72976a990203d92f0b1d9f6fb52f4a609530d3d80f0e6fc0d8a8d", "page": 1, "locator": "C3：R6 4.7KΩ 从 +3.3V 连接至 SDA"}]
+    },
+    {
+      "reference": "R7",
+      "part_number": "1.3MΩ",
+      "role": "U3 输出到 FB 的上侧反馈电阻",
+      "evidence": [{"asset_sha256": "65164012e7d72976a990203d92f0b1d9f6fb52f4a609530d3d80f0e6fc0d8a8d", "page": 1, "locator": "C2：R7 1.3MΩ 连接 8.5~9.5V 输出与 U3.FB 节点"}]
+    },
+    {
+      "reference": "R8",
+      "part_number": "200KΩ",
+      "role": "U3 FB 到 GND 的下侧反馈电阻",
+      "evidence": [{"asset_sha256": "65164012e7d72976a990203d92f0b1d9f6fb52f4a609530d3d80f0e6fc0d8a8d", "page": 1, "locator": "C2：R8 200KΩ 连接 U3.FB 节点与 GND"}]
+    }
+  ],
+  "facts": [
+    {
+      "id": "system.power-and-display-architecture",
+      "category": "system",
+      "subject": "Unit OLED",
+      "statement": "J1 引入 +5V 与 I2C 信号；U2 生成 +3.3V，U3 升压生成 +9V，U1 OLED_SH1107 使用 SCL/SDA 进行通信。",
+      "confidence": "confirmed",
+      "attributes": {"input_connector": "J1", "input_supply": "+5V", "logic_supply": "+3.3V", "display_high_voltage": "+9V", "display": "U1 OLED_SH1107", "bus": "I2C"},
+      "evidence": [{"asset_sha256": "65164012e7d72976a990203d92f0b1d9f6fb52f4a609530d3d80f0e6fc0d8a8d", "page": 1, "locator": "全页：B1-B4 的 U2/U1 电源与显示电路、C1-C3 的 U3 升压与 J1 接口"}]
+    },
+    {
+      "id": "interface.j1-pinout",
+      "category": "interface",
+      "subject": "J1",
+      "statement": "J1 的 1 脚 IIC_SCL 接 SCL，2 脚 IIC_SDA 接 SDA，3 脚 VCC 接 +5V，4 脚 GND 接地。",
+      "confidence": "confirmed",
+      "attributes": {"connector": "HY-2.0_IIC", "pin_1": "IIC_SCL / SCL", "pin_2": "IIC_SDA / SDA", "pin_3": "VCC / +5V", "pin_4": "GND", "signal_level": "SCL/SDA 上拉至 +3.3V", "direction": "SCL/SDA 双向开漏总线；电源由 J1 输入板内"},
+      "evidence": [{"asset_sha256": "65164012e7d72976a990203d92f0b1d9f6fb52f4a609530d3d80f0e6fc0d8a8d", "page": 1, "locator": "C3：J1.1~J1.4 的 IIC_SCL、IIC_SDA、VCC、GND 标注及左侧 SCL/SDA、+5V/GND 网络"}]
+    },
+    {
+      "id": "bus.i2c-display",
+      "category": "bus",
+      "subject": "J1 与 U1",
+      "statement": "J1 的 SCL/SDA 网络分别直接连接 U1 的 CLK.9 与 DIN.10，构成显示模块的 I2C 信号路径。",
+      "confidence": "confirmed",
+      "attributes": {"controller_side": "J1 外部主机", "device": "U1 OLED_SH1107", "scl_net": "SCL", "scl_device_pin": "U1.9 CLK", "sda_net": "SDA", "sda_device_pin": "U1.10 DIN"},
+      "evidence": [{"asset_sha256": "65164012e7d72976a990203d92f0b1d9f6fb52f4a609530d3d80f0e6fc0d8a8d", "page": 1, "locator": "B3-C3：U1.9 CLK 标注 SCL、U1.10 DIN 标注 SDA，并与 J1.1/J1.2 同名网络对应"}]
+    },
+    {
+      "id": "bus.i2c-pullups",
+      "category": "bus",
+      "subject": "SCL 与 SDA",
+      "statement": "SCL 经 R5（4.7KΩ）上拉至 +3.3V，SDA 经 R6（4.7KΩ）上拉至 +3.3V。",
+      "confidence": "confirmed",
+      "attributes": {"scl_pullup": "R5 4.7KΩ to +3.3V", "sda_pullup": "R6 4.7KΩ to +3.3V", "logic_rail": "+3.3V"},
+      "evidence": [{"asset_sha256": "65164012e7d72976a990203d92f0b1d9f6fb52f4a609530d3d80f0e6fc0d8a8d", "page": 1, "locator": "C3：+3.3V-R5-SCL 与 +3.3V-R6-SDA 两条上拉支路"}]
+    },
+    {
+      "id": "address.i2c-unconfirmed",
+      "category": "address",
+      "subject": "U1 OLED_SH1107",
+      "statement": "产品正文给出 I2C 地址 0x3C，但本页原理图未标注地址值或可直接换算地址的地址选择引脚状态，因此无法仅由原理图确认 0x3C。",
+      "confidence": "uncertain",
+      "attributes": {"documented_address": "0x3C", "schematic_address": "未标注", "bus": "I2C"},
+      "evidence": [{"asset_sha256": "65164012e7d72976a990203d92f0b1d9f6fb52f4a609530d3d80f0e6fc0d8a8d", "page": 1, "locator": "B3-B4：U1 OLED_SH1107 的 1~12 脚及 SCL/SDA 连接区域，未见地址数值或地址选择网络标注"}]
+    },
+    {
+      "id": "power.input-5v",
+      "category": "power",
+      "subject": "+5V",
+      "statement": "J1.3 将 VCC 接入 +5V；+5V 同时送往 U2 的 VIN 和 U3 升压输入网络。",
+      "confidence": "confirmed",
+      "attributes": {"source": "J1.3 VCC", "rail": "+5V", "loads": "U2.VIN, U3.Vin/升压输入", "input_decoupling": "C5 22uF、C10 22uF"},
+      "evidence": [{"asset_sha256": "65164012e7d72976a990203d92f0b1d9f6fb52f4a609530d3d80f0e6fc0d8a8d", "page": 1, "locator": "B1 的 +5V-U2.VIN 与 C5，C1 的 +5V-U3.Vin 与 C10，以及 C3 的 J1.3 +5V"}]
+    },
+    {
+      "id": "power.ldo-3v3",
+      "category": "power",
+      "subject": "U2 HT7533",
+      "statement": "U2 的 VIN.2 接 +5V、GND.1 接 GND、VOUT.3 输出 +3.3V；输入和输出分别以 C5、C6（均为 22uF）对地去耦。",
+      "confidence": "confirmed",
+      "attributes": {"input_pin": "U2.2 VIN", "input_rail": "+5V", "ground_pin": "U2.1 GND", "output_pin": "U2.3 VOUT", "output_rail": "+3.3V", "input_capacitor": "C5 22uF", "output_capacitor": "C6 22uF", "test_point": "JP1"},
+      "evidence": [{"asset_sha256": "65164012e7d72976a990203d92f0b1d9f6fb52f4a609530d3d80f0e6fc0d8a8d", "page": 1, "locator": "B1-B2：U2 HT7533、C5/C6、+5V、+3.3V、GND 与 JP1 的完整连接"}]
+    },
+    {
+      "id": "power.boost-9v",
+      "category": "power",
+      "subject": "U3 SGM6601YTN5G/TR",
+      "statement": "U3 与 L1（10uH）、D1（1N4148WS T4）构成升压路径，将 +5V 转换为标注 8.5~9.5V 的 +9V 输出；C9（1uF）跨接输出与 GND。",
+      "confidence": "confirmed",
+      "attributes": {"input_rail": "+5V", "converter": "U3 SGM6601YTN5G/TR", "inductor": "L1 10uH", "diode": "D1 1N4148WS T4", "output_annotation": "8.5~9.5V", "output_net": "+9V", "output_capacitor": "C9 1uF", "output_test_point": "JP2", "ground_test_point": "JP4"},
+      "evidence": [{"asset_sha256": "65164012e7d72976a990203d92f0b1d9f6fb52f4a609530d3d80f0e6fc0d8a8d", "page": 1, "locator": "C1-C2：+5V、U3、L1、D1、8.5~9.5V/+9V、C9、JP2 与 JP4 组成的升压电路"}]
+    },
+    {
+      "id": "analog.boost-feedback",
+      "category": "analog",
+      "subject": "U3 FB",
+      "statement": "R7（1.3MΩ）从升压输出接至 U3.FB，R8（200KΩ）从 FB 接地，C8（22pF）跨接输出与 FB。",
+      "confidence": "confirmed",
+      "attributes": {"upper_resistor": "R7 1.3MΩ", "lower_resistor": "R8 200KΩ", "feedforward_capacitor": "C8 22pF", "feedback_pin": "U3.3 FB", "output": "8.5~9.5V / +9V"},
+      "evidence": [{"asset_sha256": "65164012e7d72976a990203d92f0b1d9f6fb52f4a609530d3d80f0e6fc0d8a8d", "page": 1, "locator": "C2：U3.3 FB、R7 1.3MΩ、R8 200KΩ、C8 22pF 与输出/GND 的连线"}]
+    },
+    {
+      "id": "power.display-supplies",
+      "category": "power",
+      "subject": "U1 OLED_SH1107",
+      "statement": "U1 的 VPP.1 连接 +9V，VDD.3 连接 +3.3V，VSS.11 与 NC_2.12 连接 GND；VCCOMH.2 连接由 C1、C2 构成的电容支路。",
+      "confidence": "confirmed",
+      "attributes": {"vpp_pin": "U1.1", "vpp_rail": "+9V", "vccomh_pin": "U1.2", "vdd_pin": "U1.3", "vdd_rail": "+3.3V", "vss_pin": "U1.11 GND", "nc2_pin": "U1.12 GND", "vccomh_capacitors": "C1 4.7uF, C2 100nF"},
+      "evidence": [{"asset_sha256": "65164012e7d72976a990203d92f0b1d9f6fb52f4a609530d3d80f0e6fc0d8a8d", "page": 1, "locator": "B2-B4：U1.1 VPP、U1.2 VCCOMH、U1.3 VDD、U1.11 VSS、U1.12 NC_2 及 +9V/+3.3V/GND、电容连线"}]
+    },
+    {
+      "id": "component.display-bias-straps",
+      "category": "component",
+      "subject": "U1 配置与偏置",
+      "statement": "U1 的 IM1.4 经 R1（4.7KΩ）连接 +3.3V，IREF.5 经 R2（560KΩ）连接 GND，DC.8 经 R4（4.7KΩ）连接 GND；R3 标注 NC。",
+      "confidence": "confirmed",
+      "attributes": {"im1": "U1.4 via R1 4.7KΩ to +3.3V", "iref": "U1.5 via R2 560KΩ to GND", "dc": "U1.8 via R4 4.7KΩ to GND", "r3": "NC"},
+      "evidence": [{"asset_sha256": "65164012e7d72976a990203d92f0b1d9f6fb52f4a609530d3d80f0e6fc0d8a8d", "page": 1, "locator": "B3：U1.4 IM1、U1.5 IREF、U1.8 DC 与 R1 4.7KΩ、R2 560KΩ、R4 4.7KΩ 的支路；R3 标注 NC"}]
+    },
+    {
+      "id": "reset.display-rst",
+      "category": "reset",
+      "subject": "U1 RST",
+      "statement": "U1 的 7 脚定义为 RST；该页未显示外部主控或连接器对 RST 的直接控制路径。",
+      "confidence": "confirmed",
+      "attributes": {"reset_pin": "U1.7 RST", "external_reset_control": "原理图未显示"},
+      "evidence": [{"asset_sha256": "65164012e7d72976a990203d92f0b1d9f6fb52f4a609530d3d80f0e6fc0d8a8d", "page": 1, "locator": "B3-B4：U1 第 7 脚标注 RST，J1 仅引出 SCL、SDA、VCC、GND"}]
+    },
+    {
+      "id": "key_net.test-points",
+      "category": "key_net",
+      "subject": "JP1、JP2、JP3、JP4",
+      "statement": "JP1 位于 +3.3V，JP2 位于 +9V，JP3 位于 +5V，JP4 位于 GND，提供四条关键电源网络的焊盘/测试节点。",
+      "confidence": "confirmed",
+      "attributes": {"JP1": "+3.3V", "JP2": "+9V", "JP3": "+5V", "JP4": "GND"},
+      "evidence": [{"asset_sha256": "65164012e7d72976a990203d92f0b1d9f6fb52f4a609530d3d80f0e6fc0d8a8d", "page": 1, "locator": "B2 的 JP1/+3.3V 与 C1-C2 的 JP3/+5V、JP2/+9V、JP4/GND 网络端点"}]
+    }
+  ],
+  "needs_review": [
+    {
+      "id": "review.i2c-address",
+      "fact_id": "address.i2c-unconfirmed",
+      "question": "U1 在该硬件版本上的 7 位 I2C 地址是否为产品正文所列的 0x3C？",
+      "reason": "原理图只显示 SCL/SDA 与接口配置支路，没有标出地址数值或明确的地址选择网络，需以 OLED 模组资料、BOM 或实板扫描复核。",
+      "evidence": [{"asset_sha256": "65164012e7d72976a990203d92f0b1d9f6fb52f4a609530d3d80f0e6fc0d8a8d", "page": 1, "locator": "B3-B4：U1 OLED_SH1107 的全部可见引脚和外围连接，未见地址标注"}]
+    }
+  ]
+}

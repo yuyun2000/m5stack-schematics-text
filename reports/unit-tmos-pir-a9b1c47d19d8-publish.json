@@ -1,0 +1,21 @@
+{
+  "dry_run": false,
+  "failed": 0,
+  "published": 1,
+  "results": [
+    {
+      "backup": null,
+      "draft_action": "unchanged",
+      "dry_run": false,
+      "errors": [],
+      "needs_review": 6,
+      "product_id": "unit-tmos-pir-a9b1c47d19d8",
+      "product_name": "Unit TMOS PIR",
+      "publish_action": "unchanged",
+      "sha256": "1d8470b6482847228e00963bf3aa7d5198785ca231371b857a7082fef09f9a28",
+      "status": "valid",
+      "uncertain_facts": 6
+    }
+  ],
+  "schema_version": 1
+}

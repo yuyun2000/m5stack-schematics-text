@@ -1,0 +1,21 @@
+{
+  "dry_run": false,
+  "failed": 0,
+  "published": 1,
+  "results": [
+    {
+      "backup": null,
+      "draft_action": "unchanged",
+      "dry_run": false,
+      "errors": [],
+      "needs_review": 5,
+      "product_id": "tail-rs485-35d2ba502abe",
+      "product_name": "Tail RS485",
+      "publish_action": "unchanged",
+      "sha256": "21c85a70830bce830662f35d9c1ad19722cc9e3dd1c2873dded50a90ea0a0cc5",
+      "status": "valid",
+      "uncertain_facts": 5
+    }
+  ],
+  "schema_version": 1
+}

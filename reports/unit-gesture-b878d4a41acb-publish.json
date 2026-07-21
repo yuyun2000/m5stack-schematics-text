@@ -1,0 +1,21 @@
+{
+  "dry_run": false,
+  "failed": 0,
+  "published": 1,
+  "results": [
+    {
+      "backup": null,
+      "draft_action": "unchanged",
+      "dry_run": false,
+      "errors": [],
+      "needs_review": 3,
+      "product_id": "unit-gesture-b878d4a41acb",
+      "product_name": "Unit Gesture",
+      "publish_action": "unchanged",
+      "sha256": "24713c826c149f3cbb50fc8c7a69e9aa2f8d818da7180736e20edfaf007ffa1e",
+      "status": "valid",
+      "uncertain_facts": 3
+    }
+  ],
+  "schema_version": 1
+}

@@ -1,0 +1,21 @@
+{
+  "dry_run": false,
+  "failed": 0,
+  "published": 1,
+  "results": [
+    {
+      "backup": null,
+      "draft_action": "unchanged",
+      "dry_run": false,
+      "errors": [],
+      "needs_review": 7,
+      "product_id": "module-lorawan-eu868-17765fac0b44",
+      "product_name": "Module LoRaWAN-EU868",
+      "publish_action": "unchanged",
+      "sha256": "79923d5f4cf1b8d6f4089c414685dca2e60e83fad7e1473765266330a5a861b5",
+      "status": "valid",
+      "uncertain_facts": 7
+    }
+  ],
+  "schema_version": 1
+}

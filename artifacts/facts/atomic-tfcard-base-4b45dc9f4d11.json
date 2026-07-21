@@ -1,0 +1,306 @@
+{
+  "schema_version": 1,
+  "generator": "schematic_describer",
+  "product": {
+    "product_id": "atomic-tfcard-base-4b45dc9f4d11",
+    "product_name": "Atomic TFCard Base",
+    "sku": "A135",
+    "source_path": "atom/Atomic TF-Card Reader.md",
+    "source_sha256": "49acda72eae80f40f8c9cdb5fcec6038738a41aa80c707d6e743923a58d02311",
+    "input_sha256": "16545c3de925a1f1de5e1ce913a5f36db3af50227ea4426bfe03db774aef582c"
+  },
+  "schematic_assets": [
+    {
+      "sha256": "3d4abface7a9b356c8350c26f1ae7deb1e5cda1f7ba2f24212b3f67fea0a67d2",
+      "source_url": "https://static-cdn.m5stack.com/resource/docs/products/atom/Atomic TF-Card Reader/img-88bbd018-3961-4acb-b12e-83c16a1accb7.webp",
+      "pages": [1]
+    }
+  ],
+  "summary": "Atomic TFCard Base 是由 U1 TF-015 卡座、Rp1 四联 4.7KΩ 偏置阵列、P1/P2 Atom 接口和 C1 100nF 去耦组成的直接连接电路。卡座 MOSI、CLK、MISO 分别连接 P1 pins3/4/5；CS 只经 Rp1 下拉到 GND，没有连接 Atom GPIO。P1 pin2 另标 GPS_T，但未接 U1。由此只能确认三条存储信号和供电，不能确认旧文档所述主机 CS 路径或实际协议模式。正文中的最高 16G、FAT/FAT32 和自弹结构不属于本页电气证据，需要软件、BOM 或结构资料确认。",
+  "keywords": [
+    "Atomic TFCard Base",
+    "A135",
+    "Atomic TF-Card Reader",
+    "TF-015",
+    "microSD",
+    "MOSI",
+    "CLK",
+    "MISO",
+    "CS",
+    "GPS_T",
+    "3.3V",
+    "5VIN",
+    "Rp1 4.7KΩ",
+    "16G",
+    "FAT",
+    "FAT32",
+    "self-eject"
+  ],
+  "components": [
+    {
+      "reference": "U1",
+      "part_number": "TF-015",
+      "role": "TF/microSD 卡座，连接 CS、MOSI、CLK、MISO、3.3V 和 GND",
+      "evidence": [
+        {
+          "asset_sha256": "3d4abface7a9b356c8350c26f1ae7deb1e5cda1f7ba2f24212b3f67fea0a67d2",
+          "page": 1,
+          "locator": "第 1 页左侧 U1 TF-015，pins2-7 为 CS/MOSI/VCC/CLK/GND/MISO"
+        }
+      ]
+    },
+    {
+      "reference": "Rp1",
+      "part_number": "4 x 4.7KΩ (472) ±5%",
+      "role": "U1 CS/MOSI/CLK/MISO 的上拉或下拉电阻阵列",
+      "evidence": [
+        {
+          "asset_sha256": "3d4abface7a9b356c8350c26f1ae7deb1e5cda1f7ba2f24212b3f67fea0a67d2",
+          "page": 1,
+          "locator": "第 1 页左上 Rp1，top pins8/7/6 接 +3.3V、top pin5 接 GND，bottom pins1/2/3/4 接 U1 MISO/CLK/MOSI/CS"
+        }
+      ]
+    },
+    {
+      "reference": "P1,P2",
+      "part_number": "Header 5 / Header 4",
+      "role": "Atom 主机的 3.3V、5VIN、GPS_T、MOSI、CLK、MISO 与 GND 接口",
+      "evidence": [
+        {
+          "asset_sha256": "3d4abface7a9b356c8350c26f1ae7deb1e5cda1f7ba2f24212b3f67fea0a67d2",
+          "page": 1,
+          "locator": "第 1 页中右 P2 Header4 与 P1 Header5，P2 pins1/2 NC、pin3 +5VIN、pin4 GND，P1 pins1-5 为 +3.3V/GPS_T/MOSI/CLK/MISO"
+        }
+      ]
+    },
+    {
+      "reference": "C1",
+      "part_number": "100nF (104) 10% 50V",
+      "role": "3.3V 到 GND 的本地去耦电容",
+      "evidence": [
+        {
+          "asset_sha256": "3d4abface7a9b356c8350c26f1ae7deb1e5cda1f7ba2f24212b3f67fea0a67d2",
+          "page": 1,
+          "locator": "第 1 页右侧 C1 100nF (104) 10% 50V，连接 +3.3V 与 GND"
+        }
+      ]
+    }
+  ],
+  "facts": [
+    {
+      "id": "system.tfcard-direct-architecture",
+      "category": "system",
+      "subject": "Atomic TFCard Base 直接连接架构",
+      "statement": "U1 TF-015 由 P1 的 +3.3V/GND 供电，MOSI、CLK、MISO 三线直接连接 P1；电路未显示控制器、电平转换器或主机 CS 连线。",
+      "confidence": "confirmed",
+      "attributes": {
+        "card_socket": "U1 TF-015",
+        "host_signals": "MOSI,CLK,MISO",
+        "card_select_host_line": null,
+        "supply": "+3.3V",
+        "ground": "GND",
+        "controller_present": false,
+        "level_shifter_present": false
+      },
+      "evidence": [
+        {
+          "asset_sha256": "3d4abface7a9b356c8350c26f1ae7deb1e5cda1f7ba2f24212b3f67fea0a67d2",
+          "page": 1,
+          "locator": "第 1 页完整单页：U1/Rp1/P1/P2/C1 全部器件与连线"
+        }
+      ]
+    },
+    {
+      "id": "storage.tf015-pinout",
+      "category": "storage",
+      "subject": "U1 TF-015 卡座引脚",
+      "statement": "U1 pin2 为 CS，pin3 为 MOSI，pin4 接 +3.3V，pin5 为 CLK，pin6 接 GND，pin7 为 MISO；图中未显示该符号的其他卡信号。",
+      "confidence": "confirmed",
+      "attributes": {
+        "pin2": "CS",
+        "pin3": "MOSI",
+        "pin4": "+3.3V",
+        "pin5": "CLK",
+        "pin6": "GND",
+        "pin7": "MISO"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "3d4abface7a9b356c8350c26f1ae7deb1e5cda1f7ba2f24212b3f67fea0a67d2",
+          "page": 1,
+          "locator": "第 1 页左侧 U1 pins2-7 的文字与网络标签"
+        }
+      ]
+    },
+    {
+      "id": "storage.tf015-bias-network",
+      "category": "storage",
+      "subject": "TF-015 信号偏置",
+      "statement": "Rp1 为四联 4.7KΩ 阵列：MISO、CLK、MOSI 三路分别通过电阻接 +3.3V，CS 通过第四路电阻接 GND。",
+      "confidence": "confirmed",
+      "attributes": {
+        "array": "Rp1 4 x 4.7KΩ (472) ±5%",
+        "MISO": "4.7KΩ to +3.3V",
+        "CLK": "4.7KΩ to +3.3V",
+        "MOSI": "4.7KΩ to +3.3V",
+        "CS": "4.7KΩ to GND"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "3d4abface7a9b356c8350c26f1ae7deb1e5cda1f7ba2f24212b3f67fea0a67d2",
+          "page": 1,
+          "locator": "第 1 页左上 Rp1 top pins8/7/6 接 +3.3V、top pin5 接 GND，bottom pins1/2/3/4 接 MISO/CLK/MOSI/CS"
+        }
+      ]
+    },
+    {
+      "id": "interface.atom-headers",
+      "category": "interface",
+      "subject": "P1/P2 Atom 主机接口",
+      "statement": "P1 pins1-5 依次连接 +3.3V、GPS_T、MOSI、CLK、MISO；P2 pins1/2 标为未连接，pin3 接 +5VIN，pin4 接 GND。",
+      "confidence": "confirmed",
+      "attributes": {
+        "P1_pin1": "+3.3V",
+        "P1_pin2": "GPS_T",
+        "P1_pin3": "MOSI",
+        "P1_pin4": "CLK",
+        "P1_pin5": "MISO",
+        "P2_pin1": "NC",
+        "P2_pin2": "NC",
+        "P2_pin3": "+5VIN",
+        "P2_pin4": "GND"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "3d4abface7a9b356c8350c26f1ae7deb1e5cda1f7ba2f24212b3f67fea0a67d2",
+          "page": 1,
+          "locator": "第 1 页中右 P2 Header4、P1 Header5 的 pin1-pin5 网络与 NC 标记"
+        }
+      ]
+    },
+    {
+      "id": "power.tfcard-supplies",
+      "category": "power",
+      "subject": "TFCard Base 电源连接",
+      "statement": "P1 pin1 的 +3.3V 直接连接 U1 VCC pin4，并由 C1 100nF 去耦到 GND；P2 pin3 的 +5VIN 在本页没有连接其他负载。",
+      "confidence": "confirmed",
+      "attributes": {
+        "card_supply": "P1 pin1 +3.3V -> U1 pin4 VCC",
+        "decoupling": "C1 100nF (104) 10% 50V",
+        "ground": "P2 pin4 GND -> U1 pin6 GND",
+        "five_volt_input": "P2 pin3 +5VIN",
+        "five_volt_consumers": "none shown"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "3d4abface7a9b356c8350c26f1ae7deb1e5cda1f7ba2f24212b3f67fea0a67d2",
+          "page": 1,
+          "locator": "第 1 页 U1 VCC/GND、P1 +3.3V、P2 +5VIN/GND 与 C1"
+        }
+      ]
+    },
+    {
+      "id": "storage.card-interface-mode",
+      "category": "storage",
+      "subject": "TF-015 存储接口协议模式",
+      "statement": "正文与管脚表把 MOSI/CLK/MISO 描述为 SPI，但原理图没有从 Atom 引出 CS；U1 CS 仅经 4.7KΩ 下拉到 GND，P1 pin2 的 GPS_T 也未连接卡座，因此无法确认实际协议模式和初始化方式。",
+      "confidence": "uncertain",
+      "attributes": {
+        "documented_bus": "SPI",
+        "host_signals": "MOSI,CLK,MISO",
+        "host_cs": null,
+        "card_cs": "Rp1 4.7KΩ pull-down to GND",
+        "unused_host_signal": "P1 pin2 GPS_T",
+        "mode": null
+      },
+      "evidence": [
+        {
+          "asset_sha256": "3d4abface7a9b356c8350c26f1ae7deb1e5cda1f7ba2f24212b3f67fea0a67d2",
+          "page": 1,
+          "locator": "第 1 页 U1 CS 仅连接 Rp1 下拉；P1 MOSI/CLK/MISO 直连 U1，GPS_T 未接 U1"
+        }
+      ]
+    },
+    {
+      "id": "storage.documented-capacity-filesystem",
+      "category": "storage",
+      "subject": "正文中的容量与文件系统",
+      "statement": "正文称最高支持 16G，并支持 FAT/FAT32；原理图只显示 TF-015 卡座和三条存储信号，没有容量、卡标准或文件系统标注，无法单独确认这些软件与介质兼容性。",
+      "confidence": "uncertain",
+      "attributes": {
+        "documented_max_capacity": "16G",
+        "documented_filesystems": "FAT,FAT32",
+        "schematic_socket": "U1 TF-015",
+        "schematic_capacity": null,
+        "schematic_filesystem": null
+      },
+      "evidence": [
+        {
+          "asset_sha256": "3d4abface7a9b356c8350c26f1ae7deb1e5cda1f7ba2f24212b3f67fea0a67d2",
+          "page": 1,
+          "locator": "第 1 页 U1 仅标 TF-015 与电气引脚，图中无 16G、FAT 或 FAT32"
+        }
+      ]
+    },
+    {
+      "id": "storage.documented-self-eject-slot",
+      "category": "storage",
+      "subject": "正文中的自弹式卡槽",
+      "statement": "正文称采用自弹式卡槽，但原理图符号只标 U1 TF-015，没有机械机构、料号版本或结构尺寸，无法由本页确认自弹机制。",
+      "confidence": "uncertain",
+      "attributes": {
+        "documented_mechanism": "self-eject",
+        "schematic_designator": "U1 TF-015",
+        "mechanical_detail_visible": false
+      },
+      "evidence": [
+        {
+          "asset_sha256": "3d4abface7a9b356c8350c26f1ae7deb1e5cda1f7ba2f24212b3f67fea0a67d2",
+          "page": 1,
+          "locator": "第 1 页 U1 TF-015 仅为电气符号，无卡槽机械剖面或 BOM 型号"
+        }
+      ]
+    }
+  ],
+  "needs_review": [
+    {
+      "id": "review.storage-interface-mode",
+      "fact_id": "storage.card-interface-mode",
+      "question": "Atomic TFCard Base 的 TF-015 实际使用 SPI 还是其他三线 SD 模式，软件初始化如何处理未引出的 CS？",
+      "reason": "图纸只有 MOSI/CLK/MISO 主机线，CS 仅 4.7KΩ 下拉；旧文档声称 CS 连接 Atom GPIO 的内容缺少当前图纸证据。",
+      "evidence": [
+        {
+          "asset_sha256": "3d4abface7a9b356c8350c26f1ae7deb1e5cda1f7ba2f24212b3f67fea0a67d2",
+          "page": 1,
+          "locator": "第 1 页 U1 CS/Rp1 与 P1/P2 主机信号范围"
+        }
+      ]
+    },
+    {
+      "id": "review.capacity-filesystem-support",
+      "fact_id": "storage.documented-capacity-filesystem",
+      "question": "最高 16G 与 FAT/FAT32 支持由哪些主机固件、库版本和卡类型测试确认？",
+      "reason": "容量和文件系统由卡介质及软件栈共同决定，原理图卡座连接不能证明兼容边界。",
+      "evidence": [
+        {
+          "asset_sha256": "3d4abface7a9b356c8350c26f1ae7deb1e5cda1f7ba2f24212b3f67fea0a67d2",
+          "page": 1,
+          "locator": "第 1 页 U1 TF-015 与 MOSI/CLK/MISO"
+        }
+      ]
+    },
+    {
+      "id": "review.self-eject-bom",
+      "fact_id": "storage.documented-self-eject-slot",
+      "question": "A135 当前量产卡座的完整 BOM 型号是否确认具备自弹机构？",
+      "reason": "TF-015 电气符号不足以证明机械结构，需要 BOM、结构图或实物确认。",
+      "evidence": [
+        {
+          "asset_sha256": "3d4abface7a9b356c8350c26f1ae7deb1e5cda1f7ba2f24212b3f67fea0a67d2",
+          "page": 1,
+          "locator": "第 1 页 U1 TF-015 电气符号"
+        }
+      ]
+    }
+  ]
+}

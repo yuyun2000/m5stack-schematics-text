@@ -1,0 +1,21 @@
+{
+  "dry_run": false,
+  "failed": 0,
+  "published": 1,
+  "results": [
+    {
+      "backup": null,
+      "draft_action": "unchanged",
+      "dry_run": false,
+      "errors": [],
+      "needs_review": 4,
+      "product_id": "unit-pir-4c2bd1465db8",
+      "product_name": "Unit PIR",
+      "publish_action": "unchanged",
+      "sha256": "1b34bc1bb21f6cb606915900f845789a282311272e5df8c3902336480c9c862a",
+      "status": "valid",
+      "uncertain_facts": 4
+    }
+  ],
+  "schema_version": 1
+}

@@ -1,0 +1,21 @@
+{
+  "dry_run": false,
+  "failed": 0,
+  "published": 1,
+  "results": [
+    {
+      "backup": null,
+      "draft_action": "unchanged",
+      "dry_run": false,
+      "errors": [],
+      "needs_review": 0,
+      "product_id": "grove-to-usbc-a6f4ed3b21ac",
+      "product_name": "Grove to USBC",
+      "publish_action": "unchanged",
+      "sha256": "a59bffd306d405153574fd4b307de5a8e2c3b4a8a2f4ea65cf26d1fe9bd1373a",
+      "status": "valid",
+      "uncertain_facts": 0
+    }
+  ],
+  "schema_version": 1
+}

@@ -1,0 +1,21 @@
+{
+  "dry_run": false,
+  "failed": 0,
+  "published": 1,
+  "results": [
+    {
+      "backup": null,
+      "draft_action": "unchanged",
+      "dry_run": false,
+      "errors": [],
+      "needs_review": 4,
+      "product_id": "nanoh2-6dd9fc2743d5",
+      "product_name": "NanoH2",
+      "publish_action": "unchanged",
+      "sha256": "c76d0fb956ebaff90113869d76b78f4a842b02d7855769fe4f686dd5d281b040",
+      "status": "valid",
+      "uncertain_facts": 4
+    }
+  ],
+  "schema_version": 1
+}

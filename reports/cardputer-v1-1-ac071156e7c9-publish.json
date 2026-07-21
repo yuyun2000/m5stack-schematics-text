@@ -1,0 +1,21 @@
+{
+  "dry_run": false,
+  "failed": 0,
+  "published": 1,
+  "results": [
+    {
+      "backup": null,
+      "draft_action": "unchanged",
+      "dry_run": false,
+      "errors": [],
+      "needs_review": 6,
+      "product_id": "cardputer-v1-1-ac071156e7c9",
+      "product_name": "Cardputer v1.1",
+      "publish_action": "unchanged",
+      "sha256": "212e137d69fe396f5fe11fbca8a756e43f2c67b6855e4c9a3636897350b7566c",
+      "status": "valid",
+      "uncertain_facts": 6
+    }
+  ],
+  "schema_version": 1
+}

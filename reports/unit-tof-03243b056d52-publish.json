@@ -1,0 +1,21 @@
+{
+  "dry_run": false,
+  "failed": 0,
+  "published": 1,
+  "results": [
+    {
+      "backup": null,
+      "draft_action": "unchanged",
+      "dry_run": false,
+      "errors": [],
+      "needs_review": 4,
+      "product_id": "unit-tof-03243b056d52",
+      "product_name": "Unit ToF",
+      "publish_action": "unchanged",
+      "sha256": "84c2c34936fe3709f5e3f9df73042dbfe82ed107e1ae245b3274d77ecaf994d6",
+      "status": "valid",
+      "uncertain_facts": 4
+    }
+  ],
+  "schema_version": 1
+}

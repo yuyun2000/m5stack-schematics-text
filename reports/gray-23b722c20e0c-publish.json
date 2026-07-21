@@ -1,0 +1,21 @@
+{
+  "dry_run": false,
+  "failed": 0,
+  "published": 1,
+  "results": [
+    {
+      "backup": null,
+      "draft_action": "unchanged",
+      "dry_run": false,
+      "errors": [],
+      "needs_review": 10,
+      "product_id": "gray-23b722c20e0c",
+      "product_name": "Gray",
+      "publish_action": "unchanged",
+      "sha256": "bd7caabf40f8b7cf24b4d08578738a608c7b0b8a1044361b16afafe8069b3e87",
+      "status": "valid",
+      "uncertain_facts": 10
+    }
+  ],
+  "schema_version": 1
+}

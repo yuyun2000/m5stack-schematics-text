@@ -1,0 +1,21 @@
+{
+  "dry_run": false,
+  "failed": 0,
+  "published": 1,
+  "results": [
+    {
+      "backup": null,
+      "draft_action": "unchanged",
+      "dry_run": false,
+      "errors": [],
+      "needs_review": 10,
+      "product_id": "stickc-plus-se-coming-soon-7629b95652fc",
+      "product_name": "StickC-Plus SE (coming soon)",
+      "publish_action": "unchanged",
+      "sha256": "4ac270435e5224a991768c051b0ff2b43d7c3de6d0e2af21eb05efd71d4a9913",
+      "status": "valid",
+      "uncertain_facts": 10
+    }
+  ],
+  "schema_version": 1
+}

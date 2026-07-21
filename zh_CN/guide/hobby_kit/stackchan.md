@@ -1,0 +1,1 @@
+<script>location.href = '/zh_CN/StackChan';</script>

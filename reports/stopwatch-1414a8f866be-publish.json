@@ -1,0 +1,21 @@
+{
+  "dry_run": false,
+  "failed": 0,
+  "published": 1,
+  "results": [
+    {
+      "backup": null,
+      "draft_action": "unchanged",
+      "dry_run": false,
+      "errors": [],
+      "needs_review": 4,
+      "product_id": "stopwatch-1414a8f866be",
+      "product_name": "StopWatch",
+      "publish_action": "unchanged",
+      "sha256": "58bc53111b38322166b3d2349d532f8aa2b902d276455bbf64d552e0905c17e6",
+      "status": "valid",
+      "uncertain_facts": 4
+    }
+  ],
+  "schema_version": 1
+}

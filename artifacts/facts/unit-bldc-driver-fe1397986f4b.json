@@ -1,0 +1,323 @@
+{
+  "schema_version": 1,
+  "generator": "schematic_describer",
+  "product": {
+    "product_id": "unit-bldc-driver-fe1397986f4b",
+    "product_name": "Unit BLDC Driver",
+    "sku": "U181",
+    "source_path": "unit/Unit-BLDC Driver.md",
+    "source_sha256": "676467488d7d494e9197825656fbefc9ae8e151694a7bc7ba5a3fd67168e0c97",
+    "input_sha256": "c94940d4c6e8976d9e77ad542851cbdfc511cd6fe5d320ecd8aaba8f33e421cd"
+  },
+  "schematic_assets": [
+    {
+      "sha256": "a778bea573af57d753554f3029fddaefd4d1a1486507b24400603c2fd8fe619e",
+      "source_url": "https://m5stack-doc.oss-cn-shenzhen.aliyuncs.com/633/Sch_bldc_driver_V1.3_sch_01.png",
+      "pages": [1]
+    }
+  ],
+  "summary": "Unit BLDC Driver 以 U1 STM32G030F6P6 为主控，通过 J1 Grove 的 I2C_SCL/I2C_SDA 接受外部命令，并以 DRV_PWM、DRV_FR、DRV_FS、DRV_FG、DRV_RD 五条控制/状态线连接 U3 DRV11873PWPR。U3 直接由 VIN 供电，驱动 PHU/PHV/PHW 三相并通过 PCOM 接到 J2 HT3.96_4P，配有电荷泵电容、相线二极管和相位公共点电阻网络。VIN 经 R9/R10 与 BZT52C3V3S 钳位网络形成 MCU_VDD，为 MCU、I2C 上拉和 SYS_LED 供电；J3 提供 SWD 下载与复位。原理图未标 I2C 地址、最大带载电流、待机/工作电流或 DRV11873 内部堵转保护参数。",
+  "keywords": [
+    "Unit BLDC Driver",
+    "U181",
+    "STM32G030F6P6",
+    "DRV11873PWPR",
+    "BLDC",
+    "I2C",
+    "0x65",
+    "I2C_SCL",
+    "I2C_SDA",
+    "DRV_PWM",
+    "DRV_FR",
+    "DRV_FS",
+    "DRV_FG",
+    "DRV_RD",
+    "PHU",
+    "PHV",
+    "PHW",
+    "PCOM",
+    "PWM_IN",
+    "FR",
+    "FG",
+    "FS",
+    "RD",
+    "VIN",
+    "MCU_VDD",
+    "BZT52C3V3S",
+    "SS16-A",
+    "HT3.96_4P",
+    "HY2.0_4P",
+    "SWCLK",
+    "SWDIO",
+    "SYS_RST",
+    "SYS_LED",
+    "R9 150R",
+    "R10 10R",
+    "R5 R6 R7 1K",
+    "C9 100nF",
+    "C11 100nF",
+    "three phase motor",
+    "sensorless motor driver"
+  ],
+  "components": [
+    {
+      "reference": "U1",
+      "part_number": "STM32G030F6P6",
+      "role": "主控 MCU，连接 I2C、DRV11873 控制/状态、SYS_LED、SWD 和复位",
+      "evidence": [{"asset_sha256": "a778bea573af57d753554f3029fddaefd4d1a1486507b24400603c2fd8fe619e", "page": 1, "locator": "第 1 页网格 B2，U1 STM32G030F6P6，pins1-20 与 SYS_LED/SWCLK/SWDIO/I2C/DRV_* 网络"}]
+    },
+    {
+      "reference": "U3",
+      "part_number": "DRV11873PWPR",
+      "role": "三相电机驱动器，接收 PWM/方向控制并输出 PHU/PHV/PHW/PCOM",
+      "evidence": [{"asset_sha256": "a778bea573af57d753554f3029fddaefd4d1a1486507b24400603c2fd8fe619e", "page": 1, "locator": "第 1 页网格 B3，U3 DRV11873PWPR，PWM_IN/FR/FG/FS/RD、U/V/W/COM、VCP/VCC/GND/CS/CPP/CPN"}]
+    },
+    {
+      "reference": "J1",
+      "part_number": "CON_HY2.0_4P_DIP_HOR_RED",
+      "role": "Grove I2C 与 VIN/GND 接口",
+      "evidence": [{"asset_sha256": "a778bea573af57d753554f3029fddaefd4d1a1486507b24400603c2fd8fe619e", "page": 1, "locator": "第 1 页网格 B1，J1 pins4/3/2/1 对应 I2C_SCL/I2C_SDA/VIN/GND"}]
+    },
+    {
+      "reference": "J2",
+      "part_number": "HT3.96_4P",
+      "role": "四针三相电机接口，输出 PHU、PHV、PHW 和 PCOM",
+      "evidence": [{"asset_sha256": "a778bea573af57d753554f3029fddaefd4d1a1486507b24400603c2fd8fe619e", "page": 1, "locator": "第 1 页网格 B4，J2 HT3.96_4P，pin4 PHU、pin3 PHV、pin2 PHW、pin1 PCOM"}]
+    },
+    {
+      "reference": "J3",
+      "part_number": "CON5",
+      "role": "MCU_VDD、SWCLK、SWDIO、SYS_RST、GND 下载调试接口",
+      "evidence": [{"asset_sha256": "a778bea573af57d753554f3029fddaefd4d1a1486507b24400603c2fd8fe619e", "page": 1, "locator": "第 1 页网格 B1，J3 CON5 pins1-5 标注 MCU_VDD/SWCLK/SWDIO/SYS_RST/GND"}]
+    },
+    {
+      "reference": "R9,R10,D2,C8",
+      "part_number": "150R/1% / 10R/1% / BZT52C3V3S / 10uF/16V",
+      "role": "VIN 至 MCU_VDD 的串联限流、3.3V 齐纳钳位与滤波网络",
+      "evidence": [{"asset_sha256": "a778bea573af57d753554f3029fddaefd4d1a1486507b24400603c2fd8fe619e", "page": 1, "locator": "第 1 页网格 A2，VIN-R9-R10-MCU_VDD，D2 BZT52C3V3S 与 C8 对 GND"}]
+    },
+    {
+      "reference": "R2,R3",
+      "part_number": "3.6K/1%",
+      "role": "I2C_SCL 与 I2C_SDA 到 MCU_VDD 的上拉电阻",
+      "evidence": [{"asset_sha256": "a778bea573af57d753554f3029fddaefd4d1a1486507b24400603c2fd8fe619e", "page": 1, "locator": "第 1 页网格 B1，R2/R3 3.6K/1% 从 I2C_SCL/I2C_SDA 接 MCU_VDD"}]
+    },
+    {
+      "reference": "D1,R1",
+      "part_number": "绿色 LED / 3.6K/1%",
+      "role": "由 SYS_LED 经 R1 驱动并对 GND 回路的绿色状态指示灯",
+      "evidence": [{"asset_sha256": "a778bea573af57d753554f3029fddaefd4d1a1486507b24400603c2fd8fe619e", "page": 1, "locator": "第 1 页网格 B1-C1，SYS_LED-R1 3.6K/1%-D1 绿色-GND"}]
+    },
+    {
+      "reference": "D3,D4,D5",
+      "part_number": "SS16-A",
+      "role": "PHU、PHV、PHW 三相输出到 GND 的钳位二极管",
+      "evidence": [{"asset_sha256": "a778bea573af57d753554f3029fddaefd4d1a1486507b24400603c2fd8fe619e", "page": 1, "locator": "第 1 页网格 B3-B4，D3/D4/D5 SS16-A 分别从 PHU/PHV/PHW 接 GND"}]
+    },
+    {
+      "reference": "R5,R6,R7",
+      "part_number": "1K/1%",
+      "role": "三相 PHU/PHV/PHW 到 PCOM 的公共点电阻网络",
+      "evidence": [{"asset_sha256": "a778bea573af57d753554f3029fddaefd4d1a1486507b24400603c2fd8fe619e", "page": 1, "locator": "第 1 页网格 B3，R5/R6/R7 1K/1% 位于 PHU/PHV/PHW 与 PCOM 星形网络"}]
+    },
+    {
+      "reference": "C9,C11",
+      "part_number": "100nF/50V",
+      "role": "DRV11873 CPP/CPN 与 VCP/VCC 的电荷泵电容",
+      "evidence": [{"asset_sha256": "a778bea573af57d753554f3029fddaefd4d1a1486507b24400603c2fd8fe619e", "page": 1, "locator": "第 1 页网格 B3，C9 100nF/50V 跨 CPP/CPN，C11 100nF/50V 位于 VCP/VCC 支路"}]
+    },
+    {
+      "reference": "R4,R8",
+      "part_number": "2K/1% / 3.6K/1%",
+      "role": "DRV11873 CS 设置电阻与 DRV_PWM 下拉电阻",
+      "evidence": [{"asset_sha256": "a778bea573af57d753554f3029fddaefd4d1a1486507b24400603c2fd8fe619e", "page": 1, "locator": "第 1 页网格 B2-B3，R4 2K/1% 从 U3 CS pin14 接 GND，R8 3.6K/1% 从 DRV_PWM 接 GND"}]
+    }
+  ],
+  "facts": [
+    {
+      "id": "system.bldc-driver-architecture",
+      "category": "system",
+      "subject": "Unit BLDC Driver 系统架构",
+      "statement": "U1 STM32G030F6P6 通过 I2C 与外部主机通信，并通过 DRV_PWM/DRV_FR 控制 U3 DRV11873PWPR、通过 DRV_FS/DRV_FG/DRV_RD 读取状态；U3 产生 PHU/PHV/PHW 三相输出和 PCOM。VIN 同时给 U3 供电，并经齐纳钳位网络生成 MCU_VDD。",
+      "confidence": "confirmed",
+      "attributes": {"controller": "U1 STM32G030F6P6", "driver": "U3 DRV11873PWPR", "host_bus": "I2C via J1", "control": "DRV_PWM,DRV_FR", "status": "DRV_FS,DRV_FG,DRV_RD", "motor_output": "J2 PHU,PHV,PHW,PCOM", "power": "VIN and MCU_VDD"},
+      "evidence": [{"asset_sha256": "a778bea573af57d753554f3029fddaefd4d1a1486507b24400603c2fd8fe619e", "page": 1, "locator": "第 1 页完整 A1-C4，J1/J3/U1/MCU_VDD/U3/J2 功能区"}]
+    },
+    {
+      "id": "component.mcu-pin-map",
+      "category": "component",
+      "subject": "STM32G030F6P6 关键引脚映射",
+      "statement": "U1 pin20 复用组 PB3/PB4/PB5/PB6 接 SYS_LED，pin19 PA15/PA14/BOOT0 接 SWCLK，pin18 PA13 接 SWDIO，pin17 PA12/PA10 接 I2C_SDA，pin16 PA11/PA9 接 I2C_SCL，pin15 PB0/PB1/PB2/PA8 接 DRV_RD，pin14 PA7 接 DRV_FG，pin13 PA6 接 DRV_FS，pin12 PA5 接 DRV_FR，pin11 PA4 接 DRV_PWM。",
+      "confidence": "confirmed",
+      "attributes": {"sys_led": "pin20 PB3/PB4/PB5/PB6", "swclk": "pin19 PA15/PA14/BOOT0", "swdio": "pin18 PA13", "i2c_sda": "pin17 PA12/PA10", "i2c_scl": "pin16 PA11/PA9", "drv_rd": "pin15 PB0/PB1/PB2/PA8", "drv_fg": "pin14 PA7", "drv_fs": "pin13 PA6", "drv_fr": "pin12 PA5", "drv_pwm": "pin11 PA4"},
+      "evidence": [{"asset_sha256": "a778bea573af57d753554f3029fddaefd4d1a1486507b24400603c2fd8fe619e", "page": 1, "locator": "第 1 页网格 B2，U1 右侧 pins11-20 的复用引脚与网络标签"}]
+    },
+    {
+      "id": "interface.grove-i2c",
+      "category": "interface",
+      "subject": "J1 Grove I2C 与电源接口",
+      "statement": "J1 pin4=I2C_SCL、pin3=I2C_SDA、pin2=VIN、pin1=GND；R2/R3 各 3.6K/1% 将 SCL/SDA 上拉到 MCU_VDD。",
+      "confidence": "confirmed",
+      "attributes": {"connector": "J1 CON_HY2.0_4P_DIP_HOR_RED", "pin4": "I2C_SCL", "pin3": "I2C_SDA", "pin2": "VIN", "pin1": "GND", "pullups": "R2/R3 3.6K/1% to MCU_VDD", "direction": "bidirectional I2C"},
+      "evidence": [{"asset_sha256": "a778bea573af57d753554f3029fddaefd4d1a1486507b24400603c2fd8fe619e", "page": 1, "locator": "第 1 页网格 B1，J1 pins1-4、R2/R3 与 MCU_VDD"}]
+    },
+    {
+      "id": "bus.i2c-controller",
+      "category": "bus",
+      "subject": "外部主机到 U1 I2C",
+      "statement": "J1 I2C_SDA 同名网络连接 U1 pin17 PA12/PA10，J1 I2C_SCL 同名网络连接 U1 pin16 PA11/PA9；U1 是板上 I2C 从设备逻辑的控制器。",
+      "confidence": "confirmed",
+      "attributes": {"external_connector": "J1", "sda": "I2C_SDA -> U1 pin17 PA12/PA10", "scl": "I2C_SCL -> U1 pin16 PA11/PA9", "pullups": "3.6K/1% to MCU_VDD", "board_controller": "U1 STM32G030F6P6"},
+      "evidence": [{"asset_sha256": "a778bea573af57d753554f3029fddaefd4d1a1486507b24400603c2fd8fe619e", "page": 1, "locator": "第 1 页网格 B1-B2，J1/R2/R3 与 U1 I2C_SDA/I2C_SCL 同名网络"}]
+    },
+    {
+      "id": "gpio.motor-control-status",
+      "category": "gpio",
+      "subject": "U1 与 DRV11873 控制/状态映射",
+      "statement": "U1 PA4 输出 DRV_PWM 到 U3 PWM_IN pin16，PA5 输出 DRV_FR 到 FR pin15；U3 FS pin1、FG pin2、RD pin3 分别经 DRV_FS、DRV_FG、DRV_RD 返回 U1 PA6、PA7 和 pin15 复用 GPIO。",
+      "confidence": "confirmed",
+      "attributes": {"pwm": "U1 PA4 pin11 -> DRV_PWM -> U3 pin16 PWM_IN", "direction": "U1 PA5 pin12 -> DRV_FR -> U3 pin15 FR", "fs": "U3 pin1 FS -> U1 PA6 pin13", "fg": "U3 pin2 FG -> U1 PA7 pin14", "rd": "U3 pin3 RD -> U1 pin15 PB0/PB1/PB2/PA8", "pwm_pulldown": "R8 3.6K/1%"},
+      "evidence": [{"asset_sha256": "a778bea573af57d753554f3029fddaefd4d1a1486507b24400603c2fd8fe619e", "page": 1, "locator": "第 1 页网格 B2-B3，U1 pins11-15、DRV_* 同名网络、R8 与 U3 pins1-3/15/16"}]
+    },
+    {
+      "id": "interface.motor-output",
+      "category": "interface",
+      "subject": "J2 三相电机接口",
+      "statement": "J2 HT3.96_4P pin4=PHU、pin3=PHV、pin2=PHW、pin1=PCOM；PHU/PHV/PHW 分别来自 U3 U pin10、V pin9、W pin7，PCOM 来自 U3 COM pin13。",
+      "confidence": "confirmed",
+      "attributes": {"connector": "J2 HT3.96_4P", "pin4": "PHU <- U3 pin10 U", "pin3": "PHV <- U3 pin9 V", "pin2": "PHW <- U3 pin7 W", "pin1": "PCOM <- U3 pin13 COM", "phases": "U,V,W"},
+      "evidence": [{"asset_sha256": "a778bea573af57d753554f3029fddaefd4d1a1486507b24400603c2fd8fe619e", "page": 1, "locator": "第 1 页网格 B3-B4，U3 U/V/W/COM 与 J2 pins4/3/2/1"}]
+    },
+    {
+      "id": "power.vin-to-mcu-vdd",
+      "category": "power",
+      "subject": "VIN 至 MCU_VDD",
+      "statement": "VIN 经 R9 150R/1% 与 R10 10R/1% 串联形成 MCU_VDD；D2 BZT52C3V3S 从 R9/R10 中间节点接 GND，C8 10uF/16V 从 MCU_VDD 接 GND。",
+      "confidence": "confirmed",
+      "attributes": {"input": "VIN", "series_resistors": "R9 150R/1%,R10 10R/1%", "zener": "D2 BZT52C3V3S to GND", "output": "MCU_VDD", "capacitor": "C8 10uF/16V"},
+      "evidence": [{"asset_sha256": "a778bea573af57d753554f3029fddaefd4d1a1486507b24400603c2fd8fe619e", "page": 1, "locator": "第 1 页网格 A2，VIN/R9/R10/D2/C8/MCU_VDD"}]
+    },
+    {
+      "id": "power.driver-vin-decoupling",
+      "category": "power",
+      "subject": "DRV11873 VIN 供电与去耦",
+      "statement": "VIN 直接连接 U3 VCC pin11；C12 22uF/16V 位于 U3 VCC/VIN 对地支路，C1/C2/C3 各 22uF/16V 组成另一组 VIN 对地储能，U3 V5 pin12 使用 C7 2.2uF/10V 对地。",
+      "confidence": "confirmed",
+      "attributes": {"driver": "U3 DRV11873PWPR", "vcc": "pin11 -> VIN", "local_bulk": "C12 22uF/16V", "input_bulk": "C1/C2/C3 22uF/16V", "v5": "pin12 with C7 2.2uF/10V", "ground": "GND"},
+      "evidence": [{"asset_sha256": "a778bea573af57d753554f3029fddaefd4d1a1486507b24400603c2fd8fe619e", "page": 1, "locator": "第 1 页网格 B3-C3，U3 VCC/V5、C12/C7 与下方 VIN/C1/C2/C3"}]
+    },
+    {
+      "id": "power.driver-charge-pump",
+      "category": "power",
+      "subject": "DRV11873 电荷泵",
+      "statement": "C9 100nF/50V 跨接 U3 CPP pin5 与 CPN pin6；C11 100nF/50V 位于 U3 VCP pin4 与 VCC/VIN 节点之间。",
+      "confidence": "confirmed",
+      "attributes": {"flying_cap": "C9 100nF/50V between CPP pin5 and CPN pin6", "pump_cap": "C11 100nF/50V between VCP pin4 and VCC/VIN", "driver": "U3 DRV11873PWPR"},
+      "evidence": [{"asset_sha256": "a778bea573af57d753554f3029fddaefd4d1a1486507b24400603c2fd8fe619e", "page": 1, "locator": "第 1 页网格 B3，U3 CPP/CPN/VCP/VCC 与 C9/C11"}]
+    },
+    {
+      "id": "analog.phase-common-network",
+      "category": "analog",
+      "subject": "PHU/PHV/PHW 到 PCOM 网络",
+      "statement": "R5、R6、R7 均为 1K/1%，分别从三相 PHU、PHV、PHW 汇入 PCOM；PCOM 同时连接 U3 COM pin13 和 J2 pin1。",
+      "confidence": "confirmed",
+      "attributes": {"phase_u": "PHU via R5 1K/1%", "phase_v": "PHV via R6 1K/1%", "phase_w": "PHW via R7 1K/1%", "common": "PCOM -> U3 pin13 COM -> J2 pin1"},
+      "evidence": [{"asset_sha256": "a778bea573af57d753554f3029fddaefd4d1a1486507b24400603c2fd8fe619e", "page": 1, "locator": "第 1 页网格 B3-B4，R5/R6/R7、PHU/PHV/PHW、PCOM、U3 COM 与 J2"}]
+    },
+    {
+      "id": "protection.phase-clamps",
+      "category": "protection",
+      "subject": "三相输出钳位",
+      "statement": "D3、D4、D5 均标 SS16-A，分别从 PHU、PHV、PHW 接到公共 GND，对三相输出形成对地钳位支路。",
+      "confidence": "confirmed",
+      "attributes": {"phase_u": "D3 SS16-A to GND", "phase_v": "D4 SS16-A to GND", "phase_w": "D5 SS16-A to GND", "protected_connector": "J2"},
+      "evidence": [{"asset_sha256": "a778bea573af57d753554f3029fddaefd4d1a1486507b24400603c2fd8fe619e", "page": 1, "locator": "第 1 页网格 B3-B4，PHU/PHV/PHW 上的 D3/D4/D5 SS16-A 与 GND"}]
+    },
+    {
+      "id": "gpio.system-led",
+      "category": "gpio",
+      "subject": "SYS_LED 绿色指示灯",
+      "statement": "U1 pin20 的 SYS_LED 网络经 R1 3.6K/1% 和 D1 绿色 LED 接到 GND，构成高电平驱动的状态指示支路。",
+      "confidence": "confirmed",
+      "attributes": {"mcu_pin": "U1 pin20 PB3/PB4/PB5/PB6", "net": "SYS_LED", "resistor": "R1 3.6K/1%", "led": "D1 绿色", "return": "GND"},
+      "evidence": [{"asset_sha256": "a778bea573af57d753554f3029fddaefd4d1a1486507b24400603c2fd8fe619e", "page": 1, "locator": "第 1 页网格 B1-B2，U1 SYS_LED 与 R1/D1/GND"}]
+    },
+    {
+      "id": "debug.swd-header",
+      "category": "debug",
+      "subject": "J3 SWD 下载接口",
+      "statement": "J3 CON5 pin1=MCU_VDD、pin2=SWCLK、pin3=SWDIO、pin4=SYS_RST、pin5=GND；SWCLK/SWDIO 连接 U1 pins19/18，SYS_RST 连接 U1 NRST pin6。",
+      "confidence": "confirmed",
+      "attributes": {"pin1": "MCU_VDD", "pin2": "SWCLK -> U1 pin19", "pin3": "SWDIO -> U1 pin18", "pin4": "SYS_RST -> U1 pin6 NRST", "pin5": "GND", "interface": "SWD"},
+      "evidence": [{"asset_sha256": "a778bea573af57d753554f3029fddaefd4d1a1486507b24400603c2fd8fe619e", "page": 1, "locator": "第 1 页网格 B1-B2，J3 CON5 与 U1 SWCLK/SWDIO/NRST 同名网络"}]
+    },
+    {
+      "id": "reset.mcu-reset",
+      "category": "reset",
+      "subject": "U1 SYS_RST 复位网络",
+      "statement": "U1 NRST pin6 连接 SYS_RST，并引到 J3 pin4；C6 2.2uF/10V 从 SYS_RST 接到 GND，原理图没有显示外部复位上拉电阻或复位按键。",
+      "confidence": "confirmed",
+      "attributes": {"mcu_pin": "U1 pin6 NRST", "net": "SYS_RST", "capacitor": "C6 2.2uF/10V to GND", "debug_pin": "J3 pin4", "external_pullup": null, "reset_button": null},
+      "evidence": [{"asset_sha256": "a778bea573af57d753554f3029fddaefd4d1a1486507b24400603c2fd8fe619e", "page": 1, "locator": "第 1 页网格 B1-B2，J3 SYS_RST、U1 NRST 与 C6/GND"}]
+    },
+    {
+      "id": "clock.no-external-crystal",
+      "category": "clock",
+      "subject": "U1 外部时钟",
+      "statement": "U1 左侧 PC14_OSC32I 与 PC15_OSC32O 复用引脚在本页没有连接晶振、谐振器或负载电容，原理图未显示独立时钟器件。",
+      "confidence": "confirmed",
+      "attributes": {"osc_in": "PC14_OSC32I unconnected", "osc_out": "PC15_OSC32O unconnected", "external_crystal": null, "load_capacitors": null},
+      "evidence": [{"asset_sha256": "a778bea573af57d753554f3029fddaefd4d1a1486507b24400603c2fd8fe619e", "page": 1, "locator": "第 1 页网格 B2，U1 左上 OSC32I/OSC32O 复用引脚无外接线路"}]
+    },
+    {
+      "id": "address.documented-i2c-address",
+      "category": "address",
+      "subject": "正文中的 I2C 地址 0x65",
+      "statement": "产品正文标称默认 I2C 地址为 0x65；本页原理图只显示 J1、R2/R3 和 U1 的 I2C_SCL/I2C_SDA 网络，没有地址电阻、拨码选择、地址文字或固件寄存器。",
+      "confidence": "uncertain",
+      "attributes": {"documented_address": "0x65", "controller": "U1 STM32G030F6P6", "scl": "I2C_SCL", "sda": "I2C_SDA", "schematic_address": null, "hardware_selector": null},
+      "evidence": [{"asset_sha256": "a778bea573af57d753554f3029fddaefd4d1a1486507b24400603c2fd8fe619e", "page": 1, "locator": "第 1 页网格 B1-B2，J1/R2/R3/U1 I2C 网络，图中无 0x65"}]
+    },
+    {
+      "id": "component.documented-driver-functions",
+      "category": "component",
+      "subject": "正文中的无传感器驱动与堵转保护",
+      "statement": "产品正文称 DRV11873PWPR 驱动三相无传感器 BLDC，并集成堵转保护、PWM 转速控制和方向切换；原理图确认 U3 型号、PWM_IN/FR/FG/FS/RD 与三相输出，但没有展开内部换相、堵转阈值、保护时序或适用电机参数。",
+      "confidence": "uncertain",
+      "attributes": {"driver": "U3 DRV11873PWPR", "documented_motor": "三相无传感器 BLDC", "documented_functions": "堵转保护,PWM 转速控制,方向切换", "schematic_control": "PWM_IN,FR,FG,FS,RD", "stall_threshold": null, "protection_timing": null},
+      "evidence": [{"asset_sha256": "a778bea573af57d753554f3029fddaefd4d1a1486507b24400603c2fd8fe619e", "page": 1, "locator": "第 1 页网格 B3，U3 DRV11873PWPR 外部引脚与 PHU/PHV/PHW/PCOM"}]
+    },
+    {
+      "id": "power.documented-current-ratings",
+      "category": "power",
+      "subject": "正文中的带载与整机电流",
+      "statement": "产品正文标称电机驱动 5V、输出带载 DC 5V@508mA、待机 DC 5V@10.62mA、工作 DC 5V@13.20mA；原理图只显示 VIN 电源路径、CS 设置电阻和去耦，没有标注这些额定值、测试条件或容差。",
+      "confidence": "uncertain",
+      "attributes": {"documented_motor_voltage": "5V", "documented_load": "DC 5V@508mA", "documented_standby": "DC 5V@10.62mA", "documented_operating": "DC 5V@13.20mA", "current_set": "U3 CS pin14,R4 2K/1%", "schematic_rating": null, "test_condition": null},
+      "evidence": [{"asset_sha256": "a778bea573af57d753554f3029fddaefd4d1a1486507b24400603c2fd8fe619e", "page": 1, "locator": "第 1 页 VIN/U3/J2/R4/C1-C3/C12 电源与输出电路，未标额定电流"}]
+    }
+  ],
+  "needs_review": [
+    {
+      "id": "review.i2c-address",
+      "fact_id": "address.documented-i2c-address",
+      "question": "请用 U181 当前固件、I2C 协议或总线扫描确认默认地址 0x65 及修改/持久化规则。",
+      "reason": "原理图没有地址文字或硬件地址配置。",
+      "evidence": [{"asset_sha256": "a778bea573af57d753554f3029fddaefd4d1a1486507b24400603c2fd8fe619e", "page": 1, "locator": "第 1 页 J1/U1 I2C_SCL/I2C_SDA"}]
+    },
+    {
+      "id": "review.driver-functions",
+      "fact_id": "component.documented-driver-functions",
+      "question": "请用 DRV11873 资料和 U181 固件确认无传感器换相、堵转检测阈值/恢复行为、PWM 范围、方向切换约束及 FG/FS/RD 语义。",
+      "reason": "板级原理图仅显示驱动器外部连接，未展开内部功能参数。",
+      "evidence": [{"asset_sha256": "a778bea573af57d753554f3029fddaefd4d1a1486507b24400603c2fd8fe619e", "page": 1, "locator": "第 1 页 U3 DRV11873PWPR 与 DRV_PWM/FR/FG/FS/RD"}]
+    },
+    {
+      "id": "review.current-ratings",
+      "fact_id": "power.documented-current-ratings",
+      "question": "请用量产规格或实测确认 5V@508mA 带载能力、10.62mA 待机、13.20mA 工作电流及温升/电机条件。",
+      "reason": "原理图未标整机电流额定值、测试负载或热边界。",
+      "evidence": [{"asset_sha256": "a778bea573af57d753554f3029fddaefd4d1a1486507b24400603c2fd8fe619e", "page": 1, "locator": "第 1 页 VIN、U3、J2 与输入去耦网络"}]
+    }
+  ]
+}

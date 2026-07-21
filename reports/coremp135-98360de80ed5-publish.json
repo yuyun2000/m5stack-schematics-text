@@ -1,0 +1,21 @@
+{
+  "dry_run": false,
+  "failed": 0,
+  "published": 1,
+  "results": [
+    {
+      "backup": null,
+      "draft_action": "unchanged",
+      "dry_run": false,
+      "errors": [],
+      "needs_review": 7,
+      "product_id": "coremp135-98360de80ed5",
+      "product_name": "CoreMP135",
+      "publish_action": "unchanged",
+      "sha256": "ae98e5052ea2063c2743ac7375f082e02165a075263a6b6279b394c69756a285",
+      "status": "valid",
+      "uncertain_facts": 7
+    }
+  ],
+  "schema_version": 1
+}

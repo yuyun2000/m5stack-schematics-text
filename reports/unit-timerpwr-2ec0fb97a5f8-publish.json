@@ -1,0 +1,21 @@
+{
+  "dry_run": false,
+  "failed": 0,
+  "published": 1,
+  "results": [
+    {
+      "backup": null,
+      "draft_action": "unchanged",
+      "dry_run": false,
+      "errors": [],
+      "needs_review": 4,
+      "product_id": "unit-timerpwr-2ec0fb97a5f8",
+      "product_name": "Unit TimerPWR",
+      "publish_action": "unchanged",
+      "sha256": "c70349e1096c99a86512852b6cfa2f006664a1c3b2558f35339b124de804902e",
+      "status": "valid",
+      "uncertain_facts": 4
+    }
+  ],
+  "schema_version": 1
+}

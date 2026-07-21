@@ -1,0 +1,21 @@
+{
+  "dry_run": false,
+  "failed": 0,
+  "published": 1,
+  "results": [
+    {
+      "backup": null,
+      "draft_action": "unchanged",
+      "dry_run": false,
+      "errors": [],
+      "needs_review": 7,
+      "product_id": "unit-poe-cam-w-b5ad042ba84a",
+      "product_name": "Unit PoE CAM-W",
+      "publish_action": "unchanged",
+      "sha256": "badb592d00ba0c11f6979b2bd6cde7db552d0d1532b4c14162ce6281bd5f3627",
+      "status": "valid",
+      "uncertain_facts": 7
+    }
+  ],
+  "schema_version": 1
+}

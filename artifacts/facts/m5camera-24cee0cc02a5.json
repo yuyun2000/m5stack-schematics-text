@@ -1,0 +1,612 @@
+{
+  "schema_version": 1,
+  "generator": "schematic_describer",
+  "product": {
+    "product_id": "m5camera-24cee0cc02a5",
+    "product_name": "M5Camera",
+    "sku": "U017",
+    "source_path": "unit/m5camera.md",
+    "source_sha256": "b574e1db9b63c1ab0c4cb69a3a2895ce50302c612d4ec549f46ec2eb44ff8682",
+    "input_sha256": "6904d76aeeb883d00651a69fcb3091520c8f6747d6e2facdeea51704ef80e188"
+  },
+  "schematic_assets": [
+    {
+      "sha256": "46c05cd332c8c7e51b5650844de2a7bceb43307c6e40f703f728119ac8562180",
+      "source_url": "https://m5stack.oss-cn-shenzhen.aliyuncs.com/image/m5-docs_schematic/unit/m5camera_sch_01.webp",
+      "pages": [1]
+    },
+    {
+      "sha256": "794cbb7a3c5418d5d9ff7d5d33747368cd8abb6d109ea2d2c1f15f8c4992c8da",
+      "source_url": "https://m5stack.oss-cn-shenzhen.aliyuncs.com/image/m5-docs_schematic/unit/m5camera_sch_02.webp",
+      "pages": [1]
+    },
+    {
+      "sha256": "e5ccaeec1a54e3359ebda4eef57a310709c03edeca5872b60e1ed6128bc12b6e",
+      "source_url": "https://m5stack.oss-cn-shenzhen.aliyuncs.com/image/m5-docs_schematic/unit/m5camera_sch_03.webp",
+      "pages": [1]
+    }
+  ],
+  "summary": "M5Camera 的三张原理图页面分别覆盖电源、ESP32-Wrover 与摄像头接口外围、USB 转串口和下载控制。VIN_USB 与 VBAT 经二极管汇入 VBUS，SY8089 生成 VCC_3V3，RT9182-G 再生成 2.5V 与 1.8V 电源；TP4057 提供电池充电路径。ESP32-Wrover 连接 24 针摄像头 FPC、SPM1423 数字麦克风、GPIO14 红蓝指示灯及未装的 MPU60X0/BME280，CP2104 负责 USB-UART、DTR/RTS 自动下载与复位。图面未画 OV2640 器件本体、存储容量、HY2.0-4P 接口或机械信息，且电源轨命名、SY8089 分压旁注和 USB 连接器版本存在待确认差异。",
+  "keywords": [
+    "M5Camera",
+    "U017",
+    "ESP32-Wrover",
+    "OV2640",
+    "FPC0.5-SMT-24P-B",
+    "SY8089",
+    "RT9182-G",
+    "TP4057",
+    "CP2104",
+    "SPM1423HM4H-B",
+    "MPU60X0",
+    "BME280",
+    "VIN_USB",
+    "VBAT",
+    "VBUS",
+    "VCC_3V3",
+    "VDD_2V5",
+    "VDD_1V8",
+    "VCC_2V5",
+    "VCC_1V8",
+    "USB_DP",
+    "USB_DN",
+    "USB_Micro",
+    "USB_CC_1",
+    "USB_CC_2",
+    "TXD0",
+    "RXD0",
+    "DTR",
+    "RTS",
+    "GPIO0",
+    "EN",
+    "GPIO14",
+    "GPIO23",
+    "GPIO22",
+    "GPIO4",
+    "GPIO2",
+    "DVP",
+    "SCCB",
+    "HY2.0-4P",
+    "4MB PSRAM"
+  ],
+  "components": [
+    {
+      "reference": "U1",
+      "part_number": "SY8089",
+      "role": "VBUS 到 VCC_3V3 的同步降压转换器",
+      "evidence": [
+        {"asset_sha256": "46c05cd332c8c7e51b5650844de2a7bceb43307c6e40f703f728119ac8562180", "page": 1, "locator": "页面上方 5V -> 3.3V DCDC Buck 区，U1 SY8089、L1 与 VCC_3V3"}
+      ]
+    },
+    {
+      "reference": "U2",
+      "part_number": "RT9182-G",
+      "role": "VCC_3V3 到 VDD_2V5 和 VDD_1V8 的双路 LDO",
+      "evidence": [
+        {"asset_sha256": "46c05cd332c8c7e51b5650844de2a7bceb43307c6e40f703f728119ac8562180", "page": 1, "locator": "页面中左 3.3V -> 2V5 & 1V8 LDO 区，U2 RT9182-G"}
+      ]
+    },
+    {
+      "reference": "U3",
+      "part_number": "TP4057",
+      "role": "VIN_USB 到 VBAT 的电池充电管理器",
+      "evidence": [
+        {"asset_sha256": "46c05cd332c8c7e51b5650844de2a7bceb43307c6e40f703f728119ac8562180", "page": 1, "locator": "页面左下 U3 TP4057、VIN_USB、VBAT、LED1 与 R4"}
+      ]
+    },
+    {
+      "reference": "D1,D2",
+      "part_number": "1N5819",
+      "role": "VIN_USB 与 VBAT 到 VBUS 的双路二极管汇流",
+      "evidence": [
+        {"asset_sha256": "46c05cd332c8c7e51b5650844de2a7bceb43307c6e40f703f728119ac8562180", "page": 1, "locator": "页面下中 D1/D2 1N5819，VIN_USB/VBAT/VBUS 网络"}
+      ]
+    },
+    {
+      "reference": "U4",
+      "part_number": "ESP32-Wrover",
+      "role": "无线主控模组，连接摄像头 FPC、USB-UART、LED、麦克风与可选传感器",
+      "evidence": [
+        {"asset_sha256": "794cbb7a3c5418d5d9ff7d5d33747368cd8abb6d109ea2d2c1f15f8c4992c8da", "page": 1, "locator": "页面上左 U4 ESP32-Wrover pins1-39"}
+      ]
+    },
+    {
+      "reference": "J1",
+      "part_number": "FPC0.5-SMT-24P-B",
+      "role": "摄像头数据、控制、时钟和电源的 24 针 FPC 接口",
+      "evidence": [
+        {"asset_sha256": "794cbb7a3c5418d5d9ff7d5d33747368cd8abb6d109ea2d2c1f15f8c4992c8da", "page": 1, "locator": "页面上中 J1 FPC0.5-SMT-24P-B pins1-24"}
+      ]
+    },
+    {
+      "reference": "U5",
+      "part_number": "SPM1423HM4H-B",
+      "role": "DAT 接 GPIO2、CLK 接 GPIO4 的数字麦克风",
+      "evidence": [
+        {"asset_sha256": "794cbb7a3c5418d5d9ff7d5d33747368cd8abb6d109ea2d2c1f15f8c4992c8da", "page": 1, "locator": "页面中右 U5 SPM1423HM4H-B、DAT GPIO2、CLK GPIO4"}
+      ]
+    },
+    {
+      "reference": "U6",
+      "part_number": "MPU60X0",
+      "role": "标注为 Not Installed Optional 的惯性传感器预留位置",
+      "evidence": [
+        {"asset_sha256": "794cbb7a3c5418d5d9ff7d5d33747368cd8abb6d109ea2d2c1f15f8c4992c8da", "page": 1, "locator": "页面下左 U6 MPU60X0 与红色 Not Installed Optional 标注"}
+      ]
+    },
+    {
+      "reference": "U7",
+      "part_number": "BME280",
+      "role": "标注为 Not Installed Optional 的环境传感器预留位置",
+      "evidence": [
+        {"asset_sha256": "794cbb7a3c5418d5d9ff7d5d33747368cd8abb6d109ea2d2c1f15f8c4992c8da", "page": 1, "locator": "页面下右 U7 BME280 与红色 Not Installed Optional 标注"}
+      ]
+    },
+    {
+      "reference": "LED2,LED3",
+      "part_number": "BLUE / RED",
+      "role": "GPIO14 公共节点上的红蓝指示灯",
+      "evidence": [
+        {"asset_sha256": "794cbb7a3c5418d5d9ff7d5d33747368cd8abb6d109ea2d2c1f15f8c4992c8da", "page": 1, "locator": "页面右上 GPIO14、LED2 BLUE 与 LED3 RED"}
+      ]
+    },
+    {
+      "reference": "U8",
+      "part_number": "CP2104",
+      "role": "USB 到 ESP32 UART0 的串口桥及下载控制信号源",
+      "evidence": [
+        {"asset_sha256": "e5ccaeec1a54e3359ebda4eef57a310709c03edeca5872b60e1ed6128bc12b6e", "page": 1, "locator": "页面中上 U8 CP2104，USB DP/DN、TXD/RXD、DTR/RTS"}
+      ]
+    },
+    {
+      "reference": "U9",
+      "part_number": "USB_Micro",
+      "role": "VIN_USB 与 USB_DP/USB_DN 的 USB 连接器图符",
+      "evidence": [
+        {"asset_sha256": "e5ccaeec1a54e3359ebda4eef57a310709c03edeca5872b60e1ed6128bc12b6e", "page": 1, "locator": "页面下中 U9 USB_Micro pins1-7"}
+      ]
+    },
+    {
+      "reference": "VT1,VT2",
+      "part_number": "NPN-S8050",
+      "role": "DTR/RTS 到 EN/GPIO0 的自动下载与复位控制晶体管",
+      "evidence": [
+        {"asset_sha256": "e5ccaeec1a54e3359ebda4eef57a310709c03edeca5872b60e1ed6128bc12b6e", "page": 1, "locator": "页面左上 VT1/VT2 NPN-S8050、DTR/RTS、EN/GPIO0"}
+      ]
+    },
+    {
+      "reference": "D3,D4",
+      "part_number": "RLSD52A031V",
+      "role": "USB_DN 与 USB_DP 的静电保护器件",
+      "evidence": [
+        {"asset_sha256": "e5ccaeec1a54e3359ebda4eef57a310709c03edeca5872b60e1ed6128bc12b6e", "page": 1, "locator": "页面下中 USB_DN/USB_DP 上的 D3/D4 RLSD52A031V"}
+      ]
+    },
+    {
+      "reference": "S1",
+      "part_number": "SMT_SW_TS_015",
+      "role": "将 EN 拉低的手动复位按键",
+      "evidence": [
+        {"asset_sha256": "e5ccaeec1a54e3359ebda4eef57a310709c03edeca5872b60e1ed6128bc12b6e", "page": 1, "locator": "页面左下 EN、S1 SMT_SW_TS_015、R18 与 C1"}
+      ]
+    }
+  ],
+  "facts": [
+    {
+      "id": "system.m5camera-architecture",
+      "category": "system",
+      "subject": "M5Camera 硬件架构",
+      "statement": "三张页面共同描述 ESP32-Wrover 主控、J1 摄像头 FPC、SPM1423 数字麦克风、可选未装 MPU60X0/BME280、SY8089/RT9182-G/TP4057 电源链路，以及 CP2104 USB-UART 和自动下载电路。",
+      "confidence": "confirmed",
+      "attributes": {"controller": "U4 ESP32-Wrover", "camera_connector": "J1 FPC0.5-SMT-24P-B", "microphone": "U5 SPM1423HM4H-B", "power": "U1 SY8089,U2 RT9182-G,U3 TP4057", "debug": "U8 CP2104"},
+      "evidence": [
+        {"asset_sha256": "46c05cd332c8c7e51b5650844de2a7bceb43307c6e40f703f728119ac8562180", "page": 1, "locator": "电源页全部功能区"},
+        {"asset_sha256": "794cbb7a3c5418d5d9ff7d5d33747368cd8abb6d109ea2d2c1f15f8c4992c8da", "page": 1, "locator": "主控与外围页全部功能区"},
+        {"asset_sha256": "e5ccaeec1a54e3359ebda4eef57a310709c03edeca5872b60e1ed6128bc12b6e", "page": 1, "locator": "USB-UART 与下载页全部功能区"}
+      ]
+    },
+    {
+      "id": "system.esp32-wrover-core",
+      "category": "system",
+      "subject": "ESP32-Wrover 主控模组",
+      "statement": "U4 标为 ESP32-Wrover，由 VCC_3V3 供电并引出 EN、GPIO0-GPIO39、TXD0/RXD0；模块外部 SD0-SD3、CMD、CLK 引脚在该页标为未连接。",
+      "confidence": "confirmed",
+      "attributes": {"reference": "U4", "module": "ESP32-Wrover", "supply": "VCC_3V3", "uart": "TXD0,RXD0", "external_flash_bus": "SD0-SD3,CMD,CLK marked NC"},
+      "evidence": [
+        {"asset_sha256": "794cbb7a3c5418d5d9ff7d5d33747368cd8abb6d109ea2d2c1f15f8c4992c8da", "page": 1, "locator": "页面上左 U4 ESP32-Wrover pins1-39"}
+      ]
+    },
+    {
+      "id": "power.vbus-to-vcc3v3",
+      "category": "power",
+      "subject": "VBUS 到 VCC_3V3 降压",
+      "statement": "U1 SY8089 的 IN 与 EN 接 VBUS，LX 经 L1 2.2uH 输出 VCC_3V3；输入侧 C4 22uF/C5 2.2uF，输出侧 C2/C3 各 22uF，FB 分压器图符为 R1/R2。",
+      "confidence": "confirmed",
+      "attributes": {"converter": "U1 SY8089", "input": "VBUS", "enable": "VBUS", "inductor": "L1 2.2uH/0420", "output": "VCC_3V3", "input_caps": "C4 22uF/6.3V,C5 2.2uF/6.3V", "output_caps": "C2 22uF/6.3V,C3 22uF/6.3V"},
+      "evidence": [
+        {"asset_sha256": "46c05cd332c8c7e51b5650844de2a7bceb43307c6e40f703f728119ac8562180", "page": 1, "locator": "页面上方 U1/L1/C2-C5/R1/R2 与 VBUS/VCC_3V3"}
+      ]
+    },
+    {
+      "id": "power.vcc3v3-dual-ldo",
+      "category": "power",
+      "subject": "VCC_3V3 到 VDD_2V5 与 VDD_1V8",
+      "statement": "U2 RT9182-G 的 VIN、EN1 与 EN2 接 VCC_3V3，VOUT1 输出 VDD_2V5，VOUT2 输出 VDD_1V8；C8 为输入去耦，C6/C7 分别连接两路输出。",
+      "confidence": "confirmed",
+      "attributes": {"regulator": "U2 RT9182-G", "input": "VCC_3V3", "outputs": "VDD_2V5,VDD_1V8", "capacitors": "C8/C6/C7 2.2uF/6.3V", "page_annotation": "Dual Low-Noise 200mA LDO Regulator"},
+      "evidence": [
+        {"asset_sha256": "46c05cd332c8c7e51b5650844de2a7bceb43307c6e40f703f728119ac8562180", "page": 1, "locator": "页面中左 U2 RT9182-G、C6/C7/C8、VDD_2V5/VDD_1V8"}
+      ]
+    },
+    {
+      "id": "power.tp4057-charge-path",
+      "category": "power",
+      "subject": "VIN_USB 到 VBAT 充电路径",
+      "statement": "U3 TP4057 的 VCC 接 VIN_USB，BAT 输出 VBAT，PROG 经 R4 3K 接 GND；C9/C10 各 2.2uF 分别位于 VIN_USB 与 VBAT 侧，LED1/R3 连接充电状态端。",
+      "confidence": "confirmed",
+      "attributes": {"charger": "U3 TP4057", "input": "VIN_USB", "battery_net": "VBAT", "program_resistor": "R4 3K", "input_cap": "C9 2.2uF/6.3V", "battery_cap": "C10 2.2uF/6.3V", "indicator": "LED1 RED,R3 3K"},
+      "evidence": [
+        {"asset_sha256": "46c05cd332c8c7e51b5650844de2a7bceb43307c6e40f703f728119ac8562180", "page": 1, "locator": "页面左下 U3 TP4057、R3/R4、LED1、C9/C10"}
+      ]
+    },
+    {
+      "id": "power.usb-battery-diode-merge",
+      "category": "power",
+      "subject": "VIN_USB 与 VBAT 到 VBUS 的二极管汇流",
+      "statement": "VIN_USB 经 D1 1N5819 接入 VBUS，VBAT 经 D2 1N5819 接入同一 VBUS 网络，VBUS 再供给 SY8089。",
+      "confidence": "confirmed",
+      "attributes": {"usb_source": "VIN_USB via D1 1N5819", "battery_source": "VBAT via D2 1N5819", "merged_net": "VBUS", "load": "U1 SY8089"},
+      "evidence": [
+        {"asset_sha256": "46c05cd332c8c7e51b5650844de2a7bceb43307c6e40f703f728119ac8562180", "page": 1, "locator": "页面下中 D1/D2 与 VIN_USB/VBAT/VBUS"}
+      ]
+    },
+    {
+      "id": "interface.camera-fpc-gpio-bundle",
+      "category": "interface",
+      "subject": "J1 摄像头 FPC 引脚网络",
+      "statement": "J1 为 24 针 FPC0.5-SMT-24P-B，图面引出 GPIO34、GPIO35、GPIO5、GPIO32、GPIO39、GPIO21、GPIO18、GPIO36、GPIO27、GPIO19、GPIO26、GPIO22、GPIO23、GPIO25，以及 VCC_3V3、VCC_1V8、VCC_2V5 和 GND。",
+      "confidence": "confirmed",
+      "attributes": {"connector": "J1 FPC0.5-SMT-24P-B", "pins": 24, "gpio_bundle": "34,35,5,32,39,21,18,36,27,19,26,22,23,25", "power_labels": "VCC_3V3,VCC_1V8,VCC_2V5,GND"},
+      "evidence": [
+        {"asset_sha256": "794cbb7a3c5418d5d9ff7d5d33747368cd8abb6d109ea2d2c1f15f8c4992c8da", "page": 1, "locator": "页面上中 J1 pins1-24 的 GPIO 与电源网络标注"}
+      ]
+    },
+    {
+      "id": "audio.spm1423-microphone",
+      "category": "audio",
+      "subject": "SPM1423HM4H-B 数字麦克风",
+      "statement": "U5 SPM1423HM4H-B 由 VCC_3V3 供电，DAT pin5 接 GPIO2，CLK pin4 接 GPIO4，SEL pin2 与 GND pins1/3 接地，C13 2.2uF 位于供电侧。",
+      "confidence": "confirmed",
+      "attributes": {"reference": "U5", "part": "SPM1423HM4H-B", "supply": "VCC_3V3", "data": "GPIO2", "clock": "GPIO4", "select": "GND", "decoupling": "C13 2.2uF/6.3V"},
+      "evidence": [
+        {"asset_sha256": "794cbb7a3c5418d5d9ff7d5d33747368cd8abb6d109ea2d2c1f15f8c4992c8da", "page": 1, "locator": "页面中右 U5 pins1-6 与 C13"}
+      ]
+    },
+    {
+      "id": "sensor.optional-unpopulated",
+      "category": "sensor",
+      "subject": "未装的 MPU60X0 与 BME280 预留电路",
+      "statement": "U6 MPU60X0 与 U7 BME280 被红色箭头统一标注 Not Installed Optional；两者由 VCC_3V3 供电，并将 GPIO23/GPIO22 用作串行时钟和数据网络。",
+      "confidence": "confirmed",
+      "attributes": {"population": "Not Installed Optional", "imu": "U6 MPU60X0", "environment_sensor": "U7 BME280", "clock_gpio": 23, "data_gpio": 22},
+      "evidence": [
+        {"asset_sha256": "794cbb7a3c5418d5d9ff7d5d33747368cd8abb6d109ea2d2c1f15f8c4992c8da", "page": 1, "locator": "页面下方 U6/U7 与 Not Installed Optional 红色标注"}
+      ]
+    },
+    {
+      "id": "bus.optional-sensor-wiring",
+      "category": "bus",
+      "subject": "可选传感器 GPIO23/GPIO22 总线",
+      "statement": "U6 的 SCL/SCLK 接 GPIO23、SDA/SDI 接 GPIO22；U7 的 SCK 接 GPIO23、SDI/SDO 接 GPIO22，CSB 接 VCC_3V3、SDO 接 GND。",
+      "confidence": "confirmed",
+      "attributes": {"clock": "GPIO23", "data": "GPIO22", "mpu60x0": "SCL/SCLK=GPIO23,SDA/SDI=GPIO22", "bme280": "SCK=GPIO23,SDI/SDO=GPIO22,CSB=VCC_3V3,SDO=GND"},
+      "evidence": [
+        {"asset_sha256": "794cbb7a3c5418d5d9ff7d5d33747368cd8abb6d109ea2d2c1f15f8c4992c8da", "page": 1, "locator": "页面下方 U6/U7 的 GPIO23/GPIO22 与配置引脚"}
+      ]
+    },
+    {
+      "id": "interface.gpio14-bicolor-led",
+      "category": "interface",
+      "subject": "GPIO14 红蓝指示灯",
+      "statement": "GPIO14 连接 LED2 BLUE 与 LED3 RED 的公共节点；LED2 另一端接 GND，LED3 另一端接 VCC_3V3，该图未在两支路画出串联限流电阻。",
+      "confidence": "confirmed",
+      "attributes": {"gpio": 14, "blue_led": "LED2 to GND", "red_led": "LED3 to VCC_3V3", "series_resistor_shown": false},
+      "evidence": [
+        {"asset_sha256": "794cbb7a3c5418d5d9ff7d5d33747368cd8abb6d109ea2d2c1f15f8c4992c8da", "page": 1, "locator": "页面右上 GPIO14、LED2 BLUE、LED3 RED"}
+      ]
+    },
+    {
+      "id": "interface.usb-micro-data-power",
+      "category": "interface",
+      "subject": "U9 USB 数据与供电连接",
+      "statement": "U9 图符标为 USB_Micro，pin1 接 VIN_USB，pin2/pin3 分别接 D-/D+，pin4 ID 未连接，pin5 及外壳脚接 GND；D-/D+ 经 R16/R17 22ohm 接 USB_DN/USB_DP。",
+      "confidence": "confirmed",
+      "attributes": {"connector": "U9 USB_Micro", "vbus": "pin1 VIN_USB", "data_minus": "pin2 via R16 22ohm to USB_DN", "data_plus": "pin3 via R17 22ohm to USB_DP", "id": "pin4 NC", "ground": "pin5 and shell"},
+      "evidence": [
+        {"asset_sha256": "e5ccaeec1a54e3359ebda4eef57a310709c03edeca5872b60e1ed6128bc12b6e", "page": 1, "locator": "页面下中 U9 USB_Micro、R16/R17 与 USB_DN/USB_DP"}
+      ]
+    },
+    {
+      "id": "protection.usb-data-esd",
+      "category": "protection",
+      "subject": "USB 数据线静电保护",
+      "statement": "USB_DN 与 USB_DP 分别连接 D3 与 D4，图面器件值标为 RLSD52A031V，两器件的公共参考端接 GND。",
+      "confidence": "confirmed",
+      "attributes": {"usb_dn_protection": "D3 RLSD52A031V", "usb_dp_protection": "D4 RLSD52A031V", "reference": "GND"},
+      "evidence": [
+        {"asset_sha256": "e5ccaeec1a54e3359ebda4eef57a310709c03edeca5872b60e1ed6128bc12b6e", "page": 1, "locator": "页面下中 R16/R17 左侧 D3/D4 与 GND"}
+      ]
+    },
+    {
+      "id": "debug.cp2104-usb-uart",
+      "category": "debug",
+      "subject": "CP2104 USB-UART 到 ESP32 UART0",
+      "statement": "U8 CP2104 的 DP/DM 接 USB_DP/USB_DN，TXD pin21 经 R10 470ohm 接 RXD0，RXD pin20 接 TXD0；RTS pin19 与 DTR pin23 引至自动下载电路。",
+      "confidence": "confirmed",
+      "attributes": {"bridge": "U8 CP2104", "usb": "DP=USB_DP,DM=USB_DN", "tx_path": "TXD pin21 -> R10 470ohm -> RXD0", "rx_path": "RXD pin20 -> TXD0", "control": "RTS pin19,DTR pin23"},
+      "evidence": [
+        {"asset_sha256": "e5ccaeec1a54e3359ebda4eef57a310709c03edeca5872b60e1ed6128bc12b6e", "page": 1, "locator": "页面中上 U8 CP2104 pins3/4/19/20/21/23 与 R10"}
+      ]
+    },
+    {
+      "id": "power.cp2104-supply",
+      "category": "power",
+      "subject": "CP2104 USB 与内部电源连接",
+      "statement": "U8 的 REGIN pin7 与 VBUS pin8 接 VIN_USB，VIO pin5 与 VDD pin6 接 VDD_3V45；C19 连接 VIN_USB，C20 连接 VDD_3V45，RST pin9 由 R8 10K 上拉到 VDD_3V45。",
+      "confidence": "confirmed",
+      "attributes": {"regin": "pin7 VIN_USB", "vbus": "pin8 VIN_USB", "vio": "pin5 VDD_3V45", "vdd": "pin6 VDD_3V45", "reset_pullup": "R8 10K to VDD_3V45", "caps": "C19/C20 2.2uF/6.3V"},
+      "evidence": [
+        {"asset_sha256": "e5ccaeec1a54e3359ebda4eef57a310709c03edeca5872b60e1ed6128bc12b6e", "page": 1, "locator": "页面中上 U8 pins5-9、R8、C19/C20"}
+      ]
+    },
+    {
+      "id": "debug.auto-download-control",
+      "category": "debug",
+      "subject": "DTR/RTS 自动下载控制",
+      "statement": "DTR 与 RTS 经 R9/R12 两只 10K 电阻进入 VT1/VT2 NPN-S8050 交叉控制网络，输出连接 ESP32 的 EN 与 GPIO0。",
+      "confidence": "confirmed",
+      "attributes": {"inputs": "DTR,RTS", "base_resistors": "R9 10K,R12 10K", "transistors": "VT1/VT2 NPN-S8050", "targets": "EN,GPIO0"},
+      "evidence": [
+        {"asset_sha256": "e5ccaeec1a54e3359ebda4eef57a310709c03edeca5872b60e1ed6128bc12b6e", "page": 1, "locator": "页面左上 DTR/RTS、R9/R12、VT1/VT2、EN/GPIO0"}
+      ]
+    },
+    {
+      "id": "reset.manual-en-reset",
+      "category": "reset",
+      "subject": "EN 手动复位网络",
+      "statement": "S1 SMT_SW_TS_015 按下时将 EN 接 GND，R18 10K 将 EN 上拉到 VCC_3V3，C1 2.2uF 接在 EN 与 GND 之间，D5 并接于该节点。",
+      "confidence": "confirmed",
+      "attributes": {"reset_net": "EN", "button": "S1 SMT_SW_TS_015 to GND", "pullup": "R18 10K to VCC_3V3", "capacitor": "C1 2.2uF/6.3V", "diode": "D5"},
+      "evidence": [
+        {"asset_sha256": "e5ccaeec1a54e3359ebda4eef57a310709c03edeca5872b60e1ed6128bc12b6e", "page": 1, "locator": "页面左下 EN、S1、R18、C1、D5"}
+      ]
+    },
+    {
+      "id": "power.sy8089-feedback-conflict",
+      "category": "power",
+      "subject": "SY8089 反馈分压标值",
+      "statement": "U1 电路图中的 R1/R2 标为 267K/59K，而同页计算旁注列出 R1=100K、R2=22.22K 并以 22K 得到 3.327V；量产采用的反馈阻值不能由该页唯一确定。",
+      "confidence": "uncertain",
+      "attributes": {"schematic_values": "R1 267K,R2 59K", "annotation_values": "R1 100K,R2 22.22K or 22K", "annotation_output": "3.327V", "production_values": null},
+      "evidence": [
+        {"asset_sha256": "46c05cd332c8c7e51b5650844de2a7bceb43307c6e40f703f728119ac8562180", "page": 1, "locator": "页面上方 U1 右侧 R1/R2 与下方反馈计算旁注"}
+      ]
+    },
+    {
+      "id": "power.camera-rail-name-mismatch",
+      "category": "power",
+      "subject": "LDO 输出与摄像头 FPC 电源网络命名",
+      "statement": "电源页把 U2 两路输出命名为 VDD_2V5/VDD_1V8，主控页 J1 使用 VCC_2V5/VCC_1V8；两组不同网络名之间没有跨页连接说明，不能由当前页面确认其电气等价关系。",
+      "confidence": "uncertain",
+      "attributes": {"ldo_outputs": "VDD_2V5,VDD_1V8", "fpc_rails": "VCC_2V5,VCC_1V8", "cross_sheet_equivalence": null},
+      "evidence": [
+        {"asset_sha256": "46c05cd332c8c7e51b5650844de2a7bceb43307c6e40f703f728119ac8562180", "page": 1, "locator": "页面中左 U2 输出 VDD_2V5/VDD_1V8"},
+        {"asset_sha256": "794cbb7a3c5418d5d9ff7d5d33747368cd8abb6d109ea2d2c1f15f8c4992c8da", "page": 1, "locator": "页面上中 J1 电源脚 VCC_2V5/VCC_1V8"}
+      ]
+    },
+    {
+      "id": "memory.documented-capacities",
+      "category": "memory",
+      "subject": "Flash、RAM 与 PSRAM 容量",
+      "statement": "源文档描述称 ESP32 配置 4M Flash、520K RAM、4M PSRAM，规格表列 4M Flash 与 4MB Quad PSRAM；原理图只标 ESP32-Wrover，没有模组子型号、存储颗粒或容量标注。",
+      "confidence": "uncertain",
+      "attributes": {"documented_flash": "4M", "documented_ram": "520K", "documented_psram": "4M / 4MB Quad", "module_subtype": null, "schematic_capacity": null},
+      "evidence": [
+        {"asset_sha256": "794cbb7a3c5418d5d9ff7d5d33747368cd8abb6d109ea2d2c1f15f8c4992c8da", "page": 1, "locator": "页面上左 U4 仅标 ESP32-Wrover，无容量或存储颗粒"}
+      ]
+    },
+    {
+      "id": "sensor.documented-ov2640-imaging",
+      "category": "sensor",
+      "subject": "OV2640 与成像参数",
+      "statement": "源文档称图像传感器为 OV2640、最大 2MP、视角 65 度，并列出 YUV/YCbCr、RGB565/555 和 Raw RGB 输出；三张原理图只有 J1 摄像头 FPC，没有 OV2640 器件、镜头或成像参数标注。",
+      "confidence": "uncertain",
+      "attributes": {"documented_sensor": "OV2640", "documented_megapixels": 2, "documented_fov_deg": 65, "documented_formats": "YUV422/420,YCbCr422,8-bit compressed,RGB565/555,8-/10-bit Raw RGB"},
+      "evidence": [
+        {"asset_sha256": "794cbb7a3c5418d5d9ff7d5d33747368cd8abb6d109ea2d2c1f15f8c4992c8da", "page": 1, "locator": "页面仅有 J1 摄像头 FPC，无 OV2640 图符或镜头参数"}
+      ]
+    },
+    {
+      "id": "interface.documented-camera-map-pwdn",
+      "category": "interface",
+      "subject": "OV2640 DVP/SCCB 映射与 PWDN",
+      "statement": "源文档把 SIOC/SIOD/XCLK/VSYNC/HREF/PCLK 映射到 G23/G22/G27/G25/G26/G21，把 D2-D9 映射到 G32/G35/G34/G5/G39/G18/G36/G19，并称 RESET 接 G15、PWDN 由 12K 下拉；图面 J1 只标 GPIO 与电源，未显示 OV2640 信号名、G15 连接或 12K PWDN 电阻。",
+      "confidence": "uncertain",
+      "attributes": {"documented_control": "SIOC=G23,SIOD=G22,XCLK=G27,VSYNC=G25,HREF=G26,PCLK=G21,RESET=G15", "documented_data": "D2=G32,D3=G35,D4=G34,D5=G5,D6=G39,D7=G18,D8=G36,D9=G19", "documented_pwdn": "12K pulldown", "schematic_signal_semantics": null},
+      "evidence": [
+        {"asset_sha256": "794cbb7a3c5418d5d9ff7d5d33747368cd8abb6d109ea2d2c1f15f8c4992c8da", "page": 1, "locator": "页面上中 J1 pins1-24 仅标 GPIO 与电源网络"}
+      ]
+    },
+    {
+      "id": "interface.documented-hy2-port",
+      "category": "interface",
+      "subject": "HY2.0-4P 扩展接口",
+      "statement": "源文档称 HY2.0-4P 引出 SCL=IO13、SDA=IO4、5V 与 GND；当前三张原理图没有 HY2.0-4P 连接器或这些引脚的接口连线。",
+      "confidence": "uncertain",
+      "attributes": {"documented_scl": "IO13", "documented_sda": "IO4", "documented_power": "5V,GND", "schematic_connector": null},
+      "evidence": [
+        {"asset_sha256": "794cbb7a3c5418d5d9ff7d5d33747368cd8abb6d109ea2d2c1f15f8c4992c8da", "page": 1, "locator": "主控外围完整页面未见 HY2.0-4P 连接器"}
+      ]
+    },
+    {
+      "id": "system.documented-wifi-camera-firmware",
+      "category": "system",
+      "subject": "Wi-Fi 摄像头预装固件",
+      "statement": "源文档称预装 ESP-IDF Wi-Fi 相机应用，创建 m5stack- 前缀 AP，在 192.168.4.1 提供 600x800、约 5-6fps 视频；原理图不包含固件镜像、SSID、IP、分辨率或帧率配置。",
+      "confidence": "uncertain",
+      "attributes": {"documented_ssid_prefix": "m5stack-", "documented_ip": "192.168.4.1", "documented_resolution": "600x800", "documented_fps": "5-6", "firmware_version": null},
+      "evidence": [
+        {"asset_sha256": "794cbb7a3c5418d5d9ff7d5d33747368cd8abb6d109ea2d2c1f15f8c4992c8da", "page": 1, "locator": "ESP32-Wrover 硬件页无固件或网络配置"}
+      ]
+    },
+    {
+      "id": "system.documented-mechanical",
+      "category": "system",
+      "subject": "产品尺寸与重量",
+      "statement": "源文档规格列产品尺寸 40.0x48.0x11.0mm、重量 17.0g；当前电气原理图没有板框、外壳、摄像头高度、机械公差或质量信息。",
+      "confidence": "uncertain",
+      "attributes": {"documented_size_mm": "40.0x48.0x11.0", "documented_weight_g": 17.0, "mechanical_drawing": null},
+      "evidence": [
+        {"asset_sha256": "46c05cd332c8c7e51b5650844de2a7bceb43307c6e40f703f728119ac8562180", "page": 1, "locator": "电源页无机械尺寸或质量信息"}
+      ]
+    },
+    {
+      "id": "interface.usb-connector-version",
+      "category": "interface",
+      "subject": "USB 连接器硬件版本",
+      "statement": "USB 页的 U9 图符明确标为 USB_Micro，同时另有 USB_CC_1/USB_CC_2 各经 5.1K 接 GND 的独立支路，但两条 CC 网络未画到 U9；源文档包装内容列 USB Type-C 连接线，量产 U017 的实际连接器类型不能由这些信息唯一确定。",
+      "confidence": "uncertain",
+      "attributes": {"schematic_connector": "U9 USB_Micro", "cc_networks": "USB_CC_1 via R7 5.1K to GND; USB_CC_2 via R11 5.1K to GND", "cc_connected_to_u9": false, "documented_cable": "USB Type-C"},
+      "evidence": [
+        {"asset_sha256": "e5ccaeec1a54e3359ebda4eef57a310709c03edeca5872b60e1ed6128bc12b6e", "page": 1, "locator": "页面右上 USB_CC_1/USB_CC_2/R7/R11 与下中 U9 USB_Micro"}
+      ]
+    },
+    {
+      "id": "power.battery-implementation",
+      "category": "power",
+      "subject": "VBAT 电池实现与充电参数",
+      "statement": "电源页显示 TP4057、VBAT、R4 3K 与二极管汇流，但没有电池连接器、电芯型号、容量、保护电路、温度监测或充电电流数值；源文档也未列电池规格。",
+      "confidence": "uncertain",
+      "attributes": {"charger": "U3 TP4057", "battery_net": "VBAT", "program_resistor": "R4 3K", "battery_connector": null, "cell": null, "protection": null, "charge_current": null},
+      "evidence": [
+        {"asset_sha256": "46c05cd332c8c7e51b5650844de2a7bceb43307c6e40f703f728119ac8562180", "page": 1, "locator": "页面下方 U3/TP4057/VBAT/R4，整页无电池连接器或电芯"}
+      ]
+    },
+    {
+      "id": "system.asset-version-binding",
+      "category": "system",
+      "subject": "原理图与 U017 量产版本对应关系",
+      "statement": "三张资源的标题栏没有产品名、SKU 或修订号，主控页与 USB 页仅显示日期 2019/3/1；图面无法独立证明这些页面与当前 U017 量产版本的精确对应关系。",
+      "confidence": "uncertain",
+      "attributes": {"product": "M5Camera", "sku": "U017", "page_date": "2019/3/1", "schematic_revision": null, "title_block_product": null},
+      "evidence": [
+        {"asset_sha256": "46c05cd332c8c7e51b5650844de2a7bceb43307c6e40f703f728119ac8562180", "page": 1, "locator": "电源页右下空白标题栏"},
+        {"asset_sha256": "794cbb7a3c5418d5d9ff7d5d33747368cd8abb6d109ea2d2c1f15f8c4992c8da", "page": 1, "locator": "主控页右下标题栏仅见 Date 2019/3/1"},
+        {"asset_sha256": "e5ccaeec1a54e3359ebda4eef57a310709c03edeca5872b60e1ed6128bc12b6e", "page": 1, "locator": "USB 页右下标题栏仅见 Date 2019/3/1"}
+      ]
+    }
+  ],
+  "needs_review": [
+    {
+      "id": "review.sy8089-feedback",
+      "fact_id": "power.sy8089-feedback-conflict",
+      "question": "U017 量产板的 SY8089 反馈电阻应采用 R1/R2=267K/59K，还是旁注中的 100K/22K 组合？",
+      "reason": "同一页面的器件标值与计算旁注不一致。",
+      "evidence": [
+        {"asset_sha256": "46c05cd332c8c7e51b5650844de2a7bceb43307c6e40f703f728119ac8562180", "page": 1, "locator": "U1 右侧 R1/R2 与下方反馈计算旁注"}
+      ]
+    },
+    {
+      "id": "review.camera-rail-names",
+      "fact_id": "power.camera-rail-name-mismatch",
+      "question": "VDD_2V5/VDD_1V8 与 J1 的 VCC_2V5/VCC_1V8 是否在 PCB 网表中实际相连？",
+      "reason": "跨页网络名称不同，当前图片没有层次端口或网表证明其等价。",
+      "evidence": [
+        {"asset_sha256": "46c05cd332c8c7e51b5650844de2a7bceb43307c6e40f703f728119ac8562180", "page": 1, "locator": "U2 输出 VDD_2V5/VDD_1V8"},
+        {"asset_sha256": "794cbb7a3c5418d5d9ff7d5d33747368cd8abb6d109ea2d2c1f15f8c4992c8da", "page": 1, "locator": "J1 电源脚 VCC_2V5/VCC_1V8"}
+      ]
+    },
+    {
+      "id": "review.memory-capacities",
+      "fact_id": "memory.documented-capacities",
+      "question": "ESP32-Wrover 的具体子型号、Flash/PSRAM 容量与单位是什么？",
+      "reason": "容量来自源文档，原理图未标模组子型号、存储颗粒或容量。",
+      "evidence": [
+        {"asset_sha256": "794cbb7a3c5418d5d9ff7d5d33747368cd8abb6d109ea2d2c1f15f8c4992c8da", "page": 1, "locator": "U4 ESP32-Wrover"}
+      ]
+    },
+    {
+      "id": "review.ov2640-imaging",
+      "fact_id": "sensor.documented-ov2640-imaging",
+      "question": "量产摄像头是否为 OV2640 2MP、65 度视角，且支持源文档列出的全部输出格式？",
+      "reason": "当前原理图只有摄像头 FPC，没有传感器本体、镜头或成像参数。",
+      "evidence": [
+        {"asset_sha256": "794cbb7a3c5418d5d9ff7d5d33747368cd8abb6d109ea2d2c1f15f8c4992c8da", "page": 1, "locator": "J1 camera FPC，页面无 OV2640 图符"}
+      ]
+    },
+    {
+      "id": "review.camera-map-pwdn",
+      "fact_id": "interface.documented-camera-map-pwdn",
+      "question": "OV2640 的 DVP/SCCB/RESET/PWDN 在当前 U017 硬件上的完整网表连接是什么？",
+      "reason": "图面只标 J1 GPIO，未显示 OV2640 信号语义、G15 或 12K PWDN 下拉。",
+      "evidence": [
+        {"asset_sha256": "794cbb7a3c5418d5d9ff7d5d33747368cd8abb6d109ea2d2c1f15f8c4992c8da", "page": 1, "locator": "J1 pins1-24"}
+      ]
+    },
+    {
+      "id": "review.hy2-port",
+      "fact_id": "interface.documented-hy2-port",
+      "question": "U017 的 HY2.0-4P 连接器位号、实际装配状态及 IO13/IO4 电气连接是什么？",
+      "reason": "源文档列出该接口，但三张原理图均未画出。",
+      "evidence": [
+        {"asset_sha256": "794cbb7a3c5418d5d9ff7d5d33747368cd8abb6d109ea2d2c1f15f8c4992c8da", "page": 1, "locator": "完整主控外围页无 HY2.0-4P"}
+      ]
+    },
+    {
+      "id": "review.wifi-camera-firmware",
+      "fact_id": "system.documented-wifi-camera-firmware",
+      "question": "量产预装固件的版本、SSID、IP、默认分辨率和实际帧率是什么？",
+      "reason": "这些行为由固件镜像和运行环境决定，电气原理图无法确认。",
+      "evidence": [
+        {"asset_sha256": "794cbb7a3c5418d5d9ff7d5d33747368cd8abb6d109ea2d2c1f15f8c4992c8da", "page": 1, "locator": "ESP32-Wrover 硬件页无固件配置"}
+      ]
+    },
+    {
+      "id": "review.mechanical",
+      "fact_id": "system.documented-mechanical",
+      "question": "40.0x48.0x11.0mm 外形与 17.0g 重量由哪份当前机械图和量产配置确认？",
+      "reason": "电气原理图没有板框、外壳、机械公差或质量信息。",
+      "evidence": [
+        {"asset_sha256": "46c05cd332c8c7e51b5650844de2a7bceb43307c6e40f703f728119ac8562180", "page": 1, "locator": "页面无机械尺寸或质量信息"}
+      ]
+    },
+    {
+      "id": "review.usb-connector-version",
+      "fact_id": "interface.usb-connector-version",
+      "question": "当前 U017 量产板实际使用 Micro-USB 还是 USB Type-C，USB_CC_1/2 是否接到实际连接器？",
+      "reason": "图面 U9 标为 USB_Micro，CC 下拉网络悬空，源文档包装列 Type-C 线缆。",
+      "evidence": [
+        {"asset_sha256": "e5ccaeec1a54e3359ebda4eef57a310709c03edeca5872b60e1ed6128bc12b6e", "page": 1, "locator": "右上 USB_CC_1/2 与下中 U9 USB_Micro"}
+      ]
+    },
+    {
+      "id": "review.battery-implementation",
+      "fact_id": "power.battery-implementation",
+      "question": "U017 是否实际装配电池或电池接口，TP4057 的充电电流、保护与电芯边界是什么？",
+      "reason": "图面只有 VBAT 与充电器，未画电池连接器、电芯、保护或充电电流。",
+      "evidence": [
+        {"asset_sha256": "46c05cd332c8c7e51b5650844de2a7bceb43307c6e40f703f728119ac8562180", "page": 1, "locator": "U3 TP4057、VBAT、R4 3K，整页无电池器件"}
+      ]
+    },
+    {
+      "id": "review.asset-version-binding",
+      "fact_id": "system.asset-version-binding",
+      "question": "这三张 2019/3/1 页面对应 U017 的哪个 PCB 修订版，是否仍与当前量产硬件一致？",
+      "reason": "标题栏没有产品名、SKU 或 Revision，无法从图片建立精确版本绑定。",
+      "evidence": [
+        {"asset_sha256": "794cbb7a3c5418d5d9ff7d5d33747368cd8abb6d109ea2d2c1f15f8c4992c8da", "page": 1, "locator": "主控页右下标题栏仅见 Date 2019/3/1"},
+        {"asset_sha256": "e5ccaeec1a54e3359ebda4eef57a310709c03edeca5872b60e1ed6128bc12b6e", "page": 1, "locator": "USB 页右下标题栏仅见 Date 2019/3/1"}
+      ]
+    }
+  ]
+}

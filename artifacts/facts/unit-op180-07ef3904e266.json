@@ -1,0 +1,203 @@
+{
+  "schema_version": 1,
+  "generator": "schematic_describer",
+  "product": {
+    "product_id": "unit-op180-07ef3904e266",
+    "product_name": "Unit OP180",
+    "sku": "U058",
+    "source_path": "unit/OP180.md",
+    "source_sha256": "96bcfc2559c034bbbadd86d783c635dfefb0651b000124c58e6bb59089db0dfc",
+    "input_sha256": "667bdbee8a13ce95c00f4a280f7761c5ffbaa08ad9b4833f414f362535131b06"
+  },
+  "schematic_assets": [
+    {
+      "sha256": "dc417b1afd7c43d6a5ab8846c96ad7d9edee711617c034f23e2d103ad748dc2a",
+      "source_url": "https://static-cdn.m5stack.com/resource/docs/products/unit/OP180/img-14df8888-5109-4b25-a399-e6b236e85a50.webp",
+      "pages": [1]
+    }
+  ],
+  "summary": "Unit OP180（U058）以 U1 ITR9606 红外发射/光电晶体管对为核心，发射 LED 由 VCC 经 R1 1KΩ 限流后接地。接收侧光电晶体管的集电极连接输出节点、发射极接地，输出节点同时连接 R3 10KΩ 上拉、R2 20KΩ 下拉和 C4 100nF 滤波，并送到 J1 pin 1 MISO；J1 pin 2 未连接，pin 3/4 为 VCC/GND。页面没有电源转换、保护、主控、总线控制器、时钟或存储器，也没有标明 VCC 数值和遮挡状态对应的最终逻辑定义。",
+  "keywords": [
+    "Unit OP180", "U058", "OP180", "ITR9606", "U1", "红外光电开关",
+    "光电晶体管", "红外发射 LED", "J1", "GROVE_IO", "MISO", "Digital Output",
+    "VCC", "GND", "R1 1KΩ", "R2 20KΩ", "R3 10KΩ", "C4 100nF",
+    "C5 100nF", "output pull-up", "output pull-down", "RC filter", "槽型光电开关",
+    "object detection", "pin 1 MISO", "pin 2 NC", "pin 3 VCC", "pin 4 GND"
+  ],
+  "components": [
+    {
+      "reference": "U1", "part_number": "ITR9606",
+      "role": "集成红外发射 LED 与光电晶体管接收器的非接触光电检测器",
+      "evidence": [{"asset_sha256": "dc417b1afd7c43d6a5ab8846c96ad7d9edee711617c034f23e2d103ad748dc2a", "page": 1, "locator": "页面中央 U1 ITR9606，左侧发光二极管与右侧光电晶体管符号"}]
+    },
+    {
+      "reference": "J1", "part_number": "GROVE_IO",
+      "role": "四针数字输出与电源接口",
+      "evidence": [{"asset_sha256": "dc417b1afd7c43d6a5ab8846c96ad7d9edee711617c034f23e2d103ad748dc2a", "page": 1, "locator": "页面右侧 J1 GROVE_IO，pin 1 MISO、pin 2 未连接、pin 3 VCC、pin 4 GND"}]
+    },
+    {
+      "reference": "R1", "part_number": "1KΩ",
+      "role": "U1 红外发射 LED 的 VCC 侧串联限流电阻",
+      "evidence": [{"asset_sha256": "dc417b1afd7c43d6a5ab8846c96ad7d9edee711617c034f23e2d103ad748dc2a", "page": 1, "locator": "页面 U1 左上 VCC-R1 1KΩ-U1 发射 LED-GND 路径"}]
+    },
+    {
+      "reference": "R2", "part_number": "20KΩ",
+      "role": "MISO 输出节点到 GND 的下拉电阻",
+      "evidence": [{"asset_sha256": "dc417b1afd7c43d6a5ab8846c96ad7d9edee711617c034f23e2d103ad748dc2a", "page": 1, "locator": "页面 U1 右侧输出节点-R2 20KΩ-GND"}]
+    },
+    {
+      "reference": "R3", "part_number": "10KΩ",
+      "role": "MISO 输出节点到 VCC 的上拉电阻",
+      "evidence": [{"asset_sha256": "dc417b1afd7c43d6a5ab8846c96ad7d9edee711617c034f23e2d103ad748dc2a", "page": 1, "locator": "页面 U1 右上 VCC-R3 10KΩ-输出节点"}]
+    },
+    {
+      "reference": "C4", "part_number": "100nF",
+      "role": "MISO 输出节点到 GND 的滤波电容",
+      "evidence": [{"asset_sha256": "dc417b1afd7c43d6a5ab8846c96ad7d9edee711617c034f23e2d103ad748dc2a", "page": 1, "locator": "页面输出节点-C4 100nF-GND"}]
+    },
+    {
+      "reference": "C5", "part_number": "100nF",
+      "role": "VCC 到 GND 的电源去耦电容",
+      "evidence": [{"asset_sha256": "dc417b1afd7c43d6a5ab8846c96ad7d9edee711617c034f23e2d103ad748dc2a", "page": 1, "locator": "页面左侧 VCC-C5 100nF-GND"}]
+    }
+  ],
+  "facts": [
+    {
+      "id": "system.op180-architecture", "category": "system", "subject": "Unit OP180 系统架构",
+      "statement": "电路由 U1 ITR9606 红外发射/接收器、发射限流 R1、输出偏置 R2/R3、输出滤波 C4、电源去耦 C5 和 J1 GROVE_IO 组成。",
+      "confidence": "confirmed",
+      "attributes": {"sensor": "U1 ITR9606", "emitter_bias": "R1 1KΩ", "receiver_bias": "R3 10KΩ pull-up,R2 20KΩ pull-down", "output_filter": "C4 100nF", "decoupling": "C5 100nF", "connector": "J1 GROVE_IO"},
+      "evidence": [{"asset_sha256": "dc417b1afd7c43d6a5ab8846c96ad7d9edee711617c034f23e2d103ad748dc2a", "page": 1, "locator": "整页 U1/J1/R1~R3/C4/C5 与 VCC/GND/MISO 网络"}]
+    },
+    {
+      "id": "sensor.itr9606-elements", "category": "sensor", "subject": "U1 ITR9606 光电结构",
+      "statement": "U1 符号内左侧为向右发光的红外 LED，右侧为受光光电晶体管；两侧在电气上分别形成发射支路和接收输出支路。",
+      "confidence": "confirmed",
+      "attributes": {"emitter": "infrared LED", "receiver": "phototransistor", "electrical_isolation_between_branches": true},
+      "evidence": [{"asset_sha256": "dc417b1afd7c43d6a5ab8846c96ad7d9edee711617c034f23e2d103ad748dc2a", "page": 1, "locator": "页面中央 U1 ITR9606 内部 LED、光箭头与光电晶体管符号"}]
+    },
+    {
+      "id": "analog.ir-emitter-drive", "category": "analog", "subject": "红外发射支路",
+      "statement": "VCC 经 R1 1KΩ 串联到 U1 红外 LED，LED 另一端接 GND；页面未显示发射使能、PWM 或开关晶体管。",
+      "confidence": "confirmed",
+      "attributes": {"path": "VCC -> R1 1KΩ -> U1 IR LED -> GND", "enable": null, "pwm": null, "switch": null},
+      "evidence": [{"asset_sha256": "dc417b1afd7c43d6a5ab8846c96ad7d9edee711617c034f23e2d103ad748dc2a", "page": 1, "locator": "页面 U1 左侧 VCC/R1/LED/GND 连续路径"}]
+    },
+    {
+      "id": "analog.phototransistor-output", "category": "analog", "subject": "光电晶体管输出",
+      "statement": "U1 光电晶体管的上端连接 MISO 输出节点、下端接 GND，因此晶体管导通时对输出节点提供下拉通路。",
+      "confidence": "confirmed",
+      "attributes": {"collector_node": "MISO output node", "emitter_return": "GND", "conducting_action": "pull output toward GND"},
+      "evidence": [{"asset_sha256": "dc417b1afd7c43d6a5ab8846c96ad7d9edee711617c034f23e2d103ad748dc2a", "page": 1, "locator": "页面 U1 右侧光电晶体管上端接输出横线、下端接 GND"}]
+    },
+    {
+      "id": "analog.output-bias", "category": "analog", "subject": "MISO 输出偏置",
+      "statement": "MISO 节点由 R3 10KΩ 上拉到 VCC，同时由 R2 20KΩ 下拉到 GND；在光电晶体管截止且外部高阻时，该电阻网络形成 VCC 到 GND 的分压。",
+      "confidence": "confirmed",
+      "attributes": {"pull_up": "R3 10KΩ to VCC", "pull_down": "R2 20KΩ to GND", "unloaded_divider_ratio": "20K/(10K+20K)=2/3 VCC"},
+      "evidence": [{"asset_sha256": "dc417b1afd7c43d6a5ab8846c96ad7d9edee711617c034f23e2d103ad748dc2a", "page": 1, "locator": "页面输出节点上方 R3 10KΩ 到 VCC、下方 R2 20KΩ 到 GND"}]
+    },
+    {
+      "id": "analog.output-filter", "category": "analog", "subject": "MISO 输出滤波",
+      "statement": "C4 100nF 从 MISO 输出节点接 GND，与 R2/R3 偏置网络共同形成输出低通滤波。",
+      "confidence": "confirmed",
+      "attributes": {"capacitor": "C4 100nF", "node": "MISO", "return": "GND", "bias_resistors": "R2 20KΩ,R3 10KΩ"},
+      "evidence": [{"asset_sha256": "dc417b1afd7c43d6a5ab8846c96ad7d9edee711617c034f23e2d103ad748dc2a", "page": 1, "locator": "页面输出节点-C4 100nF-GND，邻近 R2/R3"}]
+    },
+    {
+      "id": "interface.j1-pinout", "category": "interface", "subject": "J1 GROVE_IO 针脚",
+      "statement": "J1 pin 1 标注 MISO 并连接检测输出，pin 2 以未连接标记结束，pin 3 为 VCC，pin 4 为 GND。",
+      "confidence": "confirmed",
+      "attributes": {"pin_1": "MISO，数字/模拟检测输出", "pin_2": "NC", "pin_3": "VCC，电源输入", "pin_4": "GND"},
+      "evidence": [{"asset_sha256": "dc417b1afd7c43d6a5ab8846c96ad7d9edee711617c034f23e2d103ad748dc2a", "page": 1, "locator": "页面右侧 J1 pins 1~4 与 MISO/NC/VCC/GND"}]
+    },
+    {
+      "id": "gpio.digital-output", "category": "gpio", "subject": "检测输出方向",
+      "statement": "J1 pin 1 MISO 是从 U1 接收支路输出到外部主机的信号；J1 pin 2 未使用，页面没有额外 GPIO、方向控制、中断、RESET、BOOT 或 EN 网络。",
+      "confidence": "confirmed",
+      "attributes": {"output": "J1 pin 1 MISO", "direction": "unit to host", "unused": "J1 pin 2", "direction_control": null, "interrupt": null, "reset": null, "boot": null, "enable": null},
+      "evidence": [{"asset_sha256": "dc417b1afd7c43d6a5ab8846c96ad7d9edee711617c034f23e2d103ad748dc2a", "page": 1, "locator": "页面 U1 接收节点到 J1 pin 1 MISO，J1 pin 2 NC，整页无其他控制网络"}]
+    },
+    {
+      "id": "power.vcc-distribution", "category": "power", "subject": "VCC 电源路径",
+      "statement": "J1 pin 3 VCC 直接供给 R1 发射支路、R3 输出上拉和 C5 去耦；本页没有稳压器、LDO、DC/DC 或负载开关。",
+      "confidence": "confirmed",
+      "attributes": {"input": "J1 pin 3 VCC", "loads": "R1,R3,C5", "regulator": null, "ldo": null, "dc_dc": null, "load_switch": null},
+      "evidence": [{"asset_sha256": "dc417b1afd7c43d6a5ab8846c96ad7d9edee711617c034f23e2d103ad748dc2a", "page": 1, "locator": "页面各 VCC 同名节点及 J1 pin 3，整页无电源转换器件"}]
+    },
+    {
+      "id": "power.decoupling", "category": "power", "subject": "VCC 去耦",
+      "statement": "C5 100nF 直接连接在 VCC 与 GND 之间。",
+      "confidence": "confirmed", "attributes": {"capacitor": "C5 100nF", "rail": "VCC", "return": "GND"},
+      "evidence": [{"asset_sha256": "dc417b1afd7c43d6a5ab8846c96ad7d9edee711617c034f23e2d103ad748dc2a", "page": 1, "locator": "页面左侧 VCC-C5 100nF-GND"}]
+    },
+    {
+      "id": "power.no-battery-monitor", "category": "power", "subject": "充电、电池与监测",
+      "statement": "本页未显示充电器、电池连接、电源良好信号、电压/电流监测或电源使能控制。",
+      "confidence": "confirmed", "attributes": {"charger": null, "battery": null, "power_good": null, "monitor": null, "enable": null},
+      "evidence": [{"asset_sha256": "dc417b1afd7c43d6a5ab8846c96ad7d9edee711617c034f23e2d103ad748dc2a", "page": 1, "locator": "整页仅 VCC 直供 R1/R3/C5，无其他电源器件"}]
+    },
+    {
+      "id": "protection.no-visible-protection", "category": "protection", "subject": "接口与电源保护",
+      "statement": "J1 的 MISO 和 VCC 路径未显示 TVS/ESD、保险丝、反接、过压或独立限流保护；R1 是红外 LED 工作限流电阻。",
+      "confidence": "confirmed",
+      "attributes": {"tvs_esd": null, "fuse": null, "reverse_polarity": null, "overvoltage": null, "interface_current_limit": null, "emitter_current_limit": "R1 1KΩ"},
+      "evidence": [{"asset_sha256": "dc417b1afd7c43d6a5ab8846c96ad7d9edee711617c034f23e2d103ad748dc2a", "page": 1, "locator": "整页 J1-MISO/VCC 路径，无保护器件符号或位号"}]
+    },
+    {
+      "id": "bus.no-serial-bus", "category": "bus", "subject": "外部总线",
+      "statement": "虽然输出网络名为 MISO，但本页没有 MOSI、SCK、CS 或任何控制器/从设备，不能构成 SPI；也未显示 I2C、UART、CAN、RS-485、USB、SDIO、MIPI 或 I2S。",
+      "confidence": "confirmed",
+      "attributes": {"digital_output": "MISO", "spi": null, "i2c": null, "uart": null, "can": null, "rs485": null, "usb": null, "sdio": null, "mipi": null, "i2s": null},
+      "evidence": [{"asset_sha256": "dc417b1afd7c43d6a5ab8846c96ad7d9edee711617c034f23e2d103ad748dc2a", "page": 1, "locator": "整页仅 J1 pin 1 单路 MISO 输出，无配套总线信号"}]
+    },
+    {
+      "id": "clock-reset-storage.none", "category": "clock", "subject": "时钟、复位、调试与存储",
+      "statement": "本页未显示晶振/时钟、复位、调试接口、主控、Flash、EEPROM、RAM 或 SD 卡。",
+      "confidence": "confirmed",
+      "attributes": {"clock": null, "reset": null, "debug": null, "controller": null, "flash": null, "eeprom": null, "ram": null, "sd": null},
+      "evidence": [{"asset_sha256": "dc417b1afd7c43d6a5ab8846c96ad7d9edee711617c034f23e2d103ad748dc2a", "page": 1, "locator": "整页仅 U1/J1/R1~R3/C4/C5，无数字控制、时钟或存储器件"}]
+    },
+    {
+      "id": "power.vcc-voltage", "category": "power", "subject": "VCC 数值电压",
+      "statement": "原理图仅使用 VCC 网络名，没有标注输入电压数值或允许范围，因此不能仅凭本页确认 J1 VCC 为 5V。",
+      "confidence": "uncertain",
+      "attributes": {"net": "VCC", "schematic_voltage": null, "candidate_from_product_doc": "5V", "allowed_range": null},
+      "evidence": [{"asset_sha256": "dc417b1afd7c43d6a5ab8846c96ad7d9edee711617c034f23e2d103ad748dc2a", "page": 1, "locator": "页面 J1 pin 3、R1/R3/C5 仅标 VCC，无电压数字"}]
+    },
+    {
+      "id": "gpio.blocked-state-logic", "category": "gpio", "subject": "遮挡状态与输出逻辑",
+      "statement": "电路可确认光电晶体管导通时下拉 MISO、截止时由 R2/R3 分压偏置，但原理图没有定义被遮挡/未遮挡分别对应高还是低，也没有给主机逻辑阈值。",
+      "confidence": "uncertain",
+      "attributes": {"transistor_on": "MISO pulled toward GND", "transistor_off": "MISO biased by R3 10KΩ/R2 20KΩ", "blocked_level": null, "unblocked_level": null, "host_threshold": null},
+      "evidence": [{"asset_sha256": "dc417b1afd7c43d6a5ab8846c96ad7d9edee711617c034f23e2d103ad748dc2a", "page": 1, "locator": "页面 U1 光耦合符号与 MISO 偏置网络，无 BLOCK/UNBLOCK 或逻辑真值表"}]
+    },
+    {
+      "id": "sensor.detection-performance", "category": "sensor", "subject": "检测几何与时序性能",
+      "statement": "原理图未标注 180° 的机械含义、槽宽/检测距离、响应时间、发射波长、环境光抗扰度或工作温度范围。",
+      "confidence": "uncertain",
+      "attributes": {"angle": null, "slot_width": null, "distance": null, "response_time": null, "wavelength": null, "ambient_light_immunity": null, "temperature_range": null},
+      "evidence": [{"asset_sha256": "dc417b1afd7c43d6a5ab8846c96ad7d9edee711617c034f23e2d103ad748dc2a", "page": 1, "locator": "整页仅 ITR9606 电路连接与阻容值，无机械或性能参数"}]
+    }
+  ],
+  "needs_review": [
+    {
+      "id": "review.vcc-voltage", "fact_id": "power.vcc-voltage",
+      "question": "Unit OP180 的 J1 VCC 额定输入电压和允许范围是什么？",
+      "reason": "原理图仅标 VCC，需产品电气规范、BOM 或实测确认。",
+      "evidence": [{"asset_sha256": "dc417b1afd7c43d6a5ab8846c96ad7d9edee711617c034f23e2d103ad748dc2a", "page": 1, "locator": "页面各 VCC 节点与 J1 pin 3"}]
+    },
+    {
+      "id": "review.blocked-state-logic", "fact_id": "gpio.blocked-state-logic",
+      "question": "物体遮挡与未遮挡时，J1 pin 1 的稳定电压和主机读取逻辑分别是什么？",
+      "reason": "图中没有遮挡状态真值表或主机输入阈值，且输出采用 10KΩ/20KΩ 分压偏置。",
+      "evidence": [{"asset_sha256": "dc417b1afd7c43d6a5ab8846c96ad7d9edee711617c034f23e2d103ad748dc2a", "page": 1, "locator": "页面 U1 光电晶体管、R2/R3/C4 与 MISO 节点"}]
+    },
+    {
+      "id": "review.detection-performance", "fact_id": "sensor.detection-performance",
+      "question": "180° 的具体结构定义、检测间距、响应时间和红外波长等参数是什么？",
+      "reason": "这些机械/光学/时序参数未出现在原理图中。",
+      "evidence": [{"asset_sha256": "dc417b1afd7c43d6a5ab8846c96ad7d9edee711617c034f23e2d103ad748dc2a", "page": 1, "locator": "整页 U1 ITR9606 及外围电路，无性能参数"}]
+    }
+  ]
+}

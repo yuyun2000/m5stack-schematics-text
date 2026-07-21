@@ -1,0 +1,21 @@
+{
+  "dry_run": false,
+  "failed": 0,
+  "published": 1,
+  "results": [
+    {
+      "backup": null,
+      "draft_action": "unchanged",
+      "dry_run": false,
+      "errors": [],
+      "needs_review": 7,
+      "product_id": "hat-18650c-a014bb8f97e1",
+      "product_name": "Hat 18650C",
+      "publish_action": "unchanged",
+      "sha256": "62b07929730a7379c696dafcf30bc9843d43d0b94378d1e6f65f2fed31fbe647",
+      "status": "valid",
+      "uncertain_facts": 7
+    }
+  ],
+  "schema_version": 1
+}

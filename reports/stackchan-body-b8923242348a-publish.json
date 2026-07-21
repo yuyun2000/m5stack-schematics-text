@@ -1,0 +1,21 @@
+{
+  "dry_run": false,
+  "failed": 0,
+  "published": 1,
+  "results": [
+    {
+      "backup": null,
+      "draft_action": "unchanged",
+      "dry_run": false,
+      "errors": [],
+      "needs_review": 4,
+      "product_id": "stackchan-body-b8923242348a",
+      "product_name": "StackChan Body",
+      "publish_action": "unchanged",
+      "sha256": "fdee12da11a4963aac133f31309ec03e968fdd2846e14607cc0b9f0695341df4",
+      "status": "valid",
+      "uncertain_facts": 4
+    }
+  ],
+  "schema_version": 1
+}

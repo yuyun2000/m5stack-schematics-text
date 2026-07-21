@@ -1,0 +1,21 @@
+{
+  "dry_run": false,
+  "failed": 0,
+  "published": 1,
+  "results": [
+    {
+      "backup": null,
+      "draft_action": "unchanged",
+      "dry_run": false,
+      "errors": [],
+      "needs_review": 11,
+      "product_id": "m5camera-x-d535da8c5a43",
+      "product_name": "M5Camera-X",
+      "publish_action": "unchanged",
+      "sha256": "bbf410af052b2df62d069d74557d7db8b6f62c02917af5dea1e59406da443ec7",
+      "status": "valid",
+      "uncertain_facts": 11
+    }
+  ],
+  "schema_version": 1
+}

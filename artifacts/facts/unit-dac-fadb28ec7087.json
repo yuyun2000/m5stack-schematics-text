@@ -1,0 +1,269 @@
+{
+  "schema_version": 1,
+  "generator": "schematic_describer",
+  "product": {
+    "product_id": "unit-dac-fadb28ec7087",
+    "product_name": "Unit DAC",
+    "sku": "U012",
+    "source_path": "unit/dac.md",
+    "source_sha256": "1609713c4ca03c37faf61f5531b2c23d61a2d176b0723ec56078e8eb796e67c9",
+    "input_sha256": "42cce6c28e6ca72afd98ce8657ae3b94171d9fcba7ae4db0bba7085475780b1a"
+  },
+  "schematic_assets": [
+    {
+      "sha256": "bbe5ea067bbf4836c1d296bc29f435407e26701a5e22f20e0b20723afd8d5bf9",
+      "source_url": "https://static-cdn.m5stack.com/resource/docs/products/unit/dac/dac_sch_01.webp",
+      "pages": [1]
+    }
+  ],
+  "summary": "Unit DAC 以 MCP4725_DAC（U2）为 I2C 数模转换器，U2 Vout 经 LM321MFX（U1）电压跟随器缓冲后输出到 P1 pin 1，P1 pin 2 接 GND。J1 四针接口引出 IIC_SCL、IIC_SDA、VCC 和 GND，SCL/SDA 各由 4.7KΩ 上拉到 VCC，U2 A0 接地。U1 与 U2 均直接使用 J1 的 VCC 供电，C1/C2/C3 分别提供接口、DAC 和运放去耦；原理图未打印 VCC 数值、数字地址、分辨率、EEPROM 或绝对输出范围。",
+  "keywords": [
+    "Unit DAC",
+    "U012",
+    "MCP4725_DAC",
+    "MCP4725",
+    "LM321MFX",
+    "IIC_Socket_4P",
+    "Header 2",
+    "I2C",
+    "0x60",
+    "IIC_SCL",
+    "IIC_SDA",
+    "A0",
+    "Vout",
+    "OUTPUT",
+    "VCC",
+    "VSS",
+    "R1 4.7KΩ",
+    "R2 4.7KΩ",
+    "C1 100nF",
+    "C2 100nF",
+    "C3 100nF",
+    "12-bit DAC",
+    "EEPROM",
+    "voltage follower"
+  ],
+  "components": [
+    {
+      "reference": "U2",
+      "part_number": "MCP4725_DAC",
+      "role": "接收 I2C 数据并在 Vout pin 1 生成模拟电压",
+      "evidence": [{"asset_sha256": "bbe5ea067bbf4836c1d296bc29f435407e26701a5e22f20e0b20723afd8d5bf9", "page": 1, "locator": "页 1 中央 U2 MCP4725_DAC：A0 pin 6、SCL pin 5、SDA pin 4、Vout pin 1、Vss pin 2、Vdd pin 3"}]
+    },
+    {
+      "reference": "U1",
+      "part_number": "LM321MFX",
+      "role": "将 U2 Vout 缓冲到 P1 输出的电压跟随器",
+      "evidence": [{"asset_sha256": "bbe5ea067bbf4836c1d296bc29f435407e26701a5e22f20e0b20723afd8d5bf9", "page": 1, "locator": "页 1 右中 U1 LM321MFX：+IN pin 1 接 U2 Vout，OUTPUT pin 4 回接 -IN pin 3 并连接 P1"}]
+    },
+    {
+      "reference": "J1",
+      "part_number": "IIC_Socket_4P",
+      "role": "外部 I2C、VCC 和 GND 接口",
+      "evidence": [{"asset_sha256": "bbe5ea067bbf4836c1d296bc29f435407e26701a5e22f20e0b20723afd8d5bf9", "page": 1, "locator": "页 1 左侧 J1 IIC_Socket_4P：pin 1 IIC_SCL、pin 2 IIC_SDA、pin 3 VCC、pin 4 GND"}]
+    },
+    {
+      "reference": "P1",
+      "part_number": "Header 2",
+      "role": "缓冲模拟电压输出与地连接器",
+      "evidence": [{"asset_sha256": "bbe5ea067bbf4836c1d296bc29f435407e26701a5e22f20e0b20723afd8d5bf9", "page": 1, "locator": "页 1 右侧 P1 Header 2：pin 1 接 U1 OUTPUT，pin 2 接 GND"}]
+    },
+    {
+      "reference": "R1/R2",
+      "part_number": "4.7KΩ",
+      "role": "IIC_SCL 与 IIC_SDA 到 VCC 的上拉电阻",
+      "evidence": [{"asset_sha256": "bbe5ea067bbf4836c1d296bc29f435407e26701a5e22f20e0b20723afd8d5bf9", "page": 1, "locator": "页 1 左中：R1/R2 均 4.7KΩ，上端接 VCC，下端分别接 IIC_SCL/IIC_SDA"}]
+    },
+    {
+      "reference": "C1/C2/C3",
+      "part_number": "100nF",
+      "role": "J1/U2/U1 的 VCC 电源去耦电容",
+      "evidence": [{"asset_sha256": "bbe5ea067bbf4836c1d296bc29f435407e26701a5e22f20e0b20723afd8d5bf9", "page": 1, "locator": "页 1：C1、C2、C3 均标 100nF，分别位于 J1、U2 Vdd、U1 VCC 附近并接 GND"}]
+    }
+  ],
+  "facts": [
+    {
+      "id": "system.i2c-dac-output-chain",
+      "category": "system",
+      "subject": "Unit DAC",
+      "statement": "J1 的 IIC_SCL/IIC_SDA 连接 U2 MCP4725_DAC，U2 Vout 进入 U1 LM321MFX 电压跟随器，U1 OUTPUT 直接送到 P1 pin 1；J1、U2 和 U1 共用 VCC/GND。",
+      "confidence": "confirmed",
+      "attributes": {"digital_interface": "J1 IIC_SCL,IIC_SDA", "dac": "U2 MCP4725_DAC", "buffer": "U1 LM321MFX", "analog_output": "P1 pin 1", "power": "VCC,GND"},
+      "evidence": [{"asset_sha256": "bbe5ea067bbf4836c1d296bc29f435407e26701a5e22f20e0b20723afd8d5bf9", "page": 1, "locator": "整页：J1/R1/R2/U2/U1/P1 与 VCC/GND 直接连线"}]
+    },
+    {
+      "id": "interface.i2c-socket-pinout",
+      "category": "interface",
+      "subject": "J1 IIC_Socket_4P",
+      "statement": "J1 pin 1 接 IIC_SCL，pin 2 接 IIC_SDA，pin 3 接 VCC，pin 4 接 GND。",
+      "confidence": "confirmed",
+      "attributes": {"pin_1": "IIC_SCL", "pin_2": "IIC_SDA", "pin_3": "VCC", "pin_4": "GND"},
+      "evidence": [{"asset_sha256": "bbe5ea067bbf4836c1d296bc29f435407e26701a5e22f20e0b20723afd8d5bf9", "page": 1, "locator": "页 1 左侧 J1 pins 1~4、IIC_SCL/IIC_SDA/VCC/GND 标签"}]
+    },
+    {
+      "id": "bus.i2c-dac-connection",
+      "category": "bus",
+      "subject": "U2 I2C",
+      "statement": "J1 pin 1 的 IIC_SCL 连接 U2 SCL pin 5，J1 pin 2 的 IIC_SDA 连接 U2 SDA pin 4；两条总线均上拉到 VCC。",
+      "confidence": "confirmed",
+      "attributes": {"device": "U2 MCP4725_DAC", "scl": "J1 pin 1 to U2 pin 5", "sda": "J1 pin 2 to U2 pin 4", "pullup_rail": "VCC", "controller": "external I2C host"},
+      "evidence": [{"asset_sha256": "bbe5ea067bbf4836c1d296bc29f435407e26701a5e22f20e0b20723afd8d5bf9", "page": 1, "locator": "页 1 左中 J1/U2 的 IIC_SCL/IIC_SDA 同名网络"}]
+    },
+    {
+      "id": "power.i2c-pullups",
+      "category": "power",
+      "subject": "IIC_SCL/IIC_SDA 上拉",
+      "statement": "R1 和 R2 均为 4.7KΩ，分别将 IIC_SCL 与 IIC_SDA 上拉到 VCC。",
+      "confidence": "confirmed",
+      "attributes": {"scl_pullup": "R1 4.7KΩ", "sda_pullup": "R2 4.7KΩ", "rail": "VCC"},
+      "evidence": [{"asset_sha256": "bbe5ea067bbf4836c1d296bc29f435407e26701a5e22f20e0b20723afd8d5bf9", "page": 1, "locator": "页 1 左中：VCC-R1-IIC_SCL 与 VCC-R2-IIC_SDA 支路"}]
+    },
+    {
+      "id": "gpio.a0-ground-strap",
+      "category": "gpio",
+      "subject": "U2 A0",
+      "statement": "U2 A0 pin 6 在原理图中连接 GND，没有绘出跳线、焊盘或外部地址选择器。",
+      "confidence": "confirmed",
+      "attributes": {"device": "U2 MCP4725_DAC", "pin": "A0 pin 6", "strap": "GND", "configurable_selector": null},
+      "evidence": [{"asset_sha256": "bbe5ea067bbf4836c1d296bc29f435407e26701a5e22f20e0b20723afd8d5bf9", "page": 1, "locator": "页 1 中央 U2 左侧 A0 pin 6 的对地连线和 GND 符号"}]
+    },
+    {
+      "id": "address.i2c-not-printed",
+      "category": "address",
+      "subject": "Unit DAC I2C 地址",
+      "statement": "原理图明确显示 A0 pin 6 接 GND，但没有打印十六进制 I2C 地址；数字地址仍需结合 MCP4725 的器件地址规则确认。",
+      "confidence": "uncertain",
+      "attributes": {"device": "U2 MCP4725_DAC", "a0": "GND", "schematic_address": null, "address_rule_source_needed": "MCP4725 datasheet and ordering code"},
+      "evidence": [{"asset_sha256": "bbe5ea067bbf4836c1d296bc29f435407e26701a5e22f20e0b20723afd8d5bf9", "page": 1, "locator": "页 1 U2 A0/SCL/SDA 区域，页面无 0x 地址文字"}]
+    },
+    {
+      "id": "analog.dac-vout-path",
+      "category": "analog",
+      "subject": "U2 Vout",
+      "statement": "U2 Vout pin 1 直接连接 U1 +IN pin 1，未在 DAC 与运放之间绘出串联电阻或 RC 滤波器。",
+      "confidence": "confirmed",
+      "attributes": {"source": "U2 Vout pin 1", "destination": "U1 +IN pin 1", "series_resistor": null, "filter": null},
+      "evidence": [{"asset_sha256": "bbe5ea067bbf4836c1d296bc29f435407e26701a5e22f20e0b20723afd8d5bf9", "page": 1, "locator": "页 1 中右 U2 Vout 到 U1 +IN 的直接水平连线"}]
+    },
+    {
+      "id": "analog.opamp-follower",
+      "category": "analog",
+      "subject": "U1 LM321MFX",
+      "statement": "U1 OUTPUT pin 4 回接 -IN pin 3，+IN pin 1 接 U2 Vout，形成电压跟随连接；OUTPUT pin 4 同时直接连接 P1 pin 1。",
+      "confidence": "confirmed",
+      "attributes": {"non_inverting_input": "pin 1 from U2 Vout", "inverting_input": "pin 3 tied to output", "output": "pin 4 to P1 pin 1", "configuration": "voltage follower"},
+      "evidence": [{"asset_sha256": "bbe5ea067bbf4836c1d296bc29f435407e26701a5e22f20e0b20723afd8d5bf9", "page": 1, "locator": "页 1 右中 U1 +IN/-IN/OUTPUT 及上方反馈线"}]
+    },
+    {
+      "id": "interface.analog-output-pinout",
+      "category": "interface",
+      "subject": "P1 Header 2",
+      "statement": "P1 pin 1 接 U1 OUTPUT pin 4，作为缓冲模拟电压输出；P1 pin 2 接 GND。",
+      "confidence": "confirmed",
+      "attributes": {"pin_1": "buffered analog output from U1 pin 4", "pin_2": "GND", "direction": "Unit to external load"},
+      "evidence": [{"asset_sha256": "bbe5ea067bbf4836c1d296bc29f435407e26701a5e22f20e0b20723afd8d5bf9", "page": 1, "locator": "页 1 右侧 P1 pins 1/2 与 U1 OUTPUT/GND 连线"}]
+    },
+    {
+      "id": "power.device-supplies",
+      "category": "power",
+      "subject": "U1/U2 VCC 供电",
+      "statement": "U2 Vdd pin 3 与 U1 VCC pin 5 均接 VCC，U2 Vss pin 2 与 U1 VSS pin 2 均接 GND。",
+      "confidence": "confirmed",
+      "attributes": {"dac_supply": "U2 Vdd pin 3 VCC", "dac_ground": "U2 Vss pin 2 GND", "opamp_supply": "U1 VCC pin 5", "opamp_ground": "U1 VSS pin 2"},
+      "evidence": [{"asset_sha256": "bbe5ea067bbf4836c1d296bc29f435407e26701a5e22f20e0b20723afd8d5bf9", "page": 1, "locator": "页 1 中右 U2 pins 2/3 与 U1 pins 2/5 的 VCC/GND 网络"}]
+    },
+    {
+      "id": "power.decoupling",
+      "category": "power",
+      "subject": "VCC 去耦",
+      "statement": "C1、C2、C3 均为 100nF 并连接 VCC 与 GND，分别位于 J1、U2 和 U1 电源附近。",
+      "confidence": "confirmed",
+      "attributes": {"interface_capacitor": "C1 100nF", "dac_capacitor": "C2 100nF", "opamp_capacitor": "C3 100nF", "rail": "VCC", "return": "GND"},
+      "evidence": [{"asset_sha256": "bbe5ea067bbf4836c1d296bc29f435407e26701a5e22f20e0b20723afd8d5bf9", "page": 1, "locator": "页 1 C1/C2/C3 三个 VCC-GND 100nF 支路"}]
+    },
+    {
+      "id": "power.vcc-rating-not-shown",
+      "category": "power",
+      "subject": "J1 VCC 额定值",
+      "statement": "J1 pin 3、U2 Vdd 和 U1 VCC 共用名为 VCC 的电源，但原理图没有打印 VCC 数值，无法仅凭该页确认接口供电电压。",
+      "confidence": "uncertain",
+      "attributes": {"connector_pin": "J1 pin 3", "net": "VCC", "loads": "U2 Vdd,U1 VCC,R1,R2", "schematic_voltage": null},
+      "evidence": [{"asset_sha256": "bbe5ea067bbf4836c1d296bc29f435407e26701a5e22f20e0b20723afd8d5bf9", "page": 1, "locator": "整页 VCC 网络，未见 3.3V/5V 数字标注"}]
+    },
+    {
+      "id": "analog.output-specs-not-shown",
+      "category": "analog",
+      "subject": "DAC 输出规格",
+      "statement": "原理图显示 MCP4725_DAC 与 LM321MFX 的连接，但没有打印 DAC 分辨率、输出电压范围、输出电流、线性度或建立时间。",
+      "confidence": "uncertain",
+      "attributes": {"dac": "U2 MCP4725_DAC", "buffer": "U1 LM321MFX", "schematic_resolution": null, "schematic_output_range": null, "schematic_output_current": null, "schematic_linearity": null},
+      "evidence": [{"asset_sha256": "bbe5ea067bbf4836c1d296bc29f435407e26701a5e22f20e0b20723afd8d5bf9", "page": 1, "locator": "页 1 U2/U1/P1 模拟链，仅有型号和引脚，无性能参数"}]
+    },
+    {
+      "id": "memory.eeprom-not-shown",
+      "category": "memory",
+      "subject": "MCP4725 非易失存储能力",
+      "statement": "原理图只标注器件型号 MCP4725_DAC，没有绘出或文字说明 EEPROM 容量、写入路径、上电恢复行为或写周期。",
+      "confidence": "uncertain",
+      "attributes": {"device": "U2 MCP4725_DAC", "external_eeprom": null, "schematic_internal_eeprom": null, "schematic_write_cycle": null, "capability_source_needed": "MCP4725 datasheet"},
+      "evidence": [{"asset_sha256": "bbe5ea067bbf4836c1d296bc29f435407e26701a5e22f20e0b20723afd8d5bf9", "page": 1, "locator": "页 1 U2 器件符号与整页，未见 EEPROM 文字或外部存储器"}]
+    },
+    {
+      "id": "clock.no-external-clock",
+      "category": "clock",
+      "subject": "外部时钟",
+      "statement": "本页未绘出晶振、振荡器或时钟网络，U2 对外仅显示 A0、SCL、SDA、Vout、Vss 和 Vdd。",
+      "confidence": "confirmed",
+      "attributes": {"external_crystal": null, "external_oscillator": null, "clock_net": null},
+      "evidence": [{"asset_sha256": "bbe5ea067bbf4836c1d296bc29f435407e26701a5e22f20e0b20723afd8d5bf9", "page": 1, "locator": "整页无晶振/振荡器位号；U2 六引脚符号无时钟脚"}]
+    },
+    {
+      "id": "protection.no-protection-shown",
+      "category": "protection",
+      "subject": "I2C 与模拟输出保护",
+      "statement": "本页没有绘出 TVS、ESD 阵列、保险丝、反接保护或模拟输出限流器件。",
+      "confidence": "confirmed",
+      "attributes": {"i2c_esd": null, "output_esd": null, "fuse": null, "reverse_polarity": null, "output_series_resistor": null},
+      "evidence": [{"asset_sha256": "bbe5ea067bbf4836c1d296bc29f435407e26701a5e22f20e0b20723afd8d5bf9", "page": 1, "locator": "整页可见器件仅 J1/R1/R2/C1/U2/C2/U1/C3/P1，无保护位号"}]
+    },
+    {
+      "id": "key_net.dac-signal-index",
+      "category": "key_net",
+      "subject": "Unit DAC 关键网络索引",
+      "statement": "关键路径为 J1 pin 1/2→IIC_SCL/IIC_SDA→U2 pins 5/4，U2 Vout pin 1→U1 +IN pin 1→U1 OUTPUT pin 4→P1 pin 1，以及 J1 pin 3 VCC→U2/U1/R1/R2。",
+      "confidence": "confirmed",
+      "attributes": {"i2c_path": "J1.1/2-U2.5/4", "analog_path": "U2.1-U1.1-U1.4-P1.1", "feedback": "U1.4-U1.3", "power_path": "J1.3 VCC-U2.3/U1.5/R1/R2", "ground": "J1.4,U2.2,U1.2,P1.2"},
+      "evidence": [{"asset_sha256": "bbe5ea067bbf4836c1d296bc29f435407e26701a5e22f20e0b20723afd8d5bf9", "page": 1, "locator": "整页 IIC_SCL/IIC_SDA/VCC/GND 与 U2 Vout/U1 OUTPUT 直接连线"}]
+    }
+  ],
+  "needs_review": [
+    {
+      "id": "review.i2c-address",
+      "fact_id": "address.i2c-not-printed",
+      "question": "A0 接 GND 时，本产品所装 MCP4725 变体的 I2C 地址是否为 0x60？",
+      "reason": "原理图未打印数字地址，MCP4725 地址还取决于器件固定地址位和订货后缀，需要数据手册/BOM 确认。",
+      "evidence": [{"asset_sha256": "bbe5ea067bbf4836c1d296bc29f435407e26701a5e22f20e0b20723afd8d5bf9", "page": 1, "locator": "U2 A0 pin 6 接 GND、SCL/SDA 已连接，但页面无 0x 地址"}]
+    },
+    {
+      "id": "review.vcc-rating",
+      "fact_id": "power.vcc-rating-not-shown",
+      "question": "J1 pin 3 的 VCC 额定供电电压是多少？",
+      "reason": "原理图只使用 VCC 网络名，没有打印电压数值；该值同时影响 I2C 电平、DAC 和运放供电。",
+      "evidence": [{"asset_sha256": "bbe5ea067bbf4836c1d296bc29f435407e26701a5e22f20e0b20723afd8d5bf9", "page": 1, "locator": "J1/U2/U1/R1/R2 的 VCC 网络，页面无电压数值"}]
+    },
+    {
+      "id": "review.output-specs",
+      "fact_id": "analog.output-specs-not-shown",
+      "question": "当前硬件的 DAC 分辨率、P1 输出范围、带载能力和误差指标分别是什么？",
+      "reason": "原理图只确认 MCP4725_DAC 和 LM321MFX 跟随器拓扑，没有打印性能参数，且输出范围受 VCC 与器件规格限制。",
+      "evidence": [{"asset_sha256": "bbe5ea067bbf4836c1d296bc29f435407e26701a5e22f20e0b20723afd8d5bf9", "page": 1, "locator": "U2 Vout-U1-P1 输出链，无分辨率或电压范围文字"}]
+    },
+    {
+      "id": "review.eeprom-capability",
+      "fact_id": "memory.eeprom-not-shown",
+      "question": "本产品 MCP4725 的 EEPROM 写入与上电恢复行为、写入次数和限制是什么？",
+      "reason": "内部 EEPROM 能力不在原理图中表达，需要器件数据手册和软件实现确认。",
+      "evidence": [{"asset_sha256": "bbe5ea067bbf4836c1d296bc29f435407e26701a5e22f20e0b20723afd8d5bf9", "page": 1, "locator": "U2 MCP4725_DAC 符号未标 EEPROM，整页无外部存储器"}]
+    }
+  ]
+}

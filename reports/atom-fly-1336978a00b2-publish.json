@@ -1,0 +1,21 @@
+{
+  "dry_run": false,
+  "failed": 0,
+  "published": 1,
+  "results": [
+    {
+      "backup": null,
+      "draft_action": "unchanged",
+      "dry_run": false,
+      "errors": [],
+      "needs_review": 2,
+      "product_id": "atom-fly-1336978a00b2",
+      "product_name": "Atom Fly",
+      "publish_action": "unchanged",
+      "sha256": "6ca9b4a51790c0600fd80329f9393ead1e8d2cfa56dfee04ea62a8fe00c1cf71",
+      "status": "valid",
+      "uncertain_facts": 2
+    }
+  ],
+  "schema_version": 1
+}

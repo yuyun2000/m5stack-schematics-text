@@ -1,0 +1,21 @@
+{
+  "dry_run": false,
+  "failed": 0,
+  "published": 1,
+  "results": [
+    {
+      "backup": null,
+      "draft_action": "unchanged",
+      "dry_run": false,
+      "errors": [],
+      "needs_review": 4,
+      "product_id": "module-gateway-h2-1a78b06ae3b4",
+      "product_name": "Module Gateway H2",
+      "publish_action": "unchanged",
+      "sha256": "d6bc0fe3cc2ff7ff2f09572b7a829c46bfb7f0622e0617b7a3da81f2aacdfa1f",
+      "status": "valid",
+      "uncertain_facts": 4
+    }
+  ],
+  "schema_version": 1
+}

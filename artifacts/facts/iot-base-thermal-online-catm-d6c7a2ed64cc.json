@@ -1,0 +1,219 @@
+{
+  "schema_version": 1,
+  "generator": "schematic_describer",
+  "product": {
+    "product_id": "iot-base-thermal-online-catm-d6c7a2ed64cc",
+    "product_name": "IoT Base Thermal Online CatM",
+    "sku": "K119",
+    "source_path": "base/thermalonline_catm.md",
+    "source_sha256": "ec73d9ddb3e41578c02abee48cfccf4c2992a8363e8fa45b99ee258124132e06",
+    "input_sha256": "e2654a104ff58a2bddfaec072e748654d1a524f42a5c1160bf7ab5452579cd12"
+  },
+  "schematic_assets": [
+    {"sha256": "5fe5c54a461d0ba9d98f5bd423e24fd5843762985acde0ee1a6288b75238926a", "source_url": "https://static-cdn.m5stack.com/resource/docs/products/base/thermalonline_catm/thermalonline_catm_sch_01.webp", "pages": [1]},
+    {"sha256": "bf1e77cc17a7130a1c9816025b04c9bf9bf1ca92ae9da1d762b82fdd419ed013", "source_url": "https://static-cdn.m5stack.com/resource/docs/products/base/thermalonline_catm/thermalonline_catm_sch_02.webp", "pages": [1]}
+  ],
+  "summary": "IoT Base Thermal Online CatM 以 U1 SIM7080G 和 U1 MLX90640 为核心：SIM7080G 通过 CORE G0/G35 的双晶体管 UART 电平转换通信，CORE G12 控制 PWRKEY，ANT pin32 接 IPEX；MLX90640 由 HT7533 生成的 3.3V 供电并通过 G21/G22 I2C 连接主机。VIN_P240 经 U3 SY8205FCC 生成 CORE_P050，再由 U4 SY8089AAAC 生成 NB_P033；独立 BAT_IN 经 FU1/D1 接 CORE_BAT。U2 RS485 通道包含自动方向、偏置、DNP 终端位和三只 TVS，J1/J2/J3 提供 Grove 扩展，J4/J7 提供直流与 RS485/电源输入，J8 为 SIM 卡座。MLX90640 地址/测温性能、无线频段协议、U2 料号和电源/电池能力需结合 datasheet、BOM 与实测确认。",
+  "keywords": [
+    "IoT Base Thermal Online CatM", "K119", "SIM7080G", "MLX90640", "HT7533", "SY8205FCC", "SY8089AAAC", "VIN_P240",
+    "CORE_P050", "NB_P033", "NB_P018", "CORE_BAT", "CORE_TXD", "CORE_RXD", "NB_TXD", "NB_RXD", "MOD_PWR", "NB_KEY",
+    "NB_STAT", "RS_TXD", "RS_RXD", "RS_A", "RS_B", "M5_BUS", "P1 Header8", "G21", "G22", "G0", "G35", "G12",
+    "G15", "G13", "G36", "G26", "G17", "G16", "I2C", "RS485", "MicroSIM", "IPEX"
+  ],
+  "components": [
+    {"reference": "U1 (主板)", "part_number": "SIM7080G", "role": "Cat-M/NB-IoT 通信模组，连接 UART、PWRKEY、状态 LED、IPEX 天线和 SIM 卡座", "evidence": [{"asset_sha256": "5fe5c54a461d0ba9d98f5bd423e24fd5843762985acde0ee1a6288b75238926a", "page": 1, "locator": "第 1 张第 1 页下中 U1 SIM7080G，UART1、PWRKEY、STATUS、ANT、VBAT/VDD_EXT 与 SIM 引脚"}]},
+    {"reference": "U2 (主板)", "part_number": null, "role": "NB_P033 供电的 RS485 收发器，连接 RS_TXD/RS_RXD、自动方向网络和 RS_A/RS_B", "evidence": [{"asset_sha256": "5fe5c54a461d0ba9d98f5bd423e24fd5843762985acde0ee1a6288b75238926a", "page": 1, "locator": "第 1 张第 1 页中央 U2，RO/RE/DE/DI/A/B/VCC/GND 与 Q1、偏置和保护网络"}]},
+    {"reference": "U3 (主板)", "part_number": "SY8205FCC", "role": "将 VIN_P240 降压为 CORE_P050 的第一级开关稳压器", "evidence": [{"asset_sha256": "5fe5c54a461d0ba9d98f5bd423e24fd5843762985acde0ee1a6288b75238926a", "page": 1, "locator": "第 1 张第 1 页右上 U3 SY8205FCC、FU2、L1 与 CORE_P050"}]},
+    {"reference": "U4 (主板)", "part_number": "SY8089AAAC", "role": "将 CORE_P050 降压为 NB_P033 的第二级开关稳压器", "evidence": [{"asset_sha256": "5fe5c54a461d0ba9d98f5bd423e24fd5843762985acde0ee1a6288b75238926a", "page": 1, "locator": "第 1 张第 1 页右上 U4 SY8089AAAC、L2 10uH 与 NB_P033"}]},
+    {"reference": "Q1,Q2,Q3,Q4", "part_number": "S8050", "role": "RS485 自动方向、CORE/NB UART 电平转换和 SIM7080G PWRKEY 下拉控制", "evidence": [{"asset_sha256": "5fe5c54a461d0ba9d98f5bd423e24fd5843762985acde0ee1a6288b75238926a", "page": 1, "locator": "第 1 张第 1 页中央 Q1/Q2/Q3/Q4 S8050"}]},
+    {"reference": "BUS1", "part_number": "M5_BUS", "role": "连接主机 GPIO、UART、RS485、模组控制、5V 和电池网络", "evidence": [{"asset_sha256": "5fe5c54a461d0ba9d98f5bd423e24fd5843762985acde0ee1a6288b75238926a", "page": 1, "locator": "第 1 张第 1 页左上 BUS1 M5_BUS pin1-pin30"}]},
+    {"reference": "J1,J2,J3", "part_number": "GROVE 4P", "role": "三组 CORE_P050 供电接口，分别引出 G21/G22、G36/G26 和 G17/G16", "evidence": [{"asset_sha256": "5fe5c54a461d0ba9d98f5bd423e24fd5843762985acde0ee1a6288b75238926a", "page": 1, "locator": "第 1 张第 1 页左侧 J1/J2/J3 GROVE 的 IO2/IO1/5V/GND"}]},
+    {"reference": "J4", "part_number": "DC5.5", "role": "VIN_P240 直流输入接口", "evidence": [{"asset_sha256": "5fe5c54a461d0ba9d98f5bd423e24fd5843762985acde0ee1a6288b75238926a", "page": 1, "locator": "第 1 张第 1 页左下 J4 DC5.5，PWR+ VIN_P240、PWR- GND"}]},
+    {"reference": "J5,J6", "part_number": "MX1.25_2P / HT3.96_2P", "role": "BAT_IN 与 GND 电池输入接口", "evidence": [{"asset_sha256": "5fe5c54a461d0ba9d98f5bd423e24fd5843762985acde0ee1a6288b75238926a", "page": 1, "locator": "第 1 张第 1 页左下 J5/J6、BAT_IN、FU1/D1/CORE_BAT"}]},
+    {"reference": "J7", "part_number": "HT3.96_4P", "role": "引出 RS_B、RS_A、VIN_P240 和 GND 的 RS485/电源接口", "evidence": [{"asset_sha256": "5fe5c54a461d0ba9d98f5bd423e24fd5843762985acde0ee1a6288b75238926a", "page": 1, "locator": "第 1 张第 1 页左下 J7 pin4 RS_B、pin3 RS_A、pin2 VIN_P240、pin1 GND"}]},
+    {"reference": "J8", "part_number": "CARD_SOCKET_SIM", "role": "连接 SIM7080G 的 SIM_VDD、SIM_DATA、SIM_CLK、SIM_RST、GND 和检测线路", "evidence": [{"asset_sha256": "5fe5c54a461d0ba9d98f5bd423e24fd5843762985acde0ee1a6288b75238926a", "page": 1, "locator": "第 1 张第 1 页右下 J8 CARD_SOCKET_SIM 与 U1 SIM 信号"}]},
+    {"reference": "ANT1", "part_number": "IPEX", "role": "SIM7080G ANT pin32 的外部射频天线接口", "evidence": [{"asset_sha256": "5fe5c54a461d0ba9d98f5bd423e24fd5843762985acde0ee1a6288b75238926a", "page": 1, "locator": "第 1 张第 1 页下中 U1 ANT pin32 到 ANT1 IPEX"}]},
+    {"reference": "P1 (主板)", "part_number": "Header 8", "role": "引出 GND、CORE_P050、NB_P033、CORE_BAT、G21、G22、G5、G2 到热成像板", "evidence": [{"asset_sha256": "5fe5c54a461d0ba9d98f5bd423e24fd5843762985acde0ee1a6288b75238926a", "page": 1, "locator": "第 1 张第 1 页右中 P1 Header8 pin1-pin8"}]},
+    {"reference": "FU1,D1,FU2", "part_number": "SL0805200 / SOD4007 / BSMD0805-050-24V", "role": "CORE_BAT 与 VIN_P240 输入路径的保险和二极管保护器件", "evidence": [{"asset_sha256": "5fe5c54a461d0ba9d98f5bd423e24fd5843762985acde0ee1a6288b75238926a", "page": 1, "locator": "第 1 张第 1 页左下 FU1/D1 及右上 FU2"}]},
+    {"reference": "TVS1,TVS2,TVS3", "part_number": "P6S05C-LF", "role": "RS_A/RS_B 线间及对地保护器件", "evidence": [{"asset_sha256": "5fe5c54a461d0ba9d98f5bd423e24fd5843762985acde0ee1a6288b75238926a", "page": 1, "locator": "第 1 张第 1 页中央 U2 右侧 TVS1/TVS2/TVS3 P6S05C-LF"}]},
+    {"reference": "U1 (热成像板)", "part_number": "MLX90640", "role": "3.3V 供电、通过 G21/G22 I2C 通信的红外阵列传感器", "evidence": [{"asset_sha256": "bf1e77cc17a7130a1c9816025b04c9bf9bf1ca92ae9da1d762b82fdd419ed013", "page": 1, "locator": "第 2 张第 1 页左上 U1 MLX90640，VDD/GND/SCL/SDA 四脚"}]},
+    {"reference": "U2 (热成像板)", "part_number": "HT7533", "role": "将 P1 的 5V 转换为 MLX90640 使用的 3.3V", "evidence": [{"asset_sha256": "bf1e77cc17a7130a1c9816025b04c9bf9bf1ca92ae9da1d762b82fdd419ed013", "page": 1, "locator": "第 2 张第 1 页下方 U2 HT7533，VIN 5V、VOUT 3.3V、GND"}]},
+    {"reference": "P1 (热成像板)", "part_number": "Header 8", "role": "与主板 P1 对应的 GND、5V、3.3V、BAT+、G21、G22、G5、G2 接口", "evidence": [{"asset_sha256": "bf1e77cc17a7130a1c9816025b04c9bf9bf1ca92ae9da1d762b82fdd419ed013", "page": 1, "locator": "第 2 张第 1 页右上 P1 Header8 pin1-pin8"}]}
+  ],
+  "facts": [
+    {
+      "id": "system.thermal-online-catm-architecture", "category": "system", "subject": "IoT Base Thermal Online CatM 系统架构",
+      "statement": "BUS1 提供主机 UART、RS485、GPIO 和电源，SIM7080G 连接 UART 电平转换、PWRKEY、SIM、状态 LED 与 IPEX；P1 将主板电源和 G21/G22 等网络送到热成像板，HT7533 生成 3.3V，MLX90640 通过 G21/G22 I2C 工作。",
+      "confidence": "confirmed", "attributes": {"modem": "SIM7080G", "thermal_sensor": "MLX90640", "power": "VIN_P240 -> SY8205FCC -> CORE_P050 -> SY8089AAAC -> NB_P033", "thermal_power": "P1 5V -> HT7533 -> 3.3V", "thermal_bus": "G21 SDA, G22 SCL", "rs485": "BUS1 <-> U2 <-> RS_A/RS_B"},
+      "evidence": [
+        {"asset_sha256": "5fe5c54a461d0ba9d98f5bd423e24fd5843762985acde0ee1a6288b75238926a", "page": 1, "locator": "第 1 张第 1 页完整 IoT Base 主板"},
+        {"asset_sha256": "bf1e77cc17a7130a1c9816025b04c9bf9bf1ca92ae9da1d762b82fdd419ed013", "page": 1, "locator": "第 2 张第 1 页 P1、HT7533 与 MLX90640"}
+      ]
+    },
+    {
+      "id": "interface.m5-bus-map", "category": "interface", "subject": "BUS1 M5_BUS 已连接针脚",
+      "statement": "BUS1 已连接 pin30/28/26 GND、pin29 CORE_RXD、pin27 G36、pin21 G26、pin16 G16、pin15 G17、pin14 G21、pin13 G22、pin12 G2、pin11 G5、pin10 MOD_PWR、pin9 RS_TXD、pin8 RS_RXD、pin7 CORE_TXD、pin3 CORE_P050 和 pin1 CORE_BAT。",
+      "confidence": "confirmed", "attributes": {"modem_uart": "pin29 CORE_RXD G35; pin7 CORE_TXD G0", "rs485": "pin9 RS_TXD G13; pin8 RS_RXD G15", "control": "pin10 MOD_PWR G12", "grove": "G21,G22,G36,G26,G17,G16", "header_gpio": "G2,G5", "power": "pin3 CORE_P050, pin1 CORE_BAT"},
+      "evidence": [{"asset_sha256": "5fe5c54a461d0ba9d98f5bd423e24fd5843762985acde0ee1a6288b75238926a", "page": 1, "locator": "第 1 张第 1 页左上 BUS1 所有带外部网络名的针脚"}]
+    },
+    {
+      "id": "power.vin-to-core-p050", "category": "power", "subject": "VIN_P240 到 CORE_P050",
+      "statement": "VIN_P240 经 FU2 BSMD0805-050-24V 到 U3 SY8205FCC，U3 LX pin2 经 L1 2.2uH 生成 CORE_P050；FB 使用 R15 36K/1% 与 R16 5.1K/1%。",
+      "confidence": "confirmed", "attributes": {"input": "VIN_P240", "fuse": "FU2 BSMD0805-050-24V", "converter": "U3 SY8205FCC", "inductor": "L1 2.2uH", "output": "CORE_P050", "feedback": "R15 36K/1%, R16 5.1K/1%"},
+      "evidence": [{"asset_sha256": "5fe5c54a461d0ba9d98f5bd423e24fd5843762985acde0ee1a6288b75238926a", "page": 1, "locator": "第 1 张第 1 页右上 VIN_P240/FU2/U3/L1/R15/R16/CORE_P050"}]
+    },
+    {
+      "id": "power.core-p050-to-nb-p033", "category": "power", "subject": "CORE_P050 到 NB_P033",
+      "statement": "CORE_P050 连接 U4 IN pin4 与 EN pin1，U4 SW pin3 经 L2 10uH 形成 NB_P033，FB 使用 R18 22K/1% 与 R19 8.2K/1%，C11 226/16V 对地。",
+      "confidence": "confirmed", "attributes": {"input": "CORE_P050", "converter": "U4 SY8089AAAC", "inductor": "L2 10uH", "output": "NB_P033", "feedback": "R18 22K/1%, R19 8.2K/1%", "output_capacitor": "C11 226/16V"},
+      "evidence": [{"asset_sha256": "5fe5c54a461d0ba9d98f5bd423e24fd5843762985acde0ee1a6288b75238926a", "page": 1, "locator": "第 1 张第 1 页右上 CORE_P050/U4/L2/R18/R19/C11/NB_P033"}]
+    },
+    {
+      "id": "power.core-battery-path", "category": "power", "subject": "BAT_IN 到 CORE_BAT",
+      "statement": "J5 pin1 与 J6 pin2 接 BAT_IN，J5 pin2/SH 与 J6 pin1 接 GND；BAT_IN 经 FU1 SL0805200 到 CORE_BAT，D1 SOD4007 连接 CORE_BAT 与 GND，CORE_BAT 再连接 BUS1 pin1 和 P1 pin4。",
+      "confidence": "confirmed", "attributes": {"inputs": "J5 pin1, J6 pin2 BAT_IN", "fuse": "FU1 SL0805200", "diode": "D1 SOD4007", "output": "CORE_BAT -> BUS1 pin1, P1 pin4"},
+      "evidence": [{"asset_sha256": "5fe5c54a461d0ba9d98f5bd423e24fd5843762985acde0ee1a6288b75238926a", "page": 1, "locator": "第 1 张第 1 页左下 J5/J6、BAT_IN、FU1、D1、CORE_BAT"}]
+    },
+    {
+      "id": "interface.grove-ports", "category": "interface", "subject": "J1/J2/J3 Grove 接口",
+      "statement": "J1 pin4-pin1 连接 G22/G21/CORE_P050/GND；J2 连接 G36/G26/CORE_P050/GND；J3 连接 G16/G17/CORE_P050/GND。",
+      "confidence": "confirmed", "attributes": {"J1": "pin4 G22, pin3 G21, pin2 CORE_P050, pin1 GND", "J2": "pin4 G36, pin3 G26, pin2 CORE_P050, pin1 GND", "J3": "pin4 G16, pin3 G17, pin2 CORE_P050, pin1 GND"},
+      "evidence": [{"asset_sha256": "5fe5c54a461d0ba9d98f5bd423e24fd5843762985acde0ee1a6288b75238926a", "page": 1, "locator": "第 1 张第 1 页左侧 J1/J2/J3 GROVE pin1-pin4"}]
+    },
+    {
+      "id": "interface.dc-rs485-inputs", "category": "interface", "subject": "J4/J7 外部接口",
+      "statement": "J4 DC5.5 的 PWR+ 接 VIN_P240、PWR- 接 GND；J7 HT3.96_4P 的 pin4=RS_B、pin3=RS_A、pin2=VIN_P240、pin1=GND。",
+      "confidence": "confirmed", "attributes": {"J4": "PWR+ VIN_P240, PWR- GND", "J7": "pin4 RS_B, pin3 RS_A, pin2 VIN_P240, pin1 GND", "rs485_direction": "bidirectional"},
+      "evidence": [{"asset_sha256": "5fe5c54a461d0ba9d98f5bd423e24fd5843762985acde0ee1a6288b75238926a", "page": 1, "locator": "第 1 张第 1 页左下 J4 DC5.5 与 J7 HT3.96_4P"}]
+    },
+    {
+      "id": "interface.header8-interconnect", "category": "interface", "subject": "主板与热成像板 P1 Header8",
+      "statement": "主板 P1 pins1-8 依次为 GND、CORE_P050、NB_P033、CORE_BAT、G21、G22、G5、G2；热成像板 P1 对应 pins1-8 为 GND、5V、经 R3 0Ω 的 3.3V、BAT+、G21、G22、G5、G2。",
+      "confidence": "confirmed", "attributes": {"main_P1": "1 GND,2 CORE_P050,3 NB_P033,4 CORE_BAT,5 G21,6 G22,7 G5,8 G2", "thermal_P1": "1 GND,2 5V,3 3.3V via R3 0Ω,4 BAT+,5 G21,6 G22,7 G5,8 G2"},
+      "evidence": [
+        {"asset_sha256": "5fe5c54a461d0ba9d98f5bd423e24fd5843762985acde0ee1a6288b75238926a", "page": 1, "locator": "第 1 张第 1 页右中 P1 Header8"},
+        {"asset_sha256": "bf1e77cc17a7130a1c9816025b04c9bf9bf1ca92ae9da1d762b82fdd419ed013", "page": 1, "locator": "第 2 张第 1 页右上 P1 Header8"}
+      ]
+    },
+    {
+      "id": "bus.rs485-auto-direction", "category": "bus", "subject": "U2 RS485 收发与自动方向",
+      "statement": "U2 RO pin1 接 RS_TXD，A pin6/B pin7 接 RS_A/RS_B，VCC pin8 接 NB_P033、GND pin5 接地；RE pin2 与 DE pin3 相连并由 Q1 S8050 控制，RS_RXD 经 R2 2.2K 驱动 Q1，R7 2.2K 将 RE/DE 节点上拉到 NB_P033，DI pin4 接 GND。",
+      "confidence": "confirmed", "attributes": {"receiver": "RO pin1 -> RS_TXD", "bus": "A pin6 RS_A; B pin7 RS_B", "direction": "RE/DE tied, controlled by Q1", "control": "RS_RXD through R2 2.2K", "pullup": "R7 2.2K to NB_P033", "driver_input": "DI pin4 GND"},
+      "evidence": [{"asset_sha256": "5fe5c54a461d0ba9d98f5bd423e24fd5843762985acde0ee1a6288b75238926a", "page": 1, "locator": "第 1 张第 1 页中央 U2、Q1、R2/R7 与 RS_TXD/RS_RXD/RS_A/RS_B"}]
+    },
+    {
+      "id": "protection.rs485-network", "category": "protection", "subject": "RS485 偏置、终端位与 TVS",
+      "statement": "R14 5.1K/1% 将 RS_A 拉向 NB_P033，R17 5.1K/1% 将 RS_B 拉向 GND；RX1 标 DNP 并跨接 RS_A/RS_B。TVS1/TVS2/TVS3 均标 P6S05C-LF，构成线间及对地保护。",
+      "confidence": "confirmed", "attributes": {"a_bias": "R14 5.1K/1% to NB_P033", "b_bias": "R17 5.1K/1% to GND", "termination": "RX1 DNP", "tvs": "TVS1/TVS2/TVS3 P6S05C-LF"},
+      "evidence": [{"asset_sha256": "5fe5c54a461d0ba9d98f5bd423e24fd5843762985acde0ee1a6288b75238926a", "page": 1, "locator": "第 1 张第 1 页中央 RS_A/RS_B 周围 R14/R17/RX1/TVS1-3"}]
+    },
+    {
+      "id": "bus.modem-uart-level-shift", "category": "bus", "subject": "CORE 与 SIM7080G UART 电平转换",
+      "statement": "BUS1 pin7 CORE_TXD 经 Q2 S8050 转换到 NB_RXD/U1 UART1_RXD pin2；U1 UART1_TXD pin1 的 NB_TXD 经 Q4 S8050 转换到 CORE_RXD/BUS1 pin29，网络使用 NB_P018、NB_P033 和 R3-R6/R11/R12 5.1K/1%。",
+      "confidence": "confirmed", "attributes": {"core_to_modem": "BUS1 pin7 CORE_TXD -> Q2 -> NB_RXD -> U1 pin2", "modem_to_core": "U1 pin1 -> NB_TXD -> Q4 -> CORE_RXD -> BUS1 pin29", "rails": "NB_P018,NB_P033", "transistors": "Q2,Q4 S8050"},
+      "evidence": [{"asset_sha256": "5fe5c54a461d0ba9d98f5bd423e24fd5843762985acde0ee1a6288b75238926a", "page": 1, "locator": "第 1 张第 1 页中央 Q2/Q4 UART 电平转换与 U1 UART1_TXD/RXD"}]
+    },
+    {
+      "id": "gpio.modem-pwrkey", "category": "gpio", "subject": "SIM7080G PWRKEY 控制",
+      "statement": "BUS1 pin10 MOD_PWR 经 R9 5.1K/1% 驱动 Q3 S8050，R10 5.1K/1% 将控制节点接地；Q3 将 U1 PWRKEY pin39 的 NB_KEY 拉向 GND。",
+      "confidence": "confirmed", "attributes": {"host": "BUS1 pin10 MOD_PWR G12", "transistor": "Q3 S8050", "base_resistor": "R9 5.1K/1%", "pulldown": "R10 5.1K/1%", "modem_pin": "U1 pin39 PWRKEY"},
+      "evidence": [{"asset_sha256": "5fe5c54a461d0ba9d98f5bd423e24fd5843762985acde0ee1a6288b75238926a", "page": 1, "locator": "第 1 张第 1 页 MOD_PWR/R9/R10/Q3/NB_KEY 与 U1 PWRKEY"}]
+    },
+    {
+      "id": "interface.modem-status-led", "category": "interface", "subject": "SIM7080G 状态指示",
+      "statement": "U1 STATUS pin42 输出 NB_STAT，经 R13 5.1K/1% 和 LED1 RED 接 GND；NETLIGHT pin41 在本页未连接。",
+      "confidence": "confirmed", "attributes": {"status": "pin42 NB_STAT -> R13 -> LED1 RED -> GND", "netlight": "pin41 unconnected"},
+      "evidence": [{"asset_sha256": "5fe5c54a461d0ba9d98f5bd423e24fd5843762985acde0ee1a6288b75238926a", "page": 1, "locator": "第 1 张第 1 页 U1 STATUS/NETLIGHT、R13 与 LED1"}]
+    },
+    {
+      "id": "rf.modem-antenna", "category": "rf", "subject": "SIM7080G 外部天线",
+      "statement": "U1 ANT pin32 直接连接 ANT1 IPEX，接口外壳接 GND；本页未显示射频匹配网络或切换器。",
+      "confidence": "confirmed", "attributes": {"modem_pin": "U1 pin32 ANT", "connector": "ANT1 IPEX", "shield": "GND", "matching_shown": false},
+      "evidence": [{"asset_sha256": "5fe5c54a461d0ba9d98f5bd423e24fd5843762985acde0ee1a6288b75238926a", "page": 1, "locator": "第 1 张第 1 页 U1 ANT pin32 到 ANT1 IPEX"}]
+    },
+    {
+      "id": "interface.sim-card", "category": "interface", "subject": "SIM7080G 与 J8 SIM 卡座",
+      "statement": "U1 SIM_VDD pin18、SIM_DATA pin15、SIM_CLK pin16、SIM_RST pin17 连接 J8 的 VCC、IO、CLK、RST；J8 GND/SHELL 接地，U1 SIM_DET pin14 连接卡座检测相关线路。",
+      "confidence": "confirmed", "attributes": {"vdd": "pin18 -> VCC", "data": "pin15 <-> IO", "clock": "pin16 -> CLK", "reset": "pin17 -> RST", "detect": "pin14 SIM_DET", "ground": "J8 GND/SHELL"},
+      "evidence": [{"asset_sha256": "5fe5c54a461d0ba9d98f5bd423e24fd5843762985acde0ee1a6288b75238926a", "page": 1, "locator": "第 1 张第 1 页右下 U1 SIM 信号与 J8 CARD_SOCKET_SIM"}]
+    },
+    {
+      "id": "power.modem-supply", "category": "power", "subject": "SIM7080G 电源连接",
+      "statement": "U1 VBAT pins34/35 接 NB_P033，并由 C1/C2 两只 106/10V 电容对地去耦；VDD_EXT pin40 输出 NB_P018，多只 GND 引脚接 GND。",
+      "confidence": "confirmed", "attributes": {"vbat": "pins34/35 NB_P033", "caps": "C1/C2 106/10V", "logic_output": "pin40 VDD_EXT NB_P018", "ground": "U1 GND pins"},
+      "evidence": [{"asset_sha256": "5fe5c54a461d0ba9d98f5bd423e24fd5843762985acde0ee1a6288b75238926a", "page": 1, "locator": "第 1 张第 1 页 U1 VBAT/VDD_EXT/GND 与 NB_P033/NB_P018/C1/C2"}]
+    },
+    {
+      "id": "power.thermal-3v3", "category": "power", "subject": "热成像板 5V 到 3.3V",
+      "statement": "P1 pin2 的 5V 连接 U2 HT7533 VIN pin2，VOUT pin3 输出 3.3V；输入侧 C4 22uF/C2 100nF、输出侧 C3 22uF 对地，3.3V 通过 R3 0Ω 接 P1 pin3 并供给 MLX90640。",
+      "confidence": "confirmed", "attributes": {"input": "P1 pin2 5V", "regulator": "U2 HT7533", "output": "3.3V", "input_caps": "C4 22uF,C2 100nF", "output_cap": "C3 22uF", "header_link": "3.3V -> R3 0Ω -> P1 pin3"},
+      "evidence": [{"asset_sha256": "bf1e77cc17a7130a1c9816025b04c9bf9bf1ca92ae9da1d762b82fdd419ed013", "page": 1, "locator": "第 2 张第 1 页 U2 HT7533、C2/C3/C4、3.3V/5V 与 P1"}]
+    },
+    {
+      "id": "bus.mlx90640-i2c", "category": "bus", "subject": "MLX90640 I2C 连接",
+      "statement": "U1 MLX90640 SDA pin1 接 G21、SCL pin4 接 G22；R2 与 R1 各 4.7KΩ 分别将 SDA 与 SCL 上拉到 3.3V，G21/G22 经 P1 pin5/pin6 连接主板和 BUS1。",
+      "confidence": "confirmed", "attributes": {"controller": "M5Stack host", "device": "U1 MLX90640", "sda": "pin1 G21, P1 pin5, BUS1 pin14", "scl": "pin4 G22, P1 pin6, BUS1 pin13", "pullups": "R2 SDA 4.7KΩ, R1 SCL 4.7KΩ to 3.3V", "logic_level": "3.3V"},
+      "evidence": [
+        {"asset_sha256": "bf1e77cc17a7130a1c9816025b04c9bf9bf1ca92ae9da1d762b82fdd419ed013", "page": 1, "locator": "第 2 张第 1 页 U1 MLX90640 SDA/SCL 与 R1/R2、P1 G21/G22"},
+        {"asset_sha256": "5fe5c54a461d0ba9d98f5bd423e24fd5843762985acde0ee1a6288b75238926a", "page": 1, "locator": "第 1 张第 1 页 P1 G21/G22 与 BUS1 G21/G22"}
+      ]
+    },
+    {
+      "id": "sensor.mlx90640-power", "category": "sensor", "subject": "MLX90640 电源和引脚",
+      "statement": "U1 MLX90640 VDD pin2 接 3.3V、GND pin3 接 GND，C1 100nF 跨接 3.3V 与 GND；SDA pin1 为 G21、SCL pin4 为 G22。",
+      "confidence": "confirmed", "attributes": {"part_number": "MLX90640", "vdd": "pin2 3.3V", "ground": "pin3 GND", "decoupling": "C1 100nF", "sda": "pin1 G21", "scl": "pin4 G22"},
+      "evidence": [{"asset_sha256": "bf1e77cc17a7130a1c9816025b04c9bf9bf1ca92ae9da1d762b82fdd419ed013", "page": 1, "locator": "第 2 张第 1 页左上 U1 MLX90640、C1 与四个引脚"}]
+    },
+    {
+      "id": "component.rs485-transceiver-model", "category": "component", "subject": "U2 RS485 收发器型号",
+      "statement": "原理图显示 U2 的八脚 RS485 收发器连接，但未标注完整器件型号；实际料号、封装、共模范围和失效保护特性无法由本页确认。",
+      "confidence": "uncertain", "attributes": {"reference": "U2", "part_number": null, "supply": "NB_P033", "pins": "RO,RE,DE,DI,A,B,VCC,GND", "package": null},
+      "evidence": [{"asset_sha256": "5fe5c54a461d0ba9d98f5bd423e24fd5843762985acde0ee1a6288b75238926a", "page": 1, "locator": "第 1 张第 1 页中央 U2 只有位号和引脚名"}]
+    },
+    {
+      "id": "rf.documented-radio-capabilities", "category": "rf", "subject": "正文中的无线频段、速率、协议和认证",
+      "statement": "正文列出 Cat-M/NB-IoT 频段、速率、RF 功率、协议、认证和 UART 115200 8N1；原理图只确认 SIM7080G 型号及物理连接，无法验证固件、区域配置、运营商认证状态和通信性能。",
+      "confidence": "uncertain", "attributes": {"module": "SIM7080G", "documented_uart": "115200 8N1", "documented_modes": "Cat-M,NB-IoT", "documented_protocols": "TCP,UDP,HTTP,HTTPS,TLS,DTLS,PING,LWM2M,COAP,MQTT", "firmware": null, "measured_throughput": null},
+      "evidence": [{"asset_sha256": "5fe5c54a461d0ba9d98f5bd423e24fd5843762985acde0ee1a6288b75238926a", "page": 1, "locator": "第 1 张第 1 页 U1 SIM7080G、UART1 与 ANT1，图中无频段/速率/协议/认证表"}]
+    },
+    {
+      "id": "power.rail-capability", "category": "power", "subject": "CORE_P050 与 NB_P033 供电能力",
+      "statement": "原理图给出两级稳压器、反馈和输出网络，但未标注输出容差、持续/峰值电流、启动时序、热设计或 SIM7080G 发射条件下的压降数据。",
+      "confidence": "uncertain", "attributes": {"rails": "CORE_P050,NB_P033", "converters": "SY8205FCC,SY8089AAAC", "tolerance": null, "continuous_current": null, "peak_current": null, "startup_sequence": null},
+      "evidence": [{"asset_sha256": "5fe5c54a461d0ba9d98f5bd423e24fd5843762985acde0ee1a6288b75238926a", "page": 1, "locator": "第 1 张第 1 页右上 U3/U4 两级电源与 U1 VBAT 负载"}]
+    },
+    {
+      "id": "protection.battery-input-limits", "category": "protection", "subject": "J5/J6 电池输入边界",
+      "statement": "原理图显示 BAT_IN 经 FU1 到 CORE_BAT，并有 D1 SOD4007 对地支路，但未标注允许电池电压、化学体系、极性、充电路径、FU1 额定含义或 D1 的具体保护动作。",
+      "confidence": "uncertain", "attributes": {"connectors": "J5 MX1.25_2P,J6 HT3.96_2P", "path": "BAT_IN -> FU1 -> CORE_BAT", "diode": "D1 SOD4007", "voltage": null, "chemistry": null, "charge_path_shown": false},
+      "evidence": [{"asset_sha256": "5fe5c54a461d0ba9d98f5bd423e24fd5843762985acde0ee1a6288b75238926a", "page": 1, "locator": "第 1 张第 1 页 J5/J6、BAT_IN、FU1、D1、CORE_BAT"}]
+    },
+    {
+      "id": "interface.sim-socket-mechanics", "category": "interface", "subject": "SIM 卡座机械规格",
+      "statement": "正文称卡槽为 MicroSIM；原理图只标 J8 CARD_SOCKET_SIM 并展示电气端子，未给出机械尺寸、插卡方向、热插拔限制或 SIM_DET 默认状态。",
+      "confidence": "uncertain", "attributes": {"documented_size": "MicroSIM", "designator": "J8 CARD_SOCKET_SIM", "dimensions": null, "orientation": null, "hotplug": null, "detect_default": null},
+      "evidence": [{"asset_sha256": "5fe5c54a461d0ba9d98f5bd423e24fd5843762985acde0ee1a6288b75238926a", "page": 1, "locator": "第 1 张第 1 页右下 J8 CARD_SOCKET_SIM"}]
+    },
+    {
+      "id": "address.mlx90640", "category": "address", "subject": "MLX90640 I2C 地址",
+      "statement": "正文标出 MLX90640 I2C 地址为 0x33；原理图只显示 G21/G22、4.7KΩ 上拉和器件型号，没有地址文字、地址选择脚或总线扫描结果。",
+      "confidence": "uncertain", "attributes": {"device": "U1 MLX90640", "documented_address": "0x33", "schematic_address": null, "bus": "G21 SDA,G22 SCL"},
+      "evidence": [{"asset_sha256": "bf1e77cc17a7130a1c9816025b04c9bf9bf1ca92ae9da1d762b82fdd419ed013", "page": 1, "locator": "第 2 张第 1 页 U1 MLX90640 与 I2C 网络，图中无地址标注"}]
+    },
+    {
+      "id": "sensor.documented-mlx90640-performance", "category": "sensor", "subject": "正文中的 MLX90640 阵列与测温范围",
+      "statement": "正文称 MLX90640 为 32x24 阵列且测温范围 -40°C 至 300°C；原理图仅确认型号、3.3V 和 I2C 连接，无法独立验证阵列分辨率、测温范围、精度、刷新率或视场角。",
+      "confidence": "uncertain", "attributes": {"part_number": "MLX90640", "documented_array": "32x24", "documented_range": "-40°C to 300°C", "accuracy": null, "refresh_rate": null, "field_of_view": null},
+      "evidence": [{"asset_sha256": "bf1e77cc17a7130a1c9816025b04c9bf9bf1ca92ae9da1d762b82fdd419ed013", "page": 1, "locator": "第 2 张第 1 页 U1 MLX90640 型号与四脚连接，图中无性能参数"}]
+    }
+  ],
+  "needs_review": [
+    {"id": "review.rs485-bom", "fact_id": "component.rs485-transceiver-model", "question": "K119 当前 BOM 中 U2 的完整 RS485 收发器型号、封装和电气特性是什么？", "reason": "原理图未标 U2 料号。", "evidence": [{"asset_sha256": "5fe5c54a461d0ba9d98f5bd423e24fd5843762985acde0ee1a6288b75238926a", "page": 1, "locator": "第 1 张第 1 页中央 U2"}]},
+    {"id": "review.radio-capabilities", "fact_id": "rf.documented-radio-capabilities", "question": "K119 的 SIM7080G 固件、区域配置、启用频段、UART 参数、协议栈和有效认证清单是什么？", "reason": "能力依赖模组固件、运营商和测试条件。", "evidence": [{"asset_sha256": "5fe5c54a461d0ba9d98f5bd423e24fd5843762985acde0ee1a6288b75238926a", "page": 1, "locator": "第 1 张第 1 页 U1 SIM7080G、UART1 和 ANT1"}]},
+    {"id": "review.power-capability", "fact_id": "power.rail-capability", "question": "CORE_P050 与 NB_P033 的目标电压、容差、持续/峰值电流、启动时序和发射压降指标是什么？", "reason": "网络名与反馈阻值不足以证明整机供电能力。", "evidence": [{"asset_sha256": "5fe5c54a461d0ba9d98f5bd423e24fd5843762985acde0ee1a6288b75238926a", "page": 1, "locator": "第 1 张第 1 页 U3/U4 与 U1 VBAT"}]},
+    {"id": "review.battery-safety", "fact_id": "protection.battery-input-limits", "question": "J5/J6 允许连接何种电池、电压与极性，FU1/D1 的额定和保护目的是什么，板上是否具备充电功能？", "reason": "原理图没有电池规格和充电器。", "evidence": [{"asset_sha256": "5fe5c54a461d0ba9d98f5bd423e24fd5843762985acde0ee1a6288b75238926a", "page": 1, "locator": "第 1 张第 1 页 J5/J6、FU1、D1"}]},
+    {"id": "review.sim-socket", "fact_id": "interface.sim-socket-mechanics", "question": "J8 当前 BOM 是否确为 MicroSIM 卡座，插卡方向、SIM_DET 默认状态和热插拔限制是什么？", "reason": "CARD_SOCKET_SIM 符号不能证明机械规格。", "evidence": [{"asset_sha256": "5fe5c54a461d0ba9d98f5bd423e24fd5843762985acde0ee1a6288b75238926a", "page": 1, "locator": "第 1 张第 1 页 J8 CARD_SOCKET_SIM"}]},
+    {"id": "review.mlx90640-address", "fact_id": "address.mlx90640", "question": "K119 的 MLX90640 实际 I2C 地址是否经 datasheet 或总线扫描确认为 0x33？", "reason": "0x33 只在正文出现，原理图没有地址字段。", "evidence": [{"asset_sha256": "bf1e77cc17a7130a1c9816025b04c9bf9bf1ca92ae9da1d762b82fdd419ed013", "page": 1, "locator": "第 2 张第 1 页 U1 MLX90640 与 G21/G22"}]},
+    {"id": "review.mlx90640-performance", "fact_id": "sensor.documented-mlx90640-performance", "question": "请用 MLX90640 datasheet 和整机校准确认 32x24 阵列、-40°C 至 300°C 范围、精度、刷新率与视场角。", "reason": "这些性能参数不在原理图中。", "evidence": [{"asset_sha256": "bf1e77cc17a7130a1c9816025b04c9bf9bf1ca92ae9da1d762b82fdd419ed013", "page": 1, "locator": "第 2 张第 1 页 U1 MLX90640"}]}
+  ]
+}

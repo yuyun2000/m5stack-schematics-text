@@ -1,0 +1,21 @@
+{
+  "dry_run": false,
+  "failed": 0,
+  "published": 1,
+  "results": [
+    {
+      "backup": null,
+      "draft_action": "unchanged",
+      "dry_run": false,
+      "errors": [],
+      "needs_review": 0,
+      "product_id": "stamp-s3-07ce7ee8d7e0",
+      "product_name": "Stamp-S3",
+      "publish_action": "unchanged",
+      "sha256": "306f3bc76f5b0564e1b4c6c5e1c603803dfb2ad9c1a61ab1ffa0e9417c32ecb5",
+      "status": "valid",
+      "uncertain_facts": 0
+    }
+  ],
+  "schema_version": 1
+}

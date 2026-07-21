@@ -1,0 +1,21 @@
+{
+  "dry_run": false,
+  "failed": 0,
+  "published": 1,
+  "results": [
+    {
+      "backup": null,
+      "draft_action": "unchanged",
+      "dry_run": false,
+      "errors": [],
+      "needs_review": 4,
+      "product_id": "unit-cams3-5a4131b60dd3",
+      "product_name": "Unit CamS3",
+      "publish_action": "unchanged",
+      "sha256": "75ba954c0a80eb799a96ad3c1e2324920f4c387e3e6a22c770d28979c2b914f8",
+      "status": "valid",
+      "uncertain_facts": 4
+    }
+  ],
+  "schema_version": 1
+}

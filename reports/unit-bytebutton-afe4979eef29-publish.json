@@ -1,0 +1,21 @@
+{
+  "dry_run": false,
+  "failed": 0,
+  "published": 1,
+  "results": [
+    {
+      "backup": null,
+      "draft_action": "unchanged",
+      "dry_run": false,
+      "errors": [],
+      "needs_review": 4,
+      "product_id": "unit-bytebutton-afe4979eef29",
+      "product_name": "Unit ByteButton",
+      "publish_action": "unchanged",
+      "sha256": "75a6bccf5fdf9329ea990600d1237ffe03deda55e8fb8725e7b58571513e9cc0",
+      "status": "valid",
+      "uncertain_facts": 4
+    }
+  ],
+  "schema_version": 1
+}

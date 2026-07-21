@@ -1,0 +1,21 @@
+{
+  "dry_run": false,
+  "failed": 0,
+  "published": 1,
+  "results": [
+    {
+      "backup": null,
+      "draft_action": "unchanged",
+      "dry_run": false,
+      "errors": [],
+      "needs_review": 2,
+      "product_id": "unit-catm-8f4ee0c8d6cd",
+      "product_name": "Unit CatM",
+      "publish_action": "unchanged",
+      "sha256": "5e2ce4f91cdc91b0f1ef356a3b3094d480e2fa57b618879f957affdc18471494",
+      "status": "valid",
+      "uncertain_facts": 2
+    }
+  ],
+  "schema_version": 1
+}

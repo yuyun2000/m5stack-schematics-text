@@ -1,0 +1,21 @@
+{
+  "dry_run": false,
+  "failed": 0,
+  "published": 1,
+  "results": [
+    {
+      "backup": null,
+      "draft_action": "unchanged",
+      "dry_run": false,
+      "errors": [],
+      "needs_review": 1,
+      "product_id": "unit-ina226-10a-aa1797f184e5",
+      "product_name": "Unit INA226-10A",
+      "publish_action": "unchanged",
+      "sha256": "d7ca7813656777d7d0ab36929d3e6708197329a09c6c5ae1741ea042cc4d4853",
+      "status": "valid",
+      "uncertain_facts": 1
+    }
+  ],
+  "schema_version": 1
+}

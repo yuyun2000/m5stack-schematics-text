@@ -1,0 +1,21 @@
+{
+  "dry_run": false,
+  "failed": 0,
+  "published": 1,
+  "results": [
+    {
+      "backup": null,
+      "draft_action": "unchanged",
+      "dry_run": false,
+      "errors": [],
+      "needs_review": 7,
+      "product_id": "unit-rollercan-c1f9bc3acb1b",
+      "product_name": "Unit RollerCAN",
+      "publish_action": "unchanged",
+      "sha256": "669caaa2c84958ab727dc30d32cb342fdf3b271abb34a6454883a043f5812ef0",
+      "status": "valid",
+      "uncertain_facts": 7
+    }
+  ],
+  "schema_version": 1
+}

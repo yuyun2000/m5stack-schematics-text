@@ -1,0 +1,277 @@
+{
+  "schema_version": 1,
+  "generator": "schematic_describer",
+  "product": {
+    "product_id": "unit-dmx-012418845602",
+    "product_name": "Unit DMX",
+    "sku": "U183",
+    "source_path": "unit/Unit-DMX.md",
+    "source_sha256": "679cd85ea0f1bc2878a8f8cfba98b8e0271c60be39d40d84c41ce4b0d88a19db",
+    "input_sha256": "a0f0c5ad8a7c7c062299bfbf552e2ef88f69e94e3da1eb46d13c3a8aaf74b0b4"
+  },
+  "schematic_assets": [
+    {
+      "sha256": "c9affd32e389d590c5a2feb74fcaeeb2bc663e8907885084fa007dcde39f334c",
+      "source_url": "https://static-cdn.m5stack.com/resource/docs/products/unit/Unit-DMX/img-a9577c01-030e-414c-a485-a37d14fa26b1.png",
+      "pages": [1]
+    }
+  ],
+  "summary": "Unit DMX 以 U3 CA-IS3092W 隔离式差分收发器为核心，J1 Grove 提供 RXD、TXD、+5V 和 GND。U2 ME6206A33XG 将 5V 转换为 3V3，U3 内部隔离电源形成 ISO_3V3/ISO_GND，A/B 侧与逻辑地分离。TXD 经 Q2 2N7002W 控制共接的 /RE、DE 节点，DI 固定为低电平；A/B 由 4.7K 偏置并通过 D1-D3 防护后连接 P1 XLR-328P。SW1 可将 R4 120R 跨接到 A/B，总线终端可按需接入。",
+  "keywords": [
+    "Unit DMX",
+    "U183",
+    "CA-IS3092W",
+    "ME6206A33XG",
+    "2N7002W",
+    "XLR-328P",
+    "SS-1260",
+    "DMX512",
+    "RS-485",
+    "half duplex",
+    "RXD",
+    "TXD",
+    "A",
+    "B",
+    "VDDA",
+    "VISO",
+    "3V3",
+    "ISO_3V3",
+    "ISO_GND",
+    "120R",
+    "termination",
+    "5kVrms",
+    "250Kbps",
+    "500Kbps",
+    "HY2.0-4P Grove",
+    "XLR-3",
+    "R5 4.7K",
+    "R7 4.7K",
+    "D1-D3",
+    "RED LED"
+  ],
+  "components": [
+    {
+      "reference": "U3",
+      "part_number": "CA-IS3092W",
+      "role": "逻辑侧与 A/B 总线侧隔离的差分收发器，集成 VISO 隔离电源域",
+      "evidence": [{"asset_sha256": "c9affd32e389d590c5a2feb74fcaeeb2bc663e8907885084fa007dcde39f334c", "page": 1, "locator": "第 1 页中央 U3 CA-IS3092W，VDDA/GNDA、RO/RE#/DE/DI 与 VISO/GNDB/A/B/SEL 引脚"}]
+    },
+    {
+      "reference": "U2",
+      "part_number": "ME6206A33XG",
+      "role": "5V 至 3V3 稳压器",
+      "evidence": [{"asset_sha256": "c9affd32e389d590c5a2feb74fcaeeb2bc663e8907885084fa007dcde39f334c", "page": 1, "locator": "第 1 页上方 U2，VIN pin 3、VOUT pin 2、GND pin 1 及 ME6206A33XG 标注"}]
+    },
+    {
+      "reference": "J1",
+      "part_number": "GROVE 4P",
+      "role": "主机 UART 与 5V 电源接口",
+      "evidence": [{"asset_sha256": "c9affd32e389d590c5a2feb74fcaeeb2bc663e8907885084fa007dcde39f334c", "page": 1, "locator": "第 1 页左上 J1 GROVE，IO2/IO1/5V/GND 与 RXD/TXD/5V/GND"}]
+    },
+    {
+      "reference": "P1",
+      "part_number": "XLR-328P",
+      "role": "隔离侧 DMX/差分总线三针 XLR 接口",
+      "evidence": [{"asset_sha256": "c9affd32e389d590c5a2feb74fcaeeb2bc663e8907885084fa007dcde39f334c", "page": 1, "locator": "第 1 页右侧 P1 XLR-328P，pin 1 ISO_GND、pin 2 B、pin 3 A"}]
+    },
+    {
+      "reference": "Q1,Q2",
+      "part_number": "2N7002W",
+      "role": "RXD 逻辑整形与 TXD 驱动/方向控制 MOSFET",
+      "evidence": [{"asset_sha256": "c9affd32e389d590c5a2feb74fcaeeb2bc663e8907885084fa007dcde39f334c", "page": 1, "locator": "第 1 页左中 Q1/Q2 均标 2N7002W，连接 RXD/TXD 与 U3 RO/RE#/DE"}]
+    },
+    {
+      "reference": "SW1,R4",
+      "part_number": "SS-1260 / 120R",
+      "role": "可开关接入的 A/B 总线 120Ω 终端",
+      "evidence": [{"asset_sha256": "c9affd32e389d590c5a2feb74fcaeeb2bc663e8907885084fa007dcde39f334c", "page": 1, "locator": "第 1 页右中 R4 120R 与 SW1 SS-1260 串联跨接 A/B"}]
+    },
+    {
+      "reference": "D1,D2,D3",
+      "part_number": null,
+      "role": "隔离侧 B 对地、B-A 跨线、A 对地的三器件保护网络",
+      "evidence": [{"asset_sha256": "c9affd32e389d590c5a2feb74fcaeeb2bc663e8907885084fa007dcde39f334c", "page": 1, "locator": "第 1 页右中 D1-D3 竖直保护链，连接 ISO_GND、B、A、ISO_GND"}]
+    },
+    {
+      "reference": "D4,R8",
+      "part_number": "RED LED / 2K",
+      "role": "3V3 电源指示灯支路",
+      "evidence": [{"asset_sha256": "c9affd32e389d590c5a2feb74fcaeeb2bc663e8907885084fa007dcde39f334c", "page": 1, "locator": "第 1 页上中 3V3、R8 2K、D4 RED LED 与 GND"}]
+    },
+    {
+      "reference": "C1,C7,C8,C9",
+      "part_number": "10uF / 100nF / 100nF / 10uF",
+      "role": "U3 逻辑侧 3V3 与隔离侧 ISO_3V3 的电源去耦",
+      "evidence": [{"asset_sha256": "c9affd32e389d590c5a2feb74fcaeeb2bc663e8907885084fa007dcde39f334c", "page": 1, "locator": "第 1 页 U3 上方 C1/C7 跨 3V3-GND，C8/C9 跨 ISO_3V3-ISO_GND"}]
+    }
+  ],
+  "facts": [
+    {
+      "id": "system.dmx-architecture",
+      "category": "system",
+      "subject": "Unit DMX 系统架构",
+      "statement": "单页电路由 J1 Grove、U2 3V3 稳压器、U3 CA-IS3092W 隔离收发器、Q1/Q2 逻辑网络、A/B 偏置与保护、SW1/R4 终端及 P1 XLR 接口构成。",
+      "confidence": "confirmed",
+      "attributes": {"host_interface": "J1 Grove RXD/TXD", "regulator": "U2 ME6206A33XG", "isolated_transceiver": "U3 CA-IS3092W", "bus": "A/B", "termination": "SW1 + R4 120R", "output_connector": "P1 XLR-328P"},
+      "evidence": [{"asset_sha256": "c9affd32e389d590c5a2feb74fcaeeb2bc663e8907885084fa007dcde39f334c", "page": 1, "locator": "第 1 页完整单页电路，J1/U2/U3/Q1/Q2/SW1/P1 功能区"}]
+    },
+    {
+      "id": "power.five-to-three3",
+      "category": "power",
+      "subject": "5V 至 3V3 稳压",
+      "statement": "J1 5V 网络连接 U2 ME6206A33XG VIN pin 3，VOUT pin 2 输出 3V3，GND pin 1 接地；输入 C4 10uF，输出 C5 100nF 与 C6 10uF 均对地。",
+      "confidence": "confirmed",
+      "attributes": {"input": "5V -> U2 pin 3 VIN", "output": "U2 pin 2 VOUT -> 3V3", "ground": "U2 pin 1", "input_capacitor": "C4 10uF", "output_capacitors": "C5 100nF,C6 10uF"},
+      "evidence": [{"asset_sha256": "c9affd32e389d590c5a2feb74fcaeeb2bc663e8907885084fa007dcde39f334c", "page": 1, "locator": "第 1 页上方 J1 5V、U2、C4-C6、3V3 与 GND"}]
+    },
+    {
+      "id": "power.logic-and-isolated-domains",
+      "category": "power",
+      "subject": "U3 双电源域",
+      "statement": "U3 逻辑侧 VDDA pin 1 接 3V3，GNDA pins 2、7、8 接 GND；隔离侧 VISO pin 16 输出 ISO_3V3，GNDB pins 15、9 接 ISO_GND，SEL pin 10 也接 ISO_GND。",
+      "confidence": "confirmed",
+      "attributes": {"logic_supply": "VDDA pin 1 -> 3V3", "logic_ground": "GNDA pins 2,7,8 -> GND", "isolated_supply": "VISO pin 16 -> ISO_3V3", "isolated_ground": "GNDB pins 15,9 -> ISO_GND", "select": "SEL pin 10 -> ISO_GND"},
+      "evidence": [{"asset_sha256": "c9affd32e389d590c5a2feb74fcaeeb2bc663e8907885084fa007dcde39f334c", "page": 1, "locator": "第 1 页中央 U3 两侧 VDDA/GNDA/VISO/GNDB/SEL 网络"}]
+    },
+    {
+      "id": "power.domain-decoupling",
+      "category": "power",
+      "subject": "U3 双域去耦",
+      "statement": "逻辑侧 C1 10uF 与 C7 100nF 跨接 3V3/GND；隔离侧 C8 100nF 与 C9 10uF 跨接 ISO_3V3/ISO_GND。",
+      "confidence": "confirmed",
+      "attributes": {"logic_caps": "C1 10uF,C7 100nF", "logic_rails": "3V3/GND", "isolated_caps": "C8 100nF,C9 10uF", "isolated_rails": "ISO_3V3/ISO_GND"},
+      "evidence": [{"asset_sha256": "c9affd32e389d590c5a2feb74fcaeeb2bc663e8907885084fa007dcde39f334c", "page": 1, "locator": "第 1 页 U3 上方 C1/C7 和 C8/C9 两组去耦"}]
+    },
+    {
+      "id": "power.indicator-led",
+      "category": "power",
+      "subject": "3V3 指示灯",
+      "statement": "3V3 经 R8 2K 和 D4 RED LED 串联到 GND，形成常接电源指示支路。",
+      "confidence": "confirmed",
+      "attributes": {"rail": "3V3", "resistor": "R8 2K", "led": "D4 RED LED", "return": "GND"},
+      "evidence": [{"asset_sha256": "c9affd32e389d590c5a2feb74fcaeeb2bc663e8907885084fa007dcde39f334c", "page": 1, "locator": "第 1 页上中 R8/D4 电源 LED 支路"}]
+    },
+    {
+      "id": "interface.grove-uart",
+      "category": "interface",
+      "subject": "J1 Grove 主机接口",
+      "statement": "J1 的 IO2、IO1、5V、GND 四触点分别连接 RXD、TXD、5V、GND。",
+      "confidence": "confirmed",
+      "attributes": {"connector": "J1 GROVE 4P", "pinout": "IO2:RXD,IO1:TXD,5V:5V,GND:GND", "signal_level": "3V3 logic network", "direction": "RXD to host,TXD from host"},
+      "evidence": [{"asset_sha256": "c9affd32e389d590c5a2feb74fcaeeb2bc663e8907885084fa007dcde39f334c", "page": 1, "locator": "第 1 页左上 J1 GROVE 的 IO2/IO1/5V/GND 行与 RXD/TXD/5V/GND"}]
+    },
+    {
+      "id": "bus.transmit-direction-control",
+      "category": "bus",
+      "subject": "TXD 与 U3 驱动控制",
+      "statement": "TXD 经 R6 1KΩ 驱动 Q2 2N7002W；Q2 源极接 GND，漏极连接 U3 RE# pin 4 与 DE pin 5 的共节点，该节点由 R3 4.7KΩ 上拉到 3V3。U3 DI pin 6 固定接 GND。",
+      "confidence": "confirmed",
+      "attributes": {"input": "TXD", "gate_resistor": "R6 1K", "transistor": "Q2 2N7002W", "controlled_pins": "U3 pin 4 RE# and pin 5 DE tied", "pullup": "R3 4.7K to 3V3", "driver_input": "U3 pin 6 DI -> GND"},
+      "evidence": [{"asset_sha256": "c9affd32e389d590c5a2feb74fcaeeb2bc663e8907885084fa007dcde39f334c", "page": 1, "locator": "第 1 页左中 TXD/R6/Q2/R3 与 U3 RE#/DE/DI pins 4-6"}]
+    },
+    {
+      "id": "bus.receive-logic-network",
+      "category": "bus",
+      "subject": "RXD 与 U3 RO 逻辑网络",
+      "statement": "RXD 与 U3 RO pin 3 之间配置 Q1 2N7002W 及 R1、R2 各 100KΩ 的 3V3 偏置/整形网络。",
+      "confidence": "confirmed",
+      "attributes": {"host_net": "RXD", "receiver_output": "U3 pin 3 RO", "transistor": "Q1 2N7002W", "resistors": "R1 100K,R2 100K", "rail": "3V3"},
+      "evidence": [{"asset_sha256": "c9affd32e389d590c5a2feb74fcaeeb2bc663e8907885084fa007dcde39f334c", "page": 1, "locator": "第 1 页左中 RXD、R1/R2、Q1 与 U3 RO pin 3"}]
+    },
+    {
+      "id": "bus.rs485-ab",
+      "category": "bus",
+      "subject": "U3 A/B 差分总线",
+      "statement": "U3 A pin 12 连接 A 网络，B pin 13 连接 B 网络；A 通过 R7 4.7KΩ 偏置到 ISO_3V3，B 通过 R5 4.7KΩ 偏置到 ISO_GND。",
+      "confidence": "confirmed",
+      "attributes": {"a_pin": "U3 pin 12 A", "b_pin": "U3 pin 13 B", "a_bias": "R7 4.7K to ISO_3V3", "b_bias": "R5 4.7K to ISO_GND", "topology": "two-wire differential bus"},
+      "evidence": [{"asset_sha256": "c9affd32e389d590c5a2feb74fcaeeb2bc663e8907885084fa007dcde39f334c", "page": 1, "locator": "第 1 页中央右侧 U3 A/B pins 12/13、R7/R5 与 ISO_3V3/ISO_GND"}]
+    },
+    {
+      "id": "interface.xlr-pinout",
+      "category": "interface",
+      "subject": "P1 XLR-328P",
+      "statement": "P1 pin 1 连接 ISO_GND，pin 2 连接 B，pin 3 连接 A。",
+      "confidence": "confirmed",
+      "attributes": {"connector": "P1 XLR-328P", "pinout": "1:ISO_GND,2:B,3:A", "isolation_domain": "ISO_3V3/ISO_GND side"},
+      "evidence": [{"asset_sha256": "c9affd32e389d590c5a2feb74fcaeeb2bc663e8907885084fa007dcde39f334c", "page": 1, "locator": "第 1 页右侧 P1 XLR-328P pins 1-3 与 ISO_GND/B/A"}]
+    },
+    {
+      "id": "protection.bus-lines",
+      "category": "protection",
+      "subject": "A/B 总线保护",
+      "statement": "D1 连接 ISO_GND 与 B，D2 跨接 B 与 A，D3 连接 A 与 ISO_GND，形成 B 对地、线间和 A 对地三支路保护；本页未标注 D1-D3 的具体型号。",
+      "confidence": "confirmed",
+      "attributes": {"b_to_ground": "D1", "line_to_line": "D2", "a_to_ground": "D3", "return": "ISO_GND", "part_number": null},
+      "evidence": [{"asset_sha256": "c9affd32e389d590c5a2feb74fcaeeb2bc663e8907885084fa007dcde39f334c", "page": 1, "locator": "第 1 页右中 D1-D3 保护链与 ISO_GND/B/A 节点"}]
+    },
+    {
+      "id": "bus.switchable-termination",
+      "category": "bus",
+      "subject": "A/B 120Ω 终端",
+      "statement": "R4 120R 与 SW1 SS-1260 串联跨接 B 和 A；SW1 闭合时将 120Ω 电阻接入差分总线。",
+      "confidence": "confirmed",
+      "attributes": {"resistor": "R4 120R", "switch": "SW1 SS-1260", "between": "B-A", "closed_state": "termination connected", "open_state": "termination disconnected"},
+      "evidence": [{"asset_sha256": "c9affd32e389d590c5a2feb74fcaeeb2bc663e8907885084fa007dcde39f334c", "page": 1, "locator": "第 1 页右中 B-R4 120R-SW1-A 支路"}]
+    },
+    {
+      "id": "system.no-auxiliary-subsystems",
+      "category": "system",
+      "subject": "其他功能分区",
+      "statement": "本页未绘制独立 MCU、协处理器、存储器、晶振、复位/BOOT、调试口、音频、传感器、射频、电池或充电器；控制器位于 J1 外部主机。",
+      "confidence": "confirmed",
+      "attributes": {"onboard_controller": false, "coprocessor": false, "memory": false, "storage": false, "clock": false, "reset": false, "debug": false, "audio": false, "sensor": false, "rf": false, "battery": false, "charger": false},
+      "evidence": [{"asset_sha256": "c9affd32e389d590c5a2feb74fcaeeb2bc663e8907885084fa007dcde39f334c", "page": 1, "locator": "第 1 页全部器件与网络，仅含接口、电源、隔离收发、保护和终端"}]
+    },
+    {
+      "id": "bus.documented-dmx-protocol",
+      "category": "bus",
+      "subject": "DMX512 协议与速率",
+      "statement": "产品正文称协议为 DMX512，固定速率 250Kbps，收发器最高数据速率 500Kbps，并描述为 RS-485 半双工；原理图只确认两线 A/B 收发拓扑，没有协议名称、波特率或帧格式。",
+      "confidence": "uncertain",
+      "attributes": {"documented_protocol": "DMX512", "documented_dmx_bitrate_bps": 250000, "documented_max_transceiver_bps": 500000, "documented_physical_layer": "RS-485 half duplex", "schematic_bitrate": null, "frame_format": null},
+      "evidence": [{"asset_sha256": "c9affd32e389d590c5a2feb74fcaeeb2bc663e8907885084fa007dcde39f334c", "page": 1, "locator": "第 1 页 U3、A/B 与 P1 区域，无 DMX512、250Kbps 或 500Kbps 文字"}]
+    },
+    {
+      "id": "protection.documented-isolation-rating",
+      "category": "protection",
+      "subject": "隔离耐压",
+      "statement": "产品正文称 CA-IS3092W 提供 5kVrms 电气隔离；原理图绘制了 U3 隔离栅和独立地，但未标注耐压值或测试条件。",
+      "confidence": "uncertain",
+      "attributes": {"documented_isolation_vrms": 5000, "schematic_isolation_barrier": true, "schematic_rating": null},
+      "evidence": [{"asset_sha256": "c9affd32e389d590c5a2feb74fcaeeb2bc663e8907885084fa007dcde39f334c", "page": 1, "locator": "第 1 页 U3 CA-IS3092W 内部隔离符号及 GND/ISO_GND 分域，无数值标注"}]
+    },
+    {
+      "id": "interface.documented-xlr-gender",
+      "category": "interface",
+      "subject": "XLR 接口机械属性",
+      "statement": "产品正文称 DMX 接口为 XLR-3 母头；原理图只标 P1 XLR-328P 和三针电气映射，未写公母、面板方向或机械规格。",
+      "confidence": "uncertain",
+      "attributes": {"schematic_part_number": "XLR-328P", "documented_connector": "XLR-3 female", "schematic_gender": null},
+      "evidence": [{"asset_sha256": "c9affd32e389d590c5a2feb74fcaeeb2bc663e8907885084fa007dcde39f334c", "page": 1, "locator": "第 1 页右侧 P1 仅标 XLR-328P"}]
+    }
+  ],
+  "needs_review": [
+    {
+      "id": "review.dmx-protocol",
+      "fact_id": "bus.documented-dmx-protocol",
+      "question": "请用当前固件、CA-IS3092W 规格或 DMX 测试确认 DMX512、250Kbps、500Kbps 上限和半双工行为。",
+      "reason": "原理图只能确认 A/B 电气拓扑，不能证明上层协议与速率。",
+      "evidence": [{"asset_sha256": "c9affd32e389d590c5a2feb74fcaeeb2bc663e8907885084fa007dcde39f334c", "page": 1, "locator": "第 1 页 U3 CA-IS3092W、A/B 和 P1"}]
+    },
+    {
+      "id": "review.isolation-rating",
+      "fact_id": "protection.documented-isolation-rating",
+      "question": "当前 CA-IS3092W 料号与 PCB 隔离设计是否满足正文所列 5kVrms？",
+      "reason": "原理图显示隔离分域，但没有额定耐压、爬电距离或测试标准。",
+      "evidence": [{"asset_sha256": "c9affd32e389d590c5a2feb74fcaeeb2bc663e8907885084fa007dcde39f334c", "page": 1, "locator": "第 1 页 U3 隔离栅及 GND/ISO_GND 分域"}]
+    },
+    {
+      "id": "review.xlr-gender",
+      "fact_id": "interface.documented-xlr-gender",
+      "question": "P1 XLR-328P 的量产机械版本是否为正文所述 XLR-3 母头？",
+      "reason": "原理图器件值未直接标注接口性别和机械方向。",
+      "evidence": [{"asset_sha256": "c9affd32e389d590c5a2feb74fcaeeb2bc663e8907885084fa007dcde39f334c", "page": 1, "locator": "第 1 页 P1 XLR-328P"}]
+    }
+  ]
+}

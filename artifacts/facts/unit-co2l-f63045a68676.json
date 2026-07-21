@@ -1,0 +1,254 @@
+{
+  "schema_version": 1,
+  "generator": "schematic_describer",
+  "product": {
+    "product_id": "unit-co2l-f63045a68676",
+    "product_name": "Unit CO2L",
+    "sku": "U104",
+    "source_path": "unit/CO2L.md",
+    "source_sha256": "f56d059d9127ae4e0cc63bda803e1256dec6cca53140e1effad4b6d470d9f5c6",
+    "input_sha256": "b71e80e92d202492a2ff60e5ae95319c6ec250ba95abb922661691d2d79b4f7d"
+  },
+  "schematic_assets": [
+    {
+      "sha256": "1c82ca74584a3b9d13217288bf1edf55bca463b5a11e8aec6a094e674ad90213",
+      "source_url": "https://m5stack-doc.oss-cn-shenzhen.aliyuncs.com/591/SCH_UNIT_CO2L_sch_01.png",
+      "pages": [1]
+    }
+  ],
+  "summary": "Unit CO2L 是一块无板载主控的 SCD41 传感器单元，U2 通过 J1 HY-2.0_IIC 的 SCL/SDA 直接连接外部 I2C 主机。U1 VRH3301NLX 将 J1 的 +5V 转换为 +3.3V，并为 SCD41 的 VDD/VDDH 及 I2C 上拉供电。J1 电源串联 F1，SCL/SDA、+3.3V 与 5V VCC 分别配置 RLSD52A031V 或 LESD3Z5.0CMT1G 对地保护。",
+  "keywords": [
+    "Unit CO2L",
+    "U104",
+    "SCD41",
+    "U2",
+    "VRH3301NLX",
+    "U1",
+    "J1",
+    "HY-2.0_IIC",
+    "I2C",
+    "IIC_SCL",
+    "IIC_SDA",
+    "SCL",
+    "SDA",
+    "VDD",
+    "VDDH",
+    "+5V",
+    "+3.3V",
+    "R3 15KΩ",
+    "R4 15KΩ",
+    "F1 6V@1A",
+    "RLSD52A031V",
+    "LESD3Z5.0CMT1G",
+    "C1 1uF",
+    "C2 1uF",
+    "C5 100nF",
+    "C6 100nF",
+    "0x62",
+    "CO2 sensor",
+    "temperature sensor",
+    "humidity sensor",
+    "I2C pull-up",
+    "Grove Port A"
+  ],
+  "components": [
+    {
+      "reference": "U2",
+      "part_number": "SCD41",
+      "role": "CO₂/环境传感器，SCL/SDA 连接 I2C，总电源引脚 VDD/VDDH 接 +3.3V。",
+      "evidence": [{"asset_sha256": "1c82ca74584a3b9d13217288bf1edf55bca463b5a11e8aec6a094e674ad90213", "page": 1, "locator": "网格 C2，U2 SCD41，VDD/7、VDDH/19、SCL/9、SDA/10、GND/6"}]
+    },
+    {
+      "reference": "U1",
+      "part_number": "VRH3301NLX",
+      "role": "+5V 输入到 +3.3V 输出的稳压器，EN 接 +5V。",
+      "evidence": [{"asset_sha256": "1c82ca74584a3b9d13217288bf1edf55bca463b5a11e8aec6a094e674ad90213", "page": 1, "locator": "网格 B2，U1 VRH3301NLX，VIN/4、VOUT/1、VSS/2/5、EN/3"}]
+    },
+    {
+      "reference": "J1",
+      "part_number": "HY-2.0_IIC",
+      "role": "四针 Grove I2C 与供电接口，引出 SCL、SDA、+5V 和 GND。",
+      "evidence": [{"asset_sha256": "1c82ca74584a3b9d13217288bf1edf55bca463b5a11e8aec6a094e674ad90213", "page": 1, "locator": "网格 B4，J1 HY-2.0_IIC 1-4 脚"}]
+    },
+    {
+      "reference": "F1",
+      "part_number": "6V@1A",
+      "role": "+5V 到 J1 VCC 的串联保险器件。",
+      "evidence": [{"asset_sha256": "1c82ca74584a3b9d13217288bf1edf55bca463b5a11e8aec6a094e674ad90213", "page": 1, "locator": "网格 B3-B4，+5V-F1 6V@1A-J1.3 VCC"}]
+    },
+    {
+      "reference": "D1,D2",
+      "part_number": "RLSD52A031V",
+      "role": "J1 SCL 与 SDA 的对地 ESD/瞬态保护器件。",
+      "evidence": [{"asset_sha256": "1c82ca74584a3b9d13217288bf1edf55bca463b5a11e8aec6a094e674ad90213", "page": 1, "locator": "网格 B3-B4，D1/D2 RLSD52A031V 分别跨接 SCL/SDA 与 GND"}]
+    },
+    {
+      "reference": "D3",
+      "part_number": "RLSD52A031V",
+      "role": "+3.3V 电源轨的对地瞬态保护器件。",
+      "evidence": [{"asset_sha256": "1c82ca74584a3b9d13217288bf1edf55bca463b5a11e8aec6a094e674ad90213", "page": 1, "locator": "网格 B2，D3 RLSD52A031V 跨接 +3.3V 与 GND"}]
+    },
+    {
+      "reference": "D4",
+      "part_number": "LESD3Z5.0CMT1G",
+      "role": "J1 VCC 5V 节点的对地保护器件。",
+      "evidence": [{"asset_sha256": "1c82ca74584a3b9d13217288bf1edf55bca463b5a11e8aec6a094e674ad90213", "page": 1, "locator": "网格 C3-C4，J1.3 VCC 节点至 D4 LESD3Z5.0CMT1G/GND"}]
+    },
+    {
+      "reference": "R3,R4",
+      "part_number": "15KΩ",
+      "role": "SCL 与 SDA 到 +3.3V 的 I2C 上拉电阻。",
+      "evidence": [{"asset_sha256": "1c82ca74584a3b9d13217288bf1edf55bca463b5a11e8aec6a094e674ad90213", "page": 1, "locator": "网格 C1-C2，R3 15KΩ 上拉 SCL，R4 15KΩ 上拉 SDA"}]
+    },
+    {
+      "reference": "C1,C2,C5,C6",
+      "part_number": "1uF / 1uF / 100nF / 100nF",
+      "role": "稳压器输入输出与 SCD41 +3.3V 供电的滤波/去耦电容。",
+      "evidence": [{"asset_sha256": "1c82ca74584a3b9d13217288bf1edf55bca463b5a11e8aec6a094e674ad90213", "page": 1, "locator": "网格 B2 C1/C2 1uF 与网格 C2 C5/C6 100nF，均接 GND"}]
+    }
+  ],
+  "facts": [
+    {
+      "id": "system.scd41-sensor-unit",
+      "category": "system",
+      "subject": "整板架构",
+      "statement": "整板由 U2 SCD41、U1 VRH3301NLX、J1、I2C 上拉和保护/去耦器件构成；本页未显示 MCU、存储器、晶振、复位、调试或射频电路。",
+      "confidence": "confirmed",
+      "attributes": {"sensor": "U2 SCD41", "regulator": "U1 VRH3301NLX", "host_interface": "J1 HY-2.0_IIC", "controller": "原理图未显示", "storage": "原理图未显示", "clock": "原理图未显示"},
+      "evidence": [{"asset_sha256": "1c82ca74584a3b9d13217288bf1edf55bca463b5a11e8aec6a094e674ad90213", "page": 1, "locator": "第 1 页全图，U1/U2/J1 与所有阻容、保险和保护器件"}]
+    },
+    {
+      "id": "sensor.scd41-pinout",
+      "category": "sensor",
+      "subject": "U2 SCD41",
+      "statement": "U2 SCD41 的 VDD（7 脚）与 VDDH（19 脚）接 +3.3V，SCL（9 脚）接 SCL，SDA（10 脚）接 SDA，GND（6 脚）接地。",
+      "confidence": "confirmed",
+      "attributes": {"reference": "U2", "part_number": "SCD41", "pin_7": "VDD/+3.3V", "pin_19": "VDDH/+3.3V", "pin_9": "SCL", "pin_10": "SDA", "pin_6": "GND"},
+      "evidence": [{"asset_sha256": "1c82ca74584a3b9d13217288bf1edf55bca463b5a11e8aec6a094e674ad90213", "page": 1, "locator": "网格 C2，U2 SCD41 五个可见功能引脚及网络"}]
+    },
+    {
+      "id": "power.vrh3301-regulation",
+      "category": "power",
+      "subject": "U1 5V 到 3.3V 稳压",
+      "statement": "U1 VRH3301NLX 的 VIN（4 脚）与 EN（3 脚）接 +5V，VOUT（1 脚）输出 +3.3V，VSS（2、5 脚）接 GND。",
+      "confidence": "confirmed",
+      "attributes": {"regulator": "U1 VRH3301NLX", "input": "VIN pin4/+5V", "enable": "EN pin3/+5V", "output": "VOUT pin1/+3.3V", "grounds": "VSS pins2,5"},
+      "evidence": [{"asset_sha256": "1c82ca74584a3b9d13217288bf1edf55bca463b5a11e8aec6a094e674ad90213", "page": 1, "locator": "网格 B2，U1 VIN/VOUT/VSS/EN 与 +5V/+3.3V/GND"}]
+    },
+    {
+      "id": "power.regulator-capacitors",
+      "category": "power",
+      "subject": "U1 输入输出滤波",
+      "statement": "C1 1uF 从 +5V/U1 VIN 接 GND，C2 1uF 从 +3.3V/U1 VOUT 接 GND。",
+      "confidence": "confirmed",
+      "attributes": {"input_capacitor": "C1 1uF +5V-to-GND", "output_capacitor": "C2 1uF +3.3V-to-GND", "regulator": "U1 VRH3301NLX"},
+      "evidence": [{"asset_sha256": "1c82ca74584a3b9d13217288bf1edf55bca463b5a11e8aec6a094e674ad90213", "page": 1, "locator": "网格 B1-B2，U1 左右两侧 C1/C2"}]
+    },
+    {
+      "id": "power.sensor-decoupling",
+      "category": "power",
+      "subject": "SCD41 去耦",
+      "statement": "C5 与 C6 均为 100nF，分别从 +3.3V 接 GND，为 SCD41 电源区域提供去耦。",
+      "confidence": "confirmed",
+      "attributes": {"capacitors": "C5 100nF,C6 100nF", "rail": "+3.3V", "return": "GND", "sensor": "U2 SCD41"},
+      "evidence": [{"asset_sha256": "1c82ca74584a3b9d13217288bf1edf55bca463b5a11e8aec6a094e674ad90213", "page": 1, "locator": "网格 C2，U2 右侧 C5/C6 100nF 至 GND"}]
+    },
+    {
+      "id": "interface.grove-pinout",
+      "category": "interface",
+      "subject": "J1 HY-2.0_IIC",
+      "statement": "J1.1-J1.4 分别为 IIC_SCL/SCL、IIC_SDA/SDA、VCC/+5V、GND。",
+      "confidence": "confirmed",
+      "attributes": {"reference": "J1", "part_number": "HY-2.0_IIC", "pin_1": "IIC_SCL/SCL", "pin_2": "IIC_SDA/SDA", "pin_3": "VCC/+5V", "pin_4": "GND"},
+      "evidence": [{"asset_sha256": "1c82ca74584a3b9d13217288bf1edf55bca463b5a11e8aec6a094e674ad90213", "page": 1, "locator": "网格 B4，J1 1-4 脚双侧网络/功能标注"}]
+    },
+    {
+      "id": "bus.i2c-routing",
+      "category": "bus",
+      "subject": "SCD41 I2C",
+      "statement": "J1.1 SCL 直接连接 U2 SCL（9 脚），J1.2 SDA 直接连接 U2 SDA（10 脚）；两条信号均工作在由 +3.3V 上拉定义的板侧电源域。",
+      "confidence": "confirmed",
+      "attributes": {"bus": "I2C", "device": "U2 SCD41", "scl_path": "J1.1 -> U2 SCL pin9", "sda_path": "J1.2 -> U2 SDA pin10", "pullup_rail": "+3.3V", "level_shifter": "原理图未显示"},
+      "evidence": [{"asset_sha256": "1c82ca74584a3b9d13217288bf1edf55bca463b5a11e8aec6a094e674ad90213", "page": 1, "locator": "网格 B3-C4 的 J1 SCL/SDA 与网格 C1-C2 的 U2 SCL/SDA 同名网络"}]
+    },
+    {
+      "id": "bus.i2c-pullups",
+      "category": "bus",
+      "subject": "I2C 上拉",
+      "statement": "R3 15KΩ将 SCL 上拉到 +3.3V，R4 15KΩ将 SDA 上拉到 +3.3V。",
+      "confidence": "confirmed",
+      "attributes": {"scl_pullup": "R3 15KΩ to +3.3V", "sda_pullup": "R4 15KΩ to +3.3V"},
+      "evidence": [{"asset_sha256": "1c82ca74584a3b9d13217288bf1edf55bca463b5a11e8aec6a094e674ad90213", "page": 1, "locator": "网格 C1-C2，R3/R4 15KΩ 与 SCL/SDA/+3.3V"}]
+    },
+    {
+      "id": "protection.i2c-lines",
+      "category": "protection",
+      "subject": "SCL/SDA 保护",
+      "statement": "D1 与 D2 均为 RLSD52A031V，分别从 SCL 和 SDA 接 GND，位于 J1 接口侧。",
+      "confidence": "confirmed",
+      "attributes": {"scl_protection": "D1 RLSD52A031V to GND", "sda_protection": "D2 RLSD52A031V to GND", "connector": "J1"},
+      "evidence": [{"asset_sha256": "1c82ca74584a3b9d13217288bf1edf55bca463b5a11e8aec6a094e674ad90213", "page": 1, "locator": "网格 B3-B4，D1/D2 与 SCL/SDA/GND"}]
+    },
+    {
+      "id": "protection.power-input",
+      "category": "protection",
+      "subject": "5V 与 3.3V 电源保护",
+      "statement": "+5V 经 F1（6V@1A）串联到 J1.3 VCC，D4 LESD3Z5.0CMT1G 从该 VCC 节点接 GND；D3 RLSD52A031V 从 +3.3V 接 GND。",
+      "confidence": "confirmed",
+      "attributes": {"fuse": "F1 6V@1A", "connector_power": "J1.3 VCC", "vcc_protection": "D4 LESD3Z5.0CMT1G", "rail_3v3_protection": "D3 RLSD52A031V"},
+      "evidence": [{"asset_sha256": "1c82ca74584a3b9d13217288bf1edf55bca463b5a11e8aec6a094e674ad90213", "page": 1, "locator": "网格 B2 D3 与网格 B3-C4 +5V-F1-J1/D4"}]
+    },
+    {
+      "id": "storage.no-controller-storage",
+      "category": "storage",
+      "subject": "主控与存储",
+      "statement": "本页未显示 MCU、外部 Flash、EEPROM、SD 卡或其他存储器，SCD41 直接通过 I2C 连接 J1。",
+      "confidence": "confirmed",
+      "attributes": {"mcu": "原理图未显示", "flash": "原理图未显示", "eeprom": "原理图未显示", "sd_card": "原理图未显示", "host_path": "J1 I2C -> U2 SCD41"},
+      "evidence": [{"asset_sha256": "1c82ca74584a3b9d13217288bf1edf55bca463b5a11e8aec6a094e674ad90213", "page": 1, "locator": "第 1 页全图，无主控或存储器位号"}]
+    },
+    {
+      "id": "clock.no-external-clock",
+      "category": "clock",
+      "subject": "时钟与复位",
+      "statement": "原理图未显示 SCD41 外部晶振、时钟输入、复位引脚或调试连接器。",
+      "confidence": "confirmed",
+      "attributes": {"external_crystal": "原理图未显示", "clock_input": "原理图未显示", "reset": "原理图未显示", "debug": "原理图未显示"},
+      "evidence": [{"asset_sha256": "1c82ca74584a3b9d13217288bf1edf55bca463b5a11e8aec6a094e674ad90213", "page": 1, "locator": "第 1 页全图与 U2 SCD41 可见引脚，无时钟/复位/调试网络"}]
+    },
+    {
+      "id": "address.i2c-address-undetermined",
+      "category": "address",
+      "subject": "SCD41 I2C 地址",
+      "statement": "原理图没有打印 I2C 地址或硬件地址选择网络，无法仅由本页确认产品正文中的 0x62。",
+      "confidence": "uncertain",
+      "attributes": {"device": "U2 SCD41", "documented_candidate": "0x62", "schematic_address": "未标注", "address_select": "未显示"},
+      "evidence": [{"asset_sha256": "1c82ca74584a3b9d13217288bf1edf55bca463b5a11e8aec6a094e674ad90213", "page": 1, "locator": "U2 SCD41 与 SCL/SDA 路径，整页无 0x62 或地址配置文字"}]
+    },
+    {
+      "id": "sensor.measurement-performance-undetermined",
+      "category": "sensor",
+      "subject": "SCD41 测量性能与低功耗模式",
+      "statement": "原理图只显示 SCD41 型号和电气连接，没有 CO₂/温度/湿度量程、精度、采样模式或功耗参数，不能由图纸确认 400-5000ppm、精度公式或单次测量模式。",
+      "confidence": "uncertain",
+      "attributes": {"device": "U2 SCD41", "co2_range_candidate": "400-5000ppm", "accuracy_candidate": "±(40ppm+5% of reading)", "temperature_candidate": "-10 to 60°C", "humidity_candidate": "0 to 95%RH", "single_shot_mode": "原理图未标注"},
+      "evidence": [{"asset_sha256": "1c82ca74584a3b9d13217288bf1edf55bca463b5a11e8aec6a094e674ad90213", "page": 1, "locator": "U2 SCD41 符号仅含型号与 VDD/VDDH/SCL/SDA/GND 引脚"}]
+    }
+  ],
+  "needs_review": [
+    {
+      "id": "review.i2c-address",
+      "fact_id": "address.i2c-address-undetermined",
+      "question": "Unit CO2L 的 SCD41 I2C 地址是否固定为 0x62，是否存在地址配置方式？",
+      "reason": "原理图没有地址文字或地址选择硬件。",
+      "evidence": [{"asset_sha256": "1c82ca74584a3b9d13217288bf1edf55bca463b5a11e8aec6a094e674ad90213", "page": 1, "locator": "U2 SCD41 与 SCL/SDA 网络区域"}]
+    },
+    {
+      "id": "review.measurement-performance",
+      "fact_id": "sensor.measurement-performance-undetermined",
+      "question": "该版本确认的 CO₂/温湿度量程、精度、采样周期和单次测量功耗分别是多少？",
+      "reason": "这些属于传感器规格或工作模式，原理图没有给出数值。",
+      "evidence": [{"asset_sha256": "1c82ca74584a3b9d13217288bf1edf55bca463b5a11e8aec6a094e674ad90213", "page": 1, "locator": "U2 SCD41 符号及其电气连接"}]
+    }
+  ]
+}

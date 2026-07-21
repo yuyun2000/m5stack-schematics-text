@@ -1,0 +1,21 @@
+{
+  "dry_run": false,
+  "failed": 0,
+  "published": 1,
+  "results": [
+    {
+      "backup": null,
+      "draft_action": "unchanged",
+      "dry_run": false,
+      "errors": [],
+      "needs_review": 6,
+      "product_id": "powerhub-896e97cb79d5",
+      "product_name": "PowerHub",
+      "publish_action": "unchanged",
+      "sha256": "52784c280f1092d42160bf1d3a99b5c18a801655b8aa364685ed1da82ad6e2d0",
+      "status": "valid",
+      "uncertain_facts": 6
+    }
+  ],
+  "schema_version": 1
+}

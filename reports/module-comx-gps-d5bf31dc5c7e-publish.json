@@ -1,0 +1,21 @@
+{
+  "dry_run": false,
+  "failed": 0,
+  "published": 1,
+  "results": [
+    {
+      "backup": null,
+      "draft_action": "unchanged",
+      "dry_run": false,
+      "errors": [],
+      "needs_review": 6,
+      "product_id": "module-comx-gps-d5bf31dc5c7e",
+      "product_name": "Module COMX GPS",
+      "publish_action": "unchanged",
+      "sha256": "17871a3e60da7dbc4ba2b8987f2a12fb20a94483567e0c4b806b2fccf68ffa11",
+      "status": "valid",
+      "uncertain_facts": 6
+    }
+  ],
+  "schema_version": 1
+}

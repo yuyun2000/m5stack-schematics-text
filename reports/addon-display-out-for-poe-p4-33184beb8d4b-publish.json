@@ -1,0 +1,21 @@
+{
+  "dry_run": false,
+  "failed": 0,
+  "published": 1,
+  "results": [
+    {
+      "backup": null,
+      "draft_action": "unchanged",
+      "dry_run": false,
+      "errors": [],
+      "needs_review": 4,
+      "product_id": "addon-display-out-for-poe-p4-33184beb8d4b",
+      "product_name": "AddOn_Display_Out_For_PoE-P4",
+      "publish_action": "unchanged",
+      "sha256": "c9cd2753e9806c54ab37226103c3615b518e670d0d8e2c4046692d4acd79cc1d",
+      "status": "valid",
+      "uncertain_facts": 4
+    }
+  ],
+  "schema_version": 1
+}

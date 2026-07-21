@@ -1,0 +1,21 @@
+{
+  "dry_run": false,
+  "failed": 0,
+  "published": 1,
+  "results": [
+    {
+      "backup": null,
+      "draft_action": "unchanged",
+      "dry_run": false,
+      "errors": [],
+      "needs_review": 6,
+      "product_id": "base-aaa-4a99b42565c7",
+      "product_name": "Base AAA",
+      "publish_action": "unchanged",
+      "sha256": "0f24bca655b4da99b2fac7740f6e7952f267246f2ad1779fc9effbf7bd96b85f",
+      "status": "valid",
+      "uncertain_facts": 6
+    }
+  ],
+  "schema_version": 1
+}

@@ -1,0 +1,21 @@
+{
+  "dry_run": false,
+  "failed": 0,
+  "published": 1,
+  "results": [
+    {
+      "backup": null,
+      "draft_action": "unchanged",
+      "dry_run": false,
+      "errors": [],
+      "needs_review": 0,
+      "product_id": "atomic-qrcode2-base-06fd4484ce87",
+      "product_name": "Atomic QRCode2 Base",
+      "publish_action": "unchanged",
+      "sha256": "03199e5cb667062cbe4fe89ed84d99d836fd64ceff0e3e759a380d31a80e15c2",
+      "status": "valid",
+      "uncertain_facts": 0
+    }
+  ],
+  "schema_version": 1
+}

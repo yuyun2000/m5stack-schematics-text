@@ -1,0 +1,21 @@
+{
+  "dry_run": false,
+  "failed": 0,
+  "published": 1,
+  "results": [
+    {
+      "backup": null,
+      "draft_action": "unchanged",
+      "dry_run": false,
+      "errors": [],
+      "needs_review": 4,
+      "product_id": "tough-1f2d2983b489",
+      "product_name": "Tough",
+      "publish_action": "unchanged",
+      "sha256": "e83168b07b64ad0cbbdf65af58dfc0adb75422e44042586f3301edc75decad04",
+      "status": "valid",
+      "uncertain_facts": 4
+    }
+  ],
+  "schema_version": 1
+}

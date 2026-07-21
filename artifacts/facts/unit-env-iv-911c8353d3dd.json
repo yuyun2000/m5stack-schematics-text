@@ -1,0 +1,395 @@
+{
+  "schema_version": 1,
+  "generator": "schematic_describer",
+  "product": {
+    "product_id": "unit-env-iv-911c8353d3dd",
+    "product_name": "Unit ENV-IV",
+    "sku": "U001-D",
+    "source_path": "unit/Unit_ENV-IV.md",
+    "source_sha256": "53e2f09a420e320cb399e2ed5c0d7c2b62baa60d839aa58801057266fd4bc310",
+    "input_sha256": "4c32fc5cc7b4ed83eb45423436799cfea85b75b1a77ec5a655559fff53ebdb0d"
+  },
+  "schematic_assets": [
+    {
+      "sha256": "40c5d4e292bb06fa81d5f26df0021b8a17f08d77e83231177ff63b2b43bda60f",
+      "source_url": "https://m5stack-doc.oss-cn-shenzhen.aliyuncs.com/573/Sch_UNIT_ENVIV_sch_01.png",
+      "pages": [
+        1
+      ]
+    }
+  ],
+  "summary": "Unit ENV-IV 由 U1 SHT40-AD1B 与 U2 BMP280 两个传感器共享 SDA/SCL 总线，J1 负责引出 IIC_SCL、IIC_SDA、VCC 和 GND。U3 HT7533 将输入 VCC 转换为 +3.3V，为两个传感器及 I2C 上拉网络供电。SHT40 地址在图中明确标注为 0x44；BMP280 的 SDO 接 GND，但原理图没有直接写出对应地址值。",
+  "keywords": [
+    "Unit ENV-IV",
+    "U001-D",
+    "SHT40-AD1B",
+    "SHT40",
+    "0x44",
+    "BMP280",
+    "HT7533",
+    "I2C",
+    "IIC_SCL",
+    "IIC_SDA",
+    "SCL",
+    "SDA",
+    "VCC",
+    "+3.3V",
+    "IIC_Socket_4P",
+    "J1",
+    "R1 4.7KΩ",
+    "R2 4.7KΩ",
+    "BMP280 SDO",
+    "BMP280 CSB",
+    "温湿度传感器",
+    "气压传感器"
+  ],
+  "components": [
+    {
+      "reference": "U1",
+      "part_number": "SHT40-AD1B",
+      "role": "共享 I2C 总线的温湿度传感器",
+      "evidence": [
+        {
+          "asset_sha256": "40c5d4e292bb06fa81d5f26df0021b8a17f08d77e83231177ff63b2b43bda60f",
+          "page": 1,
+          "locator": "网格 B2，U1 四引脚器件，器件值标注 SHT40-AD1B，SDA/SCL 接同名网络"
+        }
+      ]
+    },
+    {
+      "reference": "U2",
+      "part_number": "BMP280",
+      "role": "共享 I2C 总线的气压传感器",
+      "evidence": [
+        {
+          "asset_sha256": "40c5d4e292bb06fa81d5f26df0021b8a17f08d77e83231177ff63b2b43bda60f",
+          "page": 1,
+          "locator": "网格 C2，U2 八引脚器件，器件值标注 BMP280，SCK 接 SCL、SDI 接 SDA"
+        }
+      ]
+    },
+    {
+      "reference": "U3",
+      "part_number": "HT7533",
+      "role": "VCC 到 +3.3V 的线性稳压器",
+      "evidence": [
+        {
+          "asset_sha256": "40c5d4e292bb06fa81d5f26df0021b8a17f08d77e83231177ff63b2b43bda60f",
+          "page": 1,
+          "locator": "网格 C3，U3 三引脚器件，器件值 HT7533，VIN 接 VCC、VOUT 接 +3.3V"
+        }
+      ]
+    },
+    {
+      "reference": "J1",
+      "part_number": "IIC_Socket_4P",
+      "role": "I2C、输入电源和地的四针外部接口",
+      "evidence": [
+        {
+          "asset_sha256": "40c5d4e292bb06fa81d5f26df0021b8a17f08d77e83231177ff63b2b43bda60f",
+          "page": 1,
+          "locator": "网格 B3，J1 IIC_Socket_4P，pin1-pin4 标注 IIC_SCL、IIC_SDA、VCC、GND"
+        }
+      ]
+    }
+  ],
+  "facts": [
+    {
+      "id": "system.sensor_architecture",
+      "category": "system",
+      "subject": "Unit ENV-IV 传感器架构",
+      "statement": "U1 SHT40-AD1B 与 U2 BMP280 共用 SCL、SDA 和 +3.3V，J1 引出 I2C 与 VCC/GND，U3 HT7533 从 VCC 生成 +3.3V。",
+      "confidence": "confirmed",
+      "attributes": {
+        "sensor_1": "U1 SHT40-AD1B",
+        "sensor_2": "U2 BMP280",
+        "bus": "SCL,SDA",
+        "sensor_rail": "+3.3V",
+        "regulator": "U3 HT7533",
+        "connector": "J1 IIC_Socket_4P"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "40c5d4e292bb06fa81d5f26df0021b8a17f08d77e83231177ff63b2b43bda60f",
+          "page": 1,
+          "locator": "整页 B2-C3，U1、U2、U3 与 J1 的总线和电源网络"
+        }
+      ]
+    },
+    {
+      "id": "interface.j1_i2c",
+      "category": "interface",
+      "subject": "J1 I2C 接口",
+      "statement": "J1 的 pin1 至 pin4 依次连接 IIC_SCL、IIC_SDA、VCC 和 GND；板内对应网络名为 SCL、SDA、VCC 和 GND。",
+      "confidence": "confirmed",
+      "attributes": {
+        "reference": "J1",
+        "part_number": "IIC_Socket_4P",
+        "pinout": "1:IIC_SCL/SCL,2:IIC_SDA/SDA,3:VCC,4:GND"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "40c5d4e292bb06fa81d5f26df0021b8a17f08d77e83231177ff63b2b43bda60f",
+          "page": 1,
+          "locator": "网格 B3，J1 四个脚号、内部端名及左侧 SCL/SDA/VCC/GND 网络"
+        }
+      ]
+    },
+    {
+      "id": "power.ht7533_regulator",
+      "category": "power",
+      "subject": "U3 HT7533 稳压路径",
+      "statement": "U3 HT7533 的 VIN pin2 连接 VCC，VOUT pin3 连接 +3.3V，GND pin1 连接 GND。",
+      "confidence": "confirmed",
+      "attributes": {
+        "reference": "U3",
+        "part_number": "HT7533",
+        "pinout": "1:GND,2:VIN/VCC,3:VOUT/+3.3V",
+        "input_rail": "VCC",
+        "output_rail": "+3.3V"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "40c5d4e292bb06fa81d5f26df0021b8a17f08d77e83231177ff63b2b43bda60f",
+          "page": 1,
+          "locator": "网格 C3，U3 HT7533 的 VOUT pin3、VIN pin2 与 GND pin1"
+        }
+      ]
+    },
+    {
+      "id": "power.vcc_input_filter",
+      "category": "power",
+      "subject": "VCC 输入去耦",
+      "statement": "C2 100 nF 与 C5 10 uF 分别跨接 VCC 与 GND。",
+      "confidence": "confirmed",
+      "attributes": {
+        "rail": "VCC",
+        "capacitors": "C2 100nF,C5 10uF"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "40c5d4e292bb06fa81d5f26df0021b8a17f08d77e83231177ff63b2b43bda60f",
+          "page": 1,
+          "locator": "网格 B3 的 C2 100nF 与网格 C3 的 C5 10uF，均连接 VCC 和 GND"
+        }
+      ]
+    },
+    {
+      "id": "power.vcc_nominal_voltage",
+      "category": "power",
+      "subject": "外部 VCC 标称电压",
+      "statement": "原理图只将 J1 pin3 与 U3 VIN pin2 网络标为 VCC，没有在图内给出该输入电源的数值。",
+      "confidence": "uncertain",
+      "attributes": {
+        "input_net": "VCC",
+        "nominal_voltage_v": null,
+        "connector_pin": "J1 pin3",
+        "regulator_pin": "U3 pin2 VIN"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "40c5d4e292bb06fa81d5f26df0021b8a17f08d77e83231177ff63b2b43bda60f",
+          "page": 1,
+          "locator": "网格 B3-C3，J1 pin3、C2/C5 与 U3 VIN pin2 的 VCC 网络标注"
+        }
+      ]
+    },
+    {
+      "id": "power.sensor_3v3_filter",
+      "category": "power",
+      "subject": "+3.3V 输出滤波",
+      "statement": "C3 100 nF 与 C4 10 uF 分别跨接 +3.3V 与 GND。",
+      "confidence": "confirmed",
+      "attributes": {
+        "rail": "+3.3V",
+        "capacitors": "C3 100nF,C4 10uF"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "40c5d4e292bb06fa81d5f26df0021b8a17f08d77e83231177ff63b2b43bda60f",
+          "page": 1,
+          "locator": "网格 C2-C3，U3 VOUT 左侧 +3.3V 网络上的 C3 100nF 与 C4 10uF"
+        }
+      ]
+    },
+    {
+      "id": "bus.shared_i2c",
+      "category": "bus",
+      "subject": "共享 I2C 总线",
+      "statement": "SCL 网络同时连接 J1 pin1、U1 SCL pin2 与 U2 SCK pin4；SDA 网络同时连接 J1 pin2、U1 SDA pin1 与 U2 SDI pin3。",
+      "confidence": "confirmed",
+      "attributes": {
+        "scl_path": "J1 pin1 -> SCL -> U1 pin2 SCL,U2 pin4 SCK",
+        "sda_path": "J1 pin2 -> SDA -> U1 pin1 SDA,U2 pin3 SDI",
+        "devices": "U1 SHT40-AD1B,U2 BMP280"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "40c5d4e292bb06fa81d5f26df0021b8a17f08d77e83231177ff63b2b43bda60f",
+          "page": 1,
+          "locator": "网格 B2-B3 与 C2，SCL/SDA 网络在 J1、U1 和 U2 之间的连接"
+        }
+      ]
+    },
+    {
+      "id": "bus.i2c_pullups",
+      "category": "bus",
+      "subject": "I2C 上拉电阻",
+      "statement": "R1 4.7 kΩ 将 SCL 上拉到 +3.3V，R2 4.7 kΩ 将 SDA 上拉到 +3.3V。",
+      "confidence": "confirmed",
+      "attributes": {
+        "scl_pullup": "R1 4.7kΩ to +3.3V",
+        "sda_pullup": "R2 4.7kΩ to +3.3V"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "40c5d4e292bb06fa81d5f26df0021b8a17f08d77e83231177ff63b2b43bda60f",
+          "page": 1,
+          "locator": "网格 B2-B3，J1 左上方 R1/R2 4.7KΩ 至 +3.3V 的上拉支路"
+        }
+      ]
+    },
+    {
+      "id": "sensor.sht40_pinout",
+      "category": "sensor",
+      "subject": "U1 SHT40-AD1B 引脚映射",
+      "statement": "U1 的 SDA pin1 连接 SDA，SCL pin2 连接 SCL，VDD pin3 连接 +3.3V，VSS pin4 连接 GND。",
+      "confidence": "confirmed",
+      "attributes": {
+        "reference": "U1",
+        "part_number": "SHT40-AD1B",
+        "pinout": "1:SDA,2:SCL,3:VDD/+3.3V,4:VSS/GND"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "40c5d4e292bb06fa81d5f26df0021b8a17f08d77e83231177ff63b2b43bda60f",
+          "page": 1,
+          "locator": "网格 B2，U1 四侧脚号、引脚名与 SDA/SCL/+3.3V/GND 网络"
+        }
+      ]
+    },
+    {
+      "id": "address.sht40_0x44",
+      "category": "address",
+      "subject": "SHT40 I2C 地址",
+      "statement": "U1 下方明确标注 0x44 I2C addr。",
+      "confidence": "confirmed",
+      "attributes": {
+        "device": "U1 SHT40-AD1B",
+        "address": "0x44"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "40c5d4e292bb06fa81d5f26df0021b8a17f08d77e83231177ff63b2b43bda60f",
+          "page": 1,
+          "locator": "网格 B2，U1 SHT40-AD1B 下方文字 0x44 I2C addr"
+        }
+      ]
+    },
+    {
+      "id": "power.sht40_decoupling",
+      "category": "power",
+      "subject": "SHT40 电源去耦",
+      "statement": "C1 100 nF 跨接 +3.3V 与 GND，位于 U1 SHT40-AD1B 电源区域。",
+      "confidence": "confirmed",
+      "attributes": {
+        "capacitor": "C1 100nF",
+        "rail": "+3.3V",
+        "device": "U1 SHT40-AD1B"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "40c5d4e292bb06fa81d5f26df0021b8a17f08d77e83231177ff63b2b43bda60f",
+          "page": 1,
+          "locator": "网格 B1-B2，U1 左侧 C1 100nF 的 +3.3V-GND 支路"
+        }
+      ]
+    },
+    {
+      "id": "sensor.bmp280_pinout",
+      "category": "sensor",
+      "subject": "U2 BMP280 引脚映射",
+      "statement": "U2 的 SCK pin4 连接 SCL，SDI pin3 连接 SDA，CSB pin2、Vdd pin8 与 Vddio pin6 连接 +3.3V，SDO pin5、GND pin1 与 GND pin7 连接 GND。",
+      "confidence": "confirmed",
+      "attributes": {
+        "reference": "U2",
+        "part_number": "BMP280",
+        "pinout": "1:GND,2:CSB/+3.3V,3:SDI/SDA,4:SCK/SCL,5:SDO/GND,6:Vddio/+3.3V,7:GND,8:Vdd/+3.3V"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "40c5d4e292bb06fa81d5f26df0021b8a17f08d77e83231177ff63b2b43bda60f",
+          "page": 1,
+          "locator": "网格 C2，U2 BMP280 全部脚号、引脚名及 SCL/SDA/+3.3V/GND 连线"
+        }
+      ]
+    },
+    {
+      "id": "bus.bmp280_i2c_mode",
+      "category": "bus",
+      "subject": "BMP280 I2C 接线模式",
+      "statement": "U2 CSB pin2 连接 +3.3V，SCK pin4 作为 SCL，SDI pin3 作为 SDA，SDO pin5 连接 GND。",
+      "confidence": "confirmed",
+      "attributes": {
+        "csb": "pin2 -> +3.3V",
+        "scl": "pin4 SCK -> SCL",
+        "sda": "pin3 SDI -> SDA",
+        "sdo": "pin5 -> GND"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "40c5d4e292bb06fa81d5f26df0021b8a17f08d77e83231177ff63b2b43bda60f",
+          "page": 1,
+          "locator": "网格 C2，U2 CSB/SCK/SDI/SDO 的脚号和网络连接"
+        }
+      ]
+    },
+    {
+      "id": "address.bmp280",
+      "category": "address",
+      "subject": "BMP280 I2C 地址",
+      "statement": "原理图确认 U2 SDO pin5 接 GND，但没有在图内直接标注 BMP280 的 I2C 地址值。",
+      "confidence": "uncertain",
+      "attributes": {
+        "device": "U2 BMP280",
+        "sdo_configuration": "pin5 -> GND",
+        "address": null
+      },
+      "evidence": [
+        {
+          "asset_sha256": "40c5d4e292bb06fa81d5f26df0021b8a17f08d77e83231177ff63b2b43bda60f",
+          "page": 1,
+          "locator": "网格 C2，U2 SDO pin5 到 GND 的连线；该器件周边无地址文字标注"
+        }
+      ]
+    }
+  ],
+  "needs_review": [
+    {
+      "id": "review.vcc_nominal_voltage",
+      "fact_id": "power.vcc_nominal_voltage",
+      "question": "J1 pin3 的 VCC 标称输入电压是否为 5V？",
+      "reason": "原理图只标注 VCC，未写明电压数值；需由产品接口定义或电源规格确认。",
+      "evidence": [
+        {
+          "asset_sha256": "40c5d4e292bb06fa81d5f26df0021b8a17f08d77e83231177ff63b2b43bda60f",
+          "page": 1,
+          "locator": "网格 B3-C3，J1 pin3 到 U3 VIN pin2 的 VCC 网络"
+        }
+      ]
+    },
+    {
+      "id": "review.bmp280_address",
+      "fact_id": "address.bmp280",
+      "question": "BMP280 在 SDO pin5 接 GND 配置下的 I2C 地址是否为产品正文中的 0x76？",
+      "reason": "原理图未直接标注 BMP280 地址，需要用该器件 datasheet 或已验证通信记录确认 SDO 配置与地址的映射。",
+      "evidence": [
+        {
+          "asset_sha256": "40c5d4e292bb06fa81d5f26df0021b8a17f08d77e83231177ff63b2b43bda60f",
+          "page": 1,
+          "locator": "网格 C2，U2 BMP280 SDO pin5 接 GND，周边无地址标注"
+        }
+      ]
+    }
+  ]
+}

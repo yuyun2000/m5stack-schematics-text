@@ -1,0 +1,42 @@
+{
+  "schema_version": 1,
+  "generator": "schematic_describer",
+  "product": {
+    "product_id": "hat-dac-b4c8fa71d070",
+    "product_name": "Hat DAC",
+    "sku": "U068",
+    "source_path": "hat/hat-dac.md",
+    "source_sha256": "db2c312321ec340788fbb47cea3d2419342201d330f7e545fb4cfb7b70ead2bc",
+    "input_sha256": "47280fc7ea85fb7fa85cd958c0f462de7a0db926c81b521783dcac6a4a03aa1d"
+  },
+  "schematic_assets": [
+    {"sha256":"5a42b8f2ff4b6760aa2fb22bc01f0134d7474265079e43ee6e4cc40d500e42eb","source_url":"https://static-cdn.m5stack.com/resource/docs/products/hat/hat-dac/hat-dac_sch_01.webp","pages":[1]}
+  ],
+  "summary": "Hat DAC 以 U2 MCP4725_DAC 为数模转换器，通过 P1 的 G26/SCL 与 G0/SDA 接入主机 I2C。U2 A0 接地，SCL/SDA 各由 4.7KΩ上拉到 VCC，DAC VOUT 经 U1 LM321MFX 电压跟随器缓冲后从 P2 pin1 输出。P1 的 5VOUT 为 VCC 电源，U1/U2 各配置 100nF 去耦。",
+  "keywords": ["Hat DAC","U068","MCP4725_DAC","MCP4725","LM321MFX","I2C","0x60","A0 GND","G26 SCL","G0 SDA","VCC","5VOUT","DAC VOUT","P2 analog output","R1 4.7K","R2 4.7K","C1 100nF","C2 100nF","C3 100nF","voltage follower"],
+  "components": [
+    {"reference":"U2","part_number":"MCP4725_DAC","role":"I2C 单通道 DAC，输出送入缓冲放大器","evidence":[{"asset_sha256":"5a42b8f2ff4b6760aa2fb22bc01f0134d7474265079e43ee6e4cc40d500e42eb","page":1,"locator":"第1页左上：U2 MCP4725_DAC pins1-6"}]},
+    {"reference":"U1","part_number":"LM321MFX","role":"DAC 输出电压跟随缓冲器","evidence":[{"asset_sha256":"5a42b8f2ff4b6760aa2fb22bc01f0134d7474265079e43ee6e4cc40d500e42eb","page":1,"locator":"第1页中上：U1 LM321MFX pins1-5"}]},
+    {"reference":"P1","part_number":"STICKIO","role":"主机电源与 I2C 接口","evidence":[{"asset_sha256":"5a42b8f2ff4b6760aa2fb22bc01f0134d7474265079e43ee6e4cc40d500e42eb","page":1,"locator":"第1页右下：P1 STICKIO pins1-8"}]},
+    {"reference":"P2","part_number":"Header 2","role":"缓冲模拟输出与 GND 的两针接口","evidence":[{"asset_sha256":"5a42b8f2ff4b6760aa2fb22bc01f0134d7474265079e43ee6e4cc40d500e42eb","page":1,"locator":"第1页右上：P2 Header 2 pins1-2"}]},
+    {"reference":"R1,R2","part_number":"4.7KΩ","role":"SCL 与 SDA 上拉到 VCC","evidence":[{"asset_sha256":"5a42b8f2ff4b6760aa2fb22bc01f0134d7474265079e43ee6e4cc40d500e42eb","page":1,"locator":"第1页左上：R1/R2 4.7KΩ"}]}
+  ],
+  "facts": [
+    {"id":"system.hat-dac-architecture","category":"system","subject":"Hat DAC 架构","statement":"P1 提供 VCC、GND、SCL 和 SDA；U2 MCP4725_DAC 完成数模转换，U1 LM321MFX 以电压跟随器方式缓冲 VOUT，P2 输出模拟电压。","confidence":"confirmed","attributes":{"dac":"U2 MCP4725_DAC","buffer":"U1 LM321MFX","host":"P1 STICKIO","output":"P2 Header 2"},"evidence":[{"asset_sha256":"5a42b8f2ff4b6760aa2fb22bc01f0134d7474265079e43ee6e4cc40d500e42eb","page":1,"locator":"第1页完整单页"}]},
+    {"id":"bus.i2c","category":"bus","subject":"MCP4725 I2C 连接","statement":"P1 pin3/G26 形成 SCL并连接 U2 pin5，P1 pin5/G0 形成 SDA并连接 U2 pin4；R1/R2 4.7KΩ分别将 SCL/SDA 上拉到 VCC。","confidence":"confirmed","attributes":{"controller_connector":"P1","scl":"P1 pin3 G26 -> U2 pin5","sda":"P1 pin5 G0 -> U2 pin4","pullup_scl":"R1 4.7KΩ to VCC","pullup_sda":"R2 4.7KΩ to VCC","direction":"bidirectional"},"evidence":[{"asset_sha256":"5a42b8f2ff4b6760aa2fb22bc01f0134d7474265079e43ee6e4cc40d500e42eb","page":1,"locator":"第1页 P1 G26/G0、U2 SCL/SDA、R1/R2"}]},
+    {"id":"address.mcp4725-config","category":"address","subject":"MCP4725 地址配置","statement":"U2 A0 pin6 在原理图中接 GND；产品正文标称 I2C 地址为 0x60，但图中未打印地址数值。","confidence":"uncertain","attributes":{"device":"U2 MCP4725_DAC","a0":"GND","documented_address":"0x60","explicit_address_text_on_schematic":false},"evidence":[{"asset_sha256":"5a42b8f2ff4b6760aa2fb22bc01f0134d7474265079e43ee6e4cc40d500e42eb","page":1,"locator":"第1页 U2 A0 pin6 接 GND"}]},
+    {"id":"power.vcc-domain","category":"power","subject":"VCC 电源域","statement":"P1 pin2/5VOUT 连接 VCC，VCC 为 U2 Vdd pin3、U1 VCC pin5 以及 I2C 上拉电源；U2 Vss pin2 与 U1 VSS pin2 接 GND。","confidence":"confirmed","attributes":{"input":"P1 pin2 5VOUT","rail":"VCC","loads":"U2 Vdd pin3; U1 VCC pin5; R1/R2","grounds":"U2 Vss pin2; U1 VSS pin2"},"evidence":[{"asset_sha256":"5a42b8f2ff4b6760aa2fb22bc01f0134d7474265079e43ee6e4cc40d500e42eb","page":1,"locator":"第1页 P1 pin2、U1/U2 VCC/Vdd/VSS"}]},
+    {"id":"analog.dac-output","category":"analog","subject":"MCP4725 模拟输出","statement":"U2 Vout pin1 直接连接 U1 +IN pin1，形成 DAC 原始模拟输出到缓冲器的输入路径。","confidence":"confirmed","attributes":{"source":"U2 Vout pin1","destination":"U1 +IN pin1","net":"DAC Vout"},"evidence":[{"asset_sha256":"5a42b8f2ff4b6760aa2fb22bc01f0134d7474265079e43ee6e4cc40d500e42eb","page":1,"locator":"第1页 U2 Vout pin1 至 U1 +IN pin1"}]},
+    {"id":"analog.output-buffer","category":"analog","subject":"LM321 电压跟随器","statement":"U1 OUTPUT pin4 回接 -IN pin3，构成单位增益电压跟随器；OUTPUT 同时连接 P2 pin1，P2 pin2 接 GND。","confidence":"confirmed","attributes":{"op_amp":"U1 LM321MFX","feedback":"OUTPUT pin4 -> -IN pin3","input":"+IN pin1 from U2 Vout","output":"U1 pin4 -> P2 pin1","return":"P2 pin2 GND","gain":"voltage follower"},"evidence":[{"asset_sha256":"5a42b8f2ff4b6760aa2fb22bc01f0134d7474265079e43ee6e4cc40d500e42eb","page":1,"locator":"第1页 U1 pins1/3/4 与 P2"}]},
+    {"id":"interface.output-p2","category":"interface","subject":"P2 模拟输出接口","statement":"P2 Header 2 pin1 为 U1 缓冲输出，pin2 为 GND。","confidence":"confirmed","attributes":{"connector":"P2 Header 2","pin1":"buffered analog output","pin2":"GND","direction":"output"},"evidence":[{"asset_sha256":"5a42b8f2ff4b6760aa2fb22bc01f0134d7474265079e43ee6e4cc40d500e42eb","page":1,"locator":"第1页右上：P2 pins1-2"}]},
+    {"id":"interface.host-p1","category":"interface","subject":"P1 STICKIO 接口","statement":"P1 pin1 为 GND、pin2 为 5VOUT/VCC、pin3 G26 为 SCL、pin5 G0 为 SDA；pins4 G36、6 BAT、8 5VIN 标记未连接。","confidence":"confirmed","attributes":{"pin1":"GND","pin2":"5VOUT / VCC","pin3":"G26 / SCL","pin4":"G36 NC","pin5":"G0 / SDA","pin6":"BAT NC","pin7":"3V3 pin shown with +3.3V label","pin8":"5VIN NC"},"evidence":[{"asset_sha256":"5a42b8f2ff4b6760aa2fb22bc01f0134d7474265079e43ee6e4cc40d500e42eb","page":1,"locator":"第1页右下：P1 pins1-8"}]},
+    {"id":"power.decoupling","category":"power","subject":"电源去耦","statement":"C1 100nF 从 VCC 对地，C2 100nF 位于 U2 Vdd，C3 100nF 位于 U1 VCC，三者均对地去耦。","confidence":"confirmed","attributes":{"bulk":"C1 100nF","dac":"C2 100nF","op_amp":"C3 100nF","rail":"VCC"},"evidence":[{"asset_sha256":"5a42b8f2ff4b6760aa2fb22bc01f0134d7474265079e43ee6e4cc40d500e42eb","page":1,"locator":"第1页 C1/C2/C3 100nF"}]},
+    {"id":"analog.documented-output-range","category":"analog","subject":"标称输出电压范围","statement":"产品正文标称输出 0-3.3V；原理图显示 DAC 与缓冲器由 P1 5VOUT/VCC 供电，未打印 0-3.3V 限幅或范围标注。","confidence":"uncertain","attributes":{"documented_range":"0-3.3V","schematic_supply":"VCC from P1 5VOUT","explicit_range_on_schematic":false,"limiter_shown":false},"evidence":[{"asset_sha256":"5a42b8f2ff4b6760aa2fb22bc01f0134d7474265079e43ee6e4cc40d500e42eb","page":1,"locator":"第1页 P1 5VOUT/VCC、U2 Vdd、U1 VCC 与 P2 output"}]},
+    {"id":"protection.visibility","category":"protection","subject":"接口保护可见性","statement":"本页未画 P1、P2、I2C 或模拟输出上的 TVS、ESD、保险丝或串联保护器件。","confidence":"confirmed","attributes":{"tvs_esd_shown":false,"fuse_shown":false,"protected_interfaces":"none shown"},"evidence":[{"asset_sha256":"5a42b8f2ff4b6760aa2fb22bc01f0134d7474265079e43ee6e4cc40d500e42eb","page":1,"locator":"第1页完整单页保护器件范围"}]},
+    {"id":"clock.visibility","category":"clock","subject":"时钟可见性","statement":"本页未画独立晶体、晶振或外部时钟输入。","confidence":"confirmed","attributes":{"crystal_shown":false,"oscillator_shown":false},"evidence":[{"asset_sha256":"5a42b8f2ff4b6760aa2fb22bc01f0134d7474265079e43ee6e4cc40d500e42eb","page":1,"locator":"第1页完整单页，无 X/Y 位号"}]}
+  ],
+  "needs_review": [
+    {"id":"review.i2c-address","fact_id":"address.mcp4725-config","question":"U068 在 A0 接地配置下的实际 I2C 地址是否固定为 0x60？","reason":"0x60 来自产品正文；原理图显示 A0 接地，但未打印地址数值。","evidence":[{"asset_sha256":"5a42b8f2ff4b6760aa2fb22bc01f0134d7474265079e43ee6e4cc40d500e42eb","page":1,"locator":"第1页 U2 A0 pin6 接 GND"}]},
+    {"id":"review.output-range","fact_id":"analog.documented-output-range","question":"U068 的实际缓冲输出范围为何标称 0-3.3V，而原理图 VCC 来自 P1 5VOUT？","reason":"原理图未显示 3.3V 参考或输出限幅，需核对装配、电源或产品规格。","evidence":[{"asset_sha256":"5a42b8f2ff4b6760aa2fb22bc01f0134d7474265079e43ee6e4cc40d500e42eb","page":1,"locator":"第1页 P1 5VOUT/VCC 到 U1/U2 与 P2 输出"}]}
+  ]
+}

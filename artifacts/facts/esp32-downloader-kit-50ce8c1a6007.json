@@ -1,0 +1,465 @@
+{
+  "schema_version": 1,
+  "generator": "schematic_describer",
+  "product": {
+    "product_id": "esp32-downloader-kit-50ce8c1a6007",
+    "product_name": "ESP32 Downloader Kit",
+    "sku": "A105",
+    "source_path": "accessory/esp32_downloader_kit.md",
+    "source_sha256": "7f811821f20ab49e0c2064ee6ba6b579c052d016d9395980d381fb6ea0f20ad9",
+    "input_sha256": "6030e65c0cc711d5b0a815d63123badf950ca56a4e4db086615410bbf182679e"
+  },
+  "schematic_assets": [
+    {
+      "sha256": "4d9e2adb14cf3115311f98b79d3790b0b0ad45efb6a2ed62f0a1730ba6247932",
+      "source_url": "https://static-cdn.m5stack.com/resource/docs/products/accessory/esp32_downloader_kit/esp32_downloader_kit_sch_01.webp",
+      "pages": [
+        1
+      ]
+    }
+  ],
+  "summary": "ESP32 Downloader Kit 的本地原理图采用 CP2104-F03-GM（U1）完成 USB 到 UART 转换，Type-C 的 USB_P/USB_N 经 22Ω 串联电阻和 SRV05-4-P-T7 防护网络连接 U1。VBUS 同时为 U1 和 AMS1117-3.3（VR1）供电，VR1 输出 +3.3V 至外部排针与板上电路。DTR、RTS 通过 Q1/Q2 两只 SS8050 及 10KΩ 基极电阻形成 EN/BOOT 自动下载控制，P1 集中引出 3.3V、RXD、TXD、EN、BOOT 和 GND。",
+  "keywords": [
+    "ESP32 Downloader Kit",
+    "A105",
+    "CP2104-F03-GM",
+    "CP2104",
+    "USB-TTL",
+    "Type-C",
+    "USB_P",
+    "USB_N",
+    "TXD",
+    "RXD",
+    "DTR",
+    "RTS",
+    "EN",
+    "BOOT",
+    "AMS1117-3.3",
+    "SS8050 Y1",
+    "SRV05-4-P-T7",
+    "VBUS",
+    "+3.3V",
+    "VCC_3.3V",
+    "Header 6",
+    "22Ω",
+    "10KΩ",
+    "UART",
+    "auto download"
+  ],
+  "components": [
+    {
+      "reference": "U1",
+      "part_number": "CP2104-F03-GM",
+      "role": "USB 到 UART 转换器，提供 TXD/RXD 与 DTR/RTS 握手信号",
+      "evidence": [
+        {
+          "asset_sha256": "4d9e2adb14cf3115311f98b79d3790b0b0ad45efb6a2ed62f0a1730ba6247932",
+          "page": 1,
+          "locator": "页面中央 U1：CP2104-F03-GM，D+/D-、VBUS/REGIN/VDD/VIO、TXD/RXD/DTR/RTS 等引脚"
+        }
+      ]
+    },
+    {
+      "reference": "J1",
+      "part_number": "Type-C",
+      "role": "USB Type-C 输入接口，引出 VBUS、USB_P、USB_N 和 GND",
+      "evidence": [
+        {
+          "asset_sha256": "4d9e2adb14cf3115311f98b79d3790b0b0ad45efb6a2ed62f0a1730ba6247932",
+          "page": 1,
+          "locator": "页面左侧 J1 Type-C USB Port：VCC/GND、DP/DN 与 VBUS/USB_P/USB_N 网络"
+        }
+      ]
+    },
+    {
+      "reference": "J2",
+      "part_number": "SRV05-4-P-T7",
+      "role": "USB 数据线与电源相关网络的多通道瞬态保护阵列",
+      "evidence": [
+        {
+          "asset_sha256": "4d9e2adb14cf3115311f98b79d3790b0b0ad45efb6a2ed62f0a1730ba6247932",
+          "page": 1,
+          "locator": "页面左下部 J1 与 U1 之间：J2 标注 SRV05-4-P-T7，连接 USB_P/USB_N、VBUS/VCC_3.3V 与 GND"
+        }
+      ]
+    },
+    {
+      "reference": "VR1",
+      "part_number": "AMS1117-3.3",
+      "role": "将 VBUS 转换为 +3.3V 的线性稳压器",
+      "evidence": [
+        {
+          "asset_sha256": "4d9e2adb14cf3115311f98b79d3790b0b0ad45efb6a2ed62f0a1730ba6247932",
+          "page": 1,
+          "locator": "页面下部中央 VR1：AMS1117-3.3，Vin 接 VBUS，Vout 接 +3.3V，GND 接地"
+        }
+      ]
+    },
+    {
+      "reference": "Q1",
+      "part_number": "SS8050 Y1",
+      "role": "DTR/RTS 自动下载控制网络中的 EN 驱动晶体管",
+      "evidence": [
+        {
+          "asset_sha256": "4d9e2adb14cf3115311f98b79d3790b0b0ad45efb6a2ed62f0a1730ba6247932",
+          "page": 1,
+          "locator": "页面右中部 Q1：SS8050 Y1，输出网络标注 EN，基极路径含 R4 10KΩ"
+        }
+      ]
+    },
+    {
+      "reference": "Q2",
+      "part_number": "SS8050 Y1",
+      "role": "DTR/RTS 自动下载控制网络中的 BOOT 驱动晶体管",
+      "evidence": [
+        {
+          "asset_sha256": "4d9e2adb14cf3115311f98b79d3790b0b0ad45efb6a2ed62f0a1730ba6247932",
+          "page": 1,
+          "locator": "页面右中部 Q2：SS8050 Y1，输出网络标注 BOOT，基极路径含 R7 10KΩ"
+        }
+      ]
+    },
+    {
+      "reference": "P1",
+      "part_number": "Header 6",
+      "role": "下载与串口调试排针，引出 +3.3V、RXD、TXD、EN、BOOT、GND",
+      "evidence": [
+        {
+          "asset_sha256": "4d9e2adb14cf3115311f98b79d3790b0b0ad45efb6a2ed62f0a1730ba6247932",
+          "page": 1,
+          "locator": "页面右侧 P1 Header 6：1~6 脚依次连接 +3.3V、RXD、TXD、EN、BOOT、GND"
+        }
+      ]
+    },
+    {
+      "reference": "R5/R6",
+      "part_number": "22Ω",
+      "role": "USB_P/USB_N 到 U1 D+/D- 的串联电阻",
+      "evidence": [
+        {
+          "asset_sha256": "4d9e2adb14cf3115311f98b79d3790b0b0ad45efb6a2ed62f0a1730ba6247932",
+          "page": 1,
+          "locator": "页面左中部 J1 与 U1 之间：USB_P、USB_N 两线上各有一只标注 22Ω 的 R5/R6"
+        }
+      ]
+    },
+    {
+      "reference": "R4/R7",
+      "part_number": "10KΩ",
+      "role": "Q1/Q2 自动下载控制的基极串联电阻",
+      "evidence": [
+        {
+          "asset_sha256": "4d9e2adb14cf3115311f98b79d3790b0b0ad45efb6a2ed62f0a1730ba6247932",
+          "page": 1,
+          "locator": "页面右中部：DTR 经 R4 10KΩ、RTS 经 R7 10KΩ 进入交叉晶体管网络"
+        }
+      ]
+    },
+    {
+      "reference": "D1/R1",
+      "part_number": "YELT 0603 / 1KΩ",
+      "role": "VBUS 到 TXD 的发送活动指示支路",
+      "evidence": [
+        {
+          "asset_sha256": "4d9e2adb14cf3115311f98b79d3790b0b0ad45efb6a2ed62f0a1730ba6247932",
+          "page": 1,
+          "locator": "页面上部：VBUS-D1(YELT 0603)-R1(1KΩ)-TXD 串联支路"
+        }
+      ]
+    },
+    {
+      "reference": "D2/R2",
+      "part_number": "YELT 0603 / 1KΩ",
+      "role": "VBUS 到 RXD 的接收活动指示支路",
+      "evidence": [
+        {
+          "asset_sha256": "4d9e2adb14cf3115311f98b79d3790b0b0ad45efb6a2ed62f0a1730ba6247932",
+          "page": 1,
+          "locator": "页面上部：VBUS-D2(YELT 0603)-R2(1KΩ)-RXD 串联支路"
+        }
+      ]
+    },
+    {
+      "reference": "D3/R3",
+      "part_number": "YELT 0603 / 1KΩ",
+      "role": "+3.3V 对 GND 的电源指示支路",
+      "evidence": [
+        {
+          "asset_sha256": "4d9e2adb14cf3115311f98b79d3790b0b0ad45efb6a2ed62f0a1730ba6247932",
+          "page": 1,
+          "locator": "页面上部右侧：+3.3V-D3(YELT 0603)-R3(1KΩ)-GND 串联支路"
+        }
+      ]
+    },
+    {
+      "reference": "C3/C4/C5",
+      "part_number": "100uF / 1.0uF / 100nF",
+      "role": "AMS1117-3.3 输入输出滤波与去耦电容",
+      "evidence": [
+        {
+          "asset_sha256": "4d9e2adb14cf3115311f98b79d3790b0b0ad45efb6a2ed62f0a1730ba6247932",
+          "page": 1,
+          "locator": "页面下部 VR1 周围：C4 1.0uF 接 VBUS/GND，C3 100uF 与 C5 100nF 接 +3.3V/GND"
+        }
+      ]
+    },
+    {
+      "reference": "C6",
+      "part_number": "10uF",
+      "role": "EN 对 GND 的自动复位/下载时序电容",
+      "evidence": [
+        {
+          "asset_sha256": "4d9e2adb14cf3115311f98b79d3790b0b0ad45efb6a2ed62f0a1730ba6247932",
+          "page": 1,
+          "locator": "页面右上部 Q1 输出：C6 10uF 跨接 EN 与 GND"
+        }
+      ]
+    }
+  ],
+  "facts": [
+    {
+      "id": "system.usb-uart-downloader",
+      "category": "system",
+      "subject": "ESP32 Downloader Kit",
+      "statement": "J1 的 USB 数据经保护和 22Ω 串联电阻进入 U1 CP2104-F03-GM，U1 输出 UART TXD/RXD，并用 DTR/RTS 驱动 Q1/Q2 生成 EN/BOOT 自动下载控制；P1 汇总全部目标侧信号。",
+      "confidence": "confirmed",
+      "attributes": {
+        "usb_uart": "U1 CP2104-F03-GM",
+        "usb_port": "J1 Type-C",
+        "target_header": "P1 Header 6",
+        "auto_download": "DTR/RTS,Q1/Q2,EN/BOOT",
+        "regulator": "VR1 AMS1117-3.3"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "4d9e2adb14cf3115311f98b79d3790b0b0ad45efb6a2ed62f0a1730ba6247932",
+          "page": 1,
+          "locator": "整页：J1/J2/U1/VR1/Q1/Q2/P1 及 USB、UART、EN、BOOT、电源网络"
+        }
+      ]
+    },
+    {
+      "id": "interface.typec-usb",
+      "category": "interface",
+      "subject": "J1 Type-C USB Port",
+      "statement": "J1 引出 VBUS、USB_P、USB_N 和 GND；USB_P、USB_N 分别经 22Ω 串联电阻连接 U1 的 D+、D-。",
+      "confidence": "confirmed",
+      "attributes": {
+        "power": "VBUS",
+        "data_positive": "USB_P via 22Ω to U1 D+",
+        "data_negative": "USB_N via 22Ω to U1 D-",
+        "return": "GND"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "4d9e2adb14cf3115311f98b79d3790b0b0ad45efb6a2ed62f0a1730ba6247932",
+          "page": 1,
+          "locator": "页面左侧 J1 至 U1：VBUS/GND、USB_P/USB_N、R5/R6 22Ω 与 U1 D+/D-"
+        }
+      ]
+    },
+    {
+      "id": "protection.usb-esd-array",
+      "category": "protection",
+      "subject": "J2 SRV05-4-P-T7",
+      "statement": "J2 SRV05-4-P-T7 连接 USB_P、USB_N、VBUS/VCC_3.3V 与 GND，位于 Type-C 接口和 U1 之间。",
+      "confidence": "confirmed",
+      "attributes": {
+        "device": "SRV05-4-P-T7",
+        "protected_signals": "USB_P,USB_N",
+        "power_references": "VBUS,VCC_3.3V",
+        "ground": "GND"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "4d9e2adb14cf3115311f98b79d3790b0b0ad45efb6a2ed62f0a1730ba6247932",
+          "page": 1,
+          "locator": "页面左下部 J2：SRV05-4-P-T7 的 I/O、电源和 GND 引脚连接"
+        }
+      ]
+    },
+    {
+      "id": "component.u1-usb-side-pins",
+      "category": "component",
+      "subject": "U1 CP2104-F03-GM USB/电源侧",
+      "statement": "U1 的 D+、D- 接 USB_P、USB_N；VBUS/REGIN 接 VBUS，VIO/VDD 使用 VCC_3.3V，多个 GND/EPAD 引脚接地。",
+      "confidence": "confirmed",
+      "attributes": {
+        "usb": "D+ USB_P,D- USB_N",
+        "input_power": "VBUS,REGIN to VBUS",
+        "logic_power": "VIO,VDD to VCC_3.3V",
+        "ground": "GND,EPAD"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "4d9e2adb14cf3115311f98b79d3790b0b0ad45efb6a2ed62f0a1730ba6247932",
+          "page": 1,
+          "locator": "页面中央 U1 左侧和下侧：D+/D-、VBUS/REGIN、VIO/VDD、GND/EPAD 引脚与网络"
+        }
+      ]
+    },
+    {
+      "id": "bus.uart-handshake-signals",
+      "category": "bus",
+      "subject": "U1 UART/握手信号",
+      "statement": "U1 引出 TXD、RXD、DTR 和 RTS 网络；TXD/RXD 连接 P1，DTR/RTS 进入 Q1/Q2 自动下载控制网络。",
+      "confidence": "confirmed",
+      "attributes": {
+        "uart_tx": "TXD",
+        "uart_rx": "RXD",
+        "handshake_1": "DTR",
+        "handshake_2": "RTS",
+        "target": "P1 and auto-download circuit"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "4d9e2adb14cf3115311f98b79d3790b0b0ad45efb6a2ed62f0a1730ba6247932",
+          "page": 1,
+          "locator": "页面中央 U1 上侧 DTR/TXD/RXD/RTS 网络及右侧 Q1/Q2、P1 同名连接"
+        }
+      ]
+    },
+    {
+      "id": "interface.p1-pinout",
+      "category": "interface",
+      "subject": "P1 Header 6",
+      "statement": "P1 的 1 脚接 +3.3V，2 脚接 RXD，3 脚接 TXD，4 脚接 EN，5 脚接 BOOT，6 脚接 GND。",
+      "confidence": "confirmed",
+      "attributes": {
+        "pin_1": "+3.3V",
+        "pin_2": "RXD",
+        "pin_3": "TXD",
+        "pin_4": "EN",
+        "pin_5": "BOOT",
+        "pin_6": "GND"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "4d9e2adb14cf3115311f98b79d3790b0b0ad45efb6a2ed62f0a1730ba6247932",
+          "page": 1,
+          "locator": "页面右侧 P1 Header 6：1~6 脚数字与 +3.3V/RXD/TXD/EN/BOOT/GND 网络"
+        }
+      ]
+    },
+    {
+      "id": "power.ams1117-3v3",
+      "category": "power",
+      "subject": "VR1 AMS1117-3.3",
+      "statement": "VR1 的 Vin 接 VBUS，Vout 输出 +3.3V，GND 接地；C4 1.0uF 位于输入侧，C3 100uF 和 C5 100nF 位于输出侧。",
+      "confidence": "confirmed",
+      "attributes": {
+        "input": "VBUS",
+        "output": "+3.3V",
+        "input_capacitor": "C4 1.0uF",
+        "output_capacitors": "C3 100uF,C5 100nF",
+        "ground": "GND"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "4d9e2adb14cf3115311f98b79d3790b0b0ad45efb6a2ed62f0a1730ba6247932",
+          "page": 1,
+          "locator": "页面下部中央 VR1 与 C3/C4/C5：VBUS、+3.3V、GND 连接"
+        }
+      ]
+    },
+    {
+      "id": "reset.auto-download-en-boot",
+      "category": "reset",
+      "subject": "EN/BOOT 自动下载控制",
+      "statement": "DTR 经 R4 10KΩ、RTS 经 R7 10KΩ 驱动 Q1/Q2 交叉晶体管网络，输出 EN 和 BOOT；C6 10uF 从 EN 接 GND。",
+      "confidence": "confirmed",
+      "attributes": {
+        "control_inputs": "DTR,RTS",
+        "base_resistors": "R4 10KΩ,R7 10KΩ",
+        "transistors": "Q1/Q2 SS8050 Y1",
+        "outputs": "EN,BOOT",
+        "en_capacitor": "C6 10uF to GND"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "4d9e2adb14cf3115311f98b79d3790b0b0ad45efb6a2ed62f0a1730ba6247932",
+          "page": 1,
+          "locator": "页面右中部：DTR-R4-Q1/Q2、RTS-R7-Q1/Q2 的交叉连线及 EN/BOOT/C6"
+        }
+      ]
+    },
+    {
+      "id": "debug.uart-activity-led",
+      "category": "debug",
+      "subject": "TXD/RXD 活动指示",
+      "statement": "VBUS 经 D1 与 R1 1KΩ 接 TXD，另一路经 D2 与 R2 1KΩ 接 RXD；D1、D2 均标注 YELT 0603。",
+      "confidence": "confirmed",
+      "attributes": {
+        "tx_indicator": "VBUS-D1 YELT 0603-R1 1KΩ-TXD",
+        "rx_indicator": "VBUS-D2 YELT 0603-R2 1KΩ-RXD"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "4d9e2adb14cf3115311f98b79d3790b0b0ad45efb6a2ed62f0a1730ba6247932",
+          "page": 1,
+          "locator": "页面上部 D1/R1 与 D2/R2 两条 VBUS 至 TXD/RXD 指示支路"
+        }
+      ]
+    },
+    {
+      "id": "power.3v3-led",
+      "category": "power",
+      "subject": "+3.3V 指示支路",
+      "statement": "+3.3V 经 D3 YELT 0603 和 R3 1KΩ 串联到 GND。",
+      "confidence": "confirmed",
+      "attributes": {
+        "supply": "+3.3V",
+        "led": "D3 YELT 0603",
+        "resistor": "R3 1KΩ",
+        "return": "GND"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "4d9e2adb14cf3115311f98b79d3790b0b0ad45efb6a2ed62f0a1730ba6247932",
+          "page": 1,
+          "locator": "页面上部右侧：+3.3V-D3-R3-GND 竖直串联支路"
+        }
+      ]
+    },
+    {
+      "id": "key_net.target-programming-signals",
+      "category": "key_net",
+      "subject": "目标侧下载信号",
+      "statement": "目标侧 P1 同时提供 UART 数据通道 RXD/TXD、下载控制 EN/BOOT、+3.3V 与 GND，所有网络均直接来自 U1、自动下载电路或 VR1。",
+      "confidence": "confirmed",
+      "attributes": {
+        "data": "RXD,TXD",
+        "control": "EN,BOOT",
+        "power": "+3.3V,GND",
+        "connector": "P1 Header 6"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "4d9e2adb14cf3115311f98b79d3790b0b0ad45efb6a2ed62f0a1730ba6247932",
+          "page": 1,
+          "locator": "页面右侧 P1 与页面中央/下部 U1、Q1/Q2、VR1 的同名网络"
+        }
+      ]
+    },
+    {
+      "id": "component.schematic-chip-variant",
+      "category": "component",
+      "subject": "U1 USB-TTL 芯片版本",
+      "statement": "该本地原理图页面的 U1 明确标注为 CP2104-F03-GM。",
+      "confidence": "confirmed",
+      "attributes": {
+        "reference": "U1",
+        "part_number": "CP2104-F03-GM",
+        "schematic_asset": "page 1"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "4d9e2adb14cf3115311f98b79d3790b0b0ad45efb6a2ed62f0a1730ba6247932",
+          "page": 1,
+          "locator": "页面中央 U1 元件下方型号文字 CP2104-F03-GM"
+        }
+      ]
+    }
+  ],
+  "needs_review": []
+}

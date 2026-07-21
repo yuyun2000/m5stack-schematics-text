@@ -1,0 +1,21 @@
+{
+  "dry_run": false,
+  "failed": 0,
+  "published": 1,
+  "results": [
+    {
+      "backup": null,
+      "draft_action": "unchanged",
+      "dry_run": false,
+      "errors": [],
+      "needs_review": 2,
+      "product_id": "atomic-poe-base-3b5470e5815f",
+      "product_name": "Atomic PoE Base",
+      "publish_action": "unchanged",
+      "sha256": "ef1677cb4702b56d09bb257a73bb9b404fad394b26226507b89f7194d80a3501",
+      "status": "valid",
+      "uncertain_facts": 2
+    }
+  ],
+  "schema_version": 1
+}

@@ -1,0 +1,43 @@
+{
+  "schema_version": 1,
+  "generator": "schematic_describer",
+  "product": {
+    "product_id": "hat-rs485-9c47adff6d40",
+    "product_name": "Hat RS485",
+    "sku": "U067",
+    "source_path": "hat/hat-rs485.md",
+    "source_sha256": "830a7ef17b6de8384b9ee00d3c96dacdbd0ad75f097c91335d1e4a98a694ee0f",
+    "input_sha256": "c2f44db8485d54582941da2d848cb8865981e6b8d2a769ecbb5f19bde7b78c90"
+  },
+  "schematic_assets": [
+    {"sha256":"45f014af0cc3d3da440dc5de05daab196335905e8b32f98e79a0c52398bb9708","source_url":"https://static-cdn.m5stack.com/resource/docs/products/hat/hat-rs485/hat-rs485_sch_01.webp","pages":[1]}
+  ],
+  "summary": "Hat RS485 以 U1 SP485EEN-L/TR 为 RS-485 收发器，RO 通过 G26 返回主机，G0 经 Q1 控制 RE/DE 自动收发节点，A/B 侧配置偏置、可选终端和浪涌保护。P1 引出 RS485_B、RS485_A、+12V 和 GND；U2 AOZ1282CI 将 +12V 降为 +5VIN，经 P2 送入 M5StickC。收发器本身由 P2 5VOUT/+5V 供电。",
+  "keywords": ["Hat RS485","U067","SP485EEN-L/TR","SP485EEN","AOZ1282CI","SS8050 Y1","RS485_A","RS485_B","G26 RO","G0 auto direction","+12V","+5V","+5VIN","R4 120R NC","R1 4.7K","R6 4.7K","SMAJ6.5CA-E3","B5819W SL","L1 4.7uH","P1 Header 4","P2 STICKIO","R2 1K","R5 4.7K","115200"],
+  "components": [
+    {"reference":"U1","part_number":"SP485EEN-L/TR","role":"RS-485 差分收发器","evidence":[{"asset_sha256":"45f014af0cc3d3da440dc5de05daab196335905e8b32f98e79a0c52398bb9708","page":1,"locator":"第1页上部：U1 SP485EEN-L/TR pins1-8"}]},
+    {"reference":"U2","part_number":"AOZ1282CI","role":"+12V 到 +5VIN 的降压转换器","evidence":[{"asset_sha256":"45f014af0cc3d3da440dc5de05daab196335905e8b32f98e79a0c52398bb9708","page":1,"locator":"第1页左中：U2 AOZ1282CI"}]},
+    {"reference":"Q1","part_number":"SS8050 Y1","role":"由 G0/T0 驱动的 RS-485 RE/DE 自动收发控制晶体管","evidence":[{"asset_sha256":"45f014af0cc3d3da440dc5de05daab196335905e8b32f98e79a0c52398bb9708","page":1,"locator":"第1页左上：Q1 SS8050 Y1、R3/R5"}]},
+    {"reference":"P1","part_number":"Header 4","role":"RS485_B、RS485_A、+12V 与 GND 外部端子","evidence":[{"asset_sha256":"45f014af0cc3d3da440dc5de05daab196335905e8b32f98e79a0c52398bb9708","page":1,"locator":"第1页右上：P1 Header 4"}]},
+    {"reference":"P2","part_number":"STICKIO","role":"主机 5V、5VIN、G26、G0 与 GND 接口","evidence":[{"asset_sha256":"45f014af0cc3d3da440dc5de05daab196335905e8b32f98e79a0c52398bb9708","page":1,"locator":"第1页右下：P2 STICKIO pins1-8"}]},
+    {"reference":"D1-D3","part_number":"SMAJ6.5CA-E3","role":"RS485_A/B 对地与线间浪涌钳位","evidence":[{"asset_sha256":"45f014af0cc3d3da440dc5de05daab196335905e8b32f98e79a0c52398bb9708","page":1,"locator":"第1页右上：D1-D3 SMAJ6.5CA-E3"}]},
+    {"reference":"D4","part_number":"B5819W SL","role":"AOZ1282CI 降压续流二极管","evidence":[{"asset_sha256":"45f014af0cc3d3da440dc5de05daab196335905e8b32f98e79a0c52398bb9708","page":1,"locator":"第1页中部：D4 B5819W SL"}]},
+    {"reference":"L1","part_number":"4.7uH","role":"AOZ1282CI LX 到 +5VIN 的储能电感","evidence":[{"asset_sha256":"45f014af0cc3d3da440dc5de05daab196335905e8b32f98e79a0c52398bb9708","page":1,"locator":"第1页中部：L1 4.7uH"}]}
+  ],
+  "facts": [
+    {"id":"system.hat-rs485-architecture","category":"system","subject":"Hat RS485 架构","statement":"P2 提供主机 G26/G0 与 +5V，U1 SP485EEN-L/TR 完成 RS-485 收发，Q1 控制 RE/DE；P1 引出 A/B 和 +12V，U2 将 +12V 降为 +5VIN。","confidence":"confirmed","attributes":{"transceiver":"U1 SP485EEN-L/TR","auto_control":"Q1 SS8050 Y1","buck":"U2 AOZ1282CI","field_connector":"P1","host":"P2"},"evidence":[{"asset_sha256":"45f014af0cc3d3da440dc5de05daab196335905e8b32f98e79a0c52398bb9708","page":1,"locator":"第1页完整单页"}]},
+    {"id":"bus.rs485-receive","category":"bus","subject":"RS-485 接收路径","statement":"U1 RO pin1 经 R2 1KΩ形成 R0，并连接 P2 pin3/G26；R3 4.7KΩ将 R0 上拉到 +5V。","confidence":"confirmed","attributes":{"source":"U1 RO pin1","series":"R2 1KΩ","net":"R0","host":"P2 pin3 / G26","pullup":"R3 4.7KΩ to +5V","direction":"transceiver output to host input"},"evidence":[{"asset_sha256":"45f014af0cc3d3da440dc5de05daab196335905e8b32f98e79a0c52398bb9708","page":1,"locator":"第1页 U1 RO/R2/R3 与 P2 G26"}]},
+    {"id":"bus.rs485-auto-direction","category":"bus","subject":"RS-485 自动收发控制","statement":"P2 pin5/G0 形成 T0，经 R5 4.7KΩ驱动 Q1 SS8050 Y1；Q1 集电极连接 U1 RE pin2 与 DE pin3，U1 DI pin4 在图中接 GND。","confidence":"confirmed","attributes":{"host":"P2 pin5 / G0","net":"T0","base_resistor":"R5 4.7KΩ","transistor":"Q1 SS8050 Y1","controlled_pins":"U1 RE pin2; DE pin3","data_input":"U1 DI pin4 -> GND"},"evidence":[{"asset_sha256":"45f014af0cc3d3da440dc5de05daab196335905e8b32f98e79a0c52398bb9708","page":1,"locator":"第1页 U1 pins2-4、Q1/R5 与 P2 G0"}]},
+    {"id":"interface.rs485-terminal","category":"interface","subject":"P1 RS-485 与电源端子","statement":"P1 Header 4 pins1-4 依次为 RS485_B、RS485_A、+12V、GND。","confidence":"confirmed","attributes":{"connector":"P1 Header 4","pin1":"RS485_B","pin2":"RS485_A","pin3":"+12V","pin4":"GND"},"evidence":[{"asset_sha256":"45f014af0cc3d3da440dc5de05daab196335905e8b32f98e79a0c52398bb9708","page":1,"locator":"第1页右上：P1 pins1-4"}]},
+    {"id":"protection.rs485-bias-termination","category":"protection","subject":"RS-485 偏置与终端","statement":"R1 4.7KΩ将 RS485_B 下拉到 GND，R6 4.7KΩ将 RS485_A 上拉到 +5V，R4 120Ω/NC 跨接 A/B 作为未装终端位。","confidence":"confirmed","attributes":{"bias_b":"R1 4.7KΩ to GND","bias_a":"R6 4.7KΩ to +5V","termination":"R4 120Ω/NC","lines":"RS485_A,RS485_B"},"evidence":[{"asset_sha256":"45f014af0cc3d3da440dc5de05daab196335905e8b32f98e79a0c52398bb9708","page":1,"locator":"第1页上部：R1/R4/R6"}]},
+    {"id":"protection.rs485-surge","category":"protection","subject":"RS-485 浪涌保护","statement":"D1 SMAJ6.5CA-E3 从 RS485_B 对地，D3 从 RS485_A 对地，D2 跨接 RS485_A/B。","confidence":"confirmed","attributes":{"b_to_ground":"D1 SMAJ6.5CA-E3","a_to_ground":"D3 SMAJ6.5CA-E3","line_to_line":"D2 SMAJ6.5CA-E3"},"evidence":[{"asset_sha256":"45f014af0cc3d3da440dc5de05daab196335905e8b32f98e79a0c52398bb9708","page":1,"locator":"第1页右上：D1-D3"}]},
+    {"id":"power.12v-to-5vin","category":"power","subject":"+12V 到 +5VIN","statement":"U2 AOZ1282CI VIN pin5 接 +12V，EN pin4 由 R7 100KΩ上拉；LX pin6 经 L1 4.7uH 与 D4 B5819W SL 输出 +5VIN，FB 使用 R8 51KΩ/R9 10KΩ。","confidence":"confirmed","attributes":{"converter":"U2 AOZ1282CI","input":"+12V","enable":"R7 100KΩ to +12V","inductor":"L1 4.7uH","diode":"D4 B5819W SL","output":"+5VIN","feedback":"R8 51KΩ; R9 10KΩ","caps":"C3/C4/C5 10uF"},"evidence":[{"asset_sha256":"45f014af0cc3d3da440dc5de05daab196335905e8b32f98e79a0c52398bb9708","page":1,"locator":"第1页中部：U2/R7-R9/L1/D4/C3-C5"}]},
+    {"id":"power.dual-5v-paths","category":"power","subject":"+5V 与 +5VIN 电源路径","statement":"P2 pin2/5VOUT 提供 +5V，为 U1 VCC pin8、Q1 控制上拉和偏置网络供电；U2 生成的 +5VIN 连接 P2 pin8/5VIN。","confidence":"confirmed","attributes":{"host_5v":"P2 pin2 5VOUT -> +5V","loads":"U1 VCC,Q1/R3,R6,C1,C6","buck_output":"+5VIN -> P2 pin8 5VIN"},"evidence":[{"asset_sha256":"45f014af0cc3d3da440dc5de05daab196335905e8b32f98e79a0c52398bb9708","page":1,"locator":"第1页 U1 +5V/P2 pin2 与 U2 +5VIN/P2 pin8"}]},
+    {"id":"interface.host-p2","category":"interface","subject":"P2 STICKIO 接口","statement":"P2 pin1 为 GND、pin2 为 5VOUT/+5V、pin3 G26 为 R0、pin5 G0 为 T0、pin8 5VIN 为 +5VIN；pins4 G36、6 BAT、7 3V3 未接入本页功能网络。","confidence":"confirmed","attributes":{"pin1":"GND","pin2":"5VOUT/+5V","pin3":"G26/R0","pin4":"G36 unused","pin5":"G0/T0","pin6":"BAT unused","pin7":"3V3 unused","pin8":"5VIN/+5VIN"},"evidence":[{"asset_sha256":"45f014af0cc3d3da440dc5de05daab196335905e8b32f98e79a0c52398bb9708","page":1,"locator":"第1页右下：P2 pins1-8"}]},
+    {"id":"bus.documented-bitrate","category":"bus","subject":"标称波特率","statement":"产品正文标称波特率 115200；原理图显示收发与自动方向电路，但未打印波特率。","confidence":"uncertain","attributes":{"documented_bitrate":"115200","explicit_bitrate_on_schematic":false,"transceiver":"SP485EEN-L/TR"},"evidence":[{"asset_sha256":"45f014af0cc3d3da440dc5de05daab196335905e8b32f98e79a0c52398bb9708","page":1,"locator":"第1页 U1/Q1 RS-485 circuit"}]},
+    {"id":"clock.visibility","category":"clock","subject":"外部时钟可见性","statement":"本页未画独立晶体、晶振或外部时钟输入。","confidence":"confirmed","attributes":{"crystal_shown":false,"oscillator_shown":false},"evidence":[{"asset_sha256":"45f014af0cc3d3da440dc5de05daab196335905e8b32f98e79a0c52398bb9708","page":1,"locator":"第1页完整单页，无 X/Y 位号"}]}
+  ],
+  "needs_review": [
+    {"id":"review.bitrate","fact_id":"bus.documented-bitrate","question":"U067 默认或推荐 RS-485 波特率是否固定为 115200？","reason":"115200 来自产品正文，原理图未打印波特率。","evidence":[{"asset_sha256":"45f014af0cc3d3da440dc5de05daab196335905e8b32f98e79a0c52398bb9708","page":1,"locator":"第1页 U1 SP485EEN-L/TR"}]}
+  ]
+}

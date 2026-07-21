@@ -1,0 +1,21 @@
+{
+  "dry_run": false,
+  "failed": 0,
+  "published": 1,
+  "results": [
+    {
+      "backup": null,
+      "draft_action": "unchanged",
+      "dry_run": false,
+      "errors": [],
+      "needs_review": 4,
+      "product_id": "unit-mini-tvoc-eco2-eb6f13365a1f",
+      "product_name": "Unit Mini TVOC/eCO2",
+      "publish_action": "unchanged",
+      "sha256": "184658febcf266651bfb40f4ac73c0cfbbdc27f5ac7491a512d88f3f594fc258",
+      "status": "valid",
+      "uncertain_facts": 4
+    }
+  ],
+  "schema_version": 1
+}

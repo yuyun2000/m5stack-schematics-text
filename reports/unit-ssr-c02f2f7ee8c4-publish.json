@@ -1,0 +1,21 @@
+{
+  "dry_run": false,
+  "failed": 0,
+  "published": 1,
+  "results": [
+    {
+      "backup": null,
+      "draft_action": "unchanged",
+      "dry_run": false,
+      "errors": [],
+      "needs_review": 5,
+      "product_id": "unit-ssr-c02f2f7ee8c4",
+      "product_name": "Unit SSR",
+      "publish_action": "unchanged",
+      "sha256": "c3e7e5db7dee87df7052336864227f390e7df34dca694d181dcec0b16551a348",
+      "status": "valid",
+      "uncertain_facts": 5
+    }
+  ],
+  "schema_version": 1
+}

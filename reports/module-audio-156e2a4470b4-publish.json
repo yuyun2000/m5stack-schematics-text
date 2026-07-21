@@ -1,0 +1,21 @@
+{
+  "dry_run": false,
+  "failed": 0,
+  "published": 1,
+  "results": [
+    {
+      "backup": null,
+      "draft_action": "unchanged",
+      "dry_run": false,
+      "errors": [],
+      "needs_review": 4,
+      "product_id": "module-audio-156e2a4470b4",
+      "product_name": "Module Audio",
+      "publish_action": "unchanged",
+      "sha256": "bd38cb46d581ee9a171d914a6754fe7828347cdd6a75b3e93fd198c873677e79",
+      "status": "valid",
+      "uncertain_facts": 4
+    }
+  ],
+  "schema_version": 1
+}

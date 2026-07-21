@@ -1,0 +1,21 @@
+{
+  "dry_run": false,
+  "failed": 0,
+  "published": 1,
+  "results": [
+    {
+      "backup": null,
+      "draft_action": "unchanged",
+      "dry_run": false,
+      "errors": [],
+      "needs_review": 3,
+      "product_id": "unit-id-14401b5e5d23",
+      "product_name": "Unit ID",
+      "publish_action": "unchanged",
+      "sha256": "cdaa9f84644bab81b7494f398e0fec590e1b552e6b754e4d7737aea5ac070100",
+      "status": "valid",
+      "uncertain_facts": 3
+    }
+  ],
+  "schema_version": 1
+}

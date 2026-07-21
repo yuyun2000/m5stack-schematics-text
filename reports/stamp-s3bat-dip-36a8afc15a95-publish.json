@@ -1,0 +1,21 @@
+{
+  "dry_run": false,
+  "failed": 0,
+  "published": 1,
+  "results": [
+    {
+      "backup": null,
+      "draft_action": "unchanged",
+      "dry_run": false,
+      "errors": [],
+      "needs_review": 6,
+      "product_id": "stamp-s3bat-dip-36a8afc15a95",
+      "product_name": "Stamp-S3Bat DIP",
+      "publish_action": "unchanged",
+      "sha256": "958de1d07c7f7ee45c780ba4b5b5c6ee8242ee788bc0b6a83075bb4e525fc650",
+      "status": "valid",
+      "uncertain_facts": 6
+    }
+  ],
+  "schema_version": 1
+}

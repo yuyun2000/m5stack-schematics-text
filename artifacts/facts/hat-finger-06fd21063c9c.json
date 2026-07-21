@@ -1,0 +1,212 @@
+{
+  "schema_version": 1,
+  "generator": "schematic_describer",
+  "product": {
+    "product_id": "hat-finger-06fd21063c9c",
+    "product_name": "Hat Finger",
+    "sku": "U074",
+    "source_path": "hat/hat-finger.md",
+    "source_sha256": "db42f6b165ce8ceceb5028ee98393db99014d748e7c11004c8bea9fd2b46ea44",
+    "input_sha256": "d74655b11bcfdfa50a59378e489f2c10d8ca5838a8410c3839f037523a371e0c"
+  },
+  "schematic_assets": [
+    {
+      "sha256": "bf4ce7ac78c9ddaeaf0ce236c419806255cbae477f982d1bfc74c5f465f53614",
+      "source_url": "https://static-cdn.m5stack.com/resource/docs/products/hat/hat-finger/hat-finger_sch_01.webp",
+      "pages": [1]
+    },
+    {
+      "sha256": "9862da56e3936e1dc2c31b592a0228b23b390c6fa08a67a06115108093d84ae5",
+      "source_url": "https://m5stack-doc.oss-cn-shenzhen.aliyuncs.com/869/hatfinger_page_01.webp",
+      "pages": [1]
+    }
+  ],
+  "summary": "Hat Finger 的本地电气资源只给出指纹模块与主机之间的 UART 方向：主机 G0 作为 TX 指向 Finger，Finger 返回信号由主机 G26 接收。另一份资源是机械尺寸图，未给出模块内部电路、器件位号、电源或完整连接器针脚。因而指纹传感器具体型号、UART 格式、供电和识别性能均需由模块 BOM/协议资料复核。",
+  "keywords": [
+    "Hat Finger",
+    "U074",
+    "FINGER",
+    "UART",
+    "TX",
+    "RX",
+    "G0",
+    "G26",
+    "M5StickC",
+    "FPC1020SC",
+    "FPC1020A",
+    "19200bps",
+    "8N1",
+    "指纹识别",
+    "电容式指纹",
+    "24mm",
+    "67mm",
+    "16mm sensor window",
+    "150 fingerprints",
+    "193Byte template"
+  ],
+  "components": [
+    {
+      "reference": "FINGER",
+      "part_number": null,
+      "role": "UART 指纹识别模块；本地接口图未标具体料号",
+      "evidence": [{"asset_sha256": "bf4ce7ac78c9ddaeaf0ce236c419806255cbae477f982d1bfc74c5f465f53614", "page": 1, "locator": "左侧 FINGER 模块图标与 TX/RX 信号"}]
+    },
+    {
+      "reference": "HOST G0/G26",
+      "part_number": "M5StickC HAT UART interface",
+      "role": "主机侧 UART TX/RX 信号连接",
+      "evidence": [{"asset_sha256": "bf4ce7ac78c9ddaeaf0ce236c419806255cbae477f982d1bfc74c5f465f53614", "page": 1, "locator": "右侧 G0/G26 括号与 TX/RX 方向箭头"}]
+    },
+    {
+      "reference": "Fingerprint sensing window",
+      "part_number": null,
+      "role": "机械图中的圆形指纹感测窗口，标注直径 16 mm",
+      "evidence": [{"asset_sha256": "9862da56e3936e1dc2c31b592a0228b23b390c6fa08a67a06115108093d84ae5", "page": 1, "locator": "正视图顶部圆形窗口，标注 Ø16"}]
+    }
+  ],
+  "facts": [
+    {
+      "id": "system.architecture",
+      "category": "system",
+      "subject": "模块接口架构",
+      "statement": "Hat Finger 作为独立指纹模块，通过两线 UART 与 StickC 主机通信；本地资源未展开模块内部处理、存储或电源电路。",
+      "confidence": "confirmed",
+      "attributes": {"module": "FINGER", "host": "M5StickC", "interface": "UART", "signals": "TX/G0; RX/G26", "internal_circuit": "not shown"},
+      "evidence": [{"asset_sha256": "bf4ce7ac78c9ddaeaf0ce236c419806255cbae477f982d1bfc74c5f465f53614", "page": 1, "locator": "FINGER 到 G0/G26 的两条 TX/RX 连接"}]
+    },
+    {
+      "id": "bus.uart",
+      "category": "bus",
+      "subject": "UART 信号映射",
+      "statement": "接口图标注 TX 使用主机 G0，箭头由主机指向 Finger；RX 使用主机 G26，箭头由 Finger 指向主机。",
+      "confidence": "confirmed",
+      "attributes": {"host_tx": "G0 -> FINGER", "host_rx": "G26 <- FINGER", "direction": "full-duplex UART signal pair"},
+      "evidence": [{"asset_sha256": "bf4ce7ac78c9ddaeaf0ce236c419806255cbae477f982d1bfc74c5f465f53614", "page": 1, "locator": "上方 TX 左向箭头/G0；下方 RX 右向箭头/G26"}]
+    },
+    {
+      "id": "gpio.uart",
+      "category": "gpio",
+      "subject": "主机 GPIO 映射",
+      "statement": "主机 G0 用作发送方向信号，G26 用作接收方向信号。",
+      "confidence": "confirmed",
+      "attributes": {"G0": "UART TX from host", "G26": "UART RX to host"},
+      "evidence": [{"asset_sha256": "bf4ce7ac78c9ddaeaf0ce236c419806255cbae477f982d1bfc74c5f465f53614", "page": 1, "locator": "G0/G26 与 TX/RX 标签"}]
+    },
+    {
+      "id": "other.mechanical",
+      "category": "other",
+      "subject": "机械图可见尺寸",
+      "statement": "机械图正视宽度标注 24 mm、总高标注 67 mm，指纹窗口标注直径 16 mm；侧视上部深度标注 20.7 mm。",
+      "confidence": "confirmed",
+      "attributes": {"front_width": "24mm", "drawing_height": "67mm", "sensor_window": "Ø16mm", "upper_depth": "20.7mm", "unit": "mm"},
+      "evidence": [{"asset_sha256": "9862da56e3936e1dc2c31b592a0228b23b390c6fa08a67a06115108093d84ae5", "page": 1, "locator": "机械正视/侧视尺寸标注 24、67、Ø16、20.7，UNIT:mm"}]
+    },
+    {
+      "id": "component.sensor-model",
+      "category": "component",
+      "subject": "指纹传感器型号",
+      "statement": "产品正文称内部模组为 FPC1020SC，数据手册链接名称为 FPC1020A；本地接口图和机械图均未标传感器型号。",
+      "confidence": "uncertain",
+      "attributes": {"document_model": "FPC1020SC", "datasheet_name": "FPC1020A", "schematic_marking": "not shown"},
+      "evidence": [
+        {"asset_sha256": "bf4ce7ac78c9ddaeaf0ce236c419806255cbae477f982d1bfc74c5f465f53614", "page": 1, "locator": "接口图只标 FINGER"},
+        {"asset_sha256": "9862da56e3936e1dc2c31b592a0228b23b390c6fa08a67a06115108093d84ae5", "page": 1, "locator": "机械图无器件型号"}
+      ]
+    },
+    {
+      "id": "bus.uart-format",
+      "category": "bus",
+      "subject": "UART 波特率与帧格式",
+      "statement": "本地接口图只标 TX/RX 和 G0/G26，未直接标注默认 19200 bps、1 个起始位、1 个停止位、无校验或 9600–115200 可配置范围。",
+      "confidence": "uncertain",
+      "attributes": {"claimed_default_baud": "19200bps", "claimed_range": "9600-115200bps", "claimed_format": "1 start; 1 stop; no parity"},
+      "evidence": [{"asset_sha256": "bf4ce7ac78c9ddaeaf0ce236c419806255cbae477f982d1bfc74c5f465f53614", "page": 1, "locator": "TX/RX 接口图无波特率或帧格式文本"}]
+    },
+    {
+      "id": "power.interface",
+      "category": "power",
+      "subject": "模块供电",
+      "statement": "两份本地资源均未显示 Hat Finger 的电源电压、供电引脚、稳压或去耦电路。",
+      "confidence": "uncertain",
+      "attributes": {"supply_voltage": "not shown", "power_pins": "not shown", "regulator": "not shown"},
+      "evidence": [
+        {"asset_sha256": "bf4ce7ac78c9ddaeaf0ce236c419806255cbae477f982d1bfc74c5f465f53614", "page": 1, "locator": "接口图仅有 TX/RX"},
+        {"asset_sha256": "9862da56e3936e1dc2c31b592a0228b23b390c6fa08a67a06115108093d84ae5", "page": 1, "locator": "机械图无电源信息"}
+      ]
+    },
+    {
+      "id": "interface.full-pinout",
+      "category": "interface",
+      "subject": "完整 HAT 针脚",
+      "statement": "本地接口图只确认 G0/G26 UART 信号，未显示 StickIO 连接器位号、GND、电源或其余 HAT 引脚。",
+      "confidence": "uncertain",
+      "attributes": {"confirmed_signals": "G0 TX; G26 RX", "missing": "connector reference; GND; power; remaining pins"},
+      "evidence": [{"asset_sha256": "bf4ce7ac78c9ddaeaf0ce236c419806255cbae477f982d1bfc74c5f465f53614", "page": 1, "locator": "右侧仅列 G0/G26"}]
+    },
+    {
+      "id": "sensor.capabilities",
+      "category": "sensor",
+      "subject": "指纹容量与识别能力",
+      "statement": "本地资源未直接标注 150 枚指纹容量、193 字节模板、256 灰度、1:N/1:1、360° 识别或安全等级 0–9。",
+      "confidence": "uncertain",
+      "attributes": {"claimed_capacity": 150, "claimed_template": "193Byte", "claimed_gray_levels": 256, "claimed_matching": "1:N and 1:1", "claimed_rotation": "360 degrees", "claimed_security_levels": "0-9"},
+      "evidence": [
+        {"asset_sha256": "bf4ce7ac78c9ddaeaf0ce236c419806255cbae477f982d1bfc74c5f465f53614", "page": 1, "locator": "接口图无功能参数"},
+        {"asset_sha256": "9862da56e3936e1dc2c31b592a0228b23b390c6fa08a67a06115108093d84ae5", "page": 1, "locator": "机械图无功能参数"}
+      ]
+    },
+    {
+      "id": "other.dimension-conflict",
+      "category": "other",
+      "subject": "产品高度尺寸一致性",
+      "statement": "机械图总高标注 67 mm，而产品正文尺寸写 24×65×20 mm，高度数值不一致，需确认量产外壳版本。",
+      "confidence": "uncertain",
+      "attributes": {"drawing_height": "67mm", "document_height": "65mm", "document_size": "24x65x20mm"},
+      "evidence": [{"asset_sha256": "9862da56e3936e1dc2c31b592a0228b23b390c6fa08a67a06115108093d84ae5", "page": 1, "locator": "正视图左侧总高 67 mm"}]
+    }
+  ],
+  "needs_review": [
+    {
+      "id": "review.sensor-model",
+      "fact_id": "component.sensor-model",
+      "question": "Hat Finger U074 实际指纹模组是 FPC1020SC、FPC1020A 还是其他型号？",
+      "reason": "正文与数据手册名称不同，本地图纸未标型号。",
+      "evidence": [{"asset_sha256": "bf4ce7ac78c9ddaeaf0ce236c419806255cbae477f982d1bfc74c5f465f53614", "page": 1, "locator": "仅标 FINGER"}]
+    },
+    {
+      "id": "review.uart-format",
+      "fact_id": "bus.uart-format",
+      "question": "请用 Finger 串口协议复核默认波特率、范围和帧格式。",
+      "reason": "接口图只显示方向和 GPIO。",
+      "evidence": [{"asset_sha256": "bf4ce7ac78c9ddaeaf0ce236c419806255cbae477f982d1bfc74c5f465f53614", "page": 1, "locator": "TX/RX G0/G26 图"}]
+    },
+    {
+      "id": "review.power-interface",
+      "fact_id": "power.interface",
+      "question": "请提供电气原理图/BOM，确认模块供电电压、引脚与电源电路。",
+      "reason": "现有资源无电源信息。",
+      "evidence": [{"asset_sha256": "bf4ce7ac78c9ddaeaf0ce236c419806255cbae477f982d1bfc74c5f465f53614", "page": 1, "locator": "接口图仅 TX/RX"}]
+    },
+    {
+      "id": "review.full-pinout",
+      "fact_id": "interface.full-pinout",
+      "question": "请提供 StickIO 连接器电气图，确认电源、GND 与完整针脚顺序。",
+      "reason": "本地接口图只列 G0/G26。",
+      "evidence": [{"asset_sha256": "bf4ce7ac78c9ddaeaf0ce236c419806255cbae477f982d1bfc74c5f465f53614", "page": 1, "locator": "右侧仅 G0/G26"}]
+    },
+    {
+      "id": "review.sensor-capabilities",
+      "fact_id": "sensor.capabilities",
+      "question": "请用已确认模组 datasheet 复核容量、模板、灰度、识别模式和安全等级。",
+      "reason": "这些性能参数未出现在本地资源。",
+      "evidence": [{"asset_sha256": "bf4ce7ac78c9ddaeaf0ce236c419806255cbae477f982d1bfc74c5f465f53614", "page": 1, "locator": "接口图无性能参数"}]
+    },
+    {
+      "id": "review.dimension-conflict",
+      "fact_id": "other.dimension-conflict",
+      "question": "量产 Hat Finger 总高是机械图 67 mm 还是正文 65 mm？",
+      "reason": "两处尺寸不一致。",
+      "evidence": [{"asset_sha256": "9862da56e3936e1dc2c31b592a0228b23b390c6fa08a67a06115108093d84ae5", "page": 1, "locator": "机械图总高 67 mm"}]
+    }
+  ]
+}

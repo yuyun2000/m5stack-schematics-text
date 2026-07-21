@@ -1,0 +1,21 @@
+{
+  "dry_run": false,
+  "failed": 0,
+  "published": 1,
+  "results": [
+    {
+      "backup": null,
+      "draft_action": "unchanged",
+      "dry_run": false,
+      "errors": [],
+      "needs_review": 2,
+      "product_id": "stamp-timer-power-e1b11c744436",
+      "product_name": "Stamp Timer Power",
+      "publish_action": "unchanged",
+      "sha256": "84feb7864c21e3e4e0f29cca3f3007fc12a81e9f79df467fbcb7a895a528cb8b",
+      "status": "valid",
+      "uncertain_facts": 2
+    }
+  ],
+  "schema_version": 1
+}

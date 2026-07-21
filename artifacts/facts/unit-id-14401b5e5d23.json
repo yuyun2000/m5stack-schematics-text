@@ -1,0 +1,254 @@
+{
+  "schema_version": 1,
+  "generator": "schematic_describer",
+  "product": {
+    "product_id": "unit-id-14401b5e5d23",
+    "product_name": "Unit ID",
+    "sku": "U124",
+    "source_path": "unit/id.md",
+    "source_sha256": "db037f3b6b922f5ebd13839763a2fc2f94c9d900ae357613e523981986117a92",
+    "input_sha256": "15184341fc21956021f6d540a4b9de961c08a8bf8787aa57b1648a3269caba96"
+  },
+  "schematic_assets": [
+    {
+      "sha256": "1fc41dd9fea0f94a05a3af1d5d08e9acb6b20544b311f08d8c4c5b238d7e7459",
+      "source_url": "https://static-cdn.m5stack.com/resource/docs/products/unit/id/id_sch_01.webp",
+      "pages": [1]
+    }
+  ],
+  "summary": "Unit ID 以 U2 ATECC608B-TNGTLSU-G 安全元件为唯一功能 IC，通过 J1 的 I2C_SCL/I2C_SDA 与外部主机通信。J1 pin3 的 +5V 经 U1 HT7533 稳压为 +3.3V，供 U2 VCC 使用；SCL/SDA 分别由 R1/R2 4.7KΩ 上拉到 +3.3V并直接连接 U2，没有电平转换器。原理图明确显示 U2 pin1-pin3/pin7 为 NC、pin4 GND、pin5 SDA、pin6 SCL、pin8 VCC，板上没有主控、外部存储、时钟、复位或调试接口。正文给出的地址 0x35、内部存储/序列号以及算法与 Trust&GO 预配置能力未直接印在原理图上，需结合对应安全元件资料或实际器件配置确认。",
+  "keywords": [
+    "Unit ID",
+    "U124",
+    "ATECC608B-TNGTLSU-G",
+    "ATECC608B",
+    "Trust&GO",
+    "TNGTLS",
+    "HT7533",
+    "I2C",
+    "0x35",
+    "I2C_SCL",
+    "I2C_SDA",
+    "J1 HY-2.0_IIC",
+    "+5V",
+    "+3.3V",
+    "R1 4.7KΩ",
+    "R2 4.7KΩ",
+    "C1 10uF",
+    "C2 10uF",
+    "C3 100nF",
+    "secure element",
+    "crypto coprocessor",
+    "10Kb EEPROM",
+    "16 key slots",
+    "72-bit serial number",
+    "ECC-P256",
+    "ECDH",
+    "ECDSA",
+    "SHA256",
+    "AES128-GCM",
+    "pre-provisioned certificate",
+    "AWS IoT",
+    "Azure",
+    "Google Cloud",
+    "hardware key storage"
+  ],
+  "components": [
+    {
+      "reference": "U2",
+      "part_number": "ATECC608B-TNGTLSU-G",
+      "role": "I2C 安全元件/加密协处理器，使用 +3.3V 供电",
+      "evidence": [{"asset_sha256": "1fc41dd9fea0f94a05a3af1d5d08e9acb6b20544b311f08d8c4c5b238d7e7459", "page": 1, "locator": "第 1 页左下 U2 ATECC608B-TNGTLSU-G pin1-pin8"}]
+    },
+    {
+      "reference": "U1",
+      "part_number": "HT7533",
+      "role": "将 J1 输入的 +5V 稳压为 +3.3V",
+      "evidence": [{"asset_sha256": "1fc41dd9fea0f94a05a3af1d5d08e9acb6b20544b311f08d8c4c5b238d7e7459", "page": 1, "locator": "第 1 页左上 U1 HT7533，VIN/VOUT/GND"}]
+    },
+    {
+      "reference": "J1",
+      "part_number": "HY-2.0_IIC",
+      "role": "外部 I2C、+5V 和 GND Grove 接口",
+      "evidence": [{"asset_sha256": "1fc41dd9fea0f94a05a3af1d5d08e9acb6b20544b311f08d8c4c5b238d7e7459", "page": 1, "locator": "第 1 页右侧 J1 HY-2.0_IIC pin1-pin4"}]
+    },
+    {
+      "reference": "R1/R2",
+      "part_number": "4.7KΩ",
+      "role": "分别将 I2C_SCL 和 I2C_SDA 上拉到 +3.3V",
+      "evidence": [{"asset_sha256": "1fc41dd9fea0f94a05a3af1d5d08e9acb6b20544b311f08d8c4c5b238d7e7459", "page": 1, "locator": "第 1 页中央 R1/R2 4.7KΩ 与 I2C_SCL/I2C_SDA"}]
+    },
+    {
+      "reference": "C1/C2",
+      "part_number": "10uF",
+      "role": "HT7533 输入 +5V 与输出 +3.3V 的滤波电容",
+      "evidence": [{"asset_sha256": "1fc41dd9fea0f94a05a3af1d5d08e9acb6b20544b311f08d8c4c5b238d7e7459", "page": 1, "locator": "第 1 页左上 C1/C2 10uF 与 U1"}]
+    },
+    {
+      "reference": "C3",
+      "part_number": "100nF",
+      "role": "ATECC608B +3.3V 电源去耦电容",
+      "evidence": [{"asset_sha256": "1fc41dd9fea0f94a05a3af1d5d08e9acb6b20544b311f08d8c4c5b238d7e7459", "page": 1, "locator": "第 1 页左下 C3 100nF，+3.3V 到 GND"}]
+    }
+  ],
+  "facts": [
+    {
+      "id": "system.secure-element-architecture",
+      "category": "system",
+      "subject": "Unit ID 系统结构",
+      "statement": "J1 提供 I2C 和 +5V，U1 生成 +3.3V，U2 ATECC608B-TNGTLSU-G 直接连接 I2C_SCL/I2C_SDA；板上没有额外主控或电平转换器。",
+      "confidence": "confirmed",
+      "attributes": {"secure_element": "U2 ATECC608B-TNGTLSU-G", "regulator": "U1 HT7533", "connector": "J1 HY-2.0_IIC", "bus": "I2C", "onboard_mcu_shown": false, "level_shifter_shown": false},
+      "evidence": [{"asset_sha256": "1fc41dd9fea0f94a05a3af1d5d08e9acb6b20544b311f08d8c4c5b238d7e7459", "page": 1, "locator": "第 1 页完整原理图全部功能区"}]
+    },
+    {
+      "id": "component.atecc608b-pin-map",
+      "category": "component",
+      "subject": "U2 ATECC608B-TNGTLSU-G",
+      "statement": "U2 pin1/pin2/pin3 标 NC，pin4=GND，pin5=SDA/I2C_SDA，pin6=SCL/I2C_SCL，pin7=NC，pin8=VCC/+3.3V。",
+      "confidence": "confirmed",
+      "attributes": {"pin_1": "NC", "pin_2": "NC", "pin_3": "NC", "pin_4": "GND", "pin_5": "SDA / I2C_SDA", "pin_6": "SCL / I2C_SCL", "pin_7": "NC", "pin_8": "VCC / +3.3V"},
+      "evidence": [{"asset_sha256": "1fc41dd9fea0f94a05a3af1d5d08e9acb6b20544b311f08d8c4c5b238d7e7459", "page": 1, "locator": "第 1 页左下 U2 pin1-pin8 编号与网络"}]
+    },
+    {
+      "id": "interface.grove-i2c",
+      "category": "interface",
+      "subject": "J1 HY-2.0_IIC",
+      "statement": "J1 pin1=IIC_SCL/I2C_SCL、pin2=IIC_SDA/I2C_SDA、pin3=VCC/+5V、pin4=GND；+5V 是板上电源输入，SCL/SDA 与外部主机双向通信。",
+      "confidence": "confirmed",
+      "attributes": {"pin_1": "I2C_SCL", "pin_2": "I2C_SDA", "pin_3": "+5V / power input", "pin_4": "GND", "scl_direction": "host-to-device clock", "sda_direction": "bidirectional"},
+      "evidence": [{"asset_sha256": "1fc41dd9fea0f94a05a3af1d5d08e9acb6b20544b311f08d8c4c5b238d7e7459", "page": 1, "locator": "第 1 页右侧 J1 pin1-pin4 网络标注"}]
+    },
+    {
+      "id": "bus.i2c-direct",
+      "category": "bus",
+      "subject": "ATECC608B I2C 总线",
+      "statement": "J1 I2C_SCL/I2C_SDA 分别直接连接 U2 SCL pin6/SDA pin5，R1/R2 各 4.7KΩ 将两线拉到 +3.3V；图中没有 MOSFET 或专用电平转换 IC。",
+      "confidence": "confirmed",
+      "attributes": {"controller": "external host via J1", "device": "U2 ATECC608B-TNGTLSU-G", "scl": "J1.1 I2C_SCL -> U2.6, R1 4.7KΩ to +3.3V", "sda": "J1.2 I2C_SDA -> U2.5, R2 4.7KΩ to +3.3V", "logic_pullup_rail": "+3.3V", "level_shifter_shown": false},
+      "evidence": [{"asset_sha256": "1fc41dd9fea0f94a05a3af1d5d08e9acb6b20544b311f08d8c4c5b238d7e7459", "page": 1, "locator": "第 1 页 U2 SCL/SDA、R1/R2 与 J1 同名 I2C 网络"}]
+    },
+    {
+      "id": "power.5v-to-3v3",
+      "category": "power",
+      "subject": "U1 HT7533",
+      "statement": "U1 VIN pin2 接 +5V，VOUT pin3 输出 +3.3V，GND pin1 接地；C1/C2 各 10uF 分别跨接输入/输出到 GND。",
+      "confidence": "confirmed",
+      "attributes": {"input": "+5V at U1 pin2", "output": "+3.3V at U1 pin3", "ground": "U1 pin1 GND", "input_cap": "C1 10uF", "output_cap": "C2 10uF"},
+      "evidence": [{"asset_sha256": "1fc41dd9fea0f94a05a3af1d5d08e9acb6b20544b311f08d8c4c5b238d7e7459", "page": 1, "locator": "第 1 页左上 U1/C1/C2 与 +5V/+3.3V"}]
+    },
+    {
+      "id": "power.secure-element",
+      "category": "power",
+      "subject": "U2 电源",
+      "statement": "U2 VCC pin8 接 +3.3V、GND pin4 接地，C3 100nF 跨接 +3.3V 与 GND；图中无使能、负载开关、电源监测、充电或电池路径。",
+      "confidence": "confirmed",
+      "attributes": {"vcc": "U2 pin8 +3.3V", "ground": "U2 pin4 GND", "decoupling": "C3 100nF", "enable_shown": false, "load_switch_shown": false, "power_monitor_shown": false, "battery_shown": false},
+      "evidence": [{"asset_sha256": "1fc41dd9fea0f94a05a3af1d5d08e9acb6b20544b311f08d8c4c5b238d7e7459", "page": 1, "locator": "第 1 页左下 U2 pin4/pin8 与 C3"}]
+    },
+    {
+      "id": "address.documented-0x35",
+      "category": "address",
+      "subject": "ATECC608B I2C 地址",
+      "statement": "产品正文列出 7 位 I2C 地址 0x35；原理图确认 U2 为总线设备，但未打印地址或地址绑带，因此需结合 TNGTLSU-G 配置资料或 I2C 扫描确认。",
+      "confidence": "uncertain",
+      "attributes": {"documented_address": "0x35", "address_width": "7-bit", "device": "U2 ATECC608B-TNGTLSU-G", "address_printed_on_schematic": false, "address_strap_shown": false},
+      "evidence": [{"asset_sha256": "1fc41dd9fea0f94a05a3af1d5d08e9acb6b20544b311f08d8c4c5b238d7e7459", "page": 1, "locator": "第 1 页 U2 SCL/SDA 与 J1 I2C，页面无地址数值"}]
+    },
+    {
+      "id": "storage.documented-secure-memory",
+      "category": "storage",
+      "subject": "ATECC608B 内部安全存储",
+      "statement": "产品正文描述 10Kb EEPROM、最多 16 个密钥/证书/数据槽和 72 位唯一序列号；原理图仅标器件完整料号，未打印容量、槽位或序列号字段。",
+      "confidence": "uncertain",
+      "attributes": {"documented_eeprom": "10Kb", "documented_slots": 16, "documented_serial_number": "72-bit", "external_storage_shown": false, "parameters_printed_on_schematic": false},
+      "evidence": [{"asset_sha256": "1fc41dd9fea0f94a05a3af1d5d08e9acb6b20544b311f08d8c4c5b238d7e7459", "page": 1, "locator": "第 1 页 U2 ATECC608B-TNGTLSU-G，无存储容量/槽位/序列号标注"}]
+    },
+    {
+      "id": "other.documented-security-capabilities",
+      "category": "other",
+      "subject": "密码学算法与 Trust&GO 配置",
+      "statement": "产品正文列出 ECC-P256/ECDH/ECDSA、SHA256、AES128-GCM、随机数和预置证书/密钥；原理图只确认 TNGTLSU-G 料号，无法显示实际配置区、证书内容或已启用算法。",
+      "confidence": "uncertain",
+      "attributes": {"documented_algorithms": "ECC-P256,ECDH,ECDSA,SHA256,AES128-GCM", "documented_rng": true, "documented_provisioning": "Trust&GO pre-provisioned certificate and key", "configuration_visible_on_schematic": false},
+      "evidence": [{"asset_sha256": "1fc41dd9fea0f94a05a3af1d5d08e9acb6b20544b311f08d8c4c5b238d7e7459", "page": 1, "locator": "第 1 页 U2 ATECC608B-TNGTLSU-G，页面无算法或证书配置"}]
+    },
+    {
+      "id": "key-net.host-to-secure-element",
+      "category": "key_net",
+      "subject": "主机到安全元件路径",
+      "statement": "关键路径为 J1.1 I2C_SCL→U2.6 SCL、J1.2 I2C_SDA→U2.5 SDA、J1.3 +5V→U1→+3.3V→U2.8 VCC，所有地连接 J1.4/U1.1/U2.4。",
+      "confidence": "confirmed",
+      "attributes": {"scl_path": "J1.1->U2.6", "sda_path": "J1.2->U2.5", "power_path": "J1.3 +5V->U1->+3.3V->U2.8", "ground_path": "J1.4,U1.1,U2.4"},
+      "evidence": [{"asset_sha256": "1fc41dd9fea0f94a05a3af1d5d08e9acb6b20544b311f08d8c4c5b238d7e7459", "page": 1, "locator": "第 1 页完整 J1/U1/U2 信号与电源路径"}]
+    },
+    {
+      "id": "protection.external-interface",
+      "category": "protection",
+      "subject": "J1 I2C 与 +5V 保护",
+      "statement": "完整原理图未在 J1 SCL、SDA、+5V 或 GND 路径画出 TVS、ESD 阵列、保险丝、反接保护或串联信号保护器件。",
+      "confidence": "confirmed",
+      "attributes": {"tvs_shown": false, "esd_array_shown": false, "fuse_shown": false, "reverse_polarity_protection_shown": false, "series_signal_protection_shown": false},
+      "evidence": [{"asset_sha256": "1fc41dd9fea0f94a05a3af1d5d08e9acb6b20544b311f08d8c4c5b238d7e7459", "page": 1, "locator": "第 1 页 J1 至 U1/U2 的全部路径"}]
+    },
+    {
+      "id": "gpio.no-extra-control-signals",
+      "category": "gpio",
+      "subject": "中断、唤醒与通用 GPIO",
+      "statement": "U2 仅连接 VCC、GND、SCL、SDA，pin1-pin3/pin7 均标 NC；原理图未引出中断、唤醒、复位或通用 GPIO。",
+      "confidence": "confirmed",
+      "attributes": {"interrupt_shown": false, "wake_shown": false, "reset_shown": false, "general_gpio_shown": false, "connected_signals": "VCC,GND,SCL,SDA"},
+      "evidence": [{"asset_sha256": "1fc41dd9fea0f94a05a3af1d5d08e9acb6b20544b311f08d8c4c5b238d7e7459", "page": 1, "locator": "第 1 页 U2 pin1-pin8 与 J1"}]
+    },
+    {
+      "id": "clock.no-external-clock",
+      "category": "clock",
+      "subject": "时钟电路",
+      "statement": "完整原理图未显示晶振、振荡器或外部时钟网络。",
+      "confidence": "confirmed",
+      "attributes": {"crystal_shown": false, "oscillator_shown": false, "clock_net_shown": false},
+      "evidence": [{"asset_sha256": "1fc41dd9fea0f94a05a3af1d5d08e9acb6b20544b311f08d8c4c5b238d7e7459", "page": 1, "locator": "第 1 页完整图无时钟器件或网络"}]
+    },
+    {
+      "id": "reset.no-reset-debug",
+      "category": "reset",
+      "subject": "复位、BOOT 与调试",
+      "statement": "完整原理图未显示 RESET、BOOT、调试、下载或测试点连接。",
+      "confidence": "confirmed",
+      "attributes": {"reset_shown": false, "boot_shown": false, "debug_connector_shown": false, "download_connector_shown": false, "testpoint_shown": false},
+      "evidence": [{"asset_sha256": "1fc41dd9fea0f94a05a3af1d5d08e9acb6b20544b311f08d8c4c5b238d7e7459", "page": 1, "locator": "第 1 页完整图无复位、BOOT、调试或测试接口"}]
+    },
+    {
+      "id": "memory.no-external-memory",
+      "category": "memory",
+      "subject": "外部存储与主控",
+      "statement": "完整原理图未显示 MCU、协处理器之外的控制器、外部 Flash、EEPROM、RAM、SD 卡或其他外部存储器。",
+      "confidence": "confirmed",
+      "attributes": {"mcu_shown": false, "additional_coprocessor_shown": false, "external_flash_shown": false, "external_eeprom_shown": false, "external_ram_shown": false, "sd_card_shown": false},
+      "evidence": [{"asset_sha256": "1fc41dd9fea0f94a05a3af1d5d08e9acb6b20544b311f08d8c4c5b238d7e7459", "page": 1, "locator": "第 1 页完整图仅有 U2 安全元件、U1 稳压器和无源器件"}]
+    }
+  ],
+  "needs_review": [
+    {
+      "id": "review.i2c-address",
+      "fact_id": "address.documented-0x35",
+      "question": "请依据 ATECC608B-TNGTLSU-G 配置资料或 I2C 扫描确认 7 位地址 0x35。",
+      "reason": "原理图确认器件和 I2C 连接，但未打印地址值。",
+      "evidence": [{"asset_sha256": "1fc41dd9fea0f94a05a3af1d5d08e9acb6b20544b311f08d8c4c5b238d7e7459", "page": 1, "locator": "第 1 页 U2 SCL/SDA"}]
+    },
+    {
+      "id": "review.secure-memory",
+      "fact_id": "storage.documented-secure-memory",
+      "question": "请依据 ATECC608B-TNGTLSU-G 数据手册与实际配置确认 10Kb EEPROM、16 个槽位和 72 位序列号。",
+      "reason": "这些参数来自产品正文，原理图只打印完整料号。",
+      "evidence": [{"asset_sha256": "1fc41dd9fea0f94a05a3af1d5d08e9acb6b20544b311f08d8c4c5b238d7e7459", "page": 1, "locator": "第 1 页 U2 ATECC608B-TNGTLSU-G"}]
+    },
+    {
+      "id": "review.security-capabilities",
+      "fact_id": "other.documented-security-capabilities",
+      "question": "请依据 TNGTLSU-G 数据手册、配置区和证书读取结果确认算法、随机数及 Trust&GO 预配置能力。",
+      "reason": "原理图无法展示芯片内部启用算法、锁定位或预置证书内容。",
+      "evidence": [{"asset_sha256": "1fc41dd9fea0f94a05a3af1d5d08e9acb6b20544b311f08d8c4c5b238d7e7459", "page": 1, "locator": "第 1 页 U2 ATECC608B-TNGTLSU-G"}]
+    }
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "dry_run": false,
+  "failed": 0,
+  "published": 1,
+  "results": [
+    {
+      "backup": null,
+      "draft_action": "unchanged",
+      "dry_run": false,
+      "errors": [],
+      "needs_review": 5,
+      "product_id": "timercamera-f-964a85b1021e",
+      "product_name": "TimerCamera-F",
+      "publish_action": "unchanged",
+      "sha256": "cb6df198f21397a8ba899ae5c11081d5a4954bf5698ca1731ca32935fedf0607",
+      "status": "valid",
+      "uncertain_facts": 5
+    }
+  ],
+  "schema_version": 1
+}

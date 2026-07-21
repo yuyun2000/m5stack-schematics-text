@@ -1,0 +1,21 @@
+{
+  "dry_run": false,
+  "failed": 0,
+  "published": 1,
+  "results": [
+    {
+      "backup": null,
+      "draft_action": "unchanged",
+      "dry_run": false,
+      "errors": [],
+      "needs_review": 4,
+      "product_id": "unit-uhf-rfid-e13e5fc00641",
+      "product_name": "Unit UHF-RFID",
+      "publish_action": "unchanged",
+      "sha256": "88f3853e2892807ccf0846e3216ce4b29ea21723b60b46aa6ce123307083690d",
+      "status": "valid",
+      "uncertain_facts": 4
+    }
+  ],
+  "schema_version": 1
+}

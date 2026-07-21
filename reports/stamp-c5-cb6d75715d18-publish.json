@@ -1,0 +1,21 @@
+{
+  "dry_run": false,
+  "failed": 0,
+  "published": 1,
+  "results": [
+    {
+      "backup": null,
+      "draft_action": "unchanged",
+      "dry_run": false,
+      "errors": [],
+      "needs_review": 4,
+      "product_id": "stamp-c5-cb6d75715d18",
+      "product_name": "Stamp-C5",
+      "publish_action": "unchanged",
+      "sha256": "aa7d5a3de6585eaa6e5c07697c1e541cc2b5e6fe0475b94a722ca874dd18f769",
+      "status": "valid",
+      "uncertain_facts": 4
+    }
+  ],
+  "schema_version": 1
+}

@@ -1,0 +1,21 @@
+{
+  "dry_run": false,
+  "failed": 0,
+  "published": 1,
+  "results": [
+    {
+      "backup": null,
+      "draft_action": "unchanged",
+      "dry_run": false,
+      "errors": [],
+      "needs_review": 2,
+      "product_id": "atom-switch-d-7c3e8ae886fb",
+      "product_name": "Atom Switch-D",
+      "publish_action": "unchanged",
+      "sha256": "47ebe191c3ca68196b33a46b2ee73772f17658632540cb1a24eb4dd4ae0c5793",
+      "status": "valid",
+      "uncertain_facts": 0
+    }
+  ],
+  "schema_version": 1
+}

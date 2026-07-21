@@ -1,0 +1,307 @@
+{
+  "schema_version": 1,
+  "generator": "schematic_describer",
+  "product": {
+    "product_id": "unit-mqtt-poe-9ff834605eee",
+    "product_name": "Unit MQTT-PoE",
+    "sku": "U129-B",
+    "source_path": "unit/mqtt_poe.md",
+    "source_sha256": "90554c92edfc9395b9f509ca1de07ff908274e7e20150d7dd9e5d376503bb20b",
+    "input_sha256": "bbeae52b176539a3b50518cd6595e8cd6ec808dae5bc204d04116a9d3a26a327"
+  },
+  "schematic_assets": [
+    {
+      "sha256": "c6b5d0bf3819231167828c952b2d0f54cf5d31af185c6138bdf9a11a9dab5cc1",
+      "source_url": "https://static-cdn.m5stack.com/resource/docs/products/unit/mqtt_poe/mqtt_poe_sch_01.webp",
+      "pages": [1]
+    }
+  ],
+  "summary": "Unit MQTT-PoE（U129-B）原理图由 M1 MQTT_TCP03 以太网/UART 模组、U1 HBJ-6308ANLF 磁性 RJ45、M2 WC-PD06H050A PoE 电源模组和 J1 HY-2.0_UART 组成。RJ45 的差分对通过端接网络连接 M1，PoE 中心抽头经 P1/P2 板间接口送入 M2，M2 的 +5V 输出经 F1 后为系统和 J1 供电，再由 VR1 AMS1117-3.3 生成 3V3。M1 的 TXD/RXD、RST、CFG 通过 P1/P2 引出，其中 TXD_1/RXD_1 接 J1 RX/TX。原理图未展开 M1 内部芯片，也未标注 PoE 输入额定范围、UART/MQTT 参数或以太网速率。",
+  "keywords": [
+    "Unit MQTT-PoE", "U129-B", "MQTT-PoE", "MQTT_TCP03", "M1",
+    "HBJ-6308ANLF", "U1", "WC-PD06H050A", "M2", "AMS1117-3.3", "VR1",
+    "HY-2.0_UART", "J1", "Header 5X2", "P1", "P2", "PoE", "Ethernet", "RJ45",
+    "TXP", "TXN", "RXP", "RXN", "LINKLED", "ACTLED", "TXD", "RXD", "RST", "CFG",
+    "VC+", "VC-", "VC2+", "VC2-", "+5V", "3V3", "F1 Fuse", "R1 10Ω",
+    "49.9Ω PHY termination", "C1 C2 6.8nF", "C3 1nF 2000V"
+  ],
+  "components": [
+    {
+      "reference": "M1", "part_number": "MQTT_TCP03",
+      "role": "以太网到 UART 功能模组，连接 PHY 差分对、链路/活动 LED、RST、TXD、RXD 和 CFG",
+      "evidence": [{"asset_sha256": "c6b5d0bf3819231167828c952b2d0f54cf5d31af185c6138bdf9a11a9dab5cc1", "page": 1, "locator": "页面中央 M1 MQTT_TCP03，pins 1~12 标注 TX-N/TX-P/RX-N/RX-P/LED_LINK/LED_ACT/CFG/RXD/TXD/RST/GND/3.3V"}]
+    },
+    {
+      "reference": "U1", "part_number": "HBJ-6308ANLF",
+      "role": "带磁性器件与 LINK/ACT LED 的 RJ45 以太网连接器，并引出四路 PoE 中心抽头",
+      "evidence": [{"asset_sha256": "c6b5d0bf3819231167828c952b2d0f54cf5d31af185c6138bdf9a11a9dab5cc1", "page": 1, "locator": "页面左中 U1 HBJ-6308ANLF，TD+/TD-/RD+/RD-、VC+/VC-/VC2+/VC2-、Y+/Y-/G+/G-"}]
+    },
+    {
+      "reference": "M2", "part_number": "WC-PD06H050A",
+      "role": "PoE 受电电源模组，从 VA1/VA2/VB1/VB2 输入侧产生 +5V 与 GND",
+      "evidence": [{"asset_sha256": "c6b5d0bf3819231167828c952b2d0f54cf5d31af185c6138bdf9a11a9dab5cc1", "page": 1, "locator": "页面下中 M2 WC-PD06H050A，pins 1~4 VA1/VA2/VB1/VB2，pin 5 GND，pin 6 +5V"}]
+    },
+    {
+      "reference": "VR1", "part_number": "AMS1117-3.3",
+      "role": "把 +5V 稳压为 3V3，供 M1 与以太网端接/LED 网络使用",
+      "evidence": [{"asset_sha256": "c6b5d0bf3819231167828c952b2d0f54cf5d31af185c6138bdf9a11a9dab5cc1", "page": 1, "locator": "页面左上 VR1 AMS1117-3.3，Vin +5V、Vout 3V3、GND"}]
+    },
+    {
+      "reference": "J1", "part_number": "HY-2.0_UART",
+      "role": "四针 UART 与 +5V 电源接口",
+      "evidence": [{"asset_sha256": "c6b5d0bf3819231167828c952b2d0f54cf5d31af185c6138bdf9a11a9dab5cc1", "page": 1, "locator": "页面右下 J1 HY-2.0_UART，pin 1 RX/TXD_1、pin 2 TX/RXD_1、pin 3 VCC/+5V、pin 4 GND"}]
+    },
+    {
+      "reference": "P1", "part_number": "Header 5X2 排针",
+      "role": "M1/RJ45 子板的十针板间接口，承载 PoE 抽头、+5V、CFG/RXD/TXD/RST 和 GND",
+      "evidence": [{"asset_sha256": "c6b5d0bf3819231167828c952b2d0f54cf5d31af185c6138bdf9a11a9dab5cc1", "page": 1, "locator": "页面右上 P1 Header 5X2 排针，odd pins VC-/VC+/VC2-/VC2+/+5V，even pins CFG/RXD/TXD/RST/GND"}]
+    },
+    {
+      "reference": "P2", "part_number": "Header 5X2 排母",
+      "role": "PoE/J1 子板的十针板间接口，承载 +5V、PoE 抽头与带 _1 后缀的 UART/控制网络",
+      "evidence": [{"asset_sha256": "c6b5d0bf3819231167828c952b2d0f54cf5d31af185c6138bdf9a11a9dab5cc1", "page": 1, "locator": "页面右中 P2 Header 5X2 排母，odd pins +5V/VC2+/VC2-/VC+/VC-，even pins GND/RST_1/TXD_1/RXD_1/CFG_1"}]
+    },
+    {
+      "reference": "F1", "part_number": "Fuse",
+      "role": "串联在 M2 pin 6 与系统 +5V 电源轨之间的保险丝",
+      "evidence": [{"asset_sha256": "c6b5d0bf3819231167828c952b2d0f54cf5d31af185c6138bdf9a11a9dab5cc1", "page": 1, "locator": "页面下中 M2 pin 6 +5V-F1 Fuse-+5V"}]
+    },
+    {
+      "reference": "R1", "part_number": "10Ω",
+      "role": "从 3V3 向 TX 差分端接公共节点供电的串联电阻",
+      "evidence": [{"asset_sha256": "c6b5d0bf3819231167828c952b2d0f54cf5d31af185c6138bdf9a11a9dab5cc1", "page": 1, "locator": "页面 U1 上方 3V3-R1 10Ω-R2/R3 公共节点"}]
+    },
+    {
+      "reference": "R2/R3", "part_number": "49.9Ω",
+      "role": "TXP/TXN 差分线的偏置/端接电阻",
+      "evidence": [{"asset_sha256": "c6b5d0bf3819231167828c952b2d0f54cf5d31af185c6138bdf9a11a9dab5cc1", "page": 1, "locator": "页面 U1 与 M1 之间 R2/R3 49.9Ω 分别连接 TXP/TXN"}]
+    },
+    {
+      "reference": "R4/R5", "part_number": "1KΩ",
+      "role": "U1 LINK/ACT LED 从 3V3 供电的限流电阻",
+      "evidence": [{"asset_sha256": "c6b5d0bf3819231167828c952b2d0f54cf5d31af185c6138bdf9a11a9dab5cc1", "page": 1, "locator": "页面 U1 左侧 R4/R5 1KΩ 从 3V3 接 U1 Y+/G+，Y-/G- 接 LINKLED/ACTLED"}]
+    },
+    {
+      "reference": "R6/R7", "part_number": "49.9Ω",
+      "role": "RXP/RXN 差分线到 C5 公共节点的端接电阻",
+      "evidence": [{"asset_sha256": "c6b5d0bf3819231167828c952b2d0f54cf5d31af185c6138bdf9a11a9dab5cc1", "page": 1, "locator": "页面 U1 右下 R6/R7 49.9Ω 分别从 RXP/RXN 接到 C5 10nF 公共节点"}]
+    },
+    {
+      "reference": "C1/C2", "part_number": "6.8nF",
+      "role": "U1 RD+/RD- 与 M1 RXP/RXN 之间的串联电容",
+      "evidence": [{"asset_sha256": "c6b5d0bf3819231167828c952b2d0f54cf5d31af185c6138bdf9a11a9dab5cc1", "page": 1, "locator": "页面 U1 右侧 C1/C2 6.8nF 串联在 RD+/RD- 到 RXP/RXN 路径"}]
+    },
+    {
+      "reference": "C3", "part_number": "1nF (102) 10% 2000V",
+      "role": "U1 pins 15/16 公共节点到 GND 的高压额定电容",
+      "evidence": [{"asset_sha256": "c6b5d0bf3819231167828c952b2d0f54cf5d31af185c6138bdf9a11a9dab5cc1", "page": 1, "locator": "页面 U1 左下 pins 15/16 公共节点-C3 1nF (102) 10% 2000V-GND"}]
+    },
+    {
+      "reference": "C4/C5", "part_number": "22nF/10nF",
+      "role": "PHY 模拟网络的接地电容",
+      "evidence": [{"asset_sha256": "c6b5d0bf3819231167828c952b2d0f54cf5d31af185c6138bdf9a11a9dab5cc1", "page": 1, "locator": "页面 U1 下方 C4 22nF 与 R6/R7 公共节点下方 C5 10nF，均接 GND"}]
+    },
+    {
+      "reference": "C6/C7/C8/C9", "part_number": "100nF/22uF/22uF/100nF",
+      "role": "AMS1117-3.3 输入 +5V 与输出 3V3 的去耦/储能电容组",
+      "evidence": [{"asset_sha256": "c6b5d0bf3819231167828c952b2d0f54cf5d31af185c6138bdf9a11a9dab5cc1", "page": 1, "locator": "页面左上 +5V 侧 C6 100nF/C7 22uF，3V3 侧 C8 22uF/C9 100nF"}]
+    }
+  ],
+  "facts": [
+    {
+      "id": "system.mqtt-poe-architecture", "category": "system", "subject": "Unit MQTT-PoE 系统架构",
+      "statement": "M1 MQTT_TCP03 通过 TXP/TXN/RXP/RXN 连接 U1 HBJ-6308ANLF RJ45，并通过 TXD/RXD 连接 J1 UART；U1 的 VC+/VC-/VC2+/VC2- 经 P1/P2 接入 M2 WC-PD06H050A，M2 输出 +5V，经 VR1 生成 3V3。",
+      "confidence": "confirmed",
+      "attributes": {"ethernet_module": "M1 MQTT_TCP03", "rj45": "U1 HBJ-6308ANLF", "poe_module": "M2 WC-PD06H050A", "uart": "J1 HY-2.0_UART", "power": "M2 +5V -> F1 -> +5V -> VR1 -> 3V3"},
+      "evidence": [{"asset_sha256": "c6b5d0bf3819231167828c952b2d0f54cf5d31af185c6138bdf9a11a9dab5cc1", "page": 1, "locator": "整页 U1/M1/M2/VR1/P1/P2/J1 与同名网络"}]
+    },
+    {
+      "id": "component.m1-pin-map", "category": "component", "subject": "M1 MQTT_TCP03 引脚",
+      "statement": "M1 pins 1~6 依次为 TX-N、TX-P、RX-N、RX-P、LED_LINK、LED_ACT；pins 7~12 依次为 CFG、RXD、TXD、RST、GND、3.3V。",
+      "confidence": "confirmed",
+      "attributes": {"pin_1": "TX-N TXN", "pin_2": "TX-P TXP", "pin_3": "RX-N RXN", "pin_4": "RX-P RXP", "pin_5": "LED_LINK LINKLED", "pin_6": "LED_ACT ACTLED", "pin_7": "CFG", "pin_8": "RXD", "pin_9": "TXD", "pin_10": "RST", "pin_11": "GND", "pin_12": "3V3"},
+      "evidence": [{"asset_sha256": "c6b5d0bf3819231167828c952b2d0f54cf5d31af185c6138bdf9a11a9dab5cc1", "page": 1, "locator": "页面中央 M1 MQTT_TCP03 pins 1~12 与网络文字"}]
+    },
+    {
+      "id": "interface.ethernet-rj45", "category": "interface", "subject": "U1 RJ45 以太网接口",
+      "statement": "U1 HBJ-6308ANLF 引出 TD+/TD-、RD+/RD- 差分端、VC+/VC-/VC2+/VC2- PoE 中心抽头，以及 Y+/Y-/G+/G- 两组状态 LED 端。",
+      "confidence": "confirmed",
+      "attributes": {"tx_pair": "TD+ pin 1,TD- pin 3", "rx_pair": "RD+ pin 4,RD- pin 6", "poe_taps": "VC+ pin 9,VC- pin 10,VC2+ pin 7,VC2- pin 8", "led_pins": "Y- pin12,Y+ pin11,G- pin14,G+ pin13"},
+      "evidence": [{"asset_sha256": "c6b5d0bf3819231167828c952b2d0f54cf5d31af185c6138bdf9a11a9dab5cc1", "page": 1, "locator": "页面左中 U1 HBJ-6308ANLF 全部标注引脚"}]
+    },
+    {
+      "id": "analog.ethernet-phy-path", "category": "analog", "subject": "M1 到 U1 的 PHY 差分网络",
+      "statement": "M1 TXP/TXN 连接 U1 TD+/TD-，并由 R2/R3 49.9Ω 接至经 R1 10Ω 供电的 3V3 公共节点；U1 RD+/RD- 经 C1/C2 6.8nF 串联到 M1 RXP/RXN，R6/R7 49.9Ω 接至 C5 10nF 对地公共节点。",
+      "confidence": "confirmed",
+      "attributes": {"tx": "M1 TXP/TXN -> U1 TD+/TD-", "tx_termination": "R2/R3 49.9Ω, R1 10Ω to 3V3", "rx": "U1 RD+/RD- -> C1/C2 6.8nF -> M1 RXP/RXN", "rx_termination": "R6/R7 49.9Ω -> C5 10nF -> GND"},
+      "evidence": [{"asset_sha256": "c6b5d0bf3819231167828c952b2d0f54cf5d31af185c6138bdf9a11a9dab5cc1", "page": 1, "locator": "页面 U1 与 M1 间 TXP/TXN/RXP/RXN、R1-R3/R6-R7、C1/C2/C5"}]
+    },
+    {
+      "id": "interface.ethernet-leds", "category": "interface", "subject": "以太网 LINK/ACT LED",
+      "statement": "M1 LINKLED 连接 U1 Y- pin 12，M1 ACTLED 连接 U1 G- pin 14；U1 Y+ pin 11 和 G+ pin 13 分别经 R4/R5 1KΩ 接 3V3。",
+      "confidence": "confirmed",
+      "attributes": {"link": "M1 pin 5 LINKLED -> U1 pin 12 Y-, U1 pin 11 Y+ -> R4 1KΩ -> 3V3", "activity": "M1 pin 6 ACTLED -> U1 pin 14 G-, U1 pin 13 G+ -> R5 1KΩ -> 3V3"},
+      "evidence": [{"asset_sha256": "c6b5d0bf3819231167828c952b2d0f54cf5d31af185c6138bdf9a11a9dab5cc1", "page": 1, "locator": "页面 U1 左侧 Y-/Y+/G-/G+、LINKLED/ACTLED、R4/R5 1KΩ"}]
+    },
+    {
+      "id": "power.poe-input", "category": "power", "subject": "PoE 中心抽头输入",
+      "statement": "U1 的 VC-、VC+、VC2-、VC2+ 网络引到 P1；M2 的 VA1、VA2、VB1、VB2 分别连接 P2 侧的 VC-_1、VC+_1、VC2-_1、VC2+_1。",
+      "confidence": "confirmed",
+      "attributes": {"rj45_taps": "VC-,VC+,VC2-,VC2+", "p1": "pins 1,3,5,7", "m2_inputs": "pin1 VA1 VC-_1,pin2 VA2 VC+_1,pin3 VB1 VC2-_1,pin4 VB2 VC2+_1"},
+      "evidence": [{"asset_sha256": "c6b5d0bf3819231167828c952b2d0f54cf5d31af185c6138bdf9a11a9dab5cc1", "page": 1, "locator": "页面 U1 VC/VC2 网络、右上 P1 与下中 M2/P2 对应网络"}]
+    },
+    {
+      "id": "power.poe-output-fuse", "category": "power", "subject": "M2 +5V 输出与保险丝",
+      "statement": "M2 pin 5 接 GND，pin 6 的 +5V 输出经 F1 Fuse 串联后进入系统 +5V 电源轨。",
+      "confidence": "confirmed",
+      "attributes": {"module": "M2 WC-PD06H050A", "ground": "pin 5 GND", "output": "pin 6 +5V", "series_protection": "F1 Fuse", "rail": "+5V"},
+      "evidence": [{"asset_sha256": "c6b5d0bf3819231167828c952b2d0f54cf5d31af185c6138bdf9a11a9dab5cc1", "page": 1, "locator": "页面下中 M2 pins 5/6、F1 与 +5V 网络"}]
+    },
+    {
+      "id": "power.5v-to-3v3", "category": "power", "subject": "+5V 到 3V3 稳压",
+      "statement": "VR1 AMS1117-3.3 的 Vin 接 +5V、Vout 输出 3V3、GND 接地；M1 pin 12 由 3V3 供电。",
+      "confidence": "confirmed",
+      "attributes": {"input": "+5V", "regulator": "VR1 AMS1117-3.3", "output": "3V3", "load": "M1 pin 12"},
+      "evidence": [{"asset_sha256": "c6b5d0bf3819231167828c952b2d0f54cf5d31af185c6138bdf9a11a9dab5cc1", "page": 1, "locator": "页面左上 VR1 +5V/3V3 与中央 M1 pin 12 3.3V"}]
+    },
+    {
+      "id": "power.regulator-decoupling", "category": "power", "subject": "VR1 输入输出电容",
+      "statement": "+5V 输入侧 C6 100nF 与 C7 22uF 对地，3V3 输出侧 C8 22uF 与 C9 100nF 对地。",
+      "confidence": "confirmed",
+      "attributes": {"input_caps": "C6 100nF,C7 22uF", "output_caps": "C8 22uF,C9 100nF", "return": "GND"},
+      "evidence": [{"asset_sha256": "c6b5d0bf3819231167828c952b2d0f54cf5d31af185c6138bdf9a11a9dab5cc1", "page": 1, "locator": "页面左上 VR1 两侧 C6/C7/C8/C9"}]
+    },
+    {
+      "id": "interface.j1-uart-pinout", "category": "interface", "subject": "J1 HY-2.0_UART 针脚",
+      "statement": "J1 pins 1~4 依次为 RX、TX、VCC、GND，对应网络为 TXD_1、RXD_1、+5V、GND。",
+      "confidence": "confirmed",
+      "attributes": {"pin_1": "RX-TXD_1，模块到主机", "pin_2": "TX-RXD_1，主机到模块", "pin_3": "VCC +5V", "pin_4": "GND"},
+      "evidence": [{"asset_sha256": "c6b5d0bf3819231167828c952b2d0f54cf5d31af185c6138bdf9a11a9dab5cc1", "page": 1, "locator": "页面右下 J1 HY-2.0_UART pins 1~4 与 TXD_1/RXD_1/+5V/GND"}]
+    },
+    {
+      "id": "bus.m1-uart", "category": "bus", "subject": "M1 UART",
+      "statement": "M1 pin 9 TXD 与 pin 8 RXD 引到 P1；P2 侧 TXD_1/RXD_1 分别连接 J1 pin 1 RX 与 pin 2 TX，原理图未显示电平转换器。",
+      "confidence": "confirmed",
+      "attributes": {"module_tx": "M1 pin 9 TXD -> P1 pin 6", "module_rx": "M1 pin 8 RXD -> P1 pin 4", "external_tx_path": "P2 pin 6 TXD_1 -> J1 pin 1 RX", "external_rx_path": "P2 pin 8 RXD_1 -> J1 pin 2 TX", "level_shifter": null},
+      "evidence": [{"asset_sha256": "c6b5d0bf3819231167828c952b2d0f54cf5d31af185c6138bdf9a11a9dab5cc1", "page": 1, "locator": "页面中央 M1 TXD/RXD、右侧 P1/P2 TXD/RXD 网络及 J1"}]
+    },
+    {
+      "id": "interface.p1-pinout", "category": "interface", "subject": "P1 Header 5X2 排针",
+      "statement": "P1 odd pins 1/3/5/7/9 依次为 VC-/VC+/VC2-/VC2+/+5V，even pins 2/4/6/8/10 依次为 CFG/RXD/TXD/RST/GND。",
+      "confidence": "confirmed",
+      "attributes": {"pin_1": "VC-", "pin_2": "CFG", "pin_3": "VC+", "pin_4": "RXD", "pin_5": "VC2-", "pin_6": "TXD", "pin_7": "VC2+", "pin_8": "RST", "pin_9": "+5V", "pin_10": "GND"},
+      "evidence": [{"asset_sha256": "c6b5d0bf3819231167828c952b2d0f54cf5d31af185c6138bdf9a11a9dab5cc1", "page": 1, "locator": "页面右上 P1 Header 5X2 排针 pins 1~10 与网络标签"}]
+    },
+    {
+      "id": "interface.p2-pinout", "category": "interface", "subject": "P2 Header 5X2 排母",
+      "statement": "P2 odd pins 1/3/5/7/9 依次为 +5V/VC2+_1/VC2-_1/VC+_1/VC-_1，even pins 2/4/6/8/10 依次为 GND/RST_1/TXD_1/RXD_1/CFG_1。",
+      "confidence": "confirmed",
+      "attributes": {"pin_1": "+5V", "pin_2": "GND", "pin_3": "VC2+_1", "pin_4": "RST_1", "pin_5": "VC2-_1", "pin_6": "TXD_1", "pin_7": "VC+_1", "pin_8": "RXD_1", "pin_9": "VC-_1", "pin_10": "CFG_1"},
+      "evidence": [{"asset_sha256": "c6b5d0bf3819231167828c952b2d0f54cf5d31af185c6138bdf9a11a9dab5cc1", "page": 1, "locator": "页面右中 P2 Header 5X2 排母 pins 1~10 与网络标签"}]
+    },
+    {
+      "id": "reset.m1-reset", "category": "reset", "subject": "M1 RST 网络",
+      "statement": "M1 pin 10 RST 连接 P1 pin 8；P2 pin 4 引出 RST_1。本页未显示 RST 上拉、RC 延时、按钮或复位监控器。",
+      "confidence": "confirmed",
+      "attributes": {"module_pin": "M1 pin 10 RST", "p1": "pin 8 RST", "p2": "pin 4 RST_1", "pull": null, "rc": null, "switch": null},
+      "evidence": [{"asset_sha256": "c6b5d0bf3819231167828c952b2d0f54cf5d31af185c6138bdf9a11a9dab5cc1", "page": 1, "locator": "页面中央 M1 RST、右上 P1 RST、右中 P2 RST_1，整页无 RST 外围器件"}]
+    },
+    {
+      "id": "gpio.m1-config", "category": "gpio", "subject": "M1 CFG 配置网络",
+      "statement": "M1 pin 7 CFG 连接 P1 pin 2；P2 pin 10 引出 CFG_1。本页未显示 CFG 的上拉、下拉、开关或有效电平。",
+      "confidence": "confirmed",
+      "attributes": {"module_pin": "M1 pin 7 CFG", "p1": "pin 2 CFG", "p2": "pin 10 CFG_1", "pull": null, "switch": null, "active_level": null},
+      "evidence": [{"asset_sha256": "c6b5d0bf3819231167828c952b2d0f54cf5d31af185c6138bdf9a11a9dab5cc1", "page": 1, "locator": "页面中央 M1 CFG、右上 P1 CFG、右中 P2 CFG_1，整页无 CFG 外围器件"}]
+    },
+    {
+      "id": "protection.fused-5v", "category": "protection", "subject": "+5V 保险丝保护",
+      "statement": "F1 Fuse 是原理图中明确显示的串联保护器件，位于 M2 +5V 输出与系统 +5V 轨之间；页面未标注其型号、额定电流或可恢复类型。",
+      "confidence": "confirmed",
+      "attributes": {"reference": "F1", "path": "M2 pin 6 +5V -> F1 -> +5V rail", "part_number": null, "current_rating": null, "resettable": null},
+      "evidence": [{"asset_sha256": "c6b5d0bf3819231167828c952b2d0f54cf5d31af185c6138bdf9a11a9dab5cc1", "page": 1, "locator": "页面下中 F1 标注 Fuse，串联在 M2 pin 6 与 +5V 标签之间"}]
+    },
+    {
+      "id": "protection.interface-coverage", "category": "protection", "subject": "接口保护覆盖",
+      "statement": "除 F1 外，本页未显示 UART 或以太网差分线上独立的 TVS/ESD 器件，也未显示 +5V 反接或过压钳位器件。",
+      "confidence": "confirmed",
+      "attributes": {"fuse": "F1", "uart_tvs": null, "ethernet_tvs": null, "reverse_polarity": null, "overvoltage_clamp": null},
+      "evidence": [{"asset_sha256": "c6b5d0bf3819231167828c952b2d0f54cf5d31af185c6138bdf9a11a9dab5cc1", "page": 1, "locator": "整页 J1、U1-M1 差分路径与 +5V 路径，无 TVS/ESD/反接器件符号"}]
+    },
+    {
+      "id": "analog.rj45-high-voltage-cap", "category": "analog", "subject": "U1 pins 15/16 对地电容",
+      "statement": "U1 pins 15 和 16 共节点通过 C3 1nF（102）、10%、2000V 电容接 GND。",
+      "confidence": "confirmed",
+      "attributes": {"connector_pins": "U1 pins 15,16", "capacitor": "C3 1nF (102) 10% 2000V", "return": "GND"},
+      "evidence": [{"asset_sha256": "c6b5d0bf3819231167828c952b2d0f54cf5d31af185c6138bdf9a11a9dab5cc1", "page": 1, "locator": "页面 U1 左下 pins 15/16-C3-GND"}]
+    },
+    {
+      "id": "clock.no-external-clock", "category": "clock", "subject": "时钟连接",
+      "statement": "本页未显示独立晶振、谐振器或外部 CLK 网络，M1 内部时钟实现未在模块符号中展开。",
+      "confidence": "confirmed", "attributes": {"external_crystal": null, "external_clock": null, "module_internal_clock": "not expanded"},
+      "evidence": [{"asset_sha256": "c6b5d0bf3819231167828c952b2d0f54cf5d31af185c6138bdf9a11a9dab5cc1", "page": 1, "locator": "整页 M1 模块符号及外围网络，无 XTAL/CLK 器件或网络"}]
+    },
+    {
+      "id": "storage.no-external-storage", "category": "storage", "subject": "外部存储器",
+      "statement": "本页未显示独立 Flash、EEPROM、SD 卡或其他存储器，M1 内部存储实现未展开。",
+      "confidence": "confirmed", "attributes": {"flash": null, "eeprom": null, "sd": null, "module_internal_storage": "not expanded"},
+      "evidence": [{"asset_sha256": "c6b5d0bf3819231167828c952b2d0f54cf5d31af185c6138bdf9a11a9dab5cc1", "page": 1, "locator": "整页元件清单无独立存储器件，M1 仅以模块符号表示"}]
+    },
+    {
+      "id": "bus.no-other-visible-bus", "category": "bus", "subject": "其他总线",
+      "statement": "本页对外控制接口仅显示 UART、RST 和 CFG，未显示 I2C、SPI、CAN、RS-485、USB、SDIO、MIPI 或 I2S 控制总线。",
+      "confidence": "confirmed", "attributes": {"uart": "TXD/RXD", "control": "RST,CFG", "i2c": null, "spi": null, "can": null, "rs485": null, "usb": null, "sdio": null, "mipi": null, "i2s": null},
+      "evidence": [{"asset_sha256": "c6b5d0bf3819231167828c952b2d0f54cf5d31af185c6138bdf9a11a9dab5cc1", "page": 1, "locator": "整页 M1/P1/P2/J1 控制网络仅 TXD/RXD/RST/CFG"}]
+    },
+    {
+      "id": "interface.board-mating-map", "category": "interface", "subject": "P1/P2 板间配接",
+      "statement": "P1 与 P2 的同功能网络呈反向针号排列，例如 +5V 为 P1 pin 9/P2 pin 1、VC- 为 P1 pin 1/P2 pin 9、CFG 为 P1 pin 2/P2 pin 10；但本页没有直接画出 P1 与 P2 的机械配接线，实际针脚配对需结构或 PCB 资料确认。",
+      "confidence": "uncertain",
+      "attributes": {"proposed_pairs": "P1 1-10 <-> P2 9,10,7,8,5,6,3,4,1,2 by matching net function", "direct_schematic_connection": false, "mechanical_orientation": null},
+      "evidence": [{"asset_sha256": "c6b5d0bf3819231167828c952b2d0f54cf5d31af185c6138bdf9a11a9dab5cc1", "page": 1, "locator": "页面右侧 P1 排针与 P2 排母的反向网络排列，二者之间无绘制连线"}]
+    },
+    {
+      "id": "component.m1-internal-silicon", "category": "component", "subject": "M1 内部控制器与以太网芯片",
+      "statement": "原理图只标注 M1 为 MQTT_TCP03，未展开其内部 MCU、以太网控制器或存储器，因此无法仅凭本页确认 W5500、ARM Cortex-M3 或具体存储型号。",
+      "confidence": "uncertain", "attributes": {"module": "MQTT_TCP03", "mcu": null, "ethernet_controller": null, "memory": null},
+      "evidence": [{"asset_sha256": "c6b5d0bf3819231167828c952b2d0f54cf5d31af185c6138bdf9a11a9dab5cc1", "page": 1, "locator": "页面中央 M1 MQTT_TCP03 仅显示模块级 pins 1~12，无内部芯片展开"}]
+    },
+    {
+      "id": "power.poe-ratings", "category": "power", "subject": "PoE 电气额定参数",
+      "statement": "M2 原理图符号确认输出网络为 +5V，但未标注 PoE 输入电压范围、+5V 输出电流/功率、效率或输入输出隔离等级。",
+      "confidence": "uncertain", "attributes": {"module": "WC-PD06H050A", "output_label": "+5V", "input_voltage_range": null, "output_current": null, "output_power": null, "efficiency": null, "isolation_rating": null},
+      "evidence": [{"asset_sha256": "c6b5d0bf3819231167828c952b2d0f54cf5d31af185c6138bdf9a11a9dab5cc1", "page": 1, "locator": "页面下中 M2 WC-PD06H050A 仅标 VA/VB、GND、+5V 引脚，无额定参数文字"}]
+    },
+    {
+      "id": "bus.protocol-parameters", "category": "bus", "subject": "UART、MQTT 与以太网参数",
+      "statement": "原理图未标注 UART 波特率/帧格式、AT 指令版本、MQTT 功能或以太网 10/100M 速率；这些固件和协议参数不能由本页确定。",
+      "confidence": "uncertain", "attributes": {"uart_baud": null, "uart_format": null, "at_version": null, "mqtt_topics": null, "mqtts": null, "ethernet_speed": null},
+      "evidence": [{"asset_sha256": "c6b5d0bf3819231167828c952b2d0f54cf5d31af185c6138bdf9a11a9dab5cc1", "page": 1, "locator": "整页仅有 M1 型号、PHY/UART 网络和电源连接，无通信速率或协议参数"}]
+    }
+  ],
+  "needs_review": [
+    {
+      "id": "review.board-mating-map", "fact_id": "interface.board-mating-map",
+      "question": "P1 排针与 P2 排母的实际机械配接方向及逐针对应关系是什么？",
+      "reason": "网络功能呈反向针号排列，但原理图没有画出两个连接器之间的直接连接或机械方向。",
+      "evidence": [{"asset_sha256": "c6b5d0bf3819231167828c952b2d0f54cf5d31af185c6138bdf9a11a9dab5cc1", "page": 1, "locator": "页面右侧 P1/P2 的针号与网络排列"}]
+    },
+    {
+      "id": "review.m1-internal-silicon", "fact_id": "component.m1-internal-silicon",
+      "question": "MQTT_TCP03 模组内部 MCU、以太网控制器和存储器的准确型号是什么？",
+      "reason": "本页仅给模块级符号，需 BOM、模组原理图或 datasheet 确认内部器件。",
+      "evidence": [{"asset_sha256": "c6b5d0bf3819231167828c952b2d0f54cf5d31af185c6138bdf9a11a9dab5cc1", "page": 1, "locator": "页面中央 M1 MQTT_TCP03 模块符号"}]
+    },
+    {
+      "id": "review.poe-ratings", "fact_id": "power.poe-ratings",
+      "question": "M2 的 PoE 输入范围、+5V 输出额定电流/功率和隔离等级分别是多少？",
+      "reason": "原理图只显示 M2 型号和 +5V 输出网络，没有电气额定参数。",
+      "evidence": [{"asset_sha256": "c6b5d0bf3819231167828c952b2d0f54cf5d31af185c6138bdf9a11a9dab5cc1", "page": 1, "locator": "页面下中 M2 WC-PD06H050A pins 1~6"}]
+    },
+    {
+      "id": "review.protocol-parameters", "fact_id": "bus.protocol-parameters",
+      "question": "该硬件/固件版本的 UART、AT、MQTT 和以太网速率参数是什么？",
+      "reason": "这些参数属于固件/模组能力，当前原理图页未标注。",
+      "evidence": [{"asset_sha256": "c6b5d0bf3819231167828c952b2d0f54cf5d31af185c6138bdf9a11a9dab5cc1", "page": 1, "locator": "整页 M1/U1/J1，仅见物理网络和器件型号"}]
+    }
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "dry_run": false,
+  "failed": 0,
+  "published": 1,
+  "results": [
+    {
+      "backup": null,
+      "draft_action": "unchanged",
+      "dry_run": false,
+      "errors": [],
+      "needs_review": 4,
+      "product_id": "module-plus-0deeb6e681d6",
+      "product_name": "Module Plus",
+      "publish_action": "unchanged",
+      "sha256": "122a58d27078a25877ca421da6a7308a1b38692279e304b2c7d5d175f410610c",
+      "status": "valid",
+      "uncertain_facts": 4
+    }
+  ],
+  "schema_version": 1
+}

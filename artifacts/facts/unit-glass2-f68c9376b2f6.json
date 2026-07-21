@@ -1,0 +1,244 @@
+{
+  "schema_version": 1,
+  "generator": "schematic_describer",
+  "product": {
+    "product_id": "unit-glass2-f68c9376b2f6",
+    "product_name": "Unit Glass2",
+    "sku": "U158-B",
+    "source_path": "unit/Glass2 Unit.md",
+    "source_sha256": "8733c8d78408358430071319db41e89ee832757f2480a158b8e189348d34f3e3",
+    "input_sha256": "9fc910d728139c7a4e5fb1278d9d23f44ecc3077849285d61706a1bab1b5bdc5"
+  },
+  "schematic_assets": [
+    {
+      "sha256": "6009f3092c087806c48be87e810ad5e6a7549d631b5d23946c430dac5ddb71ae",
+      "source_url": "https://m5stack-doc.oss-cn-shenzhen.aliyuncs.com/613/SCH_UNIT_GLASS2_sch_01.png",
+      "pages": [1]
+    }
+  ],
+  "summary": "Unit Glass2 以 J3 AFC05-S24FIA-00/SSD1309 OLED 模组为显示核心，J1、J2 两个 HY-2.0_IIC 接口并联到 SCL、SDA、+5V 和 GND。U2 ME6210A33M3G 将 +5V 转为 +3.3V 供显示逻辑，U1 TPS61040DBVR 配合 L1、D1 与反馈网络将 +5V 升至 +12.5V 供 OLED VCC。Jumper1 与 R7 设置 SA0，原理图明确给出 SA0=0 时地址 0x3C、SA0=1 时地址 0x3D。",
+  "keywords": ["Unit Glass2", "U158-B", "SSD1309", "AFC05-S24FIA-00", "TPS61040DBVR", "ME6210A33M3G", "I2C", "0x3C", "0x3D", "SA0", "Jumper1", "SCL", "SDA", "HY-2.0_IIC", "J1", "J2", "J3", "+5V", "+3.3V", "+12.5V", "L1 10uH 2520", "1N4148WS T4", "RES", "D0", "D1", "D2", "IREF", "VCOMH", "VLED", "R5 910K", "R6 4.7K", "R7 4.7K", "128x64", "transparent OLED"],
+  "components": [
+    {
+      "reference": "J3",
+      "part_number": "AFC05-S24FIA-00 / SSD1309",
+      "role": "24 针透明 OLED 显示模组与 SSD1309 控制器",
+      "evidence": [{"asset_sha256": "6009f3092c087806c48be87e810ad5e6a7549d631b5d23946c430dac5ddb71ae", "page": 1, "locator": "页 1 网格 A3-B3，J3 24 针器件下方标注 AFC05-S24FIA-00 和 SSD1309"}]
+    },
+    {
+      "reference": "U1",
+      "part_number": "TPS61040DBVR",
+      "role": "+5V 至 +12.5V OLED 升压控制器",
+      "evidence": [{"asset_sha256": "6009f3092c087806c48be87e810ad5e6a7549d631b5d23946c430dac5ddb71ae", "page": 1, "locator": "页 1 网格 A1，U1 下方标注 TPS61040DBVR，外围连接 L1、D1 和反馈分压"}]
+    },
+    {
+      "reference": "U2",
+      "part_number": "ME6210A33M3G",
+      "role": "+5V 至 +3.3V 显示逻辑电源 LDO",
+      "evidence": [{"asset_sha256": "6009f3092c087806c48be87e810ad5e6a7549d631b5d23946c430dac5ddb71ae", "page": 1, "locator": "页 1 网格 B1，U2 下方标注 ME6210A33M3G，Vin/Vout 接 +5V/+3.3V"}]
+    },
+    {
+      "reference": "J1",
+      "part_number": "HY-2.0_IIC",
+      "role": "第一组四针 I2C 与 +5V 接口",
+      "evidence": [{"asset_sha256": "6009f3092c087806c48be87e810ad5e6a7549d631b5d23946c430dac5ddb71ae", "page": 1, "locator": "页 1 网格 C2，J1 标注 HY-2.0_IIC，针脚为 IIC_SCL、IIC_SDA、VCC、GND"}]
+    },
+    {
+      "reference": "J2",
+      "part_number": "HY-2.0_IIC",
+      "role": "第二组四针 I2C 与 +5V 菊花链接口",
+      "evidence": [{"asset_sha256": "6009f3092c087806c48be87e810ad5e6a7549d631b5d23946c430dac5ddb71ae", "page": 1, "locator": "页 1 网格 C2-C3，J2 标注 HY-2.0_IIC，针脚为 IIC_SCL、IIC_SDA、VCC、GND"}]
+    },
+    {
+      "reference": "Jumper1",
+      "part_number": "SA0 solder jumper",
+      "role": "SSD1309 I2C 地址位 SA0 选择焊盘",
+      "evidence": [{"asset_sha256": "6009f3092c087806c48be87e810ad5e6a7549d631b5d23946c430dac5ddb71ae", "page": 1, "locator": "页 1 网格 A2，Jumper1 位于 +3.3V 与 SA0 之间，旁注 SA0=0 0x3C、SA0=1 0x3D"}]
+    },
+    {
+      "reference": "L1",
+      "part_number": "10uH 2520",
+      "role": "TPS61040 升压储能电感",
+      "evidence": [{"asset_sha256": "6009f3092c087806c48be87e810ad5e6a7549d631b5d23946c430dac5ddb71ae", "page": 1, "locator": "页 1 网格 A1，L1 标注 10uH 2520，连接 +5V 与 U1 SW/D1 开关节点"}]
+    },
+    {
+      "reference": "D1",
+      "part_number": "1N4148WS T4",
+      "role": "升压电路整流二极管",
+      "evidence": [{"asset_sha256": "6009f3092c087806c48be87e810ad5e6a7549d631b5d23946c430dac5ddb71ae", "page": 1, "locator": "页 1 网格 A1，D1 标注 1N4148WS T4，位于 SW 节点与 +12.5V 之间"}]
+    }
+  ],
+  "facts": [
+    {
+      "id": "system.display",
+      "category": "system",
+      "subject": "J3 OLED 显示模组",
+      "statement": "J3 标注 AFC05-S24FIA-00 和 SSD1309，是本电路的 24 针 OLED 显示模组。",
+      "confidence": "confirmed",
+      "attributes": {"reference": "J3", "module": "AFC05-S24FIA-00", "controller": "SSD1309", "pins": 24},
+      "evidence": [{"asset_sha256": "6009f3092c087806c48be87e810ad5e6a7549d631b5d23946c430dac5ddb71ae", "page": 1, "locator": "页 1 网格 A3-B3，J3 针脚列表及 AFC05-S24FIA-00/SSD1309 标注"}]
+    },
+    {
+      "id": "interface.j1",
+      "category": "interface",
+      "subject": "J1 I2C 接口",
+      "statement": "J1 的 1 至 4 脚依次连接 SCL、SDA、+5V 和 GND，内部针脚名为 IIC_SCL、IIC_SDA、VCC、GND。",
+      "confidence": "confirmed",
+      "attributes": {"reference": "J1", "pinout": "1:SCL/IIC_SCL,2:SDA/IIC_SDA,3:+5V/VCC,4:GND", "signal_direction": "SCL/SDA bidirectional"},
+      "evidence": [{"asset_sha256": "6009f3092c087806c48be87e810ad5e6a7549d631b5d23946c430dac5ddb71ae", "page": 1, "locator": "页 1 网格 C2，J1 脚号、内外网络名与 +5V/GND"}]
+    },
+    {
+      "id": "interface.j2",
+      "category": "interface",
+      "subject": "J2 I2C 接口",
+      "statement": "J2 的 1 至 4 脚依次连接 SCL、SDA、+5V 和 GND，内部针脚名为 IIC_SCL、IIC_SDA、VCC、GND。",
+      "confidence": "confirmed",
+      "attributes": {"reference": "J2", "pinout": "1:SCL/IIC_SCL,2:SDA/IIC_SDA,3:+5V/VCC,4:GND", "signal_direction": "SCL/SDA bidirectional"},
+      "evidence": [{"asset_sha256": "6009f3092c087806c48be87e810ad5e6a7549d631b5d23946c430dac5ddb71ae", "page": 1, "locator": "页 1 网格 C2-C3，J2 脚号、内外网络名与 +5V/GND"}]
+    },
+    {
+      "id": "bus.i2c_connectors",
+      "category": "bus",
+      "subject": "J1 与 J2 并联 I2C 总线",
+      "statement": "J1 与 J2 的 1、2、3、4 脚分别共用 SCL、SDA、+5V、GND，因此两个接口在电气上并联。",
+      "confidence": "confirmed",
+      "attributes": {"connectors": "J1,J2", "shared_nets": "SCL,SDA,+5V,GND", "topology": "parallel/daisy-chain"},
+      "evidence": [{"asset_sha256": "6009f3092c087806c48be87e810ad5e6a7549d631b5d23946c430dac5ddb71ae", "page": 1, "locator": "页 1 网格 C2-C3，J1/J2 对应针脚之间的连续 SCL、SDA 与电源网络"}]
+    },
+    {
+      "id": "bus.i2c_pullups",
+      "category": "bus",
+      "subject": "I2C 上拉",
+      "statement": "R3、R4 均为 4.7 kΩ，分别将 SCL、SDA 上拉至 +3.3V。",
+      "confidence": "confirmed",
+      "attributes": {"scl_pullup": "R3 4.7k to +3.3V", "sda_pullup": "R4 4.7k to +3.3V"},
+      "evidence": [{"asset_sha256": "6009f3092c087806c48be87e810ad5e6a7549d631b5d23946c430dac5ddb71ae", "page": 1, "locator": "页 1 网格 C2，J2 左侧 R3/R4 与 SCL/SDA、+3.3V 网络"}]
+    },
+    {
+      "id": "bus.display_i2c",
+      "category": "bus",
+      "subject": "SSD1309 I2C 数据连接",
+      "statement": "SCL 连接 J3 的 D0 引脚 13；SDA 连接 J3 的 D1 引脚 14，并在连接器处与 D2 引脚 15相连。",
+      "confidence": "confirmed",
+      "attributes": {"scl": "J3 D0/pin 13", "sda": "J3 D1/pin 14 and D2/pin 15"},
+      "evidence": [{"asset_sha256": "6009f3092c087806c48be87e810ad5e6a7549d631b5d23946c430dac5ddb71ae", "page": 1, "locator": "页 1 网格 A3，J3 D0/D1/D2 引脚 13-15 与 SCL/SDA 连线"}]
+    },
+    {
+      "id": "address.sa0",
+      "category": "address",
+      "subject": "SSD1309 I2C 地址选择",
+      "statement": "原理图旁注明 SA0=0 时 I2C 地址为 0x3C，SA0=1 时为 0x3D；SA0 连接 J3 的 DC 引脚 10。",
+      "confidence": "confirmed",
+      "attributes": {"address_sa0_low": "0x3C", "address_sa0_high": "0x3D", "address_pin": "J3 DC/pin 10", "network": "SA0"},
+      "evidence": [{"asset_sha256": "6009f3092c087806c48be87e810ad5e6a7549d631b5d23946c430dac5ddb71ae", "page": 1, "locator": "页 1 网格 A2-A3，I2C ADD 文字、SA0 网络及 J3 DC 引脚 10"}]
+    },
+    {
+      "id": "address.jumper",
+      "category": "address",
+      "subject": "Jumper1 与 R7",
+      "statement": "R7 4.7 kΩ 将 SA0 下拉至 GND；Jumper1 闭合时把 SA0 连接至 +3.3V，构成地址位选择。",
+      "confidence": "confirmed",
+      "attributes": {"pulldown": "R7 4.7k to GND", "jumper": "Jumper1 between +3.3V and SA0", "open_state": "SA0=0/0x3C", "closed_state": "SA0=1/0x3D"},
+      "evidence": [{"asset_sha256": "6009f3092c087806c48be87e810ad5e6a7549d631b5d23946c430dac5ddb71ae", "page": 1, "locator": "页 1 网格 A2，Jumper1 两端 +3.3V/SA0 与 R7 4.7K 下拉"}]
+    },
+    {
+      "id": "power.ldo",
+      "category": "power",
+      "subject": "U2 逻辑电源",
+      "statement": "U2 ME6210A33M3G 的 Vin 引脚 3 接 +5V，Vout 引脚 2 输出 +3.3V，GND 引脚 1 接地。",
+      "confidence": "confirmed",
+      "attributes": {"reference": "U2", "part_number": "ME6210A33M3G", "input": "Vin/pin 3/+5V", "output": "Vout/pin 2/+3.3V", "ground": "GND/pin 1"},
+      "evidence": [{"asset_sha256": "6009f3092c087806c48be87e810ad5e6a7549d631b5d23946c430dac5ddb71ae", "page": 1, "locator": "页 1 网格 B1，U2 引脚号及 +5V/+3.3V/GND 网络"}]
+    },
+    {
+      "id": "power.ldo_decoupling",
+      "category": "power",
+      "subject": "U2 输入输出去耦",
+      "statement": "C6、C7 均为 4.7 uF，分别连接在 U2 的 +5V 输入、+3.3V 输出与 GND 之间。",
+      "confidence": "confirmed",
+      "attributes": {"input_capacitor": "C6 4.7uF", "output_capacitor": "C7 4.7uF"},
+      "evidence": [{"asset_sha256": "6009f3092c087806c48be87e810ad5e6a7549d631b5d23946c430dac5ddb71ae", "page": 1, "locator": "页 1 网格 B1，U2 两侧 C6/C7 与电源网络"}]
+    },
+    {
+      "id": "power.boost",
+      "category": "power",
+      "subject": "U1 OLED 升压电源",
+      "statement": "U1 TPS61040DBVR 的 Vin 引脚 5 与 EN 引脚 4 接 +5V，SW 引脚 1 连接 L1/D1 开关节点，FB 引脚 3 接反馈分压，GND 引脚 2 接地，输出网络标为 +12.5V。",
+      "confidence": "confirmed",
+      "attributes": {"reference": "U1", "part_number": "TPS61040DBVR", "input_enable": "Vin/pin 5 and EN/pin 4 to +5V", "switch_pin": "SW/pin 1", "feedback_pin": "FB/pin 3", "output_rail": "+12.5V", "ground": "GND/pin 2"},
+      "evidence": [{"asset_sha256": "6009f3092c087806c48be87e810ad5e6a7549d631b5d23946c430dac5ddb71ae", "page": 1, "locator": "页 1 网格 A1，U1 全部引脚、L1/D1 与 +5V/+12.5V 网络"}]
+    },
+    {
+      "id": "power.boost_passives",
+      "category": "power",
+      "subject": "U1 升压外围",
+      "statement": "L1 为 10 uH 2520，D1 为 1N4148WS T4；R1 1.1 MΩ 与 R2 120 kΩ 构成 +12.5V 至 GND 的反馈分压，C1 22 pF 跨接输出与 FB，C5 22 uF 为输入电容，C4 1 uF 为输出电容。",
+      "confidence": "confirmed",
+      "attributes": {"inductor": "L1 10uH 2520", "diode": "D1 1N4148WS T4", "upper_feedback": "R1 1.1M", "lower_feedback": "R2 120k", "feedforward_capacitor": "C1 22pF", "input_capacitor": "C5 22uF", "output_capacitor": "C4 1uF"},
+      "evidence": [{"asset_sha256": "6009f3092c087806c48be87e810ad5e6a7549d631b5d23946c430dac5ddb71ae", "page": 1, "locator": "页 1 网格 A1，TPS61040 周围 L1、D1、R1/R2、C1/C4/C5"}]
+    },
+    {
+      "id": "power.display_logic",
+      "category": "power",
+      "subject": "J3 VDD",
+      "statement": "J3 的 VDD 引脚 5 连接 +3.3V，C2 4.7 uF 与 C3 100 nF 并联在该电源与 GND 之间。",
+      "confidence": "confirmed",
+      "attributes": {"supply_pin": "J3 VDD/pin 5", "rail": "+3.3V", "capacitors": "C2 4.7uF,C3 100nF"},
+      "evidence": [{"asset_sha256": "6009f3092c087806c48be87e810ad5e6a7549d631b5d23946c430dac5ddb71ae", "page": 1, "locator": "页 1 网格 A3，J3 VDD 引脚 5、+3.3V 与 C2/C3"}]
+    },
+    {
+      "id": "power.display_high_voltage",
+      "category": "power",
+      "subject": "J3 VCC",
+      "statement": "J3 的 VCC 引脚 23 连接 +12.5V，C9 10 uF 与 C10 100 nF 并联在该电源与 GND 之间。",
+      "confidence": "confirmed",
+      "attributes": {"supply_pin": "J3 VCC/pin 23", "rail": "+12.5V", "capacitors": "C9 10uF,C10 100nF"},
+      "evidence": [{"asset_sha256": "6009f3092c087806c48be87e810ad5e6a7549d631b5d23946c430dac5ddb71ae", "page": 1, "locator": "页 1 网格 B3，J3 VCC 引脚 23、+12.5V 与 C9/C10"}]
+    },
+    {
+      "id": "reset.display",
+      "category": "reset",
+      "subject": "J3 RES",
+      "statement": "J3 的 RES 引脚 9 连接 RES 网络；R6 4.7 kΩ 将 RES 上拉至 +3.3V，C11 4.7 uF 将其连接至 GND。",
+      "confidence": "confirmed",
+      "attributes": {"reset_pin": "J3 RES/pin 9", "pullup": "R6 4.7k to +3.3V", "capacitor": "C11 4.7uF to GND"},
+      "evidence": [{"asset_sha256": "6009f3092c087806c48be87e810ad5e6a7549d631b5d23946c430dac5ddb71ae", "page": 1, "locator": "页 1 网格 A3-B2，J3 RES 引脚 9 与 R6/C11 复位网络"}]
+    },
+    {
+      "id": "analog.display_bias",
+      "category": "analog",
+      "subject": "J3 IREF 与 VCOMH",
+      "statement": "J3 的 IREF 引脚 21 通过 R5 910 kΩ 连接 GND；VCOMH 引脚 22 通过 C8 4.7 uF 连接 GND。",
+      "confidence": "confirmed",
+      "attributes": {"iref": "J3 pin 21,R5 910k to GND", "vcomh": "J3 pin 22,C8 4.7uF to GND"},
+      "evidence": [{"asset_sha256": "6009f3092c087806c48be87e810ad5e6a7549d631b5d23946c430dac5ddb71ae", "page": 1, "locator": "页 1 网格 B3，J3 IREF/VCOMH 引脚 21/22 与 R5/C8"}]
+    },
+    {
+      "id": "gpio.display_mode",
+      "category": "gpio",
+      "subject": "J3 接口模式配置",
+      "statement": "J3 的 VLSS、VSS、BS1、BS2 和 CS 引脚在本页连接 GND；D0/D1/D2 用于 SCL/SDA，构成图示串行接口配置。",
+      "confidence": "confirmed",
+      "attributes": {"grounded_config_pins": "VLSS/pin 2,VSS/pin 3,BS1/pin 6,BS2/pin 7,CS/pin 8", "serial_pins": "D0/pin 13 SCL,D1/pin 14 SDA,D2/pin 15 SDA"},
+      "evidence": [{"asset_sha256": "6009f3092c087806c48be87e810ad5e6a7549d631b5d23946c430dac5ddb71ae", "page": 1, "locator": "页 1 网格 A3，J3 上半部配置引脚接地与 D0-D2 串行网络"}]
+    },
+    {
+      "id": "other.display_parameters",
+      "category": "other",
+      "subject": "OLED 面板参数",
+      "statement": "产品正文描述 1.51 英寸透明蓝色 OLED、128×64 像素和 1 位颜色深度，但这些面板参数未在本页原理图中标注。",
+      "confidence": "uncertain",
+      "attributes": {"documented_size_inch": 1.51, "documented_resolution": "128x64", "documented_color": "blue", "documented_color_depth_bits": 1, "schematic_panel_parameters": null},
+      "evidence": [{"asset_sha256": "6009f3092c087806c48be87e810ad5e6a7549d631b5d23946c430dac5ddb71ae", "page": 1, "locator": "页 1 J3 仅标注 AFC05-S24FIA-00/SSD1309 与针脚，未标注尺寸、分辨率、颜色或透明属性"}]
+    }
+  ],
+  "needs_review": [
+    {
+      "id": "review.display_parameters",
+      "fact_id": "other.display_parameters",
+      "question": "AFC05-S24FIA-00 面板在该产品版本中的尺寸、分辨率、颜色和透明属性是否与正文参数一致？",
+      "reason": "原理图只提供模组型号和电气连接，未打印面板光学与几何参数。",
+      "evidence": [{"asset_sha256": "6009f3092c087806c48be87e810ad5e6a7549d631b5d23946c430dac5ddb71ae", "page": 1, "locator": "页 1 网格 A3-B3，J3 型号与 24 针连接区域"}]
+    }
+  ]
+}

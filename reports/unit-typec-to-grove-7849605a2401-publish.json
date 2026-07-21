@@ -1,0 +1,21 @@
+{
+  "dry_run": false,
+  "failed": 0,
+  "published": 1,
+  "results": [
+    {
+      "backup": null,
+      "draft_action": "unchanged",
+      "dry_run": false,
+      "errors": [],
+      "needs_review": 4,
+      "product_id": "unit-typec-to-grove-7849605a2401",
+      "product_name": "Unit TypeC to Grove",
+      "publish_action": "unchanged",
+      "sha256": "750e372a37b356533c6d299fd151c5746e97cac7c44d0f1198a266fef5b3af35",
+      "status": "valid",
+      "uncertain_facts": 4
+    }
+  ],
+  "schema_version": 1
+}

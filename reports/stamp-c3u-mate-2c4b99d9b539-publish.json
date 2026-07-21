@@ -1,0 +1,21 @@
+{
+  "dry_run": false,
+  "failed": 0,
+  "published": 1,
+  "results": [
+    {
+      "backup": null,
+      "draft_action": "unchanged",
+      "dry_run": false,
+      "errors": [],
+      "needs_review": 2,
+      "product_id": "stamp-c3u-mate-2c4b99d9b539",
+      "product_name": "Stamp-C3U Mate",
+      "publish_action": "unchanged",
+      "sha256": "e827c0ea152cdffadb7ea41b309939cd4212aa2bc7118272d8ccd88b83395270",
+      "status": "valid",
+      "uncertain_facts": 2
+    }
+  ],
+  "schema_version": 1
+}

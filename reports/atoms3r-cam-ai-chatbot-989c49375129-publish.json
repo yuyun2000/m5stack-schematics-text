@@ -1,0 +1,21 @@
+{
+  "dry_run": false,
+  "failed": 0,
+  "published": 1,
+  "results": [
+    {
+      "backup": null,
+      "draft_action": "unchanged",
+      "dry_run": false,
+      "errors": [],
+      "needs_review": 3,
+      "product_id": "atoms3r-cam-ai-chatbot-989c49375129",
+      "product_name": "AtomS3R-CAM AI Chatbot",
+      "publish_action": "unchanged",
+      "sha256": "96600a7799b1703c9c6dff8f28630c9221f62eb6eb52f64da61a1419d1cc70e8",
+      "status": "valid",
+      "uncertain_facts": 3
+    }
+  ],
+  "schema_version": 1
+}

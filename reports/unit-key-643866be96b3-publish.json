@@ -1,0 +1,21 @@
+{
+  "dry_run": false,
+  "failed": 0,
+  "published": 1,
+  "results": [
+    {
+      "backup": null,
+      "draft_action": "unchanged",
+      "dry_run": false,
+      "errors": [],
+      "needs_review": 2,
+      "product_id": "unit-key-643866be96b3",
+      "product_name": "Unit Key",
+      "publish_action": "unchanged",
+      "sha256": "e871c55d0fd8a154f3015d92dcee8785648e26aa1e5121ae60a0cbeddd7e0d4a",
+      "status": "valid",
+      "uncertain_facts": 2
+    }
+  ],
+  "schema_version": 1
+}

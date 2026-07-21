@@ -1,0 +1,21 @@
+{
+  "dry_run": false,
+  "failed": 0,
+  "published": 1,
+  "results": [
+    {
+      "backup": null,
+      "draft_action": "unchanged",
+      "dry_run": false,
+      "errors": [],
+      "needs_review": 7,
+      "product_id": "timercamera-56ad239d7994",
+      "product_name": "TimerCamera",
+      "publish_action": "unchanged",
+      "sha256": "d4976d9dbe639910f2fcfa17f9318ea2c180799dcdfb08326563309e0df04d67",
+      "status": "valid",
+      "uncertain_facts": 7
+    }
+  ],
+  "schema_version": 1
+}

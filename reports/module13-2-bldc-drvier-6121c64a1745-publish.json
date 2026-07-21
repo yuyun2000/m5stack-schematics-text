@@ -1,0 +1,21 @@
+{
+  "dry_run": false,
+  "failed": 0,
+  "published": 1,
+  "results": [
+    {
+      "backup": null,
+      "draft_action": "unchanged",
+      "dry_run": false,
+      "errors": [],
+      "needs_review": 5,
+      "product_id": "module13-2-bldc-drvier-6121c64a1745",
+      "product_name": "Module13.2 BLDC Drvier",
+      "publish_action": "unchanged",
+      "sha256": "eeebc29ec7a58ed75ba2158593480f31ac39301301db94239cf891ff61732a8b",
+      "status": "valid",
+      "uncertain_facts": 5
+    }
+  ],
+  "schema_version": 1
+}

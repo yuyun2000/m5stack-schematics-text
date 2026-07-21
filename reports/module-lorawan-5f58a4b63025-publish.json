@@ -1,0 +1,21 @@
+{
+  "dry_run": false,
+  "failed": 0,
+  "published": 1,
+  "results": [
+    {
+      "backup": null,
+      "draft_action": "unchanged",
+      "dry_run": false,
+      "errors": [],
+      "needs_review": 5,
+      "product_id": "module-lorawan-5f58a4b63025",
+      "product_name": "Module LoRaWAN",
+      "publish_action": "unchanged",
+      "sha256": "55579309f3565146ba80523842c9f389ffb976528086aea2b305cb872d7824b9",
+      "status": "valid",
+      "uncertain_facts": 5
+    }
+  ],
+  "schema_version": 1
+}

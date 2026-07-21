@@ -1,0 +1,21 @@
+{
+  "dry_run": false,
+  "failed": 0,
+  "published": 1,
+  "results": [
+    {
+      "backup": null,
+      "draft_action": "unchanged",
+      "dry_run": false,
+      "errors": [],
+      "needs_review": 3,
+      "product_id": "module-air-quality-692ca7671c88",
+      "product_name": "Module Air Quality",
+      "publish_action": "unchanged",
+      "sha256": "82770daaebcd34a54ede8e1873c735059703c97176619300e1ced142e610e820",
+      "status": "valid",
+      "uncertain_facts": 3
+    }
+  ],
+  "schema_version": 1
+}

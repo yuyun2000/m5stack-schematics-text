@@ -1,0 +1,270 @@
+{
+  "schema_version": 1,
+  "generator": "schematic_describer",
+  "product": {
+    "product_id": "module-plus-0deeb6e681d6",
+    "product_name": "Module Plus",
+    "sku": "M019",
+    "source_path": "module/plus.md",
+    "source_sha256": "1b50cc7fd0bdd0cd84b40fc2a0f978bb34521c75b55731d53556cbaa94f5c79a",
+    "input_sha256": "80c92097f94a46aa9a1211cec7ddcfe9c38bd9f06a6170cdfc7ee2ced8831301"
+  },
+  "schematic_assets": [
+    {
+      "sha256": "cac302d55358b8696c787b2414d56d5cfd14eb2e250f23b500438ac892e3754d",
+      "source_url": "https://static-cdn.m5stack.com/resource/docs/products/module/plus/plus_sch_01.webp",
+      "pages": [1]
+    }
+  ],
+  "summary": "Module Plus 以 U1 ATMEGA328 为协处理器，通过 SDA/SCL 与 J1 M5Stack_BUS 主机通信，并由 J2 六针接口提供 ISP 下载。GPIO13 经 R2/Q1 驱动由 3.3 V 供电的 D1 红外发射支路；P3 引出 GPIO36/GPIO26，P4 引出 GPIO16/GPIO17 UART，均带 +5 V 和 GND。P1/P2 还引出 D0-D3、A2/A3、ADIN0/ADIN1 等扩展信号，但原理图未画出电池、齿轮电位器或麦克风器件。",
+  "keywords": [
+    "Module Plus", "M019", "ATMEGA328", "I2C", "0x62", "SDA", "SCL", "GPIO13", "IR_TX", "NPN", "D1", "R1 470Ω", "R2 470Ω", "ISP_Download", "RESET", "SCK", "MISO", "MOSI", "P1 Header 6", "P2 Header 6", "ADIN0", "ADIN1", "D0", "D1 MCU", "D2", "D3", "A2", "A3", "GPIO36", "GPIO26", "GPIO16", "GPIO17", "PORT.B", "PORT.C", "M5Stack_BUS", "+3V3", "+5V", "Battery", "gear potentiometer", "microphone pad"
+  ],
+  "components": [
+    {
+      "reference": "U1",
+      "part_number": "ATMEGA328",
+      "role": "板载协处理器，提供 I2C、ISP、数字/模拟扩展与红外控制 GPIO",
+      "evidence": [{"asset_sha256": "cac302d55358b8696c787b2414d56d5cfd14eb2e250f23b500438ac892e3754d", "page": 1, "locator": "左上 U1 ATMEGA328 pins1-32"}]
+    },
+    {
+      "reference": "Q1",
+      "part_number": "NPN",
+      "role": "GPIO13 控制的红外 LED 低侧驱动晶体管",
+      "evidence": [{"asset_sha256": "cac302d55358b8696c787b2414d56d5cfd14eb2e250f23b500438ac892e3754d", "page": 1, "locator": "上中 GPIO13/R2/Q1/D1/R1"}]
+    },
+    {
+      "reference": "D1",
+      "part_number": null,
+      "role": "由 Q1 驱动、连接 +3V3 的发光二极管符号，对应红外发射功能",
+      "evidence": [{"asset_sha256": "cac302d55358b8696c787b2414d56d5cfd14eb2e250f23b500438ac892e3754d", "page": 1, "locator": "上中 D1 LED symbol/R1/Q1"}]
+    },
+    {
+      "reference": "J2",
+      "part_number": "ISP_Download",
+      "role": "ATMEGA328 的 VCC、RESET、SCK、MISO、MOSI、GND 六针 ISP 接口",
+      "evidence": [{"asset_sha256": "cac302d55358b8696c787b2414d56d5cfd14eb2e250f23b500438ac892e3754d", "page": 1, "locator": "右上 J2 ISP_Download pins1-6"}]
+    },
+    {
+      "reference": "J1",
+      "part_number": "M5Stack_BUS",
+      "role": "30 针主机接口，提供 3.3 V、5 V、I2C、GPIO、UART 与红外控制信号",
+      "evidence": [{"asset_sha256": "cac302d55358b8696c787b2414d56d5cfd14eb2e250f23b500438ac892e3754d", "page": 1, "locator": "右中至右下 J1 M5Stack_BUS pins1-30"}]
+    },
+    {
+      "reference": "P1",
+      "part_number": "Header 6",
+      "role": "引出 U1 D0-D3 与 A2/A3 的六针扩展排针",
+      "evidence": [{"asset_sha256": "cac302d55358b8696c787b2414d56d5cfd14eb2e250f23b500438ac892e3754d", "page": 1, "locator": "左下 P1 Header 6 pins1-6"}]
+    },
+    {
+      "reference": "P2",
+      "part_number": "Header 6",
+      "role": "引出 ADIN1、ADIN0、GND 与一个标注 PB2 但带未连接标记的扩展排针",
+      "evidence": [{"asset_sha256": "cac302d55358b8696c787b2414d56d5cfd14eb2e250f23b500438ac892e3754d", "page": 1, "locator": "下中 P2 Header 6、ADIN1/PB2/ADIN0/GND"}]
+    },
+    {
+      "reference": "P3",
+      "part_number": "GPIO",
+      "role": "GPIO36、GPIO26、+5 V 与 GND 的四针 Port B 接口",
+      "evidence": [{"asset_sha256": "cac302d55358b8696c787b2414d56d5cfd14eb2e250f23b500438ac892e3754d", "page": 1, "locator": "下中偏右 P3 GPIO pins1-4"}]
+    },
+    {
+      "reference": "P4",
+      "part_number": "UART",
+      "role": "GPIO16、GPIO17、+5 V 与 GND 的四针 Port C UART 接口",
+      "evidence": [{"asset_sha256": "cac302d55358b8696c787b2414d56d5cfd14eb2e250f23b500438ac892e3754d", "page": 1, "locator": "下中偏右 P4 UART pins1-4"}]
+    },
+    {
+      "reference": "R1/R2",
+      "part_number": "470Ω / 470Ω",
+      "role": "红外 LED 限流与 Q1 基极限流",
+      "evidence": [{"asset_sha256": "cac302d55358b8696c787b2414d56d5cfd14eb2e250f23b500438ac892e3754d", "page": 1, "locator": "上中 R1 470Ω/R2 470Ω/D1/Q1"}]
+    }
+  ],
+  "facts": [
+    {
+      "id": "system.architecture",
+      "category": "system",
+      "subject": "Module Plus 系统架构",
+      "statement": "U1 ATMEGA328 通过 I2C 连接 J1 M5-Bus，控制 GPIO13 红外驱动，并向 J2 ISP、P1/P2 扩展排针以及 P3/P4 Grove 接口提供信号。",
+      "confidence": "confirmed",
+      "attributes": {"controller": "U1 ATMEGA328", "host": "J1 M5Stack_BUS", "host_bus": "I2C", "debug": "J2 ISP_Download", "infrared": "GPIO13 -> R2/Q1/D1", "expansion": "P1/P2/P3/P4"},
+      "evidence": [{"asset_sha256": "cac302d55358b8696c787b2414d56d5cfd14eb2e250f23b500438ac892e3754d", "page": 1, "locator": "整页 U1/Q1/J2/J1/P1-P4"}]
+    },
+    {
+      "id": "component.mcu-pin-groups",
+      "category": "component",
+      "subject": "ATMEGA328 主要引脚分组",
+      "statement": "U1 PB2/PB3/PB4/PB5 分别为 PB2、MOSI、MISO、SCK，PC0/PC1 为 ADIN0/ADIN1，PC2/PC3 为 A2/A3，PC4/PC5 为 SDA/SCL，PC6 为 RESET，PD0-PD3 为 D0-D3。",
+      "confidence": "confirmed",
+      "attributes": {"spi": "PB3 pin15 MOSI; PB4 pin16 MISO; PB5 pin17 SCK", "analog": "PC0 pin23 ADIN0; PC1 pin24 ADIN1; PC2 pin25 A2; PC3 pin26 A3", "i2c": "PC4 pin27 SDA; PC5 pin28 SCL", "reset": "PC6 pin29 RESET", "digital": "PD0 pin30 D0; PD1 pin31 D1; PD2 pin32 D2; PD3 pin1 D3", "other": "PB2 pin14 PB2"},
+      "evidence": [{"asset_sha256": "cac302d55358b8696c787b2414d56d5cfd14eb2e250f23b500438ac892e3754d", "page": 1, "locator": "U1 left pin labels PB2/MOSI/MISO/SCK/ADIN/A/SDA/SCL/RESET/D0-D3"}]
+    },
+    {
+      "id": "power.mcu",
+      "category": "power",
+      "subject": "ATMEGA328 供电",
+      "statement": "U1 VCC pins4/6 与 AVCC pin18 连接 VCC，GND pins3/5/21 接地；页面未画 VCC 到 J1 +3V3 的显式网络连接或本地去耦电容。",
+      "confidence": "confirmed",
+      "attributes": {"vcc": "U1 pins4/6", "avcc": "U1 pin18", "rail_name": "VCC", "ground": "pins3/5/21", "explicit_source_connection": "not shown", "decoupling": "not shown"},
+      "evidence": [{"asset_sha256": "cac302d55358b8696c787b2414d56d5cfd14eb2e250f23b500438ac892e3754d", "page": 1, "locator": "U1 right-side VCC/AVCC/GND pins；J1 +3V3 separate net"}]
+    },
+    {
+      "id": "bus.i2c",
+      "category": "bus",
+      "subject": "ATMEGA328 I2C 主机接口",
+      "statement": "U1 SDA pin27 与 SCL pin28 连接同名网络，分别到 J1 pin17 与 pin18；页面未画 I2C 上拉电阻。",
+      "confidence": "confirmed",
+      "attributes": {"device": "U1 ATMEGA328", "sda": "U1 pin27 -> SDA -> J1 pin17", "scl": "U1 pin28 -> SCL -> J1 pin18", "direction": "bidirectional SDA; host clock SCL", "pullups": "not shown"},
+      "evidence": [{"asset_sha256": "cac302d55358b8696c787b2414d56d5cfd14eb2e250f23b500438ac892e3754d", "page": 1, "locator": "U1 SDA/SCL and J1 pins17/18"}]
+    },
+    {
+      "id": "interface.ir-driver",
+      "category": "interface",
+      "subject": "红外发射驱动",
+      "statement": "J1 pin22/GPIO13 经 R2 470 Ω 驱动 Q1 NPN 基极，Q1 低侧开关控制由 +3V3 经 R1 470 Ω 供电的 D1 发光二极管。",
+      "confidence": "confirmed",
+      "attributes": {"host_gpio": "GPIO13", "bus_pin": "J1 pin22", "base_resistor": "R2 470Ω", "transistor": "Q1 NPN", "emitter": "D1", "led_resistor": "R1 470Ω", "supply": "+3V3", "topology": "NPN low-side switch"},
+      "evidence": [{"asset_sha256": "cac302d55358b8696c787b2414d56d5cfd14eb2e250f23b500438ac892e3754d", "page": 1, "locator": "上中 GPIO13/R2/Q1/D1/R1/+3V3；J1 pin22"}]
+    },
+    {
+      "id": "debug.isp",
+      "category": "debug",
+      "subject": "ATMEGA328 ISP 下载接口",
+      "statement": "J2 ISP_Download pin1 为 VCC、pin2 RESET、pin3 SCK、pin4 MISO、pin5 MOSI、pin6 GND，与 U1 对应网络相连。",
+      "confidence": "confirmed",
+      "attributes": {"connector": "J2 ISP_Download", "pin1": "VCC", "pin2": "RESET", "pin3": "SCK", "pin4": "MISO", "pin5": "MOSI", "pin6": "GND"},
+      "evidence": [{"asset_sha256": "cac302d55358b8696c787b2414d56d5cfd14eb2e250f23b500438ac892e3754d", "page": 1, "locator": "右上 J2 pins1-6 and U1 MOSI/MISO/SCK/RESET"}]
+    },
+    {
+      "id": "reset.mcu",
+      "category": "reset",
+      "subject": "ATMEGA328 复位网络",
+      "statement": "U1 PC6/RESET pin29 仅连接 J2 ISP RESET pin2，页面未画复位上拉、按键或 RC 电路。",
+      "confidence": "confirmed",
+      "attributes": {"target": "U1 RESET pin29", "debug": "J2 pin2 RESET", "pullup": "not shown", "button": "not shown", "rc": "not shown"},
+      "evidence": [{"asset_sha256": "cac302d55358b8696c787b2414d56d5cfd14eb2e250f23b500438ac892e3754d", "page": 1, "locator": "U1 RESET net to J2 pin2"}]
+    },
+    {
+      "id": "clock.mcu",
+      "category": "clock",
+      "subject": "ATMEGA328 时钟引脚",
+      "statement": "U1 XTAL1 pin7 与 XTAL2 pin8 只标为 XTAL1/XTAL2，页面没有画晶振、谐振器、负载电容或频率。",
+      "confidence": "confirmed",
+      "attributes": {"xtal1": "U1 pin7", "xtal2": "U1 pin8", "crystal": "not shown", "frequency": "not shown", "load_caps": "not shown"},
+      "evidence": [{"asset_sha256": "cac302d55358b8696c787b2414d56d5cfd14eb2e250f23b500438ac892e3754d", "page": 1, "locator": "U1 XTAL1/XTAL2 pins7/8 with no external parts"}]
+    },
+    {
+      "id": "interface.header-p1",
+      "category": "interface",
+      "subject": "P1 数字/模拟扩展排针",
+      "statement": "P1 Header 6 pins1-6 分别引出 D0、D1、D2、D3、A2、A3。",
+      "confidence": "confirmed",
+      "attributes": {"connector": "P1 Header 6", "pin1": "D0", "pin2": "D1", "pin3": "D2", "pin4": "D3", "pin5": "A2", "pin6": "A3"},
+      "evidence": [{"asset_sha256": "cac302d55358b8696c787b2414d56d5cfd14eb2e250f23b500438ac892e3754d", "page": 1, "locator": "左下 P1 pins1-6"}]
+    },
+    {
+      "id": "interface.header-p2",
+      "category": "interface",
+      "subject": "P2 模拟扩展排针",
+      "statement": "P2 Header 6 明确引出 ADIN1、ADIN0 与 GND；PB2 网络在连接器侧带未连接标记，其余针脚未标网络。",
+      "confidence": "confirmed",
+      "attributes": {"connector": "P2 Header 6", "adin1": "pin1", "adin0": "pin5", "ground": "pin6", "pb2": "no-connect mark near pin3", "unlabeled": "pins2/4"},
+      "evidence": [{"asset_sha256": "cac302d55358b8696c787b2414d56d5cfd14eb2e250f23b500438ac892e3754d", "page": 1, "locator": "下中 P2 ADIN1/PB2/ADIN0/GND"}]
+    },
+    {
+      "id": "interface.port-b",
+      "category": "interface",
+      "subject": "Port B GPIO",
+      "statement": "P3 GPIO pin1 为 GPIO36、pin2 GPIO26、pin3 +5 V、pin4 GND；GPIO36/GPIO26 分别来自 J1 pins4/10。",
+      "confidence": "confirmed",
+      "attributes": {"connector": "P3 GPIO", "pin1": "GPIO36 / J1 pin4", "pin2": "GPIO26 / J1 pin10", "pin3": "+5V", "pin4": "GND"},
+      "evidence": [{"asset_sha256": "cac302d55358b8696c787b2414d56d5cfd14eb2e250f23b500438ac892e3754d", "page": 1, "locator": "P3 GPIO and J1 GPIO36/GPIO26"}]
+    },
+    {
+      "id": "interface.port-c",
+      "category": "interface",
+      "subject": "Port C UART",
+      "statement": "P4 UART pin1 为 GPIO16、pin2 GPIO17、pin3 +5 V、pin4 GND；GPIO16/GPIO17 分别来自 J1 pins15/16。",
+      "confidence": "confirmed",
+      "attributes": {"connector": "P4 UART", "pin1": "GPIO16 / J1 pin15", "pin2": "GPIO17 / J1 pin16", "pin3": "+5V", "pin4": "GND", "direction_labels": "not printed on schematic"},
+      "evidence": [{"asset_sha256": "cac302d55358b8696c787b2414d56d5cfd14eb2e250f23b500438ac892e3754d", "page": 1, "locator": "P4 UART and J1 GPIO16/GPIO17"}]
+    },
+    {
+      "id": "interface.m5bus",
+      "category": "interface",
+      "subject": "M5Stack_BUS 使用网络",
+      "statement": "J1 使用 pins1/3/5 GND、pin4 GPIO36、pin10 GPIO26、pin12 +3V3、pin15 GPIO16、pin16 GPIO17、pin17 SDA、pin18 SCL、pin22 GPIO13 与 pin28 +5 V；其余页面未接外部网络。",
+      "confidence": "confirmed",
+      "attributes": {"ground": "pins1/3/5", "port_b": "pin4 GPIO36; pin10 GPIO26", "3v3": "pin12", "port_c": "pin15 GPIO16; pin16 GPIO17", "i2c": "pin17 SDA; pin18 SCL", "infrared": "pin22 GPIO13", "5v": "pin28"},
+      "evidence": [{"asset_sha256": "cac302d55358b8696c787b2414d56d5cfd14eb2e250f23b500438ac892e3754d", "page": 1, "locator": "右中至右下 J1 pins1-30"}]
+    },
+    {
+      "id": "address.i2c",
+      "category": "address",
+      "subject": "Module Plus I2C 地址",
+      "statement": "产品正文声明 I2C 地址为 0x62，但原理图只显示 ATMEGA328 SDA/SCL，地址由固件实现且未打印在页面。",
+      "confidence": "uncertain",
+      "attributes": {"document_address": "0x62", "device": "U1 ATMEGA328", "schematic_address": "not printed", "implementation": "firmware-dependent"},
+      "evidence": [{"asset_sha256": "cac302d55358b8696c787b2414d56d5cfd14eb2e250f23b500438ac892e3754d", "page": 1, "locator": "U1 SDA/SCL and J1 without numeric address"}]
+    },
+    {
+      "id": "power.battery",
+      "category": "power",
+      "subject": "锂电池容量与连接",
+      "statement": "产品描述称 500 mAh，产品特性称 400 mAh，但该原理图没有画电池、充电器、电池连接器或 BAT 网络，容量存在正文冲突。",
+      "confidence": "uncertain",
+      "attributes": {"description_capacity": "500mAh", "feature_capacity": "400mAh", "schematic_battery": "not shown", "charger": "not shown", "battery_connector": "not shown"},
+      "evidence": [{"asset_sha256": "cac302d55358b8696c787b2414d56d5cfd14eb2e250f23b500438ac892e3754d", "page": 1, "locator": "Entire schematic has no battery or charger symbols"}]
+    },
+    {
+      "id": "analog.gear-potentiometer",
+      "category": "analog",
+      "subject": "齿轮电位器",
+      "statement": "产品正文称带可编程齿轮电位器，原理图只显示 ADIN0/ADIN1 及 P2 排针，没有电位器位号、阻值或机械连接。",
+      "confidence": "uncertain",
+      "attributes": {"document_component": "gear potentiometer", "visible_nets": "ADIN0/ADIN1", "pot_reference": "not shown", "resistance": null, "mechanical_link": "not shown"},
+      "evidence": [{"asset_sha256": "cac302d55358b8696c787b2414d56d5cfd14eb2e250f23b500438ac892e3754d", "page": 1, "locator": "U1 ADIN0/ADIN1 and P2 only"}]
+    },
+    {
+      "id": "audio.microphone-pad",
+      "category": "audio",
+      "subject": "麦克风接口焊盘",
+      "statement": "产品描述称提供麦克风接口焊盘，但原理图没有 MIC 网络、麦克风位号、偏置电路或明确焊盘标识。",
+      "confidence": "uncertain",
+      "attributes": {"document_claim": "microphone interface pads", "mic_net": "not shown", "microphone": "not shown", "bias": "not shown", "pad_reference": "not shown"},
+      "evidence": [{"asset_sha256": "cac302d55358b8696c787b2414d56d5cfd14eb2e250f23b500438ac892e3754d", "page": 1, "locator": "Entire schematic lacks MIC labels/components"}]
+    }
+  ],
+  "needs_review": [
+    {
+      "id": "review.i2c-address",
+      "fact_id": "address.i2c",
+      "question": "请用 ATMEGA328 内置固件或 I2C 扫描确认地址为 0x62。",
+      "reason": "地址未印在原理图，由固件决定。",
+      "evidence": [{"asset_sha256": "cac302d55358b8696c787b2414d56d5cfd14eb2e250f23b500438ac892e3754d", "page": 1, "locator": "U1 SDA/SCL"}]
+    },
+    {
+      "id": "review.battery",
+      "fact_id": "power.battery",
+      "question": "请用 BOM、实物电芯标签和完整电源原理图确认电池容量及充电路径。",
+      "reason": "正文同时出现 500 mAh 与 400 mAh，当前页面没有电池电路。",
+      "evidence": [{"asset_sha256": "cac302d55358b8696c787b2414d56d5cfd14eb2e250f23b500438ac892e3754d", "page": 1, "locator": "No battery circuit shown"}]
+    },
+    {
+      "id": "review.gear-potentiometer",
+      "fact_id": "analog.gear-potentiometer",
+      "question": "请用 PCB/BOM/装配图确认齿轮电位器位号、阻值及其与 ADIN0/ADIN1 的连接。",
+      "reason": "原理图仅显示模拟网络名，没有电位器。",
+      "evidence": [{"asset_sha256": "cac302d55358b8696c787b2414d56d5cfd14eb2e250f23b500438ac892e3754d", "page": 1, "locator": "ADIN0/ADIN1/P2"}]
+    },
+    {
+      "id": "review.microphone-pad",
+      "fact_id": "audio.microphone-pad",
+      "question": "请用 PCB 丝印、焊盘图或完整原理图确认麦克风接口焊盘及电气连接。",
+      "reason": "当前页面没有 MIC 相关标识。",
+      "evidence": [{"asset_sha256": "cac302d55358b8696c787b2414d56d5cfd14eb2e250f23b500438ac892e3754d", "page": 1, "locator": "No MIC labels shown"}]
+    }
+  ]
+}

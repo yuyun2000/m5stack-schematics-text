@@ -1,0 +1,21 @@
+{
+  "dry_run": false,
+  "failed": 0,
+  "published": 1,
+  "results": [
+    {
+      "backup": null,
+      "draft_action": "unchanged",
+      "dry_run": false,
+      "errors": [],
+      "needs_review": 2,
+      "product_id": "hat-ncir-bad0ce1008dc",
+      "product_name": "Hat NCIR",
+      "publish_action": "unchanged",
+      "sha256": "7d4ac8822d0ab3f561f2b4ec056f929becbdbdb953215a890e873bfce9db98d9",
+      "status": "valid",
+      "uncertain_facts": 2
+    }
+  ],
+  "schema_version": 1
+}

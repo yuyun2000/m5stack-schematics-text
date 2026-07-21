@@ -1,0 +1,21 @@
+{
+  "dry_run": false,
+  "failed": 0,
+  "published": 1,
+  "results": [
+    {
+      "backup": null,
+      "draft_action": "unchanged",
+      "dry_run": false,
+      "errors": [],
+      "needs_review": 3,
+      "product_id": "coreink-51c3aed4a6bc",
+      "product_name": "CoreInk",
+      "publish_action": "unchanged",
+      "sha256": "29eb95d4641844567df31c8851d6ae807e1dcf54ef982adc922b685dee6ed300",
+      "status": "valid",
+      "uncertain_facts": 3
+    }
+  ],
+  "schema_version": 1
+}

@@ -1,0 +1,21 @@
+{
+  "dry_run": false,
+  "failed": 0,
+  "published": 1,
+  "results": [
+    {
+      "backup": null,
+      "draft_action": "unchanged",
+      "dry_run": false,
+      "errors": [],
+      "needs_review": 5,
+      "product_id": "stamp-p4-dc40121df2ce",
+      "product_name": "Stamp-P4",
+      "publish_action": "unchanged",
+      "sha256": "13dec360f9361ae053d67f1d83b175fc8aec4c908e04237793ce602d55cd2dfa",
+      "status": "valid",
+      "uncertain_facts": 5
+    }
+  ],
+  "schema_version": 1
+}

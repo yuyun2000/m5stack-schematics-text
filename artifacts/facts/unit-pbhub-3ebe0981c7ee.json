@@ -1,0 +1,269 @@
+{
+  "schema_version": 1,
+  "generator": "schematic_describer",
+  "product": {
+    "product_id": "unit-pbhub-3ebe0981c7ee",
+    "product_name": "Unit PbHub",
+    "sku": "U041",
+    "source_path": "unit/pbhub.md",
+    "source_sha256": "ee9dcbc79d765713c19b5ed6c4feb1b0e7aab511063c40a1327f26b8c804c536",
+    "input_sha256": "789918c622efe0616bc9a19348ee0d17c0d49b390c1067125d4ea27e6ae1e8af"
+  },
+  "schematic_assets": [
+    {
+      "sha256": "7bd7bcb1837980d1e5812935dc8f929b2a6ded1208b0e3faa4cc1fb4c1ca21fb",
+      "source_url": "https://static-cdn.m5stack.com/resource/docs/products/unit/pbhub/pbhub_sch_01.webp",
+      "pages": [1]
+    }
+  ],
+  "summary": "Unit PbHub（U041）原理图以 U1 ATMEGA328 为主控，通过 J7 GROVE_I2C 接收 SCL/SDA，并扩展为 J1~J6 六组 IN0~IN5 与 OUT0~OUT5 GPIO/模拟通道。全部接口和 MCU 直接使用 +5V，SCL/SDA 各由 10KΩ 上拉；U1 使用 Y1 8MHz 晶振、RESET 上拉/电容网络和 J8 六针 ISP。R2/R3/R4 0Ω 与 R7 10KΩ 构成 PB0~PB2 三位配置网络，但原理图未写出 I2C 地址映射；源产品文字还对 ATMEGA328 与 STM32F030F4P6 存在型号冲突，需以 BOM/实物确认装配版本。",
+  "keywords": [
+    "Unit PbHub", "U041", "PbHub", "ATMEGA328", "U1", "GROVE_I2C", "J7",
+    "J1-J6 GROVE_IO", "IN0", "IN1", "IN2", "IN3", "IN4", "IN5",
+    "OUT0", "OUT1", "OUT2", "OUT3", "OUT4", "OUT5", "SCL", "SDA",
+    "I2C", "0x61", "0x68", "PB0", "PB1", "PB2", "R2 R3 R4 0Ω", "R7 10KΩ",
+    "8MHz", "Y1", "RESET", "J8 ISP_Download", "MOSI", "MISO", "SCK", "+5V", "ADC6", "ADC7"
+  ],
+  "components": [
+    {
+      "reference": "U1", "part_number": "ATMEGA328",
+      "role": "I2C 到六路 GPIO/模拟端口扩展主控，连接地址配置、8MHz 时钟、RESET 与 ISP",
+      "evidence": [{"asset_sha256": "7bd7bcb1837980d1e5812935dc8f929b2a6ded1208b0e3faa4cc1fb4c1ca21fb", "page": 1, "locator": "页面中央 U1 ATMEGA328，PB0~PB7、PC0~PC6、PD0~PD7、ADC6/ADC7、AVCC/VCC/GND 引脚"}]
+    },
+    {
+      "reference": "J7", "part_number": "GROVE_I2C",
+      "role": "上游四针 I2C 与 +5V 电源接口",
+      "evidence": [{"asset_sha256": "7bd7bcb1837980d1e5812935dc8f929b2a6ded1208b0e3faa4cc1fb4c1ca21fb", "page": 1, "locator": "页面左上 J7 GROVE_I2C，pins 1~4 为 IIC_SCL/IIC_SDA/VCC/GND"}]
+    },
+    {
+      "reference": "J1-J6", "part_number": "GROVE_IO",
+      "role": "六组扩展端口，每组包含一路 INn、一路 OUTn、+5V 与 GND",
+      "evidence": [{"asset_sha256": "7bd7bcb1837980d1e5812935dc8f929b2a6ded1208b0e3faa4cc1fb4c1ca21fb", "page": 1, "locator": "页面右半 J1~J6 GROVE_IO，分别连接 IN0/OUT0 至 IN5/OUT5，pins 3/4 为 +5V/GND"}]
+    },
+    {
+      "reference": "J8", "part_number": "ISP_Download",
+      "role": "ATMEGA328 六针 ISP 编程/调试接口",
+      "evidence": [{"asset_sha256": "7bd7bcb1837980d1e5812935dc8f929b2a6ded1208b0e3faa4cc1fb4c1ca21fb", "page": 1, "locator": "页面右下 J8 ISP_Download，pins 1~6 为 VCC/RST/SCK/MISO/MOSI/GND"}]
+    },
+    {
+      "reference": "Y1", "part_number": "8MHz",
+      "role": "ATMEGA328 PB6/XTAL1 与 PB7/XTAL2 的外部晶振",
+      "evidence": [{"asset_sha256": "7bd7bcb1837980d1e5812935dc8f929b2a6ded1208b0e3faa4cc1fb4c1ca21fb", "page": 1, "locator": "页面 U1 左侧 Y1 8MHz 连接 U1 pins 7/8，C8/C9 各 20pF 到 GND"}]
+    },
+    {
+      "reference": "R5/R6", "part_number": "10KΩ",
+      "role": "SCL 与 SDA 到 +5V 的 I2C 上拉电阻",
+      "evidence": [{"asset_sha256": "7bd7bcb1837980d1e5812935dc8f929b2a6ded1208b0e3faa4cc1fb4c1ca21fb", "page": 1, "locator": "页面左上 R5 10KΩ 从 SCL 到 +5V，R6 10KΩ 从 SDA 到 +5V"}]
+    },
+    {
+      "reference": "R1/C7", "part_number": "10KΩ/100nF",
+      "role": "RESET 网络的 +5V 上拉和对地电容",
+      "evidence": [{"asset_sha256": "7bd7bcb1837980d1e5812935dc8f929b2a6ded1208b0e3faa4cc1fb4c1ca21fb", "page": 1, "locator": "页面左中 +5V-R1 10KΩ-RESET-C7 100nF-GND"}]
+    },
+    {
+      "reference": "R2/R3/R4", "part_number": "0Ω",
+      "role": "PB2/PB1/PB0 到 +5V 的三位地址/配置跳线",
+      "evidence": [{"asset_sha256": "7bd7bcb1837980d1e5812935dc8f929b2a6ded1208b0e3faa4cc1fb4c1ca21fb", "page": 1, "locator": "页面 U1 左上 R2/R3/R4 0Ω 从 +5V 分别连接 U1 PB2 pin14、PB1 pin13、PB0 pin12"}]
+    },
+    {
+      "reference": "R7", "part_number": "10KΩ (103) ±5%",
+      "role": "PB0~PB2 配置网络的多联下拉电阻阵列",
+      "evidence": [{"asset_sha256": "7bd7bcb1837980d1e5812935dc8f929b2a6ded1208b0e3faa4cc1fb4c1ca21fb", "page": 1, "locator": "页面 U1 左侧 R7 八针电阻阵列，标 10KΩ (103) ±5%，一侧接 PB0~PB2 配置线、另一侧接 GND"}]
+    },
+    {
+      "reference": "C8/C9", "part_number": "20pF",
+      "role": "Y1 两端到 GND 的晶振负载电容",
+      "evidence": [{"asset_sha256": "7bd7bcb1837980d1e5812935dc8f929b2a6ded1208b0e3faa4cc1fb4c1ca21fb", "page": 1, "locator": "页面 Y1 两侧 C8/C9 20pF 到 GND"}]
+    },
+    {
+      "reference": "C1-C6", "part_number": "100nF",
+      "role": "J1~J6 各 +5V 端口的本地去耦电容",
+      "evidence": [{"asset_sha256": "7bd7bcb1837980d1e5812935dc8f929b2a6ded1208b0e3faa4cc1fb4c1ca21fb", "page": 1, "locator": "页面右半 C1~C6 各 100nF，从对应 J1~J6 +5V 旁接 GND"}]
+    },
+    {
+      "reference": "C10", "part_number": "100nF",
+      "role": "J7 上游 +5V 输入的本地去耦电容",
+      "evidence": [{"asset_sha256": "7bd7bcb1837980d1e5812935dc8f929b2a6ded1208b0e3faa4cc1fb4c1ca21fb", "page": 1, "locator": "页面左上 J7 旁 +5V-C10 100nF-GND"}]
+    }
+  ],
+  "facts": [
+    {
+      "id": "system.pbhub-architecture", "category": "system", "subject": "Unit PbHub 系统架构",
+      "statement": "U1 ATMEGA328 作为 I2C 从设备控制六组 J1~J6 GROVE_IO；J7 提供上游 I2C/+5V，Y1 提供 8MHz 时钟，J8 提供 ISP 下载，R2~R4/R7 提供三位配置。",
+      "confidence": "confirmed",
+      "attributes": {"controller": "U1 ATMEGA328", "upstream": "J7 GROVE_I2C", "ports": "J1-J6 GROVE_IO", "clock": "Y1 8MHz", "debug": "J8 ISP_Download", "configuration": "PB0-PB2 via R2-R4/R7"},
+      "evidence": [{"asset_sha256": "7bd7bcb1837980d1e5812935dc8f929b2a6ded1208b0e3faa4cc1fb4c1ca21fb", "page": 1, "locator": "整页 U1/J1~J8/Y1/R1~R7/C1~C10 与同名网络"}]
+    },
+    {
+      "id": "component.mcu-power-pins", "category": "component", "subject": "U1 电源引脚",
+      "statement": "U1 AVCC pin 18、VCC pins 4/6 接 +5V，GND pins 3/5/21 接地；AREF pin 20 未显示外接网络。",
+      "confidence": "confirmed",
+      "attributes": {"avcc": "pin 18 +5V", "vcc": "pins 4,6 +5V", "ground": "pins 3,5,21 GND", "aref": "pin 20 no visible connection"},
+      "evidence": [{"asset_sha256": "7bd7bcb1837980d1e5812935dc8f929b2a6ded1208b0e3faa4cc1fb4c1ca21fb", "page": 1, "locator": "页面 U1 右侧 AREF/AVCC/VCC/GND pins 20/18/4/6/3/5/21"}]
+    },
+    {
+      "id": "interface.j7-i2c-pinout", "category": "interface", "subject": "J7 GROVE_I2C 针脚",
+      "statement": "J7 pins 1~4 依次为 IIC_SCL、IIC_SDA、VCC、GND，对应网络 SCL、SDA、+5V、GND。",
+      "confidence": "confirmed",
+      "attributes": {"pin_1": "IIC_SCL-SCL", "pin_2": "IIC_SDA-SDA", "pin_3": "VCC +5V", "pin_4": "GND"},
+      "evidence": [{"asset_sha256": "7bd7bcb1837980d1e5812935dc8f929b2a6ded1208b0e3faa4cc1fb4c1ca21fb", "page": 1, "locator": "页面左上 J7 pins 1~4 与 SCL/SDA/+5V/GND"}]
+    },
+    {
+      "id": "bus.i2c-wiring", "category": "bus", "subject": "上游 I2C 总线",
+      "statement": "J7 SCL 连接 U1 PC5/SCL pin 28，J7 SDA 连接 U1 PC4/SDA pin 27；两线分别经 R5/R6 10KΩ 上拉到 +5V。",
+      "confidence": "confirmed",
+      "attributes": {"controller_connector": "J7", "device": "U1 ATMEGA328", "scl": "J7 pin 1 -> U1 pin 28 PC5/SCL", "sda": "J7 pin 2 -> U1 pin 27 PC4/SDA", "scl_pullup": "R5 10KΩ to +5V", "sda_pullup": "R6 10KΩ to +5V"},
+      "evidence": [{"asset_sha256": "7bd7bcb1837980d1e5812935dc8f929b2a6ded1208b0e3faa4cc1fb4c1ca21fb", "page": 1, "locator": "页面 J7 SCL/SDA、R5/R6 与 U1 pins 28/27"}]
+    },
+    {
+      "id": "interface.output-port-common-pinout", "category": "interface", "subject": "J1~J6 公共针脚定义",
+      "statement": "J1~J6 每组 pin 1 标注 MISO 并连接 INn，pin 2 标注 IO 并连接 OUTn，pin 3 为 +5V，pin 4 为 GND。",
+      "confidence": "confirmed",
+      "attributes": {"pin_1": "MISO-INn，端口到 MCU 输入", "pin_2": "IO-OUTn，MCU 到端口输出", "pin_3": "+5V", "pin_4": "GND", "ports": "n=0..5"},
+      "evidence": [{"asset_sha256": "7bd7bcb1837980d1e5812935dc8f929b2a6ded1208b0e3faa4cc1fb4c1ca21fb", "page": 1, "locator": "页面右半 J1~J6 GROVE_IO 重复 pin 1 MISO/INn、pin 2 IO/OUTn、pin 3 +5V、pin 4 GND"}]
+    },
+    {
+      "id": "gpio.port0-map", "category": "gpio", "subject": "J1 Port 0",
+      "statement": "J1 IN0 连接 U1 PC0/ADC0 pin 23，OUT0 连接 U1 PD2/INT0 pin 32。",
+      "confidence": "confirmed", "attributes": {"connector": "J1", "input": "pin 1 IN0 -> U1 pin 23 PC0/ADC0", "output": "pin 2 OUT0 -> U1 pin 32 PD2/INT0"},
+      "evidence": [{"asset_sha256": "7bd7bcb1837980d1e5812935dc8f929b2a6ded1208b0e3faa4cc1fb4c1ca21fb", "page": 1, "locator": "页面右上 J1 IN0/OUT0 与中央 U1 IN0 pin23/OUT0 pin32"}]
+    },
+    {
+      "id": "gpio.port1-map", "category": "gpio", "subject": "J2 Port 1",
+      "statement": "J2 IN1 连接 U1 PC1/ADC1 pin 24，OUT1 连接 U1 PD3/PCINT19/OC2B/INT1 pin 1。",
+      "confidence": "confirmed", "attributes": {"connector": "J2", "input": "pin 1 IN1 -> U1 pin 24 PC1/ADC1", "output": "pin 2 OUT1 -> U1 pin 1 PD3/PCINT19/OC2B/INT1"},
+      "evidence": [{"asset_sha256": "7bd7bcb1837980d1e5812935dc8f929b2a6ded1208b0e3faa4cc1fb4c1ca21fb", "page": 1, "locator": "页面右上 J2 IN1/OUT1 与中央 U1 IN1 pin24/OUT1 pin1"}]
+    },
+    {
+      "id": "gpio.port2-map", "category": "gpio", "subject": "J3 Port 2",
+      "statement": "J3 IN2 连接 U1 PC2/ADC2 pin 25，OUT2 连接 U1 PD4/PCINT20/XCK/T0 pin 2。",
+      "confidence": "confirmed", "attributes": {"connector": "J3", "input": "pin 1 IN2 -> U1 pin 25 PC2/ADC2", "output": "pin 2 OUT2 -> U1 pin 2 PD4/PCINT20/XCK/T0"},
+      "evidence": [{"asset_sha256": "7bd7bcb1837980d1e5812935dc8f929b2a6ded1208b0e3faa4cc1fb4c1ca21fb", "page": 1, "locator": "页面右中 J3 IN2/OUT2 与中央 U1 IN2 pin25/OUT2 pin2"}]
+    },
+    {
+      "id": "gpio.port3-map", "category": "gpio", "subject": "J4 Port 3",
+      "statement": "J4 IN3 连接 U1 PC3/ADC3 pin 26，OUT3 连接 U1 PD5/PCINT21/OC0B/T1 pin 9。",
+      "confidence": "confirmed", "attributes": {"connector": "J4", "input": "pin 1 IN3 -> U1 pin 26 PC3/ADC3", "output": "pin 2 OUT3 -> U1 pin 9 PD5/PCINT21/OC0B/T1"},
+      "evidence": [{"asset_sha256": "7bd7bcb1837980d1e5812935dc8f929b2a6ded1208b0e3faa4cc1fb4c1ca21fb", "page": 1, "locator": "页面右中 J4 IN3/OUT3 与中央 U1 IN3 pin26/OUT3 pin9"}]
+    },
+    {
+      "id": "gpio.port4-map", "category": "gpio", "subject": "J5 Port 4",
+      "statement": "J5 IN4 连接 U1 ADC6 pin 19，OUT4 连接 U1 PD6/PCINT22/OC0A/AIN0 pin 10。",
+      "confidence": "confirmed", "attributes": {"connector": "J5", "input": "pin 1 IN4 -> U1 pin 19 ADC6", "output": "pin 2 OUT4 -> U1 pin 10 PD6/PCINT22/OC0A/AIN0"},
+      "evidence": [{"asset_sha256": "7bd7bcb1837980d1e5812935dc8f929b2a6ded1208b0e3faa4cc1fb4c1ca21fb", "page": 1, "locator": "页面右下 J5 IN4/OUT4 与中央 U1 ADC6 pin19 IN4、PD6 pin10 OUT4"}]
+    },
+    {
+      "id": "gpio.port5-map", "category": "gpio", "subject": "J6 Port 5",
+      "statement": "J6 IN5 连接 U1 ADC7 pin 22，OUT5 连接 U1 PD7/PCINT23/AIN1 pin 11。",
+      "confidence": "confirmed", "attributes": {"connector": "J6", "input": "pin 1 IN5 -> U1 pin 22 ADC7", "output": "pin 2 OUT5 -> U1 pin 11 PD7/PCINT23/AIN1"},
+      "evidence": [{"asset_sha256": "7bd7bcb1837980d1e5812935dc8f929b2a6ded1208b0e3faa4cc1fb4c1ca21fb", "page": 1, "locator": "页面右下 J6 IN5/OUT5 与中央 U1 ADC7 pin22 IN5、PD7 pin11 OUT5"}]
+    },
+    {
+      "id": "analog.input-capabilities", "category": "analog", "subject": "六路输入 ADC 映射",
+      "statement": "IN0~IN3 分别映射 U1 ADC0~ADC3，IN4/IN5 分别映射独立 ADC6/ADC7；原理图未显示输入分压、缓冲、滤波或过压钳位。",
+      "confidence": "confirmed",
+      "attributes": {"IN0": "ADC0 pin23", "IN1": "ADC1 pin24", "IN2": "ADC2 pin25", "IN3": "ADC3 pin26", "IN4": "ADC6 pin19", "IN5": "ADC7 pin22", "divider": null, "buffer": null, "filter": null, "clamp": null},
+      "evidence": [{"asset_sha256": "7bd7bcb1837980d1e5812935dc8f929b2a6ded1208b0e3faa4cc1fb4c1ca21fb", "page": 1, "locator": "页面 U1 IN0~IN5 对应 ADC 引脚与 J1~J6 直连网络"}]
+    },
+    {
+      "id": "clock.external-crystal", "category": "clock", "subject": "U1 外部时钟",
+      "statement": "Y1 8MHz 连接 U1 PB6/XTAL1 pin 7 与 PB7/XTAL2 pin 8，两端分别通过 C8/C9 20pF 接地。",
+      "confidence": "confirmed",
+      "attributes": {"crystal": "Y1 8MHz", "xtal1": "U1 pin 7 PB6/XTAL1", "xtal2": "U1 pin 8 PB7/XTAL2", "load_caps": "C8 20pF,C9 20pF"},
+      "evidence": [{"asset_sha256": "7bd7bcb1837980d1e5812935dc8f929b2a6ded1208b0e3faa4cc1fb4c1ca21fb", "page": 1, "locator": "页面 U1 左侧 Y1 8MHz、pins 7/8 与 C8/C9 20pF"}]
+    },
+    {
+      "id": "reset.mcu-reset", "category": "reset", "subject": "ATMEGA328 RESET",
+      "statement": "U1 PC6/RESET pin 29 连接 RESET 网络；R1 10KΩ 将 RESET 上拉到 +5V，C7 100nF 将 RESET 接地，J8 pin 2 也连接 RESET。",
+      "confidence": "confirmed",
+      "attributes": {"mcu_pin": "U1 pin 29 PC6/RESET", "pullup": "R1 10KΩ to +5V", "capacitor": "C7 100nF to GND", "debug_pin": "J8 pin 2 RST"},
+      "evidence": [{"asset_sha256": "7bd7bcb1837980d1e5812935dc8f929b2a6ded1208b0e3faa4cc1fb4c1ca21fb", "page": 1, "locator": "页面左中 R1/C7 RESET、U1 pin29 与右下 J8 pin2"}]
+    },
+    {
+      "id": "debug.isp-pinout", "category": "debug", "subject": "J8 ISP 下载接口",
+      "statement": "J8 pins 1~6 依次为 VCC(+5V)、RST、SCK、MISO、MOSI、GND；SCK/MISO/MOSI 分别连接 U1 PB5 pin17、PB4 pin16、PB3 pin15。",
+      "confidence": "confirmed",
+      "attributes": {"pin_1": "VCC +5V", "pin_2": "RST RESET", "pin_3": "SCK U1 pin17 PB5", "pin_4": "MISO U1 pin16 PB4", "pin_5": "MOSI U1 pin15 PB3", "pin_6": "GND"},
+      "evidence": [{"asset_sha256": "7bd7bcb1837980d1e5812935dc8f929b2a6ded1208b0e3faa4cc1fb4c1ca21fb", "page": 1, "locator": "页面右下 J8 ISP_Download pins 1~6 与中央 U1 MOSI/MISO/SCK/RESET"}]
+    },
+    {
+      "id": "bus.isp-spi", "category": "bus", "subject": "ISP SPI 信号",
+      "statement": "MOSI、MISO、SCK 仅用于图中 J8 ISP 下载路径，页面未显示其他 SPI 外设或片选网络。",
+      "confidence": "confirmed", "attributes": {"controller": "U1 ATMEGA328", "connector": "J8", "mosi": "PB3 pin15", "miso": "PB4 pin16", "sck": "PB5 pin17", "external_spi_device": null, "chip_select": null},
+      "evidence": [{"asset_sha256": "7bd7bcb1837980d1e5812935dc8f929b2a6ded1208b0e3faa4cc1fb4c1ca21fb", "page": 1, "locator": "页面 U1 PB3/PB4/PB5 到 J8 MOSI/MISO/SCK，同页无其他 SPI 器件"}]
+    },
+    {
+      "id": "gpio.address-straps", "category": "gpio", "subject": "PB0~PB2 配置网络",
+      "statement": "U1 PB0 pin12、PB1 pin13、PB2 pin14 各连接一只 0Ω 电阻 R4/R3/R2 到 +5V，并连接 R7 10KΩ 多联电阻到 GND，形成三位硬件配置输入。",
+      "confidence": "confirmed",
+      "attributes": {"bit_0": "PB0 pin12,R4 0Ω to +5V,R7 10KΩ to GND", "bit_1": "PB1 pin13,R3 0Ω to +5V,R7 10KΩ to GND", "bit_2": "PB2 pin14,R2 0Ω to +5V,R7 10KΩ to GND"},
+      "evidence": [{"asset_sha256": "7bd7bcb1837980d1e5812935dc8f929b2a6ded1208b0e3faa4cc1fb4c1ca21fb", "page": 1, "locator": "页面 U1 左上 PB0~PB2、R2~R4 0Ω、R7 10KΩ 与 +5V/GND"}]
+    },
+    {
+      "id": "power.5v-distribution", "category": "power", "subject": "+5V 电源分配",
+      "statement": "J7 pin 3 输入 +5V，并直接供给 U1 AVCC/VCC、J1~J6 pin 3、I2C 上拉、RESET 上拉、配置电阻和去耦电容；本页没有稳压器、DC/DC 或负载开关。",
+      "confidence": "confirmed",
+      "attributes": {"input": "J7 pin 3 +5V", "mcu": "U1 AVCC/VCC", "ports": "J1-J6 pin 3", "pullups": "R1,R2-R6", "regulator": null, "dc_dc": null, "load_switch": null},
+      "evidence": [{"asset_sha256": "7bd7bcb1837980d1e5812935dc8f929b2a6ded1208b0e3faa4cc1fb4c1ca21fb", "page": 1, "locator": "整页 +5V 同名网络，从 J7 到 U1/J1~J6/阻容；无电源转换器件"}]
+    },
+    {
+      "id": "power.port-decoupling", "category": "power", "subject": "接口去耦电容",
+      "statement": "C1~C6 各 100nF，分别位于 J1~J6 的 +5V 端口旁并接地；C10 100nF 位于 J7 +5V 输入旁并接地。",
+      "confidence": "confirmed", "attributes": {"output_ports": "C1-C6 100nF for J1-J6", "upstream": "C10 100nF for J7", "rail": "+5V", "return": "GND"},
+      "evidence": [{"asset_sha256": "7bd7bcb1837980d1e5812935dc8f929b2a6ded1208b0e3faa4cc1fb4c1ca21fb", "page": 1, "locator": "页面 J1~J7 旁 C1~C6/C10 100nF 到 GND"}]
+    },
+    {
+      "id": "protection.no-visible-protection", "category": "protection", "subject": "端口与电源保护",
+      "statement": "J7 与 J1~J6 的信号/+5V 路径未显示 TVS/ESD、保险丝、反接、过压、串联限流或端口隔离器件。",
+      "confidence": "confirmed", "attributes": {"tvs_esd": null, "fuse": null, "reverse_polarity": null, "overvoltage": null, "series_limit": null, "isolation": null},
+      "evidence": [{"asset_sha256": "7bd7bcb1837980d1e5812935dc8f929b2a6ded1208b0e3faa4cc1fb4c1ca21fb", "page": 1, "locator": "整页 J7/J1~J6 到 U1 的直接信号和 +5V 路径，无保护器件"}]
+    },
+    {
+      "id": "storage.no-external-storage", "category": "storage", "subject": "外部存储器",
+      "statement": "本页未显示独立 Flash、EEPROM、RAM、SD 卡或其他外部存储器；U1 内部存储容量未在原理图标注。",
+      "confidence": "confirmed", "attributes": {"external_flash": null, "external_eeprom": null, "external_ram": null, "sd": null, "internal_capacity": null},
+      "evidence": [{"asset_sha256": "7bd7bcb1837980d1e5812935dc8f929b2a6ded1208b0e3faa4cc1fb4c1ca21fb", "page": 1, "locator": "整页器件无独立存储芯片，U1 符号未给存储容量"}]
+    },
+    {
+      "id": "address.i2c-strap-map", "category": "address", "subject": "I2C 地址配置",
+      "statement": "原理图确认 PB0~PB2 三位硬件配置网络，但没有列出各组合对应的 I2C 地址，因此不能仅凭本页确认默认 0x61 或 0x61~0x68 映射。",
+      "confidence": "uncertain",
+      "attributes": {"bits": "PB0,PB1,PB2", "default_address": null, "address_map": null, "candidate_from_product_doc": "0x61-0x68"},
+      "evidence": [{"asset_sha256": "7bd7bcb1837980d1e5812935dc8f929b2a6ded1208b0e3faa4cc1fb4c1ca21fb", "page": 1, "locator": "页面 PB0~PB2/R2~R4/R7 配置电路，无十六进制地址或映射表"}]
+    },
+    {
+      "id": "component.assembled-mcu", "category": "component", "subject": "实装 MCU 型号",
+      "statement": "原理图明确将 U1 标为 ATMEGA328，但未给完整封装/速度后缀；源产品文字的规格表另列 STM32F030F4P6，与图纸冲突，实际装配型号需 BOM 或实物确认。",
+      "confidence": "uncertain",
+      "attributes": {"schematic": "ATMEGA328", "full_suffix": null, "conflicting_product_spec": "STM32F030F4P6", "assembled_part": null},
+      "evidence": [{"asset_sha256": "7bd7bcb1837980d1e5812935dc8f929b2a6ded1208b0e3faa4cc1fb4c1ca21fb", "page": 1, "locator": "页面中央 U1 型号文字 ATMEGA328 与 32-pin 引脚符号"}]
+    },
+    {
+      "id": "other.firmware-capabilities", "category": "other", "subject": "固件与 ADC/PWM 能力",
+      "statement": "原理图给出 ADC、定时器/PWM 复用引脚，但未标注固件命令、ADC 分辨率/参考电压、PWM 频率、端口模式限制或是否支持嵌套。",
+      "confidence": "uncertain",
+      "attributes": {"firmware_commands": null, "adc_resolution": null, "adc_reference": null, "pwm_frequency": null, "port_mode_limits": null, "nested_hub_support": null},
+      "evidence": [{"asset_sha256": "7bd7bcb1837980d1e5812935dc8f929b2a6ded1208b0e3faa4cc1fb4c1ca21fb", "page": 1, "locator": "页面 U1 ADC/OC 引脚复用文字及六路端口，整页无固件/性能参数"}]
+    }
+  ],
+  "needs_review": [
+    {
+      "id": "review.i2c-address-map", "fact_id": "address.i2c-strap-map",
+      "question": "PB0~PB2 各焊接组合对应的 I2C 地址是什么，默认地址是否为 0x61？",
+      "reason": "原理图只显示三位电阻配置网络，没有地址真值表。",
+      "evidence": [{"asset_sha256": "7bd7bcb1837980d1e5812935dc8f929b2a6ded1208b0e3faa4cc1fb4c1ca21fb", "page": 1, "locator": "页面 R2/R3/R4/R7 与 U1 PB0~PB2"}]
+    },
+    {
+      "id": "review.assembled-mcu", "fact_id": "component.assembled-mcu",
+      "question": "当前 U041 硬件版本实际装配 ATMEGA328 的哪个完整型号，还是 STM32F030F4P6？",
+      "reason": "原理图标 ATMEGA328，源产品规格表列 STM32F030F4P6，需按硬件优先级用 BOM/实物消除冲突。",
+      "evidence": [{"asset_sha256": "7bd7bcb1837980d1e5812935dc8f929b2a6ded1208b0e3faa4cc1fb4c1ca21fb", "page": 1, "locator": "页面中央 U1 ATMEGA328"}]
+    },
+    {
+      "id": "review.firmware-capabilities", "fact_id": "other.firmware-capabilities",
+      "question": "该固件版本的命令集、ADC 分辨率/参考、PWM 参数和端口功能限制是什么？",
+      "reason": "这些行为由 MCU 固件和器件参数决定，原理图只给硬件引脚映射。",
+      "evidence": [{"asset_sha256": "7bd7bcb1837980d1e5812935dc8f929b2a6ded1208b0e3faa4cc1fb4c1ca21fb", "page": 1, "locator": "页面 U1 ADC/OC 复用引脚与 J1~J6 端口"}]
+    }
+  ]
+}

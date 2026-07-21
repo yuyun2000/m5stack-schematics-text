@@ -1,0 +1,21 @@
+{
+  "dry_run": false,
+  "failed": 0,
+  "published": 1,
+  "results": [
+    {
+      "backup": null,
+      "draft_action": "unchanged",
+      "dry_run": false,
+      "errors": [],
+      "needs_review": 7,
+      "product_id": "unit-nbiot-cn-bff1068848bb",
+      "product_name": "Unit NBIoT-CN",
+      "publish_action": "unchanged",
+      "sha256": "6978fa95d2093cc51f4b39ae7ef8e55f9213d495f9e94abd61c608ba2967f21f",
+      "status": "valid",
+      "uncertain_facts": 7
+    }
+  ],
+  "schema_version": 1
+}

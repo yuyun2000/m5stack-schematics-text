@@ -1,0 +1,271 @@
+{
+  "schema_version": 1,
+  "generator": "schematic_describer",
+  "product": {
+    "product_id": "hat-env-ii-r-da72c940f235",
+    "product_name": "Hat ENV-II.R",
+    "sku": "U053-C",
+    "source_path": "hat/hat_envII.R.md",
+    "source_sha256": "3b0210796605425b990aa5d99cf0d595d03b97c0424d355fd9600a0c4b74c510",
+    "input_sha256": "63a992c611ae0d30f6519ade91ce7581ddcaeb7cf3c0b77ae89b3d72834df661"
+  },
+  "schematic_assets": [
+    {
+      "sha256": "0c8a00a90b539c3997825638a5da4501931b37a0c911a7d132d466e35caf9eeb",
+      "source_url": "https://static-cdn.m5stack.com/resource/docs/products/hat/hat_envII.R/hat_envII.R_sch_01.webp",
+      "pages": [1]
+    }
+  ],
+  "summary": "Hat ENV-II.R 原理图包含 U1 SHT30-DIS-B 温湿度传感器、U3 BMP280 气压传感器，以及同页绘制的 U2 BMM150 磁传感器，三者共享 SCL/SDA。StickIO 的 G26 与 G0 分别承载 SCL 与 SDA，R1/R2 各 4.7 kΩ 将总线上拉到 +3.3V。所有器件使用 3.3 V，C1 至 C4 各 100 nF 分别为传感器电源去耦；SHT30 与 BMM150 的中断类引脚未接到主机。",
+  "keywords": [
+    "Hat ENV-II.R",
+    "U053-C",
+    "SHT30-DIS-B",
+    "SHT30",
+    "BMP280",
+    "BMM150",
+    "I2C",
+    "0x44",
+    "0x76",
+    "SCL",
+    "SDA",
+    "G26",
+    "G0",
+    "STICKIO",
+    "P1",
+    "+3.3V",
+    "R1 4.7KΩ",
+    "R2 4.7KΩ",
+    "C1 100nF",
+    "C2 100nF",
+    "C3 100nF",
+    "C4 100nF",
+    "ADDR GND",
+    "SDO GND",
+    "CSB +3.3V",
+    "ALERT",
+    "nRESET",
+    "INT",
+    "DRDY",
+    "temperature humidity pressure",
+    "magnetometer"
+  ],
+  "components": [
+    {
+      "reference": "U1",
+      "part_number": "SHT30-DIS-B",
+      "role": "共享 I2C 总线的温湿度传感器，ADDR 固定接 GND",
+      "evidence": [{"asset_sha256": "0c8a00a90b539c3997825638a5da4501931b37a0c911a7d132d466e35caf9eeb", "page": 1, "locator": "左上，U1 SHT30-DIS-B，VDD/SDA/SCL/ADDR/VSS/dpad"}]
+    },
+    {
+      "reference": "U3",
+      "part_number": "BMP280",
+      "role": "共享 I2C 总线的气压传感器，CSB 上拉、SDO 接地配置",
+      "evidence": [{"asset_sha256": "0c8a00a90b539c3997825638a5da4501931b37a0c911a7d132d466e35caf9eeb", "page": 1, "locator": "左下，U3 BMP280，SCK/SDI/SDO/CSB/Vdd/Vddio/GND"}]
+    },
+    {
+      "reference": "U2",
+      "part_number": "BMM150",
+      "role": "原理图中共享 I2C 总线的磁传感器，INT 与 DRDY 未连接",
+      "evidence": [{"asset_sha256": "0c8a00a90b539c3997825638a5da4501931b37a0c911a7d132d466e35caf9eeb", "page": 1, "locator": "右下，U2 BMM150，SCK/SDI/SDO/PS/CSB/VDD/VDDIO/INT/DRDY"}]
+    },
+    {
+      "reference": "P1",
+      "part_number": "STICKIO",
+      "role": "M5Stick HAT 接口，提供 G26/SCL、G0/SDA、3V3 与 GND",
+      "evidence": [{"asset_sha256": "0c8a00a90b539c3997825638a5da4501931b37a0c911a7d132d466e35caf9eeb", "page": 1, "locator": "右上，P1 STICKIO pins 1-8 与 SCL/SDA/+3.3V/GND"}]
+    },
+    {
+      "reference": "R1/R2",
+      "part_number": "4.7KΩ / 4.7KΩ",
+      "role": "SCL 与 SDA 的 3.3 V 上拉电阻",
+      "evidence": [{"asset_sha256": "0c8a00a90b539c3997825638a5da4501931b37a0c911a7d132d466e35caf9eeb", "page": 1, "locator": "上中，R1 4.7KΩ 从 SCL 到 +3.3V，R2 4.7KΩ 从 SDA 到 +3.3V"}]
+    },
+    {
+      "reference": "C1/C2",
+      "part_number": "100nF / 100nF",
+      "role": "SHT30 与 BMP280 的 3.3 V 电源去耦",
+      "evidence": [{"asset_sha256": "0c8a00a90b539c3997825638a5da4501931b37a0c911a7d132d466e35caf9eeb", "page": 1, "locator": "左侧，C1、C2 均为 100nF，跨接 +3.3V 与 GND"}]
+    },
+    {
+      "reference": "C3/C4",
+      "part_number": "100nF / 100nF",
+      "role": "BMM150 VDDIO/PS 与 VDD 电源去耦",
+      "evidence": [{"asset_sha256": "0c8a00a90b539c3997825638a5da4501931b37a0c911a7d132d466e35caf9eeb", "page": 1, "locator": "右下，C3、C4 均为 100nF，分别连接 BMM150 3.3 V 电源节点到 GND"}]
+    }
+  ],
+  "facts": [
+    {
+      "id": "system.architecture",
+      "category": "system",
+      "subject": "多传感器架构",
+      "statement": "原理图将 U1 SHT30-DIS-B、U3 BMP280 和 U2 BMM150 接到同一 SCL/SDA 总线，并由 P1 STICKIO 提供 3.3 V、GND 和主机 I2C 信号。",
+      "confidence": "confirmed",
+      "attributes": {"temperature_humidity": "U1 SHT30-DIS-B", "pressure": "U3 BMP280", "magnetic": "U2 BMM150", "bus": "shared I2C", "connector": "P1 STICKIO", "supply": "+3.3V"},
+      "evidence": [{"asset_sha256": "0c8a00a90b539c3997825638a5da4501931b37a0c911a7d132d466e35caf9eeb", "page": 1, "locator": "整页：U1/U2/U3/P1 及公共 SCL/SDA/+3.3V/GND"}]
+    },
+    {
+      "id": "bus.shared-i2c",
+      "category": "bus",
+      "subject": "共享 I2C 总线",
+      "statement": "SCL 同时连接 U1 pin4、U3 pin4 SCK、U2 A3 SCK 与 P1 pin3 G26；SDA 同时连接 U1 pin1、U3 pin3 SDI、U2 B4 SDI 与 P1 pin5 G0。",
+      "confidence": "confirmed",
+      "attributes": {"controller": "external M5Stick host", "scl_net": "SCL", "scl_gpio": "P1 pin3 G26", "scl_devices": "U1 pin4; U3 pin4; U2 A3", "sda_net": "SDA", "sda_gpio": "P1 pin5 G0", "sda_devices": "U1 pin1; U3 pin3; U2 B4"},
+      "evidence": [{"asset_sha256": "0c8a00a90b539c3997825638a5da4501931b37a0c911a7d132d466e35caf9eeb", "page": 1, "locator": "U1/U3/U2 的 SCL/SDA 网络标签与 P1 G26/G0 连线"}]
+    },
+    {
+      "id": "bus.i2c-pullups",
+      "category": "bus",
+      "subject": "I2C 上拉",
+      "statement": "R1 4.7 kΩ 将 SCL 上拉到 +3.3V，R2 4.7 kΩ 将 SDA 上拉到 +3.3V。",
+      "confidence": "confirmed",
+      "attributes": {"scl_pullup": "R1 4.7KΩ to +3.3V", "sda_pullup": "R2 4.7KΩ to +3.3V", "logic_level": "3.3V"},
+      "evidence": [{"asset_sha256": "0c8a00a90b539c3997825638a5da4501931b37a0c911a7d132d466e35caf9eeb", "page": 1, "locator": "上中，R1/R2 与 SCL/SDA/+3.3V"}]
+    },
+    {
+      "id": "sensor.sht30",
+      "category": "sensor",
+      "subject": "SHT30 温湿度传感器配置",
+      "statement": "U1 为 SHT30-DIS-B，VDD pin5 接 +3.3V，VSS pin8、ADDR pin2、R pin7 与 dpad pin9 接 GND；ALERT pin3 和 nRESET pin6 未连接。",
+      "confidence": "confirmed",
+      "attributes": {"reference": "U1", "part_number": "SHT30-DIS-B", "vdd": "pin5 +3.3V", "ground": "pins 2/7/8/9 GND", "addr_level": "GND", "alert": "pin3 NC", "reset": "pin6 nRESET NC", "decoupling": "C1 100nF"},
+      "evidence": [{"asset_sha256": "0c8a00a90b539c3997825638a5da4501931b37a0c911a7d132d466e35caf9eeb", "page": 1, "locator": "左上，U1 SHT30-DIS-B 全部引脚与 C1"}]
+    },
+    {
+      "id": "sensor.bmp280",
+      "category": "sensor",
+      "subject": "BMP280 气压传感器配置",
+      "statement": "U3 为 BMP280，Vdd pin8、Vddio pin6 和 CSB pin2 接 +3.3V，GND pins 1/7 与 SDO pin5 接 GND，SCK/SDI 分别连接 SCL/SDA。",
+      "confidence": "confirmed",
+      "attributes": {"reference": "U3", "part_number": "BMP280", "vdd": "pin8 +3.3V", "vddio": "pin6 +3.3V", "csb": "pin2 +3.3V", "sdo": "pin5 GND", "grounds": "pins 1/7 GND", "sck": "pin4 SCL", "sdi": "pin3 SDA", "decoupling": "C2 100nF"},
+      "evidence": [{"asset_sha256": "0c8a00a90b539c3997825638a5da4501931b37a0c911a7d132d466e35caf9eeb", "page": 1, "locator": "左下，U3 BMP280 引脚、+3.3V/GND 与 C2"}]
+    },
+    {
+      "id": "sensor.bmm150",
+      "category": "sensor",
+      "subject": "BMM150 磁传感器电路",
+      "statement": "U2 为 BMM150，SCK A3 与 SDI B4 接 SCL/SDA，PS A1、VDDIO B2、VDD E5 接 +3.3V，CSB A5 与 SDO C1 接 GND；INT D2、DRDY D4 未连接。",
+      "confidence": "confirmed",
+      "attributes": {"reference": "U2", "part_number": "BMM150", "sck": "A3 SCL", "sdi": "B4 SDA", "ps": "A1 +3.3V", "vddio": "B2 +3.3V", "vdd": "E5 +3.3V", "csb": "A5 GND", "sdo": "C1 GND", "interrupt": "D2 INT NC", "data_ready": "D4 DRDY NC", "decoupling": "C3/C4 100nF"},
+      "evidence": [{"asset_sha256": "0c8a00a90b539c3997825638a5da4501931b37a0c911a7d132d466e35caf9eeb", "page": 1, "locator": "右下，U2 BMM150 全部可见引脚与 C3/C4"}]
+    },
+    {
+      "id": "interface.stickio",
+      "category": "interface",
+      "subject": "StickIO 引脚映射",
+      "statement": "P1 pin1 GND、pin3 G26/SCL、pin5 G0/SDA、pin7 3V3/+3.3V 被使用；pin2 5VOUT、pin4 G36、pin6 BAT、pin8 5VIN 标为未连接。",
+      "confidence": "confirmed",
+      "attributes": {"pin1": "GND", "pin2": "5VOUT NC", "pin3": "G26 SCL", "pin4": "G36 NC", "pin5": "G0 SDA", "pin6": "BAT NC", "pin7": "3V3 +3.3V", "pin8": "5VIN NC", "logic_level": "3.3V"},
+      "evidence": [{"asset_sha256": "0c8a00a90b539c3997825638a5da4501931b37a0c911a7d132d466e35caf9eeb", "page": 1, "locator": "右上，P1 STICKIO pins 1-8 与连线/NC 标记"}]
+    },
+    {
+      "id": "power.sensor-rail",
+      "category": "power",
+      "subject": "3.3 V 传感器电源",
+      "statement": "P1 pin7 3V3 形成 +3.3V 电源轨，为 U1、U2、U3 及 I2C 上拉供电；原理图未显示电源转换器、LDO、负载开关或电池路径。",
+      "confidence": "confirmed",
+      "attributes": {"source": "P1 pin7 3V3", "rail": "+3.3V", "loads": "U1/U2/U3/R1/R2", "converter": "none shown", "ldo": "none shown", "load_switch": "none shown"},
+      "evidence": [{"asset_sha256": "0c8a00a90b539c3997825638a5da4501931b37a0c911a7d132d466e35caf9eeb", "page": 1, "locator": "整页 +3.3V 网络与 P1 pin7"}]
+    },
+    {
+      "id": "power.decoupling",
+      "category": "power",
+      "subject": "传感器去耦",
+      "statement": "C1、C2、C3、C4 均为 100 nF 并连接在相应 +3.3V 电源节点与 GND 之间。",
+      "confidence": "confirmed",
+      "attributes": {"sht30": "C1 100nF", "bmp280": "C2 100nF", "bmm150_vddio_ps": "C3 100nF", "bmm150_vdd": "C4 100nF"},
+      "evidence": [{"asset_sha256": "0c8a00a90b539c3997825638a5da4501931b37a0c911a7d132d466e35caf9eeb", "page": 1, "locator": "C1/C2/C3/C4 各 100nF 的 +3.3V-GND 连线"}]
+    },
+    {
+      "id": "reset.interrupt-lines",
+      "category": "reset",
+      "subject": "复位与中断引脚",
+      "statement": "SHT30 nRESET 与 ALERT 未连接；BMM150 INT 与 DRDY 未连接，P1 未引出这些信号。",
+      "confidence": "confirmed",
+      "attributes": {"sht30_reset": "U1 pin6 nRESET NC", "sht30_alert": "U1 pin3 ALERT NC", "bmm150_int": "U2 D2 INT NC", "bmm150_drdy": "U2 D4 DRDY NC"},
+      "evidence": [{"asset_sha256": "0c8a00a90b539c3997825638a5da4501931b37a0c911a7d132d466e35caf9eeb", "page": 1, "locator": "U1 ALERT/nRESET 开路与 U2 INT/DRDY 红色 NC 标记"}]
+    },
+    {
+      "id": "address.sht30",
+      "category": "address",
+      "subject": "SHT30 I2C 地址",
+      "statement": "产品正文给出 SHT30 地址 0x44；原理图仅显示 ADDR 接 GND，未印出地址值或地址真值表。",
+      "confidence": "uncertain",
+      "attributes": {"claimed_address": "0x44", "schematic_addr_level": "GND", "address_table": "not printed"},
+      "evidence": [{"asset_sha256": "0c8a00a90b539c3997825638a5da4501931b37a0c911a7d132d466e35caf9eeb", "page": 1, "locator": "U1 pin2 ADDR 接 GND，页面无 0x44 标注"}]
+    },
+    {
+      "id": "address.bmp280",
+      "category": "address",
+      "subject": "BMP280 I2C 地址",
+      "statement": "产品正文给出 BMP280 地址 0x76；原理图显示 CSB 接 +3.3V、SDO 接 GND，但未印出地址值或地址真值表。",
+      "confidence": "uncertain",
+      "attributes": {"claimed_address": "0x76", "schematic_csb": "+3.3V", "schematic_sdo": "GND", "address_table": "not printed"},
+      "evidence": [{"asset_sha256": "0c8a00a90b539c3997825638a5da4501931b37a0c911a7d132d466e35caf9eeb", "page": 1, "locator": "U3 CSB/SDO 配置，页面无 0x76 标注"}]
+    },
+    {
+      "id": "address.bmm150",
+      "category": "address",
+      "subject": "BMM150 I2C 地址",
+      "statement": "原理图显示 BMM150 的 CSB 与 SDO 接 GND，但页面和产品正文均未给出其 I2C 地址。",
+      "confidence": "uncertain",
+      "attributes": {"reference": "U2", "schematic_csb": "GND", "schematic_sdo": "GND", "address": "not printed"},
+      "evidence": [{"asset_sha256": "0c8a00a90b539c3997825638a5da4501931b37a0c911a7d132d466e35caf9eeb", "page": 1, "locator": "U2 BMM150 CSB A5 与 SDO C1 接 GND，页面无地址"}]
+    },
+    {
+      "id": "component.bmm150-population",
+      "category": "component",
+      "subject": "BMM150 装配状态",
+      "statement": "原理图明确画出 U2 BMM150 完整供电和 I2C 连接，但 Hat ENV-II.R 产品正文只列 SHT30 与 BMP280，现有资料无法确认 U053-C 实物是否装配或启用 BMM150。",
+      "confidence": "uncertain",
+      "attributes": {"schematic_component": "U2 BMM150", "schematic_connection": "powered shared I2C", "document_component_list": "SHT30 and BMP280 only", "physical_population": "not confirmed"},
+      "evidence": [{"asset_sha256": "0c8a00a90b539c3997825638a5da4501931b37a0c911a7d132d466e35caf9eeb", "page": 1, "locator": "右下，U2 BMM150 完整电路"}]
+    },
+    {
+      "id": "sensor.measurement-ratings",
+      "category": "sensor",
+      "subject": "环境测量范围与精度",
+      "statement": "产品正文列出温度、湿度与气压测量范围和精度，但这些数值未印在原理图页面中。",
+      "confidence": "uncertain",
+      "attributes": {"claimed_temperature_range": "-40 to 120C", "claimed_temperature_accuracy": "0-60C +/-0.2C", "claimed_humidity": "10-90% RH +/-2%", "claimed_pressure": "300-1100hPa +/-1hPa"},
+      "evidence": [{"asset_sha256": "0c8a00a90b539c3997825638a5da4501931b37a0c911a7d132d466e35caf9eeb", "page": 1, "locator": "U1/U3 区域仅标型号、引脚和外围电路，无量程/精度数值"}]
+    }
+  ],
+  "needs_review": [
+    {
+      "id": "review.sht30-address",
+      "fact_id": "address.sht30",
+      "question": "请用 SHT30 datasheet 确认 ADDR=GND 时的 7-bit I2C 地址是否为 0x44。",
+      "reason": "原理图没有地址真值表或 0x44 标注。",
+      "evidence": [{"asset_sha256": "0c8a00a90b539c3997825638a5da4501931b37a0c911a7d132d466e35caf9eeb", "page": 1, "locator": "U1 pin2 ADDR 接 GND"}]
+    },
+    {
+      "id": "review.bmp280-address",
+      "fact_id": "address.bmp280",
+      "question": "请用 BMP280 datasheet 确认 CSB=3.3V、SDO=GND 时的 7-bit I2C 地址是否为 0x76。",
+      "reason": "原理图没有地址真值表或 0x76 标注。",
+      "evidence": [{"asset_sha256": "0c8a00a90b539c3997825638a5da4501931b37a0c911a7d132d466e35caf9eeb", "page": 1, "locator": "U3 CSB/SDO 电平配置"}]
+    },
+    {
+      "id": "review.bmm150-address",
+      "fact_id": "address.bmm150",
+      "question": "请用 BMM150 datasheet 确认 CSB=GND、SDO=GND 配置下的 I2C 地址。",
+      "reason": "原理图和产品正文均未直接列出 BMM150 地址。",
+      "evidence": [{"asset_sha256": "0c8a00a90b539c3997825638a5da4501931b37a0c911a7d132d466e35caf9eeb", "page": 1, "locator": "U2 CSB A5 与 SDO C1 接 GND"}]
+    },
+    {
+      "id": "review.bmm150-population",
+      "fact_id": "component.bmm150-population",
+      "question": "请用 U053-C BOM、装配图或实物确认 U2 BMM150 是否实际装配并作为产品功能开放。",
+      "reason": "正式原理图包含 BMM150，但产品正文只描述 SHT30 与 BMP280。",
+      "evidence": [{"asset_sha256": "0c8a00a90b539c3997825638a5da4501931b37a0c911a7d132d466e35caf9eeb", "page": 1, "locator": "右下 U2 BMM150 完整电路"}]
+    },
+    {
+      "id": "review.measurement-ratings",
+      "fact_id": "sensor.measurement-ratings",
+      "question": "请用 SHT30/BMP280 datasheet 或产品测试规范复核量程与精度参数。",
+      "reason": "量程和精度未印在原理图中。",
+      "evidence": [{"asset_sha256": "0c8a00a90b539c3997825638a5da4501931b37a0c911a7d132d466e35caf9eeb", "page": 1, "locator": "U1 SHT30-DIS-B 与 U3 BMP280 电路"}]
+    }
+  ]
+}

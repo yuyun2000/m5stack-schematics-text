@@ -1,0 +1,21 @@
+{
+  "dry_run": false,
+  "failed": 0,
+  "published": 1,
+  "results": [
+    {
+      "backup": null,
+      "draft_action": "unchanged",
+      "dry_run": false,
+      "errors": [],
+      "needs_review": 5,
+      "product_id": "unit-gps-sma-0205aa2de7bb",
+      "product_name": "Unit GPS SMA",
+      "publish_action": "unchanged",
+      "sha256": "ef739f22bfacba3b9f49a752415a773715d4abe3ec4c4742cea236ba82a37069",
+      "status": "valid",
+      "uncertain_facts": 5
+    }
+  ],
+  "schema_version": 1
+}

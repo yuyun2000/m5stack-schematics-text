@@ -1,0 +1,21 @@
+{
+  "dry_run": false,
+  "failed": 0,
+  "published": 1,
+  "results": [
+    {
+      "backup": null,
+      "draft_action": "unchanged",
+      "dry_run": false,
+      "errors": [],
+      "needs_review": 5,
+      "product_id": "unit-lorawan470-9d0faaf6a4e5",
+      "product_name": "Unit LoRaWAN470",
+      "publish_action": "unchanged",
+      "sha256": "213feb11829059b2b53d69fd4a4a8c48821c7e8a4c9e178abb683d1c41f8c540",
+      "status": "valid",
+      "uncertain_facts": 5
+    }
+  ],
+  "schema_version": 1
+}

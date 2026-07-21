@@ -1,0 +1,761 @@
+{
+  "schema_version": 1,
+  "generator": "schematic_describer",
+  "product": {
+    "product_id": "paper-v1-1-791f70ff5573",
+    "product_name": "Paper v1.1",
+    "sku": "K049-B",
+    "source_path": "core/m5paper_v1.1.md",
+    "source_sha256": "53eb62ff889f6c99d06e9926c6aca731883bbf9b312db5750e10070a8f7a8d40",
+    "input_sha256": "dede7d3c2c5b072d30be2bb42561d94822e634819517cb3597f2ae231ca52132"
+  },
+  "schematic_assets": [
+    {
+      "sha256": "1442b3537acb90c9b2471c567deab75ef670c6114c6f056076248ddc21c0dfd9",
+      "source_url": "https://m5stack-doc.oss-cn-shenzhen.aliyuncs.com/688/M5_PAPER_SCH_page_01.png",
+      "pages": [1]
+    },
+    {
+      "sha256": "f320feda5dae5addb3fed1291d4e9c369a0ca2fb7cd4f717971e91eba6fd5b37",
+      "source_url": "https://m5stack-doc.oss-cn-shenzhen.aliyuncs.com/688/M5_PAPER_SCH_page_02.png",
+      "pages": [1]
+    },
+    {
+      "sha256": "b9201c64714c766a6a7f80fb63166c2acb89a3861e6d36ef98b29b1f1752e012",
+      "source_url": "https://m5stack-doc.oss-cn-shenzhen.aliyuncs.com/688/M5_PAPER_SCH_page_03.png",
+      "pages": [1]
+    },
+    {
+      "sha256": "90ad5fabab872ab75a365519ef9c18e21cef7df7f36f146067b7166486302622",
+      "source_url": "https://m5stack-doc.oss-cn-shenzhen.aliyuncs.com/688/M5_PAPER_SCH_page_04.png",
+      "pages": [1]
+    },
+    {
+      "sha256": "69bd3e2f206a7f3f90237cafd9f14dd1c020aec29c01cb68eedd5367ecfc907f",
+      "source_url": "https://m5stack-doc.oss-cn-shenzhen.aliyuncs.com/688/M5_PAPER_SCH_page_05.png",
+      "pages": [1]
+    },
+    {
+      "sha256": "8e0e8eeb66e99385c815ec314022bb28a1f32ef6f0be47082964422998209f92",
+      "source_url": "https://m5stack-doc.oss-cn-shenzhen.aliyuncs.com/688/M5_PAPER_SCH_page_06.png",
+      "pages": [1]
+    },
+    {
+      "sha256": "c85e5e48676fdb02936967f5b27a0bddea7d14845d955bb4c29cff1c629309ca",
+      "source_url": "https://m5stack-doc.oss-cn-shenzhen.aliyuncs.com/688/M5_PAPER_SCH_page_07.png",
+      "pages": [1]
+    }
+  ],
+  "summary": "Paper v1.1 以 U1 ESP32 为主控，配套 ESPSRAM64H、W25Q128、FM24C02B，并通过 SPI 驱动 IT8951E-64 电子墨水屏控制器和 ED047TC1 面板。板上包含 SHT30、PCF8563 RTC、MicroSD、CP2104 USB-UART、三组 HY2.0-4P 扩展口以及独立触摸 I2C 接口。电源由 USB/电池汇合形成 VSYS，经 SY7088、SY8003 和受控负载开关生成 5 V、3.3 V 与 EPD 电源，TPS65185 负责面板高压轨。",
+  "keywords": [
+    "Paper v1.1",
+    "K049-B",
+    "ESP32",
+    "IT8951E-64",
+    "ED047TC1",
+    "TPS65185",
+    "ESPSRAM64H",
+    "W25Q128",
+    "W25Q32",
+    "FM24C02B-DN-T-G",
+    "SHT30",
+    "SE95D",
+    "PCF8563",
+    "CP2104",
+    "SY7088",
+    "SY8003",
+    "SLM6600",
+    "SGM3167",
+    "USB Type-C",
+    "MicroSD",
+    "HY2.0-4P",
+    "I2C_SCL",
+    "I2C_SDA",
+    "IT_SPI_SCK",
+    "IT_SPI_MOSI",
+    "IT_SPI_MISO",
+    "EPD_VCOM",
+    "VEPD_5V",
+    "VCC_3V3",
+    "VBUS_5V",
+    "VBAT_S",
+    "GPIO36",
+    "GPIO34",
+    "RTC_ALM"
+  ],
+  "components": [
+    {
+      "reference": "U1",
+      "part_number": "ESP32",
+      "role": "系统主控，连接外部存储、传感器、IT8951 SPI、MicroSD、按键和电源控制信号",
+      "evidence": [{"asset_sha256": "1442b3537acb90c9b2471c567deab75ef670c6114c6f056076248ddc21c0dfd9", "page": 1, "locator": "U1 主控及 GPIO 网络区域"}]
+    },
+    {
+      "reference": "U2",
+      "part_number": "FM24C02B-DN-T-G",
+      "role": "I2C 非易失存储器，A0/A1/A2 接地",
+      "evidence": [{"asset_sha256": "1442b3537acb90c9b2471c567deab75ef670c6114c6f056076248ddc21c0dfd9", "page": 1, "locator": "U2 FM24C02B-DN-T-G 与 I2C_SCL/I2C_SDA"}]
+    },
+    {
+      "reference": "U3",
+      "part_number": "ESPSRAM64H",
+      "role": "ESP32 外部伪静态 RAM",
+      "evidence": [{"asset_sha256": "1442b3537acb90c9b2471c567deab75ef670c6114c6f056076248ddc21c0dfd9", "page": 1, "locator": "U3 ESPSRAM64H 存储器区域"}]
+    },
+    {
+      "reference": "U4",
+      "part_number": "W25Q128",
+      "role": "ESP32 外部 SPI Flash",
+      "evidence": [{"asset_sha256": "1442b3537acb90c9b2471c567deab75ef670c6114c6f056076248ddc21c0dfd9", "page": 1, "locator": "U4 W25Q128 存储器区域"}]
+    },
+    {
+      "reference": "U22",
+      "part_number": "SHT30",
+      "role": "系统 I2C 温湿度传感器，ADDR 接地",
+      "evidence": [{"asset_sha256": "1442b3537acb90c9b2471c567deab75ef670c6114c6f056076248ddc21c0dfd9", "page": 1, "locator": "U22 SHT30 与 I2C_SCL/I2C_SDA"}]
+    },
+    {
+      "reference": "ANT1",
+      "part_number": "PROANT_440",
+      "role": "ESP32 射频天线",
+      "evidence": [{"asset_sha256": "1442b3537acb90c9b2471c567deab75ef670c6114c6f056076248ddc21c0dfd9", "page": 1, "locator": "ANT1 PROANT_440 与 RF 匹配网络"}]
+    },
+    {
+      "reference": "U5",
+      "part_number": "IT8951E-64",
+      "role": "电子墨水屏控制器，连接 ESP32 SPI、专用存储器、PMIC 和并行面板总线",
+      "evidence": [
+        {"asset_sha256": "f320feda5dae5addb3fed1291d4e9c369a0ca2fb7cd4f717971e91eba6fd5b37", "page": 1, "locator": "U5A/U5C IT8951E-64 控制与存储接口"},
+        {"asset_sha256": "90ad5fabab872ab75a365519ef9c18e21cef7df7f36f146067b7166486302622", "page": 1, "locator": "U5B/U5D IT8951E-64 EPD 并行接口"}
+      ]
+    },
+    {
+      "reference": "U6",
+      "part_number": "W25Q32",
+      "role": "IT8951 专用 SPI Flash",
+      "evidence": [{"asset_sha256": "f320feda5dae5addb3fed1291d4e9c369a0ca2fb7cd4f717971e91eba6fd5b37", "page": 1, "locator": "U6 W25Q32 与 U5 存储接口"}]
+    },
+    {
+      "reference": "U10",
+      "part_number": "SGM3167",
+      "role": "EPD VCOM 控制信号调理器件",
+      "evidence": [{"asset_sha256": "f320feda5dae5addb3fed1291d4e9c369a0ca2fb7cd4f717971e91eba6fd5b37", "page": 1, "locator": "U10 SGM3167 与 EPD_VCOM_CTRL"}]
+    },
+    {
+      "reference": "U11",
+      "part_number": "SE95D",
+      "role": "IT8951 侧 I2C 温度传感器",
+      "evidence": [{"asset_sha256": "f320feda5dae5addb3fed1291d4e9c369a0ca2fb7cd4f717971e91eba6fd5b37", "page": 1, "locator": "U11 SE95D 与 IT_I2C_SCL/IT_I2C_SDA"}]
+    },
+    {
+      "reference": "U18",
+      "part_number": "SY8003",
+      "role": "将 VEPD_5V 降压为 VEPD_1V8",
+      "evidence": [{"asset_sha256": "b9201c64714c766a6a7f80fb63166c2acb89a3861e6d36ef98b29b1f1752e012", "page": 1, "locator": "U18 SY8003，VEPD_5V 输入与 VEPD_1V8 输出"}]
+    },
+    {
+      "reference": "U19",
+      "part_number": "SY8003",
+      "role": "将 VEPD_5V 降压为 VEPD_3V3",
+      "evidence": [{"asset_sha256": "b9201c64714c766a6a7f80fb63166c2acb89a3861e6d36ef98b29b1f1752e012", "page": 1, "locator": "U19 SY8003，VEPD_5V 输入与 VEPD_3V3 输出"}]
+    },
+    {
+      "reference": "U20",
+      "part_number": "SGM803-SXN3/TR",
+      "role": "2.93 V 复位监控器，生成 IT_RST#",
+      "evidence": [{"asset_sha256": "b9201c64714c766a6a7f80fb63166c2acb89a3861e6d36ef98b29b1f1752e012", "page": 1, "locator": "U20 2.93V/SGM803-SXN3/TR 与 IT_RST#"}]
+    },
+    {
+      "reference": "J1",
+      "part_number": "EPD_ED047TC1",
+      "role": "ED047TC1 电子墨水屏面板连接器",
+      "evidence": [{"asset_sha256": "90ad5fabab872ab75a365519ef9c18e21cef7df7f36f146067b7166486302622", "page": 1, "locator": "J1 EPD_ED047TC1 与 EPD1_D0-D7、栅源驱动网络"}]
+    },
+    {
+      "reference": "U7",
+      "part_number": "TPS65185",
+      "role": "电子纸电源管理器，产生和控制 VNEG、VPOS、VEE、VDDH 与 VCOM",
+      "evidence": [{"asset_sha256": "69bd3e2f206a7f3f90237cafd9f14dd1c020aec29c01cb68eedd5367ecfc907f", "page": 1, "locator": "U7 TPS65185 及 EPD 高压电源网络"}]
+    },
+    {
+      "reference": "U8",
+      "part_number": "SY7088",
+      "role": "由 VSYS 升压生成 VBUS_5V",
+      "evidence": [{"asset_sha256": "8e0e8eeb66e99385c815ec314022bb28a1f32ef6f0be47082964422998209f92", "page": 1, "locator": "A1-A2，U8 SY7088，VSYS 输入与 VBUS_5V 输出"}]
+    },
+    {
+      "reference": "U9",
+      "part_number": "SLM6600",
+      "role": "USB 输入锂电池充电管理器，连接 VUSB_VIN 与 VBAT_IN",
+      "evidence": [{"asset_sha256": "8e0e8eeb66e99385c815ec314022bb28a1f32ef6f0be47082964422998209f92", "page": 1, "locator": "A3，U9 SLM6600 充电路径"}]
+    },
+    {
+      "reference": "U17",
+      "part_number": "SY8003",
+      "role": "由 VBUS_5V 降压生成 VCC_3V3",
+      "evidence": [{"asset_sha256": "8e0e8eeb66e99385c815ec314022bb28a1f32ef6f0be47082964422998209f92", "page": 1, "locator": "C1-C2，U17 SY8003，VBUS_5V 输入与 VCC_3V3 输出"}]
+    },
+    {
+      "reference": "U23",
+      "part_number": "PCF8563",
+      "role": "电池供电 I2C RTC，RTC_ALM 输出参与唤醒/电源控制",
+      "evidence": [{"asset_sha256": "8e0e8eeb66e99385c815ec314022bb28a1f32ef6f0be47082964422998209f92", "page": 1, "locator": "C4-D4，U23 PCF8563、Y1 与 RTC_ALM"}]
+    },
+    {
+      "reference": "J3",
+      "part_number": "USB-TYPEC",
+      "role": "主 USB Type-C 电源和 USB 2.0 数据接口",
+      "evidence": [{"asset_sha256": "c85e5e48676fdb02936967f5b27a0bddea7d14845d955bb4c29cff1c629309ca", "page": 1, "locator": "A2，J3 USB-TYPEC，VUSB_VIN 与 USB_D_P/USB_D_N"}]
+    },
+    {
+      "reference": "U14",
+      "part_number": "CP2104",
+      "role": "USB 转 UART 下载与调试桥接器",
+      "evidence": [{"asset_sha256": "c85e5e48676fdb02936967f5b27a0bddea7d14845d955bb4c29cff1c629309ca", "page": 1, "locator": "C3，U14 CP2104，USB_D_P/N 与 CP_TXD/CP_RXD/CP_RTS/CP_DTR"}]
+    },
+    {
+      "reference": "U21",
+      "part_number": "5033981892",
+      "role": "MicroSD 卡连接器，带 CARD_CD 检测",
+      "evidence": [{"asset_sha256": "c85e5e48676fdb02936967f5b27a0bddea7d14845d955bb4c29cff1c629309ca", "page": 1, "locator": "A4，U21 卡座，SD_CS/SD_SCK/IT_SPI_MOSI/IT_SPI_MISO/CARD_CD"}]
+    },
+    {
+      "reference": "J2",
+      "part_number": "K1-1502SA-02",
+      "role": "左、按压、右三路拨轮开关连接器",
+      "evidence": [{"asset_sha256": "c85e5e48676fdb02936967f5b27a0bddea7d14845d955bb4c29cff1c629309ca", "page": 1, "locator": "A1，J2 KEY_LEFT/KEY_PUSH/KEY_RIGHT"}]
+    },
+    {
+      "reference": "J5/J6/J7",
+      "part_number": "PH2.0_4P_SMT",
+      "role": "三组 5 V GPIO 扩展连接器",
+      "evidence": [{"asset_sha256": "c85e5e48676fdb02936967f5b27a0bddea7d14845d955bb4c29cff1c629309ca", "page": 1, "locator": "B1-D1，J5 GPIO32/25、J6 GPIO33/26、J7 GPIO19/18 与 VEXT_5V"}]
+    },
+    {
+      "reference": "J11",
+      "part_number": "TOUCH_I2C",
+      "role": "触摸面板 I2C、电源、中断和复位连接器",
+      "evidence": [{"asset_sha256": "c85e5e48676fdb02936967f5b27a0bddea7d14845d955bb4c29cff1c629309ca", "page": 1, "locator": "B1-B2，J11 TOUCH_I2C，I2C_SDA/I2C_SCL/TOUCH_INT/ESP32_EN"}]
+    },
+    {
+      "reference": "U12/U13/U15/U16",
+      "part_number": "SRV05-4",
+      "role": "USB 数据线和外部 GPIO 扩展口 ESD 保护阵列",
+      "evidence": [{"asset_sha256": "c85e5e48676fdb02936967f5b27a0bddea7d14845d955bb4c29cff1c629309ca", "page": 1, "locator": "A3 U12 及 B2-D2 U13/U15/U16 SRV05-4"}]
+    }
+  ],
+  "facts": [
+    {
+      "id": "system.architecture",
+      "category": "system",
+      "subject": "系统架构",
+      "statement": "ESP32 负责系统控制并通过 SPI 连接 IT8951E-64；IT8951E-64 再通过并行 EPD 总线和 TPS65185 电源控制链路驱动 ED047TC1 面板。",
+      "confidence": "confirmed",
+      "attributes": {"main_controller": "U1 ESP32", "display_controller": "U5 IT8951E-64", "panel": "J1 EPD_ED047TC1", "display_pmic": "U7 TPS65185"},
+      "evidence": [
+        {"asset_sha256": "1442b3537acb90c9b2471c567deab75ef670c6114c6f056076248ddc21c0dfd9", "page": 1, "locator": "U1 与 IT_SPI_* 网络"},
+        {"asset_sha256": "90ad5fabab872ab75a365519ef9c18e21cef7df7f36f146067b7166486302622", "page": 1, "locator": "U5B/U5D 到 J1 EPD_ED047TC1"},
+        {"asset_sha256": "69bd3e2f206a7f3f90237cafd9f14dd1c020aec29c01cb68eedd5367ecfc907f", "page": 1, "locator": "U7 TPS65185 面板电源网络"}
+      ]
+    },
+    {
+      "id": "memory.esp-psram",
+      "category": "memory",
+      "subject": "ESP32 外部 PSRAM",
+      "statement": "U3 标注为 ESPSRAM64H，并连接 ESP32 的外部存储接口。",
+      "confidence": "confirmed",
+      "attributes": {"reference": "U3", "part_number": "ESPSRAM64H"},
+      "evidence": [{"asset_sha256": "1442b3537acb90c9b2471c567deab75ef670c6114c6f056076248ddc21c0dfd9", "page": 1, "locator": "U3 ESPSRAM64H"}]
+    },
+    {
+      "id": "storage.esp-flash",
+      "category": "storage",
+      "subject": "ESP32 启动 Flash",
+      "statement": "U4 W25Q128 是 ESP32 外部 Flash。",
+      "confidence": "confirmed",
+      "attributes": {"reference": "U4", "part_number": "W25Q128"},
+      "evidence": [{"asset_sha256": "1442b3537acb90c9b2471c567deab75ef670c6114c6f056076248ddc21c0dfd9", "page": 1, "locator": "U4 W25Q128 与 ESP32 存储总线"}]
+    },
+    {
+      "id": "storage.it8951-flash",
+      "category": "storage",
+      "subject": "IT8951 Flash",
+      "statement": "U6 W25Q32 连接到 IT8951E-64 的专用串行存储接口。",
+      "confidence": "confirmed",
+      "attributes": {"reference": "U6", "part_number": "W25Q32", "controller": "U5 IT8951E-64"},
+      "evidence": [{"asset_sha256": "f320feda5dae5addb3fed1291d4e9c369a0ca2fb7cd4f717971e91eba6fd5b37", "page": 1, "locator": "U6 W25Q32 与 U5A/U5C"}]
+    },
+    {
+      "id": "storage.fram",
+      "category": "storage",
+      "subject": "I2C 非易失存储",
+      "statement": "U2 FM24C02B-DN-T-G 接在系统 I2C 总线上，地址选择脚 A0、A1、A2 均接地。",
+      "confidence": "confirmed",
+      "attributes": {"reference": "U2", "part_number": "FM24C02B-DN-T-G", "scl": "I2C_SCL", "sda": "I2C_SDA", "a0": "GND", "a1": "GND", "a2": "GND"},
+      "evidence": [{"asset_sha256": "1442b3537acb90c9b2471c567deab75ef670c6114c6f056076248ddc21c0dfd9", "page": 1, "locator": "U2 引脚 SCL/SDA/A0/A1/A2"}]
+    },
+    {
+      "id": "bus.esp-it8951-spi",
+      "category": "bus",
+      "subject": "ESP32 到 IT8951 SPI",
+      "statement": "ESP32 通过 IT_SPI_SCK、IT_SPI_MOSI、IT_SPI_MISO 和 IT_SPI_CS# 与 IT8951E-64 通信。",
+      "confidence": "confirmed",
+      "attributes": {"controller": "U1 ESP32", "device": "U5 IT8951E-64", "sck": "IT_SPI_SCK/GPIO14", "mosi": "IT_SPI_MOSI/GPIO12", "miso": "IT_SPI_MISO/GPIO13", "cs": "IT_SPI_CS#/GPIO15"},
+      "evidence": [
+        {"asset_sha256": "1442b3537acb90c9b2471c567deab75ef670c6114c6f056076248ddc21c0dfd9", "page": 1, "locator": "U1 GPIO12-GPIO15 与 IT_SPI_*"},
+        {"asset_sha256": "f320feda5dae5addb3fed1291d4e9c369a0ca2fb7cd4f717971e91eba6fd5b37", "page": 1, "locator": "U5A/U5C IT_SPI_SCK/MOSI/MISO/CS#"}
+      ]
+    },
+    {
+      "id": "bus.system-i2c",
+      "category": "bus",
+      "subject": "系统 I2C",
+      "statement": "GPIO22/I2C_SCL 与 GPIO21/I2C_SDA 连接 FM24C02B、SHT30、PCF8563 和 J11 触摸接口。",
+      "confidence": "confirmed",
+      "attributes": {"controller": "U1 ESP32", "scl": "GPIO22/I2C_SCL", "sda": "GPIO21/I2C_SDA", "devices": "U2 FM24C02B; U22 SHT30; U23 PCF8563; J11 TOUCH_I2C"},
+      "evidence": [
+        {"asset_sha256": "1442b3537acb90c9b2471c567deab75ef670c6114c6f056076248ddc21c0dfd9", "page": 1, "locator": "U1 GPIO22/GPIO21、U2、U22 的 I2C_SCL/I2C_SDA"},
+        {"asset_sha256": "8e0e8eeb66e99385c815ec314022bb28a1f32ef6f0be47082964422998209f92", "page": 1, "locator": "U23 PCF8563 SCL/SDA"},
+        {"asset_sha256": "c85e5e48676fdb02936967f5b27a0bddea7d14845d955bb4c29cff1c629309ca", "page": 1, "locator": "J11 TOUCH_I2C 的 I2C_SDA/I2C_SCL"}
+      ]
+    },
+    {
+      "id": "bus.it8951-i2c",
+      "category": "bus",
+      "subject": "IT8951 I2C",
+      "statement": "IT8951E-64 使用 IT_I2C_SCL/IT_I2C_SDA 连接 U11 SE95D 和 U7 TPS65185。",
+      "confidence": "confirmed",
+      "attributes": {"controller": "U5 IT8951E-64", "scl": "IT_I2C_SCL", "sda": "IT_I2C_SDA", "devices": "U11 SE95D; U7 TPS65185"},
+      "evidence": [
+        {"asset_sha256": "f320feda5dae5addb3fed1291d4e9c369a0ca2fb7cd4f717971e91eba6fd5b37", "page": 1, "locator": "U5/U11 IT_I2C_SCL/IT_I2C_SDA"},
+        {"asset_sha256": "69bd3e2f206a7f3f90237cafd9f14dd1c020aec29c01cb68eedd5367ecfc907f", "page": 1, "locator": "U7 TPS65185 IT_I2C_SCL/IT_I2C_SDA"}
+      ]
+    },
+    {
+      "id": "interface.microsd",
+      "category": "interface",
+      "subject": "MicroSD 接口",
+      "statement": "U21 卡座使用 SD_CS、SD_SCK、IT_SPI_MOSI、IT_SPI_MISO，CARD_CD 由 10 kΩ 上拉到 VCC_3V3。",
+      "confidence": "confirmed",
+      "attributes": {"reference": "U21", "part_number": "5033981892", "cs": "SD_CS", "clock": "SD_SCK", "mosi": "IT_SPI_MOSI", "miso": "IT_SPI_MISO", "detect": "CARD_CD", "voltage": "VCC_3V3"},
+      "evidence": [{"asset_sha256": "c85e5e48676fdb02936967f5b27a0bddea7d14845d955bb4c29cff1c629309ca", "page": 1, "locator": "A4，U21 DAT2/CD-DAT3/CMD/VDD/CLK/DAT0/CD 引脚"}]
+    },
+    {
+      "id": "gpio.sd-card",
+      "category": "gpio",
+      "subject": "MicroSD GPIO 映射",
+      "statement": "MicroSD 的 SD_CS 对应 GPIO4，CARD_CD 对应 GPIO34；SPI 时钟、MOSI、MISO 分别对应 GPIO14、GPIO12、GPIO13。",
+      "confidence": "confirmed",
+      "attributes": {"sd_cs": "GPIO4", "card_cd": "GPIO34", "sd_sck": "GPIO14", "mosi": "GPIO12", "miso": "GPIO13"},
+      "evidence": [
+        {"asset_sha256": "1442b3537acb90c9b2471c567deab75ef670c6114c6f056076248ddc21c0dfd9", "page": 1, "locator": "U1 GPIO4/GPIO34/GPIO12-GPIO14 网络映射"},
+        {"asset_sha256": "c85e5e48676fdb02936967f5b27a0bddea7d14845d955bb4c29cff1c629309ca", "page": 1, "locator": "U21 SD_CS/SD_SCK/IT_SPI_MOSI/IT_SPI_MISO/CARD_CD"}
+      ]
+    },
+    {
+      "id": "gpio.wheel",
+      "category": "gpio",
+      "subject": "拨轮按键 GPIO",
+      "statement": "KEY_RIGHT、KEY_PUSH_IO、KEY_LEFT 分别连接 GPIO37、GPIO38、GPIO39。",
+      "confidence": "confirmed",
+      "attributes": {"right": "GPIO37/KEY_RIGHT", "push": "GPIO38/KEY_PUSH_IO", "left": "GPIO39/KEY_LEFT"},
+      "evidence": [
+        {"asset_sha256": "1442b3537acb90c9b2471c567deab75ef670c6114c6f056076248ddc21c0dfd9", "page": 1, "locator": "U1 GPIO37-GPIO39 按键网络"},
+        {"asset_sha256": "c85e5e48676fdb02936967f5b27a0bddea7d14845d955bb4c29cff1c629309ca", "page": 1, "locator": "J2 KEY_LEFT/KEY_PUSH/KEY_RIGHT 与 R41-R43 上拉"}
+      ]
+    },
+    {
+      "id": "gpio.touch-int",
+      "category": "gpio",
+      "subject": "触摸中断",
+      "statement": "J11 的 TOUCH_INT 通过 R87 10 kΩ 串联到 ESP32 GPIO36。",
+      "confidence": "confirmed",
+      "attributes": {"connector": "J11 pin 5", "net": "TOUCH_INT", "gpio": "GPIO36", "series_resistor": "R87 10k"},
+      "evidence": [
+        {"asset_sha256": "1442b3537acb90c9b2471c567deab75ef670c6114c6f056076248ddc21c0dfd9", "page": 1, "locator": "U1 GPIO36 TOUCH_INT"},
+        {"asset_sha256": "c85e5e48676fdb02936967f5b27a0bddea7d14845d955bb4c29cff1c629309ca", "page": 1, "locator": "B2，J11 pin 5 TOUCH_INT、R87 10K"}
+      ]
+    },
+    {
+      "id": "interface.touch-header",
+      "category": "interface",
+      "subject": "触摸接口",
+      "statement": "J11 提供 VCC_3V3、GND、I2C_SDA、I2C_SCL、TOUCH_INT 和 ESP32_EN；其余两针未连接。",
+      "confidence": "confirmed",
+      "attributes": {"pin1": "VCC_3V3", "pin2": "GND", "pin3": "I2C_SDA", "pin4": "I2C_SCL", "pin5": "TOUCH_INT", "pin6": "ESP32_EN", "pin7": "NC", "pin8": "NC"},
+      "evidence": [{"asset_sha256": "c85e5e48676fdb02936967f5b27a0bddea7d14845d955bb4c29cff1c629309ca", "page": 1, "locator": "B1-B2，J11 TOUCH_I2C pins 1-8"}]
+    },
+    {
+      "id": "interface.grove-ports",
+      "category": "interface",
+      "subject": "HY2.0-4P 扩展口",
+      "statement": "J5、J6、J7 均提供两路 GPIO、VEXT_5V 和 GND，信号组合依次为 GPIO32/GPIO25、GPIO33/GPIO26、GPIO19/GPIO18。",
+      "confidence": "confirmed",
+      "attributes": {"J5": "pin1 GPIO32; pin2 GPIO25; pin3 VEXT_5V; pin4 GND", "J6": "pin1 GPIO33; pin2 GPIO26; pin3 VEXT_5V; pin4 GND", "J7": "pin1 GPIO19; pin2 GPIO18; pin3 VEXT_5V; pin4 GND"},
+      "evidence": [{"asset_sha256": "c85e5e48676fdb02936967f5b27a0bddea7d14845d955bb4c29cff1c629309ca", "page": 1, "locator": "B1-D1，J5/J6/J7 PH2.0_4P_SMT 引脚"}]
+    },
+    {
+      "id": "protection.grove-esd",
+      "category": "protection",
+      "subject": "扩展口 ESD 保护",
+      "statement": "J5、J6、J7 的六路 GPIO 分别经 47 Ω 串联电阻和 U13/U15/U16 SRV05-4 阵列保护。",
+      "confidence": "confirmed",
+      "attributes": {"arrays": "U13/U15/U16 SRV05-4", "series_resistors": "R45/R46/R49/R51/R53/R55 47R", "clamp_rail": "VEXT_5V"},
+      "evidence": [{"asset_sha256": "c85e5e48676fdb02936967f5b27a0bddea7d14845d955bb4c29cff1c629309ca", "page": 1, "locator": "B2-D2，R45/R46/U13、R49/R51/U15、R53/R55/U16"}]
+    },
+    {
+      "id": "interface.usb-c",
+      "category": "interface",
+      "subject": "主 USB Type-C",
+      "statement": "J3 将 VUSB_VIN、USB_D_P 和 USB_D_N 引入系统，CC1 与 CC2 各通过 5.1 kΩ 电阻接地。",
+      "confidence": "confirmed",
+      "attributes": {"reference": "J3", "vbus": "VUSB_VIN", "dp": "USB_D_P", "dn": "USB_D_N", "cc1": "R40 5.1k to GND", "cc2": "R44 5.1k to GND"},
+      "evidence": [{"asset_sha256": "c85e5e48676fdb02936967f5b27a0bddea7d14845d955bb4c29cff1c629309ca", "page": 1, "locator": "A2，J3 USB-TYPEC、R40/R44"}]
+    },
+    {
+      "id": "protection.usb-esd",
+      "category": "protection",
+      "subject": "USB ESD 保护",
+      "statement": "USB_D_P 和 USB_D_N 经 U12 SRV05-4 保护，阵列钳位到 VUSB_VIN 和 GND。",
+      "confidence": "confirmed",
+      "attributes": {"reference": "U12", "part_number": "SRV05-4", "signals": "USB_D_P; USB_D_N", "rails": "VUSB_VIN; GND"},
+      "evidence": [{"asset_sha256": "c85e5e48676fdb02936967f5b27a0bddea7d14845d955bb4c29cff1c629309ca", "page": 1, "locator": "A3，U12 SRV05-4"}]
+    },
+    {
+      "id": "debug.usb-uart",
+      "category": "debug",
+      "subject": "USB-UART 下载接口",
+      "statement": "U14 CP2104 将 USB_D_P/N 转换为 CP_TXD/CP_RXD，并用 CP_RTS/CP_DTR 驱动 ESP32 自动下载/复位电路。",
+      "confidence": "confirmed",
+      "attributes": {"reference": "U14", "part_number": "CP2104", "uart_tx": "CP_TXD -> R56 47R -> ESP32_U0RXD", "uart_rx": "CP_RXD -> R57 47R -> ESP32_U0TXD", "control": "CP_RTS; CP_DTR"},
+      "evidence": [{"asset_sha256": "c85e5e48676fdb02936967f5b27a0bddea7d14845d955bb4c29cff1c629309ca", "page": 1, "locator": "C3-C4，U14 CP2104、R56/R57、VT1/VT2 自动下载电路"}]
+    },
+    {
+      "id": "debug.it-usb",
+      "category": "debug",
+      "subject": "IT8951 USB 调试口",
+      "statement": "J8 是标为 NC 的可选 USB Type-C 接口，连接 IT_DBG_P 和 IT_DBG_N。",
+      "confidence": "confirmed",
+      "attributes": {"reference": "J8", "population": "NC", "dp": "IT_DBG_P", "dn": "IT_DBG_N"},
+      "evidence": [{"asset_sha256": "f320feda5dae5addb3fed1291d4e9c369a0ca2fb7cd4f717971e91eba6fd5b37", "page": 1, "locator": "J8 USB Type-C 可选调试接口与 IT_DBG_P/N"}]
+    },
+    {
+      "id": "sensor.sht30",
+      "category": "sensor",
+      "subject": "环境温湿度传感器",
+      "statement": "U22 SHT30 接入系统 I2C，总线地址选择脚 ADDR 接地，ALERT 与 NRST 未连接。",
+      "confidence": "confirmed",
+      "attributes": {"reference": "U22", "part_number": "SHT30", "scl": "I2C_SCL", "sda": "I2C_SDA", "addr_strap": "GND", "alert": "NC", "nrst": "NC"},
+      "evidence": [{"asset_sha256": "1442b3537acb90c9b2471c567deab75ef670c6114c6f056076248ddc21c0dfd9", "page": 1, "locator": "U22 SHT30 引脚 ADDR/ALERT/NRST/SCL/SDA"}]
+    },
+    {
+      "id": "sensor.epd-temperature",
+      "category": "sensor",
+      "subject": "EPD 温度传感器",
+      "statement": "U11 SE95D 位于 IT8951 侧 I2C 总线上，为 EPD 控制域提供温度测量接口。",
+      "confidence": "confirmed",
+      "attributes": {"reference": "U11", "part_number": "SE95D", "scl": "IT_I2C_SCL", "sda": "IT_I2C_SDA"},
+      "evidence": [{"asset_sha256": "f320feda5dae5addb3fed1291d4e9c369a0ca2fb7cd4f717971e91eba6fd5b37", "page": 1, "locator": "U11 SE95D 与 IT_I2C_SCL/IT_I2C_SDA"}]
+    },
+    {
+      "id": "rf.antenna",
+      "category": "rf",
+      "subject": "ESP32 天线",
+      "statement": "ESP32 射频端连接 ANT1 PROANT_440，串并联匹配器件位置包含 TBD/NC 标注。",
+      "confidence": "confirmed",
+      "attributes": {"reference": "ANT1", "part_number": "PROANT_440", "matching": "TBD/NC positions"},
+      "evidence": [{"asset_sha256": "1442b3537acb90c9b2471c567deab75ef670c6114c6f056076248ddc21c0dfd9", "page": 1, "locator": "ANT1 PROANT_440 与天线匹配网络"}]
+    },
+    {
+      "id": "clock.it8951",
+      "category": "clock",
+      "subject": "IT8951 主时钟",
+      "statement": "X2 为 IT8951E-64 提供 12 MHz、20 ppm 晶体时钟。",
+      "confidence": "confirmed",
+      "attributes": {"reference": "X2", "frequency": "12MHz", "tolerance": "20ppm", "device": "U5 IT8951E-64"},
+      "evidence": [{"asset_sha256": "f320feda5dae5addb3fed1291d4e9c369a0ca2fb7cd4f717971e91eba6fd5b37", "page": 1, "locator": "X2 12MHz/20ppm 与 U5 时钟引脚"}]
+    },
+    {
+      "id": "clock.rtc",
+      "category": "clock",
+      "subject": "RTC 时钟",
+      "statement": "Y1 为 U23 PCF8563 提供 32.768 kHz 时钟，负载电容 C124/C125 均标注 6 pF。",
+      "confidence": "confirmed",
+      "attributes": {"reference": "Y1", "frequency": "32.768K", "load_capacitors": "C124 6pF; C125 6pF", "rtc": "U23 PCF8563"},
+      "evidence": [{"asset_sha256": "8e0e8eeb66e99385c815ec314022bb28a1f32ef6f0be47082964422998209f92", "page": 1, "locator": "C4，Y1 32.768K/6pF、C124/C125、U23 OSCI/OSCO"}]
+    },
+    {
+      "id": "reset.it8951",
+      "category": "reset",
+      "subject": "IT8951 复位",
+      "statement": "U20 2.93 V SGM803-SXN3/TR 监控 EPD 3.3 V 域并输出 IT_RST#。",
+      "confidence": "confirmed",
+      "attributes": {"reference": "U20", "part_number": "SGM803-SXN3/TR", "threshold_marking": "2.93V", "output": "IT_RST#", "supply": "VEPD_3V3A_U20"},
+      "evidence": [{"asset_sha256": "b9201c64714c766a6a7f80fb63166c2acb89a3861e6d36ef98b29b1f1752e012", "page": 1, "locator": "U20 2.93V/SGM803-SXN3/TR、IT_RST#"}]
+    },
+    {
+      "id": "reset.esp32",
+      "category": "reset",
+      "subject": "ESP32 复位与自动下载",
+      "statement": "OS1 可将 ESP32_EN 拉低复位；CP_RTS/CP_DTR 通过 VT1/VT2 和 D13/R54 控制 ESP32_EN 与 GPIO0 以支持自动下载。",
+      "confidence": "confirmed",
+      "attributes": {"manual_switch": "OS1 SMT_SW_PTS_820", "enable": "ESP32_EN", "boot": "GPIO0", "uart_controls": "CP_RTS; CP_DTR"},
+      "evidence": [{"asset_sha256": "c85e5e48676fdb02936967f5b27a0bddea7d14845d955bb4c29cff1c629309ca", "page": 1, "locator": "B2 OS1 ESP32_EN；C4 VT1/VT2/D13/R54 自动下载电路"}]
+    },
+    {
+      "id": "power.source-or",
+      "category": "power",
+      "subject": "系统电源汇合",
+      "statement": "D9 与 D12 两只 DSK34 肖特基二极管分别将 VBAT 和 VUSB_VIN 汇合到 VSYS。",
+      "confidence": "confirmed",
+      "attributes": {"battery_input": "VBAT via D9 DSK34", "usb_input": "VUSB_VIN via D12 DSK34", "output": "VSYS"},
+      "evidence": [{"asset_sha256": "8e0e8eeb66e99385c815ec314022bb28a1f32ef6f0be47082964422998209f92", "page": 1, "locator": "C2，D9/D12 DSK34 到 VSYS"}]
+    },
+    {
+      "id": "power.system-5v",
+      "category": "power",
+      "subject": "系统 5 V",
+      "statement": "U8 SY7088 以 VSYS 为输入，经 L4 WPN3012H2R2MT 升压生成 VBUS_5V。",
+      "confidence": "confirmed",
+      "attributes": {"reference": "U8", "part_number": "SY7088", "input": "VSYS", "output": "VBUS_5V", "inductor": "L4 WPN3012H2R2MT"},
+      "evidence": [{"asset_sha256": "8e0e8eeb66e99385c815ec314022bb28a1f32ef6f0be47082964422998209f92", "page": 1, "locator": "A1-A2，U8/L4/R30/R33，VSYS 到 VBUS_5V"}]
+    },
+    {
+      "id": "power.system-3v3",
+      "category": "power",
+      "subject": "系统 3.3 V",
+      "statement": "U17 SY8003 将 VBUS_5V 降压为 VCC_3V3。",
+      "confidence": "confirmed",
+      "attributes": {"reference": "U17", "part_number": "SY8003", "input": "VBUS_5V", "output": "VCC_3V3", "inductor": "L6 WPN3012H2R2MT"},
+      "evidence": [{"asset_sha256": "8e0e8eeb66e99385c815ec314022bb28a1f32ef6f0be47082964422998209f92", "page": 1, "locator": "C1-C2，U17/L6/R36/R38，VBUS_5V 到 VCC_3V3"}]
+    },
+    {
+      "id": "power.battery-charge",
+      "category": "power",
+      "subject": "电池充电路径",
+      "statement": "U9 SLM6600 由 VUSB_VIN 供电，BAT 端连接 VBAT_IN；PROG 端通过 R31 1 kΩ 接地。",
+      "confidence": "confirmed",
+      "attributes": {"reference": "U9", "part_number": "SLM6600", "input": "VUSB_VIN", "battery_net": "VBAT_IN", "program_resistor": "R31 1K"},
+      "evidence": [{"asset_sha256": "8e0e8eeb66e99385c815ec314022bb28a1f32ef6f0be47082964422998209f92", "page": 1, "locator": "A3，U9 SLM6600、R31、VBAT_IN/VUSB_VIN"}]
+    },
+    {
+      "id": "power.battery-latch",
+      "category": "power",
+      "subject": "电池电源保持",
+      "statement": "VBAT_UFUSED 经 FUSE1 6V/2A Poly 和 FET1 PMOS 到 VBAT；FET2 NMOS 受 PWR_EN 控制，KEY_PUSH_IO 与 RTC_ALM 通过二极管网络参与 PWR_EN。",
+      "confidence": "confirmed",
+      "attributes": {"input": "VBAT_UFUSED", "fuse": "FUSE1 6V/2A/Poly", "high_side": "FET1 CJ2301-PMOS", "control_fet": "FET2 CJ2302-NMOS", "enable": "PWR_EN", "wake_sources": "KEY_PUSH_IO; RTC_ALM"},
+      "evidence": [{"asset_sha256": "8e0e8eeb66e99385c815ec314022bb28a1f32ef6f0be47082964422998209f92", "page": 1, "locator": "B3-B4，FUSE1/FET1/FET2/D7/D8/D10/D11 电源保持电路"}]
+    },
+    {
+      "id": "protection.power-input",
+      "category": "protection",
+      "subject": "电池与外部 5 V 保护",
+      "statement": "电池输入使用 FUSE1 6V/2A Poly，自外部接口输出的 VEXT_5V 使用 FUSE2 6V/2A Poly。",
+      "confidence": "confirmed",
+      "attributes": {"battery_fuse": "FUSE1 6V/2A/Poly", "external_5v_fuse": "FUSE2 6V/2A/Poly"},
+      "evidence": [{"asset_sha256": "8e0e8eeb66e99385c815ec314022bb28a1f32ef6f0be47082964422998209f92", "page": 1, "locator": "B3 FUSE1；D1-D2 FUSE2"}]
+    },
+    {
+      "id": "power.switched-outputs",
+      "category": "power",
+      "subject": "受控 5 V 输出",
+      "statement": "EXT_PWR_EN 控制 FET5/FET3 高边路径向 VEXT_5V 供电，EPD_PWR_EN 控制 FET6/FET4 高边路径向 VEPD_5V 供电。",
+      "confidence": "confirmed",
+      "attributes": {"external_enable": "EXT_PWR_EN", "external_output": "VEXT_5V", "external_fets": "FET5 CJ3134KW/SC70; FET3 SE7401U/SC70", "epd_enable": "EPD_PWR_EN", "epd_output": "VEPD_5V", "epd_fets": "FET6 CJ3134KW/SC70; FET4 SE7401U/SC70"},
+      "evidence": [{"asset_sha256": "8e0e8eeb66e99385c815ec314022bb28a1f32ef6f0be47082964422998209f92", "page": 1, "locator": "D1-D3，EXT_PWR_EN/FET5/FET3/FUSE2 与 EPD_PWR_EN/FET6/FET4"}]
+    },
+    {
+      "id": "analog.battery-sense",
+      "category": "analog",
+      "subject": "电池电压采样",
+      "statement": "VBAT 经 R83 3 kΩ 与 R86 11 kΩ 分压生成 VBAT_S，VBAT_S 连接 ESP32 GPIO35。",
+      "confidence": "confirmed",
+      "attributes": {"source": "VBAT", "sense_net": "VBAT_S", "upper_resistor": "R83 3K", "lower_resistor": "R86 11K", "gpio": "GPIO35"},
+      "evidence": [
+        {"asset_sha256": "8e0e8eeb66e99385c815ec314022bb28a1f32ef6f0be47082964422998209f92", "page": 1, "locator": "D3，R83/R86，VBAT_S"},
+        {"asset_sha256": "1442b3537acb90c9b2471c567deab75ef670c6114c6f056076248ddc21c0dfd9", "page": 1, "locator": "U1 GPIO35 VBAT_S"}
+      ]
+    },
+    {
+      "id": "power.epd-low-voltage",
+      "category": "power",
+      "subject": "EPD 低压电源",
+      "statement": "U18 与 U19 两颗 SY8003 分别由 VEPD_5V 生成 VEPD_1V8 和 VEPD_3V3；磁珠进一步分隔模拟与数字子电源域。",
+      "confidence": "confirmed",
+      "attributes": {"u18_input": "VEPD_5V", "u18_output": "VEPD_1V8", "u19_input": "VEPD_5V", "u19_output": "VEPD_3V3", "separated_rails": "VEPD_1V8A; VEPD_3V3A; VEPD_3V3A_U20; VEPD_3V3A_HSRT"},
+      "evidence": [{"asset_sha256": "b9201c64714c766a6a7f80fb63166c2acb89a3861e6d36ef98b29b1f1752e012", "page": 1, "locator": "U18/U19 SY8003 及 VEPD_1V8/VEPD_3V3 磁珠分区"}]
+    },
+    {
+      "id": "power.epd-high-voltage",
+      "category": "power",
+      "subject": "EPD 高压电源",
+      "statement": "U7 TPS65185 配合 L2/L3 和 BAS3010 二极管产生或控制 EPD_VNEG、EPD_VPOS、EPD_VEE、EPD_VDDH 与 EPD_VCOM。",
+      "confidence": "confirmed",
+      "attributes": {"reference": "U7", "part_number": "TPS65185", "rails": "EPD_VNEG; EPD_VPOS; EPD_VEE; EPD_VDDH; EPD_VCOM", "inductors": "L2; L3", "control": "TPS_WAKEUP; TPS_PWRUP; TPS_INT; TPS_PG; EPD_VCOM_CTRL"},
+      "evidence": [{"asset_sha256": "69bd3e2f206a7f3f90237cafd9f14dd1c020aec29c01cb68eedd5367ecfc907f", "page": 1, "locator": "U7 TPS65185、L2/L3、BAS3010 与 EPD 高压网络"}]
+    },
+    {
+      "id": "interface.epd-panel",
+      "category": "interface",
+      "subject": "电子墨水屏面板接口",
+      "statement": "J1 EPD_ED047TC1 接收 EPD1_D0-D7 并行数据、X/Y 栅源控制时钟和锁存信号，以及 VCOM、VNEG、VPOS、VDDH、VEE、BORDER 等电源/驱动网络。",
+      "confidence": "confirmed",
+      "attributes": {"reference": "J1", "panel": "ED047TC1", "data_bus": "EPD1_D0-D7", "power_nets": "EPD_VCOM; EPD_VNEG; EPD_VPOS; EPD_VDDH; EPD_VEE", "other": "BORDER; X/Y latch/strobe/clock nets"},
+      "evidence": [{"asset_sha256": "90ad5fabab872ab75a365519ef9c18e21cef7df7f36f146067b7166486302622", "page": 1, "locator": "J1 EPD_ED047TC1 全部面板信号及 U5B/U5D"}]
+    },
+    {
+      "id": "key-net.epd-control",
+      "category": "key_net",
+      "subject": "IT8951 到 EPD PMIC 控制",
+      "statement": "IT8951E-64 使用 TPS_WAKEUP、TPS_PWRUP、TPS_INT、TPS_PG 和 EPD_VCOM_CTRL 管理 TPS65185 电源时序与状态。",
+      "confidence": "confirmed",
+      "attributes": {"controller": "U5 IT8951E-64", "pmic": "U7 TPS65185", "signals": "TPS_WAKEUP; TPS_PWRUP; TPS_INT; TPS_PG; EPD_VCOM_CTRL"},
+      "evidence": [
+        {"asset_sha256": "f320feda5dae5addb3fed1291d4e9c369a0ca2fb7cd4f717971e91eba6fd5b37", "page": 1, "locator": "U5 控制网络 TPS_WAKEUP/TPS_PWRUP/TPS_INT/TPS_PG/EPD_VCOM_CTRL"},
+        {"asset_sha256": "69bd3e2f206a7f3f90237cafd9f14dd1c020aec29c01cb68eedd5367ecfc907f", "page": 1, "locator": "U7 TPS65185 对应控制引脚"}
+      ]
+    },
+    {
+      "id": "component.flash-capacity",
+      "category": "storage",
+      "subject": "ESP32 Flash 容量",
+      "statement": "原理图仅明确 U4 型号为 W25Q128；将其写成产品容量 16 MB 需要用器件资料或 BOM 复核。",
+      "confidence": "uncertain",
+      "attributes": {"reference": "U4", "schematic_marking": "W25Q128", "claimed_capacity": "16MB"},
+      "evidence": [{"asset_sha256": "1442b3537acb90c9b2471c567deab75ef670c6114c6f056076248ddc21c0dfd9", "page": 1, "locator": "U4 仅标注 W25Q128"}]
+    },
+    {
+      "id": "component.psram-capacity",
+      "category": "memory",
+      "subject": "PSRAM 容量",
+      "statement": "原理图仅明确 U3 型号为 ESPSRAM64H；将其写成产品容量 8 MB 需要用器件资料或 BOM 复核。",
+      "confidence": "uncertain",
+      "attributes": {"reference": "U3", "schematic_marking": "ESPSRAM64H", "claimed_capacity": "8MB"},
+      "evidence": [{"asset_sha256": "1442b3537acb90c9b2471c567deab75ef670c6114c6f056076248ddc21c0dfd9", "page": 1, "locator": "U3 仅标注 ESPSRAM64H"}]
+    },
+    {
+      "id": "interface.display-specification",
+      "category": "interface",
+      "subject": "面板显示规格",
+      "statement": "原理图确认面板型号 ED047TC1，但未直接标注 4.7 英寸、540×960、16 级灰度、柔性面板或刷新模式性能。",
+      "confidence": "uncertain",
+      "attributes": {"confirmed_panel": "ED047TC1", "unverified_claims": "4.7 inch; 540x960; 16 grayscale; flexible panel; refresh modes"},
+      "evidence": [{"asset_sha256": "90ad5fabab872ab75a365519ef9c18e21cef7df7f36f146067b7166486302622", "page": 1, "locator": "J1 仅标注 EPD_ED047TC1 和电气网络"}]
+    },
+    {
+      "id": "component.touch-controller",
+      "category": "component",
+      "subject": "触摸控制器",
+      "statement": "原理图只显示 J11 TOUCH_I2C 接口，未显示触摸控制器本体，因此 GT911 型号、两点触控、手势能力和 I2C 地址无法由这些页面确认。",
+      "confidence": "uncertain",
+      "attributes": {"connector": "J11 TOUCH_I2C", "unverified_model": "GT911", "unverified_capabilities": "two-point touch; gestures; I2C address"},
+      "evidence": [{"asset_sha256": "c85e5e48676fdb02936967f5b27a0bddea7d14845d955bb4c29cff1c629309ca", "page": 1, "locator": "J11 仅给出触摸电源、I2C、INT、复位信号"}]
+    },
+    {
+      "id": "component.rtc-model-conflict",
+      "category": "component",
+      "subject": "RTC 型号一致性",
+      "statement": "当前原理图 U23 明确标注 PCF8563，与产品正文所称 BM8563 不一致，发布硬件型号前需确认本版本 BOM。",
+      "confidence": "uncertain",
+      "attributes": {"schematic_reference": "U23", "schematic_model": "PCF8563", "document_model": "BM8563"},
+      "evidence": [{"asset_sha256": "8e0e8eeb66e99385c815ec314022bb28a1f32ef6f0be47082964422998209f92", "page": 1, "locator": "C4-D4，U23 丝印 PCF8563"}]
+    },
+    {
+      "id": "power.battery-capacity",
+      "category": "power",
+      "subject": "内置电池容量",
+      "statement": "原理图给出电池连接与充电/保护网络，但未标注 1150 mAh、3.7 V 容量规格或 RTC-only 10 µA 功耗。",
+      "confidence": "uncertain",
+      "attributes": {"battery_connector": "J4", "battery_net": "VBAT_UFUSED", "unverified_claims": "1150mAh@3.7V; RTC-only 10uA"},
+      "evidence": [
+        {"asset_sha256": "c85e5e48676fdb02936967f5b27a0bddea7d14845d955bb4c29cff1c629309ca", "page": 1, "locator": "B1，J4 仅标注 VBAT_UFUSED 与 GND"},
+        {"asset_sha256": "8e0e8eeb66e99385c815ec314022bb28a1f32ef6f0be47082964422998209f92", "page": 1, "locator": "充电、电源保持与 RTC 电源路径未标容量或静态电流"}
+      ]
+    },
+    {
+      "id": "debug.usb-uart-variant",
+      "category": "debug",
+      "subject": "USB-UART 物料变体",
+      "statement": "当前原理图 U14 只标注 CP2104，未显示产品正文提到的 CH9102 替代版本。",
+      "confidence": "uncertain",
+      "attributes": {"schematic_model": "CP2104", "unverified_alternate": "CH9102"},
+      "evidence": [{"asset_sha256": "c85e5e48676fdb02936967f5b27a0bddea7d14845d955bb4c29cff1c629309ca", "page": 1, "locator": "C3，U14 明确标注 CP2104"}]
+    },
+    {
+      "id": "address.i2c-addresses",
+      "category": "address",
+      "subject": "I2C 设备地址",
+      "statement": "原理图显示 FM24C02B 和 SHT30 的地址脚接法，但未以十六进制直接标注 FM24C02B、SHT30、PCF8563、SE95D 或触摸设备的 I2C 地址。",
+      "confidence": "uncertain",
+      "attributes": {"system_devices": "U2 FM24C02B; U22 SHT30; U23 PCF8563; J11 touch", "it_devices": "U11 SE95D; U7 TPS65185", "address_text": "not printed"},
+      "evidence": [
+        {"asset_sha256": "1442b3537acb90c9b2471c567deab75ef670c6114c6f056076248ddc21c0dfd9", "page": 1, "locator": "U2/U22 地址脚与 I2C 网络，未见十六进制地址"},
+        {"asset_sha256": "f320feda5dae5addb3fed1291d4e9c369a0ca2fb7cd4f717971e91eba6fd5b37", "page": 1, "locator": "U11/IT I2C 网络未见十六进制地址"},
+        {"asset_sha256": "8e0e8eeb66e99385c815ec314022bb28a1f32ef6f0be47082964422998209f92", "page": 1, "locator": "U23 PCF8563 未标 I2C 地址"}
+      ]
+    }
+  ],
+  "needs_review": [
+    {
+      "id": "review.flash-capacity",
+      "fact_id": "component.flash-capacity",
+      "question": "U4 W25Q128 在本产品 BOM 中是否对应 16 MB 可用 Flash？",
+      "reason": "原理图只给出器件型号，没有直接写容量单位。",
+      "evidence": [{"asset_sha256": "1442b3537acb90c9b2471c567deab75ef670c6114c6f056076248ddc21c0dfd9", "page": 1, "locator": "U4 W25Q128"}]
+    },
+    {
+      "id": "review.psram-capacity",
+      "fact_id": "component.psram-capacity",
+      "question": "U3 ESPSRAM64H 在本产品 BOM 中是否对应 8 MB PSRAM？",
+      "reason": "原理图只给出器件型号，没有直接写容量单位。",
+      "evidence": [{"asset_sha256": "1442b3537acb90c9b2471c567deab75ef670c6114c6f056076248ddc21c0dfd9", "page": 1, "locator": "U3 ESPSRAM64H"}]
+    },
+    {
+      "id": "review.display-specification",
+      "fact_id": "interface.display-specification",
+      "question": "请用 ED047TC1 datasheet 或本版本 BOM 确认面板尺寸、分辨率、灰度级、柔性结构和刷新模式。",
+      "reason": "这些性能参数未印在原理图页面上。",
+      "evidence": [{"asset_sha256": "90ad5fabab872ab75a365519ef9c18e21cef7df7f36f146067b7166486302622", "page": 1, "locator": "J1 EPD_ED047TC1"}]
+    },
+    {
+      "id": "review.touch-controller",
+      "fact_id": "component.touch-controller",
+      "question": "请用触摸 FPC/BOM 确认 GT911 型号、能力和 I2C 地址。",
+      "reason": "七张原理图仅出现触摸连接器，没有控制器本体。",
+      "evidence": [{"asset_sha256": "c85e5e48676fdb02936967f5b27a0bddea7d14845d955bb4c29cff1c629309ca", "page": 1, "locator": "J11 TOUCH_I2C"}]
+    },
+    {
+      "id": "review.rtc-model-conflict",
+      "fact_id": "component.rtc-model-conflict",
+      "question": "Paper v1.1 K049-B 实际装配的 RTC 是 PCF8563 还是 BM8563？",
+      "reason": "原理图 U23 标注 PCF8563，产品正文标注 BM8563。",
+      "evidence": [{"asset_sha256": "8e0e8eeb66e99385c815ec314022bb28a1f32ef6f0be47082964422998209f92", "page": 1, "locator": "U23 PCF8563"}]
+    },
+    {
+      "id": "review.battery-capacity",
+      "fact_id": "power.battery-capacity",
+      "question": "请用电池标签或 BOM 确认 1150 mAh@3.7 V 及 RTC-only 10 µA 指标。",
+      "reason": "原理图未给出电池容量和整机休眠电流。",
+      "evidence": [{"asset_sha256": "c85e5e48676fdb02936967f5b27a0bddea7d14845d955bb4c29cff1c629309ca", "page": 1, "locator": "J4 电池接口仅标 VBAT_UFUSED/GND"}]
+    },
+    {
+      "id": "review.usb-uart-variant",
+      "fact_id": "debug.usb-uart-variant",
+      "question": "是否存在装配 CH9102 的 K049-B 物料变体？",
+      "reason": "当前原理图只显示 CP2104，无法证明替代物料。",
+      "evidence": [{"asset_sha256": "c85e5e48676fdb02936967f5b27a0bddea7d14845d955bb4c29cff1c629309ca", "page": 1, "locator": "U14 CP2104"}]
+    },
+    {
+      "id": "review.i2c-addresses",
+      "fact_id": "address.i2c-addresses",
+      "question": "请用各器件 datasheet 与地址脚接法复核所有 I2C 7-bit 地址。",
+      "reason": "原理图未直接印出十六进制地址，不能仅凭经验补全。",
+      "evidence": [
+        {"asset_sha256": "1442b3537acb90c9b2471c567deab75ef670c6114c6f056076248ddc21c0dfd9", "page": 1, "locator": "U2/U22 I2C 与地址脚"},
+        {"asset_sha256": "f320feda5dae5addb3fed1291d4e9c369a0ca2fb7cd4f717971e91eba6fd5b37", "page": 1, "locator": "U11/U7 IT I2C"},
+        {"asset_sha256": "8e0e8eeb66e99385c815ec314022bb28a1f32ef6f0be47082964422998209f92", "page": 1, "locator": "U23 PCF8563 I2C"}
+      ]
+    }
+  ]
+}

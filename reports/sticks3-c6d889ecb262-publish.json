@@ -1,0 +1,21 @@
+{
+  "dry_run": false,
+  "failed": 0,
+  "published": 1,
+  "results": [
+    {
+      "backup": null,
+      "draft_action": "unchanged",
+      "dry_run": false,
+      "errors": [],
+      "needs_review": 8,
+      "product_id": "sticks3-c6d889ecb262",
+      "product_name": "StickS3",
+      "publish_action": "unchanged",
+      "sha256": "3aa8803ef41c545724ede1fd8a1c824298c33e5706b12cb3da4434e7bbb2601d",
+      "status": "valid",
+      "uncertain_facts": 8
+    }
+  ],
+  "schema_version": 1
+}

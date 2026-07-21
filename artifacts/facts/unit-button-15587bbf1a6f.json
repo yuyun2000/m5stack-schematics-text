@@ -1,0 +1,195 @@
+{
+  "schema_version": 1,
+  "generator": "schematic_describer",
+  "product": {
+    "product_id": "unit-button-15587bbf1a6f",
+    "product_name": "Unit Button",
+    "sku": "U027",
+    "source_path": "unit/button.md",
+    "source_sha256": "4fef84e5c8294eee1aefcfad4d5289ea6eb625433f8168926d752b31d54bcc9c",
+    "input_sha256": "931244575a8a58bc0cd128f8106eaec3e1aa4cd957db6ab2762d9c0f8afeef01"
+  },
+  "schematic_assets": [
+    {
+      "sha256": "fef08e7908c51192d85f36fc2093aa9c7c0e11bc7b35b900281072814a8ac694",
+      "source_url": "https://m5stack-doc.oss-cn-shenzhen.aliyuncs.com/804/U027_UNIT_BUTTON_SCHE_page_01.png",
+      "pages": [1]
+    }
+  ],
+  "summary": "Unit Button 是由按键 S1、R1/R2 分压网络、C1 滤波电容和 Grove 连接器 J1 组成的无源数字输入单元。S1 按下时将 J1 pin 1 信号节点直接连接 GND；释放时 R1=10KΩ 与 R2=20KΩ 将节点偏置到理论空载值 2/3×VCC。J1 pin 2 不连接、pin 3 输入 VCC、pin 4 接 GND；原理图没有标注 VCC 的额定电压。",
+  "keywords": [
+    "Unit Button",
+    "U027",
+    "SW-BUTTON",
+    "S1",
+    "R1 10KΩ",
+    "R2 20KΩ",
+    "C1 100nF",
+    "Grove",
+    "J1",
+    "Digital Output",
+    "active low",
+    "pin 1 I",
+    "pin 2 NC",
+    "pin 3 VCC",
+    "pin 4 GND",
+    "VCC",
+    "GND",
+    "2/3 VCC",
+    "voltage divider",
+    "debounce filter",
+    "PORT.B",
+    "V1.0"
+  ],
+  "components": [
+    {
+      "reference": "S1",
+      "part_number": "SW-BUTTON",
+      "role": "按下时把数字输出节点短接到 GND 的常开按键",
+      "evidence": [{"asset_sha256": "fef08e7908c51192d85f36fc2093aa9c7c0e11bc7b35b900281072814a8ac694", "page": 1, "locator": "页 1 网格 B2：S1 SW-BUTTON，左端接 GND、右端接 J1 pin 1 信号节点"}]
+    },
+    {
+      "reference": "R1",
+      "part_number": "10KΩ",
+      "role": "VCC 到按键信号节点的上侧偏置电阻",
+      "evidence": [{"asset_sha256": "fef08e7908c51192d85f36fc2093aa9c7c0e11bc7b35b900281072814a8ac694", "page": 1, "locator": "页 1 网格 B2：R1 10KΩ 竖直接在 VCC 与 J1 pin 1 节点之间"}]
+    },
+    {
+      "reference": "R2",
+      "part_number": "20KΩ",
+      "role": "按键信号节点到 GND 的下侧偏置电阻",
+      "evidence": [{"asset_sha256": "fef08e7908c51192d85f36fc2093aa9c7c0e11bc7b35b900281072814a8ac694", "page": 1, "locator": "页 1 网格 B2：R2 20KΩ 竖直接在 J1 pin 1 节点与 GND 之间"}]
+    },
+    {
+      "reference": "C1",
+      "part_number": "100nF",
+      "role": "按键信号节点到 GND 的滤波电容",
+      "evidence": [{"asset_sha256": "fef08e7908c51192d85f36fc2093aa9c7c0e11bc7b35b900281072814a8ac694", "page": 1, "locator": "页 1 网格 B2：C1 100nF 从 S1/R1/R2/J1 pin 1 共节点接至 GND"}]
+    },
+    {
+      "reference": "J1",
+      "part_number": "Grove 4P",
+      "role": "引出按键数字输出、VCC 和 GND，pin 2 未接",
+      "evidence": [{"asset_sha256": "fef08e7908c51192d85f36fc2093aa9c7c0e11bc7b35b900281072814a8ac694", "page": 1, "locator": "页 1 网格 B3：J1 Grove，pin 1 接信号，pin 2 悬空，pin 3 VCC，pin 4 GND"}]
+    }
+  ],
+  "facts": [
+    {
+      "id": "system.passive-button-input",
+      "category": "system",
+      "subject": "Unit Button",
+      "statement": "S1、R1、R2 和 C1 共用 J1 pin 1 信号节点：R1 从 VCC 上拉该节点，R2 与 C1 接 GND，S1 按下时也将节点接 GND。",
+      "confidence": "confirmed",
+      "attributes": {"active_ic": null, "button": "S1 SW-BUTTON", "signal_pin": "J1 pin 1", "upper_resistor": "R1 10KΩ", "lower_resistor": "R2 20KΩ", "capacitor": "C1 100nF", "return": "GND"},
+      "evidence": [{"asset_sha256": "fef08e7908c51192d85f36fc2093aa9c7c0e11bc7b35b900281072814a8ac694", "page": 1, "locator": "页 1 网格 B2-B3：S1/R1/R2/C1/J1 的完整直接连线"}]
+    },
+    {
+      "id": "interface.grove-pinout",
+      "category": "interface",
+      "subject": "J1 Grove 4P",
+      "statement": "J1 pin 1 为按键数字输出，连接器内标 I；pin 2 标 O 但未接内部电路；pin 3 接 VCC；pin 4 接 GND。",
+      "confidence": "confirmed",
+      "attributes": {"pin_1": "digital output; I", "pin_2": "no internal connection; O", "pin_3": "VCC", "pin_4": "GND", "output_direction": "Unit to host", "power_direction": "host to Unit"},
+      "evidence": [{"asset_sha256": "fef08e7908c51192d85f36fc2093aa9c7c0e11bc7b35b900281072814a8ac694", "page": 1, "locator": "页 1 网格 B3：J1 pins 1~4、I/O/VCC/GND 字符及外部连线"}]
+    },
+    {
+      "id": "gpio.button-active-low",
+      "category": "gpio",
+      "subject": "J1 pin 1 按键输出",
+      "statement": "S1 按下时闭合 J1 pin 1 信号节点到 GND 的路径，因此按下状态在原理图拓扑上为低电平。",
+      "confidence": "confirmed",
+      "attributes": {"signal_pin": "J1 pin 1", "button": "S1", "pressed_connection": "GND", "pressed_logic": "low", "polarity": "active low"},
+      "evidence": [{"asset_sha256": "fef08e7908c51192d85f36fc2093aa9c7c0e11bc7b35b900281072814a8ac694", "page": 1, "locator": "页 1 网格 B2：S1 右端接输出节点、左端接 GND"}]
+    },
+    {
+      "id": "component.button-contact",
+      "category": "component",
+      "subject": "S1 SW-BUTTON",
+      "statement": "S1 符号为未按下时断开的瞬时按键，一端接 GND，另一端接 J1 pin 1 与 R1/R2/C1 共节点。",
+      "confidence": "confirmed",
+      "attributes": {"reference": "S1", "part_number": "SW-BUTTON", "contact_state_drawn": "open", "terminal_1": "GND", "terminal_2": "J1 pin 1 signal node"},
+      "evidence": [{"asset_sha256": "fef08e7908c51192d85f36fc2093aa9c7c0e11bc7b35b900281072814a8ac694", "page": 1, "locator": "页 1 网格 B2：S1 的开路触点符号和两端网络"}]
+    },
+    {
+      "id": "analog.released-divider",
+      "category": "analog",
+      "subject": "释放状态偏置",
+      "statement": "S1 释放时，R1 10KΩ 与 R2 20KΩ 在 VCC 和 GND 之间构成分压，J1 pin 1 位于两电阻中点；忽略外部负载时节点电压为 20K/(10K+20K)×VCC，即 2/3×VCC。",
+      "confidence": "confirmed",
+      "attributes": {"upper_resistor": "R1 10KΩ", "lower_resistor": "R2 20KΩ", "output_node": "J1 pin 1", "unloaded_ratio": "20K/(10K+20K)=2/3", "unloaded_voltage": "2/3 * VCC", "button_state": "released"},
+      "evidence": [{"asset_sha256": "fef08e7908c51192d85f36fc2093aa9c7c0e11bc7b35b900281072814a8ac694", "page": 1, "locator": "页 1 网格 B2：VCC-R1 10KΩ-输出节点-R2 20KΩ-GND 分压路径"}]
+    },
+    {
+      "id": "analog.signal-filter",
+      "category": "analog",
+      "subject": "C1 输出滤波",
+      "statement": "C1 100nF 从 J1 pin 1 输出节点接至 GND，与 R1/R2 偏置网络并联在按键输出上。",
+      "confidence": "confirmed",
+      "attributes": {"capacitor": "C1 100nF", "signal": "J1 pin 1", "return": "GND", "associated_resistors": "R1 10KΩ,R2 20KΩ"},
+      "evidence": [{"asset_sha256": "fef08e7908c51192d85f36fc2093aa9c7c0e11bc7b35b900281072814a8ac694", "page": 1, "locator": "页 1 网格 B2：C1 100nF 上端接按键信号节点、下端接 GND"}]
+    },
+    {
+      "id": "power.supply-path",
+      "category": "power",
+      "subject": "J1 VCC/GND",
+      "statement": "J1 pin 3 输入 VCC，并通过同名网络连接 R1 上端；J1 pin 4 接 GND，与 S1、R2 和 C1 的地端共地。",
+      "confidence": "confirmed",
+      "attributes": {"power_pin": "J1 pin 3 VCC", "ground_pin": "J1 pin 4 GND", "vcc_load": "R1 10KΩ", "ground_loads": "S1,R2,C1"},
+      "evidence": [{"asset_sha256": "fef08e7908c51192d85f36fc2093aa9c7c0e11bc7b35b900281072814a8ac694", "page": 1, "locator": "页 1 网格 B2-B3：J1 pin 3/VCC 与 R1，同页各 GND 符号及 J1 pin 4"}]
+    },
+    {
+      "id": "power.vcc-rating-not-shown",
+      "category": "power",
+      "subject": "J1 pin 3 VCC 额定值",
+      "statement": "原理图将 J1 pin 3 和 R1 上端标为 VCC，但未给出该电源的数值，因此无法仅凭原理图确认额定供电电压和释放态的绝对输出电压。",
+      "confidence": "uncertain",
+      "attributes": {"connector_pin": "J1 pin 3", "net": "VCC", "schematic_voltage": null, "released_output_ratio": "2/3 VCC", "absolute_output_voltage": null},
+      "evidence": [{"asset_sha256": "fef08e7908c51192d85f36fc2093aa9c7c0e11bc7b35b900281072814a8ac694", "page": 1, "locator": "页 1 网格 B2-B3：R1 与 J1 pin 3 的 VCC 标签，整页未见电压数值"}]
+    },
+    {
+      "id": "interface.pin2-no-connect",
+      "category": "interface",
+      "subject": "J1 pin 2",
+      "statement": "J1 pin 2 左侧没有连接线，未接入 S1/R1/R2/C1 电路；连接器内部该位置标为 O。",
+      "confidence": "confirmed",
+      "attributes": {"connector_pin": "J1 pin 2", "label": "O", "internal_connection": null},
+      "evidence": [{"asset_sha256": "fef08e7908c51192d85f36fc2093aa9c7c0e11bc7b35b900281072814a8ac694", "page": 1, "locator": "页 1 网格 B3：J1 pin 2 数字、O 字符与无外部连线的端点"}]
+    },
+    {
+      "id": "protection.no-protection-shown",
+      "category": "protection",
+      "subject": "按键接口保护",
+      "statement": "本页没有绘出 TVS、ESD 阵列、反接保护、保险丝或专用输入钳位器件；可见器件仅为 S1、R1、R2、C1 和 J1。",
+      "confidence": "confirmed",
+      "attributes": {"tvs": null, "esd_array": null, "reverse_polarity_device": null, "fuse": null, "visible_components": "S1,R1,R2,C1,J1"},
+      "evidence": [{"asset_sha256": "fef08e7908c51192d85f36fc2093aa9c7c0e11bc7b35b900281072814a8ac694", "page": 1, "locator": "整页：唯一电路区域包含 S1/R1/R2/C1/J1，无其他保护位号"}]
+    },
+    {
+      "id": "key_net.button-output-index",
+      "category": "key_net",
+      "subject": "按键信号关键连接",
+      "statement": "关键网络为 J1 pin 3 VCC→R1→J1 pin 1，J1 pin 1→R2/C1/S1→GND，J1 pin 4→GND；J1 pin 2 不连接。",
+      "confidence": "confirmed",
+      "attributes": {"upper_path": "J1.3 VCC-R1-J1.1", "ground_paths": "J1.1-R2/C1/S1-GND", "ground_pin": "J1.4", "unused_pin": "J1.2"},
+      "evidence": [{"asset_sha256": "fef08e7908c51192d85f36fc2093aa9c7c0e11bc7b35b900281072814a8ac694", "page": 1, "locator": "页 1 网格 B2-B3：所有同节点连线和 J1 pinout"}]
+    },
+    {
+      "id": "other.schematic-version",
+      "category": "other",
+      "subject": "UNIT_BUTTON 原理图版本",
+      "statement": "图框标注 Project Title 为 UNIT_BUTTON.PrjPCB、Sheet Title 为 UNIT_BUTTON.SchDoc、Revised 为 V1.0、日期为 07/18/2018，Sheet 1 of 1。",
+      "confidence": "confirmed",
+      "attributes": {"project_title": "UNIT_BUTTON.PrjPCB", "sheet_title": "UNIT_BUTTON.SchDoc", "revision": "V1.0", "date": "07/18/2018", "sheet": "1 of 1"},
+      "evidence": [{"asset_sha256": "fef08e7908c51192d85f36fc2093aa9c7c0e11bc7b35b900281072814a8ac694", "page": 1, "locator": "页 1 网格 D3-D4：右下角图框 Project Title/Sheet Title/Revised/Date/Sheet"}]
+    }
+  ],
+  "needs_review": [
+    {
+      "id": "review.vcc-rating",
+      "fact_id": "power.vcc-rating-not-shown",
+      "question": "J1 pin 3 的 VCC 额定输入电压是多少，释放状态 J1 pin 1 的标称高电平是多少？",
+      "reason": "原理图只给出 R1/R2 的 2/3 分压比例，没有打印 VCC 数值；绝对输出电平取决于外部供电。",
+      "evidence": [{"asset_sha256": "fef08e7908c51192d85f36fc2093aa9c7c0e11bc7b35b900281072814a8ac694", "page": 1, "locator": "页 1 网格 B2-B3：VCC-R1 10KΩ-R2 20KΩ-GND 及 J1 pin 3，页面无电压标注"}]
+    }
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "dry_run": false,
+  "failed": 0,
+  "published": 1,
+  "results": [
+    {
+      "backup": null,
+      "draft_action": "unchanged",
+      "dry_run": false,
+      "errors": [],
+      "needs_review": 2,
+      "product_id": "unit-can-bcce96f7e852",
+      "product_name": "Unit CAN",
+      "publish_action": "unchanged",
+      "sha256": "c321be3c270c9f80299af8d6364c7f8c396fa50518fa39aafce6fe9f25b6200b",
+      "status": "valid",
+      "uncertain_facts": 2
+    }
+  ],
+  "schema_version": 1
+}

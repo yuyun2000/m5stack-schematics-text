@@ -1,0 +1,21 @@
+{
+  "dry_run": false,
+  "failed": 0,
+  "published": 1,
+  "results": [
+    {
+      "backup": null,
+      "draft_action": "unchanged",
+      "dry_run": false,
+      "errors": [],
+      "needs_review": 3,
+      "product_id": "unit-env-2ba151987edb",
+      "product_name": "Unit ENV",
+      "publish_action": "unchanged",
+      "sha256": "07c7b7a7fa61b90ab99596b176d6a9ca7e6bdbf05cc211c5cae3c2d3f930a247",
+      "status": "valid",
+      "uncertain_facts": 3
+    }
+  ],
+  "schema_version": 1
+}

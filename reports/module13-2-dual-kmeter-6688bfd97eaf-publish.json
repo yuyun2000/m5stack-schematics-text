@@ -1,0 +1,21 @@
+{
+  "dry_run": false,
+  "failed": 0,
+  "published": 1,
+  "results": [
+    {
+      "backup": null,
+      "draft_action": "unchanged",
+      "dry_run": false,
+      "errors": [],
+      "needs_review": 3,
+      "product_id": "module13-2-dual-kmeter-6688bfd97eaf",
+      "product_name": "Module13.2 Dual Kmeter",
+      "publish_action": "unchanged",
+      "sha256": "9170ca1fec937dbaac5d5fcd1b9f2c0ab42285da5466ff5ab7cebad654191178",
+      "status": "valid",
+      "uncertain_facts": 3
+    }
+  ],
+  "schema_version": 1
+}

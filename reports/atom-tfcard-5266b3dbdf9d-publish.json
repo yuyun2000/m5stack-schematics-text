@@ -1,0 +1,21 @@
+{
+  "dry_run": false,
+  "failed": 0,
+  "published": 1,
+  "results": [
+    {
+      "backup": null,
+      "draft_action": "unchanged",
+      "dry_run": false,
+      "errors": [],
+      "needs_review": 4,
+      "product_id": "atom-tfcard-5266b3dbdf9d",
+      "product_name": "Atom TFCard",
+      "publish_action": "unchanged",
+      "sha256": "434b484a71bd199c982379c5447274aea009bdefaf04a5c9f99e232a0a5e3a96",
+      "status": "valid",
+      "uncertain_facts": 4
+    }
+  ],
+  "schema_version": 1
+}

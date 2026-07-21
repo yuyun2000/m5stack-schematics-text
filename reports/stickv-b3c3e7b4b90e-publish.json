@@ -1,0 +1,21 @@
+{
+  "dry_run": false,
+  "failed": 0,
+  "published": 1,
+  "results": [
+    {
+      "backup": null,
+      "draft_action": "unchanged",
+      "dry_run": false,
+      "errors": [],
+      "needs_review": 10,
+      "product_id": "stickv-b3c3e7b4b90e",
+      "product_name": "StickV",
+      "publish_action": "unchanged",
+      "sha256": "fde55bb711d9f64016e52532e4ae71d9c68d461e46b7459aa686e853a957b955",
+      "status": "valid",
+      "uncertain_facts": 10
+    }
+  ],
+  "schema_version": 1
+}

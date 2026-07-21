@@ -1,0 +1,21 @@
+{
+  "dry_run": false,
+  "failed": 0,
+  "published": 1,
+  "results": [
+    {
+      "backup": null,
+      "draft_action": "unchanged",
+      "dry_run": false,
+      "errors": [],
+      "needs_review": 3,
+      "product_id": "base-lan-poe-v1-2-0c51709f4a9c",
+      "product_name": "Base LAN PoE v1.2",
+      "publish_action": "unchanged",
+      "sha256": "5dd4c5560cd8ad26804949a9ad55d3904dd8c1433d34e90b58fce2593414989a",
+      "status": "valid",
+      "uncertain_facts": 3
+    }
+  ],
+  "schema_version": 1
+}

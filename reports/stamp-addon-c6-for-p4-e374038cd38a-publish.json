@@ -1,0 +1,21 @@
+{
+  "dry_run": false,
+  "failed": 0,
+  "published": 1,
+  "results": [
+    {
+      "backup": null,
+      "draft_action": "unchanged",
+      "dry_run": false,
+      "errors": [],
+      "needs_review": 5,
+      "product_id": "stamp-addon-c6-for-p4-e374038cd38a",
+      "product_name": "Stamp-AddOn C6 For P4",
+      "publish_action": "unchanged",
+      "sha256": "f6a364816cbe367b82ddeb3078abefb1a67ed787a060efda9251a651c69757cb",
+      "status": "valid",
+      "uncertain_facts": 5
+    }
+  ],
+  "schema_version": 1
+}

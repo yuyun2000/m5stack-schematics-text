@@ -1,0 +1,21 @@
+{
+  "dry_run": false,
+  "failed": 0,
+  "published": 1,
+  "results": [
+    {
+      "backup": null,
+      "draft_action": "unchanged",
+      "dry_run": false,
+      "errors": [],
+      "needs_review": 2,
+      "product_id": "unit-mini-imu-pro-d28db2be8dfa",
+      "product_name": "Unit Mini IMU-Pro",
+      "publish_action": "unchanged",
+      "sha256": "5dc772e91ecadd9892e8e595977c945f83e5a85444e9b00919485be965b09952",
+      "status": "valid",
+      "uncertain_facts": 2
+    }
+  ],
+  "schema_version": 1
+}

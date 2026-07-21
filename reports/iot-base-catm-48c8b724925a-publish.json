@@ -1,0 +1,21 @@
+{
+  "dry_run": false,
+  "failed": 0,
+  "published": 1,
+  "results": [
+    {
+      "backup": null,
+      "draft_action": "unchanged",
+      "dry_run": false,
+      "errors": [],
+      "needs_review": 5,
+      "product_id": "iot-base-catm-48c8b724925a",
+      "product_name": "IoT Base CatM",
+      "publish_action": "unchanged",
+      "sha256": "ddb68e2be6e3e737265cb33a23667d7cff23503f513f5c97457941e93dcc9cf5",
+      "status": "valid",
+      "uncertain_facts": 5
+    }
+  ],
+  "schema_version": 1
+}

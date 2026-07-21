@@ -1,0 +1,653 @@
+{
+  "schema_version": 1,
+  "generator": "schematic_describer",
+  "product": {
+    "product_id": "stamp-c5-dip-9f73b7531dde",
+    "product_name": "Stamp-C5 DIP",
+    "sku": "S016-DIP",
+    "source_path": "core/Stamp-C5_DIP.md",
+    "source_sha256": "18628eba72b4121c832d4082d1662121b40b636776a93037f985207b2d19da66",
+    "input_sha256": "7c11163b84ac9576ec5455e68169fc3b2383a311b9f7a1b8c1a2a3b4242d0a40"
+  },
+  "schematic_assets": [
+    {
+      "sha256": "c9956a9984d780e970e779dac5371128f78093a1f37a53756714d0c2b29cfc19",
+      "source_url": "https://m5stack-doc.oss-cn-shenzhen.aliyuncs.com/1258/S016_StampC5_V0.3_SCH_PDF_20260207_2026_02_07_11_34_57_page_02.png",
+      "pages": [
+        1
+      ]
+    }
+  ],
+  "summary": "Stamp-C5 DIP 以 ESP32-C5HF4 为主控，USB Type-C 数据经 ICMF062P900MFR 滤波后直连片上 USB；TPS2116DRLR 在 USB_IN 与 VBAT 间进行电源选择，JW5712 生成 3.3V，SGM40567-4.2XG/TR 提供约 200mA 充电。2.4GHz 与 5GHz 射频经 LFD182G45DCHD481 双工器复用至 IPEX-1，11 路焊盘 GPIO 和 8 路 JP3/FPC GPIO 均有明确引出。DIP 源文档说明默认焊接 FPC 座并配备两排 2.54-7P 排针，但唯一原理图页与 Stamp-C5 共用且不含装配属性。",
+  "keywords": [
+    "Stamp-C5 DIP",
+    "S016-DIP",
+    "Stamp-C5",
+    "ESP32-C5HF4",
+    "ESP32-C5",
+    "4MB Flash",
+    "USB Type-C",
+    "TYPEC-302-BRP16SC08",
+    "ICMF062P900MFR",
+    "TPS2116DRLR",
+    "JW5712",
+    "600mA",
+    "SGM40567-4.2XG/TR",
+    "200mA charge",
+    "LFD182G45DCHD481",
+    "2.4GHz",
+    "5GHz",
+    "IPEX-1",
+    "JP3 FPC 12P",
+    "G28_BOOT",
+    "G11_TXD",
+    "G12_RXD",
+    "CHG_STA",
+    "VSYS_3V3",
+    "VBAT",
+    "USB_IN",
+    "V0.2",
+    "V0.3"
+  ],
+  "components": [
+    {
+      "reference": "U3",
+      "part_number": "ESP32-C5HF4",
+      "role": "Stamp-C5 DIP 主控制器，集成 USB 与双频射频端口",
+      "evidence": [
+        {
+          "asset_sha256": "c9956a9984d780e970e779dac5371128f78093a1f37a53756714d0c2b29cfc19",
+          "page": 1,
+          "locator": "B1-D5 ESP32-C5HF4 区域 U3 主控符号"
+        }
+      ]
+    },
+    {
+      "reference": "J1",
+      "part_number": "TYPEC-302-BRP16SC08",
+      "role": "USB Type-C 电源与数据接口",
+      "evidence": [
+        {
+          "asset_sha256": "c9956a9984d780e970e779dac5371128f78093a1f37a53756714d0c2b29cfc19",
+          "page": 1,
+          "locator": "A1-A2 USBC IN 区域 J1 TYPEC-302-BRP16SC08"
+        }
+      ]
+    },
+    {
+      "reference": "FT1",
+      "part_number": "ICMF062P900MFR",
+      "role": "USB D+/D- 共模滤波器",
+      "evidence": [
+        {
+          "asset_sha256": "c9956a9984d780e970e779dac5371128f78093a1f37a53756714d0c2b29cfc19",
+          "page": 1,
+          "locator": "A1-A3 USBC_P/N 至 USB_P/N 之间 FT1 ICMF062P900MFR"
+        }
+      ]
+    },
+    {
+      "reference": "U1",
+      "part_number": "TPS2116DRLR",
+      "role": "USB_IN/VBAT 双输入电源选择器",
+      "evidence": [
+        {
+          "asset_sha256": "c9956a9984d780e970e779dac5371128f78093a1f37a53756714d0c2b29cfc19",
+          "page": 1,
+          "locator": "A3-A4 U1 TPS2116DRLR、VIN1/VIN2 与 VBUS"
+        }
+      ]
+    },
+    {
+      "reference": "U2",
+      "part_number": "JW5712",
+      "role": "VBUS 至 VSYS_3V3 降压转换器，图面标最大 600mA",
+      "evidence": [
+        {
+          "asset_sha256": "c9956a9984d780e970e779dac5371128f78093a1f37a53756714d0c2b29cfc19",
+          "page": 1,
+          "locator": "A5-A6 POWER 3V3 区域 U2 JW5712 与 MAX OUT I=600mA"
+        }
+      ]
+    },
+    {
+      "reference": "U5",
+      "part_number": "SGM40567-4.2XG/TR",
+      "role": "USB_IN 至 VBAT 单节电池充电器",
+      "evidence": [
+        {
+          "asset_sha256": "c9956a9984d780e970e779dac5371128f78093a1f37a53756714d0c2b29cfc19",
+          "page": 1,
+          "locator": "A7-A8 Charge 区域 U5 SGM40567-4.2XG/TR"
+        }
+      ]
+    },
+    {
+      "reference": "X1",
+      "part_number": "TJ1148000HYFBC",
+      "role": "ESP32-C5 主晶振",
+      "evidence": [
+        {
+          "asset_sha256": "c9956a9984d780e970e779dac5371128f78093a1f37a53756714d0c2b29cfc19",
+          "page": 1,
+          "locator": "B3-B4 X1 TJ1148000HYFBC 与 XTAL_P/N"
+        }
+      ]
+    },
+    {
+      "reference": "U4",
+      "part_number": "LFD182G45DCHD481",
+      "role": "2.4GHz/5GHz 双频双工器",
+      "evidence": [
+        {
+          "asset_sha256": "c9956a9984d780e970e779dac5371128f78093a1f37a53756714d0c2b29cfc19",
+          "page": 1,
+          "locator": "C5-C7 U4 LFD182G45DCHD481，H_PORT/L_PORT 至 COM"
+        }
+      ]
+    },
+    {
+      "reference": "J2",
+      "part_number": "IPEX_1",
+      "role": "双频外部天线连接器",
+      "evidence": [
+        {
+          "asset_sha256": "c9956a9984d780e970e779dac5371128f78093a1f37a53756714d0c2b29cfc19",
+          "page": 1,
+          "locator": "C7-C8 U4 COM 经 50R 网络连接 J2 IPEX_1"
+        }
+      ]
+    },
+    {
+      "reference": "JP1/JP2",
+      "part_number": "Stamp edge pads",
+      "role": "DIP 两侧 2.54mm 焊盘 GPIO、电源与 USB_IN 引出",
+      "evidence": [
+        {
+          "asset_sha256": "c9956a9984d780e970e779dac5371128f78093a1f37a53756714d0c2b29cfc19",
+          "page": 1,
+          "locator": "B6-B7 CELL Header 区域 JP1/JP2 七针定义"
+        }
+      ]
+    },
+    {
+      "reference": "JP3",
+      "part_number": "12-pin extension header/FPC footprint",
+      "role": "DIP 背部 12 针 FPC 扩展接口电气定义",
+      "evidence": [
+        {
+          "asset_sha256": "c9956a9984d780e970e779dac5371128f78093a1f37a53756714d0c2b29cfc19",
+          "page": 1,
+          "locator": "B7-B8 CELL Header 区域 JP3 1-12 脚"
+        }
+      ]
+    },
+    {
+      "reference": "D1/D2",
+      "part_number": "BLUE_LED/RED_LED",
+      "role": "G28/BOOT 与充电状态指示灯",
+      "evidence": [
+        {
+          "asset_sha256": "c9956a9984d780e970e779dac5371128f78093a1f37a53756714d0c2b29cfc19",
+          "page": 1,
+          "locator": "B7-C8 D1 BLUE_LED 与 D2 RED_LED 指示支路"
+        }
+      ]
+    }
+  ],
+  "facts": [
+    {
+      "id": "system.controller",
+      "category": "system",
+      "subject": "Stamp-C5 DIP 主控制器",
+      "statement": "U3 原理图器件型号为 ESP32-C5HF4，集成 USB_D-/USB_D+ 引脚、ANT_2G 与 ANT_5G 双射频端口，并引出 GPIO0-12、GPIO14、GPIO23-28。",
+      "confidence": "confirmed",
+      "attributes": {
+        "reference": "U3",
+        "part_number": "ESP32-C5HF4",
+        "usb": "USB_D-,USB_D+",
+        "rf": "ANT_2G,ANT_5G",
+        "exposed_gpio": "GPIO0-12,GPIO14,GPIO23-28"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "c9956a9984d780e970e779dac5371128f78093a1f37a53756714d0c2b29cfc19",
+          "page": 1,
+          "locator": "B1-D5 U3 ESP32-C5HF4 主控符号与全部外部网络"
+        }
+      ]
+    },
+    {
+      "id": "interface.usb-type-c",
+      "category": "interface",
+      "subject": "USB Type-C 输入",
+      "statement": "J1 TYPEC-302-BRP16SC08 的 VBUS 输出 USB_IN，A6/B6 并接 USBC_P，A7/B7 并接 USBC_N，CC1/CC2 分别经 R2/R3 5.1 kΩ 下拉到 GND。",
+      "confidence": "confirmed",
+      "attributes": {
+        "connector": "J1 TYPEC-302-BRP16SC08",
+        "power": "USB_IN",
+        "d_plus": "A6,B6 USBC_P",
+        "d_minus": "A7,B7 USBC_N",
+        "cc1_pulldown": "R2 5.1k",
+        "cc2_pulldown": "R3 5.1k"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "c9956a9984d780e970e779dac5371128f78093a1f37a53756714d0c2b29cfc19",
+          "page": 1,
+          "locator": "A1-A2 USBC IN 区域 J1、USB_IN、USBC_P/N 与 R2/R3"
+        }
+      ]
+    },
+    {
+      "id": "protection.usb-filter-esd",
+      "category": "protection",
+      "subject": "USB 数据滤波与保护",
+      "statement": "USBC_P/N 通过 FT1 ICMF062P900MFR 输出 USB_P/N，连接器侧的两路数据线分别由 DR1/DR2 对地保护。",
+      "confidence": "confirmed",
+      "attributes": {
+        "filter": "FT1 ICMF062P900MFR",
+        "input": "USBC_P,USBC_N",
+        "output": "USB_P,USB_N",
+        "esd": "DR1,DR2"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "c9956a9984d780e970e779dac5371128f78093a1f37a53756714d0c2b29cfc19",
+          "page": 1,
+          "locator": "A2-A3 FT1、DR1/DR2 与 USBC_P/N/USB_P/N"
+        }
+      ]
+    },
+    {
+      "id": "power.source-mux",
+      "category": "power",
+      "subject": "USB 与电池电源选择",
+      "statement": "U1 TPS2116DRLR 的 VIN1 接 USB_IN、VIN2 接 VBAT，VOUT 输出 VBUS；USB_IN 经 R7/R8 两只 10 kΩ 分压连接 PR1。",
+      "confidence": "confirmed",
+      "attributes": {
+        "mux": "U1 TPS2116DRLR",
+        "vin1": "USB_IN",
+        "vin2": "VBAT",
+        "output": "VBUS",
+        "priority_divider": "R7=10k,R8=10k to PR1"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "c9956a9984d780e970e779dac5371128f78093a1f37a53756714d0c2b29cfc19",
+          "page": 1,
+          "locator": "A3-A4 U1 TPS2116DRLR、USB_IN/VBAT/VBUS 与 R7/R8"
+        }
+      ]
+    },
+    {
+      "id": "power.system-3v3",
+      "category": "power",
+      "subject": "JW5712 系统 3.3V",
+      "statement": "U2 JW5712 以 VBUS 为 VIN，VSEL1/VSEL2/VSEL3 均接 VBUS，图面注记 Set output Voltage = 3.3V、MAX OUT I = 600mA；SW 经 L1 FTC121065S2R2MBCA 输出 VSYS_3V3。",
+      "confidence": "confirmed",
+      "attributes": {
+        "converter": "U2 JW5712",
+        "input": "VBUS",
+        "vsel": "VSEL1=1,VSEL2=1,VSEL3=1",
+        "output": "VSYS_3V3",
+        "output_voltage_v": 3.3,
+        "max_output_current_ma": 600,
+        "inductor": "L1 FTC121065S2R2MBCA"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "c9956a9984d780e970e779dac5371128f78093a1f37a53756714d0c2b29cfc19",
+          "page": 1,
+          "locator": "A5-A6 POWER 3V3 区域 U2、L1 与 3.3V/600mA 注记"
+        }
+      ]
+    },
+    {
+      "id": "power.battery-charger",
+      "category": "power",
+      "subject": "SGM40567 电池充电",
+      "statement": "U5 SGM40567-4.2XG/TR 的 VIN 接 USB_IN、BAT 接 VBAT、nCHG 输出 CHG_STA，IREF 经 R9 10 kΩ 接地；图面明确标注 Charge current = 200mA。",
+      "confidence": "confirmed",
+      "attributes": {
+        "charger": "U5 SGM40567-4.2XG/TR",
+        "input": "USB_IN",
+        "battery": "VBAT",
+        "status": "CHG_STA",
+        "iref": "R9 10k",
+        "charge_current_ma": 200
+      },
+      "evidence": [
+        {
+          "asset_sha256": "c9956a9984d780e970e779dac5371128f78093a1f37a53756714d0c2b29cfc19",
+          "page": 1,
+          "locator": "A7-A8 Charge 区域 U5、R9、USB_IN/VBAT/CHG_STA 与 200mA 注记"
+        }
+      ]
+    },
+    {
+      "id": "interface.native-usb",
+      "category": "interface",
+      "subject": "ESP32-C5 原生 USB",
+      "statement": "滤波后的 USB_N 与 USB_P 分别直接连接 U3 ESP32-C5HF4 的 USB_D- 和 USB_D+ 引脚，未绘制独立 USB-UART 芯片。",
+      "confidence": "confirmed",
+      "attributes": {
+        "d_minus": "USB_N to U3 USB_D-",
+        "d_plus": "USB_P to U3 USB_D+",
+        "usb_uart_bridge": "not shown"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "c9956a9984d780e970e779dac5371128f78093a1f37a53756714d0c2b29cfc19",
+          "page": 1,
+          "locator": "C1-D4 USB_N/P 网络直连 U3 pin22/pin23 USB_D-/USB_D+"
+        }
+      ]
+    },
+    {
+      "id": "reset.chip-enable",
+      "category": "reset",
+      "subject": "CHIP_EN 复位网络",
+      "statement": "CHIP_EN 由 R4 10 kΩ 上拉至 VSYS_3V3、C19 1 µF 对地，并引出 TP7 测试点。",
+      "confidence": "confirmed",
+      "attributes": {
+        "signal": "CHIP_EN",
+        "pullup": "R4 10k",
+        "capacitor": "C19 1uF",
+        "testpoint": "TP7"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "c9956a9984d780e970e779dac5371128f78093a1f37a53756714d0c2b29cfc19",
+          "page": 1,
+          "locator": "C1-C2 TP7 CHIP_EN、R4 与 C19"
+        }
+      ]
+    },
+    {
+      "id": "reset.boot-strap",
+      "category": "reset",
+      "subject": "G28_BOOT 启动网络",
+      "statement": "G28_BOOT 由 R6 10 kΩ 上拉至 VSYS_3V3、C23 10 pF 对地，并引出 TP8；将该网络接地后上电可形成低电平启动条件。",
+      "confidence": "confirmed",
+      "attributes": {
+        "signal": "G28_BOOT",
+        "gpio": "GPIO28",
+        "pullup": "R6 10k",
+        "capacitor": "C23 10pF",
+        "testpoint": "TP8"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "c9956a9984d780e970e779dac5371128f78093a1f37a53756714d0c2b29cfc19",
+          "page": 1,
+          "locator": "C1-D2 TP8 G28_BOOT、R6/C23 与 U3 GPIO28"
+        }
+      ]
+    },
+    {
+      "id": "debug.testpoints",
+      "category": "debug",
+      "subject": "USB、UART、EN 与 Boot 测试点",
+      "statement": "TP3=USBC_P、TP4=USBC_N、TP5=G11_TXD、TP6=G12_RXD、TP7=CHIP_EN、TP8=G28_BOOT。",
+      "confidence": "confirmed",
+      "attributes": {
+        "mapping": "TP3:USBC_P,TP4:USBC_N,TP5:G11_TXD,TP6:G12_RXD,TP7:CHIP_EN,TP8:G28_BOOT"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "c9956a9984d780e970e779dac5371128f78093a1f37a53756714d0c2b29cfc19",
+          "page": 1,
+          "locator": "C1-D2 左侧 TP3-TP8 网络标签"
+        }
+      ]
+    },
+    {
+      "id": "clock.main-crystal",
+      "category": "clock",
+      "subject": "ESP32-C5 晶振网络",
+      "statement": "X1 标为 TJ1148000HYFBC，连接 XTAL_P/N；XTAL_P 侧串联 L2 24 nH，并由 C6 10 pF 接地，XTAL_N 侧由 C7 12 pF 接地。",
+      "confidence": "confirmed",
+      "attributes": {
+        "reference": "X1",
+        "part_number": "TJ1148000HYFBC",
+        "series_inductor": "L2 24nH LQP03TN24NH02D",
+        "xtal_p_capacitor": "C6 10pF",
+        "xtal_n_capacitor": "C7 12pF"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "c9956a9984d780e970e779dac5371128f78093a1f37a53756714d0c2b29cfc19",
+          "page": 1,
+          "locator": "B3-B5 X1、L2、C6/C7 与 U3 XTAL_P/N"
+        }
+      ]
+    },
+    {
+      "id": "rf.dual-band-diplexer",
+      "category": "rf",
+      "subject": "2.4GHz 与 5GHz 天线复用",
+      "statement": "U3 ANT_5G 经 L3 0 Ω 和 C17/C18 NC 匹配位连接 U4 H_PORT；ANT_2G 经 L4 2 nH 和 C20 2.2 pF/C21 2.4 pF 连接 U4 L_PORT；U4 LFD182G45DCHD481 的 COM 经 50 Ω 受控阻抗网络连接 J2 IPEX_1，DR3 为 NC。",
+      "confidence": "confirmed",
+      "attributes": {
+        "diplexer": "U4 LFD182G45DCHD481",
+        "high_band": "ANT_5G-L3 0R-C17/C18 NC-H_PORT",
+        "low_band": "ANT_2G-L4 2nH-C20 2.2pF/C21 2.4pF-L_PORT",
+        "common": "COM to J2 IPEX_1 via 50R controlled impedance",
+        "optional_esd": "DR3 NC"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "c9956a9984d780e970e779dac5371128f78093a1f37a53756714d0c2b29cfc19",
+          "page": 1,
+          "locator": "C4-D8 U3 ANT_5G/ANT_2G、匹配网络、U4 与 J2 IPEX_1"
+        }
+      ]
+    },
+    {
+      "id": "interface.edge-pads",
+      "category": "interface",
+      "subject": "JP1/JP2 Stamp 焊盘",
+      "statement": "JP1 的 1-7 脚为 G1、G2、G3、G4、VBAT、USB_IN、GND；JP2 的 1-7 脚为 G5、G6、G7、G8、G9、G10、G28_BOOT。",
+      "confidence": "confirmed",
+      "attributes": {
+        "jp1": "1:G1,2:G2,3:G3,4:G4,5:VBAT,6:USB_IN,7:GND",
+        "jp2": "1:G5,2:G6,3:G7,4:G8,5:G9,6:G10,7:G28_BOOT"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "c9956a9984d780e970e779dac5371128f78093a1f37a53756714d0c2b29cfc19",
+          "page": 1,
+          "locator": "B6-B7 CELL Header 区域 JP1/JP2 1-7 脚"
+        }
+      ]
+    },
+    {
+      "id": "interface.fpc-pinout",
+      "category": "interface",
+      "subject": "JP3 12 针扩展接口",
+      "statement": "JP3 的 1-12 脚依次为 VSYS_3V3、VSYS_3V3、G23、G0、G24、G25、GND、G26、G27、G11_TXD、GND、G12_RXD。",
+      "confidence": "confirmed",
+      "attributes": {
+        "pinout": "1:VSYS_3V3,2:VSYS_3V3,3:G23,4:G0,5:G24,6:G25,7:GND,8:G26,9:G27,10:G11_TXD,11:GND,12:G12_RXD"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "c9956a9984d780e970e779dac5371128f78093a1f37a53756714d0c2b29cfc19",
+          "page": 1,
+          "locator": "B7-B8 CELL Header 区域 JP3 1-12 脚网络"
+        }
+      ]
+    },
+    {
+      "id": "gpio.exposed-count",
+      "category": "gpio",
+      "subject": "19 路外部 GPIO",
+      "statement": "JP1/JP2 焊盘引出 G1-G10 与 G28 共 11 路 GPIO，JP3 引出 G23、G0、G24、G25、G26、G27、G11、G12 共 8 路 GPIO，合计 19 路。",
+      "confidence": "confirmed",
+      "attributes": {
+        "edge_pad_gpio": "G1,G2,G3,G4,G5,G6,G7,G8,G9,G10,G28",
+        "jp3_gpio": "G23,G0,G24,G25,G26,G27,G11,G12",
+        "total": 19
+      },
+      "evidence": [
+        {
+          "asset_sha256": "c9956a9984d780e970e779dac5371128f78093a1f37a53756714d0c2b29cfc19",
+          "page": 1,
+          "locator": "B6-B8 CELL Header 区域 JP1/JP2/JP3 全部 GPIO 网络"
+        }
+      ]
+    },
+    {
+      "id": "gpio.status-leds",
+      "category": "gpio",
+      "subject": "充电与 Boot 指示灯",
+      "statement": "D2 RED_LED 从 VBAT 经 D2、R10 1 kΩ 连接 CHG_STA；D1 BLUE_LED 从 VSYS_3V3 经 D1、R1 1 kΩ 连接 G28_BOOT。",
+      "confidence": "confirmed",
+      "attributes": {
+        "charge_led": "VBAT-D2 RED_LED-R10 1k-CHG_STA",
+        "boot_led": "VSYS_3V3-D1 BLUE_LED-R1 1k-G28_BOOT"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "c9956a9984d780e970e779dac5371128f78093a1f37a53756714d0c2b29cfc19",
+          "page": 1,
+          "locator": "B7-C8 D2/R10/CHG_STA 与 D1/R1/G28_BOOT"
+        }
+      ]
+    },
+    {
+      "id": "system.schematic-revision",
+      "category": "system",
+      "subject": "原理图版本标识",
+      "statement": "资源 URL 与 PDF 文件名标为 StampC5 V0.3，但当前本地页面标题栏写 StampC5、页码 2/2、Revision V0.2、Date 2/07/2026；无法仅凭这一页确认 V0.3 文件是否仍包含 V0.2 页面或资源命名有误。",
+      "confidence": "uncertain",
+      "attributes": {
+        "resource_filename_revision": "V0.3",
+        "visible_title_revision": "V0.2",
+        "visible_page": "2/2",
+        "visible_date": "2/07/2026"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "c9956a9984d780e970e779dac5371128f78093a1f37a53756714d0c2b29cfc19",
+          "page": 1,
+          "locator": "D6-D8 标题栏 StampC5、2/2、Revision V0.2、Date 2/07/2026"
+        }
+      ]
+    },
+    {
+      "id": "storage.integrated-flash",
+      "category": "storage",
+      "subject": "4MB Flash 实现方式",
+      "statement": "源文档标注 4MB Flash，原理图只绘制 U3 ESP32-C5HF4 且没有独立 Flash 器件；Flash 是否集成于该封装及实际容量需由器件资料或 BOM 确认。",
+      "confidence": "uncertain",
+      "attributes": {
+        "source_document_capacity": "4MB",
+        "schematic_soc": "ESP32-C5HF4",
+        "external_flash": "not shown"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "c9956a9984d780e970e779dac5371128f78093a1f37a53756714d0c2b29cfc19",
+          "page": 1,
+          "locator": "B1-D5 ESP32-C5HF4 区域无独立 Flash 器件"
+        }
+      ]
+    },
+    {
+      "id": "interface.fpc-assembly",
+      "category": "interface",
+      "subject": "Stamp-C5 DIP 的 FPC 座与排针装配",
+      "statement": "Stamp-C5 DIP 源文档说明默认焊接 FPC 座并随附 2 x 2.54-7P 排针；唯一原理图页只给出 JP3 12 针和 JP1/JP2 七针电气定义，未标连接器料号、排针是否出厂焊接或装配属性，需由 BOM 或实物确认。",
+      "confidence": "uncertain",
+      "attributes": {
+        "schematic": "JP3 12-pin and JP1/JP2 7-pin electrical interfaces",
+        "source_document_fpc": "FPC connector populated by default",
+        "source_document_headers": "2 x 2.54-7P headers included",
+        "assembly_details": "not specified in schematic"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "c9956a9984d780e970e779dac5371128f78093a1f37a53756714d0c2b29cfc19",
+          "page": 1,
+          "locator": "B7-B8 CELL Header 区域 JP3 12 针符号，未提供装配属性"
+        }
+      ]
+    },
+    {
+      "id": "power.deep-sleep-current",
+      "category": "power",
+      "subject": "电池深度休眠功耗",
+      "statement": "Stamp-C5 DIP 源文档标注深度休眠为 3.7V@13µA，原理图显示 TPS2116DRLR、JW5712、SGM40567 和 LED 支路，但没有功耗测试状态、测量点、温度或器件关断配置，无法从图面复核 13µA 指标。",
+      "confidence": "uncertain",
+      "attributes": {
+        "source_document": "3.7V@13uA deep sleep",
+        "power_path": "VBAT-TPS2116DRLR-JW5712-VSYS_3V3",
+        "test_conditions": "not specified"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "c9956a9984d780e970e779dac5371128f78093a1f37a53756714d0c2b29cfc19",
+          "page": 1,
+          "locator": "A3-C8 VBAT 电源路径与 LED 支路，未标功耗测试条件"
+        }
+      ]
+    }
+  ],
+  "needs_review": [
+    {
+      "id": "review.schematic-revision",
+      "fact_id": "system.schematic-revision",
+      "question": "S016-DIP 当前正式原理图版本是 V0.3 还是页面标题栏所示 V0.2？",
+      "reason": "资源文件名/URL 与页面可见 Revision 字段不一致，且当前清单只收录 PDF 第 2 页。",
+      "evidence": [
+        {
+          "asset_sha256": "c9956a9984d780e970e779dac5371128f78093a1f37a53756714d0c2b29cfc19",
+          "page": 1,
+          "locator": "D6-D8 标题栏显示 Revision V0.2 与页码 2/2"
+        }
+      ]
+    },
+    {
+      "id": "review.integrated-flash",
+      "fact_id": "storage.integrated-flash",
+      "question": "U3 ESP32-C5HF4 是否集成源文档所述 4MB Flash，实际容量如何由 BOM 或器件资料确认？",
+      "reason": "原理图没有独立 Flash，也未直接标注容量。",
+      "evidence": [
+        {
+          "asset_sha256": "c9956a9984d780e970e779dac5371128f78093a1f37a53756714d0c2b29cfc19",
+          "page": 1,
+          "locator": "B1-D5 U3 ESP32-C5HF4 周边无独立 Flash 器件"
+        }
+      ]
+    },
+    {
+      "id": "review.fpc-assembly",
+      "fact_id": "interface.fpc-assembly",
+      "question": "Stamp-C5 DIP 默认焊接的 FPC 座具体料号是什么，随附两排 2.54-7P 排针是否出厂焊接？",
+      "reason": "源文档给出 DIP 装配/包装说明，原理图只给出 JP1/JP2/JP3 电气符号，没有装配属性。",
+      "evidence": [
+        {
+          "asset_sha256": "c9956a9984d780e970e779dac5371128f78093a1f37a53756714d0c2b29cfc19",
+          "page": 1,
+          "locator": "B6-B8 JP1/JP2/JP3 电气符号无连接器料号或装配属性"
+        }
+      ]
+    },
+    {
+      "id": "review.deep-sleep-current",
+      "fact_id": "power.deep-sleep-current",
+      "question": "3.7V@13µA 深度休眠指标的测量点、温度、射频状态、LED 状态和电源器件配置是什么？",
+      "reason": "原理图无法给出性能测试边界。",
+      "evidence": [
+        {
+          "asset_sha256": "c9956a9984d780e970e779dac5371128f78093a1f37a53756714d0c2b29cfc19",
+          "page": 1,
+          "locator": "A3-C8 VBAT 至 VSYS_3V3 电源路径与指示灯支路"
+        }
+      ]
+    }
+  ]
+}
+

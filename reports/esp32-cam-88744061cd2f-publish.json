@@ -1,0 +1,21 @@
+{
+  "dry_run": false,
+  "failed": 0,
+  "published": 1,
+  "results": [
+    {
+      "backup": null,
+      "draft_action": "unchanged",
+      "dry_run": false,
+      "errors": [],
+      "needs_review": 6,
+      "product_id": "esp32-cam-88744061cd2f",
+      "product_name": "ESP32-CAM",
+      "publish_action": "unchanged",
+      "sha256": "e836612786c32f5233a4474b7e58345ff767d36e9cab044cea2a996a0d018003",
+      "status": "valid",
+      "uncertain_facts": 6
+    }
+  ],
+  "schema_version": 1
+}

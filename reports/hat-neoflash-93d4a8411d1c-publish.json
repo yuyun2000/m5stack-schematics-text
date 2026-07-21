@@ -1,0 +1,21 @@
+{
+  "dry_run": false,
+  "failed": 0,
+  "published": 1,
+  "results": [
+    {
+      "backup": null,
+      "draft_action": "unchanged",
+      "dry_run": false,
+      "errors": [],
+      "needs_review": 4,
+      "product_id": "hat-neoflash-93d4a8411d1c",
+      "product_name": "Hat NeoFlash",
+      "publish_action": "unchanged",
+      "sha256": "e7ce36fb1ecbe753794a32d394d9f8691bdadd4e203fc34f89cb0d0fdcc2e2fa",
+      "status": "valid",
+      "uncertain_facts": 4
+    }
+  ],
+  "schema_version": 1
+}

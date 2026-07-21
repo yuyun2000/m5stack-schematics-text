@@ -1,0 +1,21 @@
+{
+  "dry_run": false,
+  "failed": 0,
+  "published": 1,
+  "results": [
+    {
+      "backup": null,
+      "draft_action": "unchanged",
+      "dry_run": false,
+      "errors": [],
+      "needs_review": 3,
+      "product_id": "unit-digiclock-63cf25e6b4eb",
+      "product_name": "Unit DigiClock",
+      "publish_action": "unchanged",
+      "sha256": "2f0d4f77fb8495f119e889499a3007b45099672ba51e51c134e144259bfd9816",
+      "status": "valid",
+      "uncertain_facts": 3
+    }
+  ],
+  "schema_version": 1
+}

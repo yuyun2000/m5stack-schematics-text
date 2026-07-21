@@ -1,0 +1,412 @@
+{
+  "schema_version": 1,
+  "generator": "schematic_describer",
+  "product": {
+    "product_id": "atom-spk-9b8445334331",
+    "product_name": "Atom SPK",
+    "sku": "K054",
+    "source_path": "atom/atom_spk.md",
+    "source_sha256": "7b692926efc3dd50b13a646295cf830b88eb37756810429660d399ee8f2faf7c",
+    "input_sha256": "9f69510511977ba9471790006ea6ee62c289aa05f1821bdad0590d625b34f26d"
+  },
+  "schematic_assets": [
+    {
+      "sha256": "6350bd8032e5d535e15fc3d932e6d4f4358a99329bec122f73380497fed9f133",
+      "source_url": "https://static-cdn.m5stack.com/resource/docs/products/atom/atom_spk/atom_spk_sch_01.webp",
+      "pages": [
+        1
+      ]
+    }
+  ],
+  "summary": "Atom SPK 通过 P1/P2 接收 Atom 主机的 +3.3V、+5VIN、I2S 音频信号和 TF 卡 SPI 信号。U2 NS4168 接收 LRCLK、BCLK 和 DATA，将音频转换为 VON/VOP 差分输出，并同时连接 P5 扬声器接口与 J1 3.5 mm 插座。U1 TF-015 由 +3.3V 供电，使用 CS、MOSI、CLK、MISO 四线 SPI；Rp1 为三路上拉和一路 CS 下拉提供 4.7KΩ 偏置。P3/P4 并联引出 DATA、BCLK、LRCLK 和 +3.3V。",
+  "keywords": [
+    "Atom SPK",
+    "K054",
+    "NS4168",
+    "TF-015",
+    "TF card",
+    "microSD",
+    "I2S",
+    "SPI",
+    "LRCLK",
+    "BCLK",
+    "DATA",
+    "SDATA",
+    "MOSI",
+    "MISO",
+    "CLK",
+    "CS",
+    "VON",
+    "VOP",
+    "+3.3V",
+    "+5VIN",
+    "P1 Header 5",
+    "P2 Header 4",
+    "P3 Header 2X2",
+    "P4 Header 2X2",
+    "P5 Header 2",
+    "3.5mm jack",
+    "4.7KΩ",
+    "differential speaker output"
+  ],
+  "components": [
+    {
+      "reference": "U1",
+      "part_number": "TF-015",
+      "role": "使用 CS、MOSI、CLK、MISO 的 TF 卡插座",
+      "evidence": [
+        {
+          "asset_sha256": "6350bd8032e5d535e15fc3d932e6d4f4358a99329bec122f73380497fed9f133",
+          "page": 1,
+          "locator": "第 1 页左上 U1 TF-015，pin2 CS、pin3 MOSI、pin4 VCC、pin5 CLK、pin6 GND、pin7 MISO"
+        }
+      ]
+    },
+    {
+      "reference": "Rp1",
+      "part_number": "4.7KΩ (472) ±5%",
+      "role": "TF 卡 SPI 网络的三路上拉和一路 CS 下拉电阻阵列",
+      "evidence": [
+        {
+          "asset_sha256": "6350bd8032e5d535e15fc3d932e6d4f4358a99329bec122f73380497fed9f133",
+          "page": 1,
+          "locator": "第 1 页左上 Rp1，pin8/7/6 接 +3.3V、pin5 接 GND，pin1/2/3/4 分别接 MISO/MOSI/CLK/CS"
+        }
+      ]
+    },
+    {
+      "reference": "U2",
+      "part_number": "NS4168",
+      "role": "接收 I2S LRCLK/BCLK/DATA 并输出 VON/VOP 差分音频的功放",
+      "evidence": [
+        {
+          "asset_sha256": "6350bd8032e5d535e15fc3d932e6d4f4358a99329bec122f73380497fed9f133",
+          "page": 1,
+          "locator": "第 1 页右上 U2 NS4168，CTRL/LRCLK/BCLK/SDATA、VDD/GND 与 VON/VOP"
+        }
+      ]
+    },
+    {
+      "reference": "P1",
+      "part_number": "Header 5",
+      "role": "Atom 侧 +3.3V、BCLK 与 TF 卡 SPI 信号接口",
+      "evidence": [
+        {
+          "asset_sha256": "6350bd8032e5d535e15fc3d932e6d4f4358a99329bec122f73380497fed9f133",
+          "page": 1,
+          "locator": "第 1 页左下 P1 Header 5，pin1 +3.3V、pin2 BCLK、pin3 MOSI、pin4 CLK、pin5 MISO"
+        }
+      ]
+    },
+    {
+      "reference": "P2",
+      "part_number": "Header 4",
+      "role": "Atom 侧 LRCLK、DATA、+5VIN 和 GND 接口",
+      "evidence": [
+        {
+          "asset_sha256": "6350bd8032e5d535e15fc3d932e6d4f4358a99329bec122f73380497fed9f133",
+          "page": 1,
+          "locator": "第 1 页左下 P2 Header 4，pin1 LRCLK、pin2 DATA、pin3 +5VIN、pin4 GND"
+        }
+      ]
+    },
+    {
+      "reference": "P3,P4",
+      "part_number": "Header 2X2",
+      "role": "并联引出 DATA、BCLK、LRCLK 和 +3.3V 的板间接口",
+      "evidence": [
+        {
+          "asset_sha256": "6350bd8032e5d535e15fc3d932e6d4f4358a99329bec122f73380497fed9f133",
+          "page": 1,
+          "locator": "第 1 页中左 P3 与右下 P4，均为 pin1 DATA、pin2 BCLK、pin3 LRCLK、pin4 +3.3V"
+        }
+      ]
+    },
+    {
+      "reference": "P5",
+      "part_number": "Header 2",
+      "role": "引出 NS4168 VON/VOP 差分扬声器输出",
+      "evidence": [
+        {
+          "asset_sha256": "6350bd8032e5d535e15fc3d932e6d4f4358a99329bec122f73380497fed9f133",
+          "page": 1,
+          "locator": "第 1 页右上 P5 Header 2，pin2 接 U2 VON、pin1 接 U2 VOP"
+        }
+      ]
+    },
+    {
+      "reference": "J1",
+      "part_number": "3.5mm jack",
+      "role": "接收 VON/VOP 差分音频的 3.5 mm 插座",
+      "evidence": [
+        {
+          "asset_sha256": "6350bd8032e5d535e15fc3d932e6d4f4358a99329bec122f73380497fed9f133",
+          "page": 1,
+          "locator": "第 1 页右上 J1 3.5mm jack，pin2 接 VON、pin3 接 VOP，pin1/pin4 未画外部网络连接"
+        }
+      ]
+    },
+    {
+      "reference": "C1,C2",
+      "part_number": "100nF (104) 10% 50V",
+      "role": "+3.3V 与 +5VIN 电源轨的对地去耦电容",
+      "evidence": [
+        {
+          "asset_sha256": "6350bd8032e5d535e15fc3d932e6d4f4358a99329bec122f73380497fed9f133",
+          "page": 1,
+          "locator": "第 1 页左下 C1 从 +3.3V 到 GND、C2 从 +5VIN 到 GND，均标注 100nF (104) 10% 50V"
+        }
+      ]
+    },
+    {
+      "reference": "C3",
+      "part_number": "10uF (106) 10% 10V",
+      "role": "NS4168 +3.3V VDD 电源轨的对地去耦电容",
+      "evidence": [
+        {
+          "asset_sha256": "6350bd8032e5d535e15fc3d932e6d4f4358a99329bec122f73380497fed9f133",
+          "page": 1,
+          "locator": "第 1 页右上 C3 10uF (106) 10% 10V，连接 U2 VDD 的 +3.3V 电源轨与 GND"
+        }
+      ]
+    }
+  ],
+  "facts": [
+    {
+      "id": "system.atom-spk-architecture",
+      "category": "system",
+      "subject": "Atom SPK 音频与存储架构",
+      "statement": "P1/P2 从 Atom 主机引入 +3.3V、+5VIN、I2S 和 SPI 网络；U2 NS4168 将 I2S 音频转换为 VON/VOP 差分输出，U1 TF-015 通过 SPI 网络连接主机，P3/P4 另行并联引出 I2S 和 +3.3V。",
+      "confidence": "confirmed",
+      "attributes": {
+        "audio_amplifier": "U2 NS4168",
+        "storage_connector": "U1 TF-015",
+        "host_connectors": "P1 Header 5, P2 Header 4",
+        "expansion_connectors": "P3/P4 Header 2X2",
+        "audio_outputs": "P5 Header 2, J1 3.5mm jack"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "6350bd8032e5d535e15fc3d932e6d4f4358a99329bec122f73380497fed9f133",
+          "page": 1,
+          "locator": "第 1 页完整单页原理图，U1/Rp1、P1-P4、U2/P5/J1 与 C1-C3"
+        }
+      ]
+    },
+    {
+      "id": "interface.atom-host-headers",
+      "category": "interface",
+      "subject": "Atom 主机连接器映射",
+      "statement": "P1 Header 5 的 pin1=+3.3V、pin2=BCLK、pin3=MOSI、pin4=CLK、pin5=MISO；P2 Header 4 的 pin1=LRCLK、pin2=DATA、pin3=+5VIN、pin4=GND。",
+      "confidence": "confirmed",
+      "attributes": {
+        "P1": "pin1 +3.3V, pin2 BCLK, pin3 MOSI, pin4 CLK, pin5 MISO",
+        "P2": "pin1 LRCLK, pin2 DATA, pin3 +5VIN, pin4 GND"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "6350bd8032e5d535e15fc3d932e6d4f4358a99329bec122f73380497fed9f133",
+          "page": 1,
+          "locator": "第 1 页左下 P1 Header 5 与 P2 Header 4 的针脚和网络名"
+        }
+      ]
+    },
+    {
+      "id": "storage.tf-card-pin-map",
+      "category": "storage",
+      "subject": "TF-015 TF 卡针脚映射",
+      "statement": "U1 TF-015 的 pin2=CS、pin3=MOSI、pin4=VCC/+3.3V、pin5=CLK、pin6=GND、pin7=MISO。",
+      "confidence": "confirmed",
+      "attributes": {
+        "pin2": "CS",
+        "pin3": "MOSI",
+        "pin4": "VCC +3.3V",
+        "pin5": "CLK",
+        "pin6": "GND",
+        "pin7": "MISO"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "6350bd8032e5d535e15fc3d932e6d4f4358a99329bec122f73380497fed9f133",
+          "page": 1,
+          "locator": "第 1 页左上 U1 TF-015 的 pin2 至 pin7 与 CS/MOSI/VCC/CLK/GND/MISO"
+        }
+      ]
+    },
+    {
+      "id": "bus.tf-card-spi",
+      "category": "bus",
+      "subject": "TF 卡 SPI 总线",
+      "statement": "U1 使用 CS、MOSI、CLK、MISO 四个网络构成 SPI 连接，其中 MOSI、CLK、MISO 经 P1 接至 Atom 主机。",
+      "confidence": "confirmed",
+      "attributes": {
+        "chip_select": "CS",
+        "controller_to_card": "MOSI",
+        "card_to_controller": "MISO",
+        "clock": "CLK",
+        "host_connector": "P1 pins 3-5 for MOSI/CLK/MISO"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "6350bd8032e5d535e15fc3d932e6d4f4358a99329bec122f73380497fed9f133",
+          "page": 1,
+          "locator": "第 1 页左侧 U1 TF-015 与 P1 的同名 MOSI/CLK/MISO 网络，以及 U1 CS 网络"
+        }
+      ]
+    },
+    {
+      "id": "key_net.tf-bias-resistors",
+      "category": "key_net",
+      "subject": "TF 卡 SPI 偏置电阻",
+      "statement": "Rp1 的 4.7KΩ 电阻分别将 MISO、MOSI、CLK 上拉至 +3.3V，并将 CS 下拉至 GND。",
+      "confidence": "confirmed",
+      "attributes": {
+        "value": "4.7KΩ (472) ±5%",
+        "MISO": "Rp1 pin1 to pin8 +3.3V",
+        "MOSI": "Rp1 pin2 to pin7 +3.3V",
+        "CLK": "Rp1 pin3 to pin6 +3.3V",
+        "CS": "Rp1 pin4 to pin5 GND"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "6350bd8032e5d535e15fc3d932e6d4f4358a99329bec122f73380497fed9f133",
+          "page": 1,
+          "locator": "第 1 页左上 Rp1 的 pin1-8、+3.3V/GND 端和 MISO/MOSI/CLK/CS 连接"
+        }
+      ]
+    },
+    {
+      "id": "interface.i2s-expansion-headers",
+      "category": "interface",
+      "subject": "P3/P4 I2S 扩展接口",
+      "statement": "P3 与 P4 具有相同映射：pin1=DATA、pin2=BCLK、pin3=LRCLK、pin4=+3.3V。",
+      "confidence": "confirmed",
+      "attributes": {
+        "P3": "pin1 DATA, pin2 BCLK, pin3 LRCLK, pin4 +3.3V",
+        "P4": "pin1 DATA, pin2 BCLK, pin3 LRCLK, pin4 +3.3V"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "6350bd8032e5d535e15fc3d932e6d4f4358a99329bec122f73380497fed9f133",
+          "page": 1,
+          "locator": "第 1 页中左 P3 与右下 P4 Header 2X2 的 DATA/BCLK/LRCLK/+3.3V"
+        }
+      ]
+    },
+    {
+      "id": "bus.ns4168-i2s",
+      "category": "bus",
+      "subject": "NS4168 I2S 输入",
+      "statement": "U2 NS4168 的 LRCLK pin2、BCLK pin3 和 SDATA pin4 分别连接 LRCLK、BCLK 和 DATA 网络。",
+      "confidence": "confirmed",
+      "attributes": {
+        "LRCLK": "U2 pin2 LRCLK",
+        "BCLK": "U2 pin3 BCLK",
+        "SDATA": "U2 pin4 DATA"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "6350bd8032e5d535e15fc3d932e6d4f4358a99329bec122f73380497fed9f133",
+          "page": 1,
+          "locator": "第 1 页右上 U2 NS4168 左侧 pin2 LRCLK、pin3 BCLK、pin4 SDATA/DATA"
+        }
+      ]
+    },
+    {
+      "id": "power.ns4168-supply-control",
+      "category": "power",
+      "subject": "NS4168 供电与控制",
+      "statement": "U2 NS4168 的 CTRL pin1 和 VDD pin6 均接 +3.3V，GND pin7 接 GND；C3 10uF 从该 +3.3V VDD 电源轨连接至 GND。",
+      "confidence": "confirmed",
+      "attributes": {
+        "CTRL": "pin1 +3.3V",
+        "VDD": "pin6 +3.3V",
+        "GND": "pin7 GND",
+        "decoupling": "C3 10uF (106) 10% 10V"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "6350bd8032e5d535e15fc3d932e6d4f4358a99329bec122f73380497fed9f133",
+          "page": 1,
+          "locator": "第 1 页右上 U2 CTRL/VDD/GND 与 C3 的 +3.3V-GND 连接"
+        }
+      ]
+    },
+    {
+      "id": "audio.ns4168-differential-output",
+      "category": "audio",
+      "subject": "NS4168 差分音频输出",
+      "statement": "U2 NS4168 从 VON pin5 和 VOP pin8 输出差分音频，两个网络同时进入 P5 和 J1。",
+      "confidence": "confirmed",
+      "attributes": {
+        "negative_output": "VON pin5",
+        "positive_output": "VOP pin8",
+        "destinations": "P5 Header 2, J1 3.5mm jack"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "6350bd8032e5d535e15fc3d932e6d4f4358a99329bec122f73380497fed9f133",
+          "page": 1,
+          "locator": "第 1 页右上 U2 VON pin5、VOP pin8 到 P5 与 J1 的两条网络"
+        }
+      ]
+    },
+    {
+      "id": "audio.speaker-header",
+      "category": "audio",
+      "subject": "P5 扬声器输出接口",
+      "statement": "P5 Header 2 的 pin2 接 VON，pin1 接 VOP，直接引出 NS4168 的差分输出。",
+      "confidence": "confirmed",
+      "attributes": {
+        "pin2": "VON / U2 pin5",
+        "pin1": "VOP / U2 pin8"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "6350bd8032e5d535e15fc3d932e6d4f4358a99329bec122f73380497fed9f133",
+          "page": 1,
+          "locator": "第 1 页右上 P5 Header 2 与 U2 VON/VOP 直连"
+        }
+      ]
+    },
+    {
+      "id": "audio.jack-output",
+      "category": "audio",
+      "subject": "J1 3.5 mm 插座音频连接",
+      "statement": "J1 pin2 接 VON、pin3 接 VOP；原理图没有给 J1 pin1 和 pin4 画出外部网络连接。",
+      "confidence": "confirmed",
+      "attributes": {
+        "pin2": "VON / U2 pin5",
+        "pin3": "VOP / U2 pin8",
+        "pin1_external_net": null,
+        "pin4_external_net": null
+      },
+      "evidence": [
+        {
+          "asset_sha256": "6350bd8032e5d535e15fc3d932e6d4f4358a99329bec122f73380497fed9f133",
+          "page": 1,
+          "locator": "第 1 页右上 J1 3.5mm jack，pin2/pin3 左侧分别连接 VON/VOP，pin1/pin4 左侧无外部网络线"
+        }
+      ]
+    },
+    {
+      "id": "power.input-rail-decoupling",
+      "category": "power",
+      "subject": "+3.3V 与 +5VIN 去耦",
+      "statement": "C1 100nF (104) 10% 50V 连接 +3.3V 与 GND，C2 同规格电容连接 +5VIN 与 GND。",
+      "confidence": "confirmed",
+      "attributes": {
+        "+3.3V": "C1 100nF (104) 10% 50V to GND",
+        "+5VIN": "C2 100nF (104) 10% 50V to GND"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "6350bd8032e5d535e15fc3d932e6d4f4358a99329bec122f73380497fed9f133",
+          "page": 1,
+          "locator": "第 1 页左下 C1 的 +3.3V-GND 与 C2 的 +5VIN-GND 连接"
+        }
+      ]
+    }
+  ],
+  "needs_review": []
+}

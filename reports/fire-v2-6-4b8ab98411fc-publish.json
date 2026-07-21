@@ -1,0 +1,21 @@
+{
+  "dry_run": false,
+  "failed": 0,
+  "published": 1,
+  "results": [
+    {
+      "backup": null,
+      "draft_action": "unchanged",
+      "dry_run": false,
+      "errors": [],
+      "needs_review": 11,
+      "product_id": "fire-v2-6-4b8ab98411fc",
+      "product_name": "Fire v2.6",
+      "publish_action": "unchanged",
+      "sha256": "291780b8652605eacabe4423119d7f1a0756834656b081d2a580fefb244bf4da",
+      "status": "valid",
+      "uncertain_facts": 11
+    }
+  ],
+  "schema_version": 1
+}

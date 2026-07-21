@@ -1,0 +1,21 @@
+{
+  "dry_run": false,
+  "failed": 0,
+  "published": 1,
+  "results": [
+    {
+      "backup": null,
+      "draft_action": "unchanged",
+      "dry_run": false,
+      "errors": [],
+      "needs_review": 1,
+      "product_id": "atomic-audio-3-5-base-1cc81796eb02",
+      "product_name": "Atomic Audio-3.5 Base",
+      "publish_action": "unchanged",
+      "sha256": "e6e686c57931c78c62fd9e84727d545ac89187e7646feb514d2c873d9a874863",
+      "status": "valid",
+      "uncertain_facts": 1
+    }
+  ],
+  "schema_version": 1
+}

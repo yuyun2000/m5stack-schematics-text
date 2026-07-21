@@ -1,0 +1,21 @@
+{
+  "dry_run": false,
+  "failed": 0,
+  "published": 1,
+  "results": [
+    {
+      "backup": null,
+      "draft_action": "unchanged",
+      "dry_run": false,
+      "errors": [],
+      "needs_review": 5,
+      "product_id": "stamp-addon-cam0308-be641eb7056e",
+      "product_name": "Stamp-AddOn_Cam0308",
+      "publish_action": "unchanged",
+      "sha256": "86add71e6d9f9fdce98fed5240756f12fce7527ab615160535c9be76130e4e5e",
+      "status": "valid",
+      "uncertain_facts": 5
+    }
+  ],
+  "schema_version": 1
+}

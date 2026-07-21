@@ -1,0 +1,41 @@
+{
+  "schema_version": 1,
+  "generator": "schematic_describer",
+  "product": {
+    "product_id": "grove-to-servo-9672db30be29",
+    "product_name": "Grove to Servo",
+    "sku": "A039",
+    "source_path": "accessory/converter/Grove_to_Servo.md",
+    "source_sha256": "ac65dcc7083efc5e4f16d7aa92ff7e138f9eae1b5238dcb10d636ae9c73c6c38",
+    "input_sha256": "3d6458fb6aa0e61108d89e801b8b1cc71f27de58355f47cd19352c3014ea79ee"
+  },
+  "schematic_assets": [
+    {"sha256": "2c64ac66aac69af316fc7cdea9455a236cf7c70ed8cd56d920a66a4d440bc1ce", "source_url": "https://m5stack-doc.oss-cn-shenzhen.aliyuncs.com/1246/A039-sche_page_01.png", "pages": [1]}
+  ],
+  "summary": "Grove to Servo 是一块纯无源三线转接板。J1 GROVE_IO 的 IO1 连接信号网络 S，VCC 与 GND 直接传递到 J2 1X3 2.54 的 pin2 与 pin3，S 连接 J2 pin1；J1 IO2 明确未连接。原理图未画电源转换、电平转换、缓冲、保护、滤波、地址或任何主动器件，因此输出电压与信号电平完全由外部 Grove 端决定。",
+  "keywords": [
+    "Grove to Servo", "A039", "GROVE_IO", "J1", "J2", "1X3 2.54", "HY2.0-4P", "2.54-3P", "IO1", "IO2", "S", "Signal", "VCC", "GND", "servo adapter", "passive adapter", "direct connection", "IO2 NC", "Grove VCC", "servo signal"
+  ],
+  "components": [
+    {"reference": "J1", "part_number": "GROVE_IO", "role": "四针 Grove 输入连接器，使用 IO1/S、VCC 和 GND，IO2 未连接", "evidence": [{"asset_sha256": "2c64ac66aac69af316fc7cdea9455a236cf7c70ed8cd56d920a66a4d440bc1ce", "page": 1, "locator": "第 1 页网格 B2-C2，J1 GROVE_IO 的 IO2/IO1/VCC/GND"}]},
+    {"reference": "J2", "part_number": "1X3 2.54", "role": "三针输出连接器，pin1 S、pin2 VCC、pin3 GND", "evidence": [{"asset_sha256": "2c64ac66aac69af316fc7cdea9455a236cf7c70ed8cd56d920a66a4d440bc1ce", "page": 1, "locator": "第 1 页网格 B3-C3，J2 1X3 2.54 pin1-pin3"}]}
+  ],
+  "facts": [
+    {"id": "system.passive-adapter", "category": "system", "subject": "Grove to Servo 无源转接架构", "statement": "整页仅包含 J1 GROVE_IO 与 J2 1X3 2.54 两个连接器，S/VCC/GND 三线直接相连，IO2 悬空；板上没有主动器件。", "confidence": "confirmed", "attributes": {"input": "J1 GROVE_IO", "output": "J2 1X3 2.54", "connected_nets": "S,VCC,GND", "unused": "J1 IO2", "active_components": null}, "evidence": [{"asset_sha256": "2c64ac66aac69af316fc7cdea9455a236cf7c70ed8cd56d920a66a4d440bc1ce", "page": 1, "locator": "第 1 页完整原理图"}]},
+    {"id": "interface.grove-j1", "category": "interface", "subject": "J1 Grove 接口", "statement": "J1 的 IO2 引脚带未连接标记；IO1 接 S，VCC 接 VCC，GND 接 GND。S 为从 Grove 侧进入转接板并送往 J2 的单线控制信号。", "confidence": "confirmed", "attributes": {"connector": "J1 GROVE_IO", "io2": "no connection", "io1": "S", "power": "VCC", "ground": "GND", "signal_direction": "input to J2"}, "evidence": [{"asset_sha256": "2c64ac66aac69af316fc7cdea9455a236cf7c70ed8cd56d920a66a4d440bc1ce", "page": 1, "locator": "第 1 页网格 B2-C2，J1 IO2 未连接标记与 IO1/S/VCC/GND"}]},
+    {"id": "interface.servo-j2", "category": "interface", "subject": "J2 三针接口", "statement": "J2 标为 1X3 2.54，pin1 接 S、pin2 接 VCC、pin3 接 GND。", "confidence": "confirmed", "attributes": {"connector": "J2 1X3 2.54", "pin1": "S signal", "pin2": "VCC", "pin3": "GND"}, "evidence": [{"asset_sha256": "2c64ac66aac69af316fc7cdea9455a236cf7c70ed8cd56d920a66a4d440bc1ce", "page": 1, "locator": "第 1 页网格 B3-C3，J2 pin1 S、pin2 VCC、pin3 GND"}]},
+    {"id": "key-net.signal-s", "category": "key_net", "subject": "S 信号直通", "statement": "J1 IO1 与 J2 pin1 通过同名网络 S 直接相连，中间没有串联电阻、缓冲器、电平转换器或反相器。", "confidence": "confirmed", "attributes": {"source": "J1 IO1", "network": "S", "destination": "J2 pin1", "series_component": null, "buffer": null, "level_shifter": null, "inversion": false}, "evidence": [{"asset_sha256": "2c64ac66aac69af316fc7cdea9455a236cf7c70ed8cd56d920a66a4d440bc1ce", "page": 1, "locator": "第 1 页 J1 IO1-S 与 J2 pin1-S 同名网络"}]},
+    {"id": "power.vcc-pass-through", "category": "power", "subject": "VCC 电源直通", "statement": "J1 VCC 与 J2 pin2 VCC 通过同名网络直接相连，板上没有 LDO、DC-DC、负载开关、保险丝、限流或去耦电容。", "confidence": "confirmed", "attributes": {"input": "J1 VCC", "output": "J2 pin2 VCC", "converter": null, "switch": null, "fuse": null, "current_limit": null, "decoupling": null}, "evidence": [{"asset_sha256": "2c64ac66aac69af316fc7cdea9455a236cf7c70ed8cd56d920a66a4d440bc1ce", "page": 1, "locator": "第 1 页 J1/J2 VCC 同名网络与完整电源路径"}]},
+    {"id": "key-net.ground-pass-through", "category": "key_net", "subject": "GND 直通", "statement": "J1 GND 与 J2 pin3 GND 通过同名网络直接相连。", "confidence": "confirmed", "attributes": {"source": "J1 GND", "destination": "J2 pin3", "network": "GND"}, "evidence": [{"asset_sha256": "2c64ac66aac69af316fc7cdea9455a236cf7c70ed8cd56d920a66a4d440bc1ce", "page": 1, "locator": "第 1 页 J1/J2 GND 同名网络"}]},
+    {"id": "protection.none", "category": "protection", "subject": "保护与滤波器件", "statement": "唯一原理图页面未画 ESD、TVS、保险丝、反接保护、过流保护、浪涌抑制、信号串阻或电源滤波器件。", "confidence": "confirmed", "attributes": {"esd": null, "tvs": null, "fuse": null, "reverse_protection": null, "overcurrent": null, "surge": null, "signal_resistor": null, "filter": null}, "evidence": [{"asset_sha256": "2c64ac66aac69af316fc7cdea9455a236cf7c70ed8cd56d920a66a4d440bc1ce", "page": 1, "locator": "第 1 页完整原理图，仅 J1/J2"}]},
+    {"id": "system.no-digital-subsystems", "category": "system", "subject": "数字、模拟和通信子系统", "statement": "板上没有 MCU、存储器、时钟、复位、调试、I2C、SPI、UART、CAN、RS-485、USB、传感器、射频、音频或模拟调理器件；S 仅为未定义协议的直通信号。", "confidence": "confirmed", "attributes": {"mcu": null, "storage": null, "clock": null, "reset": null, "debug": null, "i2c": null, "spi": null, "uart": null, "can": null, "rs485": null, "usb": null, "sensor": null, "rf": null, "audio": null, "analog": null}, "evidence": [{"asset_sha256": "2c64ac66aac69af316fc7cdea9455a236cf7c70ed8cd56d920a66a4d440bc1ce", "page": 1, "locator": "第 1 页完整原理图"}]},
+    {"id": "interface.documented-mechanics", "category": "interface", "subject": "J2 公针与弯脚结构", "statement": "产品正文称 J2 为 2.54-3P 公针并采用弯脚设计；原理图只标 J2 为 1X3 2.54，没有针座性别、弯角方向、引脚长度、额定插拔次数或机械公差。", "confidence": "uncertain", "attributes": {"documented_gender": "male", "documented_pitch": "2.54mm", "documented_style": "right-angle", "schematic_label": "1X3 2.54", "pin_length": null, "mating_cycles": null, "tolerance": null}, "evidence": [{"asset_sha256": "2c64ac66aac69af316fc7cdea9455a236cf7c70ed8cd56d920a66a4d440bc1ce", "page": 1, "locator": "第 1 页 J2 仅标 1X3 2.54"}]},
+    {"id": "gpio.documented-servo-signal", "category": "gpio", "subject": "舵机控制信号协议", "statement": "产品正文将 S 描述为舵机 Signal；原理图只确认 J1 IO1 到 J2 pin1 的直通连接，没有标 PWM 频率、脉宽范围、逻辑电平、极性、刷新率或兼容的舵机协议。", "confidence": "uncertain", "attributes": {"documented_role": "servo Signal", "network": "S", "input": "J1 IO1", "output": "J2 pin1", "pwm_frequency": null, "pulse_width": null, "logic_level": null, "polarity": null}, "evidence": [{"asset_sha256": "2c64ac66aac69af316fc7cdea9455a236cf7c70ed8cd56d920a66a4d440bc1ce", "page": 1, "locator": "第 1 页 J1 IO1-S-J2 pin1，无协议信息"}]},
+    {"id": "power.documented-ratings", "category": "power", "subject": "VCC 与信号电气额定值", "statement": "原理图未标 VCC 电压范围、最大电流、接触电阻、S 信号容限、ESD 等级或可驱动舵机功率；纯直通连接不能证明具体额定值。", "confidence": "uncertain", "attributes": {"vcc_voltage": null, "max_current": null, "contact_resistance": null, "signal_tolerance": null, "esd_rating": null, "servo_power": null}, "evidence": [{"asset_sha256": "2c64ac66aac69af316fc7cdea9455a236cf7c70ed8cd56d920a66a4d440bc1ce", "page": 1, "locator": "第 1 页 J1/J2 S/VCC/GND 直连，无额定值"}]}
+  ],
+  "needs_review": [
+    {"id": "review.connector-mechanics", "fact_id": "interface.documented-mechanics", "question": "请用量产 BOM、连接器料号或实物确认 J2 的公针性别、弯脚方向、针长与机械额定值。", "reason": "原理图只给出 1X3 2.54，不包含机械属性。", "evidence": [{"asset_sha256": "2c64ac66aac69af316fc7cdea9455a236cf7c70ed8cd56d920a66a4d440bc1ce", "page": 1, "locator": "第 1 页 J2"}]},
+    {"id": "review.servo-protocol", "fact_id": "gpio.documented-servo-signal", "question": "请依据目标舵机和主控平台确认 S 的逻辑电平、PWM 周期、脉宽、极性及兼容范围。", "reason": "原理图只显示信号直通，不定义舵机协议。", "evidence": [{"asset_sha256": "2c64ac66aac69af316fc7cdea9455a236cf7c70ed8cd56d920a66a4d440bc1ce", "page": 1, "locator": "第 1 页 S 网络"}]},
+    {"id": "review.electrical-ratings", "fact_id": "power.documented-ratings", "question": "请依据连接器 datasheet 和 PCB 设计确认 VCC 电压/电流、接触电阻、S 电平容限及 ESD 等级。", "reason": "原理图没有任何电气额定参数或保护器件。", "evidence": [{"asset_sha256": "2c64ac66aac69af316fc7cdea9455a236cf7c70ed8cd56d920a66a4d440bc1ce", "page": 1, "locator": "第 1 页 J1/J2"}]}
+  ]
+}

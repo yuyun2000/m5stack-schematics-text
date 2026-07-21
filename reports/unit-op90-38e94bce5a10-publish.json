@@ -1,0 +1,21 @@
+{
+  "dry_run": false,
+  "failed": 0,
+  "published": 1,
+  "results": [
+    {
+      "backup": null,
+      "draft_action": "unchanged",
+      "dry_run": false,
+      "errors": [],
+      "needs_review": 4,
+      "product_id": "unit-op90-38e94bce5a10",
+      "product_name": "Unit OP90",
+      "publish_action": "unchanged",
+      "sha256": "76c475f3361f2b85609f6f1dc984db52dfcfc0e240f432cbd8c02dc8f1542d0f",
+      "status": "valid",
+      "uncertain_facts": 4
+    }
+  ],
+  "schema_version": 1
+}

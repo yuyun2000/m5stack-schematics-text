@@ -1,0 +1,21 @@
+{
+  "dry_run": false,
+  "failed": 0,
+  "published": 1,
+  "results": [
+    {
+      "backup": null,
+      "draft_action": "unchanged",
+      "dry_run": false,
+      "errors": [],
+      "needs_review": 1,
+      "product_id": "hat-tof-1a91e659606c",
+      "product_name": "Hat ToF",
+      "publish_action": "unchanged",
+      "sha256": "f7c429ed4b63051e72fa833c20b2fc6a8c077561166df6a69a712466622be5d8",
+      "status": "valid",
+      "uncertain_facts": 1
+    }
+  ],
+  "schema_version": 1
+}

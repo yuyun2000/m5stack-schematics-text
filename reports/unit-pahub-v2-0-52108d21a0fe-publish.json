@@ -1,0 +1,21 @@
+{
+  "dry_run": false,
+  "failed": 0,
+  "published": 1,
+  "results": [
+    {
+      "backup": null,
+      "draft_action": "unchanged",
+      "dry_run": false,
+      "errors": [],
+      "needs_review": 5,
+      "product_id": "unit-pahub-v2-0-52108d21a0fe",
+      "product_name": "Unit PaHub v2.0",
+      "publish_action": "unchanged",
+      "sha256": "a10f6f2700606cb7881b4ece8b4f700bc7d9ae0aa9f7058a716aa33b95044c16",
+      "status": "valid",
+      "uncertain_facts": 5
+    }
+  ],
+  "schema_version": 1
+}

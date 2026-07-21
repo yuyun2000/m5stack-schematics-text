@@ -1,0 +1,353 @@
+{
+  "schema_version": 1,
+  "generator": "schematic_describer",
+  "product": {
+    "product_id": "unit-mini-tof-90-aa3bfaada847",
+    "product_name": "Unit Mini ToF-90°",
+    "sku": "U196",
+    "source_path": "unit/Unit Mini ToF-90.md",
+    "source_sha256": "7156bd3d21a1eee49c5130db7dfcbf9140fa189b25318756b01ecfc1593e12d6",
+    "input_sha256": "5555bf067afc973db0e6a779d23d9cbe59bdbddb7b2398987181b54cbff306e0"
+  },
+  "schematic_assets": [
+    {
+      "sha256": "82039681f5a55c96648ce3c93b12f23b4628c2ce1c70ae6e55be4f3f0f3029ea",
+      "source_url": "https://m5stack-doc.oss-cn-shenzhen.aliyuncs.com/1143/U196_SCH.png",
+      "pages": [1]
+    }
+  ],
+  "summary": "Unit Mini ToF-90° 由标为 Unit-ToF-90_1F 与 Unit-ToF-90_2F 的两块电路构成：1F 通过 J1 Grove 接收 I2C 与 5V，由 U1 ME6206A33XG 生成 3V3，并提供 I2C 上拉和红色电源灯。P1/P2 四针板间接口按 SCL、SDA、3.3V、GND 对应连接，2F 上的 U2 VL53L0CXV0DH/1 直接作为 I2C ToF 传感器，XSHUT/GPIO1 上拉并配置本地去耦。原理图未印 I2C 地址、光学性能、90°物理安装细节或功耗数据，且正文 VL53L0X 名称与图纸完整标识的对应关系需要 BOM/器件资料确认。",
+  "keywords": [
+    "Unit Mini ToF-90°",
+    "Unit Mini ToF-90",
+    "U196",
+    "Unit-ToF-90_1F",
+    "Unit-ToF-90_2F",
+    "VL53L0CXV0DH/1",
+    "VL53L0X",
+    "ME6206A33XG",
+    "Grove",
+    "HY2.0-4P",
+    "I2C",
+    "I2C_SCL",
+    "I2C_SDA",
+    "TOF_SCL",
+    "TOF_SDA",
+    "VCC_5V",
+    "3V3",
+    "TOF_3V3",
+    "TOF_GND",
+    "XSHUT",
+    "GPIO1",
+    "0x29",
+    "R1 4.7KΩ",
+    "R2 4.7KΩ",
+    "R3 10KΩ",
+    "R4 10KΩ",
+    "P1 Header 4",
+    "P2 Header 4",
+    "D1 RED LED",
+    "R7 1KΩ",
+    "940nm VCSEL",
+    "25° FoV",
+    "3-200cm",
+    "ToF",
+    "Class 1 laser",
+    "90° installation"
+  ],
+  "components": [
+    {
+      "reference": "U2",
+      "part_number": "VL53L0CXV0DH/1",
+      "role": "2F 板上的 ToF 传感器，连接 I2C、XSHUT、GPIO1、双 AVDD 与多脚接地",
+      "evidence": [{"asset_sha256": "82039681f5a55c96648ce3c93b12f23b4628c2ce1c70ae6e55be4f3f0f3029ea", "page": 1, "locator": "第1页网格 C2-C3，U2 VL53L0CXV0DH/1 pins1-12"}]
+    },
+    {
+      "reference": "U1",
+      "part_number": "ME6206A33XG",
+      "role": "1F 板上将 VCC_5V 稳压为 3V3 的三脚 LDO",
+      "evidence": [{"asset_sha256": "82039681f5a55c96648ce3c93b12f23b4628c2ce1c70ae6e55be4f3f0f3029ea", "page": 1, "locator": "第1页网格 A2-A3，U1 ME6206A33XG、VIN/VOUT/GND"}]
+    },
+    {
+      "reference": "J1",
+      "part_number": "GROVE",
+      "role": "1F 外部 I2C 与 5V/GND 接口，四脚标 IO2、IO1、5V、GND",
+      "evidence": [{"asset_sha256": "82039681f5a55c96648ce3c93b12f23b4628c2ce1c70ae6e55be4f3f0f3029ea", "page": 1, "locator": "第1页网格 A2，J1 GROVE 与 I2C_SCL/I2C_SDA/VCC_5V/GND"}]
+    },
+    {
+      "reference": "P1",
+      "part_number": "Header 4",
+      "role": "1F 板间接口，引出 I2C_SCL、I2C_SDA、3V3、GND",
+      "evidence": [{"asset_sha256": "82039681f5a55c96648ce3c93b12f23b4628c2ce1c70ae6e55be4f3f0f3029ea", "page": 1, "locator": "第1页网格 B2，P1 Header 4 pins1-4"}]
+    },
+    {
+      "reference": "P2",
+      "part_number": "Header 4",
+      "role": "2F 板间接口，引出 TOF_SCL、TOF_SDA、TOF_3V3、TOF_GND",
+      "evidence": [{"asset_sha256": "82039681f5a55c96648ce3c93b12f23b4628c2ce1c70ae6e55be4f3f0f3029ea", "page": 1, "locator": "第1页网格 C2，P2 Header 4 pins1-4"}]
+    },
+    {
+      "reference": "R1/R2",
+      "part_number": "4.7KΩ / 4.7KΩ",
+      "role": "1F 板上 I2C_SCL/I2C_SDA 到 3V3 的上拉电阻",
+      "evidence": [{"asset_sha256": "82039681f5a55c96648ce3c93b12f23b4628c2ce1c70ae6e55be4f3f0f3029ea", "page": 1, "locator": "第1页网格 A2，R1/R2 4.7KΩ、3V3、I2C_SCL/I2C_SDA"}]
+    },
+    {
+      "reference": "R3/R4",
+      "part_number": "10KΩ / 10KΩ",
+      "role": "2F 板上 U2 GPIO1 与 XSHUT 到 TOF_3V3 的上拉电阻",
+      "evidence": [{"asset_sha256": "82039681f5a55c96648ce3c93b12f23b4628c2ce1c70ae6e55be4f3f0f3029ea", "page": 1, "locator": "第1页网格 C2-C3，R3/R4 10KΩ、TOF_3V3、U2 pins7/5"}]
+    },
+    {
+      "reference": "D1/R7",
+      "part_number": "RED LED / 1KΩ",
+      "role": "1F 板上从 3V3 经 1KΩ 到 GND 的红色电源指示支路",
+      "evidence": [{"asset_sha256": "82039681f5a55c96648ce3c93b12f23b4628c2ce1c70ae6e55be4f3f0f3029ea", "page": 1, "locator": "第1页网格 B3，3V3/R7 1KΩ/D1 RED LED/GND"}]
+    },
+    {
+      "reference": "C1/C2/C3",
+      "part_number": "10uF / 100nF / 10uF",
+      "role": "U1 输入与输出的去耦/储能电容",
+      "evidence": [{"asset_sha256": "82039681f5a55c96648ce3c93b12f23b4628c2ce1c70ae6e55be4f3f0f3029ea", "page": 1, "locator": "第1页网格 A2-A3，U1 周围 C1/C2/C3"}]
+    },
+    {
+      "reference": "C4/C5/C8",
+      "part_number": "10uF / 100nF / NC",
+      "role": "2F 板上 TOF_3V3 的本地去耦与 P2 处预留未装电容",
+      "evidence": [{"asset_sha256": "82039681f5a55c96648ce3c93b12f23b4628c2ce1c70ae6e55be4f3f0f3029ea", "page": 1, "locator": "第1页网格 C2-C3，C4 10uF/C5 100nF/C8 NC 与 TOF_3V3/TOF_GND"}]
+    }
+  ],
+  "facts": [
+    {
+      "id": "system.two-board-architecture",
+      "category": "system",
+      "subject": "1F/2F 双板架构",
+      "statement": "原理图用虚线框分为 Unit-ToF-90_1F 和 Unit-ToF-90_2F：1F 包含 Grove、LDO、I2C 上拉、P1 与电源灯，2F 包含 P2、U2 ToF 传感器及其上拉/去耦。",
+      "confidence": "confirmed",
+      "attributes": {"first_board": "Unit-ToF-90_1F", "first_board_blocks": "J1,U1,R1/R2,P1,D1", "second_board": "Unit-ToF-90_2F", "second_board_blocks": "P2,U2,R3/R4,C4/C5/C8", "controller": "not shown"},
+      "evidence": [{"asset_sha256": "82039681f5a55c96648ce3c93b12f23b4628c2ce1c70ae6e55be4f3f0f3029ea", "page": 1, "locator": "第1页上下两个虚线框 Unit-ToF-90_1F/2F"}]
+    },
+    {
+      "id": "component.sensor-marking",
+      "category": "component",
+      "subject": "U2 ToF 传感器标识",
+      "statement": "2F 板 U2 的原理图型号明确标为 VL53L0CXV0DH/1，符号具有 12 脚。",
+      "confidence": "confirmed",
+      "attributes": {"reference": "U2", "schematic_part_number": "VL53L0CXV0DH/1", "pins": 12, "interface": "I2C", "control": "XSHUT; GPIO1"},
+      "evidence": [{"asset_sha256": "82039681f5a55c96648ce3c93b12f23b4628c2ce1c70ae6e55be4f3f0f3029ea", "page": 1, "locator": "第1页网格 C3，U2 型号和 pins1-12"}]
+    },
+    {
+      "id": "interface.grove-pinout",
+      "category": "interface",
+      "subject": "J1 Grove 针脚",
+      "statement": "J1 pin IO2 接 I2C_SCL，pin IO1 接 I2C_SDA，pin 5V 接 VCC_5V，pin GND 接 GND。",
+      "confidence": "confirmed",
+      "attributes": {"connector": "J1 GROVE", "io2": "I2C_SCL", "io1": "I2C_SDA", "power": "5V / VCC_5V", "ground": "GND", "direction": "SCL host output; SDA bidirectional"},
+      "evidence": [{"asset_sha256": "82039681f5a55c96648ce3c93b12f23b4628c2ce1c70ae6e55be4f3f0f3029ea", "page": 1, "locator": "第1页网格 A2，J1 IO2/IO1/5V/GND 与网络名"}]
+    },
+    {
+      "id": "power.ldo-3v3",
+      "category": "power",
+      "subject": "VCC_5V 到 3V3",
+      "statement": "U1 ME6206A33XG VIN pin3 接 VCC_5V，VOUT pin2 输出 3V3，GND pin1 接地；输入 C1 10uF，输出 C2 100nF/C3 10uF。",
+      "confidence": "confirmed",
+      "attributes": {"regulator": "U1 ME6206A33XG", "input": "pin3 VIN / VCC_5V", "output": "pin2 VOUT / 3V3", "ground": "pin1 GND", "input_cap": "C1 10uF", "output_caps": "C2 100nF; C3 10uF"},
+      "evidence": [{"asset_sha256": "82039681f5a55c96648ce3c93b12f23b4628c2ce1c70ae6e55be4f3f0f3029ea", "page": 1, "locator": "第1页网格 A2-A3，U1/C1/C2/C3/VCC_5V/3V3"}]
+    },
+    {
+      "id": "bus.i2c-first-board",
+      "category": "bus",
+      "subject": "1F I2C 总线",
+      "statement": "J1 的 I2C_SCL/I2C_SDA 直接连到 P1 pins1/2，并分别由 R1/R2 4.7KΩ 上拉到 3V3。",
+      "confidence": "confirmed",
+      "attributes": {"scl": "J1 IO2/I2C_SCL -> P1 pin1", "sda": "J1 IO1/I2C_SDA -> P1 pin2", "scl_pullup": "R1 4.7KΩ to 3V3", "sda_pullup": "R2 4.7KΩ to 3V3", "logic_voltage": "3V3"},
+      "evidence": [{"asset_sha256": "82039681f5a55c96648ce3c93b12f23b4628c2ce1c70ae6e55be4f3f0f3029ea", "page": 1, "locator": "第1页网格 A2-B2，J1/R1/R2/P1 与 I2C_SCL/I2C_SDA"}]
+    },
+    {
+      "id": "interface.board-headers",
+      "category": "interface",
+      "subject": "P1/P2 板间信号对应",
+      "statement": "P1 pins1-4 依次为 I2C_SCL、I2C_SDA、3V3、GND；P2 pins1-4 依次为 TOF_SCL、TOF_SDA、TOF_3V3、TOF_GND，形成同脚序的四线板间接口。",
+      "confidence": "confirmed",
+      "attributes": {"P1_pin1": "I2C_SCL", "P1_pin2": "I2C_SDA", "P1_pin3": "3V3", "P1_pin4": "GND", "P2_pin1": "TOF_SCL", "P2_pin2": "TOF_SDA", "P2_pin3": "TOF_3V3", "P2_pin4": "TOF_GND"},
+      "evidence": [{"asset_sha256": "82039681f5a55c96648ce3c93b12f23b4628c2ce1c70ae6e55be4f3f0f3029ea", "page": 1, "locator": "第1页网格 B2 的 P1 与 C2 的 P2 pins1-4"}]
+    },
+    {
+      "id": "bus.sensor-i2c",
+      "category": "bus",
+      "subject": "U2 I2C 连接",
+      "statement": "P2 pin1 TOF_SCL 连接 U2 SCL pin10，P2 pin2 TOF_SDA 连接 U2 SDA pin9；2F 注记说明 I2C pull-up resistors on 1F board。",
+      "confidence": "confirmed",
+      "attributes": {"controller": "external host through J1/P1/P2", "device": "U2 VL53L0CXV0DH/1", "scl": "P2 pin1 TOF_SCL -> U2 pin10", "sda": "P2 pin2 TOF_SDA -> U2 pin9", "pullup_location": "1F board R1/R2"},
+      "evidence": [{"asset_sha256": "82039681f5a55c96648ce3c93b12f23b4628c2ce1c70ae6e55be4f3f0f3029ea", "page": 1, "locator": "第1页网格 C2-C3，P2/TOF_SCL/TOF_SDA/U2 pins9/10 与 pull-up 注记"}]
+    },
+    {
+      "id": "power.sensor-supply",
+      "category": "power",
+      "subject": "U2 TOF_3V3 供电",
+      "statement": "P2 pin3 的 TOF_3V3 连接 U2 AVDD pins1/11；C4 10uF 与 C5 100nF 从 TOF_3V3 对地，C8 为 P2 附近未装的对地电容位。",
+      "confidence": "confirmed",
+      "attributes": {"source": "P2 pin3 TOF_3V3", "load": "U2 AVDD pins1,11", "decoupling": "C4 10uF; C5 100nF", "optional_cap": "C8 NC", "return": "TOF_GND"},
+      "evidence": [{"asset_sha256": "82039681f5a55c96648ce3c93b12f23b4628c2ce1c70ae6e55be4f3f0f3029ea", "page": 1, "locator": "第1页网格 C2-C3，P2 pin3/U2 AVDD/C4/C5/C8"}]
+    },
+    {
+      "id": "gpio.xshut-gpio1",
+      "category": "gpio",
+      "subject": "U2 XSHUT 与 GPIO1",
+      "statement": "U2 XSHUT pin5 与 GPIO1 pin7 分别通过 R4/R3 10KΩ 上拉到 TOF_3V3，页面没有把两信号引到 P2。",
+      "confidence": "confirmed",
+      "attributes": {"xshut": "U2 pin5 -> R4 10KΩ -> TOF_3V3", "gpio1": "U2 pin7 -> R3 10KΩ -> TOF_3V3", "external_breakout": "not shown", "default_level": "high"},
+      "evidence": [{"asset_sha256": "82039681f5a55c96648ce3c93b12f23b4628c2ce1c70ae6e55be4f3f0f3029ea", "page": 1, "locator": "第1页网格 C2-C3，R3/R4、U2 XSHUT pin5/GPIO1 pin7"}]
+    },
+    {
+      "id": "key_net.sensor-ground-dnc",
+      "category": "key_net",
+      "subject": "U2 接地与 DNC",
+      "statement": "U2 VSS pin2、GND pin3、GND2 pin4、GND3 pin6、GND4 pin12 接 TOF_GND，DNC pin8 标叉未连接。",
+      "confidence": "confirmed",
+      "attributes": {"grounds": "pins2,3,4,6,12 -> TOF_GND", "dnc": "pin8 not connected", "ground_source": "P2 pin4 TOF_GND"},
+      "evidence": [{"asset_sha256": "82039681f5a55c96648ce3c93b12f23b4628c2ce1c70ae6e55be4f3f0f3029ea", "page": 1, "locator": "第1页网格 C3，U2 right-side VSS/GND/GND2/GND3/GND4/DNC pins"}]
+    },
+    {
+      "id": "power.red-led",
+      "category": "power",
+      "subject": "3V3 红色指示灯",
+      "statement": "1F 板 3V3 经 R7 1KΩ 串联 D1 RED LED 到 GND，电路中没有 GPIO 开关或负载开关。",
+      "confidence": "confirmed",
+      "attributes": {"rail": "3V3", "resistor": "R7 1KΩ", "led": "D1 RED LED", "return": "GND", "control": "always connected"},
+      "evidence": [{"asset_sha256": "82039681f5a55c96648ce3c93b12f23b4628c2ce1c70ae6e55be4f3f0f3029ea", "page": 1, "locator": "第1页网格 B3，3V3/R7/D1/GND"}]
+    },
+    {
+      "id": "protection.interface-absence",
+      "category": "protection",
+      "subject": "外部接口保护",
+      "statement": "J1 的 VCC_5V、I2C_SCL 与 I2C_SDA 路径未显示保险丝、串联限流或专用 ESD/TVS 器件。",
+      "confidence": "confirmed",
+      "attributes": {"power_fuse": "not shown", "i2c_series": "not shown", "esd": "not shown", "tvs": "not shown", "connector": "J1 GROVE"},
+      "evidence": [{"asset_sha256": "82039681f5a55c96648ce3c93b12f23b4628c2ce1c70ae6e55be4f3f0f3029ea", "page": 1, "locator": "第1页网格 A2-B2，J1 到 U1/P1 的全部接口线路"}]
+    },
+    {
+      "id": "system.omitted-blocks",
+      "category": "system",
+      "subject": "未显示的控制与存储分区",
+      "statement": "该页未显示 MCU、协处理器、外部存储器、晶振、复位按键、调试接口、音频、射频或电池/充电电路；U2 由外部 I2C 主机直接访问。",
+      "confidence": "confirmed",
+      "attributes": {"mcu": "not shown", "coprocessor": "not shown", "storage": "not shown", "clock": "not shown", "debug": "not shown", "audio": "not shown", "rf": "not shown", "battery": "not shown"},
+      "evidence": [{"asset_sha256": "82039681f5a55c96648ce3c93b12f23b4628c2ce1c70ae6e55be4f3f0f3029ea", "page": 1, "locator": "第1页完整单页器件与功能分区"}]
+    },
+    {
+      "id": "component.sensor-name-equivalence",
+      "category": "component",
+      "subject": "VL53L0X 与 VL53L0CXV0DH/1 名称对应",
+      "statement": "产品正文把传感器称为 VL53L0X，原理图 U2 完整字段为 VL53L0CXV0DH/1；本页没有 BOM 或订货型号说明二者的精确对应关系。",
+      "confidence": "uncertain",
+      "attributes": {"document_name": "VL53L0X", "schematic_marking": "VL53L0CXV0DH/1", "bom": "not available on page", "equivalence": "not confirmed by schematic alone"},
+      "evidence": [{"asset_sha256": "82039681f5a55c96648ce3c93b12f23b4628c2ce1c70ae6e55be4f3f0f3029ea", "page": 1, "locator": "第1页网格 C3，U2 标识 VL53L0CXV0DH/1"}]
+    },
+    {
+      "id": "address.i2c-0x29",
+      "category": "address",
+      "subject": "U2 I2C 地址",
+      "statement": "产品正文给出 7 位 I2C 地址 0x29，但原理图页面只显示 SDA/SCL 连接，没有打印地址或地址选择网络。",
+      "confidence": "uncertain",
+      "attributes": {"document_address": "0x29", "address_width": "7-bit stated by context", "schematic_address": "not shown", "address_strap": "not shown", "device": "U2"},
+      "evidence": [{"asset_sha256": "82039681f5a55c96648ce3c93b12f23b4628c2ce1c70ae6e55be4f3f0f3029ea", "page": 1, "locator": "第1页网格 C2-C3，U2 SDA/SCL 与上拉，无地址标注"}]
+    },
+    {
+      "id": "sensor.optical-performance",
+      "category": "sensor",
+      "subject": "量程、分辨率、视场与激光",
+      "statement": "产品正文给出 3-200cm、1mm、25° FoV、940nm VCSEL/Class 1 与 ±3% 等参数；原理图没有光学结构、标定条件或性能表。",
+      "confidence": "uncertain",
+      "attributes": {"document_range": "3-200cm", "document_resolution": "1mm", "document_fov": "25°", "document_wavelength": "940nm", "document_laser_class": "Class 1", "document_accuracy": "±3%", "schematic_performance": "not shown"},
+      "evidence": [{"asset_sha256": "82039681f5a55c96648ce3c93b12f23b4628c2ce1c70ae6e55be4f3f0f3029ea", "page": 1, "locator": "第1页 U2 电气连接，无光学性能字段"}]
+    },
+    {
+      "id": "sensor.timing-modes",
+      "category": "sensor",
+      "subject": "测量速度与 Long Range 模式",
+      "statement": "产品正文给出 23ms、最短 8ms、响应时间小于 30ms，并称 200cm 需要 Long Range 和暗环境；原理图没有时序、固件配置或环境条件。",
+      "confidence": "uncertain",
+      "attributes": {"document_measurement": "23ms", "document_minimum": "8ms", "document_response": "<30ms", "document_long_range": "200cm in Long Range under dark/no IR interference", "schematic_timing": "not shown"},
+      "evidence": [{"asset_sha256": "82039681f5a55c96648ce3c93b12f23b4628c2ce1c70ae6e55be4f3f0f3029ea", "page": 1, "locator": "第1页 U2 I2C/XSHUT/GPIO1 电路，无时序或模式注记"}]
+    },
+    {
+      "id": "sensor.physical-rotation",
+      "category": "sensor",
+      "subject": "90°传感器安装方向",
+      "statement": "产品名和正文表示传感器旋转 90°、水平前向探测；原理图仅以 1F/2F 电路框表示两块板，没有机械视图或光轴方向。",
+      "confidence": "uncertain",
+      "attributes": {"document_rotation": "90°", "document_direction": "horizontal forward", "schematic_board_names": "Unit-ToF-90_1F; Unit-ToF-90_2F", "mechanical_evidence": "not shown"},
+      "evidence": [{"asset_sha256": "82039681f5a55c96648ce3c93b12f23b4628c2ce1c70ae6e55be4f3f0f3029ea", "page": 1, "locator": "第1页上下 1F/2F 电气框，无机械安装视图"}]
+    },
+    {
+      "id": "power.consumption",
+      "category": "power",
+      "subject": "待机与工作功耗",
+      "statement": "产品正文给出无 LED/含 LED 待机及工作电流，但原理图没有测试点、传感器模式、主机状态或测量条件。",
+      "confidence": "uncertain",
+      "attributes": {"document_standby_no_led": "DC 5.03V@15.01uA", "document_standby_with_led": "DC 5.02V@1.92mA", "document_working": "DC 5.02V@10.99mA", "schematic_measurement": "not shown", "led_branch": "3V3 -> R7 1KΩ -> D1 -> GND"},
+      "evidence": [{"asset_sha256": "82039681f5a55c96648ce3c93b12f23b4628c2ce1c70ae6e55be4f3f0f3029ea", "page": 1, "locator": "第1页 J1/U1/D1/U2 电源链路，无电流测量数据"}]
+    },
+    {
+      "id": "other.operating-temperature",
+      "category": "other",
+      "subject": "整机工作温度",
+      "statement": "产品正文给出 0-40°C，原理图未标整机温度范围、LDO 额定负载或传感器工作条件。",
+      "confidence": "uncertain",
+      "attributes": {"document_temperature": "0-40°C", "schematic_temperature": "not shown", "ldo_rating": "not shown", "sensor_conditions": "not shown"},
+      "evidence": [{"asset_sha256": "82039681f5a55c96648ce3c93b12f23b4628c2ce1c70ae6e55be4f3f0f3029ea", "page": 1, "locator": "第1页完整单页，无温度或系统额定参数表"}]
+    }
+  ],
+  "needs_review": [
+    {
+      "id": "review.sensor-name-equivalence",
+      "fact_id": "component.sensor-name-equivalence",
+      "question": "请用 U196 BOM、实装丝印或 ST 订货资料确认图纸 VL53L0CXV0DH/1 与正文 VL53L0X 的精确器件/封装关系。",
+      "reason": "正文通用型号与原理图完整字段不同，本页没有 BOM 解释。",
+      "evidence": [{"asset_sha256": "82039681f5a55c96648ce3c93b12f23b4628c2ce1c70ae6e55be4f3f0f3029ea", "page": 1, "locator": "第1页网格 C3，U2 VL53L0CXV0DH/1"}]
+    },
+    {
+      "id": "review.i2c-address",
+      "fact_id": "address.i2c-0x29",
+      "question": "请用对应 U2 datasheet、驱动或总线实测确认默认 7 位地址为 0x29，并说明是否支持运行时改址。",
+      "reason": "地址来自产品正文，原理图没有地址字段或选择网络。",
+      "evidence": [{"asset_sha256": "82039681f5a55c96648ce3c93b12f23b4628c2ce1c70ae6e55be4f3f0f3029ea", "page": 1, "locator": "第1页 U2 SDA/SCL 电路"}]
+    },
+    {
+      "id": "review.optical-performance",
+      "fact_id": "sensor.optical-performance",
+      "question": "请用实装传感器 datasheet 与 U196 光学/标定测试确认量程、分辨率、FoV、波长、激光等级和精度。",
+      "reason": "这些是器件与结构性能，原理图没有测试条件。",
+      "evidence": [{"asset_sha256": "82039681f5a55c96648ce3c93b12f23b4628c2ce1c70ae6e55be4f3f0f3029ea", "page": 1, "locator": "第1页 U2 电气连接"}]
+    },
+    {
+      "id": "review.timing-modes",
+      "fact_id": "sensor.timing-modes",
+      "question": "请按驱动配置和环境条件实测 8ms/23ms/<30ms 时序及 200cm Long Range 模式。",
+      "reason": "原理图没有固件时序、模式或环境条件。",
+      "evidence": [{"asset_sha256": "82039681f5a55c96648ce3c93b12f23b4628c2ce1c70ae6e55be4f3f0f3029ea", "page": 1, "locator": "第1页 U2 I2C/XSHUT/GPIO1"}]
+    },
+    {
+      "id": "review.physical-rotation",
+      "fact_id": "sensor.physical-rotation",
+      "question": "请用 U196 PCB/结构图或实物确认传感器相对 Grove 板旋转 90°及实际光轴方向。",
+      "reason": "原理图只有 1F/2F 电气分区，没有机械安装证据。",
+      "evidence": [{"asset_sha256": "82039681f5a55c96648ce3c93b12f23b4628c2ce1c70ae6e55be4f3f0f3029ea", "page": 1, "locator": "第1页 Unit-ToF-90_1F/2F 虚线框"}]
+    },
+    {
+      "id": "review.power-consumption",
+      "fact_id": "power.consumption",
+      "question": "请按 LED 状态、传感器模式和 5V 输入条件复测待机与工作电流。",
+      "reason": "正文电流值没有对应的图纸测量方法。",
+      "evidence": [{"asset_sha256": "82039681f5a55c96648ce3c93b12f23b4628c2ce1c70ae6e55be4f3f0f3029ea", "page": 1, "locator": "第1页 J1/U1/D1/U2 电源链路"}]
+    },
+    {
+      "id": "review.operating-temperature",
+      "fact_id": "other.operating-temperature",
+      "question": "请用整机规格、BOM 器件额定值和环境测试确认 0-40°C 工作范围。",
+      "reason": "温度范围未印在原理图上。",
+      "evidence": [{"asset_sha256": "82039681f5a55c96648ce3c93b12f23b4628c2ce1c70ae6e55be4f3f0f3029ea", "page": 1, "locator": "第1页完整单页，无温度参数"}]
+    }
+  ]
+}

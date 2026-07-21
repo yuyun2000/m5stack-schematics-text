@@ -1,0 +1,21 @@
+{
+  "dry_run": false,
+  "failed": 0,
+  "published": 1,
+  "results": [
+    {
+      "backup": null,
+      "draft_action": "unchanged",
+      "dry_run": false,
+      "errors": [],
+      "needs_review": 7,
+      "product_id": "module-comx-lorawan868-9537116beb9a",
+      "product_name": "Module COMX LoRaWAN868",
+      "publish_action": "unchanged",
+      "sha256": "c7fa9e0bb74d1a5b9542ccfc948d9f35fcbab0d6d3a00a69375d0b26de9ac1fd",
+      "status": "valid",
+      "uncertain_facts": 7
+    }
+  ],
+  "schema_version": 1
+}

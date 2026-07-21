@@ -1,0 +1,21 @@
+{
+  "dry_run": false,
+  "failed": 0,
+  "published": 1,
+  "results": [
+    {
+      "backup": null,
+      "draft_action": "unchanged",
+      "dry_run": false,
+      "errors": [],
+      "needs_review": 1,
+      "product_id": "core2-for-aws-2e685fb3f300",
+      "product_name": "Core2 For AWS",
+      "publish_action": "unchanged",
+      "sha256": "2e547769065a7ba69a666589302a3ff6836aac094f926bb28b305f8cc12dfc39",
+      "status": "valid",
+      "uncertain_facts": 1
+    }
+  ],
+  "schema_version": 1
+}

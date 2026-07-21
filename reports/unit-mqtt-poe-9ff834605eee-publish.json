@@ -1,0 +1,21 @@
+{
+  "dry_run": false,
+  "failed": 0,
+  "published": 1,
+  "results": [
+    {
+      "backup": null,
+      "draft_action": "unchanged",
+      "dry_run": false,
+      "errors": [],
+      "needs_review": 4,
+      "product_id": "unit-mqtt-poe-9ff834605eee",
+      "product_name": "Unit MQTT-PoE",
+      "publish_action": "unchanged",
+      "sha256": "6296239cab2b4d6044050b9405273f4d9058abe4f865aeed4174b2f35fd6af8a",
+      "status": "valid",
+      "uncertain_facts": 4
+    }
+  ],
+  "schema_version": 1
+}

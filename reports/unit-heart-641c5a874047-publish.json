@@ -1,0 +1,21 @@
+{
+  "dry_run": false,
+  "failed": 0,
+  "published": 1,
+  "results": [
+    {
+      "backup": null,
+      "draft_action": "unchanged",
+      "dry_run": false,
+      "errors": [],
+      "needs_review": 2,
+      "product_id": "unit-heart-641c5a874047",
+      "product_name": "Unit Heart",
+      "publish_action": "unchanged",
+      "sha256": "406a266de819854ae7f69f1cb2056e38b447d96c8a62e12e8e8ddd85d5198f6c",
+      "status": "valid",
+      "uncertain_facts": 2
+    }
+  ],
+  "schema_version": 1
+}

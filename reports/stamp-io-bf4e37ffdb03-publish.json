@@ -1,0 +1,21 @@
+{
+  "dry_run": false,
+  "failed": 0,
+  "published": 1,
+  "results": [
+    {
+      "backup": null,
+      "draft_action": "unchanged",
+      "dry_run": false,
+      "errors": [],
+      "needs_review": 3,
+      "product_id": "stamp-io-bf4e37ffdb03",
+      "product_name": "Stamp IO",
+      "publish_action": "unchanged",
+      "sha256": "8bb42c6391366543bc22d626fafc31a2705e05fc432347a80e42e0a04dc85ba9",
+      "status": "valid",
+      "uncertain_facts": 3
+    }
+  ],
+  "schema_version": 1
+}

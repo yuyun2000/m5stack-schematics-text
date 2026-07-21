@@ -1,0 +1,150 @@
+{
+  "schema_version": 1,
+  "generator": "schematic_describer",
+  "product": {
+    "product_id": "unit-proto-342508bb9734",
+    "product_name": "Unit Proto",
+    "sku": "U022",
+    "source_path": "unit/proto.md",
+    "source_sha256": "d645dbc3a0af392853ffcd8a45c32197f69c1057c099935a7070bace806eda17",
+    "input_sha256": "a17b512bc2d842f3a2f8c24a9c489158e12824c395d98193033727fae72aae35"
+  },
+  "schematic_assets": [
+    {
+      "sha256": "30fc13708a2c9f3a84b43d870bd0ea57f976928fc58e6917a9a9c5f47be8aceb",
+      "source_url": "https://m5stack-doc.oss-cn-shenzhen.aliyuncs.com/809/U022_SCHE.jpg",
+      "pages": [1]
+    }
+  ],
+  "summary": "Unit Proto（U022）原理图是 P1 Header 4 与 J1 Grove 之间的四针无源直连，P1 pins 1~4 分别对应 J1 的 I、O、VCC、GND。页面内没有主控、协处理器、传感器、电源转换、保护、时钟、复位、调试或存储器件。原理图未标注 VCC 电压、I/O 命名相对于哪一侧的方向，也未展示原型焊盘数量、孔径和孔距。",
+  "keywords": [
+    "Unit Proto", "U022", "Proto Unit", "P1", "Header 4", "J1", "Grove",
+    "I", "O", "VCC", "GND", "P1 pin 1", "P1 pin 2", "P1 pin 3", "P1 pin 4",
+    "J1 pin 1 I", "J1 pin 2 O", "J1 pin 3 VCC", "J1 pin 4 GND",
+    "无源直连", "原型板", "77 holes", "2.54mm", "1mm hole"
+  ],
+  "components": [
+    {
+      "reference": "P1", "part_number": "Header 4",
+      "role": "四针内部排针/原型电路接口，逐针连接 J1",
+      "evidence": [{"asset_sha256": "30fc13708a2c9f3a84b43d870bd0ea57f976928fc58e6917a9a9c5f47be8aceb", "page": 1, "locator": "第 1 页 B2 中央 P1 Header 4，pins 1~4 四条横线连接 J1"}]
+    },
+    {
+      "reference": "J1", "part_number": "Grove",
+      "role": "四针外部 Grove 接口，功能为 I、O、VCC、GND",
+      "evidence": [{"asset_sha256": "30fc13708a2c9f3a84b43d870bd0ea57f976928fc58e6917a9a9c5f47be8aceb", "page": 1, "locator": "第 1 页 B2 中央 J1 Grove，pins 1~4 标注 I/O/VCC/GND"}]
+    }
+  ],
+  "facts": [
+    {
+      "id": "system.passive-breakout", "category": "system", "subject": "Unit Proto 架构",
+      "statement": "电路仅由 P1 Header 4 和 J1 Grove 组成，四个针脚一一直接相连，没有中间器件或有源功能分区。",
+      "confidence": "confirmed", "attributes": {"internal": "P1 Header 4", "external": "J1 Grove", "connection": "pin-to-pin direct", "active_devices": null},
+      "evidence": [{"asset_sha256": "30fc13708a2c9f3a84b43d870bd0ea57f976928fc58e6917a9a9c5f47be8aceb", "page": 1, "locator": "第 1 页完整原理图仅 P1/J1 与四条直连线"}]
+    },
+    {
+      "id": "component.connector-set", "category": "component", "subject": "连接器组成",
+      "statement": "P1 型号文字为 Header 4，J1 型号文字为 Grove；两者均明确编号 pins 1~4。",
+      "confidence": "confirmed", "attributes": {"P1": "Header 4,pins 1-4", "J1": "Grove,pins 1-4"},
+      "evidence": [{"asset_sha256": "30fc13708a2c9f3a84b43d870bd0ea57f976928fc58e6917a9a9c5f47be8aceb", "page": 1, "locator": "第 1 页 B2 P1/J1 位号、型号文字和针号"}]
+    },
+    {
+      "id": "interface.p1-pinout", "category": "interface", "subject": "P1 Header 4 针脚",
+      "statement": "P1 pins 1~4 分别直连 J1 pins 1~4，对应功能依次为 I、O、VCC、GND。",
+      "confidence": "confirmed", "attributes": {"pin_1": "J1 pin 1 I", "pin_2": "J1 pin 2 O", "pin_3": "J1 pin 3 VCC", "pin_4": "J1 pin 4 GND"},
+      "evidence": [{"asset_sha256": "30fc13708a2c9f3a84b43d870bd0ea57f976928fc58e6917a9a9c5f47be8aceb", "page": 1, "locator": "第 1 页 B2 P1 pins 1~4 到 J1 pins 1~4 的四条水平连线"}]
+    },
+    {
+      "id": "interface.j1-pinout", "category": "interface", "subject": "J1 Grove 针脚",
+      "statement": "J1 pin 1 为 I，pin 2 为 O，pin 3 为 VCC，pin 4 为 GND。",
+      "confidence": "confirmed", "attributes": {"pin_1": "I", "pin_2": "O", "pin_3": "VCC", "pin_4": "GND"},
+      "evidence": [{"asset_sha256": "30fc13708a2c9f3a84b43d870bd0ea57f976928fc58e6917a9a9c5f47be8aceb", "page": 1, "locator": "第 1 页 B2 J1 Grove pins 1~4 与 I/O/VCC/GND 文字"}]
+    },
+    {
+      "id": "key-net.signal-i", "category": "key_net", "subject": "I 信号通道",
+      "statement": "P1 pin 1 与 J1 pin 1 I 直接相连，中间没有串联电阻、上拉、下拉、滤波、缓冲、电平转换或保护器件。",
+      "confidence": "confirmed", "attributes": {"from": "P1 pin 1", "to": "J1 pin 1 I", "series": null, "pull": null, "filter": null, "buffer": null, "level_shifter": null, "protection": null},
+      "evidence": [{"asset_sha256": "30fc13708a2c9f3a84b43d870bd0ea57f976928fc58e6917a9a9c5f47be8aceb", "page": 1, "locator": "第 1 页 B2 最上方 P1 pin 1-J1 pin 1 I 连线"}]
+    },
+    {
+      "id": "key-net.signal-o", "category": "key_net", "subject": "O 信号通道",
+      "statement": "P1 pin 2 与 J1 pin 2 O 直接相连，中间没有串联电阻、上拉、下拉、滤波、缓冲、电平转换或保护器件。",
+      "confidence": "confirmed", "attributes": {"from": "P1 pin 2", "to": "J1 pin 2 O", "series": null, "pull": null, "filter": null, "buffer": null, "level_shifter": null, "protection": null},
+      "evidence": [{"asset_sha256": "30fc13708a2c9f3a84b43d870bd0ea57f976928fc58e6917a9a9c5f47be8aceb", "page": 1, "locator": "第 1 页 B2 第二条 P1 pin 2-J1 pin 2 O 连线"}]
+    },
+    {
+      "id": "power.vcc-continuity", "category": "power", "subject": "VCC 电源通道",
+      "statement": "P1 pin 3 与 J1 pin 3 VCC 直接相连，本页没有稳压器、LDO、DC/DC、负载开关、充电器、电池或电源监测器。",
+      "confidence": "confirmed", "attributes": {"internal": "P1 pin 3", "external": "J1 pin 3 VCC", "regulator": null, "load_switch": null, "charger": null, "battery": null, "monitor": null},
+      "evidence": [{"asset_sha256": "30fc13708a2c9f3a84b43d870bd0ea57f976928fc58e6917a9a9c5f47be8aceb", "page": 1, "locator": "第 1 页 B2 P1 pin 3-J1 pin 3 VCC 直连，整页无电源器件"}]
+    },
+    {
+      "id": "power.ground-continuity", "category": "power", "subject": "GND 通道",
+      "statement": "P1 pin 4 与 J1 pin 4 GND 直接相连。",
+      "confidence": "confirmed", "attributes": {"internal": "P1 pin 4", "external": "J1 pin 4 GND", "net": "GND"},
+      "evidence": [{"asset_sha256": "30fc13708a2c9f3a84b43d870bd0ea57f976928fc58e6917a9a9c5f47be8aceb", "page": 1, "locator": "第 1 页 B2 最下方 P1 pin 4-J1 pin 4 GND 连线"}]
+    },
+    {
+      "id": "protection.no-visible-protection", "category": "protection", "subject": "接口保护",
+      "statement": "I、O、VCC 和 GND 四条通道均未显示 TVS/ESD、保险丝、限流、反接或过压保护。",
+      "confidence": "confirmed", "attributes": {"tvs_esd": null, "fuse": null, "current_limit": null, "reverse_polarity": null, "overvoltage": null},
+      "evidence": [{"asset_sha256": "30fc13708a2c9f3a84b43d870bd0ea57f976928fc58e6917a9a9c5f47be8aceb", "page": 1, "locator": "第 1 页 P1-J1 四条直接连接，无保护器件符号或位号"}]
+    },
+    {
+      "id": "system.no-active-blocks", "category": "system", "subject": "有源功能分区",
+      "statement": "本页未显示主控、协处理器、传感器、模拟前端、射频、音频或其他 IC/模块。",
+      "confidence": "confirmed", "attributes": {"controller": null, "coprocessor": null, "sensor": null, "analog": null, "rf": null, "audio": null},
+      "evidence": [{"asset_sha256": "30fc13708a2c9f3a84b43d870bd0ea57f976928fc58e6917a9a9c5f47be8aceb", "page": 1, "locator": "第 1 页完整器件范围仅 P1 Header 4 与 J1 Grove"}]
+    },
+    {
+      "id": "clock-reset-storage.none", "category": "clock", "subject": "时钟、复位、调试与存储",
+      "statement": "本页未显示晶振/时钟、RESET、BOOT、EN、中断、调试接口、Flash、EEPROM、RAM 或 SD 卡。",
+      "confidence": "confirmed", "attributes": {"clock": null, "reset": null, "boot": null, "enable": null, "interrupt": null, "debug": null, "flash": null, "eeprom": null, "ram": null, "sd": null},
+      "evidence": [{"asset_sha256": "30fc13708a2c9f3a84b43d870bd0ea57f976928fc58e6917a9a9c5f47be8aceb", "page": 1, "locator": "第 1 页仅两个无源连接器与四条网络"}]
+    },
+    {
+      "id": "bus.no-visible-protocol", "category": "bus", "subject": "总线与地址",
+      "statement": "I/O 名称没有关联控制器或设备，本页未确认 I2C、SPI、UART、CAN、RS-485、USB、SDIO、MIPI 或 I2S，也没有地址、片选或协议参数。",
+      "confidence": "confirmed", "attributes": {"signals": "I,O", "i2c": null, "spi": null, "uart": null, "can": null, "rs485": null, "usb": null, "sdio": null, "mipi": null, "i2s": null, "address": null, "chip_select": null},
+      "evidence": [{"asset_sha256": "30fc13708a2c9f3a84b43d870bd0ea57f976928fc58e6917a9a9c5f47be8aceb", "page": 1, "locator": "第 1 页 J1 仅 I/O/VCC/GND，整页无控制器、设备或协议标注"}]
+    },
+    {
+      "id": "power.vcc-voltage", "category": "power", "subject": "VCC 电压",
+      "statement": "原理图只标 J1 pin 3 为 VCC，未标注电压、允许范围或电流能力。",
+      "confidence": "uncertain", "attributes": {"net": "VCC", "voltage": null, "allowed_range": null, "current_rating": null},
+      "evidence": [{"asset_sha256": "30fc13708a2c9f3a84b43d870bd0ea57f976928fc58e6917a9a9c5f47be8aceb", "page": 1, "locator": "第 1 页 J1 pin 3 仅标 VCC，无数值"}]
+    },
+    {
+      "id": "gpio.signal-direction", "category": "gpio", "subject": "I/O 信号方向",
+      "statement": "J1 pins 1/2 标为 I/O，但电路是无源直连，原理图没有说明方向命名相对于 Grove 主机端还是 P1 原型电路端，也没有方向控制器件。",
+      "confidence": "uncertain", "attributes": {"signal_1": "J1 pin 1 I-P1 pin 1", "signal_2": "J1 pin 2 O-P1 pin 2", "reference_side": null, "direction_control": null},
+      "evidence": [{"asset_sha256": "30fc13708a2c9f3a84b43d870bd0ea57f976928fc58e6917a9a9c5f47be8aceb", "page": 1, "locator": "第 1 页 J1 I/O 到 P1 的直连，无箭头、缓冲器或方向控制"}]
+    },
+    {
+      "id": "other.prototype-field", "category": "other", "subject": "原型焊盘机械参数",
+      "statement": "当前原理图页没有绘制原型焊盘阵列，也未标注焊盘/孔数量、孔径、孔距或哪些孔与 P1 导通，因此不能由本页确认 77 holes、1mm 孔径和 2.54mm 孔距。",
+      "confidence": "uncertain", "attributes": {"pad_count": null, "hole_diameter": null, "pitch": null, "pad_connectivity": null, "candidate_from_product_doc": "77 holes,1mm,2.54mm"},
+      "evidence": [{"asset_sha256": "30fc13708a2c9f3a84b43d870bd0ea57f976928fc58e6917a9a9c5f47be8aceb", "page": 1, "locator": "第 1 页完整图纸仅 P1/J1，无焊盘阵列或机械尺寸"}]
+    }
+  ],
+  "needs_review": [
+    {
+      "id": "review.vcc-voltage", "fact_id": "power.vcc-voltage",
+      "question": "Unit Proto 的 VCC 允许电压和电流范围是什么？",
+      "reason": "原理图只标 VCC，没有数值或额定参数。",
+      "evidence": [{"asset_sha256": "30fc13708a2c9f3a84b43d870bd0ea57f976928fc58e6917a9a9c5f47be8aceb", "page": 1, "locator": "第 1 页 J1 pin 3 VCC"}]
+    },
+    {
+      "id": "review.signal-direction", "fact_id": "gpio.signal-direction",
+      "question": "I 与 O 的方向定义是相对于 J1 主机端还是 P1 原型电路端？",
+      "reason": "四条网络为无源直连，没有方向箭头或有源方向器件。",
+      "evidence": [{"asset_sha256": "30fc13708a2c9f3a84b43d870bd0ea57f976928fc58e6917a9a9c5f47be8aceb", "page": 1, "locator": "第 1 页 J1 pins 1/2 I/O 与 P1 pins 1/2"}]
+    },
+    {
+      "id": "review.prototype-field", "fact_id": "other.prototype-field",
+      "question": "原型区实际孔数、孔径、孔距及与 P1 的默认导通关系是什么？",
+      "reason": "这些机械和 PCB 参数没有出现在当前原理图页。",
+      "evidence": [{"asset_sha256": "30fc13708a2c9f3a84b43d870bd0ea57f976928fc58e6917a9a9c5f47be8aceb", "page": 1, "locator": "第 1 页完整原理图，无原型孔阵列"}]
+    }
+  ]
+}

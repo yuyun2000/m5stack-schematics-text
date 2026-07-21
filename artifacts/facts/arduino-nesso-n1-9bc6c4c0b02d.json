@@ -1,0 +1,477 @@
+{
+  "schema_version": 1,
+  "generator": "schematic_describer",
+  "product": {
+    "product_id": "arduino-nesso-n1-9bc6c4c0b02d",
+    "product_name": "Arduino Nesso N1",
+    "sku": "DK001",
+    "source_path": "core/Arduino_Nesso_N1.md",
+    "source_sha256": "2231c4e2a5f142bf2ceb7269047f33ab74ee574d5ff98a8288a3ff811163a902",
+    "input_sha256": "8e4a627edb9579d6f17907a7682551cc50493d1edefc8f7917debfed4e9d379a"
+  },
+  "schematic_assets": [
+    {
+      "sha256": "c054f406cf7a710da56d74c38020171cf78741a29f07ea113aed4647146c987a",
+      "source_url": "https://m5stack-doc.oss-cn-shenzhen.aliyuncs.com/1198/DK001-sche_02.png",
+      "pages": [1]
+    },
+    {
+      "sha256": "7bce7557076fa017d2a7158af3df63e68c6f412c15baa0266b38a2de42d93e82",
+      "source_url": "https://m5stack-doc.oss-cn-shenzhen.aliyuncs.com/1198/DK001-sche.png",
+      "pages": [1]
+    },
+    {
+      "sha256": "343dbda5cdf7ebb88e917073bea90c929cda28dd647a94afd970c14b34a3674d",
+      "source_url": "https://m5stack-doc.oss-cn-shenzhen.aliyuncs.com/1198/TPX00227-full-pinout_page_01.png",
+      "pages": [1]
+    },
+    {
+      "sha256": "82b6b1d8636e0997ddc947a5f725f6011048d9d8c976f595dd8518805b091f9a",
+      "source_url": "https://m5stack-doc.oss-cn-shenzhen.aliyuncs.com/1198/TPX00227-full-pinout_page_02.png",
+      "pages": [1]
+    },
+    {
+      "sha256": "e33c2a0b31f78a9dc0ae4f3cbb1984fa49ef4ab6692fba4414abc2a2126ff9bb",
+      "source_url": "https://m5stack-doc.oss-cn-shenzhen.aliyuncs.com/1198/TPX00227-full-pinout_page_03.png",
+      "pages": [1]
+    },
+    {
+      "sha256": "27ab0be9cc303b18ca582bd4d743aa6e602309b6edfa41ddc03a2caa4a9cb473",
+      "source_url": "https://m5stack-doc.oss-cn-shenzhen.aliyuncs.com/1198/TPX00227-full-pinout_page_04.png",
+      "pages": [1]
+    },
+    {
+      "sha256": "f27a232d9e2dcb7eefcc10c920d3081f818e7452e78d4263f56ba28233f2a669",
+      "source_url": "https://m5stack-doc.oss-cn-shenzhen.aliyuncs.com/1198/TPX00227-full-pinout_page_05.png",
+      "pages": [1]
+    },
+    {
+      "sha256": "1b2349863a66d260d8ff0ebaf00703787890dc680b8833e334f165b05fabcd7b",
+      "source_url": "https://m5stack-doc.oss-cn-shenzhen.aliyuncs.com/1198/TPX00227-full-pinout_page_06.png",
+      "pages": [1]
+    }
+  ],
+  "summary": "Arduino Nesso N1 以 ESP32-C6 为主控，集成 16 MB SPI Flash、SX1262 LoRa 射频链、ST7789 135×240 LCD、FT6336 触摸、BMI270 IMU、双 PI4IOE5V6408 IO 扩展器、250 mAh 电池与多路电源管理，并引出 USB-C、Qwiic、Grove 和 8 Pin 扩展接口。",
+  "keywords": [
+    "Arduino Nesso N1",
+    "DK001",
+    "TPX00227",
+    "ESP32-C6",
+    "SX1262",
+    "850-960 MHz",
+    "MMCX",
+    "ST7789",
+    "FT6336",
+    "BMI270",
+    "PI4IOE5V6408",
+    "BQ27220YZFR",
+    "AW32001ECSR",
+    "PMS150G",
+    "JW5712",
+    "SGM6603",
+    "GPIO21",
+    "GPIO20",
+    "GPIO10",
+    "GPIO8",
+    "I2C0",
+    "SPI2",
+    "Qwiic",
+    "Grove",
+    "Hat Bus",
+    "USB-C",
+    "LoRa",
+    "0x43",
+    "0x44"
+  ],
+  "components": [
+    {
+      "reference": "U4/U8",
+      "part_number": "ESP32-C6",
+      "role": "RISC-V 32 位主控制器",
+      "evidence": [{"asset_sha256": "7bce7557076fa017d2a7158af3df63e68c6f412c15baa0266b38a2de42d93e82", "page": 1, "locator": "系统框图中央黄色 ESP32-C6 RISC-V 32-bit 方框，标注 U4/U8"}]
+    },
+    {
+      "reference": "U5",
+      "part_number": "GD25Q128/W25Q128",
+      "role": "16 MB SPI Flash",
+      "evidence": [{"asset_sha256": "7bce7557076fa017d2a7158af3df63e68c6f412c15baa0266b38a2de42d93e82", "page": 1, "locator": "系统框图左下 Flash 16 MB GD25Q128/W25Q128 (U5) 方框"}]
+    },
+    {
+      "reference": "U1",
+      "part_number": "SX1262",
+      "role": "850–960 MHz LoRa 收发器",
+      "evidence": [{"asset_sha256": "7bce7557076fa017d2a7158af3df63e68c6f412c15baa0266b38a2de42d93e82", "page": 1, "locator": "系统框图上方 LoRa Transceiver SX1262 (U1) 方框"}]
+    },
+    {
+      "reference": "RF Switch SPDT",
+      "part_number": "0900FM15K0039",
+      "role": "LoRa 射频收发路径切换",
+      "evidence": [{"asset_sha256": "7bce7557076fa017d2a7158af3df63e68c6f412c15baa0266b38a2de42d93e82", "page": 1, "locator": "系统框图上方 SX1262 右侧 RF Switch SPDT 0900FM15K0039 方框"}]
+    },
+    {
+      "reference": "U8",
+      "part_number": "SGM13005L4",
+      "role": "LoRa 接收低噪声放大器",
+      "evidence": [{"asset_sha256": "7bce7557076fa017d2a7158af3df63e68c6f412c15baa0266b38a2de42d93e82", "page": 1, "locator": "系统框图上方 Low Noise Amplifier SGM13005L4 (U8) 方框"}]
+    },
+    {
+      "reference": "U3",
+      "part_number": "FM8625H",
+      "role": "LoRa 射频开关/放大器",
+      "evidence": [{"asset_sha256": "7bce7557076fa017d2a7158af3df63e68c6f412c15baa0266b38a2de42d93e82", "page": 1, "locator": "系统框图右上 RF Switch/Amplifier FM8625H (U3) 方框"}]
+    },
+    {
+      "reference": "I/O Expander #1/#2",
+      "part_number": "PI4IOE5V6408",
+      "role": "按键、LoRa 控制、电源、LCD、Grove、VIN 检测和 LED 的 IO 扩展",
+      "evidence": [{"asset_sha256": "343dbda5cdf7ebb88e917073bea90c929cda28dd647a94afd970c14b34a3674d", "page": 1, "locator": "页左下 I/O Expanders (PI4IOE5V6408) 注记，列出 E0 0x43 与 E1 0x44 的职责"}]
+    },
+    {
+      "reference": "LCD",
+      "part_number": "ST7789",
+      "role": "1.14 英寸 135×240 IPS LCD 驱动器",
+      "evidence": [{"asset_sha256": "343dbda5cdf7ebb88e917073bea90c929cda28dd647a94afd970c14b34a3674d", "page": 1, "locator": "页右侧 LCD TOUCHSCREEN DISPLAY 表，标注 ST7789、1.14 inch、135×240"}]
+    },
+    {
+      "reference": "TP",
+      "part_number": "FT6336",
+      "role": "电容触摸控制器",
+      "evidence": [{"asset_sha256": "343dbda5cdf7ebb88e917073bea90c929cda28dd647a94afd970c14b34a3674d", "page": 1, "locator": "页右侧 LCD TOUCHSCREEN DISPLAY 下半部 FT6336 接口表"}]
+    },
+    {
+      "reference": "U7 (IMU)",
+      "part_number": "BMI270",
+      "role": "六轴 IMU",
+      "evidence": [{"asset_sha256": "343dbda5cdf7ebb88e917073bea90c929cda28dd647a94afd970c14b34a3674d", "page": 1, "locator": "页左侧 IMU BMI270 MODULE 接口表"}]
+    },
+    {
+      "reference": "U2",
+      "part_number": "BQ27220YZFR",
+      "role": "电池电量计",
+      "evidence": [{"asset_sha256": "7bce7557076fa017d2a7158af3df63e68c6f412c15baa0266b38a2de42d93e82", "page": 1, "locator": "系统框图左下 Battery Fuel Gauge BQ27220YZFR (U2) 方框"}]
+    },
+    {
+      "reference": "U1 (PMU)",
+      "part_number": "AW32001ECSR",
+      "role": "电源管理单元",
+      "evidence": [{"asset_sha256": "7bce7557076fa017d2a7158af3df63e68c6f412c15baa0266b38a2de42d93e82", "page": 1, "locator": "系统框图左下 Power Management Unit AW32001ECSR (U1) 方框"}]
+    },
+    {
+      "reference": "U5 (power)",
+      "part_number": "PMS150G",
+      "role": "电源管理控制器",
+      "evidence": [{"asset_sha256": "7bce7557076fa017d2a7158af3df63e68c6f412c15baa0266b38a2de42d93e82", "page": 1, "locator": "系统框图下方 Power Management IC PMS150G (U5) 方框"}]
+    },
+    {
+      "reference": "U6",
+      "part_number": "JW5712",
+      "role": "降压转换器",
+      "evidence": [{"asset_sha256": "7bce7557076fa017d2a7158af3df63e68c6f412c15baa0266b38a2de42d93e82", "page": 1, "locator": "系统框图下方 Step-Down Converter JW5712 (U6) 方框"}]
+    },
+    {
+      "reference": "U4 (power)",
+      "part_number": "SGM6603",
+      "role": "5V 输出升压转换器",
+      "evidence": [{"asset_sha256": "7bce7557076fa017d2a7158af3df63e68c6f412c15baa0266b38a2de42d93e82", "page": 1, "locator": "系统框图中下 Step-Up Converter SGM6603 (U4) 方框及 5VOUT_EN 连线"}]
+    },
+    {
+      "reference": "BZ1",
+      "part_number": "4 kHz Buzzer",
+      "role": "蜂鸣器",
+      "evidence": [{"asset_sha256": "7bce7557076fa017d2a7158af3df63e68c6f412c15baa0266b38a2de42d93e82", "page": 1, "locator": "系统框图左侧 4 KHz Buzzer BUZZER (BZ1) 方框"}]
+    },
+    {
+      "reference": "LED4",
+      "part_number": "MHS153IRCT",
+      "role": "红外发射 LED",
+      "evidence": [{"asset_sha256": "7bce7557076fa017d2a7158af3df63e68c6f412c15baa0266b38a2de42d93e82", "page": 1, "locator": "系统框图左侧 IR Transmitter LED MHS153IRCT (LED4) 方框"}]
+    }
+  ],
+  "facts": [
+    {
+      "id": "system.controller",
+      "category": "system",
+      "subject": "主控制器",
+      "statement": "系统主控制器为 ESP32-C6，系统框图标注为 RISC-V 32-bit。",
+      "confidence": "confirmed",
+      "attributes": {"part_number": "ESP32-C6", "architecture": "RISC-V 32-bit", "reference": "U4/U8"},
+      "evidence": [{"asset_sha256": "7bce7557076fa017d2a7158af3df63e68c6f412c15baa0266b38a2de42d93e82", "page": 1, "locator": "系统框图中央黄色 ESP32-C6 RISC-V 32-bit 方框"}]
+    },
+    {
+      "id": "storage.flash",
+      "category": "storage",
+      "subject": "外部 Flash",
+      "statement": "U5 为 GD25Q128 或 W25Q128，容量标注为 16 MB，并通过专用 SPI_Flash 总线连接 ESP32-C6。",
+      "confidence": "confirmed",
+      "attributes": {"reference": "U5", "part_number": "GD25Q128/W25Q128", "capacity_mb": 16, "bus": "SPI_Flash dedicated"},
+      "evidence": [{"asset_sha256": "7bce7557076fa017d2a7158af3df63e68c6f412c15baa0266b38a2de42d93e82", "page": 1, "locator": "系统框图左下 Flash 16 MB 方框、SPI_Flash 连线及右下总线说明"}]
+    },
+    {
+      "id": "bus.spi2_shared",
+      "category": "bus",
+      "subject": "LCD 与 LoRa 的 SPI2",
+      "statement": "LCD 与 LoRa 共用 SPI2：GPIO21 为 MOSI、GPIO20 为 SCK；LCD CS 为 GPIO17，LoRa CS 为 GPIO23，图面明确要求两者不得同时访问。",
+      "confidence": "confirmed",
+      "attributes": {"mosi": "GPIO21", "sck": "GPIO20", "lcd_cs": "GPIO17", "lora_cs": "GPIO23", "simultaneous_access": false},
+      "evidence": [{"asset_sha256": "7bce7557076fa017d2a7158af3df63e68c6f412c15baa0266b38a2de42d93e82", "page": 1, "locator": "系统框图右下 ESP32-C6 Buses 注记，列出 SPI2 G20/G21/G22、LCD CS:G17、LoRa CS:G23 和 no simultaneous access"}]
+    },
+    {
+      "id": "bus.i2c0_shared",
+      "category": "bus",
+      "subject": "共享 I2C0",
+      "statement": "I2C0 使用 GPIO10(SDA) 和 GPIO8(SCL)，由触摸、IMU、电池电量计、电源管理、两颗 IO 扩展器、Qwiic 与 HAT 侧外设共享。",
+      "confidence": "confirmed",
+      "attributes": {"sda": "GPIO10", "scl": "GPIO8", "bus": "I2C0", "shared": true},
+      "evidence": [
+        {"asset_sha256": "7bce7557076fa017d2a7158af3df63e68c6f412c15baa0266b38a2de42d93e82", "page": 1, "locator": "系统框图蓝色 I2C0 连线及右下 ESP32-C6 Buses 注记"},
+        {"asset_sha256": "c054f406cf7a710da56d74c38020171cf78741a29f07ea113aed4647146c987a", "page": 1, "locator": "功能框图右上 SDA:G10、SCL:G8 总线标注及各 I2C 外设连线"}
+      ]
+    },
+    {
+      "id": "interface.lcd",
+      "category": "interface",
+      "subject": "ST7789 LCD",
+      "statement": "ST7789 1.14 英寸 IPS LCD 分辨率为 135×240；MOSI=GPIO21、SCK=GPIO20、CS=GPIO17、RS=GPIO16，RESET=E1.P1，BACKLIGHT=E1.P6。",
+      "confidence": "confirmed",
+      "attributes": {"part_number": "ST7789", "resolution": "135x240", "mosi": "GPIO21", "sck": "GPIO20", "cs": "GPIO17", "rs": "GPIO16", "reset": "E1.P1", "backlight": "E1.P6"},
+      "evidence": [{"asset_sha256": "343dbda5cdf7ebb88e917073bea90c929cda28dd647a94afd970c14b34a3674d", "page": 1, "locator": "页右侧 LCD TOUCHSCREEN DISPLAY 上半部 ST7789 引脚映射表和分辨率标注"}]
+    },
+    {
+      "id": "sensor.touch",
+      "category": "sensor",
+      "subject": "FT6336 触摸控制器",
+      "statement": "FT6336 通过 I2C 连接，SDA=GPIO10、SCL=GPIO8、TOUCH_INT=GPIO3，7 位地址为 0x38。",
+      "confidence": "confirmed",
+      "attributes": {"part_number": "FT6336", "sda": "GPIO10", "scl": "GPIO8", "interrupt": "GPIO3", "i2c_address": "0x38"},
+      "evidence": [{"asset_sha256": "343dbda5cdf7ebb88e917073bea90c929cda28dd647a94afd970c14b34a3674d", "page": 1, "locator": "页右侧 FT6336 表，列出 GPIO10、GPIO8、GPIO3 以及 Capacitive Touch I2C addr: 0x38"}]
+    },
+    {
+      "id": "sensor.imu",
+      "category": "sensor",
+      "subject": "BMI270 IMU",
+      "statement": "BMI270 通过 I2C 连接，SCL=GPIO8、SDA=GPIO10、IMU_INT=GPIO3，7 位地址为 0x68。",
+      "confidence": "confirmed",
+      "attributes": {"part_number": "BMI270", "scl": "GPIO8", "sda": "GPIO10", "interrupt": "GPIO3", "i2c_address": "0x68"},
+      "evidence": [{"asset_sha256": "343dbda5cdf7ebb88e917073bea90c929cda28dd647a94afd970c14b34a3674d", "page": 1, "locator": "页左侧 IMU BMI270 MODULE 表及 BMI270 I2C addr: 0x68 注记"}]
+    },
+    {
+      "id": "rf.lora_interface",
+      "category": "rf",
+      "subject": "SX1262 数字接口",
+      "statement": "SX1262 的 MOSI=GPIO21、SCK=GPIO20、CS=GPIO23、MISO=GPIO22、BUSY=GPIO19、IRQ/DIO1=GPIO15；RESET=E0.P7、ANTENNA_SWITCH=E0.P6、LNA_ENABLE=E0.P5。",
+      "confidence": "confirmed",
+      "attributes": {"mosi": "GPIO21", "sck": "GPIO20", "cs": "GPIO23", "miso": "GPIO22", "busy": "GPIO19", "irq_dio1": "GPIO15", "reset": "E0.P7", "antenna_switch": "E0.P6", "lna_enable": "E0.P5"},
+      "evidence": [{"asset_sha256": "82b6b1d8636e0997ddc947a5f725f6011048d9d8c976f595dd8518805b091f9a", "page": 1, "locator": "页左侧 LoRa SX1262 MODULE 引脚映射表"}]
+    },
+    {
+      "id": "rf.lora_chain",
+      "category": "rf",
+      "subject": "LoRa 射频链",
+      "statement": "SX1262 的 RFO/RFIP/RFIN 经 0900FM15K0039 SPDT、SGM13005L4 LNA 和 FM8625H 射频开关/放大器连接外置 LoRa MMCX 天线；工作频段标注为 850–960 MHz。",
+      "confidence": "confirmed",
+      "attributes": {"transceiver": "SX1262", "spdt": "0900FM15K0039", "lna": "SGM13005L4", "rf_switch_amplifier": "FM8625H", "connector": "MMCX", "frequency_range_mhz": "850-960"},
+      "evidence": [
+        {"asset_sha256": "c054f406cf7a710da56d74c38020171cf78741a29f07ea113aed4647146c987a", "page": 1, "locator": "功能框图右下蓝色 LoRa 射频区域，含 SX1262、0900FM15K0039、SGM13005L4、FM8625H 与 MMCX"},
+        {"asset_sha256": "82b6b1d8636e0997ddc947a5f725f6011048d9d8c976f595dd8518805b091f9a", "page": 1, "locator": "页中央外置 LoRa MMCX Connector 和 LoRa Antenna 850–960 MHz 标注"}
+      ]
+    },
+    {
+      "id": "clock.lora_reference",
+      "category": "clock",
+      "subject": "SX1262 参考时钟",
+      "statement": "SX1262 的 XTA 网络连接 32 MHz 参考振荡器。",
+      "confidence": "confirmed",
+      "attributes": {"frequency_mhz": 32, "signal": "XTA"},
+      "evidence": [{"asset_sha256": "7bce7557076fa017d2a7158af3df63e68c6f412c15baa0266b38a2de42d93e82", "page": 1, "locator": "系统框图上方 SX1262 XTA 与 Crystal Osc. 32 MHz Ref. 方框"}]
+    },
+    {
+      "id": "protection.lora_antenna",
+      "category": "protection",
+      "subject": "LoRa 天线使用限制",
+      "statement": "LoRa 无线模块使用时必须连接天线；图面警告未接天线使用会损坏 LoRa 模块。",
+      "confidence": "confirmed",
+      "attributes": {"antenna_required": true, "risk": "module damage"},
+      "evidence": [{"asset_sha256": "82b6b1d8636e0997ddc947a5f725f6011048d9d8c976f595dd8518805b091f9a", "page": 1, "locator": "页右侧红色 WARNING：always use the LoRa radio module with its antenna connected"}]
+    },
+    {
+      "id": "address.io_expanders",
+      "category": "address",
+      "subject": "PI4IOE5V6408 地址",
+      "statement": "详细 Pinout 页将 E0 标为 0x43（buttons & LoRa control），E1 标为 0x44（power/UI、LCD reset/backlight、Grove power、VIN detect、LED）。",
+      "confidence": "confirmed",
+      "attributes": {"e0_address": "0x43", "e1_address": "0x44", "part_number": "PI4IOE5V6408"},
+      "evidence": [
+        {"asset_sha256": "343dbda5cdf7ebb88e917073bea90c929cda28dd647a94afd970c14b34a3674d", "page": 1, "locator": "页左下 I/O Expanders (PI4IOE5V6408) 注记，明确 E0 @ 0x43、E1 @ 0x44"},
+        {"asset_sha256": "82b6b1d8636e0997ddc947a5f725f6011048d9d8c976f595dd8518805b091f9a", "page": 1, "locator": "页左下重复的 I/O Expanders 地址与职责注记"}
+      ]
+    },
+    {
+      "id": "address.io_expander_conflict",
+      "category": "address",
+      "subject": "IO 扩展器地址记录冲突",
+      "statement": "系统框图的 Reserved I2C addresses 列表包含 0x20 和 0x21，而详细 Pinout 页把两颗 PI4IOE5V6408 标为 0x43 和 0x44；两套图面记录不一致。",
+      "confidence": "uncertain",
+      "attributes": {"system_diagram_addresses": "0x20,0x21", "pinout_addresses": "0x43,0x44"},
+      "evidence": [
+        {"asset_sha256": "7bce7557076fa017d2a7158af3df63e68c6f412c15baa0266b38a2de42d93e82", "page": 1, "locator": "系统框图右下 Reserved I2C addresses 列表包含 0x20、0x21"},
+        {"asset_sha256": "343dbda5cdf7ebb88e917073bea90c929cda28dd647a94afd970c14b34a3674d", "page": 1, "locator": "详细 Pinout 页左下明确标注 E0 @ 0x43、E1 @ 0x44"}
+      ]
+    },
+    {
+      "id": "gpio.user_buttons",
+      "category": "gpio",
+      "subject": "用户按键",
+      "statement": "KEY1 连接 E0.P0，KEY2 连接 E0.P1。",
+      "confidence": "confirmed",
+      "attributes": {"key1": "E0.P0", "key2": "E0.P1"},
+      "evidence": [
+        {"asset_sha256": "343dbda5cdf7ebb88e917073bea90c929cda28dd647a94afd970c14b34a3674d", "page": 1, "locator": "页下方 USER BUTTON 标注 E0.P0 KEY1"},
+        {"asset_sha256": "82b6b1d8636e0997ddc947a5f725f6011048d9d8c976f595dd8518805b091f9a", "page": 1, "locator": "页下方 USER BUTTON 标注 E0.P1 KEY2"}
+      ]
+    },
+    {
+      "id": "audio.buzzer",
+      "category": "audio",
+      "subject": "蜂鸣器",
+      "statement": "4 kHz 蜂鸣器 BZ1 的 BEEP_PIN 连接 ESP32-C6 GPIO11。",
+      "confidence": "confirmed",
+      "attributes": {"reference": "BZ1", "frequency_hz": 4000, "gpio": "GPIO11", "signal": "BEEP_PIN"},
+      "evidence": [
+        {"asset_sha256": "7bce7557076fa017d2a7158af3df63e68c6f412c15baa0266b38a2de42d93e82", "page": 1, "locator": "系统框图左侧 4 KHz Buzzer (BZ1) 至 GPIO_11 连线"},
+        {"asset_sha256": "e33c2a0b31f78a9dc0ae4f3cbb1984fa49ef4ab6692fba4414abc2a2126ff9bb", "page": 1, "locator": "页左侧 BUZZER 标注 GPIO11 与 BEEP_PIN"}
+      ]
+    },
+    {
+      "id": "gpio.ir_emitter",
+      "category": "gpio",
+      "subject": "红外发射 LED",
+      "statement": "红外发射 LED4（MHS153IRCT）的 IR_TX_PIN 连接 ESP32-C6 GPIO9。",
+      "confidence": "confirmed",
+      "attributes": {"reference": "LED4", "part_number": "MHS153IRCT", "gpio": "GPIO9", "signal": "IR_TX_PIN"},
+      "evidence": [
+        {"asset_sha256": "7bce7557076fa017d2a7158af3df63e68c6f412c15baa0266b38a2de42d93e82", "page": 1, "locator": "系统框图左侧 IR Transmitter LED MHS153IRCT (LED4) 至 GPIO_9 连线"},
+        {"asset_sha256": "1b2349863a66d260d8ff0ebaf00703787890dc680b8833e334f165b05fabcd7b", "page": 1, "locator": "页上方 IR EMITTER 标注 GPIO9 与 IR_TX_PIN"}
+      ]
+    },
+    {
+      "id": "interface.qwiic",
+      "category": "interface",
+      "subject": "Qwiic 接口",
+      "statement": "Qwiic 4 针接口的 1 至 4 脚依次为 GND、3V3 OUT、SDA/GPIO10、SCL/GPIO8。",
+      "confidence": "confirmed",
+      "attributes": {"pinout": "1:GND,2:3V3_OUT,3:SDA/GPIO10,4:SCL/GPIO8", "bus": "I2C0"},
+      "evidence": [{"asset_sha256": "e33c2a0b31f78a9dc0ae4f3cbb1984fa49ef4ab6692fba4414abc2a2126ff9bb", "page": 1, "locator": "页右侧 QWIIC CONNECTOR 1–4 脚表"}]
+    },
+    {
+      "id": "interface.grove",
+      "category": "interface",
+      "subject": "Grove 接口",
+      "statement": "Grove 4 针接口的 1 至 4 脚依次为 GND、5V OUT、GROVE_IO_0/GPIO5、GROVE_IO_1/GPIO4，GROVE_POWER_EN 由 E1.P2 控制。",
+      "confidence": "confirmed",
+      "attributes": {"pinout": "1:GND,2:5V_OUT,3:GPIO5,4:GPIO4", "power_enable": "E1.P2"},
+      "evidence": [
+        {"asset_sha256": "27ab0be9cc303b18ca582bd4d743aa6e602309b6edfa41ddc03a2caa4a9cb473", "page": 1, "locator": "页右侧 GROVE CONNECTOR 1–4 脚表及 GROVE_POWER_EN E1.P2"},
+        {"asset_sha256": "f27a232d9e2dcb7eefcc10c920d3081f818e7452e78d4263f56ba28233f2a669", "page": 1, "locator": "页左侧 Grove Connector 引脚表及 E1.P2 电源使能"}
+      ]
+    },
+    {
+      "id": "interface.usb",
+      "category": "interface",
+      "subject": "USB-C 接口",
+      "statement": "USB-C 接口用于编程与锂电池充电；USB D-=GPIO12、USB D+=GPIO13，VBUS 为输入，VIN_DETECT 连接 E1.P5。",
+      "confidence": "confirmed",
+      "attributes": {"usb_d_minus": "GPIO12", "usb_d_plus": "GPIO13", "vbus_direction": "input", "vin_detect": "E1.P5", "uses": "programming,battery charging"},
+      "evidence": [{"asset_sha256": "f27a232d9e2dcb7eefcc10c920d3081f818e7452e78d4263f56ba28233f2a669", "page": 1, "locator": "页中下 USB-C PORT 表及 Program the board and recharge lipo battery 注记；右侧 VIN_DETECT=E1.P5"}]
+    },
+    {
+      "id": "interface.expansion_header",
+      "category": "interface",
+      "subject": "8 Pin Expansion Port",
+      "statement": "8 Pin 扩展口的 1 至 8 脚依次为 GND、5V OUT、GPIO7、GPIO2、GPIO6、BATTERY OUT、3V3 OUT、5V IN，并兼容 M5Stack HAT 系列。",
+      "confidence": "confirmed",
+      "attributes": {"pinout": "1:GND,2:5V_OUT,3:GPIO7,4:GPIO2,5:GPIO6,6:BATTERY_OUT,7:3V3_OUT,8:5V_IN", "compatibility": "M5Stack HAT series"},
+      "evidence": [{"asset_sha256": "1b2349863a66d260d8ff0ebaf00703787890dc680b8833e334f165b05fabcd7b", "page": 1, "locator": "页左上 8 PIN EXPANSION PORT 1–8 脚表及左下兼容性注记"}]
+    },
+    {
+      "id": "power.expansion_battery",
+      "category": "power",
+      "subject": "8 Pin 扩展口电池脚",
+      "statement": "8 Pin 扩展口的 BATTERY OUT 为未稳压 3–4.2 V 电池轨，仅允许输出，不得反向供电。",
+      "confidence": "confirmed",
+      "attributes": {"pin": 6, "voltage_v": "3-4.2", "regulated": false, "direction": "output-only", "backfeed_allowed": false},
+      "evidence": [{"asset_sha256": "1b2349863a66d260d8ff0ebaf00703787890dc680b8833e334f165b05fabcd7b", "page": 1, "locator": "8 PIN EXPANSION PORT 下方橙框：Unregulated ~3-4.2 V battery rail, output-only. Do not back-feed"}]
+    },
+    {
+      "id": "power.battery",
+      "category": "power",
+      "subject": "内置锂电池",
+      "statement": "设备内置 250 mAh 锂聚合物电池；功能框图将电池电压范围标为 3.7–4.2 V。",
+      "confidence": "confirmed",
+      "attributes": {"capacity_mah": 250, "voltage_range_v": "3.7-4.2", "chemistry": "LiPo"},
+      "evidence": [
+        {"asset_sha256": "c054f406cf7a710da56d74c38020171cf78741a29f07ea113aed4647146c987a", "page": 1, "locator": "功能框图左上 BATTERY 250mAh 方框及 3.7~4.2V 标注"},
+        {"asset_sha256": "f27a232d9e2dcb7eefcc10c920d3081f818e7452e78d4263f56ba28233f2a669", "page": 1, "locator": "页右侧 BUILT-IN 250mAh LIPO BATTERY 标注"}
+      ]
+    },
+    {
+      "id": "power.management",
+      "category": "power",
+      "subject": "电源管理链",
+      "statement": "电源链包含 BQ27220YZFR 电量计、AW32001ECSR 电源管理单元、PMS150G 电源管理控制器、JW5712 降压转换器和 SGM6603 升压转换器；SGM6603 的 5VOUT_EN 由 E1.P2 控制。",
+      "confidence": "confirmed",
+      "attributes": {"fuel_gauge": "BQ27220YZFR", "pmu": "AW32001ECSR", "controller": "PMS150G", "step_down": "JW5712", "step_up": "SGM6603", "five_v_enable": "E1.P2"},
+      "evidence": [
+        {"asset_sha256": "7bce7557076fa017d2a7158af3df63e68c6f412c15baa0266b38a2de42d93e82", "page": 1, "locator": "系统框图下方电源管理器件方框和 5VOUT_EN 连线"},
+        {"asset_sha256": "c054f406cf7a710da56d74c38020171cf78741a29f07ea113aed4647146c987a", "page": 1, "locator": "功能框图左侧电池、BQ27220、AW32001、PMS150G、JW5712、SGM6603 与 VSYS_BUS/5V_OUT 电源链"}
+      ]
+    },
+    {
+      "id": "power.control",
+      "category": "power",
+      "subject": "电源按钮与关机控制",
+      "statement": "Power On/Reset/Power Off 按钮的 POWEROFF 信号连接 E1.P0；该按钮用于开机、复位、关机和进入 Bootloader 模式。",
+      "confidence": "confirmed",
+      "attributes": {"poweroff": "E1.P0", "functions": "power on,reset,power off,bootloader"},
+      "evidence": [{"asset_sha256": "e33c2a0b31f78a9dc0ae4f3cbb1984fa49ef4ab6692fba4414abc2a2126ff9bb", "page": 1, "locator": "页右下 Power On / Reset / Power Off 表，标注 E1.P0 POWEROFF 及四种操作"}]
+    },
+    {
+      "id": "gpio.builtin_led",
+      "category": "gpio",
+      "subject": "内置绿色 LED",
+      "statement": "内置绿色 LED 的 LED_BUILTIN 信号由 E1.P7 控制。",
+      "confidence": "confirmed",
+      "attributes": {"color": "green", "control": "E1.P7", "signal": "LED_BUILTIN"},
+      "evidence": [{"asset_sha256": "e33c2a0b31f78a9dc0ae4f3cbb1984fa49ef4ab6692fba4414abc2a2126ff9bb", "page": 1, "locator": "页下方 BUILTIN LED (GREEN) 标注 E1.P7 与 LED_BUILTIN"}]
+    },
+    {
+      "id": "protection.gpio_voltage",
+      "category": "protection",
+      "subject": "GPIO 电平限制",
+      "statement": "所有 GPIO 仅支持 3.3 V 逻辑且不耐受 5 V。",
+      "confidence": "confirmed",
+      "attributes": {"logic_voltage_v": 3.3, "five_v_tolerant": false},
+      "evidence": [{"asset_sha256": "1b2349863a66d260d8ff0ebaf00703787890dc680b8833e334f165b05fabcd7b", "page": 1, "locator": "页右下 WARNING：All GPIO pins are 3.3 V logic only and are not 5V tolerant"}]
+    },
+    {
+      "id": "protection.battery_handling",
+      "category": "protection",
+      "subject": "锂电池操作安全",
+      "statement": "图面要求小心处理内置 LiPo 电池，不得穿刺、短路或暴露于高温。",
+      "confidence": "confirmed",
+      "attributes": {"avoid_puncture": true, "avoid_short_circuit": true, "avoid_high_temperature": true},
+      "evidence": [{"asset_sha256": "f27a232d9e2dcb7eefcc10c920d3081f818e7452e78d4263f56ba28233f2a669", "page": 1, "locator": "页右下 LiPo battery WARNING，列出 puncture、short-circuit、high temperatures 风险"}]
+    }
+  ],
+  "needs_review": [
+    {
+      "id": "review.io_expander_addresses",
+      "fact_id": "address.io_expander_conflict",
+      "question": "系统框图中的 0x20/0x21 是否为旧版本或误写，当前 DK001 硬件上两颗 PI4IOE5V6408 是否应统一按详细 Pinout 的 0x43/0x44 使用？",
+      "reason": "系统框图只在 Reserved I2C addresses 列表中出现 0x20/0x21，详细 Pinout 多页则明确写 E0=0x43、E1=0x44，图面记录冲突，不能仅凭现有资源消除。",
+      "evidence": [
+        {"asset_sha256": "7bce7557076fa017d2a7158af3df63e68c6f412c15baa0266b38a2de42d93e82", "page": 1, "locator": "系统框图右下 Reserved I2C addresses 列表"},
+        {"asset_sha256": "343dbda5cdf7ebb88e917073bea90c929cda28dd647a94afd970c14b34a3674d", "page": 1, "locator": "详细 Pinout 页左下 E0 @ 0x43、E1 @ 0x44 注记"}
+      ]
+    }
+  ]
+}

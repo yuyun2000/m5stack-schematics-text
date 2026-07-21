@@ -1,0 +1,21 @@
+{
+  "dry_run": false,
+  "failed": 0,
+  "published": 1,
+  "results": [
+    {
+      "backup": null,
+      "draft_action": "unchanged",
+      "dry_run": false,
+      "errors": [],
+      "needs_review": 0,
+      "product_id": "atom-dtu-cat1-e0915fd91516",
+      "product_name": "Atom DTU Cat1",
+      "publish_action": "unchanged",
+      "sha256": "8a27b87a9a9037a3542f64b997165cc634a811165c720c8560a75e03d6d581db",
+      "status": "valid",
+      "uncertain_facts": 0
+    }
+  ],
+  "schema_version": 1
+}

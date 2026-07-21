@@ -1,0 +1,21 @@
+{
+  "dry_run": false,
+  "failed": 0,
+  "published": 1,
+  "results": [
+    {
+      "backup": null,
+      "draft_action": "unchanged",
+      "dry_run": false,
+      "errors": [],
+      "needs_review": 3,
+      "product_id": "bala2-fire-a634eb077ea9",
+      "product_name": "Bala2-Fire",
+      "publish_action": "unchanged",
+      "sha256": "534e2813cc466c3d7e3dac2f94c4f3be8fb00bba8bae7f4669fe3e50032be95f",
+      "status": "valid",
+      "uncertain_facts": 3
+    }
+  ],
+  "schema_version": 1
+}

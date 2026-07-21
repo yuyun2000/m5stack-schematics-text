@@ -1,0 +1,135 @@
+# Unit CatM GNSS
+
+<span class="product-sku">SKU:U137</span>
+
+<PictureViewer>
+<img src="https://static-cdn.m5stack.com/resource/docs/products/unit/catm_gnss/catm_gnss_01.webp">
+<img src="https://static-cdn.m5stack.com/resource/docs/products/unit/catm_gnss/catm_gnss_02.webp">
+<img src="https://static-cdn.m5stack.com/resource/docs/products/unit/catm_gnss/catm_gnss_10.webp">
+<img src="https://static-cdn.m5stack.com/resource/docs/products/unit/catm_gnss/catm_gnss_03.webp">
+<img src="https://static-cdn.m5stack.com/resource/docs/products/unit/catm_gnss/catm_gnss_04.webp">
+<img src="https://static-cdn.m5stack.com/resource/docs/products/unit/catm_gnss/catm_gnss_05.webp">
+<img src="https://static-cdn.m5stack.com/resource/docs/products/unit/catm_gnss/catm_gnss_06.webp">
+<img src="https://static-cdn.m5stack.com/resource/docs/products/unit/catm_gnss/catm_gnss_08.webp">
+<img src="https://static-cdn.m5stack.com/resource/docs/products/unit/catm_gnss/catm_gnss_09.webp">
+</PictureViewer>
+
+## 描述
+
+**Unit CatM GNSS** 是一款国际版 **CatM** & **NB-IoT** 双模式及支持 **GNSS** 全球定位的无线通信模块。采用 **SIM7080G** 模组方案，覆盖全球多数 CatM & NB-IoT 频段，可适应不同的数据通信速率 / 吞吐量需求。模块采用串口通信，**AT 指令控制**，支持 **多种通信协议**。集成双 **SMA** 外部天线接口，提升设备通信质量与信号的稳定性。非常适用于如远程控制、远程监控、远程医疗、移动物流定位等物联网应用。
+
+## 产品特性
+
+- 一体化集成 “通讯 + 定位”，**双 SMA 天线**接口设计
+  - 通讯部分支持**CatM，NBIoT**两种模式，覆盖全球多数 CatM\&NB-IoT 频段
+    - 上下行速度:
+      - Cat-M: Uplink: 1119Kbps Downlink:589Kbps
+      - NB-IoT: Uplink: 150Kbps Downlink:136Kbps
+    - 支持协议:
+      - TCP/UDP/HTTP/HTTPS/TLS/DTLS/PING/LWM2M/COAP/MQTT 等通信协议
+    - 模块认证:
+      - Softbank/Telec/RoHS/REACH/JATE/Docomo/KDDI/RCM/CE (RED) /GCF
+        Deutsche Telekom/FCC/PTCRB/AT\&T/Verizon/T-Mobile/US Cellular/IC
+  - 定位部分支持：\*\*GPS/GLONASS/BeiDou/Galileo \*\*
+  - 内置 MicroSIM 卡槽
+- 支持两种供电方式：
+  - 外接 DC9-24V (5.5/2.1mm DC 座) 电源输入，内置 DC/DC 转换电路，实现 DC9-24V 转 DC 5V，能同时提供主控 5V 供电
+  - 外部通过 HY2.0-4P 电缆提供的 5V 供电
+- 通信接口：UART (3.3V TTL)，AT Command 控制
+- 开发平台: **Arduino**、**UiFlow**
+- 预留四个固定孔，多种固定方式
+
+## 包装内容
+
+- 1 x Unit CatM GNSS
+- 1 x 4G 胶棒天线
+- 1 x GPS 天线
+- 1 x HY2.0-4P Grove 连接线 (20cm)
+
+## 应用场景
+
+- 远程控制
+- 远程监控
+- 远程医疗
+- 移动物流定位
+
+## 规格参数
+
+| 规格              | 参数                                                              |
+| ----------------- | ----------------------------------------------------------------- |
+| 模组型号          | SIM7080G                                                          |
+| 支持 CAT-M 频段   | B1/B2/B3/B4/B5/B8/B12/B13/B14/B18/B19/B20/B25/B26/B27/B28/B66/B85 |
+| 支持 CAT-NB 频段  | B1/B2/B3/B4/B5/B8/B12/B13/B18/B19/B20/B25/B26/B28/B66/B71/B85     |
+| 支持 GNSS 类型    | GPS/GLONASS/BeiDou/Galileo                                        |
+| Cat-M 上下行速度  | Uplink: 1119Kbps Downlink:589Kbps                                 |
+| NB-IoT 上下行速度 | Uplink: 150Kbps Downlink:136Kbps                                  |
+| RF Power Class    | Class 5 (Typ. 21dbm)                                              |
+| 待机工作电流      | DC 12V@13mA                                                       |
+| 通信接口          | UART: baud 115200 8N1                                             |
+| 产品尺寸          | 61.6 x 40.0 x 14.8mm                                              |
+| 产品重量          | 84.0g                                                             |
+| 包装尺寸          | 189.0 x 55.0 x 26.0mm                                             |
+| 毛重              | 97.3g                                                             |
+
+## 认证信息
+
+- [SIM7080G_AT\&T_Certificate_2020](https://m5stack.oss-cn-shenzhen.aliyuncs.com/resource/docs/datasheet/unit/sim7080g/en/SIM7080G_AT%26amp%3BT_Certificate_2020.pdf)
+- [SIM7080G_GCF_Certificate_2020](https://m5stack.oss-cn-shenzhen.aliyuncs.com/resource/docs/datasheet/unit/sim7080g/en/SIM7080G_GCF_Certificate_2020.pdf)
+- [SIM7080G_NCC_2020](https://m5stack.oss-cn-shenzhen.aliyuncs.com/resource/docs/datasheet/unit/sim7080g/en/SIM7080G_NCC_2020.pdf)
+- [SIM7080G_PTCRB_Certificate_2020](https://m5stack.oss-cn-shenzhen.aliyuncs.com/resource/docs/datasheet/unit/sim7080g/en/SIM7080G_PTCRB_Certificate_2020.pdf)
+- [SIM7080G_RCM_Compliance Certificate_2020](https://m5stack.oss-cn-shenzhen.aliyuncs.com/resource/docs/datasheet/unit/sim7080g/en/SIM7080G_RCM_Compliance%20Certificate_2020.pdf)
+- [SIM7080G_T-mobile_Certificate_2021](https://m5stack.oss-cn-shenzhen.aliyuncs.com/resource/docs/datasheet/unit/sim7080g/en/SIM7080G_T-mobile_Certificate_2021.pdf)
+- [SIM7080G_US Cellular_Certificate_2021](https://m5stack.oss-cn-shenzhen.aliyuncs.com/resource/docs/datasheet/unit/sim7080g/en/SIM7080G_US%20Cellular_Certificate_2021.pdf)
+
+## 原理图
+
+<img src="https://static-cdn.m5stack.com/resource/docs/products/unit/catm_gnss/catm_gnss_sch_01.webp" width="80%">
+
+## 管脚映射
+
+### Unit CatM GNSS
+
+::grove-table
+| HY2.0-4P | Black | Red | Yellow  | White   |
+| -------- | ----- | --- | ------- | ------- |
+| PORT.C   | GND   | 5V  | UART_RX | UART_TX |
+::
+
+## 尺寸图
+
+<img alt="image" width="100%" src="https://m5stack.oss-cn-shenzhen.aliyuncs.com/resource/docs/products/unit/catm_gnss/%E5%B0%BA%E5%AF%B8%E5%9B%BE.jpg">
+
+## 数据手册
+
+- [SIM7070_SIM7080_SIM7090 Series_CTBURST_Application Note_V1.02](https://m5stack.oss-cn-shenzhen.aliyuncs.com/resource/docs/datasheet/unit/sim7080g/en/SIM7070_SIM7080_SIM7090%20Series_CTBURST_Application%20Note_V1.02.pdf)
+- [SIM7070_SIM7080_SIM7090 Series_CoAP(S)_Application Note_V1.03](<https://m5stack.oss-cn-shenzhen.aliyuncs.com/resource/docs/datasheet/unit/sim7080g/en/SIM7070_SIM7080_SIM7090%20Series_CoAP(S)_Application%20Note_V1.03.pdf>)
+- [SIM7070_SIM7080_SIM7090 Series_Email_Application Note_V1.02](https://m5stack.oss-cn-shenzhen.aliyuncs.com/resource/docs/datasheet/unit/sim7080g/en/SIM7070_SIM7080_SIM7090%20Series_Email_Application%20Note_V1.02.pdf)
+- [SIM7070_SIM7080_SIM7090 Series_FOTA_Application Note_V1.02](https://m5stack.oss-cn-shenzhen.aliyuncs.com/resource/docs/datasheet/unit/sim7080g/en/SIM7070_SIM7080_SIM7090%20Series_FOTA_Application%20Note_V1.02.pdf)
+- [SIM7070_SIM7080_SIM7090 Series_FS_Application Note_V1.02](https://m5stack.oss-cn-shenzhen.aliyuncs.com/resource/docs/datasheet/unit/sim7080g/en/SIM7070_SIM7080_SIM7090%20Series_FS_Application%20Note_V1.02.pdf)
+- [SIM7070_SIM7080_SIM7090 Series_FTP(S)_Application Note_V1.02](<https://m5stack.oss-cn-shenzhen.aliyuncs.com/resource/docs/datasheet/unit/sim7080g/en/SIM7070_SIM7080_SIM7090%20Series_FTP(S)_Application%20Note_V1.02.pdf>)
+- [SIM7070_SIM7080_SIM7090 Series_GNSS_Application Note_V1.02](https://m5stack.oss-cn-shenzhen.aliyuncs.com/resource/docs/datasheet/unit/sim7080g/en/SIM7070_SIM7080_SIM7090%20Series_GNSS_Application%20Note_V1.02.pdf)
+- [SIM7070_SIM7080_SIM7090 Series_HTTP(S)_Application Note_V1.02](<https://m5stack.oss-cn-shenzhen.aliyuncs.com/resource/docs/datasheet/unit/sim7080g/en/SIM7070_SIM7080_SIM7090%20Series_HTTP(S)_Application%20Note_V1.02.pdf>)
+- [SIM7070_SIM7080_SIM7090 Series_Linux_Application Note_V1.02](https://m5stack.oss-cn-shenzhen.aliyuncs.com/resource/docs/datasheet/unit/sim7080g/en/SIM7070_SIM7080_SIM7090%20Series_Linux_Application%20Note_V1.02.pdf)
+- [SIM7070_SIM7080_SIM7090 Series_Low Power Mode_Application Note_V1.02](https://m5stack.oss-cn-shenzhen.aliyuncs.com/resource/docs/datasheet/unit/sim7080g/en/SIM7070_SIM7080_SIM7090%20Series_Low%20Power%20Mode_Application%20Note_V1.02.pdf)
+- [SIM7070_SIM7080_SIM7090 Series_LwM2M_Application Note_V1.02](https://m5stack.oss-cn-shenzhen.aliyuncs.com/resource/docs/datasheet/unit/sim7080g/en/SIM7070_SIM7080_SIM7090%20Series_LwM2M_Application%20Note_V1.02.pdf)
+- [SIM7070_SIM7080_SIM7090 Series_MQTT(S)_Application Note_V1.03](<https://m5stack.oss-cn-shenzhen.aliyuncs.com/resource/docs/datasheet/unit/sim7080g/en/SIM7070_SIM7080_SIM7090%20Series_MQTT(S)_Application%20Note_V1.03.pdf>)
+- [SIM7070_SIM7080_SIM7090 Series_PING_Application Note_V1.02](https://m5stack.oss-cn-shenzhen.aliyuncs.com/resource/docs/datasheet/unit/sim7080g/en/SIM7070_SIM7080_SIM7090%20Series_PING_Application%20Note_V1.02.pdf)
+- [SIM7070_SIM7080_SIM7090 Series_SAT_Application Note_V1.02](https://m5stack.oss-cn-shenzhen.aliyuncs.com/resource/docs/datasheet/unit/sim7080g/en/SIM7070_SIM7080_SIM7090%20Series_SAT_Application%20Note_V1.02.pdf)
+- [SIM7070_SIM7080_SIM7090 Series_SSL_Application Note_V1.00](https://m5stack.oss-cn-shenzhen.aliyuncs.com/resource/docs/datasheet/unit/sim7080g/en/SIM7070_SIM7080_SIM7090%20Series_SSL_Application%20Note_V1.00.pdf)
+- [SIM7070_SIM7080_SIM7090 Series_TCPUDP(S)_Application Note_V1.03](<https://m5stack.oss-cn-shenzhen.aliyuncs.com/resource/docs/datasheet/unit/sim7080g/en/SIM7070_SIM7080_SIM7090%20Series_TCPUDP(S)_Application%20Note_V1.03.pdf>)
+- [SIM7080_Series_SPEC_20200427](https://m5stack.oss-cn-shenzhen.aliyuncs.com/resource/docs/datasheet/unit/sim7080g/en/SIM7080_Series_SPEC_20200427.pdf)
+
+## 软件开发
+
+### Arduino
+
+- [Unit CatM GNSS 测试程序](https://github.com/m5stack/M5_SIM7080G/tree/master/examples)
+
+### UiFlow1
+
+<img src="https://static-cdn.m5stack.com/resource/docs/products/unit/catm_gnss/catm_gnss_uiflow_01.webp" width="50%">
+
+### 通信协议
+
+- AT Command
+  - [SIM7070_SIM7080_SIM7090 Series_AT Command Manual_V1.04](https://m5stack.oss-cn-shenzhen.aliyuncs.com/resource/docs/datasheet/unit/sim7080g/en/SIM7070_SIM7080_SIM7090%20Series_AT%20Command%20Manual_V1.04.pdf)

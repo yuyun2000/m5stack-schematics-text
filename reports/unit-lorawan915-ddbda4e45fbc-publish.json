@@ -1,0 +1,21 @@
+{
+  "dry_run": false,
+  "failed": 0,
+  "published": 1,
+  "results": [
+    {
+      "backup": null,
+      "draft_action": "unchanged",
+      "dry_run": false,
+      "errors": [],
+      "needs_review": 3,
+      "product_id": "unit-lorawan915-ddbda4e45fbc",
+      "product_name": "Unit LoRaWAN915",
+      "publish_action": "unchanged",
+      "sha256": "c3a8f1ac70b0be1fc1caa417bfe174f3b840ac6883865c8c28081f792fac560c",
+      "status": "valid",
+      "uncertain_facts": 3
+    }
+  ],
+  "schema_version": 1
+}

@@ -1,0 +1,21 @@
+{
+  "dry_run": false,
+  "failed": 0,
+  "published": 1,
+  "results": [
+    {
+      "backup": null,
+      "draft_action": "unchanged",
+      "dry_run": false,
+      "errors": [],
+      "needs_review": 1,
+      "product_id": "unit-fader-21ccf33d2601",
+      "product_name": "Unit Fader",
+      "publish_action": "unchanged",
+      "sha256": "eb860fb7a85f7d718f2c469a540d5bc1067e7c1c6b702c348071dc20623e67e5",
+      "status": "valid",
+      "uncertain_facts": 1
+    }
+  ],
+  "schema_version": 1
+}

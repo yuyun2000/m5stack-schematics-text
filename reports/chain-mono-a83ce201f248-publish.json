@@ -1,0 +1,21 @@
+{
+  "dry_run": false,
+  "failed": 0,
+  "published": 1,
+  "results": [
+    {
+      "backup": null,
+      "draft_action": "unchanged",
+      "dry_run": false,
+      "errors": [],
+      "needs_review": 3,
+      "product_id": "chain-mono-a83ce201f248",
+      "product_name": "Chain Mono",
+      "publish_action": "unchanged",
+      "sha256": "30154d9abb896c618a410975b2ef4ec01e2bda359e276a3eaa8c76ef56cd463b",
+      "status": "valid",
+      "uncertain_facts": 3
+    }
+  ],
+  "schema_version": 1
+}

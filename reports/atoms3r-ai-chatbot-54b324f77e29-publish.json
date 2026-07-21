@@ -1,0 +1,21 @@
+{
+  "dry_run": false,
+  "failed": 0,
+  "published": 1,
+  "results": [
+    {
+      "backup": null,
+      "draft_action": "unchanged",
+      "dry_run": false,
+      "errors": [],
+      "needs_review": 5,
+      "product_id": "atoms3r-ai-chatbot-54b324f77e29",
+      "product_name": "AtomS3R-AI Chatbot",
+      "publish_action": "unchanged",
+      "sha256": "ce734e43cd20862c89ada592871fcd624bb917cda30f4f714bb24beb065e47cd",
+      "status": "valid",
+      "uncertain_facts": 5
+    }
+  ],
+  "schema_version": 1
+}

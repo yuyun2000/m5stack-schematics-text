@@ -1,0 +1,21 @@
+{
+  "dry_run": false,
+  "failed": 0,
+  "published": 1,
+  "results": [
+    {
+      "backup": null,
+      "draft_action": "unchanged",
+      "dry_run": false,
+      "errors": [],
+      "needs_review": 2,
+      "product_id": "faces-bottom-0b69ecd4797d",
+      "product_name": "Faces Bottom",
+      "publish_action": "unchanged",
+      "sha256": "0902d3ef5fd0fb2758cd99a2c63ea84379459764c460e774841990eec9aeb7d5",
+      "status": "valid",
+      "uncertain_facts": 2
+    }
+  ],
+  "schema_version": 1
+}

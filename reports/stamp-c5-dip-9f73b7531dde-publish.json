@@ -1,0 +1,21 @@
+{
+  "dry_run": false,
+  "failed": 0,
+  "published": 1,
+  "results": [
+    {
+      "backup": null,
+      "draft_action": "unchanged",
+      "dry_run": false,
+      "errors": [],
+      "needs_review": 4,
+      "product_id": "stamp-c5-dip-9f73b7531dde",
+      "product_name": "Stamp-C5 DIP",
+      "publish_action": "unchanged",
+      "sha256": "e29a31f073d6c832388951b3c9da410bd3c7b398aeeecf14d0f520e919eb308e",
+      "status": "valid",
+      "uncertain_facts": 4
+    }
+  ],
+  "schema_version": 1
+}

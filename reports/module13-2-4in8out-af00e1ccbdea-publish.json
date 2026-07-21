@@ -1,0 +1,21 @@
+{
+  "dry_run": false,
+  "failed": 0,
+  "published": 1,
+  "results": [
+    {
+      "backup": null,
+      "draft_action": "unchanged",
+      "dry_run": false,
+      "errors": [],
+      "needs_review": 4,
+      "product_id": "module13-2-4in8out-af00e1ccbdea",
+      "product_name": "Module13.2 4In8Out",
+      "publish_action": "unchanged",
+      "sha256": "4abc57ba95858984caa25e8180f7bd7ff08b36b7be8aba0b3836bd23ed9f3d76",
+      "status": "valid",
+      "uncertain_facts": 4
+    }
+  ],
+  "schema_version": 1
+}

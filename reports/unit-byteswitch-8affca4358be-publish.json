@@ -1,0 +1,21 @@
+{
+  "dry_run": false,
+  "failed": 0,
+  "published": 1,
+  "results": [
+    {
+      "backup": null,
+      "draft_action": "unchanged",
+      "dry_run": false,
+      "errors": [],
+      "needs_review": 5,
+      "product_id": "unit-byteswitch-8affca4358be",
+      "product_name": "Unit ByteSwitch",
+      "publish_action": "unchanged",
+      "sha256": "be836f49661ba9533522fe352a2e6280d31819d2f440e41b713d9d0ceebb5118",
+      "status": "valid",
+      "uncertain_facts": 5
+    }
+  ],
+  "schema_version": 1
+}

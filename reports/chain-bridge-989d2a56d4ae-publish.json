@@ -1,0 +1,21 @@
+{
+  "dry_run": false,
+  "failed": 0,
+  "published": 1,
+  "results": [
+    {
+      "backup": null,
+      "draft_action": "unchanged",
+      "dry_run": false,
+      "errors": [],
+      "needs_review": 0,
+      "product_id": "chain-bridge-989d2a56d4ae",
+      "product_name": "Chain Bridge",
+      "publish_action": "unchanged",
+      "sha256": "66c76e6ea9a9e1eeba0c99accb97c91401f6fec34c00722a4a180cb40f3d3157",
+      "status": "valid",
+      "uncertain_facts": 0
+    }
+  ],
+  "schema_version": 1
+}

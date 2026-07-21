@@ -1,0 +1,754 @@
+{
+  "schema_version": 1,
+  "generator": "schematic_describer",
+  "product": {
+    "product_id": "bugc2-9d763b1973a6",
+    "product_name": "BugC2",
+    "sku": "K033-C",
+    "source_path": "app/BUGC2.md",
+    "source_sha256": "4fce496285880f264b204d4e9d4065267ea27417205ef941532baedd261da7f2",
+    "input_sha256": "9709ab6d1f67a0f7ca30302649e40472df6e5480d30cf1dfd0bdc093d38514e2"
+  },
+  "schematic_assets": [
+    {
+      "sha256": "d38ba3ddf0500bde295da2fabc0651b10f55d70fb23bcfe0fbb365b939921aaf",
+      "source_url": "https://m5stack-doc.oss-cn-shenzhen.aliyuncs.com/541/SCH_BugC2_V1.0_sch_01.png",
+      "pages": [1]
+    }
+  ],
+  "summary": "BugC2 以 STM32F030F4P6 为控制核心，四颗 L9110S 分别驱动四个两针电机接口，控制信号占用 PA1-PA7 和 PB1。主机通过 STICKIO 提供 SCL/SDA、IR_R、+3.3V 和 +5VIN，板上另有 SWD 调试接口、SL0038GD 红外接收器以及两颗级联 WS2812C-2020 RGB LED。PA0 上的 BAT_ADC/RGB 网络同时连接 RGB 数据输入和电池分压采样支路。电源部分包含仅供电的 USB Type-C、TP4057 充电器、充电状态 LED、16340 电池座、2A 保险丝、反接保护和由 +3.3V 控制的 BAT 输出开关。",
+  "keywords": [
+    "BugC2",
+    "K033-C",
+    "STM32F030F4P6",
+    "L9110S",
+    "TP4057",
+    "SL0038GD",
+    "WS2812C-2020",
+    "AO3401A",
+    "AO3400A",
+    "STICKIO",
+    "USB Type-C",
+    "SWD",
+    "SWCLK",
+    "SWDIO",
+    "NRST",
+    "BOOT0",
+    "SCL PA9",
+    "SDA PA10",
+    "IR_R",
+    "BAT_ADC/RGB",
+    "PA0",
+    "PA1",
+    "PA2",
+    "PA3",
+    "PA4",
+    "PA5",
+    "PA6",
+    "PA7",
+    "PB1",
+    "16340_B+",
+    "BAT",
+    "+3.3V",
+    "+5VIN",
+    "four motor drivers",
+    "battery reverse protection"
+  ],
+  "components": [
+    {
+      "reference": "U3",
+      "part_number": "STM32F030F4P6",
+      "role": "主控制器，管理四路电机、I2C、RGB/电池采样和 SWD 调试",
+      "evidence": [
+        {
+          "asset_sha256": "d38ba3ddf0500bde295da2fabc0651b10f55d70fb23bcfe0fbb365b939921aaf",
+          "page": 1,
+          "locator": "网格 2B，U3 STM32F030F4P6 及 PA0-PA14、PB1、NRST、BOOT0、电源引脚"
+        }
+      ]
+    },
+    {
+      "reference": "U1",
+      "part_number": "L9110S",
+      "role": "由 PA3/PA4 控制并驱动 P1 的第一路双向电机驱动器",
+      "evidence": [
+        {
+          "asset_sha256": "d38ba3ddf0500bde295da2fabc0651b10f55d70fb23bcfe0fbb365b939921aaf",
+          "page": 1,
+          "locator": "网格 1A-2A，U1 L9110S、P1、PA3/PA4、BAT 和 C5"
+        }
+      ]
+    },
+    {
+      "reference": "U2",
+      "part_number": "L9110S",
+      "role": "由 PA2/PB1 控制并驱动 P2 的第二路双向电机驱动器",
+      "evidence": [
+        {
+          "asset_sha256": "d38ba3ddf0500bde295da2fabc0651b10f55d70fb23bcfe0fbb365b939921aaf",
+          "page": 1,
+          "locator": "网格 3A-4A，U2 L9110S、P2、PA2/PB1、BAT 和 C6"
+        }
+      ]
+    },
+    {
+      "reference": "U4",
+      "part_number": "L9110S",
+      "role": "由 PA1/PA7 控制并驱动 P3 的第三路双向电机驱动器",
+      "evidence": [
+        {
+          "asset_sha256": "d38ba3ddf0500bde295da2fabc0651b10f55d70fb23bcfe0fbb365b939921aaf",
+          "page": 1,
+          "locator": "网格 1A-2B，U4 L9110S、P3、PA1/PA7、BAT 和 C10"
+        }
+      ]
+    },
+    {
+      "reference": "U5",
+      "part_number": "L9110S",
+      "role": "由 PA5/PA6 控制并驱动 P4 的第四路双向电机驱动器",
+      "evidence": [
+        {
+          "asset_sha256": "d38ba3ddf0500bde295da2fabc0651b10f55d70fb23bcfe0fbb365b939921aaf",
+          "page": 1,
+          "locator": "网格 3A-4B，U5 L9110S、P4、PA5/PA6、BAT 和 C11"
+        }
+      ]
+    },
+    {
+      "reference": "P1, P2, P3, P4",
+      "part_number": "Header 2",
+      "role": "四个两针电机输出接口，分别连接 U1、U2、U4、U5 的 OA/OB",
+      "evidence": [
+        {
+          "asset_sha256": "d38ba3ddf0500bde295da2fabc0651b10f55d70fb23bcfe0fbb365b939921aaf",
+          "page": 1,
+          "locator": "网格 1A-4B，P1-P4 Header 2 与各 L9110S 输出"
+        }
+      ]
+    },
+    {
+      "reference": "P5",
+      "part_number": "SWD_5p",
+      "role": "STM32 的五针 SWD 调试与复位接口",
+      "evidence": [
+        {
+          "asset_sha256": "d38ba3ddf0500bde295da2fabc0651b10f55d70fb23bcfe0fbb365b939921aaf",
+          "page": 1,
+          "locator": "网格 3B，P5 SWD_5p 的 VCC/SWCLK/SWDIO/RST/GND"
+        }
+      ]
+    },
+    {
+      "reference": "P6",
+      "part_number": "STICKIO",
+      "role": "与 M5StickC 主机连接的八针板间接口",
+      "evidence": [
+        {
+          "asset_sha256": "d38ba3ddf0500bde295da2fabc0651b10f55d70fb23bcfe0fbb365b939921aaf",
+          "page": 1,
+          "locator": "网格 4C，P6 STICKIO 的 GND/5VOUT/G26/G36/G0/BAT/3V3/5VIN"
+        }
+      ]
+    },
+    {
+      "reference": "IR1",
+      "part_number": "SL0038GD",
+      "role": "3.3V 红外接收器，输出 IR_R 到 STICKIO G36",
+      "evidence": [
+        {
+          "asset_sha256": "d38ba3ddf0500bde295da2fabc0651b10f55d70fb23bcfe0fbb365b939921aaf",
+          "page": 1,
+          "locator": "网格 4B，IR1 SL0038GD、IR_R、R3 10kΩ 和 C9 100nF"
+        }
+      ]
+    },
+    {
+      "reference": "LED1, LED2",
+      "part_number": "WS2812C-2020",
+      "role": "两颗由 BAT_ADC/RGB 网络驱动的级联可编程 RGB LED",
+      "evidence": [
+        {
+          "asset_sha256": "d38ba3ddf0500bde295da2fabc0651b10f55d70fb23bcfe0fbb365b939921aaf",
+          "page": 1,
+          "locator": "网格 2C-3C，LED1/LED2 WS2812C-2020、BAT_ADC/RGB、DO/DI 和 +3.3V"
+        }
+      ]
+    },
+    {
+      "reference": "USB1",
+      "part_number": "TYPE-C 6P",
+      "role": "仅提供 +5VIN 的 USB Type-C 电源输入连接器",
+      "evidence": [
+        {
+          "asset_sha256": "d38ba3ddf0500bde295da2fabc0651b10f55d70fb23bcfe0fbb365b939921aaf",
+          "page": 1,
+          "locator": "网格 1D-2D，USB1 TYPE-C 6P、VBUS、CC1/CC2、R9/R16 和 GND"
+        }
+      ]
+    },
+    {
+      "reference": "U7",
+      "part_number": "TP4057",
+      "role": "+5VIN 到 16340_B+ 的单节锂电池充电控制器",
+      "evidence": [
+        {
+          "asset_sha256": "d38ba3ddf0500bde295da2fabc0651b10f55d70fb23bcfe0fbb365b939921aaf",
+          "page": 1,
+          "locator": "网格 2D-3D，U7 TP4057、+5VIN、16340_B+、R17 2.7kΩ 与状态 LED"
+        }
+      ]
+    },
+    {
+      "reference": "BT1",
+      "part_number": "Battery",
+      "role": "16340 电池座，正端经 Q3 和 F1 接入 16340_B+",
+      "evidence": [
+        {
+          "asset_sha256": "d38ba3ddf0500bde295da2fabc0651b10f55d70fb23bcfe0fbb365b939921aaf",
+          "page": 1,
+          "locator": "网格 3D-4D，BT1 Battery、Q3、F1 和 GND"
+        }
+      ]
+    },
+    {
+      "reference": "Q3",
+      "part_number": "AO3401A",
+      "role": "电池座正端的反接保护 P 沟道 MOSFET",
+      "evidence": [
+        {
+          "asset_sha256": "d38ba3ddf0500bde295da2fabc0651b10f55d70fb23bcfe0fbb365b939921aaf",
+          "page": 1,
+          "locator": "网格 3D，BT1 正端与 F1 之间的 Q3 AO3401A，门极接 GND"
+        }
+      ]
+    },
+    {
+      "reference": "Q1",
+      "part_number": "AO3401A",
+      "role": "16340_B+ 到 BAT 的高边输出开关",
+      "evidence": [
+        {
+          "asset_sha256": "d38ba3ddf0500bde295da2fabc0651b10f55d70fb23bcfe0fbb365b939921aaf",
+          "page": 1,
+          "locator": "网格 4D，Q1 AO3401A 位于 16340_B+ 与 BAT 之间，门极接 R5/Q2 节点"
+        }
+      ]
+    },
+    {
+      "reference": "Q2",
+      "part_number": "AO3400A",
+      "role": "由 +3.3V 控制并下拉 Q1 门极的 N 沟道 MOSFET",
+      "evidence": [
+        {
+          "asset_sha256": "d38ba3ddf0500bde295da2fabc0651b10f55d70fb23bcfe0fbb365b939921aaf",
+          "page": 1,
+          "locator": "网格 4D，Q2 AO3400A、+3.3V、R8 10kΩ、GND 与 Q1 门极节点"
+        }
+      ]
+    },
+    {
+      "reference": "F1",
+      "part_number": "Fuse 0805 2A/6V",
+      "role": "电池正极路径串联保险丝",
+      "evidence": [
+        {
+          "asset_sha256": "d38ba3ddf0500bde295da2fabc0651b10f55d70fb23bcfe0fbb365b939921aaf",
+          "page": 1,
+          "locator": "网格 3D-4D，Q3 与 16340_B+ 之间的 F1 Fuse 0805 2A/6V"
+        }
+      ]
+    }
+  ],
+  "facts": [
+    {
+      "id": "system.controller-and-actuators",
+      "category": "system",
+      "subject": "BugC2 控制与执行架构",
+      "statement": "U3 STM32F030F4P6 通过八个 GPIO 控制四颗 L9110S，四颗驱动器分别连接 P1-P4 两针电机接口；同一控制器还连接 I2C、SWD 和 BAT_ADC/RGB 网络。",
+      "confidence": "confirmed",
+      "attributes": {
+        "controller": "U3 STM32F030F4P6",
+        "motor_drivers": "U1, U2, U4, U5 L9110S",
+        "motor_outputs": "P1, P2, P3, P4",
+        "host_interface": "P6 STICKIO",
+        "debug": "P5 SWD_5p"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "d38ba3ddf0500bde295da2fabc0651b10f55d70fb23bcfe0fbb365b939921aaf",
+          "page": 1,
+          "locator": "全图 U3 主控、U1/U2/U4/U5 电机驱动、P1-P6 接口及 RGB/红外/电源模块"
+        }
+      ]
+    },
+    {
+      "id": "component.motor-driver-u1",
+      "category": "component",
+      "subject": "U1 第一电机驱动通道",
+      "statement": "U1 L9110S 的 IA 接 PA4、IB 接 PA3，OA 接 P1 pin2、OB 接 P1 pin1，两个 VCC 引脚接 BAT，两个 GND 引脚接地。",
+      "confidence": "confirmed",
+      "attributes": {
+        "driver": "U1 L9110S",
+        "ia": "PA4",
+        "ib": "PA3",
+        "oa": "P1 pin2",
+        "ob": "P1 pin1",
+        "supply": "BAT"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "d38ba3ddf0500bde295da2fabc0651b10f55d70fb23bcfe0fbb365b939921aaf",
+          "page": 1,
+          "locator": "网格 1A-2A，U1 的 IA/IB/OA/OB/VCC/GND 与 P1"
+        }
+      ]
+    },
+    {
+      "id": "component.motor-driver-u2",
+      "category": "component",
+      "subject": "U2 第二电机驱动通道",
+      "statement": "U2 L9110S 的 IA 接 PA2、IB 接 PB1，OA 接 P2 pin2、OB 接 P2 pin1，两个 VCC 引脚接 BAT，两个 GND 引脚接地。",
+      "confidence": "confirmed",
+      "attributes": {
+        "driver": "U2 L9110S",
+        "ia": "PA2",
+        "ib": "PB1",
+        "oa": "P2 pin2",
+        "ob": "P2 pin1",
+        "supply": "BAT"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "d38ba3ddf0500bde295da2fabc0651b10f55d70fb23bcfe0fbb365b939921aaf",
+          "page": 1,
+          "locator": "网格 3A-4A，U2 的 IA/IB/OA/OB/VCC/GND 与 P2"
+        }
+      ]
+    },
+    {
+      "id": "component.motor-driver-u4",
+      "category": "component",
+      "subject": "U4 第三电机驱动通道",
+      "statement": "U4 L9110S 的 IA 接 PA7、IB 接 PA1，OA 接 P3 pin2、OB 接 P3 pin1，两个 VCC 引脚接 BAT，两个 GND 引脚接地。",
+      "confidence": "confirmed",
+      "attributes": {
+        "driver": "U4 L9110S",
+        "ia": "PA7",
+        "ib": "PA1",
+        "oa": "P3 pin2",
+        "ob": "P3 pin1",
+        "supply": "BAT"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "d38ba3ddf0500bde295da2fabc0651b10f55d70fb23bcfe0fbb365b939921aaf",
+          "page": 1,
+          "locator": "网格 1A-2B，U4 的 IA/IB/OA/OB/VCC/GND 与 P3"
+        }
+      ]
+    },
+    {
+      "id": "component.motor-driver-u5",
+      "category": "component",
+      "subject": "U5 第四电机驱动通道",
+      "statement": "U5 L9110S 的 IA 接 PA5、IB 接 PA6，OA 接 P4 pin2、OB 接 P4 pin1，两个 VCC 引脚接 BAT，两个 GND 引脚接地。",
+      "confidence": "confirmed",
+      "attributes": {
+        "driver": "U5 L9110S",
+        "ia": "PA5",
+        "ib": "PA6",
+        "oa": "P4 pin2",
+        "ob": "P4 pin1",
+        "supply": "BAT"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "d38ba3ddf0500bde295da2fabc0651b10f55d70fb23bcfe0fbb365b939921aaf",
+          "page": 1,
+          "locator": "网格 3A-4B，U5 的 IA/IB/OA/OB/VCC/GND 与 P4"
+        }
+      ]
+    },
+    {
+      "id": "bus.i2c-host",
+      "category": "bus",
+      "subject": "STICKIO 到 STM32 的 I2C 总线",
+      "statement": "P6 pin3 的 SCL 连接 U3 PA9，P6 pin5 的 SDA 连接 U3 PA10；SCL 和 SDA 分别由 R6/R7 10kΩ 上拉到 +3.3V。",
+      "confidence": "confirmed",
+      "attributes": {
+        "connector": "P6 STICKIO",
+        "scl_path": "P6 pin3 G26-SCL-U3 PA9",
+        "sda_path": "P6 pin5 G0-SDA-U3 PA10",
+        "scl_pullup": "R6 10kΩ",
+        "sda_pullup": "R7 10kΩ"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "d38ba3ddf0500bde295da2fabc0651b10f55d70fb23bcfe0fbb365b939921aaf",
+          "page": 1,
+          "locator": "网格 2B-4C，U3 PA9/PA10 的 SCL/SDA 与 P6、R6/R7"
+        }
+      ]
+    },
+    {
+      "id": "debug.swd-header",
+      "category": "debug",
+      "subject": "SWD 调试接口",
+      "statement": "P5 pin1=+3.3V、pin2=SWCLK、pin3=SWDIO、pin4=NRST、pin5=GND；SWCLK/SWDIO 分别连接 U3 PA14/PA13。",
+      "confidence": "confirmed",
+      "attributes": {
+        "connector": "P5 SWD_5p",
+        "pin1": "+3.3V",
+        "pin2": "SWCLK to U3 PA14",
+        "pin3": "SWDIO to U3 PA13",
+        "pin4": "NRST",
+        "pin5": "GND"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "d38ba3ddf0500bde295da2fabc0651b10f55d70fb23bcfe0fbb365b939921aaf",
+          "page": 1,
+          "locator": "网格 2B-3B，U3 PA14/PA13/NRST 与 P5 五针引脚"
+        }
+      ]
+    },
+    {
+      "id": "reset.nrst",
+      "category": "reset",
+      "subject": "STM32 复位网络",
+      "statement": "U3 NRST 由 R2 10kΩ 上拉到 +3.3V，并由 C8 100nF 对地；NRST 同时引出到 P5 pin4。",
+      "confidence": "confirmed",
+      "attributes": {
+        "controller_pin": "U3 pin4 NRST",
+        "pullup": "R2 10kΩ",
+        "capacitor": "C8 100nF",
+        "debug_pin": "P5 pin4"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "d38ba3ddf0500bde295da2fabc0651b10f55d70fb23bcfe0fbb365b939921aaf",
+          "page": 1,
+          "locator": "网格 1B-3B，R2/C8/NRST、U3 pin4 与 P5 pin4"
+        }
+      ]
+    },
+    {
+      "id": "reset.boot0",
+      "category": "reset",
+      "subject": "STM32 BOOT0 配置",
+      "statement": "U3 BOOT0 通过 R1 10kΩ 接 GND。",
+      "confidence": "confirmed",
+      "attributes": {
+        "controller_pin": "U3 pin1 BOOT0",
+        "resistor": "R1 10kΩ",
+        "default_level": "GND"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "d38ba3ddf0500bde295da2fabc0651b10f55d70fb23bcfe0fbb365b939921aaf",
+          "page": 1,
+          "locator": "网格 2B，U3 BOOT0、R1 10kΩ 与 GND"
+        }
+      ]
+    },
+    {
+      "id": "interface.stickio-pinout",
+      "category": "interface",
+      "subject": "P6 STICKIO 引脚",
+      "statement": "P6 pin1=GND、pin2=5VOUT 且外部 +5V 支路标记未连接、pin3=G26/SCL、pin4=G36/IR_R、pin5=G0/SDA、pin6=BAT 且未接线、pin7=+3.3V、pin8=+5VIN。",
+      "confidence": "confirmed",
+      "attributes": {
+        "connector": "P6 STICKIO",
+        "pin1": "GND",
+        "pin2": "5VOUT, external +5V branch NC",
+        "pin3": "G26 / SCL",
+        "pin4": "G36 / IR_R",
+        "pin5": "G0 / SDA",
+        "pin6": "BAT, no wire",
+        "pin7": "+3.3V",
+        "pin8": "+5VIN"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "d38ba3ddf0500bde295da2fabc0651b10f55d70fb23bcfe0fbb365b939921aaf",
+          "page": 1,
+          "locator": "网格 4C，P6 STICKIO 1-8 脚、SCL/IR_R/SDA/+3.3V/+5VIN 及 NC 标记"
+        }
+      ]
+    },
+    {
+      "id": "sensor.infrared-receiver",
+      "category": "sensor",
+      "subject": "SL0038GD 红外接收器",
+      "statement": "IR1 SL0038GD 的 VCC 接 +3.3V、GND 接地、OUT 输出 IR_R；IR_R 由 R3 10kΩ 上拉到 +3.3V，电源配置 C9 100nF 去耦。",
+      "confidence": "confirmed",
+      "attributes": {
+        "reference": "IR1",
+        "part_number": "SL0038GD",
+        "output": "IR_R",
+        "pullup": "R3 10kΩ",
+        "supply": "+3.3V",
+        "decoupling": "C9 100nF"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "d38ba3ddf0500bde295da2fabc0651b10f55d70fb23bcfe0fbb365b939921aaf",
+          "page": 1,
+          "locator": "网格 4B，IR1 的 VCC/OUT/GND、IR_R、R3 和 C9"
+        }
+      ]
+    },
+    {
+      "id": "gpio.infrared-to-host",
+      "category": "gpio",
+      "subject": "红外输出到主机",
+      "statement": "IR_R 从 IR1 OUT 直接连接 P6 pin4，对应 STICKIO G36。",
+      "confidence": "confirmed",
+      "attributes": {
+        "source": "IR1 OUT",
+        "net": "IR_R",
+        "host_connector": "P6 pin4 G36"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "d38ba3ddf0500bde295da2fabc0651b10f55d70fb23bcfe0fbb365b939921aaf",
+          "page": 1,
+          "locator": "网格 4B-C，IR1 OUT 的 IR_R 与 P6 pin4 G36 同名网络"
+        }
+      ]
+    },
+    {
+      "id": "gpio.rgb-chain",
+      "category": "gpio",
+      "subject": "两颗 WS2812C-2020 级联",
+      "statement": "BAT_ADC/RGB 接 LED1 DI，LED1 DO 接 LED2 DI，LED2 DO 未继续连接；两颗 LED 均由 +3.3V 供电并接 GND。",
+      "confidence": "confirmed",
+      "attributes": {
+        "first_led": "LED1 WS2812C-2020",
+        "second_led": "LED2 WS2812C-2020",
+        "data_input": "BAT_ADC/RGB",
+        "chain": "LED1 DO to LED2 DI",
+        "supply": "+3.3V"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "d38ba3ddf0500bde295da2fabc0651b10f55d70fb23bcfe0fbb365b939921aaf",
+          "page": 1,
+          "locator": "网格 2C-3C，LED1/LED2 的 DI/DO/VDD/GND 与 BAT_ADC/RGB"
+        }
+      ]
+    },
+    {
+      "id": "analog.battery-monitor",
+      "category": "analog",
+      "subject": "BAT 电压分压采样",
+      "statement": "BAT 经 R10 100kΩ 与 R12 51kΩ 分压，分压中点再经 R11 330Ω 接 BAT_ADC/RGB，BAT_ADC/RGB 连接 U3 PA0。",
+      "confidence": "confirmed",
+      "attributes": {
+        "source": "BAT",
+        "upper_resistor": "R10 100kΩ",
+        "lower_resistor": "R12 51kΩ",
+        "series_resistor": "R11 330Ω",
+        "controller_pin": "U3 PA0",
+        "net": "BAT_ADC/RGB"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "d38ba3ddf0500bde295da2fabc0651b10f55d70fb23bcfe0fbb365b939921aaf",
+          "page": 1,
+          "locator": "网格 3C-4C，BAT、R10/R12/R11、BAT_ADC/RGB 与 U3 PA0"
+        }
+      ]
+    },
+    {
+      "id": "key_net.pa0-shared",
+      "category": "key_net",
+      "subject": "PA0 的 BAT_ADC/RGB 复用网络",
+      "statement": "U3 PA0 与 BAT_ADC/RGB 同网，该网络同时连接电池分压支路和 LED1 DI。",
+      "confidence": "confirmed",
+      "attributes": {
+        "controller_pin": "U3 PA0",
+        "net": "BAT_ADC/RGB",
+        "analog_branch": "BAT divider via R11",
+        "digital_branch": "LED1 DI"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "d38ba3ddf0500bde295da2fabc0651b10f55d70fb23bcfe0fbb365b939921aaf",
+          "page": 1,
+          "locator": "网格 2B-4C，U3 PA0、LED1 DI 和 R11 输出均标注 BAT_ADC/RGB"
+        }
+      ]
+    },
+    {
+      "id": "interface.usb-c-power",
+      "category": "interface",
+      "subject": "USB Type-C 供电输入",
+      "statement": "USB1 TYPE-C 6P 仅画出 VBUS、CC1、CC2、GND 和 SHELL；两个 VBUS 引脚接 +5VIN，CC1/CC2 分别通过 R9/R16 5.1kΩ 接地。",
+      "confidence": "confirmed",
+      "attributes": {
+        "connector": "USB1 TYPE-C 6P",
+        "output": "+5VIN",
+        "cc1_pulldown": "R9 5.1kΩ",
+        "cc2_pulldown": "R16 5.1kΩ",
+        "data_pins": "not shown"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "d38ba3ddf0500bde295da2fabc0651b10f55d70fb23bcfe0fbb365b939921aaf",
+          "page": 1,
+          "locator": "网格 1D-2D，USB1 的全部六针符号、+5VIN、R9/R16 和 GND"
+        }
+      ]
+    },
+    {
+      "id": "power.tp4057-charger",
+      "category": "power",
+      "subject": "TP4057 充电路径",
+      "statement": "U7 TP4057 的 VCC 接 +5VIN，BAT 输出 16340_B+，PROG 经 R17 2.7kΩ 接地；输入配置 C16 10uF，输出配置 C17 100nF 与 C18 10uF。",
+      "confidence": "confirmed",
+      "attributes": {
+        "charger": "U7 TP4057",
+        "input": "+5VIN",
+        "battery_output": "16340_B+",
+        "program_resistor": "R17 2.7kΩ",
+        "input_capacitor": "C16 10uF",
+        "output_capacitors": "C17 100nF, C18 10uF"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "d38ba3ddf0500bde295da2fabc0651b10f55d70fb23bcfe0fbb365b939921aaf",
+          "page": 1,
+          "locator": "网格 2D-3D，U7 VCC/BAT/PROG、+5VIN、16340_B+、R17、C16-C18"
+        }
+      ]
+    },
+    {
+      "id": "power.charge-status-leds",
+      "category": "power",
+      "subject": "充电状态指示",
+      "statement": "U7 CHRG 连接红色 D1 指示支路，U7 STDBY 连接绿色 D2 指示支路；D1 经 R15 2kΩ 接 +5VIN，D2 经 R4 10kΩ 接 +5VIN。",
+      "confidence": "confirmed",
+      "attributes": {
+        "charge_pin": "U7 CHRG",
+        "charge_led": "D1 red with R15 2kΩ",
+        "standby_pin": "U7 STDBY",
+        "standby_led": "D2 green with R4 10kΩ",
+        "supply": "+5VIN"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "d38ba3ddf0500bde295da2fabc0651b10f55d70fb23bcfe0fbb365b939921aaf",
+          "page": 1,
+          "locator": "网格 2D，U7 CHRG/STDBY、D1/D2 与 R15/R4"
+        }
+      ]
+    },
+    {
+      "id": "power.battery-protection-path",
+      "category": "power",
+      "subject": "电池正极保护路径",
+      "statement": "BT1 正端经 Q3 AO3401A 和 F1 0805 2A/6V 串联到 16340_B+；Q3 门极接 GND。",
+      "confidence": "confirmed",
+      "attributes": {
+        "path": "BT1 positive-Q3-F1-16340_B+",
+        "reverse_protection": "Q3 AO3401A",
+        "fuse": "F1 0805 2A/6V",
+        "q3_gate": "GND"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "d38ba3ddf0500bde295da2fabc0651b10f55d70fb23bcfe0fbb365b939921aaf",
+          "page": 1,
+          "locator": "网格 3D-4D，BT1、Q3、F1 与 16340_B+ 串联路径"
+        }
+      ]
+    },
+    {
+      "id": "power.bat-output-switch",
+      "category": "power",
+      "subject": "16340_B+ 到 BAT 的受控开关",
+      "statement": "Q1 AO3401A 串联在 16340_B+ 与 BAT 之间，其门极由 R5 100kΩ 上拉到 16340_B+，并由 Q2 AO3400A 下拉；Q2 门极接 +3.3V，R8 10kΩ 将其门极下拉到 GND。",
+      "confidence": "confirmed",
+      "attributes": {
+        "high_side_switch": "Q1 AO3401A",
+        "input": "16340_B+",
+        "output": "BAT",
+        "gate_pullup": "R5 100kΩ",
+        "gate_pulldown_switch": "Q2 AO3400A",
+        "q2_control": "+3.3V with R8 10kΩ to GND"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "d38ba3ddf0500bde295da2fabc0651b10f55d70fb23bcfe0fbb365b939921aaf",
+          "page": 1,
+          "locator": "网格 4D，Q1/Q2、R5/R8、16340_B+、BAT、+3.3V 和 GND"
+        }
+      ]
+    },
+    {
+      "id": "power.power-domains",
+      "category": "power",
+      "subject": "主电源域",
+      "statement": "+5VIN 来自 USB1 或 P6 pin8 并供给 TP4057；+3.3V 来自 P6 pin7 并供给 STM32、红外、RGB 和电池输出控制；BAT 经受控电池路径供给四颗 L9110S。",
+      "confidence": "confirmed",
+      "attributes": {
+        "five_volt_input": "+5VIN from USB1 and P6 pin8",
+        "logic_supply": "+3.3V from P6 pin7",
+        "motor_supply": "BAT",
+        "charger_input": "+5VIN",
+        "battery_switch_control": "+3.3V"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "d38ba3ddf0500bde295da2fabc0651b10f55d70fb23bcfe0fbb365b939921aaf",
+          "page": 1,
+          "locator": "全图 +5VIN、+3.3V、BAT、USB1、P6、U7 与四颗 L9110S 电源连接"
+        }
+      ]
+    },
+    {
+      "id": "protection.motor-decoupling",
+      "category": "protection",
+      "subject": "电机驱动去耦",
+      "statement": "四颗 L9110S 的 BAT 电源分别配置 C1-C4 100nF 对地，四个电机输出端 P1-P4 分别跨接 C5、C6、C10、C11 100nF。",
+      "confidence": "confirmed",
+      "attributes": {
+        "bat_decoupling": "C1, C2, C3, C4 each 100nF",
+        "p1_output_capacitor": "C5 100nF",
+        "p2_output_capacitor": "C6 100nF",
+        "p3_output_capacitor": "C10 100nF",
+        "p4_output_capacitor": "C11 100nF"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "d38ba3ddf0500bde295da2fabc0651b10f55d70fb23bcfe0fbb365b939921aaf",
+          "page": 1,
+          "locator": "网格 1A-4B，C1-C4 的 BAT 去耦与 P1-P4 两端的 C5/C6/C10/C11"
+        }
+      ]
+    },
+    {
+      "id": "key_net.motor-control-map",
+      "category": "key_net",
+      "subject": "四路电机 GPIO 映射",
+      "statement": "电机控制映射为 U1/P1 使用 PA4 与 PA3，U2/P2 使用 PA2 与 PB1，U4/P3 使用 PA7 与 PA1，U5/P4 使用 PA5 与 PA6。",
+      "confidence": "confirmed",
+      "attributes": {
+        "P1": "PA4 IA, PA3 IB",
+        "P2": "PA2 IA, PB1 IB",
+        "P3": "PA7 IA, PA1 IB",
+        "P4": "PA5 IA, PA6 IB"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "d38ba3ddf0500bde295da2fabc0651b10f55d70fb23bcfe0fbb365b939921aaf",
+          "page": 1,
+          "locator": "网格 1A-4B，U1/U2/U4/U5 的 IA/IB 网络名及 P1-P4 输出"
+        }
+      ]
+    }
+  ],
+  "needs_review": []
+}

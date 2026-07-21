@@ -1,0 +1,21 @@
+{
+  "dry_run": false,
+  "failed": 0,
+  "published": 1,
+  "results": [
+    {
+      "backup": null,
+      "draft_action": "unchanged",
+      "dry_run": false,
+      "errors": [],
+      "needs_review": 4,
+      "product_id": "module13-2-qrcode-4a6d94edd708",
+      "product_name": "Module13.2 QRCode",
+      "publish_action": "unchanged",
+      "sha256": "09c98df4ea1a150bcccc9baa4c4100ea51aeb068490131c5bf92db1dc5df00a4",
+      "status": "valid",
+      "uncertain_facts": 4
+    }
+  ],
+  "schema_version": 1
+}

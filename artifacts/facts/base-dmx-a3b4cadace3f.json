@@ -1,0 +1,337 @@
+{
+  "schema_version": 1,
+  "generator": "schematic_describer",
+  "product": {
+    "product_id": "base-dmx-a3b4cadace3f",
+    "product_name": "Base DMX",
+    "sku": "M128",
+    "source_path": "base/DMX_Base.md",
+    "source_sha256": "e2131e1790d56110c716596f0b2ac341e6086de97dd6d69404a15ae0c46a25f4",
+    "input_sha256": "42b3cb044bbcc6ba763141495d9e63cc1c31ca1a186807007e0231e1445ec21a"
+  },
+  "schematic_assets": [
+    {
+      "sha256": "653538dd2fba533c525d523422ddc126223a2e1ecb5460d241cb32e36155f93f",
+      "source_url": "https://m5stack-doc.oss-cn-shenzhen.aliyuncs.com/555/SCH_DMX_Base_V1.0_sch_01.png",
+      "pages": [1]
+    },
+    {
+      "sha256": "dc0f5d1da1e0720a6db533363f5dc29c187de337b20995b6915e44a416c43d55",
+      "source_url": "https://m5stack-doc.oss-cn-shenzhen.aliyuncs.com/555/Sch_DMX-sub_V1.0_sch_01.png",
+      "pages": [1]
+    }
+  ],
+  "summary": "Base DMX 由主板和接口子板组成。主板使用 U1 MP1584EN-LF-Z 将 DC 插座的 12V 网络降压为 VCC_5V，再由 U2 B0505LS-1WR2 生成隔离的 5VISO/GNDISO；U3、U6 两路 SP3485EN-L/TR 分别构成 DMX 输出与输入通道，并通过 U5 EL0631、U4 EL0600 与 M5 主机侧的 TX、RX、485EN 隔离。主板 S1 控制输出偏置，S2 在 B1/A1 与 B2/A2 直通或 120Ω 支路之间切换。子板提供五针 DMX IN/OUT、输入端可切换 120Ω 终端和差分线保护。源文档中的输入范围、收发器型号、M5-Bus 针号方向和 XLR-3 实现与图纸存在不能单页消解的差异，均列为待确认。",
+  "keywords": [
+    "Base DMX",
+    "M128",
+    "DMX512",
+    "MP1584EN-LF-Z",
+    "B0505LS-1WR2",
+    "SP3485EN-L/TR",
+    "EL0600(TA)",
+    "EL0631(TA)",
+    "SS8050 Y1",
+    "VCC_5V",
+    "5VISO",
+    "GNDISO",
+    "485EN",
+    "TX",
+    "RX",
+    "B1",
+    "A1",
+    "B2",
+    "A2",
+    "120R",
+    "680R",
+    "NC5MAH",
+    "NC5FAH",
+    "HT3.96 4P"
+  ],
+  "components": [
+    {
+      "reference": "主板 P1",
+      "part_number": "DC050-T",
+      "role": "12V 网络的直流输入插座",
+      "evidence": [{"asset_sha256": "653538dd2fba533c525d523422ddc126223a2e1ecb5460d241cb32e36155f93f", "page": 1, "locator": "主板第 1 页左上 P1 DC050-T、12V、C1 47uF/35V 与 GND 区域"}]
+    },
+    {
+      "reference": "U1",
+      "part_number": "MP1584EN-LF-Z",
+      "role": "12V 到 VCC_5V 的降压转换器",
+      "evidence": [{"asset_sha256": "653538dd2fba533c525d523422ddc126223a2e1ecb5460d241cb32e36155f93f", "page": 1, "locator": "主板第 1 页上方 U1 方框及下方 MP1584EN-LF-Z 标注"}]
+    },
+    {
+      "reference": "U2",
+      "part_number": "B0505LS-1WR2",
+      "role": "VCC_5V 到 5VISO 的隔离电源模块",
+      "evidence": [{"asset_sha256": "653538dd2fba533c525d523422ddc126223a2e1ecb5460d241cb32e36155f93f", "page": 1, "locator": "主板第 1 页右上 U2 B0505LS-1WR2，输入 VCC_5V/GND、输出 5VISO/GNDISO"}]
+    },
+    {
+      "reference": "U3,U6",
+      "part_number": "SP3485EN-L/TR",
+      "role": "DMX OUT 与 DMX IN 两路隔离侧 RS-485 收发器",
+      "evidence": [{"asset_sha256": "653538dd2fba533c525d523422ddc126223a2e1ecb5460d241cb32e36155f93f", "page": 1, "locator": "主板第 1 页中部 U3 DMX OUT PORT 与下部 U6 DMX IN PORT，器件值均标 SP3485EN-L/TR"}]
+    },
+    {
+      "reference": "U4",
+      "part_number": "EL0600(TA)",
+      "role": "隔离侧 U6 接收数据到主机 RX 的高速光耦",
+      "evidence": [{"asset_sha256": "653538dd2fba533c525d523422ddc126223a2e1ecb5460d241cb32e36155f93f", "page": 1, "locator": "主板第 1 页左下 U4 EL0600(TA)，两侧分别为 3V3/GND/RX 与 5VISO/GNDISO/U6 RO"}]
+    },
+    {
+      "reference": "U5",
+      "part_number": "EL0631(TA)",
+      "role": "主机 TX 与 485EN 到隔离侧 U3 的双通道高速光耦",
+      "evidence": [{"asset_sha256": "653538dd2fba533c525d523422ddc126223a2e1ecb5460d241cb32e36155f93f", "page": 1, "locator": "主板第 1 页左中 U5 EL0631(TA)，主机侧接 3V3/TX/485EN，隔离侧接 5VISO/GNDISO/U3"}]
+    },
+    {
+      "reference": "VT3",
+      "part_number": "SS8050 Y1",
+      "role": "485EN 光耦输入的晶体管驱动级",
+      "evidence": [{"asset_sha256": "653538dd2fba533c525d523422ddc126223a2e1ecb5460d241cb32e36155f93f", "page": 1, "locator": "主板第 1 页左中 VT3 SS8050 Y1 与 R17/R16/R10、485EN、3V3 连接区域"}]
+    },
+    {
+      "reference": "主板 S1,S2",
+      "part_number": "双刀双掷开关",
+      "role": "输出偏置与输入/输出直通路径选择",
+      "evidence": [{"asset_sha256": "653538dd2fba533c525d523422ddc126223a2e1ecb5460d241cb32e36155f93f", "page": 1, "locator": "主板第 1 页中右 S1 Bias Resistor For OUT port Switch 与 S2 Separate or Pass-through Switch"}]
+    },
+    {
+      "reference": "主板 P3",
+      "part_number": "HT3.96 4P",
+      "role": "B1、A1、12V、GND 四线扩展接口",
+      "evidence": [{"asset_sha256": "653538dd2fba533c525d523422ddc126223a2e1ecb5460d241cb32e36155f93f", "page": 1, "locator": "主板第 1 页右下 P3 HT3.96 4P，pins4/3/2/1 接 B1/A1/12V/GND"}]
+    },
+    {
+      "reference": "主板 P4",
+      "part_number": "Header 3X2H 2.54",
+      "role": "主板与接口子板之间的 GNDISO、A1/B1、A2/B2 连接器",
+      "evidence": [{"asset_sha256": "653538dd2fba533c525d523422ddc126223a2e1ecb5460d241cb32e36155f93f", "page": 1, "locator": "主板第 1 页底部 P4 Header 3X2H 2.54，pins1/2 GNDISO、3 A2、4 A1、5 B2、6 B1"}]
+    },
+    {
+      "reference": "P5",
+      "part_number": "BUS",
+      "role": "M5 主机总线接口",
+      "evidence": [{"asset_sha256": "653538dd2fba533c525d523422ddc126223a2e1ecb5460d241cb32e36155f93f", "page": 1, "locator": "主板第 1 页右侧 P5 BUS，外侧标出 RX、TX、485EN、3V3、VCC_5V、12V、BAT 与 GND"}]
+    },
+    {
+      "reference": "子板 P1,P2",
+      "part_number": "NC5MAH / NC5FAH",
+      "role": "五针 DMX IN 与 DMX OUT 接口",
+      "evidence": [{"asset_sha256": "dc0f5d1da1e0720a6db533363f5dc29c187de337b20995b6915e44a416c43d55", "page": 1, "locator": "子板第 1 页左侧 P1 NC5MAH DMX IN PORT 与右侧 P2 NC5FAH DMX OUT PORT"}]
+    },
+    {
+      "reference": "子板 S1,R1",
+      "part_number": "SW-SPST / 120R",
+      "role": "DMX IN 的可切换终端电阻",
+      "evidence": [{"asset_sha256": "dc0f5d1da1e0720a6db533363f5dc29c187de337b20995b6915e44a416c43d55", "page": 1, "locator": "子板第 1 页左中 S1 SW-SPST 与 R1 120R，跨接 B2/A2"}]
+    },
+    {
+      "reference": "子板 D1-D6",
+      "part_number": null,
+      "role": "DMX IN/OUT 差分线到 GND 及线间的保护二极管网络",
+      "evidence": [{"asset_sha256": "dc0f5d1da1e0720a6db533363f5dc29c187de337b20995b6915e44a416c43d55", "page": 1, "locator": "子板第 1 页 D3/D4/D2 位于 B2/A2 输入侧，D1/D5/D6 位于 B1/A1 输出侧，均未标器件值"}]
+    }
+  ],
+  "facts": [
+    {
+      "id": "system.architecture",
+      "category": "system",
+      "subject": "Base DMX 主板与接口子板",
+      "statement": "主板完成 12V 降压、5V 电源隔离、主机侧信号隔离和两路 RS-485 收发；接口子板完成五针 DMX IN/OUT、输入终端切换和差分线保护，主板 P4 与子板 P3 传递 GNDISO、A1/B1、A2/B2。",
+      "confidence": "confirmed",
+      "attributes": {"main_power": "12V -> VCC_5V -> 5VISO", "output_channel": "U5 -> U3 -> B1/A1", "input_channel": "B2/A2 -> U6 -> U4 -> RX", "board_interconnect": "main P4 / sub P3"},
+      "evidence": [
+        {"asset_sha256": "653538dd2fba533c525d523422ddc126223a2e1ecb5460d241cb32e36155f93f", "page": 1, "locator": "主板第 1 页电源、DMX OUT、DMX IN 与 P4 区域"},
+        {"asset_sha256": "dc0f5d1da1e0720a6db533363f5dc29c187de337b20995b6915e44a416c43d55", "page": 1, "locator": "子板第 1 页 DMX IN/OUT、终端、保护与 P3 区域"}
+      ]
+    },
+    {
+      "id": "power.buck_converter",
+      "category": "power",
+      "subject": "12V 到 VCC_5V 降压电源",
+      "statement": "主板 P1 DC050-T 形成 12V 网络，C1 为 47uF/35V；U1 MP1584EN-LF-Z 经 D1 DSS34、L1 10uH、C2/C6 各 10uF 生成 VCC_5V，D2 TVS 5V 跨接 VCC_5V 与 GND。",
+      "confidence": "confirmed",
+      "attributes": {"input": "12V", "controller": "U1 MP1584EN-LF-Z", "input_capacitor": "C1 47uF/35V", "catch_diode": "D1 DSS34", "inductor": "L1 10uH", "output_capacitors": "C2 10uF,C6 10uF", "output_protection": "D2 TVS 5V", "output": "VCC_5V"},
+      "evidence": [{"asset_sha256": "653538dd2fba533c525d523422ddc126223a2e1ecb5460d241cb32e36155f93f", "page": 1, "locator": "主板第 1 页左上 P1/C1 与 U1/D1/L1/C2/C6/D2 降压回路"}]
+    },
+    {
+      "id": "power.buck_feedback",
+      "category": "power",
+      "subject": "MP1584EN 配置网络",
+      "statement": "U1 EN pin2 由 R3 100K 上拉到 12V，FREQ pin6 通过 R4 100K 接 GND；FB pin4 使用 R1 210K 与 R2 39K 分压，COMP pin3 使用 C4 150pF 与 R6 100K 支路，BST pin8 通过 C5 100nF 接 SW pin1。",
+      "confidence": "confirmed",
+      "attributes": {"enable_pullup": "R3 100K to 12V", "frequency_resistor": "R4 100K to GND", "feedback_top": "R1 210K", "feedback_bottom": "R2 39K", "compensation": "C4 150pF,R6 100K", "bootstrap": "C5 100nF between BST and SW"},
+      "evidence": [{"asset_sha256": "653538dd2fba533c525d523422ddc126223a2e1ecb5460d241cb32e36155f93f", "page": 1, "locator": "主板第 1 页 U1 周围 R1-R4、R6、C4、C5 与对应引脚"}]
+    },
+    {
+      "id": "power.input_range",
+      "category": "power",
+      "subject": "DC 输入范围",
+      "statement": "源文档写 DC 9~24V 输入，但主板原理图只把 P1 与 U1 输入网络标为 12V，没有给出 9~24V 连续工作范围或边界条件。",
+      "confidence": "uncertain",
+      "attributes": {"source_document_range": "9~24V DC", "schematic_label": "12V", "confirmed_range": null},
+      "evidence": [{"asset_sha256": "653538dd2fba533c525d523422ddc126223a2e1ecb5460d241cb32e36155f93f", "page": 1, "locator": "主板第 1 页左上 P1、C1、U1 输入侧均标 12V"}]
+    },
+    {
+      "id": "power.isolated_supply",
+      "category": "power",
+      "subject": "B0505LS-1WR2 隔离电源",
+      "statement": "U2 以 VCC_5V/GND 为输入并在隔离侧输出 5VISO/GNDISO；输出经 L2 10uH 和 C8/C9/C10 各 100nF 滤波，R5 250R 跨接 5VISO 与 GNDISO，输入侧 C7 为 10uF。",
+      "confidence": "confirmed",
+      "attributes": {"module": "U2 B0505LS-1WR2", "input_domain": "VCC_5V/GND", "output_domain": "5VISO/GNDISO", "input_capacitor": "C7 10uF", "output_inductor": "L2 10uH", "output_capacitors": "C8/C9/C10 100nF", "output_load": "R5 250R"},
+      "evidence": [{"asset_sha256": "653538dd2fba533c525d523422ddc126223a2e1ecb5460d241cb32e36155f93f", "page": 1, "locator": "主板第 1 页右上 U2、C7、L2、C8-C10、R5 与两侧电源域"}]
+    },
+    {
+      "id": "interface.output_channel",
+      "category": "interface",
+      "subject": "主机到 DMX OUT 通道",
+      "statement": "TX 经 R12 470R 驱动 U5 下通道，485EN 经 R17/R16、VT3 SS8050 Y1 和 R10 驱动 U5 上通道；U5 隔离侧输出由 R9/R11 各 330R 上拉到 5VISO，并分别连接 U3 的 RE/DE 控制节点和 DI。U3 RO 未接出，A/B 输出为 A1/B1。",
+      "confidence": "confirmed",
+      "attributes": {"data_input": "TX -> R12 470R -> U5", "enable_input": "485EN -> R17 1K/R16 10K -> VT3/R10 330R -> U5", "isolated_pullups": "R9 330R,R11 330R to 5VISO", "transceiver": "U3 SP3485EN-L/TR", "differential_output": "A1,B1", "receiver_output_used": false},
+      "evidence": [{"asset_sha256": "653538dd2fba533c525d523422ddc126223a2e1ecb5460d241cb32e36155f93f", "page": 1, "locator": "主板第 1 页左中 485EN/TX/VT3/U5 与中部 U3 DMX OUT PORT 连接"}]
+    },
+    {
+      "id": "interface.input_channel",
+      "category": "interface",
+      "subject": "DMX IN 到主机 RX 通道",
+      "statement": "U6 的 B/A 接 B2/A2，RO 经 R15 470R 驱动 U4 隔离输入，U4 主机侧输出为 RX 并由 R8 330R 上拉到 3V3；U6 的 RE/DE 控制节点通过 R18 1K 接 GNDISO，DI 未接出。",
+      "confidence": "confirmed",
+      "attributes": {"differential_input": "B2,A2", "transceiver": "U6 SP3485EN-L/TR", "receiver_path": "U6 RO -> R15 470R -> U4 EL0600(TA) -> RX", "rx_pullup": "R8 330R to 3V3", "control_bias": "R18 1K to GNDISO", "driver_input_used": false},
+      "evidence": [{"asset_sha256": "653538dd2fba533c525d523422ddc126223a2e1ecb5460d241cb32e36155f93f", "page": 1, "locator": "主板第 1 页左下 U4/R8/C11/RX 与下中 U6/R15/R18/B2/A2 DMX IN PORT"}]
+    },
+    {
+      "id": "component.rs485_part_number",
+      "category": "component",
+      "subject": "RS-485 收发器型号",
+      "statement": "主板原理图把 U3、U6 标为 SP3485EN-L/TR，源文档规格表写 SP3488EN，数据手册链接名称又写 SP485EEN；当前产品装配型号不能由这组资料唯一确定。",
+      "confidence": "uncertain",
+      "attributes": {"schematic_part": "SP3485EN-L/TR", "source_spec_part": "SP3488EN", "linked_datasheet_name": "SP485EEN", "assembled_part": null},
+      "evidence": [{"asset_sha256": "653538dd2fba533c525d523422ddc126223a2e1ecb5460d241cb32e36155f93f", "page": 1, "locator": "主板第 1 页 U3 与 U6 下方均标 SP3485EN-L/TR"}]
+    },
+    {
+      "id": "protection.galvanic_isolation",
+      "category": "protection",
+      "subject": "主机域与 DMX 域隔离",
+      "statement": "主机侧使用 3V3/GND、TX/RX/485EN，DMX 侧使用 5VISO/GNDISO、A1/B1/A2/B2；U2 跨接两个电源域，U4/U5 跨接信号域，图中没有把 GND 与 GNDISO 直接相连。",
+      "confidence": "confirmed",
+      "attributes": {"host_domain": "3V3,GND,TX,RX,485EN", "isolated_domain": "5VISO,GNDISO,A1,B1,A2,B2", "power_barrier": "U2", "signal_barrier": "U4,U5", "direct_ground_tie_shown": false},
+      "evidence": [{"asset_sha256": "653538dd2fba533c525d523422ddc126223a2e1ecb5460d241cb32e36155f93f", "page": 1, "locator": "主板第 1 页 U2/U4/U5 两侧的 GND 与 GNDISO 网络及信号路径"}]
+    },
+    {
+      "id": "interface.output_bias_switch",
+      "category": "interface",
+      "subject": "S1 输出偏置切换",
+      "statement": "主板 S1 的两个公共端连接 B1/A1，一组投掷端连接 R14 680R 至 GNDISO 和 R13 680R 至 5VISO，另一组投掷端未接出；S1 可同时接入或断开这两条输出偏置支路。",
+      "confidence": "confirmed",
+      "attributes": {"signals": "B1,A1", "pullup": "R13 680R to 5VISO", "pulldown": "R14 680R to GNDISO", "switch": "main S1 dual-pole"},
+      "evidence": [{"asset_sha256": "653538dd2fba533c525d523422ddc126223a2e1ecb5460d241cb32e36155f93f", "page": 1, "locator": "主板第 1 页 U3 右侧 S1 与 R13/R14，标注 Bias Resistor For OUT port Switch"}]
+    },
+    {
+      "id": "interface.pass_through_switch",
+      "category": "interface",
+      "subject": "S2 分离或直通切换",
+      "statement": "主板 S2 的公共端连接 B1/A1；一组投掷端连接 B2/A2，另一组投掷端连接 R7 120R 两端，因此 S2 在 B1/A1 到 B2/A2 直通与 B1/A1 跨接 120R 两种连接状态之间切换。",
+      "confidence": "confirmed",
+      "attributes": {"common_pair": "B1,A1", "pass_through_pair": "B2,A2", "alternate_branch": "R7 120R", "switch": "main S2 dual-pole"},
+      "evidence": [{"asset_sha256": "653538dd2fba533c525d523422ddc126223a2e1ecb5460d241cb32e36155f93f", "page": 1, "locator": "主板第 1 页中右 S2、B1/A1、B2/A2 与 R7 120R，标注 Separate or Pass-through Switch"}]
+    },
+    {
+      "id": "interface.main_connectors",
+      "category": "interface",
+      "subject": "主板 P3/P4 外部连接",
+      "statement": "主板 P3 HT3.96 4P 的 pins4/3/2/1 依次连接 B1/A1/12V/GND；主板 P4 pins1/2 接 GNDISO、pin3 接 A2、pin4 接 A1、pin5 接 B2、pin6 接 B1。",
+      "confidence": "confirmed",
+      "attributes": {"p3_pinout": "1:GND,2:12V,3:A1,4:B1", "p4_pinout": "1:GNDISO,2:GNDISO,3:A2,4:A1,5:B2,6:B1"},
+      "evidence": [{"asset_sha256": "653538dd2fba533c525d523422ddc126223a2e1ecb5460d241cb32e36155f93f", "page": 1, "locator": "主板第 1 页右下 P3 HT3.96 4P 与底部 P4 Header 3X2H 2.54"}]
+    },
+    {
+      "id": "interface.sub_xlr5",
+      "category": "interface",
+      "subject": "接口子板五针 DMX IN/OUT",
+      "statement": "子板 P1 NC5MAH pins1-5 依次连接 GND、B2、A2、DATA_4、DATA_5；P2 NC5FAH pins1-5 依次连接 GND、B1、A1、DATA_4、DATA_5，DATA_4 与 DATA_5 通过同名网络在输入和输出之间直通。",
+      "confidence": "confirmed",
+      "attributes": {"input_connector": "P1 NC5MAH", "input_pinout": "1:GND,2:B2,3:A2,4:DATA_4,5:DATA_5", "output_connector": "P2 NC5FAH", "output_pinout": "1:GND,2:B1,3:A1,4:DATA_4,5:DATA_5", "pass_through": "DATA_4,DATA_5"},
+      "evidence": [{"asset_sha256": "dc0f5d1da1e0720a6db533363f5dc29c187de337b20995b6915e44a416c43d55", "page": 1, "locator": "子板第 1 页 P1 DMX IN PORT 与 P2 DMX OUT PORT 的 pins1-5 网络"}]
+    },
+    {
+      "id": "interface.xlr3_support",
+      "category": "interface",
+      "subject": "XLR-3 接口实现",
+      "statement": "源文档称支持 XLR-5 与 XLR-3 公母头，但接口子板原理图只显示 NC5MAH 和 NC5FAH 五针连接器，没有给出三针 XLR 的独立位号或引脚映射。",
+      "confidence": "uncertain",
+      "attributes": {"schematic_connectors": "NC5MAH,NC5FAH", "xlr5_shown": true, "xlr3_shown": false, "xlr3_pinout": null},
+      "evidence": [{"asset_sha256": "dc0f5d1da1e0720a6db533363f5dc29c187de337b20995b6915e44a416c43d55", "page": 1, "locator": "子板第 1 页仅有 P1 NC5MAH、P2 NC5FAH 与 P3 Header 3X2H"}]
+    },
+    {
+      "id": "protection.input_termination",
+      "category": "protection",
+      "subject": "接口子板 DMX IN 终端",
+      "statement": "子板 R1 为 120R，S1 为 SW-SPST；闭合 S1 时 R1 跨接 B2 与 A2，断开时终端支路开路。",
+      "confidence": "confirmed",
+      "attributes": {"resistor": "R1 120R", "switch": "sub S1 SW-SPST", "signals": "B2,A2"},
+      "evidence": [{"asset_sha256": "dc0f5d1da1e0720a6db533363f5dc29c187de337b20995b6915e44a416c43d55", "page": 1, "locator": "子板第 1 页左中 P1 B2/A2、R1 120R 与 S1 SW-SPST，标注 Termination Resistor for IN port Switch"}]
+    },
+    {
+      "id": "protection.differential_clamps",
+      "category": "protection",
+      "subject": "接口子板差分线保护",
+      "statement": "子板 D3/D4/D2 位于 B2/A2 输入侧，D1/D5/D6 位于 B1/A1 输出侧；每组三只器件分别连接差分线到 GND 及两条差分线之间，但图中没有标注二极管型号或额定参数。",
+      "confidence": "confirmed",
+      "attributes": {"input_devices": "D3,D4,D2", "input_signals": "B2,A2,GND", "output_devices": "D1,D5,D6", "output_signals": "B1,A1,GND", "part_number": null},
+      "evidence": [{"asset_sha256": "dc0f5d1da1e0720a6db533363f5dc29c187de337b20995b6915e44a416c43d55", "page": 1, "locator": "子板第 1 页 B2/A2 旁 D3/D4/D2 与 B1/A1 旁 D1/D5/D6 保护链"}]
+    },
+    {
+      "id": "interface.board_header_mapping",
+      "category": "interface",
+      "subject": "主板 P4 与子板 P3 针位视图",
+      "statement": "主板 P4 标为 pins1/2 GNDISO、3 A2、4 A1、5 B2、6 B1；子板 P3 标为 pins1/2 GND、3 A1、4 A2、5 B1、6 B2。两张图的 A/B 针位呈镜像排列，需要结合连接器配合方向解读。",
+      "confidence": "confirmed",
+      "attributes": {"main_p4": "1:GNDISO,2:GNDISO,3:A2,4:A1,5:B2,6:B1", "sub_p3": "1:GND,2:GND,3:A1,4:A2,5:B1,6:B2", "view_relation": "mirrored A/B ordering"},
+      "evidence": [
+        {"asset_sha256": "653538dd2fba533c525d523422ddc126223a2e1ecb5460d241cb32e36155f93f", "page": 1, "locator": "主板第 1 页底部 P4 Header 3X2H 2.54"},
+        {"asset_sha256": "dc0f5d1da1e0720a6db533363f5dc29c187de337b20995b6915e44a416c43d55", "page": 1, "locator": "子板第 1 页底部 P3 Header 3X2H"}
+      ]
+    },
+    {
+      "id": "bus.host_pin_numbering",
+      "category": "bus",
+      "subject": "P5 BUS 与源文档 M5-Bus 针号",
+      "statement": "主板 P5 符号在右侧奇数脚标出 RX pin1、TX pin21、VCC_5V pin27、BAT pin29，在左侧偶数脚标出 485EN pin22、12V pin30；源文档表则把 UART_RX、UART_TX、RS485_EN、5V、BAT 分别列为 pins2、22、21、28、30，并把 12V 输入对应到 HPWR pins25/27/29。该差异需要按 PCB 连接器视图确认。",
+      "confidence": "uncertain",
+      "attributes": {"schematic_labels": "RX:1,TX:21,485EN:22,VCC_5V:27,BAT:29,12V:30", "source_table": "UART_RX:2,UART_TX:22,RS485_EN:21,5V:28,BAT:30,HPWR:25/27/29", "confirmed_physical_mapping": null},
+      "evidence": [{"asset_sha256": "653538dd2fba533c525d523422ddc126223a2e1ecb5460d241cb32e36155f93f", "page": 1, "locator": "主板第 1 页右侧 P5 BUS 外侧 pin 编号与 RX/TX/485EN/VCC_5V/12V/BAT 标签"}]
+    }
+  ],
+  "needs_review": [
+    {
+      "id": "review.input_range",
+      "fact_id": "power.input_range",
+      "question": "Base DMX 当前硬件版本经验证的 DC 输入范围是否为 9~24V？",
+      "reason": "产品正文写 9~24V，主板原理图只使用 12V 网络标签，缺少连续范围和边界条件。",
+      "evidence": [{"asset_sha256": "653538dd2fba533c525d523422ddc126223a2e1ecb5460d241cb32e36155f93f", "page": 1, "locator": "主板第 1 页 P1 DC050-T、C1 47uF/35V 与 U1 输入网络"}]
+    },
+    {
+      "id": "review.rs485_part_number",
+      "fact_id": "component.rs485_part_number",
+      "question": "当前量产 BOM 中 U3/U6 的准确型号是 SP3485EN-L/TR、SP3488EN 还是 SP485EEN？",
+      "reason": "原理图、产品规格表和数据手册链接名称三处不一致，不能用其中任一处替代 BOM。",
+      "evidence": [{"asset_sha256": "653538dd2fba533c525d523422ddc126223a2e1ecb5460d241cb32e36155f93f", "page": 1, "locator": "主板第 1 页 U3/U6 器件值 SP3485EN-L/TR"}]
+    },
+    {
+      "id": "review.xlr3_support",
+      "fact_id": "interface.xlr3_support",
+      "question": "XLR-3 公母头通过哪一连接器、转接件或针位实现，三针信号映射是什么？",
+      "reason": "接口子板图只画五针 NC5MAH/NC5FAH，未画三针 XLR 位号和映射。",
+      "evidence": [{"asset_sha256": "dc0f5d1da1e0720a6db533363f5dc29c187de337b20995b6915e44a416c43d55", "page": 1, "locator": "子板第 1 页 P1/P2 五针接口区域"}]
+    },
+    {
+      "id": "review.host_pin_numbering",
+      "fact_id": "bus.host_pin_numbering",
+      "question": "P5 原理图针号与产品 M5-Bus 表的奇偶针差异是否来自连接器顶视图/底视图镜像？",
+      "reason": "RX/TX/485EN/5V/BAT/12V 在图纸符号和产品表中的针号不一致，需要 PCB 网表或连接器视图校核。",
+      "evidence": [{"asset_sha256": "653538dd2fba533c525d523422ddc126223a2e1ecb5460d241cb32e36155f93f", "page": 1, "locator": "主板第 1 页 P5 BUS 整体及两侧 pin 编号"}]
+    }
+  ]
+}

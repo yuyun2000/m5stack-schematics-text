@@ -1,0 +1,21 @@
+{
+  "dry_run": false,
+  "failed": 0,
+  "published": 1,
+  "results": [
+    {
+      "backup": null,
+      "draft_action": "unchanged",
+      "dry_run": false,
+      "errors": [],
+      "needs_review": 4,
+      "product_id": "module-cc1101-7382c678b783",
+      "product_name": "Module CC1101",
+      "publish_action": "unchanged",
+      "sha256": "c812fbccc8bfc520b5d835a4ab04b87b907ff687aa25322194161d1a0ead81e4",
+      "status": "valid",
+      "uncertain_facts": 4
+    }
+  ],
+  "schema_version": 1
+}

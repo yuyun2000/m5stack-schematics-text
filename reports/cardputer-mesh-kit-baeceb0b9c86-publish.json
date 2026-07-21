@@ -1,0 +1,21 @@
+{
+  "dry_run": false,
+  "failed": 0,
+  "published": 1,
+  "results": [
+    {
+      "backup": null,
+      "draft_action": "unchanged",
+      "dry_run": false,
+      "errors": [],
+      "needs_review": 1,
+      "product_id": "cardputer-mesh-kit-baeceb0b9c86",
+      "product_name": "Cardputer Mesh Kit",
+      "publish_action": "unchanged",
+      "sha256": "47cdb3c72626c0d8c4ef7d3355c6256a4e4c7ffe1b4dcd4f3c0f7006359ad456",
+      "status": "valid",
+      "uncertain_facts": 1
+    }
+  ],
+  "schema_version": 1
+}

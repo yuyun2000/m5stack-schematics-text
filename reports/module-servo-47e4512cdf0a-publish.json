@@ -1,0 +1,21 @@
+{
+  "dry_run": false,
+  "failed": 0,
+  "published": 1,
+  "results": [
+    {
+      "backup": null,
+      "draft_action": "unchanged",
+      "dry_run": false,
+      "errors": [],
+      "needs_review": 4,
+      "product_id": "module-servo-47e4512cdf0a",
+      "product_name": "Module Servo",
+      "publish_action": "unchanged",
+      "sha256": "19931829220ce1e4c481f600bc706776dc82e0610e27b433b85537d5c2881377",
+      "status": "valid",
+      "uncertain_facts": 4
+    }
+  ],
+  "schema_version": 1
+}

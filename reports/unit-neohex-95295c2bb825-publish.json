@@ -1,0 +1,21 @@
+{
+  "dry_run": false,
+  "failed": 0,
+  "published": 1,
+  "results": [
+    {
+      "backup": null,
+      "draft_action": "unchanged",
+      "dry_run": false,
+      "errors": [],
+      "needs_review": 3,
+      "product_id": "unit-neohex-95295c2bb825",
+      "product_name": "Unit NeoHEX",
+      "publish_action": "unchanged",
+      "sha256": "4645438d737a9c6e701eb50a94fe05e7bd05c5acd9070440ef65b7a3e169cf24",
+      "status": "valid",
+      "uncertain_facts": 3
+    }
+  ],
+  "schema_version": 1
+}

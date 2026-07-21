@@ -1,0 +1,441 @@
+{
+  "schema_version": 1,
+  "generator": "schematic_describer",
+  "product": {
+    "product_id": "base-m5go-bottom2-v1-3-ccd29a0e34c3",
+    "product_name": "Base M5GO Bottom2 v1.3",
+    "sku": "A014-C-V13",
+    "source_path": "base/m5go_bottom2_v1.3.md",
+    "source_sha256": "c66cd642f12c6cdb358093aa9e7941004abb36ef07f4a0eb3b50cae0ab091896",
+    "input_sha256": "3b9e7dac2f1f29967067dd641b38cba55684c54e741c6dab783deaf5ca2a456f"
+  },
+  "schematic_assets": [
+    {
+      "sha256": "332b93b787b976cf93080ec6799f34395781165be0dd2608f7108287c7a7221b",
+      "source_url": "https://m5stack-doc.oss-cn-shenzhen.aliyuncs.com/1227/SCH_M5GO_Bottom2_SCH_Main_V1.31_2026_03_16_10_32_04_page_01.png",
+      "pages": [1]
+    }
+  ],
+  "summary": "Base M5GO Bottom2 v1.3 原理图是一块由 Core2 通过 J4 M5Bus 控制的底座，包含 U1 BMI270 六轴 IMU、U2 LMD4020T261-OAC23 数字麦克风、LED1~LED10 SK6812 灯链和 U3 TP4057 电池充电器。G21/G22 I2C 同时连接 BMI270、未标型号的 U4 与 J3 磁吸电源/I2C 接口，BMI270 的 SDO 下拉使图示默认地址为 0x68。J1/J2 分别引出 UART 与 GPIO/ADC-DAC 网络；J3 VIN 经 TP4057 形成 BAT+ 并接到 M5Bus BATTERY，500mAh 容量与 U4 具体型号未在原理图中标出。",
+  "keywords": [
+    "Base M5GO Bottom2 v1.3",
+    "A014-C-V13",
+    "SCH Main V1.31",
+    "BMI270",
+    "0x68",
+    "0x69",
+    "LMD4020T261-OAC23",
+    "SPM1423",
+    "SK6812",
+    "TP4057",
+    "SS8550 Y2",
+    "M5Stack_BUS2",
+    "M5Bus",
+    "I2C_SDA",
+    "I2C_SCL",
+    "GPIO21",
+    "GPIO22",
+    "GPIO25",
+    "GPIO34",
+    "GPIO0",
+    "GPIO36",
+    "GPIO26",
+    "GPIO13",
+    "GPIO14",
+    "RGB",
+    "SK6812 data",
+    "DAT",
+    "CLK",
+    "U2_RXD",
+    "U2_TXD",
+    "VIN",
+    "BAT+",
+    "UART_Socket_4P",
+    "GPIO_Socket_4P",
+    "SOCKET_POWER_4P"
+  ],
+  "components": [
+    {
+      "reference": "U1",
+      "part_number": "BMI270",
+      "role": "六轴 IMU，通过 I2C_SDA/I2C_SCL 连接 Core2，SDO 下拉选择默认地址",
+      "evidence": [{"asset_sha256": "332b93b787b976cf93080ec6799f34395781165be0dd2608f7108287c7a7221b", "page": 1, "locator": "网格 B2-B3，U1 BMI270，SDX/SCX/SDO/CSB/VDD/VDDIO/GNDIO/GND"}]
+    },
+    {
+      "reference": "U2",
+      "part_number": "LMD4020T261-OAC23",
+      "role": "数字麦克风，使用 DAT/CLK 接口，L/R 选择脚接地",
+      "evidence": [{"asset_sha256": "332b93b787b976cf93080ec6799f34395781165be0dd2608f7108287c7a7221b", "page": 1, "locator": "网格 B1-C2，Microphone 分区 U2 LMD4020T261-OAC23，DATA/CLK/L/R/VDD/GND"}]
+    },
+    {
+      "reference": "LED1-LED10",
+      "part_number": "SK6812",
+      "role": "十颗串行可编程 RGB LED，使用 +5V 供电，数据由 SK6812 网络依次级联",
+      "evidence": [{"asset_sha256": "332b93b787b976cf93080ec6799f34395781165be0dd2608f7108287c7a7221b", "page": 1, "locator": "网格 A1-A4，LED1~LED10 SK6812，DIN/DOUT/VDD/VSS 串行链"}]
+    },
+    {
+      "reference": "U3",
+      "part_number": "TP4057",
+      "role": "单节锂电池充电管理器，VIN 输入、BAT+ 输出，并驱动 CHRG/STDBY 状态灯",
+      "evidence": [{"asset_sha256": "332b93b787b976cf93080ec6799f34395781165be0dd2608f7108287c7a7221b", "page": 1, "locator": "网格 D1-D2，Power 分区 U3 TP4057，VCC/BAT/CHRG/STDBY/PROG/GND"}]
+    },
+    {
+      "reference": "U4",
+      "part_number": null,
+      "role": "未标型号的 8-pin I2C 器件/预留位置，VCC=3.3V、SCL/SDA 接主 I2C，总计四个 NC 引脚",
+      "evidence": [{"asset_sha256": "332b93b787b976cf93080ec6799f34395781165be0dd2608f7108287c7a7221b", "page": 1, "locator": "网格 D2-D3，U4 pins1-3/7 NC、pin4 GND、pin5 SDA、pin6 SCL、pin8 VCC"}]
+    },
+    {
+      "reference": "Q1",
+      "part_number": "SS8550 Y2",
+      "role": "RGB 到 SK6812 首灯数据网络的晶体管驱动/电平接口",
+      "evidence": [{"asset_sha256": "332b93b787b976cf93080ec6799f34395781165be0dd2608f7108287c7a7221b", "page": 1, "locator": "网格 D2，Q1 SS8550 Y2，RGB 经 R8 到基极，SK6812 网络连接上端，另一端接 GND"}]
+    },
+    {
+      "reference": "D1",
+      "part_number": "1615RG",
+      "role": "TP4057 CHRG/STDBY 双色充电状态 LED",
+      "evidence": [{"asset_sha256": "332b93b787b976cf93080ec6799f34395781165be0dd2608f7108287c7a7221b", "page": 1, "locator": "网格 D1，D1 1615RG、R6 1K 与 U3 CHRG/STDBY"}]
+    },
+    {
+      "reference": "J1",
+      "part_number": "UART_Socket_4P",
+      "role": "四针 UART 扩展口，引出 U2_RXD、U2_TXD、+5V、GND",
+      "evidence": [{"asset_sha256": "332b93b787b976cf93080ec6799f34395781165be0dd2608f7108287c7a7221b", "page": 1, "locator": "网格 A4-B4，J1 UART_Socket_4P pins1-4"}]
+    },
+    {
+      "reference": "J2",
+      "part_number": "GPIO_Socket_4P",
+      "role": "四针 GPIO 扩展口，引出 GPIO36、GPIO26、+5V、GND",
+      "evidence": [{"asset_sha256": "332b93b787b976cf93080ec6799f34395781165be0dd2608f7108287c7a7221b", "page": 1, "locator": "网格 B4，J2 GPIO_Socket_4P pins1-4"}]
+    },
+    {
+      "reference": "J3",
+      "part_number": "SOCKET_POWER_4P",
+      "role": "磁吸电源/I2C 接口，引出 GND、VIN、I2C_SDA、I2C_SCL",
+      "evidence": [{"asset_sha256": "332b93b787b976cf93080ec6799f34395781165be0dd2608f7108287c7a7221b", "page": 1, "locator": "网格 B4，J3 SOCKET_POWER_4P pins1-4，GND/VIN/I2C_SDA/I2C_SCL"}]
+    },
+    {
+      "reference": "J4",
+      "part_number": "M5Stack_BUS2",
+      "role": "30-pin M5Bus 主机接口，承载电源、电池、I2C、数字麦克风、RGB、UART 与 GPIO",
+      "evidence": [{"asset_sha256": "332b93b787b976cf93080ec6799f34395781165be0dd2608f7108287c7a7221b", "page": 1, "locator": "网格 C3-D4，J4 M5Stack_BUS2 pins1-30"}]
+    },
+    {
+      "reference": "R2,R3",
+      "part_number": "4.7KΩ",
+      "role": "I2C_SDA/I2C_SCL 到 3.3V 的上拉电阻",
+      "evidence": [{"asset_sha256": "332b93b787b976cf93080ec6799f34395781165be0dd2608f7108287c7a7221b", "page": 1, "locator": "网格 B3-B4 Socket 分区，R2 4.7K I2C_SDA、R3 4.7K I2C_SCL"}]
+    },
+    {
+      "reference": "R4,R5",
+      "part_number": "NC / 4.7KΩ",
+      "role": "BMI270 SDO 地址选择网络，R4 为 3.3V 上拉预留，R5 为对地下拉",
+      "evidence": [{"asset_sha256": "332b93b787b976cf93080ec6799f34395781165be0dd2608f7108287c7a7221b", "page": 1, "locator": "网格 B2，U1 SDO pin1，R4 NC 到 3.3V、R5 4.7K 到 GND"}]
+    }
+  ],
+  "facts": [
+    {
+      "id": "system.architecture",
+      "category": "system",
+      "subject": "Base M5GO Bottom2 v1.3 架构",
+      "statement": "底座通过 J4 M5Bus 连接外部 Core2，集成 BMI270、数字麦克风、十颗 SK6812、TP4057 充电器、未标型号 I2C 器件以及 UART/GPIO/磁吸电源-I2C 三组接口。",
+      "confidence": "confirmed",
+      "attributes": {"host": "J4 M5Stack_BUS2", "imu": "U1 BMI270", "microphone": "U2 LMD4020T261-OAC23", "rgb": "LED1-LED10 SK6812", "charger": "U3 TP4057", "extra_i2c": "U4 unmarked", "sockets": "J1,J2,J3"},
+      "evidence": [{"asset_sha256": "332b93b787b976cf93080ec6799f34395781165be0dd2608f7108287c7a7221b", "page": 1, "locator": "整页网格 A1-D4，各功能分区与 M5Bus"}]
+    },
+    {
+      "id": "sensor.bmi270",
+      "category": "sensor",
+      "subject": "BMI270 六轴 IMU",
+      "statement": "U1 明确标为 BMI270，VDD pin8、VDDIO pin5 与 CSB pin12 接 +3.3V，SDX pin14 接 I2C_SDA，SCX pin13 接 I2C_SCL，GNDIO pin6 与 GND pin7 接地。",
+      "confidence": "confirmed",
+      "attributes": {"reference": "U1", "part_number": "BMI270", "vdd": "pin8 +3.3V", "vddio": "pin5 +3.3V", "mode_strap": "pin12 CSB +3.3V", "sda": "pin14 SDX/I2C_SDA", "scl": "pin13 SCX/I2C_SCL", "ground": "pins6,7"},
+      "evidence": [{"asset_sha256": "332b93b787b976cf93080ec6799f34395781165be0dd2608f7108287c7a7221b", "page": 1, "locator": "网格 B2-B3，U1 BMI270 pins1-14"}]
+    },
+    {
+      "id": "address.bmi270",
+      "category": "address",
+      "subject": "BMI270 I2C 地址",
+      "statement": "U1 SDO pin1 通过 R5 4.7K 下拉到 GND，R4 上拉位置标 NC；页内注记 SDO=0 时地址 0x68（default），SDO=1 时地址 0x69，因此图示装配地址为 0x68。",
+      "confidence": "confirmed",
+      "attributes": {"device": "U1 BMI270", "sdo": "pin1", "pulldown": "R5 4.7K", "pullup_option": "R4 NC", "assembled_address": "0x68", "alternate_address": "0x69"},
+      "evidence": [{"asset_sha256": "332b93b787b976cf93080ec6799f34395781165be0dd2608f7108287c7a7221b", "page": 1, "locator": "网格 B2，U1 SDO/R4/R5 与 SDO=0 add:0x68(default), SDO=1 add:0x69 注记"}]
+    },
+    {
+      "id": "bus.i2c",
+      "category": "bus",
+      "subject": "主 I2C 总线",
+      "statement": "J4 pin17 GPIO21 为 I2C_SDA、pin18 GPIO22 为 I2C_SCL；总线连接 U1 BMI270、U4 未标型号器件和 J3 pins3/4，并由 R2/R3 各 4.7K 上拉到 +3.3V。",
+      "confidence": "confirmed",
+      "attributes": {"controller_connector": "J4", "sda": "J4.17 GPIO21/I2C_SDA", "scl": "J4.18 GPIO22/I2C_SCL", "devices": "U1 BMI270,U4", "external": "J3 pins3,4", "pullups": "R2,R3 4.7K to +3.3V", "level": "3.3V"},
+      "evidence": [{"asset_sha256": "332b93b787b976cf93080ec6799f34395781165be0dd2608f7108287c7a7221b", "page": 1, "locator": "网格 B2-D4，I2C_SDA/I2C_SCL 从 J4 到 U1/U4/J3 与 R2/R3"}]
+    },
+    {
+      "id": "gpio.imu-unused",
+      "category": "gpio",
+      "subject": "BMI270 中断与辅助接口",
+      "statement": "BMI270 INT1 pin4、INT2 pin9、ASDX pin2、ASCX pin3、OSDO pin11 与 OCSB pin10 均以红色叉号标为未连接。",
+      "confidence": "confirmed",
+      "attributes": {"interrupts": "pin4 INT1 NC,pin9 INT2 NC", "aux_i2c": "pin2 ASDX NC,pin3 ASCX NC", "ois_interface": "pin11 OSDO NC,pin10 OCSB NC"},
+      "evidence": [{"asset_sha256": "332b93b787b976cf93080ec6799f34395781165be0dd2608f7108287c7a7221b", "page": 1, "locator": "网格 B2-B3，U1 右侧 INT/ASD/ASC/OSD/OCS 红色 NC 标记"}]
+    },
+    {
+      "id": "audio.digital-microphone",
+      "category": "audio",
+      "subject": "数字麦克风接口",
+      "statement": "U2 LMD4020T261-OAC23 由 +3.3V 供电，DATA pin3 连接 DAT，CLK pin4 连接 CLK，L/R pin6 接 GND，pins2/5 GND 接地。",
+      "confidence": "confirmed",
+      "attributes": {"reference": "U2", "part_number": "LMD4020T261-OAC23", "supply": "pin1 +3.3V", "data": "pin3 DAT", "clock": "pin4 CLK", "channel_select": "pin6 L/R=GND", "ground": "pins2,5"},
+      "evidence": [{"asset_sha256": "332b93b787b976cf93080ec6799f34395781165be0dd2608f7108287c7a7221b", "page": 1, "locator": "网格 B1-C2，U2 数字麦克风 pins1-6"}]
+    },
+    {
+      "id": "bus.microphone-pdm",
+      "category": "bus",
+      "subject": "M5Bus 到数字麦克风 CLK/DAT",
+      "statement": "J4 pin24 GPIO0 连接 CLK 并驱动 U2 pin4，J4 pin26 GPIO34 连接 DAT 并接收 U2 pin3 数据。",
+      "confidence": "confirmed",
+      "attributes": {"clock": "J4.24 GPIO0 -> CLK -> U2.4", "data": "U2.3 -> DAT -> J4.26 GPIO34", "device": "U2 LMD4020T261-OAC23", "supply_level": "3.3V"},
+      "evidence": [{"asset_sha256": "332b93b787b976cf93080ec6799f34395781165be0dd2608f7108287c7a7221b", "page": 1, "locator": "网格 B1-C2 与 C4-D4，U2 DAT/CLK 到 J4 pins26/24"}]
+    },
+    {
+      "id": "power.microphone-decoupling",
+      "category": "power",
+      "subject": "麦克风 3.3V 去耦",
+      "statement": "U2 VDD 使用 +3.3V，C1 10uF 与 C2 100nF 从 +3.3V 对地去耦。",
+      "confidence": "confirmed",
+      "attributes": {"device": "U2", "rail": "+3.3V", "bulk_cap": "C1 10uF", "high_frequency_cap": "C2 100nF"},
+      "evidence": [{"asset_sha256": "332b93b787b976cf93080ec6799f34395781165be0dd2608f7108287c7a7221b", "page": 1, "locator": "网格 C1-C2，Microphone 分区 C1/C2 与 U2 VDD"}]
+    },
+    {
+      "id": "gpio.rgb-chain",
+      "category": "gpio",
+      "subject": "十颗 SK6812 灯链",
+      "statement": "J4 pin8 GPIO25 的 RGB 网络经 R8 1K 与 Q1 SS8550 Y2 形成 SK6812 数据网络，进入 LED1 DIN；LED1 DOUT 依次连接 LED2~LED10 DIN，LED10 DOUT 未连接。",
+      "confidence": "confirmed",
+      "attributes": {"host": "J4 pin8 GPIO25", "input_net": "RGB", "driver": "R8 1K,Q1 SS8550 Y2", "chain_input": "SK6812 -> LED1 DIN", "chain": "LED1 DOUT through LED10 DIN", "chain_output": "LED10 DOUT NC", "count": 10},
+      "evidence": [{"asset_sha256": "332b93b787b976cf93080ec6799f34395781165be0dd2608f7108287c7a7221b", "page": 1, "locator": "网格 A1-A4/D2/C4，J4 RGB、Q1 与 LED1~LED10 数据链"}]
+    },
+    {
+      "id": "power.rgb-leds",
+      "category": "power",
+      "subject": "SK6812 供电",
+      "statement": "LED1~LED10 的 VDD pin4 均接 +5V，VSS pin2 均接 GND；R1 4.7K 从首灯数据输入 SK6812 网络上拉到 +5V。",
+      "confidence": "confirmed",
+      "attributes": {"devices": "LED1-LED10", "supply": "+5V", "ground": "VSS pin2", "data_pullup": "R1 4.7K to +5V", "data_net": "SK6812"},
+      "evidence": [{"asset_sha256": "332b93b787b976cf93080ec6799f34395781165be0dd2608f7108287c7a7221b", "page": 1, "locator": "网格 A1-A4，十颗 SK6812 VDD/VSS 与 R1"}]
+    },
+    {
+      "id": "power.charger",
+      "category": "power",
+      "subject": "TP4057 充电路径",
+      "statement": "J3 pin2 的 VIN 连接 U3 TP4057 VCC pin4，U3 BAT pin3 输出 BAT+ 并连接 J4 pin30 BATTERY；C6/C7 各 10uF 分别对 VIN/BAT+ 去耦，PROG pin6 经 R9 2K 接地。",
+      "confidence": "confirmed",
+      "attributes": {"charger": "U3 TP4057", "input": "J3.2 VIN -> U3.4 VCC", "output": "U3.3 BAT -> BAT+ -> J4.30 BATTERY", "input_cap": "C6 10uF", "battery_cap": "C7 10uF", "program_resistor": "R9 2K", "battery_capacity": null},
+      "evidence": [{"asset_sha256": "332b93b787b976cf93080ec6799f34395781165be0dd2608f7108287c7a7221b", "page": 1, "locator": "网格 D1-D4，J3 VIN、U3 TP4057、BAT+ 与 J4 pin30"}]
+    },
+    {
+      "id": "gpio.charge-status",
+      "category": "gpio",
+      "subject": "充电状态指示",
+      "statement": "VIN 经 R6 1K 为 D1 1615RG 提供公共电源，D1 两路分别连接 U3 CHRG pin1 与 STDBY pin5，用于显示充电和待机状态。",
+      "confidence": "confirmed",
+      "attributes": {"led": "D1 1615RG", "series_resistor": "R6 1K", "supply": "VIN", "charge_signal": "U3 pin1 CHRG", "standby_signal": "U3 pin5 STDBY"},
+      "evidence": [{"asset_sha256": "332b93b787b976cf93080ec6799f34395781165be0dd2608f7108287c7a7221b", "page": 1, "locator": "网格 D1，R6/D1 与 U3 CHRG/STDBY"}]
+    },
+    {
+      "id": "interface.magnetic-power-i2c",
+      "category": "interface",
+      "subject": "J3 磁吸电源/I2C 接口",
+      "statement": "J3 SOCKET_POWER_4P pin1 为 GND、pin2 VIN、pin3 I2C_SDA、pin4 I2C_SCL；因此同一接口承载充电输入与 I2C 扩展。",
+      "confidence": "confirmed",
+      "attributes": {"reference": "J3", "pin1": "GND", "pin2": "VIN/charger input", "pin3": "I2C_SDA", "pin4": "I2C_SCL", "power_direction": "input to TP4057"},
+      "evidence": [{"asset_sha256": "332b93b787b976cf93080ec6799f34395781165be0dd2608f7108287c7a7221b", "page": 1, "locator": "网格 B4，J3 SOCKET_POWER_4P pins1-4 与黄色 SDA/SCL 标注"}]
+    },
+    {
+      "id": "interface.uart-socket",
+      "category": "interface",
+      "subject": "J1 UART 四针接口",
+      "statement": "J1 UART_Socket_4P pin1 为 U2_RXD、pin2 U2_TXD、pin3 +5V、pin4 GND；U2_RXD/U2_TXD 分别延伸到 J4 pins15/16。",
+      "confidence": "confirmed",
+      "attributes": {"reference": "J1", "pin1": "U2_RXD -> J4.15 GPIO13", "pin2": "U2_TXD -> J4.16 GPIO14", "pin3": "+5V", "pin4": "GND"},
+      "evidence": [{"asset_sha256": "332b93b787b976cf93080ec6799f34395781165be0dd2608f7108287c7a7221b", "page": 1, "locator": "网格 A4-C4，J1 U2_RXD/U2_TXD 到 J4 pins15/16"}]
+    },
+    {
+      "id": "bus.uart",
+      "category": "bus",
+      "subject": "Core2 UART2 扩展",
+      "statement": "J4 pin15 GPIO13 连接 U2_RXD 并到 J1 pin1 UART_RXD，J4 pin16 GPIO14 连接 U2_TXD 并到 J1 pin2 UART_TXD。",
+      "confidence": "confirmed",
+      "attributes": {"host_rx": "J4.15 GPIO13/U2_RXD", "socket_rx": "J1.1 UART_RXD", "host_tx": "J4.16 GPIO14/U2_TXD", "socket_tx": "J1.2 UART_TXD", "power": "+5V,GND"},
+      "evidence": [{"asset_sha256": "332b93b787b976cf93080ec6799f34395781165be0dd2608f7108287c7a7221b", "page": 1, "locator": "网格 A4-D4，J1 与 J4 的 UART 网络"}]
+    },
+    {
+      "id": "interface.gpio-socket",
+      "category": "interface",
+      "subject": "J2 GPIO/ADC-DAC 四针接口",
+      "statement": "J2 GPIO_Socket_4P pin1 为 GPIO36、pin2 GPIO26、pin3 +5V、pin4 GND；GPIO36 与 GPIO26 分别连接 J4 pins4/10。",
+      "confidence": "confirmed",
+      "attributes": {"reference": "J2", "pin1": "GPIO36 -> J4.4", "pin2": "GPIO26 -> J4.10", "pin3": "+5V", "pin4": "GND", "schematic_direction": "not annotated"},
+      "evidence": [{"asset_sha256": "332b93b787b976cf93080ec6799f34395781165be0dd2608f7108287c7a7221b", "page": 1, "locator": "网格 B4-D4，J2 GPIO36/GPIO26 到 J4 pins4/10"}]
+    },
+    {
+      "id": "interface.m5bus",
+      "category": "interface",
+      "subject": "J4 M5Bus 关键引脚",
+      "statement": "J4 使用 pins1/3/5 GND、pin8 GPIO25/RGB、pin4 GPIO36、pin10 GPIO26、pin12 +3.3V、pins15/16 UART、pins17/18 I2C、pin24 GPIO0/CLK、pin26 GPIO34/DAT、pin28 +5V、pin30 BATTERY/BAT+。",
+      "confidence": "confirmed",
+      "attributes": {"ground": "pins1,3,5", "rgb": "pin8 GPIO25", "gpio_socket": "pin4 GPIO36,pin10 GPIO26", "3v3": "pin12", "uart": "pin15 GPIO13,pin16 GPIO14", "i2c": "pin17 GPIO21,pin18 GPIO22", "microphone": "pin24 GPIO0 CLK,pin26 GPIO34 DAT", "5v": "pin28", "battery": "pin30 BATTERY"},
+      "evidence": [{"asset_sha256": "332b93b787b976cf93080ec6799f34395781165be0dd2608f7108287c7a7221b", "page": 1, "locator": "网格 C3-D4，J4 M5Stack_BUS2 pins1-30"}]
+    },
+    {
+      "id": "component.unidentified-i2c",
+      "category": "component",
+      "subject": "U4 未标型号 I2C 器件",
+      "statement": "U4 是 8-pin 符号：pin8 VCC 接 +3.3V、pin4 GND、pin5 SDA、pin6 SCL，pins1/2/3/7 均标 NC；图面没有器件型号、地址或功能名。",
+      "confidence": "confirmed",
+      "attributes": {"reference": "U4", "part_number": null, "vcc": "pin8 +3.3V", "ground": "pin4", "sda": "pin5 I2C_SDA", "scl": "pin6 I2C_SCL", "nc": "pins1,2,3,7", "address": null},
+      "evidence": [{"asset_sha256": "332b93b787b976cf93080ec6799f34395781165be0dd2608f7108287c7a7221b", "page": 1, "locator": "网格 D2-D3，U4 全部 pin 标注，无料号文字"}]
+    },
+    {
+      "id": "power.rail-distribution",
+      "category": "power",
+      "subject": "5V、3.3V 与 BAT+ 电源轨",
+      "statement": "+5V 从 J4 pin28 分配到十颗 SK6812 和 J1/J2；+3.3V 从 J4 pin12 分配到 BMI270、麦克风、U4 与 I2C 上拉；BAT+ 由 TP4057 输出并接 J4 pin30。",
+      "confidence": "confirmed",
+      "attributes": {"5v_source": "J4 pin28", "5v_loads": "LED1-LED10,J1 pin3,J2 pin3", "3v3_source": "J4 pin12", "3v3_loads": "U1,U2,U4,R2,R3,R7", "battery_rail": "U3 BAT -> BAT+ -> J4 pin30"},
+      "evidence": [{"asset_sha256": "332b93b787b976cf93080ec6799f34395781165be0dd2608f7108287c7a7221b", "page": 1, "locator": "整页 +5V/+3.3V/BAT+ 网络追踪"}]
+    },
+    {
+      "id": "key_net.system-mapping",
+      "category": "key_net",
+      "subject": "主机到功能模块关键映射",
+      "statement": "GPIO21/22 -> I2C -> BMI270/U4/J3；GPIO0/34 -> CLK/DAT -> 麦克风；GPIO25 -> RGB/Q1 -> SK6812 灯链；GPIO13/14 -> UART J1；GPIO36/26 -> J2。",
+      "confidence": "confirmed",
+      "attributes": {"i2c": "GPIO21/GPIO22 -> U1,U4,J3", "microphone": "GPIO0 CLK,GPIO34 DAT -> U2", "rgb": "GPIO25 -> RGB -> Q1 -> LED1-LED10", "uart": "GPIO13/GPIO14 -> J1", "gpio": "GPIO36/GPIO26 -> J2"},
+      "evidence": [{"asset_sha256": "332b93b787b976cf93080ec6799f34395781165be0dd2608f7108287c7a7221b", "page": 1, "locator": "整页 J4 与 U1/U2/Q1/LED/J1/J2/J3 网络追踪"}]
+    },
+    {
+      "id": "analog.charger-program",
+      "category": "analog",
+      "subject": "TP4057 充电设定网络",
+      "statement": "U3 PROG pin6 经 R9 2K 接 GND，VIN/BAT+ 分别配置 C6/C7 10uF；原理图未给出由 R9 对应的数值充电电流。",
+      "confidence": "confirmed",
+      "attributes": {"charger": "U3 TP4057", "program_pin": "pin6 PROG", "program_resistor": "R9 2K to GND", "input_cap": "C6 10uF", "battery_cap": "C7 10uF", "charge_current_mark": null},
+      "evidence": [{"asset_sha256": "332b93b787b976cf93080ec6799f34395781165be0dd2608f7108287c7a7221b", "page": 1, "locator": "网格 D1-D2，U3 PROG/R9 与 C6/C7"}]
+    },
+    {
+      "id": "clock.no-board-oscillator",
+      "category": "clock",
+      "subject": "板级时钟",
+      "statement": "本页未显示晶振或独立振荡器；麦克风 CLK 由 J4 GPIO0 提供，I2C SCL 由 J4 GPIO22 提供。",
+      "confidence": "confirmed",
+      "attributes": {"crystal": null, "oscillator": null, "microphone_clock": "J4.24 GPIO0/CLK", "i2c_clock": "J4.18 GPIO22/I2C_SCL"},
+      "evidence": [{"asset_sha256": "332b93b787b976cf93080ec6799f34395781165be0dd2608f7108287c7a7221b", "page": 1, "locator": "整页无 X/Y 器件；CLK 与 I2C_SCL 均来自 J4"}]
+    },
+    {
+      "id": "reset.none-external",
+      "category": "reset",
+      "subject": "复位网络",
+      "statement": "本页没有连接到 BMI270、麦克风、SK6812、TP4057 或 U4 的外部复位网络；J4 EN pin6 以红色叉号标为未连接。",
+      "confidence": "confirmed",
+      "attributes": {"board_reset": null, "m5bus_en": "J4 pin6 NC", "imu_reset": null, "u4_reset": null},
+      "evidence": [{"asset_sha256": "332b93b787b976cf93080ec6799f34395781165be0dd2608f7108287c7a7221b", "page": 1, "locator": "整页器件无 RESET；网格 C4 J4 EN pin6 红色 NC"}]
+    },
+    {
+      "id": "protection.no-dedicated-tvs",
+      "category": "protection",
+      "subject": "外部接口保护",
+      "statement": "J1/J2/J3 与 M5Bus 信号在本页未显示专用 TVS/ESD、保险丝或反接保护器件；可见保护相关功能主要是 TP4057 充电管理本身。",
+      "confidence": "confirmed",
+      "attributes": {"tvS_esd": null, "fuse": null, "reverse_protection": null, "charger": "U3 TP4057"},
+      "evidence": [{"asset_sha256": "332b93b787b976cf93080ec6799f34395781165be0dd2608f7108287c7a7221b", "page": 1, "locator": "整页 J1/J2/J3/J4 与电源区，无 TVS/ESD/Fuse 标注"}]
+    },
+    {
+      "id": "debug.none",
+      "category": "debug",
+      "subject": "调试接口",
+      "statement": "本页未显示 SWD、JTAG、专用调试连接器或测试点；UART J1 是通用扩展口。",
+      "confidence": "confirmed",
+      "attributes": {"swd": null, "jtag": null, "test_points": null, "uart_extension": "J1"},
+      "evidence": [{"asset_sha256": "332b93b787b976cf93080ec6799f34395781165be0dd2608f7108287c7a7221b", "page": 1, "locator": "整页无 Debug/TP/SWD/JTAG 标记"}]
+    },
+    {
+      "id": "storage.none",
+      "category": "storage",
+      "subject": "板级存储",
+      "statement": "本页没有明确标注的 Flash、EEPROM、eMMC 或存储卡接口；U4 型号未知，不能将其确定为存储器。",
+      "confidence": "confirmed",
+      "attributes": {"flash": null, "eeprom_confirmed": null, "emmc": null, "storage_card": null, "u4_role": "unknown"},
+      "evidence": [{"asset_sha256": "332b93b787b976cf93080ec6799f34395781165be0dd2608f7108287c7a7221b", "page": 1, "locator": "整页无存储器件型号；U4 仅有无型号 I2C 符号"}]
+    },
+    {
+      "id": "memory.none",
+      "category": "memory",
+      "subject": "外部内存",
+      "statement": "本页没有主控 SoC、RAM、PSRAM 或 DDR 器件。",
+      "confidence": "confirmed",
+      "attributes": {"soc": null, "ram": null, "psram": null, "ddr": null},
+      "evidence": [{"asset_sha256": "332b93b787b976cf93080ec6799f34395781165be0dd2608f7108287c7a7221b", "page": 1, "locator": "整页为底座外设与连接器，无主控/内存"}]
+    },
+    {
+      "id": "rf.none",
+      "category": "rf",
+      "subject": "射频电路",
+      "statement": "本页未显示射频收发器、天线或射频匹配网络。",
+      "confidence": "confirmed",
+      "attributes": {"rf_ic": null, "antenna": null, "matching": null},
+      "evidence": [{"asset_sha256": "332b93b787b976cf93080ec6799f34395781165be0dd2608f7108287c7a7221b", "page": 1, "locator": "整页无 RF/ANT 分区或器件"}]
+    },
+    {
+      "id": "component.microphone-model-conflict",
+      "category": "component",
+      "subject": "数字麦克风型号冲突",
+      "statement": "产品正文称麦克风为 SPM1423，但当前原理图 U2 明确标为 LMD4020T261-OAC23；需要以量产 BOM 或丝印确认 v1.3 实际装配型号。",
+      "confidence": "uncertain",
+      "attributes": {"reference": "U2", "schematic_model": "LMD4020T261-OAC23", "documented_model": "SPM1423", "assembled_model": null},
+      "evidence": [{"asset_sha256": "332b93b787b976cf93080ec6799f34395781165be0dd2608f7108287c7a7221b", "page": 1, "locator": "网格 B1-C2，U2 器件文字 LMD4020T261-OAC23"}]
+    },
+    {
+      "id": "component.u4-identification",
+      "category": "component",
+      "subject": "U4 具体型号与用途",
+      "statement": "U4 连接 3.3V、GND、I2C_SCL、I2C_SDA，其他四脚 NC，但原理图没有料号、功能名或地址，无法确定其器件类型。",
+      "confidence": "uncertain",
+      "attributes": {"reference": "U4", "part_number": null, "bus": "I2C_SDA,I2C_SCL", "supply": "3.3V", "address": null, "role": null},
+      "evidence": [{"asset_sha256": "332b93b787b976cf93080ec6799f34395781165be0dd2608f7108287c7a7221b", "page": 1, "locator": "网格 D2-D3，U4 无器件型号/地址标注"}]
+    },
+    {
+      "id": "power.documented-battery-capacity",
+      "category": "power",
+      "subject": "内置电池容量",
+      "statement": "正文称内置锂电池为 500mAh；原理图仅显示 TP4057、BAT+ 网络与 J4 BATTERY pin30，没有电池位号、型号或容量标注。",
+      "confidence": "uncertain",
+      "attributes": {"documented_capacity": "500mAh", "charger": "U3 TP4057", "battery_net": "BAT+", "battery_connector": null, "schematic_capacity": null},
+      "evidence": [{"asset_sha256": "332b93b787b976cf93080ec6799f34395781165be0dd2608f7108287c7a7221b", "page": 1, "locator": "网格 D1-D4，U3 BAT 输出到 BAT+/J4 pin30，无电池器件与容量"}]
+    }
+  ],
+  "needs_review": [
+    {
+      "id": "review.microphone-model",
+      "fact_id": "component.microphone-model-conflict",
+      "question": "请用 v1.3 量产 BOM 或 U2 实物丝印确认数字麦克风是 LMD4020T261-OAC23 还是 SPM1423。",
+      "reason": "当前正式原理图与产品正文的麦克风型号不一致。",
+      "evidence": [{"asset_sha256": "332b93b787b976cf93080ec6799f34395781165be0dd2608f7108287c7a7221b", "page": 1, "locator": "网格 B1-C2，U2 标 LMD4020T261-OAC23"}]
+    },
+    {
+      "id": "review.u4",
+      "fact_id": "component.u4-identification",
+      "question": "请用 BOM、PCB 丝印或原始设计库确认 U4 的具体型号、功能和 I2C 地址。",
+      "reason": "U4 符号只有引脚连接，没有料号、功能名与地址。",
+      "evidence": [{"asset_sha256": "332b93b787b976cf93080ec6799f34395781165be0dd2608f7108287c7a7221b", "page": 1, "locator": "网格 D2-D3，U4 8-pin I2C 符号"}]
+    },
+    {
+      "id": "review.battery-capacity",
+      "fact_id": "power.documented-battery-capacity",
+      "question": "请用电池标签、BOM 或容量测试确认内置锂电池为 500mAh。",
+      "reason": "原理图只显示 BAT+ 充电网络，不显示电池规格。",
+      "evidence": [{"asset_sha256": "332b93b787b976cf93080ec6799f34395781165be0dd2608f7108287c7a7221b", "page": 1, "locator": "网格 D1-D4，TP4057/BAT+/J4 BATTERY"}]
+    }
+  ]
+}

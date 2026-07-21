@@ -1,0 +1,21 @@
+{
+  "dry_run": false,
+  "failed": 0,
+  "published": 1,
+  "results": [
+    {
+      "backup": null,
+      "draft_action": "unchanged",
+      "dry_run": false,
+      "errors": [],
+      "needs_review": 5,
+      "product_id": "llm-8850-kit-19733465ff8f",
+      "product_name": "LLM-8850 Kit",
+      "publish_action": "unchanged",
+      "sha256": "da7c75cf3fbaf6e41a22b733ba4e82495091c350ce66b8fe8416dc8a0f99f739",
+      "status": "valid",
+      "uncertain_facts": 5
+    }
+  ],
+  "schema_version": 1
+}

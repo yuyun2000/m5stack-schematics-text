@@ -1,0 +1,21 @@
+{
+  "dry_run": false,
+  "failed": 0,
+  "published": 1,
+  "results": [
+    {
+      "backup": null,
+      "draft_action": "unchanged",
+      "dry_run": false,
+      "errors": [],
+      "needs_review": 2,
+      "product_id": "atom-socket-cn-7f11d3b719f7",
+      "product_name": "Atom Socket-CN",
+      "publish_action": "unchanged",
+      "sha256": "4d492c806dceb69656db5cd9df2dab065eb55448901e8a98545296f855ce2d70",
+      "status": "valid",
+      "uncertain_facts": 0
+    }
+  ],
+  "schema_version": 1
+}

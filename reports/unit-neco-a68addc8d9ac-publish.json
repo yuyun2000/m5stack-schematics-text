@@ -1,0 +1,21 @@
+{
+  "dry_run": false,
+  "failed": 0,
+  "published": 1,
+  "results": [
+    {
+      "backup": null,
+      "draft_action": "unchanged",
+      "dry_run": false,
+      "errors": [],
+      "needs_review": 3,
+      "product_id": "unit-neco-a68addc8d9ac",
+      "product_name": "Unit Neco",
+      "publish_action": "unchanged",
+      "sha256": "b5187b9d06f41933235ed4ed1f079720d75fa31b7e77a6f931b6d0aa05273699",
+      "status": "valid",
+      "uncertain_facts": 3
+    }
+  ],
+  "schema_version": 1
+}

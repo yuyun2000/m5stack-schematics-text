@@ -1,0 +1,21 @@
+{
+  "dry_run": false,
+  "failed": 0,
+  "published": 1,
+  "results": [
+    {
+      "backup": null,
+      "draft_action": "unchanged",
+      "dry_run": false,
+      "errors": [],
+      "needs_review": 4,
+      "product_id": "unit-gps-14a75f276fa6",
+      "product_name": "Unit GPS",
+      "publish_action": "unchanged",
+      "sha256": "7d0584af864d15acff1aa521b635c6d54ad9224e7ed8ee431b7e29e17b5bec56",
+      "status": "valid",
+      "uncertain_facts": 4
+    }
+  ],
+  "schema_version": 1
+}

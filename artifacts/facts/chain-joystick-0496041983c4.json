@@ -1,0 +1,207 @@
+{
+  "schema_version": 1,
+  "generator": "schematic_describer",
+  "product": {
+    "product_id": "chain-joystick-0496041983c4",
+    "product_name": "Chain Joystick",
+    "sku": "U205",
+    "source_path": "chain/Chain_Joystick.md",
+    "source_sha256": "dc7f386c9e0476c49c14c0d4df0439596e2268e073ffd3633a205f1bbe8f4d6c",
+    "input_sha256": "f7d8483352876c32281b19b5bd4b40fc085cda46215fee67ff1e663033614ed2"
+  },
+  "schematic_assets": [
+    {
+      "sha256": "82f87022244f3d2df4ee500034f38a01b9fe92fbbc0bcd68fd22eff0d7740ef3",
+      "source_url": "https://m5stack-doc.oss-cn-shenzhen.aliyuncs.com/1191/U205-SCH_Chain-Joystick_SCH_Main_V1.0_2025_09_29_23_34_52_page_01.png",
+      "pages": [1]
+    }
+  ],
+  "summary": "Chain Joystick 以 U1 STM32G031G8U6 为主控，通过 J1 入口 UART1（PB6/PB7）和 J2 出口 UART2（PA2/PA3）形成定向 Chain 级联。J1/J2 的 VCC_5V 经 U2 ME6206A33XG 转换为 VCC_3V3，为 MCU、FPC 摇杆和 U4 WS2812C-2020 RGB LED 供电。FPC1 引出 VR1_YOUT、VR2_XOUT 和 BTN1，分别连接 PA6、PA7、PB0；板上还提供 J4 五针 SWD 调试接口与 NRST RC 网络。",
+  "keywords": [
+    "Chain Joystick", "U205", "STM32G031G8U6", "ME6206A33XG", "WS2812C-2020", "Chain direction", "UART1", "UART2", "TXD1", "RXD1", "TXD2", "RXD2", "PB6", "PB7", "PA2", "PA3", "PA6", "PA7", "PB0", "PA8", "VR1_YOUT", "VR2_XOUT", "BTN1", "RGB", "GROVE_IO", "VCC_5V", "VCC_3V3", "FPC-6P 0.5mm", "SWD_5P", "MCU_SWCLK", "MCU_SWDIO", "NRST", "PESD3V3S1UB", "115200bps 8N1", "Hall joystick"
+  ],
+  "components": [
+    {
+      "reference": "U1", "part_number": "STM32G031G8U6", "role": "读取摇杆三轴输入、驱动 RGB，并以两个 UART 实现 Chain 入口/出口通信的主控",
+      "evidence": [{"asset_sha256": "82f87022244f3d2df4ee500034f38a01b9fe92fbbc0bcd68fd22eff0d7740ef3", "page": 1, "locator": "第 1 页 B2-B3 MCU 区 U1 STM32G031G8U6，28 脚及 UART、摇杆、RGB、SWD 网络"}]
+    },
+    {
+      "reference": "U2", "part_number": "ME6206A33XG", "role": "将 VCC_5V 转换为 VCC_3V3 的 LDO",
+      "evidence": [{"asset_sha256": "82f87022244f3d2df4ee500034f38a01b9fe92fbbc0bcd68fd22eff0d7740ef3", "page": 1, "locator": "第 1 页 A3 LDO 区 U2 ME6206A33XG，pin3 VIN/VCC_5V、pin2 VOUT/VCC_3V3、pin1 GND"}]
+    },
+    {
+      "reference": "J1", "part_number": "GROVE_IO", "role": "Chain IN 四针接口，引出 TXD1、RXD1、VCC_5V 与 GND",
+      "evidence": [{"asset_sha256": "82f87022244f3d2df4ee500034f38a01b9fe92fbbc0bcd68fd22eff0d7740ef3", "page": 1, "locator": "第 1 页 A1 Chain direction IN 下方 J1 GROVE_IO，IO2/TXD1、IO1/RXD1、VCC_5V、GND"}]
+    },
+    {
+      "reference": "J2", "part_number": "GROVE_IO", "role": "Chain OUT 四针接口，引出 RXD2、TXD2、VCC_5V 与 GND",
+      "evidence": [{"asset_sha256": "82f87022244f3d2df4ee500034f38a01b9fe92fbbc0bcd68fd22eff0d7740ef3", "page": 1, "locator": "第 1 页 A2 Chain direction OUT 下方 J2 GROVE_IO，IO2/RXD2、IO1/TXD2、VCC_5V、GND"}]
+    },
+    {
+      "reference": "FPC1", "part_number": "FPC-6P 0.5mm, Thickness 0.2mm", "role": "连接摇杆组件的 YOUT、XOUT、按键、3.3V、GND 与屏蔽焊盘",
+      "evidence": [{"asset_sha256": "82f87022244f3d2df4ee500034f38a01b9fe92fbbc0bcd68fd22eff0d7740ef3", "page": 1, "locator": "第 1 页 C2 Joystick 区 FPC1，pin1 VR1_YOUT、pin2 VCC_3V3、pin3 GND、pin4 BTN1、pin5 VR2_XOUT、pin6 NC，7/8 接 GND"}]
+    },
+    {
+      "reference": "U4", "part_number": "WS2812C-2020", "role": "由 MCU PA8/RGB 驱动的单颗可编程 RGB LED",
+      "evidence": [{"asset_sha256": "82f87022244f3d2df4ee500034f38a01b9fe92fbbc0bcd68fd22eff0d7740ef3", "page": 1, "locator": "第 1 页 C3 RGB 区 U4 WS2812C-2020，DI/RGB、VDD/VCC_3V3、GND、DO"}]
+    },
+    {
+      "reference": "J4", "part_number": "SWD_5P", "role": "引出 VCC_3V3、MCU_SWCLK、MCU_SWDIO、NRST 与 GND 的调试接口",
+      "evidence": [{"asset_sha256": "82f87022244f3d2df4ee500034f38a01b9fe92fbbc0bcd68fd22eff0d7740ef3", "page": 1, "locator": "第 1 页 B3 MCU 区右侧 J4 SWD_5P，pin1-pin5 五个网络"}]
+    },
+    {
+      "reference": "R1,C4,D1", "part_number": "10KΩ / 100nF / PESD3V3S1UB", "role": "BTN1 按键上拉、滤波和 ESD 钳位网络",
+      "evidence": [{"asset_sha256": "82f87022244f3d2df4ee500034f38a01b9fe92fbbc0bcd68fd22eff0d7740ef3", "page": 1, "locator": "第 1 页 C1 Joystick 区 BTN1 节点，R1 10KΩ 到 VCC_3V3、C4 100nF 与 D1 PESD3V3S1UB 到 GND"}]
+    },
+    {
+      "reference": "R2,C1", "part_number": "10KΩ / 1uF", "role": "MCU NRST 上拉与复位电容网络",
+      "evidence": [{"asset_sha256": "82f87022244f3d2df4ee500034f38a01b9fe92fbbc0bcd68fd22eff0d7740ef3", "page": 1, "locator": "第 1 页 B1 MCU 左侧 NRST，R2 10KΩ 到 VCC_3V3、C1 1uF 到 GND"}]
+    },
+    {
+      "reference": "C2,C3", "part_number": "100nF / 10uF", "role": "STM32G031 VDD/VDDA 的 3.3V 去耦电容",
+      "evidence": [{"asset_sha256": "82f87022244f3d2df4ee500034f38a01b9fe92fbbc0bcd68fd22eff0d7740ef3", "page": 1, "locator": "第 1 页 B1-B2 U1 VDD/VDDA 旁 C2 100nF、C3 10uF 接 GND"}]
+    },
+    {
+      "reference": "C5,C7,C8", "part_number": "10uF / 100nF / 10uF", "role": "ME6206A33XG 输入和输出旁路电容",
+      "evidence": [{"asset_sha256": "82f87022244f3d2df4ee500034f38a01b9fe92fbbc0bcd68fd22eff0d7740ef3", "page": 1, "locator": "第 1 页 A3 U2 周围 C5 10uF 位于 VCC_5V，C7 100nF/C8 10uF 位于 VCC_3V3"}]
+    },
+    {
+      "reference": "C12", "part_number": "100nF", "role": "WS2812C-2020 的 VCC_3V3 去耦电容",
+      "evidence": [{"asset_sha256": "82f87022244f3d2df4ee500034f38a01b9fe92fbbc0bcd68fd22eff0d7740ef3", "page": 1, "locator": "第 1 页 C3 U4 VDD 旁 C12 100nF 接 GND"}]
+    }
+  ],
+  "facts": [
+    {
+      "id": "system.chain-joystick-architecture", "category": "system", "subject": "Chain Joystick 系统架构",
+      "statement": "U1 STM32G031G8U6 通过两个 UART 分别连接 Chain IN/OUT，采集 FPC1 的 YOUT/XOUT/BTN1 并驱动 U4 RGB；U2 将接口 5V 转换为全板 3.3V。",
+      "confidence": "confirmed", "attributes": {"mcu": "U1 STM32G031G8U6", "input_connector": "J1 GROVE_IO", "output_connector": "J2 GROVE_IO", "joystick": "FPC1", "rgb": "U4 WS2812C-2020", "ldo": "U2 ME6206A33XG"},
+      "evidence": [{"asset_sha256": "82f87022244f3d2df4ee500034f38a01b9fe92fbbc0bcd68fd22eff0d7740ef3", "page": 1, "locator": "第 1 页完整单页：Chain direction、LDO、MCU、Joystick、RGB 五个分区"}]
+    },
+    {
+      "id": "power.ldo-3v3", "category": "power", "subject": "5V 到 3.3V 稳压",
+      "statement": "U2 ME6206A33XG pin3 VIN 接 VCC_5V，pin2 VOUT 输出 VCC_3V3，pin1 GND 接 GND；C5 10uF 为输入旁路，C7 100nF 与 C8 10uF为输出旁路。",
+      "confidence": "confirmed", "attributes": {"input": "U2 pin3 VCC_5V", "output": "U2 pin2 VCC_3V3", "ground": "U2 pin1 GND", "input_capacitor": "C5 10uF", "output_capacitors": "C7 100nF; C8 10uF"},
+      "evidence": [{"asset_sha256": "82f87022244f3d2df4ee500034f38a01b9fe92fbbc0bcd68fd22eff0d7740ef3", "page": 1, "locator": "第 1 页 A3 LDO 区 U2/C5/C7/C8"}]
+    },
+    {
+      "id": "power.rail-distribution", "category": "power", "subject": "电源轨分配",
+      "statement": "J1/J2 均引出 VCC_5V；VCC_3V3 为 U1 VDD/VDDA、FPC1 pin2、U4 VDD 和 J4 pin1 供电。",
+      "confidence": "confirmed", "attributes": {"five_volt_sources": "J1 VCC; J2 VCC", "three_volt_source": "U2 VOUT", "three_volt_consumers": "U1 VDD/VDDA; FPC1 pin2; U4 pin4 VDD; J4 pin1"},
+      "evidence": [{"asset_sha256": "82f87022244f3d2df4ee500034f38a01b9fe92fbbc0bcd68fd22eff0d7740ef3", "page": 1, "locator": "第 1 页所有 VCC_5V/VCC_3V3 全局网络"}]
+    },
+    {
+      "id": "interface.chain-in", "category": "interface", "subject": "J1 Chain IN 接口",
+      "statement": "J1 GROVE_IO 的 IO2 接 TXD1、IO1 接 RXD1，并提供 VCC_5V 和 GND；页面箭头将 J1 侧标为 Chain direction IN。",
+      "confidence": "confirmed", "attributes": {"io2": "TXD1", "io1": "RXD1", "vcc": "VCC_5V", "ground": "GND", "direction_label": "IN"},
+      "evidence": [{"asset_sha256": "82f87022244f3d2df4ee500034f38a01b9fe92fbbc0bcd68fd22eff0d7740ef3", "page": 1, "locator": "第 1 页 A1 J1 GROVE_IO 与上方 IN 箭头"}]
+    },
+    {
+      "id": "interface.chain-out", "category": "interface", "subject": "J2 Chain OUT 接口",
+      "statement": "J2 GROVE_IO 的 IO2 接 RXD2、IO1 接 TXD2，并提供 VCC_5V 和 GND；页面箭头将 J2 侧标为 Chain direction OUT。",
+      "confidence": "confirmed", "attributes": {"io2": "RXD2", "io1": "TXD2", "vcc": "VCC_5V", "ground": "GND", "direction_label": "OUT"},
+      "evidence": [{"asset_sha256": "82f87022244f3d2df4ee500034f38a01b9fe92fbbc0bcd68fd22eff0d7740ef3", "page": 1, "locator": "第 1 页 A2 J2 GROVE_IO 与上方 OUT 箭头"}]
+    },
+    {
+      "id": "bus.uart1-chain-in", "category": "bus", "subject": "UART1 与 Chain IN",
+      "statement": "U1 PB6 pin26 连接 TXD1/J1 IO2，PB7 pin27 连接 RXD1/J1 IO1。",
+      "confidence": "confirmed", "attributes": {"controller": "U1 USART on PB6/PB7", "tx": "PB6 pin26 -> TXD1 -> J1 IO2", "rx": "PB7 pin27 -> RXD1 -> J1 IO1", "connector": "J1 Chain IN"},
+      "evidence": [{"asset_sha256": "82f87022244f3d2df4ee500034f38a01b9fe92fbbc0bcd68fd22eff0d7740ef3", "page": 1, "locator": "第 1 页 U1 右上 PB6/TXD1、PB7/RXD1 与 J1 同名网络"}]
+    },
+    {
+      "id": "bus.uart2-chain-out", "category": "bus", "subject": "UART2 与 Chain OUT",
+      "statement": "U1 PA2 pin8 连接 TXD2/J2 IO1，PA3 pin9 连接 RXD2/J2 IO2。",
+      "confidence": "confirmed", "attributes": {"controller": "U1 USART on PA2/PA3", "tx": "PA2 pin8 -> TXD2 -> J2 IO1", "rx": "PA3 pin9 -> RXD2 -> J2 IO2", "connector": "J2 Chain OUT"},
+      "evidence": [{"asset_sha256": "82f87022244f3d2df4ee500034f38a01b9fe92fbbc0bcd68fd22eff0d7740ef3", "page": 1, "locator": "第 1 页 U1 左侧 PA2/TXD2、PA3/RXD2 与 J2 同名网络"}]
+    },
+    {
+      "id": "bus.documented-uart-format", "category": "bus", "subject": "Chain UART 波特率与帧格式",
+      "statement": "产品正文标注 Chain UART 为 115200bps@8N1，但当前原理图只显示 TXD/RXD 连接，没有波特率、数据位、校验或停止位标注。",
+      "confidence": "uncertain", "attributes": {"documented_baud": 115200, "documented_format": "8N1", "schematic_rate_shown": false, "schematic_format_shown": false},
+      "evidence": [{"asset_sha256": "82f87022244f3d2df4ee500034f38a01b9fe92fbbc0bcd68fd22eff0d7740ef3", "page": 1, "locator": "第 1 页 J1/J2 与 U1 TXD1/RXD1/TXD2/RXD2，未见速率或帧格式"}]
+    },
+    {
+      "id": "analog.joystick-y", "category": "analog", "subject": "摇杆 Y 轴输入",
+      "statement": "FPC1 pin1 的 VR1_YOUT 连接 U1 PA6 pin12。",
+      "confidence": "confirmed", "attributes": {"connector_pin": "FPC1 pin1", "net": "VR1_YOUT", "mcu_pin": "U1 PA6 pin12", "direction": "analog input to MCU"},
+      "evidence": [{"asset_sha256": "82f87022244f3d2df4ee500034f38a01b9fe92fbbc0bcd68fd22eff0d7740ef3", "page": 1, "locator": "第 1 页 C2 FPC1 pin1 VR1_YOUT 与 B2 U1 PA6 pin12"}]
+    },
+    {
+      "id": "analog.joystick-x", "category": "analog", "subject": "摇杆 X 轴输入",
+      "statement": "FPC1 pin5 的 VR2_XOUT 连接 U1 PA7 pin13。",
+      "confidence": "confirmed", "attributes": {"connector_pin": "FPC1 pin5", "net": "VR2_XOUT", "mcu_pin": "U1 PA7 pin13", "direction": "analog input to MCU"},
+      "evidence": [{"asset_sha256": "82f87022244f3d2df4ee500034f38a01b9fe92fbbc0bcd68fd22eff0d7740ef3", "page": 1, "locator": "第 1 页 C2 FPC1 pin5 VR2_XOUT 与 B2 U1 PA7 pin13"}]
+    },
+    {
+      "id": "gpio.joystick-button", "category": "gpio", "subject": "摇杆 Z 轴按键输入",
+      "statement": "FPC1 pin4 BTN1 连接 U1 PB0 pin14；R1 10KΩ 将 BTN1 上拉到 VCC_3V3，C4 100nF 与 D1 PESD3V3S1UB 从 BTN1 接 GND。",
+      "confidence": "confirmed", "attributes": {"connector_pin": "FPC1 pin4", "mcu_pin": "U1 PB0 pin14", "pullup": "R1 10KΩ to VCC_3V3", "filter": "C4 100nF to GND", "protection": "D1 PESD3V3S1UB to GND", "direction": "digital input"},
+      "evidence": [{"asset_sha256": "82f87022244f3d2df4ee500034f38a01b9fe92fbbc0bcd68fd22eff0d7740ef3", "page": 1, "locator": "第 1 页 C1-C2 BTN1/R1/C4/D1/FPC1 与 B2 U1 PB0"}]
+    },
+    {
+      "id": "protection.button-esd", "category": "protection", "subject": "BTN1 ESD 防护",
+      "statement": "D1 PESD3V3S1UB 从 BTN1 接 GND，对摇杆按键信号提供钳位；C4 100nF 同节点接 GND。",
+      "confidence": "confirmed", "attributes": {"device": "D1 PESD3V3S1UB", "protected_net": "BTN1", "return": "GND", "parallel_capacitor": "C4 100nF"},
+      "evidence": [{"asset_sha256": "82f87022244f3d2df4ee500034f38a01b9fe92fbbc0bcd68fd22eff0d7740ef3", "page": 1, "locator": "第 1 页 C1 BTN1 节点的 D1 与 C4"}]
+    },
+    {
+      "id": "sensor.joystick-element-identity", "category": "sensor", "subject": "摇杆霍尔传感器与组件身份",
+      "statement": "产品正文描述为霍尔电磁摇杆，但当前原理图仅显示 FPC1 与 VR1_YOUT/VR2_XOUT/BTN1，没有摇杆组件料号、霍尔传感器型号、量程或输出电压范围。",
+      "confidence": "uncertain", "attributes": {"interface": "FPC1", "signals": "VR1_YOUT, VR2_XOUT, BTN1", "joystick_part_number_shown": false, "hall_sensor_model_shown": false, "output_range_shown": false},
+      "evidence": [{"asset_sha256": "82f87022244f3d2df4ee500034f38a01b9fe92fbbc0bcd68fd22eff0d7740ef3", "page": 1, "locator": "第 1 页 Joystick 区仅有 FPC1 和 BTN1 外围，未见霍尔传感器器件"}]
+    },
+    {
+      "id": "interface.joystick-fpc", "category": "interface", "subject": "FPC1 摇杆接口",
+      "statement": "FPC1 pin1=VR1_YOUT、pin2=VCC_3V3、pin3=GND、pin4=BTN1、pin5=VR2_XOUT、pin6 未连接，机械/屏蔽 pin7/pin8 接 GND。",
+      "confidence": "confirmed", "attributes": {"pin1": "VR1_YOUT", "pin2": "VCC_3V3", "pin3": "GND", "pin4": "BTN1", "pin5": "VR2_XOUT", "pin6": "NC", "pin7_pin8": "GND"},
+      "evidence": [{"asset_sha256": "82f87022244f3d2df4ee500034f38a01b9fe92fbbc0bcd68fd22eff0d7740ef3", "page": 1, "locator": "第 1 页 C2 FPC1 1-8 脚及左侧网络"}]
+    },
+    {
+      "id": "gpio.rgb-control", "category": "gpio", "subject": "WS2812C RGB 控制",
+      "statement": "U1 PA8 pin16 的 RGB 网络连接 U4 DI pin3；U4 VDD pin4 接 VCC_3V3，GND pin2 接 GND，DO pin1 未连接，C12 100nF 为去耦。",
+      "confidence": "confirmed", "attributes": {"mcu_pin": "U1 PA8 pin16", "data_net": "RGB", "led_input": "U4 pin3 DI", "supply": "U4 pin4 VCC_3V3", "ground": "U4 pin2 GND", "data_out": "U4 pin1 DO NC", "decoupling": "C12 100nF"},
+      "evidence": [{"asset_sha256": "82f87022244f3d2df4ee500034f38a01b9fe92fbbc0bcd68fd22eff0d7740ef3", "page": 1, "locator": "第 1 页 B2 U1 PA8/RGB 与 C3 U4 WS2812C-2020/C12"}]
+    },
+    {
+      "id": "reset.mcu-nrst", "category": "reset", "subject": "STM32G031 复位网络",
+      "statement": "U1 PF2-NRST pin5 接 NRST，R2 10KΩ 上拉至 VCC_3V3，C1 1uF 接 GND；NRST 另接 J4 pin4。",
+      "confidence": "confirmed", "attributes": {"mcu_pin": "U1 pin5 PF2-NRST", "pullup": "R2 10KΩ to VCC_3V3", "capacitor": "C1 1uF to GND", "debug_pin": "J4 pin4 NRST"},
+      "evidence": [{"asset_sha256": "82f87022244f3d2df4ee500034f38a01b9fe92fbbc0bcd68fd22eff0d7740ef3", "page": 1, "locator": "第 1 页 B1 U1 NRST/R2/C1 与 B3 J4 pin4"}]
+    },
+    {
+      "id": "debug.swd-interface", "category": "debug", "subject": "五针 SWD 调试接口",
+      "statement": "J4 SWD_5P pin1=VCC_3V3、pin2=MCU_SWCLK、pin3=MCU_SWDIO、pin4=NRST、pin5=GND；SWCLK 接 U1 PA14-BOOT0 pin21，SWDIO 接 PA13 pin20。",
+      "confidence": "confirmed", "attributes": {"pin1": "VCC_3V3", "pin2": "MCU_SWCLK / U1 PA14-BOOT0 pin21", "pin3": "MCU_SWDIO / U1 PA13 pin20", "pin4": "NRST", "pin5": "GND"},
+      "evidence": [{"asset_sha256": "82f87022244f3d2df4ee500034f38a01b9fe92fbbc0bcd68fd22eff0d7740ef3", "page": 1, "locator": "第 1 页 B3 J4 SWD_5P 与 U1 PA14/PA13/NRST"}]
+    },
+    {
+      "id": "bus.sda-scl-unconnected", "category": "bus", "subject": "MCU SDA/SCL 标注",
+      "statement": "U1 PA12[PA10] pin19 标注 SDA、PA11[PA9] pin18 标注 SCL，但两条短引线均带未连接标记，当前页面没有 I2C 设备或连接器。",
+      "confidence": "confirmed", "attributes": {"sda": "U1 pin19 PA12[PA10], NC", "scl": "U1 pin18 PA11[PA9], NC", "i2c_device_shown": false, "address_shown": false},
+      "evidence": [{"asset_sha256": "82f87022244f3d2df4ee500034f38a01b9fe92fbbc0bcd68fd22eff0d7740ef3", "page": 1, "locator": "第 1 页 U1 右侧 pin18 SCL/pin19 SDA 末端红色未连接标记"}]
+    },
+    {
+      "id": "clock.no-external-crystal", "category": "clock", "subject": "MCU 外部时钟",
+      "statement": "U1 PC14-OSC32IN pin1 与 PC15-OSC32OUT pin2 在当前页面未连接，完整原理图未画出晶振或外部振荡器。",
+      "confidence": "confirmed", "attributes": {"osc32in": "U1 pin1 NC", "osc32out": "U1 pin2 NC", "crystal_shown": false, "oscillator_shown": false},
+      "evidence": [{"asset_sha256": "82f87022244f3d2df4ee500034f38a01b9fe92fbbc0bcd68fd22eff0d7740ef3", "page": 1, "locator": "第 1 页 U1 pin1/pin2 PC14/PC15 短引线无网络，完整页面无晶振"}]
+    },
+    {
+      "id": "memory.no-external-memory", "category": "memory", "subject": "外部存储器",
+      "statement": "当前完整单页原理图未画出外部 Flash、EEPROM、RAM 或存储卡接口。",
+      "confidence": "confirmed", "attributes": {"external_flash_shown": false, "eeprom_shown": false, "external_ram_shown": false, "memory_card_shown": false},
+      "evidence": [{"asset_sha256": "82f87022244f3d2df4ee500034f38a01b9fe92fbbc0bcd68fd22eff0d7740ef3", "page": 1, "locator": "第 1 页完整单页器件，仅 MCU/LDO/RGB/FPC/连接器，无外部存储"}]
+    }
+  ],
+  "needs_review": [
+    {
+      "id": "review.uart-format", "fact_id": "bus.documented-uart-format", "question": "Chain Joystick 当前内置固件是否固定使用 115200bps、8N1，两个 UART 的协议时序与转发行为是否一致？",
+      "reason": "速率和帧格式来自产品正文，原理图只能确认 TXD/RXD 物理映射。",
+      "evidence": [{"asset_sha256": "82f87022244f3d2df4ee500034f38a01b9fe92fbbc0bcd68fd22eff0d7740ef3", "page": 1, "locator": "第 1 页 U1 UART1/UART2 与 J1/J2 连接，无通信参数"}]
+    },
+    {
+      "id": "review.joystick-element", "fact_id": "sensor.joystick-element-identity", "question": "FPC1 所连霍尔摇杆的具体料号、X/Y 输出范围、中心值、线性度和 BTN1 电气结构是什么？",
+      "reason": "当前原理图只显示 FPC 接口信号和按键外围，没有摇杆内部传感器或规格。",
+      "evidence": [{"asset_sha256": "82f87022244f3d2df4ee500034f38a01b9fe92fbbc0bcd68fd22eff0d7740ef3", "page": 1, "locator": "第 1 页 Joystick 区 FPC1、BTN1 网络，未见传感器型号或内部电路"}]
+    }
+  ]
+}

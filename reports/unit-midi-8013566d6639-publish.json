@@ -1,0 +1,21 @@
+{
+  "dry_run": false,
+  "failed": 0,
+  "published": 1,
+  "results": [
+    {
+      "backup": null,
+      "draft_action": "unchanged",
+      "dry_run": false,
+      "errors": [],
+      "needs_review": 5,
+      "product_id": "unit-midi-8013566d6639",
+      "product_name": "Unit MIDI",
+      "publish_action": "unchanged",
+      "sha256": "2a5d73d9d70bc068b2d8c454aa5839e86e33f473bb034b914cfaaf897cb198ba",
+      "status": "valid",
+      "uncertain_facts": 5
+    }
+  ],
+  "schema_version": 1
+}

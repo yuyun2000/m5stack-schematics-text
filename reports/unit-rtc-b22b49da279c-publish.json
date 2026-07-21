@@ -1,0 +1,21 @@
+{
+  "dry_run": false,
+  "failed": 0,
+  "published": 1,
+  "results": [
+    {
+      "backup": null,
+      "draft_action": "unchanged",
+      "dry_run": false,
+      "errors": [],
+      "needs_review": 2,
+      "product_id": "unit-rtc-b22b49da279c",
+      "product_name": "Unit RTC",
+      "publish_action": "unchanged",
+      "sha256": "59823a4460bfc1e85ed07c1f462c70a177a89b6d061d16dd728f4f26bd411513",
+      "status": "valid",
+      "uncertain_facts": 2
+    }
+  ],
+  "schema_version": 1
+}

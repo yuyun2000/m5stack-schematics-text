@@ -1,0 +1,21 @@
+{
+  "dry_run": false,
+  "failed": 0,
+  "published": 1,
+  "results": [
+    {
+      "backup": null,
+      "draft_action": "unchanged",
+      "dry_run": false,
+      "errors": [],
+      "needs_review": 2,
+      "product_id": "chain-joystick-0496041983c4",
+      "product_name": "Chain Joystick",
+      "publish_action": "unchanged",
+      "sha256": "ddc0ea02079624e73b06c45f51b4e8f7aa1575d65236c00eb9a38ac0306b7176",
+      "status": "valid",
+      "uncertain_facts": 2
+    }
+  ],
+  "schema_version": 1
+}

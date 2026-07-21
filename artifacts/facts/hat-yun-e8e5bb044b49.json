@@ -1,0 +1,239 @@
+{
+  "schema_version": 1,
+  "generator": "schematic_describer",
+  "product": {
+    "product_id": "hat-yun-e8e5bb044b49",
+    "product_name": "Hat Yun",
+    "sku": "U070",
+    "source_path": "hat/hat-yun.md",
+    "source_sha256": "5966cdea3fe8c846d5ae27f4e350aa78e9f48a5026b9039f859cc5aa8145ce75",
+    "input_sha256": "edb359be80e183dfabcc09fc7f1c4534a3c8f4735837ba466c2f72efc1d6d8cf"
+  },
+  "schematic_assets": [
+    {
+      "sha256": "6422fad12ee8e930c5c043ffab4c6f5d0e7b3370f3538f51da2cc8554b44fd36",
+      "source_url": "https://static-cdn.m5stack.com/resource/docs/products/hat/hat-yun/hat-yun_sch_01.webp",
+      "pages": [1]
+    }
+  ],
+  "summary": "Hat Yun 的本地资源是一张云朵形系统连线框图：STM32 连接光敏元件、BMP280、SHT20 和外围 14 个 LED 功能块。STICKIO 的 G26/SCL 与 G0/SDA 连接传感器总线，3V3 连接 STM32，5VI 连接独立的 5V POWER 功能块。该页没有器件位号、完整 STM32 型号、LED 料号、I2C 地址、被动器件或电源转换细节，因此相关产品正文参数列为待确认。",
+  "keywords": [
+    "Hat Yun",
+    "U070",
+    "STM32",
+    "STM32F030F4P6",
+    "BMP280",
+    "SHT20",
+    "光敏电阻",
+    "LED",
+    "14 x LED",
+    "SK6812 4020",
+    "I2C",
+    "SCL",
+    "SDA",
+    "G26",
+    "G0",
+    "GND",
+    "3V3",
+    "5VI",
+    "5V POWER",
+    "STICKIO",
+    "0x40",
+    "0x76",
+    "0x38",
+    "环境传感器"
+  ],
+  "components": [
+    {
+      "reference": "STM32",
+      "part_number": "STM32",
+      "role": "框图中央控制器，连接光敏元件、SCL/SDA 传感器总线、3V3/GND 和外围 LED 链",
+      "evidence": [{"asset_sha256": "6422fad12ee8e930c5c043ffab4c6f5d0e7b3370f3538f51da2cc8554b44fd36", "page": 1, "locator": "页面中央偏左 STM32 方框：左接光敏元件，下接 GND/3V3，右接传感器连线，周围为 LED 链"}]
+    },
+    {
+      "reference": "BMP280",
+      "part_number": "BMP280",
+      "role": "环境气压传感器功能块，连接共享传感器信号线",
+      "evidence": [{"asset_sha256": "6422fad12ee8e930c5c043ffab4c6f5d0e7b3370f3538f51da2cc8554b44fd36", "page": 1, "locator": "页面中央偏右黑色小矩形，顶部标注 BMP280，下端连接两条水平传感器信号线"}]
+    },
+    {
+      "reference": "SHT20",
+      "part_number": "SHT20",
+      "role": "温湿度传感器功能块，连接共享传感器信号线",
+      "evidence": [{"asset_sha256": "6422fad12ee8e930c5c043ffab4c6f5d0e7b3370f3538f51da2cc8554b44fd36", "page": 1, "locator": "页面中央偏右黑色方块，右侧标注 SHT20，下端连接传感器信号线"}]
+    },
+    {
+      "reference": "Photoresistor",
+      "part_number": null,
+      "role": "光敏输入功能块，通过单条信号线连接 STM32",
+      "evidence": [{"asset_sha256": "6422fad12ee8e930c5c043ffab4c6f5d0e7b3370f3538f51da2cc8554b44fd36", "page": 1, "locator": "页面中央偏左 STM32 左侧的圆形光敏元件图标及其水平连线"}]
+    },
+    {
+      "reference": "LED x14",
+      "part_number": null,
+      "role": "沿云朵外轮廓布置的 14 个 LED 功能块，形成外围灯链",
+      "evidence": [{"asset_sha256": "6422fad12ee8e930c5c043ffab4c6f5d0e7b3370f3538f51da2cc8554b44fd36", "page": 1, "locator": "整页云朵灰色外围连线上分布 14 个分别标注 LED 的方块/箭头符号"}]
+    },
+    {
+      "reference": "5V POWER",
+      "part_number": null,
+      "role": "由 STICKIO 5VI 蓝色电源线连接的独立 5V POWER 功能块",
+      "evidence": [{"asset_sha256": "6422fad12ee8e930c5c043ffab4c6f5d0e7b3370f3538f51da2cc8554b44fd36", "page": 1, "locator": "页面右下黑色方块，右侧竖排标注 5V POWER，左接来自 5VI 的蓝色线"}]
+    },
+    {
+      "reference": "STICKIO",
+      "part_number": null,
+      "role": "主机侧 8 信号功能接口，标注 GND、5VO、G26、G36、G0、BAT、3V3、5VI",
+      "evidence": [{"asset_sha256": "6422fad12ee8e930c5c043ffab4c6f5d0e7b3370f3538f51da2cc8554b44fd36", "page": 1, "locator": "页面左下八行绿色标签：GND/5VO/G26/G36/G0/BAT/3V3/5VI"}]
+    }
+  ],
+  "facts": [
+    {
+      "id": "system.environment-light-architecture",
+      "category": "system",
+      "subject": "Hat Yun",
+      "statement": "框图以 STM32 为控制器，连接 BMP280、SHT20、光敏元件和 14 个外围 LED；主机侧提供 GND、SCL、SDA、3V3 与 5VI 连接。",
+      "confidence": "confirmed",
+      "attributes": {"controller": "STM32", "sensors": "BMP280; SHT20; photoresistor", "lighting": "14 x LED", "host_signals": "GND; G26/SCL; G0/SDA; 3V3; 5VI"},
+      "evidence": [{"asset_sha256": "6422fad12ee8e930c5c043ffab4c6f5d0e7b3370f3538f51da2cc8554b44fd36", "page": 1, "locator": "全页云朵框图：中央 STM32/传感器、外围 LED 链与左下 STICKIO 信号"}]
+    },
+    {
+      "id": "interface.stickio-functional-mapping",
+      "category": "interface",
+      "subject": "STICKIO",
+      "statement": "框图标注 GND 连接 STM32 地线，G26 连接 SCL，G0 连接 SDA，3V3 连接 STM32 电源，5VI 连接 5V POWER；5VO、G36 和 BAT 未画出功能连接。",
+      "confidence": "confirmed",
+      "attributes": {"GND": "STM32 ground", "5VO": "no functional connection shown", "G26": "SCL", "G36": "no functional connection shown", "G0": "SDA", "BAT": "no functional connection shown", "3V3": "STM32 supply", "5VI": "5V POWER"},
+      "evidence": [{"asset_sha256": "6422fad12ee8e930c5c043ffab4c6f5d0e7b3370f3538f51da2cc8554b44fd36", "page": 1, "locator": "页面左下八个 STICKIO 标签及黑色/红色/蓝色连线终点"}]
+    },
+    {
+      "id": "bus.sensor-i2c-routing",
+      "category": "bus",
+      "subject": "SCL/SDA 传感器总线",
+      "statement": "G26 的 SCL 与 G0 的 SDA 沿框图连接 BMP280 和 SHT20，并与 STM32 传感器连线汇合。",
+      "confidence": "confirmed",
+      "attributes": {"scl_host": "G26", "sda_host": "G0", "devices": "BMP280; SHT20", "controller": "STM32", "pullups": "not shown"},
+      "evidence": [{"asset_sha256": "6422fad12ee8e930c5c043ffab4c6f5d0e7b3370f3538f51da2cc8554b44fd36", "page": 1, "locator": "页面中部两条标注 SCL/SDA 的主机线及 BMP280/SHT20 下端连接点"}]
+    },
+    {
+      "id": "sensor.bmp280-sht20",
+      "category": "sensor",
+      "subject": "BMP280 与 SHT20",
+      "statement": "框图明确标出 BMP280 和 SHT20 两个传感器功能块，两者连接共享的 SCL/SDA 信号路径。",
+      "confidence": "confirmed",
+      "attributes": {"pressure_sensor": "BMP280", "temperature_humidity_sensor": "SHT20", "bus": "SCL/SDA", "power_pins": "not shown"},
+      "evidence": [{"asset_sha256": "6422fad12ee8e930c5c043ffab4c6f5d0e7b3370f3538f51da2cc8554b44fd36", "page": 1, "locator": "页面中央偏右 BMP280/SHT20 标注及下方连接点"}]
+    },
+    {
+      "id": "sensor.photoresistor-path",
+      "category": "sensor",
+      "subject": "光敏输入",
+      "statement": "光敏元件图标通过一条水平信号线直接连接 STM32；该页未标注其位号、阻值、分压网络或 STM32 引脚。",
+      "confidence": "confirmed",
+      "attributes": {"sensor": "photoresistor symbol", "controller": "STM32", "controller_pin": "not shown", "resistance": "not shown", "divider": "not shown"},
+      "evidence": [{"asset_sha256": "6422fad12ee8e930c5c043ffab4c6f5d0e7b3370f3538f51da2cc8554b44fd36", "page": 1, "locator": "页面中央偏左光敏元件图标至 STM32 左侧的黑色水平线"}]
+    },
+    {
+      "id": "component.controller-exact-model",
+      "category": "component",
+      "subject": "STM32 控制器型号",
+      "statement": "产品正文给出 STM32F030F4P6，但本地框图只标注 STM32，没有完整型号、位号、封装或引脚名，无法由该页确认。",
+      "confidence": "uncertain",
+      "attributes": {"documented_model": "STM32F030F4P6", "schematic_label": "STM32", "reference_designator": "not shown", "package": "not shown"},
+      "evidence": [{"asset_sha256": "6422fad12ee8e930c5c043ffab4c6f5d0e7b3370f3538f51da2cc8554b44fd36", "page": 1, "locator": "页面中央控制器方框仅标注 STM32"}]
+    },
+    {
+      "id": "address.sensor-i2c-addresses",
+      "category": "address",
+      "subject": "SHT20/BMP280 I2C 地址",
+      "statement": "产品正文标注 SHT20 为 0x40、BMP280 为 0x76，但框图未显示任何地址文本、地址引脚或配置网络，无法由该页确认。",
+      "confidence": "uncertain",
+      "attributes": {"documented_sht20_address": "0x40", "documented_bmp280_address": "0x76", "schematic_address_labels": "not shown", "address_configuration": "not shown"},
+      "evidence": [{"asset_sha256": "6422fad12ee8e930c5c043ffab4c6f5d0e7b3370f3538f51da2cc8554b44fd36", "page": 1, "locator": "页面 BMP280/SHT20 与 SCL/SDA 区域，无 0x40、0x76 或地址配置"}]
+    },
+    {
+      "id": "address.yun-controller-0x38",
+      "category": "address",
+      "subject": "Hat Yun 控制器 I2C 地址",
+      "statement": "产品正文标注 YUN 地址为 0x38，但框图没有 0x38、地址选择网络或固件信息，无法由该页确认。",
+      "confidence": "uncertain",
+      "attributes": {"documented_address": "0x38", "schematic_address_label": "not shown", "address_straps": "not shown", "firmware_evidence": "not shown"},
+      "evidence": [{"asset_sha256": "6422fad12ee8e930c5c043ffab4c6f5d0e7b3370f3538f51da2cc8554b44fd36", "page": 1, "locator": "全页 STM32 与 SCL/SDA 网络，无 0x38 或地址配置标注"}]
+    },
+    {
+      "id": "gpio.led-chain-count",
+      "category": "gpio",
+      "subject": "外围 LED 链",
+      "statement": "云朵轮廓的灰色链路上显示 14 个分别标注 LED 的功能块；框图未标注控制 GPIO、数据方向或供电连接。",
+      "confidence": "confirmed",
+      "attributes": {"count": 14, "label": "LED", "controller_gpio": "not shown", "data_direction": "not shown", "power_connection": "not shown"},
+      "evidence": [{"asset_sha256": "6422fad12ee8e930c5c043ffab4c6f5d0e7b3370f3538f51da2cc8554b44fd36", "page": 1, "locator": "整页云朵外轮廓灰色连线上逐个计数的 14 个 LED 标签"}]
+    },
+    {
+      "id": "component.led-type-sk6812",
+      "category": "component",
+      "subject": "RGB LED 型号",
+      "statement": "产品正文声明使用 14 颗 SK6812 4020 RGB LED，但框图仅标注 LED，未显示 SK6812、4020、RGB、位号或级联引脚，无法由该页确认完整料号。",
+      "confidence": "uncertain",
+      "attributes": {"documented_type": "SK6812 4020 RGB", "documented_count": 14, "schematic_label": "LED", "reference_designators": "not shown"},
+      "evidence": [{"asset_sha256": "6422fad12ee8e930c5c043ffab4c6f5d0e7b3370f3538f51da2cc8554b44fd36", "page": 1, "locator": "外围 14 个功能块均只标注 LED，无型号或封装"}]
+    },
+    {
+      "id": "power.controller-3v3",
+      "category": "power",
+      "subject": "STM32 3V3 供电",
+      "statement": "STICKIO 的 3V3 通过红色连线连接 STM32；GND 通过黑色连线连接 STM32。",
+      "confidence": "confirmed",
+      "attributes": {"supply": "3V3 to STM32", "ground": "GND to STM32", "decoupling": "not shown", "regulator": "not shown"},
+      "evidence": [{"asset_sha256": "6422fad12ee8e930c5c043ffab4c6f5d0e7b3370f3538f51da2cc8554b44fd36", "page": 1, "locator": "页面左下 3V3 红线与 GND 黑线连接中央 STM32"}]
+    },
+    {
+      "id": "power.external-5vi",
+      "category": "power",
+      "subject": "5VI 外部电源路径",
+      "statement": "STICKIO 的 5VI 通过蓝色连线连接右侧 5V POWER 功能块；框图未显示转换器、开关、保护或 5V POWER 到负载的具体连接。",
+      "confidence": "confirmed",
+      "attributes": {"input": "STICKIO 5VI", "destination": "5V POWER block", "converter": "not shown", "switch": "not shown", "protection": "not shown", "loads": "not shown"},
+      "evidence": [{"asset_sha256": "6422fad12ee8e930c5c043ffab4c6f5d0e7b3370f3538f51da2cc8554b44fd36", "page": 1, "locator": "页面下方从 5VI 标签到右侧 5V POWER 方块的蓝色连线"}]
+    },
+    {
+      "id": "other.asset-detail-level",
+      "category": "other",
+      "subject": "本地资源详细程度",
+      "statement": "该页为系统功能框图，不包含器件位号、芯片引脚号、被动器件值、连接器针脚编号、时钟、复位、BOOT、调试、存储或保护电路。",
+      "confidence": "confirmed",
+      "attributes": {"asset_type": "system functional block diagram", "reference_designators": "not shown", "chip_pin_numbers": "not shown", "passives": "not shown", "clock_reset_debug": "not shown", "storage": "not shown", "protection": "not shown"},
+      "evidence": [{"asset_sha256": "6422fad12ee8e930c5c043ffab4c6f5d0e7b3370f3538f51da2cc8554b44fd36", "page": 1, "locator": "整页仅包含功能块、传感器名称、LED 标签和彩色系统连线"}]
+    }
+  ],
+  "needs_review": [
+    {
+      "id": "review.controller-model",
+      "fact_id": "component.controller-exact-model",
+      "question": "Hat Yun 所装控制器完整型号是否为 STM32F030F4P6？",
+      "reason": "产品正文给出完整型号，但本地框图仅标注 STM32。",
+      "evidence": [{"asset_sha256": "6422fad12ee8e930c5c043ffab4c6f5d0e7b3370f3538f51da2cc8554b44fd36", "page": 1, "locator": "中央控制器方框仅标注 STM32"}]
+    },
+    {
+      "id": "review.sensor-addresses",
+      "fact_id": "address.sensor-i2c-addresses",
+      "question": "SHT20 的 0x40 与 BMP280 的 0x76 地址在该硬件版本上如何确认？",
+      "reason": "框图只显示器件名称和共享信号线，没有地址或配置标注。",
+      "evidence": [{"asset_sha256": "6422fad12ee8e930c5c043ffab4c6f5d0e7b3370f3538f51da2cc8554b44fd36", "page": 1, "locator": "BMP280/SHT20 与 SCL/SDA 区域"}]
+    },
+    {
+      "id": "review.yun-address-0x38",
+      "fact_id": "address.yun-controller-0x38",
+      "question": "YUN 控制接口地址 0x38 是否由 STM32 固件固定实现？",
+      "reason": "框图没有地址选择或固件版本依据。",
+      "evidence": [{"asset_sha256": "6422fad12ee8e930c5c043ffab4c6f5d0e7b3370f3538f51da2cc8554b44fd36", "page": 1, "locator": "STM32 与 SCL/SDA 网络，未见 0x38"}]
+    },
+    {
+      "id": "review.led-part-number",
+      "fact_id": "component.led-type-sk6812",
+      "question": "外围 14 颗 LED 的完整料号和封装是否为 SK6812 4020 RGB？",
+      "reason": "框图确认数量为 14，但每个功能块只标注 LED。",
+      "evidence": [{"asset_sha256": "6422fad12ee8e930c5c043ffab4c6f5d0e7b3370f3538f51da2cc8554b44fd36", "page": 1, "locator": "云朵外围 14 个 LED 功能块"}]
+    }
+  ]
+}

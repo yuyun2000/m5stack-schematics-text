@@ -1,0 +1,340 @@
+{
+  "schema_version": 1,
+  "generator": "schematic_describer",
+  "product": {
+    "product_id": "atomic-tounit-base-6dd534d15886",
+    "product_name": "Atomic ToUnit Base",
+    "sku": "A161",
+    "source_path": "accessory/Atomic_ToUnit_Base.md",
+    "source_sha256": "e3b405aec1fc1db42643c4f1fdebd6cf4a7ce06d7eadea25aa1ffcfc8b291fc9",
+    "input_sha256": "c7d69c906f75737799a4bf13b65afde3ad1c2cc508c83a6e67a6a838fe077bd2"
+  },
+  "schematic_assets": [
+    {
+      "sha256": "c483c0ce88ec11fdb33e31899310dd21cc8cb92df6738ae88a37006ae4c66733",
+      "source_url": "https://m5stack-doc.oss-cn-shenzhen.aliyuncs.com/1195/A161-SCH_Atomic-ToUnit-Base_SCH_2025_08_28_11_06_42.png",
+      "pages": [
+        1
+      ]
+    }
+  ],
+  "summary": "Atomic ToUnit Base 是由 Atom 底部排针 P1/P2、八位拨码开关 SW1 和四针 GROVE 接口 J1 构成的无源 GPIO 转接电路。SW1 的前四位把 Atom Lite GPIO22/19/23/33 中的任一路连接到 IO2，后四位把同一组候选 GPIO 中的任一路连接到 IO1；Atom S3 在 P2 相同物理位置对应 GPIO5/6/7/8。VCC_5V 与 GND 直接从 P1 传递到 GROVE，P2 的 3V3 不进入 J1。",
+  "keywords": [
+    "Atomic ToUnit Base",
+    "A161",
+    "Atom Lite",
+    "Atom S3",
+    "SW1",
+    "SW-DIP8",
+    "GROVE",
+    "IO1",
+    "IO2",
+    "VCC_5V",
+    "3V3",
+    "GPIO22",
+    "GPIO19",
+    "GPIO23",
+    "GPIO33",
+    "GPIO5",
+    "GPIO6",
+    "GPIO7",
+    "GPIO8",
+    "GPIO21",
+    "GPIO25",
+    "GPIO39",
+    "GPIO38",
+    "Header 4",
+    "Header 5"
+  ],
+  "components": [
+    {
+      "reference": "P1",
+      "part_number": "Header 4",
+      "role": "Atom 底部的 VCC_5V、GND 与两路附加 GPIO 连接排针",
+      "evidence": [
+        {
+          "asset_sha256": "c483c0ce88ec11fdb33e31899310dd21cc8cb92df6738ae88a37006ae4c66733",
+          "page": 1,
+          "locator": "网格 A2-B2 的 PinMap 左侧，P1 Header 4 及 pin1-pin4 网络标注"
+        }
+      ]
+    },
+    {
+      "reference": "P2",
+      "part_number": "Header 5",
+      "role": "Atom 底部的 3V3 与四路可选择 GPIO 连接排针",
+      "evidence": [
+        {
+          "asset_sha256": "c483c0ce88ec11fdb33e31899310dd21cc8cb92df6738ae88a37006ae4c66733",
+          "page": 1,
+          "locator": "网格 A2-B3 的 PinMap 右侧，P2 Header 5 及 Atom S3/Atom Lite 双重标注"
+        }
+      ]
+    },
+    {
+      "reference": "SW1",
+      "part_number": "SW-DIP8",
+      "role": "从四路 Atom GPIO 中分别选择 IO2 与 IO1 的八位拨码开关",
+      "evidence": [
+        {
+          "asset_sha256": "c483c0ce88ec11fdb33e31899310dd21cc8cb92df6738ae88a37006ae4c66733",
+          "page": 1,
+          "locator": "网格 B2-C2，SW1 SW-DIP8，左侧 pin1-pin8 与右侧 pin9-pin16、IO2/IO1 汇流排"
+        }
+      ]
+    },
+    {
+      "reference": "J1",
+      "part_number": "1x4P GROVE",
+      "role": "输出 IO2、IO1、VCC_5V 和 GND 的四针 Unit 接口",
+      "evidence": [
+        {
+          "asset_sha256": "c483c0ce88ec11fdb33e31899310dd21cc8cb92df6738ae88a37006ae4c66733",
+          "page": 1,
+          "locator": "网格 B3-C3，J1 1x4P GROVE，pin1-pin4 标注 IO2、IO1、VCC、GND"
+        }
+      ]
+    }
+  ],
+  "facts": [
+    {
+      "id": "system.passive_routing",
+      "category": "system",
+      "subject": "Atomic ToUnit Base 无源转接架构",
+      "statement": "整页电路由 P1、P2、SW1 和 J1 构成；GPIO 经拨码开关连接到 IO1/IO2，VCC_5V 与 GND 直接连接 GROVE 接口。",
+      "confidence": "confirmed",
+      "attributes": {
+        "input_headers": "P1 Header 4,P2 Header 5",
+        "selector": "SW1 SW-DIP8",
+        "output_connector": "J1 1x4P GROVE",
+        "output_signals": "IO2,IO1,VCC_5V,GND"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "c483c0ce88ec11fdb33e31899310dd21cc8cb92df6738ae88a37006ae4c66733",
+          "page": 1,
+          "locator": "整页中央 PinMap、SW1 与 J1 的全部连线"
+        }
+      ]
+    },
+    {
+      "id": "interface.p1_pinmap",
+      "category": "interface",
+      "subject": "P1 Header 4",
+      "statement": "P1 pin1 连接 GND，pin2 连接 VCC_5V，pin3 在 Atom Lite 标为 GPIO25、在 Atom S3 标为 GPIO38，pin4 在 Atom Lite 标为 GPIO21、在 Atom S3 标为 GPIO39。",
+      "confidence": "confirmed",
+      "attributes": {
+        "reference": "P1",
+        "pin1": "GND",
+        "pin2": "VCC_5V",
+        "pin3": "Atom Lite GPIO25 / Atom S3 GPIO38",
+        "pin4": "Atom Lite GPIO21 / Atom S3 GPIO39"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "c483c0ce88ec11fdb33e31899310dd21cc8cb92df6738ae88a37006ae4c66733",
+          "page": 1,
+          "locator": "网格 A2-B2，PinMap 左侧 P1 pin1-pin4 及 Atom Lite/Atom S3 标签"
+        }
+      ]
+    },
+    {
+      "id": "interface.p2_pinmap",
+      "category": "interface",
+      "subject": "P2 Header 5",
+      "statement": "P2 pin5 连接 3V3；pin4 至 pin1 在 Atom Lite 依次为 GPIO22、GPIO19、GPIO23、GPIO33，在 Atom S3 依次为 GPIO5、GPIO6、GPIO7、GPIO8。",
+      "confidence": "confirmed",
+      "attributes": {
+        "reference": "P2",
+        "pin5": "3V3",
+        "pin4": "Atom Lite GPIO22 / Atom S3 GPIO5",
+        "pin3": "Atom Lite GPIO19 / Atom S3 GPIO6",
+        "pin2": "Atom Lite GPIO23 / Atom S3 GPIO7",
+        "pin1": "Atom Lite GPIO33 / Atom S3 GPIO8"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "c483c0ce88ec11fdb33e31899310dd21cc8cb92df6738ae88a37006ae4c66733",
+          "page": 1,
+          "locator": "网格 A2-B3，PinMap 右侧 P2 pin1-pin5 及 Atom S3/Atom Lite 标签"
+        }
+      ]
+    },
+    {
+      "id": "interface.j1_grove",
+      "category": "interface",
+      "subject": "J1 GROVE 接口",
+      "statement": "J1 pin1 连接 IO2，pin2 连接 IO1，pin3 连接 VCC_5V，pin4 连接 GND。",
+      "confidence": "confirmed",
+      "attributes": {
+        "reference": "J1",
+        "pinout": "1:IO2,2:IO1,3:VCC_5V,4:GND"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "c483c0ce88ec11fdb33e31899310dd21cc8cb92df6738ae88a37006ae4c66733",
+          "page": 1,
+          "locator": "网格 B3-C3，J1 左侧脚号与 IO2、IO1、VCC_5V、GND 网络"
+        }
+      ]
+    },
+    {
+      "id": "component.sw1_pin_pairs",
+      "category": "component",
+      "subject": "SW1 开关触点配对",
+      "statement": "SW1 八个独立触点的引脚对为 1-9、2-10、3-11、4-12、5-13、6-14、7-15、8-16。",
+      "confidence": "confirmed",
+      "attributes": {
+        "reference": "SW1",
+        "part_number": "SW-DIP8",
+        "contact_pairs": "1-9,2-10,3-11,4-12,5-13,6-14,7-15,8-16"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "c483c0ce88ec11fdb33e31899310dd21cc8cb92df6738ae88a37006ae4c66733",
+          "page": 1,
+          "locator": "网格 B2-C2，SW1 内部八个开关符号及左右脚号"
+        }
+      ]
+    },
+    {
+      "id": "gpio.io2_selection",
+      "category": "gpio",
+      "subject": "IO2 拨码选择",
+      "statement": "SW1 pin9、pin10、pin11、pin12 汇接 IO2；闭合对应触点可分别把 GPIO22、GPIO19、GPIO23、GPIO33 连接到 IO2。",
+      "confidence": "confirmed",
+      "attributes": {
+        "output": "IO2",
+        "switch_positions": "SW1 1-4",
+        "atom_lite_options": "GPIO22,GPIO19,GPIO23,GPIO33",
+        "atom_s3_options": "GPIO5,GPIO6,GPIO7,GPIO8",
+        "right_pins": "9,10,11,12"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "c483c0ce88ec11fdb33e31899310dd21cc8cb92df6738ae88a37006ae4c66733",
+          "page": 1,
+          "locator": "网格 B2-C2，SW1 上半组 pin1-pin4 到 pin9-pin12 的 IO2 汇流排"
+        }
+      ]
+    },
+    {
+      "id": "gpio.io1_selection",
+      "category": "gpio",
+      "subject": "IO1 拨码选择",
+      "statement": "SW1 pin13、pin14、pin15、pin16 汇接 IO1；闭合对应触点可分别把 GPIO22、GPIO19、GPIO23、GPIO33 连接到 IO1。",
+      "confidence": "confirmed",
+      "attributes": {
+        "output": "IO1",
+        "switch_positions": "SW1 5-8",
+        "atom_lite_options": "GPIO22,GPIO19,GPIO23,GPIO33",
+        "atom_s3_options": "GPIO5,GPIO6,GPIO7,GPIO8",
+        "right_pins": "13,14,15,16"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "c483c0ce88ec11fdb33e31899310dd21cc8cb92df6738ae88a37006ae4c66733",
+          "page": 1,
+          "locator": "网格 B2-C2，SW1 下半组 pin5-pin8 到 pin13-pin16 的 IO1 汇流排"
+        }
+      ]
+    },
+    {
+      "id": "gpio.controller_aliases",
+      "category": "gpio",
+      "subject": "Atom Lite 与 Atom S3 GPIO 对应关系",
+      "statement": "P2 相同物理位置的 GPIO 对应关系为 GPIO22/GPIO5、GPIO19/GPIO6、GPIO23/GPIO7、GPIO33/GPIO8，前者为 Atom Lite 标注，后者为 Atom S3 标注。",
+      "confidence": "confirmed",
+      "attributes": {
+        "pair_1": "Atom Lite GPIO22 / Atom S3 GPIO5",
+        "pair_2": "Atom Lite GPIO19 / Atom S3 GPIO6",
+        "pair_3": "Atom Lite GPIO23 / Atom S3 GPIO7",
+        "pair_4": "Atom Lite GPIO33 / Atom S3 GPIO8"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "c483c0ce88ec11fdb33e31899310dd21cc8cb92df6738ae88a37006ae4c66733",
+          "page": 1,
+          "locator": "网格 A2-B3，P2 左侧 Atom S3 与 Atom Lite 两列 GPIO 标注"
+        }
+      ]
+    },
+    {
+      "id": "key_net.duplicate_selection",
+      "category": "key_net",
+      "subject": "同一 GPIO 同时接入 IO1 与 IO2",
+      "statement": "SW1 上下两组重复连接同一组四个 GPIO；同时闭合一对对应位置会把 IO1 与 IO2 连接到同一个 GPIO 网络。",
+      "confidence": "confirmed",
+      "attributes": {
+        "io2_positions": "1,2,3,4",
+        "io1_positions": "5,6,7,8",
+        "corresponding_pairs": "1/5,2/6,3/7,4/8"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "c483c0ce88ec11fdb33e31899310dd21cc8cb92df6738ae88a37006ae4c66733",
+          "page": 1,
+          "locator": "网格 B2-C2，SW1 左侧 GPIO22/19/23/33 在上半组和下半组各出现一次，右侧分别汇入 IO2 与 IO1"
+        }
+      ]
+    },
+    {
+      "id": "power.vcc5_passthrough",
+      "category": "power",
+      "subject": "VCC_5V 直通路径",
+      "statement": "P1 pin2 的 VCC_5V 网络直接连接 J1 pin3，中间没有串联器件。",
+      "confidence": "confirmed",
+      "attributes": {
+        "source": "P1 pin2",
+        "rail": "VCC_5V",
+        "destination": "J1 pin3"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "c483c0ce88ec11fdb33e31899310dd21cc8cb92df6738ae88a37006ae4c66733",
+          "page": 1,
+          "locator": "网格 A2-B2 的 P1 pin2 VCC_5V 与网格 B3-C3 的 J1 pin3 VCC_5V 同名网络"
+        }
+      ]
+    },
+    {
+      "id": "power.ground_passthrough",
+      "category": "power",
+      "subject": "GND 直通路径",
+      "statement": "P1 pin1 的 GND 网络直接连接 J1 pin4。",
+      "confidence": "confirmed",
+      "attributes": {
+        "source": "P1 pin1",
+        "rail": "GND",
+        "destination": "J1 pin4"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "c483c0ce88ec11fdb33e31899310dd21cc8cb92df6738ae88a37006ae4c66733",
+          "page": 1,
+          "locator": "网格 A2-B2 的 P1 pin1 GND 与网格 B3-C3 的 J1 pin4 GND 同名网络"
+        }
+      ]
+    },
+    {
+      "id": "power.p2_3v3_scope",
+      "category": "power",
+      "subject": "P2 3V3 网络",
+      "statement": "P2 pin5 标注 3V3；该网络在本页没有连接 SW1 或 J1。",
+      "confidence": "confirmed",
+      "attributes": {
+        "source": "P2 pin5",
+        "rail": "3V3",
+        "grove_connection": null
+      },
+      "evidence": [
+        {
+          "asset_sha256": "c483c0ce88ec11fdb33e31899310dd21cc8cb92df6738ae88a37006ae4c66733",
+          "page": 1,
+          "locator": "网格 A2-B3，P2 pin5 的独立 3V3 网络；SW1 与 J1 区域无 3V3 标注"
+        }
+      ]
+    }
+  ],
+  "needs_review": []
+}

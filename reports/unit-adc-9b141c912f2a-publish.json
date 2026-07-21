@@ -1,0 +1,21 @@
+{
+  "dry_run": false,
+  "failed": 0,
+  "published": 1,
+  "results": [
+    {
+      "backup": null,
+      "draft_action": "unchanged",
+      "dry_run": false,
+      "errors": [],
+      "needs_review": 3,
+      "product_id": "unit-adc-9b141c912f2a",
+      "product_name": "Unit ADC",
+      "publish_action": "unchanged",
+      "sha256": "af47546779997d227087c86d053f859718d0112a80af021af7d95fdcacb71ae5",
+      "status": "valid",
+      "uncertain_facts": 3
+    }
+  ],
+  "schema_version": 1
+}

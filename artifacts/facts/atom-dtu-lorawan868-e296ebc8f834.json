@@ -1,0 +1,574 @@
+{
+  "schema_version": 1,
+  "generator": "schematic_describer",
+  "product": {
+    "product_id": "atom-dtu-lorawan868-e296ebc8f834",
+    "product_name": "Atom DTU LoRaWAN868",
+    "sku": "K063",
+    "source_path": "atom/atom_dtu_lorawan868.md",
+    "source_sha256": "94a24f7a1a0c5e61da6b0bbd8ad9a526a6b5bbfaa8a8d6d500fe956c5747327a",
+    "input_sha256": "5dc30b1c59405a898b05230985ffa958c01d73034a56a282784388d0a3730c2c"
+  },
+  "schematic_assets": [
+    {
+      "sha256": "413dc7fd72cad70452238a33b69a91afd73bdebe5f386c378c1ecc754444247f",
+      "source_url": "https://static-cdn.m5stack.com/resource/docs/products/atom/atom_dtu_lorawan868/atom_dtu_lorawan868_sch_01.webp",
+      "pages": [1]
+    }
+  ],
+  "summary": "Atom DTU LoRaWAN868 以 M1 Ra-07/Ra-07H 无线模组为核心，通过 UTXD/URXD 串口连接 Atom G19/G22，并经 E1 SMA 天线接口连接外部天线。P1 的 12V+/12V- 输入经 MP1584EN 降压为 +5V，SP3485EN-L/TR 将 Atom G23/G33 的 TX/RX 转换为带偏置、可选 120Ω 终端和 SP4021 浪涌保护的 RS485_A/RS485_B。板上另有 Grove I2C、Atom 4Pin/5Pin、SWD/RESET 测试点和 470/868/915 MHz 装配选项；原理图未展开 Ra-07/Ra-07H 内部芯片和固件参数。",
+  "keywords": [
+    "Atom DTU LoRaWAN868",
+    "K063",
+    "868MHz",
+    "Ra-07",
+    "Ra-07H",
+    "ASR6501",
+    "MP1584EN",
+    "SP3485EN-L/TR",
+    "LoRaWAN",
+    "RS485",
+    "RS485_A",
+    "RS485_B",
+    "UTXD",
+    "URXD",
+    "TX",
+    "RX",
+    "ANT_SMA-KWE",
+    "SWCLK",
+    "SWDIO",
+    "RESET",
+    "+VIN",
+    "+5V",
+    "+3.3V",
+    "G19",
+    "G22",
+    "G23",
+    "G33",
+    "G21",
+    "G25",
+    "Atom-5Pin",
+    "Atom-4Pin",
+    "HY-2.0_IIC",
+    "SP4021-01FTG-C",
+    "120Ω termination",
+    "115200bps",
+    "LoRaWAN v1.0.1"
+  ],
+  "components": [
+    {
+      "reference": "M1",
+      "part_number": "Ra-07/Ra-07H",
+      "role": "868 MHz 版本无线通信模组，连接 UART、射频、SWD、RESET、GPIO 和 +3.3V 电源",
+      "evidence": [
+        {
+          "asset_sha256": "413dc7fd72cad70452238a33b69a91afd73bdebe5f386c378c1ecc754444247f",
+          "page": 1,
+          "locator": "第 1 页中部 M1 Ra-07/Ra-07H，GND/ADC/AUX/SETA/DIO3/SETB/SWCLK/SWDIO/VCC 与 ANT/RESET/Pxx/UTX/URX"
+        }
+      ]
+    },
+    {
+      "reference": "U1",
+      "part_number": "MP1584EN",
+      "role": "从 +VIN 生成 +5V 的降压转换器",
+      "evidence": [
+        {
+          "asset_sha256": "413dc7fd72cad70452238a33b69a91afd73bdebe5f386c378c1ecc754444247f",
+          "page": 1,
+          "locator": "第 1 页左上 U1 MP1584EN、F1、L1 10uH、R4/R5 与 +VIN/+5V"
+        }
+      ]
+    },
+    {
+      "reference": "U2",
+      "part_number": "SP3485EN-L/TR",
+      "role": "3.3V 逻辑侧 TX/RX 与 RS485_A/RS485_B 之间的半双工收发器",
+      "evidence": [
+        {
+          "asset_sha256": "413dc7fd72cad70452238a33b69a91afd73bdebe5f386c378c1ecc754444247f",
+          "page": 1,
+          "locator": "第 1 页左下 U2 SP3485EN-L/TR，RO/RE/DE/DI、A/B、VCC/GND"
+        }
+      ]
+    },
+    {
+      "reference": "Q1",
+      "part_number": "SS8050 Y1",
+      "role": "由 TX 经 R15 驱动的 RS485 RE/DE 方向控制晶体管",
+      "evidence": [
+        {
+          "asset_sha256": "413dc7fd72cad70452238a33b69a91afd73bdebe5f386c378c1ecc754444247f",
+          "page": 1,
+          "locator": "第 1 页左下 Q1 SS8050 Y1、R15 1KΩ 与 U2 RE/DE"
+        }
+      ]
+    },
+    {
+      "reference": "E1",
+      "part_number": "ANT_SMA-KWE",
+      "role": "Ra-07/Ra-07H ANT 引脚的 SMA 天线接口",
+      "evidence": [
+        {
+          "asset_sha256": "413dc7fd72cad70452238a33b69a91afd73bdebe5f386c378c1ecc754444247f",
+          "page": 1,
+          "locator": "第 1 页中右 M1 ANT pin18 经 R8 0Ω 到 E1 ANT_SMA-KWE"
+        }
+      ]
+    },
+    {
+      "reference": "P1",
+      "part_number": "HDR_4P",
+      "role": "RS485 B/A 与 12V+/12V- 电源端子",
+      "evidence": [
+        {
+          "asset_sha256": "413dc7fd72cad70452238a33b69a91afd73bdebe5f386c378c1ecc754444247f",
+          "page": 1,
+          "locator": "第 1 页右中 P1 HDR_4P，RS485_B/RS485_A/+VIN/GND 与 B/A/12V+/12V-"
+        }
+      ]
+    },
+    {
+      "reference": "J1",
+      "part_number": "HY-2.0_IIC",
+      "role": "G21/G25 I2C 与 +5V/GND Grove 接口",
+      "evidence": [
+        {
+          "asset_sha256": "413dc7fd72cad70452238a33b69a91afd73bdebe5f386c378c1ecc754444247f",
+          "page": 1,
+          "locator": "第 1 页右中 J1 HY-2.0_IIC，G21/IIC_SCL、G25/IIC_SDA、+5V、GND"
+        }
+      ]
+    },
+    {
+      "reference": "P2",
+      "part_number": "Atom-5Pin",
+      "role": "Atom 的 +3.3V、LoRa UART 和 RS485 UART 接口",
+      "evidence": [
+        {
+          "asset_sha256": "413dc7fd72cad70452238a33b69a91afd73bdebe5f386c378c1ecc754444247f",
+          "page": 1,
+          "locator": "第 1 页右下 P2 Atom-5Pin，3V3/G22/G19/G23/G33 与 URXD/UTXD/TX/RX"
+        }
+      ]
+    },
+    {
+      "reference": "P3",
+      "part_number": "Atom-4Pin",
+      "role": "Atom 的 G21/G25/+5V/GND 接口，与 J1 Grove 对应",
+      "evidence": [
+        {
+          "asset_sha256": "413dc7fd72cad70452238a33b69a91afd73bdebe5f386c378c1ecc754444247f",
+          "page": 1,
+          "locator": "第 1 页右下 P3 Atom-4Pin，G21/G25/+5V/GND"
+        }
+      ]
+    },
+    {
+      "reference": "JP1-JP5",
+      "part_number": null,
+      "role": "+3.3V、GND、SWC、SWD 和 RESET 调试测试点",
+      "evidence": [
+        {
+          "asset_sha256": "413dc7fd72cad70452238a33b69a91afd73bdebe5f386c378c1ecc754444247f",
+          "page": 1,
+          "locator": "第 1 页左中 JP1-JP5，依次标注 +3.3V、GND、SWC、SWD、RESET"
+        }
+      ]
+    },
+    {
+      "reference": "D3,D4,D5",
+      "part_number": "SP4021-01FTG-C",
+      "role": "RS485_A/RS485_B 线对地及线间浪涌保护网络",
+      "evidence": [
+        {
+          "asset_sha256": "413dc7fd72cad70452238a33b69a91afd73bdebe5f386c378c1ecc754444247f",
+          "page": 1,
+          "locator": "第 1 页下中 D3/D4/D5 SP4021-01FTG-C 与 RS485_B/RS485_A/GND"
+        }
+      ]
+    },
+    {
+      "reference": "R14",
+      "part_number": "120Ω/NC",
+      "role": "跨接 RS485_A/RS485_B 的可选终端电阻",
+      "evidence": [
+        {
+          "asset_sha256": "413dc7fd72cad70452238a33b69a91afd73bdebe5f386c378c1ecc754444247f",
+          "page": 1,
+          "locator": "第 1 页下中 R14 120Ω/NC，跨接 RS485_B 与 RS485_A"
+        }
+      ]
+    },
+    {
+      "reference": "F1",
+      "part_number": "1.5A/24V",
+      "role": "+VIN 输入保险丝",
+      "evidence": [
+        {
+          "asset_sha256": "413dc7fd72cad70452238a33b69a91afd73bdebe5f386c378c1ecc754444247f",
+          "page": 1,
+          "locator": "第 1 页左上 +VIN 串联 F1 1.5A/24V 到 U1 VIN"
+        }
+      ]
+    }
+  ],
+  "facts": [
+    {
+      "id": "system.dtu-868-architecture",
+      "category": "system",
+      "subject": "Atom DTU LoRaWAN868 系统架构",
+      "statement": "电路由 Ra-07/Ra-07H 无线模组、SMA 天线、Atom UART、SP3485EN RS485、12V 输入到 5V 降压、Grove I2C 和 SWD/RESET 测试点组成。",
+      "confidence": "confirmed",
+      "attributes": {
+        "radio_module": "M1 Ra-07/Ra-07H",
+        "radio_uart": "UTXD/URXD",
+        "antenna": "E1 ANT_SMA-KWE",
+        "rs485": "U2 SP3485EN-L/TR",
+        "power_converter": "U1 MP1584EN",
+        "host_connectors": "P2 Atom-5Pin, P3 Atom-4Pin"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "413dc7fd72cad70452238a33b69a91afd73bdebe5f386c378c1ecc754444247f",
+          "page": 1,
+          "locator": "第 1 页完整单页原理图，电源、M1、RF、RS485、Atom、Grove 和调试区"
+        }
+      ]
+    },
+    {
+      "id": "power.12v-to-5v",
+      "category": "power",
+      "subject": "12V 输入到 +5V 降压",
+      "statement": "P1 12V+ 连接 +VIN，+VIN 经 F1 1.5A/24V 进入 U1 MP1584EN；SW 经 L1 10uH 和 D1 SS54 形成降压输出，R4 51kΩ/R5 10kΩ 反馈，输出网络为 +5V。",
+      "confidence": "confirmed",
+      "attributes": {
+        "terminal": "P1 12V+ / 12V-",
+        "input": "+VIN",
+        "fuse": "F1 1.5A/24V",
+        "converter": "U1 MP1584EN",
+        "inductor": "L1 10uH",
+        "catch_diode": "D1 SS54",
+        "feedback": "R4 51K, R5 10K",
+        "output": "+5V"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "413dc7fd72cad70452238a33b69a91afd73bdebe5f386c378c1ecc754444247f",
+          "page": 1,
+          "locator": "第 1 页左上 U1 电源区与右中 P1，+VIN/F1/MP1584EN/L1/R4/R5/+5V"
+        }
+      ]
+    },
+    {
+      "id": "protection.power-input",
+      "category": "protection",
+      "subject": "+VIN 输入保护与滤波",
+      "statement": "+VIN 经 F1 串联保护，D2 SS54 和 C2 10uF 分别从保险后输入节点接到 GND，U1 EN pin2 在图中标为未连接。",
+      "confidence": "confirmed",
+      "attributes": {
+        "fuse": "F1 1.5A/24V",
+        "shunt_diode": "D2 SS54",
+        "input_capacitor": "C2 10uF",
+        "enable_pin": "U1 EN pin2 NC"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "413dc7fd72cad70452238a33b69a91afd73bdebe5f386c378c1ecc754444247f",
+          "page": 1,
+          "locator": "第 1 页左上 +VIN/F1/D2/C2/U1 EN"
+        }
+      ]
+    },
+    {
+      "id": "power.radio-3v3",
+      "category": "power",
+      "subject": "Ra-07/Ra-07H 3.3V 电源",
+      "statement": "P2 Atom-5Pin pin1 引入 +3.3V 并连接 M1 VCC pin9；C7 100nF、C8 10uF 和 C9 33pF 从该节点去耦到 GND。",
+      "confidence": "confirmed",
+      "attributes": {
+        "source": "P2 pin1 3V3",
+        "module_pin": "M1 VCC pin9",
+        "decoupling": "C7 100nF, C8 10uF, C9 33pF"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "413dc7fd72cad70452238a33b69a91afd73bdebe5f386c378c1ecc754444247f",
+          "page": 1,
+          "locator": "第 1 页中部 M1 VCC/+3.3V/C7/C8/C9 与右下 P2 pin1"
+        }
+      ]
+    },
+    {
+      "id": "component.radio-module",
+      "category": "component",
+      "subject": "Ra-07/Ra-07H 外部无线模组",
+      "statement": "M1 型号字段为 Ra-07/Ra-07H，原理图引出 ADC、AUX、SETA/SETB、DIO3、SWCLK/SWDIO、ANT、RESET、P07/P06/P01/P00、UTX/URX 和电源地。",
+      "confidence": "confirmed",
+      "attributes": {
+        "reference": "M1",
+        "part_number": "Ra-07/Ra-07H",
+        "uart": "pin11 UTX, pin10 URX",
+        "debug": "pin7 SWCLK, pin8 SWDIO",
+        "rf": "pin18 ANT",
+        "reset": "pin16 RESET",
+        "power": "pin9 VCC"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "413dc7fd72cad70452238a33b69a91afd73bdebe5f386c378c1ecc754444247f",
+          "page": 1,
+          "locator": "第 1 页中部 M1 Ra-07/Ra-07H 全部引脚标签"
+        }
+      ]
+    },
+    {
+      "id": "component.radio-internal-chip",
+      "category": "component",
+      "subject": "Ra-07/Ra-07H 内部通信芯片",
+      "statement": "产品正文将通信芯片写为 ASR6501，但当前原理图只给出外部模组料号 Ra-07/Ra-07H，没有展开模组内部芯片，因此无法从原理图独立确认内部芯片和版本。",
+      "confidence": "uncertain",
+      "attributes": {
+        "schematic_module": "Ra-07/Ra-07H",
+        "documented_chip": "ASR6501",
+        "internal_schematic_available": false
+      },
+      "evidence": [
+        {
+          "asset_sha256": "413dc7fd72cad70452238a33b69a91afd73bdebe5f386c378c1ecc754444247f",
+          "page": 1,
+          "locator": "第 1 页中部 M1 型号字段仅标 Ra-07/Ra-07H"
+        }
+      ]
+    },
+    {
+      "id": "rf.sma-antenna-path",
+      "category": "rf",
+      "subject": "无线模组到 SMA 天线路径",
+      "statement": "M1 ANT pin18 经 R8 0Ω 串联到 E1 ANT_SMA-KWE，E1 的屏蔽端接 GND。",
+      "confidence": "confirmed",
+      "attributes": {
+        "module_pin": "M1 pin18 ANT",
+        "series_element": "R8 0R",
+        "connector": "E1 ANT_SMA-KWE",
+        "shield": "GND"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "413dc7fd72cad70452238a33b69a91afd73bdebe5f386c378c1ecc754444247f",
+          "page": 1,
+          "locator": "第 1 页中右 M1 ANT/R8/E1 ANT_SMA-KWE/GND"
+        }
+      ]
+    },
+    {
+      "id": "rf.frequency-option-table",
+      "category": "rf",
+      "subject": "470/868/915 MHz 装配选项",
+      "statement": "原理图装配表将 R1 0Ω 对应 470、R2 0Ω 对应 868、R3 0Ω 对应 915；当前产品名称和 SKU 对应 868 版本。",
+      "confidence": "confirmed",
+      "attributes": {
+        "R1": "0R -> 470",
+        "R2": "0R -> 868",
+        "R3": "0R -> 915",
+        "product_variant": "868"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "413dc7fd72cad70452238a33b69a91afd73bdebe5f386c378c1ecc754444247f",
+          "page": 1,
+          "locator": "第 1 页右上装配表，R1 0Ω/470、R2 0Ω/868、R3 0Ω/915"
+        }
+      ]
+    },
+    {
+      "id": "interface.radio-uart-atom",
+      "category": "interface",
+      "subject": "Atom 与无线模组 UART 映射",
+      "statement": "P2 pin2 G22 连接 URXD，并经 R10 22Ω 到 M1 URX pin10；P2 pin3 G19 连接 UTXD，并经 R9 22Ω 到 M1 UTX pin11。",
+      "confidence": "confirmed",
+      "attributes": {
+        "host_tx": "P2 pin2 G22 -> URXD -> R10 -> M1 URX pin10",
+        "host_rx": "P2 pin3 G19 -> UTXD -> R9 -> M1 UTX pin11",
+        "series_resistors": "R9/R10 22R"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "413dc7fd72cad70452238a33b69a91afd73bdebe5f386c378c1ecc754444247f",
+          "page": 1,
+          "locator": "第 1 页中部 M1 UTX/URX/R9/R10 与右下 P2 G22/G19/URXD/UTXD"
+        }
+      ]
+    },
+    {
+      "id": "interface.rs485-uart-atom",
+      "category": "interface",
+      "subject": "Atom 与 RS485 UART 映射",
+      "statement": "P2 pin4 G23 连接 TX，pin5 G33 连接 RX；RX 经 R12 1kΩ 接 U2 RO 并由 R13 4.7kΩ 上拉，TX 经 R15 1kΩ 驱动 Q1 以控制 U2 RE/DE。",
+      "confidence": "confirmed",
+      "attributes": {
+        "host_tx": "P2 pin4 G23 -> TX",
+        "host_rx": "P2 pin5 G33 -> RX",
+        "receiver_output": "U2 RO via R12 1K to RX",
+        "rx_pullup": "R13 4.7K to +3.3V",
+        "direction_control": "TX via R15 1K and Q1 SS8050 Y1"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "413dc7fd72cad70452238a33b69a91afd73bdebe5f386c378c1ecc754444247f",
+          "page": 1,
+          "locator": "第 1 页右下 P2 G23/G33/TX/RX 与左下 U2/R12/R13/Q1/R15"
+        }
+      ]
+    },
+    {
+      "id": "interface.rs485-terminal",
+      "category": "interface",
+      "subject": "P1 RS485 与电源端子",
+      "statement": "P1 HDR_4P 依次引出 RS485_B、RS485_A、+VIN 和 GND，端子功能标注为 B、A、12V+、12V-。",
+      "confidence": "confirmed",
+      "attributes": {
+        "B": "RS485_B",
+        "A": "RS485_A",
+        "power_positive": "+VIN / 12V+",
+        "power_negative": "GND / 12V-"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "413dc7fd72cad70452238a33b69a91afd73bdebe5f386c378c1ecc754444247f",
+          "page": 1,
+          "locator": "第 1 页右中 P1 HDR_4P 的 RS485_B/RS485_A/+VIN/GND"
+        }
+      ]
+    },
+    {
+      "id": "protection.rs485-bias-termination",
+      "category": "protection",
+      "subject": "RS485 偏置与可选终端",
+      "statement": "RS485_B 由 R11 4.7kΩ 下拉到 GND，RS485_A 由 R16 4.7kΩ 上拉到 +3.3V；R14 120Ω/NC 跨接 A/B 作为可选终端。",
+      "confidence": "confirmed",
+      "attributes": {
+        "B_bias": "R11 4.7K to GND",
+        "A_bias": "R16 4.7K to +3.3V",
+        "termination": "R14 120R/NC across A/B"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "413dc7fd72cad70452238a33b69a91afd73bdebe5f386c378c1ecc754444247f",
+          "page": 1,
+          "locator": "第 1 页下中 U2 A/B、R11/R16 与 R14 120Ω/NC"
+        }
+      ]
+    },
+    {
+      "id": "protection.rs485-surge",
+      "category": "protection",
+      "subject": "RS485 浪涌保护",
+      "statement": "D3/D4/D5 三颗 SP4021-01FTG-C 配置在 RS485_B、RS485_A 与 GND 周围，形成线对地及线间保护网络。",
+      "confidence": "confirmed",
+      "attributes": {
+        "devices": "D3, D4, D5 SP4021-01FTG-C",
+        "protected_nets": "RS485_A, RS485_B",
+        "reference": "GND"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "413dc7fd72cad70452238a33b69a91afd73bdebe5f386c378c1ecc754444247f",
+          "page": 1,
+          "locator": "第 1 页下中 D3/D4/D5 与 RS485_B/RS485_A/GND"
+        }
+      ]
+    },
+    {
+      "id": "interface.grove-i2c",
+      "category": "interface",
+      "subject": "J1 Grove I2C 接口",
+      "statement": "J1 HY-2.0_IIC 的 pin1 IIC_SCL=G21、pin2 IIC_SDA=G25、pin3 VCC=+5V、pin4 GND=GND；同名网络连接 P3 Atom-4Pin。",
+      "confidence": "confirmed",
+      "attributes": {
+        "connector": "J1 HY-2.0_IIC",
+        "pin1": "G21 IIC_SCL",
+        "pin2": "G25 IIC_SDA",
+        "pin3": "+5V",
+        "pin4": "GND",
+        "host_connector": "P3 Atom-4Pin"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "413dc7fd72cad70452238a33b69a91afd73bdebe5f386c378c1ecc754444247f",
+          "page": 1,
+          "locator": "第 1 页右中 J1 与右下 P3 的 G21/G25/+5V/GND"
+        }
+      ]
+    },
+    {
+      "id": "debug.radio-swd-reset",
+      "category": "debug",
+      "subject": "无线模组调试与复位测试点",
+      "statement": "JP1-JP5 依次引出 +3.3V、GND、SWC、SWD 和 RESET；SWC/SWD/RESET 分别连接 M1 SWCLK pin7、SWDIO pin8 和 RESET pin16。",
+      "confidence": "confirmed",
+      "attributes": {
+        "JP1": "+3.3V",
+        "JP2": "GND",
+        "JP3": "SWC -> M1 SWCLK pin7",
+        "JP4": "SWD -> M1 SWDIO pin8",
+        "JP5": "RESET -> M1 RESET pin16"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "413dc7fd72cad70452238a33b69a91afd73bdebe5f386c378c1ecc754444247f",
+          "page": 1,
+          "locator": "第 1 页左中 JP1-JP5 与中部 M1 SWCLK/SWDIO/RESET"
+        }
+      ]
+    },
+    {
+      "id": "bus.documented-radio-firmware",
+      "category": "bus",
+      "subject": "产品正文中的无线串口与协议参数",
+      "statement": "产品正文给出 UART 115200bps、LoRaWAN v1.0.1 和 AT 指令控制，但当前原理图只显示 UTX/URX 物理连接，未标注波特率、协议栈版本或指令集。",
+      "confidence": "uncertain",
+      "attributes": {
+        "documented_baud": "115200bps",
+        "documented_protocol": "LoRaWAN v1.0.1",
+        "documented_control": "AT commands",
+        "schematic_uart": "UTX/URX"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "413dc7fd72cad70452238a33b69a91afd73bdebe5f386c378c1ecc754444247f",
+          "page": 1,
+          "locator": "第 1 页 M1 UTX/URX 与 P2 UART 连接，图中无波特率或协议版本标注"
+        }
+      ]
+    }
+  ],
+  "needs_review": [
+    {
+      "id": "review.radio-internal-chip",
+      "fact_id": "component.radio-internal-chip",
+      "question": "K063 当前装配的 Ra-07/Ra-07H 模组内部芯片是否确认为 ASR6501，具体模组版本是什么？",
+      "reason": "原理图仅给出模组料号，未展开内部芯片，需要 BOM、模组丝印或官方资料确认。",
+      "evidence": [
+        {
+          "asset_sha256": "413dc7fd72cad70452238a33b69a91afd73bdebe5f386c378c1ecc754444247f",
+          "page": 1,
+          "locator": "第 1 页中部 M1 型号字段为 Ra-07/Ra-07H"
+        }
+      ]
+    },
+    {
+      "id": "review.radio-firmware-parameters",
+      "fact_id": "bus.documented-radio-firmware",
+      "question": "当前出货固件是否确认为 UART 115200bps、LoRaWAN v1.0.1 并使用产品正文所述 AT 指令集？",
+      "reason": "这些是固件参数，无法从当前原理图的 UTX/URX 连线验证。",
+      "evidence": [
+        {
+          "asset_sha256": "413dc7fd72cad70452238a33b69a91afd73bdebe5f386c378c1ecc754444247f",
+          "page": 1,
+          "locator": "第 1 页 M1 UTX/URX 与 Atom UART 网络"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "dry_run": false,
+  "failed": 0,
+  "published": 1,
+  "results": [
+    {
+      "backup": null,
+      "draft_action": "unchanged",
+      "dry_run": false,
+      "errors": [],
+      "needs_review": 6,
+      "product_id": "unit-chainbus-c02a3e614b6e",
+      "product_name": "Unit ChainBus",
+      "publish_action": "unchanged",
+      "sha256": "b13cfbe006a7d1a96c811e0a480b5902ec315d8f6bd08e8e17795b5f1f149249",
+      "status": "valid",
+      "uncertain_facts": 6
+    }
+  ],
+  "schema_version": 1
+}

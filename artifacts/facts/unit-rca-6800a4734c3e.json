@@ -1,0 +1,237 @@
+{
+  "schema_version": 1,
+  "generator": "schematic_describer",
+  "product": {
+    "product_id": "unit-rca-6800a4734c3e",
+    "product_name": "Unit RCA",
+    "sku": "U155",
+    "source_path": "unit/RCA.md",
+    "source_sha256": "0172e2f5d752779484964d0a63df58520fe4b3b5676cb065a141d5ceb3dad50c",
+    "input_sha256": "522bea4b367137a892e3119748a83af270a8dcc2661a4b9c0ad8e8d420d6d639"
+  },
+  "schematic_assets": [
+    {
+      "sha256": "559a74e5c55a67027d446228793c534b237d8402a4551b432015bc1bfa2cb00a",
+      "source_url": "https://m5stack-doc.oss-cn-shenzhen.aliyuncs.com/609/SCH_UNIT_RCA_sch_01.png",
+      "pages": [1]
+    }
+  ],
+  "summary": "Unit RCA 是不含主动 IC 的无源双通道信号选择与 RCA 端接板。J1 引出 IO1、IO2、5V 和 GND，S1 SW-PWR 在 IO1/IO2 间选择一路，经 L2 4.7R 串联后连接 P4 Yellow 的 SIG；R1 75R 将 SIG 端接到 AGND。P4 的三个 G 引脚接 AGND，R2 0R 将 AGND 与 GND 相连，而 +5V 在本页未连接任何内部负载。",
+  "keywords": [
+    "Unit RCA", "U155", "RCA", "Yellow RCA", "P4", "J1", "GROVE 4P", "IO1", "IO2", "AIN-1", "AIN-2", "S1", "SW-PWR", "SPDT", "L2 4.7R", "R1 75R", "R2 0R", "SIG", "AGND", "GND", "+5V", "75 ohm termination", "composite video", "audio", "passive selector", "HY2.0-4P"
+  ],
+  "components": [
+    {
+      "reference": "J1",
+      "part_number": "GROVE 4P",
+      "role": "外部四针接口，引出 IO2、IO1、5V 与 GND",
+      "evidence": [{"asset_sha256": "559a74e5c55a67027d446228793c534b237d8402a4551b432015bc1bfa2cb00a", "page": 1, "locator": "页面 B1-B2 J1 GROVE 4P，四行依次标 IO2、IO1、5V、GND"}]
+    },
+    {
+      "reference": "S1",
+      "part_number": "SW-PWR",
+      "role": "三引脚单刀双掷选择开关，在 IO2 和 IO1 间选择一路连接公共输出",
+      "evidence": [{"asset_sha256": "559a74e5c55a67027d446228793c534b237d8402a4551b432015bc1bfa2cb00a", "page": 1, "locator": "页面 B2-B3 S1 SW-PWR：pin1 IO2、pin3 IO1、pin2 公共端"}]
+    },
+    {
+      "reference": "L2",
+      "part_number": "4.7R",
+      "role": "S1 公共端到 RCA SIG 的 4.7Ω 串联元件",
+      "evidence": [{"asset_sha256": "559a74e5c55a67027d446228793c534b237d8402a4551b432015bc1bfa2cb00a", "page": 1, "locator": "页面 B3 S1 pin2 与 P4 SIG 之间 L2，标值 4.7R"}]
+    },
+    {
+      "reference": "R1",
+      "part_number": "75R",
+      "role": "从 RCA SIG 节点到 AGND 的 75Ω 并联端接电阻",
+      "evidence": [{"asset_sha256": "559a74e5c55a67027d446228793c534b237d8402a4551b432015bc1bfa2cb00a", "page": 1, "locator": "页面 B3 R1 75R，上端接 L2/P4 SIG 节点，下端接 AGND"}]
+    },
+    {
+      "reference": "R2",
+      "part_number": "0R",
+      "role": "将模拟地 AGND 与连接器地 GND 单点桥接",
+      "evidence": [{"asset_sha256": "559a74e5c55a67027d446228793c534b237d8402a4551b432015bc1bfa2cb00a", "page": 1, "locator": "页面 C3 R2 0R，左端 AGND、右端 GND"}]
+    },
+    {
+      "reference": "P4",
+      "part_number": "Yellow",
+      "role": "RCA 母座，包含一个 SIG 信号端和三个接 AGND 的 G/屏蔽端",
+      "evidence": [{"asset_sha256": "559a74e5c55a67027d446228793c534b237d8402a4551b432015bc1bfa2cb00a", "page": 1, "locator": "页面 B3 P4 Yellow：顶部 SIG，下面三个 G 引脚共同接 AGND"}]
+    }
+  ],
+  "facts": [
+    {
+      "id": "system.passive-rca-selector",
+      "category": "system",
+      "subject": "Unit RCA",
+      "statement": "整板由 Grove 连接器、SPDT 选择开关、4.7Ω 串联元件、75Ω 端接、0Ω 地桥和 RCA 插座组成；本页未显示 MCU、协处理器、存储器、放大器、ADC/DAC、稳压器、晶振或复位电路。",
+      "confidence": "confirmed",
+      "attributes": {"architecture": "passive two-input selector with RCA termination", "input_connector": "J1 GROVE 4P", "selector": "S1 SW-PWR", "output_connector": "P4 Yellow", "active_ic": null, "amplifier": null, "adc_dac": null, "storage": null, "clock": null},
+      "evidence": [{"asset_sha256": "559a74e5c55a67027d446228793c534b237d8402a4551b432015bc1bfa2cb00a", "page": 1, "locator": "整页仅含 J1、S1、L2、R1、R2、P4 六组器件"}]
+    },
+    {
+      "id": "interface.grove-net-map",
+      "category": "interface",
+      "subject": "J1 GROVE 4P",
+      "statement": "J1 四个电气连接依次标注 IO2、IO1、5V 和 GND；IO2/IO1 进入 S1，GND 通过 R2 与 AGND 相连，5V 在本页没有连接内部负载。",
+      "confidence": "confirmed",
+      "attributes": {"signal_1": "IO2", "signal_2": "IO1", "power": "5V, no internal load", "ground": "GND", "ground_bridge": "R2 0R to AGND"},
+      "evidence": [{"asset_sha256": "559a74e5c55a67027d446228793c534b237d8402a4551b432015bc1bfa2cb00a", "page": 1, "locator": "页面 B1-B2 J1 IO2/IO1/5V/GND 与同名网络"}]
+    },
+    {
+      "id": "gpio.selector-switch-map",
+      "category": "gpio",
+      "subject": "S1 SW-PWR",
+      "statement": "S1 pin 1 连接 IO2，pin 3 连接 IO1，pin 2 是公共端并连接 L2；图示静态触点落在 pin 3 侧，即图示位置选择 IO1，另一位置选择 IO2。",
+      "confidence": "confirmed",
+      "attributes": {"pin_1": "IO2", "pin_2": "common to L2", "pin_3": "IO1", "drawn_position": "pin2 connected to pin3 IO1", "alternate_position": "pin2 connected to pin1 IO2", "switch_type": "SPDT"},
+      "evidence": [{"asset_sha256": "559a74e5c55a67027d446228793c534b237d8402a4551b432015bc1bfa2cb00a", "page": 1, "locator": "页面 B2-B3 S1 pin1/pin2/pin3、IO2/IO1 标签及斜向触点"}]
+    },
+    {
+      "id": "analog.selected-signal-path",
+      "category": "analog",
+      "subject": "IO1/IO2 至 RCA SIG",
+      "statement": "被 S1 选中的 IO1 或 IO2 从 S1 pin 2 经 L2 4.7R 串联后直接连接 P4 SIG；路径中没有隔直电容、放大器、缓冲器或电平转换器。",
+      "confidence": "confirmed",
+      "attributes": {"sources": "IO1 or IO2", "selector": "S1", "series_element": "L2 4.7R", "destination": "P4 SIG", "coupling_capacitor": null, "buffer": null, "level_shifter": null},
+      "evidence": [{"asset_sha256": "559a74e5c55a67027d446228793c534b237d8402a4551b432015bc1bfa2cb00a", "page": 1, "locator": "页面 B2-B3 IO1/IO2-S1-L2-P4 SIG 连续信号路径"}]
+    },
+    {
+      "id": "analog.rca-termination",
+      "category": "analog",
+      "subject": "R1 75Ω 端接",
+      "statement": "R1 75R 从 L2 后、P4 SIG 前的信号节点并联到 AGND，对 RCA 信号提供板上 75Ω 对地端接。",
+      "confidence": "confirmed",
+      "attributes": {"reference": "R1", "resistance": "75R", "signal_node": "P4 SIG after L2", "return": "AGND", "topology": "shunt termination"},
+      "evidence": [{"asset_sha256": "559a74e5c55a67027d446228793c534b237d8402a4551b432015bc1bfa2cb00a", "page": 1, "locator": "页面 B3 R1 75R 从 SIG 横线垂直接到 AGND"}]
+    },
+    {
+      "id": "interface.rca-pinout",
+      "category": "interface",
+      "subject": "P4 Yellow RCA",
+      "statement": "P4 顶部引脚标 SIG 并连接信号节点，另外三个引脚均标 G 且并接 AGND，构成 RCA 中心信号与多点屏蔽/地连接。",
+      "confidence": "confirmed",
+      "attributes": {"reference": "P4", "marking": "Yellow", "signal_pin": "SIG", "ground_pins": "G,G,G", "ground_net": "AGND"},
+      "evidence": [{"asset_sha256": "559a74e5c55a67027d446228793c534b237d8402a4551b432015bc1bfa2cb00a", "page": 1, "locator": "页面 B3 P4 Yellow 的 SIG 和三个 G 引脚"}]
+    },
+    {
+      "id": "key_net.io1-path",
+      "category": "key_net",
+      "subject": "IO1",
+      "statement": "IO1 从 J1 信号引脚直接连接 S1 pin 3，在 S1 图示位置被接到公共 pin 2。",
+      "confidence": "confirmed",
+      "attributes": {"net": "IO1", "source_or_sink": "J1", "switch_pin": "S1 pin 3", "drawn_selected": true},
+      "evidence": [{"asset_sha256": "559a74e5c55a67027d446228793c534b237d8402a4551b432015bc1bfa2cb00a", "page": 1, "locator": "页面 B1-B3 J1 IO1 与 S1 pin 3 同名网络及图示触点"}]
+    },
+    {
+      "id": "key_net.io2-path",
+      "category": "key_net",
+      "subject": "IO2",
+      "statement": "IO2 从 J1 信号引脚直接连接 S1 pin 1，在 S1 另一切换位置可接到公共 pin 2。",
+      "confidence": "confirmed",
+      "attributes": {"net": "IO2", "source_or_sink": "J1", "switch_pin": "S1 pin 1", "drawn_selected": false},
+      "evidence": [{"asset_sha256": "559a74e5c55a67027d446228793c534b237d8402a4551b432015bc1bfa2cb00a", "page": 1, "locator": "页面 B1-B3 J1 IO2 与 S1 pin 1 同名网络"}]
+    },
+    {
+      "id": "key_net.sig-path",
+      "category": "key_net",
+      "subject": "SIG",
+      "statement": "SIG 是 L2 右端、R1 上端和 P4 信号端的公共节点，直接承载选择后的 RCA 信号。",
+      "confidence": "confirmed",
+      "attributes": {"net": "SIG", "series_input": "L2 4.7R", "termination": "R1 75R to AGND", "connector": "P4 SIG"},
+      "evidence": [{"asset_sha256": "559a74e5c55a67027d446228793c534b237d8402a4551b432015bc1bfa2cb00a", "page": 1, "locator": "页面 B3 L2-R1-P4 SIG 共节点"}]
+    },
+    {
+      "id": "analog.ground-bridge",
+      "category": "analog",
+      "subject": "AGND 与 GND",
+      "statement": "P4 屏蔽端与 R1 返回使用 AGND，J1 使用 GND；R2 0R 将 AGND 和 GND 直接桥接。",
+      "confidence": "confirmed",
+      "attributes": {"analog_ground": "AGND", "connector_ground": "GND", "bridge": "R2 0R", "rca_ground": "P4 G pins", "termination_return": "R1 lower terminal"},
+      "evidence": [{"asset_sha256": "559a74e5c55a67027d446228793c534b237d8402a4551b432015bc1bfa2cb00a", "page": 1, "locator": "页面 B3-C3 P4/R1 AGND 与 R2 0R 至 GND"}]
+    },
+    {
+      "id": "power.five-volt-unused",
+      "category": "power",
+      "subject": "J1 5V",
+      "statement": "J1 的 5V 引脚在本页只显示短引线，没有连接 S1、P4 或任何内部器件，因此板上信号选择和端接不依赖 5V 供电。",
+      "confidence": "confirmed",
+      "attributes": {"rail": "5V", "connector": "J1", "internal_load": null, "regulator": null, "active_power_path": null},
+      "evidence": [{"asset_sha256": "559a74e5c55a67027d446228793c534b237d8402a4551b432015bc1bfa2cb00a", "page": 1, "locator": "页面 B1-B2 J1 5V 行仅有未延伸短线，整页无其他 5V 标签"}]
+    },
+    {
+      "id": "protection.no-explicit-signal-protection",
+      "category": "protection",
+      "subject": "IO1/IO2/SIG 接口保护",
+      "statement": "本页未显示 IO1、IO2 或 SIG 上的 TVS/ESD 器件、钳位二极管、保险丝或过压保护；可见串并联元件仅为 L2 4.7R 与 R1 75R。",
+      "confidence": "confirmed",
+      "attributes": {"tv_esd": null, "clamp": null, "fuse": null, "overvoltage_protection": null, "series_element": "L2 4.7R", "termination": "R1 75R"},
+      "evidence": [{"asset_sha256": "559a74e5c55a67027d446228793c534b237d8402a4551b432015bc1bfa2cb00a", "page": 1, "locator": "整页 IO1/IO2-S1-L2-R1-P4 路径，无保护器件位号"}]
+    },
+    {
+      "id": "interface.ain-name-mapping",
+      "category": "interface",
+      "subject": "AIN-1/AIN-2 与 IO1/IO2",
+      "statement": "正文 Grove 表使用 AIN-1/AIN-2 名称，而原理图仅标 IO1/IO2；无法仅凭本页证明 AIN-1=IO1、AIN-2=IO2 的命名对应。",
+      "confidence": "uncertain",
+      "attributes": {"schematic_names": "IO1,IO2", "document_names": "AIN-1,AIN-2", "confirmed_mapping": null},
+      "evidence": [{"asset_sha256": "559a74e5c55a67027d446228793c534b237d8402a4551b432015bc1bfa2cb00a", "page": 1, "locator": "页面 J1/S1 只显示 IO1 与 IO2，无 AIN-1/AIN-2 文本"}]
+    },
+    {
+      "id": "interface.grove-color-mapping",
+      "category": "interface",
+      "subject": "J1 Grove 线色映射",
+      "statement": "原理图显示 IO2、IO1、5V、GND 四个电气网络，但没有 Black/Red/Yellow/White 线色标注，无法仅凭本页验证正文线色映射。",
+      "confidence": "uncertain",
+      "attributes": {"electrical_nets": "IO2,IO1,5V,GND", "color_labels_on_schematic": null, "document_colors": "Black,Red,Yellow,White"},
+      "evidence": [{"asset_sha256": "559a74e5c55a67027d446228793c534b237d8402a4551b432015bc1bfa2cb00a", "page": 1, "locator": "页面 J1 仅显示网络名，无线色文字"}]
+    },
+    {
+      "id": "other.audio-video-use",
+      "category": "other",
+      "subject": "RCA 音频或复合视频用途",
+      "statement": "正文描述音频或复合视频传输；原理图只显示 Yellow 标记、75Ω 端接和无源信号路径，没有带宽、幅度、耦合、失真或音视频制式参数，因此不能证明全部音频/视频兼容范围。",
+      "confidence": "uncertain",
+      "attributes": {"documented_uses": "audio,composite video", "schematic_marking": "P4 Yellow", "termination": "75R", "bandwidth": null, "signal_amplitude": null, "video_standard": null, "audio_impedance": null},
+      "evidence": [{"asset_sha256": "559a74e5c55a67027d446228793c534b237d8402a4551b432015bc1bfa2cb00a", "page": 1, "locator": "页面 S1/L2/R1/P4 无源链路，无信号规格或制式注释"}]
+    },
+    {
+      "id": "analog.signal-direction",
+      "category": "analog",
+      "subject": "RCA 与 Grove 信号方向",
+      "statement": "原理图中的 IO1/IO2、S1、L2 和 P4 SIG 均为无方向模拟连线，没有输入/输出箭头或主动驱动器，因此无法仅凭本页确认信号必须从 Grove 流向 RCA 或反向。",
+      "confidence": "uncertain",
+      "attributes": {"grove_side": "J1 IO1/IO2", "rca_side": "P4 SIG", "active_driver": null, "direction_marker": null, "confirmed_direction": null},
+      "evidence": [{"asset_sha256": "559a74e5c55a67027d446228793c534b237d8402a4551b432015bc1bfa2cb00a", "page": 1, "locator": "页面 IO1/IO2-S1-L2-P4 SIG 为纯无源双向网络，无箭头"}]
+    }
+  ],
+  "needs_review": [
+    {
+      "id": "review.ain-name-mapping",
+      "fact_id": "interface.ain-name-mapping",
+      "question": "请用 PCB 网络名或固件 pin map 确认 AIN-1/AIN-2 与原理图 IO1/IO2 的一一对应。",
+      "reason": "正文和原理图使用不同网络名称，当前页没有交叉对照。",
+      "evidence": [{"asset_sha256": "559a74e5c55a67027d446228793c534b237d8402a4551b432015bc1bfa2cb00a", "page": 1, "locator": "J1/S1 仅标 IO1/IO2"}]
+    },
+    {
+      "id": "review.grove-color-mapping",
+      "fact_id": "interface.grove-color-mapping",
+      "question": "请结合 Grove 线缆规范和连接器方向确认 Black/Red/Yellow/White 与 IO2/IO1/5V/GND 的对应关系。",
+      "reason": "原理图不含线色标签。",
+      "evidence": [{"asset_sha256": "559a74e5c55a67027d446228793c534b237d8402a4551b432015bc1bfa2cb00a", "page": 1, "locator": "J1 GROVE 4P 电气网络，无颜色"}]
+    },
+    {
+      "id": "review.audio-video-use",
+      "fact_id": "other.audio-video-use",
+      "question": "请用产品设计规范或信号测试确认支持的复合视频制式、幅度/带宽，以及音频阻抗和幅度范围。",
+      "reason": "原理图只有 75Ω 端接和无源路径，不能证明完整音视频兼容性。",
+      "evidence": [{"asset_sha256": "559a74e5c55a67027d446228793c534b237d8402a4551b432015bc1bfa2cb00a", "page": 1, "locator": "S1/L2/R1/P4 链路无信号参数"}]
+    },
+    {
+      "id": "review.signal-direction",
+      "fact_id": "analog.signal-direction",
+      "question": "请依据预期系统连接和驱动端确认 Unit RCA 的规范信号方向。",
+      "reason": "纯无源网络在电气图上没有固定方向。",
+      "evidence": [{"asset_sha256": "559a74e5c55a67027d446228793c534b237d8402a4551b432015bc1bfa2cb00a", "page": 1, "locator": "IO1/IO2-S1-L2-P4 SIG 无方向标记"}]
+    }
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "dry_run": false,
+  "failed": 0,
+  "published": 1,
+  "results": [
+    {
+      "backup": null,
+      "draft_action": "unchanged",
+      "dry_run": false,
+      "errors": [],
+      "needs_review": 2,
+      "product_id": "hat-mini-joyc-2b282d3bc3f8",
+      "product_name": "Hat Mini JoyC",
+      "publish_action": "unchanged",
+      "sha256": "91c11ca39fa01ae7ae733a2aea7b4b1af1299a4ec28861a341396e395dca56d3",
+      "status": "valid",
+      "uncertain_facts": 2
+    }
+  ],
+  "schema_version": 1
+}

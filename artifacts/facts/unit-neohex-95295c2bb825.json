@@ -1,0 +1,213 @@
+{
+  "schema_version": 1,
+  "generator": "schematic_describer",
+  "product": {
+    "product_id": "unit-neohex-95295c2bb825",
+    "product_name": "Unit NeoHEX",
+    "sku": "A045-B",
+    "source_path": "unit/neohex.md",
+    "source_sha256": "550ba8628fc28f677e24f1527cbf0e70689a4c98a269443d8149f540f2b82f74",
+    "input_sha256": "625502c4576b51d93db6668fdb7e35855ce58eb94dd59654ac28f96a4cd2120e"
+  },
+  "schematic_assets": [
+    {
+      "sha256": "77156c238eadb7f29026bc3dbc259ea8a81acbb337f8749e588dae16d55044fa",
+      "source_url": "https://m5stack-doc.oss-cn-shenzhen.aliyuncs.com/532/Sch_NeoHex_V1.1_sch_01.png",
+      "pages": [1]
+    },
+    {
+      "sha256": "5a335794b0fc4b2d6b1bf7021f26ba6fef4b425b5bcda1d39bf10064f1380e5a",
+      "source_url": "https://m5stack-doc.oss-cn-shenzhen.aliyuncs.com/532/Sch_NeoHex_V1.1_sch_02.jpg",
+      "pages": [1]
+    }
+  ],
+  "summary": "Unit NeoHEX（A045-B）由 U1~U37 共 37 颗 WS2812C-2020 可寻址 RGB LED 串联组成，数据从 S-IN 进入 U1 DI，经过全部灯珠后由 U37 DO 输出 S-OUT。J1 Grove 和 J3 Header 4 并联提供 S-IN、VCC_5V 与 GND 输入，J2 Grove 提供 S-OUT、VCC_5V 与 GND 级联输出；所有 LED 直接使用 VCC_5V。C1~C13 共 13 只 100nF/50V 电容并联在 VCC_5V 与 GND 之间，第 2 张图显示 LED 按 4-5-6-7-6-5-4 的六边形行列排布。原理图未标注 LED 的 -V1 完整后缀、额定供电范围、功耗或刷新/亮度参数。",
+  "keywords": [
+    "Unit NeoHEX", "A045-B", "NeoHEX", "WS2812C-2020", "U1-U37", "37 RGB LED",
+    "S-IN", "S-OUT", "S6-OUT", "S12-OUT", "S18-OUT", "S24-OUT", "S30-OUT", "S36-OUT",
+    "VCC_5V", "GND", "J1 GROVE", "J2 GROVE", "J3 Header 4", "IO1", "IO2",
+    "DI", "DO", "VDD", "C1-C13", "100nF/50V", "single-wire RGB", "LED cascade",
+    "4-5-6-7-6-5-4", "WS2812C-2020-V1", "Grove input", "Grove output", "级联灯板"
+  ],
+  "components": [
+    {
+      "reference": "U1-U37", "part_number": "WS2812C-2020",
+      "role": "37 颗串行级联的可寻址 RGB LED，每颗含 DI、DO、VDD 和 GND",
+      "evidence": [
+        {"asset_sha256": "77156c238eadb7f29026bc3dbc259ea8a81acbb337f8749e588dae16d55044fa", "page": 1, "locator": "第 1 张第 1 页 B1:D4 区域 U1~U37，全部标 WS2812C-2020，pin 1 DO、pin 2 GND、pin 3 DI、pin 4 VDD"},
+        {"asset_sha256": "5a335794b0fc4b2d6b1bf7021f26ba6fef4b425b5bcda1d39bf10064f1380e5a", "page": 1, "locator": "第 2 张第 1 页六边形板轮廓内 U1~U37 的物理位置"}
+      ]
+    },
+    {
+      "reference": "J1", "part_number": "GROVE",
+      "role": "主数据/电源输入接口，IO1 接 S-IN、5V 接 VCC_5V、GND 接地，IO2 未连接",
+      "evidence": [{"asset_sha256": "77156c238eadb7f29026bc3dbc259ea8a81acbb337f8749e588dae16d55044fa", "page": 1, "locator": "第 1 张第 1 页 A1 左上 J1 GROVE，IO2 未连接叉号、IO1 S-IN、5V VCC_5V、GND"}]
+    },
+    {
+      "reference": "J2", "part_number": "GROVE",
+      "role": "数据/电源级联输出接口，IO1 接 S-OUT、5V 接 VCC_5V、GND 接地，IO2 未连接",
+      "evidence": [{"asset_sha256": "77156c238eadb7f29026bc3dbc259ea8a81acbb337f8749e588dae16d55044fa", "page": 1, "locator": "第 1 张第 1 页 A1 左上 J2 GROVE，IO2 未连接叉号、IO1 S-OUT、5V VCC_5V、GND"}]
+    },
+    {
+      "reference": "J3", "part_number": "Header 4",
+      "role": "第二组数据/电源输入接口，pin 3 S-IN、pin 2 VCC_5V、pin 1 GND，pin 4 未连接",
+      "evidence": [{"asset_sha256": "77156c238eadb7f29026bc3dbc259ea8a81acbb337f8749e588dae16d55044fa", "page": 1, "locator": "第 1 张第 1 页 A2 J3 Header 4，pins 4~1 对应 NC/S-IN/VCC_5V/GND"}]
+    },
+    {
+      "reference": "C1-C13", "part_number": "100nF/50V",
+      "role": "VCC_5V 到 GND 的 13 只并联电源去耦电容",
+      "evidence": [{"asset_sha256": "77156c238eadb7f29026bc3dbc259ea8a81acbb337f8749e588dae16d55044fa", "page": 1, "locator": "第 1 张第 1 页 A3:A4，C1~C13 均标 100nF/50V 并联在 VCC_5V 与 GND 母线之间"}]
+    }
+  ],
+  "facts": [
+    {
+      "id": "system.neohex-architecture", "category": "system", "subject": "Unit NeoHEX 系统架构",
+      "statement": "U1~U37 形成 37 级 WS2812C-2020 串行 RGB LED 链；J1/J3 提供并联输入，J2 提供级联输出，C1~C13 对 VCC_5V 去耦。",
+      "confidence": "confirmed",
+      "attributes": {"leds": "U1-U37 WS2812C-2020", "input_connectors": "J1 GROVE,J3 Header 4", "output_connector": "J2 GROVE", "data_path": "S-IN -> U1...U37 -> S-OUT", "power": "VCC_5V", "decoupling": "C1-C13 100nF/50V"},
+      "evidence": [{"asset_sha256": "77156c238eadb7f29026bc3dbc259ea8a81acbb337f8749e588dae16d55044fa", "page": 1, "locator": "第 1 张第 1 页完整接口、LED 链和去耦电容网络"}]
+    },
+    {
+      "id": "component.led-pin-map", "category": "component", "subject": "WS2812C-2020 引脚映射",
+      "statement": "每颗 U1~U37 的 pin 1 为 DO、pin 2 为 GND、pin 3 为 DI、pin 4 为 VDD；VDD 接 VCC_5V，GND 接公共地。",
+      "confidence": "confirmed",
+      "attributes": {"pin_1": "DO", "pin_2": "GND", "pin_3": "DI", "pin_4": "VDD VCC_5V"},
+      "evidence": [{"asset_sha256": "77156c238eadb7f29026bc3dbc259ea8a81acbb337f8749e588dae16d55044fa", "page": 1, "locator": "第 1 张第 1 页 U1~U37 重复符号内 DO/GND/DI/VDD 与 pins 1~4"}]
+    },
+    {
+      "id": "bus.led-serial-chain", "category": "bus", "subject": "37 级单线 LED 数据链",
+      "statement": "S-IN 接 U1 DI，前一级 DO 逐级接后一级 DI，U37 DO 输出 S-OUT；链中每 6 颗在图上以 S6-OUT、S12-OUT、S18-OUT、S24-OUT、S30-OUT、S36-OUT 标记边界。",
+      "confidence": "confirmed",
+      "attributes": {"input": "S-IN -> U1 pin 3 DI", "chain": "U1 DO -> U2 DI -> ... -> U37 DI", "output": "U37 pin 1 DO -> S-OUT", "boundary_nets": "S6-OUT,S12-OUT,S18-OUT,S24-OUT,S30-OUT,S36-OUT", "device_count": 37},
+      "evidence": [{"asset_sha256": "77156c238eadb7f29026bc3dbc259ea8a81acbb337f8749e588dae16d55044fa", "page": 1, "locator": "第 1 张第 1 页 D1:D4 底行与 B1:B4 顶行串行连线及 S6/S12/S18/S24/S30/S36 边界网络"}]
+    },
+    {
+      "id": "interface.j1-input", "category": "interface", "subject": "J1 Grove 输入接口",
+      "statement": "J1 的 IO1 触点接 S-IN，5V 触点接 VCC_5V，GND 触点接地，IO2 触点以未连接标记结束。",
+      "confidence": "confirmed",
+      "attributes": {"IO1": "S-IN，数据输入", "IO2": "NC", "5V": "VCC_5V，电源输入", "GND": "GND"},
+      "evidence": [{"asset_sha256": "77156c238eadb7f29026bc3dbc259ea8a81acbb337f8749e588dae16d55044fa", "page": 1, "locator": "第 1 张第 1 页 A1 J1 GROVE 四个逻辑触点及网络"}]
+    },
+    {
+      "id": "interface.j2-output", "category": "interface", "subject": "J2 Grove 级联输出接口",
+      "statement": "J2 的 IO1 触点接 S-OUT，5V 触点接 VCC_5V，GND 触点接地，IO2 触点以未连接标记结束。",
+      "confidence": "confirmed",
+      "attributes": {"IO1": "S-OUT，数据输出", "IO2": "NC", "5V": "VCC_5V，级联电源", "GND": "GND"},
+      "evidence": [{"asset_sha256": "77156c238eadb7f29026bc3dbc259ea8a81acbb337f8749e588dae16d55044fa", "page": 1, "locator": "第 1 张第 1 页 A1 J2 GROVE 四个逻辑触点及网络"}]
+    },
+    {
+      "id": "interface.j3-input", "category": "interface", "subject": "J3 Header 4 输入接口",
+      "statement": "J3 pin 1 为 GND，pin 2 为 VCC_5V，pin 3 为 S-IN，pin 4 未连接；S-IN 和 VCC_5V 与 J1 对应网络并联。",
+      "confidence": "confirmed",
+      "attributes": {"pin_1": "GND", "pin_2": "VCC_5V", "pin_3": "S-IN", "pin_4": "NC", "parallel_with": "J1 S-IN/VCC_5V/GND"},
+      "evidence": [{"asset_sha256": "77156c238eadb7f29026bc3dbc259ea8a81acbb337f8749e588dae16d55044fa", "page": 1, "locator": "第 1 张第 1 页 A2 J3 pins 1~4 与同名网络，J1 同名 S-IN/VCC_5V/GND"}]
+    },
+    {
+      "id": "key-net.data-input-parallel", "category": "key_net", "subject": "S-IN 并联输入",
+      "statement": "J1 IO1 与 J3 pin 3 使用同一 S-IN 网络并直接连接 U1 DI，页面未显示输入选择开关、缓冲器、串联电阻或电平转换器。",
+      "confidence": "confirmed",
+      "attributes": {"sources": "J1 IO1,J3 pin 3", "destination": "U1 pin 3 DI", "selector": null, "buffer": null, "series_resistor": null, "level_shifter": null},
+      "evidence": [{"asset_sha256": "77156c238eadb7f29026bc3dbc259ea8a81acbb337f8749e588dae16d55044fa", "page": 1, "locator": "第 1 张第 1 页 A1:A2 J1/J3 S-IN 与 D1 U1 DI 同名网络"}]
+    },
+    {
+      "id": "key-net.data-output", "category": "key_net", "subject": "S-OUT 级联输出",
+      "statement": "U37 DO 连接 S-OUT，S-OUT 直接引到 J2 IO1；页面未显示输出缓冲或保护器件。",
+      "confidence": "confirmed",
+      "attributes": {"source": "U37 pin 1 DO", "net": "S-OUT", "connector": "J2 IO1", "buffer": null, "protection": null},
+      "evidence": [{"asset_sha256": "77156c238eadb7f29026bc3dbc259ea8a81acbb337f8749e588dae16d55044fa", "page": 1, "locator": "第 1 张第 1 页 A4 U37 DO S-OUT 与 A1 J2 IO1 S-OUT"}]
+    },
+    {
+      "id": "power.common-5v-rail", "category": "power", "subject": "VCC_5V 公共电源轨",
+      "statement": "J1 5V、J2 5V、J3 pin 2 和 U1~U37 VDD 全部连接 VCC_5V；本页没有稳压器、LDO、DC/DC、负载开关、充电器、电池或电源监测器。",
+      "confidence": "confirmed",
+      "attributes": {"rail": "VCC_5V", "inputs": "J1 5V,J3 pin 2", "cascade_output": "J2 5V", "loads": "U1-U37 pin 4 VDD", "converter": null, "load_switch": null, "charger": null, "battery": null, "monitor": null},
+      "evidence": [{"asset_sha256": "77156c238eadb7f29026bc3dbc259ea8a81acbb337f8749e588dae16d55044fa", "page": 1, "locator": "第 1 张第 1 页所有 VCC_5V 同名网络与 LED VDD，整页无电源转换器件"}]
+    },
+    {
+      "id": "power.decoupling-bank", "category": "power", "subject": "LED 电源去耦",
+      "statement": "C1~C13 均为 100nF/50V，并联在 VCC_5V 和 GND 母线之间；图中注释 RGB*37,C*13 与 37 颗 LED/13 颗电容数量相符。",
+      "confidence": "confirmed",
+      "attributes": {"capacitors": "C1-C13", "value": "100nF", "rating": "50V", "rail": "VCC_5V", "return": "GND", "count": 13},
+      "evidence": [{"asset_sha256": "77156c238eadb7f29026bc3dbc259ea8a81acbb337f8749e588dae16d55044fa", "page": 1, "locator": "第 1 张第 1 页 A3:A4 C1~C13 标注 100nF/50V 与 A2 RGB*37,C*13 注释"}]
+    },
+    {
+      "id": "system.physical-led-layout", "category": "other", "subject": "37 颗 LED 物理排布",
+      "statement": "第 2 张图将 U1~U37 排成七行，逐行数量为 4、5、6、7、6、5、4，位于六边形板轮廓内。",
+      "confidence": "confirmed",
+      "attributes": {"rows": "4,5,6,7,6,5,4", "total": 37, "shape": "hexagonal", "references": "U1-U37"},
+      "evidence": [{"asset_sha256": "5a335794b0fc4b2d6b1bf7021f26ba6fef4b425b5bcda1d39bf10064f1380e5a", "page": 1, "locator": "第 2 张第 1 页完整六边形板图，U1~U37 七行物理布局"}]
+    },
+    {
+      "id": "protection.no-visible-protection", "category": "protection", "subject": "数据与电源保护",
+      "statement": "S-IN、S-OUT 和 VCC_5V 接口路径未显示 TVS/ESD、保险丝、限流、反接或过压保护器件。",
+      "confidence": "confirmed",
+      "attributes": {"data_tvs": null, "power_tvs": null, "fuse": null, "current_limit": null, "reverse_polarity": null, "overvoltage": null},
+      "evidence": [{"asset_sha256": "77156c238eadb7f29026bc3dbc259ea8a81acbb337f8749e588dae16d55044fa", "page": 1, "locator": "第 1 张第 1 页 J1/J2/J3 到 LED/电源母线的直接连接，无保护器件位号"}]
+    },
+    {
+      "id": "clock-reset-debug.none", "category": "clock", "subject": "时钟、复位与调试",
+      "statement": "本页未显示独立晶振/时钟、RESET、BOOT、EN、中断或调试接口；LED 控制仅通过 S-IN 串行数据链。",
+      "confidence": "confirmed",
+      "attributes": {"clock": null, "reset": null, "boot": null, "enable": null, "interrupt": null, "debug": null, "control": "S-IN"},
+      "evidence": [{"asset_sha256": "77156c238eadb7f29026bc3dbc259ea8a81acbb337f8749e588dae16d55044fa", "page": 1, "locator": "第 1 张第 1 页全部接口与 LED 网络，无时钟/复位/调试信号"}]
+    },
+    {
+      "id": "storage-memory.none", "category": "storage", "subject": "外部存储与内存",
+      "statement": "两张图均未显示独立 Flash、EEPROM、RAM、SD 卡或其他外部存储器件。",
+      "confidence": "confirmed",
+      "attributes": {"flash": null, "eeprom": null, "ram": null, "sd": null},
+      "evidence": [
+        {"asset_sha256": "77156c238eadb7f29026bc3dbc259ea8a81acbb337f8749e588dae16d55044fa", "page": 1, "locator": "第 1 张第 1 页仅连接器、U1~U37 和 C1~C13"},
+        {"asset_sha256": "5a335794b0fc4b2d6b1bf7021f26ba6fef4b425b5bcda1d39bf10064f1380e5a", "page": 1, "locator": "第 2 张第 1 页仅显示 U1~U37 物理布局"}
+      ]
+    },
+    {
+      "id": "bus.no-addressed-standard-bus", "category": "bus", "subject": "其他标准总线与地址",
+      "statement": "原理图未显示 I2C、SPI、UART、CAN、RS-485、USB、SDIO、MIPI 或 I2S，也没有器件地址或片选网络。",
+      "confidence": "confirmed",
+      "attributes": {"led_serial": "S-IN/S-OUT", "i2c": null, "spi": null, "uart": null, "can": null, "rs485": null, "usb": null, "sdio": null, "mipi": null, "i2s": null, "address": null, "chip_select": null},
+      "evidence": [{"asset_sha256": "77156c238eadb7f29026bc3dbc259ea8a81acbb337f8749e588dae16d55044fa", "page": 1, "locator": "第 1 张第 1 页全部网络仅 S-IN/S-OUT/中间级联/VCC_5V/GND"}]
+    },
+    {
+      "id": "component.led-full-part-number", "category": "component", "subject": "LED 完整型号后缀",
+      "statement": "原理图中 U1~U37 均标 WS2812C-2020，未显示 -V1 后缀，因此不能仅凭图纸确认完整订货型号为 WS2812C-2020-V1。",
+      "confidence": "uncertain",
+      "attributes": {"schematic_part_number": "WS2812C-2020", "candidate_from_product_doc": "WS2812C-2020-V1", "confirmed_suffix": null},
+      "evidence": [{"asset_sha256": "77156c238eadb7f29026bc3dbc259ea8a81acbb337f8749e588dae16d55044fa", "page": 1, "locator": "第 1 张第 1 页 U1~U37 符号下均标 WS2812C-2020"}]
+    },
+    {
+      "id": "interface.grove-numeric-pinout", "category": "interface", "subject": "J1/J2 数字针号",
+      "statement": "J1/J2 符号明确给出 IO2、IO1、5V、GND 四个触点及网络，但没有显示数字针号，无法仅凭本页把这些触点无歧义映射到 pin 1~4。",
+      "confidence": "uncertain",
+      "attributes": {"J1_contacts": "IO2 NC,IO1 S-IN,5V VCC_5V,GND", "J2_contacts": "IO2 NC,IO1 S-OUT,5V VCC_5V,GND", "numeric_pin_order": null},
+      "evidence": [{"asset_sha256": "77156c238eadb7f29026bc3dbc259ea8a81acbb337f8749e588dae16d55044fa", "page": 1, "locator": "第 1 张第 1 页 A1 J1/J2 GROVE 符号，显示触点名但无 pin 1~4 数字"}]
+    },
+    {
+      "id": "power.performance-ratings", "category": "power", "subject": "LED 电源与性能额定参数",
+      "statement": "原理图只将电源轨命名为 VCC_5V，没有标注允许供电范围、最大电流、全亮功耗、亮度级数、颜色数或刷新速率。",
+      "confidence": "uncertain",
+      "attributes": {"rail_label": "VCC_5V", "voltage_range": null, "maximum_current": null, "full_white_power": null, "brightness_levels": null, "color_count": null, "refresh_rate": null},
+      "evidence": [{"asset_sha256": "77156c238eadb7f29026bc3dbc259ea8a81acbb337f8749e588dae16d55044fa", "page": 1, "locator": "第 1 张第 1 页 VCC_5V 母线、LED 和接口；整页无额定范围或性能数字"}]
+    }
+  ],
+  "needs_review": [
+    {
+      "id": "review.led-full-part-number", "fact_id": "component.led-full-part-number",
+      "question": "U1~U37 的完整订货型号是否为 WS2812C-2020-V1？",
+      "reason": "图纸只标 WS2812C-2020，版本后缀需 BOM、采购资料或实物丝印确认。",
+      "evidence": [{"asset_sha256": "77156c238eadb7f29026bc3dbc259ea8a81acbb337f8749e588dae16d55044fa", "page": 1, "locator": "第 1 张第 1 页 U1~U37 型号文字"}]
+    },
+    {
+      "id": "review.grove-numeric-pinout", "fact_id": "interface.grove-numeric-pinout",
+      "question": "J1 和 J2 的 IO2、IO1、5V、GND 分别对应数字 pin 1~4 的哪一针？",
+      "reason": "GROVE 符号未显示数字针号；需连接器封装、PCB 或装配图确认。",
+      "evidence": [{"asset_sha256": "77156c238eadb7f29026bc3dbc259ea8a81acbb337f8749e588dae16d55044fa", "page": 1, "locator": "第 1 张第 1 页 A1 J1/J2 GROVE 符号"}]
+    },
+    {
+      "id": "review.power-performance-ratings", "fact_id": "power.performance-ratings",
+      "question": "该硬件版本的允许供电范围、最大/全亮电流、亮度级数和刷新能力是什么？",
+      "reason": "这些是 LED 版本与系统性能参数，原理图仅给 VCC_5V 网络名。",
+      "evidence": [{"asset_sha256": "77156c238eadb7f29026bc3dbc259ea8a81acbb337f8749e588dae16d55044fa", "page": 1, "locator": "第 1 张第 1 页 VCC_5V、U1~U37 与 C1~C13"}]
+    }
+  ]
+}

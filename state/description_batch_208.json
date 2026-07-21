@@ -1,0 +1,1886 @@
+{
+  "batch_id": "schematic-rich-remaining-208-2026-07-19",
+  "created_at": "2026-07-19T04:40:10+00:00",
+  "manifest_sha256": "1c293a2e1e3ec4ccfc7856509eaddee9069508cb1c3450361126b0b6c054d78a",
+  "policy": {
+    "lease_ttl_minutes": 180,
+    "selection": "missing facts; existing published Markdown first; manifest order",
+    "status_source": "derive from assets, facts, Markdown, and per-product report"
+  },
+  "products": [
+    {
+      "input_sha256": "19fbc57cb40e39060e4d564b28f9d13d65950772b5e1c35840ba979dfd956a30",
+      "ordinal": 1,
+      "output_filename": "Unit KMeter-ISO.md",
+      "product_id": "unit-kmeter-iso-446da9e20650",
+      "product_name": "Unit KMeter-ISO",
+      "source_path": "unit/KMeterISO Unit.md",
+      "source_sha256": "77d192a6ff0ab5bf1001b979258caf138a2bb3e5efc9efa5de45368cd808708d"
+    },
+    {
+      "input_sha256": "dbf433e6a292e2890bddac4e6a16cca7ce056748bb1a9bc89eb4082ffae0dc30",
+      "ordinal": 2,
+      "output_filename": "Unit Laser RX.md",
+      "product_id": "unit-laser-rx-d2bc4b24c5c2",
+      "product_name": "Unit Laser RX",
+      "source_path": "unit/laser-rx.md",
+      "source_sha256": "69d207c71155ba973d043614360681f067464974e9f676e106edb18d83a3498f"
+    },
+    {
+      "input_sha256": "768578872df3cd3ed784e3e619e99985f4e334e80313ac593ff39cbcc7e1c223",
+      "ordinal": 3,
+      "output_filename": "Unit Laser TX.md",
+      "product_id": "unit-laser-tx-9cc73b1c6bc0",
+      "product_name": "Unit Laser TX",
+      "source_path": "unit/laser-tx.md",
+      "source_sha256": "fa45a05d1331cee08cbb8ec8aed33250c52289f4be672a88b0b861c5373cab9f"
+    },
+    {
+      "input_sha256": "560e571aa23ca86570af2e7eac95db83915309917a4926b4834143e70a6c919e",
+      "ordinal": 4,
+      "output_filename": "Unit LCD.md",
+      "product_id": "unit-lcd-f6d3e8883759",
+      "product_name": "Unit LCD",
+      "source_path": "unit/lcd.md",
+      "source_sha256": "5638f1e96974e868fcab7963eed8983544bf90630e24eccbcf12fb9507f915ac"
+    },
+    {
+      "input_sha256": "2ddf606e42961776e30652249c6783b03fb6f22f3e418d4f92dce818f3792e3d",
+      "ordinal": 5,
+      "output_filename": "Unit Light.md",
+      "product_id": "unit-light-efa135d85ff4",
+      "product_name": "Unit Light",
+      "source_path": "unit/LIGHT.md",
+      "source_sha256": "5c97a4f8103baf19e1264117e845beebfc6857f7d7c43e6d0c7165b72222e405"
+    },
+    {
+      "input_sha256": "c2f4ae890755c923d56ecc599f3dbae1e38daa14f865c3a0dc580b86ec2addcf",
+      "ordinal": 6,
+      "output_filename": "Unit LoRaE220-920.md",
+      "product_id": "unit-lorae220-920-da0bbe16dcc2",
+      "product_name": "Unit LoRaE220-920",
+      "source_path": "unit/LoRaE220-JP Unit.md",
+      "source_sha256": "0831c0e840929d7752f85455bdd72b03d865e55daef681b84ea9ed8b2c107c2b"
+    },
+    {
+      "input_sha256": "7a085b0bde60dcba9f58c7a0bc27d937bf495321d1b0e6c4cac906491c027abd",
+      "ordinal": 7,
+      "output_filename": "Unit LoRaWAN470.md",
+      "product_id": "unit-lorawan470-9d0faaf6a4e5",
+      "product_name": "Unit LoRaWAN470",
+      "source_path": "unit/lorawan470.md",
+      "source_sha256": "86b0f14220a4ad1d1282c3b037336bc5d1ddacccc488fb6799524b4b12590b3f"
+    },
+    {
+      "input_sha256": "a21024d5e518068f0083eece9e010862bfd59c1c16a991197bcb2d831cfc536d",
+      "ordinal": 8,
+      "output_filename": "Unit LoRaWAN868.md",
+      "product_id": "unit-lorawan868-9340b4ba3b1b",
+      "product_name": "Unit LoRaWAN868",
+      "source_path": "unit/lorawan868.md",
+      "source_sha256": "f03105ff97079928680894deefe8da50339d535dcc49278c023a18a49f1f9df1"
+    },
+    {
+      "input_sha256": "39d5970139396aba04f8dfa5266fb072a03abb366609da245e976054c6bb874e",
+      "ordinal": 9,
+      "output_filename": "Unit LoRaWAN915.md",
+      "product_id": "unit-lorawan915-ddbda4e45fbc",
+      "product_name": "Unit LoRaWAN915",
+      "source_path": "unit/lorawan915.md",
+      "source_sha256": "59d8a7fd8d77ad8b21fd181c92d30501fefba39ccb6fa2d4a1ecccc07eda4955"
+    },
+    {
+      "input_sha256": "d7e97921be181f57cdec10a6992db23df109c7bdd69e87620a58a095641d413e",
+      "ordinal": 10,
+      "output_filename": "Unit PoE CAM-W v1.1.md",
+      "product_id": "unit-poe-cam-w-v1-1-32186dd0cb2c",
+      "product_name": "Unit PoE CAM-W v1.1",
+      "source_path": "unit/M5PoECAM-W V1.1.md",
+      "source_sha256": "068d985765e46681c7b2472529c830b5cdbe9b1f36dded1c91d187a8215d8335"
+    },
+    {
+      "input_sha256": "a09e674cd292caebcec70ec1448f2921728c79757a2a0cecd462d1e5d53d9b91",
+      "ordinal": 11,
+      "output_filename": "Unit MIC.md",
+      "product_id": "unit-mic-20ab34202cb7",
+      "product_name": "Unit MIC",
+      "source_path": "unit/mic.md",
+      "source_sha256": "3a04e3304ead443325eb9dcd62a970cedc159989e7937fea765aeac4c22b2a47"
+    },
+    {
+      "input_sha256": "5dbbf89c496c07bdced6c298c3a7beb4cf5dd8723dff9bb57640a989d384d5cf",
+      "ordinal": 12,
+      "output_filename": "Unit Mini Proto.md",
+      "product_id": "unit-mini-proto-eb1e36d8926b",
+      "product_name": "Unit Mini Proto",
+      "source_path": "unit/mini-proto.md",
+      "source_sha256": "98aed1f4e8ea5a2527db2bb6cbb70c6797f90d74969071cc4932181e6bd5ccd2"
+    },
+    {
+      "input_sha256": "8310dd0aa8bf8497ddec767b22d46cb110a6d1ee9f5c319ebf5ea09414e3e794",
+      "ordinal": 13,
+      "output_filename": "Unit Mini OLED.md",
+      "product_id": "unit-mini-oled-da4ed5824b0e",
+      "product_name": "Unit Mini OLED",
+      "source_path": "unit/MiniOLED Unit.md",
+      "source_sha256": "cef12fa1b4267ea06a27cc83e4b963bb548b45fb663cf851c27170e5f717d682"
+    },
+    {
+      "input_sha256": "bbeae52b176539a3b50518cd6595e8cd6ec808dae5bc204d04116a9d3a26a327",
+      "ordinal": 14,
+      "output_filename": "Unit MQTT-PoE.md",
+      "product_id": "unit-mqtt-poe-9ff834605eee",
+      "product_name": "Unit MQTT-PoE",
+      "source_path": "unit/mqtt_poe.md",
+      "source_sha256": "90554c92edfc9395b9f509ca1de07ff908274e7e20150d7dd9e5d376503bb20b"
+    },
+    {
+      "input_sha256": "d4b3c892ce3e7700393d6b311da4560a9d9841d97dcf52e6d28207000cebca3b",
+      "ordinal": 15,
+      "output_filename": "Unit NBIoT-CN.md",
+      "product_id": "unit-nbiot-cn-bff1068848bb",
+      "product_name": "Unit NBIoT-CN",
+      "source_path": "unit/nbiot_cn.md",
+      "source_sha256": "5f33963081c2aa39359ad4830f0775c3bc63b24954fb18eee52e9888906540d2"
+    },
+    {
+      "input_sha256": "8d9d45d3cf1591a779e1a10e0ee79901047ade0d465c7eb8ef35a49e6b9bf2ef",
+      "ordinal": 16,
+      "output_filename": "Unit NBIoT.md",
+      "product_id": "unit-nbiot-812620512877",
+      "product_name": "Unit NBIoT",
+      "source_path": "unit/nbiot_global.md",
+      "source_sha256": "7dcbed93bb6caa02efbfd8253ee2e1573a30a833066534af3675fa314868c579"
+    },
+    {
+      "input_sha256": "562ac753983a2aed3bf61b59ed4579fd0eae656c635cf02c75165ca64d524ca7",
+      "ordinal": 17,
+      "output_filename": "Unit NCIR.md",
+      "product_id": "unit-ncir-d867e38eced1",
+      "product_name": "Unit NCIR",
+      "source_path": "unit/ncir.md",
+      "source_sha256": "0fe50061d2c52540f20aee63508ff6ddb56b2a7a266ca5c31a12be02fc4bc93f"
+    },
+    {
+      "input_sha256": "8b062523c78ba1efcb2a0bab8fae1643aac301537afcccfdebda19fa8ebccb3c",
+      "ordinal": 18,
+      "output_filename": "Unit NCIR2.md",
+      "product_id": "unit-ncir2-f812153e5668",
+      "product_name": "Unit NCIR2",
+      "source_path": "unit/NCIR2.md",
+      "source_sha256": "1af15fa497e390e4e7552f8ed1618176e004c43b592898fab16f9ce3d36b05a5"
+    },
+    {
+      "input_sha256": "e66260c4a54f6ebb11d3d03f0705c3368cdf6efeb56497a27d3dad8b5471567f",
+      "ordinal": 19,
+      "output_filename": "Unit Neco.md",
+      "product_id": "unit-neco-a68addc8d9ac",
+      "product_name": "Unit Neco",
+      "source_path": "unit/Neco Unit.md",
+      "source_sha256": "1486dcf630a0aa1130e83331a6a71c78d13566c6d3cd953adb916715881a6f70"
+    },
+    {
+      "input_sha256": "625502c4576b51d93db6668fdb7e35855ce58eb94dd59654ac28f96a4cd2120e",
+      "ordinal": 20,
+      "output_filename": "Unit NeoHEX.md",
+      "product_id": "unit-neohex-95295c2bb825",
+      "product_name": "Unit NeoHEX",
+      "source_path": "unit/neohex.md",
+      "source_sha256": "550ba8628fc28f677e24f1527cbf0e70689a4c98a269443d8149f540f2b82f74"
+    },
+    {
+      "input_sha256": "c0944dde32503d74f68af98eb1f1adbf5df399073805ec921cf6fe14d0f5d622",
+      "ordinal": 21,
+      "output_filename": "Unit OLED.md",
+      "product_id": "unit-oled-562ec96af36e",
+      "product_name": "Unit OLED",
+      "source_path": "unit/oled.md",
+      "source_sha256": "8bb338553487160d0b7a3fcc727571eb149a00543cf2d0310d25f4ea3bc19604"
+    },
+    {
+      "input_sha256": "9fcbd4d3bd36994a4cecc4490cf6ccb837d366093db32e584ab98cde94a4d91a",
+      "ordinal": 22,
+      "output_filename": "Unit OP90.md",
+      "product_id": "unit-op90-38e94bce5a10",
+      "product_name": "Unit OP90",
+      "source_path": "unit/OP.90.md",
+      "source_sha256": "bc342312ace2b1b4ff1dde276536402b5d7722d3c74cc1cd81d5efcee5ecec2d"
+    },
+    {
+      "input_sha256": "667bdbee8a13ce95c00f4a280f7761c5ffbaa08ad9b4833f414f362535131b06",
+      "ordinal": 23,
+      "output_filename": "Unit OP180.md",
+      "product_id": "unit-op180-07ef3904e266",
+      "product_name": "Unit OP180",
+      "source_path": "unit/OP180.md",
+      "source_sha256": "96bcfc2559c034bbbadd86d783c635dfefb0651b000124c58e6bb59089db0dfc"
+    },
+    {
+      "input_sha256": "9f1ee3a749124f04baee645c325bf445eb90b78c744c6c031ff79b67b887192a",
+      "ordinal": 24,
+      "output_filename": "Unit PaHub.md",
+      "product_id": "unit-pahub-8ef77a36b7a9",
+      "product_name": "Unit PaHub",
+      "source_path": "unit/pahub.md",
+      "source_sha256": "6623d4f3914f6ca02d34b2df2688a0b379d55a53ada7ae4d63b8b7153263d765"
+    },
+    {
+      "input_sha256": "45693fc2947e8a95959bf6579913ce42d7c9d2b44bb2cb45836907713c85694b",
+      "ordinal": 25,
+      "output_filename": "Unit PaHub v2.0.md",
+      "product_id": "unit-pahub-v2-0-52108d21a0fe",
+      "product_name": "Unit PaHub v2.0",
+      "source_path": "unit/pahub2.md",
+      "source_sha256": "17786dc7d0e119af9a7f8b423aa08bf9bd989523fc0b0eee6c20d398b41285fd"
+    },
+    {
+      "input_sha256": "789918c622efe0616bc9a19348ee0d17c0d49b390c1067125d4ea27e6ae1e8af",
+      "ordinal": 26,
+      "output_filename": "Unit PbHub.md",
+      "product_id": "unit-pbhub-3ebe0981c7ee",
+      "product_name": "Unit PbHub",
+      "source_path": "unit/pbhub.md",
+      "source_sha256": "ee9dcbc79d765713c19b5ed6c4feb1b0e7aab511063c40a1327f26b8c804c536"
+    },
+    {
+      "input_sha256": "beb5374fa9c2582bc1359a9f8c94b6dced32dbecaf5ee3a4edae780fd004fc8f",
+      "ordinal": 27,
+      "output_filename": "Unit PbHub v1.1.md",
+      "product_id": "unit-pbhub-v1-1-b2aa06be0a47",
+      "product_name": "Unit PbHub v1.1",
+      "source_path": "unit/pbhub_1.1.md",
+      "source_sha256": "62e7a0bfd906d2776e30e10c27348b9c1713422087d838e83ccd5394e9ad1b2e"
+    },
+    {
+      "input_sha256": "4e41d4f38b9fae597b3fb4169f15b738d85d17eca5e8ad8586e82ead3f42d95f",
+      "ordinal": 28,
+      "output_filename": "Unit Mini PDM.md",
+      "product_id": "unit-mini-pdm-2175a10d1184",
+      "product_name": "Unit Mini PDM",
+      "source_path": "unit/pdm.md",
+      "source_sha256": "bc2f4c65c694a6817a0da60f94661def4f4f9efd4f549725e7bcb574a2140a31"
+    },
+    {
+      "input_sha256": "17466a94fd9a8053436519be57b27ea8a010e1037d860cfecb21e50df3bc67a8",
+      "ordinal": 29,
+      "output_filename": "Unit PIR.md",
+      "product_id": "unit-pir-4c2bd1465db8",
+      "product_name": "Unit PIR",
+      "source_path": "unit/PIR.md",
+      "source_sha256": "c0bc4666dce8e29b6250a102d211974b119f5a5454428eadc323941c809a4a08"
+    },
+    {
+      "input_sha256": "5cc3f1c691deb4b765be3c6ed8a1e54196044e90cdde300e52bea0f28f5db366",
+      "ordinal": 30,
+      "output_filename": "Unit PoE CAM.md",
+      "product_id": "unit-poe-cam-457508024666",
+      "product_name": "Unit PoE CAM",
+      "source_path": "unit/poe_cam.md",
+      "source_sha256": "7dd5e7fedfc277915dffe4af15f433e7e910d5f6f774d8109e2518364949b7c5"
+    },
+    {
+      "input_sha256": "82159c069425d45964e59297df6fbcc5891cefe3788783161cb5b7c89c105ede",
+      "ordinal": 31,
+      "output_filename": "Unit PoE CAM-W.md",
+      "product_id": "unit-poe-cam-w-b5ad042ba84a",
+      "product_name": "Unit PoE CAM-W",
+      "source_path": "unit/PoECAM-W.md",
+      "source_sha256": "76fc9ad367071c5bda221add5c6d58337dcf2691b8b8d79f5c25ceb1c752be14"
+    },
+    {
+      "input_sha256": "5b35042f293d7b792aaa9e8b995775639ed92f5c03fbc3e9414ba3bf301b3b54",
+      "ordinal": 32,
+      "output_filename": "Unit PoESP32.md",
+      "product_id": "unit-poesp32-7d38dbaac194",
+      "product_name": "Unit PoESP32",
+      "source_path": "unit/poesp32.md",
+      "source_sha256": "c1695baba80160e689b2fd10526d1c34a487e5d3576b6a595eed714642a563a7"
+    },
+    {
+      "input_sha256": "7fedc20a91d46ee5de1e264e4896731cb4b5605eb9af905a1c87d2cf8d8fef73",
+      "ordinal": 33,
+      "output_filename": "Unit Power.md",
+      "product_id": "unit-power-2f15cdb873cb",
+      "product_name": "Unit Power",
+      "source_path": "unit/power.md",
+      "source_sha256": "1945a286892a827c89ff5ccb202b62ed02e493759cc67368ae8df7e01963bd8b"
+    },
+    {
+      "input_sha256": "a17b512bc2d842f3a2f8c24a9c489158e12824c395d98193033727fae72aae35",
+      "ordinal": 34,
+      "output_filename": "Unit Proto.md",
+      "product_id": "unit-proto-342508bb9734",
+      "product_name": "Unit Proto",
+      "source_path": "unit/proto.md",
+      "source_sha256": "d645dbc3a0af392853ffcd8a45c32197f69c1057c099935a7070bace806eda17"
+    },
+    {
+      "input_sha256": "522bea4b367137a892e3119748a83af270a8dcc2661a4b9c0ad8e8d420d6d639",
+      "ordinal": 35,
+      "output_filename": "Unit RCA.md",
+      "product_id": "unit-rca-6800a4734c3e",
+      "product_name": "Unit RCA",
+      "source_path": "unit/RCA.md",
+      "source_sha256": "0172e2f5d752779484964d0a63df58520fe4b3b5676cb065a141d5ceb3dad50c"
+    },
+    {
+      "input_sha256": "1e11b8684454cf599ca6ea3bcf48123f35b971dbf0c365301e91c7d4e8655937",
+      "ordinal": 36,
+      "output_filename": "Unit Relay.md",
+      "product_id": "unit-relay-b14b02f11c3d",
+      "product_name": "Unit Relay",
+      "source_path": "unit/relay.md",
+      "source_sha256": "c838fdedc36ba95c7e3403a205bb4f6c5af81223e779bb5139fa8a5ff81ebc06"
+    },
+    {
+      "input_sha256": "6b6ce8b3da202af45d01b19c2632beac78b5645dcf1a5d71530cf96a844f8551",
+      "ordinal": 37,
+      "output_filename": "Unit RF433R.md",
+      "product_id": "unit-rf433r-7245b9cbf66d",
+      "product_name": "Unit RF433R",
+      "source_path": "unit/rf433_r.md",
+      "source_sha256": "0358e5b6ca124e126466fdf20b86c6260df4d78601ca6658677fc949a16658e8"
+    },
+    {
+      "input_sha256": "ea1390b28bb6f881a018c60fea7c8bfe35e83eb90209915fac44c5d6b98ca052",
+      "ordinal": 38,
+      "output_filename": "Unit RF433T.md",
+      "product_id": "unit-rf433t-21f49a191358",
+      "product_name": "Unit RF433T",
+      "source_path": "unit/rf433_t.md",
+      "source_sha256": "2f0eeb29d1805015d0c8b23739239ff58c7a32340d87eedb25d007d3480732ef"
+    },
+    {
+      "input_sha256": "036175d7fc155c364491710620900444fb5d80ffcb499df59ce97618ed007d14",
+      "ordinal": 39,
+      "output_filename": "Unit RFID.md",
+      "product_id": "unit-rfid-a52b2b4084a4",
+      "product_name": "Unit RFID",
+      "source_path": "unit/rfid.md",
+      "source_sha256": "c5145647d89aea277debf57cf124a4b2fe08774e8db27c6711347f8c1f629ffb"
+    },
+    {
+      "input_sha256": "8f4aa21e71246315e60446393f74525160c75ad5b81ee305ef893061b1d9d903",
+      "ordinal": 40,
+      "output_filename": "Unit RGB.md",
+      "product_id": "unit-rgb-c8ad97af0ab8",
+      "product_name": "Unit RGB",
+      "source_path": "unit/rgb.md",
+      "source_sha256": "125060340cb04140672218705e1dd341969023d6793efad2439ce36af0461fa9"
+    },
+    {
+      "input_sha256": "1b7b98210b3388741cc59185d11ce1c6fcc2f0d486828a78203e03cccf9b01d1",
+      "ordinal": 41,
+      "output_filename": "Unit RS485.md",
+      "product_id": "unit-rs485-ba5717526e3a",
+      "product_name": "Unit RS485",
+      "source_path": "unit/rs485.md",
+      "source_sha256": "310f22141d6a8dca4f747996313bc672d261b218e31235fbbcd189387184d9c2"
+    },
+    {
+      "input_sha256": "b57b5e0ad3fc12bd36f1aa9d6a6a78f69f78acb27a5bbe02dea5a3e14a2e1e4c",
+      "ordinal": 42,
+      "output_filename": "Unit SSR.md",
+      "product_id": "unit-ssr-c02f2f7ee8c4",
+      "product_name": "Unit SSR",
+      "source_path": "unit/ssr.md",
+      "source_sha256": "1d23031ea8fda0fe12306ca7dbc7a9f49ce5f5c6078c2767b97f2db9eaeeb2ed"
+    },
+    {
+      "input_sha256": "83c65ff10cbdf2123fcccc574f349f4f943dadf940701a7a406a56cd0fc42720",
+      "ordinal": 43,
+      "output_filename": "Unit Thermal.md",
+      "product_id": "unit-thermal-cc672b6b369c",
+      "product_name": "Unit Thermal",
+      "source_path": "unit/THERMAL.md",
+      "source_sha256": "15d1d22e5ce5e3f1d8b858a179130486c86fd8efa76f4d58e5fb57c98be13dde"
+    },
+    {
+      "input_sha256": "44e89f324a7627eab2f1ebc5d55894c9eae001f050907be7a6b90ce6f269dd85",
+      "ordinal": 44,
+      "output_filename": "Unit Thermal2.md",
+      "product_id": "unit-thermal2-332816353c42",
+      "product_name": "Unit Thermal2",
+      "source_path": "unit/Thermal2.md",
+      "source_sha256": "77b9e04d9691b6419fb384c76901711bee0942656d49f692e1059dbf15c133bd"
+    },
+    {
+      "input_sha256": "6d5c485f43468014924d31d229e9bf156035458103401f22a8c64e3662d8e55f",
+      "ordinal": 45,
+      "output_filename": "TimerCamera.md",
+      "product_id": "timercamera-56ad239d7994",
+      "product_name": "TimerCamera",
+      "source_path": "unit/timercam.md",
+      "source_sha256": "2e4eae3a2ac0d5fa0e74123ae4daddd4ae6738a67a1e34415af58856b11e441a"
+    },
+    {
+      "input_sha256": "c7c49dcf04136faa2db824965c98a7db2b1a4acfd0fca6661e6bab5127ae0c9c",
+      "ordinal": 46,
+      "output_filename": "TimerCamera-F.md",
+      "product_id": "timercamera-f-964a85b1021e",
+      "product_name": "TimerCamera-F",
+      "source_path": "unit/timercam_f.md",
+      "source_sha256": "13cd587883c79e3b6c88cd554fe32d0c83e4500fcf1386aa60255cc30eee4113"
+    },
+    {
+      "input_sha256": "e41627bccda703371369b13655ac34ceaa3da192162f5ca01635812b1ab4dc4c",
+      "ordinal": 47,
+      "output_filename": "TimerCamera-X.md",
+      "product_id": "timercamera-x-eba094edbdc4",
+      "product_name": "TimerCamera-X",
+      "source_path": "unit/timercam_x.md",
+      "source_sha256": "6e1d04d0435d80d3591c15e1cc9c1eb0f4d4f699a788f4a99d4252d5bac49796"
+    },
+    {
+      "input_sha256": "d8f203f125f91209cc8de6beafc150f93e2ecb825e6e4c5a88b6e29f983818a6",
+      "ordinal": 48,
+      "output_filename": "Unit ToF.md",
+      "product_id": "unit-tof-03243b056d52",
+      "product_name": "Unit ToF",
+      "source_path": "unit/TOF.md",
+      "source_sha256": "82b6c6f4e17857fb48ebe63d09caf8b7a39fad5599d2c6eb3367d7c579c13d73"
+    },
+    {
+      "input_sha256": "d0118e3ed516100abce9990518b0a4a2ef8b3c728394afda55586313ded96a85",
+      "ordinal": 49,
+      "output_filename": "Unit Trace.md",
+      "product_id": "unit-trace-b883f0a704ce",
+      "product_name": "Unit Trace",
+      "source_path": "unit/trace.md",
+      "source_sha256": "dcdde54703c0c02f9a6874e8595cb9655e3cf7436f4151511b767acd4dcad015"
+    },
+    {
+      "input_sha256": "ee4525105b2624214c7e6e7eedc6332f30de9be8a72ff8fa0917c6a8aa16b584",
+      "ordinal": 50,
+      "output_filename": "Unit Tube Pressure.md",
+      "product_id": "unit-tube-pressure-c550b29fbc78",
+      "product_name": "Unit Tube Pressure",
+      "source_path": "unit/tube_pressure.md",
+      "source_sha256": "3a98113bd9b3a6db5d668b7f6b26714c13ca3e913fdae65b23bc511fe26141f8"
+    },
+    {
+      "input_sha256": "b5b683bbca4428289eb42c31fba3efb760dc05e013e6b369b2ad58369bc9908f",
+      "ordinal": 51,
+      "output_filename": "Unit Mini TVOC_eCO2.md",
+      "product_id": "unit-mini-tvoc-eco2-eb6f13365a1f",
+      "product_name": "Unit Mini TVOC/eCO2",
+      "source_path": "unit/tvoc.md",
+      "source_sha256": "fba51488a3e0082cea0e10aeaa01f0d5f1ddd04d7397f9d29bc3cce31c5915bd"
+    },
+    {
+      "input_sha256": "ff36da4c41527b99e07475f6df72459874a9ec2c7e2a7b55c69b8cc74f471d0c",
+      "ordinal": 52,
+      "output_filename": "Unit TypeC to Grove.md",
+      "product_id": "unit-typec-to-grove-7849605a2401",
+      "product_name": "Unit TypeC to Grove",
+      "source_path": "unit/typec2grove.md",
+      "source_sha256": "df4d047486dbb7a99e675930e23389c0365b634e9c282bfe657c9cd1f7ee83ef"
+    },
+    {
+      "input_sha256": "991982087f734c9193693160cfd26bd149e89504af9392b29d35684aa1bd0d0f",
+      "ordinal": 53,
+      "output_filename": "Unit ASR.md",
+      "product_id": "unit-asr-a8e654b97ac6",
+      "product_name": "Unit ASR",
+      "source_path": "unit/Unit ASR.md",
+      "source_sha256": "ec02d14879f03310c1eafb8b936730d81420aa35b827ad868eef131dda8f11bb"
+    },
+    {
+      "input_sha256": "de223ed2bf823cb9bdbf8ad1a69486b86b6675c2a90999238e790778531b6c8a",
+      "ordinal": 54,
+      "output_filename": "Unit ByteButton.md",
+      "product_id": "unit-bytebutton-afe4979eef29",
+      "product_name": "Unit ByteButton",
+      "source_path": "unit/Unit ByteButton.md",
+      "source_sha256": "1f66db9e2ef5ef925cdffe8793e8fae314c8f285cb35c35e0fc4d7a4fee397b7"
+    },
+    {
+      "input_sha256": "17cbcfb92c48e73a0da24e242916d96b1e8f38fc1e78dd3a24b54a3aea0043d6",
+      "ordinal": 55,
+      "output_filename": "Unit ByteSwitch.md",
+      "product_id": "unit-byteswitch-8affca4358be",
+      "product_name": "Unit ByteSwitch",
+      "source_path": "unit/Unit ByteSwitch.md",
+      "source_sha256": "27cbf900f3375952a1ba8dce3bc672d61ca0400f845aba49e347ee3977fce5f3"
+    },
+    {
+      "input_sha256": "f14d79d7c6844bb90f19b79b6555b3a04d2866fa0958ced27831281a208e464c",
+      "ordinal": 56,
+      "output_filename": "Unit Camera.md",
+      "product_id": "unit-camera-5eca3cc8e61e",
+      "product_name": "Unit Camera",
+      "source_path": "unit/Unit Camera.md",
+      "source_sha256": "9960829e5be6967c697431a936a9b8da6a13191f0a7424cbcdd4ee72d2b6a122"
+    },
+    {
+      "input_sha256": "c1f49c7bf8eaa1a058be8ecbb4a49098bd2c2794e3a9f4d9dad1720781d3c80a",
+      "ordinal": 57,
+      "output_filename": "Unit Gateway H2.md",
+      "product_id": "unit-gateway-h2-3d4f3f01cf7e",
+      "product_name": "Unit Gateway H2",
+      "source_path": "unit/Unit Gateway H2.md",
+      "source_sha256": "aca8722fdd0fd5f4a0485cfbc4591a45887ff3ea1889bbb43d73659f30e7291a"
+    },
+    {
+      "input_sha256": "7fe8eb2f129a34be59c185e5464d3304e896c602af877e7e2ead7cbf140686f8",
+      "ordinal": 58,
+      "output_filename": "Unit Limit.md",
+      "product_id": "unit-limit-76279fe54f4f",
+      "product_name": "Unit Limit",
+      "source_path": "unit/Unit Limit.md",
+      "source_sha256": "3eae9a88c05ccc479d29d290a461af3edd4458aabb74b28abbbb9823f8128c80"
+    },
+    {
+      "input_sha256": "163a588154e377f959a45c6542e1f1e1730dae8ddd4c464ec5c060022cc385a6",
+      "ordinal": 59,
+      "output_filename": "Unit LoRaE220-433.md",
+      "product_id": "unit-lorae220-433-fd8862b01edf",
+      "product_name": "Unit LoRaE220-433",
+      "source_path": "unit/Unit LoRaE220-433.md",
+      "source_sha256": "32471bcd722d70de92fe99d89d72cb511f44eaf143f39aa1f286d913c87da340"
+    },
+    {
+      "input_sha256": "2a40f736ee3da1dc8a552f860b9551da466c4fdb5914d44fc1ef8473bcf73e14",
+      "ordinal": 60,
+      "output_filename": "Unit LoRaWAN-AS923.md",
+      "product_id": "unit-lorawan-as923-0a82795306a4",
+      "product_name": "Unit LoRaWAN-AS923",
+      "source_path": "unit/Unit LoRaWAN-AS923.md",
+      "source_sha256": "f77fed5ba25f165eaaa9fe1a4afa643fbeac4232be223776cdef0a5f99439f97"
+    },
+    {
+      "input_sha256": "b051f828031c4eea9b21ff66d8b33884d607f74528f5bbdc5116c8ff71963bf7",
+      "ordinal": 61,
+      "output_filename": "Unit LoRaWAN-CN470.md",
+      "product_id": "unit-lorawan-cn470-6c30432ff630",
+      "product_name": "Unit LoRaWAN-CN470",
+      "source_path": "unit/Unit LoRaWAN-CN470.md",
+      "source_sha256": "512ea0ab7acb690d5cca6ed535212f3ad1b827e90bfc6a9de5b65eee3da09910"
+    },
+    {
+      "input_sha256": "a9653e3d54eb12036ced652c66e838c4423454faea537ddffe9f252797f9f10d",
+      "ordinal": 62,
+      "output_filename": "Unit LoRaWAN-EU868.md",
+      "product_id": "unit-lorawan-eu868-30781d39aa5f",
+      "product_name": "Unit LoRaWAN-EU868",
+      "source_path": "unit/Unit LoRaWAN-EU868.md",
+      "source_sha256": "5405267c2ebf2012be2fbd82d3065d0b400e4ddabe24bffaf0849ed52d5fd38e"
+    },
+    {
+      "input_sha256": "4f80953fd84202cf055f119b85c8a5bb9327697543d7fb67708427236e39a12a",
+      "ordinal": 63,
+      "output_filename": "Unit LoRaWAN-US915.md",
+      "product_id": "unit-lorawan-us915-c3e231464cb3",
+      "product_name": "Unit LoRaWAN-US915",
+      "source_path": "unit/Unit LoRaWAN-US915.md",
+      "source_sha256": "7423bac1004d8600805fa7689b0dd6f04fa1b934ceb934686172a6ee37172d68"
+    },
+    {
+      "input_sha256": "5555bf067afc973db0e6a779d23d9cbe59bdbddb7b2398987181b54cbff306e0",
+      "ordinal": 64,
+      "output_filename": "Unit Mini ToF-90°.md",
+      "product_id": "unit-mini-tof-90-aa3bfaada847",
+      "product_name": "Unit Mini ToF-90°",
+      "source_path": "unit/Unit Mini ToF-90.md",
+      "source_sha256": "7156bd3d21a1eee49c5130db7dfcbf9140fa189b25318756b01ecfc1593e12d6"
+    },
+    {
+      "input_sha256": "9020d52deb45289e849eb3b02e0812f251333928b0816bb21fdfd138561c21ec",
+      "ordinal": 65,
+      "output_filename": "Unit NBIoT2.md",
+      "product_id": "unit-nbiot2-1c4bde8307d2",
+      "product_name": "Unit NBIoT2",
+      "source_path": "unit/Unit NB-IoT2(SIM7028).md",
+      "source_sha256": "3bc8d8a09002f5382e19584bc2c6c8a7c4d9896b6985ba5b0dfb33e8aaf25ee3"
+    },
+    {
+      "input_sha256": "b715a43470b7aa9fe4328a4795e8ea089e2da2336f1c880813a413130e04a8b9",
+      "ordinal": 66,
+      "output_filename": "Unit Scales.md",
+      "product_id": "unit-scales-b8e4bdd6bf8a",
+      "product_name": "Unit Scales",
+      "source_path": "unit/UNIT Scales.md",
+      "source_sha256": "584ce86717ba8017c28a1b02edced4a510fcca6372928ea91502ab1096a65129"
+    },
+    {
+      "input_sha256": "2b06d451c7fc4ec494cb246acbb1049c14a2b82f6adc09cac6d693c8aa7d8c59",
+      "ordinal": 67,
+      "output_filename": "Unit ADC v1.1.md",
+      "product_id": "unit-adc-v1-1-4f4844dbea51",
+      "product_name": "Unit ADC v1.1",
+      "source_path": "unit/Unit-ADC_V1.1.md",
+      "source_sha256": "61d10c75a0b927ae1b552df1cf4432e7525715fac87278c059c77149ea5aa8ff"
+    },
+    {
+      "input_sha256": "c94940d4c6e8976d9e77ad542851cbdfc511cd6fe5d320ecd8aaba8f33e421cd",
+      "ordinal": 68,
+      "output_filename": "Unit BLDC Driver.md",
+      "product_id": "unit-bldc-driver-fe1397986f4b",
+      "product_name": "Unit BLDC Driver",
+      "source_path": "unit/Unit-BLDC Driver.md",
+      "source_sha256": "676467488d7d494e9197825656fbefc9ae8e151694a7bc7ba5a3fd67168e0c97"
+    },
+    {
+      "input_sha256": "9dd884a5b4ec2892c0581fe740bdb4af3bd4c4ffd656b9ddf7aa156a31782ad5",
+      "ordinal": 69,
+      "output_filename": "Unit CamS3-5MP.md",
+      "product_id": "unit-cams3-5mp-7f472b7f6963",
+      "product_name": "Unit CamS3-5MP",
+      "source_path": "unit/Unit-CAMS3 5MP.md",
+      "source_sha256": "e1d4f88d5625215c123bcc04be557345e0e25015e00b3eed26bc39dd28fc7ff9"
+    },
+    {
+      "input_sha256": "9596a69bd706b0ede2d2e6ff5de14ae92a4de3a7e1076e8882a16286cdd257a9",
+      "ordinal": 70,
+      "output_filename": "Unit CamS3.md",
+      "product_id": "unit-cams3-5a4131b60dd3",
+      "product_name": "Unit CamS3",
+      "source_path": "unit/Unit-CamS3.md",
+      "source_sha256": "bcecd5747be27a8bac04767aa64bf9e4919b9b149397dac9fb1df93a29b2f036"
+    },
+    {
+      "input_sha256": "d995ad4dc9116cb02006e05b4aa3ed271f736ad4c6b30df07cb5feeb479c8ad5",
+      "ordinal": 71,
+      "output_filename": "Unit DAC2.md",
+      "product_id": "unit-dac2-b428d9b69609",
+      "product_name": "Unit DAC2",
+      "source_path": "unit/Unit-DAC2.md",
+      "source_sha256": "c3850e52e204d84709dd833a317a8110f0ab6d3e4ec69b983301f73627831cf4"
+    },
+    {
+      "input_sha256": "a0f0c5ad8a7c7c062299bfbf552e2ef88f69e94e3da1eb46d13c3a8aaf74b0b4",
+      "ordinal": 72,
+      "output_filename": "Unit DMX.md",
+      "product_id": "unit-dmx-012418845602",
+      "product_name": "Unit DMX",
+      "source_path": "unit/Unit-DMX.md",
+      "source_sha256": "679cd85ea0f1bc2878a8f8cfba98b8e0271c60be39d40d84c41ce4b0d88a19db"
+    },
+    {
+      "input_sha256": "45500d34921e2ebaa9f14ac01e33697aefd78108c39533d941471a80ca27750f",
+      "ordinal": 73,
+      "output_filename": "Unit GPS SMA.md",
+      "product_id": "unit-gps-sma-0205aa2de7bb",
+      "product_name": "Unit GPS SMA",
+      "source_path": "unit/Unit-GPS SMA.md",
+      "source_sha256": "b8024d53d3fd156cc93d48c138a5f26c0e4f7591c374532a913fd547a3bef4f1"
+    },
+    {
+      "input_sha256": "759402d834a6802d183a30a9677ed86813ab42b7b0fa38ba446e27434e9f950e",
+      "ordinal": 74,
+      "output_filename": "Unit GPS v1.1.md",
+      "product_id": "unit-gps-v1-1-798281308d46",
+      "product_name": "Unit GPS v1.1",
+      "source_path": "unit/Unit-GPS v1.1.md",
+      "source_sha256": "c038045f0ede29736438d52a40572e2864b2520236bc4f514e84f64dd57d5a6f"
+    },
+    {
+      "input_sha256": "0dbbee880d181e987efa2712c7aa788aca0fd63229e4cca66fca58384385434f",
+      "ordinal": 75,
+      "output_filename": "Unit Joystick2.md",
+      "product_id": "unit-joystick2-df80d35d1bae",
+      "product_name": "Unit Joystick2",
+      "source_path": "unit/Unit-JoyStick2.md",
+      "source_sha256": "06243d6b21cb2cc95a14f8af448150ae51a0468be48ea578b0b96615934fa426"
+    },
+    {
+      "input_sha256": "1cad95351bb9c3f82dedee2717dc45636afe03b932f35271dc9d6271d0b2cbec",
+      "ordinal": 76,
+      "output_filename": "Unit MIDI.md",
+      "product_id": "unit-midi-8013566d6639",
+      "product_name": "Unit MIDI",
+      "source_path": "unit/Unit-MIDI.md",
+      "source_sha256": "8f14e73d002f536fbc4ef9ca37b7ee76a8de2ebc9e33d6f40670d39b13ac9c1a"
+    },
+    {
+      "input_sha256": "8ccd45500f1e015d43ebd5d8de036df8fafafa0dd5624da4c2d678a4149d4857",
+      "ordinal": 77,
+      "output_filename": "Unit Mini Scales.md",
+      "product_id": "unit-mini-scales-7a0edd9429d6",
+      "product_name": "Unit Mini Scales",
+      "source_path": "unit/Unit-Mini Scales.md",
+      "source_sha256": "64747297d9c71456a207cefdf58ddfe3951013b6e753c18c6528e9b9c68663f3"
+    },
+    {
+      "input_sha256": "b680301eb9e893c18f4432330e0da289febdeb9d6d5cda0be9622be884088847",
+      "ordinal": 78,
+      "output_filename": "Unit PaHub v2.1.md",
+      "product_id": "unit-pahub-v2-1-3cae2bc62d83",
+      "product_name": "Unit PaHub v2.1",
+      "source_path": "unit/Unit-PaHub v2.1.md",
+      "source_sha256": "25cd8804fc4b50588e90ea4cb5c132e5419d7000b4fa77515beccaf53e624f61"
+    },
+    {
+      "input_sha256": "3d56036bfa86505fab3fa6900541e46ea8a9d272d623a5dbe4793ecc3bd1ce32",
+      "ordinal": 79,
+      "output_filename": "Unit Puzzle.md",
+      "product_id": "unit-puzzle-916715c42dc0",
+      "product_name": "Unit Puzzle",
+      "source_path": "unit/Unit-Puzzle.md",
+      "source_sha256": "5a70fe5ca71427574e402a22c3a6dcfe1b9235ca59a959de8fcae990f9dfda83"
+    },
+    {
+      "input_sha256": "1da7a8d0b294d34d6b52b9433feeccf6cef0676c78201b74863558a557076337",
+      "ordinal": 80,
+      "output_filename": "Unit QRCode.md",
+      "product_id": "unit-qrcode-3b010e4b3474",
+      "product_name": "Unit QRCode",
+      "source_path": "unit/Unit-QRCode.md",
+      "source_sha256": "54f9bfce1bfc2222c1f44abf8bc237e97adbdd909aac0d804f086c55a9c4179e"
+    },
+    {
+      "input_sha256": "6dd2bf3d49c2104f8e1b0ede59d9f37ba979e5ec491a2dfa186600187089f60c",
+      "ordinal": 81,
+      "output_filename": "Unit Reflective IR.md",
+      "product_id": "unit-reflective-ir-b9aa857e0a62",
+      "product_name": "Unit Reflective IR",
+      "source_path": "unit/Unit-Reflective IR.md",
+      "source_sha256": "4854d99987ae447b9b6702735b80edb15c6b031ea75646456ff6a6a35fe082ed"
+    },
+    {
+      "input_sha256": "1ca6daa73c20c582d7fc7c82f09a03a8e33c4fdf8c59106830def5cfef1af59a",
+      "ordinal": 82,
+      "output_filename": "Unit Roller485-Lite.md",
+      "product_id": "unit-roller485-lite-f16bc5177915",
+      "product_name": "Unit Roller485-Lite",
+      "source_path": "unit/Unit-Roller485 Lite.md",
+      "source_sha256": "1259cee091cf73f3a751395c2ec8a819d0eb644a821f8c732fa15e31acff99a4"
+    },
+    {
+      "input_sha256": "9df03ef744fad5550f11316b3873f0e672b7c5bafbd5d59f486012cf374d1962",
+      "ordinal": 83,
+      "output_filename": "Unit Roller485.md",
+      "product_id": "unit-roller485-7ac377f08255",
+      "product_name": "Unit Roller485",
+      "source_path": "unit/Unit-Roller485.md",
+      "source_sha256": "3b5f3708c1a71eaa6d1b71c2b0f3eafbed85e4b997e76e1c4d6507c8361a541f"
+    },
+    {
+      "input_sha256": "9ed6f74c112ae784eb36c54a6dbf2527080abedee67c76b518a87e8f570276da",
+      "ordinal": 84,
+      "output_filename": "Unit RollerCAN-Lite.md",
+      "product_id": "unit-rollercan-lite-e7b0b6e3f917",
+      "product_name": "Unit RollerCAN-Lite",
+      "source_path": "unit/Unit-RollerCAN Lite.md",
+      "source_sha256": "45b052756df41820ec21955530cfc6dfc2916e4bdc8e7c896bc4b67c73b6c80d"
+    },
+    {
+      "input_sha256": "8bf7cd329eeb977062c5e770acd98d0a81806a18811ded61f7ffce337b764203",
+      "ordinal": 85,
+      "output_filename": "Unit RollerCAN.md",
+      "product_id": "unit-rollercan-c1f9bc3acb1b",
+      "product_name": "Unit RollerCAN",
+      "source_path": "unit/Unit-RollerCAN.md",
+      "source_sha256": "177d9e68148e2d6adda77e190370094f4a2a290d9e5d24cff441da2a59b33876"
+    },
+    {
+      "input_sha256": "40ca62bfe712827069c71b05358fd9e103bb616b39424f93aaa5291e1e11c04e",
+      "ordinal": 86,
+      "output_filename": "Unit Scroll.md",
+      "product_id": "unit-scroll-ed7a75d33f1d",
+      "product_name": "Unit Scroll",
+      "source_path": "unit/UNIT-Scroll.md",
+      "source_sha256": "ff699f22ea5e4763d4f377ad17fc885e25fe10d15362a25d1ee98719adcb2b48"
+    },
+    {
+      "input_sha256": "67b5f4f19666aae5b1629ee571442813c6716d24c8b714d1824c5be5bfd9babd",
+      "ordinal": 87,
+      "output_filename": "Unit Synth.md",
+      "product_id": "unit-synth-ae301994d0ec",
+      "product_name": "Unit Synth",
+      "source_path": "unit/Unit-Synth.md",
+      "source_sha256": "61972ddc9ffcc1fc89e7f2aec9b92bd042f4d0b2e5caa25e296d51c1518c49db"
+    },
+    {
+      "input_sha256": "00ace580a60cfdec0e1307303fad7df218ceafdbd935d7c3f49b68c069b9ae88",
+      "ordinal": 88,
+      "output_filename": "Unit TimerPWR.md",
+      "product_id": "unit-timerpwr-2ec0fb97a5f8",
+      "product_name": "Unit TimerPWR",
+      "source_path": "unit/Unit-TimerPWR.md",
+      "source_sha256": "8d5242194d529149cad70f4adc0713dd4eb19bcb5c494dc775c288847232488d"
+    },
+    {
+      "input_sha256": "d4f2db8b14cc58200a56e9789c80aaf0cf9c5e16ee87469ce5646797cd275eff",
+      "ordinal": 89,
+      "output_filename": "Unit TMOS PIR.md",
+      "product_id": "unit-tmos-pir-a9b1c47d19d8",
+      "product_name": "Unit TMOS PIR",
+      "source_path": "unit/UNIT-TMOS PIR.md",
+      "source_sha256": "9eb6cf95260fd9e01c2b112d4f5bfb1995dcc578aada4b8899d479280b753acf"
+    },
+    {
+      "input_sha256": "57fc5ec85ae1d001866619e33eb35be3e9353473ba4a32e8c94aa68fba5e0936",
+      "ordinal": 90,
+      "output_filename": "Unit ToF4M.md",
+      "product_id": "unit-tof4m-f7f755230293",
+      "product_name": "Unit ToF4M",
+      "source_path": "unit/Unit-ToF4M.md",
+      "source_sha256": "5646d9eb1cb69ae4731dc7f9d9b03ae6a9afe71796e931a10d561ec9fd6ba39c"
+    },
+    {
+      "input_sha256": "2991453ca35bde4cb7836fe8b2c758f081daae39e399924f54f12c6fc4420011",
+      "ordinal": 91,
+      "output_filename": "Unit Weight-I2C.md",
+      "product_id": "unit-weight-i2c-6c9d7b7fb61d",
+      "product_name": "Unit Weight-I2C",
+      "source_path": "unit/Unit-Weight I2C.md",
+      "source_sha256": "91c18b63c5cdfc0bdb0adc8b1fff0aa77feb73099c7e3942cd08426e1bec81dd"
+    },
+    {
+      "input_sha256": "1664513f39fb23fb29addfd3bf9aced7eedca239b3ea8c3b4b5e5b1ed654abdd",
+      "ordinal": 92,
+      "output_filename": "Unit AudioPlayer.md",
+      "product_id": "unit-audioplayer-948669ca7509",
+      "product_name": "Unit AudioPlayer",
+      "source_path": "unit/Unit_AudioPlayer.md",
+      "source_sha256": "8a51940d62012f56f8742266b4b588b29ef65c369bcd4cb5a78202f3de11b98b"
+    },
+    {
+      "input_sha256": "4e9bc0bbc11bfee8031ae09e7b730d6418d03285336b413dfff26bba867885ee",
+      "ordinal": 93,
+      "output_filename": "Unit C6L.md",
+      "product_id": "unit-c6l-978d685b24b9",
+      "product_name": "Unit C6L",
+      "source_path": "unit/Unit_C6L.md",
+      "source_sha256": "f2f9d49b98cb40f61369bda85eb54e409835659f3b88953fbddfd3ccef2ab936"
+    },
+    {
+      "input_sha256": "2da9c46c8ac63868fbbcf61152631f66f6545ba7719e4075c5ca29ef23437d18",
+      "ordinal": 94,
+      "output_filename": "Unit CAM.md",
+      "product_id": "unit-cam-0e7a4ce648c7",
+      "product_name": "Unit CAM",
+      "source_path": "unit/unit_cam.md",
+      "source_sha256": "51bfa3b0caf9743133aa28103b2911970252e5d42f9f05f7a9e39da28a461e9b"
+    },
+    {
+      "input_sha256": "4157ae846843995d6c6e3d090c3f80eda5189f73fcc10b9d01d75a2060588237",
+      "ordinal": 95,
+      "output_filename": "Unit Camera DIY Kit.md",
+      "product_id": "unit-camera-diy-kit-db540551e151",
+      "product_name": "Unit Camera DIY Kit",
+      "source_path": "unit/unit_cam_kit.md",
+      "source_sha256": "3df6be9ceb19b8a2230bcb97aff6a7a1f86603ce6102ec705f3c68d99436f08e"
+    },
+    {
+      "input_sha256": "c40527b86c399c580a63b8b81fca016f22011729f7aafc2e65d7e53fb1dd8027",
+      "ordinal": 96,
+      "output_filename": "Unit Fan.md",
+      "product_id": "unit-fan-2ed411433320",
+      "product_name": "Unit Fan",
+      "source_path": "unit/unit_fan.md",
+      "source_sha256": "1c46c6bf64140309187c148664175da8f166f8dfa466a1d739b2837adf812b23"
+    },
+    {
+      "input_sha256": "b685977687720fd97d1d65d0355406c9e1ad4e0b66de79ba4e6075f05b9e746a",
+      "ordinal": 97,
+      "output_filename": "Unit Fingerprint2.md",
+      "product_id": "unit-fingerprint2-df1b9c951b4d",
+      "product_name": "Unit Fingerprint2",
+      "source_path": "unit/Unit_Fingerprint2.md",
+      "source_sha256": "4235d62d7483ea4d5b999a76b0877d80a09e15af23093959183417ea8917ee1b"
+    },
+    {
+      "input_sha256": "8fef0c14a4585702961f33e59bfc16e24c078f4ff56c878c6d2e99e8ca8c70b5",
+      "ordinal": 98,
+      "output_filename": "Unit Grove to Grove.md",
+      "product_id": "unit-grove-to-grove-011b18ade30e",
+      "product_name": "Unit Grove to Grove",
+      "source_path": "unit/unit_grove2grove.md",
+      "source_sha256": "c6ec59442cb0278470f2b55a906e195491fed41f0ce328a75713a5db996a0277"
+    },
+    {
+      "input_sha256": "d6ce4ddf4544e8f61faa295fb93217618a12009ea8279882161045dcc1711b40",
+      "ordinal": 99,
+      "output_filename": "Unit MQ.md",
+      "product_id": "unit-mq-2a13ac26d1ac",
+      "product_name": "Unit MQ",
+      "source_path": "unit/Unit_MQ.md",
+      "source_sha256": "59dc010ca92f17545c05e7171bd59dd9ea20ea38dd9677a1304dcdab38829e0d"
+    },
+    {
+      "input_sha256": "e9c9a50f326e681b1aea29ad806a9e38fc98363a3db7037d69b017cde5a3e17c",
+      "ordinal": 100,
+      "output_filename": "Unit Step16.md",
+      "product_id": "unit-step16-f64c5daa39b8",
+      "product_name": "Unit Step16",
+      "source_path": "unit/Unit_Step16.md",
+      "source_sha256": "309ec141aa4b69d31e7cb07411b8605f05b9ce197df30ac2cf096e7de4cf7430"
+    },
+    {
+      "input_sha256": "4487282e5be0398fbe596dc3dfe071205fb7310fc8dcb9d8dcc93aec0eb40703",
+      "ordinal": 101,
+      "output_filename": "UnitV2.md",
+      "product_id": "unitv2-26188210094d",
+      "product_name": "UnitV2",
+      "source_path": "unit/unitv2.md",
+      "source_sha256": "d280970c28ddd8496e805945e3471c141d5078bfa6ba1139edca8938544ab850"
+    },
+    {
+      "input_sha256": "0dc199b2d9dbb909707ed646a0dc499b97b524a1ac39fed1c419be403b48c0ad",
+      "ordinal": 102,
+      "output_filename": "UnitV2-M12.md",
+      "product_id": "unitv2-m12-8d140c5aef60",
+      "product_name": "UnitV2-M12",
+      "source_path": "unit/unitv2_m12.md",
+      "source_sha256": "29fa62c613da9ba74dacfdf75f9e13ade905eb5be75b3e97fb36883485a0eb0a"
+    },
+    {
+      "input_sha256": "eb0fe014946f2f584022563231247f16fc205e2eadce8fd3e34c162bd80bfdf8",
+      "ordinal": 103,
+      "output_filename": "Unit UWB.md",
+      "product_id": "unit-uwb-066371890460",
+      "product_name": "Unit UWB",
+      "source_path": "unit/uwb.md",
+      "source_sha256": "e96799b4e4516a454a102ee9dd9ef91eed2010b02373031641986296c45fdb25"
+    },
+    {
+      "input_sha256": "1cb73d28586e55c5f4956b012a58a2be36c6065c45e91619ce8985601acabb8f",
+      "ordinal": 104,
+      "output_filename": "Unit Vibrator.md",
+      "product_id": "unit-vibrator-ee09b947945b",
+      "product_name": "Unit Vibrator",
+      "source_path": "unit/vibrator.md",
+      "source_sha256": "c89f5ee20b64edb0c09bb499d4359440fcf07897aa59ec0d9c74819598fbc5af"
+    },
+    {
+      "input_sha256": "0d1305ae3918e13da3240b70b61ee57b2ae648dd6556cd4c9301dafb88df4edf",
+      "ordinal": 105,
+      "output_filename": "Unit VMeter.md",
+      "product_id": "unit-vmeter-9e126bbd9b81",
+      "product_name": "Unit VMeter",
+      "source_path": "unit/vmeter.md",
+      "source_sha256": "21d20bdde9136d89e5778e006638aa56beab90a7f4f4a917412d29f3188c1c66"
+    },
+    {
+      "input_sha256": "e112c363d2a34c2a7e4b88c98a232276510ee06ee00cd6657cf7cba6820eb240",
+      "ordinal": 106,
+      "output_filename": "Unit Watering.md",
+      "product_id": "unit-watering-9305c7e679f8",
+      "product_name": "Unit Watering",
+      "source_path": "unit/watering.md",
+      "source_sha256": "369613ef47e6c5be10c252e411cba3b3fdfeb27ac84abd172db7ebaa2ba46fc8"
+    },
+    {
+      "input_sha256": "b9b1d6d73de8cd60b635afcb2f9e97cf6dfdd8a1a0731c97b406a985391815ea",
+      "ordinal": 107,
+      "output_filename": "Unit Weight.md",
+      "product_id": "unit-weight-b35adfabb254",
+      "product_name": "Unit Weight",
+      "source_path": "unit/WEIGHT.md",
+      "source_sha256": "c83f8b6a6cf59fd9866ab58f8322a787d01e1241a7df3c54187da605b97ca852"
+    },
+    {
+      "input_sha256": "717a17f14926d912720bfbff7bb2d53061d39cb5356ee64bc56b1f7ac4ff172c",
+      "ordinal": 108,
+      "output_filename": "Unit ZigBee.md",
+      "product_id": "unit-zigbee-ddec232a18a5",
+      "product_name": "Unit ZigBee",
+      "source_path": "unit/zigbee.md",
+      "source_sha256": "d0c3998f46e04670e99ee580a4ae66a5c10da4daabbd04ed8a06dddf576065b4"
+    },
+    {
+      "input_sha256": "3d6458fb6aa0e61108d89e801b8b1cc71f27de58355f47cd19352c3014ea79ee",
+      "ordinal": 109,
+      "output_filename": "Grove to Servo.md",
+      "product_id": "grove-to-servo-9672db30be29",
+      "product_name": "Grove to Servo",
+      "source_path": "accessory/converter/Grove_to_Servo.md",
+      "source_sha256": "ac65dcc7083efc5e4f16d7aa92ff7e138f9eae1b5238dcb10d636ae9c73c6c38"
+    },
+    {
+      "input_sha256": "ae6cfb42fa11f3bccf715974880b4a8b616c683e8e9992b13b4adfdaf9226249",
+      "ordinal": 110,
+      "output_filename": "AddOn_Display_Out_For_PoE-P4.md",
+      "product_id": "addon-display-out-for-poe-p4-33184beb8d4b",
+      "product_name": "AddOn_Display_Out_For_PoE-P4",
+      "source_path": "addon/AddOn_Display_Out_For_PoE-P4.md",
+      "source_sha256": "4693c97ef76bf66b5107c1b3d9043bea8a645bc07abab70440ae88b18daf593f"
+    },
+    {
+      "input_sha256": "ee7980cd2c630d8252e71d9f6ff024960308450f3216f9f7190904d4efe6cd0c",
+      "ordinal": 111,
+      "output_filename": "AI Pyramid-Pro.md",
+      "product_id": "ai-pyramid-pro-0d03bb19c983",
+      "product_name": "AI Pyramid-Pro",
+      "source_path": "ai_hardware/AI_Pyramid-Pro.md",
+      "source_sha256": "654f5069777ae50cd92cd60f88a493bb110e5d9694607daffb3ca081ca31e814"
+    },
+    {
+      "input_sha256": "e4eba32a45524d0601cae6bcfa4f064f82ba28633b9ae13feca6bc17727a5f11",
+      "ordinal": 112,
+      "output_filename": "AI Pyramid.md",
+      "product_id": "ai-pyramid-fd54617506a4",
+      "product_name": "AI Pyramid",
+      "source_path": "ai_hardware/AI_Pyramid.md",
+      "source_sha256": "6858bf7f196d27c6b7260c6704581cfde135a952d01e80e993fdf2596809b5a5"
+    },
+    {
+      "input_sha256": "cdbec5dd1e559b0a0a0d52b545e78d7388bcbeaf090bf6989d454f4c433d1b74",
+      "ordinal": 113,
+      "output_filename": "LLM-8850 Kit.md",
+      "product_id": "llm-8850-kit-19733465ff8f",
+      "product_name": "LLM-8850 Kit",
+      "source_path": "ai_hardware/LLM-8850_Kit.md",
+      "source_sha256": "6ad930fef80210c4a6fe8ae1166c9b7f3d665bb4f082ca9d7396d75581922477"
+    },
+    {
+      "input_sha256": "86ee4c74aaa37a635116259fc44c7f990c4b6c27f6176d8c5a6c6845a6bf742e",
+      "ordinal": 114,
+      "output_filename": "Demo Board-SHT30.md",
+      "product_id": "demo-board-sht30-57672aae1d3e",
+      "product_name": "Demo Board-SHT30",
+      "source_path": "app/demo-board_sht30.md",
+      "source_sha256": "3f021a389c7fe486402c30c42d7ab407a201ea0c8bdf6744e0b9cae0216248d0"
+    },
+    {
+      "input_sha256": "d2397e839a653629e5bb4869636219ad0ac5411a7fec1931cf05b0e7e9a8153e",
+      "ordinal": 115,
+      "output_filename": "StampFly v1.1.md",
+      "product_id": "stampfly-v1-1-f012eacc6ec8",
+      "product_name": "StampFly v1.1",
+      "source_path": "app/StampFly_v1.1.md",
+      "source_sha256": "bf7610a7c9a727ef9a8c7c1c70a53a2408b07d5861ca7f837c27a6b092244f10"
+    },
+    {
+      "input_sha256": "1397f84ce46523a4c533f335c8cdf64060ee40c33df2b8e1466973f86397e022",
+      "ordinal": 116,
+      "output_filename": "Atom DTU NBIoT2 v1.1.md",
+      "product_id": "atom-dtu-nbiot2-v1-1-7cc35e7fc6dc",
+      "product_name": "Atom DTU NBIoT2 v1.1",
+      "source_path": "atom/Atom_DTU_NBIoT2_v1.1.md",
+      "source_sha256": "8744fdd0a8c631725ef6983b83b18cfe68446fc79a444093d51568357c811726"
+    },
+    {
+      "input_sha256": "93757122ea3e0b0044fe9c9c355bf739e393881e6c81317d476294a17ce82d43",
+      "ordinal": 117,
+      "output_filename": "Atom Voice.md",
+      "product_id": "atom-voice-b618de616492",
+      "product_name": "Atom Voice",
+      "source_path": "atom/atomecho.md",
+      "source_sha256": "72ed0abf69f25968d4b50e3537d5da57bf44484ccaff7c29cf6700818ea16534"
+    },
+    {
+      "input_sha256": "9be4180c7837de83b00fe315631a60dd7da39c896a064bea5f2fc97329a3ba80",
+      "ordinal": 118,
+      "output_filename": "Atomic Voice Base.md",
+      "product_id": "atomic-voice-base-9afc5eb1fbae",
+      "product_name": "Atomic Voice Base",
+      "source_path": "atom/Atomic Echo Base.md",
+      "source_sha256": "6af8c74d2c811bcc060d00ddb28cb10378b766816c5b82e853351b1a6966b9a4"
+    },
+    {
+      "input_sha256": "9ccea98e46adedebf4b9932eaac905845b04869f9c0156d780186f4ff7949f14",
+      "ordinal": 119,
+      "output_filename": "Atomic Audio-3.5 Base.md",
+      "product_id": "atomic-audio-3-5-base-1cc81796eb02",
+      "product_name": "Atomic Audio-3.5 Base",
+      "source_path": "atom/Atomic_Audio-3.5_Base.md",
+      "source_sha256": "4942ee2a94f0c059a24232e2394b4f15dad2909a66aa545873cb21118027da19"
+    },
+    {
+      "input_sha256": "c240a2619f18b1999e45f77e1199622205987c4d231c5430b8735808e8b48193",
+      "ordinal": 120,
+      "output_filename": "Voice Pyramid.md",
+      "product_id": "voice-pyramid-c17fa45aea23",
+      "product_name": "Voice Pyramid",
+      "source_path": "atom/Echo_Pyramid.md",
+      "source_sha256": "303c29f29f7516e3b7fdf103733026d99c28e6368dce23f2f2e08537183b544a"
+    },
+    {
+      "input_sha256": "dd42c86b8a49f74c829590d763a93000cd9bff675018793843068892ca3c7719",
+      "ordinal": 121,
+      "output_filename": "Base Dual 16340.md",
+      "product_id": "base-dual-16340-262bfa1373e8",
+      "product_name": "Base Dual 16340",
+      "source_path": "base/Base_Dual_16340.md",
+      "source_sha256": "f62afb694e24507baaccc2ad865287ab32b71251eb39b5cac1f83bf63b3341d7"
+    },
+    {
+      "input_sha256": "9e5e577c1bd29c6a0765cde965cf947fc38f692c38ab864817dc7aa3229c9bb5",
+      "ordinal": 122,
+      "output_filename": "Base BTC.md",
+      "product_id": "base-btc-74e915409827",
+      "product_name": "Base BTC",
+      "source_path": "base/btc_base.md",
+      "source_sha256": "d253fdbcf21f255f1f6d8aa0ba6d23a96217db3131dee534f36f6c6088ca0705"
+    },
+    {
+      "input_sha256": "3b9e7dac2f1f29967067dd641b38cba55684c54e741c6dab783deaf5ca2a456f",
+      "ordinal": 123,
+      "output_filename": "Base M5GO Bottom2 v1.3.md",
+      "product_id": "base-m5go-bottom2-v1-3-ccd29a0e34c3",
+      "product_name": "Base M5GO Bottom2 v1.3",
+      "source_path": "base/m5go_bottom2_v1.3.md",
+      "source_sha256": "c66cd642f12c6cdb358093aa9e7941004abb36ef07f4a0eb3b50cae0ab091896"
+    },
+    {
+      "input_sha256": "bf35c95437afaf71c4c87e6cb691268b717c25fed9cb36dfdf4d8dfcb6b48b92",
+      "ordinal": 124,
+      "output_filename": "StackChan Body.md",
+      "product_id": "stackchan-body-b8923242348a",
+      "product_name": "StackChan Body",
+      "source_path": "base/StackChan_Body.md",
+      "source_sha256": "30ef710fe757a79cb904da4466233dd3d65f9a08fa5ee970b44a1f3ff8abfc28"
+    },
+    {
+      "input_sha256": "b2ad9354af2e051da7a2568ae9f29491f823a48ac9d718af637c673e31fe0058",
+      "ordinal": 125,
+      "output_filename": "Cap CC1101.md",
+      "product_id": "cap-cc1101-bc3594f2539a",
+      "product_name": "Cap CC1101",
+      "source_path": "cap/Cap_CC1101.md",
+      "source_sha256": "a877984b1cb12b19502e2d2e20a19ac42bc3cd6fe0006b2682936adb6ab3d0f4"
+    },
+    {
+      "input_sha256": "c257f369f8d566718fa297799d9bacde0e8c353465501c7580c08aa325d238d8",
+      "ordinal": 126,
+      "output_filename": "Cap LoRa-1262.md",
+      "product_id": "cap-lora-1262-be2dc05fa52a",
+      "product_name": "Cap LoRa-1262",
+      "source_path": "cap/Cap_LoRa-1262.md",
+      "source_sha256": "c62c7c05757b90bb7ccccafdeecc0e172e4ebafcc7308761bb12e9d42d33e337"
+    },
+    {
+      "input_sha256": "b670afe6536c686eb04a525e073d5025321e6fce7dde31459f7460fa30afb4b8",
+      "ordinal": 127,
+      "output_filename": "CardputerZero.md",
+      "product_id": "cardputerzero-5fe3a896d37a",
+      "product_name": "CardputerZero",
+      "source_path": "CardputerZero.md",
+      "source_sha256": "c95e2813ebd5fd9357eb7bd47a203eaedd59e1a2d7524bc1d65b3dbc92718a0d"
+    },
+    {
+      "input_sha256": "9d95b0beca8ef323997bd12b12632c59dc0b6e3866c5e95d92289b2a1393066d",
+      "ordinal": 128,
+      "output_filename": "Chain Angle.md",
+      "product_id": "chain-angle-1f6d463f3b0d",
+      "product_name": "Chain Angle",
+      "source_path": "chain/Chain_Angle.md",
+      "source_sha256": "1393a189187af7e195e9cd84bb4ab1acd3314a27d989945b81e11d24ff5010ff"
+    },
+    {
+      "input_sha256": "7c40e118402e6cbfbe66021ed123613235e82d6090aa0ef066225970e3691794",
+      "ordinal": 129,
+      "output_filename": "Chain Blank.md",
+      "product_id": "chain-blank-7c4fc41115c9",
+      "product_name": "Chain Blank",
+      "source_path": "chain/Chain_Blank.md",
+      "source_sha256": "8d48f546951c2d30313c134fed40a127c7665a304c9fbf06618aeebd24329845"
+    },
+    {
+      "input_sha256": "3663710d015aae99077efc84828d4d3937312dc4c394465680137874e829b8b7",
+      "ordinal": 130,
+      "output_filename": "Chain Encoder.md",
+      "product_id": "chain-encoder-89e7cf7197fa",
+      "product_name": "Chain Encoder",
+      "source_path": "chain/Chain_Encoder.md",
+      "source_sha256": "39a5e85389c56ecae340b31b69e4426fa9069fdcfe0a1bfd93f10860dc20377f"
+    },
+    {
+      "input_sha256": "6d81afed01b48ffc766280f26ff73ac5feda5dbe17bb3ae69892f9d94d236ab5",
+      "ordinal": 131,
+      "output_filename": "Chain Mono.md",
+      "product_id": "chain-mono-a83ce201f248",
+      "product_name": "Chain Mono",
+      "source_path": "chain/Chain_Mono.md",
+      "source_sha256": "3c2af0733a308dc7b49d5cc3bb5396c78fb900bcb51ed703b0064015ff74ae2b"
+    },
+    {
+      "input_sha256": "cc6430aea2b9bab24cff9a46c25115c8d14528d672bddab47a1b97ae9cb9acf1",
+      "ordinal": 132,
+      "output_filename": "Chain Mount.md",
+      "product_id": "chain-mount-15c29cf8cbdc",
+      "product_name": "Chain Mount",
+      "source_path": "chain/Chain_Mount.md",
+      "source_sha256": "84fa2df1139cb4225f35f0095348f2d96dac59afffa40c0f124d1b3ef78b24e0"
+    },
+    {
+      "input_sha256": "7cfd96d1bb2f4adcbcf5004420ff655a1d61f534b72656dd228e38a324bdec23",
+      "ordinal": 133,
+      "output_filename": "Chain RGB.md",
+      "product_id": "chain-rgb-0b295a8b03af",
+      "product_name": "Chain RGB",
+      "source_path": "chain/Chain_RGB.md",
+      "source_sha256": "c5a91cb25213e2358fc2ce976499fd26d9d6fe48babfb5a0b5b1e99a1340af86"
+    },
+    {
+      "input_sha256": "5f3e3198798ddfd7d6ac866a27e361bc3c329564595bc70634015b2087788b31",
+      "ordinal": 134,
+      "output_filename": "Chain ToF.md",
+      "product_id": "chain-tof-93d363be2dba",
+      "product_name": "Chain ToF",
+      "source_path": "chain/Chain_ToF.md",
+      "source_sha256": "2595e483b789eaeff524c4a24e290d42d4a1a04a1dea940f680ab2f451f516ba"
+    },
+    {
+      "input_sha256": "8e4a627edb9579d6f17907a7682551cc50493d1edefc8f7917debfed4e9d379a",
+      "ordinal": 135,
+      "output_filename": "Arduino Nesso N1.md",
+      "product_id": "arduino-nesso-n1-9bc6c4c0b02d",
+      "product_name": "Arduino Nesso N1",
+      "source_path": "core/Arduino_Nesso_N1.md",
+      "source_sha256": "2231c4e2a5f142bf2ceb7269047f33ab74ee574d5ff98a8288a3ff811163a902"
+    },
+    {
+      "input_sha256": "48aadda19bd614db7448355239ef4ca0c1db719d9030f8c545ccc0ad15034e77",
+      "ordinal": 136,
+      "output_filename": "Atom-Matrix v1.1.md",
+      "product_id": "atom-matrix-v1-1-055d78a9ea4e",
+      "product_name": "Atom-Matrix v1.1",
+      "source_path": "core/Atom-Matrix_v1.1.md",
+      "source_sha256": "708997d021d066aafb7f57a71dce262beb50855bcd312e4a674b8ceb4e41a268"
+    },
+    {
+      "input_sha256": "7eaebab8e055d178718940523adf5b9b3cc3de1a8ac8390f1e6e4a86e021611c",
+      "ordinal": 137,
+      "output_filename": "Atom VoiceS3R.md",
+      "product_id": "atom-voices3r-a558a80fe93d",
+      "product_name": "Atom VoiceS3R",
+      "source_path": "core/Atom_EchoS3R.md",
+      "source_sha256": "4a90f34da221d1ebdf607611205241dc0a39e7aec31a6a383c47ff15a5fc45ed"
+    },
+    {
+      "input_sha256": "cc11c78731f3c01470420ea777acb50a68848d3b2d9d6951faa55e03aeb5f7cf",
+      "ordinal": 138,
+      "output_filename": "Basic v2.6.md",
+      "product_id": "basic-v2-6-e80eb73f82d4",
+      "product_name": "Basic v2.6",
+      "source_path": "core/BASIC v2.6.md",
+      "source_sha256": "119249e8c29f5bb92cf1236fe775192bd179849fbabd0669c337a9c507223619"
+    },
+    {
+      "input_sha256": "1c7ffee6f194802b9d20136227cc637eb5a29c645e1f8260cc7b9e4c1e9c68d4",
+      "ordinal": 139,
+      "output_filename": "Basic.md",
+      "product_id": "basic-4611b24b5375",
+      "product_name": "Basic",
+      "source_path": "core/basic.md",
+      "source_sha256": "d2f6e9400e6393943ae9ba1c38343af03efc0d757c5d759029ef6b9e50b7e728"
+    },
+    {
+      "input_sha256": "6c8d01eedaf9241880c97562d0b0a517445b5e5221bed835679f55b6f1cf0f2d",
+      "ordinal": 140,
+      "output_filename": "Basic v2.7.md",
+      "product_id": "basic-v2-7-27c4169867b7",
+      "product_name": "Basic v2.7",
+      "source_path": "core/basic_v2.7.md",
+      "source_sha256": "d7803d137be2f2af8dc3cb610c4a3205e3aa7bd44d995fde438f92b4dab4a52e"
+    },
+    {
+      "input_sha256": "7453afb3947c1065d3da2a6c4e404c9bcd026d09e3d79702b96a64ab001b6e5b",
+      "ordinal": 141,
+      "output_filename": "Capsule v1.1.md",
+      "product_id": "capsule-v1-1-45dc2708b826",
+      "product_name": "Capsule v1.1",
+      "source_path": "core/Capsule_v1.1.md",
+      "source_sha256": "e861216c70ba04950d9a35ffad7e583cec2a4b9ad5a1f72fe8e5b4551b8566b7"
+    },
+    {
+      "input_sha256": "7a736ecfbca0b84c5d52e9a6d4076667708de1b98a5ae67f6f71e94d861773bf",
+      "ordinal": 142,
+      "output_filename": "Cardputer Mesh Kit.md",
+      "product_id": "cardputer-mesh-kit-baeceb0b9c86",
+      "product_name": "Cardputer Mesh Kit",
+      "source_path": "core/Cardputer_Mesh_Kit.md",
+      "source_sha256": "785843898ccaafa174eed5ca7b141d838c71004bfd1e8ccf3767fd04f5a2d6b6"
+    },
+    {
+      "input_sha256": "2d61eebc08b1bf20deef525bf167269cbc55b2f51c3856f00581c67471b6991e",
+      "ordinal": 143,
+      "output_filename": "CM4Stack.md",
+      "product_id": "cm4stack-c8ed4963c06f",
+      "product_name": "CM4Stack",
+      "source_path": "core/CM4Stack.md",
+      "source_sha256": "6bf2f4bc9c749594bd7afa60840c5bd845ac0bf95be8cf4b79c02e2e435f3e49"
+    },
+    {
+      "input_sha256": "e37122e49f0a3ee2601e65c2ef420a410f1aed54c78b954ae191569da4c3fad1",
+      "ordinal": 144,
+      "output_filename": "Core Metal.md",
+      "product_id": "core-metal-5d62c0428d7c",
+      "product_name": "Core Metal",
+      "source_path": "core/CORE Metal.md",
+      "source_sha256": "6a4d32b441705d459da12fc5430754067c05a7a4be11b653c65270d134de511b"
+    },
+    {
+      "input_sha256": "2b66dcc6512da3e03c90e8919c54eb46bec4c21086f8528bcdf6db503dbe31e5",
+      "ordinal": 145,
+      "output_filename": "Core2 For AWS v1.3.md",
+      "product_id": "core2-for-aws-v1-3-9e942e074984",
+      "product_name": "Core2 For AWS v1.3",
+      "source_path": "core/Core2_For_AWS_v1.3.md",
+      "source_sha256": "ac659cd149bec6294444538603eb3db8dc33cd6f3354694ee496774efc522101"
+    },
+    {
+      "input_sha256": "45aede6bdee22d34911db7c13ca1c4aca60963f46f5f15556fe69984af045365",
+      "ordinal": 146,
+      "output_filename": "Core2 v1.3.md",
+      "product_id": "core2-v1-3-7def93e81521",
+      "product_name": "Core2 v1.3",
+      "source_path": "core/Core2_v1.3.md",
+      "source_sha256": "de2f8062fb9474dd35a19f91ade411e8f2d9d5edd61eef1ed02c0a98ddb73fe1"
+    },
+    {
+      "input_sha256": "5e52b24a6e65c14aaf1c389c0bebd77157c720d0848f5c08226399e60abb6492",
+      "ordinal": 147,
+      "output_filename": "CoreS3-Lite.md",
+      "product_id": "cores3-lite-998c3f3e6e87",
+      "product_name": "CoreS3-Lite",
+      "source_path": "core/CoreS3-Lite.md",
+      "source_sha256": "30cb7fa138092172ebd631d9de7dd6b41d6755a6d6ff4f0e84f437f7def7fd77"
+    },
+    {
+      "input_sha256": "def619ce7c7961fc1f72727640113a9f3104ed915c5aed926ceac51cef18d5e2",
+      "ordinal": 148,
+      "output_filename": "CoreS3.md",
+      "product_id": "cores3-fe2e07941902",
+      "product_name": "CoreS3",
+      "source_path": "core/CoreS3.md",
+      "source_sha256": "8b2ba29b657c6998100a1f1413c162506cf95351133bf5d2abfc2f9cd7e5d17a"
+    },
+    {
+      "input_sha256": "25ac2200c07df7df9c4f7804b8bc2fc171a61e921a699a0ed5e0b84439f561b0",
+      "ordinal": 149,
+      "output_filename": "CoreS3 Thread BR.md",
+      "product_id": "cores3-thread-br-3d5cedb82525",
+      "product_name": "CoreS3 Thread BR",
+      "source_path": "core/CoreS3_Thread_BR.md",
+      "source_sha256": "d3831dd6386364059ba7dab7b0d22b8969f87e3eb6272784b65dbc053f8e2946"
+    },
+    {
+      "input_sha256": "bd40fa73f91abdc864d6b313f031a351b95af9e52ecc91a66e602bc212059db1",
+      "ordinal": 150,
+      "output_filename": "DinMeter v1.1.md",
+      "product_id": "dinmeter-v1-1-1be53f587107",
+      "product_name": "DinMeter v1.1",
+      "source_path": "core/DinMeter_v1.1.md",
+      "source_sha256": "85eabb68671282134155cd94ee394a2359b253b1108bc39a5f9fc4149865fbb0"
+    },
+    {
+      "input_sha256": "3f580b6bb75534289e0e22b51087d1cd4958824edde06f759c01ed6f44708a07",
+      "ordinal": 151,
+      "output_filename": "Fire.md",
+      "product_id": "fire-2b6395d25b50",
+      "product_name": "Fire",
+      "source_path": "core/fire.md",
+      "source_sha256": "91122437466681ae996404a2277efcffe57f02441ebca626cabb42e26bb9dcbd"
+    },
+    {
+      "input_sha256": "cfb95eb171bcc6b0ded4ae622946dc6714f28865be4ad0ffa087c658f0e3c4c2",
+      "ordinal": 152,
+      "output_filename": "Fire v2.6.md",
+      "product_id": "fire-v2-6-4b8ab98411fc",
+      "product_name": "Fire v2.6",
+      "source_path": "core/fire_v2.6.md",
+      "source_sha256": "188c458071bc7b61d8aec3bab42134702ab63b206f0db596cbff6161196dadda"
+    },
+    {
+      "input_sha256": "dd77011e13e375591e5a7cfab4bfe9c6c32bedc16bb3517b28c2b6b0fd849856",
+      "ordinal": 153,
+      "output_filename": "Fire v2.7.md",
+      "product_id": "fire-v2-7-970c16a4d3f5",
+      "product_name": "Fire v2.7",
+      "source_path": "core/fire_v2.7.md",
+      "source_sha256": "2a0f08ab2f717601fe54d49c7072197b4cc5930d41138753130330be03afb142"
+    },
+    {
+      "input_sha256": "fef1c361343fa4ced3f4481c4e61c3232e5f303a2fefccd1825ae37f4ba85ecc",
+      "ordinal": 154,
+      "output_filename": "Gray.md",
+      "product_id": "gray-23b722c20e0c",
+      "product_name": "Gray",
+      "source_path": "core/gray.md",
+      "source_sha256": "bf55d50cf8d07ff0c373cbde6f16c6381d65e539814ab92d7db063acc42740c4"
+    },
+    {
+      "input_sha256": "1d941d1395cf9b511032df6c07f54ce87b53f8a2405ded07f273de117c52dcb8",
+      "ordinal": 155,
+      "output_filename": "CoreMP135.md",
+      "product_id": "coremp135-98360de80ed5",
+      "product_name": "CoreMP135",
+      "source_path": "core/M5CoreMP135.md",
+      "source_sha256": "2fe82015a14c75233c3358dae59555b6a0334e9b952380671eecc099ce9455c1"
+    },
+    {
+      "input_sha256": "e2b777ecb7dcf14cc9044e7275b5d005a05bd2ea2154a78e7dd3e6dfa5c439be",
+      "ordinal": 156,
+      "output_filename": "CoreS3-SE.md",
+      "product_id": "cores3-se-de74f0945ee3",
+      "product_name": "CoreS3-SE",
+      "source_path": "core/M5CoreS3 SE.md",
+      "source_sha256": "18e6d4750b6456af76725682bf7aea9fcfa2785f32b03a87d7222e127e363a5a"
+    },
+    {
+      "input_sha256": "25a35b164b13c91b2cffbe56a2d9d31dee6ee8274d0bef211e87e9a45a2ab267",
+      "ordinal": 157,
+      "output_filename": "M5GO IoT Kit.md",
+      "product_id": "m5go-iot-kit-7548fd87ca51",
+      "product_name": "M5GO IoT Kit",
+      "source_path": "core/m5go.md",
+      "source_sha256": "cafee0092e01f543f0eaaa5eb2d3e98012379809b4c2e3507b37bc8e57664d1f"
+    },
+    {
+      "input_sha256": "e6080ee4527dc5cb450771236b463ec08ce51f2c25fb465a034eed3128ee39ec",
+      "ordinal": 158,
+      "output_filename": "M5GO IoT Kit v2.6.md",
+      "product_id": "m5go-iot-kit-v2-6-398b26645492",
+      "product_name": "M5GO IoT Kit v2.6",
+      "source_path": "core/m5go_v2.6.md",
+      "source_sha256": "0d96d106342208d71db827f3dfe6e4cc56a4cbc16235fe8fbf8b1e88386dadf3"
+    },
+    {
+      "input_sha256": "ba471834013bf31346c0fa31880f1d60bc1224edb0a93b9eb24847a64aec0190",
+      "ordinal": 159,
+      "output_filename": "M5GO IoT Kit v2.7.md",
+      "product_id": "m5go-iot-kit-v2-7-566311c71a9f",
+      "product_name": "M5GO IoT Kit v2.7",
+      "source_path": "core/m5go_v2.7.md",
+      "source_sha256": "0fd57a6a6ec23035e1237944c93ac1d8ab7b9e11601b50d2a6c391a5c0b6f5a5"
+    },
+    {
+      "input_sha256": "fdfa7fe01203bd8f953b29880306a77eb378ba1a4d7881aebe080eff7fb6dd61",
+      "ordinal": 160,
+      "output_filename": "StickV.md",
+      "product_id": "stickv-b3c3e7b4b90e",
+      "product_name": "StickV",
+      "source_path": "core/m5stickv.md",
+      "source_sha256": "0d85a42b3972bbc460be22eec2eab1bb568a7590f61e55dd18da51e0f8f8716c"
+    },
+    {
+      "input_sha256": "af3aec58b6abb8cc8f8d0f183bf4482a4a70210192f7ae619c1e1c319952fda6",
+      "ordinal": 161,
+      "output_filename": "NanoH2.md",
+      "product_id": "nanoh2-6dd9fc2743d5",
+      "product_name": "NanoH2",
+      "source_path": "core/NanoH2.md",
+      "source_sha256": "130aceaba5160349ea0cc9e1b5085d9afa50a7bfa325ceedadf7968407ad471c"
+    },
+    {
+      "input_sha256": "4635a85632b0681202ae1be7cbb82967b961beb6e2e62bb0993eea705c0e744e",
+      "ordinal": 162,
+      "output_filename": "PaperColor.md",
+      "product_id": "papercolor-a872f67ef4c9",
+      "product_name": "PaperColor",
+      "source_path": "core/PaperColor.md",
+      "source_sha256": "3d42fca51d9020c08eac4ebd1a72e629ee6672fa512bffdca359c414da3dda50"
+    },
+    {
+      "input_sha256": "c56a0c8616b06a3ef469f22defe6faaa452b1eac99c7b4d7a665b66f21e64f55",
+      "ordinal": 163,
+      "output_filename": "StackChan Core.md",
+      "product_id": "stackchan-core-cbbf2e7748c5",
+      "product_name": "StackChan Core",
+      "source_path": "core/StackChan_Core.md",
+      "source_sha256": "4219bf660ed0a7474c4d5c7e45fedf437a19ecc18bcfe8953d47c6b0dee52f0f"
+    },
+    {
+      "input_sha256": "014379f89d2bee4b0c7deea19bf8e4613cf2696722affa08a72af9b3d96f3e5b",
+      "ordinal": 164,
+      "output_filename": "Stamp-C5.md",
+      "product_id": "stamp-c5-cb6d75715d18",
+      "product_name": "Stamp-C5",
+      "source_path": "core/Stamp-C5.md",
+      "source_sha256": "afbc68b69387a70a16d132ab2c96eac9fd1de3ee1d5e904914baee58bfb49ba4"
+    },
+    {
+      "input_sha256": "7c11163b84ac9576ec5455e68169fc3b2383a311b9f7a1b8c1a2a3b4242d0a40",
+      "ordinal": 165,
+      "output_filename": "Stamp-C5 DIP.md",
+      "product_id": "stamp-c5-dip-9f73b7531dde",
+      "product_name": "Stamp-C5 DIP",
+      "source_path": "core/Stamp-C5_DIP.md",
+      "source_sha256": "18628eba72b4121c832d4082d1662121b40b636776a93037f985207b2d19da66"
+    },
+    {
+      "input_sha256": "092782c8959beb15d0c67c2cbab58d6040803a51c73ea2a89a4d8ca7b360e2e1",
+      "ordinal": 166,
+      "output_filename": "Stamp-P4.md",
+      "product_id": "stamp-p4-dc40121df2ce",
+      "product_name": "Stamp-P4",
+      "source_path": "core/Stamp-P4.md",
+      "source_sha256": "fd1201c8a0793fa71d8d278eadf4fb93753b29daa0fe7bf4f79c93ff7c45121f"
+    },
+    {
+      "input_sha256": "228d41525d6393a259ee13f9f761bcdec4cb72eb8180b76a9cf8861b8c03d046",
+      "ordinal": 167,
+      "output_filename": "Stamp-S3Bat.md",
+      "product_id": "stamp-s3bat-7601115a7f19",
+      "product_name": "Stamp-S3Bat",
+      "source_path": "core/Stamp-S3Bat.md",
+      "source_sha256": "954acdc1ed0b6e69d2e7435232dd0bb39d5535a2d96f536f2a3aa09dc0983411"
+    },
+    {
+      "input_sha256": "0d4c6f776ddb9d49f8e630f5fb74c126af67a58f042b2d287bf345dd8ecb3230",
+      "ordinal": 168,
+      "output_filename": "Stamp-S3Bat DIP.md",
+      "product_id": "stamp-s3bat-dip-36a8afc15a95",
+      "product_name": "Stamp-S3Bat DIP",
+      "source_path": "core/Stamp-S3Bat_DIP.md",
+      "source_sha256": "0f782efc919fedcd49c5153f29ddc24e3b5f56971d68231a8adf097ff840329a"
+    },
+    {
+      "input_sha256": "cf097710cd96f0a3786d64d58c1d6ae3b28fbebc05e67366578f97bd7588de44",
+      "ordinal": 169,
+      "output_filename": "Stamp C6LoRa.md",
+      "product_id": "stamp-c6lora-8e0b68b10cfd",
+      "product_name": "Stamp C6LoRa",
+      "source_path": "core/Stamp_C6LoRa.md",
+      "source_sha256": "53fa875ed26e1f57470dc214477b6a78285987b6eca5358b6249686b88f0b01d"
+    },
+    {
+      "input_sha256": "aadde3cd16b0c661e180187a28ae751cf0cbfe1357dc8e14a2d7979c37d79b62",
+      "ordinal": 170,
+      "output_filename": "StickC-Plus SE (coming soon).md",
+      "product_id": "stickc-plus-se-coming-soon-7629b95652fc",
+      "product_name": "StickC-Plus SE (coming soon)",
+      "source_path": "core/StickC-Plus_SE.md",
+      "source_sha256": "bf92592651295707bab09886668667b9f06edd206f5a20a3845206fa3065ae96"
+    },
+    {
+      "input_sha256": "813aedb640b0be5b9b8a4b69b3fa5fd1449976b57c2e2c0a8c16005f8a4eed2b",
+      "ordinal": 171,
+      "output_filename": "StickS3.md",
+      "product_id": "sticks3-c6d889ecb262",
+      "product_name": "StickS3",
+      "source_path": "core/StickS3.md",
+      "source_sha256": "856b0b11c6666e27e964ab015a3f40851ded9c11967b05790031d1bad3162ab5"
+    },
+    {
+      "input_sha256": "9a72de49ca47027ee988a8509ce23553ced31e7d2498571aec4b0d6d3c7f3434",
+      "ordinal": 172,
+      "output_filename": "StopWatch.md",
+      "product_id": "stopwatch-1414a8f866be",
+      "product_name": "StopWatch",
+      "source_path": "core/StopWatch.md",
+      "source_sha256": "421f393254ec795a262b408203b7e98fc11e0973ebb747efb0ef66f5d4962c31"
+    },
+    {
+      "input_sha256": "308affb0bb52c37f52079917896e071d9300a90834329b82373011aa1d91c4f4",
+      "ordinal": 173,
+      "output_filename": "Xiaozhi Card Kit（小智墨伴）.md",
+      "product_id": "xiaozhi-card-kit-c26d860f8f0b",
+      "product_name": "Xiaozhi Card Kit（小智墨伴）",
+      "source_path": "core/Xiaozhi_Card_Kit.md",
+      "source_sha256": "947eccd9e77acbf31d706b9c356905d6aa3df18f9ab3299d6a885613a078a43a"
+    },
+    {
+      "input_sha256": "96f691119152485e0bbc2be23a9b19ea53a22588ce263d2b3b5d65dc0469e233",
+      "ordinal": 174,
+      "output_filename": "Hat 18650C.md",
+      "product_id": "hat-18650c-a014bb8f97e1",
+      "product_name": "Hat 18650C",
+      "source_path": "hat/hat-18650.md",
+      "source_sha256": "5ea429b9aa6a4c259f2a21fe0defe3f168c8c836db8e0bda4e987c5594d8a339"
+    },
+    {
+      "input_sha256": "ad33cb8102f71b96085c552e635e3d64e8c8c976832eadb19918c53554eb38f0",
+      "ordinal": 175,
+      "output_filename": "Module COMX Cat1.md",
+      "product_id": "module-comx-cat1-6bc022329978",
+      "product_name": "Module COMX Cat1",
+      "source_path": "module/comx_cat1.md",
+      "source_sha256": "db09ed12b08708aecd7c24d77673079d25038bfb0bbc4863f5208ea030bb4f06"
+    },
+    {
+      "input_sha256": "de8cccd5790bccfeeb9835acbc1859e7b2efe102ba9111680a2db7e8c127537a",
+      "ordinal": 176,
+      "output_filename": "Module COMX GPS.md",
+      "product_id": "module-comx-gps-d5bf31dc5c7e",
+      "product_name": "Module COMX GPS",
+      "source_path": "module/comx_gps.md",
+      "source_sha256": "215c1b42c4486fb595804ba457750dca6d64eeb84362c1310521e665808fe426"
+    },
+    {
+      "input_sha256": "4a88cf79247d02f41ed2ae6ecf5337c1a99f17ec7e63a3088bef7102539a593e",
+      "ordinal": 177,
+      "output_filename": "Module COMX GSM.md",
+      "product_id": "module-comx-gsm-e81b91d4b9ec",
+      "product_name": "Module COMX GSM",
+      "source_path": "module/comx_gsm.md",
+      "source_sha256": "0d46b96ff7ecf9a51dab0418b1321991481b8ecd1fae7506918ed62fa852270b"
+    },
+    {
+      "input_sha256": "8155314dd543c6cefec9d5d79d5656a1c88564a8ac98b90756285a372000b8b5",
+      "ordinal": 178,
+      "output_filename": "Module COMX LoRaWAN868.md",
+      "product_id": "module-comx-lorawan868-9537116beb9a",
+      "product_name": "Module COMX LoRaWAN868",
+      "source_path": "module/comx_lorawan.md",
+      "source_sha256": "3f7441744c806c9070e78560fe034aca119722508764df5a9c0a53da6665a51c"
+    },
+    {
+      "input_sha256": "d8be17419dee7e4ba22511cbf71160dfe58488c6278c7939a94837dd701863fc",
+      "ordinal": 179,
+      "output_filename": "Module COMX LoRaWAN470.md",
+      "product_id": "module-comx-lorawan470-0079a37aa09d",
+      "product_name": "Module COMX LoRaWAN470",
+      "source_path": "module/comx_lorawan470.md",
+      "source_sha256": "c5132b77a3275fc37a6f5e90cd4e27993b3b21045a588375408ff681f3d4d3a4"
+    },
+    {
+      "input_sha256": "b0b200718845e6b61b7f4ed191e23c5132374e99bedab6e6df1f4347ff8049a6",
+      "ordinal": 180,
+      "output_filename": "Module COMX LoRaWAN868 v2.0.md",
+      "product_id": "module-comx-lorawan868-v2-0-f51e2213e53b",
+      "product_name": "Module COMX LoRaWAN868 v2.0",
+      "source_path": "module/comx_lorawan868_2.0.md",
+      "source_sha256": "be7dccfcb8d21ba901a76b0512f4030b170a5f48314bf6f6db15b5229cbeb51e"
+    },
+    {
+      "input_sha256": "5a0bc8baecd714f80eb2905d8d38101bcfb1e336ac3ca79be8348ba7f2cf620b",
+      "ordinal": 181,
+      "output_filename": "Module COMX LoRaWAN915.md",
+      "product_id": "module-comx-lorawan915-111e3c82be41",
+      "product_name": "Module COMX LoRaWAN915",
+      "source_path": "module/comx_lorawan915.md",
+      "source_sha256": "2293deb6d6b1ed2295923b5dc77371d08c92bdb927a55bc81d2448956eca4e1e"
+    },
+    {
+      "input_sha256": "6bd07e42870a7a9e9a12f7c8c2bee8e1e523c53c98fa3fd4987e694d7bd58ab7",
+      "ordinal": 182,
+      "output_filename": "Module COMX LTE-Data.md",
+      "product_id": "module-comx-lte-data-5df34570f62f",
+      "product_name": "Module COMX LTE-Data",
+      "source_path": "module/comx_lte-data.md",
+      "source_sha256": "7e532ef3e111abb8d7e8a905d5229828c78102eb163b83a8944373e413c122ff"
+    },
+    {
+      "input_sha256": "115be8710c5e049addfe04e933f32d423ace7674d99be2354cebd3b5c4d24115",
+      "ordinal": 183,
+      "output_filename": "Module COMX LTE.md",
+      "product_id": "module-comx-lte-20b73553b7c9",
+      "product_name": "Module COMX LTE",
+      "source_path": "module/comx_lte.md",
+      "source_sha256": "421e1a72bf2ce08b11bceff9637e562d6a3fe3c025c8e5e783e49d280ca20376"
+    },
+    {
+      "input_sha256": "f22371ae9734d8f682cecfaa9ffa37f11f992e2883638b331f0fa20ec2deec2e",
+      "ordinal": 184,
+      "output_filename": "Module COMX NBIoT.md",
+      "product_id": "module-comx-nbiot-82ecd2e5c625",
+      "product_name": "Module COMX NBIoT",
+      "source_path": "module/comx_nb-iot.md",
+      "source_sha256": "5ca9a7d4217763dd236018a000087ec0d99de31f5772d81b26b76976a1591b0d"
+    },
+    {
+      "input_sha256": "092e1749c5f1f73d9afaf4c48d361b652dceb65a51eca80f54a2161e890cff41",
+      "ordinal": 185,
+      "output_filename": "Faces QWERTY.md",
+      "product_id": "faces-qwerty-59a1a6d60299",
+      "product_name": "Faces QWERTY",
+      "source_path": "module/faces_keyboard.md",
+      "source_sha256": "e5b8dc72e810081eaede2acce7d613a4716e7623f12c92f358b03d8b635ab725"
+    },
+    {
+      "input_sha256": "e76ea1ade33555f4b67c5cf7273970d1006de56829baaac965f9b06c9b1bc092",
+      "ordinal": 186,
+      "output_filename": "Module LLM Kit.md",
+      "product_id": "module-llm-kit-6dad0f809655",
+      "product_name": "Module LLM Kit",
+      "source_path": "module/Module LLM Kit.md",
+      "source_sha256": "412b97a529b9ec0770454d87a40f41cb744d7cad2e1727d8e8265cdbdf5e4bba"
+    },
+    {
+      "input_sha256": "e8840f801a732c7eb1bb722510d8b2ece6e1a5f1d1c5d13a59b0df2d21d6b53f",
+      "ordinal": 187,
+      "output_filename": "Module LLM.md",
+      "product_id": "module-llm-f66d28e8903c",
+      "product_name": "Module LLM",
+      "source_path": "module/Module-LLM.md",
+      "source_sha256": "e07eddde2c93dbc85c24820c2cfaa3afcaefbce4a637cb9649ff1caf71520b71"
+    },
+    {
+      "input_sha256": "86deef2fffba1f28bbbd646dfa8613d5b293931584cf34edda8c8e7813ab0297",
+      "ordinal": 188,
+      "output_filename": "Module ASR.md",
+      "product_id": "module-asr-9df8acfba584",
+      "product_name": "Module ASR",
+      "source_path": "module/Module_ASR.md",
+      "source_sha256": "223c409c3f50fa8574197e5fb9cb16d4a1138e1a644a96e38e4d0085eadb8090"
+    },
+    {
+      "input_sha256": "ab50d4ca279506e03d33b920c9f2606e2cefb16949ae1ad871ff5f1f958f5f98",
+      "ordinal": 189,
+      "output_filename": "Module LoRaWAN-EU868.md",
+      "product_id": "module-lorawan-eu868-17765fac0b44",
+      "product_name": "Module LoRaWAN-EU868",
+      "source_path": "module/Module_LoRaWAN-EU868.md",
+      "source_sha256": "7dcb2417b14ad9308c67c338c309460b3048f493642b81a2f5b72dfb407ce221"
+    },
+    {
+      "input_sha256": "22b2b3a705e3a755843f449e480b72477224dccbf373402ccfb5aa76c56af6f2",
+      "ordinal": 190,
+      "output_filename": "Module NB-IoT Plus.md",
+      "product_id": "module-nb-iot-plus-879adbfc094e",
+      "product_name": "Module NB-IoT Plus",
+      "source_path": "module/nb-iot_plus.md",
+      "source_sha256": "367fb7323967bcb8aa59a2e8ab4fdc08d1d1af0db4bef0485b41c15a8fc1c1a1"
+    },
+    {
+      "input_sha256": "fe5634cad529f0e6b7194b9153fb1993829094d85dc6edd477c5f68c1986e79e",
+      "ordinal": 191,
+      "output_filename": "Module13.2 BLDC Drvier.md",
+      "product_id": "module13-2-bldc-drvier-6121c64a1745",
+      "product_name": "Module13.2 BLDC Drvier",
+      "source_path": "module/odrive.md",
+      "source_sha256": "c744e7e517157356437ab6682ce3488aad74d33e8d0d92245c05244306e8816f"
+    },
+    {
+      "input_sha256": "8b69cd484caf4c6e688abc660c6a7551fbe48ef034cf4ba943b3550f974601bd",
+      "ordinal": 192,
+      "output_filename": "StackChan.md",
+      "product_id": "stackchan-4ab98aca5f72",
+      "product_name": "StackChan",
+      "source_path": "StackChan.md",
+      "source_sha256": "8dab8ac7c818457e5d8b3f3528692defff8a0bdbb73bf655360a1a2a0e1863c3"
+    },
+    {
+      "input_sha256": "8e946d03a4f67068c2e9fdaf33dddf1a17f277a0c408451551618b96558608cd",
+      "ordinal": 193,
+      "output_filename": "Stamp-AddOn C6 For P4.md",
+      "product_id": "stamp-addon-c6-for-p4-e374038cd38a",
+      "product_name": "Stamp-AddOn C6 For P4",
+      "source_path": "stamp/Stamp-AddOn_C6_For_P4.md",
+      "source_sha256": "c45939343d4f53b3ba6496be783e5c8b31c1ff67bc2cfd11b2ef0905a3f8c469"
+    },
+    {
+      "input_sha256": "8e697ff28c90342f25b22d26c4d5ef0a3bf97dffe10f0b6446c7f1c03e630398",
+      "ordinal": 194,
+      "output_filename": "Stamp-AddOn_Cam0308.md",
+      "product_id": "stamp-addon-cam0308-be641eb7056e",
+      "product_name": "Stamp-AddOn_Cam0308",
+      "source_path": "stamp/Stamp-AddOn_Cam0308.md",
+      "source_sha256": "490a453425830b34f613db63428a18db58cf930f2ad3d0adfbe5f5a911a66d7e"
+    },
+    {
+      "input_sha256": "2b08867b31d2903dfaef8985aba1363e5ceb02e96aa464524b20a15d30623dfa",
+      "ordinal": 195,
+      "output_filename": "StamPLC PoE.md",
+      "product_id": "stamplc-poe-c8d18c868a51",
+      "product_name": "StamPLC PoE",
+      "source_path": "stamplc/StamPLC_PoE.md",
+      "source_sha256": "50a71d2f9aced5d29901b16d291ee5aeb4a8cec7c7637af7ab1692b34dbe768e"
+    },
+    {
+      "input_sha256": "4a3a0cffdc20adec1ed501d1719a3a2dc08cbe336b35b530fb5e86e69bd78a5c",
+      "ordinal": 196,
+      "output_filename": "Tab5 Keyboard.md",
+      "product_id": "tab5-keyboard-d4c3f4783ca5",
+      "product_name": "Tab5 Keyboard",
+      "source_path": "tab5/Tab5_Keyboard.md",
+      "source_sha256": "56df9ea36ed13b9a961bec5c77e85b3d3fe1ec589302b1cb5c8c8b4d53c231a2"
+    },
+    {
+      "input_sha256": "422b2a74e0db9592c4c60673b3154fdc1fb6d143d2c0b03021adbd053a135217",
+      "ordinal": 197,
+      "output_filename": "ESP32-CAM PSRAM.md",
+      "product_id": "esp32-cam-psram-4bf1cbd7fd68",
+      "product_name": "ESP32-CAM PSRAM",
+      "source_path": "unit/ESP32CAM-PSRAM.md",
+      "source_sha256": "5f0bcf0ff2d4099a30cbb8df3ed0cf7b8884c1c0eb0f631e2db397d5beab182d"
+    },
+    {
+      "input_sha256": "6904d76aeeb883d00651a69fcb3091520c8f6747d6e2facdeea51704ef80e188",
+      "ordinal": 198,
+      "output_filename": "M5Camera.md",
+      "product_id": "m5camera-24cee0cc02a5",
+      "product_name": "M5Camera",
+      "source_path": "unit/m5camera.md",
+      "source_sha256": "b574e1db9b63c1ab0c4cb69a3a2895ce50302c612d4ec549f46ec2eb44ff8682"
+    },
+    {
+      "input_sha256": "e3b6b7ad3620641cc7a465495ff8aa455aea280c7e0a9ccb1d5bbf6e7a8ffad4",
+      "ordinal": 199,
+      "output_filename": "M5Camera-F.md",
+      "product_id": "m5camera-f-00c809bf2b2e",
+      "product_name": "M5Camera-F",
+      "source_path": "unit/m5camera_f.md",
+      "source_sha256": "4b9f44e95cc0df33528e73b04cd2239d64bac67ec993271251f71ed8a4beb92f"
+    },
+    {
+      "input_sha256": "2e05b27ee4a0139de8d41da5723b14bd40246aec0824ddc0ec1d21fa3c9e8327",
+      "ordinal": 200,
+      "output_filename": "M5Camera-F New.md",
+      "product_id": "m5camera-f-new-1006d5674b34",
+      "product_name": "M5Camera-F New",
+      "source_path": "unit/m5camera_f_new.md",
+      "source_sha256": "091edc0299117d9badefc11289a092a522e405bddb0dce8fe7a9dadb252ebdb7"
+    },
+    {
+      "input_sha256": "632c76882ae02b3c6dfc78cbcfb5007a09380506053fdfafc3316c74cff88add",
+      "ordinal": 201,
+      "output_filename": "M5Camera-X.md",
+      "product_id": "m5camera-x-d535da8c5a43",
+      "product_name": "M5Camera-X",
+      "source_path": "unit/m5camera_x.md",
+      "source_sha256": "7a77faf87874a27db9b960750b9b6872bb27033e13c6b6d4364d4a3c6445b074"
+    },
+    {
+      "input_sha256": "9ca6f2124c1c1ef96ec1400d6363ca1e3632398ef5fd75247f624951193cb80a",
+      "ordinal": 202,
+      "output_filename": "Unit RFID2.md",
+      "product_id": "unit-rfid2-f87703264348",
+      "product_name": "Unit RFID2",
+      "source_path": "unit/rfid2.md",
+      "source_sha256": "e9d90dd506d2ab3d8b2c2bd483683b5c372828ea9f754b7c7be28b93e8432327"
+    },
+    {
+      "input_sha256": "9b3f97ef3a18359384076f9947633072c68e8303b6839b9d6512c32cf8290e16",
+      "ordinal": 203,
+      "output_filename": "Unit UHF-RFID.md",
+      "product_id": "unit-uhf-rfid-e13e5fc00641",
+      "product_name": "Unit UHF-RFID",
+      "source_path": "unit/uhf_rfid.md",
+      "source_sha256": "e679299aa582c74e9f977e559cc50e069dd75abc0c3789e21442bb984f8c4328"
+    },
+    {
+      "input_sha256": "8c8c9d3baf41a72636674d54b4892dcf1968148b1d34e83a17f217afd1449741",
+      "ordinal": 204,
+      "output_filename": "Unit CardKB2.md",
+      "product_id": "unit-cardkb2-f04738bf1335",
+      "product_name": "Unit CardKB2",
+      "source_path": "unit/Unit_CardKB2.md",
+      "source_sha256": "e0c6c2ce6f5c7473dfcfff8903ddbd54ea3ae1dc8bc3fbe1dbe803dc688b6ea8"
+    },
+    {
+      "input_sha256": "f021eabd862775dd2132f92ebc1848d50c6e6cfbf755305d757c92a0755379f2",
+      "ordinal": 205,
+      "output_filename": "Unit Cat1-CN.md",
+      "product_id": "unit-cat1-cn-2bfd2e248c89",
+      "product_name": "Unit Cat1-CN",
+      "source_path": "unit/Unit_Cat1-CN.md",
+      "source_sha256": "bf940dfe6b2afcbc8dfac0adf13e677ccdc5c2881ab51b5d2e9b9604a5202f71"
+    },
+    {
+      "input_sha256": "149c9ba299ebc6c017dff8ff03f163ef30c8cb68551abe90ff5577c026bd42d1",
+      "ordinal": 206,
+      "output_filename": "Unit ChainBus.md",
+      "product_id": "unit-chainbus-c02a3e614b6e",
+      "product_name": "Unit ChainBus",
+      "source_path": "unit/Unit_ChainBus.md",
+      "source_sha256": "e54e76b70903b210b1069438daa63b6177dcb6351461925b05963ebd6d1f8e6d"
+    },
+    {
+      "input_sha256": "94b5294d824f0de23e68058ff2921ae17429e83c230eccf3e11a51883a05aa2b",
+      "ordinal": 207,
+      "output_filename": "Unit NFC.md",
+      "product_id": "unit-nfc-003c544bf944",
+      "product_name": "Unit NFC",
+      "source_path": "unit/Unit_NFC.md",
+      "source_sha256": "1bad8e7b1b1f1ad680e4bf8eb3045697b85d067192f6c4379ccc7d66fa726d7a"
+    },
+    {
+      "input_sha256": "f649155cc30e5617b6921231210a8fc746d59c59bc436008f28479e98986ae13",
+      "ordinal": 208,
+      "output_filename": "Unit PoE-P4.md",
+      "product_id": "unit-poe-p4-ad6370b7c836",
+      "product_name": "Unit PoE-P4",
+      "source_path": "unit/Unit_PoE-P4.md",
+      "source_sha256": "055dc980cfa0774f9ef75392a0ec57310bb7d5aaa1da5043482de2292f6554cf"
+    }
+  ],
+  "schema_version": 1,
+  "target_count": 208
+}

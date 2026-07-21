@@ -1,0 +1,214 @@
+{
+  "schema_version": 1,
+  "generator": "schematic_describer",
+  "product": {
+    "product_id": "hat-spk-360caf2204fc",
+    "product_name": "Hat SPK",
+    "sku": "U055",
+    "source_path": "hat/hat-spk.md",
+    "source_sha256": "75beaa643a6189c4cb467051bbd3a09d3b887203e5e8f2fd6c552ee911c0f612",
+    "input_sha256": "6b5bcf280b2e47292fef86162b801ba16b5c850fcee9d881dd5641d9b62efd58"
+  },
+  "schematic_assets": [
+    {
+      "sha256": "5c9959fd855a196d2e4289d0ad50f777b1d7f5116886fad1d5eaa0f990c38aef",
+      "source_url": "https://m5stack-doc.oss-cn-shenzhen.aliyuncs.com/861/StickHat_SPK_page_01.png",
+      "pages": [1]
+    }
+  ],
+  "summary": "Hat SPK 以 U1 PAM8303 单声道桥接音频功放驱动 LS1 Speaker，原理图标注增益为 2。主机 G26 经 C1/R1 输入到 IN-，IN+ 经 C2/R2 交流参考到 GND；G0 经 R4 控制 SD，并由 R3 上拉到 3.3 V。功放 VDD/PVDD 使用 StickIO 5VOUT，输出为 OUT+/OUT- 差分桥接，不与地相连。",
+  "keywords": [
+    "Hat SPK",
+    "U055",
+    "PAM8303",
+    "LS1 Speaker",
+    "G26",
+    "G0",
+    "IN-",
+    "IN+",
+    "OUT+",
+    "OUT-",
+    "SD",
+    "Gain=2",
+    "5VOUT",
+    "+5V",
+    "+3.3V",
+    "C1 10nF",
+    "C2 10nF",
+    "R1 150K",
+    "R2 150K",
+    "R3 10K",
+    "R4 0R",
+    "bridge-tied load",
+    "audio amplifier",
+    "STICKIO"
+  ],
+  "components": [
+    {
+      "reference": "U1",
+      "part_number": "PAM8303",
+      "role": "单声道差分输入、桥接输出音频功率放大器",
+      "evidence": [{"asset_sha256": "5c9959fd855a196d2e4289d0ad50f777b1d7f5116886fad1d5eaa0f990c38aef", "page": 1, "locator": "B2-C3，U1 PAM8303、IN-/IN+/SD/OUT+/OUT-/VDD/PVDD"}]
+    },
+    {
+      "reference": "LS1",
+      "part_number": "Speaker",
+      "role": "连接 PAM8303 OUT+/OUT- 的扬声器负载",
+      "evidence": [{"asset_sha256": "5c9959fd855a196d2e4289d0ad50f777b1d7f5116886fad1d5eaa0f990c38aef", "page": 1, "locator": "B3，LS1 Speaker 跨接 OUT+/OUT-"}]
+    },
+    {
+      "reference": "P1",
+      "part_number": "STICKIO",
+      "role": "主机 HAT 接口，提供 G26 音频、G0 关断控制、5 V、3.3 V 与 GND",
+      "evidence": [{"asset_sha256": "5c9959fd855a196d2e4289d0ad50f777b1d7f5116886fad1d5eaa0f990c38aef", "page": 1, "locator": "B1-C1，P1 STICKIO pins 1-8"}]
+    },
+    {
+      "reference": "C1/R1",
+      "part_number": "10nF / 150KΩ",
+      "role": "G26 到 PAM8303 IN- 的交流耦合和输入电阻",
+      "evidence": [{"asset_sha256": "5c9959fd855a196d2e4289d0ad50f777b1d7f5116886fad1d5eaa0f990c38aef", "page": 1, "locator": "B1-B2，G26-C1 10nF-R1 150KΩ-U1 IN-"}]
+    },
+    {
+      "reference": "C2/R2",
+      "part_number": "10nF / 150KΩ",
+      "role": "GND 到 PAM8303 IN+ 的交流参考和匹配输入电阻",
+      "evidence": [{"asset_sha256": "5c9959fd855a196d2e4289d0ad50f777b1d7f5116886fad1d5eaa0f990c38aef", "page": 1, "locator": "B1-C2，GND-C2 10nF-R2 150KΩ-U1 IN+"}]
+    },
+    {
+      "reference": "R3/R4",
+      "part_number": "10KΩ / 0Ω",
+      "role": "PAM8303 SD 上拉及 G0 控制连接",
+      "evidence": [{"asset_sha256": "5c9959fd855a196d2e4289d0ad50f777b1d7f5116886fad1d5eaa0f990c38aef", "page": 1, "locator": "C2，+3.3V-R3 10KΩ-SD 与 G0-R4 0Ω-SD"}]
+    },
+    {
+      "reference": "C3/C4",
+      "part_number": "1uF / 1uF",
+      "role": "PAM8303 5 V 供电去耦电容",
+      "evidence": [{"asset_sha256": "5c9959fd855a196d2e4289d0ad50f777b1d7f5116886fad1d5eaa0f990c38aef", "page": 1, "locator": "C3，C3/C4 1uF 从 +5V 到 GND"}]
+    }
+  ],
+  "facts": [
+    {
+      "id": "system.architecture",
+      "category": "system",
+      "subject": "扬声器 HAT 架构",
+      "statement": "G26 单端音频经匹配的差分输入网络送入 PAM8303，PAM8303 以 OUT+/OUT- 桥接方式驱动 LS1；G0 控制 SD。",
+      "confidence": "confirmed",
+      "attributes": {"amplifier": "U1 PAM8303", "audio_gpio": "G26", "shutdown_gpio": "G0", "load": "LS1 Speaker", "output_topology": "OUT+/OUT- bridge"},
+      "evidence": [{"asset_sha256": "5c9959fd855a196d2e4289d0ad50f777b1d7f5116886fad1d5eaa0f990c38aef", "page": 1, "locator": "整页：P1、C1/R1、C2/R2、U1、LS1、R3/R4"}]
+    },
+    {
+      "id": "audio.amplifier",
+      "category": "audio",
+      "subject": "PAM8303 功放",
+      "statement": "U1 为 PAM8303，原理图明确标注 Gain = 2，输出 pins 1/8 分别为 OUT+/OUT-。",
+      "confidence": "confirmed",
+      "attributes": {"reference": "U1", "part_number": "PAM8303", "gain": 2, "out_plus": "pin1", "out_minus": "pin8"},
+      "evidence": [{"asset_sha256": "5c9959fd855a196d2e4289d0ad50f777b1d7f5116886fad1d5eaa0f990c38aef", "page": 1, "locator": "U1 PAM8303 下方 Gain = 2 与 OUT+/OUT-"}]
+    },
+    {
+      "id": "audio.input-minus",
+      "category": "audio",
+      "subject": "反相音频输入",
+      "statement": "StickIO G26 经 C1 10 nF 与 R1 150 kΩ 串联到 U1 IN- pin 4。",
+      "confidence": "confirmed",
+      "attributes": {"source": "P1 pin3 G26", "coupling": "C1 10nF", "input_resistor": "R1 150KΩ", "destination": "U1 pin4 IN-"},
+      "evidence": [{"asset_sha256": "5c9959fd855a196d2e4289d0ad50f777b1d7f5116886fad1d5eaa0f990c38aef", "page": 1, "locator": "G26-C1-R1-IN- 连线"}]
+    },
+    {
+      "id": "audio.input-plus",
+      "category": "audio",
+      "subject": "同相输入参考",
+      "statement": "GND 经 C2 10 nF 与 R2 150 kΩ 串联到 U1 IN+ pin 5，与反相输入使用匹配阻容值。",
+      "confidence": "confirmed",
+      "attributes": {"source": "GND", "coupling": "C2 10nF", "input_resistor": "R2 150KΩ", "destination": "U1 pin5 IN+"},
+      "evidence": [{"asset_sha256": "5c9959fd855a196d2e4289d0ad50f777b1d7f5116886fad1d5eaa0f990c38aef", "page": 1, "locator": "GND-C2-R2-IN+ 连线"}]
+    },
+    {
+      "id": "gpio.shutdown",
+      "category": "gpio",
+      "subject": "功放 SD 控制",
+      "statement": "G0 经 R4 0 Ω 连接 U1 SD pin 6，SD 还由 R3 10 kΩ 上拉到 +3.3 V。",
+      "confidence": "confirmed",
+      "attributes": {"gpio": "G0", "series_resistor": "R4 0Ω", "control_pin": "U1 pin6 SD", "pullup": "R3 10KΩ to +3.3V"},
+      "evidence": [{"asset_sha256": "5c9959fd855a196d2e4289d0ad50f777b1d7f5116886fad1d5eaa0f990c38aef", "page": 1, "locator": "G0-R4-SD 与 +3.3V-R3-SD"}]
+    },
+    {
+      "id": "audio.bridge-output",
+      "category": "audio",
+      "subject": "桥接扬声器输出",
+      "statement": "LS1 扬声器跨接 U1 OUT+ 与 OUT-，扬声器任一端均未连接 GND。",
+      "confidence": "confirmed",
+      "attributes": {"load": "LS1 Speaker", "terminal_1": "U1 pin1 OUT+", "terminal_2": "U1 pin8 OUT-", "grounded_terminal": false},
+      "evidence": [{"asset_sha256": "5c9959fd855a196d2e4289d0ad50f777b1d7f5116886fad1d5eaa0f990c38aef", "page": 1, "locator": "U1 OUT+/OUT- 到 LS1 两端"}]
+    },
+    {
+      "id": "power.amplifier-supply",
+      "category": "power",
+      "subject": "功放 5 V 电源",
+      "statement": "P1 pin2 5VOUT 连接 +5V，并为 U1 VDD/PVDD 供电；C3/C4 各 1 µF 对地去耦。",
+      "confidence": "confirmed",
+      "attributes": {"source": "P1 pin2 5VOUT", "net": "+5V", "pins": "U1 pin3 VDD; U1 pin2 PVDD", "decoupling": "C3 1uF; C4 1uF"},
+      "evidence": [{"asset_sha256": "5c9959fd855a196d2e4289d0ad50f777b1d7f5116886fad1d5eaa0f990c38aef", "page": 1, "locator": "P1 5VOUT/+5V 到 U1 VDD/PVDD 与 C3/C4"}]
+    },
+    {
+      "id": "interface.stickio",
+      "category": "interface",
+      "subject": "StickIO 使用情况",
+      "statement": "P1 pin1 GND、pin2 5VOUT、pin3 G26、pin5 G0、pin7 3V3 被使用；G36、BAT、5VIN 未连接。",
+      "confidence": "confirmed",
+      "attributes": {"pin1": "GND", "pin2": "5VOUT", "pin3": "G26 audio", "pin4": "G36 NC", "pin5": "G0 SD", "pin6": "BAT NC", "pin7": "3V3 SD pullup", "pin8": "5VIN NC"},
+      "evidence": [{"asset_sha256": "5c9959fd855a196d2e4289d0ad50f777b1d7f5116886fad1d5eaa0f990c38aef", "page": 1, "locator": "P1 STICKIO pins 1-8 与连接/NC 标记"}]
+    },
+    {
+      "id": "component.speaker-rating",
+      "category": "component",
+      "subject": "扬声器阻抗与额定功率",
+      "statement": "原理图仅将 LS1 标为 Speaker，未标注阻抗、额定功率、频响或具体料号。",
+      "confidence": "uncertain",
+      "attributes": {"reference": "LS1", "schematic_marking": "Speaker", "impedance": "not printed", "power": "not printed", "part_number": "not printed"},
+      "evidence": [{"asset_sha256": "5c9959fd855a196d2e4289d0ad50f777b1d7f5116886fad1d5eaa0f990c38aef", "page": 1, "locator": "LS1 仅标 Speaker"}]
+    },
+    {
+      "id": "audio.output-performance",
+      "category": "audio",
+      "subject": "3 W 输出与失真",
+      "statement": "产品正文称 5 V、4 Ω 负载下输出 3 W 且 THD 10%，但原理图未直接标注这些性能条件。",
+      "confidence": "uncertain",
+      "attributes": {"claimed_supply": "5V", "claimed_load": "4Ω", "claimed_power": "3W", "claimed_thd": "10%"},
+      "evidence": [{"asset_sha256": "5c9959fd855a196d2e4289d0ad50f777b1d7f5116886fad1d5eaa0f990c38aef", "page": 1, "locator": "U1/LS1 电路未列输出功率或 THD"}]
+    },
+    {
+      "id": "power.operating-range-protection",
+      "category": "power",
+      "subject": "供电范围与保护能力",
+      "statement": "原理图使用 +5 V 电源，但未直接标注 PAM8303 的 2.8–5.5 V 工作范围、短路保护、PSRR、EMI 或无输入噪声性能。",
+      "confidence": "uncertain",
+      "attributes": {"schematic_supply": "+5V", "claimed_range": "2.8-5.5V", "claimed_protection": "short-circuit protection", "claimed_other": "high PSRR; low EMI; low idle noise"},
+      "evidence": [{"asset_sha256": "5c9959fd855a196d2e4289d0ad50f777b1d7f5116886fad1d5eaa0f990c38aef", "page": 1, "locator": "U1 PAM8303 电路只标供电与 Gain=2"}]
+    }
+  ],
+  "needs_review": [
+    {
+      "id": "review.speaker-rating",
+      "fact_id": "component.speaker-rating",
+      "question": "请用 LS1 BOM/扬声器标签确认阻抗、额定功率和料号。",
+      "reason": "原理图只标 Speaker。",
+      "evidence": [{"asset_sha256": "5c9959fd855a196d2e4289d0ad50f777b1d7f5116886fad1d5eaa0f990c38aef", "page": 1, "locator": "LS1 Speaker"}]
+    },
+    {
+      "id": "review.output-performance",
+      "fact_id": "audio.output-performance",
+      "question": "请用 PAM8303 datasheet/实测复核 5 V、4 Ω、3 W、10% THD 条件。",
+      "reason": "原理图不包含性能曲线或额定条件。",
+      "evidence": [{"asset_sha256": "5c9959fd855a196d2e4289d0ad50f777b1d7f5116886fad1d5eaa0f990c38aef", "page": 1, "locator": "U1 PAM8303 与 LS1"}]
+    },
+    {
+      "id": "review.operating-range-protection",
+      "fact_id": "power.operating-range-protection",
+      "question": "请用 PAM8303 datasheet 复核供电范围、短路保护、PSRR、EMI 和噪声指标。",
+      "reason": "这些器件规格未印在原理图中。",
+      "evidence": [{"asset_sha256": "5c9959fd855a196d2e4289d0ad50f777b1d7f5116886fad1d5eaa0f990c38aef", "page": 1, "locator": "U1 PAM8303"}]
+    }
+  ]
+}

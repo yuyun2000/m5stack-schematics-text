@@ -1,0 +1,21 @@
+{
+  "dry_run": false,
+  "failed": 0,
+  "published": 1,
+  "results": [
+    {
+      "backup": null,
+      "draft_action": "unchanged",
+      "dry_run": false,
+      "errors": [],
+      "needs_review": 4,
+      "product_id": "module13-2-lan-55693d26da93",
+      "product_name": "Module13.2 LAN",
+      "publish_action": "unchanged",
+      "sha256": "dbd244683e0436470d5f8e587c229d69c08e347ffc13c5baeb0741dca0133850",
+      "status": "valid",
+      "uncertain_facts": 4
+    }
+  ],
+  "schema_version": 1
+}

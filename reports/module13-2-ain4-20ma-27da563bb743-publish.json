@@ -1,0 +1,21 @@
+{
+  "dry_run": false,
+  "failed": 0,
+  "published": 1,
+  "results": [
+    {
+      "backup": null,
+      "draft_action": "unchanged",
+      "dry_run": false,
+      "errors": [],
+      "needs_review": 3,
+      "product_id": "module13-2-ain4-20ma-27da563bb743",
+      "product_name": "Module13.2 AIN4-20mA",
+      "publish_action": "unchanged",
+      "sha256": "4df1f550b7c41cd7dab7c5bae518bff165a2fd4793a053e3571943dd9bd167c3",
+      "status": "valid",
+      "uncertain_facts": 3
+    }
+  ],
+  "schema_version": 1
+}

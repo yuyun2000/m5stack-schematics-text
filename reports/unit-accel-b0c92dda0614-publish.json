@@ -1,0 +1,21 @@
+{
+  "dry_run": false,
+  "failed": 0,
+  "published": 1,
+  "results": [
+    {
+      "backup": null,
+      "draft_action": "unchanged",
+      "dry_run": false,
+      "errors": [],
+      "needs_review": 2,
+      "product_id": "unit-accel-b0c92dda0614",
+      "product_name": "Unit Accel",
+      "publish_action": "unchanged",
+      "sha256": "c39a2cd7e7a0d34a7e10e6c6221431d55aa767ac3d3c673c8ef061ca64177c5d",
+      "status": "valid",
+      "uncertain_facts": 2
+    }
+  ],
+  "schema_version": 1
+}

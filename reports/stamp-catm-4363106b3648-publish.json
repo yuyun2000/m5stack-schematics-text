@@ -1,0 +1,21 @@
+{
+  "dry_run": false,
+  "failed": 0,
+  "published": 1,
+  "results": [
+    {
+      "backup": null,
+      "draft_action": "unchanged",
+      "dry_run": false,
+      "errors": [],
+      "needs_review": 4,
+      "product_id": "stamp-catm-4363106b3648",
+      "product_name": "Stamp CatM",
+      "publish_action": "unchanged",
+      "sha256": "928e4400bfff2ea7ecb3b40af4448927a59213e8cc79c1fd43e91c9466e3569a",
+      "status": "valid",
+      "uncertain_facts": 4
+    }
+  ],
+  "schema_version": 1
+}

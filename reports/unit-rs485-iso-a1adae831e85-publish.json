@@ -1,0 +1,21 @@
+{
+  "dry_run": false,
+  "failed": 0,
+  "published": 1,
+  "results": [
+    {
+      "backup": null,
+      "draft_action": "unchanged",
+      "dry_run": false,
+      "errors": [],
+      "needs_review": 1,
+      "product_id": "unit-rs485-iso-a1adae831e85",
+      "product_name": "Unit RS485-ISO",
+      "publish_action": "unchanged",
+      "sha256": "32ce27c43d8d9f6c48d171ecca5f95306cffc0f45445646acb32687a6c344897",
+      "status": "valid",
+      "uncertain_facts": 1
+    }
+  ],
+  "schema_version": 1
+}

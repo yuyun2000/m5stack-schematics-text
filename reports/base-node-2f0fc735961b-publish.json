@@ -1,0 +1,21 @@
+{
+  "dry_run": false,
+  "failed": 0,
+  "published": 1,
+  "results": [
+    {
+      "backup": null,
+      "draft_action": "unchanged",
+      "dry_run": false,
+      "errors": [],
+      "needs_review": 4,
+      "product_id": "base-node-2f0fc735961b",
+      "product_name": "Base Node",
+      "publish_action": "unchanged",
+      "sha256": "64bbe1f07d6ab7eb1b89f7a0b49d3468c14b562a18195bad63e267516771f7de",
+      "status": "valid",
+      "uncertain_facts": 4
+    }
+  ],
+  "schema_version": 1
+}

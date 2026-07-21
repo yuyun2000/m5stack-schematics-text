@@ -1,0 +1,366 @@
+{
+  "schema_version": 1,
+  "generator": "schematic_describer",
+  "product": {
+    "product_id": "module-lorawan-5f58a4b63025",
+    "product_name": "Module LoRaWAN",
+    "sku": "M018",
+    "source_path": "module/lorawan.md",
+    "source_sha256": "8786f47d6e5417c30aae51243b2f22ce832c9c39e0ced3aa7e2a17fc6e296647",
+    "input_sha256": "9aa8f55a9831b0a9ab9197e75f3c4c6cab551104960ab809b504e2475c0c72e1"
+  },
+  "schematic_assets": [
+    {
+      "sha256": "a0de4ee75918086ec6ee6c88510386e21646f761b15a8aed5359999af4ce4b9c",
+      "source_url": "https://static-cdn.m5stack.com/resource/docs/products/module/lorawan/lorawan_sch_01.webp",
+      "pages": [1]
+    }
+  ],
+  "summary": "Module LoRaWAN 以 M1 RHF76-052 通信模组为核心，M1 的 USART_TX/USART_RX 通过 TX/RX 网络及四个 0Ω 电阻连接到 J1 M5Stack_BUS 的 GPIO16/GPIO2 与 GPIO17/GPIO5。模组由 3V3 网络供电，并通过 E1、E2 两个 ANT_IPEX 分别连接 RFO_LF 与 RFO_HF 射频端口；单页原理图未画出电源转换器、LDO 或专用保护器件。原理图仅以模块方框表示 RHF76-052，未展开产品正文所述 STM32L052C8T6、SX1276、内部存储、时钟和 LoRaWAN 协议电路。",
+  "keywords": [
+    "Module LoRaWAN",
+    "M018",
+    "RHF76-052",
+    "STM32L052C8T6",
+    "SX1276",
+    "LoRaWAN",
+    "M5Stack_BUS",
+    "UART",
+    "USART_TX",
+    "USART_RX",
+    "TX",
+    "RX",
+    "GPIO16",
+    "GPIO17",
+    "GPIO2",
+    "GPIO5",
+    "RFO_LF",
+    "RFO_HF",
+    "ANT_IPEX",
+    "E1",
+    "E2",
+    "3V3",
+    "+5V",
+    "P1 Header 5",
+    "PA8",
+    "PA9",
+    "PA10",
+    "NRST",
+    "SWDIO",
+    "SWCLK",
+    "NSS",
+    "SCK",
+    "MISO",
+    "MOSI",
+    "USART_CTS",
+    "USART_RTS"
+  ],
+  "components": [
+    {
+      "reference": "M1",
+      "part_number": "RHF76-052",
+      "role": "LoRaWAN UART 通信模组，提供主机 UART、低频/高频射频端口及辅助 MCU 信号",
+      "evidence": [{"asset_sha256": "a0de4ee75918086ec6ee6c88510386e21646f761b15a8aed5359999af4ce4b9c", "page": 1, "locator": "页面左侧中央 M1 方框，器件值 RHF76-052，pin 1-33 标注 VCC、USART、SPI、SWD、RFO_LF、RFO_HF 等信号"}]
+    },
+    {
+      "reference": "J1",
+      "part_number": "M5Stack_BUS",
+      "role": "30 针主机堆叠总线，提供 GND、GPIO、RST、+3.3V、HPWR、+5V 和 BATTERY 针脚",
+      "evidence": [{"asset_sha256": "a0de4ee75918086ec6ee6c88510386e21646f761b15a8aed5359999af4ce4b9c", "page": 1, "locator": "页面右侧中央 J1 M5Stack_BUS，奇数 pin 1-29 与偶数 pin 2-30 的网络名完整可见"}]
+    },
+    {
+      "reference": "P1",
+      "part_number": "Header 5",
+      "role": "5 针辅助排针，引出 3V3、GND 与 M1 PA8/PA9/PA10",
+      "evidence": [{"asset_sha256": "a0de4ee75918086ec6ee6c88510386e21646f761b15a8aed5359999af4ce4b9c", "page": 1, "locator": "页面左缘 P1 Header 5，pin 1 接 3V3、pin 2 接 GND、pin 3-5 分别连至 M1 PA8/PA9/PA10"}]
+    },
+    {
+      "reference": "E1",
+      "part_number": "ANT_IPEX",
+      "role": "连接 M1 RFO_LF 的低频射频天线接口",
+      "evidence": [{"asset_sha256": "a0de4ee75918086ec6ee6c88510386e21646f761b15a8aed5359999af4ce4b9c", "page": 1, "locator": "页面上方中央 E1 ANT_IPEX，射频端连接 M1 pin 32/RFO_LF，回路接 GND"}]
+    },
+    {
+      "reference": "E2",
+      "part_number": "ANT_IPEX",
+      "role": "连接 M1 RFO_HF 的高频射频天线接口",
+      "evidence": [{"asset_sha256": "a0de4ee75918086ec6ee6c88510386e21646f761b15a8aed5359999af4ce4b9c", "page": 1, "locator": "页面中央 E2 ANT_IPEX，射频端连接 M1 pin 30/RFO_HF，回路接 GND"}]
+    },
+    {
+      "reference": "R1",
+      "part_number": "0Ω",
+      "role": "TX 到 J1 GPIO16 的默认 UART 发送路由",
+      "evidence": [{"asset_sha256": "a0de4ee75918086ec6ee6c88510386e21646f761b15a8aed5359999af4ce4b9c", "page": 1, "locator": "页面右上 Default connection 区，TX 经 R1 0Ω 接 GPIO16"}]
+    },
+    {
+      "reference": "R2",
+      "part_number": "0Ω",
+      "role": "TX 到 J1 GPIO2 的备选 UART 发送路由",
+      "evidence": [{"asset_sha256": "a0de4ee75918086ec6ee6c88510386e21646f761b15a8aed5359999af4ce4b9c", "page": 1, "locator": "页面右上 UART 选路区，TX 经 R2 0Ω 接 GPIO2"}]
+    },
+    {
+      "reference": "R3",
+      "part_number": "0Ω",
+      "role": "RX 到 J1 GPIO17 的默认 UART 接收路由",
+      "evidence": [{"asset_sha256": "a0de4ee75918086ec6ee6c88510386e21646f761b15a8aed5359999af4ce4b9c", "page": 1, "locator": "页面右下 Default connection 区，RX 经 R3 0Ω 接 GPIO17"}]
+    },
+    {
+      "reference": "R4",
+      "part_number": "0Ω",
+      "role": "RX 到 J1 GPIO5 的备选 UART 接收路由",
+      "evidence": [{"asset_sha256": "a0de4ee75918086ec6ee6c88510386e21646f761b15a8aed5359999af4ce4b9c", "page": 1, "locator": "页面右下 UART 选路区，RX 经 R4 0Ω 接 GPIO5"}]
+    },
+    {
+      "reference": "D1,R5",
+      "part_number": "LED（型号未标）; 1KΩ",
+      "role": "M1 PA10 到 GND 的串联指示灯支路",
+      "evidence": [{"asset_sha256": "a0de4ee75918086ec6ee6c88510386e21646f761b15a8aed5359999af4ce4b9c", "page": 1, "locator": "页面左下 D1 与 R5 1KΩ 串联，支路上端连接 P1 pin 5/M1 pin 5 PA10，下端接 GND"}]
+    }
+  ],
+  "facts": [
+    {
+      "id": "system.lorawan-architecture",
+      "category": "system",
+      "subject": "Module LoRaWAN 系统架构",
+      "statement": "单页原理图由 M1 RHF76-052、J1 M5Stack_BUS、P1 Header 5、E1/E2 ANT_IPEX、UART 0Ω 选路和 PA10 指示灯支路构成；M1 内部处理器、射频芯片、存储器与协议电路均未展开。",
+      "confidence": "confirmed",
+      "attributes": {"communication_module": "M1 RHF76-052", "host_connector": "J1 M5Stack_BUS", "aux_connector": "P1 Header 5", "uart_nets": "TX,RX", "antenna_ports": "E1 RFO_LF,E2 RFO_HF", "internal_block_expanded": false},
+      "evidence": [{"asset_sha256": "a0de4ee75918086ec6ee6c88510386e21646f761b15a8aed5359999af4ce4b9c", "page": 1, "locator": "完整页面：左侧 M1/P1/D1，中部 E1/E2，右侧 J1 与 R1-R4"}]
+    },
+    {
+      "id": "component.rhf76-052-pinout",
+      "category": "component",
+      "subject": "M1 RHF76-052 可见引脚",
+      "statement": "M1 标出 pin 1-33：左侧为 1 VCC、2 GND、3 PA8、4 PA9、5 PA10、6 NSS、7 SCK、8 MISO、9 MOSI、10 USART_CTS、11 USART_RTS、12 SWDIO、13 SWCLK；底部为 14 PA15、15 PB3、16 PB4、17 NC、18 VCC、19 NC、20 PA3；右侧为 21 PB5、22 USART_TX、23 USART_RX、24 SCL、25 SDA、26 PC13、27 NRST、28 PA0、29 GND、30 RFO_HF、31 GND、32 RFO_LF、33 GND。",
+      "confidence": "confirmed",
+      "attributes": {"reference": "M1", "part_number": "RHF76-052", "pins_1_13": "1:VCC,2:GND,3:PA8,4:PA9,5:PA10,6:NSS,7:SCK,8:MISO,9:MOSI,10:USART_CTS,11:USART_RTS,12:SWDIO,13:SWCLK", "pins_14_20": "14:PA15,15:PB3,16:PB4,17:NC,18:VCC,19:NC,20:PA3", "pins_21_33": "21:PB5,22:USART_TX,23:USART_RX,24:SCL,25:SDA,26:PC13,27:NRST,28:PA0,29:GND,30:RFO_HF,31:GND,32:RFO_LF,33:GND"},
+      "evidence": [{"asset_sha256": "a0de4ee75918086ec6ee6c88510386e21646f761b15a8aed5359999af4ce4b9c", "page": 1, "locator": "页面左侧 M1 RHF76-052 方框四周 pin 1-33 的引脚名称"}]
+    },
+    {
+      "id": "component.internal-mcu",
+      "category": "component",
+      "subject": "RHF76-052 内部 MCU",
+      "statement": "产品正文将内部微处理器写为 STM32L052C8T6，但原理图只显示 M1 RHF76-052 模块边界，没有 STM32L052C8T6 的独立位号、供电、时钟或引脚连接。",
+      "confidence": "uncertain",
+      "attributes": {"documented_part_number": "STM32L052C8T6", "schematic_module": "M1 RHF76-052", "internal_mcu_visible": false},
+      "evidence": [{"asset_sha256": "a0de4ee75918086ec6ee6c88510386e21646f761b15a8aed5359999af4ce4b9c", "page": 1, "locator": "页面左侧 M1 仅标 RHF76-052，模块内部未展开 MCU"}]
+    },
+    {
+      "id": "component.internal-radio",
+      "category": "component",
+      "subject": "RHF76-052 内部 Radio IC",
+      "statement": "产品正文将 Radio IC 写为 Semtech SX1276，但原理图只显示 M1 的 RFO_LF/RFO_HF 模块端口，没有 SX1276 的独立位号、SPI、供电或射频匹配连接。",
+      "confidence": "uncertain",
+      "attributes": {"documented_part_number": "Semtech SX1276", "schematic_module": "M1 RHF76-052", "internal_radio_visible": false},
+      "evidence": [{"asset_sha256": "a0de4ee75918086ec6ee6c88510386e21646f761b15a8aed5359999af4ce4b9c", "page": 1, "locator": "页面左侧 M1 仅标 RHF76-052，右侧只引出 RFO_LF/RFO_HF，未出现 SX1276 位号"}]
+    },
+    {
+      "id": "power.module-3v3",
+      "category": "power",
+      "subject": "M1 3V3 供电路径",
+      "statement": "3V3 网络连接 P1 pin 1 与 M1 pin 1/VCC；P1 pin 2 接 GND。图中没有从 J1 +5V 或 BATTERY 到 3V3 的转换器、LDO 或负载开关，也未绘出 M1 外部去耦电容。",
+      "confidence": "confirmed",
+      "attributes": {"rail": "3V3", "source_connector": "P1 pin 1", "module_pin": "M1 pin 1/VCC", "ground": "P1 pin 2/GND", "converter_visible": false, "ldo_visible": false, "load_switch_visible": false, "external_decoupling_visible": false},
+      "evidence": [{"asset_sha256": "a0de4ee75918086ec6ee6c88510386e21646f761b15a8aed5359999af4ce4b9c", "page": 1, "locator": "页面左上 3V3-P1 pin 1-M1 pin 1/VCC 与 P1 pin 2/GND；完整页面无电源转换 IC 或电容"}]
+    },
+    {
+      "id": "power.m5bus-rails",
+      "category": "power",
+      "subject": "J1 M5Stack_BUS 电源针脚",
+      "statement": "J1 pin 1、3、5 接公共 GND；pin 12 标 +3.3V 但外侧带未连接标记；pin 25、27、29 标 HPWR；pin 28 标 +5V 并连接页面右侧 +5V 网络；pin 30 标 BATTERY。除 GND 和 +5V 网络外，本页未画这些电源针脚到 M1 的连接。",
+      "confidence": "confirmed",
+      "attributes": {"ground_pins": "1,3,5", "3v3_pin": "12:+3.3V, no external connection mark", "hpwr_pins": "25,27,29", "five_volt_pin": "28:+5V", "battery_pin": "30:BATTERY", "m1_power_link_visible": false},
+      "evidence": [{"asset_sha256": "a0de4ee75918086ec6ee6c88510386e21646f761b15a8aed5359999af4ce4b9c", "page": 1, "locator": "页面右侧 J1 顶部 GND pin 1/3/5、中部 +3.3V pin 12、底部 HPWR/+5V/BATTERY pin 25-30"}]
+    },
+    {
+      "id": "interface.p1-header",
+      "category": "interface",
+      "subject": "P1 5 针辅助接口",
+      "statement": "P1 Header 5 的 pin 1 接 3V3，pin 2 接 GND，pin 3 接 M1 pin 3/PA8，pin 4 接 M1 pin 4/PA9，pin 5 接 M1 pin 5/PA10；原理图未标这些 GPIO 的输入输出方向或外部接口电平范围。",
+      "confidence": "confirmed",
+      "attributes": {"reference": "P1", "pinout": "1:3V3,2:GND,3:M1 PA8,4:M1 PA9,5:M1 PA10", "gpio_direction_visible": false, "voltage_range_visible": false},
+      "evidence": [{"asset_sha256": "a0de4ee75918086ec6ee6c88510386e21646f761b15a8aed5359999af4ce4b9c", "page": 1, "locator": "页面左缘 P1 Header 5 至 3V3/GND 和 M1 PA8/PA9/PA10 的五条连接"}]
+    },
+    {
+      "id": "interface.m5bus-pinout",
+      "category": "interface",
+      "subject": "J1 M5Stack_BUS 完整针脚",
+      "statement": "J1 奇数针为 1 GND、3 GND、5 GND、7 GPIO23、9 GPIO19、11 GPIO18、13 GPIO3、15 GPIO16、17 GPIO21、19 GPIO2、21 GPIO12、23 GPIO15、25 HPWR、27 HPWR、29 HPWR；偶数针为 2 GPIO35、4 GPIO36、6 RST、8 GPIO25、10 GPIO26、12 +3.3V、14 GPIO1、16 GPIO17、18 GPIO22、20 GPIO5、22 GPIO13、24 GPIO0、26 GPIO34、28 +5V、30 BATTERY。",
+      "confidence": "confirmed",
+      "attributes": {"reference": "J1 M5Stack_BUS", "odd_pins": "1:GND,3:GND,5:GND,7:GPIO23,9:GPIO19,11:GPIO18,13:GPIO3,15:GPIO16,17:GPIO21,19:GPIO2,21:GPIO12,23:GPIO15,25:HPWR,27:HPWR,29:HPWR", "even_pins": "2:GPIO35,4:GPIO36,6:RST,8:GPIO25,10:GPIO26,12:+3.3V,14:GPIO1,16:GPIO17,18:GPIO22,20:GPIO5,22:GPIO13,24:GPIO0,26:GPIO34,28:+5V,30:BATTERY"},
+      "evidence": [{"asset_sha256": "a0de4ee75918086ec6ee6c88510386e21646f761b15a8aed5359999af4ce4b9c", "page": 1, "locator": "页面右侧中央 J1 M5Stack_BUS，连接器内部 pin 1-30 与网络名"}]
+    },
+    {
+      "id": "bus.host-uart",
+      "category": "bus",
+      "subject": "M1 至 M5-Bus UART",
+      "statement": "M1 pin 22/USART_TX 连接 TX 网络，pin 23/USART_RX 连接 RX 网络；TX 通过 R1/R2 连接 J1 GPIO16/GPIO2，RX 通过 R3/R4 连接 J1 GPIO17/GPIO5。按信号名，M1 为 UART 设备端，主机 GPIO 方向需由主机 UART 配置确定。",
+      "confidence": "confirmed",
+      "attributes": {"device": "M1 RHF76-052", "device_tx": "M1 pin 22/USART_TX -> TX", "device_rx": "M1 pin 23/USART_RX -> RX", "host_tx_candidates": "J1 pin 15/GPIO16,J1 pin 19/GPIO2", "host_rx_candidates": "J1 pin 16/GPIO17,J1 pin 20/GPIO5", "bus_level": "3V3 module supply", "baud_visible": false},
+      "evidence": [{"asset_sha256": "a0de4ee75918086ec6ee6c88510386e21646f761b15a8aed5359999af4ce4b9c", "page": 1, "locator": "页面 M1 右侧 USART_TX/USART_RX 网络，以及右侧 R1-R4 至 J1 GPIO16/GPIO2/GPIO17/GPIO5"}]
+    },
+    {
+      "id": "bus.uart-default-routing",
+      "category": "bus",
+      "subject": "UART 默认与备选 0Ω 路由",
+      "statement": "图中 Default connection 标注对应 TX 经 R1 0Ω 到 GPIO16、RX 经 R3 0Ω 到 GPIO17；另画出 TX 经 R2 0Ω 到 GPIO2、RX 经 R4 0Ω 到 GPIO5 的备选支路。原理图没有 DNP/NC 装配标记，不能仅凭此页确认四个电阻的实际贴装组合。",
+      "confidence": "confirmed",
+      "attributes": {"default_tx": "TX -> R1 0Ω -> GPIO16", "alternate_tx": "TX -> R2 0Ω -> GPIO2", "default_rx": "RX -> R3 0Ω -> GPIO17", "alternate_rx": "RX -> R4 0Ω -> GPIO5", "population_marks_visible": false},
+      "evidence": [{"asset_sha256": "a0de4ee75918086ec6ee6c88510386e21646f761b15a8aed5359999af4ce4b9c", "page": 1, "locator": "页面右上/右下两组 Default connection：R1-R4 均标 0Ω，未见 DNP 或 NC 文字"}]
+    },
+    {
+      "id": "bus.uart-format",
+      "category": "bus",
+      "subject": "UART 通信参数",
+      "statement": "产品正文记载 UART 为 9600 baud、8 数据位、无校验、1 停止位；原理图仅显示 USART_TX/USART_RX 和路由电阻，没有打印波特率或帧格式。",
+      "confidence": "uncertain",
+      "attributes": {"documented_baud": 9600, "documented_data_bits": 8, "documented_parity": "none", "documented_stop_bits": 1, "schematic_parameters_visible": false},
+      "evidence": [{"asset_sha256": "a0de4ee75918086ec6ee6c88510386e21646f761b15a8aed5359999af4ce4b9c", "page": 1, "locator": "页面 M1 USART_TX/USART_RX 与 R1-R4 路由区域，没有 UART 参数标注"}]
+    },
+    {
+      "id": "bus.module-spi-i2c",
+      "category": "bus",
+      "subject": "M1 SPI 与 I2C 引脚可见性",
+      "statement": "M1 标出 NSS pin 6、SCK pin 7、MISO pin 8、MOSI pin 9，以及 SCL pin 24、SDA pin 25，但这些引脚在本页没有连接到外部器件或连接器；图中没有可见 I2C 设备地址。",
+      "confidence": "confirmed",
+      "attributes": {"spi": "pin 6/NSS,pin 7/SCK,pin 8/MISO,pin 9/MOSI", "i2c": "pin 24/SCL,pin 25/SDA", "external_devices_visible": false, "i2c_address_visible": false},
+      "evidence": [{"asset_sha256": "a0de4ee75918086ec6ee6c88510386e21646f761b15a8aed5359999af4ce4b9c", "page": 1, "locator": "页面 M1 左侧 pin 6-9 与右侧 pin 24-25，均只有短引脚线而无外部网络"}]
+    },
+    {
+      "id": "address.visibility",
+      "category": "address",
+      "subject": "总线地址可见性",
+      "statement": "原理图没有标出 I2C、SPI、UART 或 LoRaWAN 设备地址；M1 主机控制接口仅以 UART TX/RX 网络呈现。",
+      "confidence": "confirmed",
+      "attributes": {"i2c_address_visible": false, "spi_address_visible": false, "uart_device_address_visible": false, "lorawan_address_visible": false},
+      "evidence": [{"asset_sha256": "a0de4ee75918086ec6ee6c88510386e21646f761b15a8aed5359999af4ce4b9c", "page": 1, "locator": "完整单页原理图的 M1、J1 与所有网络标注，无十六进制或设备地址字段"}]
+    },
+    {
+      "id": "gpio.aux-pa8-pa9-pa10",
+      "category": "gpio",
+      "subject": "P1 辅助 GPIO 与指示支路",
+      "statement": "M1 PA8、PA9、PA10 分别引至 P1 pin 3、4、5；PA10/P1 pin 5 还连接 D1 与 R5 1KΩ 串联到 GND。D1 的颜色、正向压降和驱动极性文字未标注。",
+      "confidence": "confirmed",
+      "attributes": {"pa8": "M1 pin 3 -> P1 pin 3", "pa9": "M1 pin 4 -> P1 pin 4", "pa10": "M1 pin 5 -> P1 pin 5 -> D1 -> R5 1KΩ -> GND", "led_part_number_visible": false, "gpio_direction_visible": false},
+      "evidence": [{"asset_sha256": "a0de4ee75918086ec6ee6c88510386e21646f761b15a8aed5359999af4ce4b9c", "page": 1, "locator": "页面左侧 P1 pin 3-5 到 M1 PA8/PA9/PA10，以及 PA10 节点下方 D1/R5/GND 支路"}]
+    },
+    {
+      "id": "reset.nrst-visibility",
+      "category": "reset",
+      "subject": "M1 NRST 与 J1 RST",
+      "statement": "M1 pin 27 标 NRST，但未连接到页面网络；J1 pin 6 标 RST，也未画到 M1 NRST 的连线，因此该页不能确认主机 RST 是否复位 RHF76-052。",
+      "confidence": "confirmed",
+      "attributes": {"module_reset": "M1 pin 27/NRST unconnected", "host_reset": "J1 pin 6/RST unconnected", "cross_connection_visible": false, "pullup_visible": false, "reset_button_visible": false},
+      "evidence": [{"asset_sha256": "a0de4ee75918086ec6ee6c88510386e21646f761b15a8aed5359999af4ce4b9c", "page": 1, "locator": "页面 M1 右侧 NRST pin 27 与 J1 右上 RST pin 6，两者均无跨页网络标签或连线"}]
+    },
+    {
+      "id": "debug.swd-visibility",
+      "category": "debug",
+      "subject": "M1 SWD 调试信号",
+      "statement": "M1 pin 12/SWDIO 与 pin 13/SWCLK 在模块符号上可见，但没有连接到 P1、J1 或专用调试连接器；BOOT 信号和调试电平未标出。",
+      "confidence": "confirmed",
+      "attributes": {"swdio": "M1 pin 12 unconnected", "swclk": "M1 pin 13 unconnected", "debug_connector_visible": false, "boot_signal_visible": false},
+      "evidence": [{"asset_sha256": "a0de4ee75918086ec6ee6c88510386e21646f761b15a8aed5359999af4ce4b9c", "page": 1, "locator": "页面 M1 左下 SWDIO pin 12、SWCLK pin 13，仅有未延伸的引脚线"}]
+    },
+    {
+      "id": "rf.dual-ipex",
+      "category": "rf",
+      "subject": "低频与高频 IPEX 天线端口",
+      "statement": "M1 pin 32/RFO_LF 连接 E1 ANT_IPEX，pin 30/RFO_HF 连接 E2 ANT_IPEX；相邻 M1 pin 33、31、29 为 GND，并连接射频区域地。图中未绘出分立射频匹配器件、天线开关或功放。",
+      "confidence": "confirmed",
+      "attributes": {"low_frequency_port": "M1 pin 32/RFO_LF -> E1 ANT_IPEX", "high_frequency_port": "M1 pin 30/RFO_HF -> E2 ANT_IPEX", "ground_pins": "M1 pin 33,31,29", "matching_network_visible": false, "rf_switch_visible": false, "power_amplifier_visible": false},
+      "evidence": [{"asset_sha256": "a0de4ee75918086ec6ee6c88510386e21646f761b15a8aed5359999af4ce4b9c", "page": 1, "locator": "页面 M1 右上 pin 29-33 至 E1/E2 ANT_IPEX 与 GND 的射频连接"}]
+    },
+    {
+      "id": "rf.documented-bands",
+      "category": "rf",
+      "subject": "LoRa 频段",
+      "statement": "产品正文记载支持 433/470MHz 与 868/915MHz；原理图只将两路射频网络命名为 RFO_LF 和 RFO_HF，没有打印中心频率、频段范围或地区配置。",
+      "confidence": "uncertain",
+      "attributes": {"documented_low_bands": "433/470MHz", "documented_high_bands": "868/915MHz", "schematic_low_net": "RFO_LF", "schematic_high_net": "RFO_HF", "frequency_values_visible": false},
+      "evidence": [{"asset_sha256": "a0de4ee75918086ec6ee6c88510386e21646f761b15a8aed5359999af4ce4b9c", "page": 1, "locator": "页面 M1 RFO_LF/RFO_HF 与 E1/E2 区域，未打印 MHz 数值"}]
+    },
+    {
+      "id": "rf.pcb-antenna-visibility",
+      "category": "rf",
+      "subject": "PCB 天线可见性",
+      "statement": "产品正文称模块具有内置 PCB 天线和外部天线接口，但本页原理图仅画出 E1、E2 两个 ANT_IPEX 符号，没有 PCB 天线位号、射频切换器或选择网络。",
+      "confidence": "uncertain",
+      "attributes": {"documented_internal_antenna": "PCB antenna", "visible_antenna_parts": "E1,E2 ANT_IPEX", "pcb_antenna_visible": false, "antenna_selector_visible": false},
+      "evidence": [{"asset_sha256": "a0de4ee75918086ec6ee6c88510386e21646f761b15a8aed5359999af4ce4b9c", "page": 1, "locator": "页面完整射频部分仅有 M1 RFO_LF/RFO_HF 与 E1/E2 ANT_IPEX"}]
+    },
+    {
+      "id": "clock.internal-visibility",
+      "category": "clock",
+      "subject": "时钟电路可见性",
+      "statement": "单页原理图没有独立晶体、谐振器或振荡器位号；RHF76-052 内部 MCU 与射频芯片的时钟电路未展开。",
+      "confidence": "confirmed",
+      "attributes": {"external_crystal_visible": false, "external_oscillator_visible": false, "module_internal_clock_expanded": false},
+      "evidence": [{"asset_sha256": "a0de4ee75918086ec6ee6c88510386e21646f761b15a8aed5359999af4ce4b9c", "page": 1, "locator": "完整单页原理图，无 Y/X 晶体、谐振器或振荡器位号"}]
+    },
+    {
+      "id": "protection.visibility",
+      "category": "protection",
+      "subject": "电源与外部接口保护可见性",
+      "statement": "单页原理图未绘出保险丝、TVS、ESD、反接保护或浪涌保护器件；J1、P1、UART 和天线端口周围也未显示专用保护器件。",
+      "confidence": "confirmed",
+      "attributes": {"fuse_visible": false, "tvs_visible": false, "esd_visible": false, "reverse_polarity_visible": false, "antenna_protection_visible": false},
+      "evidence": [{"asset_sha256": "a0de4ee75918086ec6ee6c88510386e21646f761b15a8aed5359999af4ce4b9c", "page": 1, "locator": "完整单页外部接口与电源区域，仅见 R1-R5、D1、连接器和模块"}]
+    },
+    {
+      "id": "storage.memory-visibility",
+      "category": "memory",
+      "subject": "存储器与内存可见性",
+      "statement": "原理图没有独立 Flash、EEPROM、RAM、SD 卡或其他存储器件；RHF76-052 内部 MCU 的存储结构未展开。",
+      "confidence": "confirmed",
+      "attributes": {"external_flash_visible": false, "eeprom_visible": false, "ram_visible": false, "sd_visible": false, "module_internal_memory_expanded": false},
+      "evidence": [{"asset_sha256": "a0de4ee75918086ec6ee6c88510386e21646f761b15a8aed5359999af4ce4b9c", "page": 1, "locator": "完整单页器件清单仅含 M1、J1、P1、E1/E2、R1-R5 和 D1"}]
+    },
+    {
+      "id": "other.functional-visibility",
+      "category": "other",
+      "subject": "音频、传感器与模拟链路可见性",
+      "statement": "单页原理图没有音频器件、传感器、ADC 前端、运算放大器、CAN、RS-485、USB、SDIO、MIPI 或 I2S 电路。",
+      "confidence": "confirmed",
+      "attributes": {"audio_visible": false, "sensor_visible": false, "analog_frontend_visible": false, "can_visible": false, "rs485_visible": false, "usb_visible": false, "sdio_visible": false, "mipi_visible": false, "i2s_visible": false},
+      "evidence": [{"asset_sha256": "a0de4ee75918086ec6ee6c88510386e21646f761b15a8aed5359999af4ce4b9c", "page": 1, "locator": "完整单页原理图的全部器件和接口，无上述功能分区或总线标注"}]
+    }
+  ],
+  "needs_review": [
+    {
+      "id": "review.internal-mcu",
+      "fact_id": "component.internal-mcu",
+      "question": "M1 RHF76-052 内部 MCU 是否确认为产品正文记载的 STM32L052C8T6？",
+      "reason": "本地原理图只显示 RHF76-052 模块边界，没有展开内部 MCU 位号、料号或连接。",
+      "evidence": [{"asset_sha256": "a0de4ee75918086ec6ee6c88510386e21646f761b15a8aed5359999af4ce4b9c", "page": 1, "locator": "页面左侧 M1 RHF76-052 模块方框"}]
+    },
+    {
+      "id": "review.internal-radio",
+      "fact_id": "component.internal-radio",
+      "question": "M1 RHF76-052 内部 Radio IC 是否确认为产品正文记载的 Semtech SX1276？",
+      "reason": "本地原理图仅引出 RFO_LF/RFO_HF，没有 SX1276 位号、料号或内部 SPI/射频连接。",
+      "evidence": [{"asset_sha256": "a0de4ee75918086ec6ee6c88510386e21646f761b15a8aed5359999af4ce4b9c", "page": 1, "locator": "页面 M1 RHF76-052 与 RFO_LF/RFO_HF 引脚区域"}]
+    },
+    {
+      "id": "review.uart-format",
+      "fact_id": "bus.uart-format",
+      "question": "Module LoRaWAN 的固定 UART 参数是否确认为 9600 baud、8N1？",
+      "reason": "参数仅见于产品正文，本地原理图未标波特率和帧格式。",
+      "evidence": [{"asset_sha256": "a0de4ee75918086ec6ee6c88510386e21646f761b15a8aed5359999af4ce4b9c", "page": 1, "locator": "页面 M1 USART_TX/USART_RX 与 UART 选路区域"}]
+    },
+    {
+      "id": "review.rf-bands",
+      "fact_id": "rf.documented-bands",
+      "question": "RFO_LF 与 RFO_HF 对应的正式支持频段是否确认为 433/470MHz 和 868/915MHz？",
+      "reason": "频率仅见于产品正文，本地原理图只标 LF/HF 网络而未打印 MHz 数值。",
+      "evidence": [{"asset_sha256": "a0de4ee75918086ec6ee6c88510386e21646f761b15a8aed5359999af4ce4b9c", "page": 1, "locator": "页面 M1 RFO_LF/RFO_HF 到 E1/E2 ANT_IPEX 区域"}]
+    },
+    {
+      "id": "review.pcb-antenna",
+      "fact_id": "rf.pcb-antenna-visibility",
+      "question": "产品正文所述内置 PCB 天线如何与 E1/E2 ANT_IPEX 连接或选择？",
+      "reason": "本地原理图未绘出 PCB 天线、射频开关或天线选择网络。",
+      "evidence": [{"asset_sha256": "a0de4ee75918086ec6ee6c88510386e21646f761b15a8aed5359999af4ce4b9c", "page": 1, "locator": "页面射频部分仅见 E1/E2 ANT_IPEX 与 M1 RFO_LF/RFO_HF"}]
+    }
+  ]
+}

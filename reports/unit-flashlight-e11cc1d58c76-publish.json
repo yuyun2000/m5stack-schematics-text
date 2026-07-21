@@ -1,0 +1,21 @@
+{
+  "dry_run": false,
+  "failed": 0,
+  "published": 1,
+  "results": [
+    {
+      "backup": null,
+      "draft_action": "unchanged",
+      "dry_run": false,
+      "errors": [],
+      "needs_review": 4,
+      "product_id": "unit-flashlight-e11cc1d58c76",
+      "product_name": "Unit FlashLight",
+      "publish_action": "unchanged",
+      "sha256": "22705ac532e6d23695acc80fedaf0970a1b8cae819f9f429649d48b365b71221",
+      "status": "valid",
+      "uncertain_facts": 4
+    }
+  ],
+  "schema_version": 1
+}

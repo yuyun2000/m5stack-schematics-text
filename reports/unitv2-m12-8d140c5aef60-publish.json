@@ -1,0 +1,21 @@
+{
+  "dry_run": false,
+  "failed": 0,
+  "published": 1,
+  "results": [
+    {
+      "backup": null,
+      "draft_action": "unchanged",
+      "dry_run": false,
+      "errors": [],
+      "needs_review": 10,
+      "product_id": "unitv2-m12-8d140c5aef60",
+      "product_name": "UnitV2-M12",
+      "publish_action": "unchanged",
+      "sha256": "15b7075b04e2eded1323d76cd68676fb35ca3bd71b39efb00beb6aee86a2f288",
+      "status": "valid",
+      "uncertain_facts": 10
+    }
+  ],
+  "schema_version": 1
+}

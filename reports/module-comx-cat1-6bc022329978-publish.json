@@ -1,0 +1,21 @@
+{
+  "dry_run": false,
+  "failed": 0,
+  "published": 1,
+  "results": [
+    {
+      "backup": null,
+      "draft_action": "unchanged",
+      "dry_run": false,
+      "errors": [],
+      "needs_review": 6,
+      "product_id": "module-comx-cat1-6bc022329978",
+      "product_name": "Module COMX Cat1",
+      "publish_action": "unchanged",
+      "sha256": "f54d91d6383912e3f66f5b0fde17f24195d0bccf8cb8867f15575f99dd0f45ba",
+      "status": "valid",
+      "uncertain_facts": 6
+    }
+  ],
+  "schema_version": 1
+}

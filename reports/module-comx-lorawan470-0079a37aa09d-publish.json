@@ -1,0 +1,21 @@
+{
+  "dry_run": false,
+  "failed": 0,
+  "published": 1,
+  "results": [
+    {
+      "backup": null,
+      "draft_action": "unchanged",
+      "dry_run": false,
+      "errors": [],
+      "needs_review": 7,
+      "product_id": "module-comx-lorawan470-0079a37aa09d",
+      "product_name": "Module COMX LoRaWAN470",
+      "publish_action": "unchanged",
+      "sha256": "aa29e4215ddbfd549cd9b4567b874aff7fc22cc360aedd8c036e943223a14bc8",
+      "status": "valid",
+      "uncertain_facts": 7
+    }
+  ],
+  "schema_version": 1
+}

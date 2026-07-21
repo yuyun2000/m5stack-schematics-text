@@ -1,0 +1,21 @@
+{
+  "dry_run": false,
+  "failed": 0,
+  "published": 1,
+  "results": [
+    {
+      "backup": null,
+      "draft_action": "unchanged",
+      "dry_run": false,
+      "errors": [],
+      "needs_review": 3,
+      "product_id": "unit-dlight-ef874caa3331",
+      "product_name": "Unit DLight",
+      "publish_action": "unchanged",
+      "sha256": "54e58832917f3398d8aade0850bde4afe2308631f3bd7832fb8bdea01f5daaff",
+      "status": "valid",
+      "uncertain_facts": 3
+    }
+  ],
+  "schema_version": 1
+}

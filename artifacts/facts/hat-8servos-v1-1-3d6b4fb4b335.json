@@ -1,0 +1,261 @@
+{
+  "schema_version": 1,
+  "generator": "schematic_describer",
+  "product": {
+    "product_id": "hat-8servos-v1-1-3d6b4fb4b335",
+    "product_name": "Hat 8Servos v1.1",
+    "sku": "U076-B",
+    "source_path": "hat/hat_8servos_1.1.md",
+    "source_sha256": "ff496a95d9ca841a28069787308acfe2863e4f4ea6a9a4f1709a37574751cb5f",
+    "input_sha256": "5c727755842d02be12f22eac17dd02cdfb6983b25a89fd3e2e003f3ffd420976"
+  },
+  "schematic_assets": [
+    {
+      "sha256": "2b912c22779a4d12b0f1776ce0a27128ad484b2c549abe6aec5077fd76c936f9",
+      "source_url": "https://m5stack-doc.oss-cn-shenzhen.aliyuncs.com/583/Sch_8ServoV1.1_sch_01.png",
+      "pages": [1]
+    }
+  ],
+  "summary": "Hat 8Servos v1.1 以 U1 STM32F030F4P6 为控制器，通过 P10 的 SDA/SCL 与主机连接，并从八组 GPIO 输出 CH1 至 CH8。P1 至 P8 各引出一路通道信号、BAT1 和公共地，Q1 AO3400A 由 PA0/PWR 控制八路舵机公共回路。电池 BAT 经 F1、S1 形成 BAT1 舵机电源路径，D1 SS54 提供输入钳位路径；控制器由 +3.3V 供电并提供 P9 SWD 调试接口。",
+  "keywords": [
+    "Hat 8Servos v1.1",
+    "U076-B",
+    "STM32F030F4P6",
+    "I2C",
+    "0x36",
+    "SDA",
+    "SCL",
+    "CH1",
+    "CH2",
+    "CH3",
+    "CH4",
+    "CH5",
+    "CH6",
+    "CH7",
+    "CH8",
+    "BAT",
+    "BAT1",
+    "PWR",
+    "AO3400A",
+    "SS54",
+    "SS-12D02-VG4",
+    "SWDIO",
+    "SWCLK",
+    "NRST",
+    "BOOT0",
+    "STICKIO",
+    "+3.3V",
+    "+5VIN"
+  ],
+  "components": [
+    {
+      "reference": "U1",
+      "part_number": "STM32F030F4P6",
+      "role": "I2C 通信、八路舵机通道信号及舵机电源控制的主控制器",
+      "evidence": [{"asset_sha256": "2b912c22779a4d12b0f1776ce0a27128ad484b2c549abe6aec5077fd76c936f9", "page": 1, "locator": "页面中央 U1 方框，器件值 STM32F030F4P6，周围标注 PA0 至 PA14、PB1、NRST、BOOT0、VDD/VDDA/VSS"}]
+    },
+    {
+      "reference": "Rp1",
+      "part_number": "10KΩ(103) ±5%",
+      "role": "SDA、SCL、NRST 上拉及 BOOT0 下拉电阻阵列",
+      "evidence": [{"asset_sha256": "2b912c22779a4d12b0f1776ce0a27128ad484b2c549abe6aec5077fd76c936f9", "page": 1, "locator": "页面中上 Rp1 电阻阵列，值标注 10KΩ(103) ±5%，连接 SDA、SCL、NRST、BOOT0、+3.3V 和 GND"}]
+    },
+    {
+      "reference": "P1-P8",
+      "part_number": "Header 3",
+      "role": "八路舵机三针连接器，分别引出 CH1 至 CH8、BAT1 和 GND",
+      "evidence": [{"asset_sha256": "2b912c22779a4d12b0f1776ce0a27128ad484b2c549abe6aec5077fd76c936f9", "page": 1, "locator": "页面左半部 P1 至 P8 八个 Header 3，针脚旁标注 CH1 至 CH8、BAT1，pin 3 汇接公共 GND"}]
+    },
+    {
+      "reference": "P9",
+      "part_number": "SWD_5p",
+      "role": "五针 SWD 调试和复位接口",
+      "evidence": [{"asset_sha256": "2b912c22779a4d12b0f1776ce0a27128ad484b2c549abe6aec5077fd76c936f9", "page": 1, "locator": "页面右上 P9 SWD_5p，五针标注 VCC、SWCLK、SWDIO、RST、GND"}]
+    },
+    {
+      "reference": "P10",
+      "part_number": "STICKIO",
+      "role": "M5Stick 主机、电源和 I2C 接口",
+      "evidence": [{"asset_sha256": "2b912c22779a4d12b0f1776ce0a27128ad484b2c549abe6aec5077fd76c936f9", "page": 1, "locator": "页面右下 P10 STICKIO 八针连接器，标注 GND、5VOUT、G26、G36、G0、BAT、3V3、5VIN"}]
+    },
+    {
+      "reference": "F1",
+      "part_number": "Fuse 0805 2A/6V",
+      "role": "BAT 输入串联保险丝",
+      "evidence": [{"asset_sha256": "2b912c22779a4d12b0f1776ce0a27128ad484b2c549abe6aec5077fd76c936f9", "page": 1, "locator": "页面左下 BAT 电源路径上的 F1，器件值标注 Fuse 0805 2A/6V"}]
+    },
+    {
+      "reference": "S1",
+      "part_number": "SS-12D02-VG4",
+      "role": "将保险丝后的电池节点切换至 BAT1 的滑动开关",
+      "evidence": [{"asset_sha256": "2b912c22779a4d12b0f1776ce0a27128ad484b2c549abe6aec5077fd76c936f9", "page": 1, "locator": "页面左下 S1 SS-12D02-VG4，pin 2 接 F1 后节点，pin 1 接 BAT1，pin 3 未连接"}]
+    },
+    {
+      "reference": "D1",
+      "part_number": "SS54",
+      "role": "保险丝后电池节点至 GND 的钳位二极管",
+      "evidence": [{"asset_sha256": "2b912c22779a4d12b0f1776ce0a27128ad484b2c549abe6aec5077fd76c936f9", "page": 1, "locator": "页面左下 D1 SS54，连接在 F1 后/S1 pin 2 节点与 GND 之间"}]
+    },
+    {
+      "reference": "Q1",
+      "part_number": "AO3400A",
+      "role": "由 PWR 网络驱动的八路舵机公共低侧回路开关",
+      "evidence": [{"asset_sha256": "2b912c22779a4d12b0f1776ce0a27128ad484b2c549abe6aec5077fd76c936f9", "page": 1, "locator": "页面左中 Q1，标注 AO3400A N沟沟 X0YV1T SOT-23，漏源位于 P1-P8 公共回路与 GND 之间"}]
+    },
+    {
+      "reference": "R1",
+      "part_number": "1KΩ",
+      "role": "PWR 到 Q1 栅极的串联电阻",
+      "evidence": [{"asset_sha256": "2b912c22779a4d12b0f1776ce0a27128ad484b2c549abe6aec5077fd76c936f9", "page": 1, "locator": "页面左中 Q1 栅极左侧 R1，值 1KΩ，左端网络 PWR"}]
+    },
+    {
+      "reference": "R2",
+      "part_number": "10KΩ",
+      "role": "Q1 栅极下拉电阻",
+      "evidence": [{"asset_sha256": "2b912c22779a4d12b0f1776ce0a27128ad484b2c549abe6aec5077fd76c936f9", "page": 1, "locator": "页面左中 Q1 栅极节点上的 R2 10KΩ，下端接 GND"}]
+    },
+    {
+      "reference": "C11,C12",
+      "part_number": "100nF",
+      "role": "U1 +3.3V 电源去耦电容",
+      "evidence": [{"asset_sha256": "2b912c22779a4d12b0f1776ce0a27128ad484b2c549abe6aec5077fd76c936f9", "page": 1, "locator": "页面中下 U1 供电区域的 C11、C12，均标注 100nF 并连接 +3.3V 与 GND"}]
+    }
+  ],
+  "facts": [
+    {
+      "id": "system.hat-8servos-v11-architecture",
+      "category": "system",
+      "subject": "Hat 8Servos v1.1 系统架构",
+      "statement": "U1 STM32F030F4P6 从 P10 接收 SDA/SCL，并输出 CH1 至 CH8；P1 至 P8 提供八路舵机连接，BAT 经 F1 和 S1 形成 BAT1，Q1 控制八路连接器的公共低侧回路。",
+      "confidence": "confirmed",
+      "attributes": {"controller": "U1 STM32F030F4P6", "host_connector": "P10", "servo_connectors": "P1-P8", "channels": "CH1-CH8", "servo_power_rail": "BAT1", "low_side_switch": "Q1 AO3400A"},
+      "evidence": [{"asset_sha256": "2b912c22779a4d12b0f1776ce0a27128ad484b2c549abe6aec5077fd76c936f9", "page": 1, "locator": "完整单页：中央 U1、左侧 P1-P8/Q1/电池路径和右下 P10 功能分区"}]
+    },
+    {
+      "id": "bus.i2c-host",
+      "category": "bus",
+      "subject": "U1 与 P10 的 I2C 总线",
+      "statement": "U1 PA10/pin 18 连接 SDA，U1 PA9/pin 17 连接 SCL；SDA 和 SCL 经 Rp1 上拉至 +3.3V，并分别连接 P10 pin 5 G0 和 pin 3 G26。",
+      "confidence": "confirmed",
+      "attributes": {"controller": "U1", "sda_mcu_pin": "PA10/pin 18", "scl_mcu_pin": "PA9/pin 17", "sda_connector_pin": "P10 pin 5/G0", "scl_connector_pin": "P10 pin 3/G26", "pullup": "Rp1 10KΩ(103) ±5%", "logic_rail": "+3.3V"},
+      "evidence": [{"asset_sha256": "2b912c22779a4d12b0f1776ce0a27128ad484b2c549abe6aec5077fd76c936f9", "page": 1, "locator": "U1 右侧 PA10/SDA 与 PA9/SCL、上方 Rp1，以及右下 P10 G0/SDA 和 G26/SCL 网络"}]
+    },
+    {
+      "id": "address.documented-i2c",
+      "category": "address",
+      "subject": "I2C 从机地址",
+      "statement": "原理图未打印 I2C 从机地址；产品正文记载 0x36，但无法仅由本页电路图确认该固件地址。",
+      "confidence": "uncertain",
+      "attributes": {"documented_address": "0x36", "schematic_address_visible": false},
+      "evidence": [{"asset_sha256": "2b912c22779a4d12b0f1776ce0a27128ad484b2c549abe6aec5077fd76c936f9", "page": 1, "locator": "U1 SDA/SCL、Rp1 与 P10 I2C 连接区域未见地址值或地址选择网络"}]
+    },
+    {
+      "id": "gpio.servo-channel-map",
+      "category": "gpio",
+      "subject": "U1 舵机通道 GPIO 映射",
+      "statement": "U1 将 PA5/pin 11 映射为 CH1、PA6/pin 12 为 CH2、PA7/pin 13 为 CH3、PB1/pin 14 为 CH4、PA4/pin 10 为 CH5、PA3/pin 9 为 CH6、PA2/pin 8 为 CH7、PA1/pin 7 为 CH8。",
+      "confidence": "confirmed",
+      "attributes": {"CH1": "PA5/pin 11", "CH2": "PA6/pin 12", "CH3": "PA7/pin 13", "CH4": "PB1/pin 14", "CH5": "PA4/pin 10", "CH6": "PA3/pin 9", "CH7": "PA2/pin 8", "CH8": "PA1/pin 7"},
+      "evidence": [{"asset_sha256": "2b912c22779a4d12b0f1776ce0a27128ad484b2c549abe6aec5077fd76c936f9", "page": 1, "locator": "U1 左右两侧 PA1-PA7、PB1 引脚和 CH1-CH8 网络标注"}]
+    },
+    {
+      "id": "interface.servo-connectors",
+      "category": "interface",
+      "subject": "P1 至 P8 舵机接口",
+      "statement": "P1 至 P8 均为 Header 3，pin 1 分别连接 CH1、CH5、CH2、CH6、CH3、CH7、CH4、CH8，pin 2 均连接 BAT1，pin 3 均连接公共回路。",
+      "confidence": "confirmed",
+      "attributes": {"P1": "1:CH1,2:BAT1,3:common", "P2": "1:CH5,2:BAT1,3:common", "P3": "1:CH2,2:BAT1,3:common", "P4": "1:CH6,2:BAT1,3:common", "P5": "1:CH3,2:BAT1,3:common", "P6": "1:CH7,2:BAT1,3:common", "P7": "1:CH4,2:BAT1,3:common", "P8": "1:CH8,2:BAT1,3:common"},
+      "evidence": [{"asset_sha256": "2b912c22779a4d12b0f1776ce0a27128ad484b2c549abe6aec5077fd76c936f9", "page": 1, "locator": "页面左侧 P1-P8 各 Header 3 的脚号、CH 网络、BAT1 母线和 pin 3 公共连线"}]
+    },
+    {
+      "id": "gpio.servo-power-control",
+      "category": "gpio",
+      "subject": "Q1 舵机公共回路控制",
+      "statement": "U1 PA0/pin 6 输出 PWR，PWR 经 R1 1KΩ连接 Q1 AO3400A 栅极，R2 10KΩ将栅极下拉到 GND；Q1 位于 P1 至 P8 pin 3 公共回路与 GND 之间。",
+      "confidence": "confirmed",
+      "attributes": {"mcu_pin": "U1 PA0/pin 6", "control_net": "PWR", "gate_resistor": "R1 1KΩ", "gate_pulldown": "R2 10KΩ", "switch": "Q1 AO3400A", "controlled_path": "P1-P8 pin 3 common to GND"},
+      "evidence": [{"asset_sha256": "2b912c22779a4d12b0f1776ce0a27128ad484b2c549abe6aec5077fd76c936f9", "page": 1, "locator": "U1 PA0/PWR 网络及页面左中 R1、R2、Q1 与 P1-P8 公共回路"}]
+    },
+    {
+      "id": "power.battery-path",
+      "category": "power",
+      "subject": "BAT 至 BAT1 电源路径",
+      "statement": "P10 pin 6 的 BAT 网络经 F1 Fuse 0805 2A/6V 到 S1 pin 2；S1 pin 1 输出 BAT1 到 P1 至 P8 pin 2，S1 pin 3 未连接。",
+      "confidence": "confirmed",
+      "attributes": {"input": "P10 pin 6/BAT", "fuse": "F1 Fuse 0805 2A/6V", "switch": "S1 SS-12D02-VG4", "switch_input": "pin 2", "switch_output": "pin 1/BAT1", "unused_pin": "S1 pin 3", "loads": "P1-P8 pin 2"},
+      "evidence": [{"asset_sha256": "2b912c22779a4d12b0f1776ce0a27128ad484b2c549abe6aec5077fd76c936f9", "page": 1, "locator": "页面右下 P10 BAT 网络和页面左下 BAT-F1-S1-BAT1 至八个连接器的路径"}]
+    },
+    {
+      "id": "protection.battery-clamp",
+      "category": "protection",
+      "subject": "BAT 输入保护",
+      "statement": "F1 串联在 BAT 输入上，D1 SS54 连接在 F1 后/S1 pin 2 节点与 GND 之间，形成带串联保险丝的输入钳位路径。",
+      "confidence": "confirmed",
+      "attributes": {"fuse": "F1 Fuse 0805 2A/6V", "diode": "D1 SS54", "protected_net": "BAT", "clamp_node": "F1 output/S1 pin 2", "return": "GND"},
+      "evidence": [{"asset_sha256": "2b912c22779a4d12b0f1776ce0a27128ad484b2c549abe6aec5077fd76c936f9", "page": 1, "locator": "页面左下 F1、D1、S1 与 GND 连接区域"}]
+    },
+    {
+      "id": "interface.host-p10",
+      "category": "interface",
+      "subject": "P10 STICKIO 主机接口",
+      "statement": "P10 pin 1 为 GND，pin 2 为 5VOUT/+5V，pin 3 为 G26/SCL，pin 4 为 G36 且未连接，pin 5 为 G0/SDA，pin 6 为 BAT，pin 7 为 3V3/+3.3V，pin 8 为 5VIN/+5VIN。",
+      "confidence": "confirmed",
+      "attributes": {"reference": "P10", "part_number": "STICKIO", "pinout": "1:GND,2:5VOUT/+5V,3:G26/SCL,4:G36/NC,5:G0/SDA,6:BAT,7:3V3/+3.3V,8:5VIN/+5VIN", "i2c_logic_rail": "+3.3V"},
+      "evidence": [{"asset_sha256": "2b912c22779a4d12b0f1776ce0a27128ad484b2c549abe6aec5077fd76c936f9", "page": 1, "locator": "页面右下 P10 STICKIO 的 pin 1-8、主机侧名称和板内网络标签"}]
+    },
+    {
+      "id": "debug.swd-p9",
+      "category": "debug",
+      "subject": "P9 SWD 调试接口",
+      "statement": "P9 pin 1 连接 VCC/+3.3V，pin 2 连接 SWCLK，pin 3 连接 SWDIO，pin 4 RST 连接 NRST，pin 5 连接 GND；U1 PA14/pin 20 为 SWCLK，PA13/pin 19 为 SWDIO。",
+      "confidence": "confirmed",
+      "attributes": {"connector": "P9 SWD_5p", "pinout": "1:VCC/+3.3V,2:SWCLK,3:SWDIO,4:RST/NRST,5:GND", "swclk_mcu_pin": "U1 PA14/pin 20", "swdio_mcu_pin": "U1 PA13/pin 19"},
+      "evidence": [{"asset_sha256": "2b912c22779a4d12b0f1776ce0a27128ad484b2c549abe6aec5077fd76c936f9", "page": 1, "locator": "页面右上 P9 SWD_5p 与 U1 PA14/SWCLK、PA13/SWDIO、NRST 网络"}]
+    },
+    {
+      "id": "reset.nrst-boot0",
+      "category": "reset",
+      "subject": "U1 复位和启动配置",
+      "statement": "U1 NRST/pin 4 连接 NRST，并由 Rp1 上拉至 +3.3V；U1 BOOT0/pin 1 连接 BOOT0，并由 Rp1 下拉至 GND。NRST 同时连接 P9 pin 4 RST。",
+      "confidence": "confirmed",
+      "attributes": {"reset_pin": "U1 NRST/pin 4", "reset_net": "NRST", "reset_bias": "Rp1 to +3.3V", "boot_pin": "U1 BOOT0/pin 1", "boot_net": "BOOT0", "boot_bias": "Rp1 to GND", "debug_reset": "P9 pin 4/RST"},
+      "evidence": [{"asset_sha256": "2b912c22779a4d12b0f1776ce0a27128ad484b2c549abe6aec5077fd76c936f9", "page": 1, "locator": "U1 左侧 NRST/BOOT0、上方 Rp1 上拉/下拉连接和右上 P9 RST"}]
+    },
+    {
+      "id": "power.mcu-rail",
+      "category": "power",
+      "subject": "U1 供电与去耦",
+      "statement": "U1 的 VDD 和 VDDA 连接 +3.3V，VSS 连接 GND；C11 与 C12 均为 100nF，并连接在 +3.3V 与 GND 之间。",
+      "confidence": "confirmed",
+      "attributes": {"controller": "U1", "supply_pins": "VDD,VDDA", "rail": "+3.3V", "ground_pin": "VSS", "decoupling": "C11 100nF,C12 100nF"},
+      "evidence": [{"asset_sha256": "2b912c22779a4d12b0f1776ce0a27128ad484b2c549abe6aec5077fd76c936f9", "page": 1, "locator": "页面中下 U1 VDD/VDDA/VSS 供电单元及 C11、C12"}]
+    },
+    {
+      "id": "clock.no-external-source",
+      "category": "clock",
+      "subject": "U1 时钟源可见性",
+      "statement": "该单页原理图中未绘出独立晶体、陶瓷谐振器或外部振荡器连接。",
+      "confidence": "confirmed",
+      "attributes": {"external_clock_component_visible": false, "schematic_pages_checked": "1"},
+      "evidence": [{"asset_sha256": "2b912c22779a4d12b0f1776ce0a27128ad484b2c549abe6aec5077fd76c936f9", "page": 1, "locator": "完整单页 U1 及所有外围器件区域，无 Y/X 晶体或振荡器位号"}]
+    },
+    {
+      "id": "storage.memory-audio-sensor-rf-visibility",
+      "category": "other",
+      "subject": "其他功能分区可见性",
+      "statement": "该单页原理图中未绘出独立存储器、外部存储、音频器件、传感器或射频器件。",
+      "confidence": "confirmed",
+      "attributes": {"storage_visible": false, "memory_visible": false, "audio_visible": false, "sensor_visible": false, "rf_visible": false, "schematic_pages_checked": "1"},
+      "evidence": [{"asset_sha256": "2b912c22779a4d12b0f1776ce0a27128ad484b2c549abe6aec5077fd76c936f9", "page": 1, "locator": "完整单页器件与连接器清单，仅见 U1、接口、电池/开关、MOSFET、保护和无源器件"}]
+    }
+  ],
+  "needs_review": [
+    {
+      "id": "review.i2c-address",
+      "fact_id": "address.documented-i2c",
+      "question": "当前产品固件的 I2C 从机地址是否确认为产品正文记载的 0x36？",
+      "reason": "原理图只显示 SDA/SCL 物理连接和上拉，没有打印从机地址、地址选择网络或固件定义。",
+      "evidence": [{"asset_sha256": "2b912c22779a4d12b0f1776ce0a27128ad484b2c549abe6aec5077fd76c936f9", "page": 1, "locator": "U1 SDA/SCL、Rp1 与 P10 I2C 连接区域"}]
+    }
+  ]
+}

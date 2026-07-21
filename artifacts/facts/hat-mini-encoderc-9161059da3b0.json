@@ -1,0 +1,294 @@
+{
+  "schema_version": 1,
+  "generator": "schematic_describer",
+  "product": {
+    "product_id": "hat-mini-encoderc-9161059da3b0",
+    "product_name": "Hat Mini EncoderC",
+    "sku": "U157",
+    "source_path": "hat/MiniEncoderC Hat.md",
+    "source_sha256": "b5b9059db179dfaefc12af535ad5cf9b6e507a678639d56a109b03d9b44f2a81",
+    "input_sha256": "1f72d3112ac6cc2b006aa009c6dbde092d209da2bc213890afd843719e20d5c8"
+  },
+  "schematic_assets": [
+    {
+      "sha256": "7a1f416e205c02adb23659d58519cf1d891081f5f761c76030a48353a1f47514",
+      "source_url": "https://m5stack-doc.oss-cn-shenzhen.aliyuncs.com/611/SCH_HAT_MiniEncoderC_V1.0_sch_01.png",
+      "pages": [1]
+    }
+  ],
+  "summary": "Hat Mini EncoderC 以 U1 STM32F030F4P6 为协处理器，采集 SW1 EC11 的 A/B 相与按键，并通过 RGB 网络驱动 U2 SK6812-3535。主机经 P1 的 SCL/SDA 与 MCU 通信，同一总线也引到 J1 Grove；J2 提供 SWDIO、SWCLK 和 NRST 调试。P1 的 3V3 为 MCU 和 RGB LED 供电，5V 供给 Grove，BAT 与 J3 电池接口直连，页面未显示充电器、LDO 或其他电源转换器。",
+  "keywords": [
+    "Hat Mini EncoderC",
+    "U157",
+    "STM32F030F4P6",
+    "EC11",
+    "SK6812-3535",
+    "I2C",
+    "0x42",
+    "SCL",
+    "SDA",
+    "AD0",
+    "AD1",
+    "BTN",
+    "RGB",
+    "PA0",
+    "PA5",
+    "PA6",
+    "PA7",
+    "PA9",
+    "PA10",
+    "SWDIO",
+    "SWCLK",
+    "NRST",
+    "BOOT0",
+    "STICKIO HAT",
+    "GROVE",
+    "BAT",
+    "3V3",
+    "5V",
+    "R4 10KΩ",
+    "C1 100nF",
+    "rotary encoder",
+    "200mAh"
+  ],
+  "components": [
+    {
+      "reference": "U1",
+      "part_number": "STM32F030F4P6",
+      "role": "采集编码器和按键、驱动 RGB LED，并通过 I2C 与主机通信的协处理器",
+      "evidence": [{"asset_sha256": "7a1f416e205c02adb23659d58519cf1d891081f5f761c76030a48353a1f47514", "page": 1, "locator": "B1-C2，U1 STM32F030F4P6 及 RGB/BTN/AD1/AD0/SCL/SDA/SWD/NRST/BOOT0"}]
+    },
+    {
+      "reference": "SW1",
+      "part_number": "EC11",
+      "role": "带按压开关的增量式旋转编码器，A/B 相接 AD1/AD0，按键接 BTN",
+      "evidence": [{"asset_sha256": "7a1f416e205c02adb23659d58519cf1d891081f5f761c76030a48353a1f47514", "page": 1, "locator": "B2-B3，SW1 EC11，A=AD1、B=AD0、C=GND、D=BTN、E/F=GND"}]
+    },
+    {
+      "reference": "U2",
+      "part_number": "SK6812-3535",
+      "role": "由 U1 RGB 网络驱动的可编程 RGB LED",
+      "evidence": [{"asset_sha256": "7a1f416e205c02adb23659d58519cf1d891081f5f761c76030a48353a1f47514", "page": 1, "locator": "B4，U2 SK6812-3535，DI=RGB、VDD=3V3、GND、DO 未连接"}]
+    },
+    {
+      "reference": "P1",
+      "part_number": "HAT 8-pin connector",
+      "role": "主机 HAT 接口，承载 GND、5V、SCL、SDA、BAT 与 3V3",
+      "evidence": [{"asset_sha256": "7a1f416e205c02adb23659d58519cf1d891081f5f761c76030a48353a1f47514", "page": 1, "locator": "D3，P1 HAT pins 1-8 与 GND/5V/SCL/G36/SDA/BAT/3V3/5VIN"}]
+    },
+    {
+      "reference": "J1",
+      "part_number": "GROVE HY2.0-4P",
+      "role": "导出 SCL、SDA、5V 与 GND 的 Grove 接口",
+      "evidence": [{"asset_sha256": "7a1f416e205c02adb23659d58519cf1d891081f5f761c76030a48353a1f47514", "page": 1, "locator": "D2-D3，J1 GROVE，IO2=SCL、IO1=SDA、5V、GND"}]
+    },
+    {
+      "reference": "J2",
+      "part_number": "SWD_5P",
+      "role": "U1 的 5 针 SWD 调试与复位接口",
+      "evidence": [{"asset_sha256": "7a1f416e205c02adb23659d58519cf1d891081f5f761c76030a48353a1f47514", "page": 1, "locator": "C1-D2，J2 SWD_5P：VCC/SWCLK/SWDIO/NRST/GND"}]
+    },
+    {
+      "reference": "J3",
+      "part_number": "SMT_HDR_2x1.25mm",
+      "role": "BAT 与 GND 的双触点电池连接器",
+      "evidence": [{"asset_sha256": "7a1f416e205c02adb23659d58519cf1d891081f5f761c76030a48353a1f47514", "page": 1, "locator": "D4，J3 SMT_HDR_2x1.25mm，BAT 正端与 GND 负端"}]
+    },
+    {
+      "reference": "R1/R2/R3",
+      "part_number": "10KΩ / 10KΩ / 10KΩ",
+      "role": "BTN、AD0、AD1 输入上拉至 3V3",
+      "evidence": [{"asset_sha256": "7a1f416e205c02adb23659d58519cf1d891081f5f761c76030a48353a1f47514", "page": 1, "locator": "B2-B3，R1 BTN、R2 AD0、R3 AD1，均为 10KΩ 到 3V3"}]
+    },
+    {
+      "reference": "R4/R5/C1",
+      "part_number": "10KΩ / 10KΩ / 100nF",
+      "role": "BOOT0 下拉与 NRST 上拉/复位滤波网络",
+      "evidence": [{"asset_sha256": "7a1f416e205c02adb23659d58519cf1d891081f5f761c76030a48353a1f47514", "page": 1, "locator": "B1-C2，BOOT0-R4-GND 与 3V3-R5-NRST-C1-GND"}]
+    },
+    {
+      "reference": "C2/C3/C4/C5/C6",
+      "part_number": "100nF / 10uF / 1uF / 100nF / 100nF",
+      "role": "MCU、Grove 5V 和编码器 A/B 相的去耦/滤波电容",
+      "evidence": [{"asset_sha256": "7a1f416e205c02adb23659d58519cf1d891081f5f761c76030a48353a1f47514", "page": 1, "locator": "C1-C3 与 D2-D3：C2/C3 供电去耦、C4 Grove 5V、C5 AD0、C6 AD1"}]
+    }
+  ],
+  "facts": [
+    {
+      "id": "system.architecture",
+      "category": "system",
+      "subject": "编码器 HAT 架构",
+      "statement": "U1 STM32F030F4P6 读取 SW1 EC11 的 AD0/AD1 与 BTN，驱动 U2 SK6812-3535，并通过 P1 的 SCL/SDA 与主机通信。",
+      "confidence": "confirmed",
+      "attributes": {"coprocessor": "U1 STM32F030F4P6", "encoder": "SW1 EC11", "rgb": "U2 SK6812-3535", "host_bus": "I2C SCL/SDA", "debug": "J2 SWD_5P"},
+      "evidence": [{"asset_sha256": "7a1f416e205c02adb23659d58519cf1d891081f5f761c76030a48353a1f47514", "page": 1, "locator": "整页：MCU、EC11、RGB、HAT、Grove、SWD 与 BAT 分区"}]
+    },
+    {
+      "id": "component.mcu",
+      "category": "component",
+      "subject": "STM32F030F4P6 协处理器",
+      "statement": "U1 为 STM32F030F4P6，VDD pin16 与 VDDA pin5 接 3V3，VSS pin15 接 GND；C2 100 nF 与 C3 10 µF 对地去耦。",
+      "confidence": "confirmed",
+      "attributes": {"reference": "U1", "part_number": "STM32F030F4P6", "vdd": "pin16 3V3", "vdda": "pin5 3V3", "vss": "pin15 GND", "decoupling": "C2 100nF; C3 10uF"},
+      "evidence": [{"asset_sha256": "7a1f416e205c02adb23659d58519cf1d891081f5f761c76030a48353a1f47514", "page": 1, "locator": "B1-C2，U1 电源脚与 C2/C3"}]
+    },
+    {
+      "id": "gpio.encoder",
+      "category": "gpio",
+      "subject": "EC11 A/B 相输入",
+      "statement": "SW1 A 相连接 AD1/U1 PA6 pin12，B 相连接 AD0/U1 PA7 pin13，共端 C 接 GND；AD1 与 AD0 分别由 R3/R2 10 kΩ 上拉并由 C6/C5 100 nF 对地滤波。",
+      "confidence": "confirmed",
+      "attributes": {"phase_a": "SW1 A -> AD1 -> U1 PA6 pin12", "phase_b": "SW1 B -> AD0 -> U1 PA7 pin13", "common": "SW1 C GND", "phase_a_filter": "R3 10KΩ to 3V3; C6 100nF to GND", "phase_b_filter": "R2 10KΩ to 3V3; C5 100nF to GND", "direction": "inputs to U1"},
+      "evidence": [{"asset_sha256": "7a1f416e205c02adb23659d58519cf1d891081f5f761c76030a48353a1f47514", "page": 1, "locator": "U1 PA6/PA7 与 SW1 A/B、R2/R3、C5/C6 连线"}]
+    },
+    {
+      "id": "gpio.button",
+      "category": "gpio",
+      "subject": "EC11 按键输入",
+      "statement": "SW1 按键 D 端连接 BTN/U1 PA5 pin11，E/F 端接 GND；BTN 由 R1 10 kΩ 上拉到 3V3。",
+      "confidence": "confirmed",
+      "attributes": {"signal": "BTN", "mcu_pin": "U1 PA5 pin11", "switch_terminal": "SW1 D", "return": "SW1 E/F GND", "pullup": "R1 10KΩ to 3V3", "active_level": "low when pressed"},
+      "evidence": [{"asset_sha256": "7a1f416e205c02adb23659d58519cf1d891081f5f761c76030a48353a1f47514", "page": 1, "locator": "U1 PA5 BTN 与 SW1 D/E/F、R1 10KΩ"}]
+    },
+    {
+      "id": "gpio.rgb",
+      "category": "gpio",
+      "subject": "SK6812 数据输出",
+      "statement": "U1 PA0 pin6 通过 RGB 网络连接 U2 DI pin3；U2 VDD pin4 接 3V3、GND pin2 接 GND，DO pin1 未连接。",
+      "confidence": "confirmed",
+      "attributes": {"mcu_pin": "U1 PA0 pin6", "net": "RGB", "destination": "U2 pin3 DI", "led": "SK6812-3535", "supply": "U2 pin4 3V3", "data_out": "U2 pin1 DO NC", "direction": "U1 output to U2"},
+      "evidence": [{"asset_sha256": "7a1f416e205c02adb23659d58519cf1d891081f5f761c76030a48353a1f47514", "page": 1, "locator": "U1 PA0 RGB 与 B4 U2 SK6812-3535"}]
+    },
+    {
+      "id": "bus.host-i2c",
+      "category": "bus",
+      "subject": "主机 I2C 接口",
+      "statement": "U1 PA9 pin17 连接 SCL，PA10 pin18 连接 SDA；SCL/SDA 同时连接 P1 HAT 与 J1 Grove，页面未显示本板 I2C 上拉电阻。",
+      "confidence": "confirmed",
+      "attributes": {"controller": "external host", "device": "U1 STM32F030F4P6", "scl": "U1 PA9 pin17 / P1 pin6 / J1 IO2", "sda": "U1 PA10 pin18 / P1 pin4 / J1 IO1", "level": "3.3V MCU domain", "onboard_pullups": "none shown", "direction": "bidirectional"},
+      "evidence": [{"asset_sha256": "7a1f416e205c02adb23659d58519cf1d891081f5f761c76030a48353a1f47514", "page": 1, "locator": "U1 PA9/PA10 与 P1/J1 的 SCL/SDA 网络"}]
+    },
+    {
+      "id": "interface.hat",
+      "category": "interface",
+      "subject": "P1 HAT 接口",
+      "statement": "P1 pin8 GND、pin7 5V、pin6 SCL、pin4 SDA、pin3 BAT、pin2 3V3 被使用；pin5 G36 与 pin1 5VIN 标为未连接。",
+      "confidence": "confirmed",
+      "attributes": {"reference": "P1", "pin1": "5VIN NC", "pin2": "3V3", "pin3": "BAT", "pin4": "SDA", "pin5": "G36 NC", "pin6": "SCL", "pin7": "5V", "pin8": "GND"},
+      "evidence": [{"asset_sha256": "7a1f416e205c02adb23659d58519cf1d891081f5f761c76030a48353a1f47514", "page": 1, "locator": "D3，P1 HAT pins 1-8 与网络/NC 标记"}]
+    },
+    {
+      "id": "interface.grove",
+      "category": "interface",
+      "subject": "J1 Grove 接口",
+      "statement": "J1 IO2 接 SCL、IO1 接 SDA，并提供 5V 与 GND；C4 1 µF 跨接 5V 与 GND。",
+      "confidence": "confirmed",
+      "attributes": {"reference": "J1", "io2": "SCL bidirectional", "io1": "SDA bidirectional", "power": "5V", "ground": "GND", "decoupling": "C4 1uF"},
+      "evidence": [{"asset_sha256": "7a1f416e205c02adb23659d58519cf1d891081f5f761c76030a48353a1f47514", "page": 1, "locator": "D2-D3，J1 GROVE 与 C4 1uF"}]
+    },
+    {
+      "id": "debug.swd",
+      "category": "debug",
+      "subject": "STM32 SWD 调试口",
+      "statement": "J2 SWD_5P 依次提供 VCC=3V3、SWCLK=MCU_SWCLK、SWDIO=MCU_SWDIO、NRST 和 GND，并连接 U1 PA14、PA13 与 NRST。",
+      "confidence": "confirmed",
+      "attributes": {"reference": "J2", "vcc": "3V3", "swclk": "U1 PA14 pin20 MCU_SWCLK", "swdio": "U1 PA13 pin19 MCU_SWDIO", "reset": "U1 pin4 NRST", "ground": "GND"},
+      "evidence": [{"asset_sha256": "7a1f416e205c02adb23659d58519cf1d891081f5f761c76030a48353a1f47514", "page": 1, "locator": "C1-D2，U1 PA13/PA14/NRST 与 J2 SWD_5P"}]
+    },
+    {
+      "id": "reset.nrst",
+      "category": "reset",
+      "subject": "MCU 复位网络",
+      "statement": "U1 NRST pin4 由 R5 10 kΩ 上拉到 3V3，并由 C1 100 nF 对地；NRST 同时引到 J2。",
+      "confidence": "confirmed",
+      "attributes": {"pin": "U1 pin4 NRST", "pullup": "R5 10KΩ to 3V3", "capacitor": "C1 100nF to GND", "debug_connector": "J2 NRST"},
+      "evidence": [{"asset_sha256": "7a1f416e205c02adb23659d58519cf1d891081f5f761c76030a48353a1f47514", "page": 1, "locator": "B2-C2，3V3-R5-NRST-C1-GND 与 J2 NRST"}]
+    },
+    {
+      "id": "gpio.boot0",
+      "category": "gpio",
+      "subject": "MCU BOOT0 配置",
+      "statement": "U1 BOOT0 pin1 通过 R4 10 kΩ 固定下拉到 GND，页面未显示 BOOT 跳线或按键。",
+      "confidence": "confirmed",
+      "attributes": {"pin": "U1 pin1 BOOT0", "pulldown": "R4 10KΩ to GND", "jumper": "none shown", "button": "none shown"},
+      "evidence": [{"asset_sha256": "7a1f416e205c02adb23659d58519cf1d891081f5f761c76030a48353a1f47514", "page": 1, "locator": "B1-B2，U1 BOOT0-R4 10KΩ-GND"}]
+    },
+    {
+      "id": "clock.external",
+      "category": "clock",
+      "subject": "外部时钟连接",
+      "statement": "U1 PF0-OSC_IN pin2 与 PF1-OSC_OUT pin3 均未连接，原理图未显示晶振或外部时钟源。",
+      "confidence": "confirmed",
+      "attributes": {"osc_in": "U1 pin2 NC", "osc_out": "U1 pin3 NC", "crystal": "none shown", "external_clock": "none shown"},
+      "evidence": [{"asset_sha256": "7a1f416e205c02adb23659d58519cf1d891081f5f761c76030a48353a1f47514", "page": 1, "locator": "B1-B2，U1 PF0-OSC_IN/PF1-OSC_OUT 开路"}]
+    },
+    {
+      "id": "power.rails",
+      "category": "power",
+      "subject": "HAT 电源轨分配",
+      "statement": "P1 3V3 为 U1 与 U2 供电，P1 5V 直接供给 J1 Grove，P1 BAT 直接连接 J3；页面未显示 LDO、DC/DC、负载开关或充电 IC。",
+      "confidence": "confirmed",
+      "attributes": {"3v3_source": "P1 pin2", "3v3_loads": "U1/U2", "5v_source": "P1 pin7", "5v_load": "J1 Grove", "battery_net": "P1 pin3 BAT to J3", "ldo": "none shown", "dc_dc": "none shown", "charger": "none shown", "load_switch": "none shown"},
+      "evidence": [{"asset_sha256": "7a1f416e205c02adb23659d58519cf1d891081f5f761c76030a48353a1f47514", "page": 1, "locator": "整页 3V3/5V/BAT 网络与 P1/J1/J3"}]
+    },
+    {
+      "id": "interface.battery",
+      "category": "interface",
+      "subject": "J3 电池接口",
+      "statement": "J3 为 SMT_HDR_2x1.25mm，正触点连接 BAT，负触点连接 GND；BAT 网络与 P1 pin3 直连。",
+      "confidence": "confirmed",
+      "attributes": {"reference": "J3", "part_number": "SMT_HDR_2x1.25mm", "positive": "BAT", "negative": "GND", "host_connection": "P1 pin3 BAT"},
+      "evidence": [{"asset_sha256": "7a1f416e205c02adb23659d58519cf1d891081f5f761c76030a48353a1f47514", "page": 1, "locator": "D3-D4，P1 BAT 网络与 J3 BAT/GND"}]
+    },
+    {
+      "id": "address.i2c",
+      "category": "address",
+      "subject": "STM32 I2C 地址",
+      "statement": "产品正文给出 I2C 地址 0x42，但原理图只显示 SCL/SDA 连接，没有印出从机地址或地址配置电阻。",
+      "confidence": "uncertain",
+      "attributes": {"claimed_address": "0x42", "device": "U1 STM32F030F4P6", "schematic_address": "not printed", "address_straps": "none shown"},
+      "evidence": [{"asset_sha256": "7a1f416e205c02adb23659d58519cf1d891081f5f761c76030a48353a1f47514", "page": 1, "locator": "U1/P1/J1 SCL/SDA 网络，页面无 0x42 标注"}]
+    },
+    {
+      "id": "component.encoder-resolution",
+      "category": "component",
+      "subject": "编码器每圈脉冲数",
+      "statement": "产品正文称编码器每旋转一周产生 30 个脉冲，但原理图仅标 SW1 EC11，没有印出机械分辨率或脉冲数。",
+      "confidence": "uncertain",
+      "attributes": {"reference": "SW1", "part_number": "EC11", "claimed_pulses_per_revolution": 30, "schematic_resolution": "not printed"},
+      "evidence": [{"asset_sha256": "7a1f416e205c02adb23659d58519cf1d891081f5f761c76030a48353a1f47514", "page": 1, "locator": "SW1 EC11 符号及 A/B/C/D/E/F 连接"}]
+    },
+    {
+      "id": "power.battery-capacity",
+      "category": "power",
+      "subject": "内置电池容量",
+      "statement": "产品正文给出 200 mAh 聚合物锂电池，但原理图只显示 J3 BAT/GND 接口，未标容量、电芯型号、保护或充电参数。",
+      "confidence": "uncertain",
+      "attributes": {"claimed_capacity": "200mAh", "schematic_interface": "J3 BAT/GND", "cell_part_number": "not printed", "protection": "not shown", "charging": "not shown"},
+      "evidence": [{"asset_sha256": "7a1f416e205c02adb23659d58519cf1d891081f5f761c76030a48353a1f47514", "page": 1, "locator": "D4，J3 仅标 BAT/GND 和 SMT_HDR_2x1.25mm"}]
+    }
+  ],
+  "needs_review": [
+    {
+      "id": "review.i2c-address",
+      "fact_id": "address.i2c",
+      "question": "请用 U1 固件或通信协议确认 7-bit I2C 地址是否为 0x42。",
+      "reason": "地址由 MCU 固件决定，原理图未印出地址。",
+      "evidence": [{"asset_sha256": "7a1f416e205c02adb23659d58519cf1d891081f5f761c76030a48353a1f47514", "page": 1, "locator": "U1 SCL/SDA 与 P1/J1"}]
+    },
+    {
+      "id": "review.encoder-resolution",
+      "fact_id": "component.encoder-resolution",
+      "question": "请用 EC11 具体料号/BOM 或实测确认每圈 30 脉冲。",
+      "reason": "EC11 系列存在不同机械规格，原理图没有完整料号或分辨率。",
+      "evidence": [{"asset_sha256": "7a1f416e205c02adb23659d58519cf1d891081f5f761c76030a48353a1f47514", "page": 1, "locator": "SW1 EC11"}]
+    },
+    {
+      "id": "review.battery-capacity",
+      "fact_id": "power.battery-capacity",
+      "question": "请用电池标签或 BOM 确认 200 mAh 容量、电芯型号及保护/充电边界。",
+      "reason": "原理图只显示 BAT 连接器，不包含电池规格或充电保护电路。",
+      "evidence": [{"asset_sha256": "7a1f416e205c02adb23659d58519cf1d891081f5f761c76030a48353a1f47514", "page": 1, "locator": "J3 BAT/GND 与 P1 BAT"}]
+    }
+  ]
+}

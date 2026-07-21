@@ -1,0 +1,21 @@
+{
+  "dry_run": false,
+  "failed": 0,
+  "published": 1,
+  "results": [
+    {
+      "backup": null,
+      "draft_action": "unchanged",
+      "dry_run": false,
+      "errors": [],
+      "needs_review": 4,
+      "product_id": "unit-zigbee-ddec232a18a5",
+      "product_name": "Unit ZigBee",
+      "publish_action": "unchanged",
+      "sha256": "364963c0684cdd87674136c47ae6fa6f55234b4e7783764dd25adb187d169397",
+      "status": "valid",
+      "uncertain_facts": 4
+    }
+  ],
+  "schema_version": 1
+}

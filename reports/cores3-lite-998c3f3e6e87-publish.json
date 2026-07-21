@@ -1,0 +1,21 @@
+{
+  "dry_run": false,
+  "failed": 0,
+  "published": 1,
+  "results": [
+    {
+      "backup": null,
+      "draft_action": "unchanged",
+      "dry_run": false,
+      "errors": [],
+      "needs_review": 7,
+      "product_id": "cores3-lite-998c3f3e6e87",
+      "product_name": "CoreS3-Lite",
+      "publish_action": "unchanged",
+      "sha256": "c619d4be02b890c28e28b2dac279a3f1a32f23c20a28e0e845e2971bcacd9407",
+      "status": "valid",
+      "uncertain_facts": 7
+    }
+  ],
+  "schema_version": 1
+}

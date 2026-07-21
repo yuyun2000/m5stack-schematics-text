@@ -1,0 +1,201 @@
+{
+  "schema_version": 1,
+  "generator": "schematic_describer",
+  "product": {
+    "product_id": "chain-return-0ee11469fa7b",
+    "product_name": "Chain Return",
+    "sku": "A154",
+    "source_path": "accessory/converter/Chain_Return.md",
+    "source_sha256": "24996ec5dab0541c596077e1a995635f12d8b099347dda3544074f08505768b6",
+    "input_sha256": "56a347025a46e55eaeb953fc02117224f0086cdb84b114f7b31ee1eaea5cc1db"
+  },
+  "schematic_assets": [
+    {
+      "sha256": "45197a27e442451af9d8d05716e319755be7f9774af6a49e43d91bd584c6909a",
+      "source_url": "https://m5stack-doc.oss-cn-shenzhen.aliyuncs.com/1153/Chain_Return_Schematics.png",
+      "pages": [
+        1
+      ]
+    }
+  ],
+  "summary": "Chain Return 是由两个 GROVE_IO 四针接口 J1 和 J2 构成的无源直通连接器。两个接口的 pin1 至 pin4 分别共享 IO2、IO1、VCC_5V 和 GND 网络，其中 IO2 标注 SCL/RX 功能别名，IO1 标注 SDA/TX 功能别名。原理图未包含主动器件、电源转换或保护器件。",
+  "keywords": [
+    "Chain Return",
+    "A154",
+    "J1",
+    "J2",
+    "GROVE_IO",
+    "HY2.0-4P",
+    "IO1",
+    "IO2",
+    "SCL/RX",
+    "SDA/TX",
+    "VCC_5V",
+    "GND",
+    "Grove 直通",
+    "四针接口",
+    "无源转接"
+  ],
+  "components": [
+    {
+      "reference": "J1",
+      "part_number": "GROVE_IO",
+      "role": "第一组 IO2、IO1、VCC_5V、GND 四针接口",
+      "evidence": [
+        {
+          "asset_sha256": "45197a27e442451af9d8d05716e319755be7f9774af6a49e43d91bd584c6909a",
+          "page": 1,
+          "locator": "网格 B2，顶部 J1 GROVE_IO，左侧 pin1-pin4 连接 IO2、IO1、VCC_5V、GND"
+        }
+      ]
+    },
+    {
+      "reference": "J2",
+      "part_number": "GROVE_IO",
+      "role": "第二组 IO2、IO1、VCC_5V、GND 四针接口",
+      "evidence": [
+        {
+          "asset_sha256": "45197a27e442451af9d8d05716e319755be7f9774af6a49e43d91bd584c6909a",
+          "page": 1,
+          "locator": "网格 C2，底部 J2 GROVE_IO，左侧 pin1-pin4 连接 IO2、IO1、VCC_5V、GND"
+        }
+      ]
+    }
+  ],
+  "facts": [
+    {
+      "id": "system.passive_passthrough",
+      "category": "system",
+      "subject": "Chain Return 无源直通结构",
+      "statement": "整页电路仅显示 J1 和 J2 两个 GROVE_IO 接口，两者通过 IO2、IO1、VCC_5V 和 GND 四个同名网络逐针贯通。",
+      "confidence": "confirmed",
+      "attributes": {
+        "connector_a": "J1 GROVE_IO",
+        "connector_b": "J2 GROVE_IO",
+        "shared_nets": "IO2,IO1,VCC_5V,GND"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "45197a27e442451af9d8d05716e319755be7f9774af6a49e43d91bd584c6909a",
+          "page": 1,
+          "locator": "网格 B2-C2，J1 与 J2 的全部四条同名网络"
+        }
+      ]
+    },
+    {
+      "id": "interface.j1_pinout",
+      "category": "interface",
+      "subject": "J1 GROVE_IO 引脚",
+      "statement": "J1 pin1 连接 IO2，pin2 连接 IO1，pin3 连接 VCC_5V，pin4 连接 GND。",
+      "confidence": "confirmed",
+      "attributes": {
+        "reference": "J1",
+        "pinout": "1:IO2,2:IO1,3:VCC_5V,4:GND"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "45197a27e442451af9d8d05716e319755be7f9774af6a49e43d91bd584c6909a",
+          "page": 1,
+          "locator": "网格 B2，J1 左侧 pin1-pin4 与右侧 IO2/IO1/VCC/GND 标注"
+        }
+      ]
+    },
+    {
+      "id": "interface.j2_pinout",
+      "category": "interface",
+      "subject": "J2 GROVE_IO 引脚",
+      "statement": "J2 pin1 连接 IO2，pin2 连接 IO1，pin3 连接 VCC_5V，pin4 连接 GND。",
+      "confidence": "confirmed",
+      "attributes": {
+        "reference": "J2",
+        "pinout": "1:IO2,2:IO1,3:VCC_5V,4:GND"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "45197a27e442451af9d8d05716e319755be7f9774af6a49e43d91bd584c6909a",
+          "page": 1,
+          "locator": "网格 C2，J2 左侧 pin1-pin4 与右侧 IO2/IO1/VCC/GND 标注"
+        }
+      ]
+    },
+    {
+      "id": "key_net.io2_passthrough",
+      "category": "key_net",
+      "subject": "IO2 信号直通",
+      "statement": "J1 pin1 与 J2 pin1 共享 IO2 网络，IO2 左侧功能标注为 SCL/RX。",
+      "confidence": "confirmed",
+      "attributes": {
+        "net": "IO2",
+        "alias": "SCL/RX",
+        "endpoint_a": "J1 pin1",
+        "endpoint_b": "J2 pin1"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "45197a27e442451af9d8d05716e319755be7f9774af6a49e43d91bd584c6909a",
+          "page": 1,
+          "locator": "网格 B2-C2，J1/J2 pin1 的 IO2 网络及蓝色 SCL/RX 标注"
+        }
+      ]
+    },
+    {
+      "id": "key_net.io1_passthrough",
+      "category": "key_net",
+      "subject": "IO1 信号直通",
+      "statement": "J1 pin2 与 J2 pin2 共享 IO1 网络，IO1 左侧功能标注为 SDA/TX。",
+      "confidence": "confirmed",
+      "attributes": {
+        "net": "IO1",
+        "alias": "SDA/TX",
+        "endpoint_a": "J1 pin2",
+        "endpoint_b": "J2 pin2"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "45197a27e442451af9d8d05716e319755be7f9774af6a49e43d91bd584c6909a",
+          "page": 1,
+          "locator": "网格 B2-C2，J1/J2 pin2 的 IO1 网络及蓝色 SDA/TX 标注"
+        }
+      ]
+    },
+    {
+      "id": "power.vcc5_passthrough",
+      "category": "power",
+      "subject": "VCC_5V 电源直通",
+      "statement": "J1 pin3 与 J2 pin3 共享 VCC_5V 网络。",
+      "confidence": "confirmed",
+      "attributes": {
+        "net": "VCC_5V",
+        "endpoint_a": "J1 pin3",
+        "endpoint_b": "J2 pin3"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "45197a27e442451af9d8d05716e319755be7f9774af6a49e43d91bd584c6909a",
+          "page": 1,
+          "locator": "网格 B2-C2，J1/J2 pin3 的红色 VCC_5V 网络标注"
+        }
+      ]
+    },
+    {
+      "id": "power.ground_passthrough",
+      "category": "power",
+      "subject": "GND 直通",
+      "statement": "J1 pin4 与 J2 pin4 共享 GND 网络。",
+      "confidence": "confirmed",
+      "attributes": {
+        "net": "GND",
+        "endpoint_a": "J1 pin4",
+        "endpoint_b": "J2 pin4"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "45197a27e442451af9d8d05716e319755be7f9774af6a49e43d91bd584c6909a",
+          "page": 1,
+          "locator": "网格 B2-C2，J1/J2 pin4 的 GND 符号与同名网络"
+        }
+      ]
+    }
+  ],
+  "needs_review": []
+}

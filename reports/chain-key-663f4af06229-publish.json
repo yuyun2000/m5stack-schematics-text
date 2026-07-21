@@ -1,0 +1,21 @@
+{
+  "dry_run": false,
+  "failed": 0,
+  "published": 1,
+  "results": [
+    {
+      "backup": null,
+      "draft_action": "unchanged",
+      "dry_run": false,
+      "errors": [],
+      "needs_review": 3,
+      "product_id": "chain-key-663f4af06229",
+      "product_name": "Chain Key",
+      "publish_action": "unchanged",
+      "sha256": "532c230caf53801634e401edc301bfbe9430f50b901a7ff45632dc7c921a96d4",
+      "status": "valid",
+      "uncertain_facts": 3
+    }
+  ],
+  "schema_version": 1
+}

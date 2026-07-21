@@ -1,0 +1,173 @@
+{
+  "schema_version": 1,
+  "generator": "schematic_describer",
+  "product": {
+    "product_id": "unit-key-643866be96b3",
+    "product_name": "Unit Key",
+    "sku": "U144",
+    "source_path": "unit/key.md",
+    "source_sha256": "dfd6b7871365c9cffe414e616e64ba1ea3910218031d4166deae9b23315b4816",
+    "input_sha256": "f2f1bdb99e6faa01a29cc9f37f4452094d71ad73b1b4cb9854f3937969b01a26"
+  },
+  "schematic_assets": [
+    {
+      "sha256": "c7d6fe491218b1f4bee366c075b0f0d7c0c526aded42dfc59aafe8d996ac5052",
+      "source_url": "https://m5stack-doc.oss-cn-shenzhen.aliyuncs.com/599/SCH_unitKey_V1.0_sch_01.png",
+      "pages": [1]
+    }
+  ],
+  "summary": "Unit Key 由 S1 常开按键和 U2 SK6812-3535 RGB LED 构成，两路信号分别以 KEY_OUT、RGB 从 J1 Grove 接口引出。KEY_OUT 由 R1 10 kΩ 上拉至 3V3，按下 S1 时接地，形成低有效数字输入。U1 HT7533 将 J1 的 5V 转为 3V3，供按键上拉和 SK6812-3535 使用。",
+  "keywords": ["Unit Key", "U144", "SK6812-3535", "SK6812", "HT7533", "SW-PB", "S1", "KEY_OUT", "RGB", "IO2", "IO1", "GROVE 4P", "active low", "10K pull-up", "R1 10K", "5V", "3V3", "DI", "DO", "VDD", "C1 1uF/50V", "C2 1uF/50V", "push button", "blue switch", "256 brightness levels"],
+  "components": [
+    {
+      "reference": "S1",
+      "part_number": "SW-PB",
+      "role": "KEY_OUT 低有效瞬时按键",
+      "evidence": [{"asset_sha256": "c7d6fe491218b1f4bee366c075b0f0d7c0c526aded42dfc59aafe8d996ac5052", "page": 1, "locator": "页 1 网格 B2，S1 标注 SW-PB，连接 KEY_OUT 与 GND"}]
+    },
+    {
+      "reference": "U2",
+      "part_number": "SK6812-3535",
+      "role": "单线可编程 RGB LED",
+      "evidence": [{"asset_sha256": "c7d6fe491218b1f4bee366c075b0f0d7c0c526aded42dfc59aafe8d996ac5052", "page": 1, "locator": "页 1 网格 C2，U2 器件框下方标注 SK6812-3535，针脚为 DO、GND、DI、VDD"}]
+    },
+    {
+      "reference": "U1",
+      "part_number": "HT7533",
+      "role": "5V 至 3V3 线性稳压器",
+      "evidence": [{"asset_sha256": "c7d6fe491218b1f4bee366c075b0f0d7c0c526aded42dfc59aafe8d996ac5052", "page": 1, "locator": "页 1 网格 C1，U1 标注 HT7533，VIN/VOUT 分别连接 5V/3V3"}]
+    },
+    {
+      "reference": "J1",
+      "part_number": "GROVE 4P",
+      "role": "按键、RGB 控制与 5V 电源接口",
+      "evidence": [{"asset_sha256": "c7d6fe491218b1f4bee366c075b0f0d7c0c526aded42dfc59aafe8d996ac5052", "page": 1, "locator": "页 1 网格 B1，J1 GROVE 4P，端子标注 IO2、IO1、5V、GND"}]
+    }
+  ],
+  "facts": [
+    {
+      "id": "system.architecture",
+      "category": "system",
+      "subject": "Unit Key 功能结构",
+      "statement": "J1 提供 KEY_OUT 按键输出与 RGB LED 控制输入；S1 构成按键，U2 SK6812-3535 构成 RGB LED，U1 生成 3V3 电源。",
+      "confidence": "confirmed",
+      "attributes": {"connector": "J1", "button": "S1 SW-PB", "button_net": "KEY_OUT", "rgb_led": "U2 SK6812-3535", "rgb_net": "RGB", "regulator": "U1 HT7533"},
+      "evidence": [{"asset_sha256": "c7d6fe491218b1f4bee366c075b0f0d7c0c526aded42dfc59aafe8d996ac5052", "page": 1, "locator": "页 1 完整电路，J1、S1、U1、U2 与 KEY_OUT/RGB/电源网络"}]
+    },
+    {
+      "id": "interface.j1",
+      "category": "interface",
+      "subject": "J1 Grove 接口",
+      "statement": "J1 的 IO2、IO1、5V、GND 四个端子分别连接 KEY_OUT、RGB、5V、GND。",
+      "confidence": "confirmed",
+      "attributes": {"reference": "J1", "pinout": "IO2:KEY_OUT,IO1:RGB,5V:5V,GND:GND", "KEY_OUT_direction": "output from unit", "RGB_direction": "input to unit"},
+      "evidence": [{"asset_sha256": "c7d6fe491218b1f4bee366c075b0f0d7c0c526aded42dfc59aafe8d996ac5052", "page": 1, "locator": "页 1 网格 B1，J1 四个端子与右侧 KEY_OUT、RGB、5V、GND 网络"}]
+    },
+    {
+      "id": "gpio.button",
+      "category": "gpio",
+      "subject": "KEY_OUT 按键网络",
+      "statement": "R1 10 kΩ 将 KEY_OUT 上拉至 3V3，S1 按键闭合时将 KEY_OUT 接至 GND。",
+      "confidence": "confirmed",
+      "attributes": {"network": "KEY_OUT", "pullup": "R1 10k to 3V3", "switch": "S1 SW-PB to GND", "active_level": "low", "released_level_rail": "3V3"},
+      "evidence": [{"asset_sha256": "c7d6fe491218b1f4bee366c075b0f0d7c0c526aded42dfc59aafe8d996ac5052", "page": 1, "locator": "页 1 网格 B2，3V3、R1 10K、KEY_OUT、S1 与 GND 连线"}]
+    },
+    {
+      "id": "key_net.button_states",
+      "category": "key_net",
+      "subject": "KEY_OUT 逻辑状态",
+      "statement": "S1 释放时 KEY_OUT 由 R1 拉向 3V3；S1 按下时 KEY_OUT 被短接到 GND，因此主机应按低有效信号读取。",
+      "confidence": "confirmed",
+      "attributes": {"released_state": "high via R1 to 3V3", "pressed_state": "low via S1 to GND", "host_signal": "J1 IO2/KEY_OUT"},
+      "evidence": [{"asset_sha256": "c7d6fe491218b1f4bee366c075b0f0d7c0c526aded42dfc59aafe8d996ac5052", "page": 1, "locator": "页 1 KEY_OUT 上拉与 S1 对地按键电路"}]
+    },
+    {
+      "id": "component.rgb_led",
+      "category": "component",
+      "subject": "U2 SK6812-3535",
+      "statement": "U2 的 DI 引脚 3 连接 RGB，VDD 引脚 4 连接 3V3，GND 引脚 2 接地；DO 引脚 1 在本页未连接。",
+      "confidence": "confirmed",
+      "attributes": {"reference": "U2", "part_number": "SK6812-3535", "data_input": "DI/pin 3/RGB", "data_output": "DO/pin 1 unconnected", "supply": "VDD/pin 4/3V3", "ground": "GND/pin 2"},
+      "evidence": [{"asset_sha256": "c7d6fe491218b1f4bee366c075b0f0d7c0c526aded42dfc59aafe8d996ac5052", "page": 1, "locator": "页 1 网格 C2，U2 DO/GND/DI/VDD 引脚号和 RGB/3V3/GND 网络"}]
+    },
+    {
+      "id": "bus.rgb_data",
+      "category": "bus",
+      "subject": "RGB 单线数据",
+      "statement": "J1 IO1 的 RGB 网络直接连接 U2 DI 引脚 3，图中未显示串联数据电阻、电平转换器或级联输出接口。",
+      "confidence": "confirmed",
+      "attributes": {"source": "J1 IO1", "network": "RGB", "destination": "U2 DI/pin 3", "series_resistor": null, "level_shifter": null, "cascade_output": null},
+      "evidence": [{"asset_sha256": "c7d6fe491218b1f4bee366c075b0f0d7c0c526aded42dfc59aafe8d996ac5052", "page": 1, "locator": "页 1 J1 RGB 网络与 U2 DI 引脚 3，路径中无其他器件"}]
+    },
+    {
+      "id": "power.regulator",
+      "category": "power",
+      "subject": "U1 HT7533",
+      "statement": "U1 HT7533 的 VIN 引脚 3 接 5V，VOUT 引脚 2 输出 3V3，GND 引脚 1 接地。",
+      "confidence": "confirmed",
+      "attributes": {"reference": "U1", "part_number": "HT7533", "input": "VIN/pin 3/5V", "output": "VOUT/pin 2/3V3", "ground": "GND/pin 1"},
+      "evidence": [{"asset_sha256": "c7d6fe491218b1f4bee366c075b0f0d7c0c526aded42dfc59aafe8d996ac5052", "page": 1, "locator": "页 1 网格 C1，U1 HT7533 引脚号与 5V/3V3/GND 网络"}]
+    },
+    {
+      "id": "power.capacitors",
+      "category": "power",
+      "subject": "5V 与 3V3 电容",
+      "statement": "C1 1 uF/50V 连接在 5V 与 GND 之间；C2 1 uF/50V 连接在 U2 附近的 3V3 与 GND 之间。",
+      "confidence": "confirmed",
+      "attributes": {"input_capacitor": "C1 1uF/50V across 5V-GND", "rgb_supply_capacitor": "C2 1uF/50V across 3V3-GND"},
+      "evidence": [{"asset_sha256": "c7d6fe491218b1f4bee366c075b0f0d7c0c526aded42dfc59aafe8d996ac5052", "page": 1, "locator": "页 1 网格 C1-C3，U1 输入侧 C1 与 U2 供电侧 C2"}]
+    },
+    {
+      "id": "power.domains",
+      "category": "power",
+      "subject": "Unit Key 电平与供电域",
+      "statement": "J1 输入电源网络为 5V；U1 输出的 3V3 同时供 R1 按键上拉和 U2 VDD。",
+      "confidence": "confirmed",
+      "attributes": {"connector_supply": "5V", "internal_rail": "3V3", "3v3_consumers": "R1 pull-up,U2 VDD"},
+      "evidence": [{"asset_sha256": "c7d6fe491218b1f4bee366c075b0f0d7c0c526aded42dfc59aafe8d996ac5052", "page": 1, "locator": "页 1 J1 5V、U1 5V-to-3V3、R1 与 U2 VDD 网络"}]
+    },
+    {
+      "id": "protection.none_visible",
+      "category": "protection",
+      "subject": "接口与负载保护",
+      "statement": "本页未显示 TVS/ESD、保险丝、反接保护、负载开关或过流保护器件。",
+      "confidence": "confirmed",
+      "attributes": {"tvs_esd_visible": false, "fuse_visible": false, "reverse_protection_visible": false, "load_switch_visible": false, "overcurrent_protection_visible": false},
+      "evidence": [{"asset_sha256": "c7d6fe491218b1f4bee366c075b0f0d7c0c526aded42dfc59aafe8d996ac5052", "page": 1, "locator": "页 1 全图仅含 J1、S1、R1、U1、U2、C1、C2 及直接连线"}]
+    },
+    {
+      "id": "other.switch_mechanics",
+      "category": "other",
+      "subject": "按键机械轴体",
+      "statement": "产品正文称 S1 使用青轴并支持更换键帽，但原理图仅标注 SW-PB，未提供机械轴体型号或键帽结构。",
+      "confidence": "uncertain",
+      "attributes": {"documented_switch_type": "blue mechanical switch", "documented_replaceable_keycap": true, "schematic_switch_label": "SW-PB", "schematic_mechanical_part": null},
+      "evidence": [{"asset_sha256": "c7d6fe491218b1f4bee366c075b0f0d7c0c526aded42dfc59aafe8d996ac5052", "page": 1, "locator": "页 1 S1 仅标注 SW-PB，没有青轴或机械料号"}]
+    },
+    {
+      "id": "other.led_brightness_current",
+      "category": "other",
+      "subject": "RGB 亮度与电流参数",
+      "statement": "产品正文描述 256 级亮度、5V@2mA 待机和 5V@13mA 工作电流；这些参数未在本页原理图中标注。",
+      "confidence": "uncertain",
+      "attributes": {"documented_brightness_levels": 256, "documented_standby_current_ma": 2, "documented_operating_current_ma": 13, "documented_supply_v": 5, "schematic_ratings": null},
+      "evidence": [{"asset_sha256": "c7d6fe491218b1f4bee366c075b0f0d7c0c526aded42dfc59aafe8d996ac5052", "page": 1, "locator": "页 1 U2 SK6812-3535 与电源电路未标注亮度级数或电流值"}]
+    }
+  ],
+  "needs_review": [
+    {
+      "id": "review.switch_mechanics",
+      "fact_id": "other.switch_mechanics",
+      "question": "S1 的实际青轴型号、触点额定值和可替换键帽规格是什么？",
+      "reason": "原理图只给出通用 SW-PB 电气符号，没有机械料号。",
+      "evidence": [{"asset_sha256": "c7d6fe491218b1f4bee366c075b0f0d7c0c526aded42dfc59aafe8d996ac5052", "page": 1, "locator": "页 1 S1 SW-PB 按键区域"}]
+    },
+    {
+      "id": "review.led_brightness_current",
+      "fact_id": "other.led_brightness_current",
+      "question": "256 级亮度和 2mA/13mA 电流参数适用于哪些 RGB 值、刷新率与测量条件？",
+      "reason": "原理图没有 SK6812 运行参数或电流测试条件。",
+      "evidence": [{"asset_sha256": "c7d6fe491218b1f4bee366c075b0f0d7c0c526aded42dfc59aafe8d996ac5052", "page": 1, "locator": "页 1 U2 SK6812-3535、RGB 与 3V3 供电区域"}]
+    }
+  ]
+}

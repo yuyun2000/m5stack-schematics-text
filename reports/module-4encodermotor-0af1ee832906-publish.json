@@ -1,0 +1,21 @@
+{
+  "dry_run": false,
+  "failed": 0,
+  "published": 1,
+  "results": [
+    {
+      "backup": null,
+      "draft_action": "unchanged",
+      "dry_run": false,
+      "errors": [],
+      "needs_review": 4,
+      "product_id": "module-4encodermotor-0af1ee832906",
+      "product_name": "Module 4EncoderMotor",
+      "publish_action": "unchanged",
+      "sha256": "aa6dee21d43d8b92090b0fb2c2bfaac78ccd2efa0b795a9575543a4a7915c740",
+      "status": "valid",
+      "uncertain_facts": 4
+    }
+  ],
+  "schema_version": 1
+}

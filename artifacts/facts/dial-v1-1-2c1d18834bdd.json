@@ -1,0 +1,504 @@
+{
+  "schema_version": 1,
+  "generator": "schematic_describer",
+  "product": {
+    "product_id": "dial-v1-1-2c1d18834bdd",
+    "product_name": "Dial v1.1",
+    "sku": "K130-V11",
+    "source_path": "core/M5Dial V1.1.md",
+    "source_sha256": "a5cf4290112b43b9bd5b5bc1fb8883b0401335f85adf9c91ca5939ebf727cf11",
+    "input_sha256": "8e0acc14c08cba41b6ee07fd4d6fe61ae1019394a11095f631c7de548e7d04d7"
+  },
+  "schematic_assets": [
+    {
+      "sha256": "1d8705f9d82d57055876ab9d3a01eb0ae8e4b1610880c99568b4b360f5b47c1f",
+      "source_url": "https://m5stack-doc.oss-cn-shenzhen.aliyuncs.com/499/Sch_M5Dial_sch_01.png",
+      "pages": [1]
+    },
+    {
+      "sha256": "0528f589274c10708c0eb75b8f10f0cc9f0d02a4adef8b0e2d31747cd6252a88",
+      "source_url": "https://m5stack-doc.oss-cn-shenzhen.aliyuncs.com/499/Sch_M5Dial_sch_02.png",
+      "pages": [1]
+    }
+  ],
+  "summary": "Dial v1.1 原理图以 M1 STAMP-S3-DIP-1.27 为主控模组接口，连接 WS1850S RFID、RTC8563、圆形 LCD/触摸模组、EC30 编码器、蜂鸣器和两路 HY2.0 扩展口。RFID、RTC 与触摸共享 TP_SDA/TP_SCL，总线由 GPIO11/GPIO12 控制；LCD 使用 GPIO4-GPIO9 的单向 SPI/控制信号。电源支持外部 +VIN 与电池路径，依次由 ME3116、TP4057、电源锁存、SY7088 和 SY8089 形成 +5VIN、VBAT_OUT、+5VOUT 与 +3.3V。",
+  "keywords": [
+    "Dial v1.1", "K130-V11", "STAMP-S3-DIP-1.27", "Stamp-S3A", "ESP32-S3FN8", "WS1850S", "RTC8563", "TP4057", "ME3116AM6G", "SY7088", "SY8089", "EC30-16bit", "OK-24M024-04", "GC9A01", "FT3267", "RC522_SDA", "RC522_SCL", "RC522_INT", "TP_SDA", "TP_SCL", "TP_INT", "LCD_MOSI", "LCD_SCK", "LCD_CS", "LCD_RESET", "LCD_BL", "VBAT_IN", "VBAT_OUT", "+5VIN", "+5VOUT", "+3.3V", "HOLD GPIO46", "WAKE GPIO42", "PORT.A", "PORT.B", "HY2.0-4P", "27.12MHz", "32.768KHz", "ANT_Hole"
+  ],
+  "components": [
+    {
+      "reference": "M1",
+      "part_number": "STAMP-S3-DIP-1.27",
+      "role": "主控模组接口，向 LCD、触摸、RFID、RTC、编码器、蜂鸣器和扩展口分配 GPIO",
+      "evidence": [{"asset_sha256": "0528f589274c10708c0eb75b8f10f0cc9f0d02a4adef8b0e2d31747cd6252a88", "page": 1, "locator": "第2图 C2-D2，M1 STAMP-S3-DIP-1.27，G1-G15 与 G39-G46"}]
+    },
+    {
+      "reference": "U1",
+      "part_number": "WS1850S",
+      "role": "RFID/NFC 前端，使用 SDA/SCL/IRQ/NRSTPD 数字接口并驱动天线匹配网络",
+      "evidence": [{"asset_sha256": "1d8705f9d82d57055876ab9d3a01eb0ae8e4b1610880c99568b4b360f5b47c1f", "page": 1, "locator": "第1图 A2-B2，U1 WS1850S，RX/TX1/TX2、RC522_SDA/SCL/IRQ、Y1"}]
+    },
+    {
+      "reference": "U2",
+      "part_number": "TP4057",
+      "role": "电池充电控制器，从 +5VIN 为 VBAT_IN 充电",
+      "evidence": [{"asset_sha256": "0528f589274c10708c0eb75b8f10f0cc9f0d02a4adef8b0e2d31747cd6252a88", "page": 1, "locator": "第2图 A1-B1，U2 TP4057、R11 0.8Ω、R17 10KΩ、JP1/JP2"}]
+    },
+    {
+      "reference": "U3",
+      "part_number": "SY7088",
+      "role": "从 VBAT_OUT 生成 +5VOUT 的升压转换器",
+      "evidence": [{"asset_sha256": "0528f589274c10708c0eb75b8f10f0cc9f0d02a4adef8b0e2d31747cd6252a88", "page": 1, "locator": "第2图 A3-B4 虚线框，U3 SY7088、L4 1.5uH、R16/R18、D8"}]
+    },
+    {
+      "reference": "U4",
+      "part_number": "SY8089",
+      "role": "从 VBAT_OUT 生成 +3.3V 的降压转换器",
+      "evidence": [{"asset_sha256": "0528f589274c10708c0eb75b8f10f0cc9f0d02a4adef8b0e2d31747cd6252a88", "page": 1, "locator": "第2图 B3-C3，U4 SY8089、L5 4.7uH、R27/R28"}]
+    },
+    {
+      "reference": "U5",
+      "part_number": "RTC8563",
+      "role": "电池供电实时时钟，通过 TP_SDA/TP_SCL 连接主控并输出 INT",
+      "evidence": [{"asset_sha256": "0528f589274c10708c0eb75b8f10f0cc9f0d02a4adef8b0e2d31747cd6252a88", "page": 1, "locator": "第2图 C2-C3，U5 RTC8563、Y2 32.768KHz、INT/TP_SDA/TP_SCL"}]
+    },
+    {
+      "reference": "U6",
+      "part_number": "CN809J",
+      "role": "+5VIN 供电复位/电源控制监控器，RESET 输出接电源选择网络",
+      "evidence": [{"asset_sha256": "0528f589274c10708c0eb75b8f10f0cc9f0d02a4adef8b0e2d31747cd6252a88", "page": 1, "locator": "第2图 B1，U6 CN809J，VCC +5VIN、RESET、R19"}]
+    },
+    {
+      "reference": "U7",
+      "part_number": "ME3116AM6G",
+      "role": "外部 +VIN 至 +5VIN 的降压转换器",
+      "evidence": [{"asset_sha256": "0528f589274c10708c0eb75b8f10f0cc9f0d02a4adef8b0e2d31747cd6252a88", "page": 1, "locator": "第2图 A2-A3，U7 ME3116AM6G、L6 10uH、R33/R34、D9/D11"}]
+    },
+    {
+      "reference": "BTB1",
+      "part_number": "OK-24M024-04",
+      "role": "24 针 LCD 与触摸模组连接器，承载背光、SPI、触摸 I2C、复位和电源",
+      "evidence": [{"asset_sha256": "1d8705f9d82d57055876ab9d3a01eb0ae8e4b1610880c99568b4b360f5b47c1f", "page": 1, "locator": "第1图 C4-D4，BTB1 OK-24M024-04，pins 1-24"}]
+    },
+    {
+      "reference": "J5",
+      "part_number": "EC30-16bit",
+      "role": "增量旋转编码器，A/B 相接 GPIO41/GPIO40，公共端接地",
+      "evidence": [{"asset_sha256": "0528f589274c10708c0eb75b8f10f0cc9f0d02a4adef8b0e2d31747cd6252a88", "page": 1, "locator": "第2图 C3-D3，J5 EC30-16bit、A/B、R21/R22、C22/C23"}]
+    },
+    {
+      "reference": "L2",
+      "part_number": "ANT_Hole",
+      "role": "WS1850S RFID 天线线圈/天线孔，经 TX1/TX2 差分匹配网络连接",
+      "evidence": [{"asset_sha256": "1d8705f9d82d57055876ab9d3a01eb0ae8e4b1610880c99568b4b360f5b47c1f", "page": 1, "locator": "第1图 B3，L2 ANT_Hole 与 R4/R5、C8/C11/C13/C14"}]
+    },
+    {
+      "reference": "LS1/Q5",
+      "part_number": "Buzzer/SS8050 Y1",
+      "role": "GPIO3 beep 控制的晶体管低边蜂鸣器驱动",
+      "evidence": [{"asset_sha256": "0528f589274c10708c0eb75b8f10f0cc9f0d02a4adef8b0e2d31747cd6252a88", "page": 1, "locator": "第2图 C1-D1，LS1 Buzzer、Q5 SS8050 Y1、D6/D7、R24/R25"}]
+    },
+    {
+      "reference": "Q2/Q3",
+      "part_number": "LP3218DT1G",
+      "role": "VBAT_IN、+5VIN 与 VBAT_OUT 之间的电源选择/隔离开关",
+      "evidence": [{"asset_sha256": "0528f589274c10708c0eb75b8f10f0cc9f0d02a4adef8b0e2d31747cd6252a88", "page": 1, "locator": "第2图 A1-B3，Q2/Q3 LP3218DT1G、D1、VBAT_IN/VBAT_OUT"}]
+    },
+    {
+      "reference": "Q1/Q4",
+      "part_number": "LN2324DT2AG",
+      "role": "Q1 控制 LCD 背光阴极，Q4 由 HOLD 控制电源锁存节点",
+      "evidence": [
+        {"asset_sha256": "1d8705f9d82d57055876ab9d3a01eb0ae8e4b1610880c99568b4b360f5b47c1f", "page": 1, "locator": "第1图 C3-C4，Q1 LN2324DT2AG、LCD_BL、LEDK"},
+        {"asset_sha256": "0528f589274c10708c0eb75b8f10f0cc9f0d02a4adef8b0e2d31747cd6252a88", "page": 1, "locator": "第2图 B2，Q4 LN2324DT2AG、HOLD"}
+      ]
+    },
+    {
+      "reference": "P5",
+      "part_number": "Header 2",
+      "role": "外部直流输入连接器，1 脚经 D13 接 +VIN，2 脚接 GND",
+      "evidence": [{"asset_sha256": "0528f589274c10708c0eb75b8f10f0cc9f0d02a4adef8b0e2d31747cd6252a88", "page": 1, "locator": "第2图 A1，P5 Header 2、D13 B5819W SL、+VIN"}]
+    },
+    {
+      "reference": "P6",
+      "part_number": "Header 2",
+      "role": "两针电池连接器，1 脚 VBAT_IN、2 脚 GND",
+      "evidence": [{"asset_sha256": "0528f589274c10708c0eb75b8f10f0cc9f0d02a4adef8b0e2d31747cd6252a88", "page": 1, "locator": "第2图 B1，P6 Header 2，VBAT_IN/GND"}]
+    },
+    {
+      "reference": "J2",
+      "part_number": "HY-2.0_IO",
+      "role": "PORT.B GPIO 扩展口，提供 GI、GO、+5VOUT 与 GND",
+      "evidence": [{"asset_sha256": "0528f589274c10708c0eb75b8f10f0cc9f0d02a4adef8b0e2d31747cd6252a88", "page": 1, "locator": "第2图 D4，J2 HY-2.0_IO pins 1-4"}]
+    },
+    {
+      "reference": "J3",
+      "part_number": "HY-2.0_IIC",
+      "role": "PORT.A I2C 扩展口，提供 SCL、SDA、+5VOUT 与 GND",
+      "evidence": [{"asset_sha256": "0528f589274c10708c0eb75b8f10f0cc9f0d02a4adef8b0e2d31747cd6252a88", "page": 1, "locator": "第2图 C4-D4，J3 HY-2.0_IIC pins 1-4"}]
+    },
+    {
+      "reference": "P1/P3",
+      "part_number": "6X2@2.54 排母/排针",
+      "role": "LCD/触摸信号的 12 针板间连接器对",
+      "evidence": [
+        {"asset_sha256": "1d8705f9d82d57055876ab9d3a01eb0ae8e4b1610880c99568b4b360f5b47c1f", "page": 1, "locator": "第1图 D4，P1 6X2@2.54 排母"},
+        {"asset_sha256": "0528f589274c10708c0eb75b8f10f0cc9f0d02a4adef8b0e2d31747cd6252a88", "page": 1, "locator": "第2图 D3-D4，P3 6X2@2.54 排针"}
+      ]
+    },
+    {
+      "reference": "S1/S4",
+      "part_number": "SW-PB",
+      "role": "WAKE 唤醒按钮与主控 EN 复位按钮",
+      "evidence": [{"asset_sha256": "0528f589274c10708c0eb75b8f10f0cc9f0d02a4adef8b0e2d31747cd6252a88", "page": 1, "locator": "第2图 B2 S1 SW-PB 与 D4/D10；D2 S4 SW-PB 接 EN/GND"}]
+    },
+    {
+      "reference": "D12/D5",
+      "part_number": "SD36/PESDNC2FD3V3B",
+      "role": "外部 +VIN 与 WAKE 按键节点的浪涌/ESD 保护",
+      "evidence": [{"asset_sha256": "0528f589274c10708c0eb75b8f10f0cc9f0d02a4adef8b0e2d31747cd6252a88", "page": 1, "locator": "第2图 A2 D12 SD36 接 +VIN；B2 D5 PESDNC2FD3V3B 接 WAKE/S1"}]
+    }
+  ],
+  "facts": [
+    {
+      "id": "system.dial-architecture",
+      "category": "system",
+      "subject": "Dial v1.1 系统架构",
+      "statement": "M1 主控模组连接 WS1850S RFID、RTC8563、LCD/触摸、EC30 编码器、蜂鸣器和两路 HY2.0 接口；外部直流与电池经充电、选择、5V/3.3V 转换和 HOLD/WAKE 锁存电路供电。",
+      "confidence": "confirmed",
+      "attributes": {"controller_interface": "M1 STAMP-S3-DIP-1.27", "rfid": "U1 WS1850S", "rtc": "U5 RTC8563", "display": "BTB1 OK-24M024-04", "encoder": "J5 EC30-16bit", "power": "U7 ME3116AM6G + U2 TP4057 + U3 SY7088 + U4 SY8089"},
+      "evidence": [
+        {"asset_sha256": "1d8705f9d82d57055876ab9d3a01eb0ae8e4b1610880c99568b4b360f5b47c1f", "page": 1, "locator": "第1图完整页，RFID 与 LCD/触摸分区"},
+        {"asset_sha256": "0528f589274c10708c0eb75b8f10f0cc9f0d02a4adef8b0e2d31747cd6252a88", "page": 1, "locator": "第2图完整页，主控接口、电源、RTC、编码器和扩展口"}
+      ]
+    },
+    {
+      "id": "component.controller-module",
+      "category": "component",
+      "subject": "M1 主控模组",
+      "statement": "原理图将主控模组接口标为 M1 STAMP-S3-DIP-1.27，并展示 G1-G15、G39-G46、EN、3V3、5V 与 GND 引脚。",
+      "confidence": "confirmed",
+      "attributes": {"reference": "M1", "schematic_part": "STAMP-S3-DIP-1.27", "power": "+3.3V / M5V", "reset": "EN", "boot": "G0/Boot"},
+      "evidence": [{"asset_sha256": "0528f589274c10708c0eb75b8f10f0cc9f0d02a4adef8b0e2d31747cd6252a88", "page": 1, "locator": "第2图 C2-D2，M1 STAMP-S3-DIP-1.27"}]
+    },
+    {
+      "id": "component.version-controller-identity",
+      "category": "component",
+      "subject": "v1.1 与 Stamp-S3A 对应关系",
+      "statement": "产品正文称 Dial v1.1 使用 Stamp-S3A/ESP32-S3FN8，但两张原理图未显示 v1.1 标题、Stamp-S3A 或 ESP32-S3FN8，仅显示 M1 STAMP-S3-DIP-1.27。",
+      "confidence": "uncertain",
+      "attributes": {"product_version": "Dial v1.1", "documented_module": "Stamp-S3A", "documented_soc": "ESP32-S3FN8", "schematic_label": "STAMP-S3-DIP-1.27", "schematic_revision_visible": false},
+      "evidence": [
+        {"asset_sha256": "1d8705f9d82d57055876ab9d3a01eb0ae8e4b1610880c99568b4b360f5b47c1f", "page": 1, "locator": "第1图完整页，未见产品版本或主控型号标题"},
+        {"asset_sha256": "0528f589274c10708c0eb75b8f10f0cc9f0d02a4adef8b0e2d31747cd6252a88", "page": 1, "locator": "第2图 C2-D2，M1 仅标 STAMP-S3-DIP-1.27"}
+      ]
+    },
+    {
+      "id": "memory.flash-capacity",
+      "category": "memory",
+      "subject": "主控 Flash",
+      "statement": "产品正文标称 8MB Flash，但两张原理图未画出独立存储器，也未在 M1 上标注 Flash 容量。",
+      "confidence": "uncertain",
+      "attributes": {"documented_capacity": "8MB", "schematic_capacity_label": null, "discrete_memory_reference": null, "module": "M1 STAMP-S3-DIP-1.27"},
+      "evidence": [{"asset_sha256": "0528f589274c10708c0eb75b8f10f0cc9f0d02a4adef8b0e2d31747cd6252a88", "page": 1, "locator": "第2图 C2-D2 M1 与完整页，未见 Flash 位号或容量"}]
+    },
+    {
+      "id": "component.rfid-front-end",
+      "category": "component",
+      "subject": "U1 WS1850S",
+      "statement": "U1 WS1850S 以 +3.3V 供电，RC522_SDA、RC522_SCL、RC522_IRQ 和 NRSTPD 接数字控制网络，TX1/TX2/RX 接天线匹配网络。",
+      "confidence": "confirmed",
+      "attributes": {"reference": "U1", "part_number": "WS1850S", "supply": "+3.3V", "digital": "RC522_SDA/RC522_SCL/RC522_IRQ/NRSTPD", "rf": "TX1/TX2/RX"},
+      "evidence": [{"asset_sha256": "1d8705f9d82d57055876ab9d3a01eb0ae8e4b1610880c99568b4b360f5b47c1f", "page": 1, "locator": "第1图 A2-B2 U1 WS1850S"}]
+    },
+    {
+      "id": "rf.rfid-antenna-network",
+      "category": "rf",
+      "subject": "RFID 天线匹配",
+      "statement": "WS1850S TX1/TX2 分别经 L1/L3 1uH、C8/C14 47pF、C10/C12 120pF、C11/C13 390pF 和 R4/R5 1.2Ω 驱动 L2 ANT_Hole；RX 经 R2/C7/R3 网络取样。",
+      "confidence": "confirmed",
+      "attributes": {"antenna": "L2 ANT_Hole", "tx_inductors": "L1/L3 1uH", "series_caps": "C8/C14 47pF", "shunt_caps": "C10/C12 120pF; C11/C13 390pF", "series_resistors": "R4/R5 1.2Ω", "rx_network": "R2 1KΩ; C7 1nF; R3 1.5KΩ"},
+      "evidence": [{"asset_sha256": "1d8705f9d82d57055876ab9d3a01eb0ae8e4b1610880c99568b4b360f5b47c1f", "page": 1, "locator": "第1图 B2-B3，U1 RX/TX1/TX2 至 L2 ANT_Hole"}]
+    },
+    {
+      "id": "clock.rfid-27mhz",
+      "category": "clock",
+      "subject": "WS1850S 参考时钟",
+      "statement": "U1 OSCIN/OSCOUT 连接 Y1 27.12MHz 晶振，两端各以 C6/C9 15pF 接地。",
+      "confidence": "confirmed",
+      "attributes": {"device": "U1 WS1850S", "crystal": "Y1", "frequency": "27.12MHz", "load_caps": "C6/C9 15pF"},
+      "evidence": [{"asset_sha256": "1d8705f9d82d57055876ab9d3a01eb0ae8e4b1610880c99568b4b360f5b47c1f", "page": 1, "locator": "第1图 B1-B2，Y1 27.12MHz、C6/C9、U1 OSCIN/OSCOUT"}]
+    },
+    {
+      "id": "rf.rfid-operating-frequency",
+      "category": "rf",
+      "subject": "RFID 工作频率",
+      "statement": "产品正文标称 RFID 标签工作频率 13.56MHz；原理图仅标出 27.12MHz 参考晶振和天线匹配元件，未直接标注载波频率。",
+      "confidence": "uncertain",
+      "attributes": {"documented_carrier": "13.56MHz", "schematic_clock": "Y1 27.12MHz", "carrier_label_visible": false},
+      "evidence": [{"asset_sha256": "1d8705f9d82d57055876ab9d3a01eb0ae8e4b1610880c99568b4b360f5b47c1f", "page": 1, "locator": "第1图 B1-B3，Y1 27.12MHz 与 L2 ANT_Hole；未见 13.56MHz 标注"}]
+    },
+    {
+      "id": "bus.shared-i2c",
+      "category": "bus",
+      "subject": "RTC、触摸与 RFID 共享 I2C",
+      "statement": "M1 GPIO11 接 TP_SDA、GPIO12 接 TP_SCL；RTC8563 与触摸连接器直接使用 TP_SDA/TP_SCL，WS1850S 的 RC522_SDA/RC522_SCL 经 R9/R8 0Ω 接入同一总线。",
+      "confidence": "confirmed",
+      "attributes": {"controller": "M1", "sda": "GPIO11 / TP_SDA", "scl": "GPIO12 / TP_SCL", "rtc": "U5 RTC8563", "touch": "BTB1 pins 19/20", "rfid": "U1 WS1850S via R9/R8 0Ω", "logic_level": "+3.3V"},
+      "evidence": [
+        {"asset_sha256": "1d8705f9d82d57055876ab9d3a01eb0ae8e4b1610880c99568b4b360f5b47c1f", "page": 1, "locator": "第1图 C2-C4，R8/R9 0Ω 与 BTB1 TP_SCL/TP_SDA"},
+        {"asset_sha256": "0528f589274c10708c0eb75b8f10f0cc9f0d02a4adef8b0e2d31747cd6252a88", "page": 1, "locator": "第2图 C2-D2，U5 TP_SDA/TP_SCL 与 M1 GPIO11/GPIO12"}
+      ]
+    },
+    {
+      "id": "address.i2c-not-labeled",
+      "category": "address",
+      "subject": "I2C 设备地址",
+      "statement": "两张原理图未标注 RTC8563、WS1850S 或触摸控制器的数值 I2C 地址。",
+      "confidence": "confirmed",
+      "attributes": {"bus": "TP_SDA/TP_SCL", "devices": "U5 RTC8563; U1 WS1850S; BTB1 touch", "address_visible": false, "addresses": null},
+      "evidence": [
+        {"asset_sha256": "1d8705f9d82d57055876ab9d3a01eb0ae8e4b1610880c99568b4b360f5b47c1f", "page": 1, "locator": "第1图 U1 与 BTB1，未见地址标注"},
+        {"asset_sha256": "0528f589274c10708c0eb75b8f10f0cc9f0d02a4adef8b0e2d31747cd6252a88", "page": 1, "locator": "第2图 U5 RTC8563，未见地址标注"}
+      ]
+    },
+    {
+      "id": "clock.rtc-32768",
+      "category": "clock",
+      "subject": "RTC8563 低速时钟",
+      "statement": "U5 OSCI/OSCO 连接 Y2 32.768KHz±20ppm、12.5pF 晶振，C28/C29 各 6.0pF 接地。",
+      "confidence": "confirmed",
+      "attributes": {"rtc": "U5 RTC8563", "crystal": "Y2", "frequency": "32.768KHz", "tolerance": "±20ppm", "load": "12.5pF", "capacitors": "C28/C29 6.0pF"},
+      "evidence": [{"asset_sha256": "0528f589274c10708c0eb75b8f10f0cc9f0d02a4adef8b0e2d31747cd6252a88", "page": 1, "locator": "第2图 C1-C2，Y2、C28/C29 与 U5 OSCI/OSCO"}]
+    },
+    {
+      "id": "key_net.rtc-wakeup",
+      "category": "key_net",
+      "subject": "RTC INT 唤醒路径",
+      "statement": "U5 RTC8563 的 INT 接公共 INT 网络，该网络经 D3 B5819WT 接入 Q3/Q4 电源锁存节点。",
+      "confidence": "confirmed",
+      "attributes": {"source": "U5 INT", "net": "INT", "diode": "D3 B5819WT", "destination": "Q3/Q4 latch node"},
+      "evidence": [{"asset_sha256": "0528f589274c10708c0eb75b8f10f0cc9f0d02a4adef8b0e2d31747cd6252a88", "page": 1, "locator": "第2图 B2 INT/D3 与 C2 U5 INT"}]
+    },
+    {
+      "id": "component.display-touch-models",
+      "category": "component",
+      "subject": "LCD 与触摸控制器型号",
+      "statement": "产品正文称屏幕驱动为 GC9A01、触摸驱动为 FT3267；原理图只给出 BTB1 OK-24M024-04 的 LCD/TP 引脚，未直接标出两颗控制器型号。",
+      "confidence": "uncertain",
+      "attributes": {"connector": "BTB1 OK-24M024-04", "documented_lcd_driver": "GC9A01", "documented_touch_driver": "FT3267", "schematic_driver_labels_visible": false},
+      "evidence": [{"asset_sha256": "1d8705f9d82d57055876ab9d3a01eb0ae8e4b1610880c99568b4b360f5b47c1f", "page": 1, "locator": "第1图 C4-D4 BTB1，仅标 LCD/TP 信号与连接器型号"}]
+    },
+    {
+      "id": "bus.lcd-spi",
+      "category": "bus",
+      "subject": "LCD SPI 总线",
+      "statement": "M1 GPIO5/GPIO6/GPIO7 分别连接 LCD_MOSI/LCD_SCK/LCD_CS，GPIO4 为 LCD_RS；BTB1 的 SDO/NC 未接出，图中无 LCD MISO。",
+      "confidence": "confirmed",
+      "attributes": {"controller": "M1", "mosi": "GPIO5 -> LCD_MOSI -> BTB1-6", "sck": "GPIO6 -> LCD_SCK -> BTB1-8", "cs": "GPIO7 -> LCD_CS -> BTB1-9", "dc": "GPIO4 -> LCD_RS -> BTB1-5", "miso": null, "direction": "MCU to LCD"},
+      "evidence": [
+        {"asset_sha256": "1d8705f9d82d57055876ab9d3a01eb0ae8e4b1610880c99568b4b360f5b47c1f", "page": 1, "locator": "第1图 C4-D4 BTB1 pins 5-9 与 P1"},
+        {"asset_sha256": "0528f589274c10708c0eb75b8f10f0cc9f0d02a4adef8b0e2d31747cd6252a88", "page": 1, "locator": "第2图 C2-D2 M1 GPIO4-GPIO7"}
+      ]
+    },
+    {
+      "id": "gpio.display-control",
+      "category": "gpio",
+      "subject": "显示与触摸控制 GPIO",
+      "statement": "GPIO8 驱动 LCD_RESET 并经 R7 0Ω 同时连接 WS1850S NRSTPD 和触摸 TP_RST；GPIO9 驱动 LCD_BL，GPIO14 接 TP_INT。",
+      "confidence": "confirmed",
+      "attributes": {"reset": "GPIO8 -> LCD_RESET -> BTB1-10/18; R7 0Ω -> NRSTPD", "backlight": "GPIO9 -> LCD_BL -> Q1", "touch_interrupt": "GPIO14 <- TP_INT", "rfid_interrupt": "GPIO10 <- RC522_INT"},
+      "evidence": [
+        {"asset_sha256": "1d8705f9d82d57055876ab9d3a01eb0ae8e4b1610880c99568b4b360f5b47c1f", "page": 1, "locator": "第1图 C2-C4，R7、Q1、BTB1 RESET/TP_RST/TP_INT"},
+        {"asset_sha256": "0528f589274c10708c0eb75b8f10f0cc9f0d02a4adef8b0e2d31747cd6252a88", "page": 1, "locator": "第2图 M1 GPIO8/GPIO9/GPIO10/GPIO14"}
+      ]
+    },
+    {
+      "id": "sensor.encoder",
+      "category": "sensor",
+      "subject": "J5 旋转编码器",
+      "statement": "J5 EC30-16bit 的 A 相接 GPIO41、B 相接 GPIO40，A/B 各以 10KΩ 上拉至 +3.3V 并以 100nF 对地滤波，公共端 C 接 GND。",
+      "confidence": "confirmed",
+      "attributes": {"reference": "J5", "part_number": "EC30-16bit", "phase_a": "A -> GPIO41", "phase_b": "B -> GPIO40", "pullups": "R21/R22 10KΩ", "filters": "C22/C23 100nF", "common": "GND", "direction": "input"},
+      "evidence": [{"asset_sha256": "0528f589274c10708c0eb75b8f10f0cc9f0d02a4adef8b0e2d31747cd6252a88", "page": 1, "locator": "第2图 C3-D3 J5、R21/R22、C22/C23 与 M1 A/B"}]
+    },
+    {
+      "id": "audio.buzzer",
+      "category": "audio",
+      "subject": "蜂鸣器驱动",
+      "statement": "M1 GPIO3 的 beep 信号经 R25 470Ω、C27 10uF 驱动 Q5 SS8050 Y1，LS1 Buzzer 由 +3.3V 经 R24 10Ω 供电，并带 D6 1N4148 续流支路。",
+      "confidence": "confirmed",
+      "attributes": {"gpio": "GPIO3 / beep", "transistor": "Q5 SS8050 Y1", "buzzer": "LS1", "supply": "+3.3V via R24 10Ω", "drive": "R25 470Ω + C27 10uF", "diode": "D6 1N4148"},
+      "evidence": [{"asset_sha256": "0528f589274c10708c0eb75b8f10f0cc9f0d02a4adef8b0e2d31747cd6252a88", "page": 1, "locator": "第2图 C1-D1 Buzzer 区与 M1 GPIO3"}]
+    },
+    {
+      "id": "interface.port-a",
+      "category": "interface",
+      "subject": "J3 PORT.A",
+      "statement": "J3 HY-2.0_IIC 的 1 脚 SCL 接 M1 GPIO15，2 脚 SDA 接 GPIO13，3 脚 +5VOUT，4 脚 GND。",
+      "confidence": "confirmed",
+      "attributes": {"reference": "J3", "pin_1": "SCL / GPIO15", "pin_2": "SDA / GPIO13", "pin_3": "+5VOUT", "pin_4": "GND", "bus": "external I2C", "signal_level": "+3.3V logic"},
+      "evidence": [{"asset_sha256": "0528f589274c10708c0eb75b8f10f0cc9f0d02a4adef8b0e2d31747cd6252a88", "page": 1, "locator": "第2图 D2 M1 GPIO13/GPIO15 与 D4 J3 HY-2.0_IIC"}]
+    },
+    {
+      "id": "interface.port-b",
+      "category": "interface",
+      "subject": "J2 PORT.B",
+      "statement": "J2 HY-2.0_IO 的 1 脚 GI 接 M1 GPIO1，2 脚 GO 接 GPIO2，3 脚 +5VOUT，4 脚 GND。",
+      "confidence": "confirmed",
+      "attributes": {"reference": "J2", "pin_1": "GI / GPIO1", "pin_2": "GO / GPIO2", "pin_3": "+5VOUT", "pin_4": "GND", "signal_direction": "GPIO configurable", "signal_level": "+3.3V logic"},
+      "evidence": [{"asset_sha256": "0528f589274c10708c0eb75b8f10f0cc9f0d02a4adef8b0e2d31747cd6252a88", "page": 1, "locator": "第2图 D2 M1 GI/GO 与 D4 J2 HY-2.0_IO"}]
+    },
+    {
+      "id": "interface.display-board-link",
+      "category": "interface",
+      "subject": "P1/P3 显示板间连接",
+      "statement": "P1 排母与 P3 排针按同一 12 针信号组连接 GND、+3.3V、LCD_BL/RS/MOSI/SCK/CS/RESET、RC522_INT、TP_SDA/SCL/INT。",
+      "confidence": "confirmed",
+      "attributes": {"connectors": "P1/P3 6X2@2.54", "signals": "LCD_BL, LCD_RS, LCD_MOSI, LCD_SCK, LCD_CS, LCD_RESET, RC522_INT, TP_SDA, TP_SCL, TP_INT", "power": "+3.3V", "ground": "GND"},
+      "evidence": [
+        {"asset_sha256": "1d8705f9d82d57055876ab9d3a01eb0ae8e4b1610880c99568b4b360f5b47c1f", "page": 1, "locator": "第1图 D4 P1 6X2@2.54 排母"},
+        {"asset_sha256": "0528f589274c10708c0eb75b8f10f0cc9f0d02a4adef8b0e2d31747cd6252a88", "page": 1, "locator": "第2图 D3-D4 P3 6X2@2.54 排针"}
+      ]
+    },
+    {
+      "id": "power.external-input",
+      "category": "power",
+      "subject": "P5 外部直流输入",
+      "statement": "P5 1 脚经 D13 B5819W SL 串联进入 +VIN，2 脚接 GND；D12 SD36 从 +VIN 对地钳位，C34 10uF/35V 与 C35 100nF 滤波。",
+      "confidence": "confirmed",
+      "attributes": {"connector": "P5 Header 2", "positive": "pin 1 -> D13 -> +VIN", "negative": "pin 2 -> GND", "series_diode": "D13 B5819W SL", "tvs": "D12 SD36", "capacitors": "C34 10uF/35V; C35 100nF"},
+      "evidence": [{"asset_sha256": "0528f589274c10708c0eb75b8f10f0cc9f0d02a4adef8b0e2d31747cd6252a88", "page": 1, "locator": "第2图 A1-A2，P5、D13、D12、C34/C35、+VIN"}]
+    },
+    {
+      "id": "power.input-voltage-range",
+      "category": "power",
+      "subject": "外部直流输入范围",
+      "statement": "产品正文标称 P5 支持 DC 6~36V；原理图显示 35V 输入电容、SD36 TVS 与 ME3116AM6G，但未直接标注 6~36V 范围。",
+      "confidence": "uncertain",
+      "attributes": {"documented_range": "DC 6~36V", "schematic_range_label": null, "input_capacitor_rating": "C34 35V", "converter": "U7 ME3116AM6G"},
+      "evidence": [{"asset_sha256": "0528f589274c10708c0eb75b8f10f0cc9f0d02a4adef8b0e2d31747cd6252a88", "page": 1, "locator": "第2图 A1-A3，+VIN 输入、C34 10uF/35V、D12 SD36、U7"}]
+    },
+    {
+      "id": "power.5vin-converter",
+      "category": "power",
+      "subject": "U7 +5VIN 转换",
+      "statement": "U7 ME3116AM6G 以 +VIN 为输入，经 L6 10uH、D9/D11 B5819W SL 与 R33 56KΩ/R34 10KΩ 反馈生成 +5VIN。",
+      "confidence": "confirmed",
+      "attributes": {"reference": "U7", "input": "+VIN", "output": "+5VIN", "inductor": "L6 10uH", "diodes": "D9/D11 B5819W SL", "feedback": "R33 56KΩ; R34 10KΩ"},
+      "evidence": [{"asset_sha256": "0528f589274c10708c0eb75b8f10f0cc9f0d02a4adef8b0e2d31747cd6252a88", "page": 1, "locator": "第2图 A2-A3，U7 ME3116AM6G 至 +5VIN"}]
+    },
+    {
+      "id": "power.battery-charger",
+      "category": "power",
+      "subject": "U2 TP4057 充电",
+      "statement": "U2 TP4057 的 VCC 经 R11 0.8Ω 接 +5VIN，BAT 经 JP1 接 VBAT_IN，PROG 经 R17 10KΩ 与 JP2 接地。",
+      "confidence": "confirmed",
+      "attributes": {"reference": "U2", "part_number": "TP4057", "input": "+5VIN via R11 0.8Ω", "battery": "VBAT_IN via JP1", "program": "R17 10KΩ via JP2", "status": "CHRG/STDBY"},
+      "evidence": [{"asset_sha256": "0528f589274c10708c0eb75b8f10f0cc9f0d02a4adef8b0e2d31747cd6252a88", "page": 1, "locator": "第2图 A1-B1，U2 TP4057"}]
+    },
+    {
+      "id": "power.battery-port",
+      "category": "power",
+      "subject": "P6 电池接口",
+      "statement": "P6 Header 2 的 1 脚接 VBAT_IN、2 脚接 GND；C21 10uF 跨接 VBAT_IN 与 GND。",
+      "confidence": "confirmed",
+      "attributes": {"reference": "P6", "pin_1": "VBAT_IN", "pin_2": "GND", "capacitor": "C21 10uF"},
+      "evidence": [{"asset_sha256": "0528f589274c10708c0eb75b8f10f0cc9f0d02a4adef8b0e2d31747cd6252a88", "page": 1, "locator": "第2图 B1，P6、VBAT_IN、C21"}]
+    },
+    {
+      "id": "power.source-selection",
+      "category": "power",
+      "subject": "电池与 +5VIN 电源选择",
+      "statement": "VBAT_IN 经 Q2 LP3218DT1G 进入中间电源节点，+5VIN 经 D1 SS34 汇入同一节点，再经 Q3 LP3218DT1G 输出 VBAT_OUT。",
+      "confidence": "confirmed",
+      "attributes": {"battery_path": "VBAT_IN -> Q2 LP3218DT1G", "external_path": "+5VIN -> D1 SS34", "output_switch": "Q3 LP3218DT1G", "output": "VBAT_OUT"},
+      "evidence": [{"asset_sha256": "0528f589274c10708c0eb75b8f10f0cc9f0d02a4adef8b0e2d31747cd6252a88", "page": 1, "locator": "第2图 A1-B3，Q2/D1/Q3 与 VBAT_IN/VBAT_OUT"}]
+    },
+    {
+      "id": "power.5vout-boost",
+      "category": "power",
+      "subject": "+5VOUT 电源轨",
+      "statement": "U3 SY7088 从 VBAT_OUT 经 R12 0Ω 输入，配合 L4 1.5uH 与 R16 150KΩ/R18 47KΩ 反馈升压，输出经 D8 SS34 标为 +5VOUT。",
+      "confidence": "confirmed",
+      "attributes": {"reference": "U3", "input": "VBAT_OUT", "output": "+5VOUT", "inductor": "L4 1.5uH", "feedback": "R16 150KΩ; R18 47KΩ", "output_diode": "D8 SS34"},
+      "evidence": [{"asset_sha256": "0528f589274c10708c0eb75b8f10f0cc9f0d02a4adef8b0e2d31747cd6252a88", "page": 1, "locator": "第2图 A3-B4 虚线框 U3 SY7088"}]
+    },
+    {
+      "id": "power.3v3-buck",
+      "category": "power",
+      "subject": "+3.3V 电源轨",
+      "statement": "U4 SY8089 以 VBAT_OUT 为输入，经 L5 4.7uH 和 R27 68KΩ/R28 15KΩ 反馈生成 +3.3V，EN 由 3V3EN 网络控制。",
+      "confidence": "confirmed",
+      "attributes": {"reference": "U4", "input": "VBAT_OUT", "output": "+3.3V", "enable": "3V3EN via R26 50KΩ", "inductor": "L5 4.7uH", "feedback": "R27 68KΩ; R28 15KΩ"},
+      "evidence": [{"asset_sha256": "0528f589274c10708c0eb75b8f10f0cc9f0d02a4adef8b0e2d31747cd6252a88", "page": 1, "locator": "第2图 B3-C3，U4 SY8089"}]
+    },
+    {
+      "id": "power.hold-wake-latch",
+      "category": "power",
+      "subject": "HOLD/WAKE 电源锁存",
+      "statement": "M1 GPIO46 输出 HOLD 控制 Q4 LN2324DT2AG；GPIO42 接 WAKE，S1、D4、D10 与 RTC INT/D3 汇入锁存节点，用于按键或 RTC 唤醒。",
+      "confidence": "confirmed",
+      "attributes": {"hold": "GPIO46 -> HOLD -> Q4", "wake": "GPIO42 -> WAKE", "button": "S1 SW-PB", "rtc": "U5 INT -> D3", "diodes": "D3/D4/D10 B5819WT"},
+      "evidence": [{"asset_sha256": "0528f589274c10708c0eb75b8f10f0cc9f0d02a4adef8b0e2d31747cd6252a88", "page": 1, "locator": "第2图 B2 HOLD/WAKE/Q4/S1/D3/D4/D10 与 D2 M1 GPIO42/GPIO46"}]
+    },
+    {
+      "id": "reset.en-and-boot",
+      "category": "reset",
+      "subject": "主控 EN 与 BOOT",
+      "statement": "M1 EN 引出到 P4 并由 S4 SW-PB 按下接地复位；M1 G0/Boot 同样在 P4 区域引出。",
+      "confidence": "confirmed",
+      "attributes": {"reset_pin": "M1 EN", "reset_switch": "S4 SW-PB to GND", "boot_pin": "M1 G0/Boot", "connector": "P4 Header 11"},
+      "evidence": [{"asset_sha256": "0528f589274c10708c0eb75b8f10f0cc9f0d02a4adef8b0e2d31747cd6252a88", "page": 1, "locator": "第2图 D2，M1 EN/G0/Boot、P4、S4"}]
+    },
+    {
+      "id": "protection.input-and-wake",
+      "category": "protection",
+      "subject": "输入和按键保护",
+      "statement": "D12 SD36 对 +VIN 提供对地钳位，D13 B5819W SL 串联在 P5 正输入；D5 PESDNC2FD3V3B 跨接 WAKE/S1 节点与 GND。",
+      "confidence": "confirmed",
+      "attributes": {"input_tvs": "D12 SD36", "input_series_diode": "D13 B5819W SL", "wake_esd": "D5 PESDNC2FD3V3B", "protected_nets": "+VIN; WAKE/S1"},
+      "evidence": [{"asset_sha256": "0528f589274c10708c0eb75b8f10f0cc9f0d02a4adef8b0e2d31747cd6252a88", "page": 1, "locator": "第2图 A1-A2 D12/D13；B2 D5"}]
+    }
+  ],
+  "needs_review": [
+    {
+      "id": "review.version-controller-identity",
+      "fact_id": "component.version-controller-identity",
+      "question": "这两张 Sch_M5Dial 原理图是否确实对应 Dial v1.1 的 Stamp-S3A/ESP32-S3FN8 硬件版本？",
+      "reason": "两页没有可见版本标题，主控只标 STAMP-S3-DIP-1.27，没有 Stamp-S3A 或 ESP32-S3FN8 标识。",
+      "evidence": [
+        {"asset_sha256": "1d8705f9d82d57055876ab9d3a01eb0ae8e4b1610880c99568b4b360f5b47c1f", "page": 1, "locator": "第1图完整页，无版本标题"},
+        {"asset_sha256": "0528f589274c10708c0eb75b8f10f0cc9f0d02a4adef8b0e2d31747cd6252a88", "page": 1, "locator": "第2图 M1 STAMP-S3-DIP-1.27，无 v1.1/Stamp-S3A 标识"}
+      ]
+    },
+    {
+      "id": "review.flash-capacity",
+      "fact_id": "memory.flash-capacity",
+      "question": "Dial v1.1 当前主控模组的 Flash 容量是否确定为 8MB？",
+      "reason": "容量来自产品正文，原理图未标注主控内部 Flash 容量。",
+      "evidence": [{"asset_sha256": "0528f589274c10708c0eb75b8f10f0cc9f0d02a4adef8b0e2d31747cd6252a88", "page": 1, "locator": "第2图 M1 STAMP-S3-DIP-1.27，未标 Flash 容量"}]
+    },
+    {
+      "id": "review.display-touch-models",
+      "fact_id": "component.display-touch-models",
+      "question": "BTB1 所接圆屏和触摸控制器是否分别固定为 GC9A01 与 FT3267？",
+      "reason": "型号来自产品正文，原理图只显示 LCD/TP 信号和 OK-24M024-04 连接器。",
+      "evidence": [{"asset_sha256": "1d8705f9d82d57055876ab9d3a01eb0ae8e4b1610880c99568b4b360f5b47c1f", "page": 1, "locator": "第1图 BTB1 OK-24M024-04，未见 GC9A01/FT3267"}]
+    },
+    {
+      "id": "review.rfid-frequency",
+      "fact_id": "rf.rfid-operating-frequency",
+      "question": "当前 WS1850S 与天线匹配网络的 RFID 载波是否确定为 13.56MHz？",
+      "reason": "13.56MHz 来自产品正文，原理图只直接标出 Y1 27.12MHz 参考晶振。",
+      "evidence": [{"asset_sha256": "1d8705f9d82d57055876ab9d3a01eb0ae8e4b1610880c99568b4b360f5b47c1f", "page": 1, "locator": "第1图 U1/Y1/L2，未见 13.56MHz 标注"}]
+    },
+    {
+      "id": "review.input-voltage-range",
+      "fact_id": "power.input-voltage-range",
+      "question": "P5 外部输入的认证范围是否为 DC 6~36V？",
+      "reason": "6~36V 来自产品正文，原理图只给出元件型号和额定值，未直接写输入范围。",
+      "evidence": [{"asset_sha256": "0528f589274c10708c0eb75b8f10f0cc9f0d02a4adef8b0e2d31747cd6252a88", "page": 1, "locator": "第2图 P5/+VIN/U7 与 C34 35V，未见 6~36V 标注"}]
+    }
+  ]
+}

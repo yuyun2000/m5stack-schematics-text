@@ -1,0 +1,21 @@
+{
+  "dry_run": false,
+  "failed": 0,
+  "published": 1,
+  "results": [
+    {
+      "backup": null,
+      "draft_action": "unchanged",
+      "dry_run": false,
+      "errors": [],
+      "needs_review": 1,
+      "product_id": "atom-can-8022ccbcf601",
+      "product_name": "Atom CAN",
+      "publish_action": "unchanged",
+      "sha256": "3350c99331fe744dcd987e93c28be3eccc1fbd30d9ba1464377393355f5690c6",
+      "status": "valid",
+      "uncertain_facts": 1
+    }
+  ],
+  "schema_version": 1
+}

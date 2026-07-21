@@ -1,0 +1,21 @@
+{
+  "dry_run": false,
+  "failed": 0,
+  "published": 1,
+  "results": [
+    {
+      "backup": null,
+      "draft_action": "unchanged",
+      "dry_run": false,
+      "errors": [],
+      "needs_review": 4,
+      "product_id": "unit-watering-9305c7e679f8",
+      "product_name": "Unit Watering",
+      "publish_action": "unchanged",
+      "sha256": "63be84749267d55b951e2feb465ba3c870d1319df95e379d9263c36a1b07da83",
+      "status": "valid",
+      "uncertain_facts": 4
+    }
+  ],
+  "schema_version": 1
+}

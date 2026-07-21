@@ -1,0 +1,21 @@
+{
+  "dry_run": false,
+  "failed": 0,
+  "published": 1,
+  "results": [
+    {
+      "backup": null,
+      "draft_action": "unchanged",
+      "dry_run": false,
+      "errors": [],
+      "needs_review": 3,
+      "product_id": "atom-lite-f7be27b3adc3",
+      "product_name": "Atom-Lite",
+      "publish_action": "unchanged",
+      "sha256": "7a255c2d8a4976dc27f7d539c17c3bad96cbb9932e270d89989b93a2f9541f0f",
+      "status": "valid",
+      "uncertain_facts": 3
+    }
+  ],
+  "schema_version": 1
+}

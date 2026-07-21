@@ -1,0 +1,21 @@
+{
+  "dry_run": false,
+  "failed": 0,
+  "published": 1,
+  "results": [
+    {
+      "backup": null,
+      "draft_action": "unchanged",
+      "dry_run": false,
+      "errors": [],
+      "needs_review": 1,
+      "product_id": "unit-8angle-e52c04131be5",
+      "product_name": "Unit 8Angle",
+      "publish_action": "unchanged",
+      "sha256": "7cb3651b90f825b7f438e6423b00d4fc56c2f6e7872ba7cf777adbddcd7c6e0c",
+      "status": "valid",
+      "uncertain_facts": 1
+    }
+  ],
+  "schema_version": 1
+}

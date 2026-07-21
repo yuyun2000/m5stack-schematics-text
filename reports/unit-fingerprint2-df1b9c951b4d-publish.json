@@ -1,0 +1,21 @@
+{
+  "dry_run": false,
+  "failed": 0,
+  "published": 1,
+  "results": [
+    {
+      "backup": null,
+      "draft_action": "unchanged",
+      "dry_run": false,
+      "errors": [],
+      "needs_review": 7,
+      "product_id": "unit-fingerprint2-df1b9c951b4d",
+      "product_name": "Unit Fingerprint2",
+      "publish_action": "unchanged",
+      "sha256": "358faafe693fed4b84a5e1bdd1a164c59be7a67fc8cbea0c505f8ae91f7bc90a",
+      "status": "valid",
+      "uncertain_facts": 7
+    }
+  ],
+  "schema_version": 1
+}

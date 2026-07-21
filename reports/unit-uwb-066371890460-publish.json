@@ -1,0 +1,21 @@
+{
+  "dry_run": false,
+  "failed": 0,
+  "published": 1,
+  "results": [
+    {
+      "backup": null,
+      "draft_action": "unchanged",
+      "dry_run": false,
+      "errors": [],
+      "needs_review": 4,
+      "product_id": "unit-uwb-066371890460",
+      "product_name": "Unit UWB",
+      "publish_action": "unchanged",
+      "sha256": "5c49327fd3bf3d5b4c083a5b78c8f28f2f16d938f0d2d22fa8c68fe26487532a",
+      "status": "valid",
+      "uncertain_facts": 4
+    }
+  ],
+  "schema_version": 1
+}

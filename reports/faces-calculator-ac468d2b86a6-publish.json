@@ -1,0 +1,21 @@
+{
+  "dry_run": false,
+  "failed": 0,
+  "published": 1,
+  "results": [
+    {
+      "backup": null,
+      "draft_action": "unchanged",
+      "dry_run": false,
+      "errors": [],
+      "needs_review": 6,
+      "product_id": "faces-calculator-ac468d2b86a6",
+      "product_name": "Faces Calculator",
+      "publish_action": "unchanged",
+      "sha256": "6250962774db1f83b0ab6bb12ce6f2a94891ce09d724eb9ac17b65bd12207ff4",
+      "status": "valid",
+      "uncertain_facts": 6
+    }
+  ],
+  "schema_version": 1
+}

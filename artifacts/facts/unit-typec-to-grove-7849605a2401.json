@@ -1,0 +1,185 @@
+{
+  "schema_version": 1,
+  "generator": "schematic_describer",
+  "product": {
+    "product_id": "unit-typec-to-grove-7849605a2401",
+    "product_name": "Unit TypeC to Grove",
+    "sku": "U151",
+    "source_path": "unit/typec2grove.md",
+    "source_sha256": "df4d047486dbb7a99e675930e23389c0365b634e9c282bfe657c9cd1f7ee83ef",
+    "input_sha256": "ff36da4c41527b99e07475f6df72459874a9ec2c7e2a7b55c69b8cc74f471d0c"
+  },
+  "schematic_assets": [
+    {
+      "sha256": "5fae073308391c2f6a7820e8424d2a5b12032b4d60c87248505be7195f4580be",
+      "source_url": "https://m5stack.oss-cn-shenzhen.aliyuncs.com/resource/docs/products/unit/typec2grove/@akita.webp",
+      "pages": [1]
+    },
+    {
+      "sha256": "35f784d7f629f505add1f9d2281910cc2ab08d52a00ed298e0d34d3990d551fb",
+      "source_url": "https://m5stack-doc.oss-cn-shenzhen.aliyuncs.com/605/UNIT-TypeC2Grove_sch_sch_01.png",
+      "pages": [1]
+    }
+  ],
+  "summary": "Unit TypeC to Grove 是无主动 IC 的 USB Type-C 供电与 Grove 信号分配板。CN1 的两路 VBUS 合并为 +5V，CC1/CC2 各经 5.1KΩ 下拉；+5V 仅送到 CN3/CN4 的 VDD，CN2 VDD 明确未连接。CN2 的 SCL/RX、SDA/TX 和 GND 透传到两个输出端 CN3/CN4，页面未显示保险丝、开关、限流、ESD 或电源转换器。",
+  "keywords": [
+    "Unit TypeC to Grove", "U151", "USB Type-C", "CN1", "CN2", "CN3", "CN4", "CON_GROVE", "SCL/RX", "SDA/TX", "S1", "S2", "VBUS1", "VBUS2", "CC1", "CC2", "R1 5.1K", "R2 5.1K", "+5V", "VDD", "GND", "power splitter", "signal pass-through", "Grove output", "power-only USB", "5V@3A"
+  ],
+  "components": [
+    {
+      "reference": "CN1",
+      "part_number": null,
+      "role": "USB Type-C 电源输入插座，引出 VBUS1/VBUS2、CC1/CC2、GND1/GND2 与 FG",
+      "evidence": [{"asset_sha256": "35f784d7f629f505add1f9d2281910cc2ab08d52a00ed298e0d34d3990d551fb", "page": 1, "locator": "原理图左下 CN1：VBUS1 A9、VBUS2 B9、CC1 A5、CC2 B5、GND1 A12、GND2 B12、FG"}]
+    },
+    {
+      "reference": "CN2",
+      "part_number": "CON_GROVE",
+      "role": "输入侧 Grove 信号端，接入 SCL/RX、SDA/TX 和 GND，VDD 未连接",
+      "evidence": [{"asset_sha256": "35f784d7f629f505add1f9d2281910cc2ab08d52a00ed298e0d34d3990d551fb", "page": 1, "locator": "原理图左上 CN2 CON_GROVE：pin1 SCL/RX、pin2 SDA/TX、pin3 VDD NC 叉号、pin4 GND"}]
+    },
+    {
+      "reference": "CN3",
+      "part_number": "CON_GROVE",
+      "role": "第一路合并输出，提供透传信号、USB +5V 和公共 GND",
+      "evidence": [{"asset_sha256": "35f784d7f629f505add1f9d2281910cc2ab08d52a00ed298e0d34d3990d551fb", "page": 1, "locator": "原理图上部中央 CN3：pin1 SCL/RX、pin2 SDA/TX、pin3 VDD/+5V、pin4 GND"}]
+    },
+    {
+      "reference": "CN4",
+      "part_number": "CON_GROVE",
+      "role": "第二路合并输出，提供透传信号、USB +5V 和公共 GND",
+      "evidence": [{"asset_sha256": "35f784d7f629f505add1f9d2281910cc2ab08d52a00ed298e0d34d3990d551fb", "page": 1, "locator": "原理图上部右侧 CN4：pin1 SCL/RX、pin2 SDA/TX、pin3 VDD/+5V、pin4 GND"}]
+    },
+    {
+      "reference": "R1/R2",
+      "part_number": "5.1K / 5.1K",
+      "role": "CN1 CC1/CC2 到 GND 的 Type-C 配置下拉电阻",
+      "evidence": [{"asset_sha256": "35f784d7f629f505add1f9d2281910cc2ab08d52a00ed298e0d34d3990d551fb", "page": 1, "locator": "原理图左下 CN1 CC1/CC2 旁 R1/R2，均标 5.1K 并接 GND"}]
+    }
+  ],
+  "facts": [
+    {
+      "id": "system.passive-power-signal-splitter",
+      "category": "system",
+      "subject": "Unit TypeC to Grove",
+      "statement": "整板由一个 USB Type-C 电源输入、一个 Grove 信号输入、两个 Grove 合并输出和两颗 CC 下拉电阻构成；没有 MCU、存储器、时钟、通信控制器、稳压器或负载开关。",
+      "confidence": "confirmed",
+      "attributes": {"usb_input": "CN1", "signal_input": "CN2", "outputs": "CN3,CN4", "cc_resistors": "R1,R2 5.1K", "active_ic": null, "controller": null, "storage": null, "regulator": null, "load_switch": null},
+      "evidence": [{"asset_sha256": "35f784d7f629f505add1f9d2281910cc2ab08d52a00ed298e0d34d3990d551fb", "page": 1, "locator": "完整原理图仅含 CN1-CN4 与 R1/R2"}]
+    },
+    {
+      "id": "interface.usb-power-only",
+      "category": "interface",
+      "subject": "CN1 USB Type-C",
+      "statement": "CN1 只画出 VBUS1/VBUS2、CC1/CC2、GND1/GND2 和 FG，没有 D+、D-、SBU 或高速差分线，因此本页实现为纯供电 Type-C 接口。",
+      "confidence": "confirmed",
+      "attributes": {"VBUS1": "A9", "VBUS2": "B9", "CC1": "A5", "CC2": "B5", "GND1": "A12", "GND2": "B12", "data_pins": null, "role": "power input only"},
+      "evidence": [{"asset_sha256": "35f784d7f629f505add1f9d2281910cc2ab08d52a00ed298e0d34d3990d551fb", "page": 1, "locator": "原理图 CN1 全部可见引脚，无 USB D+/D-"}]
+    },
+    {
+      "id": "interface.typec-cc-pulldowns",
+      "category": "interface",
+      "subject": "CC1/CC2",
+      "statement": "CN1 CC1 pin A5 经 R1 5.1K 接 GND，CC2 pin B5 经 R2 5.1K 接 GND。",
+      "confidence": "confirmed",
+      "attributes": {"CC1": "CN1 A5 via R1 5.1K to GND", "CC2": "CN1 B5 via R2 5.1K to GND"},
+      "evidence": [{"asset_sha256": "35f784d7f629f505add1f9d2281910cc2ab08d52a00ed298e0d34d3990d551fb", "page": 1, "locator": "原理图 CN1 CC1/CC2 至 R1/R2 5.1K-GND"}]
+    },
+    {
+      "id": "power.vbus-to-five-volt",
+      "category": "power",
+      "subject": "CN1 VBUS 到 +5V",
+      "statement": "CN1 VBUS1 与 VBUS2 合并到同一 +5V 网络，该网络直接连接 CN3/CN4 pin 3 VDD；页面未显示保险丝、限流器件、反接保护或电源转换。",
+      "confidence": "confirmed",
+      "attributes": {"source": "CN1 VBUS1/VBUS2", "rail": "+5V", "destinations": "CN3 pin3 VDD,CN4 pin3 VDD", "fuse": null, "current_limit": null, "reverse_protection": null, "converter": null},
+      "evidence": [{"asset_sha256": "35f784d7f629f505add1f9d2281910cc2ab08d52a00ed298e0d34d3990d551fb", "page": 1, "locator": "原理图 CN1 VBUS1/VBUS2 +5V 标签与 CN3/CN4 pin3 公共 +5V 线"}]
+    },
+    {
+      "id": "interface.cn2-pinout",
+      "category": "interface",
+      "subject": "CN2 输入 Grove",
+      "statement": "CN2 pin 1 接 SCL/RX，pin 2 接 SDA/TX，pin 3 VDD 带未连接叉号，pin 4 接公共 GND。",
+      "confidence": "confirmed",
+      "attributes": {"pin_1": "SCL/RX", "pin_2": "SDA/TX", "pin_3": "VDD NC", "pin_4": "GND"},
+      "evidence": [{"asset_sha256": "35f784d7f629f505add1f9d2281910cc2ab08d52a00ed298e0d34d3990d551fb", "page": 1, "locator": "原理图 CN2 pins1-4，pin3 NC 叉号与 pin4 GND 连线"}]
+    },
+    {
+      "id": "interface.output-pinout",
+      "category": "interface",
+      "subject": "CN3/CN4 输出 Grove",
+      "statement": "CN3 与 CN4 pinout 相同：pin 1=SCL/RX，pin 2=SDA/TX，pin 3=VDD/+5V，pin 4=GND。",
+      "confidence": "confirmed",
+      "attributes": {"CN3": "pin1 SCL/RX,pin2 SDA/TX,pin3 +5V,pin4 GND", "CN4": "pin1 SCL/RX,pin2 SDA/TX,pin3 +5V,pin4 GND"},
+      "evidence": [{"asset_sha256": "35f784d7f629f505add1f9d2281910cc2ab08d52a00ed298e0d34d3990d551fb", "page": 1, "locator": "原理图 CN3/CN4 pins1-4 及 SCL/RX、SDA/TX、VDD、GND"}]
+    },
+    {
+      "id": "key_net.signal-pass-through",
+      "category": "key_net",
+      "subject": "SCL/RX 与 SDA/TX",
+      "statement": "CN2 pin 1、CN3 pin 1、CN4 pin 1 共用 SCL/RX 网络；CN2 pin 2、CN3 pin 2、CN4 pin 2 共用 SDA/TX 网络，信号无缓冲、切换或串联器件。",
+      "confidence": "confirmed",
+      "attributes": {"signal_1": "CN2.1=CN3.1=CN4.1 SCL/RX", "signal_2": "CN2.2=CN3.2=CN4.2 SDA/TX", "buffer": null, "mux": null, "series_resistor": null, "direction": "passive bidirectional"},
+      "evidence": [{"asset_sha256": "35f784d7f629f505add1f9d2281910cc2ab08d52a00ed298e0d34d3990d551fb", "page": 1, "locator": "原理图上部 CN2-CN3-CN4 两条连续信号线"}]
+    },
+    {
+      "id": "key_net.ground-pass-through",
+      "category": "key_net",
+      "subject": "GND",
+      "statement": "CN1 GND1/GND2/FG、CN2 pin 4、CN3 pin 4 和 CN4 pin 4 均连接公共 GND。",
+      "confidence": "confirmed",
+      "attributes": {"usb_ground": "CN1 GND1,GND2,FG", "input_ground": "CN2 pin4", "output_grounds": "CN3 pin4,CN4 pin4", "net": "GND"},
+      "evidence": [{"asset_sha256": "35f784d7f629f505add1f9d2281910cc2ab08d52a00ed298e0d34d3990d551fb", "page": 1, "locator": "原理图 CN1 与 CN2/CN3/CN4 公共 GND 符号和连线"}]
+    },
+    {
+      "id": "protection.no-visible-port-protection",
+      "category": "protection",
+      "subject": "USB/Grove 保护边界",
+      "statement": "除 CC1/CC2 的 R1/R2 外，页面未显示 VBUS、+5V、SCL/RX、SDA/TX 上的 TVS/ESD、保险丝、限流、反接、过压或浪涌保护。",
+      "confidence": "confirmed",
+      "attributes": {"tv_esd": null, "fuse": null, "current_limit": null, "reverse_polarity": null, "overvoltage": null, "surge": null, "only_resistors": "R1/R2 CC pulldowns"},
+      "evidence": [{"asset_sha256": "35f784d7f629f505add1f9d2281910cc2ab08d52a00ed298e0d34d3990d551fb", "page": 1, "locator": "完整原理图仅含连接器与 CC 下拉，无保护器件"}]
+    },
+    {
+      "id": "interface.input-ground-conflict",
+      "category": "interface",
+      "subject": "INPUT CH GND",
+      "statement": "正文表将 INPUT CH 的 Black/GND 标为 NC，但原理图明确把 CN2 pin 4 接到公共 GND；实际产品输入端地线是否连接存在资料冲突。",
+      "confidence": "uncertain",
+      "attributes": {"document_mapping": "INPUT CH Black=NC", "schematic_mapping": "CN2 pin4=GND", "confirmed_hardware": null},
+      "evidence": [{"asset_sha256": "35f784d7f629f505add1f9d2281910cc2ab08d52a00ed298e0d34d3990d551fb", "page": 1, "locator": "原理图 CN2 pin4 绿色连线接 GND 并延伸到 CN3/CN4 pin4"}]
+    },
+    {
+      "id": "bus.signal-function",
+      "category": "bus",
+      "subject": "S1/S2 与 SCL/RX/SDA/TX",
+      "statement": "正文把两条透传信号称为 S1/S2，原理图将其标为 SCL/RX 与 SDA/TX；没有控制器或协议器件，无法仅凭本页确定应按 I2C、UART 还是通用信号使用。",
+      "confidence": "uncertain",
+      "attributes": {"document_names": "S1,S2", "schematic_names": "SCL/RX,SDA/TX", "i2c_controller": null, "uart_controller": null, "confirmed_protocol": null},
+      "evidence": [{"asset_sha256": "35f784d7f629f505add1f9d2281910cc2ab08d52a00ed298e0d34d3990d551fb", "page": 1, "locator": "原理图 CN2-CN4 信号标签 SCL/RX 与 SDA/TX，无协议 IC"}]
+    },
+    {
+      "id": "power.documented-current-rating",
+      "category": "power",
+      "subject": "MAX 5V@3A",
+      "statement": "正文标称 MAX 5V@3A；原理图只显示直接铜网连接，没有连接器额定值、铜宽、温升、保险丝或限流器件，不能由本页确认连续 3A 能力。",
+      "confidence": "uncertain",
+      "attributes": {"documented_rating": "MAX 5V@3A", "schematic_voltage": "+5V", "current_rating_label": null, "fuse": null, "thermal_data": null, "copper_width": null},
+      "evidence": [{"asset_sha256": "35f784d7f629f505add1f9d2281910cc2ab08d52a00ed298e0d34d3990d551fb", "page": 1, "locator": "原理图 VBUS-to-CN3/CN4 +5V 直连，无电流或热参数"}]
+    },
+    {
+      "id": "interface.grove-color-mapping",
+      "category": "interface",
+      "subject": "Grove 线色映射",
+      "statement": "原理图给出连接器 pin 1-4 与网络，但未标注 Black/Red/Yellow/White 线色，无法仅凭本页验证输出线色和输入线色。",
+      "confidence": "uncertain",
+      "attributes": {"schematic_pinout": "pin1 SCL/RX,pin2 SDA/TX,pin3 VDD,pin4 GND", "color_labels": null, "document_colors": "Black,Red,Yellow,White"},
+      "evidence": [{"asset_sha256": "35f784d7f629f505add1f9d2281910cc2ab08d52a00ed298e0d34d3990d551fb", "page": 1, "locator": "原理图 CN2/CN3/CN4 无颜色文字"}]
+    }
+  ],
+  "needs_review": [
+    {"id": "review.input-ground", "fact_id": "interface.input-ground-conflict", "question": "请用 PCB 连通性或实物测量确认 INPUT CH 的 GND 是否连接输出公共 GND。", "reason": "正文标 NC，而原理图明确接 GND。", "evidence": [{"asset_sha256": "35f784d7f629f505add1f9d2281910cc2ab08d52a00ed298e0d34d3990d551fb", "page": 1, "locator": "CN2 pin4-GND 连线"}]},
+    {"id": "review.signal-function", "fact_id": "bus.signal-function", "question": "请确认 S1/S2 与 SCL/RX/SDA/TX 的命名对应及支持的总线/信号用途。", "reason": "正文和原理图命名不同，板上无协议控制器。", "evidence": [{"asset_sha256": "35f784d7f629f505add1f9d2281910cc2ab08d52a00ed298e0d34d3990d551fb", "page": 1, "locator": "CN2-CN4 两条透传信号"}]},
+    {"id": "review.current-rating", "fact_id": "power.documented-current-rating", "question": "请用连接器额定值、PCB 铜厚/线宽和温升测试确认 5V@3A 连续供电能力。", "reason": "原理图没有电流或热设计参数。", "evidence": [{"asset_sha256": "35f784d7f629f505add1f9d2281910cc2ab08d52a00ed298e0d34d3990d551fb", "page": 1, "locator": "CN1 VBUS 到 CN3/CN4 VDD 直连"}]},
+    {"id": "review.grove-colors", "fact_id": "interface.grove-color-mapping", "question": "请结合 Grove 连接器方向和线缆规范确认 Black/Red/Yellow/White 与各 pin 的对应。", "reason": "原理图不含线色。", "evidence": [{"asset_sha256": "35f784d7f629f505add1f9d2281910cc2ab08d52a00ed298e0d34d3990d551fb", "page": 1, "locator": "CN2/CN3/CN4 pinout"}]}
+  ]
+}

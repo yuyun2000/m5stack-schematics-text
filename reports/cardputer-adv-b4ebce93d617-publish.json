@@ -1,0 +1,21 @@
+{
+  "dry_run": false,
+  "failed": 0,
+  "published": 1,
+  "results": [
+    {
+      "backup": null,
+      "draft_action": "unchanged",
+      "dry_run": false,
+      "errors": [],
+      "needs_review": 3,
+      "product_id": "cardputer-adv-b4ebce93d617",
+      "product_name": "Cardputer-Adv",
+      "publish_action": "unchanged",
+      "sha256": "1c27f479a75435e6444933374e31b820607fc06b9572de9bc6c4cc5388d39c3c",
+      "status": "valid",
+      "uncertain_facts": 3
+    }
+  ],
+  "schema_version": 1
+}

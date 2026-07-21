@@ -1,0 +1,302 @@
+{
+  "schema_version": 1,
+  "generator": "schematic_describer",
+  "product": {
+    "product_id": "base15-v1-1-f39644ff5994",
+    "product_name": "Base15 v1.1",
+    "sku": "K025-B",
+    "source_path": "module/Base15 V1.1.md",
+    "source_sha256": "28e22931b47c6a74791ea17cbab8108b6d4f1a9494af59966edf7b6f993051ba",
+    "input_sha256": "044fd8f798b24b20d405477d4e2f1670777609c02f80eff8183d4853510eec4a"
+  },
+  "schematic_assets": [
+    {
+      "sha256": "888294553d5334509e36126ecd89cc213e79679566e9c722489f6cd6f4acd52c",
+      "source_url": "https://m5stack-doc.oss-cn-shenzhen.aliyuncs.com/539/Sch_BASE_v1.1_sch_01.png",
+      "pages": [1]
+    }
+  ],
+  "summary": "Base15 v1.1 以 U1 MP1584EN、D1 SS54 和 L1 10uH 构成降压电源，J2 输入经 F1 PPTC-1812 形成 IN+，同时连接 M5-Bus HPWR 与转换器 VIN，转换器输出网络标为 +5V。J1 M5Stack_BUS 引出完整 30 针总线，P3/J3 提供四针 Grove_UART 对接，P4/J4 提供四针 Grove_IIC 对接。电路还包含输入/输出滤波、反馈补偿和 +5V 红色指示灯，但未绘出主控制器、存储或通信收发器。",
+  "keywords": [
+    "Base15 v1.1",
+    "K025-B",
+    "MP1584EN",
+    "MP1584",
+    "PPTC-1812",
+    "SS54",
+    "10uH",
+    "IN+",
+    "IN12/24V",
+    "HPWR",
+    "+5V",
+    "+3.3V",
+    "M5Stack_BUS",
+    "Grove_UART",
+    "Grove_IIC",
+    "IIC_SCL",
+    "IIC_SDA",
+    "RX",
+    "TX",
+    "SDA",
+    "SCL",
+    "PWR3.5",
+    "52.3KΩ",
+    "10KΩ",
+    "100KΩ",
+    "D5",
+    "红灯 0603"
+  ],
+  "components": [
+    {
+      "reference": "U1",
+      "part_number": "MP1584EN",
+      "role": "IN+ 至 +5V 的降压转换控制器",
+      "evidence": [{"asset_sha256": "888294553d5334509e36126ecd89cc213e79679566e9c722489f6cd6f4acd52c", "page": 1, "locator": "网格 B2 中央 U1，器件值 MP1584EN，标注 VIN、SW、BST、EN、FB、FREQ、COMP、GND 引脚"}]
+    },
+    {
+      "reference": "J2",
+      "part_number": "PWR3.5",
+      "role": "外部直流输入连接器",
+      "evidence": [{"asset_sha256": "888294553d5334509e36126ecd89cc213e79679566e9c722489f6cd6f4acd52c", "page": 1, "locator": "网格 B1 的 J2 PWR3.5，pin 1 经 F1 到 IN+，pin 3 接 GND"}]
+    },
+    {
+      "reference": "F1",
+      "part_number": "PPTC-1812",
+      "role": "J2 输入至 IN+ 的串联自恢复保险器件",
+      "evidence": [{"asset_sha256": "888294553d5334509e36126ecd89cc213e79679566e9c722489f6cd6f4acd52c", "page": 1, "locator": "网格 B1 的 F1，值 PPTC-1812，串联在 J2 pin 1 与 IN+ 之间"}]
+    },
+    {
+      "reference": "D1",
+      "part_number": "SS54",
+      "role": "MP1584EN SW 节点至 GND 的续流二极管",
+      "evidence": [{"asset_sha256": "888294553d5334509e36126ecd89cc213e79679566e9c722489f6cd6f4acd52c", "page": 1, "locator": "网格 A3-B3 的 D1 SS54，连接 U1 SW/L1 前节点与 GND"}]
+    },
+    {
+      "reference": "L1",
+      "part_number": "10uH",
+      "role": "MP1584EN 降压输出电感",
+      "evidence": [{"asset_sha256": "888294553d5334509e36126ecd89cc213e79679566e9c722489f6cd6f4acd52c", "page": 1, "locator": "网格 B3 的 L1 10uH，串联在 U1 SW 节点与 +5V 输出之间"}]
+    },
+    {
+      "reference": "C1",
+      "part_number": "100nF",
+      "role": "U1 BST 与 SW 节点之间的自举电容",
+      "evidence": [{"asset_sha256": "888294553d5334509e36126ecd89cc213e79679566e9c722489f6cd6f4acd52c", "page": 1, "locator": "网格 A2-A3 的 C1 100nF，连接 U1 BST pin 8 与 SW pin 1 节点"}]
+    },
+    {
+      "reference": "C5,C6",
+      "part_number": "2.2uF",
+      "role": "IN+ 输入滤波电容",
+      "evidence": [{"asset_sha256": "888294553d5334509e36126ecd89cc213e79679566e9c722489f6cd6f4acd52c", "page": 1, "locator": "网格 B1-B2 的 C5、C6，均标注 2.2uF，连接 IN+ 与 GND"}]
+    },
+    {
+      "reference": "C2,C3,C4",
+      "part_number": "22uF",
+      "role": "+5V 输出滤波电容组",
+      "evidence": [{"asset_sha256": "888294553d5334509e36126ecd89cc213e79679566e9c722489f6cd6f4acd52c", "page": 1, "locator": "网格 B3 的 C2、C3、C4，均标注 22uF，并联在 +5V 与 GND 之间"}]
+    },
+    {
+      "reference": "R1,R2",
+      "part_number": "52.3KΩ; 10KΩ",
+      "role": "+5V 至 U1 FB 的输出反馈分压网络",
+      "evidence": [{"asset_sha256": "888294553d5334509e36126ecd89cc213e79679566e9c722489f6cd6f4acd52c", "page": 1, "locator": "网格 B2-B3 的 R1 52.3KΩ 从 +5V 连接 FB，R2 10KΩ 从 FB 连接 GND"}]
+    },
+    {
+      "reference": "R3",
+      "part_number": "100KΩ",
+      "role": "U1 FREQ pin 至 GND 的频率设定电阻",
+      "evidence": [{"asset_sha256": "888294553d5334509e36126ecd89cc213e79679566e9c722489f6cd6f4acd52c", "page": 1, "locator": "网格 B2 的 R3 100KΩ，连接 U1 FREQ pin 6 与 GND"}]
+    },
+    {
+      "reference": "C7,R4",
+      "part_number": "150pF; 100KΩ",
+      "role": "U1 COMP pin 至 GND 的串联补偿网络",
+      "evidence": [{"asset_sha256": "888294553d5334509e36126ecd89cc213e79679566e9c722489f6cd6f4acd52c", "page": 1, "locator": "网格 B2-C2 的 U1 COMP pin 3、C7 150pF、R4 100KΩ 至 GND 串联支路"}]
+    },
+    {
+      "reference": "D5,R20",
+      "part_number": "红灯 0603; 4.7KΩ",
+      "role": "+5V 电源指示灯和限流电阻",
+      "evidence": [{"asset_sha256": "888294553d5334509e36126ecd89cc213e79679566e9c722489f6cd6f4acd52c", "page": 1, "locator": "网格 B4 的 D5 红灯 0603 与 R20 4.7KΩ，串联连接在 +5V 与 GND 之间"}]
+    },
+    {
+      "reference": "J1",
+      "part_number": "M5Stack_BUS",
+      "role": "30 针 M5-Bus 电源、GPIO、I2C 和 HPWR 接口",
+      "evidence": [{"asset_sha256": "888294553d5334509e36126ecd89cc213e79679566e9c722489f6cd6f4acd52c", "page": 1, "locator": "网格 C4 的 J1 M5Stack_BUS，pin 1-30 标注 GND、GPIO、EN、SDA、SCL、HPWR、+3.3V、+5V、BAT"}]
+    },
+    {
+      "reference": "P3,J3",
+      "part_number": "Header 4; Grove_UART",
+      "role": "四针 UART Grove 接口及并联排针",
+      "evidence": [{"asset_sha256": "888294553d5334509e36126ecd89cc213e79679566e9c722489f6cd6f4acd52c", "page": 1, "locator": "网格 A4 的 P3 Header 4 与 J3 Grove_UART，pin 1-4 逐针直连，J3 标注 RX、TX、VCC、GND"}]
+    },
+    {
+      "reference": "P4,J4",
+      "part_number": "Header 4; Grove_IIC",
+      "role": "四针 I2C Grove 接口及并联排针",
+      "evidence": [{"asset_sha256": "888294553d5334509e36126ecd89cc213e79679566e9c722489f6cd6f4acd52c", "page": 1, "locator": "网格 A4 的 P4 Header 4 与 J4 Grove_IIC，pin 1-4 逐针直连，J4 标注 IIC_SCL、IIC_SDA、VCC、GND"}]
+    },
+    {
+      "reference": "P1",
+      "part_number": "HDR_4P",
+      "role": "标注 B、A、12V+、12V- 的四针自定义接口",
+      "evidence": [{"asset_sha256": "888294553d5334509e36126ecd89cc213e79679566e9c722489f6cd6f4acd52c", "page": 1, "locator": "网格 B4 的 P1 HDR_4P，四个引脚名称依次标为 B、A、12V+、12V-，外侧无固定布线"}]
+    }
+  ],
+  "facts": [
+    {
+      "id": "system.base15-v11-architecture",
+      "category": "system",
+      "subject": "Base15 v1.1 系统架构",
+      "statement": "J2 输入经 F1 形成 IN+，IN+ 同时馈入 U1 MP1584EN 与 J1 HPWR；U1、D1、L1 和滤波/反馈网络产生 +5V，并把 +5V 送至 J1 pin 28。J1 引出完整 M5-Bus，P3/J3、P4/J4 和 P1 提供自定义扩展连接。",
+      "confidence": "confirmed",
+      "attributes": {"input_connector": "J2 PWR3.5", "input_protection": "F1 PPTC-1812", "raw_rail": "IN+", "converter": "U1 MP1584EN", "catch_diode": "D1 SS54", "inductor": "L1 10uH", "output_rail": "+5V", "bus": "J1 M5Stack_BUS", "expansion": "P1,P3/J3,P4/J4"},
+      "evidence": [{"asset_sha256": "888294553d5334509e36126ecd89cc213e79679566e9c722489f6cd6f4acd52c", "page": 1, "locator": "完整单页网格 A1-C4：J2/F1、MP1584EN 电源、J1 M5-Bus 与右上扩展接口"}]
+    },
+    {
+      "id": "power.dc-input-path",
+      "category": "power",
+      "subject": "J2 至 IN+ 输入路径",
+      "statement": "J2 PWR3.5 pin 1 经 F1 PPTC-1812 串联连接 IN+，J2 pin 3 连接 GND；IN+ 连接 C5、C6 输入电容、U1 VIN/pin 7 和 J1 HPWR pin 25、27、29。",
+      "confidence": "confirmed",
+      "attributes": {"connector": "J2 PWR3.5", "positive_pin": "pin 1", "return_pin": "pin 3/GND", "fuse": "F1 PPTC-1812", "raw_rail": "IN+", "loads": "C5,C6,U1 VIN pin 7,J1 pin 25/27/29 HPWR"},
+      "evidence": [{"asset_sha256": "888294553d5334509e36126ecd89cc213e79679566e9c722489f6cd6f4acd52c", "page": 1, "locator": "网格 B1-B2 的 J2-F1-IN+-C5/C6-U1 VIN 与网格 C4 的 J1 HPWR/IN+ 网络"}]
+    },
+    {
+      "id": "power.input-voltage-range",
+      "category": "power",
+      "subject": "外部输入电压范围",
+      "statement": "原理图电源区标题标为 IN12/24V，产品正文记载 9-24V；仅凭本页无法确认完整允许输入范围和端点容差。",
+      "confidence": "uncertain",
+      "attributes": {"schematic_label": "IN12/24V", "documented_range": "9-24V", "confirmed_range": null},
+      "evidence": [{"asset_sha256": "888294553d5334509e36126ecd89cc213e79679566e9c722489f6cd6f4acd52c", "page": 1, "locator": "网格 B1 输入区的大字标注 IN12/24V，J2 与 F1 上方"}]
+    },
+    {
+      "id": "power.mp1584-buck-topology",
+      "category": "power",
+      "subject": "U1 降压功率级",
+      "statement": "U1 VIN/pin 7 接 IN+，SW/pin 1 连接 D1 SS54 与 L1 10uH，L1 另一端为 +5V；D1 连接 SW 节点与 GND，C1 100nF 连接 BST/pin 8 与 SW 节点。",
+      "confidence": "confirmed",
+      "attributes": {"controller": "U1 MP1584EN", "input": "pin 7/VIN -> IN+", "switch_node": "pin 1/SW", "catch_diode": "D1 SS54 to GND", "inductor": "L1 10uH", "output": "+5V", "bootstrap": "C1 100nF between BST pin 8 and SW"},
+      "evidence": [{"asset_sha256": "888294553d5334509e36126ecd89cc213e79679566e9c722489f6cd6f4acd52c", "page": 1, "locator": "网格 A2-B3 的 U1 VIN/SW/BST、C1、D1、L1 与 +5V 网络"}]
+    },
+    {
+      "id": "power.feedback-network",
+      "category": "power",
+      "subject": "U1 +5V 反馈网络",
+      "statement": "R1 52.3KΩ 从 +5V 连接至 U1 FB/pin 4，R2 10KΩ 从 FB 连接至 GND。",
+      "confidence": "confirmed",
+      "attributes": {"upper_resistor": "R1 52.3KΩ", "lower_resistor": "R2 10KΩ", "feedback_pin": "U1 pin 4/FB", "sensed_rail": "+5V"},
+      "evidence": [{"asset_sha256": "888294553d5334509e36126ecd89cc213e79679566e9c722489f6cd6f4acd52c", "page": 1, "locator": "网格 B2-B3 的 U1 FB、R1 52.3KΩ、R2 10KΩ 与 +5V/GND 连接"}]
+    },
+    {
+      "id": "power.frequency-and-compensation",
+      "category": "power",
+      "subject": "U1 频率设定与补偿",
+      "statement": "U1 FREQ/pin 6 经 R3 100KΩ 接 GND；COMP/pin 3 经 C7 150pF 与 R4 100KΩ 串联支路接 GND。EN/pin 2 在本页无外部连线。",
+      "confidence": "confirmed",
+      "attributes": {"frequency_pin": "U1 pin 6/FREQ", "frequency_resistor": "R3 100KΩ to GND", "compensation_pin": "U1 pin 3/COMP", "compensation_network": "C7 150pF series R4 100KΩ to GND", "enable_pin": "U1 pin 2/EN unconnected"},
+      "evidence": [{"asset_sha256": "888294553d5334509e36126ecd89cc213e79679566e9c722489f6cd6f4acd52c", "page": 1, "locator": "网格 B2-C2 的 U1 EN/FREQ/COMP、R3、C7、R4 和 GND"}]
+    },
+    {
+      "id": "power.input-output-filtering",
+      "category": "power",
+      "subject": "输入与输出滤波",
+      "statement": "C5、C6 各为 2.2uF，并联在 IN+ 与 GND 之间；C2、C3、C4 各为 22uF，并联在 +5V 与 GND 之间。",
+      "confidence": "confirmed",
+      "attributes": {"input_capacitors": "C5 2.2uF,C6 2.2uF", "input_rail": "IN+", "output_capacitors": "C2 22uF,C3 22uF,C4 22uF", "output_rail": "+5V", "return": "GND"},
+      "evidence": [{"asset_sha256": "888294553d5334509e36126ecd89cc213e79679566e9c722489f6cd6f4acd52c", "page": 1, "locator": "网格 B1-B3 的 C5/C6 输入电容与 C2/C3/C4 输出电容"}]
+    },
+    {
+      "id": "protection.input-and-catch",
+      "category": "protection",
+      "subject": "输入过流与降压续流器件",
+      "statement": "F1 PPTC-1812 串联在 J2 pin 1 与 IN+ 之间；D1 SS54 连接 U1 SW 节点与 GND。原理图未绘出独立 TVS 或反接保护器件。",
+      "confidence": "confirmed",
+      "attributes": {"input_series_device": "F1 PPTC-1812", "catch_diode": "D1 SS54", "tvs_visible": false, "reverse_protection_visible": false},
+      "evidence": [{"asset_sha256": "888294553d5334509e36126ecd89cc213e79679566e9c722489f6cd6f4acd52c", "page": 1, "locator": "网格 A3-B1 的 J2/F1 输入路径、D1 SS54 与完整输入保护区域"}]
+    },
+    {
+      "id": "component.power-indicator",
+      "category": "component",
+      "subject": "+5V 红色指示灯",
+      "statement": "D5 标注红灯 0603，与 R20 4.7KΩ 串联连接在 +5V 和 GND 之间。",
+      "confidence": "confirmed",
+      "attributes": {"led": "D5 红灯 0603", "series_resistor": "R20 4.7KΩ", "rail": "+5V", "return": "GND"},
+      "evidence": [{"asset_sha256": "888294553d5334509e36126ecd89cc213e79679566e9c722489f6cd6f4acd52c", "page": 1, "locator": "网格 B4 的 GND-R20-D5-+5V 串联支路"}]
+    },
+    {
+      "id": "interface.m5bus-pinout",
+      "category": "interface",
+      "subject": "J1 M5Stack_BUS 针脚映射",
+      "statement": "J1 pin 1、3、5 为 GND，pin 6 为 EN，pin 12 为 +3.3V，pin 17 为 SDA，pin 18 为 SCL，pin 25、27、29 为 HPWR/IN+，pin 28 为 +5V，pin 30 为 BAT；其余针脚按图标注为 GPIO35、GPIO36、GPIO23、GPIO25、GPIO19、GPIO26、GPIO18、GPIO3、GPIO1、GPIO16、GPIO17、GPIO2、GPIO5、GPIO12、GPIO13、GPIO15、GPIO0、GPIO34。",
+      "confidence": "confirmed",
+      "attributes": {"reference": "J1", "power_pinout": "1:GND,3:GND,5:GND,12:+3.3V,25:HPWR/IN+,27:HPWR/IN+,28:+5V,29:HPWR/IN+,30:BAT", "bus_pinout": "6:EN,17:SDA/GPIO21,18:SCL/GPIO22", "gpio_pinout": "2:GPIO35,4:GPIO36,7:GPIO23,8:GPIO25,9:GPIO19,10:GPIO26,11:GPIO18,13:GPIO3,14:GPIO1,15:GPIO16,16:GPIO17,19:GPIO2,20:GPIO5,21:GPIO12,22:GPIO13,23:GPIO15,24:GPIO0,26:GPIO34"},
+      "evidence": [{"asset_sha256": "888294553d5334509e36126ecd89cc213e79679566e9c722489f6cd6f4acd52c", "page": 1, "locator": "网格 C4 的 J1 M5Stack_BUS pin 1-30 及两侧全部红色/蓝色网络标注"}]
+    },
+    {
+      "id": "key_net.hpwr-and-5v",
+      "category": "key_net",
+      "subject": "IN+、HPWR 与 +5V 网络",
+      "statement": "F1 后的 IN+ 与 J1 pin 25、27、29 HPWR 为同一网络，并连接 U1 VIN；降压输出 +5V 与 J1 pin 28、输出电容和 D5 指示灯为同一网络。",
+      "confidence": "confirmed",
+      "attributes": {"raw_input_net": "IN+", "hpwr_pins": "J1 pin 25,27,29", "converter_input": "U1 VIN pin 7", "regulated_output_net": "+5V", "five_volt_bus_pin": "J1 pin 28", "five_volt_loads": "C2,C3,C4,D5"},
+      "evidence": [{"asset_sha256": "888294553d5334509e36126ecd89cc213e79679566e9c722489f6cd6f4acd52c", "page": 1, "locator": "网格 B1-B3 的 IN+/MP1584/+5V 电源路径与网格 C4 的 J1 HPWR/+5V 网络"}]
+    },
+    {
+      "id": "interface.uart-grove",
+      "category": "interface",
+      "subject": "P3 与 J3 Grove_UART",
+      "statement": "P3 Header 4 pin 1 至 pin 4 分别直连 J3 Grove_UART pin 1 至 pin 4；J3 对应引脚名称为 RX、TX、VCC、GND。该页未显示这些网络与 J1 固定相连。",
+      "confidence": "confirmed",
+      "attributes": {"header": "P3 Header 4", "grove": "J3 Grove_UART", "pinout": "1:RX,2:TX,3:VCC,4:GND", "fixed_m5bus_connection_visible": false},
+      "evidence": [{"asset_sha256": "888294553d5334509e36126ecd89cc213e79679566e9c722489f6cd6f4acd52c", "page": 1, "locator": "网格 A4 的 P3-J3 四条逐针连线及 J3 RX/TX/VCC/GND 标注"}]
+    },
+    {
+      "id": "bus.i2c-grove-and-m5bus",
+      "category": "bus",
+      "subject": "I2C 接口可见连接",
+      "statement": "P4 Header 4 pin 1 至 pin 4 分别直连 J4 Grove_IIC pin 1 至 pin 4，对应 IIC_SCL、IIC_SDA、VCC、GND；J1 另在 pin 17、pin 18 引出 SDA、SCL，但本页未绘出 J4 与 J1 SDA/SCL 的固定连接。",
+      "confidence": "confirmed",
+      "attributes": {"grove_pair": "P4 Header 4/J4 Grove_IIC", "grove_pinout": "1:IIC_SCL,2:IIC_SDA,3:VCC,4:GND", "m5bus_i2c": "J1 pin 17:SDA,pin 18:SCL", "fixed_cross_connection_visible": false, "address_visible": false},
+      "evidence": [{"asset_sha256": "888294553d5334509e36126ecd89cc213e79679566e9c722489f6cd6f4acd52c", "page": 1, "locator": "网格 A4 的 P4-J4 IIC_SCL/IIC_SDA/VCC/GND 与网格 C4 的 J1 SDA/SCL 标注，二者间无固定布线"}]
+    },
+    {
+      "id": "interface.custom-p1",
+      "category": "interface",
+      "subject": "P1 自定义四针接口",
+      "statement": "P1 为 HDR_4P，四个引脚名称标为 B、A、12V+、12V-；本页未绘出 P1 外侧到其他网络的固定连线。",
+      "confidence": "confirmed",
+      "attributes": {"reference": "P1", "part_number": "HDR_4P", "pin_names": "B,A,12V+,12V-", "fixed_board_connection_visible": false},
+      "evidence": [{"asset_sha256": "888294553d5334509e36126ecd89cc213e79679566e9c722489f6cd6f4acd52c", "page": 1, "locator": "网格 B4 的 P1 HDR_4P 与 B/A/12V+/12V- 引脚名称，左侧引脚为短悬空线"}]
+    },
+    {
+      "id": "clock.reset-debug-controller-visibility",
+      "category": "other",
+      "subject": "控制、时钟、复位和调试可见性",
+      "statement": "该单页未绘出主控制器、协处理器、晶体、复位网络、BOOT 网络或专用调试接口。",
+      "confidence": "confirmed",
+      "attributes": {"controller_visible": false, "coprocessor_visible": false, "clock_visible": false, "reset_visible": false, "boot_visible": false, "debug_interface_visible": false},
+      "evidence": [{"asset_sha256": "888294553d5334509e36126ecd89cc213e79679566e9c722489f6cd6f4acd52c", "page": 1, "locator": "完整单页器件与接口清单，以 MP1584EN 电源和无源扩展接口为主，无 MCU、晶体、复位或调试位号"}]
+    },
+    {
+      "id": "storage.memory-audio-sensor-rf-visibility",
+      "category": "other",
+      "subject": "其他功能分区可见性",
+      "statement": "该单页未绘出独立存储器、外部存储、音频器件、传感器、射频器件、充电器、电池监测或模拟采样链路。",
+      "confidence": "confirmed",
+      "attributes": {"storage_visible": false, "memory_visible": false, "audio_visible": false, "sensor_visible": false, "rf_visible": false, "charger_visible": false, "battery_monitor_visible": false, "analog_sampling_visible": false},
+      "evidence": [{"asset_sha256": "888294553d5334509e36126ecd89cc213e79679566e9c722489f6cd6f4acd52c", "page": 1, "locator": "完整单页全部功能区，未见对应器件或连接"}]
+    }
+  ],
+  "needs_review": [
+    {
+      "id": "review.input-voltage-range",
+      "fact_id": "power.input-voltage-range",
+      "question": "Base15 v1.1 的正式允许输入范围是否为产品正文记载的 9-24V，还是原理图标题所示的 12/24V 标称输入？",
+      "reason": "原理图只在输入区标注 IN12/24V，没有给出最小值、最大值、容差或绝对额定范围。",
+      "evidence": [{"asset_sha256": "888294553d5334509e36126ecd89cc213e79679566e9c722489f6cd6f4acd52c", "page": 1, "locator": "网格 B1 的 IN12/24V 标题及 J2 输入区域"}]
+    }
+  ]
+}

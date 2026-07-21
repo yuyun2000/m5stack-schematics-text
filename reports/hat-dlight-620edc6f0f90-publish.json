@@ -1,0 +1,21 @@
+{
+  "dry_run": false,
+  "failed": 0,
+  "published": 1,
+  "results": [
+    {
+      "backup": null,
+      "draft_action": "unchanged",
+      "dry_run": false,
+      "errors": [],
+      "needs_review": 3,
+      "product_id": "hat-dlight-620edc6f0f90",
+      "product_name": "Hat DLight",
+      "publish_action": "unchanged",
+      "sha256": "3febf1a799a61a58ec88648a1ed2aa88e232daae2105705d35d894bbd12693c2",
+      "status": "valid",
+      "uncertain_facts": 3
+    }
+  ],
+  "schema_version": 1
+}

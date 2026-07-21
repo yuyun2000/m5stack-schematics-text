@@ -1,0 +1,21 @@
+{
+  "dry_run": false,
+  "failed": 0,
+  "published": 1,
+  "results": [
+    {
+      "backup": null,
+      "draft_action": "unchanged",
+      "dry_run": false,
+      "errors": [],
+      "needs_review": 4,
+      "product_id": "unit-mq-2a13ac26d1ac",
+      "product_name": "Unit MQ",
+      "publish_action": "unchanged",
+      "sha256": "363ac4c96f33eb9eea9d3bee182998108e0a83ceef0e8fe200b8daa6c3682d9b",
+      "status": "valid",
+      "uncertain_facts": 4
+    }
+  ],
+  "schema_version": 1
+}

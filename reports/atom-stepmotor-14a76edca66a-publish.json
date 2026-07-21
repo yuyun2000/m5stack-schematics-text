@@ -1,0 +1,21 @@
+{
+  "dry_run": false,
+  "failed": 0,
+  "published": 1,
+  "results": [
+    {
+      "backup": null,
+      "draft_action": "unchanged",
+      "dry_run": false,
+      "errors": [],
+      "needs_review": 0,
+      "product_id": "atom-stepmotor-14a76edca66a",
+      "product_name": "Atom Stepmotor",
+      "publish_action": "unchanged",
+      "sha256": "d7b2cafca4c541c2bab2da9999af1024df6158355c31a94a16ffd87900206855",
+      "status": "valid",
+      "uncertain_facts": 0
+    }
+  ],
+  "schema_version": 1
+}

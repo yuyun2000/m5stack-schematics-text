@@ -1,0 +1,322 @@
+{
+  "schema_version": 1,
+  "generator": "schematic_describer",
+  "product": {
+    "product_id": "unit-pahub-8ef77a36b7a9",
+    "product_name": "Unit PaHub",
+    "sku": "U040",
+    "source_path": "unit/pahub.md",
+    "source_sha256": "6623d4f3914f6ca02d34b2df2688a0b379d55a53ada7ae4d63b8b7153263d765",
+    "input_sha256": "9f1ee3a749124f04baee645c325bf445eb90b78c744c6c031ff79b67b887192a"
+  },
+  "schematic_assets": [
+    {
+      "sha256": "a16916708fe9e80f119e1a40b7e5a7cff1fecfe59a6187ca9f5811ce3aede87a",
+      "source_url": "https://static-cdn.m5stack.com/resource/docs/products/unit/pahub/pahub_sch_01.webp",
+      "pages": [1]
+    }
+  ],
+  "summary": "Unit PaHub 以 TCA9548A（U1）将 J7 的一组 I2C SCL/SDA 分配到 J1~J6 六组下游接口，分别使用通道 0~5，通道 6、7 在原理图中未连接。上游 SCL、SDA 和 RESET 各有 10KΩ 到 VCC 的上拉，下游 12 条时钟/数据网络通过 R1~R3 电阻阵列上拉到 VCC。VCC 从 J7 分配给 U1 和全部下游口，A0~A2 带有上拉选址焊位和 10KΩ 下拉；原理图不能单独确认默认地址及 VCC 的数值电压。",
+  "keywords": [
+    "Unit PaHub", "U040", "PaHub", "TCA9548A", "U1", "I2C multiplexer", "I2C switch", "GROVE_I2C", "J1", "J2", "J3", "J4", "J5", "J6", "J7", "SCL", "SDA", "SC0", "SD0", "SC1", "SD1", "SC2", "SD2", "SC3", "SD3", "SC4", "SD4", "SC5", "SD5", "A0", "A1", "A2", "RESET", "VCC", "0x70", "R1", "R2", "R3", "10KΩ", "6-channel"
+  ],
+  "components": [
+    {
+      "reference": "U1",
+      "part_number": "TCA9548A",
+      "role": "八通道 I2C 开关，本板使用 SD0/SC0 至 SD5/SC5 六组下游通道",
+      "evidence": [{"asset_sha256": "a16916708fe9e80f119e1a40b7e5a7cff1fecfe59a6187ca9f5811ce3aede87a", "page": 1, "locator": "B2-C2：U1 标注 TCA9548A，左侧 SCL/SDA/RESET/A0~A2/VCC/GND，右侧 SD0~SD7 与 SC0~SC7"}]
+    },
+    {
+      "reference": "J7",
+      "part_number": "GROVE_I2C",
+      "role": "上游 I2C 与 VCC/GND 输入接口",
+      "evidence": [{"asset_sha256": "a16916708fe9e80f119e1a40b7e5a7cff1fecfe59a6187ca9f5811ce3aede87a", "page": 1, "locator": "B1：J7 GROVE_I2C，1~4 脚标注 IIC_SCL、IIC_SDA、VCC、GND"}]
+    },
+    {
+      "reference": "J1",
+      "part_number": "GROVE_I2C",
+      "role": "I2C 下游通道 0 接口，连接 SC0、SD0、VCC、GND",
+      "evidence": [{"asset_sha256": "a16916708fe9e80f119e1a40b7e5a7cff1fecfe59a6187ca9f5811ce3aede87a", "page": 1, "locator": "B3：J1 GROVE_I2C 的 SC0、SD0、VCC、GND 引脚"}]
+    },
+    {
+      "reference": "J2",
+      "part_number": "GROVE_I2C",
+      "role": "I2C 下游通道 1 接口，连接 SC1、SD1、VCC、GND",
+      "evidence": [{"asset_sha256": "a16916708fe9e80f119e1a40b7e5a7cff1fecfe59a6187ca9f5811ce3aede87a", "page": 1, "locator": "B3：J2 GROVE_I2C 的 SC1、SD1、VCC、GND 引脚"}]
+    },
+    {
+      "reference": "J3",
+      "part_number": "GROVE_I2C",
+      "role": "I2C 下游通道 2 接口，连接 SC2、SD2、VCC、GND",
+      "evidence": [{"asset_sha256": "a16916708fe9e80f119e1a40b7e5a7cff1fecfe59a6187ca9f5811ce3aede87a", "page": 1, "locator": "B3-C3：J3 GROVE_I2C 的 SC2、SD2、VCC、GND 引脚"}]
+    },
+    {
+      "reference": "J4",
+      "part_number": "GROVE_I2C",
+      "role": "I2C 下游通道 3 接口，连接 SC3、SD3、VCC、GND",
+      "evidence": [{"asset_sha256": "a16916708fe9e80f119e1a40b7e5a7cff1fecfe59a6187ca9f5811ce3aede87a", "page": 1, "locator": "B3-C3：J4 GROVE_I2C 的 SC3、SD3、VCC、GND 引脚"}]
+    },
+    {
+      "reference": "J5",
+      "part_number": "GROVE_I2C",
+      "role": "I2C 下游通道 4 接口，连接 SC4、SD4、VCC、GND",
+      "evidence": [{"asset_sha256": "a16916708fe9e80f119e1a40b7e5a7cff1fecfe59a6187ca9f5811ce3aede87a", "page": 1, "locator": "C3：J5 GROVE_I2C 的 SC4、SD4、VCC、GND 引脚"}]
+    },
+    {
+      "reference": "J6",
+      "part_number": "GROVE_I2C",
+      "role": "I2C 下游通道 5 接口，连接 SC5、SD5、VCC、GND",
+      "evidence": [{"asset_sha256": "a16916708fe9e80f119e1a40b7e5a7cff1fecfe59a6187ca9f5811ce3aede87a", "page": 1, "locator": "C3：J6 GROVE_I2C 的 SC5、SD5、VCC、GND 引脚"}]
+    },
+    {
+      "reference": "R1",
+      "part_number": "10KΩ (103) ±5%",
+      "role": "将 SD0、SC0、SD1、SC1 四条下游 I2C 网络上拉到 VCC 的四联电阻阵列",
+      "evidence": [{"asset_sha256": "a16916708fe9e80f119e1a40b7e5a7cff1fecfe59a6187ca9f5811ce3aede87a", "page": 1, "locator": "B4：R1 标注 10KΩ(103)±5%，5~8 脚接 SD0/SC0/SD1/SC1，1~4 脚接 VCC"}]
+    },
+    {
+      "reference": "R2",
+      "part_number": "10KΩ (103) ±5%",
+      "role": "将 SD2、SC2、SD3、SC3 四条下游 I2C 网络上拉到 VCC 的四联电阻阵列",
+      "evidence": [{"asset_sha256": "a16916708fe9e80f119e1a40b7e5a7cff1fecfe59a6187ca9f5811ce3aede87a", "page": 1, "locator": "B4-C4：R2 标注 10KΩ(103)±5%，5~8 脚接 SD2/SC2/SD3/SC3，1~4 脚接 VCC"}]
+    },
+    {
+      "reference": "R3",
+      "part_number": "10KΩ (103) ±5%",
+      "role": "将 SD4、SC4、SD5、SC5 四条下游 I2C 网络上拉到 VCC 的四联电阻阵列",
+      "evidence": [{"asset_sha256": "a16916708fe9e80f119e1a40b7e5a7cff1fecfe59a6187ca9f5811ce3aede87a", "page": 1, "locator": "C4：R3 标注 10KΩ(103)±5%，5~8 脚接 SD4/SC4/SD5/SC5，1~4 脚接 VCC"}]
+    },
+    {
+      "reference": "R5, R6, R7",
+      "part_number": "10KΩ",
+      "role": "分别将上游 SCL、SDA 和 U1 RESET 上拉到 VCC",
+      "evidence": [{"asset_sha256": "a16916708fe9e80f119e1a40b7e5a7cff1fecfe59a6187ca9f5811ce3aede87a", "page": 1, "locator": "B1-B2：R5/R6/R7 均标注 10KΩ，上端接 VCC，下端分别接 U1.22 SCL、U1.23 SDA、U1.3 RESET"}]
+    },
+    {
+      "reference": "R12, R13, R14",
+      "part_number": "0Ω",
+      "role": "A0、A1、A2 到 VCC 的地址配置电阻位",
+      "evidence": [{"asset_sha256": "a16916708fe9e80f119e1a40b7e5a7cff1fecfe59a6187ca9f5811ce3aede87a", "page": 1, "locator": "C1-C2：R12/R13/R14 标注 0Ω，上端接 VCC，下端依次接 U1 A0/A1/A2 网络"}]
+    },
+    {
+      "reference": "R19, R20, R21",
+      "part_number": "10KΩ",
+      "role": "A0、A1、A2 到 GND 的地址下拉电阻",
+      "evidence": [{"asset_sha256": "a16916708fe9e80f119e1a40b7e5a7cff1fecfe59a6187ca9f5811ce3aede87a", "page": 1, "locator": "C1-C2：R19/R20/R21 标注 10KΩ，上端依次接 U1 A0/A1/A2 网络，下端接 GND"}]
+    },
+    {
+      "reference": "C1, C2, C3, C4, C5, C7, C8",
+      "part_number": "100nF",
+      "role": "J1~J7 各接口 VCC 到 GND 的本地去耦电容",
+      "evidence": [{"asset_sha256": "a16916708fe9e80f119e1a40b7e5a7cff1fecfe59a6187ca9f5811ce3aede87a", "page": 1, "locator": "B1-C4：C3 邻近 J7，C1/C2/C4/C5/C7/C8 分别邻近 J1~J6，均标注 100nF 并跨接 VCC/GND"}]
+    }
+  ],
+  "facts": [
+    {
+      "id": "system.i2c-fanout",
+      "category": "system",
+      "subject": "Unit PaHub",
+      "statement": "U1 TCA9548A 将 J7 的一组上游 I2C 网络分配到 J1~J6 六组下游接口，板上使用 U1 的通道 0~5。",
+      "confidence": "confirmed",
+      "attributes": {"multiplexer": "U1 TCA9548A", "upstream": "J7", "downstream_ports": "J1, J2, J3, J4, J5, J6", "used_channels": "0, 1, 2, 3, 4, 5", "unused_channels": "6, 7"},
+      "evidence": [{"asset_sha256": "a16916708fe9e80f119e1a40b7e5a7cff1fecfe59a6187ca9f5811ce3aede87a", "page": 1, "locator": "全页：B1 的 J7、B2-C2 的 U1，以及 B3-C3 的 J1~J6 与 SC0/SD0~SC5/SD5 网络"}]
+    },
+    {
+      "id": "component.u1-pin-map",
+      "category": "component",
+      "subject": "U1 TCA9548A",
+      "statement": "U1 的上游 SCL、SDA、RESET 分别为 22、23、3 脚；VCC 为 24 脚、GND 为 12 脚；A0、A1、A2 分别为 1、2、21 脚。",
+      "confidence": "confirmed",
+      "attributes": {"SCL": "pin 22", "SDA": "pin 23", "RESET": "pin 3", "VCC": "pin 24", "GND": "pin 12", "A0": "pin 1", "A1": "pin 2", "A2": "pin 21"},
+      "evidence": [{"asset_sha256": "a16916708fe9e80f119e1a40b7e5a7cff1fecfe59a6187ca9f5811ce3aede87a", "page": 1, "locator": "B2-C2：U1 左侧各功能名旁的引脚号 22、23、3、24、12、1、2、21"}]
+    },
+    {
+      "id": "interface.j7-upstream-pinout",
+      "category": "interface",
+      "subject": "J7",
+      "statement": "J7.1 IIC_SCL 接 U1.SCL，J7.2 IIC_SDA 接 U1.SDA，J7.3 接 VCC，J7.4 接 GND。",
+      "confidence": "confirmed",
+      "attributes": {"connector": "GROVE_I2C", "pin_1": "IIC_SCL / U1.22 SCL", "pin_2": "IIC_SDA / U1.23 SDA", "pin_3": "VCC", "pin_4": "GND", "role": "upstream I2C and power"},
+      "evidence": [{"asset_sha256": "a16916708fe9e80f119e1a40b7e5a7cff1fecfe59a6187ca9f5811ce3aede87a", "page": 1, "locator": "B1-B2：J7.1~J7.4 标注与至 U1.22/U1.23、VCC、GND 的连线"}]
+    },
+    {
+      "id": "interface.j1-channel0",
+      "category": "interface",
+      "subject": "J1",
+      "statement": "J1.1 接 SC0，J1.2 接 SD0，J1.3 接 VCC，J1.4 接 GND。",
+      "confidence": "confirmed",
+      "attributes": {"channel": 0, "pin_1": "SC0 / U1.5", "pin_2": "SD0 / U1.4", "pin_3": "VCC", "pin_4": "GND"},
+      "evidence": [{"asset_sha256": "a16916708fe9e80f119e1a40b7e5a7cff1fecfe59a6187ca9f5811ce3aede87a", "page": 1, "locator": "B2-B3：U1 SD0.4/SC0.5 网络到 J1.2/J1.1，J1.3 VCC、J1.4 GND"}]
+    },
+    {
+      "id": "interface.j2-channel1",
+      "category": "interface",
+      "subject": "J2",
+      "statement": "J2.1 接 SC1，J2.2 接 SD1，J2.3 接 VCC，J2.4 接 GND。",
+      "confidence": "confirmed",
+      "attributes": {"channel": 1, "pin_1": "SC1 / U1.7", "pin_2": "SD1 / U1.6", "pin_3": "VCC", "pin_4": "GND"},
+      "evidence": [{"asset_sha256": "a16916708fe9e80f119e1a40b7e5a7cff1fecfe59a6187ca9f5811ce3aede87a", "page": 1, "locator": "B2-B3：U1 SD1.6/SC1.7 网络到 J2.2/J2.1，J2.3 VCC、J2.4 GND"}]
+    },
+    {
+      "id": "interface.j3-channel2",
+      "category": "interface",
+      "subject": "J3",
+      "statement": "J3.1 接 SC2，J3.2 接 SD2，J3.3 接 VCC，J3.4 接 GND。",
+      "confidence": "confirmed",
+      "attributes": {"channel": 2, "pin_1": "SC2 / U1.9", "pin_2": "SD2 / U1.8", "pin_3": "VCC", "pin_4": "GND"},
+      "evidence": [{"asset_sha256": "a16916708fe9e80f119e1a40b7e5a7cff1fecfe59a6187ca9f5811ce3aede87a", "page": 1, "locator": "B2-C3：U1 SD2.8/SC2.9 网络到 J3.2/J3.1，J3.3 VCC、J3.4 GND"}]
+    },
+    {
+      "id": "interface.j4-channel3",
+      "category": "interface",
+      "subject": "J4",
+      "statement": "J4.1 接 SC3，J4.2 接 SD3，J4.3 接 VCC，J4.4 接 GND。",
+      "confidence": "confirmed",
+      "attributes": {"channel": 3, "pin_1": "SC3 / U1.11", "pin_2": "SD3 / U1.10", "pin_3": "VCC", "pin_4": "GND"},
+      "evidence": [{"asset_sha256": "a16916708fe9e80f119e1a40b7e5a7cff1fecfe59a6187ca9f5811ce3aede87a", "page": 1, "locator": "B2-C3：U1 SD3.10/SC3.11 网络到 J4.2/J4.1，J4.3 VCC、J4.4 GND"}]
+    },
+    {
+      "id": "interface.j5-channel4",
+      "category": "interface",
+      "subject": "J5",
+      "statement": "J5.1 接 SC4，J5.2 接 SD4，J5.3 接 VCC，J5.4 接 GND。",
+      "confidence": "confirmed",
+      "attributes": {"channel": 4, "pin_1": "SC4 / U1.14", "pin_2": "SD4 / U1.13", "pin_3": "VCC", "pin_4": "GND"},
+      "evidence": [{"asset_sha256": "a16916708fe9e80f119e1a40b7e5a7cff1fecfe59a6187ca9f5811ce3aede87a", "page": 1, "locator": "C2-C3：U1 SD4.13/SC4.14 网络到 J5.2/J5.1，J5.3 VCC、J5.4 GND"}]
+    },
+    {
+      "id": "interface.j6-channel5",
+      "category": "interface",
+      "subject": "J6",
+      "statement": "J6.1 接 SC5，J6.2 接 SD5，J6.3 接 VCC，J6.4 接 GND。",
+      "confidence": "confirmed",
+      "attributes": {"channel": 5, "pin_1": "SC5 / U1.16", "pin_2": "SD5 / U1.15", "pin_3": "VCC", "pin_4": "GND"},
+      "evidence": [{"asset_sha256": "a16916708fe9e80f119e1a40b7e5a7cff1fecfe59a6187ca9f5811ce3aede87a", "page": 1, "locator": "C2-C3：U1 SD5.15/SC5.16 网络到 J6.2/J6.1，J6.3 VCC、J6.4 GND"}]
+    },
+    {
+      "id": "bus.channel-pin-map",
+      "category": "bus",
+      "subject": "U1 下游 I2C 通道",
+      "statement": "通道 0~5 的数据/时钟引脚依次为 SD0.4/SC0.5、SD1.6/SC1.7、SD2.8/SC2.9、SD3.10/SC3.11、SD4.13/SC4.14、SD5.15/SC5.16。",
+      "confidence": "confirmed",
+      "attributes": {"channel_0": "SD0 pin 4, SC0 pin 5", "channel_1": "SD1 pin 6, SC1 pin 7", "channel_2": "SD2 pin 8, SC2 pin 9", "channel_3": "SD3 pin 10, SC3 pin 11", "channel_4": "SD4 pin 13, SC4 pin 14", "channel_5": "SD5 pin 15, SC5 pin 16"},
+      "evidence": [{"asset_sha256": "a16916708fe9e80f119e1a40b7e5a7cff1fecfe59a6187ca9f5811ce3aede87a", "page": 1, "locator": "B2-C2：U1 右侧 SD0/SC0 至 SD5/SC5 的引脚号与同名网络"}]
+    },
+    {
+      "id": "gpio.unused-channels",
+      "category": "gpio",
+      "subject": "U1 通道 6 与 7",
+      "statement": "U1 的 SD6.17、SC6.18、SD7.19、SC7.20 均以未连接标记结束，没有接到外部连接器。",
+      "confidence": "confirmed",
+      "attributes": {"SD6": "U1.17 NC", "SC6": "U1.18 NC", "SD7": "U1.19 NC", "SC7": "U1.20 NC"},
+      "evidence": [{"asset_sha256": "a16916708fe9e80f119e1a40b7e5a7cff1fecfe59a6187ca9f5811ce3aede87a", "page": 1, "locator": "C2：U1.17~U1.20 的 SD6/SC6/SD7/SC7 线端均带红色未连接叉号"}]
+    },
+    {
+      "id": "bus.upstream-pullups",
+      "category": "bus",
+      "subject": "SCL 与 SDA",
+      "statement": "上游 SCL 经 R5（10KΩ）上拉至 VCC，上游 SDA 经 R6（10KΩ）上拉至 VCC。",
+      "confidence": "confirmed",
+      "attributes": {"scl_pullup": "R5 10KΩ to VCC", "sda_pullup": "R6 10KΩ to VCC", "nets": "SCL, SDA"},
+      "evidence": [{"asset_sha256": "a16916708fe9e80f119e1a40b7e5a7cff1fecfe59a6187ca9f5811ce3aede87a", "page": 1, "locator": "B1-B2：VCC-R5-U1.22 SCL 与 VCC-R6-U1.23 SDA 两条支路"}]
+    },
+    {
+      "id": "bus.downstream-pullups",
+      "category": "bus",
+      "subject": "SC0/SD0 至 SC5/SD5",
+      "statement": "R1、R2、R3 三个四联 10KΩ 电阻阵列分别将六个已用通道的 12 条下游 I2C 网络上拉至 VCC。",
+      "confidence": "confirmed",
+      "attributes": {"R1": "SD0, SC0, SD1, SC1 to VCC", "R2": "SD2, SC2, SD3, SC3 to VCC", "R3": "SD4, SC4, SD5, SC5 to VCC", "resistance": "10KΩ (103) ±5%"},
+      "evidence": [{"asset_sha256": "a16916708fe9e80f119e1a40b7e5a7cff1fecfe59a6187ca9f5811ce3aede87a", "page": 1, "locator": "B4-C4：R1/R2/R3 的信号侧网络标注与公共 VCC 侧连线"}]
+    },
+    {
+      "id": "address.a0-a2-straps",
+      "category": "address",
+      "subject": "U1 A0、A1、A2",
+      "statement": "A0、A1、A2 分别通过 R12、R13、R14（0Ω）连接 VCC，并分别通过 R19、R20、R21（10KΩ）连接 GND。",
+      "confidence": "confirmed",
+      "attributes": {"A0": "U1.1; R12 0Ω to VCC; R19 10KΩ to GND", "A1": "U1.2; R13 0Ω to VCC; R20 10KΩ to GND", "A2": "U1.21; R14 0Ω to VCC; R21 10KΩ to GND"},
+      "evidence": [{"asset_sha256": "a16916708fe9e80f119e1a40b7e5a7cff1fecfe59a6187ca9f5811ce3aede87a", "page": 1, "locator": "C1-C2：U1 A0/A1/A2 三条水平网络及 R12~R14 到 VCC、R19~R21 到 GND 的支路"}]
+    },
+    {
+      "id": "address.default-0x70-unconfirmed",
+      "category": "address",
+      "subject": "U1 TCA9548A",
+      "statement": "产品正文标注默认 7 位 I2C 地址为 0x70；原理图显示 A0~A2 的上下拉配置位，但未标明 R12~R14 的装配状态，因此不能只由本页确认默认地址。",
+      "confidence": "uncertain",
+      "attributes": {"documented_default_address": "0x70", "address_pins": "A0, A1, A2", "population_state": "R12/R13/R14 未在原理图标明 DNP/已装"},
+      "evidence": [{"asset_sha256": "a16916708fe9e80f119e1a40b7e5a7cff1fecfe59a6187ca9f5811ce3aede87a", "page": 1, "locator": "C1-C2：A0~A2 的 R12~R14 0Ω 上拉位与 R19~R21 10KΩ 下拉，图中无装配状态说明"}]
+    },
+    {
+      "id": "reset.u1-pullup",
+      "category": "reset",
+      "subject": "U1 RESET",
+      "statement": "U1 RESET.3 经 R7（10KΩ）上拉至 VCC，RESET 网络未引出到 J1~J7。",
+      "confidence": "confirmed",
+      "attributes": {"reset_pin": "U1.3 RESET", "pullup": "R7 10KΩ to VCC", "external_connector": "none shown"},
+      "evidence": [{"asset_sha256": "a16916708fe9e80f119e1a40b7e5a7cff1fecfe59a6187ca9f5811ce3aede87a", "page": 1, "locator": "B1-B2：R7 从 VCC 接至 U1.3 RESET；所有 J1~J7 仅列 I2C/VCC/GND 引脚"}]
+    },
+    {
+      "id": "power.vcc-distribution",
+      "category": "power",
+      "subject": "VCC",
+      "statement": "J7.3 的 VCC 网络直接连接 U1.VCC.24，并分配到 J1~J6 的 3 脚；本页未显示稳压器、负载开关、充电器或电池路径。",
+      "confidence": "confirmed",
+      "attributes": {"input": "J7.3 VCC", "ic_supply": "U1.24 VCC", "outputs": "J1.3, J2.3, J3.3, J4.3, J5.3, J6.3", "conversion": "none shown", "battery_or_charger": "none shown"},
+      "evidence": [{"asset_sha256": "a16916708fe9e80f119e1a40b7e5a7cff1fecfe59a6187ca9f5811ce3aede87a", "page": 1, "locator": "全页 VCC 同名网络：J7.3、U1.24、J1.3~J6.3；未见电源转换或电池器件"}]
+    },
+    {
+      "id": "power.vcc-voltage-unconfirmed",
+      "category": "power",
+      "subject": "VCC 数值电压",
+      "statement": "产品正文将 Grove 电源脚描述为 5V，但原理图只标注 VCC，没有给出数值电压，因此 5V 不能仅由本页确认。",
+      "confidence": "uncertain",
+      "attributes": {"schematic_net": "VCC", "documented_voltage": "5V", "schematic_voltage": "未标注"},
+      "evidence": [{"asset_sha256": "a16916708fe9e80f119e1a40b7e5a7cff1fecfe59a6187ca9f5811ce3aede87a", "page": 1, "locator": "B1-C4：所有电源节点均标为 VCC，标题栏与网络标注中未见具体电压值"}]
+    },
+    {
+      "id": "power.connector-decoupling",
+      "category": "power",
+      "subject": "J1~J7 VCC 去耦",
+      "statement": "C3 位于 J7 电源旁，C1、C2、C4、C5、C7、C8 分别位于 J1~J6 电源旁；七只电容均为 100nF 并跨接 VCC 与 GND。",
+      "confidence": "confirmed",
+      "attributes": {"J7": "C3 100nF", "J1": "C1 100nF", "J2": "C2 100nF", "J3": "C4 100nF", "J4": "C5 100nF", "J5": "C7 100nF", "J6": "C8 100nF"},
+      "evidence": [{"asset_sha256": "a16916708fe9e80f119e1a40b7e5a7cff1fecfe59a6187ca9f5811ce3aede87a", "page": 1, "locator": "B1-C4：C1/C2/C3/C4/C5/C7/C8 的 100nF 标注及 VCC-GND 连接"}]
+    },
+    {
+      "id": "protection.no-discrete-protection",
+      "category": "protection",
+      "subject": "J1~J7 外部接口",
+      "statement": "本页未显示 J1~J7 的 TVS、保险丝、反接保护或串联限流器件；接口信号直接连接多路开关或上拉网络。",
+      "confidence": "confirmed",
+      "attributes": {"esd_tvs": "none shown", "fuse": "none shown", "reverse_polarity": "none shown", "series_current_limit": "none shown"},
+      "evidence": [{"asset_sha256": "a16916708fe9e80f119e1a40b7e5a7cff1fecfe59a6187ca9f5811ce3aede87a", "page": 1, "locator": "全页：J1~J7 至 U1/VCC/GND 的完整可见连接，未出现保护器件位号或符号"}]
+    },
+    {
+      "id": "other.schematic-metadata",
+      "category": "other",
+      "subject": "原理图标题栏",
+      "statement": "原理图标题栏标注 Project Title 为 UNIT_PAHUB.PrjPCB、Sheet Title 为 UNIT_PAHUB.SchDoc、Sheet 1 of 1、日期 02/18/19。",
+      "confidence": "confirmed",
+      "attributes": {"project_title": "UNIT_PAHUB.PrjPCB", "sheet_title": "UNIT_PAHUB.SchDoc", "sheet": "1 of 1", "date": "02/18/19"},
+      "evidence": [{"asset_sha256": "a16916708fe9e80f119e1a40b7e5a7cff1fecfe59a6187ca9f5811ce3aede87a", "page": 1, "locator": "D3-D4：右下角标题栏的 Project Title、Sheet Title、Sheet 与 Date 字段"}]
+    }
+  ],
+  "needs_review": [
+    {
+      "id": "review.default-i2c-address",
+      "fact_id": "address.default-0x70-unconfirmed",
+      "question": "该硬件装配版本的 R12、R13、R14 是否默认不装，从而使 A0~A2 为低并对应正文所列 0x70？",
+      "reason": "原理图画出三个 0Ω 到 VCC 的电阻位和三个 10KΩ 下拉，但没有 BOM/DNP 装配状态，不能由连接图确定上电地址。",
+      "evidence": [{"asset_sha256": "a16916708fe9e80f119e1a40b7e5a7cff1fecfe59a6187ca9f5811ce3aede87a", "page": 1, "locator": "C1-C2：R12~R14、R19~R21 与 U1 A0~A2 地址配置网络"}]
+    },
+    {
+      "id": "review.vcc-voltage",
+      "fact_id": "power.vcc-voltage-unconfirmed",
+      "question": "J7 输入及 J1~J6 输出的 VCC 在该硬件版本上是否固定为正文所列 5V？",
+      "reason": "原理图只使用 VCC 网络名且没有电压数值或板上稳压器，需要由接口规范、BOM 或实板电压确认。",
+      "evidence": [{"asset_sha256": "a16916708fe9e80f119e1a40b7e5a7cff1fecfe59a6187ca9f5811ce3aede87a", "page": 1, "locator": "全页 J1~J7、U1 与电阻阵列的 VCC 网络，未标具体电压"}]
+    }
+  ]
+}

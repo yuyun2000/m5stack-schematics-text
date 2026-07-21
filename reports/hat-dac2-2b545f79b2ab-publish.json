@@ -1,0 +1,21 @@
+{
+  "dry_run": false,
+  "failed": 0,
+  "published": 1,
+  "results": [
+    {
+      "backup": null,
+      "draft_action": "unchanged",
+      "dry_run": false,
+      "errors": [],
+      "needs_review": 2,
+      "product_id": "hat-dac2-2b545f79b2ab",
+      "product_name": "Hat DAC2",
+      "publish_action": "unchanged",
+      "sha256": "859d310a30516edfcd3a0d724561c63526c2188630e3b4b99c0e73ddd3f6564b",
+      "status": "valid",
+      "uncertain_facts": 2
+    }
+  ],
+  "schema_version": 1
+}

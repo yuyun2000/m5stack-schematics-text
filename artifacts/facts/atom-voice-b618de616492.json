@@ -1,0 +1,251 @@
+{
+  "schema_version": 1,
+  "generator": "schematic_describer",
+  "product": {
+    "product_id": "atom-voice-b618de616492",
+    "product_name": "Atom Voice",
+    "sku": "C008-C",
+    "source_path": "atom/atomecho.md",
+    "source_sha256": "72ed0abf69f25968d4b50e3537d5da57bf44484ccaff7c29cf6700818ea16534",
+    "input_sha256": "93757122ea3e0b0044fe9c9c355bf739e393881e6c81317d476294a17ce82d43"
+  },
+  "schematic_assets": [
+    {
+      "sha256": "8b8748788a42bdc25777f83e7e7b1f47b91cbb9e6a1944c2f5fdf97a61b1ddd7",
+      "source_url": "https://static-cdn.m5stack.com/resource/docs/products/atom/atomecho/atomecho_sch_01.webp",
+      "pages": [1]
+    }
+  ],
+  "summary": "Atom Voice C008-C 的本地资源是一张 ATOM ECHO 音频连接框图，显示 ESP32 方框连接 NS4168、麦克风方框与扬声器符号。功放侧映射为 G22=AMP DATA、G19=AMP BCLK、G33=AMP LRCK，麦克风侧映射为 G33=SYS LRCK/MIC CLK、G23=MIC DATA，因此 G33 是播放与采集共用的音频时钟网络。图中还出现 ESP32 的 3V3、5V、GND 标签，但没有器件位号、阻容、电源转换、保护、晶振、Flash、射频、Grove、RGB、按键或复位电路。正文所列 ESP32-PICO-D4、SPM1423、4MB Flash、0.8W、I2S/PDM 和无线/HMI 参数均需完整原理图或 datasheet 复核。",
+  "keywords": [
+    "Atom Voice", "ATOM ECHO", "C008-C", "ESP32", "ESP32-PICO-D4", "NS4168", "SPM1423", "MIC", "speaker", "AMP DATA", "AMP BCLK", "AMP LRCK", "SYS LRCK", "MIC CLK", "MIC DATA", "G22", "G19", "G33", "G23", "I2S", "PDM", "3V3", "5V", "GND", "SK6812", "G27", "G39", "G26", "G32", "4MB Flash", "Wi-Fi", "A2DP", "BLE 4.0", "HY2.0-4P"
+  ],
+  "components": [
+    {
+      "reference": "ESP32 block",
+      "part_number": "ESP32",
+      "role": "音频信号控制方框，标出 3V3、G22、G19、G33、G23、5V 与 GND",
+      "evidence": [{"asset_sha256": "8b8748788a42bdc25777f83e7e7b1f47b91cbb9e6a1944c2f5fdf97a61b1ddd7", "page": 1, "locator": "第 1 页右侧红色 ESP 32 方框及 3V3/G22/G19/G33/G23/5V/GND 标签"}]
+    },
+    {
+      "reference": "NS4168 block",
+      "part_number": "NS4168",
+      "role": "数字音频功放方框，连接 SADTA/AMP DATA、BCLK/AMP BCLK、LRCK/AMP LRCK 并驱动扬声器符号",
+      "evidence": [{"asset_sha256": "8b8748788a42bdc25777f83e7e7b1f47b91cbb9e6a1944c2f5fdf97a61b1ddd7", "page": 1, "locator": "第 1 页左上 NS4168 方框、SADTA/BCLK/LRCK 与扬声器连接"}]
+    },
+    {
+      "reference": "MIC block",
+      "part_number": null,
+      "role": "数字麦克风方框，以 CLK 和 DATA 接入 ESP32 音频网络",
+      "evidence": [{"asset_sha256": "8b8748788a42bdc25777f83e7e7b1f47b91cbb9e6a1944c2f5fdf97a61b1ddd7", "page": 1, "locator": "第 1 页左下 MIC 方框、CLK/DATA、SYS LRCK/MIC DATA"}]
+    },
+    {
+      "reference": "speaker symbol",
+      "part_number": null,
+      "role": "连接 NS4168 输出的扬声器负载，图中未给位号、阻抗或额定功率",
+      "evidence": [{"asset_sha256": "8b8748788a42bdc25777f83e7e7b1f47b91cbb9e6a1944c2f5fdf97a61b1ddd7", "page": 1, "locator": "第 1 页最左侧扬声器符号与 NS4168 输出连线"}]
+    }
+  ],
+  "facts": [
+    {
+      "id": "system.audio-block-architecture",
+      "category": "system",
+      "subject": "音频框图架构",
+      "statement": "资源图显示 ESP32 通过三条功放音频网络连接 NS4168，NS4168 再连接扬声器；ESP32 还通过 CLK/DATA 两条网络连接 MIC 方框。",
+      "confidence": "confirmed",
+      "attributes": {"controller": "ESP32 block", "playback": "ESP32 -> NS4168 -> speaker symbol", "capture": "MIC block <-> ESP32", "product_mark": "ATOM ECHO C008-C"},
+      "evidence": [{"asset_sha256": "8b8748788a42bdc25777f83e7e7b1f47b91cbb9e6a1944c2f5fdf97a61b1ddd7", "page": 1, "locator": "第 1 页完整 ATOM ECHO C008-C 音频连接框图"}]
+    },
+    {
+      "id": "audio.amplifier-gpio-map",
+      "category": "audio",
+      "subject": "NS4168 音频信号映射",
+      "statement": "NS4168 SADTA 标为 AMP DATA 并连接 ESP32 G22，BCLK 标为 AMP BCLK 并连接 G19，LRCK 标为 AMP LRCK 并连接 G33。",
+      "confidence": "confirmed",
+      "attributes": {"amplifier": "NS4168", "data": "SADTA/AMP DATA <-> G22", "bit_clock": "BCLK/AMP BCLK <-> G19", "frame_clock": "LRCK/AMP LRCK <-> G33", "direction_marked": false},
+      "evidence": [{"asset_sha256": "8b8748788a42bdc25777f83e7e7b1f47b91cbb9e6a1944c2f5fdf97a61b1ddd7", "page": 1, "locator": "第 1 页 NS4168 SADTA/BCLK/LRCK 到 ESP32 G22/G19/G33 连线"}]
+    },
+    {
+      "id": "audio.microphone-gpio-map",
+      "category": "audio",
+      "subject": "麦克风音频信号映射",
+      "statement": "MIC CLK 网络标为 SYS LRCK 并连接 ESP32 G33，MIC DATA 网络连接 ESP32 G23；框图未标麦克风型号和信号方向箭头。",
+      "confidence": "confirmed",
+      "attributes": {"microphone": "MIC block", "clock": "CLK/SYS LRCK <-> G33", "data": "DATA/MIC DATA <-> G23", "direction_marked": false, "part_number": null},
+      "evidence": [{"asset_sha256": "8b8748788a42bdc25777f83e7e7b1f47b91cbb9e6a1944c2f5fdf97a61b1ddd7", "page": 1, "locator": "第 1 页 MIC CLK/DATA、SYS LRCK/MIC DATA 到 ESP32 G33/G23 连线"}]
+    },
+    {
+      "id": "key_net.shared-g33-clock",
+      "category": "key_net",
+      "subject": "G33 共用音频时钟",
+      "statement": "NS4168 的 AMP LRCK 与 MIC 的 SYS LRCK/CLK 汇入同一网络并连接 ESP32 G33，因此 G33 在框图中同时服务功放帧时钟与麦克风时钟。",
+      "confidence": "confirmed",
+      "attributes": {"gpio": "G33", "amplifier_signal": "AMP LRCK", "microphone_signal": "SYS LRCK/MIC CLK", "shared": true},
+      "evidence": [{"asset_sha256": "8b8748788a42bdc25777f83e7e7b1f47b91cbb9e6a1944c2f5fdf97a61b1ddd7", "page": 1, "locator": "第 1 页中部 AMP LRCK 与 SYS LRCK 汇合后连接 ESP32 G33"}]
+    },
+    {
+      "id": "power.visible-controller-labels",
+      "category": "power",
+      "subject": "框图可见电源标签",
+      "statement": "ESP32 方框上可见 3V3、5V 和 GND 标签，但页面没有画出它们到 NS4168、MIC 或扬声器的供电连线，也没有电源输入连接器或转换器。",
+      "confidence": "confirmed",
+      "attributes": {"labels": "3V3,5V,GND", "amplifier_supply_connection": null, "microphone_supply_connection": null, "converter": null, "input_connector": null},
+      "evidence": [{"asset_sha256": "8b8748788a42bdc25777f83e7e7b1f47b91cbb9e6a1944c2f5fdf97a61b1ddd7", "page": 1, "locator": "第 1 页 ESP32 方框的 3V3/5V/GND 标签及全图无电源器件"}]
+    },
+    {
+      "id": "system.asset-detail-scope",
+      "category": "system",
+      "subject": "本地资源详细程度",
+      "statement": "本地资源为单页功能连接图，产品标记 ATOM ECHO C008-C；页面未给任何标准位号、阻容值、封装、引脚号、器件电源脚或完整网名表。",
+      "confidence": "confirmed",
+      "attributes": {"asset_type": "functional connection diagram", "pages": 1, "product_mark": "ATOM ECHO C008-C", "reference_designators": null, "passive_values": null, "packages": null, "device_pin_numbers": null},
+      "evidence": [{"asset_sha256": "8b8748788a42bdc25777f83e7e7b1f47b91cbb9e6a1944c2f5fdf97a61b1ddd7", "page": 1, "locator": "第 1 页完整页面，只有 ESP32/NS4168/MIC/扬声器功能块"}]
+    },
+    {
+      "id": "component.documented-soc-and-mic",
+      "category": "component",
+      "subject": "正文 SoC 与麦克风型号",
+      "statement": "正文规格称 SoC 为 ESP32-PICO-D4、麦克风为 SPM1423；资源图只写 ESP 32 与 MIC，无法由该页确认 PICO-D4 子型号、麦克风型号、封装或硬件版本。",
+      "confidence": "uncertain",
+      "attributes": {"documented_soc": "ESP32-PICO-D4", "schematic_soc_label": "ESP 32", "documented_microphone": "SPM1423", "schematic_microphone_label": "MIC", "soc_package": null, "microphone_package": null},
+      "evidence": [{"asset_sha256": "8b8748788a42bdc25777f83e7e7b1f47b91cbb9e6a1944c2f5fdf97a61b1ddd7", "page": 1, "locator": "第 1 页 ESP 32 与 MIC 方框，无 PICO-D4/SPM1423 字样"}]
+    },
+    {
+      "id": "bus.documented-audio-protocols",
+      "category": "bus",
+      "subject": "正文 I2S/PDM 音频协议",
+      "statement": "正文称 NS4168 使用 I2S、SPM1423 使用 PDM；资源图只标 SADTA/BCLK/LRCK 与 CLK/DATA，没有标协议名称、主从关系、方向、采样率、位宽、声道格式或时钟频率。",
+      "confidence": "uncertain",
+      "attributes": {"documented_amplifier_bus": "I2S", "documented_microphone_bus": "PDM", "schematic_signal_set": "AMP DATA/BCLK/LRCK; MIC CLK/DATA", "master": null, "directions": null, "sample_rate": null, "bit_width": null, "channel_format": null, "clock_frequency": null},
+      "evidence": [{"asset_sha256": "8b8748788a42bdc25777f83e7e7b1f47b91cbb9e6a1944c2f5fdf97a61b1ddd7", "page": 1, "locator": "第 1 页音频信号标签，无 I2S/PDM 或时序参数文字"}]
+    },
+    {
+      "id": "audio.documented-speaker-performance",
+      "category": "audio",
+      "subject": "正文扬声器与功放参数",
+      "statement": "正文规格列出 0.8W/NS4168；资源图确认 NS4168 与扬声器符号相连，但没有扬声器阻抗、额定功率、NS4168 供电电压、增益、使能、输出拓扑、滤波或保护。",
+      "confidence": "uncertain",
+      "attributes": {"documented_power": "0.8W", "amplifier": "NS4168", "speaker_impedance": null, "amplifier_supply": null, "gain": null, "enable": null, "output_topology": null, "filter": null, "overcurrent_protection": null},
+      "evidence": [{"asset_sha256": "8b8748788a42bdc25777f83e7e7b1f47b91cbb9e6a1944c2f5fdf97a61b1ddd7", "page": 1, "locator": "第 1 页 NS4168 到扬声器符号，仅信号框图"}]
+    },
+    {
+      "id": "memory.documented-flash",
+      "category": "memory",
+      "subject": "正文 4MB Flash",
+      "statement": "正文规格列出 4MB Flash；资源图没有 Flash 器件、位号、总线、容量、电压或分区信息，也未展开 ESP32 模组内部存储。",
+      "confidence": "uncertain",
+      "attributes": {"documented_capacity": "4MB", "flash_part_number": null, "flash_bus": null, "flash_voltage": null, "partition_layout": null},
+      "evidence": [{"asset_sha256": "8b8748788a42bdc25777f83e7e7b1f47b91cbb9e6a1944c2f5fdf97a61b1ddd7", "page": 1, "locator": "第 1 页 ESP32 方框，无 Flash 或存储连接"}]
+    },
+    {
+      "id": "rf.documented-wireless",
+      "category": "rf",
+      "subject": "正文无线能力",
+      "statement": "正文称支持 2.4GHz Wi-Fi 802.11b/g/n、A2DP 与 BLE 4.0；资源图没有射频引脚、天线、匹配网络、晶振、认证模组或无线协议标注。",
+      "confidence": "uncertain",
+      "attributes": {"documented_wifi": "IEEE 802.11b/g/n", "documented_bluetooth": "A2DP,BLE 4.0", "antenna": null, "matching_network": null, "rf_clock": null, "module_certification": null},
+      "evidence": [{"asset_sha256": "8b8748788a42bdc25777f83e7e7b1f47b91cbb9e6a1944c2f5fdf97a61b1ddd7", "page": 1, "locator": "第 1 页 ESP32 方框及全图，无 RF/天线电路"}]
+    },
+    {
+      "id": "interface.documented-grove",
+      "category": "interface",
+      "subject": "正文 Grove 接口",
+      "statement": "正文管脚表将 HY2.0-4P 定义为 GND、5V、G26、G32；本地资源页没有 Grove 连接器、针脚、G26/G32 网络、电平、方向或保护。",
+      "confidence": "uncertain",
+      "attributes": {"documented_connector": "HY2.0-4P", "documented_black": "GND", "documented_red": "5V", "documented_yellow": "G26", "documented_white": "G32", "schematic_connector": null, "directions": null, "protection": null},
+      "evidence": [{"asset_sha256": "8b8748788a42bdc25777f83e7e7b1f47b91cbb9e6a1944c2f5fdf97a61b1ddd7", "page": 1, "locator": "第 1 页完整框图，无 Grove/HY2.0/G26/G32"}]
+    },
+    {
+      "id": "gpio.documented-hmi",
+      "category": "gpio",
+      "subject": "正文 RGB 与按键映射",
+      "statement": "正文管脚表称 SK6812 RGB 数据连接 G27、按键输入连接 G39，并列出 Reset Button；资源图没有 SK6812、按键、复位开关、上拉/下拉、有效电平或去抖网络。",
+      "confidence": "uncertain",
+      "attributes": {"documented_rgb": "SK6812 data=G27", "documented_button": "G39 input", "documented_reset_button": true, "schematic_rgb": null, "button_active_level": null, "button_bias": null, "debounce": null, "reset_net": null},
+      "evidence": [{"asset_sha256": "8b8748788a42bdc25777f83e7e7b1f47b91cbb9e6a1944c2f5fdf97a61b1ddd7", "page": 1, "locator": "第 1 页完整框图，无 RGB/按键/复位电路"}]
+    },
+    {
+      "id": "power.implementation-and-protection",
+      "category": "power",
+      "subject": "电源转换与保护实现",
+      "statement": "框图仅在 ESP32 方框上列出 3V3、5V、GND，未显示 5V 输入来源、3.3V 转换器、NS4168/MIC 供电、电源使能、去耦、过流/过压/反接/ESD 保护或电流预算。",
+      "confidence": "uncertain",
+      "attributes": {"visible_labels": "3V3,5V,GND", "input_source": null, "regulator": null, "amplifier_supply": null, "microphone_supply": null, "enable": null, "decoupling": null, "overcurrent": null, "overvoltage": null, "reverse_polarity": null, "esd": null, "current_budget": null},
+      "evidence": [{"asset_sha256": "8b8748788a42bdc25777f83e7e7b1f47b91cbb9e6a1944c2f5fdf97a61b1ddd7", "page": 1, "locator": "第 1 页完整框图，只有 3V3/5V/GND 标签，无电源与保护元件"}]
+    },
+    {
+      "id": "debug.reset-boot-programming",
+      "category": "debug",
+      "subject": "复位、BOOT 与编程接口",
+      "statement": "正文提到 Reset Button 与固件烧录，但资源图没有 EN/RESET、BOOT strap、UART、USB、JTAG、下载按键、调试连接器或相关保护。",
+      "confidence": "uncertain",
+      "attributes": {"reset": null, "boot": null, "uart": null, "usb": null, "jtag": null, "programming_connector": null, "debug_protection": null},
+      "evidence": [{"asset_sha256": "8b8748788a42bdc25777f83e7e7b1f47b91cbb9e6a1944c2f5fdf97a61b1ddd7", "page": 1, "locator": "第 1 页完整框图，无 reset/boot/UART/USB/JTAG 网络"}]
+    }
+  ],
+  "needs_review": [
+    {
+      "id": "review.soc-and-mic",
+      "fact_id": "component.documented-soc-and-mic",
+      "question": "请用完整 BOM/原理图确认 ESP32-PICO-D4 与 SPM1423 的准确型号、封装、版本和引脚连接。",
+      "reason": "框图只标 ESP 32 和 MIC。",
+      "evidence": [{"asset_sha256": "8b8748788a42bdc25777f83e7e7b1f47b91cbb9e6a1944c2f5fdf97a61b1ddd7", "page": 1, "locator": "ESP32 与 MIC 方框"}]
+    },
+    {
+      "id": "review.audio-protocols",
+      "fact_id": "bus.documented-audio-protocols",
+      "question": "请由 NS4168/SPM1423 datasheet 与固件确认 I2S/PDM 主从方向、GPIO 模式、采样率、位宽、声道格式和时钟频率。",
+      "reason": "框图只有信号名，没有协议及时序参数。",
+      "evidence": [{"asset_sha256": "8b8748788a42bdc25777f83e7e7b1f47b91cbb9e6a1944c2f5fdf97a61b1ddd7", "page": 1, "locator": "AMP DATA/BCLK/LRCK 与 MIC CLK/DATA"}]
+    },
+    {
+      "id": "review.speaker-performance",
+      "fact_id": "audio.documented-speaker-performance",
+      "question": "请确认扬声器阻抗/功率、NS4168 供电、增益、使能、输出拓扑、滤波、热保护和安全音频幅度。",
+      "reason": "框图没有功放外围与扬声器参数。",
+      "evidence": [{"asset_sha256": "8b8748788a42bdc25777f83e7e7b1f47b91cbb9e6a1944c2f5fdf97a61b1ddd7", "page": 1, "locator": "NS4168 到扬声器符号"}]
+    },
+    {
+      "id": "review.flash",
+      "fact_id": "memory.documented-flash",
+      "question": "请确认 4MB Flash 的型号、总线、电压、频率和固件可用分区。",
+      "reason": "框图未展开主控存储。",
+      "evidence": [{"asset_sha256": "8b8748788a42bdc25777f83e7e7b1f47b91cbb9e6a1944c2f5fdf97a61b1ddd7", "page": 1, "locator": "ESP32 方框，无 Flash"}]
+    },
+    {
+      "id": "review.wireless",
+      "fact_id": "rf.documented-wireless",
+      "question": "请确认无线 SoC、天线形式、匹配网络、射频时钟、Wi-Fi/Bluetooth 版本与认证信息。",
+      "reason": "框图没有射频和天线证据。",
+      "evidence": [{"asset_sha256": "8b8748788a42bdc25777f83e7e7b1f47b91cbb9e6a1944c2f5fdf97a61b1ddd7", "page": 1, "locator": "ESP32 方框及全页，无 RF"}]
+    },
+    {
+      "id": "review.grove",
+      "fact_id": "interface.documented-grove",
+      "question": "请用完整原理图确认 HY2.0-4P 位号、G26/G32 GPIO 方向、电平、5V 供电能力和接口保护。",
+      "reason": "Grove 接口未出现在资源图。",
+      "evidence": [{"asset_sha256": "8b8748788a42bdc25777f83e7e7b1f47b91cbb9e6a1944c2f5fdf97a61b1ddd7", "page": 1, "locator": "完整框图，无 Grove"}]
+    },
+    {
+      "id": "review.hmi",
+      "fact_id": "gpio.documented-hmi",
+      "question": "请确认 SK6812、G27、G39 按键、Reset Button 的位号、有效电平、偏置与去抖/复位路径。",
+      "reason": "HMI 电路未出现在资源图。",
+      "evidence": [{"asset_sha256": "8b8748788a42bdc25777f83e7e7b1f47b91cbb9e6a1944c2f5fdf97a61b1ddd7", "page": 1, "locator": "完整框图，无 RGB/按键"}]
+    },
+    {
+      "id": "review.power-protection",
+      "fact_id": "power.implementation-and-protection",
+      "question": "请提供完整电源页，确认输入范围、3.3V 转换、音频器件供电、去耦、使能、功耗和保护器件。",
+      "reason": "页面只有电源标签，没有电源电路。",
+      "evidence": [{"asset_sha256": "8b8748788a42bdc25777f83e7e7b1f47b91cbb9e6a1944c2f5fdf97a61b1ddd7", "page": 1, "locator": "ESP32 3V3/5V/GND 标签"}]
+    },
+    {
+      "id": "review.debug-programming",
+      "fact_id": "debug.reset-boot-programming",
+      "question": "请确认复位、BOOT、UART/USB/JTAG、下载按键和编程连接器的实际实现。",
+      "reason": "框图不含调试与烧录网络。",
+      "evidence": [{"asset_sha256": "8b8748788a42bdc25777f83e7e7b1f47b91cbb9e6a1944c2f5fdf97a61b1ddd7", "page": 1, "locator": "完整框图，无 reset/boot/debug"}]
+    }
+  ]
+}

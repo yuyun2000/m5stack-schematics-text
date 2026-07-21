@@ -1,0 +1,644 @@
+{
+  "schema_version": 1,
+  "generator": "schematic_describer",
+  "product": {
+    "product_id": "stamp-s3-07ce7ee8d7e0",
+    "product_name": "Stamp-S3",
+    "sku": "S007",
+    "source_path": "core/StampS3.md",
+    "source_sha256": "84c9ec1ad0e25c9610a4d6ced3a915a00fea9e68cac4d42b0b84f55ebe401327",
+    "input_sha256": "4664a4fbb63fd9179e0d61c9965569b6ee2eb2c96071459a8e868c50c66b1833"
+  },
+  "schematic_assets": [
+    {
+      "sha256": "aaa7dbf40110a4ec90c6f2dae371394bafe3c0894ae255aca506aba1b636899f",
+      "source_url": "https://m5stack-doc.oss-cn-shenzhen.aliyuncs.com/522/Sch_M5StampS3_v0.2_sch_01.png",
+      "pages": [1]
+    }
+  ],
+  "summary": "Stamp-S3 以 ESP32-S3FN8 为主控，配置 40MHz 晶体、PROANT440 板载天线、WS2812 RGB LED 和 GPIO0 用户/下载按键。USB Type-C 提供原生 USB D+/D- 与 VIN_5V，MUN3CAD01-SC 将 VIN_5V 转换为 VDD_3V3。STAMP-S3M 焊盘模块引出 23 路 GPIO、EN、UART TX/RX、5V、3.3V 和 GND；背面还提供由 GPIO33-GPIO38 驱动的 8 针 SPI 显示接口，并预留标注 NC 的 12 针替代接口。",
+  "keywords": [
+    "Stamp-S3",
+    "S007",
+    "ESP32-S3FN8",
+    "STAMP-S3M",
+    "MUN3CAD01-SC",
+    "SGM2578",
+    "WS4622C-4/TR",
+    "WS2812",
+    "PROANT440",
+    "40MHz",
+    "USB Type-C",
+    "USB_DU_P",
+    "USB_DU_N",
+    "VIN_5V",
+    "VDD_3V3",
+    "ESP_EN",
+    "GPIO0",
+    "GPIO21",
+    "GPIO33",
+    "GPIO34",
+    "GPIO35",
+    "GPIO36",
+    "GPIO37",
+    "GPIO38",
+    "GPIO43 TX",
+    "GPIO44 RX",
+    "GPIO46",
+    "SK_DIN",
+    "DISP_RST",
+    "DISP_RS",
+    "DISP_MOSI",
+    "DISP_SCK",
+    "DISP_CS",
+    "DISP_BL",
+    "PESDNC2FD3V3B",
+    "M5StampS3"
+  ],
+  "components": [
+    {
+      "reference": "U1",
+      "part_number": "ESP32-S3FN8",
+      "role": "Stamp-S3 主控 SoC",
+      "evidence": [
+        {
+          "asset_sha256": "aaa7dbf40110a4ec90c6f2dae371394bafe3c0894ae255aca506aba1b636899f",
+          "page": 1,
+          "locator": "网格 2A-C，U1 ESP32-S3FN8 及全部电源、时钟、USB、GPIO 和 UART 网络"
+        }
+      ]
+    },
+    {
+      "reference": "M1",
+      "part_number": "STAMP-S3M",
+      "role": "28 焊盘 Stamp-S3 模组外部接口定义",
+      "evidence": [
+        {
+          "asset_sha256": "aaa7dbf40110a4ec90c6f2dae371394bafe3c0894ae255aca506aba1b636899f",
+          "page": 1,
+          "locator": "网格 3C-4C，M1 STAMP-S3M pin1-pin28 的 GPIO、电源、EN、TX、RX 和 GND"
+        }
+      ]
+    },
+    {
+      "reference": "M2",
+      "part_number": "MUN3CAD01-SC",
+      "role": "VIN_5V 到 VDD_3V3 的 DC-DC 电源模块",
+      "evidence": [
+        {
+          "asset_sha256": "aaa7dbf40110a4ec90c6f2dae371394bafe3c0894ae255aca506aba1b636899f",
+          "page": 1,
+          "locator": "网格 2D，M2 MUN3CAD01-SC、VIN_5V、VDD_3V3、EN 和反馈分压"
+        }
+      ]
+    },
+    {
+      "reference": "ANT1",
+      "part_number": "PROANT440",
+      "role": "板载 2.4GHz 射频天线",
+      "evidence": [
+        {
+          "asset_sha256": "aaa7dbf40110a4ec90c6f2dae371394bafe3c0894ae255aca506aba1b636899f",
+          "page": 1,
+          "locator": "网格 1A，ANT1 PROANT440 经 L1/C1/C2 匹配网络连接 ESP_LNA"
+        }
+      ]
+    },
+    {
+      "reference": "X1",
+      "part_number": "40MHz",
+      "role": "ESP32-S3 主时钟晶体",
+      "evidence": [
+        {
+          "asset_sha256": "aaa7dbf40110a4ec90c6f2dae371394bafe3c0894ae255aca506aba1b636899f",
+          "page": 1,
+          "locator": "网格 1B，X1 40MHz、L3、C9、C14 与 XTAL_40M_P/N"
+        }
+      ]
+    },
+    {
+      "reference": "U3",
+      "part_number": "WS2812",
+      "role": "可编程 RGB 状态 LED",
+      "evidence": [
+        {
+          "asset_sha256": "aaa7dbf40110a4ec90c6f2dae371394bafe3c0894ae255aca506aba1b636899f",
+          "page": 1,
+          "locator": "网格 3B-4B，U3 WS2812，DI=SK_DIN、DO=SK_DOUT、VDD=VDD_3V3"
+        }
+      ]
+    },
+    {
+      "reference": "S1",
+      "part_number": "SMT_SW_1TS026A",
+      "role": "GPIO0 用户键和启动模式按键",
+      "evidence": [
+        {
+          "asset_sha256": "aaa7dbf40110a4ec90c6f2dae371394bafe3c0894ae255aca506aba1b636899f",
+          "page": 1,
+          "locator": "网格 3C，S1 将 GPIO0 接地，R4 10kΩ 上拉并由 D1 防护"
+        }
+      ]
+    },
+    {
+      "reference": "U2",
+      "part_number": "SGM2578 / WS4622C-4/TR",
+      "role": "显示背光 3.3V 负载开关",
+      "evidence": [
+        {
+          "asset_sha256": "aaa7dbf40110a4ec90c6f2dae371394bafe3c0894ae255aca506aba1b636899f",
+          "page": 1,
+          "locator": "网格 3A，U2 SGM2578/WS4622C-4/TR，VIN=VDD_3V3、EN=DISP_BL、VOUT 接显示背光引脚"
+        }
+      ]
+    },
+    {
+      "reference": "J3",
+      "part_number": "HDGC/0.5K-HX-8PWB",
+      "role": "8 针 SPI 显示 FPC 接口",
+      "evidence": [
+        {
+          "asset_sha256": "aaa7dbf40110a4ec90c6f2dae371394bafe3c0894ae255aca506aba1b636899f",
+          "page": 1,
+          "locator": "网格 4A，J3 pin1 背光、pin2 GND、pin3-pin8 为 DISP_RST/RS/MOSI/SCK/VDD_3V3/CS"
+        }
+      ]
+    },
+    {
+      "reference": "J1",
+      "part_number": "HDGC/0.5K-HX-12PWB/NC",
+      "role": "标注 NC 的 12 针显示 FPC 替代接口",
+      "evidence": [
+        {
+          "asset_sha256": "aaa7dbf40110a4ec90c6f2dae371394bafe3c0894ae255aca506aba1b636899f",
+          "page": 1,
+          "locator": "网格 4A，J1 12 针接口，器件型号末尾明确标注 /NC"
+        }
+      ]
+    },
+    {
+      "reference": "J2",
+      "part_number": "USB-TYPEC",
+      "role": "USB 2.0 设备接口和 5V 电源入口",
+      "evidence": [
+        {
+          "asset_sha256": "aaa7dbf40110a4ec90c6f2dae371394bafe3c0894ae255aca506aba1b636899f",
+          "page": 1,
+          "locator": "网格 4D，J2 USB-TYPEC、DP/DN、CC1/CC2、VBUS、GND 和外壳"
+        }
+      ]
+    },
+    {
+      "reference": "F1",
+      "part_number": "6V/1A/PPTC",
+      "role": "USB VBUS 到 VIN_5V 的自恢复保险丝",
+      "evidence": [
+        {
+          "asset_sha256": "aaa7dbf40110a4ec90c6f2dae371394bafe3c0894ae255aca506aba1b636899f",
+          "page": 1,
+          "locator": "网格 4D，F1 6V/1A/PPTC 串联在 JP1/J2 VCC 与 VIN_5V 之间"
+        }
+      ]
+    },
+    {
+      "reference": "L5",
+      "part_number": null,
+      "role": "USB D+/D- 共模扼流圈",
+      "evidence": [
+        {
+          "asset_sha256": "aaa7dbf40110a4ec90c6f2dae371394bafe3c0894ae255aca506aba1b636899f",
+          "page": 1,
+          "locator": "网格 3D，L5 串接 USB_DU_P/N 与 USB_D_P/N 两对差分网络"
+        }
+      ]
+    },
+    {
+      "reference": "D3,D4",
+      "part_number": "PESDNC2FD3V3B",
+      "role": "USB D+/D- 静电防护器件",
+      "evidence": [
+        {
+          "asset_sha256": "aaa7dbf40110a4ec90c6f2dae371394bafe3c0894ae255aca506aba1b636899f",
+          "page": 1,
+          "locator": "网格 3D，D3 接 USB_D_P、D4 接 USB_D_N，均对地"
+        }
+      ]
+    },
+    {
+      "reference": "D1",
+      "part_number": "PESDNC2FD3V3B",
+      "role": "GPIO0 用户键网络静电防护",
+      "evidence": [
+        {
+          "asset_sha256": "aaa7dbf40110a4ec90c6f2dae371394bafe3c0894ae255aca506aba1b636899f",
+          "page": 1,
+          "locator": "网格 3C，D1 PESDNC2FD3V3B 从 GPIO0 接地"
+        }
+      ]
+    }
+  ],
+  "facts": [
+    {
+      "id": "system.esp32-s3fn8",
+      "category": "system",
+      "subject": "ESP32-S3FN8 最小系统",
+      "statement": "U1 ESP32-S3FN8 连接板载射频、40MHz 晶体、VDD_3V3 电源、原生 USB、RGB LED、GPIO0 按键、SPI 显示接口和 STAMP-S3M 外部焊盘。",
+      "confidence": "confirmed",
+      "attributes": {
+        "reference": "U1",
+        "part_number": "ESP32-S3FN8",
+        "core_supply": "VDD_3V3",
+        "enable_net": "ESP_EN",
+        "rf_net": "ESP_LNA"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "aaa7dbf40110a4ec90c6f2dae371394bafe3c0894ae255aca506aba1b636899f",
+          "page": 1,
+          "locator": "网格 1A-2C 的 U1 及网格 3A-4D 的各功能区连接"
+        }
+      ]
+    },
+    {
+      "id": "memory.integrated-flash-wiring",
+      "category": "memory",
+      "subject": "ESP32-S3FN8 Flash 供电",
+      "statement": "U1 VDD_SPI 由 FLASH_VCC 供电并配置 C4 1uF 去耦；SPIHD、SPIWP、SPICS0、SPICLK、SPIQ 和 SPID 均标记为未连接，原理图未放置独立外部 Flash 器件。",
+      "confidence": "confirmed",
+      "attributes": {
+        "flash_supply": "FLASH_VCC",
+        "decoupling": "C4 1uF/10V",
+        "unconnected_pins": "SPIHD, SPIWP, SPICS0, SPICLK, SPIQ, SPID",
+        "external_flash_component": null
+      },
+      "evidence": [
+        {
+          "asset_sha256": "aaa7dbf40110a4ec90c6f2dae371394bafe3c0894ae255aca506aba1b636899f",
+          "page": 1,
+          "locator": "网格 1A-2B，U1 pin29 VDD_SPI、C4 与 pin30-pin35 未连接标记"
+        }
+      ]
+    },
+    {
+      "id": "clock.main-40mhz",
+      "category": "clock",
+      "subject": "ESP32-S3 主时钟",
+      "statement": "X1 40MHz 晶体连接 U1 XTAL_P/XTAL_N，XTAL_P 支路串联 L3 10nH，两个晶体端分别配置 C9 10pF 和 C14 12pF 对地。",
+      "confidence": "confirmed",
+      "attributes": {
+        "reference": "X1",
+        "frequency": "40MHz",
+        "series_inductor": "L3 10nH",
+        "load_capacitors": "C9 10pF, C14 12pF"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "aaa7dbf40110a4ec90c6f2dae371394bafe3c0894ae255aca506aba1b636899f",
+          "page": 1,
+          "locator": "网格 1B-2B，X1、L3、C9、C14 与 XTAL_40M_P/N"
+        }
+      ]
+    },
+    {
+      "id": "rf.onboard-antenna",
+      "category": "rf",
+      "subject": "板载 2.4GHz 天线",
+      "statement": "U1 LNA_IN 通过 ESP_LNA、L1 2.2nH 连接 ANT1 PROANT440，射频匹配节点配置 C1 2.2pF 和 C2 2.0pF 对地。",
+      "confidence": "confirmed",
+      "attributes": {
+        "antenna": "ANT1 PROANT440",
+        "soc_pin": "U1 LNA_IN",
+        "net": "ESP_LNA",
+        "series_inductor": "L1 2.2nH",
+        "shunt_capacitors": "C1 2.2pF, C2 2.0pF"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "aaa7dbf40110a4ec90c6f2dae371394bafe3c0894ae255aca506aba1b636899f",
+          "page": 1,
+          "locator": "网格 1A-2A，ANT1、L1、C1、C2、ESP_LNA 与 U1 LNA_IN"
+        }
+      ]
+    },
+    {
+      "id": "power.usb-input",
+      "category": "power",
+      "subject": "USB VBUS 到 VIN_5V",
+      "statement": "J2 USB Type-C 的 VCC 经 JP1 测试点和 F1 6V/1A PPTC 自恢复保险丝连接 VIN_5V，VIN_5V 端由 D14 PESDNC2FD5VB 对地防护。",
+      "confidence": "confirmed",
+      "attributes": {
+        "connector": "J2",
+        "testpoint": "JP1",
+        "fuse": "F1 6V/1A/PPTC",
+        "output_net": "VIN_5V",
+        "protection": "D14 PESDNC2FD5VB"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "aaa7dbf40110a4ec90c6f2dae371394bafe3c0894ae255aca506aba1b636899f",
+          "page": 1,
+          "locator": "网格 4D，J2 VCC、JP1、F1、VIN_5V 与 D14"
+        }
+      ]
+    },
+    {
+      "id": "power.3v3-converter",
+      "category": "power",
+      "subject": "VDD_3V3 电源转换",
+      "statement": "M2 MUN3CAD01-SC 以 VIN_5V 为输入并输出 VDD_3V3，反馈分压为 R6 100kΩ 与 R17 22.1kΩ，输出由 C21、C22 各 10uF 去耦。",
+      "confidence": "confirmed",
+      "attributes": {
+        "converter": "M2 MUN3CAD01-SC",
+        "input": "VIN_5V",
+        "output": "VDD_3V3",
+        "feedback": "R6 100kΩ, R17 22.1kΩ",
+        "output_capacitors": "C21 10uF, C22 10uF"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "aaa7dbf40110a4ec90c6f2dae371394bafe3c0894ae255aca506aba1b636899f",
+          "page": 1,
+          "locator": "网格 2D，M2、VIN_5V、VDD_3V3、R6、R17、C21、C22"
+        }
+      ]
+    },
+    {
+      "id": "reset.enable-power-link",
+      "category": "reset",
+      "subject": "ESP_EN 与 DC-DC 使能",
+      "statement": "U1 CHIP_PU 连接 ESP_EN，ESP_EN 由 R7 10kΩ 上拉到 VDD_3V3、C23 1uF 对地，并通过 D6 1N4148WT 连接 M2 的 EN 网络；M2 EN 另由 R16 100kΩ 接 VIN_5V。",
+      "confidence": "confirmed",
+      "attributes": {
+        "soc_enable": "ESP_EN",
+        "soc_pullup": "R7 10kΩ",
+        "soc_capacitor": "C23 1uF",
+        "isolation_diode": "D6 1N4148WT",
+        "converter_enable_pull": "R16 100kΩ to VIN_5V"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "aaa7dbf40110a4ec90c6f2dae371394bafe3c0894ae255aca506aba1b636899f",
+          "page": 1,
+          "locator": "网格 1D-2D，ESP_EN、R7、C23、D6、EN、R16 与 M2 pin1"
+        }
+      ]
+    },
+    {
+      "id": "interface.usb-type-c",
+      "category": "interface",
+      "subject": "USB Type-C 连接",
+      "statement": "J2 DP1/DP2 并接 USB_D_P，DN1/DN2 并接 USB_D_N；CC1 与 CC2 分别通过 R1、R2 5.1kΩ 接地。",
+      "confidence": "confirmed",
+      "attributes": {
+        "connector": "J2 USB-TYPEC",
+        "dp_net": "USB_D_P",
+        "dm_net": "USB_D_N",
+        "cc1_pulldown": "R1 5.1kΩ",
+        "cc2_pulldown": "R2 5.1kΩ"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "aaa7dbf40110a4ec90c6f2dae371394bafe3c0894ae255aca506aba1b636899f",
+          "page": 1,
+          "locator": "网格 4D，J2 DP/DN/CC 引脚与 R1/R2"
+        }
+      ]
+    },
+    {
+      "id": "bus.usb-native",
+      "category": "bus",
+      "subject": "ESP32-S3 原生 USB 差分链路",
+      "statement": "U1 GPIO19/GPIO20 分别形成 USB_DU_N/USB_DU_P，经 L5 共模扼流圈转换到连接器侧 USB_D_N/USB_D_P；JP2/JP3 为前级差分测试点。",
+      "confidence": "confirmed",
+      "attributes": {
+        "dm_gpio": 19,
+        "dp_gpio": 20,
+        "soc_nets": "USB_DU_N, USB_DU_P",
+        "connector_nets": "USB_D_N, USB_D_P",
+        "common_mode_choke": "L5",
+        "testpoints": "JP2, JP3"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "aaa7dbf40110a4ec90c6f2dae371394bafe3c0894ae255aca506aba1b636899f",
+          "page": 1,
+          "locator": "网格 2B U1 GPIO19/20 与网格 3D L5、JP2、JP3、USB_DU_P/N、USB_D_P/N"
+        }
+      ]
+    },
+    {
+      "id": "protection.usb-data",
+      "category": "protection",
+      "subject": "USB 数据线 ESD 防护",
+      "statement": "连接器侧 USB_D_P 和 USB_D_N 分别由 D3、D4 PESDNC2FD3V3B 对地防护。",
+      "confidence": "confirmed",
+      "attributes": {
+        "dp_protection": "D3 PESDNC2FD3V3B",
+        "dm_protection": "D4 PESDNC2FD3V3B"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "aaa7dbf40110a4ec90c6f2dae371394bafe3c0894ae255aca506aba1b636899f",
+          "page": 1,
+          "locator": "网格 3D，D3 接 USB_D_P、D4 接 USB_D_N，二者均接 GND"
+        }
+      ]
+    },
+    {
+      "id": "gpio.user-boot-button",
+      "category": "gpio",
+      "subject": "GPIO0 用户与启动按键",
+      "statement": "S1 按下时将 GPIO0 拉低，R4 10kΩ 将 GPIO0 上拉到 VDD_3V3，D1 PESDNC2FD3V3B 从 GPIO0 对地防护；GPIO0 同时引到 M1 pin20。",
+      "confidence": "confirmed",
+      "attributes": {
+        "switch": "S1 SMT_SW_1TS026A",
+        "net": "GPIO0",
+        "active_level": "low",
+        "pullup": "R4 10kΩ",
+        "protection": "D1 PESDNC2FD3V3B",
+        "module_pin": 20
+      },
+      "evidence": [
+        {
+          "asset_sha256": "aaa7dbf40110a4ec90c6f2dae371394bafe3c0894ae255aca506aba1b636899f",
+          "page": 1,
+          "locator": "网格 3C，R4、D1、GPIO0、S1；网格 4C M1 pin20 GPIO0"
+        }
+      ]
+    },
+    {
+      "id": "gpio.rgb-led",
+      "category": "gpio",
+      "subject": "WS2812 RGB LED",
+      "statement": "U3 WS2812 由 VDD_3V3 供电，DI 接 SK_DIN，SK_DIN 连接 U1 GPIO21；DO 输出为 SK_DOUT。",
+      "confidence": "confirmed",
+      "attributes": {
+        "reference": "U3",
+        "data_gpio": 21,
+        "data_in": "SK_DIN",
+        "data_out": "SK_DOUT",
+        "supply": "VDD_3V3"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "aaa7dbf40110a4ec90c6f2dae371394bafe3c0894ae255aca506aba1b636899f",
+          "page": 1,
+          "locator": "网格 2B U1 GPIO21/SK_DIN 与网格 3B-4B U3 WS2812"
+        }
+      ]
+    },
+    {
+      "id": "interface.stamp-module-power",
+      "category": "interface",
+      "subject": "STAMP-S3M 电源和控制焊盘",
+      "statement": "M1 pin13 提供 VIN_5V，pin28 提供 VDD_3V3，pin11/pin18 为 GND，pin22 为 EN。",
+      "confidence": "confirmed",
+      "attributes": {
+        "connector": "M1 STAMP-S3M",
+        "five_volt_pin": 13,
+        "three_v_three_pin": 28,
+        "ground_pins": "11,18",
+        "enable_pin": 22
+      },
+      "evidence": [
+        {
+          "asset_sha256": "aaa7dbf40110a4ec90c6f2dae371394bafe3c0894ae255aca506aba1b636899f",
+          "page": 1,
+          "locator": "网格 3C-4C，M1 pin11、13、18、22、28"
+        }
+      ]
+    },
+    {
+      "id": "interface.stamp-module-gpios",
+      "category": "interface",
+      "subject": "STAMP-S3M 外部 GPIO",
+      "statement": "M1 引出 GPIO0-GPIO15 以及 GPIO39、GPIO40、GPIO41、GPIO42、GPIO43/TX、GPIO44/RX 和 GPIO46，共 23 路 GPIO。",
+      "confidence": "confirmed",
+      "attributes": {
+        "connector": "M1 STAMP-S3M",
+        "gpio_count": 23,
+        "gpio_list": "GPIO0, GPIO1, GPIO2, GPIO3, GPIO4, GPIO5, GPIO6, GPIO7, GPIO8, GPIO9, GPIO10, GPIO11, GPIO12, GPIO13, GPIO14, GPIO15, GPIO39, GPIO40, GPIO41, GPIO42, GPIO43, GPIO44, GPIO46"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "aaa7dbf40110a4ec90c6f2dae371394bafe3c0894ae255aca506aba1b636899f",
+          "page": 1,
+          "locator": "网格 3C-4C，M1 左侧 pin1-pin17 与右侧 pin19-pin27 的 GPIO 标注"
+        }
+      ]
+    },
+    {
+      "id": "bus.uart0-module",
+      "category": "bus",
+      "subject": "UART0 到模组焊盘",
+      "statement": "U1 U0TXD 经 R5 510Ω 连接 TX，并引到 M1 pin26 G43/Tx；U1 U0RXD 直接连接 RX，并引到 M1 pin24 G44/Rx。",
+      "confidence": "confirmed",
+      "attributes": {
+        "tx_soc": "U1 U0TXD",
+        "tx_net": "TX",
+        "tx_gpio": 43,
+        "tx_module_pin": 26,
+        "tx_series_resistor": "R5 510Ω",
+        "rx_soc": "U1 U0RXD",
+        "rx_net": "RX",
+        "rx_gpio": 44,
+        "rx_module_pin": 24
+      },
+      "evidence": [
+        {
+          "asset_sha256": "aaa7dbf40110a4ec90c6f2dae371394bafe3c0894ae255aca506aba1b636899f",
+          "page": 1,
+          "locator": "网格 2C U1 U0TXD/U0RXD、R5、TX/RX 与网格 4C M1 pin24/pin26"
+        }
+      ]
+    },
+    {
+      "id": "gpio.gpio3-pullup",
+      "category": "gpio",
+      "subject": "GPIO3 默认偏置",
+      "statement": "GPIO3 通过 R3 10kΩ 上拉到 VDD_3V3，并同时引到 M1 pin3。",
+      "confidence": "confirmed",
+      "attributes": {
+        "gpio": 3,
+        "pullup": "R3 10kΩ",
+        "module_pin": 3
+      },
+      "evidence": [
+        {
+          "asset_sha256": "aaa7dbf40110a4ec90c6f2dae371394bafe3c0894ae255aca506aba1b636899f",
+          "page": 1,
+          "locator": "网格 2A，U1 GPIO3 与 R3；网格 3C M1 pin3 GPIO3"
+        }
+      ]
+    },
+    {
+      "id": "interface.lcd-8pin",
+      "category": "interface",
+      "subject": "J3 八针 SPI 显示接口",
+      "statement": "J3 pin1 接 U2 背光输出，pin2=GND，pin3=DISP_RST，pin4=DISP_RS，pin5=DISP_MOSI，pin6=DISP_SCK，pin7=VDD_3V3，pin8=DISP_CS。",
+      "confidence": "confirmed",
+      "attributes": {
+        "connector": "J3 HDGC/0.5K-HX-8PWB",
+        "pin1": "backlight output",
+        "pin2": "GND",
+        "pin3": "DISP_RST",
+        "pin4": "DISP_RS",
+        "pin5": "DISP_MOSI",
+        "pin6": "DISP_SCK",
+        "pin7": "VDD_3V3",
+        "pin8": "DISP_CS"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "aaa7dbf40110a4ec90c6f2dae371394bafe3c0894ae255aca506aba1b636899f",
+          "page": 1,
+          "locator": "网格 4A，J3 8 针连接器和每个网络标注"
+        }
+      ]
+    },
+    {
+      "id": "interface.lcd-gpio-map",
+      "category": "gpio",
+      "subject": "SPI 显示 GPIO 映射",
+      "statement": "DISP_RST=GPIO33、DISP_RS=GPIO34、DISP_MOSI=GPIO35、DISP_SCK=GPIO36、DISP_CS=GPIO37、DISP_BL=GPIO38；U2 以 DISP_BL 控制背光电源。",
+      "confidence": "confirmed",
+      "attributes": {
+        "reset_gpio": 33,
+        "rs_gpio": 34,
+        "mosi_gpio": 35,
+        "sck_gpio": 36,
+        "cs_gpio": 37,
+        "backlight_gpio": 38,
+        "backlight_switch": "U2 SGM2578 / WS4622C-4/TR"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "aaa7dbf40110a4ec90c6f2dae371394bafe3c0894ae255aca506aba1b636899f",
+          "page": 1,
+          "locator": "网格 2B-C，U1 GPIO33-GPIO38 对应 DISP 网络；网格 3A U2 EN=DISP_BL"
+        }
+      ]
+    },
+    {
+      "id": "interface.lcd-12pin-nc",
+      "category": "interface",
+      "subject": "J1 十二针显示接口预留",
+      "statement": "J1 为标注 /NC 的 12 针替代显示接口，除复用 J3 的背光、DISP_RST/RS/MOSI/SCK/CS、VDD_3V3 和 GND 外，还引出 VIN_5V、GPIO18、GPIO17、GPIO16。",
+      "confidence": "confirmed",
+      "attributes": {
+        "connector": "J1 HDGC/0.5K-HX-12PWB/NC",
+        "assembly": "NC",
+        "extra_signals": "VIN_5V, GPIO18, GPIO17, GPIO16",
+        "shared_display_signals": "backlight, DISP_RST, DISP_RS, DISP_MOSI, DISP_SCK, VDD_3V3, DISP_CS"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "aaa7dbf40110a4ec90c6f2dae371394bafe3c0894ae255aca506aba1b636899f",
+          "page": 1,
+          "locator": "网格 4A，J1 pin1-pin12 及器件名末尾 /NC"
+        }
+      ]
+    }
+  ],
+  "needs_review": []
+}

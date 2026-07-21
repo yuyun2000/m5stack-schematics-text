@@ -1,0 +1,21 @@
+{
+  "dry_run": false,
+  "failed": 0,
+  "published": 1,
+  "results": [
+    {
+      "backup": null,
+      "draft_action": "unchanged",
+      "dry_run": false,
+      "errors": [],
+      "needs_review": 7,
+      "product_id": "unit-dac2-b428d9b69609",
+      "product_name": "Unit DAC2",
+      "publish_action": "unchanged",
+      "sha256": "49153934606f741ab2d988ef7730a5fd1ad0c3cff122e9fd6fbb59b50cc59827",
+      "status": "valid",
+      "uncertain_facts": 7
+    }
+  ],
+  "schema_version": 1
+}

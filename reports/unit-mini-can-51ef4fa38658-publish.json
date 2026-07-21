@@ -1,0 +1,21 @@
+{
+  "dry_run": false,
+  "failed": 0,
+  "published": 1,
+  "results": [
+    {
+      "backup": null,
+      "draft_action": "unchanged",
+      "dry_run": false,
+      "errors": [],
+      "needs_review": 0,
+      "product_id": "unit-mini-can-51ef4fa38658",
+      "product_name": "Unit Mini CAN",
+      "publish_action": "unchanged",
+      "sha256": "57f983dd576c22c8ee47db9e15d58008a173892d815a3f99a114cb5ba6dd8e0a",
+      "status": "valid",
+      "uncertain_facts": 0
+    }
+  ],
+  "schema_version": 1
+}

@@ -1,0 +1,389 @@
+{
+  "schema_version": 1,
+  "generator": "schematic_describer",
+  "product": {
+    "product_id": "unit-catm-gnss-dc6725ac8794",
+    "product_name": "Unit CatM GNSS",
+    "sku": "U137",
+    "source_path": "unit/catm_gnss.md",
+    "source_sha256": "effc7fdb41e92b987d5bf44b5ffc6b9ab1d4c76c6dadfd05d19b5b4273ced1a5",
+    "input_sha256": "50b18050801d5bb9aa8772eb8f3e1949c8c2b3e6e2128f3bd04367bbd3fcddca"
+  },
+  "schematic_assets": [
+    {
+      "sha256": "fd1b7d1dde59d1699006445e194f8e713b29f959d0d3f50c7d49d8405fa711c2",
+      "source_url": "https://static-cdn.m5stack.com/resource/docs/products/unit/catm_gnss/catm_gnss_sch_01.webp",
+      "pages": [1]
+    }
+  ],
+  "summary": "Unit CatM GNSS 以 M1A/M1B SIM7080G 为蜂窝与 GNSS 通信核心，外接 U3 SIM 卡座、E1 蜂窝 SMA 天线和 E2 GNSS SMA 天线。J2 HY-2.0_UART 提供 5V、GND 与 LTE_TX/LTE_RX，Q4/Q5 将外部 3.3V UART 与模块 1.8V UART1_TXD/UART1_RXD 互联。DC 插座 J1 与 Grove +5V 经二极管汇合，两路 U1/U4 ME3116AM6G 分别生成 VBAT/+3.3V 与 +5V，并配有浪涌保护、储能电容和 STATUS/NETLIGHT 指示电路。",
+  "keywords": [
+    "Unit CatM GNSS",
+    "U137",
+    "SIM7080G",
+    "M1A",
+    "M1B",
+    "Cat-M",
+    "NB-IoT",
+    "GNSS",
+    "UART1_TXD",
+    "UART1_RXD",
+    "M_TXD",
+    "M_RXD",
+    "LTE_TX",
+    "LTE_RX",
+    "HY-2.0_UART",
+    "J2",
+    "PWR2.5",
+    "J1",
+    "SIM_VCC",
+    "SIM_DATA",
+    "SIM_CLK",
+    "SIM_RST",
+    "SNF05CT1G",
+    "ANT_SMA-KWE",
+    "E1",
+    "E2",
+    "GNSS_ANT",
+    "ME3116AM6G",
+    "VBAT",
+    "+5V",
+    "+3.3V",
+    "+1.8V",
+    "STATUS",
+    "NETLIGHT",
+    "PWRKEY",
+    "SS8050 Y1",
+    "B5819W SL",
+    "SD24",
+    "115200 8N1",
+    "MicroSIM"
+  ],
+  "components": [
+    {
+      "reference": "M1A,M1B",
+      "part_number": "SIM7080G",
+      "role": "蜂窝/GNSS 通信模组，提供 UART1、SIM、状态、电源、蜂窝 ANT 与 GNSS_ANT 接口。",
+      "evidence": [{"asset_sha256": "fd1b7d1dde59d1699006445e194f8e713b29f959d0d3f50c7d49d8405fa711c2", "page": 1, "locator": "页面中央 M1A/M1B SIM7080G 分体符号及 1-76 脚"}]
+    },
+    {
+      "reference": "U1",
+      "part_number": "ME3116AM6G",
+      "role": "公共输入电源到 VBAT/+3.3V 的降压转换器。",
+      "evidence": [{"asset_sha256": "fd1b7d1dde59d1699006445e194f8e713b29f959d0d3f50c7d49d8405fa711c2", "page": 1, "locator": "页面上部 U1 ME3116AM6G、L1、D1、R4/R8、VBAT"}]
+    },
+    {
+      "reference": "U4",
+      "part_number": "ME3116AM6G",
+      "role": "公共输入电源到 +5V 的降压转换器。",
+      "evidence": [{"asset_sha256": "fd1b7d1dde59d1699006445e194f8e713b29f959d0d3f50c7d49d8405fa711c2", "page": 1, "locator": "页面左中部 U4 ME3116AM6G、L2、D8/D9、R24/R25、+5V"}]
+    },
+    {
+      "reference": "U3",
+      "part_number": "SIM",
+      "role": "SIM 卡座，连接 SIM_VCC、SIM_DATA、SIM_CLK、SIM_RST 与 GND。",
+      "evidence": [{"asset_sha256": "fd1b7d1dde59d1699006445e194f8e713b29f959d0d3f50c7d49d8405fa711c2", "page": 1, "locator": "页面左下 U3 SIM，IO/CLK/RST/VCC/VPP/GND 引脚"}]
+    },
+    {
+      "reference": "U2",
+      "part_number": "SNF05CT1G",
+      "role": "SIM_DATA/SIM_CLK/SIM_RST 三线对地 ESD 保护阵列。",
+      "evidence": [{"asset_sha256": "fd1b7d1dde59d1699006445e194f8e713b29f959d0d3f50c7d49d8405fa711c2", "page": 1, "locator": "页面下中偏左 U2 SNF05CT1G，SIM 三线与 GND"}]
+    },
+    {
+      "reference": "J1",
+      "part_number": "PWR2.5",
+      "role": "外部直流电源插座，经 D5 M7 接入公共输入节点。",
+      "evidence": [{"asset_sha256": "fd1b7d1dde59d1699006445e194f8e713b29f959d0d3f50c7d49d8405fa711c2", "page": 1, "locator": "页面左上 J1 PWR2.5、D5 M7 与 GND"}]
+    },
+    {
+      "reference": "J2",
+      "part_number": "HY-2.0_UART",
+      "role": "四针 UART/Grove 接口，针脚为 RX/LTE_TX、TX/LTE_RX、VCC/+5V、GND。",
+      "evidence": [{"asset_sha256": "fd1b7d1dde59d1699006445e194f8e713b29f959d0d3f50c7d49d8405fa711c2", "page": 1, "locator": "页面右中 J2 HY-2.0_UART 1-4 脚"}]
+    },
+    {
+      "reference": "E1",
+      "part_number": "ANT_SMA-KWE",
+      "role": "蜂窝天线 SMA 接口，经 R12 0Ω连接 M1 ANT（31 脚）。",
+      "evidence": [{"asset_sha256": "fd1b7d1dde59d1699006445e194f8e713b29f959d0d3f50c7d49d8405fa711c2", "page": 1, "locator": "页面右下中部 M1 ANT/31-R12 0Ω-E1 ANT_SMA-KWE"}]
+    },
+    {
+      "reference": "E2",
+      "part_number": "ANT_SMA-KWE",
+      "role": "GNSS 天线 SMA 接口，经 C14 33pF 连接 GNSS_ANT，并具有 L3/R22 偏置支路。",
+      "evidence": [{"asset_sha256": "fd1b7d1dde59d1699006445e194f8e713b29f959d0d3f50c7d49d8405fa711c2", "page": 1, "locator": "页面右中 M1 GNSS_ANT/68-C14-L3/R22-E2 ANT_SMA-KWE"}]
+    },
+    {
+      "reference": "Q4,Q5",
+      "part_number": "SS8050 Y1",
+      "role": "LTE_RX/LTE_TX 3.3V 侧与 M_RXD/M_TXD 1.8V 侧之间的 UART 电平转换晶体管。",
+      "evidence": [{"asset_sha256": "fd1b7d1dde59d1699006445e194f8e713b29f959d0d3f50c7d49d8405fa711c2", "page": 1, "locator": "页面右下 Q4/Q5 SS8050 Y1 与 R16-R21、+3.3V/+1.8V"}]
+    },
+    {
+      "reference": "Q2,Q3",
+      "part_number": "SS8050 Y1",
+      "role": "STATUS 与 NETLIGHT 控制的 LED 低侧驱动晶体管。",
+      "evidence": [{"asset_sha256": "fd1b7d1dde59d1699006445e194f8e713b29f959d0d3f50c7d49d8405fa711c2", "page": 1, "locator": "页面右上 D2/R2/Q2 STATUS 与 D3/R3/Q3 NETLIGHT 两路"}]
+    },
+    {
+      "reference": "D2,D3",
+      "part_number": "0603",
+      "role": "VBAT 供电的 STATUS 与 NETLIGHT 状态 LED。",
+      "evidence": [{"asset_sha256": "fd1b7d1dde59d1699006445e194f8e713b29f959d0d3f50c7d49d8405fa711c2", "page": 1, "locator": "页面右上 D2/D3 0603、R2/R3 1KΩ 与 Q2/Q3"}]
+    },
+    {
+      "reference": "D4,D5,D10",
+      "part_number": "SD24 / M7 / B5819W SL",
+      "role": "公共输入的浪涌钳位与两路电源输入串联隔离器件。",
+      "evidence": [{"asset_sha256": "fd1b7d1dde59d1699006445e194f8e713b29f959d0d3f50c7d49d8405fa711c2", "page": 1, "locator": "页面左上 J1-D5、+5V-D10、公共节点-D4/GND"}]
+    },
+    {
+      "reference": "D6,D7",
+      "part_number": "PTVSHC3D4V5U / RLSD52A031V",
+      "role": "VBAT/+3.3V 电源轨的对地瞬态保护器件。",
+      "evidence": [{"asset_sha256": "fd1b7d1dde59d1699006445e194f8e713b29f959d0d3f50c7d49d8405fa711c2", "page": 1, "locator": "页面中左 D6 PTVSHC3D4V5U、D7 RLSD52A031V 接 +3.3V/GND"}]
+    },
+    {
+      "reference": "R13,R14,R15",
+      "part_number": "22Ω",
+      "role": "SIM_DATA、SIM_CLK、SIM_RST 的串联电阻。",
+      "evidence": [{"asset_sha256": "fd1b7d1dde59d1699006445e194f8e713b29f959d0d3f50c7d49d8405fa711c2", "page": 1, "locator": "页面下中 R13/R14/R15 22Ω 串接 M1 SIM 信号与 U3"}]
+    },
+    {
+      "reference": "C12,C13,C15-C21",
+      "part_number": "470uF/10V / 100uF / 100nF",
+      "role": "SIM7080G VBAT 的大容量储能与高频去耦电容组。",
+      "evidence": [{"asset_sha256": "fd1b7d1dde59d1699006445e194f8e713b29f959d0d3f50c7d49d8405fa711c2", "page": 1, "locator": "页面左下 VBAT 电容组 C12/C13 470uF、C15-C17/C19-C21 100uF、C18 100nF"}]
+    },
+    {
+      "reference": "C6",
+      "part_number": "22uF",
+      "role": "SIM7080G VDD_EXT/+1.8V 电源的对地电容。",
+      "evidence": [{"asset_sha256": "fd1b7d1dde59d1699006445e194f8e713b29f959d0d3f50c7d49d8405fa711c2", "page": 1, "locator": "页面上中 C6 22uF，跨接 +1.8V 与 GND"}]
+    }
+  ],
+  "facts": [
+    {
+      "id": "system.sim7080g-architecture",
+      "category": "system",
+      "subject": "整板架构",
+      "statement": "M1A/M1B SIM7080G 是蜂窝与 GNSS 核心，连接 U3 SIM、E1/E2 双 SMA、J2 UART、STATUS/NETLIGHT 指示及 VBAT/+1.8V 电源；U1/U4 分别生成 VBAT 与 +5V。",
+      "confidence": "confirmed",
+      "attributes": {"module": "M1A,M1B SIM7080G", "sim": "U3 SIM", "cellular_antenna": "E1 ANT_SMA-KWE", "gnss_antenna": "E2 ANT_SMA-KWE", "host_uart": "J2 HY-2.0_UART", "power_converters": "U1,U4 ME3116AM6G", "indicators": "D2/D3,Q2/Q3"},
+      "evidence": [{"asset_sha256": "fd1b7d1dde59d1699006445e194f8e713b29f959d0d3f50c7d49d8405fa711c2", "page": 1, "locator": "第 1 页全图，M1A/M1B 与电源、SIM、UART、射频、指示功能分区"}]
+    },
+    {
+      "id": "component.sim7080g-key-pins",
+      "category": "component",
+      "subject": "SIM7080G 关键引脚",
+      "statement": "M1A 的 UART1_TXD/1、UART1_RXD/2 接 M_TXD/M_RXD，SIM_DATA/15、SIM_CLK/16、SIM_RST/17、SIM_VDD/18 接 SIM 电路，ANT/31 接 E1，VBAT/34/35 接 +3.3V；M1B GNSS_ANT/68 接 E2。",
+      "confidence": "confirmed",
+      "attributes": {"uart": "pin1 UART1_TXD=M_TXD,pin2 UART1_RXD=M_RXD", "sim": "pin15 SIM_DATA,pin16 SIM_CLK,pin17 SIM_RST,pin18 SIM_VDD", "cellular_rf": "pin31 ANT", "vbats": "pins34,35 VBAT/+3.3V", "gnss_rf": "pin68 GNSS_ANT", "status": "pin42 STATUS", "netlight": "pin41 NETLIGHT", "vdd_ext": "pin40 +1.8V"},
+      "evidence": [{"asset_sha256": "fd1b7d1dde59d1699006445e194f8e713b29f959d0d3f50c7d49d8405fa711c2", "page": 1, "locator": "页面中央 M1A/M1B SIM7080G 引脚 1-76 及网络标注"}]
+    },
+    {
+      "id": "power.dual-input-or",
+      "category": "power",
+      "subject": "双电源输入汇合",
+      "statement": "J1 PWR2.5 正端经 D5 M7 接公共输入节点，J2 的 +5V 供电经 D10 B5819W SL 接同一节点；D4 SD24 从公共节点接 GND。",
+      "confidence": "confirmed",
+      "attributes": {"dc_input": "J1 PWR2.5 via D5 M7", "grove_input": "+5V via D10 B5819W SL", "common_node": "U1/U4 VIN", "surge_clamp": "D4 SD24 to GND"},
+      "evidence": [{"asset_sha256": "fd1b7d1dde59d1699006445e194f8e713b29f959d0d3f50c7d49d8405fa711c2", "page": 1, "locator": "页面左上 J1-D5 与 +5V-D10 汇合，D4 接 GND，节点连接 U1/U4 VIN"}]
+    },
+    {
+      "id": "power.u1-vbat-stage",
+      "category": "power",
+      "subject": "U1 VBAT 降压级",
+      "statement": "U1 ME3116AM6G 通过 L1 10uH、D1 B5819W SL、R4 47KΩ、R8 15KΩ、C4 100pF 和 C5 22uF 生成标注为 VBAT/+3.3V 的输出。",
+      "confidence": "confirmed",
+      "attributes": {"converter": "U1 ME3116AM6G", "inductor": "L1 10uH", "catch_diode": "D1 B5819W SL", "feedback": "R4 47KΩ,R8 15KΩ", "feedforward": "C4 100pF", "output_capacitor": "C5 22uF", "output_net": "VBAT/+3.3V", "enable_pull": "R1 100KΩ"},
+      "evidence": [{"asset_sha256": "fd1b7d1dde59d1699006445e194f8e713b29f959d0d3f50c7d49d8405fa711c2", "page": 1, "locator": "页面上中 U1-L1-D1-R4/R8-C4/C5-VBAT 电源级"}]
+    },
+    {
+      "id": "power.u4-5v-stage",
+      "category": "power",
+      "subject": "U4 5V 降压级",
+      "statement": "U4 ME3116AM6G 通过 L2 10uH、D8 B5819W SL、R24 52.3KΩ、R25 10KΩ 与 C23 22uF 构成降压级，输出经 D9 B5819W SL 到 +5V。",
+      "confidence": "confirmed",
+      "attributes": {"converter": "U4 ME3116AM6G", "inductor": "L2 10uH", "catch_diode": "D8 B5819W SL", "feedback": "R24 52.3KΩ ±1%,R25 10KΩ", "output_capacitor": "C23 22uF", "series_output_diode": "D9 B5819W SL", "output_net": "+5V", "enable_pull": "R23 100KΩ"},
+      "evidence": [{"asset_sha256": "fd1b7d1dde59d1699006445e194f8e713b29f959d0d3f50c7d49d8405fa711c2", "page": 1, "locator": "页面左中 U4-L2-D8-R24/R25-C23-D9-+5V 电源级"}]
+    },
+    {
+      "id": "power.vbat-storage-protection",
+      "category": "power",
+      "subject": "VBAT 储能与保护",
+      "statement": "VBAT 具有 C12/C13 各 470uF/10V、C15-C17 与 C19-C21 各 100uF、C18 100nF 的对地电容组，并由 D6 PTVSHC3D4V5U 与 D7 RLSD52A031V 对地保护。",
+      "confidence": "confirmed",
+      "attributes": {"bulk_470uf": "C12,C13 470uF/10V", "bulk_100uf": "C15,C16,C17,C19,C20,C21 100uF", "bypass": "C18 100nF", "protection": "D6 PTVSHC3D4V5U,D7 RLSD52A031V", "rail": "VBAT/+3.3V"},
+      "evidence": [{"asset_sha256": "fd1b7d1dde59d1699006445e194f8e713b29f959d0d3f50c7d49d8405fa711c2", "page": 1, "locator": "页面左下 VBAT 电容组 C12-C21 与页面中左 D6/D7"}]
+    },
+    {
+      "id": "power.module-rails",
+      "category": "power",
+      "subject": "SIM7080G 电源轨",
+      "statement": "M1A VBAT（34、35 脚）连接 +3.3V/VBAT，M1A VDD_EXT（40 脚）输出 +1.8V；C6 22uF 从 +1.8V 接 GND。",
+      "confidence": "confirmed",
+      "attributes": {"module_vbat_pins": "34,35", "module_vbat_net": "+3.3V/VBAT", "vdd_ext_pin": "40", "vdd_ext_net": "+1.8V", "vdd_ext_capacitor": "C6 22uF"},
+      "evidence": [{"asset_sha256": "fd1b7d1dde59d1699006445e194f8e713b29f959d0d3f50c7d49d8405fa711c2", "page": 1, "locator": "M1A 34/35 VBAT、40 VDD_EXT 与页面上中 C6 +1.8V"}]
+    },
+    {
+      "id": "interface.uart-grove-pinout",
+      "category": "interface",
+      "subject": "J2 HY-2.0_UART",
+      "statement": "J2.1-J2.4 分别为 RX/LTE_TX、TX/LTE_RX、VCC/+5V、GND；C7 100nF 跨接 +5V 与 GND。",
+      "confidence": "confirmed",
+      "attributes": {"pin_1": "RX/LTE_TX", "pin_2": "TX/LTE_RX", "pin_3": "VCC/+5V", "pin_4": "GND", "supply_bypass": "C7 100nF"},
+      "evidence": [{"asset_sha256": "fd1b7d1dde59d1699006445e194f8e713b29f959d0d3f50c7d49d8405fa711c2", "page": 1, "locator": "页面右中 J2 1-4 脚与 LTE_TX/LTE_RX/+5V/GND、C7"}]
+    },
+    {
+      "id": "bus.uart-routing",
+      "category": "bus",
+      "subject": "主机 UART 路径",
+      "statement": "SIM7080G UART1_TXD（1 脚）输出 M_TXD，经 Q5 电平转换到 LTE_TX/J2.1；J2.2 LTE_RX 经 Q4 电平转换为 M_RXD，连接 UART1_RXD（2 脚）。",
+      "confidence": "confirmed",
+      "attributes": {"module_tx": "M1A UART1_TXD pin1/M_TXD", "host_rx": "LTE_TX/J2.1 RX", "tx_level_shifter": "Q5 SS8050 Y1", "host_tx": "LTE_RX/J2.2 TX", "module_rx": "M_RXD/M1A UART1_RXD pin2", "rx_level_shifter": "Q4 SS8050 Y1"},
+      "evidence": [{"asset_sha256": "fd1b7d1dde59d1699006445e194f8e713b29f959d0d3f50c7d49d8405fa711c2", "page": 1, "locator": "M1A UART1_TXD/RXD、右下 Q4/Q5 电平转换与 J2 LTE_TX/LTE_RX"}]
+    },
+    {
+      "id": "bus.uart-level-translation",
+      "category": "bus",
+      "subject": "UART 1.8V/3.3V 电平转换",
+      "statement": "Q4/Q5 SS8050 Y1 与 R16-R21 六个 4.7KΩ电阻连接 +1.8V 模块侧 M_RXD/M_TXD 和 +3.3V 主机侧 LTE_RX/LTE_TX。",
+      "confidence": "confirmed",
+      "attributes": {"module_domain": "+1.8V", "host_domain": "+3.3V", "rx_transistor": "Q4 SS8050 Y1", "tx_transistor": "Q5 SS8050 Y1", "rx_resistors": "R16,R17,R18 4.7KΩ", "tx_resistors": "R19,R20,R21 4.7KΩ"},
+      "evidence": [{"asset_sha256": "fd1b7d1dde59d1699006445e194f8e713b29f959d0d3f50c7d49d8405fa711c2", "page": 1, "locator": "页面右下 Q4/Q5、R16-R21、+1.8V/+3.3V、LTE/M UART 网络"}]
+    },
+    {
+      "id": "interface.sim-card",
+      "category": "interface",
+      "subject": "U3 SIM 卡接口",
+      "statement": "M1A SIM_DATA/15、SIM_CLK/16、SIM_RST/17 分别经 R13/R14/R15（22Ω）连接 U3 IO/CLK/RST；SIM_VCC/SIM_VDD 连接 U3 VCC，C8 100nF 对地。",
+      "confidence": "confirmed",
+      "attributes": {"data": "M1A pin15 -> R13 22Ω -> U3 IO", "clock": "M1A pin16 -> R14 22Ω -> U3 CLK", "reset": "M1A pin17 -> R15 22Ω -> U3 RST", "supply": "M1A pin18 SIM_VDD/SIM_VCC -> U3 VCC", "supply_capacitor": "C8 100nF", "ground": "U3 GND"},
+      "evidence": [{"asset_sha256": "fd1b7d1dde59d1699006445e194f8e713b29f959d0d3f50c7d49d8405fa711c2", "page": 1, "locator": "页面下中 M1A SIM_DATA/CLK/RST/VDD、R13-R15、U2、U3、C8-C11"}]
+    },
+    {
+      "id": "protection.sim-interface",
+      "category": "protection",
+      "subject": "SIM 信号保护与滤波",
+      "statement": "U2 SNF05CT1G 将 SIM_DATA、SIM_CLK、SIM_RST 三线钳位到 GND；C9/C10/C11 各 33pF 分别从三条 SIM 信号接 GND。",
+      "confidence": "confirmed",
+      "attributes": {"protector": "U2 SNF05CT1G", "protected_nets": "SIM_DATA,SIM_CLK,SIM_RST", "data_cap": "C9 33pF", "clock_cap": "C10 33pF", "reset_cap": "C11 33pF", "ground": "GND"},
+      "evidence": [{"asset_sha256": "fd1b7d1dde59d1699006445e194f8e713b29f959d0d3f50c7d49d8405fa711c2", "page": 1, "locator": "页面下中 U2 SNF05CT1G 与 C9-C11 的 SIM 三线对地连接"}]
+    },
+    {
+      "id": "rf.cellular-antenna",
+      "category": "rf",
+      "subject": "蜂窝天线 E1",
+      "statement": "M1A ANT（31 脚）经 R12 0Ω串联连接 E1 ANT_SMA-KWE，连接器屏蔽端接 GND。",
+      "confidence": "confirmed",
+      "attributes": {"module_pin": "M1A ANT pin31", "series": "R12 0Ω", "connector": "E1 ANT_SMA-KWE", "shield": "GND"},
+      "evidence": [{"asset_sha256": "fd1b7d1dde59d1699006445e194f8e713b29f959d0d3f50c7d49d8405fa711c2", "page": 1, "locator": "页面右下中部 M1A ANT/31-R12-E1"}]
+    },
+    {
+      "id": "rf.gnss-antenna-bias",
+      "category": "rf",
+      "subject": "GNSS 天线 E2",
+      "statement": "M1B GNSS_ANT（68 脚）经 C14 33pF 串联至 E2 ANT_SMA-KWE；E2 信号节点还经 L3 47nH 和 R22 10Ω连接 +3.3V 偏置。",
+      "confidence": "confirmed",
+      "attributes": {"module_pin": "M1B GNSS_ANT pin68", "series_capacitor": "C14 33pF", "connector": "E2 ANT_SMA-KWE", "bias_inductor": "L3 47nH", "bias_resistor": "R22 10Ω", "bias_rail": "+3.3V", "shield": "GND"},
+      "evidence": [{"asset_sha256": "fd1b7d1dde59d1699006445e194f8e713b29f959d0d3f50c7d49d8405fa711c2", "page": 1, "locator": "页面右中 M1B GNSS_ANT-C14-E2 与 L3-R22-+3.3V 支路"}]
+    },
+    {
+      "id": "gpio.status-indicator",
+      "category": "gpio",
+      "subject": "STATUS 指示",
+      "statement": "M1A STATUS（42 脚）经 R6 1KΩ驱动 Q2 SS8050 Y1 基极，R9 10KΩ下拉；Q2 低侧控制 VBAT-D2-R2 1KΩ指示支路。",
+      "confidence": "confirmed",
+      "attributes": {"module_pin": "M1A STATUS pin42", "base_resistor": "R6 1KΩ", "pulldown": "R9 10KΩ", "transistor": "Q2 SS8050 Y1", "led": "D2 0603", "led_resistor": "R2 1KΩ", "supply": "VBAT"},
+      "evidence": [{"asset_sha256": "fd1b7d1dde59d1699006445e194f8e713b29f959d0d3f50c7d49d8405fa711c2", "page": 1, "locator": "页面右上 STATUS-R6/R9-Q2 与 VBAT-D2-R2"}]
+    },
+    {
+      "id": "gpio.netlight-indicator",
+      "category": "gpio",
+      "subject": "NETLIGHT 指示",
+      "statement": "M1A NETLIGHT（41 脚）经 R7 1KΩ驱动 Q3 SS8050 Y1 基极，R10 10KΩ下拉；Q3 低侧控制 VBAT-D3-R3 1KΩ指示支路。",
+      "confidence": "confirmed",
+      "attributes": {"module_pin": "M1A NETLIGHT pin41", "base_resistor": "R7 1KΩ", "pulldown": "R10 10KΩ", "transistor": "Q3 SS8050 Y1", "led": "D3 0603", "led_resistor": "R3 1KΩ", "supply": "VBAT"},
+      "evidence": [{"asset_sha256": "fd1b7d1dde59d1699006445e194f8e713b29f959d0d3f50c7d49d8405fa711c2", "page": 1, "locator": "页面右上 NETLIGHT-R7/R10-Q3 与 VBAT-D3-R3"}]
+    },
+    {
+      "id": "key_net.pwrkey-status-link",
+      "category": "key_net",
+      "subject": "PWRKEY 与 STATUS",
+      "statement": "M1A PWRKEY（39 脚）经 R11 0Ω连接到图中 STATUS 竖直网络。",
+      "confidence": "confirmed",
+      "attributes": {"pwrkey_pin": "M1A pin39", "resistor": "R11 0Ω", "other_net": "STATUS"},
+      "evidence": [{"asset_sha256": "fd1b7d1dde59d1699006445e194f8e713b29f959d0d3f50c7d49d8405fa711c2", "page": 1, "locator": "M1A 39 PWRKEY-R11 0Ω 与 42 STATUS 右侧公共竖线"}]
+    },
+    {
+      "id": "clock.no-external-module-clock",
+      "category": "clock",
+      "subject": "SIM7080G 时钟",
+      "statement": "原理图未显示 SIM7080G 外接晶振；M1B 的 SPI_CLK 等未用接口也没有外部时钟连接。",
+      "confidence": "confirmed",
+      "attributes": {"external_crystal": "原理图未显示", "spi_clk_pin": "M1B pin50, no visible connection", "module": "SIM7080G"},
+      "evidence": [{"asset_sha256": "fd1b7d1dde59d1699006445e194f8e713b29f959d0d3f50c7d49d8405fa711c2", "page": 1, "locator": "M1A/M1B 全部外围与第 1 页全图，无晶振位号"}]
+    },
+    {
+      "id": "storage.no-external-storage",
+      "category": "storage",
+      "subject": "外部存储",
+      "statement": "原理图未显示独立 Flash、EEPROM、SD 卡或其他外部存储器，存储能力无法从板级图纸确认。",
+      "confidence": "confirmed",
+      "attributes": {"flash": "原理图未显示", "eeprom": "原理图未显示", "sd_card": "原理图未显示", "module": "SIM7080G"},
+      "evidence": [{"asset_sha256": "fd1b7d1dde59d1699006445e194f8e713b29f959d0d3f50c7d49d8405fa711c2", "page": 1, "locator": "第 1 页全图，无外部存储器位号或存储连接器"}]
+    },
+    {
+      "id": "bus.uart-parameters-undetermined",
+      "category": "bus",
+      "subject": "UART 参数与 AT 控制",
+      "statement": "原理图确认 UART1 电气连接，但未标注波特率、数据位、校验、停止位或 AT 指令协议，不能由图纸确认正文中的 115200 8N1。",
+      "confidence": "uncertain",
+      "attributes": {"bus": "UART1", "baud_candidate": "115200", "format_candidate": "8N1", "protocol_candidate": "AT Command", "schematic_parameters": "未标注"},
+      "evidence": [{"asset_sha256": "fd1b7d1dde59d1699006445e194f8e713b29f959d0d3f50c7d49d8405fa711c2", "page": 1, "locator": "M1A UART1_TXD/RXD 至 J2 路径，无串口参数文字"}]
+    },
+    {
+      "id": "rf.capabilities-undetermined",
+      "category": "rf",
+      "subject": "蜂窝/GNSS 能力与射频参数",
+      "statement": "原理图只确认 SIM7080G 型号及 ANT/GNSS_ANT 射频路径，没有列出 Cat-M/NB-IoT 频段、数据速率、发射功率、协议或 GPS/GLONASS/BeiDou/Galileo 支持矩阵。",
+      "confidence": "uncertain",
+      "attributes": {"module": "SIM7080G", "cellular_modes_candidate": "Cat-M,NB-IoT", "gnss_candidate": "GPS,GLONASS,BeiDou,Galileo", "bands": "原理图未标注", "data_rates": "原理图未标注", "rf_power": "原理图未标注", "protocols": "原理图未标注"},
+      "evidence": [{"asset_sha256": "fd1b7d1dde59d1699006445e194f8e713b29f959d0d3f50c7d49d8405fa711c2", "page": 1, "locator": "M1A/M1B SIM7080G 与 E1/E2 天线区域，无频段、速率或星座文字"}]
+    },
+    {
+      "id": "power.dc-input-rating-undetermined",
+      "category": "power",
+      "subject": "J1 直流输入范围",
+      "statement": "J1 仅标 PWR2.5，后接 D5、D4 与两路降压器；原理图没有打印允许输入电压范围、极性、最大电流或待机功耗，不能由图纸确认 DC 9-24V。",
+      "confidence": "uncertain",
+      "attributes": {"connector": "J1 PWR2.5", "voltage_candidate": "DC 9-24V", "polarity": "图中中心端经 D5 接输入、外壳端接 GND", "maximum_current": "未标注", "standby_current": "未标注"},
+      "evidence": [{"asset_sha256": "fd1b7d1dde59d1699006445e194f8e713b29f959d0d3f50c7d49d8405fa711c2", "page": 1, "locator": "页面左上 J1 PWR2.5-D5/D4-U1/U4 输入电路，无 9-24V 或电流文字"}]
+    }
+  ],
+  "needs_review": [
+    {
+      "id": "review.uart-parameters",
+      "fact_id": "bus.uart-parameters-undetermined",
+      "question": "当前固件/模组 UART 的确认波特率、帧格式和 AT 指令控制方式是否为 115200 8N1？",
+      "reason": "原理图只能证明 UART1 电气连接，未给出通信参数。",
+      "evidence": [{"asset_sha256": "fd1b7d1dde59d1699006445e194f8e713b29f959d0d3f50c7d49d8405fa711c2", "page": 1, "locator": "M1A UART1_TXD/RXD 至 Q4/Q5/J2"}]
+    },
+    {
+      "id": "review.rf-capabilities",
+      "fact_id": "rf.capabilities-undetermined",
+      "question": "该硬件版本确认支持哪些 Cat-M/NB-IoT 频段、GNSS 星座、协议、数据速率和发射功率？",
+      "reason": "这些属于模组规格，原理图没有列出相关参数。",
+      "evidence": [{"asset_sha256": "fd1b7d1dde59d1699006445e194f8e713b29f959d0d3f50c7d49d8405fa711c2", "page": 1, "locator": "SIM7080G 与 E1/E2 射频路径区域"}]
+    },
+    {
+      "id": "review.dc-input-rating",
+      "fact_id": "power.dc-input-rating-undetermined",
+      "question": "J1 PWR2.5 的允许 DC 输入范围、极性、公差和最大电流是多少？",
+      "reason": "图纸没有输入额定值文字，仅显示保护和降压拓扑。",
+      "evidence": [{"asset_sha256": "fd1b7d1dde59d1699006445e194f8e713b29f959d0d3f50c7d49d8405fa711c2", "page": 1, "locator": "J1-D5/D4-U1/U4 公共输入路径"}]
+    }
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "dry_run": false,
+  "failed": 0,
+  "published": 1,
+  "results": [
+    {
+      "backup": null,
+      "draft_action": "unchanged",
+      "dry_run": false,
+      "errors": [],
+      "needs_review": 13,
+      "product_id": "module-comx-lte-20b73553b7c9",
+      "product_name": "Module COMX LTE",
+      "publish_action": "unchanged",
+      "sha256": "d4d52f2480688a87123b04986924ac9970b64b8bd74c950a4fb351831631884c",
+      "status": "valid",
+      "uncertain_facts": 13
+    }
+  ],
+  "schema_version": 1
+}

@@ -1,0 +1,21 @@
+{
+  "dry_run": false,
+  "failed": 0,
+  "published": 1,
+  "results": [
+    {
+      "backup": null,
+      "draft_action": "unchanged",
+      "dry_run": false,
+      "errors": [],
+      "needs_review": 8,
+      "product_id": "unit-c6l-978d685b24b9",
+      "product_name": "Unit C6L",
+      "publish_action": "unchanged",
+      "sha256": "7972876ddee0ab4b2092694f9f5527589175b1c03664b53d76ce47f53be5ddaa",
+      "status": "valid",
+      "uncertain_facts": 8
+    }
+  ],
+  "schema_version": 1
+}

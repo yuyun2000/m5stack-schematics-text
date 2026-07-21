@@ -1,0 +1,692 @@
+{
+  "schema_version": 1,
+  "generator": "schematic_describer",
+  "product": {
+    "product_id": "stamp-p4-dc40121df2ce",
+    "product_name": "Stamp-P4",
+    "sku": "S013",
+    "source_path": "core/Stamp-P4.md",
+    "source_sha256": "fd1201c8a0793fa71d8d278eadf4fb93753b29daa0fe7bf4f79c93ff7c45121f",
+    "input_sha256": "092782c8959beb15d0c67c2cbab58d6040803a51c73ea2a89a4d8ca7b360e2e1"
+  },
+  "schematic_assets": [
+    {
+      "sha256": "d30ac61d359b55ad9a12c403da6dd9cfea3119f38ae06b8bd413b4b665bedcad",
+      "source_url": "https://m5stack-doc.oss-cn-shenzhen.aliyuncs.com/1218/SCH_Stamp-P4_2026_03_16_17_23_06_page_01.png",
+      "pages": [1]
+    }
+  ],
+  "summary": "Stamp-P4 S013 单页原理图以 U5 ESP32-P4 为核心，外接 U2 XM25UH128DHIGT NOR Flash 和 40MHz 晶振；USB Type-C 输入经 AW32901FCR 保护，VIN 与 USB 两路经 CH213K 汇入 SYS_5V，再由两颗 SY8089AAAC 生成 SOC_3.3V 与 SOC_VHP。模组通过 65 个 Stamp 焊盘及独立 CAM、SDIO 连接器引出 MIPI DSI/CSI、USB、RMII、UART、I2C、ADC、JTAG 和 GPIO。",
+  "keywords": [
+    "Stamp-P4",
+    "S013",
+    "ESP32-P4",
+    "ESP32-P4NRW32",
+    "XM25UH128DHIGT",
+    "SY8089AAAC",
+    "AW32901FCR",
+    "CH213K",
+    "AXE516127D",
+    "HC-PBB40C-20DS-0.4V-2.5-02",
+    "MIPI DSI",
+    "MIPI CSI",
+    "SDIO",
+    "RMII",
+    "USB2_HOST_DP",
+    "USB2_HOST_DM",
+    "G24_USBC_D-",
+    "G25_USBC_D+",
+    "G26_USB1_D-",
+    "G27_USB1_D+",
+    "SYS_5V",
+    "SOC_3.3V",
+    "SOC_VHP",
+    "ESP_LDO1",
+    "CHIP_EN",
+    "LPG9_SCL",
+    "LPG11_SDA",
+    "G32_RMII_CLK",
+    "G36_RMII_MDIO",
+    "G35_BOOT_RMII_TXD1",
+    "G41_RMII_TXD0",
+    "G33_RMII_TXEN",
+    "G31_RMII_MDC",
+    "G28_RMII_RXDV",
+    "G30_RMII_RXD1",
+    "G29_RMII_RXD0",
+    "G52_RMII_RST"
+  ],
+  "components": [
+    {
+      "reference": "U5",
+      "part_number": "ESP32-P4",
+      "role": "主控 SoC，连接外部 Flash、USB、MIPI DSI/CSI、RMII、SDIO、UART、I2C、ADC、JTAG 与 GPIO",
+      "evidence": [
+        {
+          "asset_sha256": "d30ac61d359b55ad9a12c403da6dd9cfea3119f38ae06b8bd413b4b665bedcad",
+          "page": 1,
+          "locator": "Core-ESP32_P4 区 A5-D6，U5 ESP32-P4"
+        }
+      ]
+    },
+    {
+      "reference": "U2",
+      "part_number": "XM25UH128DHIGT",
+      "role": "ESP32-P4 外部 NOR Flash",
+      "evidence": [
+        {
+          "asset_sha256": "d30ac61d359b55ad9a12c403da6dd9cfea3119f38ae06b8bd413b4b665bedcad",
+          "page": 1,
+          "locator": "FLASH 区 A3-A4，U2 XM25UH128DHIGT"
+        }
+      ]
+    },
+    {
+      "reference": "U7",
+      "part_number": "AW32901FCR",
+      "role": "USB_VBUS 到 5V_USB_IN 的输入过压和接口保护器件",
+      "evidence": [
+        {
+          "asset_sha256": "d30ac61d359b55ad9a12c403da6dd9cfea3119f38ae06b8bd413b4b665bedcad",
+          "page": 1,
+          "locator": "Interface Protection 区 A2，U7 AW32901FCR"
+        }
+      ]
+    },
+    {
+      "reference": "U1,U6",
+      "part_number": "CH213K",
+      "role": "VIN 与 5V_USB_IN 两路输入汇入 SYS_5V 的电源路径器件",
+      "evidence": [
+        {
+          "asset_sha256": "d30ac61d359b55ad9a12c403da6dd9cfea3119f38ae06b8bd413b4b665bedcad",
+          "page": 1,
+          "locator": "SYS_5V 区 A3，U1/U6 CH213K"
+        }
+      ]
+    },
+    {
+      "reference": "U3",
+      "part_number": "SY8089AAAC",
+      "role": "SYS_5V 到 SOC_3.3V 的 600mA DCDC",
+      "evidence": [
+        {
+          "asset_sha256": "d30ac61d359b55ad9a12c403da6dd9cfea3119f38ae06b8bd413b4b665bedcad",
+          "page": 1,
+          "locator": "DCDC:3.3V_600mA 区 B1-B2，U3 SY8089AAAC"
+        }
+      ]
+    },
+    {
+      "reference": "U4",
+      "part_number": "SY8089AAAC",
+      "role": "SOC_3.3V 到 SOC_VHP 的 1.2V 500mA DCDC，由 VHP_DCDC_EN 控制",
+      "evidence": [
+        {
+          "asset_sha256": "d30ac61d359b55ad9a12c403da6dd9cfea3119f38ae06b8bd413b4b665bedcad",
+          "page": 1,
+          "locator": "DCDC:1.2V_500mA 区 B2，U4 SY8089AAAC"
+        }
+      ]
+    },
+    {
+      "reference": "J1",
+      "part_number": null,
+      "role": "USB Type-C 电源与 G24/G25 USB 数据接口",
+      "evidence": [
+        {
+          "asset_sha256": "d30ac61d359b55ad9a12c403da6dd9cfea3119f38ae06b8bd413b4b665bedcad",
+          "page": 1,
+          "locator": "USB Input 区 A1-A2，J1 TYPEC"
+        }
+      ]
+    },
+    {
+      "reference": "TVS1,TVS2",
+      "part_number": "ESD5311",
+      "role": "USB 输入与数据线 ESD 保护",
+      "evidence": [
+        {
+          "asset_sha256": "d30ac61d359b55ad9a12c403da6dd9cfea3119f38ae06b8bd413b4b665bedcad",
+          "page": 1,
+          "locator": "USB Input 区 A1-A2，TVS1/TVS2 ESD5311"
+        }
+      ]
+    },
+    {
+      "reference": "X1",
+      "part_number": "40MHz crystal",
+      "role": "ESP32-P4 主晶振",
+      "evidence": [
+        {
+          "asset_sha256": "d30ac61d359b55ad9a12c403da6dd9cfea3119f38ae06b8bd413b4b665bedcad",
+          "page": 1,
+          "locator": "Crystal 区 B3-B4，X1 40MHz"
+        }
+      ]
+    },
+    {
+      "reference": "STAMP1",
+      "part_number": "STAMP_P4",
+      "role": "65 焊盘邮票孔接口，引出电源、GPIO、USB、RMII、MIPI DSI、UART、I2C、ADC 与控制信号",
+      "evidence": [
+        {
+          "asset_sha256": "d30ac61d359b55ad9a12c403da6dd9cfea3119f38ae06b8bd413b4b665bedcad",
+          "page": 1,
+          "locator": "STAMP HOLE 区 B1-D3，STAMP1/STAMP_P4 pins 1-65"
+        }
+      ]
+    },
+    {
+      "reference": "J2",
+      "part_number": "AXE516127D",
+      "role": "20-pin MIPI CSI 摄像头连接器，含双数据 lane、时钟 lane、I2C、电源、复位和 MCLK",
+      "evidence": [
+        {
+          "asset_sha256": "d30ac61d359b55ad9a12c403da6dd9cfea3119f38ae06b8bd413b4b665bedcad",
+          "page": 1,
+          "locator": "CAM 区 B3-C4，J2 AXE516127D"
+        }
+      ]
+    },
+    {
+      "reference": "J3",
+      "part_number": "HC-PBB40C-20DS-0.4V-2.5-02",
+      "role": "20-pin SDIO 扩展连接器，另引出电源、I2C、ADC 和 GPIO",
+      "evidence": [
+        {
+          "asset_sha256": "d30ac61d359b55ad9a12c403da6dd9cfea3119f38ae06b8bd413b4b665bedcad",
+          "page": 1,
+          "locator": "SDIO 区 D3-D4，J3 HC-PBB40C-20DS-0.4V-2.5-02"
+        }
+      ]
+    }
+  ],
+  "facts": [
+    {
+      "id": "system.stamp-p4-architecture",
+      "category": "system",
+      "subject": "Stamp-P4 单页模组架构",
+      "statement": "U5 ESP32-P4 通过 U2 外部 NOR Flash 和 X1 40MHz 晶振构成核心，USB/VIN 输入汇入 SYS_5V 后产生 SOC_3.3V 与 SOC_VHP；STAMP1、J2 与 J3 分别引出通用 Stamp、MIPI CSI 和 SDIO 接口，并包含 MIPI DSI、USB 与 RMII 高速信号。",
+      "confidence": "confirmed",
+      "attributes": {
+        "schematic_page_count": 1,
+        "module_sku": "S013"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "d30ac61d359b55ad9a12c403da6dd9cfea3119f38ae06b8bd413b4b665bedcad",
+          "page": 1,
+          "locator": "整页 USB Input、Power、STAMP HOLE、CAM、SDIO 与 Core-ESP32_P4"
+        }
+      ]
+    },
+    {
+      "id": "component.soc-production-variant",
+      "category": "component",
+      "subject": "ESP32-P4 量产变体",
+      "statement": "原理图 U5 仅标 ESP32-P4，正文称量产主控为 ESP32-P4NRW32；图面没有 NRW32 完整后缀、封装内存配置或芯片订购码，无法仅凭该页确认 exact variant。",
+      "confidence": "uncertain",
+      "attributes": {
+        "schematic_label": "ESP32-P4",
+        "documented_variant": "ESP32-P4NRW32"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "d30ac61d359b55ad9a12c403da6dd9cfea3119f38ae06b8bd413b4b665bedcad",
+          "page": 1,
+          "locator": "Core-ESP32_P4 区 A5-D6，U5 仅标 ESP32-P4"
+        }
+      ]
+    },
+    {
+      "id": "power.usb-input-protection",
+      "category": "power",
+      "subject": "USB Type-C 输入保护",
+      "statement": "J1 VBUS 形成 USB_VBUS，经 U7 AW32901FCR 输出 5V_USB_IN；U7 的 nEN 接地，R3 标 NC、R4 为 0R，输入输出两侧均有去耦。J1 CC1/CC2 分别通过 R1/R2 5.1K 接地。",
+      "confidence": "confirmed",
+      "attributes": {
+        "input": "USB_VBUS",
+        "output": "5V_USB_IN",
+        "cc_pulldown_ohm": 5100
+      },
+      "evidence": [
+        {
+          "asset_sha256": "d30ac61d359b55ad9a12c403da6dd9cfea3119f38ae06b8bd413b4b665bedcad",
+          "page": 1,
+          "locator": "USB Input 与 Interface Protection 区 A1-A2，J1/U7/R1-R4"
+        }
+      ]
+    },
+    {
+      "id": "protection.documented-overvoltage-threshold",
+      "category": "protection",
+      "subject": "USB 输入过压保护阈值",
+      "statement": "正文称 AW32901FCR 支持大于 6V 输入电压保护；原理图只给 U7 型号和 USB_VBUS/5V_USB_IN 路径，没有阈值设定值或 OVP 电压标注。",
+      "confidence": "uncertain",
+      "attributes": {
+        "documented_threshold": ">6V",
+        "protection_ic": "AW32901FCR"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "d30ac61d359b55ad9a12c403da6dd9cfea3119f38ae06b8bd413b4b665bedcad",
+          "page": 1,
+          "locator": "Interface Protection 区 A2，U7 AW32901FCR，无 OVP 阈值标注"
+        }
+      ]
+    },
+    {
+      "id": "power.sys5-input-merge",
+      "category": "power",
+      "subject": "VIN 与 USB 输入汇入 SYS_5V",
+      "statement": "U1 CH213K 以 VIN 为输入，U6 CH213K 以 5V_USB_IN 为输入，两者 VO 输出并联到 SYS_5V；两路输入和共享输出均配置 22uF 去耦。",
+      "confidence": "confirmed",
+      "attributes": {
+        "input_a": "VIN",
+        "input_b": "5V_USB_IN",
+        "output": "SYS_5V"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "d30ac61d359b55ad9a12c403da6dd9cfea3119f38ae06b8bd413b4b665bedcad",
+          "page": 1,
+          "locator": "SYS_5V 区 A3，U1/U6 CH213K 与 C1/C2/C4"
+        }
+      ]
+    },
+    {
+      "id": "power.soc-3v3-dcdc",
+      "category": "power",
+      "subject": "SOC_3.3V 600mA DCDC",
+      "statement": "U3 SY8089AAAC 以 SYS_5V 为输入，经 L1 和反馈网络输出 SOC_3.3V；图区标题明确标注 DCDC:3.3V_600mA。",
+      "confidence": "confirmed",
+      "attributes": {
+        "input": "SYS_5V",
+        "output": "SOC_3.3V",
+        "output_voltage_v": 3.3,
+        "rated_current_ma": 600
+      },
+      "evidence": [
+        {
+          "asset_sha256": "d30ac61d359b55ad9a12c403da6dd9cfea3119f38ae06b8bd413b4b665bedcad",
+          "page": 1,
+          "locator": "DCDC:3.3V_600mA 区 B1-B2，U3/L1/R6/R7"
+        }
+      ]
+    },
+    {
+      "id": "power.soc-vhp-dcdc",
+      "category": "power",
+      "subject": "SOC_VHP 1.2V 500mA DCDC",
+      "statement": "U4 SY8089AAAC 从 SOC_3.3V 取电，经 L12 输出 SOC_VHP，EN 由 VHP_DCDC_EN 控制；图区标题明确标注 DCDC:1.2V_500mA。",
+      "confidence": "confirmed",
+      "attributes": {
+        "input": "SOC_3.3V",
+        "output": "SOC_VHP",
+        "output_voltage_v": 1.2,
+        "rated_current_ma": 500,
+        "enable": "VHP_DCDC_EN"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "d30ac61d359b55ad9a12c403da6dd9cfea3119f38ae06b8bd413b4b665bedcad",
+          "page": 1,
+          "locator": "DCDC:1.2V_500mA 区 B2，U4/L12/VHP_DCDC_EN"
+        }
+      ]
+    },
+    {
+      "id": "power.esp32-rails",
+      "category": "power",
+      "subject": "ESP32-P4 供电域与内部 LDO 网络",
+      "statement": "U5 的 VDDA、VDD3P3、VDDSPI、VDDPST 与相关 3.3V 电源脚接 SOC_3.3V，VDD_HP0/1/2/3 接 SOC_VHP；EN_DCDC 输出 VHP_DCDC_EN，VFB_DCDC 接 VHP_DCDC_DVFS。VFB1/VFB2/VFB3/VFB4 与外部去耦形成 ESP_LDO1/2/3 等内部 LDO 网络，外部 Flash VCC 接 ESP_LDO1。",
+      "confidence": "confirmed",
+      "attributes": {
+        "main_rail": "SOC_3.3V",
+        "high_performance_rail": "SOC_VHP",
+        "flash_rail": "ESP_LDO1"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "d30ac61d359b55ad9a12c403da6dd9cfea3119f38ae06b8bd413b4b665bedcad",
+          "page": 1,
+          "locator": "Core-ESP32_P4 区 A5-D6，U5 电源脚、VHP_DCDC_EN/DVFS 与 ESP_LDO1/2/3"
+        }
+      ]
+    },
+    {
+      "id": "storage.external-flash-wiring",
+      "category": "storage",
+      "subject": "XM25UH128DHIGT 外部 Flash",
+      "statement": "U2 标注 XM25UH128DHIGT，CS#/SO/SCLK/SI/HOLD#/WP# 分别连接 FLASH_CS、FLASH_D0、FLASH_SCK、FLASH_D1、FLASH_HOLD、FLASH_WP，VCC 接 ESP_LDO1，R5 10K 上拉 FLASH_CS。",
+      "confidence": "confirmed",
+      "attributes": {
+        "part_number": "XM25UH128DHIGT",
+        "supply": "ESP_LDO1"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "d30ac61d359b55ad9a12c403da6dd9cfea3119f38ae06b8bd413b4b665bedcad",
+          "page": 1,
+          "locator": "FLASH 区 A3-A4，U2、R5 与 FLASH_CS/D0/SCK/D1/HOLD/WP"
+        }
+      ]
+    },
+    {
+      "id": "storage.documented-flash-capacity",
+      "category": "storage",
+      "subject": "16MB Flash 容量",
+      "statement": "正文称 Stamp-P4 配置 16MB Flash；原理图给出 U2 XM25UH128DHIGT 型号与连线，但没有单独标注 bit 或 byte 容量，容量换算需由器件 datasheet 或量产 BOM 确认。",
+      "confidence": "uncertain",
+      "attributes": {
+        "documented_capacity_mb": 16,
+        "schematic_part_number": "XM25UH128DHIGT"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "d30ac61d359b55ad9a12c403da6dd9cfea3119f38ae06b8bd413b4b665bedcad",
+          "page": 1,
+          "locator": "FLASH 区 A3-A4，U2 XM25UH128DHIGT，未另标容量"
+        }
+      ]
+    },
+    {
+      "id": "memory.documented-psram-capacity",
+      "category": "memory",
+      "subject": "32MB Octal PSRAM",
+      "statement": "正文称主控配置 32MB Octal PSRAM；原理图 U5 只标 ESP32-P4，单页中没有独立 PSRAM、PSRAM 总线、容量字段或 NRW32 完整订购码，因此内存集成方式与容量需查量产 BOM 或 ESP32-P4NRW32 datasheet。",
+      "confidence": "uncertain",
+      "attributes": {
+        "documented_capacity_mb": 32,
+        "documented_interface": "Octal"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "d30ac61d359b55ad9a12c403da6dd9cfea3119f38ae06b8bd413b4b665bedcad",
+          "page": 1,
+          "locator": "Core-ESP32_P4 区 A5-D6，U5 仅标 ESP32-P4，未画独立 PSRAM"
+        }
+      ]
+    },
+    {
+      "id": "clock.main-40mhz",
+      "category": "clock",
+      "subject": "ESP32-P4 40MHz 晶振",
+      "statement": "X1 标注 40MHz，XTALP/XTALN 分别经 R10/R11 0R 接入，C4/C5 各 15pF 对地。",
+      "confidence": "confirmed",
+      "attributes": {
+        "frequency_mhz": 40,
+        "load_capacitor_pf": 15,
+        "series_resistor_ohm": 0
+      },
+      "evidence": [
+        {
+          "asset_sha256": "d30ac61d359b55ad9a12c403da6dd9cfea3119f38ae06b8bd413b4b665bedcad",
+          "page": 1,
+          "locator": "Crystal 区 B3-B4，X1/R10/R11/C4/C5"
+        }
+      ]
+    },
+    {
+      "id": "reset.enable-and-straps",
+      "category": "reset",
+      "subject": "CHIP_EN、Boot 与 RMII 配置上拉",
+      "statement": "CHIP_EN 由 R23 10K 上拉到 SOC_3.3V，并由 C21 1uF 对地；G35_BOOT_RMII_TXD1 由 R18 10K 上拉，G36_RMII_MDIO 由 R16 10K 上拉。STAMP1 还引出 G34_JTAG_ENABLE。",
+      "confidence": "confirmed",
+      "attributes": {
+        "chip_enable": "CHIP_EN",
+        "boot_rmii_txd1": "G35_BOOT_RMII_TXD1",
+        "jtag_enable": "G34_JTAG_ENABLE"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "d30ac61d359b55ad9a12c403da6dd9cfea3119f38ae06b8bd413b4b665bedcad",
+          "page": 1,
+          "locator": "Core-ESP32_P4 区 D6，R16/R18/R23/C21；STAMP HOLE 区 C2-C3，G34_JTAG_ENABLE/CHIP_EN"
+        }
+      ]
+    },
+    {
+      "id": "interface.typec-usbc",
+      "category": "interface",
+      "subject": "Type-C USB 数据路径",
+      "statement": "J1 DN1/DN2 与 DP1/DP2 分别并接到 G24_USBC_D- 与 G25_USBC_D+，TVS2 ESD5311 提供接口侧保护；U5 的 GPIO24/USBP1_0- 与 GPIO25/USBP1_0+ 对应这组网络，图中标注 90Ω 阻抗匹配。",
+      "confidence": "confirmed",
+      "attributes": {
+        "dm": "G24_USBC_D-",
+        "dp": "G25_USBC_D+",
+        "differential_impedance_ohm": 90
+      },
+      "evidence": [
+        {
+          "asset_sha256": "d30ac61d359b55ad9a12c403da6dd9cfea3119f38ae06b8bd413b4b665bedcad",
+          "page": 1,
+          "locator": "USB Input 区 A1 与 Core-ESP32_P4 区 C5-C6，G24/G25 USBP1_0 差分对"
+        }
+      ]
+    },
+    {
+      "id": "interface.additional-usb-pairs",
+      "category": "interface",
+      "subject": "额外 USB1 与 USB2 Host 差分对",
+      "statement": "STAMP1 pins17/19 引出 G27_USB1_D+ 与 G26_USB1_D-，pins40/41 引出 USB2_HOST_DP 与 USB2_HOST_DM；U5 图中两组差分路径均标注 90Ω 阻抗匹配。",
+      "confidence": "confirmed",
+      "attributes": {
+        "usb1_dp": "G27_USB1_D+",
+        "usb1_dm": "G26_USB1_D-",
+        "usb2_dp": "USB2_HOST_DP",
+        "usb2_dm": "USB2_HOST_DM",
+        "differential_impedance_ohm": 90
+      },
+      "evidence": [
+        {
+          "asset_sha256": "d30ac61d359b55ad9a12c403da6dd9cfea3119f38ae06b8bd413b4b665bedcad",
+          "page": 1,
+          "locator": "STAMP HOLE 区 C1-D3 pins17/19/40/41；Core-ESP32_P4 区 C4-C6 USB 差分线"
+        }
+      ]
+    },
+    {
+      "id": "interface.mipi-dsi",
+      "category": "interface",
+      "subject": "双 lane MIPI DSI",
+      "statement": "U5 引出 LCD_DSI_D0_P/N、LCD_DSI_CK_P/N 和 LCD_DSI_D1_P/N 三组差分对，图中标注 100Ω 阻抗匹配；三组网络分别连接 STAMP1 pins57/58、60/61、63/64，并以 pins56/59/62/65 的 GND 分隔。",
+      "confidence": "confirmed",
+      "attributes": {
+        "data_lanes": 2,
+        "differential_impedance_ohm": 100
+      },
+      "evidence": [
+        {
+          "asset_sha256": "d30ac61d359b55ad9a12c403da6dd9cfea3119f38ae06b8bd413b4b665bedcad",
+          "page": 1,
+          "locator": "STAMP HOLE 区 D2-D3 pins56-65 与 Core-ESP32_P4 区 B4-C5 LCD_DSI 差分对"
+        }
+      ]
+    },
+    {
+      "id": "interface.mipi-csi",
+      "category": "interface",
+      "subject": "双 lane MIPI CSI 摄像头接口",
+      "statement": "J2 AXE516127D 引出 CAM_CSI_D0_P/N、CAM_CSI_CK_P/N、CAM_CSI_D1_P/N，配套 G54_CAM_RST、G53_CAM_MCLK、LPG11_SDA、LPG9_SCL、SOC_3.3V 和多脚 GND；CSI 差分线在 U5 侧标注 90Ω 阻抗匹配。",
+      "confidence": "confirmed",
+      "attributes": {
+        "data_lanes": 2,
+        "differential_impedance_ohm": 90,
+        "connector": "AXE516127D"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "d30ac61d359b55ad9a12c403da6dd9cfea3119f38ae06b8bd413b4b665bedcad",
+          "page": 1,
+          "locator": "CAM 区 B3-C4，J2；Core-ESP32_P4 区 B4-C5 CAM_CSI 差分对"
+        }
+      ]
+    },
+    {
+      "id": "interface.sdio-connector",
+      "category": "interface",
+      "subject": "20-pin SDIO 扩展接口",
+      "statement": "J3 标注 HC-PBB40C-20DS-0.4V-2.5-02，连接 G40/G42/G43/G44/G45/G46/G47/G48、G51_ADC1、LPG9_SCL、LPG11_SDA，以及 SYS_5V、SOC_3.3V 和多脚 GND。",
+      "confidence": "confirmed",
+      "attributes": {
+        "connector_pins": 20,
+        "connector": "HC-PBB40C-20DS-0.4V-2.5-02"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "d30ac61d359b55ad9a12c403da6dd9cfea3119f38ae06b8bd413b4b665bedcad",
+          "page": 1,
+          "locator": "SDIO 区 D3-D4，J3 pins1-20"
+        }
+      ]
+    },
+    {
+      "id": "component.connector-datasheet-match",
+      "category": "component",
+      "subject": "CAM 与 SDIO 连接器数据手册对应关系",
+      "statement": "原理图明确标 J2=AXE516127D、J3=HC-PBB40C-20DS-0.4V-2.5-02；正文数据手册链接名称分别为 AXE616124D 与 HC-PBB40C-20DP-0.4V-02，链接型号与图面型号不一致，不能直接视为量产连接器的对应 datasheet。",
+      "confidence": "uncertain",
+      "attributes": {
+        "schematic_cam": "AXE516127D",
+        "linked_cam_datasheet": "AXE616124D",
+        "schematic_sdio": "HC-PBB40C-20DS-0.4V-2.5-02",
+        "linked_sdio_datasheet": "HC-PBB40C-20DP-0.4V-02"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "d30ac61d359b55ad9a12c403da6dd9cfea3119f38ae06b8bd413b4b665bedcad",
+          "page": 1,
+          "locator": "CAM 区 J2 AXE516127D 与 SDIO 区 J3 HC-PBB40C-20DS-0.4V-2.5-02"
+        }
+      ]
+    },
+    {
+      "id": "interface.rmii",
+      "category": "interface",
+      "subject": "RMII 以太网信号组",
+      "statement": "STAMP1 引出 G32_RMII_CLK、G36_RMII_MDIO、G35_BOOT_RMII_TXD1、G41_RMII_TXD0、G33_RMII_TXEN、G31_RMII_MDC、G28_RMII_RXDV、G30_RMII_RXD1、G29_RMII_RXD0 与 G52_RMII_RST，覆盖 RMII 时钟、管理、收发与复位。",
+      "confidence": "confirmed",
+      "attributes": {
+        "clock": "G32_RMII_CLK",
+        "mdio": "G36_RMII_MDIO",
+        "mdc": "G31_RMII_MDC",
+        "reset": "G52_RMII_RST"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "d30ac61d359b55ad9a12c403da6dd9cfea3119f38ae06b8bd413b4b665bedcad",
+          "page": 1,
+          "locator": "STAMP HOLE 区 C2-D3 pins46-55 与 Core-ESP32_P4 区 A5-D6 对应 GPIO 网络"
+        }
+      ]
+    },
+    {
+      "id": "bus.low-power-i2c-uart",
+      "category": "bus",
+      "subject": "低功耗 GPIO、I2C 与 UART",
+      "statement": "STAMP1 引出 LPG0-LPG15，其中 LPG9 标 SCL、LPG11 标 SDA，LPG14/LPG15 兼作 LPTXD_PCTXD 与 LPRXD_PCRXD；常规 UART0 使用 G37_U0TX 与 G38_U0RX。J2/J3 同时复用 LPG9_SCL 与 LPG11_SDA。",
+      "confidence": "confirmed",
+      "attributes": {
+        "i2c_scl": "LPG9_SCL",
+        "i2c_sda": "LPG11_SDA",
+        "uart0_tx": "G37_U0TX",
+        "uart0_rx": "G38_U0RX"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "d30ac61d359b55ad9a12c403da6dd9cfea3119f38ae06b8bd413b4b665bedcad",
+          "page": 1,
+          "locator": "STAMP HOLE 区 B1-C3，LPG0-15/G37/G38；CAM/SDIO 区 LPG9_SCL/LPG11_SDA"
+        }
+      ]
+    },
+    {
+      "id": "analog.adc-breakout",
+      "category": "analog",
+      "subject": "ADC 引出网络",
+      "statement": "STAMP1 引出 G16_ADC1 至 G23_ADC1 八路、G49_ADC2 与 G50_ADC2 两路；J3 SDIO 连接器另引出 G51_ADC1。",
+      "confidence": "confirmed",
+      "attributes": {
+        "adc1_stamp_range": "G16-G23",
+        "adc2_stamp": "G49,G50",
+        "adc1_sdio": "G51"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "d30ac61d359b55ad9a12c403da6dd9cfea3119f38ae06b8bd413b4b665bedcad",
+          "page": 1,
+          "locator": "STAMP HOLE 区 B1-C3，G16-G23_ADC1/G49-G50_ADC2；SDIO 区 G51_ADC1"
+        }
+      ]
+    }
+  ],
+  "needs_review": [
+    {
+      "id": "review.soc-production-variant",
+      "fact_id": "component.soc-production-variant",
+      "question": "Stamp-P4 S013 量产主控的完整订购码是否为 ESP32-P4NRW32",
+      "reason": "正文给出 ESP32-P4NRW32，但原理图 U5 仅标 ESP32-P4，没有完整变体后缀或封装配置。",
+      "evidence": [
+        {
+          "asset_sha256": "d30ac61d359b55ad9a12c403da6dd9cfea3119f38ae06b8bd413b4b665bedcad",
+          "page": 1,
+          "locator": "Core-ESP32_P4 区 A5-D6，U5 ESP32-P4"
+        }
+      ]
+    },
+    {
+      "id": "review.overvoltage-threshold",
+      "fact_id": "protection.documented-overvoltage-threshold",
+      "question": "U7 AW32901FCR 的量产 USB 输入过压保护阈值是否为正文所述大于 6V",
+      "reason": "图面未给 U7 的 OVP 阈值或外部设定值。",
+      "evidence": [
+        {
+          "asset_sha256": "d30ac61d359b55ad9a12c403da6dd9cfea3119f38ae06b8bd413b4b665bedcad",
+          "page": 1,
+          "locator": "Interface Protection 区 A2，U7 AW32901FCR"
+        }
+      ]
+    },
+    {
+      "id": "review.flash-capacity",
+      "fact_id": "storage.documented-flash-capacity",
+      "question": "U2 XM25UH128DHIGT 对应的量产 Flash 容量是否为正文所述 16MB",
+      "reason": "原理图给出完整器件型号和总线，但未单独写出容量。",
+      "evidence": [
+        {
+          "asset_sha256": "d30ac61d359b55ad9a12c403da6dd9cfea3119f38ae06b8bd413b4b665bedcad",
+          "page": 1,
+          "locator": "FLASH 区 A3-A4，U2 XM25UH128DHIGT"
+        }
+      ]
+    },
+    {
+      "id": "review.psram-capacity",
+      "fact_id": "memory.documented-psram-capacity",
+      "question": "Stamp-P4 的 PSRAM 是否集成于 ESP32-P4NRW32 且容量为 32MB Octal",
+      "reason": "原理图没有完整 SoC 订购码、独立 PSRAM 或容量标注。",
+      "evidence": [
+        {
+          "asset_sha256": "d30ac61d359b55ad9a12c403da6dd9cfea3119f38ae06b8bd413b4b665bedcad",
+          "page": 1,
+          "locator": "Core-ESP32_P4 区 A5-D6，U5 与存储网络"
+        }
+      ]
+    },
+    {
+      "id": "review.connector-datasheets",
+      "fact_id": "component.connector-datasheet-match",
+      "question": "J2/J3 的量产连接器 datasheet 应分别使用哪个 exact 型号",
+      "reason": "原理图型号 AXE516127D 与 HC-PBB40C-20DS-0.4V-2.5-02，和正文数据手册链接名称 AXE616124D 与 HC-PBB40C-20DP-0.4V-02 不一致。",
+      "evidence": [
+        {
+          "asset_sha256": "d30ac61d359b55ad9a12c403da6dd9cfea3119f38ae06b8bd413b4b665bedcad",
+          "page": 1,
+          "locator": "CAM 区 J2 与 SDIO 区 J3 型号标注"
+        }
+      ]
+    }
+  ]
+}

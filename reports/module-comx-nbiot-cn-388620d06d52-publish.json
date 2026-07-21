@@ -1,0 +1,21 @@
+{
+  "dry_run": false,
+  "failed": 0,
+  "published": 1,
+  "results": [
+    {
+      "backup": null,
+      "draft_action": "unchanged",
+      "dry_run": false,
+      "errors": [],
+      "needs_review": 5,
+      "product_id": "module-comx-nbiot-cn-388620d06d52",
+      "product_name": "Module COMX NBIoT-CN",
+      "publish_action": "unchanged",
+      "sha256": "ee67b953226834a0f3d4e291c84ba3c5470705220455e7e3ad1696bead3aa93a",
+      "status": "valid",
+      "uncertain_facts": 5
+    }
+  ],
+  "schema_version": 1
+}

@@ -1,0 +1,21 @@
+{
+  "dry_run": false,
+  "failed": 0,
+  "published": 1,
+  "results": [
+    {
+      "backup": null,
+      "draft_action": "unchanged",
+      "dry_run": false,
+      "errors": [],
+      "needs_review": 2,
+      "product_id": "unit-env-pro-c6547e5b42d2",
+      "product_name": "Unit ENV-Pro",
+      "publish_action": "unchanged",
+      "sha256": "106078e24c4b86701a2ed20c7e25c5df80c11a7c3537ab21cd1492a8ebf21175",
+      "status": "valid",
+      "uncertain_facts": 2
+    }
+  ],
+  "schema_version": 1
+}

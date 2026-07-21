@@ -1,0 +1,393 @@
+{
+  "schema_version": 1,
+  "generator": "schematic_describer",
+  "product": {
+    "product_id": "module-commu-a942b3345b57",
+    "product_name": "Module COMMU",
+    "sku": "M011",
+    "source_path": "module/commu.md",
+    "source_sha256": "4079f50ebf579973dfdaea6e212018ab89019bd3605690c7d5445143323be68d",
+    "input_sha256": "1d399a6e23c3739bb7da0be872fe00896bb59e7ae1662ad0543920d61803ecf2"
+  },
+  "schematic_assets": [
+    {
+      "sha256": "2b12b55cea9aab280c6c68dbc675cd3f565fa7a9000f3fdbea491d8a0a3dcfb5",
+      "source_url": "https://static-cdn.m5stack.com/resource/docs/products/module/commu/commu_sch_01.webp",
+      "pages": [1]
+    }
+  ],
+  "summary": "Module COMMU 通过 J1 M5Stack_BUS 接入主机，U1 MCP2515-I/SO 使用 SPI 与 CAN_CS、CAN_INT 组成 CAN 控制器链路，再由 U2 TJA1051T/3 驱动 CAN_H/CAN_L。U3 SP3485EN-L/TR 将可选 UART0/UART2 信号转换为 RS485_A/RS485_B，Q1 与 R5/R6 构成随发送信号动作的方向控制网络。板上另引出一组可选 UART0/UART2 TTL 接口和两组并联 I2C 接口；+5V 与 +3.3V 均由 M5-Bus 输入，图中未见本地稳压、充电或电池电路。",
+  "keywords": [
+    "Module COMMU",
+    "M011",
+    "MCP2515-I/SO",
+    "TJA1051T/3",
+    "SP3485EN-L/TR",
+    "M5Stack_BUS",
+    "CAN",
+    "CAN_H",
+    "CAN_L",
+    "CAN_CS",
+    "CAN_INT",
+    "CAN_MOSI",
+    "CAN_MISO",
+    "CAN_SCK",
+    "RS485",
+    "RS485_A",
+    "RS485_B",
+    "UART0",
+    "UART2",
+    "U1_TXD",
+    "U1_RXD",
+    "U2_TXD",
+    "U2_RXD",
+    "IIC_SCL",
+    "IIC_SDA",
+    "8MHz",
+    "P6SMB6.8CA",
+    "120R",
+    "+5V",
+    "+3.3V",
+    "GPIO23",
+    "GPIO19",
+    "GPIO18",
+    "GPIO12",
+    "GPIO15",
+    "GPIO21",
+    "GPIO22"
+  ],
+  "components": [
+    {
+      "reference": "J1",
+      "part_number": "M5Stack_BUS",
+      "role": "主机堆叠接口，引入 CAN SPI、UART0/UART2、I2C、CAN 控制信号以及 +5V/+3.3V 电源",
+      "evidence": [{"asset_sha256": "2b12b55cea9aab280c6c68dbc675cd3f565fa7a9000f3fdbea491d8a0a3dcfb5", "page": 1, "locator": "第 1 页左上 J1 M5Stack_BUS，1~30 脚及 GPIO/网络标注"}]
+    },
+    {
+      "reference": "U1",
+      "part_number": "MCP2515-I/SO",
+      "role": "SPI 接口独立 CAN 控制器，连接主机 SPI 与 U2 的 TXCAN/RXCAN",
+      "evidence": [{"asset_sha256": "2b12b55cea9aab280c6c68dbc675cd3f565fa7a9000f3fdbea491d8a0a3dcfb5", "page": 1, "locator": "第 1 页上中 U1 MCP2515-I/SO，RESET、SPI、INT、TXCAN/RXCAN、OSC1/OSC2 与电源引脚"}]
+    },
+    {
+      "reference": "Y1",
+      "part_number": "8MHz",
+      "role": "U1 MCP2515 的外部晶振",
+      "evidence": [{"asset_sha256": "2b12b55cea9aab280c6c68dbc675cd3f565fa7a9000f3fdbea491d8a0a3dcfb5", "page": 1, "locator": "第 1 页 U1 左下 Y1 8MHz，连接 U1.7 OSC2 与 U1.8 OSC1，C1/C2 各 20pF 对地"}]
+    },
+    {
+      "reference": "U2",
+      "part_number": "TJA1051T/3",
+      "role": "CAN 收发器，在 TXCAN/RXCAN 逻辑侧与 CAN_H/CAN_L 差分侧之间转换",
+      "evidence": [{"asset_sha256": "2b12b55cea9aab280c6c68dbc675cd3f565fa7a9000f3fdbea491d8a0a3dcfb5", "page": 1, "locator": "第 1 页上中右 U2 TJA1051T/3，1~8 脚与 TXCAN/RXCAN、CAN_H/CAN_L、+5V、+3.3V、GND"}]
+    },
+    {
+      "reference": "R2",
+      "part_number": "120R",
+      "role": "固定跨接 CAN_L 与 CAN_H 的终端电阻",
+      "evidence": [{"asset_sha256": "2b12b55cea9aab280c6c68dbc675cd3f565fa7a9000f3fdbea491d8a0a3dcfb5", "page": 1, "locator": "第 1 页 U2 右侧 R2 120R，竖直跨接 CAN_L 与 CAN_H"}]
+    },
+    {
+      "reference": "J2",
+      "part_number": "CAN_Socket_4P",
+      "role": "CAN 外部接口，引出 CAN_H、CAN_L、+5V 和 GND",
+      "evidence": [{"asset_sha256": "2b12b55cea9aab280c6c68dbc675cd3f565fa7a9000f3fdbea491d8a0a3dcfb5", "page": 1, "locator": "第 1 页右上 Peripheral Interfaces 区 J2 CAN_Socket_4P，1~4 脚"}]
+    },
+    {
+      "reference": "J6/J9",
+      "part_number": "switch_line",
+      "role": "选择 UART0 或 UART2 作为 RS-485 接收和发送逻辑信号，图注默认 UART2 to RS485",
+      "evidence": [{"asset_sha256": "2b12b55cea9aab280c6c68dbc675cd3f565fa7a9000f3fdbea491d8a0a3dcfb5", "page": 1, "locator": "第 1 页左中 Default: UART2 to RS485 区，J6 输入 U1_RXD/U2_RXD，J9 输入 U1_TXD/U2_TXD"}]
+    },
+    {
+      "reference": "Q1",
+      "part_number": "SS8050 Y1",
+      "role": "由选定 TXD 经 R6 驱动，并控制 U3 的 /RE 与 DE 共节点",
+      "evidence": [{"asset_sha256": "2b12b55cea9aab280c6c68dbc675cd3f565fa7a9000f3fdbea491d8a0a3dcfb5", "page": 1, "locator": "第 1 页中下 Q1 SS8050 Y1，基极经 R6 1K 接 J9 输出，集电极接 U3.2/U3.3 与 R5 4.7K"}]
+    },
+    {
+      "reference": "U3",
+      "part_number": "SP3485EN-L/TR",
+      "role": "3.3V RS-485 收发器，连接 UART 逻辑侧与 RS485_A/RS485_B 差分侧",
+      "evidence": [{"asset_sha256": "2b12b55cea9aab280c6c68dbc675cd3f565fa7a9000f3fdbea491d8a0a3dcfb5", "page": 1, "locator": "第 1 页中下 U3 SP3485EN-L/TR，RO、/RE、DE、DI、A、B、VCC、GND"}]
+    },
+    {
+      "reference": "R3/R7",
+      "part_number": "4.7K",
+      "role": "RS485_B 对 GND 和 RS485_A 对 +3.3V 的偏置电阻",
+      "evidence": [{"asset_sha256": "2b12b55cea9aab280c6c68dbc675cd3f565fa7a9000f3fdbea491d8a0a3dcfb5", "page": 1, "locator": "第 1 页 U3 右侧，R3 4.7K 从 RS485_B 接 GND，R7 4.7K 从 RS485_A 接 +3.3V"}]
+    },
+    {
+      "reference": "D1-D3",
+      "part_number": "P6SMB6.8CA",
+      "role": "RS-485 差分线的三器件保护网络，覆盖 B-GND、B-A 和 A-GND",
+      "evidence": [{"asset_sha256": "2b12b55cea9aab280c6c68dbc675cd3f565fa7a9000f3fdbea491d8a0a3dcfb5", "page": 1, "locator": "第 1 页 U3 右侧 D1/D2/D3，均标 P6SMB6.8CA，连接 GND、RS485_B、RS485_A、GND"}]
+    },
+    {
+      "reference": "J3",
+      "part_number": "RS485_Socket_4P",
+      "role": "RS-485 外部接口，引出 RS485_B、RS485_A、+5V 和 GND",
+      "evidence": [{"asset_sha256": "2b12b55cea9aab280c6c68dbc675cd3f565fa7a9000f3fdbea491d8a0a3dcfb5", "page": 1, "locator": "第 1 页右上 Peripheral Interfaces 区 J3 RS485_Socket_4P，1~4 脚"}]
+    },
+    {
+      "reference": "J4/J5",
+      "part_number": "IIC_Socket_4P",
+      "role": "两组并联 I2C 外部接口，均引出 IIC_SCL、IIC_SDA、+5V 和 GND",
+      "evidence": [{"asset_sha256": "2b12b55cea9aab280c6c68dbc675cd3f565fa7a9000f3fdbea491d8a0a3dcfb5", "page": 1, "locator": "第 1 页右侧 Peripheral Interfaces 区 J4/J5 IIC_Socket_4P，1~4 脚"}]
+    },
+    {
+      "reference": "J7/J10",
+      "part_number": "switch_line",
+      "role": "选择 UART0 或 UART2 连接到外部 TTL UART 接口，图注默认 UART0",
+      "evidence": [{"asset_sha256": "2b12b55cea9aab280c6c68dbc675cd3f565fa7a9000f3fdbea491d8a0a3dcfb5", "page": 1, "locator": "第 1 页右中 Default: UART0 区，J7 输入 U1_TXD/U2_TXD，J10 输入 U1_RXD/U2_RXD"}]
+    },
+    {
+      "reference": "J8",
+      "part_number": "UART_Socket_5P",
+      "role": "TTL UART 外部接口，引出 +5V、+3.3V、TXD、RXD 和 GND",
+      "evidence": [{"asset_sha256": "2b12b55cea9aab280c6c68dbc675cd3f565fa7a9000f3fdbea491d8a0a3dcfb5", "page": 1, "locator": "第 1 页右中 J8 UART_Socket_5P，1~5 脚"}]
+    },
+    {
+      "reference": "C3-C14",
+      "part_number": "100nF",
+      "role": "+5V 与 +3.3V 电源轨的并联去耦电容组",
+      "evidence": [{"asset_sha256": "2b12b55cea9aab280c6c68dbc675cd3f565fa7a9000f3fdbea491d8a0a3dcfb5", "page": 1, "locator": "第 1 页底部 C3~C9 标 +5V/100nF，C10~C14 标 +3.3V/100nF，均接 GND"}]
+    }
+  ],
+  "facts": [
+    {
+      "id": "system.commu-architecture",
+      "category": "system",
+      "subject": "Module COMMU",
+      "statement": "J1 提供主机 SPI、UART0/UART2、I2C、控制信号和电源；U1/U2 构成 CAN 控制器与收发器链，U3/Q1/J6/J9 构成可选 UART 到 RS-485 链，J7/J10/J8 构成可选 TTL UART 链，J4/J5 并联引出 I2C。",
+      "confidence": "confirmed",
+      "attributes": {"host_connector": "J1 M5Stack_BUS", "can_chain": "J1 SPI -> U1 MCP2515-I/SO -> U2 TJA1051T/3 -> J2", "rs485_chain": "J1 UART0/UART2 -> J6/J9 -> U3 SP3485EN-L/TR -> J3", "uart_chain": "J1 UART0/UART2 -> J7/J10 -> J8", "i2c_ports": "J4,J5"},
+      "evidence": [{"asset_sha256": "2b12b55cea9aab280c6c68dbc675cd3f565fa7a9000f3fdbea491d8a0a3dcfb5", "page": 1, "locator": "第 1 页全图：J1、U1/U2、U3、J2~J10 及同名网络"}]
+    },
+    {
+      "id": "interface.j1-used-pinout",
+      "category": "interface",
+      "subject": "J1 M5Stack_BUS 已用针脚",
+      "statement": "J1 的 1/3/5 脚接 GND；7/9/11 脚分别为 CAN_MOSI/CAN_MISO/CAN_SCK；12 脚为 +3.3V；13/14 脚为 U1_RXD/U1_TXD；15/16 脚为 U2_RXD/U2_TXD；17/18 脚为 IIC_SDA/IIC_SCL；21/23 脚为 CAN_CS/CAN_INT；28 脚为 +5V。",
+      "confidence": "confirmed",
+      "attributes": {"pin_1": "GND", "pin_3": "GND", "pin_5": "GND", "pin_7": "CAN_MOSI", "pin_9": "CAN_MISO", "pin_11": "CAN_SCK", "pin_12": "+3.3V", "pin_13": "U1_RXD", "pin_14": "U1_TXD", "pin_15": "U2_RXD", "pin_16": "U2_TXD", "pin_17": "IIC_SDA", "pin_18": "IIC_SCL", "pin_21": "CAN_CS", "pin_23": "CAN_INT", "pin_28": "+5V"},
+      "evidence": [{"asset_sha256": "2b12b55cea9aab280c6c68dbc675cd3f565fa7a9000f3fdbea491d8a0a3dcfb5", "page": 1, "locator": "第 1 页左上 J1，两侧针脚号与外部网络标签"}]
+    },
+    {
+      "id": "gpio.j1-host-mapping",
+      "category": "gpio",
+      "subject": "J1 主机 GPIO 映射",
+      "statement": "CAN_MOSI/MISO/SCK 分别映射 GPIO23/GPIO19/GPIO18；U1_RXD/TXD 分别映射 GPIO3/GPIO1；U2_RXD/TXD 分别映射 GPIO16/GPIO17；IIC_SDA/SCL 分别映射 GPIO21/GPIO22；CAN_CS/CAN_INT 分别映射 GPIO12/GPIO15。",
+      "confidence": "confirmed",
+      "attributes": {"CAN_MOSI": "GPIO23", "CAN_MISO": "GPIO19", "CAN_SCK": "GPIO18", "U1_RXD": "GPIO3", "U1_TXD": "GPIO1", "U2_RXD": "GPIO16", "U2_TXD": "GPIO17", "IIC_SDA": "GPIO21", "IIC_SCL": "GPIO22", "CAN_CS": "GPIO12", "CAN_INT": "GPIO15"},
+      "evidence": [{"asset_sha256": "2b12b55cea9aab280c6c68dbc675cd3f565fa7a9000f3fdbea491d8a0a3dcfb5", "page": 1, "locator": "第 1 页左上 J1，外侧网络名与符号内 GPIO 名同一行对应"}]
+    },
+    {
+      "id": "bus.can-spi",
+      "category": "bus",
+      "subject": "U1 SPI 总线",
+      "statement": "U1.14 SI 接 CAN_MOSI，U1.15 SO 接 CAN_MISO，U1.13 SCK 接 CAN_SCK，U1.16 /CS 接 CAN_CS；该 CAN 控制器以片选而非总线地址寻址。",
+      "confidence": "confirmed",
+      "attributes": {"controller": "host via J1", "device": "U1 MCP2515-I/SO", "mosi": "U1.14 SI CAN_MOSI", "miso": "U1.15 SO CAN_MISO", "clock": "U1.13 SCK CAN_SCK", "chip_select": "U1.16 /CS CAN_CS", "address": null},
+      "evidence": [{"asset_sha256": "2b12b55cea9aab280c6c68dbc675cd3f565fa7a9000f3fdbea491d8a0a3dcfb5", "page": 1, "locator": "第 1 页 U1 左上 13~16 脚 SCK/SI/SO/CS 及 CAN_SCK/CAN_MOSI/CAN_MISO/CAN_CS"}]
+    },
+    {
+      "id": "gpio.can-interrupt",
+      "category": "gpio",
+      "subject": "CAN_INT",
+      "statement": "U1.12 INT 输出网络 CAN_INT，并经 J1.23 连接主机 GPIO15。",
+      "confidence": "confirmed",
+      "attributes": {"source": "U1.12 INT", "net": "CAN_INT", "connector_pin": "J1.23", "host_gpio": "GPIO15", "direction": "U1 to host"},
+      "evidence": [{"asset_sha256": "2b12b55cea9aab280c6c68dbc675cd3f565fa7a9000f3fdbea491d8a0a3dcfb5", "page": 1, "locator": "第 1 页 U1.12 INT 的 CAN_INT 网络与 J1.23 CAN_INT/GPIO15"}]
+    },
+    {
+      "id": "reset.u1-pullup",
+      "category": "reset",
+      "subject": "U1 RESET",
+      "statement": "U1.17 RESET 通过 R1 10K0 上拉到 +3.3V，图中未显示外部复位控制信号。",
+      "confidence": "confirmed",
+      "attributes": {"reset_pin": "U1.17 RESET", "pullup": "R1 10K0", "rail": "+3.3V", "external_reset_net_shown": false},
+      "evidence": [{"asset_sha256": "2b12b55cea9aab280c6c68dbc675cd3f565fa7a9000f3fdbea491d8a0a3dcfb5", "page": 1, "locator": "第 1 页 U1 左上 RESET 引脚与竖直 R1 10K0 至 +3.3V"}]
+    },
+    {
+      "id": "clock.u1-8mhz",
+      "category": "clock",
+      "subject": "U1 CAN 控制器时钟",
+      "statement": "Y1 8MHz 跨接 U1.7 OSC2 与 U1.8 OSC1，C1 和 C2 均为 20pF 并分别从晶振两端接 GND。",
+      "confidence": "confirmed",
+      "attributes": {"crystal": "Y1", "frequency": "8MHz", "osc2": "U1.7", "osc1": "U1.8", "load_capacitors": "C1 20pF,C2 20pF", "return": "GND"},
+      "evidence": [{"asset_sha256": "2b12b55cea9aab280c6c68dbc675cd3f565fa7a9000f3fdbea491d8a0a3dcfb5", "page": 1, "locator": "第 1 页 U1 左下 OSC2/OSC1、Y1 8MHz、C1/C2 20pF"}]
+    },
+    {
+      "id": "bus.can-controller-transceiver",
+      "category": "bus",
+      "subject": "U1 与 U2 CAN 逻辑链路",
+      "statement": "U1.1 TXCAN 通过 TXCAN 网络连接 U2.1 TXD，U2.4 RXD 通过 RXCAN 网络连接 U1.2 RXCAN。",
+      "confidence": "confirmed",
+      "attributes": {"transmit_path": "U1.1 TXCAN -> TXCAN -> U2.1 TXD", "receive_path": "U2.4 RXD -> RXCAN -> U1.2 RXCAN"},
+      "evidence": [{"asset_sha256": "2b12b55cea9aab280c6c68dbc675cd3f565fa7a9000f3fdbea491d8a0a3dcfb5", "page": 1, "locator": "第 1 页 U1 右侧 TXCAN、左侧 RXCAN 与 U2 左侧同名网络"}]
+    },
+    {
+      "id": "power.can-ic-supplies",
+      "category": "power",
+      "subject": "CAN 芯片电源",
+      "statement": "U1.18 VDD 接 +3.3V、U1.9 VSS 接 GND；U2.3 VCC 接 +5V、U2.5 VIO 接 +3.3V，U2.2 GND 与 U2.8 S 均接 GND。",
+      "confidence": "confirmed",
+      "attributes": {"U1_VDD": "+3.3V", "U1_VSS": "GND", "U2_VCC": "+5V", "U2_VIO": "+3.3V", "U2_GND": "GND", "U2_S": "GND"},
+      "evidence": [{"asset_sha256": "2b12b55cea9aab280c6c68dbc675cd3f565fa7a9000f3fdbea491d8a0a3dcfb5", "page": 1, "locator": "第 1 页 U1.18/U1.9 与 U2.2/U2.3/U2.5/U2.8 的电源和接地标注"}]
+    },
+    {
+      "id": "interface.j2-can-pinout",
+      "category": "interface",
+      "subject": "J2 CAN_Socket_4P",
+      "statement": "J2.1 接 CAN_H，J2.2 接 CAN_L，J2.3 接 +5V，J2.4 接 GND。",
+      "confidence": "confirmed",
+      "attributes": {"pin_1": "CAN_H", "pin_2": "CAN_L", "pin_3": "+5V", "pin_4": "GND", "signal_level": "CAN differential", "direction": "bidirectional"},
+      "evidence": [{"asset_sha256": "2b12b55cea9aab280c6c68dbc675cd3f565fa7a9000f3fdbea491d8a0a3dcfb5", "page": 1, "locator": "第 1 页右上 J2，1 CAN_H、2 CAN_L、3 VCC/+5V、4 GND"}]
+    },
+    {
+      "id": "bus.can-physical-termination",
+      "category": "bus",
+      "subject": "CAN_H/CAN_L",
+      "statement": "U2.7 CANH 接 CAN_H，U2.6 CANL 接 CAN_L；R2 120R 固定跨接两条差分线，图中未画出可断开跳线。",
+      "confidence": "confirmed",
+      "attributes": {"canh": "U2.7 CANH -> CAN_H", "canl": "U2.6 CANL -> CAN_L", "termination": "R2 120R", "switchable": false},
+      "evidence": [{"asset_sha256": "2b12b55cea9aab280c6c68dbc675cd3f565fa7a9000f3fdbea491d8a0a3dcfb5", "page": 1, "locator": "第 1 页 U2 右侧 CANL/CANH 与 R2 120R 跨线连接"}]
+    },
+    {
+      "id": "interface.rs485-uart-selection",
+      "category": "interface",
+      "subject": "J6/J9 RS-485 UART 选择",
+      "statement": "J6 在 U1_RXD 与 U2_RXD 中选择一路连接 U3.1 RO；J9 在 U1_TXD 与 U2_TXD 中选择一路同时连接 U3.4 DI 和方向控制支路，图注标明默认 UART2 to RS485。",
+      "confidence": "confirmed",
+      "attributes": {"receive_selector": "J6 IN1=U1_RXD, IN2=U2_RXD, OUT to U3.1 RO via R4 1K", "transmit_selector": "J9 IN1=U1_TXD, IN2=U2_TXD, OUT to U3.4 DI and R6", "default": "UART2 to RS485"},
+      "evidence": [{"asset_sha256": "2b12b55cea9aab280c6c68dbc675cd3f565fa7a9000f3fdbea491d8a0a3dcfb5", "page": 1, "locator": "第 1 页左中 Default: UART2 to RS485，J6/J9 与 U3 RO/DI、R4/R6 的连线"}]
+    },
+    {
+      "id": "gpio.rs485-direction-control",
+      "category": "gpio",
+      "subject": "U3 /RE 与 DE 自动方向节点",
+      "statement": "U3.2 /RE 与 U3.3 DE 短接并连接 Q1 集电极；该节点由 R5 4.7K 上拉至 +3.3V，选定 TXD 经 R6 1K 驱动 Q1 基极，Q1 发射极接 GND。",
+      "confidence": "confirmed",
+      "attributes": {"enable_node": "U3.2 /RE + U3.3 DE", "pullup": "R5 4.7K to +3.3V", "transistor": "Q1 SS8050 Y1", "base_drive": "selected TXD via R6 1K", "emitter": "GND"},
+      "evidence": [{"asset_sha256": "2b12b55cea9aab280c6c68dbc675cd3f565fa7a9000f3fdbea491d8a0a3dcfb5", "page": 1, "locator": "第 1 页 Q1/R5/R6 与 U3.2 /RE、U3.3 DE 共节点"}]
+    },
+    {
+      "id": "bus.rs485-transceiver-pinout",
+      "category": "bus",
+      "subject": "U3 SP3485EN-L/TR",
+      "statement": "U3.1 RO 为接收输出，U3.4 DI 为发送输入，U3.6 A 接 RS485_A，U3.7 B 接 RS485_B，U3.8 VCC 接 +3.3V，U3.5 GND 接地。",
+      "confidence": "confirmed",
+      "attributes": {"pin_1": "RO to J6 via R4 1K", "pin_4": "DI from J9", "pin_6": "A RS485_A", "pin_7": "B RS485_B", "pin_8": "VCC +3.3V", "pin_5": "GND"},
+      "evidence": [{"asset_sha256": "2b12b55cea9aab280c6c68dbc675cd3f565fa7a9000f3fdbea491d8a0a3dcfb5", "page": 1, "locator": "第 1 页中下 U3 的 1~8 脚标签及相连网络"}]
+    },
+    {
+      "id": "bus.rs485-bias",
+      "category": "bus",
+      "subject": "RS-485 偏置网络",
+      "statement": "R3 4.7K 将 RS485_B 接至 GND，R7 4.7K 将 RS485_A 接至 +3.3V；图中未显示 A/B 之间的终端电阻。",
+      "confidence": "confirmed",
+      "attributes": {"B_bias": "R3 4.7K to GND", "A_bias": "R7 4.7K to +3.3V", "termination_between_A_B_shown": false},
+      "evidence": [{"asset_sha256": "2b12b55cea9aab280c6c68dbc675cd3f565fa7a9000f3fdbea491d8a0a3dcfb5", "page": 1, "locator": "第 1 页 U3 右侧 RS485_B/RS485_A 节点及 R3/R7，A/B 间仅见 D2 保护器件"}]
+    },
+    {
+      "id": "protection.rs485-tvs",
+      "category": "protection",
+      "subject": "RS-485 接口保护",
+      "statement": "D1 P6SMB6.8CA 跨接 GND 与 RS485_B，D2 P6SMB6.8CA 跨接 RS485_B 与 RS485_A，D3 P6SMB6.8CA 跨接 RS485_A 与 GND。",
+      "confidence": "confirmed",
+      "attributes": {"B_to_GND": "D1 P6SMB6.8CA", "B_to_A": "D2 P6SMB6.8CA", "A_to_GND": "D3 P6SMB6.8CA"},
+      "evidence": [{"asset_sha256": "2b12b55cea9aab280c6c68dbc675cd3f565fa7a9000f3fdbea491d8a0a3dcfb5", "page": 1, "locator": "第 1 页 U3 右侧竖直 D1/D2/D3 保护串链及 GND、RS485_B、RS485_A 节点"}]
+    },
+    {
+      "id": "interface.j3-rs485-pinout",
+      "category": "interface",
+      "subject": "J3 RS485_Socket_4P",
+      "statement": "J3.1 接 RS485_B，J3.2 接 RS485_A，J3.3 接 +5V，J3.4 接 GND；+5V 是接口输出电源，而 U3 自身 VCC 为 +3.3V。",
+      "confidence": "confirmed",
+      "attributes": {"pin_1": "RS485_B", "pin_2": "RS485_A", "pin_3": "+5V", "pin_4": "GND", "signal_level": "RS-485 differential", "direction": "bidirectional", "transceiver_supply": "+3.3V"},
+      "evidence": [{"asset_sha256": "2b12b55cea9aab280c6c68dbc675cd3f565fa7a9000f3fdbea491d8a0a3dcfb5", "page": 1, "locator": "第 1 页右上 J3 的 1 RS485_B、2 RS485_A、3 VCC/+5V、4 GND，以及 U3.8 +3.3V"}]
+    },
+    {
+      "id": "interface.uart-selection",
+      "category": "interface",
+      "subject": "J7/J10 TTL UART 选择",
+      "statement": "J7 在 U1_TXD 与 U2_TXD 中选择 J8 的 TXD，J10 在 U1_RXD 与 U2_RXD 中选择 J8 的 RXD；两处图注均标明默认 UART0。",
+      "confidence": "confirmed",
+      "attributes": {"tx_selector": "J7 IN1=U1_TXD, IN2=U2_TXD", "rx_selector": "J10 IN1=U1_RXD, IN2=U2_RXD", "default": "UART0", "logic_rails_available": "+5V,+3.3V"},
+      "evidence": [{"asset_sha256": "2b12b55cea9aab280c6c68dbc675cd3f565fa7a9000f3fdbea491d8a0a3dcfb5", "page": 1, "locator": "第 1 页右中两处 Default: UART0，J7/J10 输入网络与 J8 TXD/RXD"}]
+    },
+    {
+      "id": "interface.j8-uart-pinout",
+      "category": "interface",
+      "subject": "J8 UART_Socket_5P",
+      "statement": "J8.1 接 +5V，J8.2 接 +3.3V，J8.3 为 TXD，J8.4 为 RXD，J8.5 接 GND。",
+      "confidence": "confirmed",
+      "attributes": {"pin_1": "+5V", "pin_2": "+3.3V", "pin_3": "TXD", "pin_4": "RXD", "pin_5": "GND", "TXD_direction": "module output", "RXD_direction": "module input"},
+      "evidence": [{"asset_sha256": "2b12b55cea9aab280c6c68dbc675cd3f565fa7a9000f3fdbea491d8a0a3dcfb5", "page": 1, "locator": "第 1 页右中 J8 UART_Socket_5P，1~5 脚左侧标签"}]
+    },
+    {
+      "id": "component.uart-series-resistors",
+      "category": "component",
+      "subject": "J8 UART 串联电阻 R8/R9",
+      "statement": "J8 的 TXD 与 RXD 路径分别画有 R8 与 R9 串联电阻，但当前原理图图片中的阻值标注无法可靠辨认。",
+      "confidence": "uncertain",
+      "attributes": {"TXD_series": "R8", "RXD_series": "R9", "resistance": null},
+      "evidence": [{"asset_sha256": "2b12b55cea9aab280c6c68dbc675cd3f565fa7a9000f3fdbea491d8a0a3dcfb5", "page": 1, "locator": "第 1 页右中 J8 左侧 TXD/RXD 两条线上 R8/R9，阻值文字像素不足以可靠转录"}]
+    },
+    {
+      "id": "bus.i2c-routing",
+      "category": "bus",
+      "subject": "I2C 总线",
+      "statement": "J1.17/GPIO21 的 IIC_SDA 和 J1.18/GPIO22 的 IIC_SCL 并联连接 J4 与 J5；图中没有板载 I2C 从设备或可见地址。",
+      "confidence": "confirmed",
+      "attributes": {"controller": "host via J1", "sda": "J1.17 GPIO21 IIC_SDA", "scl": "J1.18 GPIO22 IIC_SCL", "ports": "J4,J5", "onboard_device_address": null},
+      "evidence": [{"asset_sha256": "2b12b55cea9aab280c6c68dbc675cd3f565fa7a9000f3fdbea491d8a0a3dcfb5", "page": 1, "locator": "第 1 页 J1.17/J1.18 与右侧 J4/J5 的 IIC_SDA/IIC_SCL 同名网络"}]
+    },
+    {
+      "id": "interface.j4-j5-i2c-pinout",
+      "category": "interface",
+      "subject": "J4/J5 IIC_Socket_4P",
+      "statement": "J4 与 J5 的针脚定义相同：1 脚 IIC_SCL、2 脚 IIC_SDA、3 脚 +5V、4 脚 GND。",
+      "confidence": "confirmed",
+      "attributes": {"J4_pin_1": "IIC_SCL", "J4_pin_2": "IIC_SDA", "J4_pin_3": "+5V", "J4_pin_4": "GND", "J5_pin_1": "IIC_SCL", "J5_pin_2": "IIC_SDA", "J5_pin_3": "+5V", "J5_pin_4": "GND", "direction": "bidirectional bus"},
+      "evidence": [{"asset_sha256": "2b12b55cea9aab280c6c68dbc675cd3f565fa7a9000f3fdbea491d8a0a3dcfb5", "page": 1, "locator": "第 1 页右侧 J4/J5，均按 1 IIC_SCL、2 IIC_SDA、3 VCC/+5V、4 GND 标注"}]
+    },
+    {
+      "id": "power.input-rails",
+      "category": "power",
+      "subject": "板级电源输入与分配",
+      "statement": "板上 +3.3V 由 J1.12 输入，+5V 由 J1.28 输入；+3.3V 供 U1、U2 VIO、U3 和 J8，+5V 供 U2 VCC 及 J2/J3/J4/J5/J8。图中未见 DC/DC、LDO、负载开关、充电器或电池连接。",
+      "confidence": "confirmed",
+      "attributes": {"3v3_input": "J1.12", "5v_input": "J1.28", "3v3_consumers": "U1 VDD,U2 VIO,U3 VCC,J8.2", "5v_consumers": "U2 VCC,J2.3,J3.3,J4.3,J5.3,J8.1", "local_converter_shown": false, "charger_shown": false, "battery_path_shown": false},
+      "evidence": [{"asset_sha256": "2b12b55cea9aab280c6c68dbc675cd3f565fa7a9000f3fdbea491d8a0a3dcfb5", "page": 1, "locator": "第 1 页 J1 +3.3V/+5V 输入、各 IC 与连接器同名电源网络；全图无稳压或充电器符号"}]
+    },
+    {
+      "id": "power.decoupling-banks",
+      "category": "power",
+      "subject": "+5V 与 +3.3V 去耦",
+      "statement": "C3~C9 共七个 100nF 电容分别跨接 +5V 与 GND；C10~C14 共五个 100nF 电容分别跨接 +3.3V 与 GND。",
+      "confidence": "confirmed",
+      "attributes": {"5v_capacitors": "C3,C4,C5,C6,C7,C8,C9", "5v_value_each": "100nF", "3v3_capacitors": "C10,C11,C12,C13,C14", "3v3_value_each": "100nF", "return": "GND"},
+      "evidence": [{"asset_sha256": "2b12b55cea9aab280c6c68dbc675cd3f565fa7a9000f3fdbea491d8a0a3dcfb5", "page": 1, "locator": "第 1 页底部连续 C3~C14 去耦电容排"}]
+    },
+    {
+      "id": "debug.unused-mcp2515-pins",
+      "category": "debug",
+      "subject": "U1 未使用功能引脚",
+      "statement": "U1.3 CLKOUT/SOF、U1.4~U1.6 TX0RTS/TX1RTS/TX2RTS、U1.10/U1.11 RX1BF/RX0BF 在图中标为未连接；原理图未显示独立调试连接器。",
+      "confidence": "confirmed",
+      "attributes": {"not_connected": "U1.3 CLKOUT/SOF,U1.4 TX0RTS,U1.5 TX1RTS,U1.6 TX2RTS,U1.10 RX1BF,U1.11 RX0BF", "debug_connector_shown": false},
+      "evidence": [{"asset_sha256": "2b12b55cea9aab280c6c68dbc675cd3f565fa7a9000f3fdbea491d8a0a3dcfb5", "page": 1, "locator": "第 1 页 U1 周围红色叉号标记的 3~6、10~11 脚；全图无调试连接器"}]
+    }
+  ],
+  "needs_review": [
+    {
+      "id": "review.uart-series-resistor-values",
+      "fact_id": "component.uart-series-resistors",
+      "question": "请从更高分辨率正式原理图或 BOM 确认 J8 TXD/RXD 串联电阻 R8、R9 的准确阻值。",
+      "reason": "当前 1188x768 WebP 页面可确认 R8/R9 位号和串联位置，但阻值文本无法可靠辨认。",
+      "evidence": [{"asset_sha256": "2b12b55cea9aab280c6c68dbc675cd3f565fa7a9000f3fdbea491d8a0a3dcfb5", "page": 1, "locator": "第 1 页右中 J8 左侧 R8/R9 阻值标注"}]
+    }
+  ]
+}

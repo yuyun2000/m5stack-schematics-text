@@ -1,0 +1,21 @@
+{
+  "dry_run": false,
+  "failed": 0,
+  "published": 1,
+  "results": [
+    {
+      "backup": null,
+      "draft_action": "unchanged",
+      "dry_run": false,
+      "errors": [],
+      "needs_review": 2,
+      "product_id": "unit-mini-bps-50b079f537c4",
+      "product_name": "Unit Mini BPS",
+      "publish_action": "unchanged",
+      "sha256": "c65e5e4d0d25c5aac38fd7aa78016cf8483df6c20c92fcb4aca020bc3e647e3b",
+      "status": "valid",
+      "uncertain_facts": 2
+    }
+  ],
+  "schema_version": 1
+}

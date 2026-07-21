@@ -1,0 +1,21 @@
+{
+  "dry_run": false,
+  "failed": 0,
+  "published": 1,
+  "results": [
+    {
+      "backup": null,
+      "draft_action": "unchanged",
+      "dry_run": false,
+      "errors": [],
+      "needs_review": 8,
+      "product_id": "unit-lorawan-as923-0a82795306a4",
+      "product_name": "Unit LoRaWAN-AS923",
+      "publish_action": "unchanged",
+      "sha256": "ab6759d3c278448a39c96d4c4c6f63b023337e02d47dfcd96da121618ffcb718",
+      "status": "valid",
+      "uncertain_facts": 8
+    }
+  ],
+  "schema_version": 1
+}

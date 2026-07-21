@@ -1,0 +1,21 @@
+{
+  "dry_run": false,
+  "failed": 0,
+  "published": 1,
+  "results": [
+    {
+      "backup": null,
+      "draft_action": "unchanged",
+      "dry_run": false,
+      "errors": [],
+      "needs_review": 5,
+      "product_id": "stamplc-poe-c8d18c868a51",
+      "product_name": "StamPLC PoE",
+      "publish_action": "unchanged",
+      "sha256": "9e8294642d942df61b207554275084153287f07522d41bc7f9dfcbf32b6a24bd",
+      "status": "valid",
+      "uncertain_facts": 5
+    }
+  ],
+  "schema_version": 1
+}

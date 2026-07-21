@@ -1,0 +1,21 @@
+{
+  "dry_run": false,
+  "failed": 0,
+  "published": 1,
+  "results": [
+    {
+      "backup": null,
+      "draft_action": "unchanged",
+      "dry_run": false,
+      "errors": [],
+      "needs_review": 3,
+      "product_id": "hat-cback-nbiot-ddfc8e81e058",
+      "product_name": "Hat CBack NBIoT",
+      "publish_action": "unchanged",
+      "sha256": "23a33bb56b0ab64ddc8315e461b9eed882ead7af7474dcd1375d7561d820287d",
+      "status": "valid",
+      "uncertain_facts": 3
+    }
+  ],
+  "schema_version": 1
+}

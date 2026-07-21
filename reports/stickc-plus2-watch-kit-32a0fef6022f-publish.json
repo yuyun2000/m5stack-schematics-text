@@ -1,0 +1,21 @@
+{
+  "dry_run": false,
+  "failed": 0,
+  "published": 1,
+  "results": [
+    {
+      "backup": null,
+      "draft_action": "unchanged",
+      "dry_run": false,
+      "errors": [],
+      "needs_review": 0,
+      "product_id": "stickc-plus2-watch-kit-32a0fef6022f",
+      "product_name": "StickC-Plus2 Watch Kit",
+      "publish_action": "unchanged",
+      "sha256": "c7ff1a85686a8c49c1095160adc407bfa20a857f09cf7e150d1c8008403120af",
+      "status": "valid",
+      "uncertain_facts": 0
+    }
+  ],
+  "schema_version": 1
+}

@@ -1,0 +1,21 @@
+{
+  "dry_run": false,
+  "failed": 0,
+  "published": 1,
+  "results": [
+    {
+      "backup": null,
+      "draft_action": "unchanged",
+      "dry_run": false,
+      "errors": [],
+      "needs_review": 6,
+      "product_id": "hat-finger-06fd21063c9c",
+      "product_name": "Hat Finger",
+      "publish_action": "unchanged",
+      "sha256": "91701b3507b21796e4101bc63d746401c38447593b07f4378d3597dbe6392b69",
+      "status": "valid",
+      "uncertain_facts": 6
+    }
+  ],
+  "schema_version": 1
+}

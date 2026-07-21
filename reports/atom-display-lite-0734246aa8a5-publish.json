@@ -1,0 +1,21 @@
+{
+  "dry_run": false,
+  "failed": 0,
+  "published": 1,
+  "results": [
+    {
+      "backup": null,
+      "draft_action": "unchanged",
+      "dry_run": false,
+      "errors": [],
+      "needs_review": 2,
+      "product_id": "atom-display-lite-0734246aa8a5",
+      "product_name": "Atom Display-Lite",
+      "publish_action": "unchanged",
+      "sha256": "f57c77a09887413198983ab7cd20361ea4c399d49df253185d5eb52585bcb5d9",
+      "status": "valid",
+      "uncertain_facts": 0
+    }
+  ],
+  "schema_version": 1
+}

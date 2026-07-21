@@ -1,0 +1,21 @@
+{
+  "dry_run": false,
+  "failed": 0,
+  "published": 1,
+  "results": [
+    {
+      "backup": null,
+      "draft_action": "unchanged",
+      "dry_run": false,
+      "errors": [],
+      "needs_review": 4,
+      "product_id": "module13-2-display-b5f636da83c6",
+      "product_name": "Module13.2 Display",
+      "publish_action": "unchanged",
+      "sha256": "20c0acf0b22b0fedf585343ad490204b17b94de7a4b51cc157fc6c59838b2cef",
+      "status": "valid",
+      "uncertain_facts": 4
+    }
+  ],
+  "schema_version": 1
+}

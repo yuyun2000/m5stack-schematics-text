@@ -1,0 +1,217 @@
+{
+  "schema_version": 1,
+  "generator": "schematic_describer",
+  "product": {
+    "product_id": "unit-dual-button-276964214cf7",
+    "product_name": "Unit Dual Button",
+    "sku": "U025",
+    "source_path": "unit/dual_button.md",
+    "source_sha256": "491e7e38172e8f1020001168f259d845fcaff84ae147abd8147ab850a1aabcfd",
+    "input_sha256": "4aeb82c8d64602fbf74beefa010b6682c43c7609506734b15b2cc715e0548bf2"
+  },
+  "schematic_assets": [
+    {
+      "sha256": "4fe33f1fff95f6addb819b54c5d8bf3337eac264d675a4cee8dea291b317561e",
+      "source_url": "https://m5stack-doc.oss-cn-shenzhen.aliyuncs.com/578/Sch_UNIT_DualButton_v1.1_sch_01.png",
+      "pages": [1]
+    }
+  ],
+  "summary": "Unit Dual Button 是一块无板载主控的双瞬时按键输入板，S1 与 S2 分别驱动 A、B 网络并在按下时接 GND。每路使用 10KΩ 上拉、20KΩ 下拉和 100nF 对地电容，释放时节点由电阻分压为约 2/3·VCC。J1 HY-2.0_IO 将 A、B、VCC 和 GND 直接引出，C2 100nF 对 VCC 去耦。",
+  "keywords": [
+    "Unit Dual Button",
+    "U025",
+    "Dual Button",
+    "S1",
+    "S2",
+    "SW-PB",
+    "A",
+    "B",
+    "J1",
+    "HY-2.0_IO",
+    "VCC",
+    "GND",
+    "R1 10KΩ(1002)±1%",
+    "R2 20KΩ(2002)±1%",
+    "R3 10KΩ(1002)±1%",
+    "R4 20KΩ(2002)±1%",
+    "C1 100nF",
+    "C2 100nF",
+    "C3 100nF",
+    "2/3 VCC",
+    "active low",
+    "button input",
+    "Red Btn",
+    "Blue Btn",
+    "Grove Port B"
+  ],
+  "components": [
+    {
+      "reference": "S1",
+      "part_number": "SW-PB",
+      "role": "A 网络瞬时按键，按下时把 A 接到 GND。",
+      "evidence": [{"asset_sha256": "4fe33f1fff95f6addb819b54c5d8bf3337eac264d675a4cee8dea291b317561e", "page": 1, "locator": "网格 B2，S1 SW-PB 左端 GND、右端 A"}]
+    },
+    {
+      "reference": "S2",
+      "part_number": "SW-PB",
+      "role": "B 网络瞬时按键，按下时把 B 接到 GND。",
+      "evidence": [{"asset_sha256": "4fe33f1fff95f6addb819b54c5d8bf3337eac264d675a4cee8dea291b317561e", "page": 1, "locator": "网格 C2，S2 SW-PB 左端 GND、右端 B"}]
+    },
+    {
+      "reference": "J1",
+      "part_number": "HY-2.0_IO",
+      "role": "四针 Grove IO 接口，引出 A、B、VCC 和 GND。",
+      "evidence": [{"asset_sha256": "4fe33f1fff95f6addb819b54c5d8bf3337eac264d675a4cee8dea291b317561e", "page": 1, "locator": "网格 B3，J1 HY-2.0_IO 1-4 脚 A/B/VCC/GND"}]
+    },
+    {
+      "reference": "R1,R3",
+      "part_number": "10KΩ(1002)±1%",
+      "role": "A 与 B 网络到 VCC 的上拉电阻。",
+      "evidence": [{"asset_sha256": "4fe33f1fff95f6addb819b54c5d8bf3337eac264d675a4cee8dea291b317561e", "page": 1, "locator": "网格 B2 R1 与 C2 R3，均标注 10KΩ(1002)±1% 并接 VCC"}]
+    },
+    {
+      "reference": "R2,R4",
+      "part_number": "20KΩ(2002)±1%",
+      "role": "A 与 B 网络到 GND 的下拉电阻，与 10K 上拉形成分压。",
+      "evidence": [{"asset_sha256": "4fe33f1fff95f6addb819b54c5d8bf3337eac264d675a4cee8dea291b317561e", "page": 1, "locator": "网格 B2 R2 与 C2 R4，均标注 20KΩ(2002)±1% 并接 GND"}]
+    },
+    {
+      "reference": "C1,C3",
+      "part_number": "100nF(104) 10% 50V",
+      "role": "A 与 B 网络的对地滤波电容。",
+      "evidence": [{"asset_sha256": "4fe33f1fff95f6addb819b54c5d8bf3337eac264d675a4cee8dea291b317561e", "page": 1, "locator": "网格 B2 C1 与 C2 C3，均标注 100nF(104) 10% 50V 并接 GND"}]
+    },
+    {
+      "reference": "C2",
+      "part_number": "100nF(104) 10% 50V",
+      "role": "J1 VCC 到 GND 的电源去耦电容。",
+      "evidence": [{"asset_sha256": "4fe33f1fff95f6addb819b54c5d8bf3337eac264d675a4cee8dea291b317561e", "page": 1, "locator": "网格 B3，C2 100nF(104) 10% 50V 跨接 VCC 与 GND"}]
+    }
+  ],
+  "facts": [
+    {
+      "id": "system.passive-dual-button",
+      "category": "system",
+      "subject": "整板架构",
+      "statement": "整板由 S1、S2、J1、R1-R4 与 C1-C3 构成，两路按键网络直接输出；本页未显示 MCU、电源转换器、存储器、时钟、复位或通信 IC。",
+      "confidence": "confirmed",
+      "attributes": {"buttons": "S1,S2", "outputs": "A,B", "connector": "J1 HY-2.0_IO", "resistors": "R1-R4", "capacitors": "C1-C3", "controller": "原理图未显示", "regulator": "原理图未显示"},
+      "evidence": [{"asset_sha256": "4fe33f1fff95f6addb819b54c5d8bf3337eac264d675a4cee8dea291b317561e", "page": 1, "locator": "第 1 页全图，S1/S2/J1/R1-R4/C1-C3"}]
+    },
+    {
+      "id": "interface.j1-pinout",
+      "category": "interface",
+      "subject": "J1 HY-2.0_IO",
+      "statement": "J1.1-J1.4 分别连接 A、B、VCC、GND，符号内部也按 A、B、VCC、GND 标注。",
+      "confidence": "confirmed",
+      "attributes": {"reference": "J1", "part_number": "HY-2.0_IO", "pin_1": "A", "pin_2": "B", "pin_3": "VCC", "pin_4": "GND"},
+      "evidence": [{"asset_sha256": "4fe33f1fff95f6addb819b54c5d8bf3337eac264d675a4cee8dea291b317561e", "page": 1, "locator": "网格 B3，J1 1-4 脚左右网络与功能标注"}]
+    },
+    {
+      "id": "gpio.button-a",
+      "category": "gpio",
+      "subject": "S1/A 按键输入",
+      "statement": "S1 是 A 与 GND 之间的 SW-PB 瞬时按键，闭合时将 J1.1 的 A 网络接到 GND。",
+      "confidence": "confirmed",
+      "attributes": {"switch": "S1 SW-PB", "signal": "A", "connector_pin": "J1.1", "pressed_connection": "GND", "direction": "output to host"},
+      "evidence": [{"asset_sha256": "4fe33f1fff95f6addb819b54c5d8bf3337eac264d675a4cee8dea291b317561e", "page": 1, "locator": "网格 B2-B3，S1-GND/A 网络与 J1.1 A"}]
+    },
+    {
+      "id": "gpio.button-b",
+      "category": "gpio",
+      "subject": "S2/B 按键输入",
+      "statement": "S2 是 B 与 GND 之间的 SW-PB 瞬时按键，闭合时将 J1.2 的 B 网络接到 GND。",
+      "confidence": "confirmed",
+      "attributes": {"switch": "S2 SW-PB", "signal": "B", "connector_pin": "J1.2", "pressed_connection": "GND", "direction": "output to host"},
+      "evidence": [{"asset_sha256": "4fe33f1fff95f6addb819b54c5d8bf3337eac264d675a4cee8dea291b317561e", "page": 1, "locator": "网格 C2 与 B3，S2-GND/B 网络与 J1.2 B"}]
+    },
+    {
+      "id": "analog.button-a-bias-filter",
+      "category": "analog",
+      "subject": "A 网络偏置与滤波",
+      "statement": "A 由 R1 10KΩ上拉到 VCC、R2 20KΩ下拉到 GND，并由 C1 100nF 接 GND；S1 释放时理想直流分压为 VCC×20K/(10K+20K)，约 2/3·VCC。",
+      "confidence": "confirmed",
+      "attributes": {"signal": "A", "pullup": "R1 10KΩ(1002)±1%", "pulldown": "R2 20KΩ(2002)±1%", "capacitor": "C1 100nF(104) 10% 50V", "released_ratio": "2/3 VCC", "pressed_level": "GND"},
+      "evidence": [{"asset_sha256": "4fe33f1fff95f6addb819b54c5d8bf3337eac264d675a4cee8dea291b317561e", "page": 1, "locator": "网格 B2，VCC-R1-A-R2/C1-GND 与 S1"}]
+    },
+    {
+      "id": "analog.button-b-bias-filter",
+      "category": "analog",
+      "subject": "B 网络偏置与滤波",
+      "statement": "B 由 R3 10KΩ上拉到 VCC、R4 20KΩ下拉到 GND，并由 C3 100nF 接 GND；S2 释放时理想直流分压为 VCC×20K/(10K+20K)，约 2/3·VCC。",
+      "confidence": "confirmed",
+      "attributes": {"signal": "B", "pullup": "R3 10KΩ(1002)±1%", "pulldown": "R4 20KΩ(2002)±1%", "capacitor": "C3 100nF(104) 10% 50V", "released_ratio": "2/3 VCC", "pressed_level": "GND"},
+      "evidence": [{"asset_sha256": "4fe33f1fff95f6addb819b54c5d8bf3337eac264d675a4cee8dea291b317561e", "page": 1, "locator": "网格 C2，VCC-R3-B-R4/C3-GND 与 S2"}]
+    },
+    {
+      "id": "key_net.channel-symmetry",
+      "category": "key_net",
+      "subject": "A/B 对称网络",
+      "statement": "A 与 B 两路使用相同的 10KΩ上拉、20KΩ下拉、100nF 对地电容和 SW-PB 接地按键拓扑。",
+      "confidence": "confirmed",
+      "attributes": {"channel_a": "S1,R1,R2,C1,A", "channel_b": "S2,R3,R4,C3,B", "topology": "identical"},
+      "evidence": [{"asset_sha256": "4fe33f1fff95f6addb819b54c5d8bf3337eac264d675a4cee8dea291b317561e", "page": 1, "locator": "网格 B2 与 C2 上下两组对称按键电路"}]
+    },
+    {
+      "id": "power.vcc-decoupling",
+      "category": "power",
+      "subject": "VCC 电源网络",
+      "statement": "J1.3 连接 VCC，C2 100nF(104) 10% 50V 从 VCC 接 GND；VCC 同时供给 R1/R3 上拉。",
+      "confidence": "confirmed",
+      "attributes": {"connector_pin": "J1.3", "rail": "VCC", "decoupling": "C2 100nF(104) 10% 50V", "pullup_consumers": "R1,R3"},
+      "evidence": [{"asset_sha256": "4fe33f1fff95f6addb819b54c5d8bf3337eac264d675a4cee8dea291b317561e", "page": 1, "locator": "J1.3 VCC、C2 VCC-GND 与 R1/R3 顶部 VCC"}]
+    },
+    {
+      "id": "protection.external-interface-none-visible",
+      "category": "protection",
+      "subject": "J1 接口保护",
+      "statement": "J1 的 A、B、VCC、GND 直接进入按键与阻容网络，本页未显示 TVS、保险丝、反接保护或串联限流器件。",
+      "confidence": "confirmed",
+      "attributes": {"connector": "J1", "signals": "A,B,VCC,GND", "tvs": "原理图未显示", "fuse": "原理图未显示", "reverse_protection": "原理图未显示"},
+      "evidence": [{"asset_sha256": "4fe33f1fff95f6addb819b54c5d8bf3337eac264d675a4cee8dea291b317561e", "page": 1, "locator": "第 1 页 J1 至 S1/S2/R1-R4/C1-C3 的直接路径"}]
+    },
+    {
+      "id": "storage.no-controller-storage",
+      "category": "storage",
+      "subject": "主控与存储",
+      "statement": "本页未显示 MCU、Flash、EEPROM、SD 卡或其他存储器，A/B 按键状态由外部主机直接采样。",
+      "confidence": "confirmed",
+      "attributes": {"mcu": "原理图未显示", "flash": "原理图未显示", "eeprom": "原理图未显示", "sd_card": "原理图未显示", "host_inputs": "A,B"},
+      "evidence": [{"asset_sha256": "4fe33f1fff95f6addb819b54c5d8bf3337eac264d675a4cee8dea291b317561e", "page": 1, "locator": "第 1 页全图，无主控或存储器位号"}]
+    },
+    {
+      "id": "power.vcc-voltage-undetermined",
+      "category": "power",
+      "subject": "VCC 绝对电压与输出高电平",
+      "statement": "原理图仅标 VCC，没有打印其绝对电压；因此只能确认释放电平约为 2/3·VCC，不能仅由图纸确认正文所示 5V 供电下 A/B 的实际电压和主机逻辑裕量。",
+      "confidence": "uncertain",
+      "attributes": {"rail": "VCC", "documented_candidate": "5V", "schematic_voltage": "未标注", "released_ratio": "2/3 VCC", "absolute_output_high": "需确认"},
+      "evidence": [{"asset_sha256": "4fe33f1fff95f6addb819b54c5d8bf3337eac264d675a4cee8dea291b317561e", "page": 1, "locator": "J1.3、R1/R3、C2 仅标 VCC，无电压数值"}]
+    },
+    {
+      "id": "other.button-color-map-undetermined",
+      "category": "other",
+      "subject": "红/蓝按键与 A/B 对应",
+      "statement": "原理图只使用 S1/A 与 S2/B 标识，没有红色或蓝色标注，无法由本页确定 Red Btn、Blue Btn 分别对应 A 还是 B。",
+      "confidence": "uncertain",
+      "attributes": {"schematic_channels": "S1/A,S2/B", "physical_labels": "Red Btn,Blue Btn", "mapping": "未标注"},
+      "evidence": [{"asset_sha256": "4fe33f1fff95f6addb819b54c5d8bf3337eac264d675a4cee8dea291b317561e", "page": 1, "locator": "S1/S2 与 A/B 网络区域，无颜色文字"}]
+    }
+  ],
+  "needs_review": [
+    {
+      "id": "review.vcc-voltage",
+      "fact_id": "power.vcc-voltage-undetermined",
+      "question": "J1 VCC 的额定电压是否固定为 5V，A/B 释放时的保证输出电压及兼容逻辑阈值是多少？",
+      "reason": "原理图仅标 VCC；10K/20K 分压只能确定比例，不能确定绝对电压。",
+      "evidence": [{"asset_sha256": "4fe33f1fff95f6addb819b54c5d8bf3337eac264d675a4cee8dea291b317561e", "page": 1, "locator": "J1.3 VCC 与 A/B 分压网络"}]
+    },
+    {
+      "id": "review.button-color-map",
+      "fact_id": "other.button-color-map-undetermined",
+      "question": "PCB 上红色与蓝色按键分别对应 S1/A 还是 S2/B？",
+      "reason": "原理图只有 S1/S2 与 A/B 标识，没有物理颜色标注。",
+      "evidence": [{"asset_sha256": "4fe33f1fff95f6addb819b54c5d8bf3337eac264d675a4cee8dea291b317561e", "page": 1, "locator": "S1/A 与 S2/B 两路按键区域"}]
+    }
+  ]
+}

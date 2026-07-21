@@ -1,0 +1,21 @@
+{
+  "dry_run": false,
+  "failed": 0,
+  "published": 1,
+  "results": [
+    {
+      "backup": null,
+      "draft_action": "unchanged",
+      "dry_run": false,
+      "errors": [],
+      "needs_review": 6,
+      "product_id": "unit-roller485-lite-f16bc5177915",
+      "product_name": "Unit Roller485-Lite",
+      "publish_action": "unchanged",
+      "sha256": "87259be143113d298cdbb80ade3d6c357a7e4eef5f39bcc73f7cae86bf405667",
+      "status": "valid",
+      "uncertain_facts": 6
+    }
+  ],
+  "schema_version": 1
+}

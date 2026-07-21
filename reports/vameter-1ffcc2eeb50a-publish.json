@@ -1,0 +1,21 @@
+{
+  "dry_run": false,
+  "failed": 0,
+  "published": 1,
+  "results": [
+    {
+      "backup": null,
+      "draft_action": "unchanged",
+      "dry_run": false,
+      "errors": [],
+      "needs_review": 4,
+      "product_id": "vameter-1ffcc2eeb50a",
+      "product_name": "VAMeter",
+      "publish_action": "unchanged",
+      "sha256": "19e471e40487c3a9a87bb14436b8af8f87d5f43c6ef180eccc955de3d4e4b5bd",
+      "status": "valid",
+      "uncertain_facts": 4
+    }
+  ],
+  "schema_version": 1
+}

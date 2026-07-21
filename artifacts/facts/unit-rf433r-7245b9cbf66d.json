@@ -1,0 +1,219 @@
+{
+  "schema_version": 1,
+  "generator": "schematic_describer",
+  "product": {
+    "product_id": "unit-rf433r-7245b9cbf66d",
+    "product_name": "Unit RF433R",
+    "sku": "U113",
+    "source_path": "unit/rf433_r.md",
+    "source_sha256": "0358e5b6ca124e126466fdf20b86c6260df4d78601ca6658677fc949a16658e8",
+    "input_sha256": "6b6ce8b3da202af45d01b19c2632beac78b5645dcf1a5d71530cf96a844f8551"
+  },
+  "schematic_assets": [
+    {
+      "sha256": "fdb0b1f0cb57b34286c54e8c9e2388d218931466f1abe306540354129b13e7c9",
+      "source_url": "https://static-cdn.m5stack.com/resource/docs/products/unit/rf433_r/rf433_r_sch_01.webp",
+      "pages": [1]
+    }
+  ],
+  "summary": "Unit RF433R（U113）以 U1 SYN531R 射频接收器为核心，直接使用 +5V，并由 Y1 13.51783MHz 谐振器提供参考频率；图内标注工作频率 433.92MHz 和 1KHz Baud Rate。射频输入从 E1 ANT_IPEX 经 L1 27nH、C3 5pF、C2 3.7pF、L2 33nH 匹配网络进入 U1 ANT，数字输出 DO 经 R1 22Ω 送到 J1 pin 1。J1 pin 2 未连接，pin 3/4 为 +5V/GND；原理图未显示主控、标准串行总线、保护或存储器。图纸的 IPEX 天线接口与产品正文的 PCB 天线描述存在冲突，调制方式、灵敏度/距离和输出逻辑也未由本页确认。",
+  "keywords": [
+    "Unit RF433R", "U113", "RF433R", "SYN531R", "U1", "433.92MHz",
+    "1KHz Baud Rate", "13.51783MHz", "Y1", "ANT_IPEX", "E1", "RF matching",
+    "L1 27nH", "C3 5pF", "C2 3.7pF", "L2 33nH", "DO", "R1 22Ω",
+    "SHDN", "R2 1KΩ", "C_AGC", "CTH", "C11 100nF", "C4 1uF",
+    "J1 HY-2.0_IO", "+5V", "GND", "pin 1 RF_RX", "pin 2 NC", "ASK"
+  ],
+  "components": [
+    {
+      "reference": "U1", "part_number": "SYN531R",
+      "role": "433.92MHz 射频接收器，连接天线匹配、参考谐振器、AGC/CTH、关断与数字输出",
+      "evidence": [{"asset_sha256": "fdb0b1f0cb57b34286c54e8c9e2388d218931466f1abe306540354129b13e7c9", "page": 1, "locator": "页面中央 U1 SYN531R，pins 1~8 ANT/GND/VDD/SHDN/DO/CTH/C_AGC/RO"}]
+    },
+    {
+      "reference": "E1", "part_number": "ANT_IPEX",
+      "role": "外部射频天线连接器",
+      "evidence": [{"asset_sha256": "fdb0b1f0cb57b34286c54e8c9e2388d218931466f1abe306540354129b13e7c9", "page": 1, "locator": "页面左侧 E1 ANT_IPEX，信号端连接匹配网络"}]
+    },
+    {
+      "reference": "Y1", "part_number": "13.51783MHz",
+      "role": "SYN531R RO pin 8 的参考谐振器，另一端接地",
+      "evidence": [{"asset_sha256": "fdb0b1f0cb57b34286c54e8c9e2388d218931466f1abe306540354129b13e7c9", "page": 1, "locator": "页面 U1 右上 pin 8 RO-Y1 13.51783MHz-GND"}]
+    },
+    {
+      "reference": "J1", "part_number": "HY-2.0_IO",
+      "role": "四针接收数据输出与 +5V 电源接口",
+      "evidence": [{"asset_sha256": "fdb0b1f0cb57b34286c54e8c9e2388d218931466f1abe306540354129b13e7c9", "page": 1, "locator": "页面右下 J1 HY-2.0_IO，pin 1 I、pin 2 O/NC、pin 3 VCC/+5V、pin 4 GND"}]
+    },
+    {
+      "reference": "L1", "part_number": "27nH ±5%",
+      "role": "E1 天线节点到 GND 的并联射频电感",
+      "evidence": [{"asset_sha256": "fdb0b1f0cb57b34286c54e8c9e2388d218931466f1abe306540354129b13e7c9", "page": 1, "locator": "页面左侧 E1 后 L1 27nH ±5% 到 GND"}]
+    },
+    {
+      "reference": "C3", "part_number": "5pF (5R0) 0.25pF",
+      "role": "E1 天线节点到 GND 的并联射频电容",
+      "evidence": [{"asset_sha256": "fdb0b1f0cb57b34286c54e8c9e2388d218931466f1abe306540354129b13e7c9", "page": 1, "locator": "页面天线节点 C3 5pF (5R0) 0.25pF 到 GND"}]
+    },
+    {
+      "reference": "C2", "part_number": "3.7pF (3R7) 0.25pF",
+      "role": "射频输入匹配路径的串联电容",
+      "evidence": [{"asset_sha256": "fdb0b1f0cb57b34286c54e8c9e2388d218931466f1abe306540354129b13e7c9", "page": 1, "locator": "页面 E1/C3 节点与 U1 ANT 之间 C2 3.7pF (3R7) 0.25pF"}]
+    },
+    {
+      "reference": "L2", "part_number": "33nH ±5%",
+      "role": "C2 后、U1 ANT 前节点到 GND 的并联射频电感",
+      "evidence": [{"asset_sha256": "fdb0b1f0cb57b34286c54e8c9e2388d218931466f1abe306540354129b13e7c9", "page": 1, "locator": "页面 C2 后射频节点 L2 33nH ±5% 到 GND，节点连接 U1 pin1 ANT"}]
+    },
+    {
+      "reference": "R1", "part_number": "22Ω",
+      "role": "U1 DO 到 J1 pin 1 的串联数字输出电阻",
+      "evidence": [{"asset_sha256": "fdb0b1f0cb57b34286c54e8c9e2388d218931466f1abe306540354129b13e7c9", "page": 1, "locator": "页面 U1 pin5 DO-R1 22Ω-J1 pin1"}]
+    },
+    {
+      "reference": "R2", "part_number": "1KΩ",
+      "role": "U1 SHDN pin 4 到 GND 的下拉电阻",
+      "evidence": [{"asset_sha256": "fdb0b1f0cb57b34286c54e8c9e2388d218931466f1abe306540354129b13e7c9", "page": 1, "locator": "页面 U1 pin4 SHDN-R2 1KΩ-GND"}]
+    },
+    {
+      "reference": "C11/C4", "part_number": "100nF/1uF",
+      "role": "U1 CTH 与 C_AGC 引脚的对地定时/AGC 电容",
+      "evidence": [{"asset_sha256": "fdb0b1f0cb57b34286c54e8c9e2388d218931466f1abe306540354129b13e7c9", "page": 1, "locator": "页面 U1 pins 6/7 CTH/C_AGC 到 C11 100nF、C4 1uF，再接 GND"}]
+    },
+    {
+      "reference": "C10/C1", "part_number": "100nF/10uF",
+      "role": "+5V 输入轨的并联去耦与储能电容",
+      "evidence": [{"asset_sha256": "fdb0b1f0cb57b34286c54e8c9e2388d218931466f1abe306540354129b13e7c9", "page": 1, "locator": "页面右下 J1 旁 +5V-C10 100nF/C1 10uF-GND"}]
+    }
+  ],
+  "facts": [
+    {
+      "id": "system.rf433r-architecture", "category": "system", "subject": "Unit RF433R 系统架构",
+      "statement": "U1 SYN531R 接收 E1 ANT_IPEX 经四元件匹配网络输入的射频信号，使用 Y1 13.51783MHz 参考，并将 DO 经 R1 输出到 J1；全板直接使用 +5V。",
+      "confidence": "confirmed", "attributes": {"receiver": "U1 SYN531R", "antenna": "E1 ANT_IPEX", "matching": "L1/C3/C2/L2", "reference": "Y1 13.51783MHz", "output": "U1 DO -> R1 22Ω -> J1 pin1", "power": "+5V"},
+      "evidence": [{"asset_sha256": "fdb0b1f0cb57b34286c54e8c9e2388d218931466f1abe306540354129b13e7c9", "page": 1, "locator": "整页 E1/L1/C2/C3/L2/U1/Y1/R1/J1 与 +5V/GND"}]
+    },
+    {
+      "id": "component.receiver-pin-map", "category": "component", "subject": "U1 SYN531R 引脚",
+      "statement": "U1 pins 1~8 依次为 ANT、GND、VDD、SHDN、DO、CTH、C_AGC、RO。",
+      "confidence": "confirmed", "attributes": {"pin_1": "ANT", "pin_2": "GND", "pin_3": "VDD +5V", "pin_4": "SHDN", "pin_5": "DO", "pin_6": "CTH", "pin_7": "C_AGC", "pin_8": "RO"},
+      "evidence": [{"asset_sha256": "fdb0b1f0cb57b34286c54e8c9e2388d218931466f1abe306540354129b13e7c9", "page": 1, "locator": "页面中央 U1 SYN531R pins 1~8 名称与网络"}]
+    },
+    {
+      "id": "rf.antenna-matching", "category": "rf", "subject": "天线到 SYN531R 匹配网络",
+      "statement": "E1 信号节点并联 L1 27nH 和 C3 5pF 到 GND，经 C2 3.7pF 串联后，在 U1 ANT 前并联 L2 33nH 到 GND。",
+      "confidence": "confirmed", "attributes": {"connector": "E1 ANT_IPEX", "first_shunt": "L1 27nH,C3 5pF", "series": "C2 3.7pF", "second_shunt": "L2 33nH", "destination": "U1 pin1 ANT"},
+      "evidence": [{"asset_sha256": "fdb0b1f0cb57b34286c54e8c9e2388d218931466f1abe306540354129b13e7c9", "page": 1, "locator": "页面左侧完整 E1-L1/C3-C2-L2-U1 ANT 射频路径"}]
+    },
+    {
+      "id": "rf.annotated-frequency-rate", "category": "rf", "subject": "工作频率与数据率标注",
+      "statement": "原理图在 U1 下方明确标注 433.92MHz, 1KHz Baud Rate。",
+      "confidence": "confirmed", "attributes": {"frequency": "433.92MHz", "baud_annotation": "1KHz Baud Rate"},
+      "evidence": [{"asset_sha256": "fdb0b1f0cb57b34286c54e8c9e2388d218931466f1abe306540354129b13e7c9", "page": 1, "locator": "页面 U1 SYN531R 下方文字 433.92MHz, 1KHz Baud Rate"}]
+    },
+    {
+      "id": "clock.receiver-reference", "category": "clock", "subject": "SYN531R 参考谐振器",
+      "statement": "U1 RO pin 8 连接 Y1 pin 1，Y1 标注 13.51783MHz，Y1 pin 2 接 GND。",
+      "confidence": "confirmed", "attributes": {"receiver_pin": "U1 pin8 RO", "resonator": "Y1 13.51783MHz", "return": "GND"},
+      "evidence": [{"asset_sha256": "fdb0b1f0cb57b34286c54e8c9e2388d218931466f1abe306540354129b13e7c9", "page": 1, "locator": "页面 U1 右上 RO-Y1 13.51783MHz-GND"}]
+    },
+    {
+      "id": "analog.agc-timing", "category": "analog", "subject": "AGC 与 CTH 外围",
+      "statement": "U1 CTH pin 6 和 C_AGC pin 7 分别连接对地电容 C11 100nF 与 C4 1uF。",
+      "confidence": "confirmed", "attributes": {"cth": "U1 pin6 -> C11 100nF -> GND", "agc": "U1 pin7 -> C4 1uF -> GND"},
+      "evidence": [{"asset_sha256": "fdb0b1f0cb57b34286c54e8c9e2388d218931466f1abe306540354129b13e7c9", "page": 1, "locator": "页面 U1 右侧 pins 6/7 到 C11/C4"}]
+    },
+    {
+      "id": "gpio.shutdown-strap", "category": "gpio", "subject": "SHDN 配置",
+      "statement": "U1 SHDN pin 4 通过 R2 1KΩ 下拉到 GND，页面没有外部主机控制或切换器件。",
+      "confidence": "confirmed", "attributes": {"pin": "U1 pin4 SHDN", "pulldown": "R2 1KΩ to GND", "external_control": null},
+      "evidence": [{"asset_sha256": "fdb0b1f0cb57b34286c54e8c9e2388d218931466f1abe306540354129b13e7c9", "page": 1, "locator": "页面 U1 pin4 SHDN-R2 1KΩ-GND"}]
+    },
+    {
+      "id": "gpio.receiver-output", "category": "gpio", "subject": "接收数据输出",
+      "statement": "U1 DO pin 5 经 R1 22Ω 串联到 J1 pin 1 I，信号方向为接收器到外部主机。",
+      "confidence": "confirmed", "attributes": {"source": "U1 pin5 DO", "series": "R1 22Ω", "destination": "J1 pin1 I", "direction": "unit to host"},
+      "evidence": [{"asset_sha256": "fdb0b1f0cb57b34286c54e8c9e2388d218931466f1abe306540354129b13e7c9", "page": 1, "locator": "页面 U1 DO-R1-J1 pin1 连线"}]
+    },
+    {
+      "id": "interface.j1-pinout", "category": "interface", "subject": "J1 HY-2.0_IO 针脚",
+      "statement": "J1 pin 1 标注 I 并连接 U1 DO 输出，pin 2 标注 O 且未连接，pin 3 为 VCC/+5V，pin 4 为 GND。",
+      "confidence": "confirmed", "attributes": {"pin_1": "I-RF_RX", "pin_2": "O-NC", "pin_3": "VCC +5V", "pin_4": "GND"},
+      "evidence": [{"asset_sha256": "fdb0b1f0cb57b34286c54e8c9e2388d218931466f1abe306540354129b13e7c9", "page": 1, "locator": "页面右下 J1 pins 1~4 与 I/NC/+5V/GND"}]
+    },
+    {
+      "id": "power.direct-5v", "category": "power", "subject": "+5V 电源路径",
+      "statement": "J1 pin 3 +5V 直接连接 U1 VDD pin 3，并由 C10 100nF 与 C1 10uF 对地去耦；本页没有稳压器、DC/DC 或负载开关。",
+      "confidence": "confirmed", "attributes": {"input": "J1 pin3 +5V", "load": "U1 pin3 VDD", "capacitors": "C10 100nF,C1 10uF", "regulator": null, "dc_dc": null, "load_switch": null},
+      "evidence": [{"asset_sha256": "fdb0b1f0cb57b34286c54e8c9e2388d218931466f1abe306540354129b13e7c9", "page": 1, "locator": "页面 J1 +5V、U1 VDD 与 C10/C1，同页无电源转换器"}]
+    },
+    {
+      "id": "protection.no-visible-protection", "category": "protection", "subject": "天线、输出与电源保护",
+      "statement": "E1 射频输入、J1 DO 输出和 +5V 电源路径未显示 TVS/ESD、保险丝、反接或过压保护器件。",
+      "confidence": "confirmed", "attributes": {"rf_tvs": null, "output_tvs": null, "power_tvs": null, "fuse": null, "reverse_polarity": null, "overvoltage": null},
+      "evidence": [{"asset_sha256": "fdb0b1f0cb57b34286c54e8c9e2388d218931466f1abe306540354129b13e7c9", "page": 1, "locator": "整页 E1/U1/J1 路径，无保护器件符号或位号"}]
+    },
+    {
+      "id": "bus.no-standard-bus", "category": "bus", "subject": "外部总线",
+      "statement": "本页对外仅有单路 DO 数据输出，未显示 I2C、SPI、UART、CAN、RS-485、USB、SDIO、MIPI 或 I2S。",
+      "confidence": "confirmed", "attributes": {"data_output": "DO", "i2c": null, "spi": null, "uart": null, "can": null, "rs485": null, "usb": null, "sdio": null, "mipi": null, "i2s": null},
+      "evidence": [{"asset_sha256": "fdb0b1f0cb57b34286c54e8c9e2388d218931466f1abe306540354129b13e7c9", "page": 1, "locator": "整页 J1 只有 DO/+5V/GND，pin2 NC"}]
+    },
+    {
+      "id": "storage-reset-debug.none", "category": "storage", "subject": "存储、复位与调试",
+      "statement": "本页未显示主控、Flash、EEPROM、RAM、SD 卡、RESET、BOOT 或调试接口。",
+      "confidence": "confirmed", "attributes": {"controller": null, "flash": null, "eeprom": null, "ram": null, "sd": null, "reset": null, "boot": null, "debug": null},
+      "evidence": [{"asset_sha256": "fdb0b1f0cb57b34286c54e8c9e2388d218931466f1abe306540354129b13e7c9", "page": 1, "locator": "整页仅接收器、匹配/阻容、谐振器与连接器"}]
+    },
+    {
+      "id": "rf.antenna-implementation", "category": "rf", "subject": "天线实现",
+      "statement": "原理图明确显示 E1 ANT_IPEX 外部天线连接器，没有绘制 PCB 天线；源产品文字称为 PCB 天线，实际装配实现存在冲突。",
+      "confidence": "uncertain", "attributes": {"schematic": "E1 ANT_IPEX", "pcb_antenna_visible": false, "conflicting_product_doc": "PCB antenna", "assembled_antenna": null},
+      "evidence": [{"asset_sha256": "fdb0b1f0cb57b34286c54e8c9e2388d218931466f1abe306540354129b13e7c9", "page": 1, "locator": "页面左侧 E1 ANT_IPEX 与匹配网络，整页无 PCB 天线图形/网络"}]
+    },
+    {
+      "id": "rf.modulation-performance", "category": "rf", "subject": "调制与接收性能",
+      "statement": "原理图标注 433.92MHz 和 1KHz Baud Rate，但未标注 ASK 调制、接收灵敏度、稳定距离、工作电流、选择性或噪声抑制指标。",
+      "confidence": "uncertain", "attributes": {"frequency": "433.92MHz", "baud_annotation": "1KHz Baud Rate", "modulation": null, "sensitivity": null, "distance": null, "current": null, "selectivity": null, "noise_rejection": null},
+      "evidence": [{"asset_sha256": "fdb0b1f0cb57b34286c54e8c9e2388d218931466f1abe306540354129b13e7c9", "page": 1, "locator": "页面 U1 下方仅 433.92MHz, 1KHz Baud Rate，无其他射频性能文字"}]
+    },
+    {
+      "id": "gpio.output-logic", "category": "gpio", "subject": "DO 输出逻辑与电平",
+      "statement": "原理图未说明 DO 的空闲/接收高低电平、输出结构、脉冲编码、电压范围或主机阈值。",
+      "confidence": "uncertain", "attributes": {"idle_level": null, "active_level": null, "output_structure": null, "encoding": null, "voltage_range": null, "host_threshold": null},
+      "evidence": [{"asset_sha256": "fdb0b1f0cb57b34286c54e8c9e2388d218931466f1abe306540354129b13e7c9", "page": 1, "locator": "页面 U1 DO-R1-J1 pin1，仅有电气连接，无逻辑说明"}]
+    },
+    {
+      "id": "gpio.shutdown-polarity", "category": "gpio", "subject": "SHDN 有效极性",
+      "statement": "SHDN 通过 R2 1KΩ 固定下拉到 GND，但本页没有标注 SHDN 的有效极性、启动状态或关断电流。",
+      "confidence": "uncertain", "attributes": {"strap": "R2 1KΩ to GND", "active_level": null, "resulting_state": null, "shutdown_current": null},
+      "evidence": [{"asset_sha256": "fdb0b1f0cb57b34286c54e8c9e2388d218931466f1abe306540354129b13e7c9", "page": 1, "locator": "页面 U1 pin4 SHDN-R2-GND，无极性符号或说明"}]
+    }
+  ],
+  "needs_review": [
+    {
+      "id": "review.antenna-implementation", "fact_id": "rf.antenna-implementation",
+      "question": "U113 实际使用 IPEX 外接天线还是 PCB 天线，E1 是否装配？",
+      "reason": "原理图显示 ANT_IPEX，产品正文称 PCB 天线，需 PCB/BOM/实物消除冲突。",
+      "evidence": [{"asset_sha256": "fdb0b1f0cb57b34286c54e8c9e2388d218931466f1abe306540354129b13e7c9", "page": 1, "locator": "页面 E1 ANT_IPEX 与射频匹配网络"}]
+    },
+    {
+      "id": "review.modulation-performance", "fact_id": "rf.modulation-performance",
+      "question": "该版本的调制方式、灵敏度、通信距离、工作电流和选择性指标是什么？",
+      "reason": "原理图只标频率和速率，其他性能需 datasheet 与整机测试确认。",
+      "evidence": [{"asset_sha256": "fdb0b1f0cb57b34286c54e8c9e2388d218931466f1abe306540354129b13e7c9", "page": 1, "locator": "页面 U1 及 433.92MHz/1KHz 注释"}]
+    },
+    {
+      "id": "review.output-logic", "fact_id": "gpio.output-logic",
+      "question": "DO 的空闲/有效逻辑、电压、输出结构和解码格式是什么？",
+      "reason": "图中只有 DO 物理路径，没有逻辑或接口电平定义。",
+      "evidence": [{"asset_sha256": "fdb0b1f0cb57b34286c54e8c9e2388d218931466f1abe306540354129b13e7c9", "page": 1, "locator": "页面 U1 DO-R1-J1 pin1"}]
+    },
+    {
+      "id": "review.shutdown-polarity", "fact_id": "gpio.shutdown-polarity",
+      "question": "SYN531R SHDN 的有效极性是什么，R2 下拉对应正常工作还是关断？",
+      "reason": "原理图只显示下拉连接，没有有效电平说明。",
+      "evidence": [{"asset_sha256": "fdb0b1f0cb57b34286c54e8c9e2388d218931466f1abe306540354129b13e7c9", "page": 1, "locator": "页面 U1 pin4 SHDN-R2 1KΩ-GND"}]
+    }
+  ]
+}

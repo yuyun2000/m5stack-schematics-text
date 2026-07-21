@@ -1,0 +1,21 @@
+{
+  "dry_run": false,
+  "failed": 0,
+  "published": 1,
+  "results": [
+    {
+      "backup": null,
+      "draft_action": "unchanged",
+      "dry_run": false,
+      "errors": [],
+      "needs_review": 7,
+      "product_id": "m5stick-ccff3e07ed3c",
+      "product_name": "M5Stick",
+      "publish_action": "unchanged",
+      "sha256": "d24100aef57e2421946282bf21eec45305fc27aaf1b5d27d378ab87b65aacc49",
+      "status": "valid",
+      "uncertain_facts": 7
+    }
+  ],
+  "schema_version": 1
+}

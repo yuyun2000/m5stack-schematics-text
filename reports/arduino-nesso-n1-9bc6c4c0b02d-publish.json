@@ -1,0 +1,21 @@
+{
+  "dry_run": false,
+  "failed": 0,
+  "published": 1,
+  "results": [
+    {
+      "backup": null,
+      "draft_action": "unchanged",
+      "dry_run": false,
+      "errors": [],
+      "needs_review": 1,
+      "product_id": "arduino-nesso-n1-9bc6c4c0b02d",
+      "product_name": "Arduino Nesso N1",
+      "publish_action": "unchanged",
+      "sha256": "d95da1bfe1b199d75c8d7050fd16ca7e63e0f5df70d922a100188ac71cd91c98",
+      "status": "valid",
+      "uncertain_facts": 1
+    }
+  ],
+  "schema_version": 1
+}

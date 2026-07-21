@@ -1,0 +1,21 @@
+{
+  "dry_run": false,
+  "failed": 0,
+  "published": 1,
+  "results": [
+    {
+      "backup": null,
+      "draft_action": "unchanged",
+      "dry_run": false,
+      "errors": [],
+      "needs_review": 2,
+      "product_id": "atom-dtu-lorawan470-8e943f8cb5b9",
+      "product_name": "Atom DTU LoRaWAN470",
+      "publish_action": "unchanged",
+      "sha256": "d149a37605d665194f7bd23d571aa71bdf503f53c7dc08c50b213b5ec918e157",
+      "status": "valid",
+      "uncertain_facts": 0
+    }
+  ],
+  "schema_version": 1
+}

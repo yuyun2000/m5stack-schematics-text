@@ -1,0 +1,21 @@
+{
+  "dry_run": false,
+  "failed": 0,
+  "published": 1,
+  "results": [
+    {
+      "backup": null,
+      "draft_action": "unchanged",
+      "dry_run": false,
+      "errors": [],
+      "needs_review": 1,
+      "product_id": "module13-2-2relay-c332f9f68be2",
+      "product_name": "Module13.2 2Relay",
+      "publish_action": "unchanged",
+      "sha256": "3146aea8b523d707570f523bb625802fc7453b46f27d1a8e9858965f9f46bfd6",
+      "status": "valid",
+      "uncertain_facts": 1
+    }
+  ],
+  "schema_version": 1
+}

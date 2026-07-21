@@ -1,0 +1,577 @@
+{
+  "schema_version": 1,
+  "generator": "schematic_describer",
+  "product": {
+    "product_id": "stamp-s3-breakout-3a05e8fd268c",
+    "product_name": "Stamp-S3 BreakOut",
+    "sku": "A129",
+    "source_path": "stamp/StampS3BreakOut.md",
+    "source_sha256": "ef036c9d77340e3daf726f4273d90080b8608e79c0c49885863270cd4fb0aa69",
+    "input_sha256": "bf7c87d091ff536ce196d9b79db25063295af994b954c1bf090c9614c3ac7118"
+  },
+  "schematic_assets": [
+    {
+      "sha256": "90d7865bc11c3d578693aa1f8ebffb7c7dac4689d69a24e7d380158f5c8b45d5",
+      "source_url": "https://m5stack-doc.oss-cn-shenzhen.aliyuncs.com/534/Sch_StampS3BreakOut_sch_01.png",
+      "pages": [
+        1
+      ]
+    }
+  ],
+  "summary": "Stamp-S3 BreakOut 是一块无源信号转接板，原理图未显示主控、协处理器、存储器、电源转换器或其他功能 IC。P2 与 P4 汇集 Stamp-S3 侧的 GPIO、电源、EN 和 GND 网络，P1、P3、P5 将这些网络引出，J1 提供标注为 IIC_SCL/IIC_SDA 的四针接口。S1 将 G0 按下接地，S2 将 EN 按下接地；板上可见 +5 V、+3.3 V 与 GND 直接分配路径，没有画出电源转换或接口保护器件。",
+  "keywords": [
+    "Stamp-S3 BreakOut",
+    "A129",
+    "Stamp-S3",
+    "P1",
+    "P2",
+    "P3",
+    "P4",
+    "P5",
+    "J1",
+    "HY-2.0_IIC",
+    "IIC_SCL",
+    "IIC_SDA",
+    "G15",
+    "G13",
+    "G0",
+    "EN",
+    "G43",
+    "G44",
+    "G46",
+    "G42",
+    "G41",
+    "G40",
+    "G39",
+    "+5",
+    "+3.3V",
+    "GND",
+    "S1",
+    "S2",
+    "SW-PB",
+    "Header 6",
+    "Header 17",
+    "Header 12",
+    "Header 11",
+    "Grove",
+    "I2C"
+  ],
+  "components": [
+    {
+      "reference": "P1",
+      "part_number": "Header 6",
+      "role": "六针扩展连接器，引出 +3.3V、G43、G44、EN、G0 和 GND。",
+      "evidence": [
+        {
+          "asset_sha256": "90d7865bc11c3d578693aa1f8ebffb7c7dac4689d69a24e7d380158f5c8b45d5",
+          "page": 1,
+          "locator": "网格 B3，P1（Header 6）及 1-6 脚网络标注"
+        }
+      ]
+    },
+    {
+      "reference": "P2",
+      "part_number": "Header 17",
+      "role": "十七针板内连接器，汇集 G1-G15 中的多个 GPIO、+5 和 GND。",
+      "evidence": [
+        {
+          "asset_sha256": "90d7865bc11c3d578693aa1f8ebffb7c7dac4689d69a24e7d380158f5c8b45d5",
+          "page": 1,
+          "locator": "网格 C2，P2（Header 17）及 1-17 脚网络标注"
+        }
+      ]
+    },
+    {
+      "reference": "P3",
+      "part_number": "Header 12",
+      "role": "十二针扩展连接器，引出 G1-G7、G13、G15、+5 和两个 GND。",
+      "evidence": [
+        {
+          "asset_sha256": "90d7865bc11c3d578693aa1f8ebffb7c7dac4689d69a24e7d380158f5c8b45d5",
+          "page": 1,
+          "locator": "网格 C2，P3（Header 12）及 1-12 脚网络标注"
+        }
+      ]
+    },
+    {
+      "reference": "P4",
+      "part_number": "Header 11",
+      "role": "十一针板内连接器，汇集 +3.3V、G46、G43、G42、G44、G41、EN、G40、G0、G39 和 GND。",
+      "evidence": [
+        {
+          "asset_sha256": "90d7865bc11c3d578693aa1f8ebffb7c7dac4689d69a24e7d380158f5c8b45d5",
+          "page": 1,
+          "locator": "网格 C3，P4（Header 11）及 1-11 脚网络标注"
+        }
+      ]
+    },
+    {
+      "reference": "P5",
+      "part_number": "Header 12",
+      "role": "十二针扩展连接器，引出 G8-G12、G14、G46、G42、G41、G40、G39 和 GND。",
+      "evidence": [
+        {
+          "asset_sha256": "90d7865bc11c3d578693aa1f8ebffb7c7dac4689d69a24e7d380158f5c8b45d5",
+          "page": 1,
+          "locator": "网格 C3，P5（Header 12）及 1-12 脚网络标注"
+        }
+      ]
+    },
+    {
+      "reference": "J1",
+      "part_number": "HY-2.0_IIC",
+      "role": "四针 IIC 接口，针脚依次为 IIC_SCL/G15、IIC_SDA/G13、VCC/+5、GND。",
+      "evidence": [
+        {
+          "asset_sha256": "90d7865bc11c3d578693aa1f8ebffb7c7dac4689d69a24e7d380158f5c8b45d5",
+          "page": 1,
+          "locator": "网格 D3，J1（HY-2.0_IIC）1-4 脚及双侧网络/功能标注"
+        }
+      ]
+    },
+    {
+      "reference": "S1",
+      "part_number": "SW-PB",
+      "role": "G0 瞬时按键，闭合时把 G0 接到 GND。",
+      "evidence": [
+        {
+          "asset_sha256": "90d7865bc11c3d578693aa1f8ebffb7c7dac4689d69a24e7d380158f5c8b45d5",
+          "page": 1,
+          "locator": "网格 D2，S1（SW-PB）两端网络 G0 与 GND"
+        }
+      ]
+    },
+    {
+      "reference": "S2",
+      "part_number": "SW-PB",
+      "role": "EN 瞬时按键，闭合时把 EN 接到 GND。",
+      "evidence": [
+        {
+          "asset_sha256": "90d7865bc11c3d578693aa1f8ebffb7c7dac4689d69a24e7d380158f5c8b45d5",
+          "page": 1,
+          "locator": "网格 D3，S2（SW-PB）两端网络 EN 与 GND"
+        }
+      ]
+    }
+  ],
+  "facts": [
+    {
+      "id": "system.passive-breakout",
+      "category": "system",
+      "subject": "整板架构",
+      "statement": "原理图由 P1-P5、J1、S1 和 S2 构成，完成 GPIO、电源、EN、GND 与 IIC 标注信号的连接器转接；本页未显示主控、协处理器、存储器、晶振、传感器、射频、音频或模拟功能 IC。",
+      "confidence": "confirmed",
+      "attributes": {
+        "connectors": "P1,P2,P3,P4,P5,J1",
+        "switches": "S1,S2",
+        "active_ic": "原理图未显示",
+        "storage": "原理图未显示",
+        "clock": "原理图未显示"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "90d7865bc11c3d578693aa1f8ebffb7c7dac4689d69a24e7d380158f5c8b45d5",
+          "page": 1,
+          "locator": "第 1 页全图，全部可见位号为 P1-P5、J1、S1、S2"
+        }
+      ]
+    },
+    {
+      "id": "interface.p2-pinout",
+      "category": "interface",
+      "subject": "P2 Header 17",
+      "statement": "P2 的 17 个针脚依次连接 G1、G2、G3、G4、G5、G6、G7、G8、G9、G10、GND、G11、+5、G12、G13、G14、G15。",
+      "confidence": "confirmed",
+      "attributes": {
+        "reference": "P2",
+        "part_number": "Header 17",
+        "pin_1": "G1",
+        "pin_2": "G2",
+        "pin_3": "G3",
+        "pin_4": "G4",
+        "pin_5": "G5",
+        "pin_6": "G6",
+        "pin_7": "G7",
+        "pin_8": "G8",
+        "pin_9": "G9",
+        "pin_10": "G10",
+        "pin_11": "GND",
+        "pin_12": "G11",
+        "pin_13": "+5",
+        "pin_14": "G12",
+        "pin_15": "G13",
+        "pin_16": "G14",
+        "pin_17": "G15"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "90d7865bc11c3d578693aa1f8ebffb7c7dac4689d69a24e7d380158f5c8b45d5",
+          "page": 1,
+          "locator": "网格 C2，P2 针脚 1-17"
+        }
+      ]
+    },
+    {
+      "id": "interface.p4-pinout",
+      "category": "interface",
+      "subject": "P4 Header 11",
+      "statement": "P4 的 11 个针脚依次连接 +3.3V、G46、G43、G42、G44、G41、EN、G40、G0、G39、GND。",
+      "confidence": "confirmed",
+      "attributes": {
+        "reference": "P4",
+        "part_number": "Header 11",
+        "pin_1": "+3.3V",
+        "pin_2": "G46",
+        "pin_3": "G43",
+        "pin_4": "G42",
+        "pin_5": "G44",
+        "pin_6": "G41",
+        "pin_7": "EN",
+        "pin_8": "G40",
+        "pin_9": "G0",
+        "pin_10": "G39",
+        "pin_11": "GND"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "90d7865bc11c3d578693aa1f8ebffb7c7dac4689d69a24e7d380158f5c8b45d5",
+          "page": 1,
+          "locator": "网格 C3，P4 针脚 1-11"
+        }
+      ]
+    },
+    {
+      "id": "interface.p1-pinout",
+      "category": "interface",
+      "subject": "P1 Header 6",
+      "statement": "P1 的 6 个针脚依次连接 +3.3V、G43、G44、EN、G0、GND。",
+      "confidence": "confirmed",
+      "attributes": {
+        "reference": "P1",
+        "part_number": "Header 6",
+        "pin_1": "+3.3V",
+        "pin_2": "G43",
+        "pin_3": "G44",
+        "pin_4": "EN",
+        "pin_5": "G0",
+        "pin_6": "GND"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "90d7865bc11c3d578693aa1f8ebffb7c7dac4689d69a24e7d380158f5c8b45d5",
+          "page": 1,
+          "locator": "网格 B3，P1 针脚 1-6"
+        }
+      ]
+    },
+    {
+      "id": "interface.p3-pinout",
+      "category": "interface",
+      "subject": "P3 Header 12",
+      "statement": "P3 的 12 个针脚依次连接 G1、G2、G3、G4、G5、G6、G7、GND、+5、G13、G15、GND。",
+      "confidence": "confirmed",
+      "attributes": {
+        "reference": "P3",
+        "part_number": "Header 12",
+        "pin_1": "G1",
+        "pin_2": "G2",
+        "pin_3": "G3",
+        "pin_4": "G4",
+        "pin_5": "G5",
+        "pin_6": "G6",
+        "pin_7": "G7",
+        "pin_8": "GND",
+        "pin_9": "+5",
+        "pin_10": "G13",
+        "pin_11": "G15",
+        "pin_12": "GND"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "90d7865bc11c3d578693aa1f8ebffb7c7dac4689d69a24e7d380158f5c8b45d5",
+          "page": 1,
+          "locator": "网格 C2，P3 针脚 1-12"
+        }
+      ]
+    },
+    {
+      "id": "interface.p5-pinout",
+      "category": "interface",
+      "subject": "P5 Header 12",
+      "statement": "P5 的 12 个针脚依次连接 G8、G9、G10、G11、G12、G14、G46、G42、G41、G40、G39、GND。",
+      "confidence": "confirmed",
+      "attributes": {
+        "reference": "P5",
+        "part_number": "Header 12",
+        "pin_1": "G8",
+        "pin_2": "G9",
+        "pin_3": "G10",
+        "pin_4": "G11",
+        "pin_5": "G12",
+        "pin_6": "G14",
+        "pin_7": "G46",
+        "pin_8": "G42",
+        "pin_9": "G41",
+        "pin_10": "G40",
+        "pin_11": "G39",
+        "pin_12": "GND"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "90d7865bc11c3d578693aa1f8ebffb7c7dac4689d69a24e7d380158f5c8b45d5",
+          "page": 1,
+          "locator": "网格 C3，P5 针脚 1-12"
+        }
+      ]
+    },
+    {
+      "id": "interface.j1-pinout",
+      "category": "interface",
+      "subject": "J1 HY-2.0_IIC",
+      "statement": "J1 针脚 1-4 分别标注为 IIC_SCL、IIC_SDA、VCC、GND，并分别连接 G15、G13、+5、GND 网络。",
+      "confidence": "confirmed",
+      "attributes": {
+        "reference": "J1",
+        "part_number": "HY-2.0_IIC",
+        "pin_1_function": "IIC_SCL",
+        "pin_1_net": "G15",
+        "pin_2_function": "IIC_SDA",
+        "pin_2_net": "G13",
+        "pin_3_function": "VCC",
+        "pin_3_net": "+5",
+        "pin_4_function": "GND",
+        "pin_4_net": "GND"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "90d7865bc11c3d578693aa1f8ebffb7c7dac4689d69a24e7d380158f5c8b45d5",
+          "page": 1,
+          "locator": "网格 D3，J1 针脚 1-4，左侧 G15/G13/+5/GND 与右侧 IIC_SCL/IIC_SDA/VCC/GND 标注"
+        }
+      ]
+    },
+    {
+      "id": "bus.iic-routing",
+      "category": "bus",
+      "subject": "J1 IIC 总线",
+      "statement": "J1 的 IIC_SCL 信号由 G15 网络引出，IIC_SDA 信号由 G13 网络引出；原理图未画出板载 IIC 设备或上拉电阻。",
+      "confidence": "confirmed",
+      "attributes": {
+        "bus": "IIC",
+        "connector": "J1",
+        "scl_net": "G15",
+        "sda_net": "G13",
+        "onboard_device": "原理图未显示",
+        "pull_up_resistors": "原理图未显示"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "90d7865bc11c3d578693aa1f8ebffb7c7dac4689d69a24e7d380158f5c8b45d5",
+          "page": 1,
+          "locator": "网格 D3，J1 的 IIC_SCL/G15 与 IIC_SDA/G13；第 1 页全图无 IIC 设备或上拉电阻位号"
+        }
+      ]
+    },
+    {
+      "id": "gpio.s1-g0",
+      "category": "gpio",
+      "subject": "S1 与 G0",
+      "statement": "S1 是连接在 G0 与 GND 之间的 SW-PB 瞬时按键，闭合时将 G0 拉到 GND。",
+      "confidence": "confirmed",
+      "attributes": {
+        "reference": "S1",
+        "part_number": "SW-PB",
+        "signal": "G0",
+        "active_connection": "GND",
+        "action": "按下闭合"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "90d7865bc11c3d578693aa1f8ebffb7c7dac4689d69a24e7d380158f5c8b45d5",
+          "page": 1,
+          "locator": "网格 D2，S1 左端 GND、右端 G0"
+        }
+      ]
+    },
+    {
+      "id": "reset.s2-en",
+      "category": "reset",
+      "subject": "S2 与 EN",
+      "statement": "S2 是连接在 EN 与 GND 之间的 SW-PB 瞬时按键，闭合时将 EN 拉到 GND。",
+      "confidence": "confirmed",
+      "attributes": {
+        "reference": "S2",
+        "part_number": "SW-PB",
+        "signal": "EN",
+        "active_connection": "GND",
+        "action": "按下闭合"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "90d7865bc11c3d578693aa1f8ebffb7c7dac4689d69a24e7d380158f5c8b45d5",
+          "page": 1,
+          "locator": "网格 D3，S2 左端 EN、右端 GND"
+        }
+      ]
+    },
+    {
+      "id": "power.5v-distribution",
+      "category": "power",
+      "subject": "+5 电源网络",
+      "statement": "+5 网络在 P2.13、P3.9 和 J1.3 之间直接分配，J1.3 的功能标注为 VCC；原理图未显示该路径上的转换器、负载开关或保护器件。",
+      "confidence": "confirmed",
+      "attributes": {
+        "rail": "+5",
+        "p2_pin": "13",
+        "p3_pin": "9",
+        "j1_pin": "3",
+        "j1_function": "VCC",
+        "conversion": "原理图未显示",
+        "protection": "原理图未显示"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "90d7865bc11c3d578693aa1f8ebffb7c7dac4689d69a24e7d380158f5c8b45d5",
+          "page": 1,
+          "locator": "网格 C2 的 P2.13/P3.9 与网格 D3 的 J1.3，均标注 +5"
+        }
+      ]
+    },
+    {
+      "id": "power.3v3-distribution",
+      "category": "power",
+      "subject": "+3.3V 电源网络",
+      "statement": "+3.3V 网络在 P4.1 与 P1.1 之间直接引出；原理图未显示该路径上的 LDO、转换器、负载开关或保护器件。",
+      "confidence": "confirmed",
+      "attributes": {
+        "rail": "+3.3V",
+        "p4_pin": "1",
+        "p1_pin": "1",
+        "conversion": "原理图未显示",
+        "load_switch": "原理图未显示",
+        "protection": "原理图未显示"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "90d7865bc11c3d578693aa1f8ebffb7c7dac4689d69a24e7d380158f5c8b45d5",
+          "page": 1,
+          "locator": "网格 B3 的 P1.1 与网格 C3 的 P4.1，均标注 +3.3V"
+        }
+      ]
+    },
+    {
+      "id": "power.ground-distribution",
+      "category": "power",
+      "subject": "GND 网络",
+      "statement": "GND 分布到 P1.6、P2.11、P3.8、P3.12、P4.11、P5.12、J1.4，并连接 S1 与 S2 的按键接地端。",
+      "confidence": "confirmed",
+      "attributes": {
+        "connector_pins": "P1.6,P2.11,P3.8,P3.12,P4.11,P5.12,J1.4",
+        "switch_connections": "S1,S2",
+        "net": "GND"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "90d7865bc11c3d578693aa1f8ebffb7c7dac4689d69a24e7d380158f5c8b45d5",
+          "page": 1,
+          "locator": "第 1 页各 P1-P5、J1、S1、S2 旁的 GND 网络标注"
+        }
+      ]
+    },
+    {
+      "id": "key_net.g13-fanout",
+      "category": "key_net",
+      "subject": "G13 网络",
+      "statement": "G13 同时连接 P2.15、P3.10 和 J1.2，J1 侧功能标注为 IIC_SDA。",
+      "confidence": "confirmed",
+      "attributes": {
+        "net": "G13",
+        "connections": "P2.15,P3.10,J1.2",
+        "j1_function": "IIC_SDA"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "90d7865bc11c3d578693aa1f8ebffb7c7dac4689d69a24e7d380158f5c8b45d5",
+          "page": 1,
+          "locator": "网格 C2 的 P2.15/P3.10 与网格 D3 的 J1.2，均标注 G13"
+        }
+      ]
+    },
+    {
+      "id": "key_net.g15-fanout",
+      "category": "key_net",
+      "subject": "G15 网络",
+      "statement": "G15 同时连接 P2.17、P3.11 和 J1.1，J1 侧功能标注为 IIC_SCL。",
+      "confidence": "confirmed",
+      "attributes": {
+        "net": "G15",
+        "connections": "P2.17,P3.11,J1.1",
+        "j1_function": "IIC_SCL"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "90d7865bc11c3d578693aa1f8ebffb7c7dac4689d69a24e7d380158f5c8b45d5",
+          "page": 1,
+          "locator": "网格 C2 的 P2.17/P3.11 与网格 D3 的 J1.1，均标注 G15"
+        }
+      ]
+    },
+    {
+      "id": "gpio.control-net-fanout",
+      "category": "gpio",
+      "subject": "G0 与 EN 网络引出",
+      "statement": "G0 在 P4.9、P1.5 和 S1 之间连接；EN 在 P4.7、P1.4 和 S2 之间连接。",
+      "confidence": "confirmed",
+      "attributes": {
+        "g0_connections": "P4.9,P1.5,S1",
+        "en_connections": "P4.7,P1.4,S2",
+        "g0_switch": "S1",
+        "en_switch": "S2"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "90d7865bc11c3d578693aa1f8ebffb7c7dac4689d69a24e7d380158f5c8b45d5",
+          "page": 1,
+          "locator": "网格 B3/C3/D2-D3 的 P1、P4、S1、S2 上 G0 与 EN 标注"
+        }
+      ]
+    },
+    {
+      "id": "bus.iic-role-level-undetermined",
+      "category": "bus",
+      "subject": "J1 IIC 方向与电平",
+      "statement": "原理图仅给出 J1 的 IIC_SCL/IIC_SDA 功能名及 G15/G13 网络映射，不能从该页确定总线控制器、外设方向或 SCL/SDA 信号电平。",
+      "confidence": "uncertain",
+      "attributes": {
+        "connector": "J1",
+        "scl_net": "G15",
+        "sda_net": "G13",
+        "controller": "未标注",
+        "device": "未标注",
+        "signal_voltage": "未标注"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "90d7865bc11c3d578693aa1f8ebffb7c7dac4689d69a24e7d380158f5c8b45d5",
+          "page": 1,
+          "locator": "网格 D3，J1 仅标注 IIC_SCL/IIC_SDA/VCC/GND 和 G15/G13/+5/GND"
+        }
+      ]
+    }
+  ],
+  "needs_review": [
+    {
+      "id": "review.iic-role-level",
+      "fact_id": "bus.iic-role-level-undetermined",
+      "question": "J1 的 IIC_SCL/IIC_SDA 由哪一控制器驱动，信号方向和电平是多少？",
+      "reason": "该原理图只显示网络映射，没有画出 Stamp-S3 内部控制器、电平规格、外设或上拉配置。",
+      "evidence": [
+        {
+          "asset_sha256": "90d7865bc11c3d578693aa1f8ebffb7c7dac4689d69a24e7d380158f5c8b45d5",
+          "page": 1,
+          "locator": "网格 D3，J1 及 G15/G13/+5/GND 网络标注"
+        }
+      ]
+    }
+  ]
+}

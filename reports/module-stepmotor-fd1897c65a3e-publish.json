@@ -1,0 +1,21 @@
+{
+  "dry_run": false,
+  "failed": 0,
+  "published": 1,
+  "results": [
+    {
+      "backup": null,
+      "draft_action": "unchanged",
+      "dry_run": false,
+      "errors": [],
+      "needs_review": 4,
+      "product_id": "module-stepmotor-fd1897c65a3e",
+      "product_name": "Module Stepmotor",
+      "publish_action": "unchanged",
+      "sha256": "f599ce75493ef6fff9af20f99908b8a05e5b299b65f050fdecae6d891e84fbcf",
+      "status": "valid",
+      "uncertain_facts": 4
+    }
+  ],
+  "schema_version": 1
+}

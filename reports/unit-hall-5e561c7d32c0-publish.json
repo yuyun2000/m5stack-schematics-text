@@ -1,0 +1,21 @@
+{
+  "dry_run": false,
+  "failed": 0,
+  "published": 1,
+  "results": [
+    {
+      "backup": null,
+      "draft_action": "unchanged",
+      "dry_run": false,
+      "errors": [],
+      "needs_review": 2,
+      "product_id": "unit-hall-5e561c7d32c0",
+      "product_name": "Unit Hall",
+      "publish_action": "unchanged",
+      "sha256": "ac2c180cb0474688c9f134c05c7d56640ddab128f048fb807cf6a0726755415a",
+      "status": "valid",
+      "uncertain_facts": 2
+    }
+  ],
+  "schema_version": 1
+}

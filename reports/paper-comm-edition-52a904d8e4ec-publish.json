@@ -1,0 +1,21 @@
+{
+  "dry_run": false,
+  "failed": 0,
+  "published": 1,
+  "results": [
+    {
+      "backup": null,
+      "draft_action": "unchanged",
+      "dry_run": false,
+      "errors": [],
+      "needs_review": 3,
+      "product_id": "paper-comm-edition-52a904d8e4ec",
+      "product_name": "Paper Comm Edition",
+      "publish_action": "unchanged",
+      "sha256": "4d099f6d7110f5044f83df3985b3ff946a1549aa0a6812cd2f5e6f8c5b4a2b14",
+      "status": "valid",
+      "uncertain_facts": 3
+    }
+  ],
+  "schema_version": 1
+}

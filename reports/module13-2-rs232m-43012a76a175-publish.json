@@ -1,0 +1,21 @@
+{
+  "dry_run": false,
+  "failed": 0,
+  "published": 1,
+  "results": [
+    {
+      "backup": null,
+      "draft_action": "unchanged",
+      "dry_run": false,
+      "errors": [],
+      "needs_review": 3,
+      "product_id": "module13-2-rs232m-43012a76a175",
+      "product_name": "Module13.2 RS232M",
+      "publish_action": "unchanged",
+      "sha256": "1030cba9f037481304075751f6e85fa5b516712104862673e22cd4df7272e8ed",
+      "status": "valid",
+      "uncertain_facts": 3
+    }
+  ],
+  "schema_version": 1
+}

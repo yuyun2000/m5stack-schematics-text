@@ -1,0 +1,21 @@
+{
+  "dry_run": false,
+  "failed": 0,
+  "published": 1,
+  "results": [
+    {
+      "backup": null,
+      "draft_action": "unchanged",
+      "dry_run": false,
+      "errors": [],
+      "needs_review": 1,
+      "product_id": "hat-heart-b9504abac304",
+      "product_name": "Hat Heart",
+      "publish_action": "unchanged",
+      "sha256": "ef6ae0c130b9e74eaa28e3b81ccd04002890a6b250ad29488cde9e89300c1224",
+      "status": "valid",
+      "uncertain_facts": 1
+    }
+  ],
+  "schema_version": 1
+}

@@ -1,0 +1,444 @@
+{
+  "schema_version": 1,
+  "generator": "schematic_describer",
+  "product": {
+    "product_id": "unit-poe-cam-w-b5ad042ba84a",
+    "product_name": "Unit PoE CAM-W",
+    "sku": "U121-B",
+    "source_path": "unit/PoECAM-W.md",
+    "source_sha256": "76fc9ad367071c5bda221add5c6d58337dcf2691b8b8d79f5c25ceb1c752be14",
+    "input_sha256": "82159c069425d45964e59297df6fbcc5891cefe3788783161cb5b7c89c105ede"
+  },
+  "schematic_assets": [
+    {
+      "sha256": "67bc5273549ec3525e559701cd26b8b7f0da2945b27504c516a177b0371fb004",
+      "source_url": "https://static-cdn.m5stack.com/resource/docs/products/unit/PoECAM-W/img-a9008619-1734-458f-81f1-8be6f4e68441.webp",
+      "pages": [1]
+    }
+  ],
+  "summary": "Unit PoE CAM-W 以 U3 ESP32-D0WDQ6 为主控，连接 U2 W5500、U4 24 针摄像头 FPC、U5 PSRAM、U6 Flash、IPEX Wi-Fi 射频、Grove/下载接口、按键和 SK6812 灯链。W5500 通过 GPIO13/GPIO38/GPIO23/GPIO4 的 SPI 接入主控，并经 25MHz 晶振、T1 HY601742 磁性器件和 RJ45 接口连接以太网；P1/P4 为外部 PoE 受电模块连接。+5V 经 U1 SY8003ADFC 生成 +3.3V，U7 XC6421AB38ER-G 生成摄像头 +1.2V/+2.8V；摄像头型号、存储容量、PoE 规范和网络能力未由本页完全确认。",
+  "keywords": [
+    "Unit PoE CAM-W", "U121-B", "ESP32-D0WDQ6", "ESP32-D0WDQ6-V3", "W5500", "OV2640", "ESP-PSRAM64H", "XM25QH128BHIQ", "SY8003ADFC", "XC6421AB38ER-G", "HY601742", "RJ45", "PoE", "IEEE802.3af", "SPI", "GPIO13 MOSI", "GPIO38 MISO", "GPIO23 SCLK", "GPIO4 SCSn", "25MHz", "40M", "ANT_IPEX", "FPC-0.5-24P", "VDD_SDIO", "+5V", "+3.3V", "+1.2V", "+2.8V", "A3V3", "AGND", "VA1", "VA2", "VB1", "VB2", "SK6812", "GPIO37", "GPIO0"
+  ],
+  "components": [
+    {
+      "reference": "U3",
+      "part_number": "ESP32-D0WDQ6",
+      "role": "主控 SoC，连接以太网、摄像头、外部存储、Wi-Fi、接口、按键和 LED",
+      "evidence": [{"asset_sha256": "67bc5273549ec3525e559701cd26b8b7f0da2945b27504c516a177b0371fb004", "page": 1, "locator": "页面 B2-D4 U3 ESP32-D0WDQ6 全部电源、GPIO、存储、RF、时钟和 UART 引脚"}]
+    },
+    {
+      "reference": "U2",
+      "part_number": "W5500",
+      "role": "SPI 以太网控制器，连接 ESP32、25MHz 晶振、PHY 差分线和状态 LED",
+      "evidence": [{"asset_sha256": "67bc5273549ec3525e559701cd26b8b7f0da2945b27504c516a177b0371fb004", "page": 1, "locator": "页面 A3-B4 U2 W5500 pins 1-48"}]
+    },
+    {
+      "reference": "U4",
+      "part_number": "FPC-0.5-24P",
+      "role": "并行摄像头接口，引出像素数据、PCLK/XCLK、HREF/VSYNC、SIO_C/SIO_D、RESET/PWDN 与电源",
+      "evidence": [{"asset_sha256": "67bc5273549ec3525e559701cd26b8b7f0da2945b27504c516a177b0371fb004", "page": 1, "locator": "页面 C7-D8 U4 FPC-0.5-24P pin 1-pin 24"}]
+    },
+    {
+      "reference": "U5",
+      "part_number": "ESP-PSRAM64H",
+      "role": "VDD_SDIO 供电、连接 ESP32 专用存储总线的外部 PSRAM",
+      "evidence": [{"asset_sha256": "67bc5273549ec3525e559701cd26b8b7f0da2945b27504c516a177b0371fb004", "page": 1, "locator": "页面 C5-C6 U5 ESP-PSRAM64H 与 GPIO16/GPIO17/SD_* 网络"}]
+    },
+    {
+      "reference": "U6",
+      "part_number": "XM25QH128BHIQ",
+      "role": "VDD_SDIO 供电、连接 ESP32 专用存储总线的外部串行 Flash",
+      "evidence": [{"asset_sha256": "67bc5273549ec3525e559701cd26b8b7f0da2945b27504c516a177b0371fb004", "page": 1, "locator": "页面 C5-D6 U6 XM25QH128BHIQ 与 SCS/CMD、SD0、SWP、SHD、SCK、SDI"}]
+    },
+    {
+      "reference": "U1",
+      "part_number": "SY8003ADFC",
+      "role": "将 +5V 降压为系统 +3.3V",
+      "evidence": [{"asset_sha256": "67bc5273549ec3525e559701cd26b8b7f0da2945b27504c516a177b0371fb004", "page": 1, "locator": "页面 A1-A3 U1 SY8003ADFC、L2、反馈与 +5V/+3.3V"}]
+    },
+    {
+      "reference": "U7",
+      "part_number": "XC6421AB38ER-G",
+      "role": "由 +5V 生成摄像头 +1.2V 与 +2.8V 的双路稳压器",
+      "evidence": [{"asset_sha256": "67bc5273549ec3525e559701cd26b8b7f0da2945b27504c516a177b0371fb004", "page": 1, "locator": "页面 A1-B2 U7 XC6421AB38ER-G，VOUT1=+1.2V、VOUT2=+2.8V"}]
+    },
+    {
+      "reference": "T1",
+      "part_number": "HY601742",
+      "role": "W5500 PHY 与 RJ45 线缆侧之间的双通道以太网隔离磁性器件",
+      "evidence": [{"asset_sha256": "67bc5273549ec3525e559701cd26b8b7f0da2945b27504c516a177b0371fb004", "page": 1, "locator": "页面 A5-B7 T1 HY601742 与 RX/TX 两组绕组、中心抽头"}]
+    },
+    {
+      "reference": "RJ45",
+      "part_number": null,
+      "role": "引出 RX+/RX-/TX+/TX- 及 PoE 空闲对 VB1/VB2 的十针以太网连接器",
+      "evidence": [{"asset_sha256": "67bc5273549ec3525e559701cd26b8b7f0da2945b27504c516a177b0371fb004", "page": 1, "locator": "页面 A7-B8 RJ45 Pin1-Pin10、RX/TX 与 VB1/VB2"}]
+    },
+    {
+      "reference": "P1/P4/D3",
+      "part_number": "Header4 / Header2 / SS22",
+      "role": "PoE 中心抽头/空闲对输入与 5V@1.2A 输出接口，输出经 D3 汇入 +5V",
+      "evidence": [{"asset_sha256": "67bc5273549ec3525e559701cd26b8b7f0da2945b27504c516a177b0371fb004", "page": 1, "locator": "页面 B6-C7 P1 VA1/VA2/VB1/VB2、P4 GND/VO5、D3 SS22 与 +5V"}]
+    },
+    {
+      "reference": "Y1",
+      "part_number": "25MHZ 12PF 10PPM",
+      "role": "W5500 XI/XO 外部 25MHz 晶振",
+      "evidence": [{"asset_sha256": "67bc5273549ec3525e559701cd26b8b7f0da2945b27504c516a177b0371fb004", "page": 1, "locator": "页面 B4 Y1 25MHZ 12PF 10PPM、C11/C17 12pF、R21 1MΩ"}]
+    },
+    {
+      "reference": "Y2",
+      "part_number": "40M",
+      "role": "ESP32 X_P/X_N 外部 40MHz 晶振",
+      "evidence": [{"asset_sha256": "67bc5273549ec3525e559701cd26b8b7f0da2945b27504c516a177b0371fb004", "page": 1, "locator": "页面 D5-D6 Y2 40M、R35 0Ω、C31/C32 12pF 与 X_P/X_N"}]
+    },
+    {
+      "reference": "E1/L1/C1/C2",
+      "part_number": "ANT_IPEX / 1.2nH / 3.0pF / 2.2pF",
+      "role": "ESP32 LNA_IN 至 IPEX 的 Wi-Fi 射频匹配与天线接口",
+      "evidence": [{"asset_sha256": "67bc5273549ec3525e559701cd26b8b7f0da2945b27504c516a177b0371fb004", "page": 1, "locator": "页面 C3-C5 U3 LNA_IN-L1-E1 与 C1/C2"}]
+    },
+    {
+      "reference": "J1",
+      "part_number": "HY-2.0_IIC",
+      "role": "GPIO33/GPIO25 与 +5V/GND 的四针外部接口",
+      "evidence": [{"asset_sha256": "67bc5273549ec3525e559701cd26b8b7f0da2945b27504c516a177b0371fb004", "page": 1, "locator": "页面 B6-C7 J1 HY-2.0_IIC 与 GPIO33/GPIO25/+5V/GND"}]
+    },
+    {
+      "reference": "P2/P3",
+      "part_number": "Header3 / Header3",
+      "role": "EN/GPIO0/GND 与 +3.3V/U0TX/U0RX 下载调试接口",
+      "evidence": [{"asset_sha256": "67bc5273549ec3525e559701cd26b8b7f0da2945b27504c516a177b0371fb004", "page": 1, "locator": "页面 B6-C7 P2 GND/GPIO0/EN 与 P3 +3.3V/U0TX/U0RX"}]
+    },
+    {
+      "reference": "S1/S2",
+      "part_number": "SW-PB / SW-PB",
+      "role": "GPIO37 用户按键与 EN 复位按键",
+      "evidence": [{"asset_sha256": "67bc5273549ec3525e559701cd26b8b7f0da2945b27504c516a177b0371fb004", "page": 1, "locator": "页面 C1-D2 S1 GPIO37、S2 EN 与 GND"}]
+    },
+    {
+      "reference": "LED1/LED2",
+      "part_number": "SK6812",
+      "role": "由 GPIO0 驱动的两颗串行 RGB LED",
+      "evidence": [{"asset_sha256": "67bc5273549ec3525e559701cd26b8b7f0da2945b27504c516a177b0371fb004", "page": 1, "locator": "页面 D3-D4 LED1/LED2 SK6812，GPIO0-DIN、DOUT-DIN、+5V/GND 与 C33/C34"}]
+    },
+    {
+      "reference": "D1/D2",
+      "part_number": "绿灯 0603 / 黄灯 0603",
+      "role": "W5500 ACTLED 与 LINKLED 状态指示",
+      "evidence": [{"asset_sha256": "67bc5273549ec3525e559701cd26b8b7f0da2945b27504c516a177b0371fb004", "page": 1, "locator": "页面 A4-B5 W5500 ACTLED/LINKLED 至 D1/D2 与 R12/R14"}]
+    },
+    {
+      "reference": "D4/D5/D6/D7",
+      "part_number": "LESD3Z5.0CMT1G / RLSD52A031V",
+      "role": "外部接口电源/信号与 GPIO37 按键节点的对地 ESD/瞬态保护",
+      "evidence": [{"asset_sha256": "67bc5273549ec3525e559701cd26b8b7f0da2945b27504c516a177b0371fb004", "page": 1, "locator": "页面 C1-D2 与 B6-C7 D4-D7 对地保护支路"}]
+    }
+  ],
+  "facts": [
+    {
+      "id": "system.poecam-architecture",
+      "category": "system",
+      "subject": "Unit PoE CAM-W 系统结构",
+      "statement": "U3 ESP32-D0WDQ6 连接 U2 W5500、U4 摄像头 FPC、U5 PSRAM、U6 Flash、E1 Wi-Fi 天线、外部接口、下载口、按键和 LED；RJ45/T1/P1/P4 构成以太网及外部 PoE 受电路径，U1/U7 生成 +3.3V、+1.2V、+2.8V。",
+      "confidence": "confirmed",
+      "attributes": {"controller": "U3 ESP32-D0WDQ6", "ethernet": "U2 W5500,T1 HY601742,RJ45", "camera": "U4 FPC-0.5-24P", "memory": "U5 ESP-PSRAM64H,U6 XM25QH128BHIQ", "wifi": "E1 ANT_IPEX", "power": "+5V -> U1 +3.3V; U7 +1.2V/+2.8V", "poe": "P1/P4 external module interface"},
+      "evidence": [{"asset_sha256": "67bc5273549ec3525e559701cd26b8b7f0da2945b27504c516a177b0371fb004", "page": 1, "locator": "完整页面 A1-D8 系统原理图"}]
+    },
+    {
+      "id": "power.main-3v3",
+      "category": "power",
+      "subject": "+5V 至 +3.3V 主电源",
+      "statement": "+5V 接 U1 SY8003ADFC IN pin 3 与 EN pin 7，LX pin 6 经 L2 WPN3012H2R2MT 输出 +3.3V；R5 68KΩ/R9 15KΩ 构成反馈，C3/C4 为输入电容，C5/C6/C7 为输出网络。",
+      "confidence": "confirmed",
+      "attributes": {"input": "+5V", "converter": "U1 SY8003ADFC", "enable": "pin 7 tied +5V", "inductor": "L2 WPN3012H2R2MT", "output": "+3.3V", "feedback": "R5 68KΩ,R9 15KΩ", "input_caps": "C3 22uF,C4 22uF", "output_caps": "C5 22pF,C6 22uF,C7 22uF"},
+      "evidence": [{"asset_sha256": "67bc5273549ec3525e559701cd26b8b7f0da2945b27504c516a177b0371fb004", "page": 1, "locator": "页面 A1-A3 U1/L2/R5/R9/C3-C7"}]
+    },
+    {
+      "id": "power.camera-rails",
+      "category": "power",
+      "subject": "摄像头 +1.2V/+2.8V 电源",
+      "statement": "+5V 连接 U7 XC6421AB38ER-G VIN pin 2 与 EN1/EN2 pins 3/6；VOUT1 pin 5 输出 +1.2V，VOUT2 pin 1 输出 +2.8V，C35/C36/C37 各 1uF。",
+      "confidence": "confirmed",
+      "attributes": {"input": "+5V", "regulator": "U7 XC6421AB38ER-G", "enable": "EN1 pin3,EN2 pin6 tied +5V", "output1": "pin5 +1.2V", "output2": "pin1 +2.8V", "caps": "C35,C36,C37 1uF"},
+      "evidence": [{"asset_sha256": "67bc5273549ec3525e559701cd26b8b7f0da2945b27504c516a177b0371fb004", "page": 1, "locator": "页面 A1-B2 U7 与 +5V/+1.2V/+2.8V"}]
+    },
+    {
+      "id": "power.w5500-analog-domain",
+      "category": "power",
+      "subject": "W5500 A3V3/AGND 分区",
+      "statement": "+3.3V 经 FB1 600Ω@100MHz 形成 A3V3，GND 经 R22 0Ω 连接 AGND；W5500 模拟网络使用 A3V3/AGND，数字网络使用 +3.3V/GND。",
+      "confidence": "confirmed",
+      "attributes": {"digital_rail": "+3.3V", "analog_rail": "A3V3", "ferrite": "FB1 600Ω@100M", "digital_ground": "GND", "analog_ground": "AGND", "ground_bridge": "R22 0Ω"},
+      "evidence": [{"asset_sha256": "67bc5273549ec3525e559701cd26b8b7f0da2945b27504c516a177b0371fb004", "page": 1, "locator": "页面 B1-B2 FB1/R22 与 U2 电源网络"}]
+    },
+    {
+      "id": "bus.w5500-spi",
+      "category": "bus",
+      "subject": "ESP32 至 W5500 SPI",
+      "statement": "U2 MOSI pin 35 接 GPIO13，MISO pin 34 接 GPIO38，SCLK pin 33 接 GPIO23，SCSn pin 32 接 GPIO4；SCSn 由 R11 10KΩ 上拉，INTn pin 36 仅由 R10 10KΩ 上拉且未接 ESP32 GPIO。",
+      "confidence": "confirmed",
+      "attributes": {"controller": "U3 ESP32-D0WDQ6", "mosi": "U2 pin35 GPIO13", "miso": "U2 pin34 GPIO38", "sclk": "U2 pin33 GPIO23", "chip_select": "U2 pin32 GPIO4", "chip_select_pullup": "R11 10KΩ to +3.3V", "interrupt": "U2 pin36 via R10 10KΩ to +3.3V, no MCU connection"},
+      "evidence": [{"asset_sha256": "67bc5273549ec3525e559701cd26b8b7f0da2945b27504c516a177b0371fb004", "page": 1, "locator": "页面 A3-A5 U2 SPI/INTn、GPIO13/38/23/4 与 R10/R11"}]
+    },
+    {
+      "id": "gpio.w5500-mode-reset",
+      "category": "gpio",
+      "subject": "W5500 模式与复位绑带",
+      "statement": "U2 RSTn 与 PMODE0/PMODE1/PMODE2 由上方 R1-R4 四个 10KΩ 电阻上拉到 +3.3V；具体 PMODE 编码含义未在原理图打印。",
+      "confidence": "confirmed",
+      "attributes": {"signals": "RSTn,PMODE0,PMODE1,PMODE2", "resistors": "R1-R4 10KΩ pullups", "rail": "+3.3V", "decoded_mode": null},
+      "evidence": [{"asset_sha256": "67bc5273549ec3525e559701cd26b8b7f0da2945b27504c516a177b0371fb004", "page": 1, "locator": "页面 A3-A4 U2 pins 37/43/44/45 与 R1-R4 10KΩ 上拉"}]
+    },
+    {
+      "id": "clock.w5500-25mhz",
+      "category": "clock",
+      "subject": "W5500 25MHz 时钟",
+      "statement": "Y1 标注 25MHZ 12PF 10PPM，连接 U2 XO pin 31 与 XI pin 30；R21 1MΩ 跨接晶振，C11/C17 各 12pF 接 GND，XO 路串 R38 200Ω。",
+      "confidence": "confirmed",
+      "attributes": {"crystal": "Y1 25MHZ 12PF 10PPM", "xo": "U2 pin31 via R38 200Ω", "xi": "U2 pin30", "feedback": "R21 1MΩ", "load_caps": "C11,C17 12pF"},
+      "evidence": [{"asset_sha256": "67bc5273549ec3525e559701cd26b8b7f0da2945b27504c516a177b0371fb004", "page": 1, "locator": "页面 B4-B5 U2 XO/XI 与 Y1/R21/R38/C11/C17"}]
+    },
+    {
+      "id": "interface.ethernet-phy",
+      "category": "interface",
+      "subject": "W5500 至 RJ45 以太网 PHY",
+      "statement": "W5500 TXP/TXN 与 RXP/RXN 经阻抗和交流耦合网络进入 T1 HY601742，T1 线缆侧连接 RJ45 的 TX+/TX-/RX+/RX-；VA1/VA2 为变压器中心抽头。",
+      "confidence": "confirmed",
+      "attributes": {"phy": "U2 W5500", "magnetics": "T1 HY601742", "tx": "TXP/TXN -> T1 -> RJ45 TX+/TX-", "rx": "RJ45 RX+/RX- -> T1 -> RXP/RXN", "center_taps": "VA1,VA2"},
+      "evidence": [{"asset_sha256": "67bc5273549ec3525e559701cd26b8b7f0da2945b27504c516a177b0371fb004", "page": 1, "locator": "页面 A4-B8 U2/T1/RJ45 差分线与中心抽头"}]
+    },
+    {
+      "id": "power.poe-interface",
+      "category": "power",
+      "subject": "PoE 受电模块接口",
+      "statement": "T1 中心抽头 VA1/VA2 与 RJ45 空闲对 VB1/VB2 引至 P1 Header4；P4 Header2 提供 GND 与 VO5（标注 5V@1.2A），VO5 经 D3 SS22 汇入板上 +5V，PoE DC/DC 模块本体未在本页展开。",
+      "confidence": "confirmed",
+      "attributes": {"poe_input_header": "P1 VA1,VA2,VB1,VB2", "poe_output_header": "P4 GND,VO5", "output_label": "5V@1.2A", "series_diode": "D3 SS22", "board_rail": "+5V", "poe_converter_on_page": null},
+      "evidence": [{"asset_sha256": "67bc5273549ec3525e559701cd26b8b7f0da2945b27504c516a177b0371fb004", "page": 1, "locator": "页面 A6-C7 VA/VB、P1/P4、D3 与 +5V"}]
+    },
+    {
+      "id": "gpio.ethernet-leds",
+      "category": "gpio",
+      "subject": "W5500 活动与链路 LED",
+      "statement": "U2 ACTLED pin 27 驱动 D1 绿灯 0603，LINKLED pin 25 驱动 D2 黄灯 0603；两支路分别经 R12/R14 1KΩ 上拉到 +3.3V，DUPLED pin 26 未连接。",
+      "confidence": "confirmed",
+      "attributes": {"activity": "U2 pin27 -> D1 green -> R12 1KΩ -> +3.3V", "link": "U2 pin25 -> D2 yellow -> R14 1KΩ -> +3.3V", "duplex": "U2 pin26 NC"},
+      "evidence": [{"asset_sha256": "67bc5273549ec3525e559701cd26b8b7f0da2945b27504c516a177b0371fb004", "page": 1, "locator": "页面 A4-B5 U2 ACTLED/DUPLED/LINKLED 与 D1/D2"}]
+    },
+    {
+      "id": "memory.external-bus",
+      "category": "memory",
+      "subject": "ESP32 外部 Flash/PSRAM 总线",
+      "statement": "U5 ESP-PSRAM64H 与 U6 XM25QH128BHIQ 使用 SCS/CMD、SD0/SDO、SWP/SD3、SHD/SD2、SCK/CLK、SDI/SD1 存储网络并由 VDD_SDIO 供电；U5 CE 由 GPIO16 控制、SCLK 接 GPIO17。",
+      "confidence": "confirmed",
+      "attributes": {"psram": "U5 ESP-PSRAM64H", "flash": "U6 XM25QH128BHIQ", "shared_bus": "SCS/CMD,SD0/SDO,SWP/SD3,SHD/SD2,SCK/CLK,SDI/SD1", "supply": "VDD_SDIO", "psram_ce": "GPIO16", "psram_sclk": "GPIO17", "ce_pullup": "R25 10KΩ"},
+      "evidence": [{"asset_sha256": "67bc5273549ec3525e559701cd26b8b7f0da2945b27504c516a177b0371fb004", "page": 1, "locator": "页面 B3-D6 U3 SD_* 与 U5/U6"}]
+    },
+    {
+      "id": "clock.esp32-40mhz",
+      "category": "clock",
+      "subject": "ESP32 40MHz 时钟",
+      "statement": "U3 X_P/X_N 连接 Y2 40M，R35 0Ω 位于 X_P 路，C31/C32 各 12pF 接 GND。",
+      "confidence": "confirmed",
+      "attributes": {"crystal": "Y2 40M", "pins": "U3 X_P/X_N", "series": "R35 0Ω", "load_caps": "C31,C32 12pF"},
+      "evidence": [{"asset_sha256": "67bc5273549ec3525e559701cd26b8b7f0da2945b27504c516a177b0371fb004", "page": 1, "locator": "页面 D5-D6 U3 X_P/X_N 与 Y2/R35/C31/C32"}]
+    },
+    {
+      "id": "rf.wifi-antenna",
+      "category": "rf",
+      "subject": "ESP32 Wi-Fi 天线路径",
+      "statement": "U3 LNA_IN 经 L1 1.2nH 串联至 E1 ANT_IPEX，C1 3.0pF 与 C2 2.2pF 分别在匹配网络两侧对地。",
+      "confidence": "confirmed",
+      "attributes": {"source": "U3 LNA_IN", "series": "L1 1.2nH", "shunt_caps": "C1 3.0pF,C2 2.2pF", "connector": "E1 ANT_IPEX"},
+      "evidence": [{"asset_sha256": "67bc5273549ec3525e559701cd26b8b7f0da2945b27504c516a177b0371fb004", "page": 1, "locator": "页面 C3-C5 U3 LNA_IN/L1/C1/C2/E1"}]
+    },
+    {
+      "id": "interface.camera-parallel-data",
+      "category": "interface",
+      "subject": "摄像头并行数据与时钟",
+      "statement": "U4 的 Y2/Y3/Y4/Y5/Y6/Y7/Y8/Y9 分别连接 GPIO32/GPIO35/GPIO34/GPIO5/GPIO39/GPIO18/GPIO36/GPIO19；PCLK 连接 GPIO21，XCLK 由 GPIO27 经 R29 47Ω 驱动。",
+      "confidence": "confirmed",
+      "attributes": {"Y2": "U4 pin19 GPIO32", "Y3": "U4 pin21 GPIO35", "Y4": "U4 pin22 GPIO34", "Y5": "U4 pin20 GPIO5", "Y6": "U4 pin18 GPIO39", "Y7": "U4 pin17 GPIO18", "Y8": "U4 pin14 GPIO36", "Y9": "U4 pin12 GPIO19", "PCLK": "U4 pin16 GPIO21 via R28 47Ω", "XCLK": "U4 pin13 GPIO27 via R29 47Ω"},
+      "evidence": [{"asset_sha256": "67bc5273549ec3525e559701cd26b8b7f0da2945b27504c516a177b0371fb004", "page": 1, "locator": "页面 C7-D8 U4 pins 12-22 的 Y2-Y9/PCLK/XCLK 与 GPIO 标签"}]
+    },
+    {
+      "id": "gpio.camera-control",
+      "category": "gpio",
+      "subject": "摄像头同步与 SCCB 控制",
+      "statement": "U4 HREF pin 9 接 GPIO26，PWDN pin 8 由 R31 10KΩ 下拉到 GND，VSYNC pin 7 接 GPIO22，RESET pin 6 接 GPIO15，SIO_C pin 5 接 GPIO12，SIO_D pin 3 接 GPIO14。",
+      "confidence": "confirmed",
+      "attributes": {"HREF": "pin9 GPIO26", "PWDN": "pin8 via R31 10KΩ to GND", "VSYNC": "pin7 GPIO22", "RESET": "pin6 GPIO15", "SIO_C": "pin5 GPIO12", "SIO_D": "pin3 GPIO14"},
+      "evidence": [{"asset_sha256": "67bc5273549ec3525e559701cd26b8b7f0da2945b27504c516a177b0371fb004", "page": 1, "locator": "页面 C7-D8 U4 pins 3/5/6/7/8/9 与 GPIO/R31"}]
+    },
+    {
+      "id": "power.camera-fpc-rails",
+      "category": "power",
+      "subject": "摄像头 FPC 电源",
+      "statement": "U4 DOVDD pin 11 接 +2.8V、DVDD pin 10 接 +1.2V、AVDD pin 4 接 +2.8V；DGND/AGND 接地，Y0(AF_GND)、Y1(AF_VDD) 与 NC 脚标为未连接。",
+      "confidence": "confirmed",
+      "attributes": {"DOVDD": "pin11 +2.8V", "DVDD": "pin10 +1.2V", "AVDD": "pin4 +2.8V", "grounds": "DGND pin15,AGND pin2", "autofocus_pins": "Y0/Y1 NC", "pin1": "NC"},
+      "evidence": [{"asset_sha256": "67bc5273549ec3525e559701cd26b8b7f0da2945b27504c516a177b0371fb004", "page": 1, "locator": "页面 C7-D8 U4 电源、地与 NC 标记"}]
+    },
+    {
+      "id": "interface.external-four-pin",
+      "category": "interface",
+      "subject": "J1 HY-2.0_IIC",
+      "statement": "J1 将 GPIO33、GPIO25、+5V 和 GND 引出；GPIO33/GPIO25 与 +5V 分别配置 D5/D6/D4 对地保护。",
+      "confidence": "confirmed",
+      "attributes": {"signals": "GPIO33,GPIO25,+5V,GND", "signal_protection": "D5/D6 RLSD52A031V", "power_protection": "D4 LESD3Z5.0CMT1G", "connector_value": "HY-2.0_IIC"},
+      "evidence": [{"asset_sha256": "67bc5273549ec3525e559701cd26b8b7f0da2945b27504c516a177b0371fb004", "page": 1, "locator": "页面 B6-C7 J1 与 GPIO33/GPIO25/+5V/GND/D4-D6"}]
+    },
+    {
+      "id": "debug.download-headers",
+      "category": "debug",
+      "subject": "ESP32 下载接口",
+      "statement": "P2 pin 1=GND、pin 2=GPIO0、pin 3=EN；P3 pin 1=U0RX、pin 2=U0TX、pin 3=+3.3V。U3 U0TXD 经 R30 499Ω 形成 U0TX，U0RXD 连接 U0RX。",
+      "confidence": "confirmed",
+      "attributes": {"P2": "pin1 GND,pin2 GPIO0,pin3 EN", "P3": "pin1 U0RX,pin2 U0TX,pin3 +3.3V", "uart_tx": "U3 U0TXD via R30 499Ω", "uart_rx": "U3 U0RXD"},
+      "evidence": [{"asset_sha256": "67bc5273549ec3525e559701cd26b8b7f0da2945b27504c516a177b0371fb004", "page": 1, "locator": "页面 B6-C7 P2/P3 与 C3-D4 U3 UART"}]
+    },
+    {
+      "id": "reset.buttons",
+      "category": "reset",
+      "subject": "EN 复位与 GPIO37 用户按键",
+      "statement": "S2 按下将 EN 接 GND；S1 按下将 GPIO37 接 GND，R32 10KΩ 将 GPIO37 上拉到 +3.3V，D7 对 GPIO37 提供对地保护。",
+      "confidence": "confirmed",
+      "attributes": {"reset_button": "S2 EN to GND", "user_button": "S1 GPIO37 to GND", "user_pullup": "R32 10KΩ to +3.3V", "user_esd": "D7 RLSD52A031V"},
+      "evidence": [{"asset_sha256": "67bc5273549ec3525e559701cd26b8b7f0da2945b27504c516a177b0371fb004", "page": 1, "locator": "页面 C1-D2 S1/S2/R32/D7"}]
+    },
+    {
+      "id": "gpio.rgb-led-chain",
+      "category": "gpio",
+      "subject": "GPIO0 SK6812 灯链",
+      "statement": "GPIO0 连接 LED1 SK6812 DIN，LED1 DOUT 连接 LED2 DIN，LED2 DOUT 未连接；两颗 LED 由 +5V/GND 供电，并分别配置 C33/C34 100nF 去耦。",
+      "confidence": "confirmed",
+      "attributes": {"input": "GPIO0 -> LED1 DIN", "chain": "LED1 DOUT -> LED2 DIN", "last_output": "LED2 DOUT NC", "supply": "+5V", "decoupling": "C33 100nF,C34 100nF"},
+      "evidence": [{"asset_sha256": "67bc5273549ec3525e559701cd26b8b7f0da2945b27504c516a177b0371fb004", "page": 1, "locator": "页面 D3-D4 GPIO0、LED1/LED2 SK6812、C33/C34"}]
+    },
+    {
+      "id": "protection.external-interfaces",
+      "category": "protection",
+      "subject": "外部接口与以太网保护",
+      "statement": "GPIO33/GPIO25/+5V 与 GPIO37 按键节点配置 D4-D7 对地保护，W5500 与 RJ45 之间由 T1 磁性隔离；页面未显示 RJ45 线缆侧专用 TVS 阵列或 PoE 高压前端保护，因为 PoE 模块未展开。",
+      "confidence": "confirmed",
+      "attributes": {"external_port_esd": "D4-D6", "button_esd": "D7", "ethernet_isolation": "T1 HY601742", "rj45_tvs_shown": false, "poe_frontend_protection_on_page": null},
+      "evidence": [{"asset_sha256": "67bc5273549ec3525e559701cd26b8b7f0da2945b27504c516a177b0371fb004", "page": 1, "locator": "页面 T1/RJ45 与 J1/D4-D7/P1/P4"}]
+    },
+    {
+      "id": "memory.documented-capacities",
+      "category": "memory",
+      "subject": "16MB Flash 与 8MB PSRAM",
+      "statement": "正文称 Flash=16MB、PSRAM=8MB；原理图打印 U6 XM25QH128BHIQ 与 U5 ESP-PSRAM64H 型号，但没有独立 MB 容量字段。",
+      "confidence": "uncertain",
+      "attributes": {"documented_flash": "16MB", "documented_psram": "8MB", "flash_part": "XM25QH128BHIQ", "psram_part": "ESP-PSRAM64H", "explicit_capacity_fields": false},
+      "evidence": [{"asset_sha256": "67bc5273549ec3525e559701cd26b8b7f0da2945b27504c516a177b0371fb004", "page": 1, "locator": "页面 U5/U6 仅标料号，无容量文字"}]
+    },
+    {
+      "id": "component.documented-camera",
+      "category": "component",
+      "subject": "正文 OV2640 与成像性能",
+      "statement": "正文称摄像头为 OV2640、2MP、65° DFOV、2.2um 像素并列出多种输出格式和自动图像控制；原理图只显示 U4 FPC-0.5-24P，没有摄像头芯片型号或光学/成像参数。",
+      "confidence": "uncertain",
+      "attributes": {"documented_model": "OV2640", "documented_resolution": "2MP", "documented_dfov": "65deg", "documented_pixel": "2.2um x 2.2um", "documented_formats": "YUV422/420,YCbCr422,RGB565/555,compressed,8/10-bit Raw RGB", "schematic_model": null},
+      "evidence": [{"asset_sha256": "67bc5273549ec3525e559701cd26b8b7f0da2945b27504c516a177b0371fb004", "page": 1, "locator": "页面 U4 仅标 FPC-0.5-24P，无 OV2640 或光学参数"}]
+    },
+    {
+      "id": "component.documented-soc-version",
+      "category": "component",
+      "subject": "ESP32-D0WDQ6-V3 型号后缀",
+      "statement": "正文将 SoC 标为 ESP32-D0WDQ6-V3；原理图 U3 只打印 ESP32-D0WDQ6，没有 -V3 后缀或芯片 revision 字段。",
+      "confidence": "uncertain",
+      "attributes": {"documented_soc": "ESP32-D0WDQ6-V3", "schematic_soc": "ESP32-D0WDQ6", "revision_confirmed": false},
+      "evidence": [{"asset_sha256": "67bc5273549ec3525e559701cd26b8b7f0da2945b27504c516a177b0371fb004", "page": 1, "locator": "页面 U3 下方型号仅 ESP32-D0WDQ6"}]
+    },
+    {
+      "id": "interface.external-port-function",
+      "category": "interface",
+      "subject": "GPIO33/GPIO25 外部端口语义",
+      "statement": "原理图连接器值写 HY-2.0_IIC，而正文将 GPIO33/GPIO25 描述为 TX/RX 的 EXT.PORT；仅凭当前页无法确认量产固件把该端口用作 I2C 还是 UART。",
+      "confidence": "uncertain",
+      "attributes": {"schematic_connector_value": "HY-2.0_IIC", "schematic_gpio": "GPIO33,GPIO25", "document_mapping": "TX=GPIO33,RX=GPIO25", "confirmed_protocol": null},
+      "evidence": [{"asset_sha256": "67bc5273549ec3525e559701cd26b8b7f0da2945b27504c516a177b0371fb004", "page": 1, "locator": "页面 B6-C7 J1 HY-2.0_IIC 与 GPIO33/GPIO25，未显示 UART/I2C 外设选择"}]
+    },
+    {
+      "id": "power.documented-poe",
+      "category": "power",
+      "subject": "正文 PoE IEEE802.3af 与 6W",
+      "statement": "正文称支持 IEEE 802.3af、最大功率 6W；原理图只显示 P1/P4 与 5V@1.2A 标签，没有 PoE PD 控制器、分类电阻、隔离 DC/DC 型号、输入电压范围或热设计。",
+      "confidence": "uncertain",
+      "attributes": {"documented_standard": "IEEE802.3af", "documented_max_power": "6W", "schematic_output_label": "5V@1.2A", "pd_controller": null, "classification": null, "dc_dc_part": null, "input_range": null},
+      "evidence": [{"asset_sha256": "67bc5273549ec3525e559701cd26b8b7f0da2945b27504c516a177b0371fb004", "page": 1, "locator": "页面 P1/P4/D3 外部 PoE 接口，未展开转换模块"}]
+    },
+    {
+      "id": "bus.documented-ethernet",
+      "category": "bus",
+      "subject": "正文以太网速率与协议",
+      "statement": "正文列出 10/100M 以及 TCP、UDP、ICMP、IPv4、ARP、IGMP、PPPoE；原理图只确认 W5500、SPI、PHY 和 RJ45，不能证明固件协议配置、吞吐量或链路行为。",
+      "confidence": "uncertain",
+      "attributes": {"documented_speed": "10/100M", "documented_protocols": "TCP,UDP,ICMP,IPv4,ARP,IGMP,PPPoE", "firmware_version": null, "measured_throughput": null},
+      "evidence": [{"asset_sha256": "67bc5273549ec3525e559701cd26b8b7f0da2945b27504c516a177b0371fb004", "page": 1, "locator": "页面 U2/T1/RJ45，无速率或协议表"}]
+    },
+    {
+      "id": "rf.documented-wifi",
+      "category": "rf",
+      "subject": "正文 Wi-Fi 能力",
+      "statement": "正文称 ESP32 具备 Wi-Fi；原理图只确认 ESP32 LNA_IN 匹配网络与 IPEX 接口，没有频段、协议、发射功率、灵敏度、天线增益或认证信息。",
+      "confidence": "uncertain",
+      "attributes": {"documented_capability": "Wi-Fi", "band": null, "standard": null, "tx_power": null, "sensitivity": null, "antenna_gain": null, "certification": null},
+      "evidence": [{"asset_sha256": "67bc5273549ec3525e559701cd26b8b7f0da2945b27504c516a177b0371fb004", "page": 1, "locator": "页面 U3 LNA_IN-L1-C1/C2-E1，仅硬件射频路径"}]
+    }
+  ],
+  "needs_review": [
+    {
+      "id": "review.memory-capacities",
+      "fact_id": "memory.documented-capacities",
+      "question": "请用 U5/U6 datasheet、BOM 或实机确认 8MB PSRAM 与 16MB Flash 容量。",
+      "reason": "原理图只打印器件料号，没有 MB 容量字段。",
+      "evidence": [{"asset_sha256": "67bc5273549ec3525e559701cd26b8b7f0da2945b27504c516a177b0371fb004", "page": 1, "locator": "页面 U5/U6"}]
+    },
+    {
+      "id": "review.camera-model",
+      "fact_id": "component.documented-camera",
+      "question": "请用摄像头模组 BOM/丝印/datasheet 确认 U4 所接是否为 OV2640，并复核 2MP、DFOV、像素尺寸、格式与自动控制能力。",
+      "reason": "本页只有 FPC 电气接口，没有摄像头型号或光学参数。",
+      "evidence": [{"asset_sha256": "67bc5273549ec3525e559701cd26b8b7f0da2945b27504c516a177b0371fb004", "page": 1, "locator": "页面 U4 FPC-0.5-24P"}]
+    },
+    {
+      "id": "review.soc-revision",
+      "fact_id": "component.documented-soc-version",
+      "question": "请确认 U121-B 量产 SoC 是否固定为 ESP32-D0WDQ6-V3。",
+      "reason": "原理图省略 -V3 后缀。",
+      "evidence": [{"asset_sha256": "67bc5273549ec3525e559701cd26b8b7f0da2945b27504c516a177b0371fb004", "page": 1, "locator": "页面 U3 ESP32-D0WDQ6"}]
+    },
+    {
+      "id": "review.external-port-function",
+      "fact_id": "interface.external-port-function",
+      "question": "请用 PCB 网络、固件和接口定义确认 GPIO33/GPIO25 外部端口实际作为 UART TX/RX 还是 I2C SCL/SDA。",
+      "reason": "原理图连接器值与正文端口语义不一致。",
+      "evidence": [{"asset_sha256": "67bc5273549ec3525e559701cd26b8b7f0da2945b27504c516a177b0371fb004", "page": 1, "locator": "页面 J1 HY-2.0_IIC 与 GPIO33/GPIO25"}]
+    },
+    {
+      "id": "review.poe-module",
+      "fact_id": "power.documented-poe",
+      "question": "请提供当前 PoE 子模块型号/BOM，确认 IEEE 802.3af、分类、隔离、输入范围、5V@1.2A/6W 与保护边界。",
+      "reason": "PoE 转换模块本体未在本页展开。",
+      "evidence": [{"asset_sha256": "67bc5273549ec3525e559701cd26b8b7f0da2945b27504c516a177b0371fb004", "page": 1, "locator": "页面 P1/P4/D3"}]
+    },
+    {
+      "id": "review.ethernet-capabilities",
+      "fact_id": "bus.documented-ethernet",
+      "question": "请用 W5500 datasheet、固件与链路测试确认 10/100M、协议支持和实际吞吐量。",
+      "reason": "原理图不能证明协议栈配置或性能。",
+      "evidence": [{"asset_sha256": "67bc5273549ec3525e559701cd26b8b7f0da2945b27504c516a177b0371fb004", "page": 1, "locator": "页面 U2/T1/RJ45"}]
+    },
+    {
+      "id": "review.wifi-capabilities",
+      "fact_id": "rf.documented-wifi",
+      "question": "请用 ESP32 revision、天线 BOM 与射频测试确认 Wi-Fi 频段、制式、功率、灵敏度、增益和认证。",
+      "reason": "板级图只展示 RF 匹配与 IPEX。",
+      "evidence": [{"asset_sha256": "67bc5273549ec3525e559701cd26b8b7f0da2945b27504c516a177b0371fb004", "page": 1, "locator": "页面 U3 RF 路径"}]
+    }
+  ]
+}

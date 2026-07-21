@@ -1,0 +1,319 @@
+{
+  "schema_version": 1,
+  "generator": "schematic_describer",
+  "product": {
+    "product_id": "hat-cback-driver-a569848f16dc",
+    "product_name": "Hat CBack Driver",
+    "sku": "A100",
+    "source_path": "hat/c_back_driver.md",
+    "source_sha256": "97b74f90000915e38135af1d13918e4ff2e09974d937cc8624a4739cc71074d7",
+    "input_sha256": "13f1e03dbae7fe0a6784c2107eaab802d797e418c8747d841f8c1c0b51a275c7"
+  },
+  "schematic_assets": [
+    {
+      "sha256": "38624912fb9135b9b6b37974f2d7311e75a49e5973e6544ee964d0aec3d97a4a",
+      "source_url": "https://static-cdn.m5stack.com/resource/docs/products/hat/c_back_driver/c_back_driver_sch_01.webp",
+      "pages": [1]
+    }
+  ],
+  "summary": "Hat CBack Driver 以 STM32F030F4P6（U1）为主控，通过 SCL/SDA 与 STICKIO 主机接口连接，并输出 CH1~CH4 四路控制信号。P3/P4 为四路三线输出提供 CHx、+BAT 和 GND，J1 引出 I2C 与 +5V，J2 引出 INPUT/OUTPUT 与 +5V。+3.3V、+5V 和 +BAT 均由 STICKIO 分别引入，原理图未显示板载电源转换器；P1 提供 SWD 调试和复位连接。",
+  "keywords": [
+    "Hat CBack Driver",
+    "A100",
+    "STM32F030F4P6",
+    "U1",
+    "STICKIO",
+    "P2",
+    "I2C",
+    "SCL",
+    "SDA",
+    "G26",
+    "G0",
+    "CH1",
+    "CH2",
+    "CH3",
+    "CH4",
+    "+BAT",
+    "+5V",
+    "+3.3V",
+    "INPUT",
+    "OUTPUT",
+    "SWD",
+    "SWCLK",
+    "SWDIO",
+    "NRST",
+    "BOOT0",
+    "PA0",
+    "PA1",
+    "PA2",
+    "PA3",
+    "PA9",
+    "PA10",
+    "0x38"
+  ],
+  "components": [
+    {
+      "reference": "U1",
+      "part_number": "STM32F030F4P6",
+      "role": "主控 MCU，连接 I2C、四路 CH 输出、扩展 INPUT/OUTPUT、复位与 SWD 调试信号",
+      "evidence": [{"asset_sha256": "38624912fb9135b9b6b37974f2d7311e75a49e5973e6544ee964d0aec3d97a4a", "page": 1, "locator": "页面左中 U1：STM32F030F4P6，1~20 脚及 BOOT0、CH1~CH4、INPUT/OUTPUT、SCL/SDA、SWDIO/SWCLK 网络"}]
+    },
+    {
+      "reference": "P1",
+      "part_number": "SWD_5p",
+      "role": "5 针 SWD 调试接口，引出 +3.3V、SWCLK、SWDIO、NRST 和 GND",
+      "evidence": [{"asset_sha256": "38624912fb9135b9b6b37974f2d7311e75a49e5973e6544ee964d0aec3d97a4a", "page": 1, "locator": "页面右上 P1 SWD_5p：1~5 脚标注 VCC、SWCLK、SWDIO、RST、GND"}]
+    },
+    {
+      "reference": "P2",
+      "part_number": "STICKIO",
+      "role": "8 针主机接口，引入 GND、+5V、SCL、INPUT、SDA、+BAT 和 +3.3V",
+      "evidence": [{"asset_sha256": "38624912fb9135b9b6b37974f2d7311e75a49e5973e6544ee964d0aec3d97a4a", "page": 1, "locator": "页面右中 P2 STICKIO：1~8 脚 GND/5VOUT/G26/G36/G0/BAT/3V3/5VIN 与左侧网络"}]
+    },
+    {
+      "reference": "J1",
+      "part_number": "HY-2.0_IIC",
+      "role": "4 针 I2C 扩展接口，引出 SCL、SDA、+5V 和 GND",
+      "evidence": [{"asset_sha256": "38624912fb9135b9b6b37974f2d7311e75a49e5973e6544ee964d0aec3d97a4a", "page": 1, "locator": "页面右下 J1 HY-2.0_IIC：1~4 脚 IIC_SCL/IIC_SDA/VCC/GND"}]
+    },
+    {
+      "reference": "J2",
+      "part_number": "HY-2.0_IO",
+      "role": "4 针通用 I/O 扩展接口，引出 INPUT、OUTPUT、+5V 和 GND",
+      "evidence": [{"asset_sha256": "38624912fb9135b9b6b37974f2d7311e75a49e5973e6544ee964d0aec3d97a4a", "page": 1, "locator": "页面右下 J2 HY-2.0_IO：1~4 脚 I/O/VCC/GND，左侧网络为 INPUT/OUTPUT/+5V/GND"}]
+    },
+    {
+      "reference": "P3",
+      "part_number": "Header 3X2",
+      "role": "CH1/CH2 三线输出接口，每路包含控制信号、+BAT 和 GND",
+      "evidence": [{"asset_sha256": "38624912fb9135b9b6b37974f2d7311e75a49e5973e6544ee964d0aec3d97a4a", "page": 1, "locator": "页面下中 P3 Header 3X2：奇数侧 CH2/+BAT/GND，偶数侧 CH1/+BAT/GND"}]
+    },
+    {
+      "reference": "P4",
+      "part_number": "Header 3X2",
+      "role": "CH3/CH4 三线输出接口，每路包含控制信号、+BAT 和 GND",
+      "evidence": [{"asset_sha256": "38624912fb9135b9b6b37974f2d7311e75a49e5973e6544ee964d0aec3d97a4a", "page": 1, "locator": "页面底部 P4 Header 3X2：奇数侧 CH4/+BAT/GND，偶数侧 CH3/+BAT/GND"}]
+    },
+    {
+      "reference": "R1",
+      "part_number": "10KΩ",
+      "role": "将 U1 BOOT0 下拉至 GND",
+      "evidence": [{"asset_sha256": "38624912fb9135b9b6b37974f2d7311e75a49e5973e6544ee964d0aec3d97a4a", "page": 1, "locator": "页面左中 U1.1 BOOT0 左侧：R1 10KΩ 连接 BOOT0 与 GND"}]
+    },
+    {
+      "reference": "R2/C1",
+      "part_number": "10KΩ / 100nF",
+      "role": "NRST 上拉与对地电容组成的复位网络",
+      "evidence": [{"asset_sha256": "38624912fb9135b9b6b37974f2d7311e75a49e5973e6544ee964d0aec3d97a4a", "page": 1, "locator": "页面左侧 NRST 网络：R2 10KΩ 接 +3.3V，C1 100nF 接 GND，并连接 U1.4"}]
+    },
+    {
+      "reference": "C2/C3",
+      "part_number": "100nF / 22uF",
+      "role": "+3.3V 电源轨对 GND 的去耦与储能电容",
+      "evidence": [{"asset_sha256": "38624912fb9135b9b6b37974f2d7311e75a49e5973e6544ee964d0aec3d97a4a", "page": 1, "locator": "页面中央 U1 右侧：C2 100nF、C3 22uF 均跨接 +3.3V 与 GND"}]
+    },
+    {
+      "reference": "C4/C5",
+      "part_number": "100nF / 100nF",
+      "role": "J1 与 J2 各自 +5V 端口的对地去耦电容",
+      "evidence": [{"asset_sha256": "38624912fb9135b9b6b37974f2d7311e75a49e5973e6544ee964d0aec3d97a4a", "page": 1, "locator": "页面右下：C4 位于 J1 +5V-GND，C5 位于 J2 +5V-GND，均标注 100nF"}]
+    },
+    {
+      "reference": "C6/C7",
+      "part_number": "22uF / 22uF",
+      "role": "P3 与 P4 附近 +BAT 电源的对地储能电容",
+      "evidence": [{"asset_sha256": "38624912fb9135b9b6b37974f2d7311e75a49e5973e6544ee964d0aec3d97a4a", "page": 1, "locator": "页面下中：P3 右侧 C6 22uF、P4 右侧 C7 22uF 均跨接 +BAT 与 GND"}]
+    }
+  ],
+  "facts": [
+    {
+      "id": "system.controller-architecture",
+      "category": "system",
+      "subject": "Hat CBack Driver",
+      "statement": "U1 STM32F030F4P6 通过 SCL/SDA 连接主机与 J1，并从 PA0~PA3 输出 CH1~CH4；PA4/PA5 分别连接 OUTPUT/INPUT。",
+      "confidence": "confirmed",
+      "attributes": {"controller": "U1 STM32F030F4P6", "host_bus": "SCL/SDA", "channel_outputs": "CH1, CH2, CH3, CH4", "extended_io": "OUTPUT, INPUT"},
+      "evidence": [{"asset_sha256": "38624912fb9135b9b6b37974f2d7311e75a49e5973e6544ee964d0aec3d97a4a", "page": 1, "locator": "全页：U1 左右两侧网络与 P2、J1、J2、P3、P4 的同名网络连接"}]
+    },
+    {
+      "id": "component.u1-pin-map",
+      "category": "component",
+      "subject": "U1 STM32F030F4P6",
+      "statement": "U1 已用功能脚为 PA0/CH1、PA1/CH2、PA2/CH3、PA3/CH4、PA4/OUTPUT、PA5/INPUT、PA9/SCL、PA10/SDA、PA13/SWDIO、PA14/SWCLK；VDDA/VDD 接 +3.3V，VSS 接 GND。",
+      "confidence": "confirmed",
+      "attributes": {"pin_5": "VDDA +3.3V", "pin_6": "PA0 CH1", "pin_7": "PA1 CH2", "pin_8": "PA2 CH3", "pin_9": "PA3 CH4", "pin_10": "PA4 OUTPUT", "pin_11": "PA5 INPUT", "pin_15": "VSS GND", "pin_16": "VDD +3.3V", "pin_17": "PA9 SCL", "pin_18": "PA10 SDA", "pin_19": "PA13 SWDIO", "pin_20": "PA14 SWCLK"},
+      "evidence": [{"asset_sha256": "38624912fb9135b9b6b37974f2d7311e75a49e5973e6544ee964d0aec3d97a4a", "page": 1, "locator": "页面左中 U1：5~20 脚编号、端口名和相邻网络标签"}]
+    },
+    {
+      "id": "clock.u1-internal-clock-pins-unused",
+      "category": "clock",
+      "subject": "U1 PF0/PF1 时钟脚",
+      "statement": "U1.2 PF0/OSC_IN 与 U1.3 PF1/OSC_OUT 在原理图上标为未连接，页面未显示外部晶振或谐振器。",
+      "confidence": "confirmed",
+      "attributes": {"osc_in": "U1.2 PF0/OSC_IN NC", "osc_out": "U1.3 PF1/OSC_OUT NC", "external_crystal": "not shown"},
+      "evidence": [{"asset_sha256": "38624912fb9135b9b6b37974f2d7311e75a49e5973e6544ee964d0aec3d97a4a", "page": 1, "locator": "页面左中 U1.2/U1.3：PF0/OSC_IN 和 PF1/OSC_OUT 左侧均有未连接标记"}]
+    },
+    {
+      "id": "reset.nrst-network",
+      "category": "reset",
+      "subject": "NRST",
+      "statement": "U1.4 NRST 连接 P1.4 RST；R2 10KΩ 将 NRST 上拉到 +3.3V，C1 100nF 将 NRST 接至 GND。",
+      "confidence": "confirmed",
+      "attributes": {"mcu_pin": "U1.4 NRST", "debug_pin": "P1.4 RST", "pull_up": "R2 10KΩ to +3.3V", "capacitor": "C1 100nF to GND"},
+      "evidence": [{"asset_sha256": "38624912fb9135b9b6b37974f2d7311e75a49e5973e6544ee964d0aec3d97a4a", "page": 1, "locator": "页面左侧 U1.4 NRST 与 R2/C1；页面右上 P1.4 的 NRST 同名网络"}]
+    },
+    {
+      "id": "gpio.boot0-pulldown",
+      "category": "gpio",
+      "subject": "BOOT0",
+      "statement": "U1.1 BOOT0 通过 R1 10KΩ 固定下拉至 GND。",
+      "confidence": "confirmed",
+      "attributes": {"mcu_pin": "U1.1 BOOT0", "resistor": "R1 10KΩ", "strap": "GND"},
+      "evidence": [{"asset_sha256": "38624912fb9135b9b6b37974f2d7311e75a49e5973e6544ee964d0aec3d97a4a", "page": 1, "locator": "页面左中 U1.1 BOOT0：R1 10KΩ 串接至左侧 GND"}]
+    },
+    {
+      "id": "debug.swd-pinout",
+      "category": "debug",
+      "subject": "P1 SWD_5p",
+      "statement": "P1.1~P1.5 依次为 +3.3V、SWCLK、SWDIO、NRST、GND；SWCLK/SWDIO 分别连接 U1.20 PA14 与 U1.19 PA13。",
+      "confidence": "confirmed",
+      "attributes": {"pin_1": "+3.3V VCC", "pin_2": "SWCLK to U1.20 PA14", "pin_3": "SWDIO to U1.19 PA13", "pin_4": "NRST", "pin_5": "GND"},
+      "evidence": [{"asset_sha256": "38624912fb9135b9b6b37974f2d7311e75a49e5973e6544ee964d0aec3d97a4a", "page": 1, "locator": "页面右上 P1 1~5 脚与页面左中 U1.19/U1.20 同名 SWDIO/SWCLK 网络"}]
+    },
+    {
+      "id": "interface.stickio-pinout",
+      "category": "interface",
+      "subject": "P2 STICKIO",
+      "statement": "P2.1~P2.8 依次标为 GND、5VOUT、G26、G36、G0、BAT、3V3、5VIN；板上网络依次为 GND、+5V、SCL、INPUT、SDA、+BAT、+3.3V，P2.8 未连接。",
+      "confidence": "confirmed",
+      "attributes": {"pin_1": "GND", "pin_2": "5VOUT +5V", "pin_3": "G26 SCL", "pin_4": "G36 INPUT", "pin_5": "G0 SDA", "pin_6": "BAT +BAT", "pin_7": "3V3 +3.3V", "pin_8": "5VIN NC"},
+      "evidence": [{"asset_sha256": "38624912fb9135b9b6b37974f2d7311e75a49e5973e6544ee964d0aec3d97a4a", "page": 1, "locator": "页面右中 P2 STICKIO：引脚编号、符号内名称、左侧网络及 8 脚未连接标记"}]
+    },
+    {
+      "id": "bus.i2c-routing",
+      "category": "bus",
+      "subject": "SCL/SDA",
+      "statement": "SCL 同名网络连接 P2.3 G26、U1.17 PA9 和 J1.1 IIC_SCL；SDA 连接 P2.5 G0、U1.18 PA10 和 J1.2 IIC_SDA。",
+      "confidence": "confirmed",
+      "attributes": {"scl": "P2.3 G26 - U1.17 PA9 - J1.1 IIC_SCL", "sda": "P2.5 G0 - U1.18 PA10 - J1.2 IIC_SDA", "level_rail": "+3.3V MCU supply", "direction": "bidirectional bus"},
+      "evidence": [{"asset_sha256": "38624912fb9135b9b6b37974f2d7311e75a49e5973e6544ee964d0aec3d97a4a", "page": 1, "locator": "页面 U1.17/U1.18、P2.3/P2.5、J1.1/J1.2 的 SCL/SDA 同名网络"}]
+    },
+    {
+      "id": "bus.i2c-no-pullups-shown",
+      "category": "bus",
+      "subject": "I2C 上拉",
+      "statement": "本页 SCL 与 SDA 路径上未显示上拉电阻、串联电阻或专用保护器件。",
+      "confidence": "confirmed",
+      "attributes": {"scl_pullup": "not shown", "sda_pullup": "not shown", "series_resistors": "not shown", "protection": "not shown"},
+      "evidence": [{"asset_sha256": "38624912fb9135b9b6b37974f2d7311e75a49e5973e6544ee964d0aec3d97a4a", "page": 1, "locator": "页面 U1、P2 与 J1 之间的 SCL/SDA 全部可见路径，未画外围电阻或保护符号"}]
+    },
+    {
+      "id": "address.i2c-0x38",
+      "category": "address",
+      "subject": "Hat CBack Driver I2C 地址",
+      "statement": "产品正文标注 I2C 地址为 0x38，但本地原理图页面未标注 0x38、地址寄存器或地址选择网络，无法仅由原理图确认该地址。",
+      "confidence": "uncertain",
+      "attributes": {"documented_address": "0x38", "schematic_address_label": "not shown", "address_straps": "not shown"},
+      "evidence": [{"asset_sha256": "38624912fb9135b9b6b37974f2d7311e75a49e5973e6544ee964d0aec3d97a4a", "page": 1, "locator": "全页 U1 与 SCL/SDA 网络：未见 0x38 文本、地址选择引脚或地址电阻"}]
+    },
+    {
+      "id": "interface.j1-i2c-pinout",
+      "category": "interface",
+      "subject": "J1 HY-2.0_IIC",
+      "statement": "J1.1 为 SCL/IIC_SCL，J1.2 为 SDA/IIC_SDA，J1.3 为 +5V/VCC，J1.4 为 GND。",
+      "confidence": "confirmed",
+      "attributes": {"pin_1": "SCL IIC_SCL", "pin_2": "SDA IIC_SDA", "pin_3": "+5V VCC", "pin_4": "GND", "signal_level": "U1 powered by +3.3V; no level shifter shown"},
+      "evidence": [{"asset_sha256": "38624912fb9135b9b6b37974f2d7311e75a49e5973e6544ee964d0aec3d97a4a", "page": 1, "locator": "页面右下 J1：左侧网络、1~4 脚编号及符号内 IIC_SCL/IIC_SDA/VCC/GND"}]
+    },
+    {
+      "id": "interface.j2-io-pinout",
+      "category": "interface",
+      "subject": "J2 HY-2.0_IO",
+      "statement": "J2.1 INPUT（I）连接 U1.11 PA5 与 P2.4 G36，J2.2 OUTPUT（O）连接 U1.10 PA4；J2.3 为 +5V/VCC，J2.4 为 GND。",
+      "confidence": "confirmed",
+      "attributes": {"pin_1": "INPUT I, U1.11 PA5, P2.4 G36", "pin_2": "OUTPUT O, U1.10 PA4", "pin_3": "+5V VCC", "pin_4": "GND", "input_direction": "to U1 PA5", "output_direction": "from U1 PA4"},
+      "evidence": [{"asset_sha256": "38624912fb9135b9b6b37974f2d7311e75a49e5973e6544ee964d0aec3d97a4a", "page": 1, "locator": "页面 U1.10/U1.11、P2.4 与 J2.1/J2.2 的 INPUT/OUTPUT 同名网络"}]
+    },
+    {
+      "id": "gpio.channel-map",
+      "category": "gpio",
+      "subject": "CH1~CH4",
+      "statement": "U1.6 PA0、U1.7 PA1、U1.8 PA2、U1.9 PA3 分别映射到 CH1、CH2、CH3、CH4，并直接连接 P3/P4 信号脚。",
+      "confidence": "confirmed",
+      "attributes": {"CH1": "U1.6 PA0 to P3.2", "CH2": "U1.7 PA1 to P3.1", "CH3": "U1.8 PA2 to P4.2", "CH4": "U1.9 PA3 to P4.1", "direction": "from U1 to channel connectors"},
+      "evidence": [{"asset_sha256": "38624912fb9135b9b6b37974f2d7311e75a49e5973e6544ee964d0aec3d97a4a", "page": 1, "locator": "页面 U1.6~U1.9 与 P3/P4 顶行的 CH1~CH4 同名网络"}]
+    },
+    {
+      "id": "interface.p3-pinout",
+      "category": "interface",
+      "subject": "P3 Header 3X2",
+      "statement": "P3.1/P3.3/P3.5 分别为 CH2/+BAT/GND，P3.2/P3.4/P3.6 分别为 CH1/+BAT/GND。",
+      "confidence": "confirmed",
+      "attributes": {"pin_1": "CH2", "pin_2": "CH1", "pin_3": "+BAT", "pin_4": "+BAT", "pin_5": "GND", "pin_6": "GND"},
+      "evidence": [{"asset_sha256": "38624912fb9135b9b6b37974f2d7311e75a49e5973e6544ee964d0aec3d97a4a", "page": 1, "locator": "页面下中 P3：1~6 脚编号和左右 CH2/CH1、+BAT、GND 网络"}]
+    },
+    {
+      "id": "interface.p4-pinout",
+      "category": "interface",
+      "subject": "P4 Header 3X2",
+      "statement": "P4.1/P4.3/P4.5 分别为 CH4/+BAT/GND，P4.2/P4.4/P4.6 分别为 CH3/+BAT/GND。",
+      "confidence": "confirmed",
+      "attributes": {"pin_1": "CH4", "pin_2": "CH3", "pin_3": "+BAT", "pin_4": "+BAT", "pin_5": "GND", "pin_6": "GND"},
+      "evidence": [{"asset_sha256": "38624912fb9135b9b6b37974f2d7311e75a49e5973e6544ee964d0aec3d97a4a", "page": 1, "locator": "页面底部 P4：1~6 脚编号和左右 CH4/CH3、+BAT、GND 网络"}]
+    },
+    {
+      "id": "power.external-rail-architecture",
+      "category": "power",
+      "subject": "外部供电结构",
+      "statement": "P2.7 直接引入 +3.3V 供 U1、P1 和复位网络使用；P2.2 直接引入 +5V 供 J1/J2；P2.6 直接引入 +BAT 供 P3/P4。原理图未显示这三条电源轨之间的板载转换器。",
+      "confidence": "confirmed",
+      "attributes": {"3v3_input": "P2.7 3V3", "5v_input": "P2.2 5VOUT", "battery_input": "P2.6 BAT", "onboard_converter": "not shown"},
+      "evidence": [{"asset_sha256": "38624912fb9135b9b6b37974f2d7311e75a49e5973e6544ee964d0aec3d97a4a", "page": 1, "locator": "全页 +3.3V、+5V、+BAT 同名网络：从 P2 分别连接 U1/P1、J1/J2、P3/P4，未见转换器符号"}]
+    },
+    {
+      "id": "power.3v3-decoupling",
+      "category": "power",
+      "subject": "+3.3V 电源轨",
+      "statement": "U1.5 VDDA 与 U1.16 VDD 均接 +3.3V，U1.15 VSS 接 GND；C2 100nF 与 C3 22uF 均跨接 +3.3V 和 GND。",
+      "confidence": "confirmed",
+      "attributes": {"analog_supply": "U1.5 VDDA +3.3V", "digital_supply": "U1.16 VDD +3.3V", "ground": "U1.15 VSS GND", "capacitors": "C2 100nF; C3 22uF"},
+      "evidence": [{"asset_sha256": "38624912fb9135b9b6b37974f2d7311e75a49e5973e6544ee964d0aec3d97a4a", "page": 1, "locator": "页面 U1.5/U1.15/U1.16 与右侧 C2/C3 的 +3.3V/GND 连接"}]
+    },
+    {
+      "id": "power.5v-port-decoupling",
+      "category": "power",
+      "subject": "+5V 端口电源",
+      "statement": "+5V 从 P2.2 连接 J1.3 和 J2.3；C4 100nF、C5 100nF 分别在 J1、J2 侧跨接 +5V 与 GND。",
+      "confidence": "confirmed",
+      "attributes": {"source": "P2.2 5VOUT", "loads": "J1.3 VCC; J2.3 VCC", "decoupling": "C4 100nF; C5 100nF"},
+      "evidence": [{"asset_sha256": "38624912fb9135b9b6b37974f2d7311e75a49e5973e6544ee964d0aec3d97a4a", "page": 1, "locator": "页面 P2.2、J1.3/C4 与 J2.3/C5 的 +5V 同名网络"}]
+    },
+    {
+      "id": "power.battery-channel-rail",
+      "category": "power",
+      "subject": "+BAT 通道电源",
+      "statement": "+BAT 从 P2.6 分配到 P3.3/P3.4 与 P4.3/P4.4；C6 22uF 和 C7 22uF 分别在 P3、P4 侧跨接 +BAT 与 GND。",
+      "confidence": "confirmed",
+      "attributes": {"source": "P2.6 BAT", "p3_power": "P3.3, P3.4 +BAT", "p4_power": "P4.3, P4.4 +BAT", "capacitors": "C6 22uF; C7 22uF"},
+      "evidence": [{"asset_sha256": "38624912fb9135b9b6b37974f2d7311e75a49e5973e6544ee964d0aec3d97a4a", "page": 1, "locator": "页面 P2.6 与 P3/P4 中行、C6/C7 上端的 +BAT 同名网络"}]
+    },
+    {
+      "id": "protection.no-dedicated-protection-shown",
+      "category": "protection",
+      "subject": "外部接口保护",
+      "statement": "本页 P2、J1、J2、P3、P4 的外部信号与电源路径上未显示 TVS、保险丝、反接保护或专用电平转换器。",
+      "confidence": "confirmed",
+      "attributes": {"tvs": "not shown", "fuse": "not shown", "reverse_polarity": "not shown", "level_shifter": "not shown"},
+      "evidence": [{"asset_sha256": "38624912fb9135b9b6b37974f2d7311e75a49e5973e6544ee964d0aec3d97a4a", "page": 1, "locator": "全页外部连接器 P2/J1/J2/P3/P4 至 U1 或电源网络的完整可见路径"}]
+    }
+  ],
+  "needs_review": [
+    {
+      "id": "review.i2c-address-0x38",
+      "fact_id": "address.i2c-0x38",
+      "question": "I2C 从设备地址 0x38 是否由 U1 固件固定实现？",
+      "reason": "产品正文给出 0x38，但原理图只显示 SCL/SDA 连接，未显示地址文本、地址选择网络或固件依据。",
+      "evidence": [{"asset_sha256": "38624912fb9135b9b6b37974f2d7311e75a49e5973e6544ee964d0aec3d97a4a", "page": 1, "locator": "全页 U1 与 SCL/SDA 网络：未见地址标注或地址选择器件"}]
+    }
+  ]
+}

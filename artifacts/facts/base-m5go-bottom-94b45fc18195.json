@@ -1,0 +1,415 @@
+{
+  "schema_version": 1,
+  "generator": "schematic_describer",
+  "product": {
+    "product_id": "base-m5go-bottom-94b45fc18195",
+    "product_name": "Base M5GO Bottom",
+    "sku": "A014",
+    "source_path": "base/m5go_bottom.md",
+    "source_sha256": "dca69ab37bf0518ed635a12212b477e64e496e6bfd528cc2b44356769d34b788",
+    "input_sha256": "330fe5cfaa3e1f7e7ba7e8d8c5a9835215367cda91ab5fc6699cf49a3b51fe14"
+  },
+  "schematic_assets": [
+    {
+      "sha256": "257641dd1a48c91b73085574de27e2e06ebfcde06599fa0ed865fe3c733da01e",
+      "source_url": "https://m5stack-doc.oss-cn-shenzhen.aliyuncs.com/1006/A014_Sch_M5GO_page_01.png",
+      "pages": [1]
+    }
+  ],
+  "summary": "Base M5GO Bottom 通过 J4 M5Stack_BUS 与 Core 主机连接，板上包含 10 颗串联 SK6812 RGB LED、U1 SPQ2410 麦克风与 U2 MAX4466 模拟放大器，以及由 Q1 AO3400A_N 驱动的红外 LED。U3 TP4057 从 J3 pogo 接口的 VIN 为 BAT+ 充电，BAT+ 回到 M5Bus；J1/J2 另行引出 UART 和 GPIO36/GPIO26，并均提供 +5V。I2C_SDA/I2C_SCL 从 M5Bus GPIO21/GPIO22 接到 J3，使用 R3/R4 4.7KΩ 上拉到 +3.3V。",
+  "keywords": [
+    "Base M5GO Bottom",
+    "A014",
+    "M5Stack_BUS",
+    "SK6812",
+    "RGB LED",
+    "GPIO15",
+    "SPQ2410",
+    "MAX4466",
+    "GPIO34",
+    "E3.3V",
+    "AGND",
+    "TP4057",
+    "BAT+",
+    "VIN",
+    "CHRG",
+    "STDBY",
+    "IR12-21C",
+    "AO3400A_N",
+    "IR_S",
+    "GPIO13",
+    "UART_RXD",
+    "UART_TXD",
+    "GPIO16",
+    "GPIO17",
+    "GPIO36",
+    "GPIO26",
+    "I2C_SDA",
+    "I2C_SCL",
+    "GPIO21",
+    "GPIO22",
+    "SOCKET_POWER_4P",
+    "UART_Socket_4P",
+    "GPIO_Socket_4P",
+    "+5V",
+    "+3.3V"
+  ],
+  "components": [
+    {
+      "reference": "LED1-LED10",
+      "part_number": "SK6812",
+      "role": "十颗串行 RGB LED，数据从 LED1 DIN 依次级联到 LED10",
+      "evidence": [{"asset_sha256": "257641dd1a48c91b73085574de27e2e06ebfcde06599fa0ed865fe3c733da01e", "page": 1, "locator": "第 1 页 A 区 LED1-LED10 SK6812，VSS/GND、VDD/+5V 与 DOUT-DIN 级联"}]
+    },
+    {
+      "reference": "R1",
+      "part_number": "4.7KΩ",
+      "role": "SK6812 数据输入网络到 +5V 的上拉电阻",
+      "evidence": [{"asset_sha256": "257641dd1a48c91b73085574de27e2e06ebfcde06599fa0ed865fe3c733da01e", "page": 1, "locator": "第 1 页 A1 区 LED1 DIN/SK6812 网络下方 R1 4.7KΩ 到 +5V"}]
+    },
+    {
+      "reference": "U1",
+      "part_number": "SPQ2410",
+      "role": "3.3V 供电的模拟麦克风，输出经 C6 耦合到 MAX4466",
+      "evidence": [{"asset_sha256": "257641dd1a48c91b73085574de27e2e06ebfcde06599fa0ed865fe3c733da01e", "page": 1, "locator": "第 1 页 B1 区 U1 SPQ2410，Vdd/OUT/GND 与 E3.3V、AGND、C6"}]
+    },
+    {
+      "reference": "U2",
+      "part_number": "MAX4466",
+      "role": "将 SPQ2410 信号放大后输出到 GPIO34 的运算放大器",
+      "evidence": [{"asset_sha256": "257641dd1a48c91b73085574de27e2e06ebfcde06599fa0ed865fe3c733da01e", "page": 1, "locator": "第 1 页 B2 区 U2 max4466，IN+/IN-/OUT/VCC/GND 与 GPIO34"}]
+    },
+    {
+      "reference": "R2,R5,C6",
+      "part_number": "1MΩ / 1MΩ / 10nF",
+      "role": "麦克风交流耦合和 E3.3V/AGND 中点偏置网络",
+      "evidence": [{"asset_sha256": "257641dd1a48c91b73085574de27e2e06ebfcde06599fa0ed865fe3c733da01e", "page": 1, "locator": "第 1 页 B1-B2 区 U1 OUT-C6 10nF 节点，R2 1MΩ 到 E3.3V、R5 1MΩ 到 AGND"}]
+    },
+    {
+      "reference": "R7,C8,R9,C10",
+      "part_number": "100KΩ / 100pF / 1KΩ / 10uF",
+      "role": "MAX4466 反相输入反馈与低频增益设定网络",
+      "evidence": [{"asset_sha256": "257641dd1a48c91b73085574de27e2e06ebfcde06599fa0ed865fe3c733da01e", "page": 1, "locator": "第 1 页 B2-C2 区 U2 OUT/IN- 周围 R7 100KΩ、C8 100pF、R9 1KΩ、C10 10uF"}]
+    },
+    {
+      "reference": "R6,R8",
+      "part_number": "0Ω",
+      "role": "分别桥接 +3.3V 到 E3.3V、GND 到 AGND 的麦克风电源域连接器件",
+      "evidence": [{"asset_sha256": "257641dd1a48c91b73085574de27e2e06ebfcde06599fa0ed865fe3c733da01e", "page": 1, "locator": "第 1 页 B3 区 R6 0Ω 位于 E3.3V/+3.3V，R8 0Ω 位于 AGND/GND"}]
+    },
+    {
+      "reference": "C1-C5,C7",
+      "part_number": "10uF / 1.0uF / 100nF / 10nF / 1nF / 10uF",
+      "role": "MAX4466 E3.3V/AGND 电源域的宽频去耦电容组",
+      "evidence": [{"asset_sha256": "257641dd1a48c91b73085574de27e2e06ebfcde06599fa0ed865fe3c733da01e", "page": 1, "locator": "第 1 页 B2-B3 区 C1-C5 从 E3.3V 接 AGND，C7 从 +3.3V 接 GND"}]
+    },
+    {
+      "reference": "U3",
+      "part_number": "TP4057",
+      "role": "从 VIN 为 BAT+ 单节电池网络充电，并提供 CHRG/STDBY 状态输出",
+      "evidence": [{"asset_sha256": "257641dd1a48c91b73085574de27e2e06ebfcde06599fa0ed865fe3c733da01e", "page": 1, "locator": "第 1 页 D1-D2 区 U3 TP4057，VCC/VIN、BAT/BAT+、PROG、CHRG、STDBY、GND"}]
+    },
+    {
+      "reference": "D1,R11",
+      "part_number": "1615RG / 1KΩ",
+      "role": "由 TP4057 CHRG 与 STDBY 驱动的双色充电状态指示灯和公共限流电阻",
+      "evidence": [{"asset_sha256": "257641dd1a48c91b73085574de27e2e06ebfcde06599fa0ed865fe3c733da01e", "page": 1, "locator": "第 1 页 D1 区 D1 1615RG 两路接 U3 CHRG/STDBY，公共端经 R11 1KΩ 接 VIN"}]
+    },
+    {
+      "reference": "R12,C11,C12",
+      "part_number": "2KΩ / 10uF / 10uF",
+      "role": "TP4057 充电编程电阻和 VIN/BAT+ 输入输出旁路",
+      "evidence": [{"asset_sha256": "257641dd1a48c91b73085574de27e2e06ebfcde06599fa0ed865fe3c733da01e", "page": 1, "locator": "第 1 页 C1-D2 区 U3 PROG-R12 2KΩ，VIN-C11 10uF，BAT+-C12 10uF"}]
+    },
+    {
+      "reference": "LED11",
+      "part_number": "IR12-21C",
+      "role": "由 +5V 供电并经 Q1 低端开关驱动的红外发射 LED",
+      "evidence": [{"asset_sha256": "257641dd1a48c91b73085574de27e2e06ebfcde06599fa0ed865fe3c733da01e", "page": 1, "locator": "第 1 页 C3-D3 区 LED11 IR12-21C，+5V 到 R10/Q1 路径"}]
+    },
+    {
+      "reference": "Q1",
+      "part_number": "AO3400A_N",
+      "role": "受 IR_S 控制的 N 沟道 MOSFET，作为红外 LED 低端开关",
+      "evidence": [{"asset_sha256": "257641dd1a48c91b73085574de27e2e06ebfcde06599fa0ed865fe3c733da01e", "page": 1, "locator": "第 1 页 D3 区 Q1 AO3400A_N，漏极接 R10/LED11，源极接 GND，栅极接 IR_S"}]
+    },
+    {
+      "reference": "R10,R13,R14",
+      "part_number": "49.9Ω / 1KΩ / 10KΩ",
+      "role": "红外 LED 限流、MOSFET 栅极串联和栅极下拉网络",
+      "evidence": [{"asset_sha256": "257641dd1a48c91b73085574de27e2e06ebfcde06599fa0ed865fe3c733da01e", "page": 1, "locator": "第 1 页 C3-D3 区 LED11-R10 49.9Ω-Q1 与 IR_S-R13 1KΩ、R14 10KΩ-GND"}]
+    },
+    {
+      "reference": "J1",
+      "part_number": "UART_Socket_4P",
+      "role": "引出 U2_RXD、U2_TXD、+5V 与 GND 的四针 UART 接口",
+      "evidence": [{"asset_sha256": "257641dd1a48c91b73085574de27e2e06ebfcde06599fa0ed865fe3c733da01e", "page": 1, "locator": "第 1 页 A4 区 J1 UART_Socket_4P，pin1 U2_RXD、pin2 U2_TXD、pin3 +5V、pin4 GND"}]
+    },
+    {
+      "reference": "J2",
+      "part_number": "GPIO_Socket_4P",
+      "role": "引出 GPIO36、GPIO26、+5V 与 GND 的四针 GPIO 接口",
+      "evidence": [{"asset_sha256": "257641dd1a48c91b73085574de27e2e06ebfcde06599fa0ed865fe3c733da01e", "page": 1, "locator": "第 1 页 B4 区 J2 GPIO_Socket_4P，pin1 GPIO36、pin2 GPIO26、pin3 +5V、pin4 GND"}]
+    },
+    {
+      "reference": "J3",
+      "part_number": "SOCKET_POWER_4P",
+      "role": "pogo 电源/I2C 接口，连接 GND、VIN、I2C_SDA 与 I2C_SCL",
+      "evidence": [{"asset_sha256": "257641dd1a48c91b73085574de27e2e06ebfcde06599fa0ed865fe3c733da01e", "page": 1, "locator": "第 1 页 B4 区 J3 SOCKET_POWER_4P，pin1 GND、pin2 +5V 标识/外部网 VIN、pin3 SDA、pin4 SCL"}]
+    },
+    {
+      "reference": "R3,R4",
+      "part_number": "4.7KΩ",
+      "role": "I2C_SDA 与 I2C_SCL 到 +3.3V 的上拉电阻",
+      "evidence": [{"asset_sha256": "257641dd1a48c91b73085574de27e2e06ebfcde06599fa0ed865fe3c733da01e", "page": 1, "locator": "第 1 页 B3-B4 区 R3 4.7KΩ 从 I2C_SDA 到 +3.3V，R4 4.7KΩ 从 I2C_SCL 到 +3.3V"}]
+    },
+    {
+      "reference": "J4",
+      "part_number": "M5Stack_BUS",
+      "role": "30 针主机总线，承载 UART、I2C、RGB、红外、麦克风、电源和未使用 GPIO",
+      "evidence": [{"asset_sha256": "257641dd1a48c91b73085574de27e2e06ebfcde06599fa0ed865fe3c733da01e", "page": 1, "locator": "第 1 页 C4-D4 区 J4 M5Stack_BUS，1-30 脚及网络标注"}]
+    },
+    {
+      "reference": "C9",
+      "part_number": "1.0uF",
+      "role": "J4 EN 网络到 GND 的电容",
+      "evidence": [{"asset_sha256": "257641dd1a48c91b73085574de27e2e06ebfcde06599fa0ed865fe3c733da01e", "page": 1, "locator": "第 1 页 C4 区 J4 pin6 EN 向上经 C9 1.0uF 接 GND"}]
+    }
+  ],
+  "facts": [
+    {
+      "id": "system.m5go-bottom-architecture",
+      "category": "system",
+      "subject": "Base M5GO Bottom 系统架构",
+      "statement": "J4 M5Stack_BUS 将 Core 主机的 GPIO 与 RGB、麦克风、红外、UART、GPIO 和 I2C/充电接口相连；板上没有独立主控，功能由 J4 上的主机 GPIO 驱动。",
+      "confidence": "confirmed",
+      "attributes": {"host_connector": "J4 M5Stack_BUS", "rgb": "LED1-LED10 SK6812", "microphone": "U1 SPQ2410 + U2 MAX4466", "charger": "U3 TP4057", "infrared": "LED11 IR12-21C + Q1 AO3400A_N", "onboard_mcu_shown": false},
+      "evidence": [{"asset_sha256": "257641dd1a48c91b73085574de27e2e06ebfcde06599fa0ed865fe3c733da01e", "page": 1, "locator": "第 1 页完整单页四个功能分区与 J4，未见主控 MCU"}]
+    },
+    {
+      "id": "gpio.rgb-input",
+      "category": "gpio",
+      "subject": "SK6812 数据输入映射",
+      "statement": "J4 pin23 的 GPIO15 连接 SK6812 网络并进入 LED1 DIN pin3，R1 4.7KΩ 将该输入网络上拉到 +5V。",
+      "confidence": "confirmed",
+      "attributes": {"host": "J4 pin23 GPIO15", "net": "SK6812", "destination": "LED1 DIN pin3", "pullup": "R1 4.7KΩ to +5V", "direction": "host output to LED chain"},
+      "evidence": [{"asset_sha256": "257641dd1a48c91b73085574de27e2e06ebfcde06599fa0ed865fe3c733da01e", "page": 1, "locator": "第 1 页 A1 LED1 DIN/SK6812/R1 与 C4 区 J4 pin23 SK6812/GPIO15"}]
+    },
+    {
+      "id": "bus.sk6812-chain",
+      "category": "bus",
+      "subject": "十颗 SK6812 串行灯链",
+      "statement": "LED1 DOUT 依次连接 LED2 DIN，随后逐颗级联到 LED10 DIN；LED10 DOUT 在本页标记未连接。",
+      "confidence": "confirmed",
+      "attributes": {"devices": "LED1-LED10", "part_number": "SK6812", "count": 10, "data_order": "LED1 -> LED2 -> LED3 -> LED4 -> LED5 -> LED6 -> LED7 -> LED8 -> LED9 -> LED10", "last_dout_connected": false},
+      "evidence": [{"asset_sha256": "257641dd1a48c91b73085574de27e2e06ebfcde06599fa0ed865fe3c733da01e", "page": 1, "locator": "第 1 页 A1-A4 区 LED1-LED10 DOUT/DIN 蓝色级联线，LED10 DOUT 端有未连接标记"}]
+    },
+    {
+      "id": "power.sk6812-rail",
+      "category": "power",
+      "subject": "SK6812 灯链供电",
+      "statement": "LED1-LED10 的 VDD pin4 均接 +5V，VSS pin2 均接 GND。",
+      "confidence": "confirmed",
+      "attributes": {"supply": "+5V", "ground": "GND", "vdd_pin": 4, "vss_pin": 2, "devices": "LED1-LED10"},
+      "evidence": [{"asset_sha256": "257641dd1a48c91b73085574de27e2e06ebfcde06599fa0ed865fe3c733da01e", "page": 1, "locator": "第 1 页 A 区十颗 SK6812 的 pin4 +5V 与 pin2 GND"}]
+    },
+    {
+      "id": "audio.microphone-front-end",
+      "category": "audio",
+      "subject": "SPQ2410 麦克风前端",
+      "statement": "U1 SPQ2410 Vdd pin1 接 E3.3V，GND pin2/pin3 接 AGND，OUT pin4 经 C6 10nF 交流耦合到由 R2/R5 各 1MΩ 形成的中点偏置，再进入 U2 MAX4466 IN+ pin1。",
+      "confidence": "confirmed",
+      "attributes": {"microphone": "U1 SPQ2410", "supply": "E3.3V", "ground": "AGND", "output": "U1 pin4 OUT", "coupling": "C6 10nF", "bias": "R2 1MΩ to E3.3V; R5 1MΩ to AGND", "amplifier_input": "U2 pin1 IN+"},
+      "evidence": [{"asset_sha256": "257641dd1a48c91b73085574de27e2e06ebfcde06599fa0ed865fe3c733da01e", "page": 1, "locator": "第 1 页 B1-B2 区 U1、C6、R2/R5 与 U2 IN+"}]
+    },
+    {
+      "id": "analog.microphone-amplifier",
+      "category": "analog",
+      "subject": "MAX4466 放大与反馈",
+      "statement": "U2 MAX4466 VCC pin5 接 E3.3V、GND pin2 接 AGND，OUT pin4 输出 GPIO34；OUT 到 IN- pin3 的反馈为 R7 100KΩ 与 C8 100pF 并联，IN- 再经 R9 1KΩ、C10 10uF 串联到 AGND。",
+      "confidence": "confirmed",
+      "attributes": {"amplifier": "U2 MAX4466", "supply": "E3.3V/AGND", "output": "U2 pin4 GPIO34", "feedback": "R7 100KΩ parallel C8 100pF", "gain_leg": "R9 1KΩ series C10 10uF to AGND"},
+      "evidence": [{"asset_sha256": "257641dd1a48c91b73085574de27e2e06ebfcde06599fa0ed865fe3c733da01e", "page": 1, "locator": "第 1 页 B2-C2 区 U2 OUT/IN- 与 R7/C8/R9/C10"}]
+    },
+    {
+      "id": "gpio.microphone-output",
+      "category": "gpio",
+      "subject": "麦克风模拟输出映射",
+      "statement": "U2 MAX4466 OUT pin4 的 GPIO34 网络连接 J4 M5Stack_BUS pin26。",
+      "confidence": "confirmed",
+      "attributes": {"source": "U2 pin4 OUT", "net": "GPIO34", "host_connector": "J4 pin26", "direction": "analog output to host input"},
+      "evidence": [{"asset_sha256": "257641dd1a48c91b73085574de27e2e06ebfcde06599fa0ed865fe3c733da01e", "page": 1, "locator": "第 1 页 B2 U2 OUT GPIO34 与 D4 J4 pin26 GPIO34"}]
+    },
+    {
+      "id": "power.microphone-domain",
+      "category": "power",
+      "subject": "麦克风模拟电源域",
+      "statement": "+3.3V 经 R6 0Ω 形成 E3.3V，GND 经 R8 0Ω 形成 AGND；C1-C5 从 E3.3V 到 AGND 提供 10uF、1.0uF、100nF、10nF、1nF 多级去耦。",
+      "confidence": "confirmed",
+      "attributes": {"supply_bridge": "R6 0Ω: +3.3V to E3.3V", "ground_bridge": "R8 0Ω: GND to AGND", "decoupling": "C1 10uF, C2 1.0uF, C3 100nF, C4 10nF, C5 1nF"},
+      "evidence": [{"asset_sha256": "257641dd1a48c91b73085574de27e2e06ebfcde06599fa0ed865fe3c733da01e", "page": 1, "locator": "第 1 页 B2-B3 区 R6/R8 与 C1-C5"}]
+    },
+    {
+      "id": "power.charger-path",
+      "category": "power",
+      "subject": "TP4057 充电路径",
+      "statement": "J3 pin2 的外部网络 VIN 连接 U3 TP4057 VCC pin4，U3 BAT pin3 输出 BAT+；BAT+ 连接 J4 pin30 BATTERY，C11/C12 各 10uF 分别旁路 VIN 与 BAT+。",
+      "confidence": "confirmed",
+      "attributes": {"input_connector": "J3 pin2", "input_net": "VIN", "charger": "U3 TP4057", "battery_net": "BAT+", "host_battery_pin": "J4 pin30 BATTERY", "input_capacitor": "C11 10uF", "battery_capacitor": "C12 10uF"},
+      "evidence": [{"asset_sha256": "257641dd1a48c91b73085574de27e2e06ebfcde06599fa0ed865fe3c733da01e", "page": 1, "locator": "第 1 页 B4 J3 VIN、C1-D2 U3/C11/C12/BAT+、D4 J4 pin30 BATTERY"}]
+    },
+    {
+      "id": "power.charger-programming",
+      "category": "power",
+      "subject": "TP4057 充电编程",
+      "statement": "U3 TP4057 PROG pin6 通过 R12 2KΩ 接 GND；原理图仅给出该电阻，不直接标注充电电流数值。",
+      "confidence": "confirmed",
+      "attributes": {"program_pin": "U3 pin6 PROG", "program_resistor": "R12 2KΩ to GND", "charge_current_label_shown": false},
+      "evidence": [{"asset_sha256": "257641dd1a48c91b73085574de27e2e06ebfcde06599fa0ed865fe3c733da01e", "page": 1, "locator": "第 1 页 D2 区 U3 PROG pin6-R12 2KΩ-GND"}]
+    },
+    {
+      "id": "gpio.charger-status",
+      "category": "gpio",
+      "subject": "充电状态 LED",
+      "statement": "U3 CHRG pin1 与 STDBY pin5 分别连接 D1 1615RG 的两路发光单元，D1 公共端经 R11 1KΩ 接 VIN。",
+      "confidence": "confirmed",
+      "attributes": {"charge_output": "U3 pin1 CHRG", "standby_output": "U3 pin5 STDBY", "indicator": "D1 1615RG", "common_resistor": "R11 1KΩ to VIN"},
+      "evidence": [{"asset_sha256": "257641dd1a48c91b73085574de27e2e06ebfcde06599fa0ed865fe3c733da01e", "page": 1, "locator": "第 1 页 D1 区 U3 CHRG/STDBY、D1 1615RG、R11/VIN"}]
+    },
+    {
+      "id": "other.documented-battery-capacity",
+      "category": "other",
+      "subject": "电池容量",
+      "statement": "产品正文标注内置电池为 500mAh，但当前原理图只显示 BAT+ 网络和 TP4057 充电电路，没有电池位号、型号或容量标注。",
+      "confidence": "uncertain",
+      "attributes": {"documented_capacity": "500mAh", "schematic_battery_net": "BAT+", "battery_reference_shown": false, "capacity_shown_on_schematic": false},
+      "evidence": [{"asset_sha256": "257641dd1a48c91b73085574de27e2e06ebfcde06599fa0ed865fe3c733da01e", "page": 1, "locator": "第 1 页 Power 区 U3 TP4057/BAT+ 与 J4 pin30，完整页面未见电池器件或容量"}]
+    },
+    {
+      "id": "gpio.infrared-control",
+      "category": "gpio",
+      "subject": "红外发射控制映射",
+      "statement": "J4 pin22 的 GPIO13 连接 IR_S，IR_S 经 R13 1KΩ 驱动 Q1 栅极，并由 R14 10KΩ 下拉到 GND。",
+      "confidence": "confirmed",
+      "attributes": {"host": "J4 pin22 GPIO13", "net": "IR_S", "gate_resistor": "R13 1KΩ", "gate_pulldown": "R14 10KΩ", "destination": "Q1 gate", "direction": "host output"},
+      "evidence": [{"asset_sha256": "257641dd1a48c91b73085574de27e2e06ebfcde06599fa0ed865fe3c733da01e", "page": 1, "locator": "第 1 页 D3 IR_S/R13/R14/Q1 与 C4-D4 J4 pin22 IR_S/GPIO13"}]
+    },
+    {
+      "id": "component.infrared-driver",
+      "category": "component",
+      "subject": "红外 LED 低端驱动",
+      "statement": "+5V 依次经过 LED11 IR12-21C 与 R10 49.9Ω 到 Q1 AO3400A_N 漏极，Q1 源极接 GND，构成由 IR_S 控制的低端开关。",
+      "confidence": "confirmed",
+      "attributes": {"power_path": "+5V -> LED11 IR12-21C -> R10 49.9Ω -> Q1 drain", "switch": "Q1 AO3400A_N", "source": "GND", "control": "IR_S"},
+      "evidence": [{"asset_sha256": "257641dd1a48c91b73085574de27e2e06ebfcde06599fa0ed865fe3c733da01e", "page": 1, "locator": "第 1 页 C3-D3 区 +5V、LED11、R10、Q1 与 GND"}]
+    },
+    {
+      "id": "interface.uart-socket",
+      "category": "interface",
+      "subject": "J1 UART 接口",
+      "statement": "J1 UART_Socket_4P pin1=U2_RXD、pin2=U2_TXD、pin3=VCC/+5V、pin4=GND；U2_RXD 来自 J4 pin15 GPIO16，U2_TXD 来自 J4 pin16 GPIO17。",
+      "confidence": "confirmed",
+      "attributes": {"pin1": "U2_RXD / J4 pin15 GPIO16", "pin2": "U2_TXD / J4 pin16 GPIO17", "pin3": "+5V", "pin4": "GND", "rx_direction": "socket RX toward host GPIO16", "tx_direction": "host GPIO17 toward socket TX"},
+      "evidence": [{"asset_sha256": "257641dd1a48c91b73085574de27e2e06ebfcde06599fa0ed865fe3c733da01e", "page": 1, "locator": "第 1 页 A4 J1 UART_Socket_4P 与 C4 J4 pin15/pin16 U2_RXD/U2_TXD"}]
+    },
+    {
+      "id": "bus.uart-routing",
+      "category": "bus",
+      "subject": "主机 UART 路由",
+      "statement": "J4 GPIO16/pin15 通过 U2_RXD 接 J1 pin1，J4 GPIO17/pin16 通过 U2_TXD 接 J1 pin2；接口电源为 +5V，逻辑信号电平未在原理图标注。",
+      "confidence": "confirmed",
+      "attributes": {"receive": "J1 pin1 U2_RXD <-> J4 pin15 GPIO16", "transmit": "J1 pin2 U2_TXD <-> J4 pin16 GPIO17", "connector_supply": "+5V", "logic_voltage_label_shown": false},
+      "evidence": [{"asset_sha256": "257641dd1a48c91b73085574de27e2e06ebfcde06599fa0ed865fe3c733da01e", "page": 1, "locator": "第 1 页 J1 U2_RXD/U2_TXD 与 J4 pin15/pin16 同名网络"}]
+    },
+    {
+      "id": "interface.gpio-socket",
+      "category": "interface",
+      "subject": "J2 GPIO 接口",
+      "statement": "J2 GPIO_Socket_4P pin1=GPIO36、pin2=GPIO26、pin3=VCC/+5V、pin4=GND；GPIO36 与 GPIO26 分别连接 J4 pin4 和 pin10。",
+      "confidence": "confirmed",
+      "attributes": {"pin1": "GPIO36 / J4 pin4", "pin2": "GPIO26 / J4 pin10", "pin3": "+5V", "pin4": "GND", "gpio36_direction": "host GPIO input capability not specified on schematic", "gpio26_direction": "bidirectional GPIO net"},
+      "evidence": [{"asset_sha256": "257641dd1a48c91b73085574de27e2e06ebfcde06599fa0ed865fe3c733da01e", "page": 1, "locator": "第 1 页 B4 J2 GPIO_Socket_4P 与 C4 J4 pin4 GPIO36/pin10 GPIO26"}]
+    },
+    {
+      "id": "interface.pogo-power-i2c",
+      "category": "interface",
+      "subject": "J3 pogo 电源与 I2C 接口",
+      "statement": "J3 SOCKET_POWER_4P pin1=GND、pin2 的连接器标识为 +5V 且板内网络名为 VIN、pin3=SDA/I2C_SDA、pin4=SCL/I2C_SCL。",
+      "confidence": "confirmed",
+      "attributes": {"pin1": "GND", "pin2": "+5V contact / VIN net", "pin3": "SDA / I2C_SDA", "pin4": "SCL / I2C_SCL", "power_destination": "U3 TP4057 VCC"},
+      "evidence": [{"asset_sha256": "257641dd1a48c91b73085574de27e2e06ebfcde06599fa0ed865fe3c733da01e", "page": 1, "locator": "第 1 页 B4 J3 SOCKET_POWER_4P 的引脚字段和左侧 GND/VIN/I2C_SDA/I2C_SCL 网络"}]
+    },
+    {
+      "id": "bus.i2c-routing",
+      "category": "bus",
+      "subject": "pogo I2C 路由",
+      "statement": "J4 pin17 GPIO21 通过 I2C_SDA 接 J3 pin3，J4 pin18 GPIO22 通过 I2C_SCL 接 J3 pin4；R3/R4 各 4.7KΩ 将 SDA/SCL 上拉到 +3.3V，页面未显示板载 I2C 地址。",
+      "confidence": "confirmed",
+      "attributes": {"controller": "M5Stack host", "sda": "J4 pin17 GPIO21 -> I2C_SDA -> J3 pin3", "scl": "J4 pin18 GPIO22 -> I2C_SCL -> J3 pin4", "pullups": "R3/R4 4.7KΩ to +3.3V", "address_shown": false},
+      "evidence": [{"asset_sha256": "257641dd1a48c91b73085574de27e2e06ebfcde06599fa0ed865fe3c733da01e", "page": 1, "locator": "第 1 页 B3-B4 R3/R4/J3 与 C4 J4 pin17/pin18 I2C_SDA/I2C_SCL"}]
+    },
+    {
+      "id": "interface.m5stack-bus-map",
+      "category": "interface",
+      "subject": "J4 M5Stack_BUS 已用引脚",
+      "statement": "J4 已用功能网络为 pin4 GPIO36、pin10 GPIO26、pin15 GPIO16/U2_RXD、pin16 GPIO17/U2_TXD、pin17 GPIO21/I2C_SDA、pin18 GPIO22/I2C_SCL、pin22 GPIO13/IR_S、pin23 GPIO15/SK6812、pin26 GPIO34、pin28 +5V、pin30 BATTERY/BAT+；pin1/3/5 为 GND，pin6 为 EN，pin12 为 +3.3V。",
+      "confidence": "confirmed",
+      "attributes": {"uart": "pin15 GPIO16 RXD; pin16 GPIO17 TXD", "i2c": "pin17 GPIO21 SDA; pin18 GPIO22 SCL", "rgb": "pin23 GPIO15", "infrared": "pin22 GPIO13", "microphone": "pin26 GPIO34", "gpio_socket": "pin4 GPIO36; pin10 GPIO26", "power": "pin1/3/5 GND; pin12 +3.3V; pin28 +5V; pin30 BATTERY/BAT+"},
+      "evidence": [{"asset_sha256": "257641dd1a48c91b73085574de27e2e06ebfcde06599fa0ed865fe3c733da01e", "page": 1, "locator": "第 1 页 C4-D4 J4 M5Stack_BUS 1-30 脚与外侧功能网络"}]
+    },
+    {
+      "id": "reset.host-en-capacitor",
+      "category": "reset",
+      "subject": "M5Bus EN 电容",
+      "statement": "J4 pin6 EN 通过 C9 1.0uF 接 GND；本页未显示 EN 的其他驱动或复位开关。",
+      "confidence": "confirmed",
+      "attributes": {"host_pin": "J4 pin6 EN", "capacitor": "C9 1.0uF to GND", "other_driver_shown": false, "reset_switch_shown": false},
+      "evidence": [{"asset_sha256": "257641dd1a48c91b73085574de27e2e06ebfcde06599fa0ed865fe3c733da01e", "page": 1, "locator": "第 1 页 C4 区 J4 pin6 EN 向上到 C9 1.0uF/GND"}]
+    },
+    {
+      "id": "key_net.power-distribution",
+      "category": "key_net",
+      "subject": "板上电源网络分配",
+      "statement": "J4 pin28 提供 +5V 给 SK6812、红外 LED、J1 和 J2；J4 pin12 提供 +3.3V 并经 R6 形成 E3.3V；J3 的 VIN 进入 U3 充电器，U3 的 BAT+ 回到 J4 pin30。",
+      "confidence": "confirmed",
+      "attributes": {"five_volt_consumers": "LED1-LED10, LED11, J1 pin3, J2 pin3", "three_volt_source": "J4 pin12 +3.3V", "analog_rail": "E3.3V via R6 0Ω", "charge_input": "J3 pin2 VIN", "battery_return": "U3 BAT+ -> J4 pin30"},
+      "evidence": [{"asset_sha256": "257641dd1a48c91b73085574de27e2e06ebfcde06599fa0ed865fe3c733da01e", "page": 1, "locator": "第 1 页各 +5V/+3.3V/E3.3V/VIN/BAT+ 网络与 J4 pin12/pin28/pin30"}]
+    },
+    {
+      "id": "storage.none-shown",
+      "category": "storage",
+      "subject": "板载存储",
+      "statement": "当前完整单页原理图未画出 Flash、PSRAM、EEPROM 或存储卡接口。",
+      "confidence": "confirmed",
+      "attributes": {"flash_shown": false, "psram_shown": false, "eeprom_shown": false, "memory_card_shown": false},
+      "evidence": [{"asset_sha256": "257641dd1a48c91b73085574de27e2e06ebfcde06599fa0ed865fe3c733da01e", "page": 1, "locator": "第 1 页完整器件页，U1-U3 为麦克风、放大器和充电器，未见存储器件"}]
+    },
+    {
+      "id": "clock.none-shown",
+      "category": "clock",
+      "subject": "板载时钟",
+      "statement": "当前完整单页原理图未画出晶振、振荡器或独立时钟输入。",
+      "confidence": "confirmed",
+      "attributes": {"crystal_shown": false, "oscillator_shown": false, "clock_net_shown": false},
+      "evidence": [{"asset_sha256": "257641dd1a48c91b73085574de27e2e06ebfcde06599fa0ed865fe3c733da01e", "page": 1, "locator": "第 1 页完整单页所有功能分区，未见 Y/X 晶振位号或 CLK 网络"}]
+    },
+    {
+      "id": "debug.none-shown",
+      "category": "debug",
+      "subject": "专用调试接口",
+      "statement": "当前完整单页原理图未画出 JTAG、SWD、USB-UART 或专用编程调试连接器。",
+      "confidence": "confirmed",
+      "attributes": {"jtag_shown": false, "swd_shown": false, "usb_uart_shown": false, "dedicated_debug_connector_shown": false},
+      "evidence": [{"asset_sha256": "257641dd1a48c91b73085574de27e2e06ebfcde06599fa0ed865fe3c733da01e", "page": 1, "locator": "第 1 页完整连接器 J1-J4，仅为 UART/GPIO/I2C/主机总线，无调试标注"}]
+    }
+  ],
+  "needs_review": [
+    {
+      "id": "review.battery-capacity",
+      "fact_id": "other.documented-battery-capacity",
+      "question": "A014 当前硬件所装电池的料号、额定容量和保护板规格是否确认为 500mAh？",
+      "reason": "500mAh 来自产品正文，当前原理图只显示 BAT+ 和 TP4057，无法从图中验证电池容量与保护配置。",
+      "evidence": [{"asset_sha256": "257641dd1a48c91b73085574de27e2e06ebfcde06599fa0ed865fe3c733da01e", "page": 1, "locator": "第 1 页 Power 区 U3 TP4057/BAT+ 与 J4 pin30，无电池位号、型号、容量或保护板"}]
+    }
+  ]
+}

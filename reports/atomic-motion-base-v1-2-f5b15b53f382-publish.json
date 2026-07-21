@@ -1,0 +1,21 @@
+{
+  "dry_run": false,
+  "failed": 0,
+  "published": 1,
+  "results": [
+    {
+      "backup": null,
+      "draft_action": "unchanged",
+      "dry_run": false,
+      "errors": [],
+      "needs_review": 5,
+      "product_id": "atomic-motion-base-v1-2-f5b15b53f382",
+      "product_name": "Atomic Motion Base v1.2",
+      "publish_action": "unchanged",
+      "sha256": "4266eaff0624e76a9dd6852e6d01a48a0c5d7e1c1c3b0ff1f245c532bbe6cbc9",
+      "status": "valid",
+      "uncertain_facts": 5
+    }
+  ],
+  "schema_version": 1
+}

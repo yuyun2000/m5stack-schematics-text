@@ -1,0 +1,454 @@
+{
+  "schema_version": 1,
+  "generator": "schematic_describer",
+  "product": {
+    "product_id": "unit-lorawan-as923-0a82795306a4",
+    "product_name": "Unit LoRaWAN-AS923",
+    "sku": "U184-AS923",
+    "source_path": "unit/Unit LoRaWAN-AS923.md",
+    "source_sha256": "f77fed5ba25f165eaaa9fe1a4afa643fbeac4232be223776cdef0a5f99439f97",
+    "input_sha256": "2a40f736ee3da1dc8a552f860b9551da466c4fdb5914d44fc1ef8473bcf73e14"
+  },
+  "schematic_assets": [
+    {
+      "sha256": "6def63d71dca037aa67dff4bd11dd51418f453e8fa9a1cc794867509b3166570",
+      "source_url": "https://m5stack.oss-cn-shenzhen.aliyuncs.com/resource/docs/products/unit/Unit%20LoRaWAN-CN470/schematic.png",
+      "pages": [1]
+    }
+  ],
+  "summary": "Unit LoRaWAN-AS923 原理图以 M1 RAK3172 无线模组为核心，通过 U2_RX/U2_TX UART 与 J1 HY-2.0_UART 主机接口通信，并引出 SWD、RST、BOOT、辅助 UART、I2C 与 SPI 测试点。J1 的 VCC 经 F1 形成 +5V，U1 VRH3301NLX 再生成 +3.3V，为 RAK3172、复位网络和 UART 上拉供电。RF pin12 连接一组全部标 NC 的 E1/R8/C8/C9 射频支路，页面另列 R1-R4 对应 470/868/915/923 的装配表，但没有直接证明本件 AS923 的 R4 实装状态或正文所述射频、协议与性能参数。",
+  "keywords": [
+    "Unit LoRaWAN-AS923",
+    "U184-AS923",
+    "RAK3172",
+    "STM32WLE5",
+    "VRH3301NLX",
+    "HY-2.0_UART",
+    "AS923",
+    "923-925MHz",
+    "LoRaWAN 1.0.3",
+    "LoRa P2P",
+    "Class A",
+    "Class B",
+    "Class C",
+    "OTAA",
+    "ABP",
+    "AT command",
+    "UART 115200",
+    "U2_RX",
+    "U2_TX",
+    "U1_RX",
+    "U1_TX",
+    "SWDIO",
+    "SWCLK",
+    "RST",
+    "BOOT",
+    "SCL",
+    "SDA",
+    "MOSI",
+    "MISO",
+    "SCK",
+    "NSS",
+    "ANT",
+    "RF",
+    "+5V",
+    "+3.3V",
+    "F1 6V@1A",
+    "R4 0Ω 923",
+    "RLSD52A031V",
+    "LESD3Z5.0CMT1G",
+    "SMA antenna"
+  ],
+  "components": [
+    {
+      "reference": "M1",
+      "part_number": "RAK3172",
+      "role": "LoRa 无线通信模组，提供双 UART、SWD、I2C、SPI、RF、RST、BOOT、ADC/GPIO 与 3.3V 电源端",
+      "evidence": [{"asset_sha256": "6def63d71dca037aa67dff4bd11dd51418f453e8fa9a1cc794867509b3166570", "page": 1, "locator": "第1页中央 M1 RAK3172 pins1-32"}]
+    },
+    {
+      "reference": "U1",
+      "part_number": "VRH3301NLX",
+      "role": "将 +5V 稳压为 +3.3V 的五脚稳压器",
+      "evidence": [{"asset_sha256": "6def63d71dca037aa67dff4bd11dd51418f453e8fa9a1cc794867509b3166570", "page": 1, "locator": "第1页左上 U1 VRH3301NLX pins1-5、+5V、+3.3V"}]
+    },
+    {
+      "reference": "J1",
+      "part_number": "HY-2.0_UART",
+      "role": "四针 Grove UART 和 5V 供电接口",
+      "evidence": [{"asset_sha256": "6def63d71dca037aa67dff4bd11dd51418f453e8fa9a1cc794867509b3166570", "page": 1, "locator": "第1页右中 J1 HY-2.0_UART pins1-4"}]
+    },
+    {
+      "reference": "E1/R8/C8/C9",
+      "part_number": "NC / NC / NC / NC",
+      "role": "RAK3172 RF 到 ANT 的可选天线与 π 型匹配位置，页面全部标 NC",
+      "evidence": [{"asset_sha256": "6def63d71dca037aa67dff4bd11dd51418f453e8fa9a1cc794867509b3166570", "page": 1, "locator": "第1页中左 M1 RF pin12、C9 NC、R8 NC、C8 NC、ANT、E1 NC"}]
+    },
+    {
+      "reference": "F1",
+      "part_number": "6V@1A",
+      "role": "串接 J1 VCC 与板上 +5V 的保险/限流器件",
+      "evidence": [{"asset_sha256": "6def63d71dca037aa67dff4bd11dd51418f453e8fa9a1cc794867509b3166570", "page": 1, "locator": "第1页右中 F1 6V@1A、+5V、VCC 与 J1 pin3"}]
+    },
+    {
+      "reference": "R9/R10",
+      "part_number": "22Ω / 22Ω",
+      "role": "U2_TX/U2_RX 与 Grove RX/TX 之间的 UART 串联电阻",
+      "evidence": [{"asset_sha256": "6def63d71dca037aa67dff4bd11dd51418f453e8fa9a1cc794867509b3166570", "page": 1, "locator": "第1页右中 U2_TX/R9/RX 与 U2_RX/R10/TX"}]
+    },
+    {
+      "reference": "D2/R6/R7",
+      "part_number": "1N4148WS T4 / 10KΩ / 10KΩ",
+      "role": "从 +3.3V 经二极管向 RX/TX 分别提供 10KΩ 上拉的 UART 偏置网络",
+      "evidence": [{"asset_sha256": "6def63d71dca037aa67dff4bd11dd51418f453e8fa9a1cc794867509b3166570", "page": 1, "locator": "第1页右中 +3.3V、D2 1N4148WS T4、R6/R7 10KΩ、RX/TX"}]
+    },
+    {
+      "reference": "D1/D3/D4/D5",
+      "part_number": "RLSD52A031V / LESD3Z5.0CMT1G / RLSD52A031V / RLSD52A031V",
+      "role": "+3.3V、VCC、RX 与 TX 的对地 ESD/瞬态保护",
+      "evidence": [{"asset_sha256": "6def63d71dca037aa67dff4bd11dd51418f453e8fa9a1cc794867509b3166570", "page": 1, "locator": "第1页左上 D1；右中 D3/D4/D5 与 +3.3V/VCC/RX/TX"}]
+    },
+    {
+      "reference": "R5/C4",
+      "part_number": "10KΩ / 1uF",
+      "role": "M1 RST 的 +3.3V 上拉和对地 RC 网络",
+      "evidence": [{"asset_sha256": "6def63d71dca037aa67dff4bd11dd51418f453e8fa9a1cc794867509b3166570", "page": 1, "locator": "第1页左中 R5 10KΩ、C4 1uF、RST"}]
+    },
+    {
+      "reference": "R1/R2/R3/R4",
+      "part_number": "0Ω",
+      "role": "470/868/915/923 版本对应关系的装配选项电阻表",
+      "evidence": [{"asset_sha256": "6def63d71dca037aa67dff4bd11dd51418f453e8fa9a1cc794867509b3166570", "page": 1, "locator": "第1页右上装配表：R1 470、R2 868、R3 915、R4 923，均标 0Ω"}]
+    },
+    {
+      "reference": "C1/C2/C3",
+      "part_number": "22uF / 1uF / 1uF",
+      "role": "U1 输入 +5V 与输出 +3.3V 的去耦/储能电容",
+      "evidence": [{"asset_sha256": "6def63d71dca037aa67dff4bd11dd51418f453e8fa9a1cc794867509b3166570", "page": 1, "locator": "第1页左上 U1 周围 C1 22uF、C2 1uF、C3 1uF"}]
+    },
+    {
+      "reference": "C5/C6/C7",
+      "part_number": "100nF / 22uF / 33pF",
+      "role": "M1 VDD +3.3V 的对地去耦网络",
+      "evidence": [{"asset_sha256": "6def63d71dca037aa67dff4bd11dd51418f453e8fa9a1cc794867509b3166570", "page": 1, "locator": "第1页中央偏右 M1 VDD pin24 与 C5/C6/C7"}]
+    },
+    {
+      "reference": "JP1-JP14",
+      "part_number": null,
+      "role": "引出电源、SWD、RST、BOOT、I2C、辅助 UART 与 SPI 的测试点组",
+      "evidence": [{"asset_sha256": "6def63d71dca037aa67dff4bd11dd51418f453e8fa9a1cc794867509b3166570", "page": 1, "locator": "第1页左下 JP1-JP14 及 +3.3V/SWCLK/SWDIO/RST/GND/BOOT/SCL/SDA/U1_RX/U1_TX/MOSI/MISO/SCK/NSS"}]
+    }
+  ],
+  "facts": [
+    {
+      "id": "system.architecture",
+      "category": "system",
+      "subject": "Unit LoRaWAN-AS923 系统架构",
+      "statement": "单页电路由 M1 RAK3172、U1 3.3V 稳压器、J1 Grove UART、可选 RF/天线支路、复位/BOOT/SWD 和辅助串行总线测试点组成。",
+      "confidence": "confirmed",
+      "attributes": {"radio_module": "M1 RAK3172", "power": "U1 VRH3301NLX", "host": "J1 HY-2.0_UART", "rf": "M1 RF -> C9/R8/C8/E1, all NC", "debug": "JP1-JP14"},
+      "evidence": [{"asset_sha256": "6def63d71dca037aa67dff4bd11dd51418f453e8fa9a1cc794867509b3166570", "page": 1, "locator": "第1页完整单页各功能分区"}]
+    },
+    {
+      "id": "component.radio-module",
+      "category": "component",
+      "subject": "RAK3172 模组边界",
+      "statement": "M1 明确标为 RAK3172，符号列出 32 脚，并引出 U2/U1 两组 UART、SWDIO/SWCLK、SCL/SDA、RF、MOSI/MISO/SCK/NSS、RST、BOOT、ADC 与 GPIO。",
+      "confidence": "confirmed",
+      "attributes": {"reference": "M1", "part_number": "RAK3172", "pins": 32, "uart": "U2_RX/U2_TX; U1_TX/U1_RX", "debug": "SWDIO/SWCLK", "rf_pin": "pin12 RF", "reset_pin": "pin22 RST", "boot_pin": "pin21 BOOT"},
+      "evidence": [{"asset_sha256": "6def63d71dca037aa67dff4bd11dd51418f453e8fa9a1cc794867509b3166570", "page": 1, "locator": "第1页中央 M1 RAK3172 全部引脚标签"}]
+    },
+    {
+      "id": "power.five-to-three3",
+      "category": "power",
+      "subject": "+5V 到 +3.3V 稳压",
+      "statement": "U1 VRH3301NLX 的 VIN pin4 与 EN pin3 接 +5V，VOUT pin1 输出 +3.3V，VSS pins2/5 接 GND；C1 22uF/C2 1uF 位于输入，C3 1uF 位于输出。",
+      "confidence": "confirmed",
+      "attributes": {"regulator": "U1 VRH3301NLX", "vin": "pin4 / +5V", "enable": "pin3 / +5V", "vout": "pin1 / +3.3V", "ground": "pins2,5", "input_caps": "C1 22uF; C2 1uF", "output_cap": "C3 1uF"},
+      "evidence": [{"asset_sha256": "6def63d71dca037aa67dff4bd11dd51418f453e8fa9a1cc794867509b3166570", "page": 1, "locator": "第1页左上 U1/C1/C2/C3/+5V/+3.3V"}]
+    },
+    {
+      "id": "power.grove-input",
+      "category": "power",
+      "subject": "Grove 5V 输入路径",
+      "statement": "J1 pin3 VCC 经 F1 6V@1A 串联后形成板上 +5V；C10 100nF 从 VCC 对地，D3 LESD3Z5.0CMT1G 从 VCC 对地。",
+      "confidence": "confirmed",
+      "attributes": {"connector": "J1 pin3 VCC", "series": "F1 6V@1A", "internal_rail": "+5V", "interface_cap": "C10 100nF", "protection": "D3 LESD3Z5.0CMT1G to GND"},
+      "evidence": [{"asset_sha256": "6def63d71dca037aa67dff4bd11dd51418f453e8fa9a1cc794867509b3166570", "page": 1, "locator": "第1页右中 J1 pin3/VCC/F1/+5V/C10/D3"}]
+    },
+    {
+      "id": "power.module-vdd",
+      "category": "power",
+      "subject": "RAK3172 VDD 去耦",
+      "statement": "M1 VDD pin24 接 +3.3V，C5 100nF、C6 22uF 和 C7 33pF 从同一电源节点对地；M1 多个 GND 脚接地。",
+      "confidence": "confirmed",
+      "attributes": {"module_pin": "M1 pin24 VDD", "rail": "+3.3V", "decoupling": "C5 100nF; C6 22uF; C7 33pF", "grounds": "M1 pins11,17,18,23,28"},
+      "evidence": [{"asset_sha256": "6def63d71dca037aa67dff4bd11dd51418f453e8fa9a1cc794867509b3166570", "page": 1, "locator": "第1页中央 M1 VDD/GND 与右侧 C5/C6/C7"}]
+    },
+    {
+      "id": "protection.three3-rail",
+      "category": "protection",
+      "subject": "+3.3V 保护",
+      "statement": "D1 RLSD52A031V 从 +3.3V 对地，位于 U1 输出电源域。",
+      "confidence": "confirmed",
+      "attributes": {"device": "D1 RLSD52A031V", "protected_net": "+3.3V", "return": "GND"},
+      "evidence": [{"asset_sha256": "6def63d71dca037aa67dff4bd11dd51418f453e8fa9a1cc794867509b3166570", "page": 1, "locator": "第1页左上 +3.3V 与 D1 RLSD52A031V"}]
+    },
+    {
+      "id": "interface.grove-uart",
+      "category": "interface",
+      "subject": "J1 Grove UART 针脚",
+      "statement": "J1 HY-2.0_UART pin1 标 RX、pin2 标 TX、pin3 为 VCC、pin4 为 GND；RX 来自 M1 U2_TX，TX 送往 M1 U2_RX。",
+      "confidence": "confirmed",
+      "attributes": {"connector": "J1 HY-2.0_UART", "pin1": "RX <- U2_TX", "pin2": "TX -> U2_RX", "pin3": "VCC / 5V input", "pin4": "GND", "logic_rail": "+3.3V"},
+      "evidence": [{"asset_sha256": "6def63d71dca037aa67dff4bd11dd51418f453e8fa9a1cc794867509b3166570", "page": 1, "locator": "第1页右中 J1 pins1-4 与 RX/TX/VCC/GND"}]
+    },
+    {
+      "id": "bus.primary-uart",
+      "category": "bus",
+      "subject": "M1 U2 UART 主机路由",
+      "statement": "M1 pin2 U2_TX 经 R9 22Ω 到 J1 RX pin1；J1 TX pin2 经 R10 22Ω 到 M1 pin1 U2_RX。",
+      "confidence": "confirmed",
+      "attributes": {"module_tx": "M1 pin2 U2_TX -> R9 22Ω -> J1 pin1 RX", "module_rx": "J1 pin2 TX -> R10 22Ω -> M1 pin1 U2_RX", "series_resistors": "R9/R10 22Ω", "direction": "module-to-host TX; host-to-module RX"},
+      "evidence": [{"asset_sha256": "6def63d71dca037aa67dff4bd11dd51418f453e8fa9a1cc794867509b3166570", "page": 1, "locator": "第1页中央 M1 pins1/2 与右中 R9/R10/J1 RX/TX"}]
+    },
+    {
+      "id": "key_net.uart-bias",
+      "category": "key_net",
+      "subject": "RX/TX 上拉偏置",
+      "statement": "+3.3V 经 D2 1N4148WS T4 到公共节点，再分别经 R6/R7 10KΩ 接 RX/TX。",
+      "confidence": "confirmed",
+      "attributes": {"source": "+3.3V", "diode": "D2 1N4148WS T4", "rx_pull": "R6 10KΩ", "tx_pull": "R7 10KΩ", "nets": "RX; TX"},
+      "evidence": [{"asset_sha256": "6def63d71dca037aa67dff4bd11dd51418f453e8fa9a1cc794867509b3166570", "page": 1, "locator": "第1页右中 D2/R6/R7 与 RX/TX"}]
+    },
+    {
+      "id": "protection.grove-uart",
+      "category": "protection",
+      "subject": "Grove 电源与 UART 保护",
+      "statement": "D3 LESD3Z5.0CMT1G 保护 VCC，D4/D5 RLSD52A031V 分别从 RX/TX 对地，F1 串联在 VCC 与 +5V 之间。",
+      "confidence": "confirmed",
+      "attributes": {"vcc": "D3 LESD3Z5.0CMT1G to GND", "rx": "D4 RLSD52A031V to GND", "tx": "D5 RLSD52A031V to GND", "fuse": "F1 6V@1A"},
+      "evidence": [{"asset_sha256": "6def63d71dca037aa67dff4bd11dd51418f453e8fa9a1cc794867509b3166570", "page": 1, "locator": "第1页右中 F1/D3/D4/D5/VCC/RX/TX"}]
+    },
+    {
+      "id": "reset.rst-rc",
+      "category": "reset",
+      "subject": "M1 复位网络",
+      "statement": "M1 RST pin22 接 RST 网络，R5 10KΩ 上拉到 +3.3V，C4 1uF 对地，并通过 JP4 引出。",
+      "confidence": "confirmed",
+      "attributes": {"module_pin": "M1 pin22 RST", "pullup": "R5 10KΩ to +3.3V", "capacitor": "C4 1uF to GND", "testpoint": "JP4"},
+      "evidence": [{"asset_sha256": "6def63d71dca037aa67dff4bd11dd51418f453e8fa9a1cc794867509b3166570", "page": 1, "locator": "第1页左中 R5/C4/RST、中央 M1 pin22、左下 JP4"}]
+    },
+    {
+      "id": "debug.swd-testpoints",
+      "category": "debug",
+      "subject": "SWD 与基本调试测试点",
+      "statement": "JP1 引出 +3.3V，JP2 引出 SWCLK/M1 pin8，JP3 引出 SWDIO/M1 pin7，JP4 引出 RST，JP5 引出 GND，JP6 引出 BOOT。",
+      "confidence": "confirmed",
+      "attributes": {"JP1": "+3.3V", "JP2": "SWCLK / M1 pin8", "JP3": "SWDIO / M1 pin7", "JP4": "RST / M1 pin22", "JP5": "GND", "JP6": "BOOT / M1 pin21"},
+      "evidence": [{"asset_sha256": "6def63d71dca037aa67dff4bd11dd51418f453e8fa9a1cc794867509b3166570", "page": 1, "locator": "第1页左下 JP1-JP6 与中央 M1 SWCLK/SWDIO/RST/BOOT"}]
+    },
+    {
+      "id": "gpio.boot-strap",
+      "category": "gpio",
+      "subject": "BOOT 网络",
+      "statement": "M1 BOOT pin21 连接 BOOT 网络和 JP6，并在模组右侧通过图中标注 0Ω 的支路接 GND。",
+      "confidence": "confirmed",
+      "attributes": {"module_pin": "M1 pin21 BOOT", "testpoint": "JP6", "strap": "0Ω to GND", "default_level": "low"},
+      "evidence": [{"asset_sha256": "6def63d71dca037aa67dff4bd11dd51418f453e8fa9a1cc794867509b3166570", "page": 1, "locator": "第1页中央 M1 BOOT pin21 右侧 0Ω/GND 与左下 JP6"}]
+    },
+    {
+      "id": "debug.aux-uart",
+      "category": "debug",
+      "subject": "辅助 U1 UART 测试点",
+      "statement": "JP8 的网络名 U1_RX 连接 M1 pin4（模组脚名 U1_TX），JP11 的网络名 U1_TX 连接 M1 pin5（模组脚名 U1_RX），形成交叉命名的辅助 UART 引出。",
+      "confidence": "confirmed",
+      "attributes": {"JP8": "net U1_RX -> M1 pin4 U1_TX", "JP11": "net U1_TX -> M1 pin5 U1_RX", "connector": "testpoints only"},
+      "evidence": [{"asset_sha256": "6def63d71dca037aa67dff4bd11dd51418f453e8fa9a1cc794867509b3166570", "page": 1, "locator": "第1页中央 M1 pins4/5 外部网络名与左下 JP8/JP11"}]
+    },
+    {
+      "id": "bus.i2c-testpoints",
+      "category": "bus",
+      "subject": "I2C 测试点",
+      "statement": "M1 pin9 SCL 和 pin10 SDA 分别引到 JP7 与 JP10；页面未显示外部 I2C 设备、地址或 SCL/SDA 上拉电阻。",
+      "confidence": "confirmed",
+      "attributes": {"controller_scl": "M1 pin9 SCL -> JP7", "controller_sda": "M1 pin10 SDA -> JP10", "devices": "not shown", "address": "not shown", "pullups": "not shown"},
+      "evidence": [{"asset_sha256": "6def63d71dca037aa67dff4bd11dd51418f453e8fa9a1cc794867509b3166570", "page": 1, "locator": "第1页中央 M1 SCL/SDA 与左下 JP7/JP10"}]
+    },
+    {
+      "id": "bus.spi-testpoints",
+      "category": "bus",
+      "subject": "SPI 测试点",
+      "statement": "M1 pin13 MOSI、pin14 MISO、pin15 SCK、pin16 NSS 分别引到 JP9、JP12、JP13、JP14；页面未显示外部 SPI 设备。",
+      "confidence": "confirmed",
+      "attributes": {"mosi": "M1 pin13 -> JP9", "miso": "M1 pin14 -> JP12", "clock": "M1 pin15 -> JP13", "chip_select": "M1 pin16 NSS -> JP14", "device": "not shown"},
+      "evidence": [{"asset_sha256": "6def63d71dca037aa67dff4bd11dd51418f453e8fa9a1cc794867509b3166570", "page": 1, "locator": "第1页中央 M1 MOSI/MISO/SCK/NSS 与左下 JP9/JP12/JP13/JP14"}]
+    },
+    {
+      "id": "rf.optional-path",
+      "category": "rf",
+      "subject": "RF 与天线可选支路",
+      "statement": "M1 RF pin12 经 C9 对地位置、R8 串联位置、C8 对地位置到 ANT/E1；E1、R8、C8、C9 均在页面标 NC，因此该页不能证明这些位号已装配。",
+      "confidence": "confirmed",
+      "attributes": {"module_pin": "M1 pin12 RF", "series": "R8 NC", "module_side_shunt": "C9 NC", "antenna_side_shunt": "C8 NC", "antenna_reference": "E1 NC", "net": "ANT"},
+      "evidence": [{"asset_sha256": "6def63d71dca037aa67dff4bd11dd51418f453e8fa9a1cc794867509b3166570", "page": 1, "locator": "第1页中左 M1 RF/R8/C8/C9/ANT/E1，全部 NC 标记"}]
+    },
+    {
+      "id": "rf.frequency-option-table",
+      "category": "rf",
+      "subject": "470/868/915/923 版本表",
+      "statement": "页面右上表将 R1 0Ω 对应 470、R2 0Ω 对应 868、R3 0Ω 对应 915、R4 0Ω 对应 923。",
+      "confidence": "confirmed",
+      "attributes": {"R1": "0Ω -> 470", "R2": "0Ω -> 868", "R3": "0Ω -> 915", "R4": "0Ω -> 923", "selection_location": "not shown in circuit"},
+      "evidence": [{"asset_sha256": "6def63d71dca037aa67dff4bd11dd51418f453e8fa9a1cc794867509b3166570", "page": 1, "locator": "第1页右上 R1-R4 频段装配选项表"}]
+    },
+    {
+      "id": "clock.external-absence",
+      "category": "clock",
+      "subject": "外部时钟",
+      "statement": "该单页没有画 M1 外部晶振、振荡器或时钟输入网络；RAK3172 内部时钟电路未展开。",
+      "confidence": "confirmed",
+      "attributes": {"external_crystal": "not shown", "oscillator": "not shown", "clock_net": "not shown", "module_internal_clock": "not expanded"},
+      "evidence": [{"asset_sha256": "6def63d71dca037aa67dff4bd11dd51418f453e8fa9a1cc794867509b3166570", "page": 1, "locator": "第1页完整单页与 M1 模组边界"}]
+    },
+    {
+      "id": "storage.external-absence",
+      "category": "storage",
+      "subject": "外部存储器",
+      "statement": "该单页未显示独立 Flash、RAM、EEPROM、SD 卡或其他外部存储器位号；RAK3172 内部存储未展开。",
+      "confidence": "confirmed",
+      "attributes": {"external_flash": "not shown", "external_ram": "not shown", "eeprom": "not shown", "sd": "not shown", "module": "M1 RAK3172"},
+      "evidence": [{"asset_sha256": "6def63d71dca037aa67dff4bd11dd51418f453e8fa9a1cc794867509b3166570", "page": 1, "locator": "第1页完整单页器件与 M1 模组边界"}]
+    },
+    {
+      "id": "rf.as923-population",
+      "category": "rf",
+      "subject": "AS923 版本实装选择",
+      "statement": "产品名和 SKU 指向 AS923，频段表将 R4 0Ω 对应 923，但图中没有在电路上标出 R1-R4 位置或明确哪一颗为本件实装；资源 URL 还位于 Unit LoRaWAN-CN470 路径。",
+      "confidence": "uncertain",
+      "attributes": {"product_variant": "AS923", "sku": "U184-AS923", "table_selection": "R4 0Ω -> 923", "population_mark": "not shown", "asset_url_variant": "Unit LoRaWAN-CN470"},
+      "evidence": [{"asset_sha256": "6def63d71dca037aa67dff4bd11dd51418f453e8fa9a1cc794867509b3166570", "page": 1, "locator": "第1页右上频段表仅列 R1-R4 对应关系，未标本件装配状态"}]
+    },
+    {
+      "id": "component.internal-mcu-memory",
+      "category": "memory",
+      "subject": "RAK3172 内部 MCU 与存储",
+      "statement": "产品正文称 STM32WLE5、256KB Flash、64KB RAM，但原理图只标外部模组 M1 RAK3172，没有展开内部 MCU 完整型号或存储容量。",
+      "confidence": "uncertain",
+      "attributes": {"schematic_module": "RAK3172", "document_mcu": "STM32WLE5", "document_flash": "256KB", "document_ram": "64KB", "internal_schematic": "not shown"},
+      "evidence": [{"asset_sha256": "6def63d71dca037aa67dff4bd11dd51418f453e8fa9a1cc794867509b3166570", "page": 1, "locator": "第1页中央 M1 型号仅为 RAK3172"}]
+    },
+    {
+      "id": "rf.protocol-modes",
+      "category": "rf",
+      "subject": "LoRaWAN 与 P2P 协议能力",
+      "statement": "产品正文列出 LoRaWAN 1.0.3、Class A/B/C、OTAA、ABP 与 LoRa P2P；原理图没有协议栈、激活模式或固件版本信息。",
+      "confidence": "uncertain",
+      "attributes": {"document_protocol": "LoRaWAN 1.0.3", "document_classes": "Class A; Class B; Class C", "document_activation": "OTAA; ABP", "document_p2p": true, "firmware": "not shown"},
+      "evidence": [{"asset_sha256": "6def63d71dca037aa67dff4bd11dd51418f453e8fa9a1cc794867509b3166570", "page": 1, "locator": "第1页 M1 RAK3172 模组方框与 UART/RF 连接，无协议信息"}]
+    },
+    {
+      "id": "bus.uart-at-parameters",
+      "category": "bus",
+      "subject": "UART 与 AT 命令参数",
+      "statement": "产品正文称默认 115200 波特率并使用 AT 指令；原理图只确认 U2_RX/U2_TX 物理连线，未标波特率、帧格式、流控或命令集版本。",
+      "confidence": "uncertain",
+      "attributes": {"document_baud": "115200", "document_protocol": "AT command", "baud_on_schematic": "not shown", "frame_format": "not shown", "flow_control": "not shown", "command_version": "not shown"},
+      "evidence": [{"asset_sha256": "6def63d71dca037aa67dff4bd11dd51418f453e8fa9a1cc794867509b3166570", "page": 1, "locator": "第1页 M1 U2_RX/U2_TX、R9/R10 与 J1，无串口参数注记"}]
+    },
+    {
+      "id": "rf.antenna-specification",
+      "category": "rf",
+      "subject": "SMA 胶棒天线规格",
+      "statement": "产品正文称 50Ω、2.3dBi、195mm、SMA 内针胶棒天线；本页 E1/R8/C8/C9 均标 NC，未标连接器型号、阻抗、增益或天线长度。",
+      "confidence": "uncertain",
+      "attributes": {"document_impedance": "50Ω", "document_gain": "2.3dBi", "document_length": "195mm", "document_connector": "SMA male pin", "schematic_antenna": "E1 NC", "matching": "R8/C8/C9 NC"},
+      "evidence": [{"asset_sha256": "6def63d71dca037aa67dff4bd11dd51418f453e8fa9a1cc794867509b3166570", "page": 1, "locator": "第1页中左 ANT/E1/R8/C8/C9 全部 NC"}]
+    },
+    {
+      "id": "rf.link-performance",
+      "category": "rf",
+      "subject": "频段、灵敏度与通信距离",
+      "statement": "产品正文给出 AS923 923-925MHz、-137dBm，以及 P2P 125Kbps 2300m/500Kbps 1300m；原理图没有调制参数、测试环境、链路预算或射频测量数据。",
+      "confidence": "uncertain",
+      "attributes": {"document_band": "923-925MHz", "document_sensitivity": "-137dBm", "document_125k_distance": "2300m", "document_500k_distance": "1300m", "schematic_test_data": "not shown"},
+      "evidence": [{"asset_sha256": "6def63d71dca037aa67dff4bd11dd51418f453e8fa9a1cc794867509b3166570", "page": 1, "locator": "第1页 RF/ANT 支路与频段选项表，无链路性能数据"}]
+    },
+    {
+      "id": "power.current-performance",
+      "category": "power",
+      "subject": "工作、空闲与休眠电流",
+      "statement": "产品正文列出 5V 下空闲 7.23mA、休眠 28.61uA，以及不同速率的收发电流；原理图没有固件状态、射频功率、测量点或测试条件。",
+      "confidence": "uncertain",
+      "attributes": {"document_idle": "DC 5V/7.23mA", "document_sleep": "DC 5V/28.61uA", "document_rx_500k": "DC 5V/9.20mA", "document_tx_500k": "DC 5V/11.36mA", "document_rx_125k": "DC 5V/8.43mA", "document_tx_125k": "DC 5V/117.16mA", "schematic_measurement": "not shown"},
+      "evidence": [{"asset_sha256": "6def63d71dca037aa67dff4bd11dd51418f453e8fa9a1cc794867509b3166570", "page": 1, "locator": "第1页 J1/F1/+5V/U1/+3.3V/M1 电源链路，无电流标注"}]
+    },
+    {
+      "id": "other.operating-limits",
+      "category": "other",
+      "subject": "工作温度与器件额定",
+      "statement": "产品正文给出 0-40°C；原理图未标整机工作温度、U1 最大负载、UART 电平容差或 ESD 等级。",
+      "confidence": "uncertain",
+      "attributes": {"document_temperature": "0-40°C", "schematic_temperature": "not shown", "regulator_load": "not shown", "uart_tolerance": "not shown", "esd_rating": "not shown"},
+      "evidence": [{"asset_sha256": "6def63d71dca037aa67dff4bd11dd51418f453e8fa9a1cc794867509b3166570", "page": 1, "locator": "第1页完整单页，无系统额定参数表"}]
+    }
+  ],
+  "needs_review": [
+    {
+      "id": "review.as923-population",
+      "fact_id": "rf.as923-population",
+      "question": "请用 U184-AS923 BOM、实物和版本专用原理图确认 R4 0Ω/923 选项实际装配，并确认当前 CN470 路径资源是否为正确共用图。",
+      "reason": "页面只列版本对应表，没有标本件实装，且资源 URL 指向 CN470 目录。",
+      "evidence": [{"asset_sha256": "6def63d71dca037aa67dff4bd11dd51418f453e8fa9a1cc794867509b3166570", "page": 1, "locator": "第1页右上 R1-R4 频段表"}]
+    },
+    {
+      "id": "review.internal-mcu-memory",
+      "fact_id": "component.internal-mcu-memory",
+      "question": "请用实装 RAK3172 版本、模组 datasheet 或 BOM 确认内部 STM32WLE5 完整型号、256KB Flash 与 64KB RAM。",
+      "reason": "原理图只有模组料号，没有展开内部 MCU 与存储。",
+      "evidence": [{"asset_sha256": "6def63d71dca037aa67dff4bd11dd51418f453e8fa9a1cc794867509b3166570", "page": 1, "locator": "第1页中央 M1 RAK3172"}]
+    },
+    {
+      "id": "review.protocol-modes",
+      "fact_id": "rf.protocol-modes",
+      "question": "请从 U184-AS923 发布固件和 RAK3172 固件版本确认 LoRaWAN 1.0.3、Class A/B/C、OTAA/ABP 与 P2P 支持。",
+      "reason": "协议栈能力不在原理图电气连接中。",
+      "evidence": [{"asset_sha256": "6def63d71dca037aa67dff4bd11dd51418f453e8fa9a1cc794867509b3166570", "page": 1, "locator": "第1页 M1 RAK3172 模组方框"}]
+    },
+    {
+      "id": "review.uart-at-parameters",
+      "fact_id": "bus.uart-at-parameters",
+      "question": "请用发布固件或实测确认默认 115200、帧格式、流控与 AT 命令集版本。",
+      "reason": "原理图只给 UART 网络，没有通信参数。",
+      "evidence": [{"asset_sha256": "6def63d71dca037aa67dff4bd11dd51418f453e8fa9a1cc794867509b3166570", "page": 1, "locator": "第1页 M1 U2_RX/U2_TX、R9/R10 与 J1"}]
+    },
+    {
+      "id": "review.antenna-specification",
+      "fact_id": "rf.antenna-specification",
+      "question": "请核对 AS923 实物的 SMA 连接器与胶棒天线料号、50Ω、2.3dBi、195mm 规格，并解释原理图 E1/R8/C8/C9 全部 NC 的装配状态。",
+      "reason": "正文天线规格与本页 NC 射频支路无法仅凭图纸统一。",
+      "evidence": [{"asset_sha256": "6def63d71dca037aa67dff4bd11dd51418f453e8fa9a1cc794867509b3166570", "page": 1, "locator": "第1页中左 ANT/E1/R8/C8/C9"}]
+    },
+    {
+      "id": "review.link-performance",
+      "fact_id": "rf.link-performance",
+      "question": "请按 AS923 法规配置、天线、发射功率和测试环境复核频段、-137dBm 灵敏度及两档 P2P 距离。",
+      "reason": "原理图没有射频测试条件或链路预算。",
+      "evidence": [{"asset_sha256": "6def63d71dca037aa67dff4bd11dd51418f453e8fa9a1cc794867509b3166570", "page": 1, "locator": "第1页 RF/ANT 支路与频段表"}]
+    },
+    {
+      "id": "review.current-performance",
+      "fact_id": "power.current-performance",
+      "question": "请按明确固件状态、数据率、发射功率与 5V 供电路径复测空闲、休眠和收发电流。",
+      "reason": "正文电流没有对应的图纸测试点或条件。",
+      "evidence": [{"asset_sha256": "6def63d71dca037aa67dff4bd11dd51418f453e8fa9a1cc794867509b3166570", "page": 1, "locator": "第1页 J1/F1/U1/M1 电源路径"}]
+    },
+    {
+      "id": "review.operating-limits",
+      "fact_id": "other.operating-limits",
+      "question": "请用整机规格、BOM 额定值和环境测试确认 0-40°C、LDO 带载、UART 容限及 ESD 等级。",
+      "reason": "这些系统级额定参数未印在原理图。",
+      "evidence": [{"asset_sha256": "6def63d71dca037aa67dff4bd11dd51418f453e8fa9a1cc794867509b3166570", "page": 1, "locator": "第1页完整单页，无额定参数表"}]
+    }
+  ]
+}

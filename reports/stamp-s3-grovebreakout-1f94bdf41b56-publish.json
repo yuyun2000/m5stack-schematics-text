@@ -1,0 +1,21 @@
+{
+  "dry_run": false,
+  "failed": 0,
+  "published": 1,
+  "results": [
+    {
+      "backup": null,
+      "draft_action": "unchanged",
+      "dry_run": false,
+      "errors": [],
+      "needs_review": 0,
+      "product_id": "stamp-s3-grovebreakout-1f94bdf41b56",
+      "product_name": "Stamp-S3 GroveBreakOut",
+      "publish_action": "unchanged",
+      "sha256": "ba9003d1120b582a3f6c069f72667a8b1c8c0a2c2b596ca3cfe8c6fa05862011",
+      "status": "valid",
+      "uncertain_facts": 0
+    }
+  ],
+  "schema_version": 1
+}

@@ -1,0 +1,21 @@
+{
+  "dry_run": false,
+  "failed": 0,
+  "published": 1,
+  "results": [
+    {
+      "backup": null,
+      "draft_action": "unchanged",
+      "dry_run": false,
+      "errors": [],
+      "needs_review": 5,
+      "product_id": "air-quality-1ff69f191246",
+      "product_name": "Air Quality",
+      "publish_action": "unchanged",
+      "sha256": "856a3217774ea6b8e2696a75508c5c2e6bfa53fc26d3832f0adb211b0a395dcc",
+      "status": "valid",
+      "uncertain_facts": 5
+    }
+  ],
+  "schema_version": 1
+}

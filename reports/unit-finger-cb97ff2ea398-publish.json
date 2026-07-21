@@ -1,0 +1,21 @@
+{
+  "dry_run": false,
+  "failed": 0,
+  "published": 1,
+  "results": [
+    {
+      "backup": null,
+      "draft_action": "unchanged",
+      "dry_run": false,
+      "errors": [],
+      "needs_review": 5,
+      "product_id": "unit-finger-cb97ff2ea398",
+      "product_name": "Unit Finger",
+      "publish_action": "unchanged",
+      "sha256": "d68281de9857829071d40b526234eb8d25e61c5cb8fb424d1d2ec2c17f553fb1",
+      "status": "valid",
+      "uncertain_facts": 5
+    }
+  ],
+  "schema_version": 1
+}

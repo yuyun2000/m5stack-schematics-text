@@ -1,0 +1,21 @@
+{
+  "dry_run": false,
+  "failed": 0,
+  "published": 1,
+  "results": [
+    {
+      "backup": null,
+      "draft_action": "unchanged",
+      "dry_run": false,
+      "errors": [],
+      "needs_review": 4,
+      "product_id": "unit-ncir-d867e38eced1",
+      "product_name": "Unit NCIR",
+      "publish_action": "unchanged",
+      "sha256": "b47238f7488ccf93b07acd7a8f88e26f92454a912388b42a50927e73dbadbebf",
+      "status": "valid",
+      "uncertain_facts": 4
+    }
+  ],
+  "schema_version": 1
+}

@@ -1,0 +1,21 @@
+{
+  "dry_run": false,
+  "failed": 0,
+  "published": 1,
+  "results": [
+    {
+      "backup": null,
+      "draft_action": "unchanged",
+      "dry_run": false,
+      "errors": [],
+      "needs_review": 1,
+      "product_id": "unit-oled-562ec96af36e",
+      "product_name": "Unit OLED",
+      "publish_action": "unchanged",
+      "sha256": "7e5a5fb102c7046c91cede8a46edb6e2e5afc946ab63057e8198b5fe9759f14e",
+      "status": "valid",
+      "uncertain_facts": 1
+    }
+  ],
+  "schema_version": 1
+}

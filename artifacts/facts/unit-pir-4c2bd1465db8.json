@@ -1,0 +1,201 @@
+{
+  "schema_version": 1,
+  "generator": "schematic_describer",
+  "product": {
+    "product_id": "unit-pir-4c2bd1465db8",
+    "product_name": "Unit PIR",
+    "sku": "U004",
+    "source_path": "unit/PIR.md",
+    "source_sha256": "c0bc4666dce8e29b6250a102d211974b119f5a5454428eadc323941c809a4a08",
+    "input_sha256": "17466a94fd9a8053436519be57b27ea8a010e1037d860cfecb21e50df3bc67a8"
+  },
+  "schematic_assets": [
+    {
+      "sha256": "027b8ee2773884eb95e20171afbcc165f0e7e871941f6f949804b65a04a1beec",
+      "source_url": "https://m5stack-doc.oss-cn-shenzhen.aliyuncs.com/701/UNIT_PIR_page_01.png",
+      "pages": [1]
+    }
+  ],
+  "summary": "Unit PIR（U004）以 U1 PIR_AS312 被动红外传感模组为核心，U2 HT7533 将 J1 输入的 VCC 转换为 3.3V 供给 U1。U1 OUT pin 2 经 R1 1KΩ 串联形成 out 网络并连接 J1 pin 1；J1 pin 2 未连接，pin 3/4 为 VCC/GND。VCC 输入由 C1 100nF 和 C4 10uF 去耦，3.3V 输出由 C2 100nF 和 C3 10uF 去耦。原理图未给输入电压数值、运动触发逻辑、延时/重复触发模式或检测距离与角度。",
+  "keywords": [
+    "Unit PIR", "U004", "PIR", "PIR_AS312", "AS312", "U1", "HT7533", "U2",
+    "J1 Grove", "Digital Output", "out", "VCC", "3.3V", "GND", "R1 1KΩ",
+    "C1 100nF", "C2 100nF", "C3 10uF", "C4 10uF", "pin 1 output",
+    "pin 2 NC", "pin 3 VCC", "pin 4 GND", "被动红外", "人体运动检测",
+    "2秒延时", "可重复触发", "500cm", "100度"
+  ],
+  "components": [
+    {
+      "reference": "U1", "part_number": "PIR_AS312",
+      "role": "三针被动红外运动传感模组，使用 3.3V 供电并输出数字检测信号",
+      "evidence": [{"asset_sha256": "027b8ee2773884eb95e20171afbcc165f0e7e871941f6f949804b65a04a1beec", "page": 1, "locator": "页面 C1:C2 U1 PIR_AS312，pin 1 VCC、pin 2 OUT、pin 3 GND"}]
+    },
+    {
+      "reference": "U2", "part_number": "HT7533",
+      "role": "把 J1 VCC 输入转换为 3.3V 的三端稳压器",
+      "evidence": [{"asset_sha256": "027b8ee2773884eb95e20171afbcc165f0e7e871941f6f949804b65a04a1beec", "page": 1, "locator": "页面 C2 U2 HT7533，pin 2 VIN 接 VCC、pin 3 VOUT 接 3.3V、pin 1 GND"}]
+    },
+    {
+      "reference": "J1", "part_number": "Grove",
+      "role": "四针数字输出与电源接口",
+      "evidence": [{"asset_sha256": "027b8ee2773884eb95e20171afbcc165f0e7e871941f6f949804b65a04a1beec", "page": 1, "locator": "页面 C3 J1 Grove，pin 1 I/out、pin 2 O/NC、pin 3 VCC、pin 4 GND"}]
+    },
+    {
+      "reference": "R1", "part_number": "1KΩ",
+      "role": "U1 OUT 与 J1 pin 1 之间的串联输出电阻",
+      "evidence": [{"asset_sha256": "027b8ee2773884eb95e20171afbcc165f0e7e871941f6f949804b65a04a1beec", "page": 1, "locator": "页面 U1 pin 2 OUT-R1 1KΩ-out-J1 pin 1"}]
+    },
+    {
+      "reference": "C1", "part_number": "100nF",
+      "role": "J1 VCC 输入轨的高频去耦电容",
+      "evidence": [{"asset_sha256": "027b8ee2773884eb95e20171afbcc165f0e7e871941f6f949804b65a04a1beec", "page": 1, "locator": "页面 J1 右侧 VCC-C1 100nF-GND"}]
+    },
+    {
+      "reference": "C4", "part_number": "10uF",
+      "role": "HT7533 VIN/VCC 输入侧储能电容",
+      "evidence": [{"asset_sha256": "027b8ee2773884eb95e20171afbcc165f0e7e871941f6f949804b65a04a1beec", "page": 1, "locator": "页面 U2 VIN/VCC 节点-C4 10uF-GND"}]
+    },
+    {
+      "reference": "C2/C3", "part_number": "100nF/10uF",
+      "role": "HT7533 3.3V 输出侧并联去耦与储能电容",
+      "evidence": [{"asset_sha256": "027b8ee2773884eb95e20171afbcc165f0e7e871941f6f949804b65a04a1beec", "page": 1, "locator": "页面 U2 VOUT/3.3V 节点-C2 100nF/C3 10uF-GND"}]
+    }
+  ],
+  "facts": [
+    {
+      "id": "system.pir-architecture", "category": "system", "subject": "Unit PIR 系统架构",
+      "statement": "电路由 U1 PIR_AS312 传感模组、U2 HT7533 3.3V 稳压器、J1 Grove、R1 输出串联电阻和 C1~C4 电源电容组成。",
+      "confidence": "confirmed",
+      "attributes": {"sensor": "U1 PIR_AS312", "regulator": "U2 HT7533", "connector": "J1 Grove", "output_series": "R1 1KΩ", "input_caps": "C1 100nF,C4 10uF", "output_caps": "C2 100nF,C3 10uF"},
+      "evidence": [{"asset_sha256": "027b8ee2773884eb95e20171afbcc165f0e7e871941f6f949804b65a04a1beec", "page": 1, "locator": "第 1 页 C1:C3 区域完整 U1/U2/J1/R1/C1~C4 电路"}]
+    },
+    {
+      "id": "sensor.as312-pin-map", "category": "sensor", "subject": "U1 PIR_AS312 引脚",
+      "statement": "U1 pin 1 VCC 接 3.3V，pin 2 OUT 经 R1 接 out，pin 3 GND 接地。",
+      "confidence": "confirmed",
+      "attributes": {"pin_1": "VCC 3.3V", "pin_2": "OUT -> R1 1KΩ -> out", "pin_3": "GND"},
+      "evidence": [{"asset_sha256": "027b8ee2773884eb95e20171afbcc165f0e7e871941f6f949804b65a04a1beec", "page": 1, "locator": "第 1 页 C1 U1 PIR_AS312 pins 1~3 与 3.3V/out/GND 网络"}]
+    },
+    {
+      "id": "interface.j1-pinout", "category": "interface", "subject": "J1 Grove 针脚",
+      "statement": "J1 pin 1 标注 I 并连接 out，pin 2 标注 O 且以未连接标记结束，pin 3 为 VCC，pin 4 为 GND。",
+      "confidence": "confirmed",
+      "attributes": {"pin_1": "I-out，传感器到主机输出", "pin_2": "O-NC", "pin_3": "VCC，电源输入", "pin_4": "GND"},
+      "evidence": [{"asset_sha256": "027b8ee2773884eb95e20171afbcc165f0e7e871941f6f949804b65a04a1beec", "page": 1, "locator": "第 1 页 C3 J1 Grove pins 1~4 与 out/NC/VCC/GND"}]
+    },
+    {
+      "id": "gpio.output-path", "category": "gpio", "subject": "PIR 数字输出路径",
+      "statement": "U1 OUT pin 2 经 R1 1KΩ 串联后形成 out 网络并连接 J1 pin 1；信号方向为传感模组到外部主机。",
+      "confidence": "confirmed",
+      "attributes": {"source": "U1 pin 2 OUT", "series": "R1 1KΩ", "net": "out", "destination": "J1 pin 1 I", "direction": "unit to host"},
+      "evidence": [{"asset_sha256": "027b8ee2773884eb95e20171afbcc165f0e7e871941f6f949804b65a04a1beec", "page": 1, "locator": "第 1 页 U1 OUT-R1-out 与 J1 pin 1 同名网络"}]
+    },
+    {
+      "id": "analog.output-conditioning", "category": "analog", "subject": "输出调理",
+      "statement": "输出线上只有 R1 1KΩ 串联电阻，页面未显示外部上拉、下拉、RC 滤波、比较器、电平转换或输出缓冲器。",
+      "confidence": "confirmed",
+      "attributes": {"series_resistor": "R1 1KΩ", "pullup": null, "pulldown": null, "filter": null, "comparator": null, "level_shifter": null, "buffer": null},
+      "evidence": [{"asset_sha256": "027b8ee2773884eb95e20171afbcc165f0e7e871941f6f949804b65a04a1beec", "page": 1, "locator": "第 1 页 U1 OUT 到 J1 pin 1 的完整路径仅含 R1"}]
+    },
+    {
+      "id": "power.input-path", "category": "power", "subject": "VCC 输入路径",
+      "statement": "J1 pin 3 VCC 直接连接 U2 VIN pin 2，并通过 C1 100nF 与 C4 10uF 对地去耦。",
+      "confidence": "confirmed",
+      "attributes": {"connector": "J1 pin 3 VCC", "regulator_input": "U2 pin 2 VIN", "capacitors": "C1 100nF,C4 10uF", "return": "GND"},
+      "evidence": [{"asset_sha256": "027b8ee2773884eb95e20171afbcc165f0e7e871941f6f949804b65a04a1beec", "page": 1, "locator": "第 1 页 C2:C3 U2 VIN/VCC、J1 VCC 与 C1/C4"}]
+    },
+    {
+      "id": "power.ht7533-regulation", "category": "power", "subject": "VCC 到 3.3V 稳压",
+      "statement": "U2 HT7533 pin 2 VIN 接 VCC，pin 3 VOUT 输出 3.3V，pin 1 GND 接地；3.3V 供给 U1 pin 1。",
+      "confidence": "confirmed",
+      "attributes": {"input": "U2 pin 2 VIN VCC", "output": "U2 pin 3 VOUT 3.3V", "ground": "U2 pin 1 GND", "load": "U1 pin 1 VCC"},
+      "evidence": [{"asset_sha256": "027b8ee2773884eb95e20171afbcc165f0e7e871941f6f949804b65a04a1beec", "page": 1, "locator": "第 1 页 U2 HT7533 与 3.3V/VCC/GND，U1 VCC 接 3.3V"}]
+    },
+    {
+      "id": "power.output-decoupling", "category": "power", "subject": "3.3V 输出去耦",
+      "statement": "U2 VOUT 的 3.3V 电源轨通过 C2 100nF 和 C3 10uF 并联接地。",
+      "confidence": "confirmed", "attributes": {"rail": "3.3V", "capacitors": "C2 100nF,C3 10uF", "return": "GND"},
+      "evidence": [{"asset_sha256": "027b8ee2773884eb95e20171afbcc165f0e7e871941f6f949804b65a04a1beec", "page": 1, "locator": "第 1 页 U2 VOUT/3.3V 旁 C2/C3 到 GND"}]
+    },
+    {
+      "id": "power.no-enable-battery-monitor", "category": "power", "subject": "电源控制、充电与监测",
+      "statement": "本页未显示稳压器使能、负载开关、充电器、电池连接、电源良好信号或电压/电流监测器。",
+      "confidence": "confirmed", "attributes": {"enable": null, "load_switch": null, "charger": null, "battery": null, "power_good": null, "monitor": null},
+      "evidence": [{"asset_sha256": "027b8ee2773884eb95e20171afbcc165f0e7e871941f6f949804b65a04a1beec", "page": 1, "locator": "第 1 页电源部分仅 U2 VIN/VOUT/GND 与 C1~C4"}]
+    },
+    {
+      "id": "protection.no-visible-protection", "category": "protection", "subject": "接口与电源保护",
+      "statement": "J1 的 out 和 VCC 路径未显示 TVS/ESD、保险丝、反接、过压或浪涌保护器件；R1 是输出串联电阻。",
+      "confidence": "confirmed", "attributes": {"output_series": "R1 1KΩ", "tvs_esd": null, "fuse": null, "reverse_polarity": null, "overvoltage": null, "surge": null},
+      "evidence": [{"asset_sha256": "027b8ee2773884eb95e20171afbcc165f0e7e871941f6f949804b65a04a1beec", "page": 1, "locator": "第 1 页 J1 到 U1/U2 的完整信号和电源路径，无保护器件位号"}]
+    },
+    {
+      "id": "bus.no-visible-serial-bus", "category": "bus", "subject": "外部总线",
+      "statement": "本页只有单路 out 数字信号，未显示 I2C、SPI、UART、CAN、RS-485、USB、SDIO、MIPI 或 I2S。",
+      "confidence": "confirmed", "attributes": {"digital_output": "out", "i2c": null, "spi": null, "uart": null, "can": null, "rs485": null, "usb": null, "sdio": null, "mipi": null, "i2s": null},
+      "evidence": [{"asset_sha256": "027b8ee2773884eb95e20171afbcc165f0e7e871941f6f949804b65a04a1beec", "page": 1, "locator": "第 1 页外部 J1 仅 out/VCC/GND，pin 2 NC"}]
+    },
+    {
+      "id": "clock-reset-debug.none", "category": "clock", "subject": "时钟、复位与调试",
+      "statement": "本页未显示晶振/时钟、RESET、BOOT、EN、中断或调试接口。",
+      "confidence": "confirmed", "attributes": {"clock": null, "reset": null, "boot": null, "enable": null, "interrupt": null, "debug": null},
+      "evidence": [{"asset_sha256": "027b8ee2773884eb95e20171afbcc165f0e7e871941f6f949804b65a04a1beec", "page": 1, "locator": "第 1 页全部器件与网络，无时钟/控制/调试信号"}]
+    },
+    {
+      "id": "storage-memory.none", "category": "storage", "subject": "存储器与内存",
+      "statement": "本页未显示主控、Flash、EEPROM、RAM、SD 卡或其他存储器件。",
+      "confidence": "confirmed", "attributes": {"controller": null, "flash": null, "eeprom": null, "ram": null, "sd": null},
+      "evidence": [{"asset_sha256": "027b8ee2773884eb95e20171afbcc165f0e7e871941f6f949804b65a04a1beec", "page": 1, "locator": "第 1 页仅 U1 PIR 模组、U2 稳压器、J1、R1 和 C1~C4"}]
+    },
+    {
+      "id": "power.vcc-voltage", "category": "power", "subject": "J1 VCC 数值",
+      "statement": "原理图仅标 VCC，没有给 J1 输入电压数值或允许范围，因此不能仅凭本页确认 VCC 为 5V。",
+      "confidence": "uncertain", "attributes": {"net": "VCC", "schematic_voltage": null, "candidate_from_product_doc": "5V", "allowed_range": null},
+      "evidence": [{"asset_sha256": "027b8ee2773884eb95e20171afbcc165f0e7e871941f6f949804b65a04a1beec", "page": 1, "locator": "第 1 页 J1 pin 3 与 U2 VIN 仅标 VCC，无电压数字"}]
+    },
+    {
+      "id": "gpio.motion-output-logic", "category": "gpio", "subject": "运动检测输出逻辑",
+      "statement": "原理图确认 U1 OUT 经 R1 输出，但没有说明检测到运动与无运动时 out 的高低电平、电压值、输出结构或主机阈值。",
+      "confidence": "uncertain", "attributes": {"motion_level": null, "idle_level": null, "high_voltage": null, "low_voltage": null, "output_structure": null, "host_threshold": null},
+      "evidence": [{"asset_sha256": "027b8ee2773884eb95e20171afbcc165f0e7e871941f6f949804b65a04a1beec", "page": 1, "locator": "第 1 页 U1 OUT-R1-out-J1，没有逻辑真值表或电平参数"}]
+    },
+    {
+      "id": "sensor.trigger-timing", "category": "sensor", "subject": "触发延时与重复触发",
+      "statement": "本页未标注触发保持时间、延时电路、可重复触发模式或重触发条件，不能仅凭原理图确认固定 2 秒行为。",
+      "confidence": "uncertain", "attributes": {"hold_time": null, "delay": null, "retriggerable": null, "retrigger_condition": null, "candidate_from_product_doc": "2 seconds,retriggerable"},
+      "evidence": [{"asset_sha256": "027b8ee2773884eb95e20171afbcc165f0e7e871941f6f949804b65a04a1beec", "page": 1, "locator": "第 1 页 U1 PIR_AS312 仅显示 VCC/OUT/GND，无定时/模式引脚或参数"}]
+    },
+    {
+      "id": "sensor.detection-performance", "category": "sensor", "subject": "PIR 检测性能",
+      "statement": "原理图未标注检测距离、视场角、静态电流、工作温度、响应时间、透镜型号或红外波段。",
+      "confidence": "uncertain", "attributes": {"distance": null, "field_of_view": null, "quiescent_current": null, "temperature_range": null, "response_time": null, "lens": null, "wavelength": null},
+      "evidence": [{"asset_sha256": "027b8ee2773884eb95e20171afbcc165f0e7e871941f6f949804b65a04a1beec", "page": 1, "locator": "第 1 页 U1 PIR_AS312 模组符号与外围连接，无性能参数"}]
+    }
+  ],
+  "needs_review": [
+    {
+      "id": "review.vcc-voltage", "fact_id": "power.vcc-voltage",
+      "question": "Unit PIR 的 J1 VCC 额定输入电压和允许范围是什么？",
+      "reason": "原理图只标 VCC；需电气规格、HT7533 输入条件或实测确认。",
+      "evidence": [{"asset_sha256": "027b8ee2773884eb95e20171afbcc165f0e7e871941f6f949804b65a04a1beec", "page": 1, "locator": "第 1 页 J1 VCC 与 U2 VIN"}]
+    },
+    {
+      "id": "review.motion-output-logic", "fact_id": "gpio.motion-output-logic",
+      "question": "运动与静止状态下 out 的逻辑、电压和输出结构分别是什么？",
+      "reason": "图中只有 U1 OUT 引脚与串联电阻，没有逻辑真值表或电平规范。",
+      "evidence": [{"asset_sha256": "027b8ee2773884eb95e20171afbcc165f0e7e871941f6f949804b65a04a1beec", "page": 1, "locator": "第 1 页 U1 OUT-R1-out-J1 pin 1"}]
+    },
+    {
+      "id": "review.trigger-timing", "fact_id": "sensor.trigger-timing",
+      "question": "触发保持时间是否固定为 2 秒，重复触发的延时刷新规则是什么？",
+      "reason": "这些行为由 PIR_AS312 内部实现决定，原理图没有定时或模式参数。",
+      "evidence": [{"asset_sha256": "027b8ee2773884eb95e20171afbcc165f0e7e871941f6f949804b65a04a1beec", "page": 1, "locator": "第 1 页 U1 PIR_AS312 三针符号"}]
+    },
+    {
+      "id": "review.detection-performance", "fact_id": "sensor.detection-performance",
+      "question": "该版本的检测距离、视场角、静态电流、温度范围和透镜型号是什么？",
+      "reason": "机械、光学和性能参数未在原理图中标注。",
+      "evidence": [{"asset_sha256": "027b8ee2773884eb95e20171afbcc165f0e7e871941f6f949804b65a04a1beec", "page": 1, "locator": "第 1 页 U1 PIR_AS312 与外围电路"}]
+    }
+  ]
+}

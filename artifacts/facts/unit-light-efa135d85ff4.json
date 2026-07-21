@@ -1,0 +1,235 @@
+{
+  "schema_version": 1,
+  "generator": "schematic_describer",
+  "product": {
+    "product_id": "unit-light-efa135d85ff4",
+    "product_name": "Unit Light",
+    "sku": "U021",
+    "source_path": "unit/LIGHT.md",
+    "source_sha256": "5c97a4f8103baf19e1264117e845beebfc6857f7d7c43e6d0c7165b72222e405",
+    "input_sha256": "2ddf606e42961776e30652249c6783b03fb6f22f3e418d4f92dce818f3792e3d"
+  },
+  "schematic_assets": [
+    {
+      "sha256": "989a79e591862234c8db61be7768fb918d32552e7c452d3d98d8b913edfebe41",
+      "source_url": "https://m5stack-doc.oss-cn-shenzhen.aliyuncs.com/709/U201-UNIT_LIGHT_SCHE_page_01.png",
+      "pages": [1]
+    }
+  ],
+  "summary": "Unit Light 使用 R4 LightRes 与 R1 10KΩ 构成 3.3V 光敏分压，节点 Ain 经 C2 100nF 滤波后直接输出，并送入 U1A LM393DR2G 同相端。R3 10KΩ 电位器产生可调阈值并连接反相端，LM393 的 Din 输出由 R2 10KΩ 上拉到 3.3V。J1 引出 Ain、Din、VCC、GND，U2 HT7533 将 VCC 稳压为 +3.3V；图中无本地主控或数字总线，VCC=5V 与光学性能参数需结合接口规范、datasheet 或实测确认。",
+  "keywords": [
+    "Unit Light", "U021", "LM393DR2G", "LM393", "HT7533", "R4 LightRes", "photoresistor", "光敏电阻", "R3 RPot 10K", "R1 10KΩ", "R2 10KΩ", "Ain", "Din", "+3.3V", "VCC", "GND", "AD_Socket_4P", "J1", "Analog Output", "Digital Output", "C1 100nF", "C2 100nF", "C3 100nF", "C4 10uF", "C5 10uF", "comparator threshold", "open-collector pull-up", "光强门槛", "模拟输出", "数字输出"
+  ],
+  "components": [
+    {
+      "reference": "U1A",
+      "part_number": "LM393DR2G",
+      "role": "比较 Ain 光敏电压与 R3 可调阈值并输出 Din 的比较器通道",
+      "evidence": [{"asset_sha256": "989a79e591862234c8db61be7768fb918d32552e7c452d3d98d8b913edfebe41", "page": 1, "locator": "第 1 页网格 B2-B3：U1A LM393DR2G，pins1/2/3/4/8 与 Ain/Din/3.3V/GND"}]
+    },
+    {
+      "reference": "U2",
+      "part_number": "HT7533",
+      "role": "将 VCC 稳压为 +3.3V，为光敏分压、阈值网络与比较器供电",
+      "evidence": [{"asset_sha256": "989a79e591862234c8db61be7768fb918d32552e7c452d3d98d8b913edfebe41", "page": 1, "locator": "第 1 页网格 C2-C3：U2 HT7533，VIN pin2=VCC、VOUT pin3=+3.3V、GND pin1"}]
+    },
+    {
+      "reference": "R4",
+      "part_number": "LightRes",
+      "role": "从 Ain 接到 GND 的光敏电阻，与 R1 构成光强相关分压",
+      "evidence": [{"asset_sha256": "989a79e591862234c8db61be7768fb918d32552e7c452d3d98d8b913edfebe41", "page": 1, "locator": "第 1 页网格 B2：R4 LightRes 光敏符号，连接 Ain 与 GND"}]
+    },
+    {
+      "reference": "R3",
+      "part_number": "RPot 10K",
+      "role": "跨接 +3.3V/GND 并向 U1A 反相端提供可调门限",
+      "evidence": [{"asset_sha256": "989a79e591862234c8db61be7768fb918d32552e7c452d3d98d8b913edfebe41", "page": 1, "locator": "第 1 页网格 B1-B2：R3 RPot 10K，上端 +3.3V、下端 GND、滑臂到 U1A pin2"}]
+    },
+    {
+      "reference": "J1",
+      "part_number": "AD_Socket_4P",
+      "role": "引出 Ain 模拟量、Din 比较结果、VCC 与 GND 的四针接口",
+      "evidence": [{"asset_sha256": "989a79e591862234c8db61be7768fb918d32552e7c452d3d98d8b913edfebe41", "page": 1, "locator": "第 1 页网格 B3：J1 AD_Socket_4P pin1 Ain、pin2 Din、pin3 VCC、pin4 GND"}]
+    },
+    {
+      "reference": "R1,R2",
+      "part_number": "10KΩ / 10KΩ",
+      "role": "R1 为 Ain 分压上臂，R2 将 Din 上拉到 +3.3V",
+      "evidence": [{"asset_sha256": "989a79e591862234c8db61be7768fb918d32552e7c452d3d98d8b913edfebe41", "page": 1, "locator": "第 1 页网格 B2-B3：R1 10KΩ 从 +3.3V 到 Ain，R2 10KΩ 从 +3.3V 到 Din"}]
+    },
+    {
+      "reference": "C1,C2",
+      "part_number": "100nF / 100nF",
+      "role": "C1 为 VCC 输入去耦，C2 为 Ain 节点滤波",
+      "evidence": [{"asset_sha256": "989a79e591862234c8db61be7768fb918d32552e7c452d3d98d8b913edfebe41", "page": 1, "locator": "第 1 页网格 B2-B3：C2 100nF 从 Ain 到 GND；C1 100nF 从 VCC 到 GND"}]
+    },
+    {
+      "reference": "C3,C4,C5",
+      "part_number": "100nF / 10uF / 10uF",
+      "role": "HT7533 输出与输入滤波/储能电容",
+      "evidence": [{"asset_sha256": "989a79e591862234c8db61be7768fb918d32552e7c452d3d98d8b913edfebe41", "page": 1, "locator": "第 1 页网格 C2-C3：C3 100nF/C4 10uF 位于 +3.3V 输出，C5 10uF 位于 VCC 输入"}]
+    }
+  ],
+  "facts": [
+    {
+      "id": "system.light-architecture",
+      "category": "system",
+      "subject": "Unit Light 系统结构",
+      "statement": "VCC 经 U2 HT7533 生成 +3.3V；R1/R4 产生光敏模拟节点 Ain，R3 产生阈值，U1A LM393DR2G 比较两者并输出 Din。J1 同时引出 Ain、Din、VCC、GND；完整单页没有本地主控、存储器、晶振、数字通信总线、电池或充电电路。",
+      "confidence": "confirmed",
+      "attributes": {"sensor": "R4 LightRes", "analog_path": "+3.3V -> R1 -> Ain -> R4 -> GND", "threshold": "R3 RPot 10K", "comparator": "U1A LM393DR2G", "outputs": "Ain,Din", "power": "VCC -> U2 HT7533 -> +3.3V", "local_mcu": null, "storage": null, "battery": null},
+      "evidence": [{"asset_sha256": "989a79e591862234c8db61be7768fb918d32552e7c452d3d98d8b913edfebe41", "page": 1, "locator": "第 1 页完整 A1-D4 原理图"}]
+    },
+    {
+      "id": "interface.j1-pinout",
+      "category": "interface",
+      "subject": "J1 AD_Socket_4P",
+      "statement": "J1 pin1=Ain、pin2=Din、pin3=VCC、pin4=GND；Ain 为板内分压模拟节点，Din 为 LM393 比较器输出，VCC 为输入电源。",
+      "confidence": "confirmed",
+      "attributes": {"pin1": "Ain, analog output", "pin2": "Din, digital comparator output", "pin3": "VCC, power input", "pin4": "GND", "connector": "AD_Socket_4P"},
+      "evidence": [{"asset_sha256": "989a79e591862234c8db61be7768fb918d32552e7c452d3d98d8b913edfebe41", "page": 1, "locator": "第 1 页网格 B3 J1 pin1-pin4 与 Ain/Din/VCC/GND"}]
+    },
+    {
+      "id": "power.vcc-to-3v3",
+      "category": "power",
+      "subject": "HT7533 3.3V 稳压",
+      "statement": "J1 的 VCC 网络连接 U2 HT7533 VIN pin2，U2 VOUT pin3 输出 +3.3V，GND pin1 接地；C5 10uF 位于 VCC 输入，C3 100nF 与 C4 10uF 位于 +3.3V 输出。",
+      "confidence": "confirmed",
+      "attributes": {"input": "VCC", "regulator": "U2 HT7533", "vin": "pin2", "vout": "pin3 +3.3V", "ground": "pin1 GND", "input_cap": "C5 10uF", "output_caps": "C3 100nF,C4 10uF"},
+      "evidence": [{"asset_sha256": "989a79e591862234c8db61be7768fb918d32552e7c452d3d98d8b913edfebe41", "page": 1, "locator": "第 1 页网格 C2-C3 U2 与 C3/C4/C5"}]
+    },
+    {
+      "id": "analog.light-divider",
+      "category": "analog",
+      "subject": "R1/R4 光敏分压",
+      "statement": "+3.3V 经 R1 10KΩ 接 Ain，Ain 再经 R4 LightRes 接 GND，形成光敏分压；由图中阻值位置可得 Ain=3.3V×R4/(10KΩ+R4)。",
+      "confidence": "confirmed",
+      "attributes": {"upper_resistor": "R1 10KΩ", "lower_sensor": "R4 LightRes", "output": "Ain", "supply": "+3.3V", "formula": "Ain=3.3V*R4/(10KΩ+R4)"},
+      "evidence": [{"asset_sha256": "989a79e591862234c8db61be7768fb918d32552e7c452d3d98d8b913edfebe41", "page": 1, "locator": "第 1 页网格 B2 +3.3V-R1-Ain-R4-GND 竖直分压支路"}]
+    },
+    {
+      "id": "analog.ain-filter-output",
+      "category": "analog",
+      "subject": "Ain 滤波与输出",
+      "statement": "C2 100nF 从 Ain 接 GND，Ain 同时连接 U1A pin3 同相输入和 J1 pin1；页面未显示 Ain 与 J1 之间的缓冲器、串联电阻或钳位器件。",
+      "confidence": "confirmed",
+      "attributes": {"node": "Ain", "filter": "C2 100nF to GND", "comparator_input": "U1A non-inverting pin3", "connector": "J1 pin1", "buffer": null, "series_resistor": null},
+      "evidence": [{"asset_sha256": "989a79e591862234c8db61be7768fb918d32552e7c452d3d98d8b913edfebe41", "page": 1, "locator": "第 1 页网格 B2-B3 Ain、C2、U1A pin3 与 J1 pin1"}]
+    },
+    {
+      "id": "analog.adjustable-threshold",
+      "category": "analog",
+      "subject": "R3 可调比较阈值",
+      "statement": "R3 RPot 10K 的两端分别接 +3.3V 与 GND，滑臂连接 U1A pin2 反相输入；阈值由电位器位置在两条电源轨之间调节。",
+      "confidence": "confirmed",
+      "attributes": {"potentiometer": "R3 RPot 10K", "top": "+3.3V", "bottom": "GND", "wiper": "U1A inverting pin2", "threshold_range_by_topology": "GND to +3.3V"},
+      "evidence": [{"asset_sha256": "989a79e591862234c8db61be7768fb918d32552e7c452d3d98d8b913edfebe41", "page": 1, "locator": "第 1 页网格 B1-B2 R3 两端、滑臂与 U1A pin2"}]
+    },
+    {
+      "id": "analog.comparator-mapping",
+      "category": "analog",
+      "subject": "LM393 比较器引脚与信号",
+      "statement": "U1A LM393DR2G 的 pin3（+）接 Ain，pin2（-）接 R3 阈值，pin1 输出 Din；pin8 接 +3.3V，pin4 接 GND。",
+      "confidence": "confirmed",
+      "attributes": {"non_inverting": "pin3 Ain", "inverting": "pin2 R3 threshold", "output": "pin1 Din", "positive_supply": "pin8 +3.3V", "negative_supply": "pin4 GND"},
+      "evidence": [{"asset_sha256": "989a79e591862234c8db61be7768fb918d32552e7c452d3d98d8b913edfebe41", "page": 1, "locator": "第 1 页网格 B2-B3 U1A pins1/2/3/4/8 与极性符号"}]
+    },
+    {
+      "id": "gpio.din-pullup",
+      "category": "gpio",
+      "subject": "Din 数字输出上拉",
+      "statement": "U1A output pin1 的 Din 网络连接 J1 pin2，并通过 R2 10KΩ 上拉到 +3.3V；本页未显示 Din 的串联输出电阻或电平转换器。",
+      "confidence": "confirmed",
+      "attributes": {"source": "U1A pin1", "net": "Din", "connector": "J1 pin2", "pullup": "R2 10KΩ to +3.3V", "series_resistor": null, "level_shifter": null},
+      "evidence": [{"asset_sha256": "989a79e591862234c8db61be7768fb918d32552e7c452d3d98d8b913edfebe41", "page": 1, "locator": "第 1 页网格 B3 U1A pin1-Din-J1 pin2 与 R2"}]
+    },
+    {
+      "id": "key_net.comparison-behavior",
+      "category": "key_net",
+      "subject": "Ain 与门限比较关系",
+      "statement": "Ain 接 LM393 同相端，R3 门限接反相端，Din 由比较器输出并上拉；因此数字输出状态由 Ain 相对于 R3 滑臂电压的高低决定。原理图没有从 Din 回馈到任一输入的迟滞电阻。",
+      "confidence": "confirmed",
+      "attributes": {"measured_input": "Ain at non-inverting pin3", "threshold_input": "R3 wiper at inverting pin2", "output": "Din", "hysteresis_feedback_shown": false},
+      "evidence": [{"asset_sha256": "989a79e591862234c8db61be7768fb918d32552e7c452d3d98d8b913edfebe41", "page": 1, "locator": "第 1 页 U1A 输入极性、R3/Ain 与 Din 全部连线"}]
+    },
+    {
+      "id": "power.input-decoupling",
+      "category": "power",
+      "subject": "J1 VCC 去耦",
+      "statement": "C1 100nF 直接跨接 J1 pin3 的 VCC 与 GND，位于接口侧；VCC 还连接 U2 输入与 C5 10uF。",
+      "confidence": "confirmed",
+      "attributes": {"rail": "VCC", "connector": "J1 pin3", "high_frequency_cap": "C1 100nF", "bulk_cap": "C5 10uF", "return": "GND"},
+      "evidence": [{"asset_sha256": "989a79e591862234c8db61be7768fb918d32552e7c452d3d98d8b913edfebe41", "page": 1, "locator": "第 1 页网格 B3 与 C3 C1/C5 的 VCC-GND 支路"}]
+    },
+    {
+      "id": "protection.interface-unshown",
+      "category": "protection",
+      "subject": "接口与电源保护拓扑",
+      "statement": "J1 VCC 直接进入 U2，Ain/Din 直接引出；完整单页未显示保险丝、反接保护、TVS/ESD 二极管、输入串联限流或专用过压保护器件。",
+      "confidence": "confirmed",
+      "attributes": {"vcc_path": "J1 VCC -> U2 VIN", "ain_path": "divider -> J1 pin1", "din_path": "U1A -> J1 pin2", "fuse_shown": false, "reverse_protection_shown": false, "tvs_esd_shown": false, "overvoltage_protection_shown": false},
+      "evidence": [{"asset_sha256": "989a79e591862234c8db61be7768fb918d32552e7c452d3d98d8b913edfebe41", "page": 1, "locator": "第 1 页完整 J1/U1/U2 电源与信号路径"}]
+    },
+    {
+      "id": "bus.no-digital-bus",
+      "category": "bus",
+      "subject": "通信与控制接口",
+      "statement": "本单元仅输出 Ain 模拟量和 Din 比较结果；页面没有 I2C、SPI、UART、CAN、RS-485、USB、地址、寄存器、时钟、复位或调试接口。",
+      "confidence": "confirmed",
+      "attributes": {"analog_output": "Ain", "digital_output": "Din", "i2c": null, "spi": null, "uart": null, "can": null, "rs485": null, "usb": null, "address": null, "reset": null, "debug": null},
+      "evidence": [{"asset_sha256": "989a79e591862234c8db61be7768fb918d32552e7c452d3d98d8b913edfebe41", "page": 1, "locator": "第 1 页完整原理图，仅 J1 Ain/Din/VCC/GND"}]
+    },
+    {
+      "id": "component.single-comparator-channel",
+      "category": "component",
+      "subject": "LM393 通道使用范围",
+      "statement": "本页只显示 U1A 比较器单元及其 pins1/2/3/4/8，未显示 U1B 的输入输出连接；不能从本页确认另一比较器通道是否在其他设计层级使用。",
+      "confidence": "confirmed",
+      "attributes": {"shown_unit": "U1A", "shown_signal_pins": "1,2,3", "shown_power_pins": "4,8", "u1b_connection_on_page": null},
+      "evidence": [{"asset_sha256": "989a79e591862234c8db61be7768fb918d32552e7c452d3d98d8b913edfebe41", "page": 1, "locator": "第 1 页唯一 LM393 符号为 U1A，无 U1B 符号"}]
+    },
+    {
+      "id": "power.documented-5v-input",
+      "category": "power",
+      "subject": "正文 Grove 5V 输入",
+      "statement": "正文 Grove 管脚表将 J1 电源触点标为 5V；原理图仅标 VCC，并确认其经 HT7533 生成 +3.3V，没有打印 VCC 数值、允许范围、静态电流或容差。",
+      "confidence": "uncertain",
+      "attributes": {"documented_input": "5V", "schematic_net": "VCC", "regulated_output": "+3.3V", "schematic_input_voltage": null, "input_range": null, "current": null, "tolerance": null},
+      "evidence": [{"asset_sha256": "989a79e591862234c8db61be7768fb918d32552e7c452d3d98d8b913edfebe41", "page": 1, "locator": "第 1 页 J1/U2 输入均标 VCC，整页无 5V 数字"}]
+    },
+    {
+      "id": "sensor.documented-performance",
+      "category": "sensor",
+      "subject": "光强检测性能",
+      "statement": "正文称光敏电阻阻值随入射光增强而降低，并用于检测光强及设定门槛；原理图确认 R4 LightRes、Ain 和比较器结构，但未给出光谱响应、照度范围、阻值-照度曲线、精度、重复性、响应时间、温漂或校准条件。",
+      "confidence": "uncertain",
+      "attributes": {"documented_behavior": "resistance decreases as incident light increases", "spectral_response": null, "lux_range": null, "resistance_curve": null, "accuracy": null, "response_time": null, "temperature_drift": null, "calibration": null},
+      "evidence": [{"asset_sha256": "989a79e591862234c8db61be7768fb918d32552e7c452d3d98d8b913edfebe41", "page": 1, "locator": "第 1 页 R4 仅标 LightRes，整页无传感性能参数"}]
+    },
+    {
+      "id": "other.no-local-processing",
+      "category": "other",
+      "subject": "本地处理与其他功能",
+      "statement": "本页没有 MCU、ADC、存储、射频、音频、显示或执行器；Ain 需要外部主机 ADC 采样，Din 可由外部数字输入读取。",
+      "confidence": "confirmed",
+      "attributes": {"local_mcu": null, "local_adc": null, "memory": null, "storage": null, "rf": null, "audio": null, "display": null, "external_adc_input": "J1 pin1 Ain", "external_digital_input": "J1 pin2 Din"},
+      "evidence": [{"asset_sha256": "989a79e591862234c8db61be7768fb918d32552e7c452d3d98d8b913edfebe41", "page": 1, "locator": "第 1 页完整 A1-D4 原理图"}]
+    }
+  ],
+  "needs_review": [
+    {
+      "id": "review.vcc-input",
+      "fact_id": "power.documented-5v-input",
+      "question": "请依据 U021 接口规范、HT7533 前级边界或实板确认 J1 VCC 是否固定为 5V，以及允许输入范围、电流和容差。",
+      "reason": "原理图只标 VCC，没有输入电压数字或额定表。",
+      "evidence": [{"asset_sha256": "989a79e591862234c8db61be7768fb918d32552e7c452d3d98d8b913edfebe41", "page": 1, "locator": "第 1 页 J1 pin3 VCC 至 U2 VIN"}]
+    },
+    {
+      "id": "review.light-performance",
+      "fact_id": "sensor.documented-performance",
+      "question": "请用当前 R4 光敏电阻型号、datasheet 或整机标定确认光谱响应、照度范围、阻值曲线、精度、响应时间、温漂与校准方法。",
+      "reason": "板级原理图只给出 LightRes 符号和分压连接，不能证明定量光强性能。",
+      "evidence": [{"asset_sha256": "989a79e591862234c8db61be7768fb918d32552e7c452d3d98d8b913edfebe41", "page": 1, "locator": "第 1 页 R1/R4/C2 Ain 光敏分压"}]
+    }
+  ]
+}

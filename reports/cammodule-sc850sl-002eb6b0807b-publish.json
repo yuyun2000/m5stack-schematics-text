@@ -1,0 +1,21 @@
+{
+  "dry_run": false,
+  "failed": 0,
+  "published": 1,
+  "results": [
+    {
+      "backup": null,
+      "draft_action": "unchanged",
+      "dry_run": false,
+      "errors": [],
+      "needs_review": 1,
+      "product_id": "cammodule-sc850sl-002eb6b0807b",
+      "product_name": "CamModule SC850SL",
+      "publish_action": "unchanged",
+      "sha256": "656651c53baaa378414f6d4e858089dfc46e50c84ca11afdf551242d772f4b0a",
+      "status": "valid",
+      "uncertain_facts": 1
+    }
+  ],
+  "schema_version": 1
+}

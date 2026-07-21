@@ -1,0 +1,333 @@
+{
+  "schema_version": 1,
+  "generator": "schematic_describer",
+  "product": {
+    "product_id": "stamp-c3u-0078f7670939",
+    "product_name": "Stamp-C3U",
+    "sku": "C122-B",
+    "source_path": "core/stamp_c3u.md",
+    "source_sha256": "b3220e41dbbadc1c09f8d11b13af6bed03855af9cc976dc9004f8646621239f8",
+    "input_sha256": "44e4a0d4322986b3905a6381fb81234f277ef7fd5d12c01023c98ed3a201bfa0"
+  },
+  "schematic_assets": [
+    {
+      "sha256": "eafaa3fac84eb1b3d7575a74e0e222e3b4d255255e1460c27ed9f8baf8a11957",
+      "source_url": "https://static-cdn.m5stack.com/resource/docs/products/core/stamp_c3u/stamp_c3u_sch_01.webp",
+      "pages": [1]
+    }
+  ],
+  "summary": "Stamp-C3U 以 U1 ESP32-C3 为主控，GPIO18/GPIO19 直接连接 USB-C 的 D-/D+，板上未配置独立 USB-UART 芯片。USB VBUS 经磁珠和肖特基二极管进入 HM8089 降压电路，生成 VCC_3V3。板上还包含 PROANT_440 天线、外部晶体、GPIO2 驱动的 SK6812、GPIO9 用户按键和 EN 复位按键。",
+  "keywords": [
+    "Stamp-C3U",
+    "C122-B",
+    "ESP32-C3",
+    "HM8089",
+    "SK6812",
+    "PROANT_440",
+    "USB Type-C",
+    "USB_D_P",
+    "USB_D_N",
+    "GPIO18",
+    "GPIO19",
+    "GPIO2",
+    "GPIO9",
+    "ESP32_EN",
+    "ESP32_U0RXD",
+    "ESP32_U0TXD",
+    "VCC_3V3",
+    "VIN_5V",
+    "B5819WS",
+    "LQM2MPN2R2NG0L",
+    "LQP15MN2N7B02D",
+    "TXC/8Z4000017",
+    "USB CDC",
+    "USB JTAG",
+    "RISC-V",
+    "4MB Flash"
+  ],
+  "components": [
+    {
+      "reference": "U1",
+      "part_number": "ESP32-C3",
+      "role": "系统主控，集成原生 USB、GPIO、UART、SPI 存储接口和射频端口",
+      "evidence": [{"asset_sha256": "eafaa3fac84eb1b3d7575a74e0e222e3b4d255255e1460c27ed9f8baf8a11957", "page": 1, "locator": "左上，U1 ESP32-C3 全部引脚与网络"}]
+    },
+    {
+      "reference": "ANT1",
+      "part_number": "PROANT_440",
+      "role": "ESP32-C3 射频天线，连接 ESP_LNA 匹配网络",
+      "evidence": [{"asset_sha256": "eafaa3fac84eb1b3d7575a74e0e222e3b4d255255e1460c27ed9f8baf8a11957", "page": 1, "locator": "上中，ANT1 PROANT_440、ESP_LNA、C1/L1/C2 匹配网络"}]
+    },
+    {
+      "reference": "J1",
+      "part_number": "USB-TYPEC",
+      "role": "USB 供电与 ESP32-C3 原生 USB 数据接口",
+      "evidence": [{"asset_sha256": "eafaa3fac84eb1b3d7575a74e0e222e3b4d255255e1460c27ed9f8baf8a11957", "page": 1, "locator": "右上，J1 USB-TYPEC、VIN、USB_D_P/USB_D_N、R1/R3"}]
+    },
+    {
+      "reference": "L2",
+      "part_number": "Sunlord/UPZ1608E101-3R0TF/100R/3A",
+      "role": "USB VIN 到 VIN_5V 的电源磁珠滤波",
+      "evidence": [{"asset_sha256": "eafaa3fac84eb1b3d7575a74e0e222e3b4d255255e1460c27ed9f8baf8a11957", "page": 1, "locator": "中上，L2 Sunlord/UPZ1608E101-3R0TF/100R/3A，VIN/VIN_5V"}]
+    },
+    {
+      "reference": "D1",
+      "part_number": "B5819WS SOD323",
+      "role": "VIN_5V 到 V1 的串联肖特基二极管",
+      "evidence": [{"asset_sha256": "eafaa3fac84eb1b3d7575a74e0e222e3b4d255255e1460c27ed9f8baf8a11957", "page": 1, "locator": "中下，D1 B5819WS SOD323，VIN_5V 到 V1"}]
+    },
+    {
+      "reference": "U2",
+      "part_number": "HM8089",
+      "role": "V1 输入的降压转换器，生成 VCC_3V3",
+      "evidence": [{"asset_sha256": "eafaa3fac84eb1b3d7575a74e0e222e3b4d255255e1460c27ed9f8baf8a11957", "page": 1, "locator": "中下，U2 HM8089、L3、R8/R9、VCC_3V3"}]
+    },
+    {
+      "reference": "L3",
+      "part_number": "LQM2MPN2R2NG0L",
+      "role": "HM8089 降压输出电感",
+      "evidence": [{"asset_sha256": "eafaa3fac84eb1b3d7575a74e0e222e3b4d255255e1460c27ed9f8baf8a11957", "page": 1, "locator": "U2 SW pin 3 到 VCC_3V3，L3 LQM2MPN2R2NG0L"}]
+    },
+    {
+      "reference": "X1",
+      "part_number": "TXC/8Z4000017/立创采购",
+      "role": "ESP32-C3 外部主晶体",
+      "evidence": [{"asset_sha256": "eafaa3fac84eb1b3d7575a74e0e222e3b4d255255e1460c27ed9f8baf8a11957", "page": 1, "locator": "左中，X1 TXC/8Z4000017，XTAL_P/XTAL_N、C5/C6"}]
+    },
+    {
+      "reference": "OS1",
+      "part_number": "SMT_SW_PTS_820",
+      "role": "将 ESP32_EN 拉低的复位按键",
+      "evidence": [{"asset_sha256": "eafaa3fac84eb1b3d7575a74e0e222e3b4d255255e1460c27ed9f8baf8a11957", "page": 1, "locator": "右中，OS1 SMT_SW_PTS_820、ESP32_EN、R10/C21"}]
+    },
+    {
+      "reference": "OS2",
+      "part_number": "SMT_SW_PTS_820",
+      "role": "GPIO9 用户/启动按键",
+      "evidence": [{"asset_sha256": "eafaa3fac84eb1b3d7575a74e0e222e3b4d255255e1460c27ed9f8baf8a11957", "page": 1, "locator": "右中，OS2 SMT_SW_PTS_820、GPIO9、R6 10K"}]
+    },
+    {
+      "reference": "U3",
+      "part_number": "SK6812",
+      "role": "GPIO2 控制的可编程 RGB LED",
+      "evidence": [{"asset_sha256": "eafaa3fac84eb1b3d7575a74e0e222e3b4d255255e1460c27ed9f8baf8a11957", "page": 1, "locator": "右下，U3 SK6812、DIN GPIO2、VCC_3V3"}]
+    }
+  ],
+  "facts": [
+    {
+      "id": "system.architecture",
+      "category": "system",
+      "subject": "最小系统架构",
+      "statement": "Stamp-C3U 由单颗 U1 ESP32-C3、外部晶体、PROANT_440 天线、HM8089 3.3 V 降压、原生 USB-C、两枚按键和一颗 SK6812 构成。",
+      "confidence": "confirmed",
+      "attributes": {"controller": "U1 ESP32-C3", "clock": "X1 TXC/8Z4000017", "antenna": "ANT1 PROANT_440", "regulator": "U2 HM8089", "usb": "J1 USB-TYPEC", "rgb": "U3 SK6812"},
+      "evidence": [{"asset_sha256": "eafaa3fac84eb1b3d7575a74e0e222e3b4d255255e1460c27ed9f8baf8a11957", "page": 1, "locator": "整页：U1、ANT1、X1、J1、U2、OS1/OS2、U3"}]
+    },
+    {
+      "id": "interface.usb-c",
+      "category": "interface",
+      "subject": "USB Type-C",
+      "statement": "J1 的 VCC 连接 VIN，DP1/DP2 并接 USB_D_P，DN1/DN2 并接 USB_D_N，CC1/CC2 分别通过 R1/R3 5.1 kΩ 接地。",
+      "confidence": "confirmed",
+      "attributes": {"reference": "J1", "vbus": "VIN", "dp": "USB_D_P", "dn": "USB_D_N", "cc1": "R1 5.1K to GND", "cc2": "R3 5.1K to GND"},
+      "evidence": [{"asset_sha256": "eafaa3fac84eb1b3d7575a74e0e222e3b4d255255e1460c27ed9f8baf8a11957", "page": 1, "locator": "右上，J1 pins A6/B6/A7/B7、R1/R3"}]
+    },
+    {
+      "id": "bus.native-usb",
+      "category": "bus",
+      "subject": "ESP32-C3 原生 USB",
+      "statement": "U1 GPIO18 连接 USB_D_N，GPIO19 连接 USB_D_P，数据线直接到 J1，原理图中未设置独立 USB-UART 桥接芯片。",
+      "confidence": "confirmed",
+      "attributes": {"controller": "U1 ESP32-C3", "dm": "GPIO18/USB_D_N", "dp": "GPIO19/USB_D_P", "connector": "J1 USB-TYPEC", "usb_uart_bridge": null},
+      "evidence": [{"asset_sha256": "eafaa3fac84eb1b3d7575a74e0e222e3b4d255255e1460c27ed9f8baf8a11957", "page": 1, "locator": "U1 pins 25/26 GPIO18/GPIO19 与 J1 USB_D_N/P"}]
+    },
+    {
+      "id": "bus.uart0",
+      "category": "bus",
+      "subject": "UART0",
+      "statement": "U1 U0RXD 引出为 ESP32_U0RXD，U0TXD 通过 R5 499 Ω 引出为 ESP32_U0TXD。",
+      "confidence": "confirmed",
+      "attributes": {"rx": "ESP32_U0RXD", "tx": "ESP32_U0TXD", "tx_series_resistor": "R5 499R"},
+      "evidence": [{"asset_sha256": "eafaa3fac84eb1b3d7575a74e0e222e3b4d255255e1460c27ed9f8baf8a11957", "page": 1, "locator": "U1 pins 27/28 U0RXD/U0TXD 与 R5"}]
+    },
+    {
+      "id": "gpio.primary-map",
+      "category": "gpio",
+      "subject": "主控 GPIO 网络",
+      "statement": "原理图明确标出 GPIO0 至 GPIO10，以及 GPIO18、GPIO19；GPIO2 连接 RGB LED，GPIO9 连接按键，GPIO18/19 连接 USB。",
+      "confidence": "confirmed",
+      "attributes": {"general_nets": "GPIO0; GPIO1; GPIO3; GPIO4; GPIO5; GPIO6; GPIO7; GPIO8; GPIO10", "rgb": "GPIO2", "button": "GPIO9", "usb_dm": "GPIO18", "usb_dp": "GPIO19"},
+      "evidence": [{"asset_sha256": "eafaa3fac84eb1b3d7575a74e0e222e3b4d255255e1460c27ed9f8baf8a11957", "page": 1, "locator": "U1 右侧 GPIO0-GPIO10、GPIO18、GPIO19 网络"}]
+    },
+    {
+      "id": "gpio.rgb-led",
+      "category": "gpio",
+      "subject": "RGB LED GPIO",
+      "statement": "U3 SK6812 的 DIN 连接 GPIO2，VDD 连接 VCC_3V3，DOUT 未连接。",
+      "confidence": "confirmed",
+      "attributes": {"reference": "U3", "part_number": "SK6812", "data_in": "GPIO2", "supply": "VCC_3V3", "data_out": "NC"},
+      "evidence": [{"asset_sha256": "eafaa3fac84eb1b3d7575a74e0e222e3b4d255255e1460c27ed9f8baf8a11957", "page": 1, "locator": "右下，U3 pins DIN/DOUT/VDD/VSS"}]
+    },
+    {
+      "id": "gpio.user-button",
+      "category": "gpio",
+      "subject": "GPIO9 用户按键",
+      "statement": "OS2 按下时将 GPIO9 拉低，R6 10 kΩ 将 GPIO9 上拉到 VCC_3V3。",
+      "confidence": "confirmed",
+      "attributes": {"reference": "OS2", "gpio": "GPIO9", "active_level": "low", "pullup": "R6 10K to VCC_3V3"},
+      "evidence": [{"asset_sha256": "eafaa3fac84eb1b3d7575a74e0e222e3b4d255255e1460c27ed9f8baf8a11957", "page": 1, "locator": "右中，OS2/R6/GPIO9"}]
+    },
+    {
+      "id": "reset.enable",
+      "category": "reset",
+      "subject": "主控复位",
+      "statement": "ESP32_EN 由 R10 10 kΩ 上拉到 VCC_3V3，并由 C21 470 nF 对地；OS1 按下时将 ESP32_EN 拉低复位。",
+      "confidence": "confirmed",
+      "attributes": {"net": "ESP32_EN", "pullup": "R10 10K", "capacitor": "C21 470nF/10V", "switch": "OS1 SMT_SW_PTS_820", "active_level": "low"},
+      "evidence": [{"asset_sha256": "eafaa3fac84eb1b3d7575a74e0e222e3b4d255255e1460c27ed9f8baf8a11957", "page": 1, "locator": "右中，R10/C21/OS1/ESP32_EN"}]
+    },
+    {
+      "id": "power.usb-filter",
+      "category": "power",
+      "subject": "USB 输入滤波",
+      "statement": "J1 VIN 经 L2 Sunlord UPZ1608E101-3R0TF（标注 100R/3A）形成 VIN_5V，C4 4.7 µF 对 VIN_5V 去耦。",
+      "confidence": "confirmed",
+      "attributes": {"input": "VIN", "filter": "L2 Sunlord/UPZ1608E101-3R0TF/100R/3A", "output": "VIN_5V", "capacitor": "C4 4.7uF/10V"},
+      "evidence": [{"asset_sha256": "eafaa3fac84eb1b3d7575a74e0e222e3b4d255255e1460c27ed9f8baf8a11957", "page": 1, "locator": "中上，VIN/L2/VIN_5V/C4"}]
+    },
+    {
+      "id": "protection.input-diode",
+      "category": "protection",
+      "subject": "输入串联二极管",
+      "statement": "D1 B5819WS SOD323 串联在 VIN_5V 与 U2 输入节点 V1 之间。",
+      "confidence": "confirmed",
+      "attributes": {"reference": "D1", "part_number": "B5819WS SOD323", "anode_net": "VIN_5V", "cathode_net": "V1"},
+      "evidence": [{"asset_sha256": "eafaa3fac84eb1b3d7575a74e0e222e3b4d255255e1460c27ed9f8baf8a11957", "page": 1, "locator": "中下，D1 位于 VIN_5V/V1 之间"}]
+    },
+    {
+      "id": "power.3v3-regulator",
+      "category": "power",
+      "subject": "3.3 V 降压电源",
+      "statement": "U2 HM8089 由 V1 供电，EN 接 V1，经 L3 LQM2MPN2R2NG0L 输出 VCC_3V3；反馈分压为 R8 68 kΩ 与 R9 15 kΩ。",
+      "confidence": "confirmed",
+      "attributes": {"reference": "U2", "part_number": "HM8089", "input": "V1", "enable": "V1", "inductor": "L3 LQM2MPN2R2NG0L", "output": "VCC_3V3", "feedback_upper": "R8 68K 1%", "feedback_lower": "R9 15K 1%"},
+      "evidence": [{"asset_sha256": "eafaa3fac84eb1b3d7575a74e0e222e3b4d255255e1460c27ed9f8baf8a11957", "page": 1, "locator": "中下，U2/L3/R8/R9/C9/C10"}]
+    },
+    {
+      "id": "rf.antenna",
+      "category": "rf",
+      "subject": "射频天线与匹配",
+      "statement": "U1 LNA_IN 通过 ESP_LNA 匹配网络连接 ANT1 PROANT_440；原理图同时标注“TBD, need further RF matching”。",
+      "confidence": "confirmed",
+      "attributes": {"soc_pin": "U1 LNA_IN", "net": "ESP_LNA", "antenna": "ANT1 PROANT_440", "series_marking": "C1 LQP15MN2N7B02D", "shunt_marking": "C2 GRM1555C1H2R4BA01D", "note": "TBD, need further RF matching"},
+      "evidence": [{"asset_sha256": "eafaa3fac84eb1b3d7575a74e0e222e3b4d255255e1460c27ed9f8baf8a11957", "page": 1, "locator": "上中，ESP_LNA/C1/L1/C2/ANT1 与 TBD 注释"}]
+    },
+    {
+      "id": "clock.external-crystal",
+      "category": "clock",
+      "subject": "ESP32-C3 外部晶体",
+      "statement": "X1 标注 TXC/8Z4000017/立创采购，连接 XTAL_P/XTAL_N；C5/C6 均标注 GRM1555C1H180JA01D。",
+      "confidence": "confirmed",
+      "attributes": {"reference": "X1", "part_number": "TXC/8Z4000017/立创采购", "nets": "XTAL_P; XTAL_N", "load_capacitors": "C5/C6 GRM1555C1H180JA01D"},
+      "evidence": [{"asset_sha256": "eafaa3fac84eb1b3d7575a74e0e222e3b4d255255e1460c27ed9f8baf8a11957", "page": 1, "locator": "左中，X1/C5/C6/XTAL_P/XTAL_N"}]
+    },
+    {
+      "id": "storage.flash-capacity",
+      "category": "storage",
+      "subject": "Flash 容量",
+      "statement": "原理图未显示独立 Flash 器件，也未直接标注产品正文所述 4 MB Flash。",
+      "confidence": "uncertain",
+      "attributes": {"controller": "U1 ESP32-C3", "claimed_flash": "4MB", "external_flash": "not shown"},
+      "evidence": [{"asset_sha256": "eafaa3fac84eb1b3d7575a74e0e222e3b4d255255e1460c27ed9f8baf8a11957", "page": 1, "locator": "U1 SPIHD/SPIWP/SPICS0/SPICLK/SPID/SPIQ 区域未画外部 Flash"}]
+    },
+    {
+      "id": "memory.internal-memory",
+      "category": "memory",
+      "subject": "片内 SRAM/ROM",
+      "statement": "原理图只标注 U1 为 ESP32-C3，未直接给出 400 KB SRAM、384 KB ROM 或 8 KB RTC SRAM。",
+      "confidence": "uncertain",
+      "attributes": {"controller": "U1 ESP32-C3", "claimed_sram": "400KB", "claimed_rom": "384KB", "claimed_rtc_sram": "8KB"},
+      "evidence": [{"asset_sha256": "eafaa3fac84eb1b3d7575a74e0e222e3b4d255255e1460c27ed9f8baf8a11957", "page": 1, "locator": "U1 型号框未列内部存储容量"}]
+    },
+    {
+      "id": "system.performance-radio",
+      "category": "system",
+      "subject": "处理器与无线规格",
+      "statement": "原理图未直接标注 RISC-V 核心、160 MHz 主频或 2.4 GHz Wi-Fi 协议/速率参数。",
+      "confidence": "uncertain",
+      "attributes": {"controller": "U1 ESP32-C3", "unverified_cpu": "32-bit RISC-V single core up to 160MHz", "unverified_wifi": "2.4GHz 802.11 b/g/n"},
+      "evidence": [{"asset_sha256": "eafaa3fac84eb1b3d7575a74e0e222e3b4d255255e1460c27ed9f8baf8a11957", "page": 1, "locator": "U1 仅标 ESP32-C3，ANT1 仅标 PROANT_440"}]
+    },
+    {
+      "id": "clock.crystal-frequency",
+      "category": "clock",
+      "subject": "主晶体频率",
+      "statement": "原理图给出 X1 采购型号，但未以频率文本直接标注其振荡频率。",
+      "confidence": "uncertain",
+      "attributes": {"reference": "X1", "part_number": "TXC/8Z4000017/立创采购", "frequency": "not printed"},
+      "evidence": [{"asset_sha256": "eafaa3fac84eb1b3d7575a74e0e222e3b4d255255e1460c27ed9f8baf8a11957", "page": 1, "locator": "X1 周边无 MHz 频率标注"}]
+    },
+    {
+      "id": "debug.usb-functions",
+      "category": "debug",
+      "subject": "USB CDC/JTAG/下载功能",
+      "statement": "原理图确认 ESP32-C3 原生 USB 电气连接，但未直接描述 CDC、JTAG 或下载模式的软件功能及启用条件。",
+      "confidence": "uncertain",
+      "attributes": {"hardware": "GPIO18/19 native USB", "unverified_functions": "USB CDC; USB JTAG; firmware download mode"},
+      "evidence": [{"asset_sha256": "eafaa3fac84eb1b3d7575a74e0e222e3b4d255255e1460c27ed9f8baf8a11957", "page": 1, "locator": "U1 GPIO18/19 到 J1，仅有电气网络"}]
+    },
+    {
+      "id": "interface.exposed-io",
+      "category": "interface",
+      "subject": "外接 IO 数量与焊盘映射",
+      "statement": "原理图标出 GPIO 网络但未画模块边缘焊盘/连接器，无法仅由该页确认正文所述 14 路 IO 的完整外接焊盘列表与 2.54 mm 间距。",
+      "confidence": "uncertain",
+      "attributes": {"claimed_count": 14, "claimed_pitch": "2.54mm", "schematic_connectors": "not shown"},
+      "evidence": [{"asset_sha256": "eafaa3fac84eb1b3d7575a74e0e222e3b4d255255e1460c27ed9f8baf8a11957", "page": 1, "locator": "整页未画外接焊盘位号或连接器"}]
+    }
+  ],
+  "needs_review": [
+    {
+      "id": "review.flash-capacity",
+      "fact_id": "storage.flash-capacity",
+      "question": "请用 ESP32-C3 封装/BOM 确认 4 MB Flash 的实现与容量。",
+      "reason": "原理图未显示独立 Flash 或容量文本。",
+      "evidence": [{"asset_sha256": "eafaa3fac84eb1b3d7575a74e0e222e3b4d255255e1460c27ed9f8baf8a11957", "page": 1, "locator": "U1 SPI 存储引脚区域"}]
+    },
+    {
+      "id": "review.internal-memory",
+      "fact_id": "memory.internal-memory",
+      "question": "请用 ESP32-C3 datasheet 复核 SRAM、ROM 与 RTC SRAM 容量。",
+      "reason": "这些片内参数不在原理图中直接标注。",
+      "evidence": [{"asset_sha256": "eafaa3fac84eb1b3d7575a74e0e222e3b4d255255e1460c27ed9f8baf8a11957", "page": 1, "locator": "U1 ESP32-C3"}]
+    },
+    {
+      "id": "review.performance-radio",
+      "fact_id": "system.performance-radio",
+      "question": "请用 ESP32-C3 datasheet 复核 CPU 架构/频率和 Wi-Fi 规格。",
+      "reason": "原理图只标芯片与天线，不列性能参数。",
+      "evidence": [{"asset_sha256": "eafaa3fac84eb1b3d7575a74e0e222e3b4d255255e1460c27ed9f8baf8a11957", "page": 1, "locator": "U1 ESP32-C3 与 ANT1 PROANT_440"}]
+    },
+    {
+      "id": "review.crystal-frequency",
+      "fact_id": "clock.crystal-frequency",
+      "question": "请用 X1 料号资料确认主晶体频率。",
+      "reason": "原理图未印出 MHz 数值。",
+      "evidence": [{"asset_sha256": "eafaa3fac84eb1b3d7575a74e0e222e3b4d255255e1460c27ed9f8baf8a11957", "page": 1, "locator": "X1 TXC/8Z4000017"}]
+    },
+    {
+      "id": "review.usb-functions",
+      "fact_id": "debug.usb-functions",
+      "question": "请用 ESP32-C3 datasheet/固件配置确认 USB CDC、JTAG 与下载模式行为。",
+      "reason": "原理图只证明原生 USB 电气连接。",
+      "evidence": [{"asset_sha256": "eafaa3fac84eb1b3d7575a74e0e222e3b4d255255e1460c27ed9f8baf8a11957", "page": 1, "locator": "GPIO18/19 到 J1 USB_D_N/P"}]
+    },
+    {
+      "id": "review.exposed-io",
+      "fact_id": "interface.exposed-io",
+      "question": "请用 PinMap/PCB 文件确认 14 路外接 IO、焊盘编号和 2.54 mm 间距。",
+      "reason": "当前原理图未画外接焊盘或连接器。",
+      "evidence": [{"asset_sha256": "eafaa3fac84eb1b3d7575a74e0e222e3b4d255255e1460c27ed9f8baf8a11957", "page": 1, "locator": "整页无外接焊盘位号"}]
+    }
+  ]
+}

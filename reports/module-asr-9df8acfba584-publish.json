@@ -1,0 +1,21 @@
+{
+  "dry_run": false,
+  "failed": 0,
+  "published": 1,
+  "results": [
+    {
+      "backup": null,
+      "draft_action": "unchanged",
+      "dry_run": false,
+      "errors": [],
+      "needs_review": 9,
+      "product_id": "module-asr-9df8acfba584",
+      "product_name": "Module ASR",
+      "publish_action": "unchanged",
+      "sha256": "fbd286ab9c67f849d2e5dad7ddd42ef50986c877fda60aa9bd7bf9c3f2ebec07",
+      "status": "valid",
+      "uncertain_facts": 9
+    }
+  ],
+  "schema_version": 1
+}

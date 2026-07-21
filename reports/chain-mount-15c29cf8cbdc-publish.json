@@ -1,0 +1,21 @@
+{
+  "dry_run": false,
+  "failed": 0,
+  "published": 1,
+  "results": [
+    {
+      "backup": null,
+      "draft_action": "unchanged",
+      "dry_run": false,
+      "errors": [],
+      "needs_review": 0,
+      "product_id": "chain-mount-15c29cf8cbdc",
+      "product_name": "Chain Mount",
+      "publish_action": "unchanged",
+      "sha256": "daf9fa3b49db224b4a1eb06b7a13b8975f463e776a18ab2c7fbea13d60e81289",
+      "status": "valid",
+      "uncertain_facts": 0
+    }
+  ],
+  "schema_version": 1
+}

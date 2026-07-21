@@ -1,0 +1,21 @@
+{
+  "dry_run": false,
+  "failed": 0,
+  "published": 1,
+  "results": [
+    {
+      "backup": null,
+      "draft_action": "unchanged",
+      "dry_run": false,
+      "errors": [],
+      "needs_review": 2,
+      "product_id": "module-extport-for-core2-0e97ef7bee82",
+      "product_name": "Module ExtPort For Core2",
+      "publish_action": "unchanged",
+      "sha256": "e4b6ab505cbbee0f1121e5b367e40f1d1c1a66d7128349f7b636b8f695e07a36",
+      "status": "valid",
+      "uncertain_facts": 2
+    }
+  ],
+  "schema_version": 1
+}

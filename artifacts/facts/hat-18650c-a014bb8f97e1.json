@@ -1,0 +1,231 @@
+{
+  "schema_version": 1,
+  "generator": "schematic_describer",
+  "product": {
+    "product_id": "hat-18650c-a014bb8f97e1",
+    "product_name": "Hat 18650C",
+    "sku": "U080",
+    "source_path": "hat/hat-18650.md",
+    "source_sha256": "5ea429b9aa6a4c259f2a21fe0defe3f168c8c836db8e0bda4e987c5594d8a339",
+    "input_sha256": "96f691119152485e0bbc2be23a9b19ea53a22588ce263d2b3b5d65dc0469e233"
+  },
+  "schematic_assets": [
+    {
+      "sha256": "c8d6d35162de2c122a27ef4a239c87bb60980ea7df4461fb4d91f0f626dda0c1",
+      "source_url": "https://m5stack-doc.oss-cn-shenzhen.aliyuncs.com/876/U080-18650C_SCH_V1.3_page_01.png",
+      "pages": [1]
+    }
+  ],
+  "summary": "Hat 18650C 原理图展示一个 J1 TYPE-C 16P 电源入口、一个 BAT1 18650 电池位，以及电气映射相同的 JP1/JP2 双 8 针接口。J1 仅将 VCC 接到 5VIN，USB 数据与配置相关引脚未连接；BAT1 正端为 BAT+、负端接地。图中未展示充电、升压或电池保护电路，因此这些功能与产品参数需要结合 BOM、PCB 或正式设计资料确认。",
+  "keywords": [
+    "Hat 18650C",
+    "U080",
+    "18650C HAT",
+    "18650",
+    "J1 TYPE-C 16P",
+    "USB Type-C",
+    "USB-C power only",
+    "BAT1",
+    "BAT+",
+    "JP1",
+    "JP2",
+    "5VIN",
+    "3V3",
+    "G0",
+    "G36",
+    "G26",
+    "5VOUT",
+    "M5StickC",
+    "U080-18650C_SCH_V1.3"
+  ],
+  "components": [
+    {
+      "reference": "J1",
+      "part_number": "TYPE-C 16P",
+      "role": "USB Type-C 电源入口，VCC 接 5VIN，数据与配置相关引脚未连接",
+      "evidence": [{"asset_sha256": "c8d6d35162de2c122a27ef4a239c87bb60980ea7df4461fb4d91f0f626dda0c1", "page": 1, "locator": "原理图左侧 J1 TYPE-C 16P，VCC/5VIN、GND/SHELL、DP1/DP2、DN1/DN2、CC1/CC2、SBU"}]
+    },
+    {
+      "reference": "BAT1",
+      "part_number": "18650",
+      "role": "18650 电池位，正端连接 BAT+，负端连接 GND",
+      "evidence": [{"asset_sha256": "c8d6d35162de2c122a27ef4a239c87bb60980ea7df4461fb4d91f0f626dda0c1", "page": 1, "locator": "原理图中部 BAT1 18650，正端 BAT+、负端 GND"}]
+    },
+    {
+      "reference": "JP1/JP2",
+      "part_number": null,
+      "role": "两组电气映射相同的 8 针接口，引出电源、电池与 GPIO 网络",
+      "evidence": [{"asset_sha256": "c8d6d35162de2c122a27ef4a239c87bb60980ea7df4461fb4d91f0f626dda0c1", "page": 1, "locator": "原理图右侧 JP1/JP2 pins 1-8，5VIN/3V3/BAT+/G0/G36/G26/5VOUT/GND"}]
+    }
+  ],
+  "facts": [
+    {
+      "id": "system.architecture",
+      "category": "system",
+      "subject": "原理图接口架构",
+      "statement": "本页原理图由 J1 USB Type-C 电源入口、BAT1 18650 电池位和 JP1/JP2 两组 8 针接口组成，未绘制其他主动器件或阻容网络。",
+      "confidence": "confirmed",
+      "attributes": {"usb_connector": "J1 TYPE-C 16P", "battery": "BAT1 18650", "host_connectors": "JP1; JP2", "other_components_shown": false},
+      "evidence": [{"asset_sha256": "c8d6d35162de2c122a27ef4a239c87bb60980ea7df4461fb4d91f0f626dda0c1", "page": 1, "locator": "整页：J1、BAT1、JP1、JP2"}]
+    },
+    {
+      "id": "interface.usb-c-power",
+      "category": "interface",
+      "subject": "USB Type-C 接口",
+      "statement": "J1 的 VCC 连接 5VIN，GND 与 SHELL 接地；DP1/DP2、DN1/DN2、CC1/CC2 和 SBU 在本页均未连接，因此原理图只确认 USB 电源输入，不显示 USB 数据路径。",
+      "confidence": "confirmed",
+      "attributes": {"reference": "J1", "part_number": "TYPE-C 16P", "vbus_net": "5VIN", "ground": "GND/SHELL", "data_pins": "DP1/DP2/DN1/DN2 not connected", "configuration_pins": "CC1/CC2 not connected", "sbu": "not connected"},
+      "evidence": [{"asset_sha256": "c8d6d35162de2c122a27ef4a239c87bb60980ea7df4461fb4d91f0f626dda0c1", "page": 1, "locator": "J1 TYPE-C 16P：VCC 到 5VIN；GND/SHELL 到 GND；DP1/DP2、DN1/DN2、CC1/CC2、SBU 无连接"}]
+    },
+    {
+      "id": "power.battery-connection",
+      "category": "power",
+      "subject": "18650 电池连接",
+      "statement": "BAT1 标注为 18650，正端连接 BAT+ 网络，负端连接 GND。",
+      "confidence": "confirmed",
+      "attributes": {"reference": "BAT1", "battery_marking": "18650", "positive_net": "BAT+", "negative_net": "GND"},
+      "evidence": [{"asset_sha256": "c8d6d35162de2c122a27ef4a239c87bb60980ea7df4461fb4d91f0f626dda0c1", "page": 1, "locator": "BAT1 18650，正端 BAT+、负端 GND"}]
+    },
+    {
+      "id": "interface.dual-8pin-map",
+      "category": "interface",
+      "subject": "JP1/JP2 8 针接口映射",
+      "statement": "JP1 与 JP2 的 pin1 至 pin8 依次连接 5VIN、3V3、BAT+、G0、G36、G26、5VOUT 和 GND。",
+      "confidence": "confirmed",
+      "attributes": {"connectors": "JP1; JP2", "pin1": "5VIN", "pin2": "3V3", "pin3": "BAT+", "pin4": "G0", "pin5": "G36", "pin6": "G26", "pin7": "5VOUT", "pin8": "GND"},
+      "evidence": [{"asset_sha256": "c8d6d35162de2c122a27ef4a239c87bb60980ea7df4461fb4d91f0f626dda0c1", "page": 1, "locator": "JP1/JP2 pins 1-8 与网络名 5VIN、3V3、BAT+、G0、G36、G26、5VOUT、GND"}]
+    },
+    {
+      "id": "interface.connector-equivalence",
+      "category": "interface",
+      "subject": "JP1 与 JP2 等效关系",
+      "statement": "JP1 与 JP2 的八个针脚逐针连接到相同网络，原理图显示两组接口具有相同电气映射。",
+      "confidence": "confirmed",
+      "attributes": {"connector_a": "JP1", "connector_b": "JP2", "mapping": "pin-for-pin identical", "pins": 8},
+      "evidence": [{"asset_sha256": "c8d6d35162de2c122a27ef4a239c87bb60980ea7df4461fb4d91f0f626dda0c1", "page": 1, "locator": "JP1 与 JP2 并列接口，pins 1-8 逐针接入同名网络"}]
+    },
+    {
+      "id": "power.no-conversion-circuit-shown",
+      "category": "power",
+      "subject": "电源转换与充电器件范围",
+      "statement": "本页未绘制充电 IC、升压转换器、电池保护 IC、开关或相关阻容电源网络，只确认 5VIN、BAT+、5VOUT 等网络存在。",
+      "confidence": "confirmed",
+      "attributes": {"charger_ic_shown": false, "boost_converter_shown": false, "battery_protection_ic_shown": false, "power_switch_shown": false, "nets_shown": "5VIN; BAT+; 5VOUT"},
+      "evidence": [{"asset_sha256": "c8d6d35162de2c122a27ef4a239c87bb60980ea7df4461fb4d91f0f626dda0c1", "page": 1, "locator": "整页仅 J1、BAT1、JP1、JP2；无充电、升压、保护或开关器件"}]
+    },
+    {
+      "id": "power.battery-capacity",
+      "category": "power",
+      "subject": "电池容量",
+      "statement": "产品正文宣称电池容量为 2200 mAh，但原理图只将 BAT1 标为 18650，没有容量、电压或电芯型号信息。",
+      "confidence": "uncertain",
+      "attributes": {"claimed_capacity": "2200mAh", "schematic_marking": "BAT1 18650", "capacity_printed_on_schematic": false},
+      "evidence": [{"asset_sha256": "c8d6d35162de2c122a27ef4a239c87bb60980ea7df4461fb4d91f0f626dda0c1", "page": 1, "locator": "BAT1 仅标 18650，未标容量或电芯型号"}]
+    },
+    {
+      "id": "power.charging-path",
+      "category": "power",
+      "subject": "USB 充电路径",
+      "statement": "产品正文将 J1 描述为电池充电接口，但本页没有显示从 5VIN 到 BAT+ 的充电路径、充电 IC、限流参数或充电终止参数。",
+      "confidence": "uncertain",
+      "attributes": {"input_net": "5VIN", "battery_net": "BAT+", "charger_ic": null, "charge_current": null, "charge_voltage": null},
+      "evidence": [{"asset_sha256": "c8d6d35162de2c122a27ef4a239c87bb60980ea7df4461fb4d91f0f626dda0c1", "page": 1, "locator": "J1 VCC 到 5VIN 与 BAT1 BAT+ 分离，二者之间无充电电路"}]
+    },
+    {
+      "id": "power.boost-path",
+      "category": "power",
+      "subject": "电池到 5VOUT 的转换路径",
+      "statement": "原理图引出了 BAT+ 和 5VOUT 两个网络，但没有显示 BAT+ 到 5VOUT 的升压转换器、使能控制、输出额定值或保护路径。",
+      "confidence": "uncertain",
+      "attributes": {"source_net": "BAT+", "output_net": "5VOUT", "converter": null, "enable_control": null, "output_rating": null},
+      "evidence": [{"asset_sha256": "c8d6d35162de2c122a27ef4a239c87bb60980ea7df4461fb4d91f0f626dda0c1", "page": 1, "locator": "BAT1 BAT+ 与 JP1/JP2 5VOUT；页面无两者之间的转换器或连接路径"}]
+    },
+    {
+      "id": "component.battery-specification",
+      "category": "component",
+      "subject": "电池可更换性与保护规格",
+      "statement": "产品正文宣称电池可更换，但原理图未给出电池座结构、电芯订货型号、标称电压、极性防呆或保护板规格。",
+      "confidence": "uncertain",
+      "attributes": {"claimed_replaceable": true, "battery_marking": "18650", "cell_part_number": null, "nominal_voltage": null, "protection_specification": null},
+      "evidence": [{"asset_sha256": "c8d6d35162de2c122a27ef4a239c87bb60980ea7df4461fb4d91f0f626dda0c1", "page": 1, "locator": "BAT1 仅标 18650 与 BAT+/GND，无机械座或保护规格"}]
+    },
+    {
+      "id": "other.mechanical-specifications",
+      "category": "other",
+      "subject": "尺寸与重量",
+      "statement": "产品正文列出产品尺寸 150 x 24 x 24 mm、产品重量 90 g、毛重 94 g 和包装尺寸 173.0 x 25.0 x 25.0 mm，但这些机械参数不在电气原理图中。",
+      "confidence": "uncertain",
+      "attributes": {"claimed_product_size": "150 x 24 x 24mm", "claimed_product_weight": "90g", "claimed_gross_weight": "94g", "claimed_package_size": "173.0 x 25.0 x 25.0mm"},
+      "evidence": [{"asset_sha256": "c8d6d35162de2c122a27ef4a239c87bb60980ea7df4461fb4d91f0f626dda0c1", "page": 1, "locator": "电气原理图整页未标机械尺寸或重量"}]
+    },
+    {
+      "id": "other.mounting-compatibility",
+      "category": "other",
+      "subject": "M5StickC 固定孔兼容性",
+      "statement": "产品正文说明 2019 年 10 月后带固定孔的 M5StickC 可用螺丝固定，旧款无固定孔设备不能螺丝固定；电气原理图没有机械孔位、尺寸或版本兼容信息。",
+      "confidence": "uncertain",
+      "attributes": {"claimed_host": "M5StickC", "claimed_revision_boundary": "2019-10", "claimed_old_host_behavior": "functional but cannot be screw-mounted", "mechanical_drawing_in_asset": false},
+      "evidence": [{"asset_sha256": "c8d6d35162de2c122a27ef4a239c87bb60980ea7df4461fb4d91f0f626dda0c1", "page": 1, "locator": "电气原理图整页未标固定孔或 M5StickC 机械版本"}]
+    },
+    {
+      "id": "other.revision-applicability",
+      "category": "other",
+      "subject": "V1.3 图纸适用范围",
+      "statement": "资源文件名标识 U080-18650C_SCH_V1.3，但当前材料没有提供该图纸版本与具体量产批次、PCB 版本或 BOM 版本之间的对应关系。",
+      "confidence": "uncertain",
+      "attributes": {"schematic_identifier": "U080-18650C_SCH_V1.3", "sku": "U080", "pcb_revision_mapping": null, "bom_revision_mapping": null},
+      "evidence": [{"asset_sha256": "c8d6d35162de2c122a27ef4a239c87bb60980ea7df4461fb4d91f0f626dda0c1", "page": 1, "locator": "原理图资源 U080-18650C_SCH_V1.3；页面未给出量产批次或 BOM 对应表"}]
+    }
+  ],
+  "needs_review": [
+    {
+      "id": "review.battery-capacity",
+      "fact_id": "power.battery-capacity",
+      "question": "请用量产 BOM、电芯标签或电芯 datasheet 确认 U080 标配电池容量是否为 2200 mAh。",
+      "reason": "原理图只标 18650，不含容量与电芯型号。",
+      "evidence": [{"asset_sha256": "c8d6d35162de2c122a27ef4a239c87bb60980ea7df4461fb4d91f0f626dda0c1", "page": 1, "locator": "BAT1 18650"}]
+    },
+    {
+      "id": "review.charging-path",
+      "fact_id": "power.charging-path",
+      "question": "请用完整电源原理图、PCB 网表或 BOM 确认 5VIN 到 BAT+ 的充电器件、连接路径和充电参数。",
+      "reason": "当前页没有显示充电电路，无法仅凭网络名确认 USB 充电实现。",
+      "evidence": [{"asset_sha256": "c8d6d35162de2c122a27ef4a239c87bb60980ea7df4461fb4d91f0f626dda0c1", "page": 1, "locator": "J1 5VIN 与 BAT1 BAT+，无中间充电器件"}]
+    },
+    {
+      "id": "review.boost-path",
+      "fact_id": "power.boost-path",
+      "question": "请用完整电源设计或 PCB 网表确认 BAT+ 到 5VOUT 的升压器件、控制方式和输出额定值。",
+      "reason": "当前页只列出 BAT+ 与 5VOUT 网络，没有显示转换路径。",
+      "evidence": [{"asset_sha256": "c8d6d35162de2c122a27ef4a239c87bb60980ea7df4461fb4d91f0f626dda0c1", "page": 1, "locator": "BAT1 BAT+ 与 JP1/JP2 5VOUT"}]
+    },
+    {
+      "id": "review.battery-specification",
+      "fact_id": "component.battery-specification",
+      "question": "请用机械图、BOM 与电芯/保护板资料确认电池可更换结构、电芯型号、标称电压和保护规格。",
+      "reason": "原理图仅给出 BAT1 18650 和极性网络。",
+      "evidence": [{"asset_sha256": "c8d6d35162de2c122a27ef4a239c87bb60980ea7df4461fb4d91f0f626dda0c1", "page": 1, "locator": "BAT1 18650，BAT+/GND"}]
+    },
+    {
+      "id": "review.mechanical-specifications",
+      "fact_id": "other.mechanical-specifications",
+      "question": "请用正式尺寸图、称重记录或包装规范复核产品与包装的尺寸和重量。",
+      "reason": "当前证据是电气原理图，不包含机械参数。",
+      "evidence": [{"asset_sha256": "c8d6d35162de2c122a27ef4a239c87bb60980ea7df4461fb4d91f0f626dda0c1", "page": 1, "locator": "电气原理图整页"}]
+    },
+    {
+      "id": "review.mounting-compatibility",
+      "fact_id": "other.mounting-compatibility",
+      "question": "请用 Hat 18650C 与各版 M5StickC 的机械图复核固定孔位置、版本边界和螺丝固定兼容性。",
+      "reason": "电气原理图没有孔位或机械版本信息。",
+      "evidence": [{"asset_sha256": "c8d6d35162de2c122a27ef4a239c87bb60980ea7df4461fb4d91f0f626dda0c1", "page": 1, "locator": "电气原理图整页无固定孔尺寸"}]
+    },
+    {
+      "id": "review.revision-applicability",
+      "fact_id": "other.revision-applicability",
+      "question": "请用工程变更记录或版本化 BOM 确认 V1.3 图纸适用的 PCB 与量产批次。",
+      "reason": "当前资源没有图纸版本、PCB 版本与 BOM 版本的映射。",
+      "evidence": [{"asset_sha256": "c8d6d35162de2c122a27ef4a239c87bb60980ea7df4461fb4d91f0f626dda0c1", "page": 1, "locator": "U080-18650C_SCH_V1.3 资源页"}]
+    }
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "dry_run": false,
+  "failed": 0,
+  "published": 1,
+  "results": [
+    {
+      "backup": null,
+      "draft_action": "unchanged",
+      "dry_run": false,
+      "errors": [],
+      "needs_review": 1,
+      "product_id": "atom-dtu-lorawan915-a9d2804d7e36",
+      "product_name": "Atom DTU LoRaWAN915",
+      "publish_action": "unchanged",
+      "sha256": "291b5b180136617cc7a8490598e8ee6e2aeb97086a3f6ad6aab5888bcf3af125",
+      "status": "valid",
+      "uncertain_facts": 1
+    }
+  ],
+  "schema_version": 1
+}

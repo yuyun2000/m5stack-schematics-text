@@ -1,0 +1,21 @@
+{
+  "dry_run": false,
+  "failed": 0,
+  "published": 1,
+  "results": [
+    {
+      "backup": null,
+      "draft_action": "unchanged",
+      "dry_run": false,
+      "errors": [],
+      "needs_review": 7,
+      "product_id": "unit-step16-f64c5daa39b8",
+      "product_name": "Unit Step16",
+      "publish_action": "unchanged",
+      "sha256": "a8d45d6f772e84439b6b340c71aeaaf2bb12e4228d0d47a0d37e8765233759a7",
+      "status": "valid",
+      "uncertain_facts": 7
+    }
+  ],
+  "schema_version": 1
+}

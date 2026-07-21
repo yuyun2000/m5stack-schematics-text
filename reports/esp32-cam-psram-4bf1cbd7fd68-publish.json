@@ -1,0 +1,21 @@
+{
+  "dry_run": false,
+  "failed": 0,
+  "published": 1,
+  "results": [
+    {
+      "backup": null,
+      "draft_action": "unchanged",
+      "dry_run": false,
+      "errors": [],
+      "needs_review": 6,
+      "product_id": "esp32-cam-psram-4bf1cbd7fd68",
+      "product_name": "ESP32-CAM PSRAM",
+      "publish_action": "unchanged",
+      "sha256": "1794153cc7c760108e8d933c9f84b893d14a071c5fdfc45af58bc3b61984d832",
+      "status": "valid",
+      "uncertain_facts": 6
+    }
+  ],
+  "schema_version": 1
+}

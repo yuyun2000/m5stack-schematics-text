@@ -1,0 +1,300 @@
+{
+  "schema_version": 1,
+  "generator": "schematic_describer",
+  "product": {
+    "product_id": "base-m5go-bottom3-e6363d570f6f",
+    "product_name": "Base M5GO Bottom3",
+    "sku": "A014-D",
+    "source_path": "module/M5GO3 Bottom.md",
+    "source_sha256": "1603aeea8ce06d86f224ed96a8fff108227703319d99be329c33b13d8c3a3def",
+    "input_sha256": "fb8649d9330ad694bd872749838bc262510eeabb4d2b120034529885fdef518f"
+  },
+  "schematic_assets": [
+    {
+      "sha256": "9a19e47f4e253aa2ab354b1757c0bee9b12bafb673fcc426eaaeca74d042f353",
+      "source_url": "https://m5stack-doc.oss-cn-shenzhen.aliyuncs.com/531/M5GO3_sch_01.png",
+      "pages": [1]
+    }
+  ],
+  "summary": "Base M5GO Bottom3 通过 J4 M5Stack_BUS 引出电源和 GPIO，并提供 J1 UART、J2 GPIO 与 J3 I2C/电源三组 4 针接口。LED1-LED10 为 10 颗串联的 WS2812C，由 GPIO5/RGB 驱动；GPIO7 通过 Q1 SI2302 驱动 +5 V 红外发射支路。U1 TP4057 从 VIN 为 BAT+ 充电，BAT+ 同时连接 J5 电池座和 M5-Bus BATTERY pin30，J3 I2C 总线配置 4.7 kΩ 上拉到 3.3 V。",
+  "keywords": [
+    "Base M5GO Bottom3", "A014-D", "M5GO3", "TP4057", "WS2812C", "LED1", "LED10", "RGB", "GPIO5", "IR1", "SI2302", "GPIO7", "49.9Ω", "BAT+", "VIN", "CHRG", "STDBY", "RPROG", "R6 2KΩ", "M5Stack_BUS_S3", "UART_Socket_4P", "GPIO_Socket_4P", "SOCKET_POWER_4P", "GPIO18", "GPIO17", "GPIO8", "GPIO9", "I2C_SDA", "I2C_SCL", "GPIO12", "GPIO11", "4.7KΩ", "+3.3V", "+5V", "500mAh", "pogo pin", "CoreS3"
+  ],
+  "components": [
+    {
+      "reference": "U1",
+      "part_number": "TP4057",
+      "role": "单节电池充电控制器，连接 VIN、BAT+、CHRG、STDBY 与 PROG",
+      "evidence": [{"asset_sha256": "9a19e47f4e253aa2ab354b1757c0bee9b12bafb673fcc426eaaeca74d042f353", "page": 1, "locator": "C1-D2 Power 分区 U1 TP4057 pins1-6"}]
+    },
+    {
+      "reference": "LED1-LED10",
+      "part_number": "WS2812C",
+      "role": "十颗 3.3 V 可编程 RGB LED，使用 DI/DO 级联数据链",
+      "evidence": [{"asset_sha256": "9a19e47f4e253aa2ab354b1757c0bee9b12bafb673fcc426eaaeca74d042f353", "page": 1, "locator": "A1-B3 RGB LED * 10 分区 LED1-LED10"}]
+    },
+    {
+      "reference": "C3-C12",
+      "part_number": "100nF",
+      "role": "分别对应十颗 WS2812C 的 3.3 V 对地去耦电容",
+      "evidence": [{"asset_sha256": "9a19e47f4e253aa2ab354b1757c0bee9b12bafb673fcc426eaaeca74d042f353", "page": 1, "locator": "A1-A3 +3.3V 上方 C3-C12 100nF"}]
+    },
+    {
+      "reference": "IR1/Q1",
+      "part_number": "IR LED / SI2302",
+      "role": "+5 V 红外发射 LED 与 GPIO7 控制的 N 沟道 MOSFET 低侧驱动",
+      "evidence": [{"asset_sha256": "9a19e47f4e253aa2ab354b1757c0bee9b12bafb673fcc426eaaeca74d042f353", "page": 1, "locator": "C2-D3 IR 分区 IR1/R4/Q1/R5/R7"}]
+    },
+    {
+      "reference": "D1",
+      "part_number": "1615RG",
+      "role": "连接 TP4057 CHRG/STDBY 的双色充电状态指示灯",
+      "evidence": [{"asset_sha256": "9a19e47f4e253aa2ab354b1757c0bee9b12bafb673fcc426eaaeca74d042f353", "page": 1, "locator": "C1-D1 D1 1615RG、R3、CHRG/STDBY"}]
+    },
+    {
+      "reference": "J5",
+      "part_number": "Header 2",
+      "role": "BAT+ 与 GND 两针电池连接器",
+      "evidence": [{"asset_sha256": "9a19e47f4e253aa2ab354b1757c0bee9b12bafb673fcc426eaaeca74d042f353", "page": 1, "locator": "D2 J5 Header 2 pins1/2"}]
+    },
+    {
+      "reference": "J1",
+      "part_number": "UART_Socket_4P",
+      "role": "GPIO18/UART_RXD、GPIO17/UART_TXD、+5 V 与 GND 的四针接口",
+      "evidence": [{"asset_sha256": "9a19e47f4e253aa2ab354b1757c0bee9b12bafb673fcc426eaaeca74d042f353", "page": 1, "locator": "A4 Socket 分区 J1 UART_Socket_4P"}]
+    },
+    {
+      "reference": "J2",
+      "part_number": "GPIO_Socket_4P",
+      "role": "GPIO8、GPIO9、+5 V 与 GND 的四针接口",
+      "evidence": [{"asset_sha256": "9a19e47f4e253aa2ab354b1757c0bee9b12bafb673fcc426eaaeca74d042f353", "page": 1, "locator": "A4-B4 Socket 分区 J2 GPIO_Socket_4P"}]
+    },
+    {
+      "reference": "J3",
+      "part_number": "SOCKET_POWER_4P",
+      "role": "GND、VIN/+5 V、I2C_SDA 与 I2C_SCL 的四针电源/I2C 接口",
+      "evidence": [{"asset_sha256": "9a19e47f4e253aa2ab354b1757c0bee9b12bafb673fcc426eaaeca74d042f353", "page": 1, "locator": "B4 Socket 分区 J3 SOCKET_POWER_4P"}]
+    },
+    {
+      "reference": "J4",
+      "part_number": "M5Stack_BUS_S3",
+      "role": "30 针 CoreS3 系列主机接口，承载电源、BAT+、RGB、IR、UART、GPIO 与 I2C",
+      "evidence": [{"asset_sha256": "9a19e47f4e253aa2ab354b1757c0bee9b12bafb673fcc426eaaeca74d042f353", "page": 1, "locator": "C4-D4 J4 M5Stack_BUS_S3 pins1-30"}]
+    },
+    {
+      "reference": "R1/R2",
+      "part_number": "4.7KΩ",
+      "role": "I2C_SDA 与 I2C_SCL 到 +3.3 V 的上拉电阻",
+      "evidence": [{"asset_sha256": "9a19e47f4e253aa2ab354b1757c0bee9b12bafb673fcc426eaaeca74d042f353", "page": 1, "locator": "B3-B4 R1/R2 4.7KΩ、I2C_SDA/I2C_SCL"}]
+    },
+    {
+      "reference": "R3/R6/C1/C2",
+      "part_number": "1KΩ / 2KΩ / 10uF / 10uF",
+      "role": "TP4057 状态灯限流、充电编程及 VIN/BAT+ 去耦网络",
+      "evidence": [{"asset_sha256": "9a19e47f4e253aa2ab354b1757c0bee9b12bafb673fcc426eaaeca74d042f353", "page": 1, "locator": "C1-D2 Power 分区 R3/R6/C1/C2"}]
+    }
+  ],
+  "facts": [
+    {
+      "id": "system.architecture",
+      "category": "system",
+      "subject": "Base M5GO Bottom3 系统架构",
+      "statement": "J4 M5Stack_BUS_S3 将主机 GPIO、电源和电池网络分配到十颗 WS2812C、红外驱动、三组四针接口与 TP4057 电池充电电路；页面未画独立主控、存储器或传感器。",
+      "confidence": "confirmed",
+      "attributes": {"host": "J4 M5Stack_BUS_S3", "rgb": "LED1-LED10 WS2812C", "infrared": "IR1/Q1 SI2302", "charging": "U1 TP4057", "external_ports": "J1 UART; J2 GPIO; J3 I2C/power", "controller": "host via J4", "storage": "not shown", "sensor": "not shown"},
+      "evidence": [{"asset_sha256": "9a19e47f4e253aa2ab354b1757c0bee9b12bafb673fcc426eaaeca74d042f353", "page": 1, "locator": "整页 RGB LED/Socket/Power/IR/M5Bus 五个分区"}]
+    },
+    {
+      "id": "component.rgb-chain",
+      "category": "component",
+      "subject": "十颗 WS2812C 级联",
+      "statement": "RGB 网络进入 LED1 DI，LED1 DO 依次级联到 LED2-LED5，再折返到 LED6-LED10；LED10 DO 在页面末端未连接。",
+      "confidence": "confirmed",
+      "attributes": {"count": 10, "part_number": "WS2812C", "input": "RGB -> LED1 DI pin3", "chain": "LED1 DO -> LED2 DI -> LED3 DI -> LED4 DI -> LED5 DI -> LED6 DI -> LED7 DI -> LED8 DI -> LED9 DI -> LED10 DI", "last_output": "LED10 DO pin1 unconnected"},
+      "evidence": [{"asset_sha256": "9a19e47f4e253aa2ab354b1757c0bee9b12bafb673fcc426eaaeca74d042f353", "page": 1, "locator": "A1-B3 LED1-LED10 DI/DO 连线"}]
+    },
+    {
+      "id": "power.rgb",
+      "category": "power",
+      "subject": "RGB LED 供电与去耦",
+      "statement": "LED1-LED10 的 VDD pin4 全部接 +3.3 V、GND pin2 全部接地，每颗 LED 分别配置 C3-C12 中的一颗 100 nF 对地去耦电容。",
+      "confidence": "confirmed",
+      "attributes": {"rail": "+3.3V", "ground": "LED1-LED10 pin2", "vdd": "LED1-LED10 pin4", "decoupling": "C3-C12 100nF, one per LED"},
+      "evidence": [{"asset_sha256": "9a19e47f4e253aa2ab354b1757c0bee9b12bafb673fcc426eaaeca74d042f353", "page": 1, "locator": "A1-B3 LED1-LED10 VDD/GND 与 C3-C12"}]
+    },
+    {
+      "id": "gpio.rgb",
+      "category": "gpio",
+      "subject": "RGB 数据 GPIO",
+      "statement": "J4 pin8/GPIO5 通过 RGB 网络直接连接 LED1 DI pin3，方向为主机向 WS2812C 链输出。",
+      "confidence": "confirmed",
+      "attributes": {"host_gpio": "GPIO5", "connector_pin": "J4 pin8", "net": "RGB", "target": "LED1 DI pin3", "direction": "host-to-LED-chain"},
+      "evidence": [{"asset_sha256": "9a19e47f4e253aa2ab354b1757c0bee9b12bafb673fcc426eaaeca74d042f353", "page": 1, "locator": "B1 RGB/LED1 DI；C4 J4 pin8 GPIO5/RGB"}]
+    },
+    {
+      "id": "interface.ir-driver",
+      "category": "interface",
+      "subject": "红外发射驱动",
+      "statement": "+5 V 经 IR1 和 R4 49.9 Ω ±1% 串联后接 Q1 SI2302 漏极，Q1 源极接地；GPIO7 经 R5 1 kΩ 驱动栅极，R7 10 kΩ 将栅极下拉。",
+      "confidence": "confirmed",
+      "attributes": {"supply": "+5V", "emitter": "IR1", "series_resistor": "R4 49.9Ω (49R9) ±1%", "switch": "Q1 SI2302", "gate": "GPIO7 via R5 1KΩ", "gate_pulldown": "R7 10KΩ", "topology": "N-MOSFET low-side switch"},
+      "evidence": [{"asset_sha256": "9a19e47f4e253aa2ab354b1757c0bee9b12bafb673fcc426eaaeca74d042f353", "page": 1, "locator": "C2-D3 IR 分区 +5V/IR1/R4/Q1/R5/R7"}]
+    },
+    {
+      "id": "gpio.ir",
+      "category": "gpio",
+      "subject": "红外控制 GPIO",
+      "statement": "J4 pin22/GPIO7 连接红外驱动网络 GPIO7，经 R5 控制 Q1 栅极。",
+      "confidence": "confirmed",
+      "attributes": {"host_gpio": "GPIO7", "connector_pin": "J4 pin22", "net": "GPIO7", "target": "Q1 gate via R5 1KΩ", "direction": "host-to-IR-driver"},
+      "evidence": [{"asset_sha256": "9a19e47f4e253aa2ab354b1757c0bee9b12bafb673fcc426eaaeca74d042f353", "page": 1, "locator": "D2 GPIO7/R5/Q1；C4 J4 pin22 GPIO7"}]
+    },
+    {
+      "id": "power.charger-path",
+      "category": "power",
+      "subject": "TP4057 充电路径",
+      "statement": "VIN 连接 U1 TP4057 VCC pin4 并由 C1 10 uF 对地去耦；U1 BAT pin3 输出 BAT+，由 C2 10 uF 去耦并连接 J5 pin2 与 J4 BATTERY pin30。",
+      "confidence": "confirmed",
+      "attributes": {"input": "VIN -> U1 VCC pin4", "input_cap": "C1 10uF", "charger": "U1 TP4057", "battery_output": "U1 BAT pin3 -> BAT+", "output_cap": "C2 10uF", "battery_connector": "J5 pin2 BAT+; J5 pin1 GND", "host_battery": "J4 pin30 BATTERY/BAT+"},
+      "evidence": [{"asset_sha256": "9a19e47f4e253aa2ab354b1757c0bee9b12bafb673fcc426eaaeca74d042f353", "page": 1, "locator": "C1-D2 U1/C1/C2/J5/VIN/BAT+；D4 J4 pin30"}]
+    },
+    {
+      "id": "power.charge-program",
+      "category": "power",
+      "subject": "TP4057 PROG 配置",
+      "statement": "U1 PROG pin6 通过 R6 2 kΩ 接 GND；原理图仅给出编程电阻值，没有在页面标注对应充电电流。",
+      "confidence": "confirmed",
+      "attributes": {"pin": "U1 PROG pin6", "resistor": "R6 2KΩ", "destination": "GND", "charge_current_label": "not shown"},
+      "evidence": [{"asset_sha256": "9a19e47f4e253aa2ab354b1757c0bee9b12bafb673fcc426eaaeca74d042f353", "page": 1, "locator": "D1-D2 U1 PROG pin6/R6 2KΩ"}]
+    },
+    {
+      "id": "interface.charge-status",
+      "category": "interface",
+      "subject": "充电状态指示",
+      "statement": "U1 CHRG pin1 与 STDBY pin5 分别连接 D1 1615RG 的两个发光通道，D1 公共供电路径经 R3 1 kΩ 接 VIN。",
+      "confidence": "confirmed",
+      "attributes": {"indicator": "D1 1615RG", "charging": "U1 CHRG pin1", "standby": "U1 STDBY pin5", "supply": "VIN via R3 1KΩ"},
+      "evidence": [{"asset_sha256": "9a19e47f4e253aa2ab354b1757c0bee9b12bafb673fcc426eaaeca74d042f353", "page": 1, "locator": "C1-D1 D1/R3/U1 CHRG/STDBY"}]
+    },
+    {
+      "id": "interface.uart-socket",
+      "category": "interface",
+      "subject": "J1 UART 四针接口",
+      "statement": "J1 UART_Socket_4P pin1 为 GPIO18/UART_RXD、pin2 为 GPIO17/UART_TXD、pin3 为 +5 V/VCC、pin4 为 GND。",
+      "confidence": "confirmed",
+      "attributes": {"connector": "J1 UART_Socket_4P", "pin1": "GPIO18 / UART_RXD", "pin2": "GPIO17 / UART_TXD", "pin3": "+5V / VCC", "pin4": "GND", "host_routes": "GPIO18 J4 pin15; GPIO17 J4 pin16"},
+      "evidence": [{"asset_sha256": "9a19e47f4e253aa2ab354b1757c0bee9b12bafb673fcc426eaaeca74d042f353", "page": 1, "locator": "A4 J1 UART_Socket_4P pins1-4；C4 J4 GPIO18/GPIO17"}]
+    },
+    {
+      "id": "interface.gpio-socket",
+      "category": "interface",
+      "subject": "J2 GPIO 四针接口",
+      "statement": "J2 GPIO_Socket_4P pin1 为 GPIO8、pin2 为 GPIO9、pin3 为 +5 V/VCC、pin4 为 GND；GPIO8/9 分别来自 J4 pins4/10。",
+      "confidence": "confirmed",
+      "attributes": {"connector": "J2 GPIO_Socket_4P", "pin1": "GPIO8", "pin2": "GPIO9", "pin3": "+5V / VCC", "pin4": "GND", "host_routes": "GPIO8 J4 pin4; GPIO9 J4 pin10"},
+      "evidence": [{"asset_sha256": "9a19e47f4e253aa2ab354b1757c0bee9b12bafb673fcc426eaaeca74d042f353", "page": 1, "locator": "A4-B4 J2 GPIO_Socket_4P；C4 J4 GPIO8/GPIO9"}]
+    },
+    {
+      "id": "bus.i2c-socket",
+      "category": "bus",
+      "subject": "J3 I2C/电源接口",
+      "statement": "J3 SOCKET_POWER_4P pin1 为 GND、pin2 为 VIN（接口内标 +5 V）、pin3 为 SDA/I2C_SDA、pin4 为 SCL/I2C_SCL；SDA/SCL 分别连接 J4 GPIO12/pin17 与 GPIO11/pin18。",
+      "confidence": "confirmed",
+      "attributes": {"connector": "J3 SOCKET_POWER_4P", "pin1": "GND", "pin2": "VIN / +5V label", "pin3": "SDA / I2C_SDA", "pin4": "SCL / I2C_SCL", "sda_host": "J4 pin17 GPIO12", "scl_host": "J4 pin18 GPIO11", "direction": "bidirectional data; host clock"},
+      "evidence": [{"asset_sha256": "9a19e47f4e253aa2ab354b1757c0bee9b12bafb673fcc426eaaeca74d042f353", "page": 1, "locator": "B3-B4 J3/I2C_SDA/I2C_SCL；C4 J4 pins17/18"}]
+    },
+    {
+      "id": "bus.i2c-pullups",
+      "category": "bus",
+      "subject": "I2C 上拉",
+      "statement": "I2C_SDA 与 I2C_SCL 分别通过 R1 与 R2 4.7 kΩ 上拉到 +3.3 V；页面没有连接固定地址的 I2C 从设备。",
+      "confidence": "confirmed",
+      "attributes": {"sda_pullup": "R1 4.7KΩ to +3.3V", "scl_pullup": "R2 4.7KΩ to +3.3V", "bus_level": "+3.3V", "i2c_device": "none shown", "address": "none shown"},
+      "evidence": [{"asset_sha256": "9a19e47f4e253aa2ab354b1757c0bee9b12bafb673fcc426eaaeca74d042f353", "page": 1, "locator": "B3-B4 R1/R2/I2C_SDA/I2C_SCL/J3"}]
+    },
+    {
+      "id": "interface.m5bus",
+      "category": "interface",
+      "subject": "M5Stack_BUS_S3 已用针脚",
+      "statement": "J4 使用 pins1/3/5 GND、pin4 GPIO8、pin8 GPIO5/RGB、pin10 GPIO9、pin12 +3.3 V、pin15 GPIO18、pin16 GPIO17、pin17 GPIO12/I2C_SDA、pin18 GPIO11/I2C_SCL、pin22 GPIO7、pin28 +5 V 与 pin30 BATTERY/BAT+。",
+      "confidence": "confirmed",
+      "attributes": {"ground": "pins1/3/5", "gpio_socket": "pin4 GPIO8; pin10 GPIO9", "rgb": "pin8 GPIO5", "3v3": "pin12", "uart": "pin15 GPIO18; pin16 GPIO17", "i2c": "pin17 GPIO12 SDA; pin18 GPIO11 SCL", "ir": "pin22 GPIO7", "5v": "pin28", "battery": "pin30 BAT+"},
+      "evidence": [{"asset_sha256": "9a19e47f4e253aa2ab354b1757c0bee9b12bafb673fcc426eaaeca74d042f353", "page": 1, "locator": "C4-D4 J4 M5Stack_BUS_S3 pins1-30"}]
+    },
+    {
+      "id": "protection.power-path",
+      "category": "protection",
+      "subject": "电池路径保护器件",
+      "statement": "页面在 U1、J5 与 J4 BAT+ 之间没有画出电池保护 IC、保险丝、反接保护或负载开关。",
+      "confidence": "confirmed",
+      "attributes": {"battery_protection_ic": "not shown", "fuse": "not shown", "reverse_protection": "not shown", "load_switch": "not shown", "visible_path": "U1 BAT -> BAT+ -> J5/J4 pin30"},
+      "evidence": [{"asset_sha256": "9a19e47f4e253aa2ab354b1757c0bee9b12bafb673fcc426eaaeca74d042f353", "page": 1, "locator": "D1-D4 BAT+ direct path from U1 to J5 and J4"}]
+    },
+    {
+      "id": "power.battery-capacity",
+      "category": "power",
+      "subject": "内置电池容量",
+      "statement": "产品正文称内置电池为 3.7 V、500 mAh，但原理图只显示 J5 与 BAT+，没有电芯型号、电压或容量标注。",
+      "confidence": "uncertain",
+      "attributes": {"document_voltage": "3.7V", "document_capacity": "500mAh", "schematic_connector": "J5 Header 2", "schematic_capacity": null},
+      "evidence": [{"asset_sha256": "9a19e47f4e253aa2ab354b1757c0bee9b12bafb673fcc426eaaeca74d042f353", "page": 1, "locator": "D2 J5/BAT+ without battery cell specification"}]
+    },
+    {
+      "id": "power.charge-current",
+      "category": "power",
+      "subject": "充电电流设定",
+      "statement": "原理图确认 R6 为 2 kΩ，但页面未给 TP4057 的 PROG 公式或充电电流数值，不能仅由该页确认实际充电电流。",
+      "confidence": "uncertain",
+      "attributes": {"charger": "U1 TP4057", "program_resistor": "R6 2KΩ", "charge_current": null, "datasheet_formula": "not present on schematic"},
+      "evidence": [{"asset_sha256": "9a19e47f4e253aa2ab354b1757c0bee9b12bafb673fcc426eaaeca74d042f353", "page": 1, "locator": "D1-D2 U1 PROG/R6 2KΩ"}]
+    },
+    {
+      "id": "interface.magnetic-pogo",
+      "category": "interface",
+      "subject": "磁吸 pogo 接口形态",
+      "statement": "产品正文把充电与 I2C 接口描述为磁吸 pogo pin，但原理图仅将 J3 标为 SOCKET_POWER_4P，未给连接器型号、pogo 结构或磁吸极性。",
+      "confidence": "uncertain",
+      "attributes": {"document_claim": "magnetic pogo pin charging and I2C", "schematic_reference": "J3", "schematic_part": "SOCKET_POWER_4P", "mechanical_type": "not shown"},
+      "evidence": [{"asset_sha256": "9a19e47f4e253aa2ab354b1757c0bee9b12bafb673fcc426eaaeca74d042f353", "page": 1, "locator": "B4 J3 SOCKET_POWER_4P symbol"}]
+    },
+    {
+      "id": "system.cores3-compatibility",
+      "category": "system",
+      "subject": "CoreS3 系列兼容性",
+      "statement": "产品正文称底座适用于 CoreS3 系列；原理图把 J4 命名为 M5Stack_BUS_S3 并给出 GPIO 映射，但没有机械尺寸、堆叠高度或完整主机兼容清单。",
+      "confidence": "uncertain",
+      "attributes": {"document_claim": "CoreS3 series", "schematic_connector": "J4 M5Stack_BUS_S3", "mechanical_compatibility": "not shown", "host_list": "not shown"},
+      "evidence": [{"asset_sha256": "9a19e47f4e253aa2ab354b1757c0bee9b12bafb673fcc426eaaeca74d042f353", "page": 1, "locator": "C4-D4 J4 M5Stack_BUS_S3 electrical symbol only"}]
+    }
+  ],
+  "needs_review": [
+    {
+      "id": "review.battery-capacity",
+      "fact_id": "power.battery-capacity",
+      "question": "请用电芯标签、BOM 或装配资料确认内置电池为 3.7 V、500 mAh。",
+      "reason": "原理图只显示 BAT+ 和两针电池连接器。",
+      "evidence": [{"asset_sha256": "9a19e47f4e253aa2ab354b1757c0bee9b12bafb673fcc426eaaeca74d042f353", "page": 1, "locator": "D2 J5/BAT+"}]
+    },
+    {
+      "id": "review.charge-current",
+      "fact_id": "power.charge-current",
+      "question": "请按该硬件使用的 TP4057 具体版本 datasheet 与 R6=2 kΩ 复核充电电流。",
+      "reason": "充电电流换算关系未出现在原理图页面。",
+      "evidence": [{"asset_sha256": "9a19e47f4e253aa2ab354b1757c0bee9b12bafb673fcc426eaaeca74d042f353", "page": 1, "locator": "U1 PROG pin6/R6 2KΩ"}]
+    },
+    {
+      "id": "review.magnetic-pogo",
+      "fact_id": "interface.magnetic-pogo",
+      "question": "请用 J3 BOM、PCB 与结构件确认其磁吸 pogo pin 型号、针脚方向和机械极性。",
+      "reason": "原理图只给通用四针接口符号。",
+      "evidence": [{"asset_sha256": "9a19e47f4e253aa2ab354b1757c0bee9b12bafb673fcc426eaaeca74d042f353", "page": 1, "locator": "B4 J3 SOCKET_POWER_4P"}]
+    },
+    {
+      "id": "review.cores3-compatibility",
+      "fact_id": "system.cores3-compatibility",
+      "question": "请用结构图和产品兼容矩阵确认适配的 CoreS3 型号及机械兼容边界。",
+      "reason": "原理图只能确认 M5Stack_BUS_S3 电气网络，不能确认机械适配。",
+      "evidence": [{"asset_sha256": "9a19e47f4e253aa2ab354b1757c0bee9b12bafb673fcc426eaaeca74d042f353", "page": 1, "locator": "J4 M5Stack_BUS_S3"}]
+    }
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "dry_run": false,
+  "failed": 0,
+  "published": 1,
+  "results": [
+    {
+      "backup": null,
+      "draft_action": "unchanged",
+      "dry_run": false,
+      "errors": [],
+      "needs_review": 0,
+      "product_id": "tab5-2e8b5b5de1fb",
+      "product_name": "Tab5",
+      "publish_action": "unchanged",
+      "sha256": "8eacafd9df300761418e05d47b336471125da53c61b8067715fee19dda721d37",
+      "status": "valid",
+      "uncertain_facts": 0
+    }
+  ],
+  "schema_version": 1
+}

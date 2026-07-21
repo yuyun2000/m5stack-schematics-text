@@ -1,0 +1,21 @@
+{
+  "dry_run": false,
+  "failed": 0,
+  "published": 1,
+  "results": [
+    {
+      "backup": null,
+      "draft_action": "unchanged",
+      "dry_run": false,
+      "errors": [],
+      "needs_review": 9,
+      "product_id": "atom-voice-b618de616492",
+      "product_name": "Atom Voice",
+      "publish_action": "unchanged",
+      "sha256": "45bfd13490ac92a0f405d923aedaf8905bd5f5a81189707f6896daecf41bf8f1",
+      "status": "valid",
+      "uncertain_facts": 9
+    }
+  ],
+  "schema_version": 1
+}

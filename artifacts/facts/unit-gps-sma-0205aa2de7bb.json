@@ -1,0 +1,319 @@
+{
+  "schema_version": 1,
+  "generator": "schematic_describer",
+  "product": {
+    "product_id": "unit-gps-sma-0205aa2de7bb",
+    "product_name": "Unit GPS SMA",
+    "sku": "U190",
+    "source_path": "unit/Unit-GPS SMA.md",
+    "source_sha256": "b8024d53d3fd156cc93d48c138a5f26c0e4f7591c374532a913fd547a3bef4f1",
+    "input_sha256": "45500d34921e2ebaa9f14ac01e33697aefd78108c39533d941471a80ca27750f"
+  },
+  "schematic_assets": [
+    {
+      "sha256": "6588f9e0561ad784479575666af9ae02f392fbf77890dd9aa261bbabd84d9f37",
+      "source_url": "https://m5stack.oss-cn-shenzhen.aliyuncs.com/resource/docs/products/unit/Unit-GPS%20SMA/schematic.png",
+      "pages": [1]
+    }
+  ],
+  "summary": "Unit GPS SMA 以 M1 ATGM336H-6N-74 GNSS 模组为核心，GNSS_TX/GNSS_RX 经 R3/R4 22Ω 交叉连接 J1 Grove UART 的 RX/TX。+5V 经 U1 VRH3301NLX 生成 +3.3V，再经 FB1 为模组 VCC 供电；BT1 为 VBAT 提供备份电源，1PPS 通过 R2 驱动蓝色 LED。M1 ANT 与 VCC_RF 经 L1 47nH 合路到 E1 Active antenna/IPEX，并由 D1 对地保护。原理图没有展开正文所述 AT6668、导航系统/性能或 UART 协议参数，且 E1 标注 IPEX 与产品正文 SMA 天线描述不一致。",
+  "keywords": [
+    "Unit GPS SMA",
+    "U190",
+    "ATGM336H-6N-74",
+    "AT6668",
+    "VRH3301NLX",
+    "GNSS",
+    "GPS",
+    "BDS",
+    "GLONASS",
+    "GALILEO",
+    "QZSS",
+    "GNSS_TX",
+    "GNSS_RX",
+    "TXD0",
+    "RXD0",
+    "1PPS",
+    "ON/OFF",
+    "VBAT",
+    "VCC_RF",
+    "ANT",
+    "IPEX",
+    "SMA active antenna",
+    "L1 47nH",
+    "LXES15AAA1-153",
+    "HY-2.0_UART",
+    "R3 R4 22R",
+    "FB1 120R/MB",
+    "BT1 Battery",
+    "LED1 BLUE",
+    "F1 6V@1A",
+    "LESD3Z5.0CMT1G",
+    "RLSD52A031V",
+    "+5V",
+    "+3.3V",
+    "115200bps 8N1",
+    "NMEA0183 4.1",
+    "10Hz",
+    "active antenna bias",
+    "UART GNSS",
+    "PPS LED"
+  ],
+  "components": [
+    {
+      "reference": "M1",
+      "part_number": "ATGM336H-6N-74",
+      "role": "GNSS 接收模组，提供 UART、1PPS、ON/OFF、VBAT、ANT 和 VCC_RF 接口",
+      "evidence": [{"asset_sha256": "6588f9e0561ad784479575666af9ae02f392fbf77890dd9aa261bbabd84d9f37", "page": 1, "locator": "第 1 页上方 M1 ATGM336H-6N-74，pins1-18 与 TXD0/RXD0/1PPS/ON-OFF/VBAT/VCC/NRST/VCC_RF/ANT/GND"}]
+    },
+    {
+      "reference": "U1",
+      "part_number": "VRH3301NLX",
+      "role": "将 +5V 转换为 +3.3V 的稳压器",
+      "evidence": [{"asset_sha256": "6588f9e0561ad784479575666af9ae02f392fbf77890dd9aa261bbabd84d9f37", "page": 1, "locator": "第 1 页左下 U1 VRH3301NLX，VIN pin4、VOUT pin1、VSS pins2/5、EN pin3"}]
+    },
+    {
+      "reference": "J1",
+      "part_number": "HY-2.0_UART",
+      "role": "GNSS UART 与 5V/GND Grove 接口",
+      "evidence": [{"asset_sha256": "6588f9e0561ad784479575666af9ae02f392fbf77890dd9aa261bbabd84d9f37", "page": 1, "locator": "第 1 页右下 J1 HY-2.0_UART，pin1 RX、pin2 TX、pin3 VCC、pin4 GND"}]
+    },
+    {
+      "reference": "E1",
+      "part_number": "Active antenna / IPEX",
+      "role": "ANT/VCC_RF 合路节点的有源天线连接器",
+      "evidence": [{"asset_sha256": "6588f9e0561ad784479575666af9ae02f392fbf77890dd9aa261bbabd84d9f37", "page": 1, "locator": "第 1 页右上 E1 标注 Active antenna 与 IPEX，信号端接 ANT/VCC_RF 合路节点、外壳接 GND"}]
+    },
+    {
+      "reference": "L1",
+      "part_number": "47nH ±2%",
+      "role": "将 M1 VCC_RF 偏置注入 ANT/有源天线射频节点",
+      "evidence": [{"asset_sha256": "6588f9e0561ad784479575666af9ae02f392fbf77890dd9aa261bbabd84d9f37", "page": 1, "locator": "第 1 页上方 M1 VCC_RF pin14 至 E1/ANT 节点之间的 L1 47nH ±2%"}]
+    },
+    {
+      "reference": "D1",
+      "part_number": "LXES15AAA1-153",
+      "role": "ANT/有源天线射频节点到 GND 的 ESD 保护器件",
+      "evidence": [{"asset_sha256": "6588f9e0561ad784479575666af9ae02f392fbf77890dd9aa261bbabd84d9f37", "page": 1, "locator": "第 1 页右上 D1 LXES15AAA1-153 从 ANT/E1 节点接 GND"}]
+    },
+    {
+      "reference": "BT1",
+      "part_number": "Battery",
+      "role": "为 M1 VBAT 提供对地备份电源",
+      "evidence": [{"asset_sha256": "6588f9e0561ad784479575666af9ae02f392fbf77890dd9aa261bbabd84d9f37", "page": 1, "locator": "第 1 页左上 BT1 Battery 位于 M1 VBAT 与 GND 之间"}]
+    },
+    {
+      "reference": "LED1,R2",
+      "part_number": "BLUE / 1KΩ",
+      "role": "由 M1 1PPS 经 R2 驱动的蓝色定位脉冲指示灯",
+      "evidence": [{"asset_sha256": "6588f9e0561ad784479575666af9ae02f392fbf77890dd9aa261bbabd84d9f37", "page": 1, "locator": "第 1 页左上 M1 1PPS-R2 1KΩ-LED1 BLUE-GND 支路"}]
+    },
+    {
+      "reference": "R1",
+      "part_number": "10KΩ",
+      "role": "将 M1 ON/OFF 上拉到 +3.3V",
+      "evidence": [{"asset_sha256": "6588f9e0561ad784479575666af9ae02f392fbf77890dd9aa261bbabd84d9f37", "page": 1, "locator": "第 1 页左上 R1 10KΩ 从 +3.3V 接 M1 ON/OFF pin5"}]
+    },
+    {
+      "reference": "FB1,C1,C2",
+      "part_number": "120Ω/MB / 22uF / 100nF",
+      "role": "+3.3V 到 M1 VCC 的滤波与去耦网络",
+      "evidence": [{"asset_sha256": "6588f9e0561ad784479575666af9ae02f392fbf77890dd9aa261bbabd84d9f37", "page": 1, "locator": "第 1 页上方 +3.3V-FB1-M1 VCC pin8，C1/C2 从 VCC 节点接 GND"}]
+    },
+    {
+      "reference": "F1,D3,D4,D5,C6",
+      "part_number": "6V@1A / LESD3Z5.0CMT1G / RLSD52A031V / RLSD52A031V / 100nF",
+      "role": "J1 VCC、RX、TX 的保险、对地瞬态保护和滤波网络",
+      "evidence": [{"asset_sha256": "6588f9e0561ad784479575666af9ae02f392fbf77890dd9aa261bbabd84d9f37", "page": 1, "locator": "第 1 页右下 +5V/F1/C6/D3 与 J1 VCC，以及 RX/TX 上的 D4/D5"}]
+    },
+    {
+      "reference": "D2",
+      "part_number": "RLSD52A031V",
+      "role": "+3.3V 电源轨到 GND 的瞬态保护",
+      "evidence": [{"asset_sha256": "6588f9e0561ad784479575666af9ae02f392fbf77890dd9aa261bbabd84d9f37", "page": 1, "locator": "第 1 页左下 D2 RLSD52A031V 从 +3.3V 接 GND"}]
+    }
+  ],
+  "facts": [
+    {
+      "id": "system.gps-sma-architecture",
+      "category": "system",
+      "subject": "Unit GPS SMA 系统架构",
+      "statement": "M1 ATGM336H-6N-74 完成 GNSS 接收，通过 J1 输出 UART，并以 1PPS 驱动 LED；+5V 经 U1 生成 +3.3V，再经 FB1 为 M1 供电，BT1 为 VBAT 备份。M1 ANT 与 VCC_RF 经 L1 合路到 E1 有源天线接口。",
+      "confidence": "confirmed",
+      "attributes": {"gnss_module": "M1 ATGM336H-6N-74", "host_interface": "J1 HY-2.0_UART", "pps": "M1 pin4 -> R2/LED1", "main_power": "+5V -> U1 VRH3301NLX -> +3.3V -> FB1 -> M1 VCC", "backup": "BT1 -> VBAT", "rf": "ANT + VCC_RF via L1 -> E1"},
+      "evidence": [{"asset_sha256": "6588f9e0561ad784479575666af9ae02f392fbf77890dd9aa261bbabd84d9f37", "page": 1, "locator": "第 1 页完整单页，M1/U1/J1/E1/BT1/LED1 与电源保护功能区"}]
+    },
+    {
+      "id": "component.gnss-module-pin-map",
+      "category": "component",
+      "subject": "ATGM336H-6N-74 关键引脚",
+      "statement": "M1 pin1=GND、pin2=TXD0/GNSS_TX、pin3=RXD0/GNSS_RX、pin4=1PPS、pin5=ON/OFF、pin6=VBAT、pin8=VCC、pin9=NRST；右侧 pin14=VCC_RF、pin11=ANT，pin10/pin12 为 GND，TXD1/RXD1 位于 pins17/16。",
+      "confidence": "confirmed",
+      "attributes": {"ground": "pin1,pin10,pin12 GND", "uart0": "pin2 TXD0/GNSS_TX,pin3 RXD0/GNSS_RX", "pps": "pin4 1PPS", "control": "pin5 ON/OFF,pin9 NRST", "backup": "pin6 VBAT", "supply": "pin8 VCC", "rf_bias": "pin14 VCC_RF", "antenna": "pin11 ANT", "uart1": "pin17 TXD1,pin16 RXD1"},
+      "evidence": [{"asset_sha256": "6588f9e0561ad784479575666af9ae02f392fbf77890dd9aa261bbabd84d9f37", "page": 1, "locator": "第 1 页上方 M1 ATGM336H-6N-74 pins1-18 标签"}]
+    },
+    {
+      "id": "power.five-to-three3",
+      "category": "power",
+      "subject": "+5V 至 +3.3V 稳压",
+      "statement": "+5V 连接 U1 VRH3301NLX VIN pin4 与 EN pin3，VOUT pin1 输出 +3.3V，VSS pins2/5 接 GND；C3 22uF 和 C4 1uF 位于输入侧，C5 1uF 位于输出侧，D2 RLSD52A031V 从 +3.3V 接 GND。",
+      "confidence": "confirmed",
+      "attributes": {"regulator": "U1 VRH3301NLX", "input": "+5V -> VIN pin4,EN pin3", "output": "+3.3V -> VOUT pin1", "ground": "VSS pins2,5", "input_caps": "C3 22uF,C4 1uF", "output_cap": "C5 1uF", "rail_protection": "D2 RLSD52A031V"},
+      "evidence": [{"asset_sha256": "6588f9e0561ad784479575666af9ae02f392fbf77890dd9aa261bbabd84d9f37", "page": 1, "locator": "第 1 页左下 U1/C3/C4/C5/D2 与 +5V/+3.3V/GND"}]
+    },
+    {
+      "id": "power.gnss-vcc-filter",
+      "category": "power",
+      "subject": "M1 VCC 滤波",
+      "statement": "+3.3V 经 FB1 120Ω/MB 进入 M1 VCC pin8；C1 22uF 与 C2 100nF 从 VCC 节点接 GND。",
+      "confidence": "confirmed",
+      "attributes": {"source": "+3.3V", "bead": "FB1 120Ω/MB", "module_pin": "M1 pin8 VCC", "decoupling": "C1 22uF,C2 100nF", "return": "GND"},
+      "evidence": [{"asset_sha256": "6588f9e0561ad784479575666af9ae02f392fbf77890dd9aa261bbabd84d9f37", "page": 1, "locator": "第 1 页上方 +3.3V/FB1/C1/C2/M1 VCC pin8"}]
+    },
+    {
+      "id": "interface.grove-uart",
+      "category": "interface",
+      "subject": "J1 Grove UART 引脚",
+      "statement": "J1 HY-2.0_UART pin1=RX、pin2=TX、pin3=VCC、pin4=GND；pin3 由 +5V 经 F1 6V@1A 供电并由 C6 100nF 对地滤波。",
+      "confidence": "confirmed",
+      "attributes": {"connector": "J1 HY-2.0_UART", "pin1": "RX", "pin2": "TX", "pin3": "VCC <- F1 6V@1A <- +5V", "pin4": "GND", "vcc_filter": "C6 100nF"},
+      "evidence": [{"asset_sha256": "6588f9e0561ad784479575666af9ae02f392fbf77890dd9aa261bbabd84d9f37", "page": 1, "locator": "第 1 页右下 J1 pins1-4、F1/C6 与 +5V/GND"}]
+    },
+    {
+      "id": "bus.gnss-uart",
+      "category": "bus",
+      "subject": "M1 到 J1 UART 映射",
+      "statement": "M1 TXD0/GNSS_TX pin2 经 R3 22Ω 连接 J1 pin1 RX；J1 pin2 TX 经 R4 22Ω 连接 M1 RXD0/GNSS_RX pin3，构成交叉 UART。M1 TXD1/RXD1 在本页没有外接。",
+      "confidence": "confirmed",
+      "attributes": {"module_tx": "M1 pin2 TXD0/GNSS_TX -> R3 22R -> J1 pin1 RX", "module_rx": "J1 pin2 TX -> R4 22R -> M1 pin3 RXD0/GNSS_RX", "secondary_uart": "M1 pins17/16 TXD1/RXD1 unconnected", "direction": "crossed TX/RX"},
+      "evidence": [{"asset_sha256": "6588f9e0561ad784479575666af9ae02f392fbf77890dd9aa261bbabd84d9f37", "page": 1, "locator": "第 1 页 M1 GNSS_TX/GNSS_RX 与右下 R3/R4/J1 RX/TX"}]
+    },
+    {
+      "id": "rf.active-antenna-bias",
+      "category": "rf",
+      "subject": "有源天线射频与偏置路径",
+      "statement": "M1 ANT pin11 直接连接 E1 天线信号节点，M1 VCC_RF pin14 经 L1 47nH ±2% 注入同一节点；D1 LXES15AAA1-153 从该节点接 GND，E1 外壳接 GND。",
+      "confidence": "confirmed",
+      "attributes": {"rf_input": "M1 pin11 ANT", "bias_source": "M1 pin14 VCC_RF", "bias_inductor": "L1 47nH ±2%", "connector": "E1 Active antenna / IPEX", "esd": "D1 LXES15AAA1-153 to GND", "ground": "E1 shield GND"},
+      "evidence": [{"asset_sha256": "6588f9e0561ad784479575666af9ae02f392fbf77890dd9aa261bbabd84d9f37", "page": 1, "locator": "第 1 页右上 M1 ANT/VCC_RF/L1/D1/E1/GND"}]
+    },
+    {
+      "id": "gpio.pps-led",
+      "category": "gpio",
+      "subject": "1PPS 蓝色指示灯",
+      "statement": "M1 1PPS pin4 经 R2 1KΩ 和 LED1 BLUE 串联到 GND，构成定位脉冲状态指示支路。",
+      "confidence": "confirmed",
+      "attributes": {"source": "M1 pin4 1PPS", "resistor": "R2 1KΩ", "led": "LED1 BLUE", "return": "GND"},
+      "evidence": [{"asset_sha256": "6588f9e0561ad784479575666af9ae02f392fbf77890dd9aa261bbabd84d9f37", "page": 1, "locator": "第 1 页左上 M1 1PPS/R2/LED1/GND"}]
+    },
+    {
+      "id": "power.backup-and-control",
+      "category": "power",
+      "subject": "VBAT 备份与 ON/OFF",
+      "statement": "BT1 Battery 跨接 M1 VBAT pin6 与 GND，为备份域供电；R1 10KΩ 将 M1 ON/OFF pin5 上拉到 +3.3V。M1 NRST pin9 在图中带未连接标记。",
+      "confidence": "confirmed",
+      "attributes": {"backup_pin": "M1 pin6 VBAT", "battery": "BT1 to GND", "control_pin": "M1 pin5 ON/OFF", "control_pullup": "R1 10K to +3.3V", "reset": "M1 pin9 NRST NC"},
+      "evidence": [{"asset_sha256": "6588f9e0561ad784479575666af9ae02f392fbf77890dd9aa261bbabd84d9f37", "page": 1, "locator": "第 1 页左上 BT1/VBAT、R1/ON-OFF 与 M1 NRST pin9 NC"}]
+    },
+    {
+      "id": "protection.grove-and-rf",
+      "category": "protection",
+      "subject": "Grove、电源与射频保护",
+      "statement": "J1 VCC 使用 F1 6V@1A 串联保护并由 D3 LESD3Z5.0CMT1G 对地钳位，RX/TX 分别由 D4/D5 RLSD52A031V 对地保护；+3.3V 使用 D2 RLSD52A031V，天线节点使用 D1 LXES15AAA1-153。",
+      "confidence": "confirmed",
+      "attributes": {"vcc_fuse": "F1 6V@1A", "vcc_tvs": "D3 LESD3Z5.0CMT1G", "rx_esd": "D4 RLSD52A031V", "tx_esd": "D5 RLSD52A031V", "three3_esd": "D2 RLSD52A031V", "rf_esd": "D1 LXES15AAA1-153"},
+      "evidence": [{"asset_sha256": "6588f9e0561ad784479575666af9ae02f392fbf77890dd9aa261bbabd84d9f37", "page": 1, "locator": "第 1 页右下 F1/D3-D5/J1、左下 D2 与右上 D1/E1"}]
+    },
+    {
+      "id": "memory.no-external-storage",
+      "category": "memory",
+      "subject": "外部存储与主控边界",
+      "statement": "本页电路没有独立 MCU、Flash、RAM、EEPROM、SD 卡或外部晶振；导航处理与协议功能封装在 M1 ATGM336H-6N-74 模组中，内部实现未展开。",
+      "confidence": "confirmed",
+      "attributes": {"module": "M1 ATGM336H-6N-74", "external_mcu": null, "external_flash": null, "external_ram": null, "external_eeprom": null, "sd_card": null, "external_crystal": null},
+      "evidence": [{"asset_sha256": "6588f9e0561ad784479575666af9ae02f392fbf77890dd9aa261bbabd84d9f37", "page": 1, "locator": "第 1 页完整单页，M1 为封装模组，未见其他存储或时钟器件"}]
+    },
+    {
+      "id": "component.documented-internal-soc",
+      "category": "component",
+      "subject": "正文中的 AT6668 SoC",
+      "statement": "产品正文称 ATGM336H 采用 AT6668 芯片方案；板级原理图只把 M1 标为 ATGM336H-6N-74，没有展开内部 SoC 或标出 AT6668。",
+      "confidence": "uncertain",
+      "attributes": {"schematic_module": "M1 ATGM336H-6N-74", "documented_soc": "AT6668", "internal_schematic": null, "soc_reference": null},
+      "evidence": [{"asset_sha256": "6588f9e0561ad784479575666af9ae02f392fbf77890dd9aa261bbabd84d9f37", "page": 1, "locator": "第 1 页 M1 型号字段仅标 ATGM336H-6N-74"}]
+    },
+    {
+      "id": "sensor.documented-gnss-performance",
+      "category": "sensor",
+      "subject": "正文中的 GNSS 系统与定位性能",
+      "statement": "正文称支持 GPS/QZSS/BD2/BD3/GALILEO/GLONASS、50 通道、最大 10Hz、CEP50 小于 1.5m，并列出灵敏度和冷热启动时间；原理图只显示 M1 外部接口，没有这些系统、频点、通道或性能参数。",
+      "confidence": "uncertain",
+      "attributes": {"documented_systems": "GPS,QZSS,BD2,BD3,GALILEO,GLONASS", "documented_channels": "50", "documented_update_rate": "10Hz max", "documented_accuracy": "<1.5m CEP50", "documented_sensitivity": "tracking -162dBm,acquisition -160dBm,cold -148dBm", "documented_start": "cold 23s,hot 1s", "schematic_performance": null},
+      "evidence": [{"asset_sha256": "6588f9e0561ad784479575666af9ae02f392fbf77890dd9aa261bbabd84d9f37", "page": 1, "locator": "第 1 页 M1 ATGM336H-6N-74 符号无 GNSS 性能表"}]
+    },
+    {
+      "id": "bus.documented-uart-protocol",
+      "category": "bus",
+      "subject": "正文中的 UART 与 NMEA 参数",
+      "statement": "正文标称 UART 默认 115200bps、8N1，并使用 NMEA0183 4.1；原理图只确认 GNSS_TX/GNSS_RX 的电气连接，没有波特率、数据格式或协议版本文字。",
+      "confidence": "uncertain",
+      "attributes": {"documented_baud": "115200bps", "documented_format": "8N1", "documented_protocol": "NMEA0183 4.1", "tx": "GNSS_TX", "rx": "GNSS_RX", "schematic_baud": null},
+      "evidence": [{"asset_sha256": "6588f9e0561ad784479575666af9ae02f392fbf77890dd9aa261bbabd84d9f37", "page": 1, "locator": "第 1 页 M1 TXD0/RXD0 与 J1 RX/TX，无波特率或 NMEA 标注"}]
+    },
+    {
+      "id": "rf.antenna-connector-conflict",
+      "category": "rf",
+      "subject": "IPEX 与 SMA 天线描述差异",
+      "statement": "原理图 E1 明确标注 Active antenna 和 IPEX；产品名及正文则描述 SMA 有源外置天线（内螺内针、30DBI、1555-1580MHz、1m）。当前板端连接器、转接结构及天线规格不能由本页一致确认。",
+      "confidence": "uncertain",
+      "attributes": {"schematic_connector": "E1 IPEX", "schematic_role": "Active antenna", "documented_connector": "SMA 内螺内针", "documented_gain": "30DBI", "documented_band": "1555-1580MHz", "documented_length": "1m", "adapter": null},
+      "evidence": [{"asset_sha256": "6588f9e0561ad784479575666af9ae02f392fbf77890dd9aa261bbabd84d9f37", "page": 1, "locator": "第 1 页右上 E1 标注 Active antenna / IPEX"}]
+    },
+    {
+      "id": "power.documented-consumption",
+      "category": "power",
+      "subject": "正文中的整机功耗",
+      "statement": "正文标称待机 DC 5V/31.64mA、工作 DC 5V/40.90mA；原理图显示稳压、模组、天线偏置和 LED 支路，但没有整机电流、测试状态或容差标注。",
+      "confidence": "uncertain",
+      "attributes": {"documented_standby": "DC 5V/31.64mA", "documented_operating": "DC 5V/40.90mA", "schematic_current": null, "test_condition": null, "tolerance": null},
+      "evidence": [{"asset_sha256": "6588f9e0561ad784479575666af9ae02f392fbf77890dd9aa261bbabd84d9f37", "page": 1, "locator": "第 1 页完整电源路径与 M1/E1/LED1，未标整机电流"}]
+    }
+  ],
+  "needs_review": [
+    {
+      "id": "review.internal-soc",
+      "fact_id": "component.documented-internal-soc",
+      "question": "请用 U190 当前 ATGM336H-6N-74 模组资料或 BOM 确认内部 SoC 是否为 AT6668。",
+      "reason": "板级原理图未展开模组内部芯片。",
+      "evidence": [{"asset_sha256": "6588f9e0561ad784479575666af9ae02f392fbf77890dd9aa261bbabd84d9f37", "page": 1, "locator": "第 1 页 M1 ATGM336H-6N-74"}]
+    },
+    {
+      "id": "review.gnss-performance",
+      "fact_id": "sensor.documented-gnss-performance",
+      "question": "请用 ATGM336H-6N-74 规格和量产固件确认支持星系/频点、50 通道、10Hz、定位精度、灵敏度及启动时间。",
+      "reason": "这些 GNSS 性能参数未打印在板级原理图中。",
+      "evidence": [{"asset_sha256": "6588f9e0561ad784479575666af9ae02f392fbf77890dd9aa261bbabd84d9f37", "page": 1, "locator": "第 1 页 M1 外部引脚符号"}]
+    },
+    {
+      "id": "review.uart-protocol",
+      "fact_id": "bus.documented-uart-protocol",
+      "question": "请用当前模组固件或串口实测确认默认 115200bps、8N1 和 NMEA0183 4.1。",
+      "reason": "原理图仅确认 UART 走线，不包含通信参数。",
+      "evidence": [{"asset_sha256": "6588f9e0561ad784479575666af9ae02f392fbf77890dd9aa261bbabd84d9f37", "page": 1, "locator": "第 1 页 GNSS_TX/GNSS_RX 与 J1"}]
+    },
+    {
+      "id": "review.antenna-interface",
+      "fact_id": "rf.antenna-connector-conflict",
+      "question": "U190 量产板端究竟是 IPEX、SMA 还是 IPEX-to-SMA 转接结构？随附有源天线的极性、增益、频段和长度是什么？",
+      "reason": "原理图标 IPEX，产品名称和正文描述 SMA，证据不一致。",
+      "evidence": [{"asset_sha256": "6588f9e0561ad784479575666af9ae02f392fbf77890dd9aa261bbabd84d9f37", "page": 1, "locator": "第 1 页 E1 Active antenna / IPEX"}]
+    },
+    {
+      "id": "review.power-consumption",
+      "fact_id": "power.documented-consumption",
+      "question": "请用量产规格或实测确认 5V/31.64mA 待机、5V/40.90mA 工作电流的 GNSS、PPS 和天线状态条件。",
+      "reason": "原理图没有整机电流或测试状态标注。",
+      "evidence": [{"asset_sha256": "6588f9e0561ad784479575666af9ae02f392fbf77890dd9aa261bbabd84d9f37", "page": 1, "locator": "第 1 页完整电源与负载电路"}]
+    }
+  ]
+}

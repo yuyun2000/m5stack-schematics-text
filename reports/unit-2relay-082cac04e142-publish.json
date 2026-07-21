@@ -1,0 +1,21 @@
+{
+  "dry_run": false,
+  "failed": 0,
+  "published": 1,
+  "results": [
+    {
+      "backup": null,
+      "draft_action": "unchanged",
+      "dry_run": false,
+      "errors": [],
+      "needs_review": 2,
+      "product_id": "unit-2relay-082cac04e142",
+      "product_name": "Unit 2Relay",
+      "publish_action": "unchanged",
+      "sha256": "dc20f83a7f380621df9b12496fd034c5dd71f35a62868b034cfac76728eb763a",
+      "status": "valid",
+      "uncertain_facts": 2
+    }
+  ],
+  "schema_version": 1
+}

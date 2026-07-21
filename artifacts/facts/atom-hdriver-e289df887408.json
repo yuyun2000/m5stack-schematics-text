@@ -1,0 +1,438 @@
+{
+  "schema_version": 1,
+  "generator": "schematic_describer",
+  "product": {
+    "product_id": "atom-hdriver-e289df887408",
+    "product_name": "Atom HDriver",
+    "sku": "K050",
+    "source_path": "atom/atom_hdriver.md",
+    "source_sha256": "6df146f3904895c90418a693ed5fcee0710e0b0db9c22be818f8ba014f907b2b",
+    "input_sha256": "feb42456c0b385364b44537163e710f579e7dea29103b4bfbc11de58aff34226"
+  },
+  "schematic_assets": [
+    {
+      "sha256": "39f8ddd46052a3fd7e9cddc15f16f8d9cc5c8ea368dd23ee06bdd02cd7ae125e",
+      "source_url": "https://static-cdn.m5stack.com/resource/docs/products/atom/atom_hdriver/atom_hdriver_sch_01.webp",
+      "pages": [
+        1
+      ]
+    }
+  ],
+  "summary": "Atom HDriver 以 U2 DRV8876PWP 驱动 OUT_N/OUT_P 双向负载，电机电源 VM 直接连接 VIN，IN_1/IN_2 分别由 Atom G19/G23 控制，nFAULT 连接 G22。U1 SY8303A 将 VIN 转换为 SYS_P050，SYS_P050 经 FU1 0.5A 形成 M5_P050，为 Atom 4 Pin 的 5V 供电；同一 SYS_P050 还连接 DRV8876 的 nSLEEP、PMODE 与 VREF 分压。Atom G33 通过 R6 18KΩ、R10 2KΩ 和 C3 105/10V 监测 VIN，J3 同时引出 OUT_N、OUT_P、GND 和 VIN。",
+  "keywords": [
+    "Atom HDriver",
+    "K050",
+    "DRV8876PWP",
+    "SY8303A",
+    "H-bridge",
+    "DC motor",
+    "OUT_N",
+    "OUT_P",
+    "IN_1",
+    "IN_2",
+    "FAULT",
+    "nFAULT",
+    "nSLEEP",
+    "PMODE",
+    "VREF",
+    "IPROPI",
+    "IMODE",
+    "VM",
+    "VCP",
+    "CPH",
+    "CPL",
+    "SYS_P050",
+    "M5_P050",
+    "VIN",
+    "VIN-1/10",
+    "G19",
+    "G23",
+    "G22",
+    "G33",
+    "Atom SIP5",
+    "Atom SIP4",
+    "HT3.96_4P",
+    "FU1 0.5A",
+    "R15 10Ω",
+    "C8 102/50V"
+  ],
+  "components": [
+    {
+      "reference": "U2",
+      "part_number": "DRV8876PWP",
+      "role": "H 桥电机驱动器，连接 Atom 控制、VIN 电机电源与 OUT_N/OUT_P 输出",
+      "evidence": [
+        {
+          "asset_sha256": "39f8ddd46052a3fd7e9cddc15f16f8d9cc5c8ea368dd23ee06bdd02cd7ae125e",
+          "page": 1,
+          "locator": "右下 Driver 区域 U2 DRV8876PWP：EN/IN1、PH/IN2、nSLEEP、nFAULT、PMODE、VREF、IPROPI、IMODE、OUT1/OUT2、VM/VCP/CPH/CPL/PAD/GND"
+        }
+      ]
+    },
+    {
+      "reference": "U1",
+      "part_number": "SY8303A",
+      "role": "VIN 到 SYS_P050 的降压转换器",
+      "evidence": [
+        {
+          "asset_sha256": "39f8ddd46052a3fd7e9cddc15f16f8d9cc5c8ea368dd23ee06bdd02cd7ae125e",
+          "page": 1,
+          "locator": "左上 DC-DC 区域 U1 SY8303A：VIN/EN/BS/LX/FB/FS/GND、L1 与 R7/R8/R9"
+        }
+      ]
+    },
+    {
+      "reference": "FU1",
+      "part_number": "0.5A",
+      "role": "SYS_P050 到 M5_P050 的串联保险丝",
+      "evidence": [
+        {
+          "asset_sha256": "39f8ddd46052a3fd7e9cddc15f16f8d9cc5c8ea368dd23ee06bdd02cd7ae125e",
+          "page": 1,
+          "locator": "左上 SYS_P050-FU1 0.5A-M5_P050"
+        }
+      ]
+    },
+    {
+      "reference": "J3",
+      "part_number": "HT3.96_4P",
+      "role": "电机输出与 VIN 电源接线端子",
+      "evidence": [
+        {
+          "asset_sha256": "39f8ddd46052a3fd7e9cddc15f16f8d9cc5c8ea368dd23ee06bdd02cd7ae125e",
+          "page": 1,
+          "locator": "右上 J3 HT3.96_4P，pins 1~4 为 OUT_N/OUT_P/GND/VIN"
+        }
+      ]
+    },
+    {
+      "reference": "J2",
+      "part_number": "SIP5",
+      "role": "Atom 5 Pin 的 3.3V、FAULT、IN_1、IN_2 与 VIN 检测接口",
+      "evidence": [
+        {
+          "asset_sha256": "39f8ddd46052a3fd7e9cddc15f16f8d9cc5c8ea368dd23ee06bdd02cd7ae125e",
+          "page": 1,
+          "locator": "左下 J2 SIP5：3V3/G22/G19/G23/G33 与 R3/R4/R5/R6/R10/C3"
+        }
+      ]
+    },
+    {
+      "reference": "J1",
+      "part_number": "SIP4",
+      "role": "Atom 4 Pin 的 G21/G25/5V/GND 接口，其中 5V 接 M5_P050",
+      "evidence": [
+        {
+          "asset_sha256": "39f8ddd46052a3fd7e9cddc15f16f8d9cc5c8ea368dd23ee06bdd02cd7ae125e",
+          "page": 1,
+          "locator": "左下 J1 SIP4：G21/G25/5V/GND，5V 网络标 M5_P050"
+        }
+      ]
+    },
+    {
+      "reference": "LED1",
+      "part_number": "LED_GREEN",
+      "role": "SYS_P050 电源指示灯",
+      "evidence": [
+        {
+          "asset_sha256": "39f8ddd46052a3fd7e9cddc15f16f8d9cc5c8ea368dd23ee06bdd02cd7ae125e",
+          "page": 1,
+          "locator": "左上 SYS_P050-R2 15K/1%-LED1 LED_GREEN-GND"
+        }
+      ]
+    },
+    {
+      "reference": "L1",
+      "part_number": "4.7uH",
+      "role": "SY8303A LX 到 SYS_P050 的降压电感",
+      "evidence": [
+        {
+          "asset_sha256": "39f8ddd46052a3fd7e9cddc15f16f8d9cc5c8ea368dd23ee06bdd02cd7ae125e",
+          "page": 1,
+          "locator": "左上 U1 LX pin 6-L1 4.7uH-SYS_P050"
+        }
+      ]
+    },
+    {
+      "reference": "R15/C8",
+      "part_number": "10Ω/1% / 102/50V",
+      "role": "OUT_N 与 OUT_P 之间的并联阻容输出网络",
+      "evidence": [
+        {
+          "asset_sha256": "39f8ddd46052a3fd7e9cddc15f16f8d9cc5c8ea368dd23ee06bdd02cd7ae125e",
+          "page": 1,
+          "locator": "右下 U2 OUT1/OUT2 之间的 R15 10Ω/1% 与 C8 102/50V"
+        }
+      ]
+    }
+  ],
+  "facts": [
+    {
+      "id": "system.hdriver-architecture",
+      "category": "system",
+      "subject": "Atom HDriver",
+      "statement": "电路由 U2 DRV8876PWP H 桥、U1 SY8303A 5V 电源、Atom SIP4/SIP5 接口和 J3 电机/电源端子组成；VIN 同时供给驱动器 VM 与 DC-DC 输入。",
+      "confidence": "confirmed",
+      "attributes": {
+        "motor_driver": "U2 DRV8876PWP",
+        "dc_dc": "U1 SY8303A",
+        "atom": "J1 SIP4,J2 SIP5",
+        "terminal": "J3 HT3.96_4P",
+        "motor_supply": "VIN"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "39f8ddd46052a3fd7e9cddc15f16f8d9cc5c8ea368dd23ee06bdd02cd7ae125e",
+          "page": 1,
+          "locator": "整页 DC-DC、ATOM SOCKET、Driver 与 J3 四个功能分区"
+        }
+      ]
+    },
+    {
+      "id": "power.vin-to-sys-p050",
+      "category": "power",
+      "subject": "U1 SY8303A 降压",
+      "statement": "VIN 连接 U1 VIN pin 5 与 EN pin 8，LX pin 6 经 L1 4.7uH 输出 SYS_P050；BS pin 7 通过 C2 104/50V 接 LX，FB pin 1 使用 R7 15K/1% 与 R8 2.2K/1% 分压，FS pin 2 经 R9 200K/1% 接地。",
+      "confidence": "confirmed",
+      "attributes": {
+        "input": "VIN",
+        "converter": "U1 SY8303A",
+        "enable": "U1 pin 8 tied to VIN",
+        "inductor": "L1 4.7uH",
+        "output": "SYS_P050",
+        "bootstrap": "C2 104/50V",
+        "feedback": "R7 15K/1%,R8 2.2K/1%",
+        "frequency": "R9 200K/1%"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "39f8ddd46052a3fd7e9cddc15f16f8d9cc5c8ea368dd23ee06bdd02cd7ae125e",
+          "page": 1,
+          "locator": "左上 VIN-U1-C2-L1-R7/R8/R9-SYS_P050"
+        }
+      ]
+    },
+    {
+      "id": "power.atom-5v-fuse",
+      "category": "power",
+      "subject": "SYS_P050 到 M5_P050",
+      "statement": "SYS_P050 经 FU1 0.5A 串联后形成 M5_P050，M5_P050 连接 J1 SIP4 的 5V 引脚；SYS_P050 另经 R2 15K/1% 与 LED1 接地。",
+      "confidence": "confirmed",
+      "attributes": {
+        "source": "SYS_P050",
+        "fuse": "FU1 0.5A",
+        "atom_rail": "M5_P050",
+        "atom_connector": "J1 5V",
+        "indicator": "R2 15K/1%,LED1 LED_GREEN"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "39f8ddd46052a3fd7e9cddc15f16f8d9cc5c8ea368dd23ee06bdd02cd7ae125e",
+          "page": 1,
+          "locator": "左上 SYS_P050-FU1-M5_P050 与 R2-LED1-GND，左下 J1 M5_P050"
+        }
+      ]
+    },
+    {
+      "id": "interface.motor-power-terminal",
+      "category": "interface",
+      "subject": "J3 HT3.96_4P",
+      "statement": "J3 pins 1~4 依次连接 OUT_N、OUT_P、GND、VIN。",
+      "confidence": "confirmed",
+      "attributes": {
+        "pin_1": "OUT_N",
+        "pin_2": "OUT_P",
+        "pin_3": "GND",
+        "pin_4": "VIN"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "39f8ddd46052a3fd7e9cddc15f16f8d9cc5c8ea368dd23ee06bdd02cd7ae125e",
+          "page": 1,
+          "locator": "右上 J3 HT3.96_4P pins 1~4 与左侧网络"
+        }
+      ]
+    },
+    {
+      "id": "interface.atom-sockets",
+      "category": "interface",
+      "subject": "J1/J2 Atom 插座",
+      "statement": "J1 SIP4 引出 G21、G25、M5_P050 和 GND；J2 SIP5 引出 3V3、G22/FAULT、G19/IN_1、G23/IN_2、G33/VIN 检测。",
+      "confidence": "confirmed",
+      "attributes": {
+        "sip4": "G21,G25,M5_P050,GND",
+        "sip5_pin_1": "3V3",
+        "sip5_pin_2": "G22 FAULT",
+        "sip5_pin_3": "G19 IN_1",
+        "sip5_pin_4": "G23 IN_2",
+        "sip5_pin_5": "G33 VIN monitor"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "39f8ddd46052a3fd7e9cddc15f16f8d9cc5c8ea368dd23ee06bdd02cd7ae125e",
+          "page": 1,
+          "locator": "左下 J1 SIP4 与 J2 SIP5 的网络标签及 R3/R4/R5/R6/R10/C3"
+        }
+      ]
+    },
+    {
+      "id": "analog.vin-monitor",
+      "category": "analog",
+      "subject": "G33 VIN 分压检测",
+      "statement": "VIN 经 R6 18K/1% 到 G33 检测节点，R10 2K/1% 与 C3 105/10V 从该节点接 GND；电阻比使 G33 节点为 VIN 的 1/10。",
+      "confidence": "confirmed",
+      "attributes": {
+        "input": "VIN",
+        "top_resistor": "R6 18K/1%",
+        "bottom_resistor": "R10 2K/1%",
+        "filter_capacitor": "C3 105/10V",
+        "output": "J2 G33",
+        "ratio": "1/10"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "39f8ddd46052a3fd7e9cddc15f16f8d9cc5c8ea368dd23ee06bdd02cd7ae125e",
+          "page": 1,
+          "locator": "左下 VIN-R6 18K-G33-R10 2K/C3 105-GND 分压滤波网络"
+        }
+      ]
+    },
+    {
+      "id": "gpio.motor-control-inputs",
+      "category": "gpio",
+      "subject": "DRV8876 IN_1/IN_2",
+      "statement": "Atom G19 经 R4 2.2K/1% 连接 IN_1 并到 U2 EN/IN1 pin 1，Atom G23 经 R5 2.2K/1% 连接 IN_2 并到 U2 PH/IN2 pin 2。",
+      "confidence": "confirmed",
+      "attributes": {
+        "input_1": "J2 G19-R4 2.2K/1%-IN_1-U2 pin 1",
+        "input_2": "J2 G23-R5 2.2K/1%-IN_2-U2 pin 2"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "39f8ddd46052a3fd7e9cddc15f16f8d9cc5c8ea368dd23ee06bdd02cd7ae125e",
+          "page": 1,
+          "locator": "左下 J2 G19/G23-R4/R5-IN_1/IN_2 与右下 U2 pins 1/2"
+        }
+      ]
+    },
+    {
+      "id": "gpio.driver-fault",
+      "category": "gpio",
+      "subject": "DRV8876 nFAULT",
+      "statement": "U2 nFAULT pin 4 连接 FAULT，FAULT 经 R3 15K/1% 连接 Atom G22。",
+      "confidence": "confirmed",
+      "attributes": {
+        "driver_pin": "U2 pin 4 nFAULT",
+        "network": "FAULT",
+        "series_resistor": "R3 15K/1%",
+        "atom_pin": "J2 G22"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "39f8ddd46052a3fd7e9cddc15f16f8d9cc5c8ea368dd23ee06bdd02cd7ae125e",
+          "page": 1,
+          "locator": "右下 U2 pin 4 nFAULT-FAULT 与左下 R3-J2 G22"
+        }
+      ]
+    },
+    {
+      "id": "power.driver-vm",
+      "category": "power",
+      "subject": "DRV8876 VIN 电源",
+      "statement": "U2 VM pin 11 连接 VIN，C9 104/50V 与 C10 100uF/35V 从 VIN 接 GND；VCP pin 12 通过 C6 104/50V 接 VM/VIN，CPH/CPL pins 13/14 之间接 C7 104/50V。",
+      "confidence": "confirmed",
+      "attributes": {
+        "motor_supply": "U2 pin 11 VM VIN",
+        "supply_caps": "C9 104/50V,C10 100uF/35V",
+        "vcp_cap": "C6 104/50V between VCP and VM",
+        "charge_pump_cap": "C7 104/50V between CPH and CPL"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "39f8ddd46052a3fd7e9cddc15f16f8d9cc5c8ea368dd23ee06bdd02cd7ae125e",
+          "page": 1,
+          "locator": "右下 U2 pins 11~14、C6/C7/C9/C10 与 VIN/GND"
+        }
+      ]
+    },
+    {
+      "id": "key_net.driver-enable-mode",
+      "category": "key_net",
+      "subject": "DRV8876 nSLEEP 与 PMODE",
+      "statement": "U2 nSLEEP pin 3 与 PMODE pin 16 均直接连接 SYS_P050。",
+      "confidence": "confirmed",
+      "attributes": {
+        "sleep": "U2 pin 3 nSLEEP SYS_P050",
+        "phase_mode": "U2 pin 16 PMODE SYS_P050"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "39f8ddd46052a3fd7e9cddc15f16f8d9cc5c8ea368dd23ee06bdd02cd7ae125e",
+          "page": 1,
+          "locator": "右下 SYS_P050 垂直网络连接 U2 pins 3/16"
+        }
+      ]
+    },
+    {
+      "id": "analog.driver-reference-current-mode",
+      "category": "analog",
+      "subject": "DRV8876 VREF/IPROPI/IMODE",
+      "statement": "U2 VREF pin 5 连接 R1 15K/1% 与 R12 15K/1% 的 SYS_P050-GND 分压点，并由 C11 104/50V 接地；IPROPI pin 6 经 R13 1K/1% 接地，IMODE pin 7 经 R14 20K/1% 接地。",
+      "confidence": "confirmed",
+      "attributes": {
+        "vref_top": "R1 15K/1% to SYS_P050",
+        "vref_bottom": "R12 15K/1% to GND",
+        "vref_cap": "C11 104/50V to GND",
+        "ipropi": "U2 pin 6-R13 1K/1%-GND",
+        "imode": "U2 pin 7-R14 20K/1%-GND"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "39f8ddd46052a3fd7e9cddc15f16f8d9cc5c8ea368dd23ee06bdd02cd7ae125e",
+          "page": 1,
+          "locator": "右下 U2 pins 5/6/7 与 R1/R12/C11/R13/R14/GND"
+        }
+      ]
+    },
+    {
+      "id": "interface.motor-output",
+      "category": "interface",
+      "subject": "DRV8876 OUT_N/OUT_P",
+      "statement": "U2 OUT1 pin 8 连接 OUT_N 并到 J3 pin 1，OUT2 pin 10 连接 OUT_P 并到 J3 pin 2；R15 10Ω/1% 与 C8 102/50V 均跨接 OUT_N 和 OUT_P。",
+      "confidence": "confirmed",
+      "attributes": {
+        "output_1": "U2 pin 8 OUT1-OUT_N-J3 pin 1",
+        "output_2": "U2 pin 10 OUT2-OUT_P-J3 pin 2",
+        "parallel_resistor": "R15 10Ω/1%",
+        "parallel_capacitor": "C8 102/50V"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "39f8ddd46052a3fd7e9cddc15f16f8d9cc5c8ea368dd23ee06bdd02cd7ae125e",
+          "page": 1,
+          "locator": "右下 U2 pins 8/10 OUT_N/OUT_P-R15/C8 与右上 J3 pins 1/2"
+        }
+      ]
+    },
+    {
+      "id": "power.driver-grounding",
+      "category": "power",
+      "subject": "DRV8876 接地",
+      "statement": "U2 PGND pin 9、GND pin 15 与 PAD pin 0 均连接 GND。",
+      "confidence": "confirmed",
+      "attributes": {
+        "power_ground": "pin 9 PGND",
+        "ground": "pin 15 GND",
+        "thermal_pad": "pin 0 PAD"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "39f8ddd46052a3fd7e9cddc15f16f8d9cc5c8ea368dd23ee06bdd02cd7ae125e",
+          "page": 1,
+          "locator": "右下 U2 pins 9/15/0 到公共 GND"
+        }
+      ]
+    }
+  ],
+  "needs_review": []
+}

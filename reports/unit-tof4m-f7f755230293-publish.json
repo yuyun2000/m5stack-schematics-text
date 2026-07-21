@@ -1,0 +1,21 @@
+{
+  "dry_run": false,
+  "failed": 0,
+  "published": 1,
+  "results": [
+    {
+      "backup": null,
+      "draft_action": "unchanged",
+      "dry_run": false,
+      "errors": [],
+      "needs_review": 3,
+      "product_id": "unit-tof4m-f7f755230293",
+      "product_name": "Unit ToF4M",
+      "publish_action": "unchanged",
+      "sha256": "b5b74c2f4cc4f9b4e7089f572d418048f66d6e52256dfb21fbca669b20a10212",
+      "status": "valid",
+      "uncertain_facts": 3
+    }
+  ],
+  "schema_version": 1
+}

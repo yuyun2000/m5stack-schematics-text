@@ -1,0 +1,21 @@
+{
+  "dry_run": false,
+  "failed": 0,
+  "published": 1,
+  "results": [
+    {
+      "backup": null,
+      "draft_action": "unchanged",
+      "dry_run": false,
+      "errors": [],
+      "needs_review": 2,
+      "product_id": "unit-weight-i2c-6c9d7b7fb61d",
+      "product_name": "Unit Weight-I2C",
+      "publish_action": "unchanged",
+      "sha256": "13d44adee657324e0a6578a874098f6d2a740b3140acccfb0160fb99b099be7f",
+      "status": "valid",
+      "uncertain_facts": 2
+    }
+  ],
+  "schema_version": 1
+}

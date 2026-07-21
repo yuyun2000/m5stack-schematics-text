@@ -1,0 +1,21 @@
+{
+  "dry_run": false,
+  "failed": 0,
+  "published": 1,
+  "results": [
+    {
+      "backup": null,
+      "draft_action": "unchanged",
+      "dry_run": false,
+      "errors": [],
+      "needs_review": 4,
+      "product_id": "unit-weight-b35adfabb254",
+      "product_name": "Unit Weight",
+      "publish_action": "unchanged",
+      "sha256": "7e920168b77511e1daa51d685b697a02a05efc83f9a580c256cc8d3ed6570a39",
+      "status": "valid",
+      "uncertain_facts": 4
+    }
+  ],
+  "schema_version": 1
+}

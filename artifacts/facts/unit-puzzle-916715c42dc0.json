@@ -1,0 +1,229 @@
+{
+  "schema_version": 1,
+  "generator": "schematic_describer",
+  "product": {
+    "product_id": "unit-puzzle-916715c42dc0",
+    "product_name": "Unit Puzzle",
+    "sku": "U193",
+    "source_path": "unit/Unit-Puzzle.md",
+    "source_sha256": "5a70fe5ca71427574e402a22c3a6dcfe1b9235ca59a959de8fcae990f9dfda83",
+    "input_sha256": "3d56036bfa86505fab3fa6900541e46ea8a9d272d623a5dbe4793ecc3bd1ce32"
+  },
+  "schematic_assets": [
+    {
+      "sha256": "6dc4261259dedebe96aa59ff5eb1227b1a6dce00c7f4bb4d7d13df9f2b385d88",
+      "source_url": "https://m5stack.oss-cn-shenzhen.aliyuncs.com/resource/docs/products/unit/Unit-Puzzle/schematic.png",
+      "pages": [1]
+    }
+  ],
+  "summary": "Unit Puzzle 是由 D1-D64 共 64 颗 WS2812E-1313 组成的 8×8 串行 RGB 灯阵，SIG_IN 进入 D1 DIN，数据沿编号顺序传递，D64 DOUT 输出 SIG_OUT。J2 输入 Grove 与 J1 输出 Grove 分别提供 SIG_IN/SIG_OUT、VCC_5V 和 GND，灯珠 VDD/GND 全部并接公共电源轨。板上没有主控、电源转换器、存储、时钟、复位或专用保护器件；底部电容组为 5V 灯阵去耦。",
+  "keywords": [
+    "Unit Puzzle",
+    "U193",
+    "WS2812E-1313",
+    "WS2812E",
+    "D1-D64",
+    "8x8 RGB matrix",
+    "64 pixel",
+    "SIG_IN",
+    "SIG_OUT",
+    "DIN",
+    "DOUT",
+    "VCC_5V",
+    "GND",
+    "J1 GROVE IO",
+    "J2 GROVE IO",
+    "Grove input",
+    "Grove output",
+    "IO1",
+    "IO2",
+    "single-wire LED",
+    "serial cascade",
+    "WS2812 chain",
+    "C1-C8",
+    "M2-Hole",
+    "H1",
+    "5V RGB LED",
+    "brightness 8%",
+    "10% brightness",
+    "93.99mA",
+    "14.27mA",
+    "1677万色",
+    "Port B",
+    "LED Signal"
+  ],
+  "components": [
+    {
+      "reference": "D1-D64",
+      "part_number": "WS2812E-1313",
+      "role": "64 颗串联可寻址 RGB LED，排列为 8 行×8 列，使用公共 5V/GND 电源",
+      "evidence": [{"asset_sha256": "6dc4261259dedebe96aa59ff5eb1227b1a6dce00c7f4bb4d7d13df9f2b385d88", "page": 1, "locator": "第 1 页中央至右侧，D1-D64 分为 8 行，每行 8 颗，器件值均为 WS2812E-1313"}]
+    },
+    {
+      "reference": "J2",
+      "part_number": "GROVE IO",
+      "role": "灯阵输入接口，IO1 接 SIG_IN，VCC 接 VCC_5V，GND 接地，IO2 未接",
+      "evidence": [{"asset_sha256": "6dc4261259dedebe96aa59ff5eb1227b1a6dce00c7f4bb4d7d13df9f2b385d88", "page": 1, "locator": "第 1 页左上 J2 GROVE IO，IO2/IO1/VCC/GND，其中 IO1 标 SIG_IN"}]
+    },
+    {
+      "reference": "J1",
+      "part_number": "GROVE IO",
+      "role": "灯阵级联输出接口，IO1 接 SIG_OUT，VCC 接 VCC_5V，GND 接地，IO2 未接",
+      "evidence": [{"asset_sha256": "6dc4261259dedebe96aa59ff5eb1227b1a6dce00c7f4bb4d7d13df9f2b385d88", "page": 1, "locator": "第 1 页左上 J1 GROVE IO，IO2/IO1/VCC/GND，其中 IO1 标 SIG_OUT"}]
+    },
+    {
+      "reference": "C1-C8",
+      "part_number": "10uF / 100nF / NC（按图装配组合）",
+      "role": "VCC_5V 到 GND 的灯阵去耦/储能电容组，部分位置标 NC",
+      "evidence": [{"asset_sha256": "6dc4261259dedebe96aa59ff5eb1227b1a6dce00c7f4bb4d7d13df9f2b385d88", "page": 1, "locator": "第 1 页底部 VCC_5V 公共线上 C1-C8 电容组，标有 10uF、100nF 与 NC"}]
+    },
+    {
+      "reference": "H1",
+      "part_number": "M2-Hole",
+      "role": "机械固定孔",
+      "evidence": [{"asset_sha256": "6dc4261259dedebe96aa59ff5eb1227b1a6dce00c7f4bb4d7d13df9f2b385d88", "page": 1, "locator": "第 1 页左中 H1 M2-Hole"}]
+    }
+  ],
+  "facts": [
+    {
+      "id": "system.puzzle-architecture",
+      "category": "system",
+      "subject": "Unit Puzzle 系统架构",
+      "statement": "整板由 J2 输入 Grove、J1 输出 Grove、D1-D64 WS2812E-1313 串行灯链、5V 去耦电容组和 H1 固定孔构成；本页没有主控、协处理器、独立存储、电源转换器、晶振、复位或调试电路。",
+      "confidence": "confirmed",
+      "attributes": {"pixels": "D1-D64 WS2812E-1313", "input": "J2 SIG_IN", "output": "J1 SIG_OUT", "power": "VCC_5V/GND", "controller": null, "memory": null, "converter": null, "clock": null, "reset": null, "debug": null},
+      "evidence": [{"asset_sha256": "6dc4261259dedebe96aa59ff5eb1227b1a6dce00c7f4bb4d7d13df9f2b385d88", "page": 1, "locator": "第 1 页完整原理图，J1/J2/D1-D64/C1-C8/H1 全部器件"}]
+    },
+    {
+      "id": "component.rgb-matrix",
+      "category": "component",
+      "subject": "8×8 WS2812E-1313 灯阵",
+      "statement": "D1-D64 共 64 颗，原理图按 D1-D8、D9-D16、D17-D24、D25-D32、D33-D40、D41-D48、D49-D56、D57-D64 排成 8 行，每行 8 颗；每颗均标 WS2812E-1313。",
+      "confidence": "confirmed",
+      "attributes": {"part_number": "WS2812E-1313", "references": "D1-D64", "rows": 8, "columns": 8, "count": 64, "row_groups": "D1-D8;D9-D16;D17-D24;D25-D32;D33-D40;D41-D48;D49-D56;D57-D64"},
+      "evidence": [{"asset_sha256": "6dc4261259dedebe96aa59ff5eb1227b1a6dce00c7f4bb4d7d13df9f2b385d88", "page": 1, "locator": "第 1 页中央 8 行灯珠阵列及 D1-D64 位号"}]
+    },
+    {
+      "id": "bus.ws2812-serial-chain",
+      "category": "bus",
+      "subject": "WS2812 单线串行级联",
+      "statement": "SIG_IN 连接 D1 DIN pin4；各 WS2812E-1313 的 DOUT pin2 连接下一颗 DIN pin4，形成 D1 到 D64 的串行级联；D64 DOUT pin2 形成 SIG_OUT。",
+      "confidence": "confirmed",
+      "attributes": {"protocol_wire": "single data wire", "input": "SIG_IN -> D1 pin4 DIN", "chain": "D1 DOUT -> D2 DIN -> ... -> D64 DIN", "output": "D64 pin2 DOUT -> SIG_OUT", "pixel_count": 64},
+      "evidence": [{"asset_sha256": "6dc4261259dedebe96aa59ff5eb1227b1a6dce00c7f4bb4d7d13df9f2b385d88", "page": 1, "locator": "第 1 页 D1 左侧 SIG_IN、各灯 DIN/DOUT 连线与 D64 右侧 SIG_OUT"}]
+    },
+    {
+      "id": "interface.input-grove",
+      "category": "interface",
+      "subject": "J2 输入 Grove",
+      "statement": "J2 的 IO1 接 SIG_IN、VCC 接 VCC_5V、GND 接 GND；IO2 引脚只有短桩，没有网络名或到其他器件的连线。",
+      "confidence": "confirmed",
+      "attributes": {"connector": "J2 GROVE IO", "io1": "SIG_IN", "io2": "unconnected", "vcc": "VCC_5V", "ground": "GND", "direction": "LED chain input"},
+      "evidence": [{"asset_sha256": "6dc4261259dedebe96aa59ff5eb1227b1a6dce00c7f4bb4d7d13df9f2b385d88", "page": 1, "locator": "第 1 页左上 J2 IO2/IO1/VCC/GND 与 SIG_IN"}]
+    },
+    {
+      "id": "interface.output-grove",
+      "category": "interface",
+      "subject": "J1 输出 Grove",
+      "statement": "J1 的 IO1 接 SIG_OUT、VCC 接 VCC_5V、GND 接 GND；IO2 引脚只有短桩，没有网络名或到其他器件的连线。",
+      "confidence": "confirmed",
+      "attributes": {"connector": "J1 GROVE IO", "io1": "SIG_OUT", "io2": "unconnected", "vcc": "VCC_5V", "ground": "GND", "direction": "LED chain output"},
+      "evidence": [{"asset_sha256": "6dc4261259dedebe96aa59ff5eb1227b1a6dce00c7f4bb4d7d13df9f2b385d88", "page": 1, "locator": "第 1 页左上 J1 IO2/IO1/VCC/GND 与 SIG_OUT"}]
+    },
+    {
+      "id": "power.common-five-volt-rail",
+      "category": "power",
+      "subject": "灯阵公共 5V 电源",
+      "statement": "J1/J2 VCC 均连接 VCC_5V；D1-D64 的 VDD pin1 全部接 VCC_5V，GND pin3 全部接公共 GND。板上没有 5V 稳压、升降压或负载开关。",
+      "confidence": "confirmed",
+      "attributes": {"rail": "VCC_5V", "connectors": "J1 VCC,J2 VCC", "pixel_supply": "D1-D64 pin1 VDD", "pixel_ground": "D1-D64 pin3 GND", "converter": null, "load_switch": null},
+      "evidence": [{"asset_sha256": "6dc4261259dedebe96aa59ff5eb1227b1a6dce00c7f4bb4d7d13df9f2b385d88", "page": 1, "locator": "第 1 页 J1/J2 VCC_5V 与所有 D1-D64 VDD/GND 公共网络"}]
+    },
+    {
+      "id": "power.decoupling-bank",
+      "category": "power",
+      "subject": "VCC_5V 去耦电容组",
+      "statement": "页面底部 C1-C8 跨接 VCC_5V 与 GND，器件值组合包含 10uF、100nF 与 NC 装配位，为灯阵电源提供集中去耦和储能。",
+      "confidence": "confirmed",
+      "attributes": {"references": "C1-C8", "rail": "VCC_5V", "return": "GND", "values_visible": "10uF,100nF,NC", "role": "bulk and high-frequency decoupling"},
+      "evidence": [{"asset_sha256": "6dc4261259dedebe96aa59ff5eb1227b1a6dce00c7f4bb4d7d13df9f2b385d88", "page": 1, "locator": "第 1 页底部 C1-C8 与 VCC_5V/GND 公共线"}]
+    },
+    {
+      "id": "key_net.signal-endpoints",
+      "category": "key_net",
+      "subject": "SIG_IN 与 SIG_OUT",
+      "statement": "SIG_IN 仅连接 J2 IO1 和 D1 DIN；SIG_OUT 仅连接 D64 DOUT 和 J1 IO1。两端没有电平转换器、串联电阻、缓冲器或方向控制器。",
+      "confidence": "confirmed",
+      "attributes": {"input_net": "J2 IO1 <-> SIG_IN <-> D1 DIN", "output_net": "D64 DOUT <-> SIG_OUT <-> J1 IO1", "level_shifter": null, "series_resistor": null, "buffer": null, "direction_control": null},
+      "evidence": [{"asset_sha256": "6dc4261259dedebe96aa59ff5eb1227b1a6dce00c7f4bb4d7d13df9f2b385d88", "page": 1, "locator": "第 1 页左上 J2/SIG_IN/D1 与右下 D64/SIG_OUT/J1 同名网络"}]
+    },
+    {
+      "id": "protection.interface-boundary",
+      "category": "protection",
+      "subject": "Grove 与灯阵保护边界",
+      "statement": "J1/J2 的 VCC_5V、SIG_IN、SIG_OUT 直接连接灯阵或电源轨；本页没有显示保险丝、反接保护、TVS/ESD 二极管、信号串阻或过流保护器件。",
+      "confidence": "confirmed",
+      "attributes": {"interfaces": "J1,J2", "fuse": null, "reverse_protection": null, "tvs_esd": null, "signal_series_resistor": null, "overcurrent_protection": null},
+      "evidence": [{"asset_sha256": "6dc4261259dedebe96aa59ff5eb1227b1a6dce00c7f4bb4d7d13df9f2b385d88", "page": 1, "locator": "第 1 页完整 J1/J2 至 D1-D64 和 VCC_5V 路径，未见专用保护符号"}]
+    },
+    {
+      "id": "other.mounting-hole",
+      "category": "other",
+      "subject": "H1 M2 固定孔",
+      "statement": "H1 标为 M2-Hole，是本页唯一机械固定孔符号，不连接任何电气网络。",
+      "confidence": "confirmed",
+      "attributes": {"reference": "H1", "type": "M2-Hole", "electrical_connection": null},
+      "evidence": [{"asset_sha256": "6dc4261259dedebe96aa59ff5eb1227b1a6dce00c7f4bb4d7d13df9f2b385d88", "page": 1, "locator": "第 1 页左中 H1 M2-Hole"}]
+    },
+    {
+      "id": "interface.documented-spare-io",
+      "category": "interface",
+      "subject": "正文中的输出 Grove 预留 IO",
+      "statement": "产品正文称输出 Grove 预留一个 IO 可连接 Port B 传感器；原理图中 J1 IO2 与 J2 IO2 均为未命名短桩，未显示两者直通或连接到其他电路，因此预留 IO 的实际导通路径无法由本页确认。",
+      "confidence": "uncertain",
+      "attributes": {"documented_feature": "output Grove spare IO for Port B sensor", "output_io2": "J1 IO2 unconnected in schematic", "input_io2": "J2 IO2 unconnected in schematic", "passthrough": null},
+      "evidence": [{"asset_sha256": "6dc4261259dedebe96aa59ff5eb1227b1a6dce00c7f4bb4d7d13df9f2b385d88", "page": 1, "locator": "第 1 页左上 J1/J2 IO2 均无网络名和外接连线"}]
+    },
+    {
+      "id": "power.documented-brightness-current",
+      "category": "power",
+      "subject": "正文中的亮度与电流参数",
+      "statement": "正文建议长期使用 10% 亮度，并标称 8% 白光时单灯约 6mW、整机工作 DC 5V@93.99mA、待机 DC 5V@14.27mA；原理图只显示灯珠和 5V 电源连接，没有亮度、PWM 数据、整机电流或测试条件。",
+      "confidence": "uncertain",
+      "attributes": {"documented_recommended_brightness": "10%", "documented_test_brightness": "8% white", "documented_pixel_power": "6mW", "documented_operating": "DC 5V@93.99mA", "documented_standby": "DC 5V@14.27mA", "schematic_current": null, "test_pattern": null},
+      "evidence": [{"asset_sha256": "6dc4261259dedebe96aa59ff5eb1227b1a6dce00c7f4bb4d7d13df9f2b385d88", "page": 1, "locator": "第 1 页 D1-D64 与 VCC_5V/GND，图中无亮度或功耗文字"}]
+    },
+    {
+      "id": "component.documented-color-depth",
+      "category": "component",
+      "subject": "正文中的 1677 万色",
+      "statement": "正文称灯阵支持 1677 万色；原理图仅确认 D1-D64 型号为 WS2812E-1313，没有打印通道位深、PWM 频率、刷新时序或颜色数量。",
+      "confidence": "uncertain",
+      "attributes": {"pixels": "D1-D64 WS2812E-1313", "documented_colors": "1677万色", "channel_depth": null, "pwm_frequency": null, "timing": null},
+      "evidence": [{"asset_sha256": "6dc4261259dedebe96aa59ff5eb1227b1a6dce00c7f4bb4d7d13df9f2b385d88", "page": 1, "locator": "第 1 页灯阵器件仅标 WS2812E-1313 与 DIN/DOUT/VDD/GND"}]
+    }
+  ],
+  "needs_review": [
+    {
+      "id": "review.spare-io",
+      "fact_id": "interface.documented-spare-io",
+      "question": "请用 PCB 网表或导通实测确认 J1 IO2 是否与 J2 IO2 直通，以及输出 Grove 预留 IO 的实际接法。",
+      "reason": "正文称有预留 IO，但原理图中两个 IO2 均显示为未连接。",
+      "evidence": [{"asset_sha256": "6dc4261259dedebe96aa59ff5eb1227b1a6dce00c7f4bb4d7d13df9f2b385d88", "page": 1, "locator": "第 1 页 J1/J2 IO2"}]
+    },
+    {
+      "id": "review.brightness-current",
+      "fact_id": "power.documented-brightness-current",
+      "question": "请用量产规格或实测确认 10% 建议亮度、8% 白光单灯功耗、待机/工作电流及测试图案。",
+      "reason": "原理图不能证明亮度设置和整机功耗。",
+      "evidence": [{"asset_sha256": "6dc4261259dedebe96aa59ff5eb1227b1a6dce00c7f4bb4d7d13df9f2b385d88", "page": 1, "locator": "第 1 页 D1-D64 与 VCC_5V"}]
+    },
+    {
+      "id": "review.color-depth",
+      "fact_id": "component.documented-color-depth",
+      "question": "请用 WS2812E-1313 数据手册确认通道位深、颜色数量、PWM/刷新参数与级联时序。",
+      "reason": "板级原理图只给出器件型号和连线。",
+      "evidence": [{"asset_sha256": "6dc4261259dedebe96aa59ff5eb1227b1a6dce00c7f4bb4d7d13df9f2b385d88", "page": 1, "locator": "第 1 页 D1-D64 WS2812E-1313"}]
+    }
+  ]
+}

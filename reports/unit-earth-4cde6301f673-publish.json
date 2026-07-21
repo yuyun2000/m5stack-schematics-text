@@ -1,0 +1,21 @@
+{
+  "dry_run": false,
+  "failed": 0,
+  "published": 1,
+  "results": [
+    {
+      "backup": null,
+      "draft_action": "unchanged",
+      "dry_run": false,
+      "errors": [],
+      "needs_review": 3,
+      "product_id": "unit-earth-4cde6301f673",
+      "product_name": "Unit Earth",
+      "publish_action": "unchanged",
+      "sha256": "73fb1260c8e9505d747bb7ff027cfeff8efaf15f0f4d219643af409334ff1eb6",
+      "status": "valid",
+      "uncertain_facts": 3
+    }
+  ],
+  "schema_version": 1
+}

@@ -1,0 +1,21 @@
+{
+  "dry_run": false,
+  "failed": 0,
+  "published": 1,
+  "results": [
+    {
+      "backup": null,
+      "draft_action": "unchanged",
+      "dry_run": false,
+      "errors": [],
+      "needs_review": 7,
+      "product_id": "module-nb-iot-plus-879adbfc094e",
+      "product_name": "Module NB-IoT Plus",
+      "publish_action": "unchanged",
+      "sha256": "fafc3c67a507bb6e96c593e19834097356043b7d5f20783fdb582dc8a0b37ac0",
+      "status": "valid",
+      "uncertain_facts": 7
+    }
+  ],
+  "schema_version": 1
+}

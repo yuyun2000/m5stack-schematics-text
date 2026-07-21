@@ -1,0 +1,21 @@
+{
+  "dry_run": false,
+  "failed": 0,
+  "published": 1,
+  "results": [
+    {
+      "backup": null,
+      "draft_action": "unchanged",
+      "dry_run": false,
+      "errors": [],
+      "needs_review": 1,
+      "product_id": "unit-button-15587bbf1a6f",
+      "product_name": "Unit Button",
+      "publish_action": "unchanged",
+      "sha256": "3fffa83b712e1b1bf1a1d08276534fbaa54b41b0ca566032b3837bf6a9b3b440",
+      "status": "valid",
+      "uncertain_facts": 1
+    }
+  ],
+  "schema_version": 1
+}

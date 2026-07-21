@@ -1,0 +1,210 @@
+{
+  "schema_version": 1,
+  "generator": "schematic_describer",
+  "product": {
+    "product_id": "unit-vibrator-ee09b947945b",
+    "product_name": "Unit Vibrator",
+    "sku": "U059",
+    "source_path": "unit/vibrator.md",
+    "source_sha256": "c89f5ee20b64edb0c09bb499d4359440fcf07897aa59ec0d9c74819598fbc5af",
+    "input_sha256": "1cb73d28586e55c5f4956b012a58a2be36c6065c45e91619ce8985601acabb8f"
+  },
+  "schematic_assets": [
+    {
+      "sha256": "b008603cddfd4c1b55a4a2b8159c2e476e85a252484dfee1f800f1a72e389981",
+      "source_url": "https://static-cdn.m5stack.com/resource/docs/products/unit/unit_fan/unit_fan_sch_01.webp",
+      "pages": [1]
+    }
+  ],
+  "summary": "Unit Vibrator 的资源页显示一组无主控的直流电机低侧开关电路。J1 pin2 MOSI 经 R1 1K 驱动 Q1 AO3400A 栅极，R2 51K 将控制节点下拉；Q1 导通时把 B1 Motor 下端拉向 GND，B1 上端接 VCC。D1 1N4148WS T4 与 C2 100nF 并接在电机两端，C1 100nF 从 VCC 接 GND；J1 pin1 MISO 未连接。页面未给 VCC 数值、电机具体型号、转速、PWM 频率或机械偏心轮，并且资源 URL 使用 unit_fan 路径名。",
+  "keywords": [
+    "Unit Vibrator", "U059", "AO3400A", "B1 Motor", "N20 motor", "D1 1N4148WS T4", "R1 1K", "R2 51K",
+    "C1 100nF", "C2 100nF", "GROVE_IO", "J1", "MOSI", "MISO", "VCC", "GND", "low-side switch",
+    "PWM", "10kHz", "8800RPM", "DIN", "GPIO control", "flyback diode", "eccentric wheel", "unit_fan_sch_01"
+  ],
+  "components": [
+    {
+      "reference": "B1",
+      "part_number": "Motor",
+      "role": "VCC 与 Q1 漏极节点之间的直流电机负载",
+      "evidence": [{"asset_sha256": "b008603cddfd4c1b55a4a2b8159c2e476e85a252484dfee1f800f1a72e389981", "page": 1, "locator": "第 1 页左上，B1 Motor，上端 VCC、下端 Q1 漏极节点"}]
+    },
+    {
+      "reference": "Q1",
+      "part_number": "AO3400A",
+      "role": "由 J1 pin2 控制的 N 沟道低侧电机开关",
+      "evidence": [{"asset_sha256": "b008603cddfd4c1b55a4a2b8159c2e476e85a252484dfee1f800f1a72e389981", "page": 1, "locator": "第 1 页左下，Q1 AO3400A，漏极接 B1、源极接 GND、栅极接 R1"}]
+    },
+    {
+      "reference": "D1",
+      "part_number": "1N4148WS T4",
+      "role": "并接 B1 电机两端的续流/反向电压钳位二极管",
+      "evidence": [{"asset_sha256": "b008603cddfd4c1b55a4a2b8159c2e476e85a252484dfee1f800f1a72e389981", "page": 1, "locator": "第 1 页左上，D1 1N4148WS T4 并接 VCC 与 Q1 漏极节点"}]
+    },
+    {
+      "reference": "J1",
+      "part_number": "GROVE_IO",
+      "role": "四针控制与电源接口，pin2 MOSI 控制电机，pin3 VCC、pin4 GND，pin1 MISO 未连接",
+      "evidence": [{"asset_sha256": "b008603cddfd4c1b55a4a2b8159c2e476e85a252484dfee1f800f1a72e389981", "page": 1, "locator": "第 1 页右侧，J1 GROVE_IO pins1-4 MISO/MOSI/VCC/GND"}]
+    },
+    {
+      "reference": "R1,R2",
+      "part_number": "1K / 51K",
+      "role": "R1 为 Q1 栅极串联电阻，R2 将控制节点下拉到 GND",
+      "evidence": [{"asset_sha256": "b008603cddfd4c1b55a4a2b8159c2e476e85a252484dfee1f800f1a72e389981", "page": 1, "locator": "第 1 页中央，J1 MOSI-R1 1K-Q1 gate 与 R2 51K-GND"}]
+    },
+    {
+      "reference": "C1,C2",
+      "part_number": "100nF / 100nF",
+      "role": "C1 为接口 VCC 对地去耦，C2 并接电机两端抑制噪声",
+      "evidence": [{"asset_sha256": "b008603cddfd4c1b55a4a2b8159c2e476e85a252484dfee1f800f1a72e389981", "page": 1, "locator": "第 1 页，C1 VCC-GND 与 C2 VCC-Q1漏极节点"}]
+    }
+  ],
+  "facts": [
+    {
+      "id": "system.vibrator-drive-architecture",
+      "category": "system",
+      "subject": "Unit Vibrator 驱动架构",
+      "statement": "J1 提供 VCC/GND 和单路 MOSI 控制，MOSI 经 R1/R2 驱动 Q1 AO3400A，Q1 低侧开关 B1 Motor；D1/C2 并接电机，C1 为 VCC 去耦。",
+      "confidence": "confirmed",
+      "attributes": {"connector": "J1 GROVE_IO", "control": "MOSI", "switch": "Q1 AO3400A", "load": "B1 Motor", "flyback": "D1 1N4148WS T4", "motor_cap": "C2 100nF", "supply_cap": "C1 100nF"},
+      "evidence": [{"asset_sha256": "b008603cddfd4c1b55a4a2b8159c2e476e85a252484dfee1f800f1a72e389981", "page": 1, "locator": "第 1 页完整电路"}]
+    },
+    {
+      "id": "interface.grove-pinout",
+      "category": "interface",
+      "subject": "J1 Grove 针脚映射",
+      "statement": "J1 pin1 标 MISO 但未连接，pin2 标 MOSI 并连接控制网络，pin3 接 VCC，pin4 接 GND；该页未将 MOSI/MISO 标为完整 SPI 总线。",
+      "confidence": "confirmed",
+      "attributes": {"reference": "J1 GROVE_IO", "pin1": "MISO, NC", "pin2": "MOSI, control input", "pin3": "VCC power input", "pin4": "GND", "complete_spi": false},
+      "evidence": [{"asset_sha256": "b008603cddfd4c1b55a4a2b8159c2e476e85a252484dfee1f800f1a72e389981", "page": 1, "locator": "第 1 页右侧 J1 pins1-4"}]
+    },
+    {
+      "id": "gpio.motor-control",
+      "category": "gpio",
+      "subject": "MOSI 电机控制输入",
+      "statement": "J1 pin2 MOSI 经 R1 1K 接 Q1 gate，R2 51K 从同一控制节点接 GND；外部信号为高时可使 Q1 导通，低或悬空时 R2 把 gate 拉低。",
+      "confidence": "confirmed",
+      "attributes": {"input": "J1 pin2 MOSI", "series": "R1 1K", "pulldown": "R2 51K", "gate": "Q1 AO3400A", "high": "Q1 on", "low_or_open": "Q1 gate pulled to GND"},
+      "evidence": [{"asset_sha256": "b008603cddfd4c1b55a4a2b8159c2e476e85a252484dfee1f800f1a72e389981", "page": 1, "locator": "第 1 页 J1 MOSI/R1/R2/Q1 gate"}]
+    },
+    {
+      "id": "power.motor-low-side-path",
+      "category": "power",
+      "subject": "电机低侧开关路径",
+      "statement": "B1 Motor 上端接 VCC，下端接 Q1 drain，Q1 source 接 GND；Q1 导通时形成 VCC-B1-Q1-GND 电流路径。",
+      "confidence": "confirmed",
+      "attributes": {"path": "VCC -> B1 Motor -> Q1 drain/source -> GND", "switch": "Q1 AO3400A", "topology": "low-side"},
+      "evidence": [{"asset_sha256": "b008603cddfd4c1b55a4a2b8159c2e476e85a252484dfee1f800f1a72e389981", "page": 1, "locator": "第 1 页左侧 B1/Q1/VCC/GND"}]
+    },
+    {
+      "id": "protection.motor-flyback-filter",
+      "category": "protection",
+      "subject": "电机续流与噪声抑制",
+      "statement": "D1 1N4148WS T4 与 C2 100nF 均并接 VCC 与 B1 下端/Q1 drain 节点；D1 提供反向电压钳位路径，C2 为电机端并联滤波。",
+      "confidence": "confirmed",
+      "attributes": {"diode": "D1 1N4148WS T4", "capacitor": "C2 100nF", "nodes": "VCC and motor low/Q1 drain", "tvs": null, "fuse": null},
+      "evidence": [{"asset_sha256": "b008603cddfd4c1b55a4a2b8159c2e476e85a252484dfee1f800f1a72e389981", "page": 1, "locator": "第 1 页 B1 并联 D1/C2 网络"}]
+    },
+    {
+      "id": "power.vcc-decoupling",
+      "category": "power",
+      "subject": "VCC 去耦",
+      "statement": "C1 100nF 从 J1 pin3 VCC 接到 GND，位于接口电源侧；图中未显示稳压器、负载开关、电流检测或电源使能。",
+      "confidence": "confirmed",
+      "attributes": {"capacitor": "C1 100nF", "rail": "VCC", "ground": "GND", "regulator": null, "load_switch": null, "current_monitor": null},
+      "evidence": [{"asset_sha256": "b008603cddfd4c1b55a4a2b8159c2e476e85a252484dfee1f800f1a72e389981", "page": 1, "locator": "第 1 页 J1 VCC/GND 与 C1"}]
+    },
+    {
+      "id": "system.absent-subsystems",
+      "category": "system",
+      "subject": "本页未包含的子系统",
+      "statement": "该页未显示 MCU、协处理器、存储、晶振、复位/BOOT、调试、I2C/UART/CAN/RS-485/USB、射频、音频、传感器、电池或充电电路；MISO 未连接。",
+      "confidence": "confirmed",
+      "attributes": {"mcu": null, "storage": null, "clock": null, "reset_debug": null, "digital_buses": null, "rf": null, "audio": null, "sensor": null, "battery_charger": null, "miso": "NC"},
+      "evidence": [{"asset_sha256": "b008603cddfd4c1b55a4a2b8159c2e476e85a252484dfee1f800f1a72e389981", "page": 1, "locator": "第 1 页完整原理图，仅有电机、MOSFET、接口和无源保护"}]
+    },
+    {
+      "id": "other.schematic-resource-identity",
+      "category": "other",
+      "subject": "原理图资源路径与产品身份",
+      "statement": "资源 URL 路径名为 unit_fan/unit_fan_sch_01.webp，页面负载仅标 B1 Motor，没有 Unit Vibrator、U059、N20 或偏心轮文字；该图是否为 Unit Vibrator 正式量产图需确认。",
+      "confidence": "uncertain",
+      "attributes": {"resource_path": "products/unit/unit_fan/unit_fan_sch_01.webp", "page_motor_label": "B1 Motor", "product_label_on_page": null, "u059_label_on_page": null, "confirmed_for_u059": false},
+      "evidence": [{"asset_sha256": "b008603cddfd4c1b55a4a2b8159c2e476e85a252484dfee1f800f1a72e389981", "page": 1, "locator": "第 1 页完整页面，无标题栏或 Unit Vibrator/U059/N20 标识"}]
+    },
+    {
+      "id": "component.documented-motor-mechanics",
+      "category": "component",
+      "subject": "正文 N20 电机与偏心轮",
+      "statement": "正文称使用 N20 直流电机和金属偏心轮，单向旋转且空载 8800RPM；原理图只标 B1 Motor，没有电机料号、偏心轮、机械方向、转速或堵转参数。",
+      "confidence": "uncertain",
+      "attributes": {"documented_motor": "N20 DC motor", "documented_mass": "metal eccentric wheel", "documented_direction": "one-way", "documented_no_load_speed": "8800RPM", "schematic_motor": "B1 Motor", "stall_current": null},
+      "evidence": [{"asset_sha256": "b008603cddfd4c1b55a4a2b8159c2e476e85a252484dfee1f800f1a72e389981", "page": 1, "locator": "第 1 页 B1 仅标 Motor"}]
+    },
+    {
+      "id": "gpio.documented-pwm-control",
+      "category": "gpio",
+      "subject": "正文 PWM 频率与强度调节",
+      "statement": "正文称支持 GPIO/PWM 控制、推荐 PWM 频率 10kHz，并以占空比无级调节震动强度；原理图确认 MOSI 到 MOSFET gate 的开关路径，但未标频率、占空比范围、最小脉宽或电机响应。",
+      "confidence": "uncertain",
+      "attributes": {"documented_control": "GPIO/PWM", "documented_frequency": "10kHz", "documented_intensity": "duty-cycle control", "duty_range": null, "minimum_pulse": null, "response_time": null},
+      "evidence": [{"asset_sha256": "b008603cddfd4c1b55a4a2b8159c2e476e85a252484dfee1f800f1a72e389981", "page": 1, "locator": "第 1 页 J1 MOSI-R1-Q1-B1 路径，无 PWM 参数"}]
+    },
+    {
+      "id": "power.documented-voltage-consumption",
+      "category": "power",
+      "subject": "正文 5V 功耗",
+      "statement": "正文给出 10kHz、50% 占空比时 5V@424.35mA；原理图电源只标 VCC，未标电压、平均/峰值电流、启动/堵转电流、测试负载、温度或容差。",
+      "confidence": "uncertain",
+      "attributes": {"documented_test": "PWM 10kHz,50% duty", "documented_power": "5V@424.35mA", "schematic_rail": "VCC", "startup_current": null, "stall_current": null, "tolerance": null},
+      "evidence": [{"asset_sha256": "b008603cddfd4c1b55a4a2b8159c2e476e85a252484dfee1f800f1a72e389981", "page": 1, "locator": "第 1 页 VCC/B1/Q1 电源路径，无额定值"}]
+    },
+    {
+      "id": "interface.documented-grove-labels",
+      "category": "interface",
+      "subject": "正文 DIN/NC 与页面 MOSI/MISO 命名",
+      "statement": "正文管脚表将 PORT.B 黄色线称 DIN、白色线称 NC；原理图将相应控制针脚标 MOSI、未用针脚标 MISO。电气连接一致，但接口信号正式命名需统一。",
+      "confidence": "uncertain",
+      "attributes": {"documented_yellow": "DIN", "documented_white": "NC", "schematic_pin2": "MOSI control", "schematic_pin1": "MISO NC", "naming_alignment": null},
+      "evidence": [{"asset_sha256": "b008603cddfd4c1b55a4a2b8159c2e476e85a252484dfee1f800f1a72e389981", "page": 1, "locator": "第 1 页 J1 pins1/2 标 MISO/MOSI"}]
+    }
+  ],
+  "needs_review": [
+    {
+      "id": "review.resource-identity",
+      "fact_id": "other.schematic-resource-identity",
+      "question": "unit_fan_sch_01.webp 是否确为 U059 Unit Vibrator 当前正式量产原理图？",
+      "reason": "资源路径指向 unit_fan，页面没有产品名/SKU/N20 标识。",
+      "evidence": [{"asset_sha256": "b008603cddfd4c1b55a4a2b8159c2e476e85a252484dfee1f800f1a72e389981", "page": 1, "locator": "第 1 页完整页面"}]
+    },
+    {
+      "id": "review.motor-mechanics",
+      "fact_id": "component.documented-motor-mechanics",
+      "question": "请用 BOM、机械图和实测确认 N20 电机、偏心轮、单向特性、8800RPM、启动/堵转电流及寿命。",
+      "reason": "原理图只显示通用 Motor 符号。",
+      "evidence": [{"asset_sha256": "b008603cddfd4c1b55a4a2b8159c2e476e85a252484dfee1f800f1a72e389981", "page": 1, "locator": "第 1 页 B1 Motor"}]
+    },
+    {
+      "id": "review.pwm-control",
+      "fact_id": "gpio.documented-pwm-control",
+      "question": "请确认 10kHz 推荐值、允许 PWM 范围、占空比-震感关系、启动/停止响应和低占空比边界。",
+      "reason": "原理图只确认开关拓扑。",
+      "evidence": [{"asset_sha256": "b008603cddfd4c1b55a4a2b8159c2e476e85a252484dfee1f800f1a72e389981", "page": 1, "locator": "第 1 页 MOSI/Q1/B1"}]
+    },
+    {
+      "id": "review.voltage-consumption",
+      "fact_id": "power.documented-voltage-consumption",
+      "question": "请确认 5V@424.35mA 的测试条件、平均/峰值、启动/堵转电流、温度和容差。",
+      "reason": "页面只标 VCC，没有电气额定值。",
+      "evidence": [{"asset_sha256": "b008603cddfd4c1b55a4a2b8159c2e476e85a252484dfee1f800f1a72e389981", "page": 1, "locator": "第 1 页 VCC/B1/Q1"}]
+    },
+    {
+      "id": "review.grove-labels",
+      "fact_id": "interface.documented-grove-labels",
+      "question": "请确认外部 API 和丝印应使用 DIN/NC 还是 MOSI/MISO 命名，并固定 J1 针脚顺序。",
+      "reason": "正文与原理图使用不同信号名。",
+      "evidence": [{"asset_sha256": "b008603cddfd4c1b55a4a2b8159c2e476e85a252484dfee1f800f1a72e389981", "page": 1, "locator": "第 1 页 J1 GROVE_IO"}]
+    }
+  ]
+}

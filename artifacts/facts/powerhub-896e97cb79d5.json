@@ -1,0 +1,650 @@
+{
+  "schema_version": 1,
+  "generator": "schematic_describer",
+  "product": {
+    "product_id": "powerhub-896e97cb79d5",
+    "product_name": "PowerHub",
+    "sku": "C148",
+    "source_path": "core/PowerHub.md",
+    "source_sha256": "047e3cb292954c2b8e5f9eaf11503443e978fc36f072571041dd075c7fbe8751",
+    "input_sha256": "2694cd93b91263a892cb5873cbd480a57114a7848a3292e85e2fcb54576752cc"
+  },
+  "schematic_assets": [
+    {
+      "sha256": "2600e4e6e7fea0a143b4d5a2e2958967617af0d6b30dcbabf8bfcb9b07432ae6",
+      "source_url": "https://m5stack-doc.oss-cn-shenzhen.aliyuncs.com/1183/PowerHub_SCH_Main_b0.3_20250704_Docs_2025_09_09_14_01_58_page_01.png",
+      "pages": [1]
+    },
+    {
+      "sha256": "b58c5653d925ac84553af79010f8d11de940f194c9839ff74d452c6f229ee19c",
+      "source_url": "https://m5stack-doc.oss-cn-shenzhen.aliyuncs.com/1183/PowerHub_SCH_Main_b0.3_20250704_Docs_2025_09_09_14_01_58_page_02.png",
+      "pages": [1]
+    },
+    {
+      "sha256": "01a3306426a03b49030d4e7e74154045c49e912bd41c1e0ed54a01d78e02c9d6",
+      "source_url": "https://m5stack-doc.oss-cn-shenzhen.aliyuncs.com/1183/PowerHub_SCH_Main_b0.3_20250704_Docs_2025_09_09_14_01_58_page_03.png",
+      "pages": [1]
+    },
+    {
+      "sha256": "528d784dec965f2689cbf2674528ed3fd3ec463f05572c6b60d0e6aa792bb345",
+      "source_url": "https://m5stack-doc.oss-cn-shenzhen.aliyuncs.com/1183/PowerHub_SCH_ext_b03_20250718_Docs_2025_09_09_14_01_53_page_01.png",
+      "pages": [1]
+    }
+  ],
+  "summary": "PowerHub 采用 U5 ESP32-S3-WROOM-1U-N16R8 主控和 U11 STM32G031G8U6 电源管理协处理器，系统管理总线连接 RX8130CE RTC，独立 PM I2C 总线连接 6 颗 INA226 与 SC8721。USB 数据通过两级 FSW7227 开关在底部 USB-C、前置 USB-C 和 USB-A 之间路由，另集成 SIT1044 CAN、SIT3088 RS-485、两组 HY2.0-4P、16P 扩展总线和 8 颗 WS2812C。电源支持 USB、DC 和 2S 电池路径，包含 TP/降压/升降压转换、2S 充电、负载开关、双向 PWR CAN/PWR485 控制及分路电流监测。",
+  "keywords": [
+    "PowerHub",
+    "C148",
+    "ESP32-S3-WROOM-1U-N16R8",
+    "STM32G031G8U6",
+    "RX8130CE",
+    "INA226",
+    "0x40",
+    "0x42",
+    "0x43",
+    "0x44",
+    "0x45",
+    "0x46",
+    "SC8721",
+    "SIT1044T(K)3",
+    "SIT3088EEUA",
+    "FSW7227YMS10G/TR",
+    "MP4560DN",
+    "IP2326",
+    "SY8113IABC",
+    "SY8089AAAC",
+    "MT9700",
+    "MAX40200AUK+",
+    "CAN",
+    "RS485",
+    "USB Type-C",
+    "USB Type-A",
+    "HY2.0-4P",
+    "EXT 2.54-16P",
+    "PM_SCL",
+    "PM_SDA",
+    "SYS_SCL",
+    "SYS_SDA",
+    "SYS_BAT_2S",
+    "SYS_5VBUS",
+    "SYS_INT5V",
+    "SOC_3V3",
+    "OEN_PWROUT",
+    "PDCDC_REFLOW",
+    "WS2812C"
+  ],
+  "components": [
+    {
+      "reference": "U5",
+      "part_number": "ESP32-S3-WROOM-1U-N16R8",
+      "role": "主应用控制器，连接 USB、CAN、RS-485、Grove、扩展总线和 STM32 系统管理接口",
+      "evidence": [{"asset_sha256": "2600e4e6e7fea0a143b4d5a2e2958967617af0d6b30dcbabf8bfcb9b07432ae6", "page": 1, "locator": "A1-B2，U5 ESP32-S3-WROOM-1U-N16R8 及 GPIO 网络"}]
+    },
+    {
+      "reference": "U11",
+      "part_number": "STM32G031G8U6",
+      "role": "电源、USB 路由、LED、充电、RTC 和分路监测管理协处理器",
+      "evidence": [{"asset_sha256": "2600e4e6e7fea0a143b4d5a2e2958967617af0d6b30dcbabf8bfcb9b07432ae6", "page": 1, "locator": "B3-C4，U11 STM32G031G8U6 全部管理信号"}]
+    },
+    {
+      "reference": "U12",
+      "part_number": "RX8130CE",
+      "role": "待机电源域 I2C RTC，nIRQ 输出为 nSTBY_WKUP",
+      "evidence": [{"asset_sha256": "2600e4e6e7fea0a143b4d5a2e2958967617af0d6b30dcbabf8bfcb9b07432ae6", "page": 1, "locator": "C4，U12 RX8130CE、PM_SCL/PM_SDA、nSTBY_WKUP、BATTERY_RTC"}]
+    },
+    {
+      "reference": "U10",
+      "part_number": "ME6239A33M3G",
+      "role": "由 SYS_5VBUS/SYS_BAT_2S 二极管汇合输入生成 VDD_STBY",
+      "evidence": [{"asset_sha256": "2600e4e6e7fea0a143b4d5a2e2958967617af0d6b30dcbabf8bfcb9b07432ae6", "page": 1, "locator": "A3-A4，D11/D14、U10 ME6239A33M3G、VDD_STBY"}]
+    },
+    {
+      "reference": "U1/U3/U6/U7/U8/U9",
+      "part_number": "WS2812C_2020",
+      "role": "主板六颗串联可寻址 RGB LED",
+      "evidence": [{"asset_sha256": "2600e4e6e7fea0a143b4d5a2e2958967617af0d6b30dcbabf8bfcb9b07432ae6", "page": 1, "locator": "C1-D3，U1/U3/U6/U7/U8/U9 WS2812C_2020 LED_DAT 链"}]
+    },
+    {
+      "reference": "U2/U4 (ext board)",
+      "part_number": "WS2812C_4020",
+      "role": "顶部小板两颗侧贴可寻址 RGB LED",
+      "evidence": [{"asset_sha256": "528d784dec965f2689cbf2674528ed3fd3ec463f05572c6b60d0e6aa792bb345", "page": 1, "locator": "C1-C2，U2/U4 WS2812C_4020 侧贴，LED_TOP 链"}]
+    },
+    {
+      "reference": "S2/S5/S1(ext board)",
+      "part_number": "SW / YTS-C017-F",
+      "role": "PMU_KEY2、USER KEY 和顶部 POWER KEY 三枚物理按键",
+      "evidence": [
+        {"asset_sha256": "2600e4e6e7fea0a143b4d5a2e2958967617af0d6b30dcbabf8bfcb9b07432ae6", "page": 1, "locator": "C1-C2，S2 PMU_KEY2、S5 USER KEY"},
+        {"asset_sha256": "528d784dec965f2689cbf2674528ed3fd3ec463f05572c6b60d0e6aa792bb345", "page": 1, "locator": "C2，S1 YTS-C017-F，PMU_SW_TOP"}
+      ]
+    },
+    {
+      "reference": "J1",
+      "part_number": "CON5",
+      "role": "STM32 SWD 调试与复位接口",
+      "evidence": [{"asset_sha256": "2600e4e6e7fea0a143b4d5a2e2958967617af0d6b30dcbabf8bfcb9b07432ae6", "page": 1, "locator": "C2-C3，J1 CON5，VDD_STBY/SWCLK/SWDIO/PMU_RST/GND"}]
+    },
+    {
+      "reference": "J4",
+      "part_number": "USB_C_16P_Horizontal",
+      "role": "底部 USB-C 数据和输入供电连接器",
+      "evidence": [{"asset_sha256": "b58c5653d925ac84553af79010f8d11de940f194c9839ff74d452c6f229ee19c", "page": 1, "locator": "A1，J4 USB_C_16P_Horizontal，VUSBIN/USB_DEV_DP/DM"}]
+    },
+    {
+      "reference": "U14",
+      "part_number": "AW32901FCR",
+      "role": "VUSBIN 到 USB_5VIN 的 USB 输入电源开关",
+      "evidence": [{"asset_sha256": "b58c5653d925ac84553af79010f8d11de940f194c9839ff74d452c6f229ee19c", "page": 1, "locator": "A2，U14 AW32901FCR，VUSBIN 输入与 USB_5VIN 输出"}]
+    },
+    {
+      "reference": "U21/U22",
+      "part_number": "FSW7227YMS10G/TR",
+      "role": "两级 USB 2.0 高速数据选择开关",
+      "evidence": [{"asset_sha256": "b58c5653d925ac84553af79010f8d11de940f194c9839ff74d452c6f229ee19c", "page": 1, "locator": "A3-B3，U21/U22 FSW7227YMS10G/TR 与 USB_CON_LV1/LV2"}]
+    },
+    {
+      "reference": "J6/J7",
+      "part_number": "USB_C_16PLT-H10.0 / USB-A",
+      "role": "前置 USB-C 与 USB-A 主机输出接口",
+      "evidence": [{"asset_sha256": "b58c5653d925ac84553af79010f8d11de940f194c9839ff74d452c6f229ee19c", "page": 1, "locator": "A4-B4，J6 USB-C、J7 USB-A、VDD_USB_OUT 与 USB_HOST_*"}]
+    },
+    {
+      "reference": "J2/J3",
+      "part_number": "HY2.0_4P_立插",
+      "role": "红色与蓝色两组 HY2.0-4P 扩展连接器",
+      "evidence": [{"asset_sha256": "b58c5653d925ac84553af79010f8d11de940f194c9839ff74d452c6f229ee19c", "page": 1, "locator": "B1-C1，J2 GRV_RED、J3 GRV_BLUE、VOUT_GROVE_RED/BLUE"}]
+    },
+    {
+      "reference": "J5",
+      "part_number": "2X8",
+      "role": "电池、DC/5 V 电源、GPIO、复位与唤醒的 16P 扩展总线",
+      "evidence": [{"asset_sha256": "b58c5653d925ac84553af79010f8d11de940f194c9839ff74d452c6f229ee19c", "page": 1, "locator": "D1，J5 2X8，VBAT_2S_CONN/VIN_ADP/SYS_5VOUT/GPIO/nSTBY_WKUP"}]
+    },
+    {
+      "reference": "J10",
+      "part_number": "DC-C0330-5.5A-2.0",
+      "role": "VIN_ADP 直流电源输入插座",
+      "evidence": [{"asset_sha256": "b58c5653d925ac84553af79010f8d11de940f194c9839ff74d452c6f229ee19c", "page": 1, "locator": "C1，J10 DC-C0330-5.5A-2.0，VIN_ADP"}]
+    },
+    {
+      "reference": "U17/U19/U20/U35/U36/U28",
+      "part_number": "INA226",
+      "role": "USB、两路 Grove、PWR CAN、PWR485 和电池六路电压电流监测",
+      "evidence": [
+        {"asset_sha256": "b58c5653d925ac84553af79010f8d11de940f194c9839ff74d452c6f229ee19c", "page": 1, "locator": "B2-C2，U17/U19/U20 INA226，ADDR:0x40/0x42/0x43"},
+        {"asset_sha256": "01a3306426a03b49030d4e7e74154045c49e912bd41c1e0ed54a01d78e02c9d6", "page": 1, "locator": "B2-D4，U35/U36/U28 INA226，ADDR:0x44/0x45/0x46"}
+      ]
+    },
+    {
+      "reference": "U13/U15/U16/U30/U31",
+      "part_number": "MT9700",
+      "role": "USB、Grove 与内部/外部 5 V 分路负载开关",
+      "evidence": [
+        {"asset_sha256": "b58c5653d925ac84553af79010f8d11de940f194c9839ff74d452c6f229ee19c", "page": 1, "locator": "B2-C2，U13/U15/U16 MT9700"},
+        {"asset_sha256": "01a3306426a03b49030d4e7e74154045c49e912bd41c1e0ed54a01d78e02c9d6", "page": 1, "locator": "B2-C2，U30/U31 MT9700"}
+      ]
+    },
+    {
+      "reference": "U23",
+      "part_number": "SIT1044T(K)3",
+      "role": "CAN 收发器，带可切换 120 Ω 终端与浪涌保护",
+      "evidence": [{"asset_sha256": "b58c5653d925ac84553af79010f8d11de940f194c9839ff74d452c6f229ee19c", "page": 1, "locator": "B3-C4，U23 SIT1044T(K)3、D8 SM24CAN、R42 120R、S3"}]
+    },
+    {
+      "reference": "U24",
+      "part_number": "SIT3088EEUA",
+      "role": "半双工 RS-485 收发器，带方向控制、可切换 120 Ω 终端与浪涌保护",
+      "evidence": [{"asset_sha256": "b58c5653d925ac84553af79010f8d11de940f194c9839ff74d452c6f229ee19c", "page": 1, "locator": "C3-D4，U24 SIT3088EEUA、SM712、R43 120R、S4"}]
+    },
+    {
+      "reference": "J8/J9",
+      "part_number": "XT30(2+2)PW-M / HT3.96_4P",
+      "role": "带电源的 CAN 与 RS-485 外部连接器",
+      "evidence": [{"asset_sha256": "b58c5653d925ac84553af79010f8d11de940f194c9839ff74d452c6f229ee19c", "page": 1, "locator": "C4-D4，J8 EXCON_CANH/CANL/VOUT_PWCAN，J9 EXT_485_A/B/VOUT_RS485"}]
+    },
+    {
+      "reference": "U27",
+      "part_number": "MP4560DN",
+      "role": "VIN_ADP 降压生成 PRE_5V",
+      "evidence": [{"asset_sha256": "01a3306426a03b49030d4e7e74154045c49e912bd41c1e0ed54a01d78e02c9d6", "page": 1, "locator": "A1-A2，D10/FU6/U27 MP4560DN/L3，VIN_ADP 到 PRE_5V"}]
+    },
+    {
+      "reference": "U25",
+      "part_number": "SY8113IABC",
+      "role": "SYS_BAT_2S 降压并经 D11/D12 输出 SYS_INT5V",
+      "evidence": [{"asset_sha256": "01a3306426a03b49030d4e7e74154045c49e912bd41c1e0ed54a01d78e02c9d6", "page": 1, "locator": "B1-B2，U25 SY8113IABC、L1、D11/D12、SYS_INT5V"}]
+    },
+    {
+      "reference": "U26",
+      "part_number": "IP2326（无后缀）",
+      "role": "SYS_5VCHG 输入的 2S 电池充电控制器",
+      "evidence": [{"asset_sha256": "01a3306426a03b49030d4e7e74154045c49e912bd41c1e0ed54a01d78e02c9d6", "page": 1, "locator": "C1-D2，U26 IP2326（无后缀）、SYS_5VCHG、SYS_BAT_2S、CHG_EN/CHG_STAT"}]
+    },
+    {
+      "reference": "U29",
+      "part_number": "SY8089AAAC",
+      "role": "SYS_INT5V 降压生成 SOC_3V3",
+      "evidence": [{"asset_sha256": "01a3306426a03b49030d4e7e74154045c49e912bd41c1e0ed54a01d78e02c9d6", "page": 1, "locator": "C2-C3，U29 SY8089AAAC、L4、SOC_3V3"}]
+    },
+    {
+      "reference": "U32/U33",
+      "part_number": "MAX40200AUK+",
+      "role": "PRE_5V 与 USB_5VIN 到 SYS_5VBUS 的双路理想二极管汇合",
+      "evidence": [{"asset_sha256": "01a3306426a03b49030d4e7e74154045c49e912bd41c1e0ed54a01d78e02c9d6", "page": 1, "locator": "A2，U32/U33 MAX40200AUK+，PRE_5V/USB_5VIN 到 SYS_5VBUS"}]
+    },
+    {
+      "reference": "U34",
+      "part_number": "SC8721",
+      "role": "PM I2C 控制的 RS485/CAN 双向升降压电源转换器",
+      "evidence": [{"asset_sha256": "01a3306426a03b49030d4e7e74154045c49e912bd41c1e0ed54a01d78e02c9d6", "page": 1, "locator": "A3-A4，U34 SC8721、LX1、PM_SCL/PM_SDA、PDCDC_EN、VOUT"}]
+    }
+  ],
+  "facts": [
+    {
+      "id": "system.architecture",
+      "category": "system",
+      "subject": "双控制器系统",
+      "statement": "U5 ESP32-S3-WROOM-1U-N16R8 负责应用与外部通信，U11 STM32G031G8U6 管理分路电源、监测、RTC、USB 选择、LED、按键和充电。",
+      "confidence": "confirmed",
+      "attributes": {"application_controller": "U5 ESP32-S3-WROOM-1U-N16R8", "management_controller": "U11 STM32G031G8U6", "system_bus": "SYS_SCL/SYS_SDA", "pm_bus": "PM_SCL/PM_SDA"},
+      "evidence": [{"asset_sha256": "2600e4e6e7fea0a143b4d5a2e2958967617af0d6b30dcbabf8bfcb9b07432ae6", "page": 1, "locator": "U5/U11 与 SYS_SCL/SYS_SDA、管理控制网络"}]
+    },
+    {
+      "id": "bus.controller-link",
+      "category": "bus",
+      "subject": "ESP32 与 STM32 管理链路",
+      "statement": "ESP32 GPIO45/SYS_SDA(PMU_RX) 与 GPIO48/SYS_SCL(PMU_TX) 连接 STM32 PB7/PB6，GPIO0/xGPIO_BOOT 连接 STM32 PA3。",
+      "confidence": "confirmed",
+      "attributes": {"esp_sda_rx": "GPIO45 SYS_SDA/PMU_RX", "esp_scl_tx": "GPIO48 SYS_SCL/PMU_TX", "stm_rx": "PB7 SYS_SDA/PMU_RX", "stm_tx": "PB6 SYS_SCL/PMU_TX", "boot": "ESP GPIO0 xGPIO_BOOT -> STM PA3"},
+      "evidence": [{"asset_sha256": "2600e4e6e7fea0a143b4d5a2e2958967617af0d6b30dcbabf8bfcb9b07432ae6", "page": 1, "locator": "U5 GPIO45/GPIO48/GPIO0 与 U11 PB7/PB6/PA3"}]
+    },
+    {
+      "id": "bus.pm-i2c",
+      "category": "bus",
+      "subject": "电源管理 I2C",
+      "statement": "STM32 PA11/PM_SCL 与 PA12/PM_SDA 连接 RX8130CE、六颗 INA226 和 SC8721。",
+      "confidence": "confirmed",
+      "attributes": {"controller": "U11 STM32G031G8U6", "scl": "PA11/PM_SCL", "sda": "PA12/PM_SDA", "devices": "U12 RX8130CE; U17/U19/U20/U28/U35/U36 INA226; U34 SC8721"},
+      "evidence": [
+        {"asset_sha256": "2600e4e6e7fea0a143b4d5a2e2958967617af0d6b30dcbabf8bfcb9b07432ae6", "page": 1, "locator": "U11 PA11/PA12 与 U12 PM_SCL/PM_SDA"},
+        {"asset_sha256": "b58c5653d925ac84553af79010f8d11de940f194c9839ff74d452c6f229ee19c", "page": 1, "locator": "U17/U19/U20 INA226 PM_SCL/PM_SDA"},
+        {"asset_sha256": "01a3306426a03b49030d4e7e74154045c49e912bd41c1e0ed54a01d78e02c9d6", "page": 1, "locator": "U28/U35/U36 INA226 与 U34 SC8721 PM_SCL/PM_SDA"}
+      ]
+    },
+    {
+      "id": "address.power-monitors",
+      "category": "address",
+      "subject": "INA226 地址映射",
+      "statement": "原理图明确标出六颗 INA226 的 7-bit 地址：USB 0x40、Grove Red 0x42、Grove Blue 0x43、PWR CAN 0x44、PWR485 0x45、电池 0x46。",
+      "confidence": "confirmed",
+      "attributes": {"U17_USB": "0x40", "U19_GROVE_RED": "0x42", "U20_GROVE_BLUE": "0x43", "U35_PWR_CAN": "0x44", "U36_PWR485": "0x45", "U28_BATTERY": "0x46"},
+      "evidence": [
+        {"asset_sha256": "b58c5653d925ac84553af79010f8d11de940f194c9839ff74d452c6f229ee19c", "page": 1, "locator": "U17 ADDR:0X40、U19 ADDR:0X42、U20 ADDR:0X43"},
+        {"asset_sha256": "01a3306426a03b49030d4e7e74154045c49e912bd41c1e0ed54a01d78e02c9d6", "page": 1, "locator": "U35 ADDR:0X44、U36 ADDR:0X45、U28 ADDR:0X46"}
+      ]
+    },
+    {
+      "id": "gpio.esp-communications",
+      "category": "gpio",
+      "subject": "ESP32 通信 GPIO",
+      "statement": "RS-485 TX/DIR/RX 使用 GPIO8/GPIO18/GPIO17，CAN TX/RX 使用 GPIO39/GPIO40，USB DM/DP 使用 GPIO19/GPIO20。",
+      "confidence": "confirmed",
+      "attributes": {"rs485_tx": "GPIO8 MCU_485_TXD", "rs485_dir": "GPIO18 MCU_485_DIR", "rs485_rx": "GPIO17 MCU_485_RXD", "can_tx": "GPIO39 MCU_CAN_TXD", "can_rx": "GPIO40 MCU_CAN_RXD", "usb_dm": "GPIO19 MCU_USB_DM", "usb_dp": "GPIO20 MCU_USB_DP"},
+      "evidence": [{"asset_sha256": "2600e4e6e7fea0a143b4d5a2e2958967617af0d6b30dcbabf8bfcb9b07432ae6", "page": 1, "locator": "U5 GPIO8/17/18/19/20/39/40 网络映射"}]
+    },
+    {
+      "id": "gpio.grove",
+      "category": "gpio",
+      "subject": "Grove GPIO 映射",
+      "statement": "红色 Grove 使用 GPIO16/GRV_RED_SCL 与 GPIO15/GRV_RED_SDA；蓝色 Grove 使用 GPIO1/GRV_BLUE_TX 与 GPIO2/GRV_BLUE_RX。",
+      "confidence": "confirmed",
+      "attributes": {"red_scl": "GPIO16", "red_sda": "GPIO15", "blue_tx": "GPIO1", "blue_rx": "GPIO2"},
+      "evidence": [
+        {"asset_sha256": "2600e4e6e7fea0a143b4d5a2e2958967617af0d6b30dcbabf8bfcb9b07432ae6", "page": 1, "locator": "U5 GRV_RED_SDA/SCL 与 GRV_BLUE_TX/RX"},
+        {"asset_sha256": "b58c5653d925ac84553af79010f8d11de940f194c9839ff74d452c6f229ee19c", "page": 1, "locator": "J2/J3 Grove 连接器"}
+      ]
+    },
+    {
+      "id": "gpio.stm-power-control",
+      "category": "gpio",
+      "subject": "STM32 电源控制映射",
+      "statement": "STM32 使用 PB8/OEN_USB、PC14/OEN_GRV_R、PC15/OEN_GRV_B、PB1/OEN_PWROUT、PA8/PDCDC_REFLOW、PC6/PDCDC_EN 控制各电源路径。",
+      "confidence": "confirmed",
+      "attributes": {"usb": "PB8 OEN_USB", "grove_red": "PC14 OEN_GRV_R", "grove_blue": "PC15 OEN_GRV_B", "power_output": "PB1 OEN_PWROUT", "reflow": "PA8 PDCDC_REFLOW", "dc_dc_enable": "PC6 PDCDC_EN"},
+      "evidence": [{"asset_sha256": "2600e4e6e7fea0a143b4d5a2e2958967617af0d6b30dcbabf8bfcb9b07432ae6", "page": 1, "locator": "U11 PB8/PC14/PC15/PB1/PA8/PC6 管脚网络"}]
+    },
+    {
+      "id": "gpio.usb-switch",
+      "category": "gpio",
+      "subject": "USB 选择控制",
+      "statement": "STM32 PB3/USB_CON_LV1 控制 U22，PA15/USB_CON_LV2 控制 U21。",
+      "confidence": "confirmed",
+      "attributes": {"level1": "PB3 USB_CON_LV1 -> U22 OE#", "level2": "PA15 USB_CON_LV2 -> U21 OE#"},
+      "evidence": [
+        {"asset_sha256": "2600e4e6e7fea0a143b4d5a2e2958967617af0d6b30dcbabf8bfcb9b07432ae6", "page": 1, "locator": "U11 PB3/PA15"},
+        {"asset_sha256": "b58c5653d925ac84553af79010f8d11de940f194c9839ff74d452c6f229ee19c", "page": 1, "locator": "U21/U22 OE# 与 USB_CON_LV2/LV1"}
+      ]
+    },
+    {
+      "id": "interface.usb-bottom",
+      "category": "interface",
+      "subject": "底部 USB-C",
+      "statement": "J4 接收 VUSBIN 并承载 USB_DEV_DP/DM，数据线经 D5 ESD0524P 后进入两级 USB 选择网络。",
+      "confidence": "confirmed",
+      "attributes": {"reference": "J4", "power": "VUSBIN", "dp": "USB_DEV_DP", "dm": "USB_DEV_DM", "protection": "D5 ESD0524P"},
+      "evidence": [{"asset_sha256": "b58c5653d925ac84553af79010f8d11de940f194c9839ff74d452c6f229ee19c", "page": 1, "locator": "A1，J4/D5，VUSBIN/USB_DEV_DP/DM"}]
+    },
+    {
+      "id": "interface.usb-host",
+      "category": "interface",
+      "subject": "前置 USB 主机接口",
+      "statement": "J7 USB-A 使用 USB_HOST_DP_A/DM_A，J6 USB-C 使用 USB_HOST_DP_C/DM_C；两者均由 VDD_USB_OUT 供电并分别经 D6/D7 ESD0524P 保护。",
+      "confidence": "confirmed",
+      "attributes": {"usb_a": "J7 USB-A", "usb_c": "J6 USB_C_16PLT-H10.0", "power": "VDD_USB_OUT", "usb_a_esd": "D6 ESD0524P", "usb_c_esd": "D7 ESD0524P"},
+      "evidence": [{"asset_sha256": "b58c5653d925ac84553af79010f8d11de940f194c9839ff74d452c6f229ee19c", "page": 1, "locator": "A4-B4，D6/J7 与 D7/J6"}]
+    },
+    {
+      "id": "bus.usb-routing",
+      "category": "bus",
+      "subject": "USB 两级数据切换",
+      "statement": "U22 在 MCU_USB_DP/DM 与 USB_DEV_DP/DM 间形成一级切换，U21 再将 USB_HOST_DP/DM 分配到前置 USB-A 或 USB-C。",
+      "confidence": "confirmed",
+      "attributes": {"level1_switch": "U22 FSW7227YMS10G/TR", "level1_control": "USB_CON_LV1", "level2_switch": "U21 FSW7227YMS10G/TR", "level2_control": "USB_CON_LV2", "targets": "J4 bottom USB-C; J6 front USB-C; J7 front USB-A"},
+      "evidence": [{"asset_sha256": "b58c5653d925ac84553af79010f8d11de940f194c9839ff74d452c6f229ee19c", "page": 1, "locator": "U21/U22 HSD1/HSD2/D+/D- 网络"}]
+    },
+    {
+      "id": "bus.can",
+      "category": "bus",
+      "subject": "CAN 总线",
+      "statement": "U23 SIT1044T(K)3 将 MCU_CAN_TXD/RXD 转换为 CANH/CANL，线路经 FU2/FU3 60V/200mA、D8 SM24CAN 保护，并可由 S3 接入 R42 120 Ω 终端。",
+      "confidence": "confirmed",
+      "attributes": {"transceiver": "U23 SIT1044T(K)3", "tx": "MCU_CAN_TXD", "rx": "MCU_CAN_RXD", "bus": "EXCON_CANH; EXCON_CANL", "fuses": "FU2/FU3 60V/200mA", "tvs": "D8 SM24CAN", "termination": "R42 120R via S3", "connector": "J8 XT30(2+2)PW-M"},
+      "evidence": [{"asset_sha256": "b58c5653d925ac84553af79010f8d11de940f194c9839ff74d452c6f229ee19c", "page": 1, "locator": "B3-C4，U23/FU2/FU3/D8/R42/S3/J8"}]
+    },
+    {
+      "id": "bus.rs485",
+      "category": "bus",
+      "subject": "RS-485 总线",
+      "statement": "U24 SIT3088EEUA 将 MCU_485_TXD/RXD/DIR 转换为 EXT_485_A/B，线路经 FU4/FU5 60V/200mA、SM712 保护，并可由 S4 接入 R43 120 Ω 终端。",
+      "confidence": "confirmed",
+      "attributes": {"transceiver": "U24 SIT3088EEUA", "tx": "MCU_485_TXD", "rx": "MCU_485_RXD", "direction": "MCU_485_DIR", "bus": "EXT_485_A; EXT_485_B", "fuses": "FU4/FU5 60V/200mA", "tvs": "SM712", "termination": "R43 120R via S4", "connector": "J9 HT3.96_4P"},
+      "evidence": [{"asset_sha256": "b58c5653d925ac84553af79010f8d11de940f194c9839ff74d452c6f229ee19c", "page": 1, "locator": "C3-D4，U24/FU4/FU5/SM712/R43/S4/J9"}]
+    },
+    {
+      "id": "interface.grove-red",
+      "category": "interface",
+      "subject": "红色 HY2.0-4P",
+      "statement": "J2 pins 4/3 为 GRV_RED_SCL/SDA，pin 2 为 VOUT_GROVE_RED，pin 1 为 GND；信号经 D3 ESD0524P 保护。",
+      "confidence": "confirmed",
+      "attributes": {"pin4": "GRV_RED_SCL/GPIO16", "pin3": "GRV_RED_SDA/GPIO15", "pin2": "VOUT_GROVE_RED", "pin1": "GND", "protection": "D3 ESD0524P"},
+      "evidence": [{"asset_sha256": "b58c5653d925ac84553af79010f8d11de940f194c9839ff74d452c6f229ee19c", "page": 1, "locator": "B1，J2/D3"}]
+    },
+    {
+      "id": "interface.grove-blue",
+      "category": "interface",
+      "subject": "蓝色 HY2.0-4P",
+      "statement": "J3 pins 4/3 为 GRV_BLUE_RX/TX，pin 2 为 VOUT_GROVE_BLUE，pin 1 为 GND；信号经 D4 ESD0524P 保护。",
+      "confidence": "confirmed",
+      "attributes": {"pin4": "GRV_BLUE_RX/GPIO2", "pin3": "GRV_BLUE_TX/GPIO1", "pin2": "VOUT_GROVE_BLUE", "pin1": "GND", "protection": "D4 ESD0524P"},
+      "evidence": [{"asset_sha256": "b58c5653d925ac84553af79010f8d11de940f194c9839ff74d452c6f229ee19c", "page": 1, "locator": "C1，J3/D4"}]
+    },
+    {
+      "id": "interface.ext16",
+      "category": "interface",
+      "subject": "16P 扩展总线",
+      "statement": "J5 提供双 BAT-2S、VIN_ADP、SYS_5VOUT、双 GND、GPIO43/44/42/41/40/7/6/5、PMU_RST 和 nSTBY_WKUP。",
+      "confidence": "confirmed",
+      "attributes": {"pins1_2": "VBAT_2S_CONN", "pin3": "VIN_ADP", "pin4": "SYS_5VOUT", "pins5_6": "GND", "pin7": "STD_GPIO43", "pin8": "PMU_RST", "pin9": "STD_GPIO44", "pin10": "nSTBY_WKUP", "pin11": "STD_GPIO42", "pin12": "STD_GPIO7", "pin13": "STD_GPIO41", "pin14": "STD_GPIO6", "pin15": "STD_GPIO4", "pin16": "STD_GPIO5"},
+      "evidence": [{"asset_sha256": "b58c5653d925ac84553af79010f8d11de940f194c9839ff74d452c6f229ee19c", "page": 1, "locator": "D1，J5 2X8 pins 1-16"}]
+    },
+    {
+      "id": "power.standby",
+      "category": "power",
+      "subject": "待机电源域",
+      "statement": "SYS_5VBUS 与 SYS_BAT_2S 经 D11/D14 1N4148WS 汇合后输入 U10 ME6239A33M3G，输出 VDD_STBY 供 STM32 与 RTC。",
+      "confidence": "confirmed",
+      "attributes": {"inputs": "SYS_5VBUS via D11; SYS_BAT_2S via D14", "diodes": "D11/D14 1N4148WS", "regulator": "U10 ME6239A33M3G", "output": "VDD_STBY", "consumers": "U11 STM32G031G8U6; U12 RX8130CE"},
+      "evidence": [{"asset_sha256": "2600e4e6e7fea0a143b4d5a2e2958967617af0d6b30dcbabf8bfcb9b07432ae6", "page": 1, "locator": "A3-A4，D11/D14/U10/VDD_STBY"}]
+    },
+    {
+      "id": "power.usb-input",
+      "category": "power",
+      "subject": "USB 输入电源",
+      "statement": "J4 VUSBIN 输入 U14 AW32901FCR，U14 输出 USB_5VIN；该电源随后进入理想二极管汇合和充电路径。",
+      "confidence": "confirmed",
+      "attributes": {"connector": "J4", "input": "VUSBIN", "switch": "U14 AW32901FCR", "output": "USB_5VIN"},
+      "evidence": [
+        {"asset_sha256": "b58c5653d925ac84553af79010f8d11de940f194c9839ff74d452c6f229ee19c", "page": 1, "locator": "J4/U14，VUSBIN 到 USB_5VIN"},
+        {"asset_sha256": "01a3306426a03b49030d4e7e74154045c49e912bd41c1e0ed54a01d78e02c9d6", "page": 1, "locator": "U33 USB_5VIN 与 D16 充电汇合"}
+      ]
+    },
+    {
+      "id": "power.dc-input",
+      "category": "power",
+      "subject": "DC 输入降压",
+      "statement": "J10 VIN_ADP 经 D10 DSK34 与 FU6 1.5A/24V 自恢复保险丝进入 U27 MP4560DN，U27 经 L3 8.2 µH 输出 PRE_5V。",
+      "confidence": "confirmed",
+      "attributes": {"connector": "J10 DC-C0330-5.5A-2.0", "input": "VIN_ADP", "diode": "D10 DSK34", "fuse": "FU6 1.5A/24V 自恢复", "converter": "U27 MP4560DN", "inductor": "L3 8.2uH/A_0630", "output": "PRE_5V"},
+      "evidence": [{"asset_sha256": "01a3306426a03b49030d4e7e74154045c49e912bd41c1e0ed54a01d78e02c9d6", "page": 1, "locator": "A1-A2，D10/FU6/U27/L3/PRE_5V"}]
+    },
+    {
+      "id": "power.source-or",
+      "category": "power",
+      "subject": "USB/DC 5 V 汇合",
+      "statement": "U32 与 U33 MAX40200AUK+ 分别将 PRE_5V 和 USB_5VIN 理想二极管汇合为 SYS_5VBUS；D15/D16 DSK34 还将两路汇合为 SYS_5VCHG。",
+      "confidence": "confirmed",
+      "attributes": {"system_or": "PRE_5V -> U32; USB_5VIN -> U33; output SYS_5VBUS", "charge_or": "PRE_5V -> D15; USB_5VIN -> D16; output SYS_5VCHG"},
+      "evidence": [{"asset_sha256": "01a3306426a03b49030d4e7e74154045c49e912bd41c1e0ed54a01d78e02c9d6", "page": 1, "locator": "A2-B2，U32/U33 与 D15/D16 汇合网络"}]
+    },
+    {
+      "id": "power.battery-5v",
+      "category": "power",
+      "subject": "2S 电池到内部 5 V",
+      "statement": "U25 SY8113IABC 从 SYS_BAT_2S 降压，经 L1 和 D11/D12 DSK34 生成 SYS_INT5V。",
+      "confidence": "confirmed",
+      "attributes": {"input": "SYS_BAT_2S", "converter": "U25 SY8113IABC", "enable": "MPWR_EN", "output": "SYS_INT5V", "rectifiers": "D11/D12 DSK34"},
+      "evidence": [{"asset_sha256": "01a3306426a03b49030d4e7e74154045c49e912bd41c1e0ed54a01d78e02c9d6", "page": 1, "locator": "B1-B2，U25/L1/D11/D12/SYS_INT5V"}]
+    },
+    {
+      "id": "power.soc-3v3",
+      "category": "power",
+      "subject": "主控 3.3 V",
+      "statement": "U29 SY8089AAAC 将 SYS_INT5V 降压，经 L4 WPN3012H2R2MT 生成 SOC_3V3。",
+      "confidence": "confirmed",
+      "attributes": {"input": "SYS_INT5V", "converter": "U29 SY8089AAAC", "inductor": "L4 WPN3012H2R2MT", "output": "SOC_3V3"},
+      "evidence": [{"asset_sha256": "01a3306426a03b49030d4e7e74154045c49e912bd41c1e0ed54a01d78e02c9d6", "page": 1, "locator": "C2-C3，U29/L4/SOC_3V3"}]
+    },
+    {
+      "id": "power.battery-charge",
+      "category": "power",
+      "subject": "2S 电池充电",
+      "statement": "U26 IP2326（无后缀）以 SYS_5VCHG 为输入，输出 SYS_BAT_2S，并接受 CHG_EN、输出 CHG_STAT；原理图注释给出 R55=91 kΩ 时 Imax 1 A，R55=110 kΩ 时 Imax 0.82 A。",
+      "confidence": "confirmed",
+      "attributes": {"reference": "U26", "part_number": "IP2326（无后缀）", "input": "SYS_5VCHG", "output": "SYS_BAT_2S", "enable": "CHG_EN", "status": "CHG_STAT", "current_note": "R55=91K Imax 1A; R55=110K Imax 0.82A"},
+      "evidence": [{"asset_sha256": "01a3306426a03b49030d4e7e74154045c49e912bd41c1e0ed54a01d78e02c9d6", "page": 1, "locator": "C1-D2，U26 与 Charging current setting 注释"}]
+    },
+    {
+      "id": "power.branch-switches",
+      "category": "power",
+      "subject": "USB/Grove 分路开关与监测",
+      "statement": "U13/U15/U16 MT9700 分别受 OEN_USB/OEN_GRV_R/OEN_GRV_B 控制，输出经 U17/U19/U20 INA226 监测后送往 USB、红色 Grove 和蓝色 Grove。",
+      "confidence": "confirmed",
+      "attributes": {"usb": "U13 MT9700 -> U17 INA226 0x40 -> VDD_USB_OUT", "grove_red": "U15 MT9700 -> U19 INA226 0x42 -> VOUT_GROVE_RED", "grove_blue": "U16 MT9700 -> U20 INA226 0x43 -> VOUT_GROVE_BLUE"},
+      "evidence": [{"asset_sha256": "b58c5653d925ac84553af79010f8d11de940f194c9839ff74d452c6f229ee19c", "page": 1, "locator": "B2-C2，U13/U17、U15/U19、U16/U20 三路"}]
+    },
+    {
+      "id": "power.sc8721",
+      "category": "power",
+      "subject": "RS485/CAN 双向电源转换",
+      "statement": "U34 SC8721 的输入由 SYS_BAT_2S 和 VIN_ADP 经 D17/D18 SP1060L 汇合，转换节点为 VOUT；PDCDC_EN 控制使能，PM_SCL/PM_SDA 提供配置。",
+      "confidence": "confirmed",
+      "attributes": {"converter": "U34 SC8721", "inputs": "SYS_BAT_2S via D17; VIN_ADP via D18", "input_diodes": "D17/D18 SP1060L", "inductor": "LX1 2.2uH/10A", "output": "VOUT", "enable": "PDCDC_EN", "control_bus": "PM_SCL/PM_SDA"},
+      "evidence": [{"asset_sha256": "01a3306426a03b49030d4e7e74154045c49e912bd41c1e0ed54a01d78e02c9d6", "page": 1, "locator": "A3-A4，D17/D18/U34/LX1/VOUT"}]
+    },
+    {
+      "id": "power.pwrcan-rs485",
+      "category": "power",
+      "subject": "PWR CAN/PWR485 分配与反向路径",
+      "statement": "VOUT 经 Q3 高边开关形成 VDD_PSU_BUS，再分别经 U35/U36 INA226 输出 VOUT_PWCAN/VOUT_RS485；VIN_ADP 与 VDD_PSU_BUS 之间另有 Q6/Q8 与 PDCDC_REFLOW 控制的反向路径。",
+      "confidence": "confirmed",
+      "attributes": {"forward_control": "OEN_PWROUT", "high_side": "Q3 AP40P04Q", "bus": "VDD_PSU_BUS", "can_monitor": "U35 INA226 0x44 -> VOUT_PWCAN", "rs485_monitor": "U36 INA226 0x45 -> VOUT_RS485", "reverse_control": "PDCDC_REFLOW", "reverse_fets": "Q6/Q8 AP40P04Q; Q9 A2N7002W"},
+      "evidence": [{"asset_sha256": "01a3306426a03b49030d4e7e74154045c49e912bd41c1e0ed54a01d78e02c9d6", "page": 1, "locator": "B3-D4，Q3/U35/U36 与 Q6/Q8/Q9 PDCDC_REFLOW 路径"}]
+    },
+    {
+      "id": "sensor.rtc-wakeup",
+      "category": "sensor",
+      "subject": "RTC 唤醒",
+      "statement": "U12 RX8130CE 由 VDD_STBY 供电，nIRQ 输出网络 nSTBY_WKUP 连接 STM32 PB5 和 16P 扩展总线。",
+      "confidence": "confirmed",
+      "attributes": {"reference": "U12", "part_number": "RX8130CE", "supply": "VDD_STBY", "interrupt": "nSTBY_WKUP", "stm32_pin": "PB5", "external_pin": "J5 pin 10"},
+      "evidence": [
+        {"asset_sha256": "2600e4e6e7fea0a143b4d5a2e2958967617af0d6b30dcbabf8bfcb9b07432ae6", "page": 1, "locator": "U12 nIRQ/nSTBY_WKUP 与 U11 PB5"},
+        {"asset_sha256": "b58c5653d925ac84553af79010f8d11de940f194c9839ff74d452c6f229ee19c", "page": 1, "locator": "J5 pin 10 nSTBY_WKUP"}
+      ]
+    },
+    {
+      "id": "debug.stm32-swd",
+      "category": "debug",
+      "subject": "STM32 SWD",
+      "statement": "J1 五针接口依次提供 VDD_STBY、SWCLK、SWDIO、PMU_RST 和 GND，用于 STM32 调试与复位。",
+      "confidence": "confirmed",
+      "attributes": {"reference": "J1", "pin1": "VDD_STBY", "pin2": "SWCLK", "pin3": "SWDIO", "pin4": "PMU_RST", "pin5": "GND"},
+      "evidence": [{"asset_sha256": "2600e4e6e7fea0a143b4d5a2e2958967617af0d6b30dcbabf8bfcb9b07432ae6", "page": 1, "locator": "C2-C3，J1 CON5 pins 1-5"}]
+    },
+    {
+      "id": "component.rgb-led-chain",
+      "category": "component",
+      "subject": "RGB LED 链",
+      "statement": "主板 6 颗 WS2812C_2020 与顶部板 2 颗 WS2812C_4020 构成共 8 颗可寻址 LED，LED_DAT 从主板串行传递到 LED_TOP。",
+      "confidence": "confirmed",
+      "attributes": {"main_board": "U1/U3/U6/U7/U8/U9 WS2812C_2020", "top_board": "U2/U4 WS2812C_4020", "count": 8, "data_in": "LED_DAT", "interboard_net": "LED_DAT_FRONT2TOP/LED_TOP", "supply": "VDD_LED"},
+      "evidence": [
+        {"asset_sha256": "2600e4e6e7fea0a143b4d5a2e2958967617af0d6b30dcbabf8bfcb9b07432ae6", "page": 1, "locator": "C1-D3，六颗 WS2812C_2020 链"},
+        {"asset_sha256": "528d784dec965f2689cbf2674528ed3fd3ec463f05572c6b60d0e6aa792bb345", "page": 1, "locator": "C1-C2，两颗 WS2812C_4020 链"}
+      ]
+    },
+    {
+      "id": "protection.communication",
+      "category": "protection",
+      "subject": "通信接口保护",
+      "statement": "USB 设备/主机口使用 ESD0524P，CAN 使用 SM24CAN 与 60V/200mA 保险丝，RS-485 使用 SM712 与 60V/200mA 保险丝。",
+      "confidence": "confirmed",
+      "attributes": {"usb": "D5/D6/D7 ESD0524P", "can": "D8 SM24CAN; FU2/FU3 60V/200mA", "rs485": "SM712; FU4/FU5 60V/200mA"},
+      "evidence": [{"asset_sha256": "b58c5653d925ac84553af79010f8d11de940f194c9839ff74d452c6f229ee19c", "page": 1, "locator": "D5/D6/D7 USB ESD；D8/FU2/FU3 CAN；SM712/FU4/FU5 RS485"}]
+    },
+    {
+      "id": "storage.module-capacity",
+      "category": "storage",
+      "subject": "ESP32 模组 Flash 容量",
+      "statement": "原理图确认模组完整料号 ESP32-S3-WROOM-1U-N16R8，但未单独以容量字段标注 16 MB Flash。",
+      "confidence": "uncertain",
+      "attributes": {"module": "ESP32-S3-WROOM-1U-N16R8", "claimed_flash": "16MB", "schematic_capacity_text": "not separately printed"},
+      "evidence": [{"asset_sha256": "2600e4e6e7fea0a143b4d5a2e2958967617af0d6b30dcbabf8bfcb9b07432ae6", "page": 1, "locator": "U5 仅以模组后缀 N16R8 表示变体"}]
+    },
+    {
+      "id": "memory.module-psram",
+      "category": "memory",
+      "subject": "ESP32 模组 PSRAM 容量",
+      "statement": "原理图确认模组完整料号 ESP32-S3-WROOM-1U-N16R8，但未单独以容量字段标注 8 MB PSRAM 或其总线模式。",
+      "confidence": "uncertain",
+      "attributes": {"module": "ESP32-S3-WROOM-1U-N16R8", "claimed_psram": "8MB Octal", "schematic_capacity_text": "not separately printed"},
+      "evidence": [{"asset_sha256": "2600e4e6e7fea0a143b4d5a2e2958967617af0d6b30dcbabf8bfcb9b07432ae6", "page": 1, "locator": "U5 仅以模组后缀 N16R8 表示变体"}]
+    },
+    {
+      "id": "address.rtc-sc8721",
+      "category": "address",
+      "subject": "RTC 与 SC8721 I2C 地址",
+      "statement": "RX8130CE 和 SC8721 均连接 PM_SCL/PM_SDA，但原理图未直接印出其 7-bit I2C 地址。",
+      "confidence": "uncertain",
+      "attributes": {"rtc": "U12 RX8130CE", "converter": "U34 SC8721", "addresses": "not printed"},
+      "evidence": [
+        {"asset_sha256": "2600e4e6e7fea0a143b4d5a2e2958967617af0d6b30dcbabf8bfcb9b07432ae6", "page": 1, "locator": "U12 PM_SCL/PM_SDA，无地址文本"},
+        {"asset_sha256": "01a3306426a03b49030d4e7e74154045c49e912bd41c1e0ed54a01d78e02c9d6", "page": 1, "locator": "U34 PM_SCL/PM_SDA，无地址文本"}
+      ]
+    },
+    {
+      "id": "power.rtc-backup-capacitor",
+      "category": "power",
+      "subject": "RTC 后备电容规格",
+      "statement": "原理图显示 BATTERY_RTC 储能网络，但其标注与产品正文所述 70000 µF/3.3 V 不能在当前页面上直接建立一致对应。",
+      "confidence": "uncertain",
+      "attributes": {"rtc": "U12 RX8130CE", "net": "BATTERY_RTC", "document_claim": "70000uF/3.3V", "status": "requires BOM confirmation"},
+      "evidence": [{"asset_sha256": "2600e4e6e7fea0a143b4d5a2e2958967617af0d6b30dcbabf8bfcb9b07432ae6", "page": 1, "locator": "U12 VBAT/BATTERY_RTC 与 C16/C18 储能网络"}]
+    },
+    {
+      "id": "power.battery-model-capacity",
+      "category": "power",
+      "subject": "可拆卸电池型号与容量",
+      "statement": "原理图以 VBAT_2S_CONN/SYS_BAT_2S 确认 2S 电池路径，但未标注 NP-F550/750/950 型号或 2000 mAh 容量。",
+      "confidence": "uncertain",
+      "attributes": {"confirmed_topology": "2S battery", "nets": "VBAT_2S_CONN; SYS_BAT_2S", "unverified_models": "NP-F550/750/950", "unverified_capacity": "2000mAh kit battery"},
+      "evidence": [
+        {"asset_sha256": "b58c5653d925ac84553af79010f8d11de940f194c9839ff74d452c6f229ee19c", "page": 1, "locator": "J5 VBAT_2S_CONN"},
+        {"asset_sha256": "01a3306426a03b49030d4e7e74154045c49e912bd41c1e0ed54a01d78e02c9d6", "page": 1, "locator": "SYS_BAT_2S 电源与充电网络未标电池型号容量"}
+      ]
+    },
+    {
+      "id": "power.external-ratings",
+      "category": "power",
+      "subject": "外部输入范围与端口输出能力",
+      "statement": "原理图给出 DC、USB、2S、PWR CAN/PWR485 的拓扑与器件，但未直接列出 DC 9–20 V 输入范围或各端口完整电流能力表。",
+      "confidence": "uncertain",
+      "attributes": {"inputs": "VIN_ADP; VUSBIN; SYS_BAT_2S; VOUT_PWCAN; VOUT_RS485", "unverified_dc_range": "9-20V", "unverified_output_table": "per-port current capability"},
+      "evidence": [
+        {"asset_sha256": "b58c5653d925ac84553af79010f8d11de940f194c9839ff74d452c6f229ee19c", "page": 1, "locator": "J10/J8/J9 连接器未标完整输入范围"},
+        {"asset_sha256": "01a3306426a03b49030d4e7e74154045c49e912bd41c1e0ed54a01d78e02c9d6", "page": 1, "locator": "电源转换拓扑未列整机端口输出能力表"}
+      ]
+    }
+  ],
+  "needs_review": [
+    {
+      "id": "review.module-flash",
+      "fact_id": "storage.module-capacity",
+      "question": "请用 ESP32-S3-WROOM-1U-N16R8 datasheet/BOM 确认 16 MB Flash。",
+      "reason": "原理图只给出模组后缀，未单列容量。",
+      "evidence": [{"asset_sha256": "2600e4e6e7fea0a143b4d5a2e2958967617af0d6b30dcbabf8bfcb9b07432ae6", "page": 1, "locator": "U5 ESP32-S3-WROOM-1U-N16R8"}]
+    },
+    {
+      "id": "review.module-psram",
+      "fact_id": "memory.module-psram",
+      "question": "请用模组 datasheet/BOM 确认 8 MB Octal PSRAM。",
+      "reason": "原理图未单列 PSRAM 容量和模式。",
+      "evidence": [{"asset_sha256": "2600e4e6e7fea0a143b4d5a2e2958967617af0d6b30dcbabf8bfcb9b07432ae6", "page": 1, "locator": "U5 ESP32-S3-WROOM-1U-N16R8"}]
+    },
+    {
+      "id": "review.rtc-sc8721-address",
+      "fact_id": "address.rtc-sc8721",
+      "question": "请用 RX8130CE 与 SC8721 datasheet 复核各自 7-bit I2C 地址。",
+      "reason": "原理图未直接印出地址，不能按经验补全。",
+      "evidence": [
+        {"asset_sha256": "2600e4e6e7fea0a143b4d5a2e2958967617af0d6b30dcbabf8bfcb9b07432ae6", "page": 1, "locator": "U12 RX8130CE"},
+        {"asset_sha256": "01a3306426a03b49030d4e7e74154045c49e912bd41c1e0ed54a01d78e02c9d6", "page": 1, "locator": "U34 SC8721"}
+      ]
+    },
+    {
+      "id": "review.rtc-backup-capacitor",
+      "fact_id": "power.rtc-backup-capacitor",
+      "question": "请用 BOM 确认 RTC 后备储能器件是否为 70000 µF/3.3 V。",
+      "reason": "当前原理图的 BATTERY_RTC 电容网络无法直接对应正文规格。",
+      "evidence": [{"asset_sha256": "2600e4e6e7fea0a143b4d5a2e2958967617af0d6b30dcbabf8bfcb9b07432ae6", "page": 1, "locator": "U12 BATTERY_RTC 与 C16/C18"}]
+    },
+    {
+      "id": "review.battery-model-capacity",
+      "fact_id": "power.battery-model-capacity",
+      "question": "请用电池/BOM 确认兼容 NP-F550/750/950 及 Kit 电池 2000 mAh。",
+      "reason": "原理图只确认 2S 电气路径。",
+      "evidence": [{"asset_sha256": "b58c5653d925ac84553af79010f8d11de940f194c9839ff74d452c6f229ee19c", "page": 1, "locator": "J5 VBAT_2S_CONN"}]
+    },
+    {
+      "id": "review.external-ratings",
+      "fact_id": "power.external-ratings",
+      "question": "请用验证报告/BOM 复核 DC 9–20 V 与各供电方式下的端口输出能力。",
+      "reason": "这些整机额定值不在原理图中直接列出。",
+      "evidence": [
+        {"asset_sha256": "b58c5653d925ac84553af79010f8d11de940f194c9839ff74d452c6f229ee19c", "page": 1, "locator": "J10/J8/J9 外部电源接口"},
+        {"asset_sha256": "01a3306426a03b49030d4e7e74154045c49e912bd41c1e0ed54a01d78e02c9d6", "page": 1, "locator": "U27/U34/分路电源拓扑"}
+      ]
+    }
+  ]
+}

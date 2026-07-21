@@ -1,0 +1,21 @@
+{
+  "dry_run": false,
+  "failed": 0,
+  "published": 1,
+  "results": [
+    {
+      "backup": null,
+      "draft_action": "unchanged",
+      "dry_run": false,
+      "errors": [],
+      "needs_review": 0,
+      "product_id": "atomic-motion-base-910a44802a78",
+      "product_name": "Atomic Motion Base",
+      "publish_action": "unchanged",
+      "sha256": "6901132b9d94cea0537a2cc39352fea25260701670269d9a53119ccf3525f7ad",
+      "status": "valid",
+      "uncertain_facts": 0
+    }
+  ],
+  "schema_version": 1
+}

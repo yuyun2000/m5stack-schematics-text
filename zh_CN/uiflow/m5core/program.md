@@ -1,0 +1,89 @@
+# Basic 固件烧录与程序推送
+
+## 1. 准备工作
+
+- 参考[UIFlow Web IDE 教程](/zh_CN/uiflow/uiflow_web)，了解使用 UiFlow 的基本流程， 并完成 M5Burner 固件烧录工具的安装。
+- 在 M5Burner 中下载适配`Basic`的固件， 如下图所示。
+
+<img src="https://m5stack-doc.oss-cn-shenzhen.aliyuncs.com/654/basic_01.png" width="70%">
+
+## 2.USB 驱动安装
+
+\#> 点击下方链接下载匹配操作系统的驱动程序。目前存在两种驱动芯片版本，CP210X（适用于`CP2104`版本）/CP34X（适用于`CH9102`版本）驱动程序压缩包。在解压压缩包后，选择对应操作系统位数的安装包进行安装。(若您不确定您的设备所使用的 USB 芯片， 可同时安装两种驱动。`CH9102_VCP_SER_MacOS v1.7`在安装过程中，可能出现报错，但实际上已经完成安装，忽略即可。)
+
+| 驱动名称                  | 适用驱动芯片 | 下载链接                                                                                             |
+| ------------------------- | ------------ | ---------------------------------------------------------------------------------------------------- |
+| CP210x_VCP_Windows        | CP2104       | [Download](https://m5stack.oss-cn-shenzhen.aliyuncs.com/resource/drivers/CP210x_VCP_Windows.zip)     |
+| CP210x_VCP_MacOS          | CP2104       | [Download](https://m5stack.oss-cn-shenzhen.aliyuncs.com/resource/drivers/CP210x_VCP_MacOS.zip)       |
+| CP210x_VCP_Linux          | CP2104       | [Download](https://m5stack.oss-cn-shenzhen.aliyuncs.com/resource/drivers/CP210x_VCP_Linux.zip)       |
+| CH9102_VCP_SER_Windows    | CH9102       | [Download](https://m5stack.oss-cn-shenzhen.aliyuncs.com/resource/drivers/CH9102_VCP_SER_Windows.exe) |
+| CH9102_VCP_SER_MacOS v1.7 | CH9102       | [Download](https://m5stack.oss-cn-shenzhen.aliyuncs.com/resource/drivers/CH9102_VCP_MacOS_v1.7.zip)  |
+
+## 3. 端口选择
+
+1\. 将设备通过 USB 线连接至电脑，在 M5Burner 中选择对应固件的 Burn 按钮，填写 WiFi 信息，选择对应设备端口。
+
+<img src="https://m5stack.oss-cn-shenzhen.aliyuncs.com/resource/docs/static/assets/img/uiflow/m5core/burner_m5core_02.jpg" width="70%">
+
+<img src="https://m5stack.oss-cn-shenzhen.aliyuncs.com/resource/docs/static/assets/img/uiflow/m5core/burner_m5core_03.jpg" width="70%">
+
+## 4. 固件烧录
+
+1\. 点击 Start 按键开始烧录。
+
+\#> 注意 | 若中途出现烧录失败或连接超时等情况，请检查是否存在端口占用，或尝试更新 USB 线，降低波特率。
+
+<img src="https://m5stack.oss-cn-shenzhen.aliyuncs.com/resource/docs/static/assets/img/uiflow/m5core/burner_m5core_04.jpg" width="70%">
+
+## 5.API KEY
+
+1\. 完成固件烧录后，设备将重新启动，保持连接 USB 连接。使用 M5Burner 点击`Configure`选项，选择对应端口，点击`Load`加载当前设备配置。获取成功后将弹窗显示当前设备的`API KEY`, `Start Mode`等信息， 此时我们可以复制保存设备的 API KEY 信息用于后续步骤使用。
+
+\#> 说明 | 在本示例中，我们将使用 UIFlow Web IDE (网络版) 进行编程，因此`Start Mode`需要确保配置为`Internet Mode`。
+
+<img src="https://m5stack.oss-cn-shenzhen.aliyuncs.com/resource/docs/static/assets/img/uiflow/m5core/burner_m5core_05.jpg" width="70%">
+
+<img src="https://m5stack.oss-cn-shenzhen.aliyuncs.com/resource/docs/static/assets/img/uiflow/m5core/burner_m5core_06.jpg" width="70%">
+
+2\. 将设备配置为在线编程模式后， 我们需要通过 API KEY 让设备与 UIFlow 建立起连接， 使其能够为指定的设备推送程序。用户需在电脑端浏览器访问[flow.m5stack.com](http://flow.m5stack.com/)进入 UIFlow 编程页面。
+
+3\. 点击页面右上角的菜单栏中的 Setting 按钮， 输入我们在上一步骤获取的 API KEY，点击 OK 保存，等待提示连接成功。
+
+<img src="https://m5stack-doc.oss-cn-shenzhen.aliyuncs.com/654/uiflow_01.jpg" width="70%">
+
+<img src="https://m5stack.oss-cn-shenzhen.aliyuncs.com/resource/docs/static/assets/img/uiflow/m5core/uiflow_m5core_01.jpg" width="70%">
+
+## 6.RUN
+
+1\. 完成以上步骤，就可以开始使用 UiFlow 进行编程了。下面将为您演示一个简单的程序，驱动屏幕显示 “Hello M5”。(1. 放置标签 2. 添加标签程序块 .3 点击下方的`Run`按钮 )
+
+<img src="https://m5stack.oss-cn-shenzhen.aliyuncs.com/resource/docs/static/assets/img/uiflow/m5core/uiflow_m5core_example_01.gif" width="70%">
+
+<img src="https://m5stack.oss-cn-shenzhen.aliyuncs.com/resource/docs/static/assets/img/uiflow/m5core/uiflow_m5core_example_02.png" width="70%">
+
+## 7.USB 编程模式
+
+- 参考[UIFlow Desktop IDE 教程](/zh_CN/uiflow/uiflow_desktop)，安装 UIFlow Desktop， 并了解基本的使用流程。参考以下操作，将设备设置为 USB 编程模式， 或通过 M5Burner 的 Configure 选项将`Start Mode`设置为`USB Mode`后，即可通过 UIFlow Desktop IDE 编程。
+
+<img src="https://static-cdn.m5stack.com/resource/docs/static/assets/img/quick_start/core/core_usb_mode.webp" width="70%">
+
+<img src="https://m5stack.oss-cn-shenzhen.aliyuncs.com/resource/docs/static/assets/img/uiflow/m5core/burner_m5core_07.jpg" width="70%">
+
+## 8. 相关链接
+
+- [M5GO 编程入门教程](https://m5stack.oss-cn-shenzhen.aliyuncs.com/resource/docs/UIFlow-Book-zh_cn.pdf)
+- [UiFlow1 Blockly 介绍](https://uiflow-micropython.readthedocs.io/zh-cn/latest/)
+
+## 9. 相关视频
+
+- UiFlow 的简介
+
+<video width="500" controls>
+    <source src="https://m5stack.oss-cn-shenzhen.aliyuncs.com/video/LukeVideo/UI%20Flow%20Overview.mp4" type="video/mp4">
+</video>
+
+- UiFlow 中开发 Basic 的视频教程
+
+<video width="500" controls>
+    <source src="https://m5stack.oss-cn-shenzhen.aliyuncs.com/video/%E6%95%99%E7%A8%8B/UIFlow%20Tutorials/A3%20-%20UIflow%E7%AE%80%E4%BB%8B.mp4" type="video/mp4">
+</video>

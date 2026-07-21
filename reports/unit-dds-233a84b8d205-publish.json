@@ -1,0 +1,21 @@
+{
+  "dry_run": false,
+  "failed": 0,
+  "published": 1,
+  "results": [
+    {
+      "backup": null,
+      "draft_action": "unchanged",
+      "dry_run": false,
+      "errors": [],
+      "needs_review": 4,
+      "product_id": "unit-dds-233a84b8d205",
+      "product_name": "Unit DDS",
+      "publish_action": "unchanged",
+      "sha256": "d89eacdd85e5ba459fccabd01cbd653ac834c62e955b44ae65319d05fba98f0b",
+      "status": "valid",
+      "uncertain_facts": 4
+    }
+  ],
+  "schema_version": 1
+}
