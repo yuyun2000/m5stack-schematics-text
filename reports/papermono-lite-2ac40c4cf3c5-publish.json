@@ -1,0 +1,21 @@
+{
+  "dry_run": false,
+  "failed": 0,
+  "published": 1,
+  "results": [
+    {
+      "backup": null,
+      "draft_action": "unchanged",
+      "dry_run": false,
+      "errors": [],
+      "needs_review": 4,
+      "product_id": "papermono-lite-2ac40c4cf3c5",
+      "product_name": "PaperMono-Lite",
+      "publish_action": "unchanged",
+      "sha256": "dc2e315568bd2d58ce5c2e906ca166b707a8a0bcaf5d03c0af2565e260c67014",
+      "status": "valid",
+      "uncertain_facts": 4
+    }
+  ],
+  "schema_version": 1
+}

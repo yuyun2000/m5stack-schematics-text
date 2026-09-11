@@ -8,13 +8,13 @@
       "draft_action": "unchanged",
       "dry_run": false,
       "errors": [],
-      "needs_review": 8,
+      "needs_review": 1,
       "product_id": "llm630-compute-kit-6280ac7a8617",
       "product_name": "LLM630 Compute Kit",
       "publish_action": "unchanged",
-      "sha256": "d244d2faca23db808c8d670b48d65c08e4cfb6c4cdfb0318a13c01968a3820eb",
+      "sha256": "40b9ed7a5bc5e0e31c26bcdb6975b05d7d6d2f0f39d1ee74808dac29555fb7a3",
       "status": "valid",
-      "uncertain_facts": 8
+      "uncertain_facts": 1
     }
   ],
   "schema_version": 1

@@ -119,10 +119,10 @@ LLM630 Compute Kit 适用于**安防监控**，**智能销售**，**智能农业
 
 ## 原理图
 
-- [LLM630 Compute Kit 原理图PDF](https://m5stack.oss-cn-shenzhen.aliyuncs.com/resource/docs/products/core/LLM630%20Computer%20Kit/%5BSCH%5D_ax630c_m2_base_b03_SCH_2024_11_29_17_06_23.pdf)
+- [LLM630 Compute Kit 原理图PDF](https://m5stack-doc.oss-cn-shenzhen.aliyuncs.com/459/K143_SCH_ax630c_m2_base_b03_SCH_2024_11_29_17_06_23.pdf)
 
 <SchViewer>
-<img src="https://m5stack-doc.oss-cn-shenzhen.aliyuncs.com/459/SCH_LLM630_Compute_Kit_page_01.png" width="100%">
+<img src="https://m5stack-doc.oss-cn-shenzhen.aliyuncs.com/459/K143_SCH_ax630c_m2_base_b03_SCH_2024_11_29_17_06_23_page_01.png" width="100%">
 </SchViewer>
 
 ## 管脚映射
@@ -135,7 +135,7 @@ LLM630 Compute Kit 适用于**安防监控**，**智能销售**，**智能农业
 
 ## 结构文件
 
-- [LLM630 Computer Kit 模型Step](https://m5stack.oss-cn-shenzhen.aliyuncs.com/resource/docs/products/core/LLM630%20Computer%20Kit/llm630_compute_base_v10_3d.step)
+- [LLM630 Compute Kit 3D Stp](https://github.com/m5stack/M5_Hardware/tree/master/Products/K143_LLM630_Compute_Kit/Structures)
 
 ## 数据手册
 
@@ -176,6 +176,6 @@ LLM630 Compute Kit 适用于**安防监控**，**智能销售**，**智能农业
 
 ## 相关视频
 
-- LLM630 Compute Kit 产品介绍以及案例展示
-
-<video class="video-container" controls><source src="https://m5stack-doc.oss-cn-shenzhen.aliyuncs.com/459/K143_VIDEO_01.mp4" type="video/mp4"></video>
+<VideoGallery>
+  <VideoItem title="LLM630 Compute Kit 产品介绍以及案例展示" url="https://m5stack-doc.oss-cn-shenzhen.aliyuncs.com/459/K143_VIDEO_01.mp4" />
+</VideoGallery>

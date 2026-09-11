@@ -1,0 +1,21 @@
+{
+  "dry_run": false,
+  "failed": 0,
+  "published": 1,
+  "results": [
+    {
+      "backup": null,
+      "draft_action": "unchanged",
+      "dry_run": false,
+      "errors": [],
+      "needs_review": 4,
+      "product_id": "stamplc-io-8af85d3bc38c",
+      "product_name": "StamPLC IO",
+      "publish_action": "unchanged",
+      "sha256": "832a0e304233b7b0029b1a5ca2560cffc8ed733ddb63e4e7095532a203a1c39e",
+      "status": "valid",
+      "uncertain_facts": 4
+    }
+  ],
+  "schema_version": 1
+}

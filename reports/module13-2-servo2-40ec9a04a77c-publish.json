@@ -8,13 +8,13 @@
       "draft_action": "unchanged",
       "dry_run": false,
       "errors": [],
-      "needs_review": 2,
+      "needs_review": 0,
       "product_id": "module13-2-servo2-40ec9a04a77c",
       "product_name": "Module13.2 Servo2",
       "publish_action": "unchanged",
-      "sha256": "58dd788966d66f3907ec40340c7d44c8ade08945c63a2713623d00f02c04e573",
+      "sha256": "fa84eeab68db84691b495d3a9a44f00a5cbeed2776bd9bc5213852f00da05f02",
       "status": "valid",
-      "uncertain_facts": 2
+      "uncertain_facts": 0
     }
   ],
   "schema_version": 1

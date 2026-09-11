@@ -1,0 +1,303 @@
+# Stamp UWB 原理图描述
+
+## 快速信息
+
+| 项目 | 内容 |
+| --- | --- |
+| 产品 | Stamp UWB |
+| SKU | S017 |
+| 产品 ID | `stamp-uwb-97095012361a` |
+| 源文档 | `zh_CN/stamp/Stamp_UWB.md` |
+
+## 概述
+
+Stamp UWB 的单页原理图以 U1A/U1B 多单元器件为核心，U1A 标注 QM33120WTR13，U1B 标注 DW3120；两处标注不一致，精确器件型号列为待确认。外部 VCC_3V3 经 U2 JW5712 与 L1 形成 VCC_1V8，并经 FB1 形成 VCCA_3V3；U1 通过 SPI、WAKEUP、IRQ、RSTn 和 GPIO7/SYNC 网络连接到 12 焊盘 pin map。射频部分包含 DW_RF1 到 DW_RF1_ANT 的匹配网络以及 DW_RF2 的终端网络，原理图未标出信道、中心频率或协议标准。
+
+## 检索关键词
+
+`Stamp UWB`、`S017`、`QM33120WTR13`、`DW3120`、`JW5712`、`SX0B38.400F0810F30`、`FTC121065S2R2MBCA`、`GJM1555C1H2R0B`、`VCC_3V3`、`VCCA_3V3`、`VCC_1V8`、`DW_EXTON`、`DW_WAKEUP`、`DW_RSTn`、`DW_IRQ`、`DW_CLK`、`DW_CDI`、`DW_CDO`、`DW_CSn`、`DW_GP7`、`DW_XTI`、`DW_XTO`、`DW_RF1`、`DW_RF2`、`DW_RF1_ANT`、`RF_50R`、`SPI`、`SPICLK`、`SPICDI`、`SPICDO`、`SPICSn`、`FB1`、`J1`
+
+## 主要器件
+
+| 位号 | 型号 | 作用 | 证据 |
+| --- | --- | --- | --- |
+| U1A/U1B | 未标注 | 多单元射频收发器符号；U1A 与 U1B 的型号文字不一致，精确型号待确认 | 图 d8a1261888ed / 第 1 页 / 第 1 页网格 A1-B2，U1A 方框底部标注 QM33120WTR13，左右侧列出 RF、SPI、GPIO、电源及时钟引脚; 图 d8a1261888ed / 第 1 页 / 第 1 页网格 D2，U1B 接地单元底部标注 DW3120，左右两列引脚均标为 GND |
+| U2 | JW5712 | 由 VCC_3V3 产生 VCC_1V8 的开关稳压器 | 图 d8a1261888ed / 第 1 页 / 第 1 页网格 A3，U2 方框底部标注 JW5712，VIN 接 VCC_3V3，SW 经 L1 接 VCC_1V8 |
+| X1 | SX0B38.400F0810F30 | 连接 U1 的 DW_XTI/DW_XTO 时钟器件 | 图 d8a1261888ed / 第 1 页 / 第 1 页网格 D1，X1 上方标注 SX0B38.400F0810F30，1/3 脚接 DW_XTI/DW_XTO，2/4 脚接地 |
+| J1 | NC | 原理图标注 NC 的 12 针可选连接器 | 图 d8a1261888ed / 第 1 页 / 第 1 页网格 D2-D3，J1 矩形列出 PIN1 至 PIN12，器件下方标注 NC |
+| FB1 | 600R@100Mhz | VCC_3V3 到 VCCA_3V3 的串联磁珠 | 图 d8a1261888ed / 第 1 页 / 第 1 页网格 C1，FB1 位于 VCC_3V3 与 VCCA_3V3 之间，标注 600R@100Mhz |
+| L1 | FTC121065S2R2MBCA | U2 SW 节点与 VCC_1V8 之间的串联电感 | 图 d8a1261888ed / 第 1 页 / 第 1 页网格 A3-A4，L1 串接 U2 SW 与 VCC_1V8，器件下方标注 FTC121065S2R2MBCA |
+| R1/C15 | 10K/1%; 1uF/10V | DW_RSTn 的上拉与对地电容网络 | 图 d8a1261888ed / 第 1 页 / 第 1 页网格 A1-B1，R1 从 VCC_3V3 接至 DW_RSTn，C15 从 DW_RSTn 接地 |
+| R2 | 10K/1% | DW_IRQ 到 VCC_3V3 的上拉电阻 | 图 d8a1261888ed / 第 1 页 / 第 1 页网格 C1，R2 上端接 VCC_3V3，下端接 DW_IRQ，标注 10K/1% |
+| C5/C20/C21/C22 | GJM1555C1H2R0B; 未标值; 1.5PF; NC | DW_RF1 到 DW_RF1_ANT 的串联/并联射频匹配网络 | 图 d8a1261888ed / 第 1 页 / 第 1 页网格 B3-B4，DW_RF1 依次经过 C5 与 C20，C21、C22 分别对地，末端为 DW_RF1_ANT |
+| C12/C24 | GJM1555C1H2R0B; 49.9R | DW_RF2 的串联耦合与对地终端网络 | 图 d8a1261888ed / 第 1 页 / 第 1 页网格 B3，DW_RF2 经 C12 后接 C24，C24 标注 49.9R 并接地 |
+| R3 | NC | VCC_3V3 与 VCC_1V8 之间的未装连接选项 | 图 d8a1261888ed / 第 1 页 / 第 1 页网格 A4，R3 竖直连接 VCC_3V3 与 VCC_1V8 输出节点，阻值栏标注 NC |
+
+## 系统结构
+
+### 单页功能架构
+
+原理图单页包含 U1A/U1B 收发器单元、U2 1.8 V 电源、X1 时钟网络、DW_RF1 天线匹配支路、DW_RF2 终端支路、J1 可选连接器和 Stamp UWB 12 焊盘 pin map。
+
+- 参数与网络：`transceiver_units=U1A/U1B`；`power_converter=U2 JW5712`；`clock=X1`；`rf_paths=DW_RF1; DW_RF2`；`external_interfaces=J1; 12-pad PINMAP`
+- 证据：图 d8a1261888ed / 第 1 页 / 第 1 页全图，网格 A1-D4：U1/U2/X1 位于左中部，RF 网络位于 B3-B4，J1 与 PINMAP 位于 D2-D4
+
+## 电源
+
+### 模块外部供电焊盘
+
+Stamp PINMAP 将 VCC_3V3 接到焊盘 2，将 GND 接到焊盘 1、8、12。
+
+- 参数与网络：`supply=VCC_3V3`；`supply_pin=2`；`ground_pins=1; 8; 12`
+- 证据：图 d8a1261888ed / 第 1 页 / 第 1 页网格 C4-D4，Stamp UWB PINMAP 左侧 1/2 脚及右侧 8/12 脚的电源与地标注
+
+### VCC_1V8 电源生成
+
+U2 JW5712 的 VIN 接 VCC_3V3，SW 经 L1 FTC121065S2R2MBCA 接到 VCC_1V8，VOS 也连接 VCC_1V8。
+
+- 参数与网络：`converter=U2 JW5712`；`input=VCC_3V3`；`switch_pin=A1 SW`；`inductor=L1 FTC121065S2R2MBCA`；`sense_pin=C2 VOS`；`output=VCC_1V8`
+- 证据：图 d8a1261888ed / 第 1 页 / 第 1 页网格 A3-A4，U2 VIN/VOS/SW、L1 以及 VCC_3V3/VCC_1V8 网络连接
+
+### U2 使能控制
+
+U2 的 EN(B1) 连接 DW_EXTON；同名网络连接 U1A 的 EXTON(A12)。
+
+- 参数与网络：`enable_net=DW_EXTON`；`regulator_pin=U2 B1 EN`；`u1_pin=U1A A12 EXTON`
+- 证据：图 d8a1261888ed / 第 1 页 / 第 1 页网格 A1，U1A EXTON(A12) 连接 DW_EXTON; 图 d8a1261888ed / 第 1 页 / 第 1 页网格 A3，DW_EXTON 接 U2 EN(B1)
+
+### U2 输入去耦
+
+U2 VIN 的 VCC_3V3 输入节点并联 C6 10uF/10V 与 C7 100nF/25V 到 GND。
+
+- 参数与网络：`rail=VCC_3V3`；`bulk_capacitor=C6 10uF/10V`；`high_frequency_capacitor=C7 100nF/25V`；`return=GND`
+- 证据：图 d8a1261888ed / 第 1 页 / 第 1 页网格 A3，U2 VIN 左侧的 C6/C7 从 VCC_3V3 节点接地
+
+### U2 开关节点
+
+U2 SW(A1) 节点经 L1 串联到 VCC_1V8，并由 C1 1nF/50V 对地。
+
+- 参数与网络：`switch_pin=U2 A1 SW`；`series_inductor=L1 FTC121065S2R2MBCA`；`shunt_capacitor=C1 1nF/50V`；`output_rail=VCC_1V8`
+- 证据：图 d8a1261888ed / 第 1 页 / 第 1 页网格 A3，U2 SW 右侧节点连接 C1 对地并串接 L1
+
+### VCC_1V8 输出滤波与可选连接
+
+L1 后的 VCC_1V8 节点并联 C2 10uF/10V、C3 10uF/10V、C4 100nF/25V 到 GND；R3 标注 NC，并连接 VCC_3V3 与该输出节点。
+
+- 参数与网络：`rail=VCC_1V8`；`capacitors=C2 10uF/10V; C3 10uF/10V; C4 100nF/25V`；`optional_link=R3 NC`；`optional_link_other_rail=VCC_3V3`
+- 证据：图 d8a1261888ed / 第 1 页 / 第 1 页网格 A4，L1 后 VCC_1V8 节点上的 C2/C3/C4 与竖直的 R3 NC
+
+### VCCA_3V3 滤波支路
+
+VCC_3V3 经 FB1 600R@100Mhz 串联形成 VCCA_3V3，FB1 两侧分别由 C13 和 C14 各 100nF/25V 对地。
+
+- 参数与网络：`input_rail=VCC_3V3`；`filter=FB1 600R@100Mhz`；`output_rail=VCCA_3V3`；`input_capacitor=C13 100nF/25V`；`output_capacitor=C14 100nF/25V`
+- 证据：图 d8a1261888ed / 第 1 页 / 第 1 页网格 C1，VCC_3V3-C13-FB1-C14-VCCA_3V3 滤波链路
+
+### U1A 电源引脚映射
+
+U1A 的 VDD1(B13) 与 VDD2b(B15) 接 VCC_3V3，VDD2a(F15) 接 VCCA_3V3，VDD3(D15) 接 VCC_1V8。
+
+- 参数与网络：`vdd1=B13 = VCC_3V3`；`vdd2a=F15 = VCCA_3V3`；`vdd2b=B15 = VCC_3V3`；`vdd3=D15 = VCC_1V8`
+- 证据：图 d8a1261888ed / 第 1 页 / 第 1 页网格 B2，U1A 右侧 VDD1/VDD2a/VDD2b/VDD3 引脚及相邻电源网络标签
+
+### U1A 主电源去耦
+
+U1A 的 VDD1、VDD2a、VDD2b、VDD3 节点分别由 C8 100nF/25V、C9 4.7nF/50V、C10 4.7nF/50V、C11 4.7nF/50V 接地。
+
+- 参数与网络：`vdd1_decoupling=C8 100nF/25V`；`vdd2a_decoupling=C9 4.7nF/50V`；`vdd2b_decoupling=C10 4.7nF/50V`；`vdd3_decoupling=C11 4.7nF/50V`
+- 证据：图 d8a1261888ed / 第 1 页 / 第 1 页网格 B2，U1A 右侧 C8-C11 四个电源去耦电容及其 GND 返回
+
+### U1A VIO_D 与 VTX_D 去耦
+
+U1A 的 VIO_D(A4) 由 C16 100nF/25V 接地，VTX_D(C14) 由 C17 220nF/25V 接地；该页未将这两个节点标为外部电源轨。
+
+- 参数与网络：`vio_d=U1A A4; C16 100nF/25V to GND`；`vtx_d=U1A C14; C17 220nF/25V to GND`；`external_rail_label=null`
+- 证据：图 d8a1261888ed / 第 1 页 / 第 1 页网格 B2，U1A 右下方 VIO_D/VTX_D 分别连接 C16/C17 到 GND
+
+### U1B 接地球阵列
+
+U1B 将左右两列共 26 个球位全部标为 GND，并分别汇接到左右两侧 GND。
+
+- 参数与网络：`left_ground_balls=E6; E10; E12; F7; F9; G6; G10; H1; H3; H7; H9; H13; D11`；`right_ground_balls=E14; C12; D13; A14; B11; C8; C10; D9; A2; B3; C6; D5; D7`；`count=26`
+- 证据：图 d8a1261888ed / 第 1 页 / 第 1 页网格 D2，U1B 方框左右各 13 个 GND 引脚及两侧接地符号
+
+## 接口
+
+### Stamp UWB 12 焊盘 pin map
+
+PINMAP 明确给出 12 个外部焊盘：1 GND、2 VCC_3V3、3 DW_WAKEUP、4 DW_IRQ、5 DW_GP7、6 DW_RSTn、7 DW_CDO、8 GND、9 DW_CDI、10 DW_CSn、11 DW_CLK、12 GND。
+
+- 参数与网络：`pin_1=GND`；`pin_2=VCC_3V3`；`pin_3=DW_WAKEUP`；`pin_4=DW_IRQ`；`pin_5=DW_GP7`；`pin_6=DW_RSTn`；`pin_7=DW_CDO`；`pin_8=GND`；`pin_9=DW_CDI`；`pin_10=DW_CSn`；`pin_11=DW_CLK`；`pin_12=GND`
+- 证据：图 d8a1261888ed / 第 1 页 / 第 1 页网格 C4-D4，Stamp UWB PINMAP 图左右两侧逐针标出 1 至 12 的网络名
+
+### J1 12 针连接器映射
+
+标注 NC 的 J1 映射为：1 VCC_3V3、2 GND、3 DW_GP7、4 DW_IRQ、5 DW_WAKEUP、6 DW_RSTn、7 GND、8 DW_CDO、9 DW_CDI、10 DW_CSn、11 GND、12 DW_CLK。
+
+- 参数与网络：`population=NC`；`pin_1=VCC_3V3`；`pin_2=GND`；`pin_3=DW_GP7`；`pin_4=DW_IRQ`；`pin_5=DW_WAKEUP`；`pin_6=DW_RSTn`；`pin_7=GND`；`pin_8=DW_CDO`；`pin_9=DW_CDI`；`pin_10=DW_CSn`；`pin_11=GND`；`pin_12=DW_CLK`
+- 证据：图 d8a1261888ed / 第 1 页 / 第 1 页网格 D2-D3，J1 的 PIN1-PIN12 各行向右连接电源、地或 DW_* 网络，器件下方标注 NC
+
+## 总线
+
+### U1 SPI 网络映射
+
+U1A 的 SPICLK(A8)、SPICDI(B7)、SPICDO(A6)、SPICSn(B5) 分别连接 DW_CLK、DW_CDI、DW_CDO、DW_CSn，并引出到 Stamp pin map 与 J1。
+
+- 参数与网络：`clock=U1A A8 SPICLK = DW_CLK = Stamp pin 11 = J1 pin 12`；`data_in=U1A B7 SPICDI = DW_CDI = Stamp pin 9 = J1 pin 9`；`data_out=U1A A6 SPICDO = DW_CDO = Stamp pin 7 = J1 pin 8`；`chip_select=U1A B5 SPICSn = DW_CSn = Stamp pin 10 = J1 pin 10`
+- 证据：图 d8a1261888ed / 第 1 页 / 第 1 页网格 A1-B2，U1A 左侧 SPICLK/SPICDI/SPICDO/SPICSn 引脚与 DW_CLK/DW_CDI/DW_CDO/DW_CSn 网络; 图 d8a1261888ed / 第 1 页 / 第 1 页网格 D2-D4，J1 与 Stamp PINMAP 标出四条 DW_* SPI 网络对应针脚
+
+## GPIO 与控制信号
+
+### DW_IRQ 中断网络
+
+DW_IRQ 连接 U1A IRQ/GPIO9(B1)、Stamp 焊盘 4 和 J1 引脚 4，并由 R2 10K/1% 上拉到 VCC_3V3。
+
+- 参数与网络：`net=DW_IRQ`；`u1_pin=B1 IRQ/GPIO9`；`stamp_pin=4`；`j1_pin=4`；`pull_up=R2 10K/1% to VCC_3V3`
+- 证据：图 d8a1261888ed / 第 1 页 / 第 1 页网格 A1 与 C1，U1A IRQ/GPIO9 的 DW_IRQ 标签以及 R2 上拉; 图 d8a1261888ed / 第 1 页 / 第 1 页网格 D2-D4，J1 引脚 4 与 Stamp 焊盘 4 均标注 DW_IRQ
+
+### DW_WAKEUP 网络
+
+DW_WAKEUP 连接 U1A WAKEUP(B9)、Stamp 焊盘 3 和 J1 引脚 5，原理图未画该网络的外部上拉或下拉。
+
+- 参数与网络：`net=DW_WAKEUP`；`u1_pin=B9 WAKEUP`；`stamp_pin=3`；`j1_pin=5`；`external_bias=null`
+- 证据：图 d8a1261888ed / 第 1 页 / 第 1 页网格 A1，U1A WAKEUP(B9) 左侧 DW_WAKEUP 网络; 图 d8a1261888ed / 第 1 页 / 第 1 页网格 D2-D4，J1 引脚 5 与 Stamp 焊盘 3 标注 DW_WAKEUP
+
+### DW_GP7 同步/GPIO 网络
+
+DW_GP7 连接 U1A GPIO7/SYNC(G2)、Stamp 焊盘 5 和 J1 引脚 3。
+
+- 参数与网络：`net=DW_GP7`；`u1_pin=G2 GPIO7/SYNC`；`stamp_pin=5`；`j1_pin=3`
+- 证据：图 d8a1261888ed / 第 1 页 / 第 1 页网格 B1，U1A GPIO7/SYNC(G2) 左侧 DW_GP7 网络; 图 d8a1261888ed / 第 1 页 / 第 1 页网格 D2-D4，J1 引脚 3 与 Stamp 焊盘 5 标注 DW_GP7
+
+### U1A 未连接 GPIO0-GPIO6
+
+U1A 的 GPIO0/RXOKLED(C2)、GPIO1/SFDLED(D3)、GPIO2/RXLED(E4)、GPIO3/TXLED(E2)、GPIO4/EXTPA(F1)、GPIO5/EXTTXE/SPIPOL(D1)、GPIO6/EXTRXE/SPIPHA(C4) 均画有未连接标记。
+
+- 参数与网络：`gpio0=C2 RXOKLED; NC`；`gpio1=D3 SFDLED; NC`；`gpio2=E4 RXLED; NC`；`gpio3=E2 TXLED; NC`；`gpio4=F1 EXTPA; NC`；`gpio5=D1 EXTTXE/SPIPOL; NC`；`gpio6=C4 EXTRXE/SPIPHA; NC`
+- 证据：图 d8a1261888ed / 第 1 页 / 第 1 页网格 B1-B2，U1A 左侧 GPIO0-GPIO6 的七个引脚端点均带红色未连接叉号
+
+## 时钟
+
+### X1 时钟网络
+
+X1 标注 SX0B38.400F0810F30，1 脚连接 DW_XTI，3 脚连接 DW_XTO，2 脚和 4 脚接 GND；C18 与 C19 均为 3.3pF 并分别从 DW_XTI、DW_XTO 接地。
+
+- 参数与网络：`reference=X1`；`marking=SX0B38.400F0810F30`；`pin_1=DW_XTI`；`pin_2=GND`；`pin_3=DW_XTO`；`pin_4=GND`；`input_load=C18 3.3pF to GND`；`output_load=C19 3.3pF to GND`
+- 证据：图 d8a1261888ed / 第 1 页 / 第 1 页网格 D1，X1 四脚符号、DW_XTI/DW_XTO、C18/C19 及接地连接; 图 d8a1261888ed / 第 1 页 / 第 1 页网格 B1-B2，U1A XTI(H15) 与 XTO(G14) 分别连接 DW_XTI 与 DW_XTO
+
+## 复位
+
+### DW_RSTn 复位网络
+
+DW_RSTn 连接 U1A RSTn(A10)、Stamp 焊盘 6 和 J1 引脚 6；R1 10K/1% 将其上拉到 VCC_3V3，C15 1uF/10V 将其接地。
+
+- 参数与网络：`net=DW_RSTn`；`u1_pin=A10 RSTn`；`stamp_pin=6`；`j1_pin=6`；`pull_up=R1 10K/1% to VCC_3V3`；`capacitor=C15 1uF/10V to GND`
+- 证据：图 d8a1261888ed / 第 1 页 / 第 1 页网格 A1-B1，U1A RSTn 与 R1/C15 的 DW_RSTn 网络; 图 d8a1261888ed / 第 1 页 / 第 1 页网格 D2-D4，J1 引脚 6 与 Stamp 焊盘 6 均标注 DW_RSTn
+
+## 保护电路
+
+### 外部焊盘信号保护
+
+Stamp PINMAP 与 J1 的 SPI、WAKEUP、IRQ、GP7 和 RSTn 外部信号路径上未画 TVS、ESD 阵列或串联保护器件；其中 RSTn 与 IRQ 仅画出偏置网络。
+
+- 参数与网络：`tvs=null`；`esd_array=null`；`series_protection=null`；`reset_bias=R1/C15`；`irq_bias=R2`
+- 证据：图 d8a1261888ed / 第 1 页 / 第 1 页网格 A1-D4，外部 DW_* 网络从 U1 直达 PINMAP/J1；仅 DW_RSTn 有 R1/C15、DW_IRQ 有 R2
+
+## 关键网络
+
+### DW_EXTON 模块内部控制
+
+DW_EXTON 只在 U1A EXTON 与 U2 EN 之间出现，Stamp PINMAP 和 J1 均未列出该网络。
+
+- 参数与网络：`net=DW_EXTON`；`source_endpoint=U1A A12 EXTON`；`destination_endpoint=U2 B1 EN`；`stamp_pin=null`；`j1_pin=null`
+- 证据：图 d8a1261888ed / 第 1 页 / 第 1 页网格 A1 与 A3，DW_EXTON 分别连接 U1A EXTON 和 U2 EN; 图 d8a1261888ed / 第 1 页 / 第 1 页网格 D2-D4，J1 与 Stamp PINMAP 的 12 针列表中均无 DW_EXTON
+
+## 射频
+
+### DW_RF1 至天线网络
+
+U1A RF1(H11) 连接 DW_RF1；该网络经串联 C5 GJM1555C1H2R0B、并联 C21 1.5PF、串联 C20 后到 DW_RF1_ANT，输出节点另有标注 NC 的 C22 对地位置。
+
+- 参数与网络：`u1_pin=H11 RF1`；`input_net=DW_RF1`；`series_1=C5 GJM1555C1H2R0B`；`shunt_1=C21 1.5PF to GND`；`series_2=C20; value not shown`；`shunt_2=C22 NC to GND`；`output_net=DW_RF1_ANT`
+- 证据：图 d8a1261888ed / 第 1 页 / 第 1 页网格 A2，U1A RF1(H11) 连接 DW_RF1; 图 d8a1261888ed / 第 1 页 / 第 1 页网格 B3-B4，DW_RF1-C5-C20-DW_RF1_ANT 主路径及 C21/C22 对地支路
+
+### DW_RF2 终端网络
+
+U1A RF2(H5) 连接 DW_RF2；该网络经串联 C12 GJM1555C1H2R0B 后由 C24 49.9R 接地。
+
+- 参数与网络：`u1_pin=H5 RF2`；`input_net=DW_RF2`；`series_component=C12 GJM1555C1H2R0B`；`termination=C24 49.9R to GND`
+- 证据：图 d8a1261888ed / 第 1 页 / 第 1 页网格 A2，U1A RF2(H5) 连接 DW_RF2; 图 d8a1261888ed / 第 1 页 / 第 1 页网格 B3，DW_RF2 经 C12 后连接对地的 C24 49.9R
+
+### RF_50R 网络标注
+
+DW_RF1、C5 后节点、DW_RF1_ANT、DW_RF2 以及 C12 后节点均带 RF_50R 网络标注。
+
+- 参数与网络：`annotation=RF_50R`；`rf1_locations=DW_RF1; after C5; DW_RF1_ANT`；`rf2_locations=DW_RF2; after C12`
+- 证据：图 d8a1261888ed / 第 1 页 / 第 1 页网格 A2 与 B3-B4，五处红色 RF_50R 信息标记分别位于 U1 射频引脚及两条外部射频网络上
+
+### 天线侧原理图边界
+
+DW_RF1 匹配链路在该页终止于网络名 DW_RF1_ANT，页面未画出独立天线器件或天线连接器位号。
+
+- 参数与网络：`antenna_net=DW_RF1_ANT`；`antenna_reference=null`；`antenna_connector=null`
+- 证据：图 d8a1261888ed / 第 1 页 / 第 1 页网格 B4，C20/C22 右侧仅有 DW_RF1_ANT 网络名，右侧无后续天线符号或连接器
+
+### 射频频率与协议标注范围
+
+该原理图页未标出射频信道、中心频率、带宽、无线数据率或协议标准。
+
+- 参数与网络：`channel=null`；`center_frequency=null`；`bandwidth=null`；`wireless_data_rate=null`；`protocol_standard=null`
+- 证据：图 d8a1261888ed / 第 1 页 / 第 1 页全图 A1-D4，仅标注器件、网络、阻容值和 RF_50R，不含信道、频率、带宽、数据率或协议参数表
+
+## 参数与信号索引
+
+| 分类 | 对象 | 参数 |
+| --- | --- | --- |
+| 系统结构 | 单页功能架构 | `transceiver_units=U1A/U1B`；`power_converter=U2 JW5712`；`clock=X1`；`rf_paths=DW_RF1; DW_RF2`；`external_interfaces=J1; 12-pad PINMAP` |
+| 核心器件 | U1 器件型号标注 | `reference=U1`；`u1a_marking=QM33120WTR13`；`u1b_marking=DW3120`；`resolved_part_number=null` |
+| 接口 | Stamp UWB 12 焊盘 pin map | `pin_1=GND`；`pin_2=VCC_3V3`；`pin_3=DW_WAKEUP`；`pin_4=DW_IRQ`；`pin_5=DW_GP7`；`pin_6=DW_RSTn`；`pin_7=DW_CDO`；`pin_8=GND`；`pin_9=DW_CDI`；`pin_10=DW_CSn`；`pin_11=DW_CLK`；`pin_12=GND` |
+| 接口 | J1 12 针连接器映射 | `population=NC`；`pin_1=VCC_3V3`；`pin_2=GND`；`pin_3=DW_GP7`；`pin_4=DW_IRQ`；`pin_5=DW_WAKEUP`；`pin_6=DW_RSTn`；`pin_7=GND`；`pin_8=DW_CDO`；`pin_9=DW_CDI`；`pin_10=DW_CSn`；`pin_11=GND`；`pin_12=DW_CLK` |
+| 总线 | U1 SPI 网络映射 | `clock=U1A A8 SPICLK = DW_CLK = Stamp pin 11 = J1 pin 12`；`data_in=U1A B7 SPICDI = DW_CDI = Stamp pin 9 = J1 pin 9`；`data_out=U1A A6 SPICDO = DW_CDO = Stamp pin 7 = J1 pin 8`；`chip_select=U1A B5 SPICSn = DW_CSn = Stamp pin 10 = J1 pin 10` |
+| 电源 | 模块外部供电焊盘 | `supply=VCC_3V3`；`supply_pin=2`；`ground_pins=1; 8; 12` |
+| 电源 | VCC_1V8 电源生成 | `converter=U2 JW5712`；`input=VCC_3V3`；`switch_pin=A1 SW`；`inductor=L1 FTC121065S2R2MBCA`；`sense_pin=C2 VOS`；`output=VCC_1V8` |
+| 电源 | U2 使能控制 | `enable_net=DW_EXTON`；`regulator_pin=U2 B1 EN`；`u1_pin=U1A A12 EXTON` |
+| 电源 | U2 输入去耦 | `rail=VCC_3V3`；`bulk_capacitor=C6 10uF/10V`；`high_frequency_capacitor=C7 100nF/25V`；`return=GND` |
+| 电源 | U2 开关节点 | `switch_pin=U2 A1 SW`；`series_inductor=L1 FTC121065S2R2MBCA`；`shunt_capacitor=C1 1nF/50V`；`output_rail=VCC_1V8` |
+| 电源 | VCC_1V8 输出滤波与可选连接 | `rail=VCC_1V8`；`capacitors=C2 10uF/10V; C3 10uF/10V; C4 100nF/25V`；`optional_link=R3 NC`；`optional_link_other_rail=VCC_3V3` |
+| 电源 | VCCA_3V3 滤波支路 | `input_rail=VCC_3V3`；`filter=FB1 600R@100Mhz`；`output_rail=VCCA_3V3`；`input_capacitor=C13 100nF/25V`；`output_capacitor=C14 100nF/25V` |
+| 电源 | U1A 电源引脚映射 | `vdd1=B13 = VCC_3V3`；`vdd2a=F15 = VCCA_3V3`；`vdd2b=B15 = VCC_3V3`；`vdd3=D15 = VCC_1V8` |
+| 电源 | U1A 主电源去耦 | `vdd1_decoupling=C8 100nF/25V`；`vdd2a_decoupling=C9 4.7nF/50V`；`vdd2b_decoupling=C10 4.7nF/50V`；`vdd3_decoupling=C11 4.7nF/50V` |
+| 电源 | U1A VIO_D 与 VTX_D 去耦 | `vio_d=U1A A4; C16 100nF/25V to GND`；`vtx_d=U1A C14; C17 220nF/25V to GND`；`external_rail_label=null` |
+| 电源 | U1B 接地球阵列 | `left_ground_balls=E6; E10; E12; F7; F9; G6; G10; H1; H3; H7; H9; H13; D11`；`right_ground_balls=E14; C12; D13; A14; B11; C8; C10; D9; A2; B3; C6; D5; D7`；`count=26` |
+| 复位 | DW_RSTn 复位网络 | `net=DW_RSTn`；`u1_pin=A10 RSTn`；`stamp_pin=6`；`j1_pin=6`；`pull_up=R1 10K/1% to VCC_3V3`；`capacitor=C15 1uF/10V to GND` |
+| GPIO 与控制信号 | DW_IRQ 中断网络 | `net=DW_IRQ`；`u1_pin=B1 IRQ/GPIO9`；`stamp_pin=4`；`j1_pin=4`；`pull_up=R2 10K/1% to VCC_3V3` |
+| GPIO 与控制信号 | DW_WAKEUP 网络 | `net=DW_WAKEUP`；`u1_pin=B9 WAKEUP`；`stamp_pin=3`；`j1_pin=5`；`external_bias=null` |
+| GPIO 与控制信号 | DW_GP7 同步/GPIO 网络 | `net=DW_GP7`；`u1_pin=G2 GPIO7/SYNC`；`stamp_pin=5`；`j1_pin=3` |
+| GPIO 与控制信号 | U1A 未连接 GPIO0-GPIO6 | `gpio0=C2 RXOKLED; NC`；`gpio1=D3 SFDLED; NC`；`gpio2=E4 RXLED; NC`；`gpio3=E2 TXLED; NC`；`gpio4=F1 EXTPA; NC`；`gpio5=D1 EXTTXE/SPIPOL; NC`；`gpio6=C4 EXTRXE/SPIPHA; NC` |
+| 时钟 | X1 时钟网络 | `reference=X1`；`marking=SX0B38.400F0810F30`；`pin_1=DW_XTI`；`pin_2=GND`；`pin_3=DW_XTO`；`pin_4=GND`；`input_load=C18 3.3pF to GND`；`output_load=C19 3.3pF to GND` |
+| 射频 | DW_RF1 至天线网络 | `u1_pin=H11 RF1`；`input_net=DW_RF1`；`series_1=C5 GJM1555C1H2R0B`；`shunt_1=C21 1.5PF to GND`；`series_2=C20; value not shown`；`shunt_2=C22 NC to GND`；`output_net=DW_RF1_ANT` |
+| 射频 | DW_RF2 终端网络 | `u1_pin=H5 RF2`；`input_net=DW_RF2`；`series_component=C12 GJM1555C1H2R0B`；`termination=C24 49.9R to GND` |
+| 射频 | RF_50R 网络标注 | `annotation=RF_50R`；`rf1_locations=DW_RF1; after C5; DW_RF1_ANT`；`rf2_locations=DW_RF2; after C12` |
+| 射频 | 天线侧原理图边界 | `antenna_net=DW_RF1_ANT`；`antenna_reference=null`；`antenna_connector=null` |
+| 射频 | 射频频率与协议标注范围 | `channel=null`；`center_frequency=null`；`bandwidth=null`；`wireless_data_rate=null`；`protocol_standard=null` |
+| 保护电路 | 外部焊盘信号保护 | `tvs=null`；`esd_array=null`；`series_protection=null`；`reset_bias=R1/C15`；`irq_bias=R2` |
+| 关键网络 | DW_EXTON 模块内部控制 | `net=DW_EXTON`；`source_endpoint=U1A A12 EXTON`；`destination_endpoint=U2 B1 EN`；`stamp_pin=null`；`j1_pin=null` |
+
+## 待确认事项
+
+- `component.u1-identity-label-conflict`：同一参考位号 U1 的功能单元 U1A 标注 QM33120WTR13，而接地单元 U1B 标注 DW3120；仅凭该页无法把两处文字归并为一个无歧义的精确料号。（证据：图 d8a1261888ed / 第 1 页 / 第 1 页网格 A1-B2，U1A 方框底部型号文字为 QM33120WTR13; 图 d8a1261888ed / 第 1 页 / 第 1 页网格 D2，U1B 接地单元底部型号文字为 DW3120）
+- `review.u1-identity-label-conflict`：U1 的正式精确料号应按 U1A 的 QM33120WTR13，还是需结合 U1B 的 DW3120 标注作其他解释？；原因：同一参考位号的两个单元在当前正式原理图页上显示不同型号文字，原理图本身没有给出归并说明。
+
+## 原理图来源
+
+| 资源 | 页码 | SHA-256 | 原始地址 |
+| --- | --- | --- | --- |
+| 1 | 1 | `d8a1261888ed7f8bea3935fb2a0bf34e77a16578d205e0f7bcef6ba98e049933` | `https://m5stack-doc.oss-cn-shenzhen.aliyuncs.com/1262/SCH_UWB_MODULE_SCH_main_V0.2_20251128_2026_06_01_11_54_35_page_01.png` |
+
+---
+
+源文档：`zh_CN/stamp/Stamp_UWB.md`
+
+源文档 SHA-256：`4767de8c6f5eb86bf490c03e6c1e91b40899d589585f3c9fa0547b63d92b7831`
+
+*该文档由专用原理图子智能体基于原理图证据自动生成；无法确认的内容集中列在“待确认事项”章节。*

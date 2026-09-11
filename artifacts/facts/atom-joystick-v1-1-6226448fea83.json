@@ -1,0 +1,1328 @@
+{
+  "schema_version": 1,
+  "generator": "schematic_describer",
+  "product": {
+    "product_id": "atom-joystick-v1-1-6226448fea83",
+    "product_name": "Atom JoyStick v1.1",
+    "sku": "K137-V11",
+    "source_path": "app/Atom_JoyStick_v1.1.md",
+    "source_sha256": "04ddd6ba3720ae9fdd2990f15199328486c4b996415174d6684cc6a720bf3dbd",
+    "input_sha256": "7301126e89e67bef345aa1e4ac3a7f997645f3b430107ac06019bc0fc1fc1130"
+  },
+  "schematic_assets": [
+    {
+      "sha256": "aa6ea9724768216e0cb39132ef2effd40d57501cf9e3ef1d690d9ce8c75013f8",
+      "source_url": "https://m5stack.oss-cn-shenzhen.aliyuncs.com/resource/docs/products/app/Atom%20JoyStick/c0a25d850ef9122df3669baeab813e5.png",
+      "pages": [
+        1
+      ]
+    }
+  ],
+  "summary": "附着原理图展示 Atom JoyStick v1.1 手柄底座：U1 STM32F030F4P6 采集两只 JH16 摇杆、左右按键和两路电池分压，并通过 SCL/SDA 接到外部主控接口。双 TP4067-4.35V 充电通道分别连接 VBAT_IN1 与 VBAT_IN2，两路电池经 S1 和 B5819W 二极管汇流后由 SY7088、L1 形成标记为 +5VN 的电源轨。底座还包含两颗串接的 WS2812C、晶体管驱动蜂鸣器及 SWD 调试口；附页未展示 AtomS3R 内部电路。",
+  "keywords": [
+    "Atom JoyStick v1.1",
+    "K137-V11",
+    "STM32F030F4P6",
+    "SY7088",
+    "TP4067-4.35V",
+    "JH16",
+    "WS2812C",
+    "TYPEC-304S-ACP16",
+    "SK22D07",
+    "B5819W",
+    "SS8050Y1",
+    "1N4148W",
+    "SCL",
+    "SDA",
+    "SWCLK",
+    "SWDIO",
+    "NRST",
+    "BOOT0",
+    "LEFT-SW-X",
+    "LEFT-SW-Y",
+    "LEFT-SW-B",
+    "RIGHT-SW-X",
+    "RIGHT-SW-Y",
+    "RIGHT-SW-B",
+    "LEFT-BTN",
+    "RIGHT-BTN",
+    "BAT-ADC1",
+    "BAT-ADC2",
+    "VBAT_IN1",
+    "VBAT_IN2",
+    "BAT_IN1",
+    "BAT_IN2",
+    "+5VN",
+    "+3.3V",
+    "BEEP",
+    "RGB",
+    "SWD_5p"
+  ],
+  "components": [
+    {
+      "reference": "U1",
+      "part_number": "STM32F030F4P6",
+      "role": "采集双摇杆、左右按键和双电池分压，提供 SCL/SDA 与 SWD 信号的协处理器",
+      "evidence": [
+        {
+          "asset_sha256": "aa6ea9724768216e0cb39132ef2effd40d57501cf9e3ef1d690d9ce8c75013f8",
+          "page": 1,
+          "locator": "第1页下部左中 U1 方框，标注 STM32F030F4P6，左右两侧可见 PA0~PA14、PF0/PF1、BOOT0、NRST、SCL/SDA 与 SWD 网络"
+        }
+      ]
+    },
+    {
+      "reference": "U2",
+      "part_number": "SY7088",
+      "role": "与 L1、反馈分压和输出滤波组成双电池汇流后的升压电源级",
+      "evidence": [
+        {
+          "asset_sha256": "aa6ea9724768216e0cb39132ef2effd40d57501cf9e3ef1d690d9ce8c75013f8",
+          "page": 1,
+          "locator": "第1页右上 U2，标注 SY7088，左接 L1 与输入电容，右侧 OUT/FB 接 R8、R9、D6"
+        }
+      ]
+    },
+    {
+      "reference": "U3,U4",
+      "part_number": "TP4067-4.35V",
+      "role": "分别连接两路电池的独立充电管理器",
+      "evidence": [
+        {
+          "asset_sha256": "aa6ea9724768216e0cb39132ef2effd40d57501cf9e3ef1d690d9ce8c75013f8",
+          "page": 1,
+          "locator": "第1页上部 U3/U4，均标注 TP4067-4.35V，BAT 端分别标为 VBAT_IN1/VBAT_IN2"
+        }
+      ]
+    },
+    {
+      "reference": "USB1",
+      "part_number": "TYPEC-304S-ACP16",
+      "role": "提供 VBUS/GND 充电输入，CC1/CC2 配置下拉，数据与 SBU 端未接入底座电路",
+      "evidence": [
+        {
+          "asset_sha256": "aa6ea9724768216e0cb39132ef2effd40d57501cf9e3ef1d690d9ce8c75013f8",
+          "page": 1,
+          "locator": "第1页左上 USB1，标注 TYPEC-304S-ACP16；VBUS 接上方充电母线，CC1/CC2 接 R10/R11，DP/DN/SBU 无外接网络"
+        }
+      ]
+    },
+    {
+      "reference": "D1,D4",
+      "part_number": "B5819W",
+      "role": "将 BAT_IN1 与 BAT_IN2 二极管汇流到升压输入节点",
+      "evidence": [
+        {
+          "asset_sha256": "aa6ea9724768216e0cb39132ef2effd40d57501cf9e3ef1d690d9ce8c75013f8",
+          "page": 1,
+          "locator": "第1页右上 D1/D4，器件标注 B5819W，左端分别为 BAT_IN1/BAT_IN2，右端汇合后接 R3/L1 电源级"
+        }
+      ]
+    },
+    {
+      "reference": "D6",
+      "part_number": "B5819W",
+      "role": "串接在 U2 输出与 +5VN 网络之间的肖特基二极管",
+      "evidence": [
+        {
+          "asset_sha256": "aa6ea9724768216e0cb39132ef2effd40d57501cf9e3ef1d690d9ce8c75013f8",
+          "page": 1,
+          "locator": "第1页右上 U2 OUT 右侧 D6，标注 B5819W，右端网络名 +5VN"
+        }
+      ]
+    },
+    {
+      "reference": "L1",
+      "part_number": "3015 1.5uH",
+      "role": "SY7088 电源级的 1.5uH 储能电感",
+      "evidence": [
+        {
+          "asset_sha256": "aa6ea9724768216e0cb39132ef2effd40d57501cf9e3ef1d690d9ce8c75013f8",
+          "page": 1,
+          "locator": "第1页右上 L1，图面标注 3015 1.5uH，位于二极管汇流节点与 U2 LX 之间"
+        }
+      ]
+    },
+    {
+      "reference": "P4",
+      "part_number": "Header 4",
+      "role": "引出两路电池正端 VBAT_IN1/VBAT_IN2 与对应接地端",
+      "evidence": [
+        {
+          "asset_sha256": "aa6ea9724768216e0cb39132ef2effd40d57501cf9e3ef1d690d9ce8c75013f8",
+          "page": 1,
+          "locator": "第1页左中 P4 四针排针，1脚网络 VBAT_IN1、4脚网络 VBAT_IN2，中间两脚连接 GND"
+        }
+      ]
+    },
+    {
+      "reference": "S1",
+      "part_number": "SK22D07",
+      "role": "双刀拨动开关，同步接通或断开两路电池到 BAT_IN1/BAT_IN2",
+      "evidence": [
+        {
+          "asset_sha256": "aa6ea9724768216e0cb39132ef2effd40d57501cf9e3ef1d690d9ce8c75013f8",
+          "page": 1,
+          "locator": "第1页左中 S1，标注 SK22D07；两组触点分别位于 VBAT_IN1→BAT_IN1 与 VBAT_IN2→BAT_IN2 路径"
+        }
+      ]
+    },
+    {
+      "reference": "LED1,LED2",
+      "part_number": "WS2812C",
+      "role": "由 RGB 网络输入并级联的两颗可编程 RGB LED",
+      "evidence": [
+        {
+          "asset_sha256": "aa6ea9724768216e0cb39132ef2effd40d57501cf9e3ef1d690d9ce8c75013f8",
+          "page": 1,
+          "locator": "第1页中上 LED1/LED2，均标注 WS2812C；RGB 接 LED1 DI，LED1 DO 接 LED2 DI"
+        }
+      ]
+    },
+    {
+      "reference": "D2,D3",
+      "part_number": "1615",
+      "role": "分别显示 U3/U4 CHRG 与 STDBY 状态的双发光器件",
+      "evidence": [
+        {
+          "asset_sha256": "aa6ea9724768216e0cb39132ef2effd40d57501cf9e3ef1d690d9ce8c75013f8",
+          "page": 1,
+          "locator": "第1页上部 U3 左侧 D2 与 U4 左侧 D3，图面标注 1615，并连接各充电器 CHRG/STDBY 引脚"
+        }
+      ]
+    },
+    {
+      "reference": "S2,S3",
+      "part_number": "SW-PB",
+      "role": "分别将 LEFT-BTN 与 RIGHT-BTN 按下接地的左右功能按键",
+      "evidence": [
+        {
+          "asset_sha256": "aa6ea9724768216e0cb39132ef2effd40d57501cf9e3ef1d690d9ce8c75013f8",
+          "page": 1,
+          "locator": "第1页中上 S2/S3，均标注 SW-PB，一端接 GND，另一端分别为 LEFT-BTN/RIGHT-BTN"
+        }
+      ]
+    },
+    {
+      "reference": "J1,J2",
+      "part_number": "JH16",
+      "role": "左右摇杆器件，分别提供 X、Y 与 SW 三路信号",
+      "evidence": [
+        {
+          "asset_sha256": "aa6ea9724768216e0cb39132ef2effd40d57501cf9e3ef1d690d9ce8c75013f8",
+          "page": 1,
+          "locator": "第1页中部 J1/J2，均标注 JH16；引脚名称为 VCC、X、Y、SW、GND，另有 NC 引脚"
+        }
+      ]
+    },
+    {
+      "reference": "P3",
+      "part_number": "SWD_5p",
+      "role": "引出 +3.3V、SWCLK、SWDIO、NRST 与 GND 的五针调试接口",
+      "evidence": [
+        {
+          "asset_sha256": "aa6ea9724768216e0cb39132ef2effd40d57501cf9e3ef1d690d9ce8c75013f8",
+          "page": 1,
+          "locator": "第1页中部偏右 P3，标注 SWD_5p，针脚依次标注 VCC、SWCLK、SWDIO、RST、GND"
+        }
+      ]
+    },
+    {
+      "reference": "LS1",
+      "part_number": "Buzzer",
+      "role": "由 Q3 低边开关驱动的板载蜂鸣器",
+      "evidence": [
+        {
+          "asset_sha256": "aa6ea9724768216e0cb39132ef2effd40d57501cf9e3ef1d690d9ce8c75013f8",
+          "page": 1,
+          "locator": "第1页右中 LS1，标注 Buzzer，上端经 R14 接 +3.3V，下端接 Q3"
+        }
+      ]
+    },
+    {
+      "reference": "Q3",
+      "part_number": "SS8050Y1",
+      "role": "受 BEEP 链路控制的蜂鸣器低边驱动晶体管",
+      "evidence": [
+        {
+          "asset_sha256": "aa6ea9724768216e0cb39132ef2effd40d57501cf9e3ef1d690d9ce8c75013f8",
+          "page": 1,
+          "locator": "第1页右中 Q3，标注 SS8050Y1；集电极接 LS1，发射极接 GND，基极接 R18/C12/D7 网络"
+        }
+      ]
+    },
+    {
+      "reference": "D5,D7",
+      "part_number": "1N4148W",
+      "role": "蜂鸣器驱动支路中的线圈续流与基极节点钳位二极管",
+      "evidence": [
+        {
+          "asset_sha256": "aa6ea9724768216e0cb39132ef2effd40d57501cf9e3ef1d690d9ce8c75013f8",
+          "page": 1,
+          "locator": "第1页右中 D5 跨接 LS1 驱动两端，D7 从 C12/Q3 基极节点接至 GND，二者均标注 1N4148W"
+        }
+      ]
+    },
+    {
+      "reference": "P2",
+      "part_number": "Header 4",
+      "role": "连接外部主控的 SCL、SDA、+5VN 与 GND 四针接口",
+      "evidence": [
+        {
+          "asset_sha256": "aa6ea9724768216e0cb39132ef2effd40d57501cf9e3ef1d690d9ce8c75013f8",
+          "page": 1,
+          "locator": "第1页右下 P2 四针排针，1~4脚分别接 SCL、SDA、+5VN、GND"
+        }
+      ]
+    },
+    {
+      "reference": "P1",
+      "part_number": "Header 5",
+      "role": "连接外部主控的 +3.3V、BEEP 与 RGB 五针接口，其中两针未连接",
+      "evidence": [
+        {
+          "asset_sha256": "aa6ea9724768216e0cb39132ef2effd40d57501cf9e3ef1d690d9ce8c75013f8",
+          "page": 1,
+          "locator": "第1页右下 P1 五针排针，1脚接 +3.3V、2脚接 BEEP、3脚接 RGB，4脚与5脚带未连接标记"
+        }
+      ]
+    }
+  ],
+  "facts": [
+    {
+      "id": "system.base-architecture",
+      "category": "system",
+      "subject": "手柄底座架构",
+      "statement": "U1 STM32F030F4P6 采集 J1/J2、S2/S3 和两路 BAT-ADC 信号，并通过 P2 的 SCL/SDA 接口与外部主控连接；P1 单独承载 RGB 与 BEEP 控制网络。",
+      "confidence": "confirmed",
+      "attributes": {
+        "coprocessor": "U1 STM32F030F4P6",
+        "joysticks": "J1,J2",
+        "buttons": "S2,S3",
+        "battery_adc": "BAT-ADC1,BAT-ADC2",
+        "host_headers": "P1,P2"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "aa6ea9724768216e0cb39132ef2effd40d57501cf9e3ef1d690d9ce8c75013f8",
+          "page": 1,
+          "locator": "第1页中下部 U1 与 J1/J2、S2/S3、BAT-ADC1/2、P1/P2 网络连接"
+        }
+      ]
+    },
+    {
+      "id": "component.stm32-role",
+      "category": "component",
+      "subject": "U1 STM32F030F4P6",
+      "statement": "U1 使用 PA0~PA7 连接电池采样和双摇杆，PF0/PF1 连接左右按键，PA9/PA10 连接 SCL/SDA，PA13/PA14 连接 SWDIO/SWCLK。",
+      "confidence": "confirmed",
+      "attributes": {
+        "reference": "U1",
+        "part_number": "STM32F030F4P6",
+        "analog_gpio": "PA0,PA1",
+        "joystick_gpio": "PA2,PA3,PA4,PA5,PA6,PA7",
+        "button_gpio": "PF0,PF1",
+        "i2c_gpio": "PA9,PA10",
+        "swd_gpio": "PA13,PA14"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "aa6ea9724768216e0cb39132ef2effd40d57501cf9e3ef1d690d9ce8c75013f8",
+          "page": 1,
+          "locator": "第1页下部左中 U1 全部已用引脚及左右侧网络标注"
+        }
+      ]
+    },
+    {
+      "id": "interface.usb-c-power-only",
+      "category": "interface",
+      "subject": "USB1 USB Type-C",
+      "statement": "USB1 的 VBUS 与 GND 接入底座充电电路，DP1/DN1、DP2/DN2 与 SBU1/SBU2 在该页均无外接网络。",
+      "confidence": "confirmed",
+      "attributes": {
+        "reference": "USB1",
+        "connector": "TYPEC-304S-ACP16",
+        "connected": "VBUS,GND,CC1,CC2",
+        "unconnected": "DP1,DN1,DP2,DN2,SBU1,SBU2"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "aa6ea9724768216e0cb39132ef2effd40d57501cf9e3ef1d690d9ce8c75013f8",
+          "page": 1,
+          "locator": "第1页左上 USB1，引脚 A4/B9 VBUS 接充电母线，USB 数据与 SBU 引脚无连线"
+        }
+      ]
+    },
+    {
+      "id": "interface.usb-cc-pulldown",
+      "category": "interface",
+      "subject": "USB Type-C CC 配置",
+      "statement": "USB1 的 CC1 与 CC2 分别经 R10、R11 的 5.1KΩ 电阻下拉到 GND。",
+      "confidence": "confirmed",
+      "attributes": {
+        "cc1_resistor": "R10 5.1KΩ",
+        "cc2_resistor": "R11 5.1KΩ",
+        "termination": "GND"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "aa6ea9724768216e0cb39132ef2effd40d57501cf9e3ef1d690d9ce8c75013f8",
+          "page": 1,
+          "locator": "第1页左上 USB1 CC1/CC2 右侧 R10/R11，均标注 5.1KΩ 并接 GND"
+        }
+      ]
+    },
+    {
+      "id": "power.usb-charge-input",
+      "category": "power",
+      "subject": "充电输入母线",
+      "statement": "USB1 VBUS 同时连接 U3 与 U4 的充电输入支路，两路充电器共用 USB-C 输入但分别连接不同电池网络。",
+      "confidence": "confirmed",
+      "attributes": {
+        "input": "USB1 VBUS",
+        "chargers": "U3,U4",
+        "battery_outputs": "VBAT_IN1,VBAT_IN2"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "aa6ea9724768216e0cb39132ef2effd40d57501cf9e3ef1d690d9ce8c75013f8",
+          "page": 1,
+          "locator": "第1页上部从 USB1 VBUS 延伸到 U3/U4 VCC 区域的公共电源连线"
+        }
+      ]
+    },
+    {
+      "id": "power.charge-channel-1",
+      "category": "power",
+      "subject": "第一路电池充电",
+      "statement": "U3 TP4067-4.35V 的 BAT 端连接 VBAT_IN1，PROG 端经 R12 2.4KΩ 接地，输入与电池端分别配置 C2 10uF、C7 10uF。",
+      "confidence": "confirmed",
+      "attributes": {
+        "charger": "U3 TP4067-4.35V",
+        "battery_net": "VBAT_IN1",
+        "program_resistor": "R12 2.4KΩ",
+        "input_capacitor": "C2 10uF",
+        "battery_capacitor": "C7 10uF"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "aa6ea9724768216e0cb39132ef2effd40d57501cf9e3ef1d690d9ce8c75013f8",
+          "page": 1,
+          "locator": "第1页上部偏左 U3 及其 R12、C2、C7、VBAT_IN1 标注"
+        }
+      ]
+    },
+    {
+      "id": "power.charge-channel-2",
+      "category": "power",
+      "subject": "第二路电池充电",
+      "statement": "U4 TP4067-4.35V 的 BAT 端连接 VBAT_IN2，PROG 端经 R13 2.4KΩ 接地，输入与电池端分别配置 C3 10uF、C8 10uF。",
+      "confidence": "confirmed",
+      "attributes": {
+        "charger": "U4 TP4067-4.35V",
+        "battery_net": "VBAT_IN2",
+        "program_resistor": "R13 2.4KΩ",
+        "input_capacitor": "C3 10uF",
+        "battery_capacitor": "C8 10uF"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "aa6ea9724768216e0cb39132ef2effd40d57501cf9e3ef1d690d9ce8c75013f8",
+          "page": 1,
+          "locator": "第1页上部中间 U4 及其 R13、C3、C8、VBAT_IN2 标注"
+        }
+      ]
+    },
+    {
+      "id": "component.charge-status-indicators",
+      "category": "component",
+      "subject": "D2/D3 充电状态指示",
+      "statement": "D2 与 D3 分别连接 U3 与 U4 的 CHRG、STDBY 引脚，各自通过 R6、R7 的 2.4KΩ 支路获得公共端供电。",
+      "confidence": "confirmed",
+      "attributes": {
+        "channel_1": "D2,R6,U3 CHRG/STDBY",
+        "channel_2": "D3,R7,U4 CHRG/STDBY",
+        "series_resistors": "R6 2.4KΩ,R7 2.4KΩ"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "aa6ea9724768216e0cb39132ef2effd40d57501cf9e3ef1d690d9ce8c75013f8",
+          "page": 1,
+          "locator": "第1页上部 U3/U4 左侧 D2/D3 双发光符号与 CHRG/STDBY 连线"
+        }
+      ]
+    },
+    {
+      "id": "interface.battery-header",
+      "category": "interface",
+      "subject": "P4 电池接口",
+      "statement": "P4 为四针电池接口，1脚连接 VBAT_IN1，4脚连接 VBAT_IN2，2脚与3脚连接 GND。",
+      "confidence": "confirmed",
+      "attributes": {
+        "reference": "P4",
+        "pin_1": "VBAT_IN1",
+        "pin_2": "GND",
+        "pin_3": "GND",
+        "pin_4": "VBAT_IN2"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "aa6ea9724768216e0cb39132ef2effd40d57501cf9e3ef1d690d9ce8c75013f8",
+          "page": 1,
+          "locator": "第1页左中 P4 的 1~4 脚与 VBAT_IN1、GND、GND、VBAT_IN2 连线"
+        }
+      ]
+    },
+    {
+      "id": "power.dual-pole-switch",
+      "category": "power",
+      "subject": "S1 双路电池开关",
+      "statement": "S1 的两组触点同步控制 VBAT_IN1 到 BAT_IN1、VBAT_IN2 到 BAT_IN2 的连接，另一侧触点 6脚与3脚未接。",
+      "confidence": "confirmed",
+      "attributes": {
+        "reference": "S1 SK22D07",
+        "pole_1": "VBAT_IN1→BAT_IN1",
+        "pole_2": "VBAT_IN2→BAT_IN2",
+        "unused_throws": "6,3"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "aa6ea9724768216e0cb39132ef2effd40d57501cf9e3ef1d690d9ce8c75013f8",
+          "page": 1,
+          "locator": "第1页左中 S1 两组机械联动触点及 VBAT_IN1/2、BAT_IN1/2 网络名"
+        }
+      ]
+    },
+    {
+      "id": "protection.battery-oring",
+      "category": "protection",
+      "subject": "双电池二极管汇流",
+      "statement": "BAT_IN1 与 BAT_IN2 分别通过 D1、D4 B5819W 接到同一升压输入节点，两路输入在进入 L1/U2 前由二极管隔离汇流。",
+      "confidence": "confirmed",
+      "attributes": {
+        "input_1": "BAT_IN1→D1",
+        "input_2": "BAT_IN2→D4",
+        "diode": "B5819W",
+        "destination": "R3/L1/U2 input node"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "aa6ea9724768216e0cb39132ef2effd40d57501cf9e3ef1d690d9ce8c75013f8",
+          "page": 1,
+          "locator": "第1页右上 BAT_IN1/BAT_IN2 经 D1/D4 汇合的电源路径"
+        }
+      ]
+    },
+    {
+      "id": "power.boost-stage",
+      "category": "power",
+      "subject": "SY7088 升压级",
+      "statement": "二极管汇流节点经 R3 和 L1 3015 1.5uH 接入 U2 SY7088 的 LX/IN 区域，C5 22uF 与 C6 1uF 接地滤波。",
+      "confidence": "confirmed",
+      "attributes": {
+        "controller": "U2 SY7088",
+        "inductor": "L1 3015 1.5uH",
+        "input_path": "D1/D4→R3→L1",
+        "capacitors": "C5 22uF,C6 1uF"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "aa6ea9724768216e0cb39132ef2effd40d57501cf9e3ef1d690d9ce8c75013f8",
+          "page": 1,
+          "locator": "第1页右上 D1/D4、R3、L1、C5、C6 与 U2 左侧引脚连接"
+        }
+      ]
+    },
+    {
+      "id": "power.boost-feedback",
+      "category": "power",
+      "subject": "U2 输出反馈",
+      "statement": "U2 OUT 节点通过 R8 52.3KΩ 与 R9 5KΩ 分压回接 FB，引出节点位于 D6 之前。",
+      "confidence": "confirmed",
+      "attributes": {
+        "upper_resistor": "R8 52.3KΩ",
+        "lower_resistor": "R9 5KΩ",
+        "feedback_pin": "U2 FB",
+        "sense_node": "U2 OUT before D6"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "aa6ea9724768216e0cb39132ef2effd40d57501cf9e3ef1d690d9ce8c75013f8",
+          "page": 1,
+          "locator": "第1页右上 U2 右侧 R8/R9 分压网络与 FB 5脚"
+        }
+      ]
+    },
+    {
+      "id": "power.plus5vn-output",
+      "category": "power",
+      "subject": "+5VN 电源轨",
+      "statement": "U2 的双 OUT 引脚连接 D6 B5819W，D6 后端网络标为 +5VN，并由 C4 22uF 对地滤波。",
+      "confidence": "confirmed",
+      "attributes": {
+        "source": "U2 OUT pins 7,8",
+        "series_diode": "D6 B5819W",
+        "rail": "+5VN",
+        "output_capacitor": "C4 22uF"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "aa6ea9724768216e0cb39132ef2effd40d57501cf9e3ef1d690d9ce8c75013f8",
+          "page": 1,
+          "locator": "第1页最右上 U2 OUT、D6、+5VN 与 C4 22uF"
+        }
+      ]
+    },
+    {
+      "id": "power.plus3v3-domain",
+      "category": "power",
+      "subject": "+3.3V 电源域",
+      "statement": "+3.3V 网络连接 U1 的 VDDA/VDD、J1/J2 VCC、LED1/LED2 VDD、按键上拉、蜂鸣器供电支路和 P1 1脚。",
+      "confidence": "confirmed",
+      "attributes": {
+        "rail": "+3.3V",
+        "loads": "U1,J1,J2,LED1,LED2,S2/S3 pull-ups,LS1 branch",
+        "host_pin": "P1 pin 1"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "aa6ea9724768216e0cb39132ef2effd40d57501cf9e3ef1d690d9ce8c75013f8",
+          "page": 1,
+          "locator": "第1页多处 +3.3V 电源标记及 U1、J1/J2、LED1/2、R15/R16、R14、P1 连线"
+        }
+      ]
+    },
+    {
+      "id": "interface.host-header-p1",
+      "category": "interface",
+      "subject": "P1 外部主控接口",
+      "statement": "P1 1脚连接 +3.3V，2脚连接 BEEP，3脚连接 RGB，4脚和5脚在该页标为未连接。",
+      "confidence": "confirmed",
+      "attributes": {
+        "pin_1": "+3.3V",
+        "pin_2": "BEEP",
+        "pin_3": "RGB",
+        "pin_4": "NC",
+        "pin_5": "NC"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "aa6ea9724768216e0cb39132ef2effd40d57501cf9e3ef1d690d9ce8c75013f8",
+          "page": 1,
+          "locator": "第1页右下 P1 五针排针及右侧 +3.3V/BEEP/RGB/未连接标记"
+        }
+      ]
+    },
+    {
+      "id": "interface.host-header-p2",
+      "category": "interface",
+      "subject": "P2 外部主控接口",
+      "statement": "P2 1脚连接 SCL，2脚连接 SDA，3脚连接 +5VN，4脚连接 GND。",
+      "confidence": "confirmed",
+      "attributes": {
+        "pin_1": "SCL",
+        "pin_2": "SDA",
+        "pin_3": "+5VN",
+        "pin_4": "GND"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "aa6ea9724768216e0cb39132ef2effd40d57501cf9e3ef1d690d9ce8c75013f8",
+          "page": 1,
+          "locator": "第1页右下 P2 四针排针及左侧 SCL/SDA/+5VN/GND 网络名"
+        }
+      ]
+    },
+    {
+      "id": "power.p2-filtering",
+      "category": "power",
+      "subject": "P2 电源与总线外围",
+      "statement": "P2 附近的 SCL、SDA 分别由 R1、R2 4.7KΩ 上拉到 +3.3V，+5VN 与 GND 之间配置 C1 100nF。",
+      "confidence": "confirmed",
+      "attributes": {
+        "scl_pullup": "R1 4.7KΩ to +3.3V",
+        "sda_pullup": "R2 4.7KΩ to +3.3V",
+        "plus5vn_capacitor": "C1 100nF"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "aa6ea9724768216e0cb39132ef2effd40d57501cf9e3ef1d690d9ce8c75013f8",
+          "page": 1,
+          "locator": "第1页右下 P2 左侧 R1/R2 上拉与 C1 对地电容"
+        }
+      ]
+    },
+    {
+      "id": "bus.i2c-route",
+      "category": "bus",
+      "subject": "STM32 与外部主控 I2C 物理链路",
+      "statement": "U1 PA9 连接 SCL，PA10 连接 SDA，两条网络直接延伸到 P2 1脚与2脚并各自上拉到 +3.3V。",
+      "confidence": "confirmed",
+      "attributes": {
+        "controller_scl": "U1 PA9 pin 17",
+        "controller_sda": "U1 PA10 pin 18",
+        "connector_scl": "P2 pin 1",
+        "connector_sda": "P2 pin 2",
+        "pullups": "R1,R2 4.7KΩ"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "aa6ea9724768216e0cb39132ef2effd40d57501cf9e3ef1d690d9ce8c75013f8",
+          "page": 1,
+          "locator": "第1页 U1 右上 PA9/PA10 的 SCL/SDA 网络与右下 P2、R1、R2"
+        }
+      ]
+    },
+    {
+      "id": "gpio.u1-buttons",
+      "category": "gpio",
+      "subject": "左右按键 GPIO",
+      "statement": "LEFT-BTN 连接 U1 PF0/OSC_IN 2脚，RIGHT-BTN 连接 U1 PF1/OSC_OUT 3脚。",
+      "confidence": "confirmed",
+      "attributes": {
+        "left_button": "U1 PF0/OSC_IN pin 2",
+        "right_button": "U1 PF1/OSC_OUT pin 3"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "aa6ea9724768216e0cb39132ef2effd40d57501cf9e3ef1d690d9ce8c75013f8",
+          "page": 1,
+          "locator": "第1页下部 U1 左侧 PF0/PF1 与 LEFT-BTN/RIGHT-BTN 网络标注"
+        }
+      ]
+    },
+    {
+      "id": "gpio.u1-left-joystick",
+      "category": "gpio",
+      "subject": "左摇杆 GPIO",
+      "statement": "LEFT-SW-X、LEFT-SW-Y、LEFT-SW-B 分别连接 U1 PA2 8脚、PA3 9脚、PA4 10脚。",
+      "confidence": "confirmed",
+      "attributes": {
+        "left_x": "U1 PA2 pin 8",
+        "left_y": "U1 PA3 pin 9",
+        "left_switch": "U1 PA4 pin 10"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "aa6ea9724768216e0cb39132ef2effd40d57501cf9e3ef1d690d9ce8c75013f8",
+          "page": 1,
+          "locator": "第1页下部 U1 左侧 PA2/PA3/PA4 对应 LEFT-SW-X/Y/B 网络"
+        }
+      ]
+    },
+    {
+      "id": "gpio.u1-right-joystick",
+      "category": "gpio",
+      "subject": "右摇杆 GPIO",
+      "statement": "RIGHT-SW-Y、RIGHT-SW-X、RIGHT-SW-B 分别连接 U1 PA5 11脚、PA6 12脚、PA7 13脚。",
+      "confidence": "confirmed",
+      "attributes": {
+        "right_y": "U1 PA5 pin 11",
+        "right_x": "U1 PA6 pin 12",
+        "right_switch": "U1 PA7 pin 13"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "aa6ea9724768216e0cb39132ef2effd40d57501cf9e3ef1d690d9ce8c75013f8",
+          "page": 1,
+          "locator": "第1页下部 U1 右侧 PA5/PA6/PA7 对应 RIGHT-SW-Y/X/B 网络"
+        }
+      ]
+    },
+    {
+      "id": "sensor.joystick-interface",
+      "category": "sensor",
+      "subject": "J1/J2 摇杆信号",
+      "statement": "J1 与 J2 均使用 VCC、X、Y、SW、GND 五个有效端，X/Y/SW 分别形成 LEFT-SW-* 与 RIGHT-SW-* 网络，器件其余引脚标为 NC。",
+      "confidence": "confirmed",
+      "attributes": {
+        "left": "J1 JH16: LEFT-SW-X,LEFT-SW-Y,LEFT-SW-B",
+        "right": "J2 JH16: RIGHT-SW-X,RIGHT-SW-Y,RIGHT-SW-B",
+        "supply": "+3.3V",
+        "return": "GND"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "aa6ea9724768216e0cb39132ef2effd40d57501cf9e3ef1d690d9ce8c75013f8",
+          "page": 1,
+          "locator": "第1页中部 J1/J2 符号内 VCC/X/Y/SW/GND/NC 引脚名与左右网络"
+        }
+      ]
+    },
+    {
+      "id": "analog.joystick-conditioning",
+      "category": "analog",
+      "subject": "摇杆信号调理",
+      "statement": "J1 与 J2 周边分别配置 R19、R17 10KΩ 上拉及四颗 100nF 对地电容，用于各自电源和 X/Y/SW 信号支路。",
+      "confidence": "confirmed",
+      "attributes": {
+        "left_pullup": "R19 10KΩ",
+        "right_pullup": "R17 10KΩ",
+        "left_capacitors": "C13,C16,C17,C18 100nF",
+        "right_capacitors": "C15,C19,C20,C21 100nF"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "aa6ea9724768216e0cb39132ef2effd40d57501cf9e3ef1d690d9ce8c75013f8",
+          "page": 1,
+          "locator": "第1页中部 J1/J2 左侧的 R19/R17 与 C13/C16/C17/C18、C15/C19/C20/C21"
+        }
+      ]
+    },
+    {
+      "id": "gpio.button-circuits",
+      "category": "gpio",
+      "subject": "左右按键输入电路",
+      "statement": "S2 与 S3 按下时分别将 LEFT-BTN 与 RIGHT-BTN 接地；R15/R16 10KΩ 上拉到 +3.3V，C10/C11 100nF 对地。",
+      "confidence": "confirmed",
+      "attributes": {
+        "left": "S2,R15 10KΩ,C10 100nF",
+        "right": "S3,R16 10KΩ,C11 100nF",
+        "active_level": "press connects to GND"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "aa6ea9724768216e0cb39132ef2effd40d57501cf9e3ef1d690d9ce8c75013f8",
+          "page": 1,
+          "locator": "第1页中上 S2/S3、R15/R16、C10/C11 与 LEFT-BTN/RIGHT-BTN 网络"
+        }
+      ]
+    },
+    {
+      "id": "analog.battery-adc1",
+      "category": "analog",
+      "subject": "第一路电池采样",
+      "statement": "BAT_IN1 经 R23 1MΩ 到 BAT-ADC1，BAT-ADC1 再经 R25 1MΩ 与 C27 100nF 接地，并连接 U1 PA0 6脚。",
+      "confidence": "confirmed",
+      "attributes": {
+        "source": "BAT_IN1",
+        "series_resistor": "R23 1MΩ",
+        "lower_resistor": "R25 1MΩ",
+        "filter_capacitor": "C27 100nF",
+        "adc_pin": "U1 PA0 pin 6"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "aa6ea9724768216e0cb39132ef2effd40d57501cf9e3ef1d690d9ce8c75013f8",
+          "page": 1,
+          "locator": "第1页下部中右 BAT_IN1→R23→BAT-ADC1→R25/C27 与 U1 PA0 网络"
+        }
+      ]
+    },
+    {
+      "id": "analog.battery-adc2",
+      "category": "analog",
+      "subject": "第二路电池采样",
+      "statement": "BAT_IN2 经 R24 1MΩ 到 BAT-ADC2，BAT-ADC2 再经 R26 1MΩ 与 C28 100nF 接地，并连接 U1 PA1 7脚。",
+      "confidence": "confirmed",
+      "attributes": {
+        "source": "BAT_IN2",
+        "series_resistor": "R24 1MΩ",
+        "lower_resistor": "R26 1MΩ",
+        "filter_capacitor": "C28 100nF",
+        "adc_pin": "U1 PA1 pin 7"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "aa6ea9724768216e0cb39132ef2effd40d57501cf9e3ef1d690d9ce8c75013f8",
+          "page": 1,
+          "locator": "第1页下部中右 BAT_IN2→R24→BAT-ADC2→R26/C28 与 U1 PA1 网络"
+        }
+      ]
+    },
+    {
+      "id": "debug.swd-header",
+      "category": "debug",
+      "subject": "P3 SWD 调试接口",
+      "statement": "P3 1~5脚依次连接 +3.3V、SWCLK、SWDIO、NRST、GND；SWCLK 与 SWDIO 分别连接 U1 PA14 20脚和 PA13 19脚。",
+      "confidence": "confirmed",
+      "attributes": {
+        "pin_1": "+3.3V",
+        "pin_2": "SWCLK / U1 PA14 pin 20",
+        "pin_3": "SWDIO / U1 PA13 pin 19",
+        "pin_4": "NRST",
+        "pin_5": "GND"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "aa6ea9724768216e0cb39132ef2effd40d57501cf9e3ef1d690d9ce8c75013f8",
+          "page": 1,
+          "locator": "第1页中部偏右 P3 SWD_5p 与下部 U1 PA13/PA14、NRST 网络"
+        }
+      ]
+    },
+    {
+      "id": "reset.boot0-pulldown",
+      "category": "reset",
+      "subject": "U1 BOOT0",
+      "statement": "U1 BOOT0 1脚通过 R21 10KΩ 下拉到 GND。",
+      "confidence": "confirmed",
+      "attributes": {
+        "pin": "U1 BOOT0 pin 1",
+        "resistor": "R21 10KΩ",
+        "termination": "GND"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "aa6ea9724768216e0cb39132ef2effd40d57501cf9e3ef1d690d9ce8c75013f8",
+          "page": 1,
+          "locator": "第1页下部 U1 左上 BOOT0 与 R21 10KΩ 到 GND"
+        }
+      ]
+    },
+    {
+      "id": "reset.nrst-network",
+      "category": "reset",
+      "subject": "U1 NRST",
+      "statement": "NRST 网络连接 U1 4脚和 P3 RST 4脚，由 R22 10KΩ 上拉到 +3.3V，并由 C23 1.0uF 接地。",
+      "confidence": "confirmed",
+      "attributes": {
+        "mcu_pin": "U1 NRST pin 4",
+        "debug_pin": "P3 pin 4",
+        "pullup": "R22 10KΩ",
+        "capacitor": "C23 1.0uF"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "aa6ea9724768216e0cb39132ef2effd40d57501cf9e3ef1d690d9ce8c75013f8",
+          "page": 1,
+          "locator": "第1页下部左侧 NRST、R22、C23 与中部 P3 RST 网络"
+        }
+      ]
+    },
+    {
+      "id": "power.u1-decoupling",
+      "category": "power",
+      "subject": "U1 电源去耦",
+      "statement": "U1 的 VDDA/VDD 接 +3.3V、VSS 接 GND，C24 10uF、C25 100nF 与 C26 100nF 分布在其电源支路对地。",
+      "confidence": "confirmed",
+      "attributes": {
+        "supply": "+3.3V",
+        "ground": "GND",
+        "bulk_capacitor": "C24 10uF",
+        "decoupling": "C25 100nF,C26 100nF"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "aa6ea9724768216e0cb39132ef2effd40d57501cf9e3ef1d690d9ce8c75013f8",
+          "page": 1,
+          "locator": "第1页下部 U1 两侧 VDDA/VDD/VSS 与 C24/C25/C26"
+        }
+      ]
+    },
+    {
+      "id": "component.rgb-chain",
+      "category": "component",
+      "subject": "WS2812C RGB 链",
+      "statement": "P1 的 RGB 网络接 LED1 DI，LED1 DO 接 LED2 DI；两颗 WS2812C 均由 +3.3V 供电并接 GND。",
+      "confidence": "confirmed",
+      "attributes": {
+        "input": "P1 pin 3 RGB",
+        "first": "LED1 WS2812C",
+        "second": "LED2 WS2812C",
+        "chain": "RGB→LED1 DI→LED1 DO→LED2 DI",
+        "supply": "+3.3V"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "aa6ea9724768216e0cb39132ef2effd40d57501cf9e3ef1d690d9ce8c75013f8",
+          "page": 1,
+          "locator": "第1页中上 LED1/LED2 DI/DO 级联与右下 P1 RGB 网络"
+        }
+      ]
+    },
+    {
+      "id": "power.rgb-decoupling",
+      "category": "power",
+      "subject": "RGB LED 去耦",
+      "statement": "LED1 与 LED2 的 +3.3V 电源旁分别配置 C9、C14 100nF 对地电容。",
+      "confidence": "confirmed",
+      "attributes": {
+        "led1_capacitor": "C9 100nF",
+        "led2_capacitor": "C14 100nF",
+        "rail": "+3.3V"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "aa6ea9724768216e0cb39132ef2effd40d57501cf9e3ef1d690d9ce8c75013f8",
+          "page": 1,
+          "locator": "第1页中上 LED1/LED2 下方 C9/C14，均标注 100nF"
+        }
+      ]
+    },
+    {
+      "id": "audio.buzzer-driver",
+      "category": "audio",
+      "subject": "蜂鸣器驱动链路",
+      "statement": "BEEP 信号依次经过 R18 470Ω 与 C12 10uF 到 Q3 SS8050Y1 基极支路；Q3 作为低边开关驱动 LS1，LS1 上端经 R14 10Ω 接 +3.3V。",
+      "confidence": "confirmed",
+      "attributes": {
+        "control": "P1 pin 2 BEEP",
+        "input_resistor": "R18 470Ω",
+        "coupling_capacitor": "C12 10uF",
+        "transistor": "Q3 SS8050Y1",
+        "load": "LS1 Buzzer",
+        "supply_resistor": "R14 10Ω"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "aa6ea9724768216e0cb39132ef2effd40d57501cf9e3ef1d690d9ce8c75013f8",
+          "page": 1,
+          "locator": "第1页右中 BEEP→R18→C12→Q3→LS1 及 R14 到 +3.3V 的完整链路"
+        }
+      ]
+    },
+    {
+      "id": "protection.buzzer-diodes",
+      "category": "protection",
+      "subject": "蜂鸣器驱动保护",
+      "statement": "D5 1N4148W 跨接在 LS1 驱动节点与 +3.3V/R14 一侧，D7 1N4148W 从 C12/Q3 基极节点接到 GND。",
+      "confidence": "confirmed",
+      "attributes": {
+        "load_diode": "D5 1N4148W",
+        "base_node_diode": "D7 1N4148W",
+        "driver": "Q3 SS8050Y1"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "aa6ea9724768216e0cb39132ef2effd40d57501cf9e3ef1d690d9ce8c75013f8",
+          "page": 1,
+          "locator": "第1页右中 LS1/Q3 周围 D5、D7 与电源、GND 连接"
+        }
+      ]
+    },
+    {
+      "id": "key_net.beep-rgb",
+      "category": "key_net",
+      "subject": "外部直控网络",
+      "statement": "BEEP 与 RGB 均从 P1 引入，不经过 U1 引脚；BEEP 进入蜂鸣器驱动，RGB 进入 LED1 数据输入。",
+      "confidence": "confirmed",
+      "attributes": {
+        "beep_path": "P1 pin 2→R18/C12/Q3/LS1",
+        "rgb_path": "P1 pin 3→LED1 DI→LED2 DI",
+        "u1_connection": "none shown"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "aa6ea9724768216e0cb39132ef2effd40d57501cf9e3ef1d690d9ce8c75013f8",
+          "page": 1,
+          "locator": "第1页右下 P1 的 BEEP/RGB 网络与右中蜂鸣器、上中 WS2812C 链路"
+        }
+      ]
+    },
+    {
+      "id": "other.grounded-mounting-pads",
+      "category": "other",
+      "subject": "PHD1~PHD6 安装焊盘",
+      "statement": "PHD1、PHD2、PHD3、PHD4、PHD5、PHD6 均标注 hd_3mm 并连接 GND。",
+      "confidence": "confirmed",
+      "attributes": {
+        "references": "PHD1,PHD2,PHD3,PHD4,PHD5,PHD6",
+        "marking": "hd_3mm",
+        "net": "GND"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "aa6ea9724768216e0cb39132ef2effd40d57501cf9e3ef1d690d9ce8c75013f8",
+          "page": 1,
+          "locator": "第1页最下部右侧 PHD1~PHD6 六个 hd_3mm 焊盘及各自 GND 符号"
+        }
+      ]
+    },
+    {
+      "id": "address.stm32-i2c",
+      "category": "address",
+      "subject": "STM32 协处理器 I2C 地址",
+      "statement": "源文档给出协处理器 I2C 地址 0x59，但附着原理图只显示 U1 与 P2 的 SCL/SDA 物理连接，未标注地址值。",
+      "confidence": "uncertain",
+      "attributes": {
+        "document_value": "0x59",
+        "schematic_annotation": "not shown",
+        "verification_source": "STM32 firmware or protocol definition"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "aa6ea9724768216e0cb39132ef2effd40d57501cf9e3ef1d690d9ce8c75013f8",
+          "page": 1,
+          "locator": "第1页 U1 PA9/PA10 与 P2 SCL/SDA 链路，无 0x59 地址标注"
+        }
+      ]
+    },
+    {
+      "id": "gpio.host-i2c-mapping",
+      "category": "gpio",
+      "subject": "外部 AtomS3R 的 I2C GPIO",
+      "statement": "源文档将宿主 SCL/SDA 映射为 G39/G38，附着原理图在 P2 侧仅标 SCL/SDA，未展示外部主控 GPIO 编号。",
+      "confidence": "uncertain",
+      "attributes": {
+        "document_scl": "G39",
+        "document_sda": "G38",
+        "schematic_host_gpio": "not shown"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "aa6ea9724768216e0cb39132ef2effd40d57501cf9e3ef1d690d9ce8c75013f8",
+          "page": 1,
+          "locator": "第1页右下 P2 仅有 SCL/SDA 网络名，外部 AtomS3R 电路不在附页中"
+        }
+      ]
+    },
+    {
+      "id": "gpio.host-beep-rgb-mapping",
+      "category": "gpio",
+      "subject": "外部 AtomS3R 的 BEEP/RGB GPIO",
+      "statement": "源文档将 BEEP/RGB 映射为 G5/G6，附着原理图在 P1 侧仅标 BEEP/RGB，未展示外部主控 GPIO 编号。",
+      "confidence": "uncertain",
+      "attributes": {
+        "document_beep": "G5",
+        "document_rgb": "G6",
+        "schematic_host_gpio": "not shown"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "aa6ea9724768216e0cb39132ef2effd40d57501cf9e3ef1d690d9ce8c75013f8",
+          "page": 1,
+          "locator": "第1页右下 P1 仅有 BEEP/RGB 网络名，外部 AtomS3R 电路不在附页中"
+        }
+      ]
+    },
+    {
+      "id": "component.atoms3r-host",
+      "category": "component",
+      "subject": "AtomS3R 外部主控模块",
+      "statement": "产品源文档称主控模块为 AtomS3R，但附着原理图只画出底座 P1/P2 接口，没有 AtomS3R 模块符号或其内部电路。",
+      "confidence": "uncertain",
+      "attributes": {
+        "document_module": "AtomS3R",
+        "schematic_presence": "not shown",
+        "visible_boundary": "P1,P2"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "aa6ea9724768216e0cb39132ef2effd40d57501cf9e3ef1d690d9ce8c75013f8",
+          "page": 1,
+          "locator": "第1页整页为手柄底座电路，右下仅 P1/P2 外部连接器，无 AtomS3R 符号"
+        }
+      ]
+    },
+    {
+      "id": "component.atoms3r-internal-specs",
+      "category": "component",
+      "subject": "AtomS3R 内部器件与规格",
+      "statement": "源文档列出的 ESP32-S3-PICO-1-N8R8、8MB Flash、8MB PSRAM、BMI270、BMM150、显示屏与 Wi-Fi 均不在附着原理图中，不能由本页确认。",
+      "confidence": "uncertain",
+      "attributes": {
+        "document_soc": "ESP32-S3-PICO-1-N8R8",
+        "document_memory": "8MB Flash,8MB PSRAM",
+        "document_sensors": "BMI270,BMM150",
+        "document_display": "0.85 inch IPS 128x128",
+        "schematic_presence": "not shown"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "aa6ea9724768216e0cb39132ef2effd40d57501cf9e3ef1d690d9ce8c75013f8",
+          "page": 1,
+          "locator": "第1页全部器件区未出现 ESP32-S3-PICO-1-N8R8、BMI270、BMM150、显示屏或存储器符号"
+        }
+      ]
+    },
+    {
+      "id": "sensor.joystick-type",
+      "category": "sensor",
+      "subject": "JH16 摇杆类型与方向能力",
+      "statement": "源文档称 J1/J2 为霍尔传感器五向摇杆；附着原理图仅标 JH16 及 X、Y、SW 引脚，未标霍尔器件结构或五向定义。",
+      "confidence": "uncertain",
+      "attributes": {
+        "document_type": "霍尔传感器五向摇杆",
+        "schematic_part": "JH16",
+        "visible_signals": "X,Y,SW",
+        "internal_structure": "not shown"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "aa6ea9724768216e0cb39132ef2effd40d57501cf9e3ef1d690d9ce8c75013f8",
+          "page": 1,
+          "locator": "第1页中部 J1/J2 仅标 JH16、VCC/X/Y/SW/GND/NC"
+        }
+      ]
+    },
+    {
+      "id": "gpio.left-joystick-document-conflict",
+      "category": "gpio",
+      "subject": "左摇杆源文档映射冲突",
+      "statement": "源文档表格将 LEFT-SW-X/Y/B 写为 PA1/PA2/PA3，但附着原理图将其连接到 PA2/PA3/PA4，同时 PA1 已连接 BAT-ADC2；现行对外映射需复核。",
+      "confidence": "uncertain",
+      "attributes": {
+        "document_mapping": "LEFT-SW-X=PA1,LEFT-SW-Y=PA2,LEFT-SW-B=PA3",
+        "schematic_mapping": "LEFT-SW-X=PA2,LEFT-SW-Y=PA3,LEFT-SW-B=PA4",
+        "additional_conflict": "PA1=BAT-ADC2 on schematic and battery table"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "aa6ea9724768216e0cb39132ef2effd40d57501cf9e3ef1d690d9ce8c75013f8",
+          "page": 1,
+          "locator": "第1页下部 U1 左侧 PA1=BAT-ADC2、PA2=LEFT-SW-X、PA3=LEFT-SW-Y、PA4=LEFT-SW-B"
+        }
+      ]
+    },
+    {
+      "id": "power.battery-operating-specs",
+      "category": "power",
+      "subject": "电池容量与充电性能",
+      "statement": "源文档给出 300mAh、4.35V、430mA 与约55分钟等电池和充电参数；附着原理图可见 TP4067-4.35V 与 R12/R13 2.4KΩ，但不能独立证明电池容量、实际充电电流或充满时间。",
+      "confidence": "uncertain",
+      "attributes": {
+        "document_capacity": "300mAh@1S",
+        "document_voltage": "4.35V",
+        "document_charge_current": "430mA",
+        "document_charge_time": "about 55 minutes at 5V/1A",
+        "schematic_visible": "U3/U4 TP4067-4.35V,R12/R13 2.4KΩ"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "aa6ea9724768216e0cb39132ef2effd40d57501cf9e3ef1d690d9ce8c75013f8",
+          "page": 1,
+          "locator": "第1页上部仅显示 U3/U4 型号、PROG 电阻和电池网络，不含容量或时间标注"
+        }
+      ]
+    },
+    {
+      "id": "system.schematic-revision",
+      "category": "system",
+      "subject": "底座原理图版本",
+      "statement": "产品名为 v1.1，源文档链接文字指向底座原理图文件 Sch_AtomJoystick_v0.3.pdf，但附着 PNG 没有可见标题栏或版本号，无法确认图页与现行硬件版本的对应关系。",
+      "confidence": "uncertain",
+      "attributes": {
+        "product_version": "v1.1",
+        "document_pdf_name": "Sch_AtomJoystick_v0.3.pdf",
+        "attached_page_version": "not shown"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "aa6ea9724768216e0cb39132ef2effd40d57501cf9e3ef1d690d9ce8c75013f8",
+          "page": 1,
+          "locator": "第1页整页无标题栏、日期或版本号标注"
+        }
+      ]
+    }
+  ],
+  "needs_review": [
+    {
+      "id": "review.stm32-i2c-address",
+      "fact_id": "address.stm32-i2c",
+      "question": "请用 STM32 固件源码或通信协议确认协处理器 I2C 地址是否固定为 0x59。",
+      "reason": "I2C 从机地址由固件配置，附着原理图只显示 SCL/SDA 物理连接。",
+      "evidence": [
+        {
+          "asset_sha256": "aa6ea9724768216e0cb39132ef2effd40d57501cf9e3ef1d690d9ce8c75013f8",
+          "page": 1,
+          "locator": "第1页 U1/P2 的 SCL/SDA 网络，无地址值标注"
+        }
+      ]
+    },
+    {
+      "id": "review.host-i2c-gpio",
+      "fact_id": "gpio.host-i2c-mapping",
+      "question": "请用 AtomS3R 连接器定义或 AtomS3R 原理图确认 P2 SCL/SDA 对应 G39/G38。",
+      "reason": "底座附页没有显示宿主侧 GPIO 编号。",
+      "evidence": [
+        {
+          "asset_sha256": "aa6ea9724768216e0cb39132ef2effd40d57501cf9e3ef1d690d9ce8c75013f8",
+          "page": 1,
+          "locator": "第1页右下 P2 只标 SCL/SDA"
+        }
+      ]
+    },
+    {
+      "id": "review.host-beep-rgb-gpio",
+      "fact_id": "gpio.host-beep-rgb-mapping",
+      "question": "请用 AtomS3R 连接器定义或 AtomS3R 原理图确认 P1 BEEP/RGB 对应 G5/G6。",
+      "reason": "底座附页没有显示宿主侧 GPIO 编号。",
+      "evidence": [
+        {
+          "asset_sha256": "aa6ea9724768216e0cb39132ef2effd40d57501cf9e3ef1d690d9ce8c75013f8",
+          "page": 1,
+          "locator": "第1页右下 P1 只标 BEEP/RGB"
+        }
+      ]
+    },
+    {
+      "id": "review.atoms3r-host",
+      "fact_id": "component.atoms3r-host",
+      "question": "请用装配资料或主控连接器资料确认该 v1.1 产品实际配套的主控模块为 AtomS3R。",
+      "reason": "附着原理图仅覆盖手柄底座，没有主控模块符号或料号。",
+      "evidence": [
+        {
+          "asset_sha256": "aa6ea9724768216e0cb39132ef2effd40d57501cf9e3ef1d690d9ce8c75013f8",
+          "page": 1,
+          "locator": "第1页整页未出现 AtomS3R 模块"
+        }
+      ]
+    },
+    {
+      "id": "review.atoms3r-internal-specs",
+      "fact_id": "component.atoms3r-internal-specs",
+      "question": "请读取本产品对应的 AtomS3R 正式原理图或装配规格，确认 SoC、存储、传感器、显示与无线规格。",
+      "reason": "这些器件和参数均不在当前 asset_manifest 附着的底座原理图中。",
+      "evidence": [
+        {
+          "asset_sha256": "aa6ea9724768216e0cb39132ef2effd40d57501cf9e3ef1d690d9ce8c75013f8",
+          "page": 1,
+          "locator": "第1页无 AtomS3R 内部电路"
+        }
+      ]
+    },
+    {
+      "id": "review.joystick-type",
+      "fact_id": "sensor.joystick-type",
+      "question": "请用 JH16 料号规格书或 BOM 确认摇杆是否为霍尔传感器五向结构。",
+      "reason": "附着原理图只显示 JH16 的 X/Y/SW 接口，未显示内部传感结构与方向定义。",
+      "evidence": [
+        {
+          "asset_sha256": "aa6ea9724768216e0cb39132ef2effd40d57501cf9e3ef1d690d9ce8c75013f8",
+          "page": 1,
+          "locator": "第1页中部 J1/J2 JH16 符号"
+        }
+      ]
+    },
+    {
+      "id": "review.left-joystick-mapping-conflict",
+      "fact_id": "gpio.left-joystick-document-conflict",
+      "question": "请修订或确认源文档的左摇杆映射；图面显示 PA2/PA3/PA4，而文档表格显示 PA1/PA2/PA3。",
+      "reason": "源文档映射与附着原理图直接冲突，且 PA1 在图面及电池表中用于 BAT-ADC2。",
+      "evidence": [
+        {
+          "asset_sha256": "aa6ea9724768216e0cb39132ef2effd40d57501cf9e3ef1d690d9ce8c75013f8",
+          "page": 1,
+          "locator": "第1页下部 U1 PA1~PA4 网络标注"
+        }
+      ]
+    },
+    {
+      "id": "review.battery-operating-specs",
+      "fact_id": "power.battery-operating-specs",
+      "question": "请用电池规格、TP4067 配置依据和实测确认 300mAh、430mA 与约55分钟充满等参数。",
+      "reason": "原理图没有电池容量、充电电流换算规则或充满时间标注。",
+      "evidence": [
+        {
+          "asset_sha256": "aa6ea9724768216e0cb39132ef2effd40d57501cf9e3ef1d690d9ce8c75013f8",
+          "page": 1,
+          "locator": "第1页 U3/U4 与 P4 电池路径"
+        }
+      ]
+    },
+    {
+      "id": "review.schematic-revision",
+      "fact_id": "system.schematic-revision",
+      "question": "请确认附着 PNG 的底座原理图版本及其与 Atom JoyStick v1.1 量产硬件的对应关系。",
+      "reason": "源文档引用 v0.3 文件名，附着 PNG 无版本标识，产品名则为 v1.1。",
+      "evidence": [
+        {
+          "asset_sha256": "aa6ea9724768216e0cb39132ef2effd40d57501cf9e3ef1d690d9ce8c75013f8",
+          "page": 1,
+          "locator": "第1页无标题栏或版本号"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "dry_run": false,
+  "failed": 0,
+  "published": 1,
+  "results": [
+    {
+      "backup": null,
+      "draft_action": "unchanged",
+      "dry_run": false,
+      "errors": [],
+      "needs_review": 4,
+      "product_id": "faces-gamepad3-674f9085ab88",
+      "product_name": "Faces_Gamepad3",
+      "publish_action": "unchanged",
+      "sha256": "84452fe66cfa8722add58c92db28b273907494d66e4525ad57688f3b492da10a",
+      "status": "valid",
+      "uncertain_facts": 4
+    }
+  ],
+  "schema_version": 1
+}

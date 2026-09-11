@@ -1,0 +1,21 @@
+{
+  "dry_run": false,
+  "failed": 0,
+  "published": 1,
+  "results": [
+    {
+      "backup": null,
+      "draft_action": "unchanged",
+      "dry_run": false,
+      "errors": [],
+      "needs_review": 4,
+      "product_id": "chain-pir-7fef392a5345",
+      "product_name": "Chain PIR",
+      "publish_action": "unchanged",
+      "sha256": "5018aa82596a8e8ee7fd394c6f6e26abd1317caa8e55b40ccaf6b3cf411ebbc6",
+      "status": "valid",
+      "uncertain_facts": 4
+    }
+  ],
+  "schema_version": 1
+}

@@ -8,13 +8,13 @@
       "draft_action": "unchanged",
       "dry_run": false,
       "errors": [],
-      "needs_review": 2,
+      "needs_review": 5,
       "product_id": "cardputerzero-5fe3a896d37a",
       "product_name": "CardputerZero",
       "publish_action": "unchanged",
-      "sha256": "831a04e750728e3295432ddcb4afa91630313d69a5cb924b1996f0f875203333",
+      "sha256": "f565d0829cea63dedfaf51dcac52f25584ff352f60f166e51b1c1ec2a1953924",
       "status": "valid",
-      "uncertain_facts": 2
+      "uncertain_facts": 5
     }
   ],
   "schema_version": 1

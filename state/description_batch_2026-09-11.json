@@ -1,0 +1,176 @@
+{
+  "batch_id": "schematic-rich-18-2026-09-11",
+  "created_at": "2026-09-11T04:01:11+00:00",
+  "manifest_sha256": "fd7413668e511961554c6d2f13bbb8cfc6326e23d7a905e3c37c99bb2af04b14",
+  "policy": {
+    "lease_ttl_minutes": 180,
+    "selection": "missing facts; existing published Markdown first; manifest order",
+    "status_source": "derive from assets, facts, Markdown, and per-product report"
+  },
+  "products": [
+    {
+      "input_sha256": "9f99185a2f0a38815668f01b88eb82b43092248cc3f4a5156b3d0a90b95f0dc6",
+      "ordinal": 1,
+      "output_filename": "Base M5GO Bottom2 v1.3.md",
+      "product_id": "base-m5go-bottom2-v1-3-3d649b5f248c",
+      "product_name": "Base M5GO Bottom2 v1.3",
+      "source_path": "base/Base_M5GO_Bottom2_v1.3.md",
+      "source_sha256": "b25e0831c5f23dd8f3daba8faba3c2a22990ce9a4485ab83be5d7a9af6c132b0"
+    },
+    {
+      "input_sha256": "d0a32ef2fd985785cfea9cfa28ee5d35f3707ebb0c4cd733c48851cd08bef95f",
+      "ordinal": 2,
+      "output_filename": "AddOn Display In For PoE-P4.md",
+      "product_id": "addon-display-in-for-poe-p4-09beae90926b",
+      "product_name": "AddOn Display In For PoE-P4",
+      "source_path": "addon/AddOn_Display_In_For_PoE-P4.md",
+      "source_sha256": "53863546dde232609a3fd40d9d42e6b4d1c055bc352a11f01d43792193ea0d93"
+    },
+    {
+      "input_sha256": "7301126e89e67bef345aa1e4ac3a7f997645f3b430107ac06019bc0fc1fc1130",
+      "ordinal": 3,
+      "output_filename": "Atom JoyStick v1.1.md",
+      "product_id": "atom-joystick-v1-1-6226448fea83",
+      "product_name": "Atom JoyStick v1.1",
+      "source_path": "app/Atom_JoyStick_v1.1.md",
+      "source_sha256": "04ddd6ba3720ae9fdd2990f15199328486c4b996415174d6684cc6a720bf3dbd"
+    },
+    {
+      "input_sha256": "01cc3af7623ab21aa53b17d81e8d0049b13da94f8e2571a99922dd4156eabbd8",
+      "ordinal": 4,
+      "output_filename": "Chain Buzzer.md",
+      "product_id": "chain-buzzer-1fc7e7a7a6b2",
+      "product_name": "Chain Buzzer",
+      "source_path": "chain/Chain_Buzzer.md",
+      "source_sha256": "aa758a84b50839a2e858fbd25bc386c2db49b66ea2445d582aa1a8423d60d754"
+    },
+    {
+      "input_sha256": "cfb3d821584b390adb0c565e2dfff9f734f966297c01bd13ca79460acfe63cd4",
+      "ordinal": 5,
+      "output_filename": "Chain PIR.md",
+      "product_id": "chain-pir-7fef392a5345",
+      "product_name": "Chain PIR",
+      "source_path": "chain/Chain_PIR.md",
+      "source_sha256": "bf35cc1dd54e08480ccfa363746526622840c5ae8168cee2995c504bbfe19499"
+    },
+    {
+      "input_sha256": "08179ec84bd677ac335307dde2445357447c84f06ac5d6ed0fa948ecb620a7e4",
+      "ordinal": 6,
+      "output_filename": "PaperMono-Lite.md",
+      "product_id": "papermono-lite-2ac40c4cf3c5",
+      "product_name": "PaperMono-Lite",
+      "source_path": "core/PaperMono-Lite.md",
+      "source_sha256": "7b6949df2252c7ea73b07fd1335c8d3ae2512268faa7cf24c9f08f444dfdf161"
+    },
+    {
+      "input_sha256": "34fe5205acb7dda5cceb81b99bf10a355148123360c63ad4f903e86ba6e59df1",
+      "ordinal": 7,
+      "output_filename": "PaperMono.md",
+      "product_id": "papermono-59c8b1a7cae9",
+      "product_name": "PaperMono",
+      "source_path": "core/PaperMono.md",
+      "source_sha256": "a0486bb3b3511e4fbce79a0b6e66b7d428086909edf54ae217f3930bfbaa51e1"
+    },
+    {
+      "input_sha256": "48b63abca5e936778f0dead79c62d50aa8e57f56ddf904ec86ea3d2d2ee6d6f0",
+      "ordinal": 8,
+      "output_filename": "StickC-Plus SE.md",
+      "product_id": "stickc-plus-se-7629b95652fc",
+      "product_name": "StickC-Plus SE",
+      "source_path": "core/StickC-Plus_SE.md",
+      "source_sha256": "0a00367c664c2446f865f6ea5500b2973c43cd3dcf6d3a3c80dc7632487af7a8"
+    },
+    {
+      "input_sha256": "d9a2c540f5967f3f59ee0513b94eb8f38c5cc06b825bfe8c9d4af3d4524b3f17",
+      "ordinal": 9,
+      "output_filename": "Faces_Bottom3.md",
+      "product_id": "faces-bottom3-f33b429808b8",
+      "product_name": "Faces_Bottom3",
+      "source_path": "faces/Faces_Bottom3.md",
+      "source_sha256": "bd1f85fd23f369ffc56346b78af27a37b5b007aefe0aa851f125a7b769b12862"
+    },
+    {
+      "input_sha256": "7559485d16db91a8ab855d9c5386338461c9153cd67eae775efd555f17a99e0f",
+      "ordinal": 10,
+      "output_filename": "Faces_Calculator3.md",
+      "product_id": "faces-calculator3-f4573557e7cb",
+      "product_name": "Faces_Calculator3",
+      "source_path": "faces/Faces_Calculator3.md",
+      "source_sha256": "66b9157a4825efa4ee153170205ba344f18d14f83ed0e3b84d123f5215651ab0"
+    },
+    {
+      "input_sha256": "a78289e7d347d75539446801f98d921593a30a3851623493cb7e928df471959a",
+      "ordinal": 11,
+      "output_filename": "Faces_Gamepad3.md",
+      "product_id": "faces-gamepad3-674f9085ab88",
+      "product_name": "Faces_Gamepad3",
+      "source_path": "faces/Faces_Gamepad3.md",
+      "source_sha256": "2fa18ce68dc2a570baccb201a4ae476e836959d06c3a1197112162a67e6a557e"
+    },
+    {
+      "input_sha256": "1e53c50be7a18fd013b055ae7a849053fd1a4d8e0d91d3b3f67f64f18d4f3064",
+      "ordinal": 12,
+      "output_filename": "Faces_Keyboard3.md",
+      "product_id": "faces-keyboard3-d38f8dd92d25",
+      "product_name": "Faces_Keyboard3",
+      "source_path": "faces/Faces_Keyboard3.md",
+      "source_sha256": "a6d425243d2616503f9946873ca2f8e7e600509497f3cf3b53c906b16b2bf380"
+    },
+    {
+      "input_sha256": "22b9919aa0859cd21e30accc85ed8fc8bbad29abc79415c0a5ea88bb7a2f009a",
+      "ordinal": 13,
+      "output_filename": "Module13.2 LoRa-1262.md",
+      "product_id": "module13-2-lora-1262-b5bb939be918",
+      "product_name": "Module13.2 LoRa-1262",
+      "source_path": "module/Module13.2_LoRa-1262.md",
+      "source_sha256": "9ddae3166e9a09ab5c196f777054071172bf45d1c2741193e98b399390b0c21a"
+    },
+    {
+      "input_sha256": "48665b52ea8e0d6c093fc2ffe020eff7ceef9d7664536f6a63c9292db5828aab",
+      "ordinal": 14,
+      "output_filename": "Stamp-AddOn Cam3660.md",
+      "product_id": "stamp-addon-cam3660-5a49456d2fd0",
+      "product_name": "Stamp-AddOn Cam3660",
+      "source_path": "stamp/Stamp-AddOn_Cam3660.md",
+      "source_sha256": "ef7f5aa818b7eac0fa5738fb72592402d11b0b25c2e10efbe33361fe10a766e1"
+    },
+    {
+      "input_sha256": "4e22a46452507e3a12a4e8fac482de7040e1c5fe344fb90cc6bf13158c45bd8a",
+      "ordinal": 15,
+      "output_filename": "Stamp LoRa-1262.md",
+      "product_id": "stamp-lora-1262-f672554cdfb9",
+      "product_name": "Stamp LoRa-1262",
+      "source_path": "stamp/Stamp_LoRa-1262.md",
+      "source_sha256": "372dedb6afbe4890df5bf31131eab920a8b41044575af7434a59e01545906dc3"
+    },
+    {
+      "input_sha256": "b42f437a1833944ba9579ff9240c886fc509b9157e6df3a084d30d302ae08a02",
+      "ordinal": 16,
+      "output_filename": "Stamp UWB.md",
+      "product_id": "stamp-uwb-97095012361a",
+      "product_name": "Stamp UWB",
+      "source_path": "stamp/Stamp_UWB.md",
+      "source_sha256": "4767de8c6f5eb86bf490c03e6c1e91b40899d589585f3c9fa0547b63d92b7831"
+    },
+    {
+      "input_sha256": "cbb28031d6b08a6085cbe4547d0b8d04b968df878562e61dc196a40902cd95b2",
+      "ordinal": 17,
+      "output_filename": "Stamp UWB F.md",
+      "product_id": "stamp-uwb-f-c5fdb11e08a9",
+      "product_name": "Stamp UWB F",
+      "source_path": "stamp/Stamp_UWB_F.md",
+      "source_sha256": "60acce4bd3a22aaee72412d606a20102a9bf2aa7bdc7d3d9885f467da69907ca"
+    },
+    {
+      "input_sha256": "7c13ff0e102b43a27ad42a8779d1ac9cad658983aa676e04bf9e1cec4d314f87",
+      "ordinal": 18,
+      "output_filename": "StamPLC IO.md",
+      "product_id": "stamplc-io-8af85d3bc38c",
+      "product_name": "StamPLC IO",
+      "source_path": "stamplc/StamPLC_IO.md",
+      "source_sha256": "f83613b825575030a0b08d419a99d4d22e15a2b3805aaa7837bc7ab543da3c39"
+    }
+  ],
+  "schema_version": 1,
+  "target_count": 18
+}

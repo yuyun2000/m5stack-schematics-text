@@ -1,0 +1,21 @@
+{
+  "dry_run": false,
+  "failed": 0,
+  "published": 1,
+  "results": [
+    {
+      "backup": null,
+      "draft_action": "unchanged",
+      "dry_run": false,
+      "errors": [],
+      "needs_review": 1,
+      "product_id": "stamp-uwb-97095012361a",
+      "product_name": "Stamp UWB",
+      "publish_action": "unchanged",
+      "sha256": "c4650a55ffcc950f563f6195fb14fbc0d672c5a9ada606f176a52aac11b74f41",
+      "status": "valid",
+      "uncertain_facts": 1
+    }
+  ],
+  "schema_version": 1
+}

@@ -1,0 +1,21 @@
+{
+  "dry_run": false,
+  "failed": 0,
+  "published": 1,
+  "results": [
+    {
+      "backup": null,
+      "draft_action": "unchanged",
+      "dry_run": false,
+      "errors": [],
+      "needs_review": 3,
+      "product_id": "stamp-addon-cam3660-5a49456d2fd0",
+      "product_name": "Stamp-AddOn Cam3660",
+      "publish_action": "unchanged",
+      "sha256": "200b7d2ff81dd5c01ccf8d77c533cc6d44217aebfd8d411b7bbe64d66454aa7e",
+      "status": "valid",
+      "uncertain_facts": 3
+    }
+  ],
+  "schema_version": 1
+}

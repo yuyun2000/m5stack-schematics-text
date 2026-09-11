@@ -1,0 +1,21 @@
+{
+  "dry_run": false,
+  "failed": 0,
+  "published": 1,
+  "results": [
+    {
+      "backup": null,
+      "draft_action": "unchanged",
+      "dry_run": false,
+      "errors": [],
+      "needs_review": 5,
+      "product_id": "faces-keyboard3-d38f8dd92d25",
+      "product_name": "Faces_Keyboard3",
+      "publish_action": "unchanged",
+      "sha256": "456ababd0bc5d7a7cb48cec8408d747dc3d51de0f507d4347b311d5ed36b96d8",
+      "status": "valid",
+      "uncertain_facts": 5
+    }
+  ],
+  "schema_version": 1
+}

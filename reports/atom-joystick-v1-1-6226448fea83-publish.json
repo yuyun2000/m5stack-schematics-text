@@ -1,0 +1,21 @@
+{
+  "dry_run": false,
+  "failed": 0,
+  "published": 1,
+  "results": [
+    {
+      "backup": null,
+      "draft_action": "unchanged",
+      "dry_run": false,
+      "errors": [],
+      "needs_review": 9,
+      "product_id": "atom-joystick-v1-1-6226448fea83",
+      "product_name": "Atom JoyStick v1.1",
+      "publish_action": "unchanged",
+      "sha256": "b1cfb657d8149d94c1fcdb7793dc1bab80ed318aa21c96cef8eebf6c185981d2",
+      "status": "valid",
+      "uncertain_facts": 9
+    }
+  ],
+  "schema_version": 1
+}

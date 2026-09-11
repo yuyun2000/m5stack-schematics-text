@@ -194,7 +194,9 @@ python '.\scripts\manage_description_batch.py' claim-next --worker pilot_485t --
 
 ## 下一轮增量更新
 
-先同步远端并重建清单。第一次写入后立刻再运行一次，第二次的 `state/product_manifest.json` 必须报告 `UNCHANGED`；兼容 CSV/XLSX 会被重新导出，仍可能显示 `UPDATED`：
+本仓库远端只保存上一次已处理的产品源快照，`git pull` 不会自动获取 Nuxt 文档仓库中的新产品。先将当前 `nuxt-m5-docs/static/zh_CN` 与本仓库 `zh_CN` 按产品 ID 和“原理图”章节比较，只同步新增、改名或原理图 URL 变化的产品 Markdown；不要在未审计影响范围时直接覆盖整个目录，否则无关的正文排版变化也会使现有 facts 的源哈希失效。`zh_CN/schematic/` 是发布目标，不参与源同步。
+
+完成产品源同步后再同步远端并重建清单。第一次写入后立刻再运行一次，第二次的 `state/product_manifest.json` 必须报告 `UNCHANGED`；兼容 CSV/XLSX 会被重新导出，仍可能显示 `UPDATED`：
 
 ```powershell
 git pull --ff-only origin main

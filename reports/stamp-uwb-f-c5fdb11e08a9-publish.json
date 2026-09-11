@@ -1,0 +1,21 @@
+{
+  "dry_run": false,
+  "failed": 0,
+  "published": 1,
+  "results": [
+    {
+      "backup": null,
+      "draft_action": "unchanged",
+      "dry_run": false,
+      "errors": [],
+      "needs_review": 4,
+      "product_id": "stamp-uwb-f-c5fdb11e08a9",
+      "product_name": "Stamp UWB F",
+      "publish_action": "unchanged",
+      "sha256": "6d29593a715859171bbb881d5be3b425dea5b6d8f348c9ba31fbcb0da9986c5f",
+      "status": "valid",
+      "uncertain_facts": 4
+    }
+  ],
+  "schema_version": 1
+}

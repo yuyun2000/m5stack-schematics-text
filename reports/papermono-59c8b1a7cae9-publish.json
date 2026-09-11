@@ -1,0 +1,21 @@
+{
+  "dry_run": false,
+  "failed": 0,
+  "published": 1,
+  "results": [
+    {
+      "backup": null,
+      "draft_action": "unchanged",
+      "dry_run": false,
+      "errors": [],
+      "needs_review": 9,
+      "product_id": "papermono-59c8b1a7cae9",
+      "product_name": "PaperMono",
+      "publish_action": "unchanged",
+      "sha256": "5d6c4dcd50e7b34821ee1131e6f7a7785bc80359266b0a9db07dfbf0319b038a",
+      "status": "valid",
+      "uncertain_facts": 9
+    }
+  ],
+  "schema_version": 1
+}

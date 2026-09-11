@@ -15,6 +15,8 @@
 <img src="https://m5stack-doc.oss-cn-shenzhen.aliyuncs.com/1243/C154-CardputerZero-main-pictures_08.png">
 <img src="https://m5stack-doc.oss-cn-shenzhen.aliyuncs.com/1243/C154-CardputerZero-main-pictures_09.png">
 <img src="https://m5stack-doc.oss-cn-shenzhen.aliyuncs.com/1243/C154-CardputerZero-main-pictures_10.png">
+<img src="https://m5stack-doc.oss-cn-shenzhen.aliyuncs.com/1243/C154-CardputerZero-main-pictures_11.png">
+<img src="https://m5stack-doc.oss-cn-shenzhen.aliyuncs.com/1243/C154-CardputerZero-main-pictures_12.png">
 </PictureViewer>
 
 ## 描述
@@ -23,49 +25,50 @@
 
 ## 产品特性
 
-- Raspberry Pi CM0 核心主控:
-  - RP3A0 (BCM2837)
-  - CPU：四核 Cortex-A53 @ 1 GHz, ARMv8-A (aarch64)
-  - 内存: 512 MB LPDDR2
+- 核心性能:
+  - Raspberry Pi Compute Module 0 (CM0)
+  - RP3A0 (BCM2837)，四核 Cortex-A53 @ 1 GHz
+  - 512 MB LPDDR2
 - 人机交互:
+  - 1.9" LCD 屏幕，分辨率 320 x 170
   - 46 键矩阵键盘
-  - 1.9" LCD 屏幕 @ ST7789v3, 分辨率 170x320
-  - 摄像头 @ IMX219 CSI 4-Lane 8MP (3280 x 2464)
-  - IMU BMI270 + BMM150
+  - IMX219 8MP 摄像头
+  - BMI270 IMU + BMM150 磁力计
   - 红外发射 + 接收
-- 无线通信:
-  - 2.4GHz Wi-Fi 802.11 b/g/n
-  - BT 4.2 标准，支持低功耗模式（BLE）
-- 丰富接口:
-  - 1× 高清数字音视频输出接口，支持 1080P 30fps
-  - 1x 10/100M 以太网接口
+- 网络通信:
+  - 2.4 GHz Wi-Fi 802.11 b/g/n
+  - 10/100M 以太网
+- USB 扩展:
+  - 支持 Host / Slave 模式切换
+  - 1x USB-A 2.0
+  - 2x USB Type-C 2.0，其中右侧接口支持 USB OTG
+- 外部扩展:
   - 1x microSD 卡槽
-  - 1x HY2.0-4P 拓展接口 (内置电子开关可切换 I2C / UART 接口)
-  - Cap EXT 2.54-14P 拓展总线:
-    - SPI, UART, I2C, USB, GPIO, 5VIN/OUT
-- USB 拓展:
-  - 独立 Host / Slave 切换开关:
-  - Slave 模式：控制机身右侧 USB Type-C 接口
-    - 1x USB Type-C 供电 / USB 2.0 + OTG
-  - Host 模式：控制机身左侧 USB 接口
-    - 1x USB-A 2.0 接口
-    - 1x USB Type-C 2.0 接口
-- 音频交互:
+  - 1x HY2.0-4P 接口，支持 I2C / UART 切换
+  - EXT 2.54-14P 扩展总线，支持 SPI、UART、I2C、USB 和 GPIO
+- 音视频:
   - ES8389 音频编解码
-  - MEMS 麦克风 x1
-  - AW8737A 扬声器功放 + 1W @ 8Ω 扬声器
-  - 3.5 音频输出接口 TRRS
-- 视频编解码:
-  - Decode: 1080P 30fps in H.264 or MPEG-4
-  - Encode: 1080P 30fps in H.264
-- 内置 3.7V@ 1500mAh 锂电池
-- BQ27220YZFR 电池状态读取
-- RTC RX8130CE
+  - 1x MEMS 麦克风
+  - 1W @ 8Ω 扬声器
+  - 3.5mm TRRS 音频输入/输出接口
+  - 支持 1080P 30fps 视频输出与编解码
+- 电源管理:
+  - 内置 DC 3.7V@1750mAh 锂电池，集成 NTC
+  - BQ27220YZFR 电池计量
+  - RX8130CE RTC
 
 ## 包装内容
 
+#> 产品提示 | CardputerZero 标准版标配 32GB microSD 卡，CardputerZero-Lite 不含 microSD 卡，需另行购置。
+
+### CardputerZero (SKU:C154)
+
 - 1 x CardputerZero
 - 1 x 32GB microSD
+
+### CardputerZero-Lite (SKU:C155)
+
+- 1 x CardputerZero-Lite
 
 ## 应用场景
 
@@ -76,25 +79,37 @@
 
 ## 规格参数
 
-| 规格         | 参数                                                        |
-| ------------ | ----------------------------------------------------------- |
-| 核心主控     | Raspberry Pi Compute Module 0 (CM0)                         |
-| CPU          | RP3A0 (BCM2837)，四核 Cortex-A53 @ 1 GHz, ARMv8-A (aarch64) |
-| 内存         | 512 MB LPDDR2                                               |
-| Wi-Fi        | 2.4GHz Wi-Fi 802.11 b/g/n                                   |
-| 以太网       | 10/100M 以太网接口，SR9900A USB 2.0 转以太网芯片            |
-| 显示屏       | 1.9" LCD 屏幕 @ ST7789v3, 分辨率 170x320                    |
-| 摄像头       | IMX219 CSI 4-Lane 8MP (3280 x 2464)                         |
-| 键盘         | 46 键矩阵键盘                                               |
-| 扩展接口     | EXT 2.54-14P 拓展总线，1x HY2.0-4P 接口                     |
-| USB 拓展芯片 | GL852G-OHY60 USB 2.0 Hub                                    |
-| 待机功耗     | 2.5W                                                        |
-| 内置电池     | DC 3.7V@ 1500mAh                                            |
-| 电源         | 供电 / 充电建议 5V @ 2A                                     |
-| 产品尺寸     | 84.0 x 54.0 x 23.1mm                                        |
-| 产品重量     | Work in progress                                            |
-| 包装尺寸     | Work in progress                                            |
-| 毛重         | Work in progress                                            |
+| 规格         | 参数                                                                                  |
+| ------------ | ------------------------------------------------------------------------------------- |
+| 核心主控     | Raspberry Pi Compute Module 0 (CM0)                                                   |
+| CPU          | RP3A0 (BCM2837)，四核 Cortex-A53 @ 1 GHz, ARMv8-A (aarch64)                           |
+| 内存         | 512 MB LPDDR2                                                                         |
+| 存储         | microSD                                                                               |
+| Wi-Fi        | 2.4GHz Wi-Fi 802.11 b/g/n                                                             |
+| 以太网       | 10/100M 以太网接口，SR9900A USB 2.0 转以太网芯片                                      |
+| 显示屏       | 1.9" LCD 屏幕 @ ST7789v3, 分辨率 320 x 170                                            |
+| 摄像头       | IMX219 CSI 4-Lane 8MP (3280 x 2464)                                                   |
+| IMU & 磁力计 | BMI270 + BMM150                                                                       |
+| RTC          | RX8130CE                                                                              |
+| 红外         | 红外发射 + 接收                                                                       |
+| 键盘         | 46 键矩阵键盘                                                                         |
+| 音频编解码   | ES8389                                                                                |
+| 麦克风       | 1x MEMS 麦克风                                                                        |
+| 扬声器       | AW8737A 扬声器功放 + 1W @ 8Ω 扬声器                                                   |
+| 音频接口     | 3.5mm TRRS 音频输入/输出接口，推荐适配 35Ω 阻抗耳机                                   |
+| 视频输出     | 1x 高清数字音视频输出接口，支持 1080P 30fps                                           |
+| 视频编解码   | H.264 / MPEG-4 1080P 30fps 解码，H.264 1080P 30fps 编码                               |
+| 扩展接口     | EXT 2.54-14P 扩展总线，1x HY2.0-4P 接口（I2C / UART 可切换，5V 输出最大电流 < 500mA） |
+| USB 接口     | 1x USB-A 2.0，2x USB Type-C 2.0，支持 Host / Slave 切换及 USB OTG                     |
+| USB 拓展芯片 | GL852G-OHY60 USB 2.0 Hub                                                              |
+| 电池计量     | BQ27220YZFR                                                                           |
+| 待机功耗     | 2.5W                                                                                  |
+| 内置电池     | DC 3.7V@ 1750mAh 集成 NTC                                                             |
+| 电源         | 供电 / 充电建议 5V @ 2A                                                               |
+| 产品尺寸     | 84.0 x 54.0 x 23.1mm                                                                  |
+| 产品重量     | Work in progress                                                                      |
+| 包装尺寸     | Work in progress                                                                      |
+| 毛重         | Work in progress                                                                      |
 
 ## 操作说明
 
@@ -102,44 +117,50 @@
 
 ## 原理图
 
-- [CardputerZero 原理图 PDF](https://m5stack-doc.oss-cn-shenzhen.aliyuncs.com/1243/C154-CardputerZERO_SCHE_PRJ_V0.3_20260430.pdf)
+- [CardputerZero 原理图 PDF](https://m5stack-doc.oss-cn-shenzhen.aliyuncs.com/1243/C154-CardputerZERO_SCH_V0.6.1_20260702.pdf)
 
 <SchViewer>
-<img src="https://m5stack-doc.oss-cn-shenzhen.aliyuncs.com/1243/C154-CardputerZERO_SCHE_PRJ_V0.3_20260430_page_01.png">
-<img src="https://m5stack-doc.oss-cn-shenzhen.aliyuncs.com/1243/C154-CardputerZERO_SCHE_PRJ_V0.3_20260430_page_02.png">
-<img src="https://m5stack-doc.oss-cn-shenzhen.aliyuncs.com/1243/C154-CardputerZERO_SCHE_PRJ_V0.3_20260430_page_03.png">
-<img src="https://m5stack-doc.oss-cn-shenzhen.aliyuncs.com/1243/C154-CardputerZERO_SCHE_PRJ_V0.3_20260430_page_04.png">
-<img src="https://m5stack-doc.oss-cn-shenzhen.aliyuncs.com/1243/C154-CardputerZERO_SCHE_PRJ_V0.3_20260430_page_05.png">
-<img src="https://m5stack-doc.oss-cn-shenzhen.aliyuncs.com/1243/C154-CardputerZERO_SCHE_PRJ_V0.3_20260430_page_06.png">
-<img src="https://m5stack-doc.oss-cn-shenzhen.aliyuncs.com/1243/C154-CardputerZERO_SCHE_PRJ_V0.3_20260430_page_07.png">
-<img src="https://m5stack-doc.oss-cn-shenzhen.aliyuncs.com/1243/C154-CardputerZERO_SCHE_PRJ_V0.3_20260430_page_08.png">
+<img src="https://m5stack-doc.oss-cn-shenzhen.aliyuncs.com/1243/C154-CardputerZERO_SCH_V0.6.1_20260702_page_01.png">
+<img src="https://m5stack-doc.oss-cn-shenzhen.aliyuncs.com/1243/C154-CardputerZERO_SCH_V0.6.1_20260702_page_02.png">
+<img src="https://m5stack-doc.oss-cn-shenzhen.aliyuncs.com/1243/C154-CardputerZERO_SCH_V0.6.1_20260702_page_03.png">
+<img src="https://m5stack-doc.oss-cn-shenzhen.aliyuncs.com/1243/C154-CardputerZERO_SCH_V0.6.1_20260702_page_04.png">
+<img src="https://m5stack-doc.oss-cn-shenzhen.aliyuncs.com/1243/C154-CardputerZERO_SCH_V0.6.1_20260702_page_05.png">
+<img src="https://m5stack-doc.oss-cn-shenzhen.aliyuncs.com/1243/C154-CardputerZERO_SCH_V0.6.1_20260702_page_06.png">
+<img src="https://m5stack-doc.oss-cn-shenzhen.aliyuncs.com/1243/C154-CardputerZERO_SCH_V0.6.1_20260702_page_07.png">
+<img src="https://m5stack-doc.oss-cn-shenzhen.aliyuncs.com/1243/C154-CardputerZERO_SCH_V0.6.1_20260702_page_08.png">
+<img src="https://m5stack-doc.oss-cn-shenzhen.aliyuncs.com/1243/C154-CardputerZERO_SCH_V0.6.1_20260702_page_09.png">
+<img src="https://m5stack-doc.oss-cn-shenzhen.aliyuncs.com/1243/C154-CardputerZERO_SCH_V0.6.1_20260702_page_10.png">
 </SchViewer>
 
 ## 管脚映射
 
 ### Display
 
-| CM0      | G10  | G11  | G25 | G8  |
-| -------- | ---- | ---- | --- | --- |
-| ST7789v3 | MOSI | SCLK | DC  | CS  |
+| CM0      | G10  | G11  | G25 | G8  | G5  |
+| -------- | ---- | ---- | --- | --- | --- |
+| ST7789v3 | MOSI | SCLK | DC  | CS  | TE  |
 
-| ST7789v3 | LCD_RST      | BL           |
-| -------- | ------------ | ------------ |
-| M5IOE1   | PYG5_LCD_RST | PYG10_BL_PWM |
+| ST7789v3 | LCD_RST       | BL           |
+| -------- | ------------- | ------------ |
+| M5IOE1   | PYG12_LCD_RST | PYG10_BL_PWM |
 
-通过 `M5IOE1` 拓展芯片的 `PYG5_LCD_RST` 控制屏幕复位,  `PYG10_BL_PWM` 控制屏幕背光。
+通过 `M5IOE1` 拓展芯片的 `PYG12_LCD_RST` 控制屏幕复位, `PYG10_BL_PWM` 控制屏幕背光。
 
 ### Audio
 
-| CM0          | G20 | G4   | G19  | G18  | G21  | G2  | G3  |
-| ------------ | --- | ---- | ---- | ---- | ---- | --- | --- |
-| ES8389(0x10) | DIN | MCLK | LRCK | BLCK | DOUT | SDA | SCL |
+| CM0          | G20_I2S_DIN | G19_I2S_LRCK | G18_I2S_BLCK | G21_I2S_DOUT | G2_I2C1_SDA | G3_I2C1_SCL |
+| ------------ | ----------- | ------------ | ------------ | ------------ | ----------- | ----------- |
+| ES8389(0x10) | DOUT        | LRCK         | BCLK         | MCLK/DIN     | SDA         | SCL         |
 
 | CM0     | G24 |
 | ------- | --- |
 | AW8737A | EN  |
 
-3.5mm 音频输出接口具备插入检测功能。当 `HP_DET` 检测到耳机插头接入时，系统自动切换输出线路；未插入耳机时，将启用 **AW8737A** 扬声器功放。功放使能信号可由 **CM0 的 G24 引脚** 进行控制。
+| CM0             | G17    |
+| --------------- | ------ |
+| 3.5mm Headphone | HP_DET |
+
+3.5mm 音频输入/输出接口具备插入检测功能。当 `HP_DET` 检测到耳机插头接入时，系统自动切换输出线路；未插入耳机时，将启用 **AW8737A** 扬声器功放。功放使能信号可由 **CM0 的 G24 引脚** 进行控制。
 
 ### USB 2.0
 
@@ -164,32 +185,49 @@ CardputerZero 将 CM0 内部的 USB 接口资源，通过 USB Hub 集线器的�
 | IMU - BMI270 (0x68)           | SDA         | SCL         |        |
 | RTC - RX8130CE (0x32)         | SDA         | SCL         |        |
 
+| BMI270        | BMI_SDA | BMI_SCL |
+| ------------- | ------- | ------- |
+| BMM150 (0x10) | SDA     | SCL     |
+
 ### Power Control
 
-| CM0           | G4          | G17 | G16    |
-| ------------- | ----------- | --- | ------ |
-| GROVE_FUNC_SW | I2C/UART_SW |     |        |
-| GROVE_5V_OUT  |             | EN  |        |
-| Camera        |             |     | CAM_EN |
+| CM0           | G4          |
+| ------------- | ----------- |
+| GROVE_FUNC_SW | I2C/UART_SW |
+
+| CM0    | G6     |
+| ------ | ------ |
+| SWITCH | SW_DET |
+
+`G6_SW_DET` 用于读取开关检测信号。
 
 ### M5IOE1
 
-| CM0           | G2_I2C1_SDA | G3_I2C1_SCL |
-| ------------- | ----------- | ----------- |
-| M5IOE1 (0x4F) | SDA         | SCL         |
+| CM0           | G2_I2C1_SDA | G3_I2C1_SCL | G16  |
+| ------------- | ----------- | ----------- | ---- |
+| M5IOE1 (0x4F) | SDA         | SCL         | NRST |
 
 - 电源状态
 
-| M5IOE1 | PYG2   | PYG4    | PYG5      | PYG14         |
-| ------ | ------ | ------- | --------- | ------------- |
-| POWER  | 5V_ADC | USB_DET | CM05V_ADC | PYG14_VSYS_EN |
+| M5IOE1 | PYG2   | PYG4     | PYG5    | PYG14  |
+| ------ | ------ | -------- | ------- | ------ |
+| POWER  | HW_DET | GROVE_EN | PWR_DET | PWR_EN |
 
 - 外设复位
 
-| M5IOE1       | PYG3   | PYG6    |
-| ------------ | ------ | ------- |
-| TCA8418RTWR  | KB_RST |         |
-| GL852G-OHY60 |        | HUB_RST |
+| M5IOE1             | PYG3       | PYG6   |
+| ------------------ | ---------- | ------ |
+| KEYBOARD & USB_HUB | KB_HUB_RST |        |
+| MIC                |            | MIC_SW |
+
+`PYG3_KB_HUB_RST` 为键盘控制器 `TCA8418RTWR` 与 USB Hub `GL852G-OHY60` 的共用复位控制信号。
+
+`PYG6_MIC_SW` 用于 3.5mm TRRS 接口的麦克风通道切换，可在 `CTIA / OMTP` 标准间切换。
+
+| PYG6_MIC_SW | Standard |
+| ----------- | -------- |
+| LOW         | CTIA     |
+| HIGH        | OMTP     |
 
 - HAT P0/P1 功能切换
 
@@ -197,12 +235,30 @@ CardputerZero 将 CM0 内部的 USB 接口资源，通过 USB Hub 集线器的�
 | ------ | ----------- |
 | SW     | PYG1_HAT_SW |
 
-- 大小写指示灯
+| M5IOE1 | PYG13        |
+| ------ | ------------ |
+| HAT_EN | PYG13_HAT_EN |
 
-| M5IOE1   | PYG8     | PYG9      |
-| -------- | -------- | --------- |
-| KEY_LED1 | BLUE_LED |           |
-| KEY_LED2 |          | GREEN_LED |
+`PYG13_HAT_EN` 用于 HAT 接口使能控制。
+
+| PYG13_HAT_EN | HAT PORT POWER |
+| ------------ | -------------- |
+| LOW          | OFF            |
+| HIGH         | ON             |
+
+- CAPS LOCKS 指示灯
+
+| M5IOE1   | PYG8      | PYG9   | PYG11   |
+| -------- | --------- | ------ | ------- |
+| KEY_LED1 | SHIFT_LED |        |         |
+| KEY_LED2 |           | FN_LED |         |
+| KEY_LED3 |           |        | SYM_LED |
+
+### IR TX & RX
+
+| CM0 | G12   | G13   |
+| --- | ----- | ----- |
+| IR  | IR_TX | IR_RX |
 
 ### HY2.0-4P
 
@@ -219,7 +275,7 @@ CardputerZero 将 CM0 内部的 USB 接口资源，通过 USB Hub 集线器的�
 | LOW            | UART       |
 | HIGH           | I2C1       |
 
-通过 `CM0` 的 `G17_GROVE_EN` 使能控制接口 5V 输出。 (最大供电电流 < 500mA)
+通过 `M5IOE1` 的 `PYG4_GROVE_EN` 使能控制接口 5V 输出。 (最大供电电流 < 500mA)
 
 ### EXT 2.54-14P
 
@@ -242,15 +298,17 @@ CardputerZero 将 CM0 内部的 USB 接口资源，通过 USB Hub 集线器的�
 | LOW         | GPIO26 / GPIO23    |
 | HIGH        | USB Hub - USB4     |
 
-## 数据手册
+## 外观贴纸
 
-- [M5IOE1 Chip User Manual](https://m5stack-doc.oss-cn-shenzhen.aliyuncs.com/1210/IO_Expander_Datasheet_EN.pdf)
+- [CardputerZero 贴纸设计文件 CDR](https://m5stack-doc.oss-cn-shenzhen.aliyuncs.com/1243/CardputerZero_Labels.zip)
 
 ## 软件开发
 
 ### 快速上手
 
-coming soon...
+- [CardputerZero 镜像烧录](/zh_CN/guide/linux/cardputerzero/image)
+- [CardputerZero ADB 连接调试](/zh_CN/guide/linux/cardputerzero/adb)
+- [CardputerZero 应用开发模板](https://github.com/CardputerZero/Template)
 
 ### SDK
 
@@ -263,12 +321,12 @@ coming soon...
 ## 产品对比
 
 ::compare-table
-| 产品对比项          | [CardputerZero](#todo) ![CardputerZero](https://m5stack-doc.oss-cn-shenzhen.aliyuncs.com/1145/coming-soon.png) | [CardputerZero-Lite](#todo) ![CardputerZero-Lite](https://m5stack-doc.oss-cn-shenzhen.aliyuncs.com/1145/coming-soon.png) |
-| ------------------- | -------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------ |
-| 核心                | Raspberry Pi CM0                                                                                               | Raspberry Pi CM0                                                                                                         |
-| Wi-Fi & Bluetooth   | ✅                                                                                                              | ✅                                                                                                                        |
-| 红外发射 + 接收     | ✅                                                                                                              | ✅                                                                                                                        |
-| 8MP 摄像头          | ✅                                                                                                              | ❌                                                                                                                        |
-| IMU BMI270 + BMM150 | ✅                                                                                                              | ❌                                                                                                                        |
-| 标配 32GB microSD   | ✅                                                                                                              | ❌                                                                                                                        |
+| 产品对比项          | [CardputerZero](/zh_CN/CardputerZero) ![CardputerZero](https://m5stack-doc.oss-cn-shenzhen.aliyuncs.com/1243/C154-CardputerZero-main-pictures_04.jpg) | [CardputerZero-Lite](#todo) ![CardputerZero-Lite](https://m5stack-doc.oss-cn-shenzhen.aliyuncs.com/1145/coming-soon.png) |
+| ------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------ |
+| 核心                | Raspberry Pi CM0                                                                                                                                      | Raspberry Pi CM0                                                                                                         |
+| Wi-Fi & BT          | ✅                                                                                                                                                     | ✅                                                                                                                        |
+| 红外发射 + 接收     | ✅                                                                                                                                                     | ✅                                                                                                                        |
+| 8MP 摄像头          | ✅                                                                                                                                                     | ❌                                                                                                                        |
+| IMU BMI270 + BMM150 | ✅                                                                                                                                                     | ❌                                                                                                                        |
+| 标配 32GB microSD   | ✅                                                                                                                                                     | ❌                                                                                                                        |
 ::

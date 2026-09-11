@@ -952,6 +952,118 @@ Battery Detect
 ## 相关视频
 
 - Stamp-S3 GroveBreakOut 产品介绍以及示例"
+AddOn Display In For PoE-P4,https://m5stack-doc.oss-cn-shenzhen.aliyuncs.com/1265/SCH_UnitPoEP4_display_in_V0.3_SCH_PDF_20260326_2026_03_26_16_04_18_page_01.png,"# AddOn Display In For PoE-P4
+
+<span class=""product-sku"">SKU:U220</span>
+
+## 描述
+
+**AddOn Display In For PoE-P4** 是一款适配 [Unit PoE-P4](/zh_CN/unit/Unit_PoE-P4) 的 HDMI 视频输入扩展模组。模块基于 `LT6911D` 芯片，可将外部设备输入的 `HDMI` 视频信号转换为 `2-Lane MIPI CSI` 信号并传输至 Unit PoE-P4，便于主控对视频画面进行采集、处理与分析。
+
+除视频输入外，模块还集成了外设连接与本地存储相关扩展能力。板载 microSD 插槽接入主控 `SDIO` 总线，可用于存储采集的视频、图像及相关数据；板载 `USB Type-A` 接口可用于连接鼠标、键盘等外设。视频、控制、存储与 USB 信号均通过 24P FPC 接口连接至 Unit PoE-P4，适用于 HDMI 视频采集、图像处理与分析、机器视觉、视频监控与嵌入式多媒体终端等应用场景。
+
+## 产品特性
+
+- 适配 Unit PoE-P4 的 HDMI 视频输入扩展模组
+- 基于 `LT6911D` 实现 `HDMI` 转 `MIPI CSI` 视频输入
+- 标准 `HDMI Type-A` 输入接口，便于快速接入外部 HDMI 视频源
+- 板载 microSD 插槽接入主控 `SDIO` 总线，支持本地存储采集的视频、图像及相关数据
+- 板载 `USB Type-A` 接口，支持鼠标、键盘等外设接入
+- 支持构建视频采集、图像处理、外设连接与本地存储联动的一体化应用方案
+- 支持 `1280 x 720 @ 60Hz` 和 `1920 x 1080 @ 30Hz`输入分辨率
+
+## 包装内容
+
+- 1 x AddOn Display In For PoE-P4
+- 1 x 24P FPC 排线 (0.5mm 间距)
+
+## 应用场景
+
+- HDMI 视频采集
+- 图像处理与分析
+- 机器视觉
+- 视频监控
+- 嵌入式多媒体终端
+
+## 规格参数
+
+| 规格          | 参数                                                  |
+| ------------- | ----------------------------------------------------- |
+| 转换芯片      | LT6911D                                               |
+| I2C 地址      | 0x56                                                  |
+| 主连接接口    | 24P FPC (0.5mm 间距)                                  |
+| 输出信号      | 2-Lane MIPI CSI / INTIO                               |
+| 输入信号      | SYS_SDA / SYS_SCL / USB1_DP / USB1_DN / SDIO / TF_DET |
+| HDMI 输入接口 | 1 x HDMI Type-A                                       |
+| USB 扩展接口  | 1 x USB Type-A                                        |
+| USB 带载能力  | 5V@0.5A                                               |
+| 存储扩展      | 1 x microSD 插槽                                      |
+| 电源输入      | DC 5V (由 Unit PoE-P4 扩展接口供电)                   |
+| HDMI 输入时序 | 1280 x 720 @ 60Hz / 1920 x 1080 @ 30Hz                |
+| 待机功耗      | DC 5V@30.75mA （整机，不包括 DSI 接口屏幕）           |
+| 工作功耗      | DC 5V@388.13mA （整机，包括 DSI 接口屏幕）            |
+| 产品尺寸      | 63.1 x 20.3 x 15.5mm                                  |
+| 产品重量      | 7.9g                                                  |
+| 包装尺寸      | 138.0 x 93.0 x 16.5mm                                 |
+| 毛重          | 11.0g                                                 |
+
+## 操作说明
+
+?> 注意事项 | 由于 Windows 与 macOS 默认启用了 GPU 缩放功能，`实际输出分辨率信号可能与系统中设置的分辨率不一致`，从而导致程序无法正常工作：<br>- Windows：需在显卡驱动中设置，才能正常输出目标分辨率信号显示。<br>- macOS：需借助第三方工具强制输出对应分辨率后，才能正常显示。
+
+## 原理图
+
+- [AddOn Display In For PoE-P4 原理图 PDF](https://m5stack-doc.oss-cn-shenzhen.aliyuncs.com/1265/SCH_UnitPoEP4_display_in_V0.3_SCH_PDF_20260326_2026_03_26_16_04_18.pdf)
+
+## 管脚映射
+
+<img src=""https://m5stack-doc.oss-cn-shenzhen.aliyuncs.com/1265/U220_AddOn_Display_In_For_PoE-P4_pinmap.jpg"">
+
+### 24P FPC CSI 接口
+
+| 信号组      | 对应信号                                        |
+| ----------- | ----------------------------------------------- |
+| I2C         | SYS_SCL、SYS_SDA                                |
+| MIPI CSI    | MIPI1_CLK_P/N、MIPI1_lane0_P/N、MIPI1_lane1_P/N |
+| 控制 / 电源 | RST_1V8、1V8、GND                               |
+
+### SDIO & USB & POWER
+
+::m5-bus-table
+| PIN      | LEFT | RIGHT | PIN    |
+| -------- | ---- | ----- | ------ |
+| SDIO_CMD | 1    | 1     | GND    |
+| SDIO_CK  | 2    | 2     |        |
+| SDIO_D3  | 3    | 3     |        |
+| SDIO_D2  | 4    | 4     | INTIO  |
+| SDIO_D1  | 5    | 5     | TF_DET |
+| SDIO_D0  | 6    | 6     | 3V3    |
+| USB1_DP  | 7    |       |        |
+| USB1_DN  | 8    |       |        |
+| 5V       | 9    |       |        |
+::
+
+## 尺寸图
+
+- [AddOn Display In For PoE-P4 模型尺寸PDF](https://m5stack-doc.oss-cn-shenzhen.aliyuncs.com/1265/U220-AddOn_Display_In_For_PoE-P4_model_size.pdf)
+
+<img src=""https://m5stack-doc.oss-cn-shenzhen.aliyuncs.com/1265/U220-AddOn_Display_In_For_PoE-P4_model_size_page_01.png"" width=""100%"">
+
+## 软件开发
+
+### UiFlow2
+
+- [AddOn Display In For PoE-P4 UiFlow2 文档](https://uiflow-micropython.readthedocs.io/zh-cn/latest/addon/display_in.html)  <!--英文链接：https://uiflow-micropython.readthedocs.io/en/latest/addon/display_in.html> -->
+
+### ESP-IDF
+
+- [AddOn Display In For PoE-P4 ESP-IDF 示例程序使用教程](/zh_CN/esp_idf/unit_poe_p4/addon_display_in_for_poe-p4)
+
+## 相关视频
+
+<VideoGallery>
+  <VideoItem title=""AddOn Display In For PoE-P4 产品介绍以及功能展示"" url=""https://m5stack-doc.oss-cn-shenzhen.aliyuncs.com/1265/U220_AddOn_Display_In_For_PoE-P4_video_CN.mp4"" />
+</VideoGallery>"
 AddOn_Display_Out_For_PoE-P4,https://m5stack-doc.oss-cn-shenzhen.aliyuncs.com/1253/SCH_Unit_PoE-P4_Display_OUT_V0.2_SCH_PDF_20260319_2026_03_19_16_32_08_page_01.png,"﻿# AddOn Display Out For PoE-P4
 
 <span class=""product-sku"">SKU:U221</span>
@@ -1702,6 +1814,167 @@ learn>| ![初次使用烧录固件教程](https://m5stack.oss-cn-shenzhen.aliyun
 ## 相关视频
 
 - Atom JoyStick 搭配 Stamp Fly 四轴飞行器基本功能演示"
+Atom JoyStick v1.1,https://m5stack.oss-cn-shenzhen.aliyuncs.com/resource/docs/products/app/Atom%20JoyStick/c0a25d850ef9122df3669baeab813e5.png,"# Atom JoyStick v1.1
+
+<span class=""product-sku"">SKU:K137-V11</span>
+
+## 描述
+
+**Atom JoyStick v1.1** 是 Atom JoyStick 的迭代升级版本，是一款多用途可编程双摇杆遥控器，主控由 AtomS3 升级为 [AtomS3R](/zh_CN/core/AtomS3R)。AtomS3R 集成 ESP32-S3-PICO-1-N8R8，配备 8MB Flash、8MB PSRAM 和 2.4 GHz Wi-Fi，并内置 BMI270 六轴姿态传感器与 BMM150 三轴地磁传感器。手柄底座采用 STM32F030F4P6 实现协处理功能，配备 2 个霍尔传感器五向摇杆、2 个功能按键、1 个拨动开关和 RGB 灯珠，并集成两路高压动力电池充电电路。产品出厂预烧录 StampFly 遥控固件，通过 ESP-NOW 协议与 StampFly 通信，固件源代码开源，适用于无人机操控、机器人控制、智能小车和各种 DIY 项目。
+
+## 教程 & 快速上手
+
+learn>| ![初次使用烧录固件教程](https://m5stack.oss-cn-shenzhen.aliyuncs.com/resource/docs/products/app/Atom%20JoyStick/c81e91d3b047ae3bee4895e69a7303b.png) | [StampFly & Atom JoyStick v1.1 固件烧录、上手教程](/zh_CN/guide/hobby_kit/stampfly/stamply_firmware) | 本教程将向你介绍，如何通过 M5Burner 给 StampFly 与 Atom JoyStick v1.1 烧录出厂固件，并完成设备配对、四轴飞行器基本操作及指示状态确认。 |
+
+## 注意事项
+
+?> 使用提醒 | 初次使用 Atom JoyStick v1.1 时，需要按照上述教程烧录遥控固件，完成后才可与 StampFly 配对飞行。
+
+#> 充电提醒 | 接通数据线充电，对应的电池前面有电源指示灯，**红色**代表电池正在充电，未充满电；**绿色**代表充满电，已达到 4.35V 的电压。
+
+?> 电池维护事项 | 1. 在负载下，切勿将电池放电至每节电池 3V 以下。<br/>2. 充满电的电池不要存放超过 3 天。长期存放时，请将电压保持在 3.8V 和 3.9V 之间。
+
+<img alt=""schematics"" src=""https://m5stack.oss-cn-shenzhen.aliyuncs.com/resource/docs/products/app/Atom%20JoyStick/%E5%85%85%E7%94%B5.png"" width=""50%"" />
+
+## 产品特性
+
+- STM32F030F4P6
+- 配备 AtomS3R
+  - ESP32-S3-PICO-1-N8R8
+  - 8MB Flash 和 8MB PSRAM
+  - 0.85 寸 IPS 屏幕 (分辨率 128 x 128)
+  - BMI270 六轴姿态传感器和 BMM150 三轴地磁传感器
+  - 增强型 3D 天线
+- 兼容 Atom 系列主控
+- 双摇杆、双按键、拨动开关
+- WS2812C RGB 灯珠
+- 两路高压锂电池充电电路
+- 电量检测
+
+## 包装内容
+
+- 1 x Atom JoyStick v1.1
+- 1 x 300mAh 高压锂电池
+
+## 应用场景
+
+- 无人机操控
+- 机器人控制
+- 智能小车
+- DIY 项目
+
+## 规格参数
+
+| 规格                       | 参数                                                             |
+| -------------------------- | ---------------------------------------------------------------- |
+| 主控                       | AtomS3R                                                          |
+| SoC                        | ESP32-S3-PICO-1-N8R8 @ Xtensa® 32 位 LX7 双核处理器，主频 240MHz |
+| Flash                      | 8MB                                                              |
+| PSRAM                      | 8MB Octal                                                        |
+| Wi-Fi                      | 2.4 GHz Wi-Fi                                                    |
+| 显示屏                     | 0.85 寸 IPS 屏幕                                                 |
+| 分辨率                     | 128 x 128                                                        |
+| 六轴姿态传感器             | BMI270 (I2C 地址：0x68)                                          |
+| 三轴地磁传感器             | BMM150 (通过 BMI270 Sensor Hub 接入)                             |
+| 协处理器                   | STM32F030F4P6                                                    |
+| 协处理器通信地址           | 0x59                                                             |
+| RGB                        | WS2812C                                                          |
+| 充电芯片                   | TP4067@4.35V                                                     |
+| 电池电量                   | 300mAh@1S                                                        |
+| 电池输出电压               | 4.35V                                                            |
+| 充电电流                   | DC 5V/430mA                                                      |
+| 电池充满时间 (Input:5V/1A) | 大约 55 分钟                                                     |
+| 按键                       | 左 / 右按键                                                      |
+| 蜂鸣器                     | 板载无源蜂鸣器 @5020                                             |
+| 工作温度                   | 0 ~ 40°C                                                         |
+| 产品尺寸                   | 84 x 60 x 31.5mm                                                 |
+| 包装尺寸                   | xxxmm                                                            |
+| 产品重量                   | xxxg                                                             |
+| 毛重                       | xxxg                                                             |
+
+## 原理图
+
+- [Atom JoyStick 底座原理图 PDF](https://m5stack.oss-cn-shenzhen.aliyuncs.com/resource/docs/products/app/Atom%20JoyStick/Sch_AtomJoystick_v0.3.pdf)
+- [AtomS3R 原理图 PDF](https://m5stack-doc.oss-cn-shenzhen.aliyuncs.com/680/Sch_M5_AtomS3R_v0.4.1.pdf)
+
+<img alt=""schematics"" src=""https://m5stack.oss-cn-shenzhen.aliyuncs.com/resource/docs/products/app/Atom%20JoyStick/c0a25d850ef9122df3669baeab813e5.png"" width=""100%"" />
+
+## 管脚映射
+
+### AtomS3R 与手柄底座
+
+- I2C 通信 (0x59)
+
+| Atom JoyStick v1.1 (AtomS3R)  | G39(SCL) | G38(SDA)  |
+| ----------------------------- | -------- | --------- |
+| STM32F030F4P6                 | PA9(SCL) | PA10(SDA) |
+
+### 蜂鸣器和 RGB 灯珠
+
+| Atom JoyStick v1.1 (AtomS3R)  | G5   | G6  |
+| ----------------------------- | ---- | --- |
+| BEEP                          | BEEP |     |
+| WS2812C                       |      | RGB |
+
+### 摇杆
+
+| STM32F030F4P6  | PA1       | PA2       | PA3       | PA6        | PA5        | PA7        |
+| -------------- | --------- | --------- | --------- | ---------- | ---------- | ---------- |
+| JoyStick_LEFT  | LEFT-SW-X | LEFT-SW-Y | LEFT-SW-B |            |            |            |
+| JoyStick_RIGHT |           |           |           | RIGHT-SW-X | RIGHT-SW-Y | RIGHT-SW-B |
+
+### 按钮和电池检测
+
+| STM32F030F4P6 | PF0      | PF1       | PA0      | PA1      |
+| ------------- | -------- | --------- | -------- | -------- |
+| Button_LEFT   | LEFT-BTN |           |          |          |
+| Button_RIGHT  |          | RIGHT-BTN |          |          |
+| BAT1-Detect   |          |           | BAT-ADC1 |          |
+| BAT2-Detect   |          |           |          | BAT-ADC2 |
+
+## 尺寸图
+
+<img alt=""module size"" src=""https://m5stack.oss-cn-shenzhen.aliyuncs.com/resource/docs/products/app/Atom%20JoyStick/%E5%B0%BA%E5%AF%B8%E5%9B%BE.jpg"" width=""100%"" />
+
+## 数据手册
+
+- [TP4067(Battery Charge Chip)](https://m5stack.oss-cn-shenzhen.aliyuncs.com/resource/docs/products/app/Atom%20JoyStick/TP4067.PDF)
+
+<!--待更新
+
+## 软件开发
+
+### Arduino
+
+- [Atom JoyStick v1.1 StampFly Controller](https://github.com/m5stack/Atom-JoyStick/tree/main/examples/StampFlyController)
+
+### 内置固件
+
+- [Atom JoyStick v1.1 内置固件](https://github.com/m5stack/Atom-JoyStick-Internal-FW)
+
+### Easyloader
+
+| Easyloader                                   | 下载链接                                                                                                                           | 备注 |
+| -------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------- | ---- |
+| Atom JoyStick v1.1 Controller Firmware Easyloader | [download](https://m5stack.oss-cn-shenzhen.aliyuncs.com/resource/docs/products/app/Atom%20JoyStick/Atom%20JoyStick%20Firmware.exe) | /    |   -->
+
+## 相关视频
+
+- Atom JoyStick v1.1 搭配 StampFly 四轴飞行器基本功能演示
+
+## 产品对比
+
+::compare-table
+| 产品对比表 | [Atom JoyStick v1.1](/zh_CN/app/Atom_JoyStick_v1.1) ![Atom JoyStick v1.1](https://m5stack-doc.oss-cn-shenzhen.aliyuncs.com/1145/coming-soon.png)                          | [Atom JoyStick](/zh_CN/app/Atom%20JoyStick) ![Atom JoyStick](https://m5stack.oss-cn-shenzhen.aliyuncs.com/resource/docs/products/app/Atom%20JoyStick/4.webp)  |
+| ---------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| 主控       | AtomS3R                                                                                                                                                                   | AtomS3                                                                                                                                                        |
+| SoC        | ESP32-S3-PICO-1-N8R8                                                                                                                                                      | ESP32-S3FN8                                                                                                                                                   |
+| 内存       | 8MB Flash + 8MB PSRAM                                                                                                                                                     | 8MB Flash                                                                                                                                                     |
+| 姿态传感器 | BMI270 六轴姿态传感器                                                                                                                                                     | MPU6886 六轴姿态传感器                                                                                                                                        |
+| 地磁传感器 | BMM150 三轴地磁传感器                                                                                                                                                     | /                                                                                                                                                             |
+| 天线       | 增强型 3D 天线                                                                                                                                                            | 标准 3D 天线                                                                                                                                                  |
+| 协处理器   | STM32F030F4P6                                                                                                                                                             | STM32F030F4P6                                                                                                                                                 |
+::"
 Bala2,https://static-cdn.m5stack.com/resource/docs/products/app/bala2/bala2_sch_01.webp,"# Bala2
 
 <span class=""product-sku"">SKU:K014-C</span>
@@ -8934,6 +9207,149 @@ Base Dual 16340 内置 INA226 电流电压监测芯片，通过 I2C 接口与主
 ## 相关视频
 
 - Base Dual 16340 产品介绍以及功能展示"
+Base M5GO Bottom2 v1.3,https://m5stack-doc.oss-cn-shenzhen.aliyuncs.com/1227/SCH_M5GO_Bottom2_SCH_Main_V1.31_2026_03_16_10_32_04_page_01.png,"# Base M5GO Bottom2 v1.3
+
+<span class=""product-sku"">SKU:A014-C-V13</span>
+
+## 描述
+
+**Base M5GO Bottom2 v1.3** 是专为 M5Stack Core2 系列产品定制的扩展底座。
+底座板载 **BMI270 六轴姿态传感器**、**LMD4020 数字麦克风** 及 **500 mAh 内置锂电池**；配备两组 HY2.0-4P 扩展接口，引出 ADC、DAC、UART 常用外设引脚，可便捷外接各类传感器模块。
+
+底座双侧共集成 10 颗可编程 SK6812 RGB 灯珠，搭配磨砂透光导光条，呈现柔和均匀的灯光效果。底部采用 Pogo Pin 磁吸充电接口，接入磁吸充电底座后，可通过板载 **TP4057 充电管理芯片** 为内置电池安全稳压充电。同时 Pogo Pin 复用引出主控 **I2C 总线**，支持磁吸式外接扩展；底座内置吸附磁铁，背部预留乐高兼容安装孔位，可与乐高结构件无缝拼接适配。**适用于物联网开发、姿态感应交互及声光创意项目等场景。**
+
+## 产品特性
+
+- 兼容 Core2 系列产品
+- 数字麦克风
+- 可编程 LED 灯条
+- 500mAh 锂电池
+- HY2.0-4P 拓展接口
+- 兼容乐高积木结构
+- 背部磁吸设计
+
+## 包装内容
+
+- 1 x Base M5GO Bottom2 v1.3
+- 2 x M3 * 16mm 螺丝 (杯头，机械牙)
+- 2 x M3 * 18mm 螺丝 (杯头，机械牙)
+- 1 x 内六角扳手 L 形 2.5mm (适配 M3 螺丝)
+
+## 应用场景
+
+- Core2 系列扩展
+- 物联网开发
+- 姿态感应交互
+- 声光创意项目
+
+## 规格参数
+
+| 规格           | 参数                            |
+| -------------- | ------------------------------- |
+| 麦克风         | PDM 麦克风（LMD4020T261-OAC23） |
+| 灯珠           | 10 x SK6812 可编程 RGB LED      |
+| 锂电池         | 500mAh @ 3.7V                   |
+| 锂电池充电芯片 | TP4057                          |
+| IMU            | BMI270                          |
+| 产品尺寸       | 54.0 x 54.0 x 15.0mm            |
+| 产品重量       | 30.9g                           |
+| 包装尺寸       | 132.0 x 95.0 x 16.0mm           |
+| 毛重           | 53.2g                           |
+
+## 原理图
+
+- [Base M5GO Bottom2 v1.3 原理图 PDF](https://m5stack-doc.oss-cn-shenzhen.aliyuncs.com/1227/SCH_M5GO-Bottom2_SCH_Main_V1.31_2026_03_16_10_32_04.pdf)
+
+## 管脚映射
+
+### SK6812-LED Bar
+
+| Core2  | G25  |
+| ------ | ---- |
+| SK6812 | DATA |
+
+### LMD4020 - 麦克风
+
+| Core2   | G34 | G0  |
+| ------- | --- | --- |
+| LMD4020 | DAT | CLK |
+
+### BMI270 & Pogo Pin
+
+| Core2    | G21 | G22 |
+| -------- | --- | --- |
+| BMI270   | SDA | SCL |
+| Pogo Pin | SDA | SCL |
+
+### HY2.0-4P
+
+::grove-table
+| HY2.0-4P | Black | Red | Yellow | White |
+| -------- | ----- | --- | ------ | ----- |
+| PORT.B   | GND   | 5V  | G26    | G36   |
+| PORT.C   | GND   | 5V  | G14    | G13   |
+::
+
+### M5-Bus
+
+::m5-bus-table
+| PIN     | LEFT | RIGHT | PIN      |
+| ------- | ---- | ----- | -------- |
+| GND     | 1    | 2     | NC       |
+| GND     | 3    | 4     | PORT.B   |
+| GND     | 5    | 6     | NC       |
+| NC      | 7    | 8     | RGB LED  |
+| NC      | 9    | 10    | PORT.B   |
+| NC      | 11   | 12    | 3V3      |
+| NC      | 13   | 14    | NC       |
+| UART_RX | 15   | 16    | UART_TX  |
+| IMU_SDA | 17   | 18    | IMU_SCL  |
+| NC      | 19   | 20    | NC       |
+| NC      | 21   | 22    | NC       |
+| NC      | 23   | 24    | I2S_LRCK |
+| NC      | 25   | 26    | I2S_DIN  |
+| NC      | 27   | 28    | 5V       |
+| NC      | 29   | 30    | BAT      |
+::
+
+## 尺寸图
+
+- [Base M5GO Bottom2 v1.3 模型尺寸PDF](https://m5stack-doc.oss-cn-shenzhen.aliyuncs.com/1227/A014-C-V13_Base_M5GO_Bottom2_v1.3_model_size.pdf)
+
+<img src=""https://m5stack-doc.oss-cn-shenzhen.aliyuncs.com/1227/A014-C-V13_Base_M5GO_Bottom2_v1.3_model_size_page_01.png"" width=""100%"">
+
+## 数据手册
+
+- [BMI270](https://m5stack.oss-cn-shenzhen.aliyuncs.com/resource/docs/datasheet/core/K128%20CoreS3/BMI270.PDF)
+- [TP4057](https://m5stack.oss-cn-shenzhen.aliyuncs.com/resource/docs/products/base/M5GO%20BATT%20Bottom3/7EEA633644BAFD22D2FBC132F5380171.pdf)
+- [LMD4020T261-OAC23](https://m5stack-doc.oss-cn-shenzhen.aliyuncs.com/1227/LMD4020T261-OAC23_Datasheet.pdf)
+
+## 软件开发
+
+### Arduino
+
+- [IMU](/zh_CN/arduino/m5core2/imu)
+- [MIC](/zh_CN/arduino/m5core2/mic)
+- [RGB LED](/zh_CN/arduino/m5core2/rgb_led)
+
+## 相关视频
+
+<VideoGallery>
+  <VideoItem title=""Base M5GO Bottom2 v1.3 产品介绍以及功能展示"" url=""https://m5stack-doc.oss-cn-shenzhen.aliyuncs.com/1227/A014-C-V13_Base_M5GO_Bottom2_v1.3_video_CN.mp4"" />
+</VideoGallery>
+
+## 产品对比
+
+::compare-table
+| 产品对比表 | [Base M5GO Bottom2 v1.3](/zh_CN/base/Base_M5GO_Bottom2_v1.3) ![Base M5GO Bottom2 v1.3](https://m5stack-doc.oss-cn-shenzhen.aliyuncs.com/1227/A014-C-V13_Base_M5GO_Bottom2_v1.3_main_pictures_02.webp) | [Base M5GO Bottom](/zh_CN/base/m5go_bottom) ![Base M5GO Bottom](https://static-cdn.m5stack.com/resource/docs/products/base/m5go_bottom/m5go_bottom_cover_01.webp) | [Base M5GO Bottom2](/zh_CN/base/m5go_bottom2) ![Base M5GO Bottom2](https://static-cdn.m5stack.com/resource/docs/products/base/m5go_bottom2/m5go_bottom2_cover_01.webp) | [Base M5GO Bottom3](/zh_CN/module/M5GO3%20Bottom) ![Base M5GO Bottom3](https://static-cdn.m5stack.com/resource/docs/products/module/M5GO3%20Bottom/img-911850a0-1162-493a-8e2f-fa6493b6a9af.webp) |
+| ---------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Core       | Core2                                                                                                                                                                                                 | Basic (Core)                                                                                                                                                      | Core2                                                                                                                                                                  | CoreS3                                                                                                                                                                                            |
+| RGB        | 10*SK6812                                                                                                                                                                                             | 10*SK6812                                                                                                                                                         | 10\*SK6812                                                                                                                                                             | 10\*WS2812                                                                                                                                                                                        |
+| IMU        | BMI270                                                                                                                                                                                                | /                                                                                                                                                                 | MPU6886                                                                                                                                                                | /                                                                                                                                                                                                 |
+| IR         | /                                                                                                                                                                                                     | IR                                                                                                                                                                | /                                                                                                                                                                      | IR                                                                                                                                                                                                |
+| BATTERY    | 500mAh                                                                                                                                                                                                | 500mAh                                                                                                                                                            | 500mAh                                                                                                                                                                 | 500mAh                                                                                                                                                                                            |
+| MIC        | LMD4020                                                                                                                                                                                               | SPQ2410                                                                                                                                                           | LMD4737                                                                                                                                                                | /                                                                                                                                                                                                 |
+::"
 Base Bottom v1.1,https://m5stack-doc.oss-cn-shenzhen.aliyuncs.com/530/Sch_BOTTOM_v1.1_sch_01.png,"# Base Bottom v1.1
 
 <span class=""product-sku"">SKU:C001-C2</span>
@@ -10480,142 +10896,6 @@ Base M5GO Bottom2,https://m5stack-doc.oss-cn-shenzhen.aliyuncs.com/1007/A014-C_S
 | BATTERY    | 500mAh                                                                                                                                                            | 500mAh                                                                                                                                                                 | 500mAh                                                                                                                                                                                            |
 | MIC        | SPQ2410                                                                                                                                                           | SPM1423                                                                                                                                                                | /                                                                                                                                                                                                 |
 ::"
-Base M5GO Bottom2 v1.3,https://m5stack-doc.oss-cn-shenzhen.aliyuncs.com/1227/SCH_M5GO_Bottom2_SCH_Main_V1.31_2026_03_16_10_32_04_page_01.png,"# Base M5GO Bottom2 v1.3
-
-<span class=""product-sku"">SKU:A014-C-V13</span>
-
-## 描述
-
-**Base M5GO Bottom2 v1.3** 是专为 Core2 v1.3 定制的扩展底座。
-底座板载 **BMI270 六轴姿态传感器**、**SPM1423 数字麦克风** 及 **500 mAh 内置锂电池**；配备两组 HY2.0-4P 扩展接口，引出 ADC、DAC、UART 常用外设引脚，可便捷外接各类传感器模块。
-
-底座双侧共集成 10 颗可编程 SK6812 RGB 灯珠，搭配磨砂透光导光条，呈现柔和均匀的灯光效果。底部采用 Pogo Pin 磁吸充电接口，接入磁吸充电底座后，可通过板载 **TP4057 充电管理芯片** 为内置电池安全稳压充电。同时 Pogo Pin 复用引出主控 **I2C 总线**，支持磁吸式外接扩展；底座内置吸附磁铁，背部预留乐高兼容安装孔位，可与乐高结构件无缝拼接适配。**适用于物联网开发、姿态感应交互及声光创意项目等场景。**
-
-## 产品特性
-
-- 兼容 Core2 v1.3
-- 数字麦克风
-- 可编程 LED 灯条
-- 500mAh 锂电池
-- HY2.0-4P 拓展接口
-- 兼容乐高积木结构
-- 适配磁吸充电底座
-
-## 包装内容
-
-- 1 x Base M5GO Bottom2 v1.3
-- 2 x M3\*16 螺丝
-- 2 x M3\*18 螺丝
-
-## 应用场景
-
-- Core2 v1.3 拓展
-- 物联网开发
-- 姿态感应交互
-- 声光创意项目
-
-## 规格参数
-
-| 规格     | 参数                   |
-| -------- | ---------------------- |
-| 麦克风   | SPM1423                |
-| LED      | SK6812 x 10            |
-| IMU      | BMI270                 |
-| 产品尺寸 | 54.0 x 54.0 x 15.0mm   |
-| 产品重量 | 30.0g                  |
-| 包装尺寸 | 132.0 x 95.0 x 16.0 mm |
-| 毛重     | 47.4g                  |
-
-## 原理图
-
-[Base M5GO Bottom2 v1.3 原理图 PDF](https://m5stack-doc.oss-cn-shenzhen.aliyuncs.com/1227/SCH_M5GO-Bottom2_SCH_Main_V1.31_2026_03_16_10_32_04.pdf)
-
-## 管脚映射
-
-### SK6812-LED Bar
-
-| ESP32 Chip | G25  |
-| ---------- | ---- |
-| SK6812     | DATA |
-
-### SPM1423 - 麦克风
-
-| ESP32 Chip | G34 | G0  |
-| ---------- | --- | --- |
-| SPM1423    | DAT | CLK |
-
-### BMI270 & Pogo Pin
-
-| ESP32 Chip | G21 | G22 |
-| ---------- | --- | --- |
-| BMI270     | SDA | SCL |
-| Pogo Pin   | SDA | SCL |
-
-### HY2.0-4P
-
-| ESP32 Chip | G26      | G36      |
-| ---------- | -------- | -------- |
-| PORT.B     | G26(DAC) | G36(ADC) |
-
-| ESP32 Chip | G13       | G14       |
-| ---------- | --------- | --------- |
-| PORT.C     | G13(RXD2) | G14(TXD2) |
-
-### M5-Bus
-
-::m5-bus-table
-| PIN     | LEFT | RIGHT | PIN      |
-| ------- | ---- | ----- | -------- |
-| GND     | 1    | 2     | NC       |
-| GND     | 3    | 4     | PORT.B   |
-| GND     | 5    | 6     | NC       |
-| NC      | 7    | 8     | RGB LED  |
-| NC      | 9    | 10    | PORT.B   |
-| NC      | 11   | 12    | 3V3      |
-| NC      | 13   | 14    | NC       |
-| UART_RX | 15   | 16    | UART_TX  |
-| IMU_SDA | 17   | 18    | IMU_SCL  |
-| NC      | 19   | 20    | NC       |
-| NC      | 21   | 22    | NC       |
-| NC      | 23   | 24    | I2S_LRCK |
-| NC      | 25   | 26    | I2S_DIN  |
-| NC      | 27   | 28    | 5V       |
-| NC      | 29   | 30    | BAT      |
-::
-
-## 尺寸图
-
-<img alt=""module size"" src=""https://static-cdn.m5stack.com/resource/docs/products/module/M5GO3 Bottom/img-c2558938-5e94-482b-9c59-02df14bb3088.jpg"" width=""100%"" />
-
-## 数据手册
-
-- [SPM1423](https://m5stack.oss-cn-shenzhen.aliyuncs.com/resource/docs/datasheet/core/SPM1423HM4H-B_datasheet_en.pdf)
-- [BMI270](https://m5stack.oss-cn-shenzhen.aliyuncs.com/resource/docs/datasheet/core/K128%20CoreS3/BMI270.PDF)
-
-## 软件开发
-
-### Arduino
-
-- [Base M5GO Bottom2 v1.3 测试程序](https://github.com/m5stack/M5-ProductExampleCodes/tree/master/Base/M5GO_BOTTOM2)
-
-### EasyLoader
-
-| Easyloader                             | Download                                                                                                     | Note |
-| -------------------------------------- | ------------------------------------------------------------------------------------------------------------ | ---- |
-| Base M5GO Bottom2 v1.3 Test Easyloader | [download](https://m5stack.oss-cn-shenzhen.aliyuncs.com/EasyLoader/Windows/BASE/EasyLoader_M5GO_BOTTOM2.exe) | /    |
-
-## 产品对比
-
-::compare-table
-| 产品对比表 | [Base M5GO Bottom2 v1.3](/zh_CN/base/m5go_bottom2_v1.3) ![Base M5GO Bottom2 v1.3](https://m5stack-doc.oss-cn-shenzhen.aliyuncs.com/1145/coming-soon.png) | [Base M5GO Bottom](/zh_CN/base/m5go_bottom) ![Base M5GO Bottom](https://static-cdn.m5stack.com/resource/docs/products/base/m5go_bottom/m5go_bottom_cover_01.webp) | [Base M5GO Bottom2](/zh_CN/base/m5go_bottom2) ![Base M5GO Bottom2](https://static-cdn.m5stack.com/resource/docs/products/base/m5go_bottom2/m5go_bottom2_cover_01.webp) | [Base M5GO Bottom3](/zh_CN/module/M5GO3%20Bottom) ![Base M5GO Bottom3](https://static-cdn.m5stack.com/resource/docs/products/module/M5GO3%20Bottom/img-911850a0-1162-493a-8e2f-fa6493b6a9af.webp) |
-| ---        | ----------                                                                                                                                               | ----------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Core       | Core2 v1.3                                                                                                                                                    | Basic (Core)                                                                                                                                                      | Core2                                                                                                                                                                  | CoreS3                                                                                                                                                                                            |
-| RGB        | 10*SK6812                                                                                                                                                | 10*SK6812                                                                                                                                                         | 10\*SK6812                                                                                                                                                             | 10\*WS2812                                                                                                                                                                                        |
-| IMU        | BMI270                                                                                                                                                   | /                                                                                                                                                                 | MPU6886                                                                                                                                                                | /                                                                                                                                                                                                 |
-| IR         | ---                                                                                                                                                      | IR                                                                                                                                                                | /                                                                                                                                                                      | IR                                                                                                                                                                                                |
-| BATTERY    | 500mAh                                                                                                                                                   | 500mAh                                                                                                                                                            | 500mAh                                                                                                                                                                 | 500mAh                                                                                                                                                                                            |
-| MIC        | SPM1423                                                                                                                                                  | SPQ2410                                                                                                                                                           | SPM1423                                                                                                                                                                | /                                                                                                                                                                                                 |
-::"
 Base Node,"https://static-cdn.m5stack.com/resource/docs/products/base/node_base/node_base_sch_01.webp,https://static-cdn.m5stack.com/resource/docs/products/base/node_base/node_base_sch_02.webp","# Base Node
 
 <span class=""product-sku"">SKU:M017</span>
@@ -11649,7 +11929,7 @@ Cap LoRa868,"https://m5stack-doc.oss-cn-shenzhen.aliyuncs.com/1177/SCH_Cap_LoRa8
 ## 相关视频
 
 - Cap LoRa868 产品介绍"
-CardputerZero,"https://m5stack-doc.oss-cn-shenzhen.aliyuncs.com/1243/C154-CardputerZERO_SCHE_PRJ_V0.3_20260430_page_01.png,https://m5stack-doc.oss-cn-shenzhen.aliyuncs.com/1243/C154-CardputerZERO_SCHE_PRJ_V0.3_20260430_page_02.png,https://m5stack-doc.oss-cn-shenzhen.aliyuncs.com/1243/C154-CardputerZERO_SCHE_PRJ_V0.3_20260430_page_03.png,https://m5stack-doc.oss-cn-shenzhen.aliyuncs.com/1243/C154-CardputerZERO_SCHE_PRJ_V0.3_20260430_page_04.png,https://m5stack-doc.oss-cn-shenzhen.aliyuncs.com/1243/C154-CardputerZERO_SCHE_PRJ_V0.3_20260430_page_05.png,https://m5stack-doc.oss-cn-shenzhen.aliyuncs.com/1243/C154-CardputerZERO_SCHE_PRJ_V0.3_20260430_page_06.png,https://m5stack-doc.oss-cn-shenzhen.aliyuncs.com/1243/C154-CardputerZERO_SCHE_PRJ_V0.3_20260430_page_07.png,https://m5stack-doc.oss-cn-shenzhen.aliyuncs.com/1243/C154-CardputerZERO_SCHE_PRJ_V0.3_20260430_page_08.png","# CardputerZero
+CardputerZero,"https://m5stack-doc.oss-cn-shenzhen.aliyuncs.com/1243/C154-CardputerZERO_SCH_V0.6.1_20260702_page_01.png,https://m5stack-doc.oss-cn-shenzhen.aliyuncs.com/1243/C154-CardputerZERO_SCH_V0.6.1_20260702_page_02.png,https://m5stack-doc.oss-cn-shenzhen.aliyuncs.com/1243/C154-CardputerZERO_SCH_V0.6.1_20260702_page_03.png,https://m5stack-doc.oss-cn-shenzhen.aliyuncs.com/1243/C154-CardputerZERO_SCH_V0.6.1_20260702_page_04.png,https://m5stack-doc.oss-cn-shenzhen.aliyuncs.com/1243/C154-CardputerZERO_SCH_V0.6.1_20260702_page_05.png,https://m5stack-doc.oss-cn-shenzhen.aliyuncs.com/1243/C154-CardputerZERO_SCH_V0.6.1_20260702_page_06.png,https://m5stack-doc.oss-cn-shenzhen.aliyuncs.com/1243/C154-CardputerZERO_SCH_V0.6.1_20260702_page_07.png,https://m5stack-doc.oss-cn-shenzhen.aliyuncs.com/1243/C154-CardputerZERO_SCH_V0.6.1_20260702_page_08.png,https://m5stack-doc.oss-cn-shenzhen.aliyuncs.com/1243/C154-CardputerZERO_SCH_V0.6.1_20260702_page_09.png,https://m5stack-doc.oss-cn-shenzhen.aliyuncs.com/1243/C154-CardputerZERO_SCH_V0.6.1_20260702_page_10.png","# CardputerZero
 
 ?> Work in progress | 本产品包装及软件研发尚未完成，最终功能及资料可能有变，敬请理解。
 
@@ -11661,49 +11941,50 @@ CardputerZero,"https://m5stack-doc.oss-cn-shenzhen.aliyuncs.com/1243/C154-Cardpu
 
 ## 产品特性
 
-- Raspberry Pi CM0 核心主控:
-  - RP3A0 (BCM2837)
-  - CPU：四核 Cortex-A53 @ 1 GHz, ARMv8-A (aarch64)
-  - 内存: 512 MB LPDDR2
+- 核心性能:
+  - Raspberry Pi Compute Module 0 (CM0)
+  - RP3A0 (BCM2837)，四核 Cortex-A53 @ 1 GHz
+  - 512 MB LPDDR2
 - 人机交互:
+  - 1.9"" LCD 屏幕，分辨率 320 x 170
   - 46 键矩阵键盘
-  - 1.9"" LCD 屏幕 @ ST7789v3, 分辨率 170x320
-  - 摄像头 @ IMX219 CSI 4-Lane 8MP (3280 x 2464)
-  - IMU BMI270 + BMM150
+  - IMX219 8MP 摄像头
+  - BMI270 IMU + BMM150 磁力计
   - 红外发射 + 接收
-- 无线通信:
-  - 2.4GHz Wi-Fi 802.11 b/g/n
-  - BT 4.2 标准，支持低功耗模式（BLE）
-- 丰富接口:
-  - 1× 高清数字音视频输出接口，支持 1080P 30fps
-  - 1x 10/100M 以太网接口
+- 网络通信:
+  - 2.4 GHz Wi-Fi 802.11 b/g/n
+  - 10/100M 以太网
+- USB 扩展:
+  - 支持 Host / Slave 模式切换
+  - 1x USB-A 2.0
+  - 2x USB Type-C 2.0，其中右侧接口支持 USB OTG
+- 外部扩展:
   - 1x microSD 卡槽
-  - 1x HY2.0-4P 拓展接口 (内置电子开关可切换 I2C / UART 接口)
-  - Cap EXT 2.54-14P 拓展总线:
-    - SPI, UART, I2C, USB, GPIO, 5VIN/OUT
-- USB 拓展:
-  - 独立 Host / Slave 切换开关:
-  - Slave 模式：控制机身右侧 USB Type-C 接口
-    - 1x USB Type-C 供电 / USB 2.0 + OTG
-  - Host 模式：控制机身左侧 USB 接口
-    - 1x USB-A 2.0 接口
-    - 1x USB Type-C 2.0 接口
-- 音频交互:
+  - 1x HY2.0-4P 接口，支持 I2C / UART 切换
+  - EXT 2.54-14P 扩展总线，支持 SPI、UART、I2C、USB 和 GPIO
+- 音视频:
   - ES8389 音频编解码
-  - MEMS 麦克风 x1
-  - AW8737A 扬声器功放 + 1W @ 8Ω 扬声器
-  - 3.5 音频输出接口 TRRS
-- 视频编解码:
-  - Decode: 1080P 30fps in H.264 or MPEG-4
-  - Encode: 1080P 30fps in H.264
-- 内置 3.7V@ 1500mAh 锂电池
-- BQ27220YZFR 电池状态读取
-- RTC RX8130CE
+  - 1x MEMS 麦克风
+  - 1W @ 8Ω 扬声器
+  - 3.5mm TRRS 音频输入/输出接口
+  - 支持 1080P 30fps 视频输出与编解码
+- 电源管理:
+  - 内置 DC 3.7V@1750mAh 锂电池，集成 NTC
+  - BQ27220YZFR 电池计量
+  - RX8130CE RTC
 
 ## 包装内容
 
+#> 产品提示 | CardputerZero 标准版标配 32GB microSD 卡，CardputerZero-Lite 不含 microSD 卡，需另行购置。
+
+### CardputerZero (SKU:C154)
+
 - 1 x CardputerZero
 - 1 x 32GB microSD
+
+### CardputerZero-Lite (SKU:C155)
+
+- 1 x CardputerZero-Lite
 
 ## 应用场景
 
@@ -11714,25 +11995,37 @@ CardputerZero,"https://m5stack-doc.oss-cn-shenzhen.aliyuncs.com/1243/C154-Cardpu
 
 ## 规格参数
 
-| 规格         | 参数                                                        |
-| ------------ | ----------------------------------------------------------- |
-| 核心主控     | Raspberry Pi Compute Module 0 (CM0)                         |
-| CPU          | RP3A0 (BCM2837)，四核 Cortex-A53 @ 1 GHz, ARMv8-A (aarch64) |
-| 内存         | 512 MB LPDDR2                                               |
-| Wi-Fi        | 2.4GHz Wi-Fi 802.11 b/g/n                                   |
-| 以太网       | 10/100M 以太网接口，SR9900A USB 2.0 转以太网芯片            |
-| 显示屏       | 1.9"" LCD 屏幕 @ ST7789v3, 分辨率 170x320                    |
-| 摄像头       | IMX219 CSI 4-Lane 8MP (3280 x 2464)                         |
-| 键盘         | 46 键矩阵键盘                                               |
-| 扩展接口     | EXT 2.54-14P 拓展总线，1x HY2.0-4P 接口                     |
-| USB 拓展芯片 | GL852G-OHY60 USB 2.0 Hub                                    |
-| 待机功耗     | 2.5W                                                        |
-| 内置电池     | DC 3.7V@ 1500mAh                                            |
-| 电源         | 供电 / 充电建议 5V @ 2A                                     |
-| 产品尺寸     | 84.0 x 54.0 x 23.1mm                                        |
-| 产品重量     | Work in progress                                            |
-| 包装尺寸     | Work in progress                                            |
-| 毛重         | Work in progress                                            |
+| 规格         | 参数                                                                                  |
+| ------------ | ------------------------------------------------------------------------------------- |
+| 核心主控     | Raspberry Pi Compute Module 0 (CM0)                                                   |
+| CPU          | RP3A0 (BCM2837)，四核 Cortex-A53 @ 1 GHz, ARMv8-A (aarch64)                           |
+| 内存         | 512 MB LPDDR2                                                                         |
+| 存储         | microSD                                                                               |
+| Wi-Fi        | 2.4GHz Wi-Fi 802.11 b/g/n                                                             |
+| 以太网       | 10/100M 以太网接口，SR9900A USB 2.0 转以太网芯片                                      |
+| 显示屏       | 1.9"" LCD 屏幕 @ ST7789v3, 分辨率 320 x 170                                            |
+| 摄像头       | IMX219 CSI 4-Lane 8MP (3280 x 2464)                                                   |
+| IMU & 磁力计 | BMI270 + BMM150                                                                       |
+| RTC          | RX8130CE                                                                              |
+| 红外         | 红外发射 + 接收                                                                       |
+| 键盘         | 46 键矩阵键盘                                                                         |
+| 音频编解码   | ES8389                                                                                |
+| 麦克风       | 1x MEMS 麦克风                                                                        |
+| 扬声器       | AW8737A 扬声器功放 + 1W @ 8Ω 扬声器                                                   |
+| 音频接口     | 3.5mm TRRS 音频输入/输出接口，推荐适配 35Ω 阻抗耳机                                   |
+| 视频输出     | 1x 高清数字音视频输出接口，支持 1080P 30fps                                           |
+| 视频编解码   | H.264 / MPEG-4 1080P 30fps 解码，H.264 1080P 30fps 编码                               |
+| 扩展接口     | EXT 2.54-14P 扩展总线，1x HY2.0-4P 接口（I2C / UART 可切换，5V 输出最大电流 < 500mA） |
+| USB 接口     | 1x USB-A 2.0，2x USB Type-C 2.0，支持 Host / Slave 切换及 USB OTG                     |
+| USB 拓展芯片 | GL852G-OHY60 USB 2.0 Hub                                                              |
+| 电池计量     | BQ27220YZFR                                                                           |
+| 待机功耗     | 2.5W                                                                                  |
+| 内置电池     | DC 3.7V@ 1750mAh 集成 NTC                                                             |
+| 电源         | 供电 / 充电建议 5V @ 2A                                                               |
+| 产品尺寸     | 84.0 x 54.0 x 23.1mm                                                                  |
+| 产品重量     | Work in progress                                                                      |
+| 包装尺寸     | Work in progress                                                                      |
+| 毛重         | Work in progress                                                                      |
 
 ## 操作说明
 
@@ -11740,33 +12033,37 @@ CardputerZero,"https://m5stack-doc.oss-cn-shenzhen.aliyuncs.com/1243/C154-Cardpu
 
 ## 原理图
 
-- [CardputerZero 原理图 PDF](https://m5stack-doc.oss-cn-shenzhen.aliyuncs.com/1243/C154-CardputerZERO_SCHE_PRJ_V0.3_20260430.pdf)
+- [CardputerZero 原理图 PDF](https://m5stack-doc.oss-cn-shenzhen.aliyuncs.com/1243/C154-CardputerZERO_SCH_V0.6.1_20260702.pdf)
 
 ## 管脚映射
 
 ### Display
 
-| CM0      | G10  | G11  | G25 | G8  |
-| -------- | ---- | ---- | --- | --- |
-| ST7789v3 | MOSI | SCLK | DC  | CS  |
+| CM0      | G10  | G11  | G25 | G8  | G5  |
+| -------- | ---- | ---- | --- | --- | --- |
+| ST7789v3 | MOSI | SCLK | DC  | CS  | TE  |
 
-| ST7789v3 | LCD_RST      | BL           |
-| -------- | ------------ | ------------ |
-| M5IOE1   | PYG5_LCD_RST | PYG10_BL_PWM |
+| ST7789v3 | LCD_RST       | BL           |
+| -------- | ------------- | ------------ |
+| M5IOE1   | PYG12_LCD_RST | PYG10_BL_PWM |
 
-通过 `M5IOE1` 拓展芯片的 `PYG5_LCD_RST` 控制屏幕复位,  `PYG10_BL_PWM` 控制屏幕背光。
+通过 `M5IOE1` 拓展芯片的 `PYG12_LCD_RST` 控制屏幕复位, `PYG10_BL_PWM` 控制屏幕背光。
 
 ### Audio
 
-| CM0          | G20 | G4   | G19  | G18  | G21  | G2  | G3  |
-| ------------ | --- | ---- | ---- | ---- | ---- | --- | --- |
-| ES8389(0x10) | DIN | MCLK | LRCK | BLCK | DOUT | SDA | SCL |
+| CM0          | G20_I2S_DIN | G19_I2S_LRCK | G18_I2S_BLCK | G21_I2S_DOUT | G2_I2C1_SDA | G3_I2C1_SCL |
+| ------------ | ----------- | ------------ | ------------ | ------------ | ----------- | ----------- |
+| ES8389(0x10) | DOUT        | LRCK         | BCLK         | MCLK/DIN     | SDA         | SCL         |
 
 | CM0     | G24 |
 | ------- | --- |
 | AW8737A | EN  |
 
-3.5mm 音频输出接口具备插入检测功能。当 `HP_DET` 检测到耳机插头接入时，系统自动切换输出线路；未插入耳机时，将启用 **AW8737A** 扬声器功放。功放使能信号可由 **CM0 的 G24 引脚** 进行控制。
+| CM0             | G17    |
+| --------------- | ------ |
+| 3.5mm Headphone | HP_DET |
+
+3.5mm 音频输入/输出接口具备插入检测功能。当 `HP_DET` 检测到耳机插头接入时，系统自动切换输出线路；未插入耳机时，将启用 **AW8737A** 扬声器功放。功放使能信号可由 **CM0 的 G24 引脚** 进行控制。
 
 ### USB 2.0
 
@@ -11791,32 +12088,49 @@ CardputerZero 将 CM0 内部的 USB 接口资源，通过 USB Hub 集线器的�
 | IMU - BMI270 (0x68)           | SDA         | SCL         |        |
 | RTC - RX8130CE (0x32)         | SDA         | SCL         |        |
 
+| BMI270        | BMI_SDA | BMI_SCL |
+| ------------- | ------- | ------- |
+| BMM150 (0x10) | SDA     | SCL     |
+
 ### Power Control
 
-| CM0           | G4          | G17 | G16    |
-| ------------- | ----------- | --- | ------ |
-| GROVE_FUNC_SW | I2C/UART_SW |     |        |
-| GROVE_5V_OUT  |             | EN  |        |
-| Camera        |             |     | CAM_EN |
+| CM0           | G4          |
+| ------------- | ----------- |
+| GROVE_FUNC_SW | I2C/UART_SW |
+
+| CM0    | G6     |
+| ------ | ------ |
+| SWITCH | SW_DET |
+
+`G6_SW_DET` 用于读取开关检测信号。
 
 ### M5IOE1
 
-| CM0           | G2_I2C1_SDA | G3_I2C1_SCL |
-| ------------- | ----------- | ----------- |
-| M5IOE1 (0x4F) | SDA         | SCL         |
+| CM0           | G2_I2C1_SDA | G3_I2C1_SCL | G16  |
+| ------------- | ----------- | ----------- | ---- |
+| M5IOE1 (0x4F) | SDA         | SCL         | NRST |
 
 - 电源状态
 
-| M5IOE1 | PYG2   | PYG4    | PYG5      | PYG14         |
-| ------ | ------ | ------- | --------- | ------------- |
-| POWER  | 5V_ADC | USB_DET | CM05V_ADC | PYG14_VSYS_EN |
+| M5IOE1 | PYG2   | PYG4     | PYG5    | PYG14  |
+| ------ | ------ | -------- | ------- | ------ |
+| POWER  | HW_DET | GROVE_EN | PWR_DET | PWR_EN |
 
 - 外设复位
 
-| M5IOE1       | PYG3   | PYG6    |
-| ------------ | ------ | ------- |
-| TCA8418RTWR  | KB_RST |         |
-| GL852G-OHY60 |        | HUB_RST |
+| M5IOE1             | PYG3       | PYG6   |
+| ------------------ | ---------- | ------ |
+| KEYBOARD & USB_HUB | KB_HUB_RST |        |
+| MIC                |            | MIC_SW |
+
+`PYG3_KB_HUB_RST` 为键盘控制器 `TCA8418RTWR` 与 USB Hub `GL852G-OHY60` 的共用复位控制信号。
+
+`PYG6_MIC_SW` 用于 3.5mm TRRS 接口的麦克风通道切换，可在 `CTIA / OMTP` 标准间切换。
+
+| PYG6_MIC_SW | Standard |
+| ----------- | -------- |
+| LOW         | CTIA     |
+| HIGH        | OMTP     |
 
 - HAT P0/P1 功能切换
 
@@ -11824,12 +12138,30 @@ CardputerZero 将 CM0 内部的 USB 接口资源，通过 USB Hub 集线器的�
 | ------ | ----------- |
 | SW     | PYG1_HAT_SW |
 
-- 大小写指示灯
+| M5IOE1 | PYG13        |
+| ------ | ------------ |
+| HAT_EN | PYG13_HAT_EN |
 
-| M5IOE1   | PYG8     | PYG9      |
-| -------- | -------- | --------- |
-| KEY_LED1 | BLUE_LED |           |
-| KEY_LED2 |          | GREEN_LED |
+`PYG13_HAT_EN` 用于 HAT 接口使能控制。
+
+| PYG13_HAT_EN | HAT PORT POWER |
+| ------------ | -------------- |
+| LOW          | OFF            |
+| HIGH         | ON             |
+
+- CAPS LOCKS 指示灯
+
+| M5IOE1   | PYG8      | PYG9   | PYG11   |
+| -------- | --------- | ------ | ------- |
+| KEY_LED1 | SHIFT_LED |        |         |
+| KEY_LED2 |           | FN_LED |         |
+| KEY_LED3 |           |        | SYM_LED |
+
+### IR TX & RX
+
+| CM0 | G12   | G13   |
+| --- | ----- | ----- |
+| IR  | IR_TX | IR_RX |
 
 ### HY2.0-4P
 
@@ -11846,7 +12178,7 @@ CardputerZero 将 CM0 内部的 USB 接口资源，通过 USB Hub 集线器的�
 | LOW            | UART       |
 | HIGH           | I2C1       |
 
-通过 `CM0` 的 `G17_GROVE_EN` 使能控制接口 5V 输出。 (最大供电电流 < 500mA)
+通过 `M5IOE1` 的 `PYG4_GROVE_EN` 使能控制接口 5V 输出。 (最大供电电流 < 500mA)
 
 ### EXT 2.54-14P
 
@@ -11869,15 +12201,17 @@ CardputerZero 将 CM0 内部的 USB 接口资源，通过 USB Hub 集线器的�
 | LOW         | GPIO26 / GPIO23    |
 | HIGH        | USB Hub - USB4     |
 
-## 数据手册
+## 外观贴纸
 
-- [M5IOE1 Chip User Manual](https://m5stack-doc.oss-cn-shenzhen.aliyuncs.com/1210/IO_Expander_Datasheet_EN.pdf)
+- [CardputerZero 贴纸设计文件 CDR](https://m5stack-doc.oss-cn-shenzhen.aliyuncs.com/1243/CardputerZero_Labels.zip)
 
 ## 软件开发
 
 ### 快速上手
 
-coming soon...
+- [CardputerZero 镜像烧录](/zh_CN/guide/linux/cardputerzero/image)
+- [CardputerZero ADB 连接调试](/zh_CN/guide/linux/cardputerzero/adb)
+- [CardputerZero 应用开发模板](https://github.com/CardputerZero/Template)
 
 ### SDK
 
@@ -11890,14 +12224,14 @@ coming soon...
 ## 产品对比
 
 ::compare-table
-| 产品对比项          | [CardputerZero](#todo) ![CardputerZero](https://m5stack-doc.oss-cn-shenzhen.aliyuncs.com/1145/coming-soon.png) | [CardputerZero-Lite](#todo) ![CardputerZero-Lite](https://m5stack-doc.oss-cn-shenzhen.aliyuncs.com/1145/coming-soon.png) |
-| ------------------- | -------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------ |
-| 核心                | Raspberry Pi CM0                                                                                               | Raspberry Pi CM0                                                                                                         |
-| Wi-Fi & Bluetooth   | ✅                                                                                                              | ✅                                                                                                                        |
-| 红外发射 + 接收     | ✅                                                                                                              | ✅                                                                                                                        |
-| 8MP 摄像头          | ✅                                                                                                              | ❌                                                                                                                        |
-| IMU BMI270 + BMM150 | ✅                                                                                                              | ❌                                                                                                                        |
-| 标配 32GB microSD   | ✅                                                                                                              | ❌                                                                                                                        |
+| 产品对比项          | [CardputerZero](/zh_CN/CardputerZero) ![CardputerZero](https://m5stack-doc.oss-cn-shenzhen.aliyuncs.com/1243/C154-CardputerZero-main-pictures_04.jpg) | [CardputerZero-Lite](#todo) ![CardputerZero-Lite](https://m5stack-doc.oss-cn-shenzhen.aliyuncs.com/1145/coming-soon.png) |
+| ------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------ |
+| 核心                | Raspberry Pi CM0                                                                                                                                      | Raspberry Pi CM0                                                                                                         |
+| Wi-Fi & BT          | ✅                                                                                                                                                     | ✅                                                                                                                        |
+| 红外发射 + 接收     | ✅                                                                                                                                                     | ✅                                                                                                                        |
+| 8MP 摄像头          | ✅                                                                                                                                                     | ❌                                                                                                                        |
+| IMU BMI270 + BMM150 | ✅                                                                                                                                                     | ❌                                                                                                                        |
+| 标配 32GB microSD   | ✅                                                                                                                                                     | ❌                                                                                                                        |
 ::"
 Chain Angle,https://m5stack-doc.oss-cn-shenzhen.aliyuncs.com/1197/U208_sche__Chain-Angle_SCH_Main_V1.0_20250704_2025_10_14_11_04_40_page_01.png,"# Chain Angle
 
@@ -12053,6 +12387,117 @@ Chain Blank 是 M5Stack Chain 系列中的一款 Proto Board DIY 拓展节点。
 ## 相关视频
 
 - Chain Blank 产品介绍以及功能展示"
+Chain Buzzer,https://m5stack-doc.oss-cn-shenzhen.aliyuncs.com/1260/ChainBuzzer_SCH_V02_20250829_2025_08_29_16_56_12_2.png,"# Chain Buzzer
+
+<span class=""product-sku"">SKU:U224</span>
+
+## 描述
+
+Chain Buzzer 是 M5Stack Chain 系列中的一款蜂鸣器输出节点。内置蜂鸣器与可编程 RGB LED，适用于声音提示、状态提醒、智能家居告警等应用场景。内部集成 STM32G031G8U6 核心主控，采用 UART 串口级联通信协议，通过两个 HY2.0-4P 拓展接口，可拓展更多 Chain 系列设备，构建更加丰富的声光交互应用。
+
+## 产品特性
+
+- M5Stack Chain 系列
+- 蜂鸣器声音输出
+- STM32G031G8U6 核心主控
+- 1x RGB LED
+- 采用 UART 串口级联通信协议
+- 2x HY2.0-4P 拓展接口，可拓展 Chain 系列设备
+
+## 包装内容
+
+- 1 x Chain Buzzer
+- 1 x Chain Bridge
+
+## 应用场景
+
+- 声音提示
+- 设备状态提醒
+- 智能家居告警
+
+## 规格参数
+
+| 规格     | 参数                                           |
+| -------- | ---------------------------------------------- |
+| MCU      | STM32G031G8U6                                  |
+| 输入电源 | DC 5V                                          |
+| 通信方式 | UART 115200bps@8N1                             |
+| 接口规格 | 2x HY2.0-4P                                    |
+| 蜂鸣器   | MLT-5020                                       |
+| RGB LED  | 1x WS2812C                                     |
+| 工作功耗 | 5V@198.3mA (蜂鸣器鸣响占空比 50%、频率 9.9kHz) |
+| 工作温度 | 0 ~ 40°C                                       |
+| 产品尺寸 | 23.9 x 23.9 x 16.0mm                           |
+| 产品重量 | 5.9g                                           |
+| 包装尺寸 | 138.0 x 93.0 x 17.0mm                          |
+| 毛重     | 9.2g                                           |
+
+## 操作说明
+
+用 Chain Bridge 连接器连接主控 Chain DualKey 和各个 Chain 系列设备。连接时需要注意方向，三角箭头从主控 Chain DualKey 指向外侧，如图：
+
+<img src=""https://m5stack-doc.oss-cn-shenzhen.aliyuncs.com/1176/Chain_connect.jpg"" width=""50%"">
+
+## 原理图
+
+- [Chain Buzzer 原理图PDF](https://m5stack-doc.oss-cn-shenzhen.aliyuncs.com/1260/ChainBuzzer_SCH_V0.2_20250829_2025_08_29_16_56_12.pdf)
+
+## 管脚映射
+
+### RGB LED
+
+| STM32G031 | PA8 |
+| --------- | --- |
+| WS2812C   | RGB |
+
+### Buzzer
+
+| STM32G031 | PA0    |
+| --------- | ------ |
+| Buzzer    | Output |
+
+### UART
+
+| STM32G031 | PB6  | PB7  | PA2  | PA3  |
+| --------- | ---- | ---- | ---- | ---- |
+| UART1     | TXD1 | RXD1 |      |      |
+| UART2     |      |      | TXD2 | RXD2 |
+
+## 尺寸图
+
+- [Chain Buzzer 模型尺寸PDF](https://m5stack-doc.oss-cn-shenzhen.aliyuncs.com/1260/U224_Chain_Buzzer_model_size.pdf)
+
+<img src=""https://m5stack-doc.oss-cn-shenzhen.aliyuncs.com/1260/U224_Chain_Buzzer_model_size_page_01.png"" width=""100%"">
+
+## 软件开发
+
+### Arduino
+
+- [Chain Buzzer Arduino 快速上手](/zh_CN/arduino/projects/chain/chain_buzzer)
+- [Chain Buzzer Arduino 驱动库](https://github.com/m5stack/M5Chain)
+- [Chain Buzzer 测试程序](https://github.com/m5stack/M5Chain/tree/main/examples/Buzzer_Example/AutoPlayMode)
+
+### UiFlow2
+
+- [Chain Buzzer UiFlow2 文档](https://uiflow-micropython.readthedocs.io/zh-cn/latest/chain/buzzer.html)
+
+### 内置固件
+
+- [Chain Buzzer 内置固件](https://github.com/m5stack/M5Chain-Series-Internal-FW/tree/main/Chain_Buzzer)
+
+### 通信协议
+
+<MarkdownPreview src=""/zh_CN/protocol/U224/UART"" title=""查看通信协议"" />
+
+- [Chain Buzzer 通信协议 PDF](https://m5stack-doc.oss-cn-shenzhen.aliyuncs.com/1260/U224-Chain-Buzzer-Protocol-V1.0_cn.pdf)
+
+  <!--英文链接为：https://m5stack-doc.oss-cn-shenzhen.aliyuncs.com/1260/U224-Chain-Buzzer-Protocol-V1.0_en.pdf>-->
+
+## 相关视频
+
+- Chain Buzzer 产品介绍以及功能展示
+
+  <!--英文链接为：https://m5stack-doc.oss-cn-shenzhen.aliyuncs.com/1260/U224-Chain_Buzzer_video_EN.mp4>  -->"
 Chain DualKey,"https://m5stack-doc.oss-cn-shenzhen.aliyuncs.com/1176/Chain_DualKey_SCH_V1.5_20250725_2025_07_25_16_06_51_page_01.png,https://m5stack-doc.oss-cn-shenzhen.aliyuncs.com/1176/Chain_DualKey_SCH_V1.5_20250725_2025_07_25_16_06_51_page_02.png,https://m5stack-doc.oss-cn-shenzhen.aliyuncs.com/1176/Chain_DualKey_SCH_V1.5_20250725_2025_07_25_16_06_51_page_03.png","# Chain DualKey
 
 <span class=""product-sku"">SKU:C147</span>
@@ -12678,6 +13123,124 @@ Chain Mount 是 M5Stack Chain 系列中的一款结构拓展节点。 正面提�
 ## 相关视频
 
 - Chain Mount 产品介绍以及功能展示"
+Chain PIR,https://m5stack-doc.oss-cn-shenzhen.aliyuncs.com/1261/ChainPIR_V01_2025_06_18_19_10_05.png,"# Chain PIR
+
+<span class=""product-sku"">SKU:U225</span>
+
+## 描述
+
+Chain PIR 是 M5Stack Chain 系列中的一款热释电人体红外感应节点。内置热释电红外传感器，并集成可编程 RGB LED。适用于人体活动检测、智能家居自动化及安防报警等应用场景。
+
+Chain PIR 集成 STM32G031G8U6 数据处理器，采用 UART 串口级联通信协议，通过两个 HY2.0-4P 拓展接口，可拓展更多 Chain 系列设备，构建更加丰富的交互应用。
+
+## 产品特性
+
+- M5Stack Chain 系列
+- 热释电人体红外感应
+- STM32G031G8U6 核心主控
+- 采用 UART 串口级联通信协议
+- 1x RGB LED
+- 2x HY2.0-4P 拓展接口，可拓展 Chain 系列设备
+- 两种工作模式：
+  - 自动上报模式：PIR 状态变化时，自动发送数据至主机
+  - 查询模式：由主机主动发起查询，从机响应当前 PIR 状态
+
+## 包装内容
+
+- 1 x Chain PIR
+- 1 x Chain Bridge
+
+## 应用场景
+
+- 人体活动检测
+- 智能家居自动化
+- 安防报警
+
+## 规格参数
+
+| 规格         | 参数                   |
+| ------------ | ---------------------- |
+| MCU          | STM32G031G8U6          |
+| 输入电源     | DC 5V                  |
+| 通信方式     | UART 115200bps@8N1     |
+| 接口规格     | 2 x HY2.0-4P           |
+| RGB LED      | 1 x WS2812C            |
+| 传感器       | AS312 热释电红外传感器 |
+| 最大检测距离 | 2.4m                   |
+| 检测角度     | ±60°                   |
+| 检测间隔     | 2s                     |
+| 工作功耗     | 5V@10.74mA             |
+| 产品尺寸     | 23.9 x 23.9 x 22.3mm   |
+| 产品重量     | 6.8g                   |
+| 包装尺寸     | 138.0 x 93.0 x 21.0mm  |
+| 毛重         | 10.0g                  |
+
+## 操作说明
+
+用 Chain Bridge 连接器连接主控 Chain DualKey 和各个 Chain 系列输入设备。连接时需要注意方向，三角箭头从主控 Chain DualKey 指向外侧，如图：
+
+<img src=""https://m5stack-doc.oss-cn-shenzhen.aliyuncs.com/1176/Chain_connect.jpg"" width=""50%"">
+
+## 原理图
+
+- [Chain PIR 原理图PDF](https://m5stack-doc.oss-cn-shenzhen.aliyuncs.com/1261/ChainPIR_V01_2025_06_18_19_10_05.pdf)
+
+## 管脚映射
+
+### RGB LED
+
+| STM32G031 | PA8 |
+| --------- | --- |
+| WS2812C   | RGB |
+
+### PIR
+
+| STM32G031  | PB0   |
+| ---------- | ----- |
+| PIR Sensor | Input |
+
+PIR Sensor 的检测触发维持时间为 2 秒；重复触发时，维持时间从最后一次有效脉冲重新计时。
+
+### UART
+
+| STM32G031 | PB6  | PB7  | PA2  | PA3  |
+| --------- | ---- | ---- | ---- | ---- |
+| UART1     | TXD1 | RXD1 |      |      |
+| UART2     |      |      | TXD2 | RXD2 |
+
+## 尺寸图
+
+- [Chain PIR 模型尺寸PDF](https://m5stack-doc.oss-cn-shenzhen.aliyuncs.com/1261/U225-Chain_PIR_Model_Size.pdf)
+
+<img src=""https://m5stack-doc.oss-cn-shenzhen.aliyuncs.com/1261/U225-Chain_PIR_Model_Size.png"" width=""100%"">
+
+## 软件开发
+
+### Arduino
+
+- [Chain PIR Arduino 上手教程](/zh_CN/arduino/projects/chain/chain_pir)
+- [Chain 系列产品 驱动库](https://github.com/m5stack/M5Chain)
+- [Chain PIR 测试程序](https://github.com/m5stack/M5Chain/tree/main/examples/PIR_Example)
+
+### UiFlow2
+
+- [Chain PIR UiFlow2 文档](https://uiflow-micropython.readthedocs.io/zh-cn/latest/chain/pir.html)
+
+### 内置固件
+
+- [Chain PIR 内置固件](https://github.com/m5stack/M5Chain-Series-Internal-FW/tree/main/Chain-PIR)
+
+### 通信协议
+
+<MarkdownPreview src=""/zh_CN/protocol/U225/UART"" title=""查看通信协议"" />
+
+- [Chain PIR 通信协议 PDF](https://m5stack-doc.oss-cn-shenzhen.aliyuncs.com/1261/M5Stack-Chain-PIR-Protocol-V1_CN.pdf)
+
+## 相关视频
+
+- Chain PIR 产品介绍以及功能展示
+
+<!--英文视频链接：https://m5stack-doc.oss-cn-shenzhen.aliyuncs.com/1261/U225_Chain_PIR_video_EN.mp4>-->"
 Chain RGB,https://m5stack-doc.oss-cn-shenzhen.aliyuncs.com/1252/SCH_Chain_RGB_2026_04_02_10_35_51_page_01.png,"# Chain RGB
 
 <span class=""product-sku"">SKU:U218</span>
@@ -22798,7 +23361,7 @@ BMM150 I2C 地址为 0x10
 \#> 注意：**2018.2A**PCB 版本的设备不支持 C2C (Type-C to Type-C) 连接及 PD 供电。
 
 <img src=""https://static-cdn.m5stack.com/resource/docs/products/core/basic_v2.6/basic_v2.6_2018.2a.webp"" width=""50%"">"
-LLM630 Compute Kit,https://m5stack-doc.oss-cn-shenzhen.aliyuncs.com/459/SCH_LLM630_Compute_Kit_page_01.png,"# LLM630 Compute Kit
+LLM630 Compute Kit,https://m5stack-doc.oss-cn-shenzhen.aliyuncs.com/459/K143_SCH_ax630c_m2_base_b03_SCH_2024_11_29_17_06_23_page_01.png,"# LLM630 Compute Kit
 
 <span class=""product-sku"">SKU:K143</span>
 
@@ -22899,7 +23462,7 @@ LLM630 Compute Kit 适用于**安防监控**，**智能销售**，**智能农业
 
 ## 原理图
 
-- [LLM630 Compute Kit 原理图PDF](https://m5stack.oss-cn-shenzhen.aliyuncs.com/resource/docs/products/core/LLM630%20Computer%20Kit/%5BSCH%5D_ax630c_m2_base_b03_SCH_2024_11_29_17_06_23.pdf)
+- [LLM630 Compute Kit 原理图PDF](https://m5stack-doc.oss-cn-shenzhen.aliyuncs.com/459/K143_SCH_ax630c_m2_base_b03_SCH_2024_11_29_17_06_23.pdf)
 
 ## 管脚映射
 
@@ -22911,7 +23474,7 @@ LLM630 Compute Kit 适用于**安防监控**，**智能销售**，**智能农业
 
 ## 结构文件
 
-- [LLM630 Computer Kit 模型Step](https://m5stack.oss-cn-shenzhen.aliyuncs.com/resource/docs/products/core/LLM630%20Computer%20Kit/llm630_compute_base_v10_3d.step)
+- [LLM630 Compute Kit 3D Stp](https://github.com/m5stack/M5_Hardware/tree/master/Products/K143_LLM630_Compute_Kit/Structures)
 
 ## 数据手册
 
@@ -22952,7 +23515,9 @@ LLM630 Compute Kit 适用于**安防监控**，**智能销售**，**智能农业
 
 ## 相关视频
 
-- LLM630 Compute Kit 产品介绍以及案例展示"
+<VideoGallery>
+  <VideoItem title=""LLM630 Compute Kit 产品介绍以及案例展示"" url=""https://m5stack-doc.oss-cn-shenzhen.aliyuncs.com/459/K143_VIDEO_01.mp4"" />
+</VideoGallery>"
 Capsule,"https://m5stack-doc.oss-cn-shenzhen.aliyuncs.com/496/Sch_M5Capsule_sch_01.png,https://m5stack-doc.oss-cn-shenzhen.aliyuncs.com/496/Sch_M5Capsule_sch_02.png","# Capsule
 
 <span class=""product-sku"">SKU:K129</span>
@@ -27594,6 +28159,677 @@ lib_deps =
 ## 相关视频
 
 - PaperColor 产品介绍以及功能展示"
+PaperMono-Lite,"https://m5stack-doc.oss-cn-shenzhen.aliyuncs.com/1268/PaperMono-Lite_PRJ_V0.6.2_20260522_page_02.png,https://m5stack-doc.oss-cn-shenzhen.aliyuncs.com/1268/PaperMono-Lite_PRJ_V0.6.2_20260522_page_03.png,https://m5stack-doc.oss-cn-shenzhen.aliyuncs.com/1268/PaperMono-Lite_PRJ_V0.6.2_20260522_page_04.png,https://m5stack-doc.oss-cn-shenzhen.aliyuncs.com/1268/PaperMono-Lite_PRJ_V0.6.2_20260522_page_05.png","# PaperMono-Lite
+
+<span class=""product-sku"">SKU:C153-Lite</span>
+
+## 描述
+
+**PaperMono-Lite** 是 PaperMono 的精简版本，面向低功耗显示与便携交互应用，配备支持触控的 3.97 英寸 4 阶灰度黑白墨水屏，基于 SSD1677 驱动，分辨率为 480x800，并集成 FT6336G 触控芯片与前光照明系统，可在弱光环境下提供清晰稳定的阅读与交互体验。核心采用 ESP32-S3R8，搭配 16MB Flash、8MB PSRAM 与 2.4 GHz Wi-Fi，同时板载蜂鸣器、PDM 麦克风 (LMD4737T261-AC02)、RGB LED、BMI270 六轴 IMU、M5IOE1 IO 扩展、microSD 卡槽和 RX8130CE 实时时钟。相比 PaperMono，Lite 版本不搭载 NFC 与 LoRa 模块，保留电子纸交互与基础无线连接能力；配合 M5PM1 多级电源管理系统与 1150mAh 电池，适用于电子阅读器、电子标牌、信息显示终端和低功耗嵌入式应用。
+
+## 教程 & 快速上手
+
+learn>| ![UiFlow2](https://m5stack.oss-cn-shenzhen.aliyuncs.com/resource/docs/static/assets/img/uiflow2/uiflow2.0_banner_01.png) | [UiFlow2](/zh_CN/uiflow2/papermono/program) | 本教程将向你介绍，如何通过 UiFlow2 图形化编程平台控制 PaperMono-Lite 设备。 |
+
+learn>| ![Arduino IDE](https://m5stack.oss-cn-shenzhen.aliyuncs.com/resource/docs/static/assets/img/arduino/arduino_banner_01.png) | [Arduino IDE](/zh_CN/arduino/papermono/program) | 本教程将向你介绍，如何通过 Arduino IDE 编程控制 PaperMono-Lite 设备。 |
+
+learn>| ![CrossPoint E‑Reader](https://m5stack-doc.oss-cn-shenzhen.aliyuncs.com/1267/C153_PaperMono_e-reader-fw-cover.png) | [CrossPoint E‑Reader](https://burner.m5stack.com/firmware/2091144466157694978/) | 点击此处下载 PaperMono-Lite 的 CrossPoint E‑Reader 固件。 |
+
+## 注意事项
+
+### 墨水屏使用注意事项
+
+1. 使用时尽量避免阳光直射/暴晒，高温或强 UV 会损伤面板。
+2. 软件上使用 10 次左右局部快速刷新之后建议使用一次全屏刷新清屏，避免产生累积的严重残影。
+3. 屏幕有内置 OTP 波形可以直接调用，使用自制的外部波形时候需要注意直流平衡，否则可能对面板造成不可逆的损伤。
+4. 需要避免不间断的连续局部快速刷新，避免长时间直流不平衡对面板造成不可逆的损伤。
+
+### 触摸有效区域
+
+#> PaperMono-Lite 触摸有效区域 | 触摸 IC 固件层面对触摸边界进行内缩处理，返回的有效触控坐标范围限定为： **X 轴：5 ~ 475**（总宽 480px），**Y 轴：5 ~ 795**（总高 800px）。
+
+## 产品特点
+
+- ESP32-S3R8 核心主控
+  - 16MB Flash
+  - 8MB PSRAM
+  - 2.4 GHz Wi-Fi
+- 3.97 英寸 4 阶灰度黑白墨水屏，支持触控
+  - SSD1677
+  - 480x800 分辨率
+  - 4 阶灰度显示
+  - FT6336G 触控
+- 集成前光照明系统
+- 音频交互
+  - PDM 麦克风 (LMD4737T261-AC02)
+  - 内置蜂鸣器
+- 板载外设
+  - BMI270 六轴 IMU
+  - M5IOE1 IO 扩展
+  - microSD 卡槽
+  - RX8130CE RTC
+  - RGB LED
+- M5PM1 多级电源管理
+- 相比 PaperMono，不搭载 NFC 与 LoRa 模块
+- 内置 1150mAh 电池
+
+## 包装内容
+
+- 1 x PaperMono-Lite
+
+## 应用场景
+
+- 电子阅读器
+- 电子标牌
+- 信息显示终端
+- 便携控制面板
+- 低功耗 IoT 节点
+
+## 规格参数
+
+| 规格     | 参数                                                   |
+| -------- | ------------------------------------------------------ |
+| SoC      | ESP32-S3R8 @ Xtensa® 32 位 LX7 双核处理器，主频 240MHz |
+| Flash    | 16MB                                                   |
+| PSRAM    | 8MB Octal                                              |
+| Wi-Fi    | 2.4 GHz Wi-Fi                                          |
+| 屏幕     | 3.97"" E-Paper (Mono) SSD1677 @ 480x800，触控 FT6336G   |
+| 屏幕灰度 | 4 阶灰度显示                                           |
+| 前光     | 集成墨水屏前光照明                                     |
+| 输入电源 | USB Type-C DC 5V                                       |
+| 电池容量 | 1150mAh                                                |
+| 麦克风   | PDM 麦克风 LMD4737T261-AC02                            |
+| 蜂鸣器   | 内置蜂鸣器                                             |
+| IMU      | BMI270                                                 |
+| 电源管理 | M5PM1                                                  |
+| IO 扩展  | M5IOE1                                                 |
+| 扩展存储 | microSD                                                |
+| RTC      | RX8130CE                                               |
+| RGB LED  | 内置 RGB LED                                           |
+| 用户按键 | 2x 用户按键 + 1x 电源按键 (ON / OFF / RESET / BOOT)    |
+| 产品尺寸 | 62.0 x 101.0 x 8.0mm                                   |
+| 产品重量 | 72.4g                                                  |
+| 包装尺寸 | 113.2 x 69.6 x21.0mm                                   |
+| 毛重     | 88.9g                                                  |
+
+## 操作说明
+
+### 开关机
+
+- 开机 / 复位：短按一次电源按钮
+- 关机：连续按两次电源按钮
+
+<!--英文视频为：https://m5stack-doc.oss-cn-shenzhen.aliyuncs.com/1268/C153-Lite_PaperMono-Lite_poweron_EN.mp4-->
+
+### 下载模式
+
+长按电源按键（大约 2 秒）直到红色 LED 灯闪烁，此时松开手，设备即进入下载模式，等待烧录。
+
+<img src=""https://m5stack-doc.oss-cn-shenzhen.aliyuncs.com/1268/C153-Lite_PaperMono-Lite_download.gif"" width=""50%"">
+
+### M5GFX LUT 刷新速度
+
+以下数据为 PaperMono 在 M5GFX 不同刷新模式下的实验室测试结果。实际刷新耗时可能因显示内容和运行环境而异，仅供参考。
+
+| 刷新模式      | 单次刷新耗时 |
+| ------------- | ------------ |
+| `epd_quality` | 4.71 s       |
+| `epd_text`    | 0.45 s       |
+| `epd_fast`    | 0.34 s       |
+| `epd_fastest` | 0.07 s       |
+
+**刷新模式演示：**
+
+## 原理图
+
+- [PaperMono-Lite 原理图 PDF](https://m5stack-doc.oss-cn-shenzhen.aliyuncs.com/1268/PaperMono-Lite_PRJ_V0.6.2_20260522.pdf)
+
+## 管脚映射
+
+### E-Paper
+
+| ESP32-S3R8 | G14_SPI2_MOSI | G15_SPI2_CLK | G16_EINK_CS | G17_EINK_DC | G18_EINK_BUSY |
+| ---------- | ------------- | ------------ | ----------- | ----------- | ------------- |
+| SSD1677    | MOSI          | SCLK         | CS          | DC          | BUSY          |
+
+| M5IOE1  | PYG5_ADC3 | PYG3       |
+| ------- | --------- | ---------- |
+| SSD1677 | RST       | EPD_3V3_EN |
+
+| M5PM1      | G3_WAKEin / IRQout / PWM |
+| ---------- | ------------------------ |
+| Frontlight | BL_FB                    |
+
+通过 `M5IOE1` 的 `PYG5_ADC3` 控制电子纸复位，`PYG3` 控制电子纸 3.3V 供电；通过 `M5PM1` 的 `G3_WAKEin` 控制前光亮度。
+
+### Touch
+
+| ESP32-S3R8    | G47_SYS_SDA | G48_SYS_SCL | G4_TP_INT |
+| ------------- | ----------- | ----------- | --------- |
+| FT6336G(0x38) | SDA         | SCL         | INT       |
+
+| M5IOE1  | PYG6   | PYG13     |
+| ------- | ------ | --------- |
+| FT6336G | TP_RST | TP_VDD_EN |
+
+### microSD
+
+| ESP32-S3R8 | G12 | G13 | G11  | G10  | G9   | G8   |
+| ---------- | --- | --- | ---- | ---- | ---- | ---- |
+| microSD    | CMD | CLK | DAT0 | DAT1 | DAT2 | DAT3 |
+
+| M5IOE1  | PYG14 | PYG1 |
+| ------- | ----- | ---- |
+| microSD | EN    | DET  |
+
+`DET` 由 microSD 供电域上拉，卡槽开关闭合时检测脚被拉低，用于识别 microSD 卡插入。
+
+### HMI
+
+| ESP32-S3R8           | G47_SYS_SDA | G48_SYS_SCL | G2_KEY1 | G3_KEY2 |
+| -------------------- | ----------- | ----------- | ------- | ------- |
+| RTC - RX8130CE(0x32) | SDA         | SCL         |         |         |
+| IMU - BMI270(0x68)   | SDA         | SCL         |         |         |
+| KEY                  |             |             | KEY1    | KEY2    |
+
+| M5PM1 | G0_WAKEin | G4_WAKEin | LED_EN_PP |
+| ----- | --------- | --------- | --------- |
+| HMI   | RTC_INT   | IMU_INT   | LED_R     |
+
+`PYG0_RTC_INT` 与 `PYG4_IMU_INT` 接入 `M5PM1`，可作为低功耗唤醒源。
+
+| M5IOE1 | PYG8_PWM2 | PYG9_PWM1 |
+| ------ | --------- | --------- |
+| HMI    | LED_G     | LED_B     |
+
+PaperMono 机身侧边的 RGB LED 指示灯，由三色灯珠组成，其中红灯连接至 M5PM1 的 `LED_EN_PP`，设备开启后将根据 M5PM1 的默认行为点亮。由于 `LED_EN_PP` 不支持配置 PWM 输出模式，因此该指示灯可调的颜色将受到限制。
+
+### KEY
+
+| ESP32-S3R8 | G2                   | G3                   |
+| ---------- | -------------------- | -------------------- |
+| KEY        | USER_KEY1 (Button A) | USER_KEY2 (Button B) |
+
+### Audio
+
+| ESP32-S3R8 | G46_PDM_DAT | G45_PDM_CLK | G42_BB_PWM |
+| ---------- | ----------- | ----------- | ---------- |
+| PDM MIC    | DAT         | CLK         |            |
+| BUZZER     |             |             | BB_PWM     |
+
+| M5IOE1 | PYG12      |
+| ------ | ---------- |
+| PDM    | PDM_VDD_EN |
+
+### M5PM1
+
+| ESP32-S3R8  | G47_SYS_SDA | G48_SYS_SCL | G1_PY_IRQ | G0_BOOT_OUT |
+| ----------- | ----------- | ----------- | --------- | ----------- |
+| M5PM1(0x6E) | SDA         | SCL         | IRQ       | BOOT_OUT    |
+
+### M5IOE1
+
+| ESP32-S3R8   | G47_SYS_SDA | G48_SYS_SCL | G7      |
+| ------------ | ----------- | ----------- | ------- |
+| M5IOE1(0x4F) | SDA         | SCL         | PYB_IRQ |
+
+| M5IOE1                 | PYG11_PWM3  |
+| ---------------------- | ----------- |
+| Charger - IP2315(0x75) | PYB_CHG_IIC |
+
+> 注意事项 | 充电芯片 `IP2315` 的 I2C 工作模式依赖 I2C 引脚上拉至 VBAT 电压。设备接入 USB 将触发模式检测，若 VBAT 电压偏低，IP2315 可能无法正常初始化至 I2C 模式，进而干扰同一条 I2C 总线上的其他器件。M5IOE1 通过 PYG11_PWM3 控制 IP2315 与系统 I2C 总线的连接：设备运行期间，禁止将 IP2315 长期挂载在 I2C 总线上，通信结束后需及时断开，避免降低总线通信稳定性。若发生 I2C 总线通信异常，可通过短按电源键复置设备，恢复总线正常工作。
+
+## 尺寸图
+
+- [PaperMono-Lite 模型尺寸PDF](https://m5stack-doc.oss-cn-shenzhen.aliyuncs.com/1268/C153-Lite_PaperMono-Lite_model_size.pdf)
+
+<img src=""https://m5stack-doc.oss-cn-shenzhen.aliyuncs.com/1268/C153-Lite_PaperMono-Lite_model_size_page_01.png"" width=""100%"">
+
+## 数据手册
+
+- [ESP32-S3](https://m5stack-doc.oss-cn-shenzhen.aliyuncs.com/472/esp32-s3_datasheet_cn.pdf)
+- [RX8130CE 寄存器手册](https://m5stack-doc.oss-cn-shenzhen.aliyuncs.com/1132/RX8130CE_cn-Register-Datasheet.pdf)
+- [BMI270](https://m5stack.oss-cn-shenzhen.aliyuncs.com/resource/docs/products/app/Stamp%20Fly/BMI270.PDF)
+- [SSD1677 屏幕驱动](https://m5stack-doc.oss-cn-shenzhen.aliyuncs.com/1267/SSD1677.pdf)
+- [3.97 英寸触控屏](https://m5stack-doc.oss-cn-shenzhen.aliyuncs.com/1267/EPD_Module_User_Manual.pdf)
+
+## 软件开发
+
+?>墨水屏驱动说明|1. M5GFX 库针对 PaperMono 设备的电子纸驱动波形目前尚不稳定。推荐优先使用下方的电子纸原厂 OTP 示例程序完成刷新配置，可获得更优的面板使用寿命与刷新稳定性。<br>2. 软件使用建议：执行约 10 次局部快速刷新后，建议执行一次全屏刷新清屏，防止残影持续累积加重。<br>3. 长时间反复刷新后，面板可能出现黑色沉积像素，属于墨水颗粒物理特性导致；静置一段时间后，执行一次全屏刷新即可恢复。
+
+### Arduino
+
+- [PaperMono-Lite Arduino 快速上手](/zh_CN/arduino/papermono/program)
+- [PaperMono-Lite M5PM1 & M5IOE1 电源管理](/zh_CN/arduino/papermono/m5pm1_m5ioe1)
+- [M5PM1 Arduino Library](https://github.com/m5stack/M5PM1)
+- [M5IOE1 Arduino Library](https://github.com/m5stack/M5IOE1)
+- [M5Unified Arduino Library](https://github.com/m5stack/M5Unified)
+- [M5GFX Arduino Library](https://github.com/m5stack/M5GFX)
+
+### UiFlow2
+
+- [PaperMono-Lite UiFlow2 快速上手](/zh_CN/uiflow2/papermono/program)
+
+### 通信协议
+
+- [M5PM1 电源管理芯片](https://m5stack-doc.oss-cn-shenzhen.aliyuncs.com/1207/M5PM1_Datasheet_CN.pdf)
+- [M5IOE1 IO拓展管理芯片](https://m5stack-doc.oss-cn-shenzhen.aliyuncs.com/1210/IO_Expander_Datasheet_CN.pdf)
+
+### ESP-IDF
+
+- [PaperMono-Lite 出厂固件源码](https://github.com/m5stack/M5PaperMono-UserDemo)
+- [PaperMono-Lite OTP 案例程序](https://github.com/m5stack/M5PaperMono-OTP-Demo)
+
+### PlatformIO
+
+```bash
+[env:m5stack-papermono-lite]
+platform = espressif32@6.12.0
+board = esp32-s3-devkitm-1
+framework = arduino
+board_build.partitions = default_16MB.csv
+board_upload.flash_size = 16MB
+board_upload.maximum_size = 16777216
+board_build.arduino.memory_type = qio_opi
+build_flags =
+    -DESP32S3
+    -DBOARD_HAS_PSRAM
+    -mfix-esp32-psram-cache-issue
+    -DCORE_DEBUG_LEVEL=0
+    -DARDUINO_USB_CDC_ON_BOOT=1
+    -DARDUINO_USB_MODE=1
+lib_deps =
+    M5Unified = https://github.com/m5stack/M5Unified#develop
+    M5PM1 = https://github.com/m5stack/M5PM1
+    M5IOE1 = https://github.com/m5stack/M5IOE1
+```
+
+### Easyloader
+
+| Easyloader               | 下载链接                                                                                           | 备注 |
+| ------------------------ | -------------------------------------------------------------------------------------------------- | ---- |
+| PaperMono-Lite User Demo | [download](https://m5stack-doc.oss-cn-shenzhen.aliyuncs.com/1267/C153-PaperMono-UserDemo_0x00.exe) | /    |
+
+### 其他
+
+- [PaperMono-Lite 恢复出厂固件](https://burner.m5stack.com/firmware/2089640807996628993/)
+- [PaperMono-Lite CrossPoint E-Reader](https://burner.m5stack.com/firmware/2091144466157694978/)
+
+## 相关视频
+
+<VideoGallery>
+  <VideoItem title=""PaperMono / PaperMono-Lite 产品介绍以及功能展示"" url=""https://m5stack-doc.oss-cn-shenzhen.aliyuncs.com/1267/C153_and_C153-Lite_PaperMono_video_CN.mp4"" />
+</VideoGallery>
+
+## 产品对比
+
+::compare-table
+| 产品对比项 | [PaperMono](/zh_CN/core/PaperMono) ![PaperMono](https://m5stack-doc.oss-cn-shenzhen.aliyuncs.com/1267/C153_PaperMono_main_pictures_02.webp) | [PaperMono-Lite](/zh_CN/core/PaperMono-Lite) ![PaperMono-Lite](https://m5stack-doc.oss-cn-shenzhen.aliyuncs.com/1268/C153-Lite_PaperMono-Lite_main_pictures_02.webp) |
+| ---------- | ------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| 主控       | ESP32-S3R8                                                                                                                                  | ESP32-S3R8                                                                                                                                                           |
+| 屏幕       | 3.97"" 4 阶灰度黑白墨水屏，480x800                                                                                                           | 3.97"" 4 阶灰度黑白墨水屏，480x800                                                                                                                                    |
+| 触控       | FT6336G                                                                                                                                     | FT6336G                                                                                                                                                              |
+| 前光       | 集成                                                                                                                                        | 集成                                                                                                                                                                 |
+| Wi-Fi      | 2.4 GHz                                                                                                                                     | 2.4 GHz                                                                                                                                                              |
+| NFC        | ST25R3916                                                                                                                                   | ❌                                                                                                                                                                    |
+| LoRa       | Stamp LoRa-1262                                                                                                                             | ❌                                                                                                                                                                    |
+| 扩展存储   | microSD                                                                                                                                     | microSD                                                                                                                                                              |
+| IMU        | BMI270                                                                                                                                      | BMI270                                                                                                                                                               |
+| RTC        | RX8130CE                                                                                                                                    | RX8130CE                                                                                                                                                             |
+| 电池       | 1150mAh                                                                                                                                     | 1150mAh                                                                                                                                                              |
+| 外壳颜色   | 灰色                                                                                                                                        | 白色                                                                                                                                                                 |
+::"
+PaperMono,"https://m5stack-doc.oss-cn-shenzhen.aliyuncs.com/1267/PaperMono_SCH_V0.6.2_20260522_page_01.png,https://m5stack-doc.oss-cn-shenzhen.aliyuncs.com/1267/PaperMono_SCH_V0.6.2_20260522_page_02.png,https://m5stack-doc.oss-cn-shenzhen.aliyuncs.com/1267/PaperMono_SCH_V0.6.2_20260522_page_03.png,https://m5stack-doc.oss-cn-shenzhen.aliyuncs.com/1267/PaperMono_SCH_V0.6.2_20260522_page_04.png,https://m5stack-doc.oss-cn-shenzhen.aliyuncs.com/1267/PaperMono_SCH_V0.6.2_20260522_page_05.png,https://m5stack-doc.oss-cn-shenzhen.aliyuncs.com/1267/PaperMono_SCH_V0.6.2_20260522_page_06.png","# PaperMono
+
+<span class=""product-sku"">SKU:C153</span>
+
+## 描述
+
+**PaperMono** 是一款围绕低功耗显示、近场识别与远距离通信能力打造的电子纸开发板，配备支持触控的 3.97 英寸 4 阶灰度黑白墨水屏，基于 SSD1677 驱动，分辨率为 480 x 800，并集成 FT6336G 触控芯片与前光照明系统，可在弱光环境下获得更舒适的阅读与交互体验。核心采用 ESP32-S3R8，搭配 16MB Flash、8MB PSRAM 与 2.4 GHz Wi-Fi，同时板载蜂鸣器、PDM 麦克风（LMD4737T261-AC02）、RGB LED、BMI270 六轴 IMU、M5IOE1 IO 扩展、microSD 卡槽和 RX8130CE 实时时钟。NFC 部分基于 ST25R3916，支持 ISO14443A、ISO14443B、FeliCa™ 和 ISO15693；LoRa 通信则采用 SX1262（Stamp LoRa-1262）方案，内置 FPC 天线，支持 868MHz ~ 923MHz 频段。配合 M5PM1 多级电源管理系统与 1150mAh 电池，可满足电子阅读器、电子标牌、门禁终端、身份认证与智能交通等低功耗 IoT 和嵌入式应用需求。
+
+## 教程 & 快速上手
+
+learn>| ![UiFlow2](https://m5stack.oss-cn-shenzhen.aliyuncs.com/resource/docs/static/assets/img/uiflow2/uiflow2.0_banner_01.png) | [UiFlow2](/zh_CN/uiflow2/papermono/program) | 本教程将向你介绍，如何通过 UiFlow2 图形化编程平台控制 PaperMono 设备。 |
+
+learn>| ![Arduino IDE](https://m5stack.oss-cn-shenzhen.aliyuncs.com/resource/docs/static/assets/img/arduino/arduino_banner_01.png) | [Arduino IDE](/zh_CN/arduino/papermono/program) | 本教程将向你介绍，如何通过 Arduino IDE 编程控制 PaperMono 设备。 |
+
+learn>| ![CrossPoint E‑Reader](https://m5stack-doc.oss-cn-shenzhen.aliyuncs.com/1267/C153_PaperMono_e-reader-fw-cover.png) | [CrossPoint E‑Reader](https://burner.m5stack.com/firmware/2091144466157694978/) | 点击此处下载 PaperMono 的 CrossPoint E‑Reader 固件。 |
+
+## 注意事项
+
+### 墨水屏使用注意事项
+
+1. 使用时尽量避免阳光直射/暴晒，高温或强 UV 会损伤面板。
+2. 软件上使用 10 次左右局部快速刷新之后建议使用一次全屏刷新清屏，避免产生累积的严重残影。
+3. 屏幕有内置 OTP 波形可以直接调用，使用自制的外部波形时候需要注意直流平衡，否则可能对面板造成不可逆的损伤。
+4. 需要避免不间断的连续局部快速刷新，避免长时间直流不平衡对面板造成不可逆的损伤。
+
+### 触摸有效区域
+
+#> PaperMono 触摸有效区域 | 触摸 IC 固件层面对触摸边界进行内缩处理，返回的有效触控坐标范围限定为： **X 轴：5 ~ 475**（总宽 480px），**Y 轴：5 ~ 795**（总高 800px）。
+
+## 产品特点
+
+- ESP32-S3R8 核心主控
+  - 16MB Flash
+  - 8MB PSRAM
+  - 2.4 GHz Wi-Fi
+- 3.97 英寸 4 阶灰度黑白墨水屏，支持触控
+  - SSD1677
+  - 480x800 分辨率
+  - 4 阶灰度显示
+  - FT6336G 触控
+- 集成前光照明系统
+- 音频交互
+  - PDM 麦克风（LMD4737T261-AC02）
+  - 内置蜂鸣器
+- 板载外设
+  - BMI270 六轴 IMU
+  - M5IOE1 IO 扩展
+  - microSD 卡槽
+  - RX8130CE RTC
+  - RGB LED
+- NFC 功能
+  - ST25R3916
+  - 支持 ISO14443A / ISO14443B / FeliCa™ / ISO15693
+- LoRa 通信
+  - SX1262（Stamp LoRa-1262）
+  - 868MHz ~ 923MHz
+  - 内置 FPC 天线
+- 内置 1150mAh 电池
+
+## 包装内容
+
+- 1 x PaperMono
+
+## 应用场景
+
+- 电子阅读器
+- 电子标牌
+- 门禁终端
+- 身份认证设备
+- 智能交通终端
+
+## 规格参数
+
+| 规格     | 参数                                                      |
+| -------- | --------------------------------------------------------- |
+| SoC      | ESP32-S3R8 @ Xtensa® 32 位 LX7 双核处理器，主频 240MHz    |
+| Flash    | 16MB                                                      |
+| PSRAM    | 8MB Octal                                                 |
+| Wi-Fi    | 2.4 GHz Wi-Fi                                             |
+| 屏幕     | 3.97"" E-Paper (Mono) SSD1677 @ 480x800，触控 FT6336G      |
+| 屏幕灰度 | 4 阶灰度显示                                              |
+| 前光     | 集成墨水屏前光照明                                        |
+| 输入电源 | USB Type-C DC 5V                                          |
+| 电池容量 | 1150mAh                                                   |
+| 麦克风   | PDM 麦克风 LMD4737T261-AC02                               |
+| 蜂鸣器   | 内置蜂鸣器                                                |
+| IMU      | BMI270                                                    |
+| 电源管理 | M5PM1                                                     |
+| IO 扩展  | M5IOE1                                                    |
+| 扩展存储 | microSD                                                   |
+| RTC      | RX8130CE                                                  |
+| RGB LED  | 内置 RGB LED                                              |
+| NFC      | ST25R3916（ISO14443A/B、FeliCa™、ISO15693）               |
+| LoRa     | SX1262（Stamp LoRa-1262），868MHz ~ 923MHz，内置 FPC 天线 |
+| 用户按键 | 2x 用户按键 + 1x 电源按键（ON / OFF / RESET / BOOT）      |
+| 产品尺寸 | 62.0 x 101.0 x 8.0mm                                      |
+| 产品重量 | 74.7g                                                     |
+| 包装尺寸 | 113.2 x 69.6 x21.0mm                                      |
+| 毛重     | 91.3g                                                     |
+
+## 操作说明
+
+### 开关机
+
+- 开机 / 复位：短按一次电源按钮
+- 关机：连续按两次电源按钮
+
+<!--英文视频为：https://m5stack-doc.oss-cn-shenzhen.aliyuncs.com/1267/C153_PaperMono_poweron_EN.mp4-->
+
+### 下载模式
+
+长按电源按键（大约 2 秒）直到红色 LED 灯闪烁，此时松开手，设备即进入下载模式，等待烧录。
+
+<img src=""https://m5stack-doc.oss-cn-shenzhen.aliyuncs.com/1267/C153_PaperMono_download.gif"" width=""50%"">
+
+### M5GFX LUT 刷新速度
+
+以下数据为 PaperMono 在 M5GFX 不同刷新模式下的实验室测试结果。实际刷新耗时可能因显示内容和运行环境而异，仅供参考。
+
+| 刷新模式      | 单次刷新耗时 |
+| ------------- | ------------ |
+| `epd_quality` | 4.71 s       |
+| `epd_text`    | 0.45 s       |
+| `epd_fast`    | 0.34 s       |
+| `epd_fastest` | 0.07 s       |
+
+**刷新模式演示：**
+
+## 原理图
+
+- [PaperMono 原理图 PDF](https://m5stack-doc.oss-cn-shenzhen.aliyuncs.com/1267/PaperMono_SCH_V0.6.2_20260522.pdf)
+
+## 管脚映射
+
+### E-Paper
+
+| ESP32-S3R8 | G14_SPI2_MOSI | G15_SPI2_CLK | G16_EINK_CS | G17_EINK_DC | G18_EINK_BUSY |
+| ---------- | ------------- | ------------ | ----------- | ----------- | ------------- |
+| SSD1677    | MOSI          | SCLK         | CS          | DC          | BUSY          |
+
+| M5IOE1  | PYG5_ADC3 | PYG3       |
+| ------- | --------- | ---------- |
+| SSD1677 | RST       | EPD_3V3_EN |
+
+| M5PM1      | G3_WAKEin / IRQout / PWM |
+| ---------- | ------------------------ |
+| Frontlight | BL_FB                    |
+
+通过 `M5IOE1` 的 `PYG5_ADC3` 控制电子纸复位，`PYG3` 控制电子纸 3.3V 供电；通过 `M5PM1` 的 `PYG3_BL_PWM` 控制前光亮度。
+
+### Touch
+
+| ESP32-S3R8    | G47_SYS_SDA | G48_SYS_SCL | G4_TP_INT |
+| ------------- | ----------- | ----------- | --------- |
+| FT6336G(0x38) | SDA         | SCL         | INT       |
+
+| M5IOE1  | PYG6   | PYG13     |
+| ------- | ------ | --------- |
+| FT6336G | TP_RST | TP_VDD_EN |
+
+### microSD
+
+| ESP32-S3R8 | G12 | G13 | G11  | G10  | G9   | G8   |
+| ---------- | --- | --- | ---- | ---- | ---- | ---- |
+| microSD    | CMD | CLK | DAT0 | DAT1 | DAT2 | DAT3 |
+
+| M5IOE1  | PYG14 | PYG1   |
+| ------- | ----- | ------ |
+| microSD | TF_EN | TF_DET |
+
+`TF_DET` 由 microSD 供电域上拉，卡槽开关闭合时检测脚被拉低，用于识别 microSD 卡插入。
+
+### HMI
+
+| ESP32-S3R8           | G47_SYS_SDA | G48_SYS_SCL | G2_KEY1 | G3_KEY2 |
+| -------------------- | ----------- | ----------- | ------- | ------- |
+| RTC - RX8130CE(0x32) | SDA         | SCL         |         |         |
+| IMU - BMI270(0x68)   | SDA         | SCL         |         |         |
+| KEY                  |             |             | KEY1    | KEY2    |
+
+| M5PM1 | G0_WAKEin | G4_WAKEin | LED_EN_PP |
+| ----- | --------- | --------- | --------- |
+| HMI   | RTC_INT   | IMU_INT   | LED_R     |
+
+`PYG0_RTC_INT` 与 `PYG4_IMU_INT` 接入 `M5PM1`，可作为低功耗唤醒源。
+
+| M5IOE1 | PYG8_PWM2 | PYG9_PWM1 |
+| ------ | --------- | --------- |
+| HMI    | LED_G     | LED_B     |
+
+PaperMono 机身侧边的 RGB LED 指示灯，由三色灯珠组成，其中红灯连接至 M5PM1 的 `LED_EN_PP`，设备开启后将根据 M5PM1 的默认行为点亮。由于 `LED_EN_PP` 不支持配置 PWM 输出模式，因此该指示灯可调的颜色将受到限制。
+
+### KEY
+
+| ESP32-S3R8 | G2                   | G3                   |
+| ---------- | -------------------- | -------------------- |
+| KEY        | USER_KEY1 (Button A) | USER_KEY2 (Button B) |
+
+### Audio
+
+| ESP32-S3R8 | G46_PDM_DAT | G45_PDM_CLK | G42_BB_PWM |
+| ---------- | ----------- | ----------- | ---------- |
+| PDM MIC    | DAT         | CLK         |            |
+| BUZZER     |             |             | BB_PWM     |
+
+| M5IOE1 | PYG12      |
+| ------ | ---------- |
+| PDM    | PDM_VDD_EN |
+
+### M5PM1
+
+| ESP32-S3R8  | G47_SYS_SDA | G48_SYS_SCL | G1_PY_IRQ | G0_BOOT_OUT |
+| ----------- | ----------- | ----------- | --------- | ----------- |
+| M5PM1(0x6E) | SDA         | SCL         | IRQ       | BOOT_OUT    |
+
+### M5IOE1
+
+| ESP32-S3R8   | G47_SYS_SDA | G48_SYS_SCL | G7      |
+| ------------ | ----------- | ----------- | ------- |
+| M5IOE1(0x4F) | SDA         | SCL         | PYB_IRQ |
+
+| M5IOE1                 | PYG11_PWM3  |
+| ---------------------- | ----------- |
+| Charger - IP2315(0x75) | PYB_CHG_IIC |
+
+?> 注意事项 | 充电芯片 `IP2315` 的 I2C 工作模式依赖 I2C 引脚上拉至 VBAT 电压。设备接入 USB 将触发模式检测，若 VBAT 电压偏低，IP2315 可能无法正常初始化至 I2C 模式，进而干扰同一条 I2C 总线上的其他器件。M5IOE1 通过 PYG11_PWM3 控制 IP2315 与系统 I2C 总线的连接：设备运行期间，`禁止将 IP2315 长期挂载在 I2C 总线上，通信结束后需及时断开，避免降低总线通信稳定性`。若发生 I2C 总线通信异常，可通过短按电源键复位设备，恢复总线正常工作。
+
+### RFID
+
+| ESP32-S3R8      | G47_SYS_SDA | G48_SYS_SCL | G6_RFID_INT |
+| --------------- | ----------- | ----------- | ----------- |
+| ST25R3916(0x50) | SDA         | SCL         | IRQ         |
+
+### LoRa
+
+| ESP32-S3R8      | G38_SPI1_MOSI | G40_SPI1_MISO | G39_SPI1_CLK | G41    | G21     | G5       |
+| --------------- | ------------- | ------------- | ------------ | ------ | ------- | -------- |
+| Stamp LoRa-1262 | SPI_MOSI      | SPI_MISO      | SPI_CLK      | SX_NSS | SX_BUSY | LORA_IRQ |
+
+| M5IOE1          | PYG10_PWM4 | PYG2_ADC1 |
+| --------------- | ---------- | --------- |
+| Stamp LoRa-1262 | SX_NRST    | SX_ANT_SW |
+
+| M5PM1           | G2      |
+| --------------- | ------- |
+| Stamp LoRa-1262 | LoRa_EN |
+
+## 尺寸图
+
+- [PaperMono 模型尺寸PDF](https://m5stack-doc.oss-cn-shenzhen.aliyuncs.com/1267/C153_PaperMono_model_size.pdf)
+
+<img src=""https://m5stack-doc.oss-cn-shenzhen.aliyuncs.com/1267/C153_PaperMono_model_size_page_01.png"" width=""100%"">
+
+## 数据手册
+
+- [ESP32-S3](https://m5stack-doc.oss-cn-shenzhen.aliyuncs.com/472/esp32-s3_datasheet_cn.pdf)
+- [NFC ST25R3916](https://m5stack-doc.oss-cn-shenzhen.aliyuncs.com/1205/ST25R3916_ZH.pdf)
+- [SSD1677 屏幕驱动](https://m5stack-doc.oss-cn-shenzhen.aliyuncs.com/1267/SSD1677.pdf)
+- [3.97 英寸触控屏](https://m5stack-doc.oss-cn-shenzhen.aliyuncs.com/1267/EPD_Module_User_Manual.pdf)
+- [RX8130CE 寄存器手册](https://m5stack-doc.oss-cn-shenzhen.aliyuncs.com/1132/RX8130CE_cn-Register-Datasheet.pdf)
+- [BMI270](https://m5stack.oss-cn-shenzhen.aliyuncs.com/resource/docs/products/app/Stamp%20Fly/BMI270.PDF)
+- [SX1262](https://m5stack-doc.oss-cn-shenzhen.aliyuncs.com/1177/DS_SX1261_2_V2-2.pdf)
+
+## 软件开发
+
+?>墨水屏驱动说明|1. M5GFX 库针对 PaperMono 设备的电子纸驱动波形目前尚不稳定。推荐优先使用下方的电子纸原厂 OTP 示例程序完成刷新配置，可获得更优的面板使用寿命与刷新稳定性。<br>2. 软件使用建议：执行约 10 次局部快速刷新后，建议执行一次全屏刷新清屏，防止残影持续累积加重。<br>3. 长时间反复刷新后，面板可能出现黑色沉积像素，属于墨水颗粒物理特性导致；静置一段时间后，执行一次全屏刷新即可恢复。
+
+### Arduino
+
+- [PaperMono Arduino 快速上手](/zh_CN/arduino/papermono/program)
+- [PaperMono M5PM1 & M5IOE1 电源管理](/zh_CN/arduino/papermono/m5pm1_m5ioe1)
+- [M5PM1 Arduino Library](https://github.com/m5stack/M5PM1)
+- [M5IOE1 Arduino Library](https://github.com/m5stack/M5IOE1)
+- [M5Unified Arduino Library](https://github.com/m5stack/M5Unified)
+- [M5GFX Arduino Library](https://github.com/m5stack/M5GFX)
+
+### UiFlow2
+
+- [PaperMono UiFlow2 快速上手](/zh_CN/uiflow2/papermono/program)
+
+### 通信协议
+
+- [M5PM1 电源管理芯片](https://m5stack-doc.oss-cn-shenzhen.aliyuncs.com/1207/M5PM1_Datasheet_CN.pdf)
+- [M5IOE1 IO拓展管理芯片](https://m5stack-doc.oss-cn-shenzhen.aliyuncs.com/1210/IO_Expander_Datasheet_CN.pdf)
+
+### ESP-IDF
+
+- [PaperMono 出厂固件源码](https://github.com/m5stack/M5PaperMono-UserDemo)
+- [PaperMono OTP 案例程序](https://github.com/m5stack/M5PaperMono-OTP-Demo)
+
+### PlatformIO
+
+```bash
+[env:m5stack-papermono]
+platform = espressif32@6.12.0
+board = esp32-s3-devkitm-1
+framework = arduino
+board_build.partitions = default_16MB.csv
+board_upload.flash_size = 16MB
+board_upload.maximum_size = 16777216
+board_build.arduino.memory_type = qio_opi
+build_flags =
+    -DESP32S3
+    -DBOARD_HAS_PSRAM
+    -mfix-esp32-psram-cache-issue
+    -DCORE_DEBUG_LEVEL=0
+    -DARDUINO_USB_CDC_ON_BOOT=1
+    -DARDUINO_USB_MODE=1
+lib_deps =
+    M5Unified = https://github.com/m5stack/M5Unified#develop
+    M5PM1 = https://github.com/m5stack/M5PM1
+    M5IOE1 = https://github.com/m5stack/M5IOE1
+    M5Unit-NFC=https://github.com/m5stack/M5Unit-NFC
+    RadioLib = https://github.com/jgromes/RadioLib
+```
+
+### Easyloader
+
+| Easyloader          | 下载链接                                                                                           | 备注 |
+| ------------------- | -------------------------------------------------------------------------------------------------- | ---- |
+| PaperMono User Demo | [download](https://m5stack-doc.oss-cn-shenzhen.aliyuncs.com/1267/C153-PaperMono-UserDemo_0x00.exe) | /    |
+
+### 其他
+
+- [PaperMono 恢复出厂固件](https://burner.m5stack.com/firmware/2089640807996628993/)
+- [PaperMono CrossPoint E-Reader](https://burner.m5stack.com/firmware/2091144466157694978/)
+
+## 相关视频
+
+<VideoGallery>
+  <VideoItem title=""PaperMono / PaperMono-Lite 产品介绍以及功能展示"" url=""https://m5stack-doc.oss-cn-shenzhen.aliyuncs.com/1267/C153_and_C153-Lite_PaperMono_video_CN.mp4"" />
+</VideoGallery>
+
+## 产品对比
+
+::compare-table
+| 产品对比项 | [PaperMono](/zh_CN/core/PaperMono) ![PaperMono](https://m5stack-doc.oss-cn-shenzhen.aliyuncs.com/1267/C153_PaperMono_main_pictures_02.webp) | [PaperMono-Lite](/zh_CN/core/PaperMono-Lite) ![PaperMono-Lite](https://m5stack-doc.oss-cn-shenzhen.aliyuncs.com/1268/C153-Lite_PaperMono-Lite_main_pictures_02.webp) |
+| ---------- | ------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| 主控       | ESP32-S3R8                                                                                                                                  | ESP32-S3R8                                                                                                                                                           |
+| 屏幕       | 3.97"" 4 阶灰度黑白墨水屏，480x800                                                                                                           | 3.97"" 4 阶灰度黑白墨水屏，480x800                                                                                                                                    |
+| 触控       | FT6336G                                                                                                                                     | FT6336G                                                                                                                                                              |
+| 前光       | 集成                                                                                                                                        | 集成                                                                                                                                                                 |
+| Wi-Fi      | 2.4 GHz                                                                                                                                     | 2.4 GHz                                                                                                                                                              |
+| NFC        | ST25R3916                                                                                                                                   | ❌                                                                                                                                                                    |
+| LoRa       | Stamp LoRa-1262                                                                                                                             | ❌                                                                                                                                                                    |
+| 扩展存储   | microSD                                                                                                                                     | microSD                                                                                                                                                              |
+| IMU        | BMI270                                                                                                                                      | BMI270                                                                                                                                                               |
+| RTC        | RX8130CE                                                                                                                                    | RX8130CE                                                                                                                                                             |
+| 电池       | 1150mAh                                                                                                                                     | 1150mAh                                                                                                                                                              |
+| 外壳颜色   | 灰色                                                                                                                                        | 白色                                                                                                                                                                 |
+::"
 PaperS3,https://m5stack-doc.oss-cn-shenzhen.aliyuncs.com/517/sch_papers3_V1.0_page_01.png,"# PaperS3
 
 <span class=""product-sku"">SKU:C139</span>
@@ -31451,13 +32687,13 @@ learn>| ![Home Assistant](https://m5stack-doc.oss-cn-shenzhen.aliyuncs.com/1145/
 | 搭载 PWR485（RS485 + 电源输入） | 板载 MPU6886、可搭载两节 18650 电池（并联） |
 
 如需对比 Station 系列产品信息，可访问[产品选型表](/zh_CN/products_selector/m5station_compare?select=K124-B)，勾选目标产品即可获取对比结果。选型表涵盖核心参数、功能特性等关键信息，支持多产品同步比对。"
-StickC-Plus SE (coming soon),https://m5stack-doc.oss-cn-shenzhen.aliyuncs.com/1234/K016-P-SE-SCH_StickC-Plus-SE_SCH.png,"# StickC-Plus SE (coming soon)
+StickC-Plus SE,https://m5stack-doc.oss-cn-shenzhen.aliyuncs.com/1234/K016-P-SE-SCH_StickC-Plus-SE_SCH.png,"# StickC-Plus SE
 
 <span class=""product-sku"">SKU:K016-P-SE</span>
 
 ## 描述
 
-**StickC-Plus SE** 是 [StickC-Plus](/zh_CN/core/m5stickc_plus)的精简版本，在保留核心功能的基础上取消了板载 6 轴 IMU 传感器，外壳颜色采用透明的橙色设计，以满足不同应用场景的需求。主控采用 ESP32-PICO-D4 模组，内置 2.4GHz Wi-Fi 功能，并集成红外发射、RTC 实时时钟、板载麦克风、状态指示灯、自定义按键、无源蜂鸣器及电源管理单元（PMU）。配备 1.14 英寸 135×240 分辨率彩色 TFT 显示屏，显示效果清晰细腻。内置 120mAh 电池，接口兼容 Hat 与 Unit 系列扩展产品，具备灵活的扩展能力。本产品适用于无需姿态检测、追求高性价比的轻量化物联网开发及简易创意项目。
+**StickC-Plus SE** 是 [StickC-Plus](/zh_CN/core/m5stickc_plus) 的轻量化版本，在保留核心功能的基础上取消了板载 6 轴 IMU 传感器，性价比更高。外壳颜色采用全新的透明橙色，通透质感出众。主控采用 ESP32-PICO-D4 模组，内置 2.4GHz Wi-Fi 功能，并集成红外发射、RTC 实时时钟、板载麦克风、状态指示灯、自定义按键、无源蜂鸣器及电源管理单元（PMU）。配备 1.14 英寸 135×240 分辨率彩色 LCD 显示屏，显示效果清晰细腻。内置 120mAh 电池，接口兼容 Hat 与 Unit 系列扩展产品，具备灵活的扩展能力。本产品适用于无需姿态检测、追求高性价比的轻量化物联网开发及简易创意项目。
 
 ## 教程 & 快速上手
 
@@ -31465,11 +32701,14 @@ learn>| ![UiFlow](https://m5stack.oss-cn-shenzhen.aliyuncs.com/resource/docs/sta
 
 learn>| ![UiFlow2](https://m5stack.oss-cn-shenzhen.aliyuncs.com/resource/docs/static/assets/img/uiflow2/uiflow2.0_banner_01.png) | [UiFlow2](/zh_CN/uiflow2/m5stickcplus/program) | 本教程将向你介绍，如何通过 UiFlow2 图形化编程平台控制 StickC-Plus SE 设备。 |
 
-learn>| ![Arduino IDE](https://m5stack.oss-cn-shenzhen.aliyuncs.com/resource/docs/static/assets/img/arduino/arduino_banner_01.png) | [Arduino IDE](/zh_CN/arduino/m5stickc_plus/program) | 本教程将向你介绍，如何通过 Arduino IDE 编程控制 StickC-Plus SE 设备。 |
+learn>| ![Arduino IDE](https://m5stack.oss-cn-shenzhen.aliyuncs.com/resource/docs/static/assets/img/arduino/arduino_banner_01.png) | [Arduino IDE](/zh_CN/arduino/m5stickc-plus_se/program) | 本教程将向你介绍，如何通过 Arduino IDE 编程控制 StickC-Plus SE 设备。 |
 
 ## 产品特性
 
-- 基于 ESP32 开发，支持 2.4GHz Wi-Fi
+- ESP32-PICO-D4 核心主控
+  - 4MB Flash
+  - 520KB SRAM
+  - 2.4 GHz Wi-Fi
 - 板载红色状态指示灯
 - 集成红外发射单元
 - 内置 RTC 实时时钟模块
@@ -31477,7 +32716,7 @@ learn>| ![Arduino IDE](https://m5stack.oss-cn-shenzhen.aliyuncs.com/resource/doc
 - 配备自定义按键、LCD 显示屏、电源键与复位键
 - 内置 120 mAh 锂电池
 - 集成无源蜂鸣器
-- 外壳采用透明橙色设计
+- 背部磁吸；透明橙色外壳设计
 - 开发平台
   - UiFlow1
   - UiFlow2
@@ -31498,30 +32737,29 @@ learn>| ![Arduino IDE](https://m5stack.oss-cn-shenzhen.aliyuncs.com/resource/doc
 
 ## 规格参数
 
-| 规格     | 参数                                                              |
-| -------- | ----------------------------------------------------------------- |
-| SoC      | ESP32-PICO-D4 双核处理器，主频 240MHz                             |
-| DMIPS    | 600                                                               |
-| Flash    | 4MB                                                               |
-| SRAM     | 520KB                                                             |
-| Wi-Fi    | 2.4 GHz Wi-Fi                                                     |
-| 天线     | 2.4G 3D 天线                                                      |
-| 输入电压 | 5V@500mA                                                          |
-| 电池     | 内置 3.7V 120mAh 锂电池                                           |
-| 电源管理 | AXP192                                                            |
-| 拓展接口 | USB Type-C x 1，HY2.0-4P (I2C+I/O+UART) x 1，2.54-8P 总线接口 x 1 |
-| LCD 屏幕 | 1.14 英寸彩色 TFT LCD，分辨率 135x240，驱动芯片 ST7789v2          |
-| 麦克风   | SPM1423                                                           |
-| RTC      | BM8563                                                            |
-| 红外     | 红外发射功能                                                      |
-| 按键     | 自定义按键 x 2                                                    |
-| LED      | 红色 LED x 1                                                      |
-| 蜂鸣器   | 板载蜂鸣器                                                        |
-| 工作温度 | 0 ~ 60°C                                                          |
-| 产品尺寸 | 48.0 x 24.0 x 13.5mm                                              |
-| 产品重量 | 16.9g                                                             |
-| 包装尺寸 | 104.4 x 65.0 x 18.0mm                                             |
-| 毛重     | 24.1g                                                             |
+| 规格     | 参数                                                      |
+| -------- | --------------------------------------------------------- |
+| SoC      | ESP32-PICO-D4 @ Xtensa® 32 位 LX6 双核处理器，主频 240MHz |
+| Flash    | 4MB                                                       |
+| SRAM     | 520KB                                                     |
+| Wi-Fi    | 2.4 GHz Wi-Fi                                             |
+| 天线     | 2.4G 3D 天线                                              |
+| 输入电压 | 5V@500mA                                                  |
+| 电池     | 内置 3.7V 120mAh 锂电池                                   |
+| 电源管理 | AXP192                                                    |
+| 拓展接口 | HY2.0-4P x 1，Hat-Bus 2.54-8P 接口                        |
+| LCD 屏幕 | 1.14 英寸彩色 TFT LCD，分辨率 135x240，驱动芯片 ST7789v2  |
+| 麦克风   | SPM1423                                                   |
+| RTC      | BM8563                                                    |
+| 红外     | 红外发射功能                                              |
+| 按键     | 自定义按键 x 2                                            |
+| LED      | 红色 LED x 1                                              |
+| 蜂鸣器   | 板载无源蜂鸣器                                            |
+| 工作温度 | 0 ~ 60°C                                                  |
+| 产品尺寸 | 48.0 x 24.0 x 8.4mm                                       |
+| 产品重量 | 17.0g                                                     |
+| 包装尺寸 | 104.4 x 65.0 x 18.0mm                                     |
+| 毛重     | 25.3g                                                     |
 
 ## 操作说明
 
@@ -31529,6 +32767,8 @@ learn>| ![Arduino IDE](https://m5stack.oss-cn-shenzhen.aliyuncs.com/resource/doc
 
 - 开机 / 复位：单击电源键
 - 关机：长按电源键
+
+<img src=""https://m5stack-doc.oss-cn-shenzhen.aliyuncs.com/1234/K016-P-SE-StickC-Plus_SE_main_pictures_12.png"" width=""40%"">
 
 ## 原理图
 
@@ -31538,35 +32778,33 @@ learn>| ![Arduino IDE](https://m5stack.oss-cn-shenzhen.aliyuncs.com/resource/doc
 
 ## 管脚映射
 
-### LED & IR & BUTTON A/B & 蜂鸣器
-
-| ESP32-PICO-D4 | G10      | G9         | G37      | G39      | G2         |
-| ------------- | -------- | ---------- | -------- | -------- | ---------- |
-| 红色 LED      | LED 管脚 |            |          |          |            |
-| 红外发射管 IR |          | 发射管引脚 |          |          |            |
-| 按键 BUTTON A |          |            | 按键管脚 |          |            |
-| 按键 BUTTON B |          |            |          | 按键管脚 |            |
-| 无源蜂鸣器    |          |            |          |          | 蜂鸣器管脚 |
-
-### 彩色 TFT 屏幕
+### LCD 屏幕
 
 | ESP32-PICO-D4 | G15      | G13     | G23    | G18     | G5     |
 | ------------- | -------- | ------- | ------ | ------- | ------ |
-| TFT 屏幕      | TFT_MOSI | TFT_CLK | TFT_DC | TFT_RST | TFT_CS |
+| ST7789v2      | LCD_MOSI | LCD_CLK | LCD_DC | LCD_RST | LCD_CS |
 
-### 麦克风 MIC (SPM1423)
+### LED & IR & 按键 & 蜂鸣器
+
+| ESP32-PICO-D4 | G10 | G9  | G37   | G39   | G2     |
+| ------------- | --- | --- | ----- | ----- | ------ |
+| LED_RED       | LED |     |       |       |        |
+| IR_TX         |     | TX  |       |       |        |
+| Button A      |     |     | Input |       |        |
+| Button B      |     |     |       | Input |        |
+| Buzzer        |     |     |       |       | Output |
+
+### 麦克风
 
 | ESP32-PICO-D4 | G0  | G34  |
 | ------------- | --- | ---- |
-| 麦克风 MIC    | CLK | DATA |
+| SPM1423       | CLK | DATA |
 
-### AXP192 控制接口 (AXP192)
+### 电源管理
 
 | ESP32-PICO-D4 | G22 | G21 |
 | ------------- | --- | --- |
 | AXP192        | SCL | SDA |
-
-### 电源输出分配 (AXP192)
 
 | AXP192   | LDO1    | LDO2   | LDO3          | GPIO0   | EXT_EN       |
 | -------- | ------- | ------ | ------------- | ------- | ------------ |
@@ -31575,15 +32813,13 @@ learn>| ![Arduino IDE](https://m5stack.oss-cn-shenzhen.aliyuncs.com/resource/doc
 | MIC      |         |        |               | MIC_VCC |              |
 | Grove 5V |         |        |               |         | EXT_BOOST_EN |
 
-### Power Switch
+| APX192     | PWRON   |
+| ---------- | ------- |
+| Button PWR | PWR_KEY |
 
-| APX192       | PWRON   |
-| ------------ | ------- |
-| Power Switch | pwr_key |
+### Hat-Bus
 
-### Hat Bus
-
-| Hat Bus | StickC-Plus SE |
+| Hat-Bus | StickC-Plus SE |
 | ------- | -------------- |
 | 1       | GND            |
 | 2       | 5V_OUT         |
@@ -31608,10 +32844,6 @@ learn>| ![Arduino IDE](https://m5stack.oss-cn-shenzhen.aliyuncs.com/resource/doc
 
 <img src=""https://m5stack-doc.oss-cn-shenzhen.aliyuncs.com/1234/K016-P-SE-model-size_page_01.png"" width=""100%"">
 
-## 结构文件
-
-- [StickC-Plus SE 结构文件](https://github.com/m5stack/M5_Hardware/tree/master/Products/K016-P_StickC-Plus/Structures)
-
 ## 数据手册
 
 - [ESP32-PICO](https://m5stack-doc.oss-cn-shenzhen.aliyuncs.com/669/esp32-pico_series_datasheet_cn.pdf)
@@ -31625,9 +32857,10 @@ learn>| ![Arduino IDE](https://m5stack.oss-cn-shenzhen.aliyuncs.com/resource/doc
 
 ### Arduino
 
-- [StickC-Plus SE Arduino 快速上手](/zh_CN/arduino/m5stickc_plus/program)
-- [StickC-Plus SE Arduino 驱动库](https://github.com/m5stack/M5StickC-Plus)
-- [StickC-Plus SE 出厂测试例程](https://github.com/m5stack/M5StickC-Plus/tree/master/examples/FactoryTest)
+- [StickC-Plus SE Arduino 快速上手](/zh_CN/arduino/m5stickc-plus_se/program)
+- [StickC-Plus SE Arduino M5Unified 驱动库](https://github.com/m5stack/M5Unified)
+- [StickC-Plus SE Arduino M5GFX 驱动库](https://github.com/m5stack/M5GFX)
+- [StickC-Plus SE 出厂固件](https://github.com/m5stack/M5StickC-Plus-SE-Factory)
 
 ### UiFlow1
 
@@ -31641,13 +32874,19 @@ learn>| ![Arduino IDE](https://m5stack.oss-cn-shenzhen.aliyuncs.com/resource/doc
 
 ?> 波特率限制 | 在进行设备程序下载操作时，推荐选用以下串口波特率选项。若采用其他速度，可能导致程序无法正常下载。<br/>**1500000 bps** / **750000 bps** / **500000 bps** / **250000 bps** / **115200 bps**
 
-将设备连接至 PC，打开设备管理器为设备安装[FTDI 驱动](https://ftdichip.com/drivers/vcp-drivers/)。以 win10 环境为例，下载匹配操作系统的驱动文件，并解压，通过设备管理器进行安装。(注意：某些系统环境下，需要安装两次，驱动才会生效，未识别的设备名通常为**M5Stack**或**USB Serial**，Windows 推荐使用驱动文件在设备管理器直接进行安装 (自定义更新)，可执行文件安装方式可能无法正常工作)。[点击此处，前往下载 FTDI 驱动](https://ftdichip.com/drivers/vcp-drivers/)
+1. 在下方列表选择匹配操作系统的驱动文件进行下载，并解压。也可点击 [FTDI Chip官方网站](https://ftdichip.com/drivers/vcp-drivers/)，获取更多版本的 FTDI 驱动。
 
-<div class=""product_pic""><img src=""https://static-cdn.m5stack.com/resource/docs/products/core/m5stickc/ftdi_01.webp""><img src=""https://static-cdn.m5stack.com/resource/docs/products/core/m5stickc/ftdi_02.webp""><img src=""https://static-cdn.m5stack.com/resource/docs/products/core/m5stickc/ftdi_03.webp""></div>
+| 驱动名称                     | 下载链接                                                                                                             |
+| ---------------------------- | -------------------------------------------------------------------------------------------------------------------- |
+| Windows_Desktop_x64          | [Download](https://m5stack.oss-cn-shenzhen.aliyuncs.com/resource/drivers/FTDI_Windows_Desktop_x64_2.12.36.20.zip)    |
+| Windows_Desktop_x86_32       | [Download](https://m5stack.oss-cn-shenzhen.aliyuncs.com/resource/drivers/FTDI_Windows_Desktop_x86_32_2.12.36.20.zip) |
+| Windows_Desktop_ARM          | [Download](https://m5stack.oss-cn-shenzhen.aliyuncs.com/resource/drivers/FTDI_Windows_Desktop_ARM_2.12.36.20A.zip)   |
+| MacOS_Intel                  | [Download](https://m5stack.oss-cn-shenzhen.aliyuncs.com/resource/drivers/FTDI_MacOS_Intel_1.6.0.zip)                 |
+| MacOS_ARM64                  | [Download](https://m5stack.oss-cn-shenzhen.aliyuncs.com/resource/drivers/FTDI_MacOS_ARM64_1.6.0.zip)                 |
 
-### 其他
+2. 将设备连接至 PC，打开设备管理器为设备安装 FTDI 驱动（下图以 Windows 10 环境为例）。（注意：某些系统环境下，需要安装两次，驱动才会生效，未识别的设备名通常为 `M5Stack` 或 `USB Serial`。）
 
-- [StickC-Plus SE 恢复出厂固件教程](/zh_CN/guide/restore_factory/m5stickc_plus)
+<img src=""https://m5stack-doc.oss-cn-shenzhen.aliyuncs.com/1145/UiFlow2_doc_FTDI_Mode.png"" width=""100%""/>
 
 **注意：**
 
@@ -31675,13 +32914,19 @@ setup()
 | ---------------------------------- | ---------------------------------------------------------------------------------------------------------- | ---- |
 | StickC-Plus SE 出产固件 Easyloader | [download](https://m5stack-doc.oss-cn-shenzhen.aliyuncs.com/1234/K016-P-SE-StickC-Plus-SE-FactoryTest.exe) | /    |
 
+## 相关视频
+
+<VideoGallery>
+  <VideoItem title=""StickC-Plus SE 产品介绍以及功能展示"" url=""https://m5stack-doc.oss-cn-shenzhen.aliyuncs.com/1234/K016-P-SE_StickC-Plus_SE_video_CN.mp4"" />
+</VideoGallery>
+
 ## 产品对比
 
 ::compare-table
-| Product Compare | [StickC-Plus SE](/zh_CN/core/StickC-Plus_SE) ![StickC-Plus SE](https://m5stack-doc.oss-cn-shenzhen.aliyuncs.com/1145/coming-soon.png) | [StickC-Plus](/zh_CN/core/m5stickc_plus) ![StickC-Plus](https://static-cdn.m5stack.com/resource/docs/products/core/m5stickc_plus/m5stickc_plus_cover_01.webp) |
-| --------------- | ------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| IMU             | 无                                                                                                                                    | 有（MPU6886）                                                                                                                                                 |
-| 外壳颜色        | 橙色，透明                                                                                                                            | 橙色，不透明                                                                                                                                                  |
+| Product Compare | [StickC-Plus SE](/zh_CN/core/StickC-Plus_SE) ![StickC-Plus SE](https://m5stack-doc.oss-cn-shenzhen.aliyuncs.com/1234/K016-P-SE-StickC-Plus_SE_main_pictures_02.webp) | [StickC-Plus](/zh_CN/core/m5stickc_plus) ![StickC-Plus](https://static-cdn.m5stack.com/resource/docs/products/core/m5stickc_plus/m5stickc_plus_cover_01.webp) |
+| --------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| IMU             | ❌                                                                                                                                                                    | ✅（MPU6886）                                                                                                                                                  |
+| 外壳颜色        | 橙色，透明                                                                                                                                                           | 橙色，不透明                                                                                                                                                  |
 ::
 
 如需对比 Stick 系列产品信息，可访问[产品选型表](/zh_CN/products_selector/m5stick_compare?select=K016-P)，勾选目标产品即可获取对比结果。选型表涵盖核心参数、功能特性等关键信息，支持多产品同步比对。"
@@ -33265,6 +34510,427 @@ learn>| ![Xiaozhi Card Kit（小智墨伴）](https://m5stack-doc.oss-cn-shenzhe
 ## 相关视频
 
 - Xiaozhi Card Kit 产品介绍"
+Faces_Bottom3,"https://m5stack-doc.oss-cn-shenzhen.aliyuncs.com/1273/A168_Faces_Bottom3_Sche_page_01.png,https://m5stack-doc.oss-cn-shenzhen.aliyuncs.com/1273/A168_Faces_Bottom3_Sche_page_02.png","﻿# Faces Bottom3
+
+<span class=""product-sku"">SKU:A168</span>
+
+## 描述
+
+**Faces Bottom3** 是 Faces 系列的功能面板扩展基座，通过 M5-Bus 总线与主机连接。基座提供 2.54-22P 输入面板总线，可用于外接键盘、计算器、游戏输入等功能面板。
+机身内置 600mAh 可充电锂电池与 TP4057 充电芯片，支持离线供电与稳定充电。
+两侧集成 RGB 灯条（共 10 颗 RGB LED），顶部提供 2 x HY2.0-4P 扩展接口（PORT.B / PORT.C），并支持 RGB LED IO 信号切换。
+背部配备 Pogo Pin 磁吸充电触点、M3 螺丝孔和壁挂固定孔，便于安装与固定；底部设有挂绳穿孔，携带方便。
+
+## 产品特性
+
+- 兼容 Faces 系列功能面板（1 代 / 3 代）
+- 兼容 Core 系列主控 （Core1 / Core2 / CoreS3 等）
+- 两侧 RGB LED 灯条（每侧 5 颗）
+- 2 x HY2.0-4P 扩展接口（PORT.B / PORT.C）
+- 内置 600mAh 可充电锂电池
+- 集成 TP4057 充电芯片
+- 背部 Pogo Pin 磁吸充电触点
+- LED IO 切换开关，兼容不同主机
+- 背部电池电源开关
+- 背部配备 M3 螺丝孔与壁挂固定孔；底部设有挂绳穿孔，方便携带
+
+## 包装内容
+
+- 1 x Faces Bottom3
+- 1 x Faces Charging3
+- 1 x 内六角扳手 L 形 2.5mm (适配 M3 螺丝)
+- 6 x M3 * 12mm 螺丝 (杯头，机械牙)
+
+## 应用场景
+
+- 手持式交互设备
+- 便携式嵌入式项目
+- 多模块扩展与原型开发
+
+## 规格参数
+
+| 规格             | 参数                                                                    |
+| ---------------- | ----------------------------------------------------------------------- |
+| 主控总线接口     | M5-Bus 2x 2.54-30P                                                      |
+| 输入面板总线接口 | 2.54-22P                                                                |
+| 扩展接口         | 2 x HY2.0-4P (PORT.B / PORT.C)                                          |
+| 电池             | 600mAh                                                                  |
+| 充电芯片         | TP4057                                                                  |
+| 输入电源         | DC 5V                                                                   |
+| RGB LED          | 10 x SK6812（两侧各 5 颗）                                              |
+| 充电方式         | 背部 Pogo Pin 磁吸充电                                                  |
+| 安装方式         | M3 螺丝孔 / 壁挂固定孔                                                  |
+| 功耗             | 上电未设置状态：3.7V@75.68uA<br>RGB LED 白光最大亮度全亮：3.7V@370.85mA |
+| 产品尺寸         | Faces Bottom3：108.0 x 54.0 x 12.5mm <br> Faces Charging3： 85.4 x 54.1 x 25.6mm                                                                   |
+| 产品重量         | 84.1g                                                                   |
+| 包装尺寸         | 120.0 x 56.0 x 30.0mm                                                   |
+| 毛重             | 104.4g                                                                  |
+
+## 操作说明
+
+### 电源开关
+
+**Faces Bottom3** 背部设有独立电源开关，用于控制电池供电。设备不使用时，可彻底断开电池供电连接，减少待机功耗，防止电池空耗。
+
+<img src=""https://m5stack-doc.oss-cn-shenzhen.aliyuncs.com/1273/A168_Faces_Bottom3_power_switch.png"" width=""50%"">
+
+## 原理图
+
+- [Faces Bottom3 原理图 PDF](https://m5stack-doc.oss-cn-shenzhen.aliyuncs.com/1273/A168_Faces_Bottom3_Sche.pdf)
+
+## 尺寸图
+
+- [Faces Bottom3 模型尺寸PDF](https://m5stack-doc.oss-cn-shenzhen.aliyuncs.com/1273/A168_Faces_Bottom3_model_size.pdf)
+- [Faces Charging3 模型尺寸PDF](https://m5stack-doc.oss-cn-shenzhen.aliyuncs.com/1273/A168_Faces_Charging3_model_size.pdf)
+
+## 数据手册
+
+- [TP4057](https://m5stack.oss-cn-shenzhen.aliyuncs.com/resource/docs/products/base/M5GO%20BATT%20Bottom3/7EEA633644BAFD22D2FBC132F5380171.pdf)
+
+## 相关视频
+
+<VideoGallery>
+  <VideoItem title=""第三代 Face系列产品介绍以及功能展示"" url=""https://m5stack-doc.oss-cn-shenzhen.aliyuncs.com/1273/Faces_Series_Video-CN.mp4"" />
+</VideoGallery>
+
+## 产品对比
+
+::compare-table
+| 产品对比表                                    | [Faces Bottom3](/zh_CN/faces/Faces_Bottom3) ![Faces Bottom3](https://m5stack-doc.oss-cn-shenzhen.aliyuncs.com/1273/A168_Faces_Bottom3_main_pictures_02.webp) | [Faces Bottom-II](/zh_CN/module/facesII) ![Faces Bottom-II](https://static-cdn.m5stack.com/resource/docs/products/module/facesII/facesII_cover_01.webp) | [Faces Bottom](/zh_CN/module/faces) ![Faces Bottom](https://static-cdn.m5stack.com/resource/docs/products/module/faces/faces_cover_01.webp) |
+| --------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------- |
+| 扩展接口                                      | 2 x HY2.0-4P                                                                                                                        | 2 x HY2.0-4P                                                                                                                                      | ❌                                                                                                                                     |
+| 三边 2.54mm 间距 排针                         | ❌                                                                                                                                   | ❌                                                                                                                                                 | 2.54 x 38P                                                                                                                            |
+| RGB LED 灯珠                                  | 10 x SK6812                                                                                                                         | 10 x SK6812                                                                                                                                       | ❌                                                                                                                                     |
+| 电池                                          | 600mAh                                                                                                                              | 600mAh                                                                                                                                            | 600mAh                                                                                                                                |
+| 电池电源开关                                  | ✅                                                                                                                                   | ❌                                                                                                                                                 | ❌                                                                                                                                     |
+| LED IO 切换开关                               | ✅                                                                                                                                   | ❌                                                                                                                                                 | ❌                                                                                                                                     |
+| 充电底座 USB Type-C 接口（兼容 C2C 连接充电） | ✅                                                                                                                                   | ❌                                                                                                                                                 | ❌                                                                                                                                     |
+::"
+Faces_Calculator3,https://m5stack-doc.oss-cn-shenzhen.aliyuncs.com/1272/A005-V3-Faces_Calculator3_Sche_page_01.png,"﻿# Faces Calculator3
+
+<span class=""product-sku"">SKU:A005-V3</span>
+
+## 描述
+
+Faces Calculator3 是一款适配 Faces Bottom 系列的计算器输入面板，采用 4 × 5 按键布局设计，覆盖常用数字、运算符和功能键，适合构建带本地计算能力的交互终端。面板通过 I2C 与主机通信，可用于提供数字录入、简易运算和计算结果显示等交互能力。
+
+## 教程 & 快速上手
+
+learn>| ![Arduino IDE](https://m5stack.oss-cn-shenzhen.aliyuncs.com/resource/docs/static/assets/img/arduino/arduino_banner_01.png) | [Arduino IDE](/zh_CN/arduino/projects/faces/faces_calculator3) | 本教程将向你介绍，如何通过 Arduino IDE 编程控制 Faces Calculator3 设备。 |
+
+## 产品特性
+
+- 内置 STM32 核心主控: STM32G031G8U6
+- I2C 通信接口
+- 计算器按键布局
+
+## 包装内容
+
+- 1x Faces Calculator3
+
+## 应用场景
+
+- 数字输入与运算交互场景
+- 本地计算与参数录入场景
+- 教学演示与原型验证项目
+
+## 规格参数
+
+| 规格               | 参数                 |
+| ------------------ | -------------------- |
+| MCU                | STM32G031G8U6        |
+| 通信接口           | I2C 通信 @ 0x08      |
+| 按键布局           | 4 x 5 计算器键盘     |
+| 按键数量           | 20 键                |
+| 待机功耗（仅面板） | 3.3V@1.79mA          |
+| 产品尺寸           | 57.0 x 54.1 x 10.6mm |
+| 产品重量           | 20.7g                |
+| 包装尺寸           | 56.0 x 59.0 x 19.0mm |
+| 毛重               | 25.5g                |
+
+## 原理图
+
+- [Faces Calculator3 原理图 PDF](https://m5stack-doc.oss-cn-shenzhen.aliyuncs.com/1272/A005-V3-Faces_Calculator3_Sche.pdf)
+
+## 管脚映射
+
+### Faces Panel Bus
+
+::m5-bus-table
+| PIN | LEFT | RIGHT | PIN |
+| --- | ---- | ----- | --- |
+| GND | 1    | 2     |     |
+| INT | 3    | 4     | 3V3 |
+|     | 5    | 6     |     |
+|     | 7    | 8     |     |
+|     | 9    | 10    |     |
+|     | 11   | 12    |     |
+|     | 13   | 14    |     |
+|     | 15   | 16    | SDA |
+|     | 17   | 18    | SCL |
+|     | 19   | 20    |     |
+|     | 21   | 22    |     |
+::
+
+## 尺寸图
+
+- [Faces Calculator3 模型尺寸PDF](https://m5stack-doc.oss-cn-shenzhen.aliyuncs.com/1272/A005-V3_Faces_Calculator3_model_size.pdf)
+
+<img src=""https://m5stack-doc.oss-cn-shenzhen.aliyuncs.com/1272/A005-V3_Faces_Calculator3_model_size_page_01.png"" width=""100%"">
+
+## 软件开发
+
+### Arduino
+
+- [Faces Calculator3 Arduino 快速上手](/zh_CN/arduino/projects/faces/faces_calculator3)
+- [Faces Calculator3 驱动库](https://github.com/m5stack/M5Faces)
+
+### UiFlow2
+
+- [Faces Calculator3 UiFlow2 文档](https://uiflow-micropython.readthedocs.io/zh-cn/develop/module/faces_calculator3.html)
+
+### 内置固件
+
+- [Faces Calculator3 内置固件](https://github.com/m5stack/M5Faces-Calculator3-Internal-FW)
+
+### 通信协议
+
+<MarkdownPreview src=""/zh_CN/protocol/A005-V3/I2C"" title=""查看通信协议"" />
+
+## 相关视频
+
+<VideoGallery>
+  <VideoItem title=""第三代 Face系列产品介绍以及功能展示"" url=""https://m5stack-doc.oss-cn-shenzhen.aliyuncs.com/1273/Faces_Series_Video-CN.mp4"" />
+</VideoGallery>
+
+## 产品对比
+
+::compare-table
+| 产品对比表 | [Faces Calculator3](/zh_CN/faces/Faces_Calculator3) ![Faces Calculator3](https://m5stack-doc.oss-cn-shenzhen.aliyuncs.com/1272/A005-V3_Faces_Calculator3_main_pictures_02.webp) | [Faces Calculator](/zh_CN/module/faces_calculator) ![Faces Calculator](https://static-cdn.m5stack.com/resource/docs/products/module/faces_calculator/faces_calculator_cover_01.webp) |
+| ---------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| MCU        | STM32G031G8U6                                                                                                                                                                   | MEGA328                                                                                                                                                                              |
+::"
+Faces_Gamepad3,https://m5stack-doc.oss-cn-shenzhen.aliyuncs.com/1271/A004-V3_Faces_Gamepad3_Sche_page_01.png,"﻿# Faces Gamepad3
+
+<span class=""product-sku"">SKU:A004-V3</span>
+
+## 描述
+
+**Faces Gamepad3** 是适配 Faces Bottom 系列的游戏控制输入面板，提供经典的方向控制、A/B 按键以及暂停/开始等交互按键，适合用于游戏控制和快捷操作场景。
+内部集成 STM32 核心主控，通过 I2C 通信协议与中断引脚和主机进行交互，具备响应快、集成度高的特点。
+
+## 教程 & 快速上手
+
+learn>| ![Arduino IDE](https://m5stack.oss-cn-shenzhen.aliyuncs.com/resource/docs/static/assets/img/arduino/arduino_banner_01.png) | [Arduino IDE](/zh_CN/arduino/projects/faces/faces_gamepad3) | 本教程将向你介绍，如何通过 Arduino IDE 编程控制 Faces Gamepad3 设备。 |
+
+## 产品特性
+
+- 内置 STM32 核心主控: STM32F030F4P6
+- I2C 通信接口
+- 游戏手柄按键布局
+
+## 包装内容
+
+- 1x Faces Gamepad3
+
+## 应用场景
+
+- 游戏控制输入场景
+- 方向控制与快捷操作场景
+- 需要按键交互的嵌入式项目
+
+## 规格参数
+
+| 规格               | 参数                   |
+| ------------------ | ---------------------- |
+| MCU                | STM32F030F4P6          |
+| 通信接口           | I2C 通信 @ 0x08        |
+| 按键布局           | 方向键、A/B、开始/选择 |
+| 按键数量           | 8 键                   |
+| 待机功耗（仅面板） | 3.3V@4.91mA            |
+| 产品尺寸           | 57.0 x 54.1 x 10.7mm   |
+| 产品重量           | 19.2g                  |
+| 包装尺寸           | 56.0 x 59.0 x 19.0mm   |
+| 毛重               | 24.0g                  |
+
+## 原理图
+
+- [Faces Gamepad3 原理图 PDF](https://m5stack-doc.oss-cn-shenzhen.aliyuncs.com/1271/A004-V3_Faces_Gamepad3_Sche.pdf)
+
+## 管脚映射
+
+### Faces Panel Bus
+
+::m5-bus-table
+| PIN | LEFT | RIGHT | PIN |
+| --- | ---- | ----- | --- |
+| GND | 1    | 2     | 5V  |
+| INT | 3    | 4     | 3V3 |
+|     | 5    | 6     |     |
+|     | 7    | 8     |     |
+|     | 9    | 10    |     |
+|     | 11   | 12    |     |
+|     | 13   | 14    |     |
+|     | 15   | 16    | SDA |
+|     | 17   | 18    | SCL |
+|     | 19   | 20    |     |
+|     | 21   | 22    |     |
+::
+
+## 尺寸图
+
+- [Faces Gamepad3 模型尺寸PDF](https://m5stack-doc.oss-cn-shenzhen.aliyuncs.com/1271/A004-V3_Faces_Gamepad3_model_size.pdf)
+
+<img src=""https://m5stack-doc.oss-cn-shenzhen.aliyuncs.com/1271/A004-V3_Faces_Gamepad3_model_size_page_01.png"" width=""100%"">
+
+## 软件开发
+
+### Arduino
+
+- [Faces Gamepad3 Arduino 快速上手](/zh_CN/arduino/projects/faces/faces_gamepad3)
+- [Faces Gamepad3 驱动库](https://github.com/m5stack/M5Faces)
+
+### UiFlow2
+
+- [Faces Gamepad3 UiFlow2 文档](https://uiflow-micropython.readthedocs.io/zh-cn/develop/module/faces_gamepad3.html)
+
+### 内置固件
+
+- [Faces Gamepad3 内置固件](https://github.com/m5stack/M5Faces-Gamepad3-Internal-FW)
+
+### 内置固件升级
+
+- [Faces Gamepad3 内置固件升级工具 - ESP32](https://burner.m5stack.com/firmware/2095418985687408641/)
+- [Faces Gamepad3 内置固件升级工具 - ESP32-S3](https://burner.m5stack.com/firmware/2095420693247287297/)
+- [Faces Gamepad3 内置固件升级教程](/zh_CN/learn/firmware/internal_fw_upgrade)
+
+### 通信协议
+
+<MarkdownPreview src=""/zh_CN/protocol/A004-V3/I2C"" title=""查看通信协议"" />
+
+## 相关视频
+
+<VideoGallery>
+  <VideoItem title=""第三代 Face系列产品介绍以及功能展示"" url=""https://m5stack-doc.oss-cn-shenzhen.aliyuncs.com/1273/Faces_Series_Video-CN.mp4"" />
+</VideoGallery>
+
+## 产品对比
+
+::compare-table
+| 产品对比表 | [Faces Gamepad3](/zh_CN/faces/Faces_Gamepad3) ![Faces Gamepad3](https://m5stack-doc.oss-cn-shenzhen.aliyuncs.com/1271/A004-V3_Faces_Gamepad3_main_pictures_02.webp) | [Faces Gamepad](/zh_CN/module/faces_gameboy) ![Faces Gamepad](https://static-cdn.m5stack.com/resource/docs/products/module/faces_gameboy/faces_gameboy_cover_01.webp) |
+| ---------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| MCU        | STM32F030F4P6                                                                                                                                                       | MEGA328                                                                                                                                                               |
+::"
+Faces_Keyboard3,https://m5stack-doc.oss-cn-shenzhen.aliyuncs.com/1270/A003-V3_Faces_Keyboard3_page_01.png,"﻿# Faces Keyboard3
+
+<span class=""product-sku"">SKU:A003-V3</span>
+
+## 描述
+
+**Faces Keyboard3** 是适配 Faces Bottom 系列的键盘输入面板，采用 35 键布局，支持通过组合键实现多字符输入，满足基础文本输入与快捷控制需求。内部集成 STM32 核心主控，通过 I2C 通信协议与中断引脚和主机进行交互，具备响应快、集成度高的特点。
+
+## 教程 & 快速上手
+
+learn>| ![Arduino IDE](https://m5stack.oss-cn-shenzhen.aliyuncs.com/resource/docs/static/assets/img/arduino/arduino_banner_01.png) | [Arduino IDE](/zh_CN/arduino/projects/faces/faces_keyboard3) | 本教程将向你介绍，如何通过 Arduino IDE 编程控制 Faces Keyboard3 设备。 |
+
+## 产品特性
+
+- 内置 STM32 核心主控: STM32F030C8T6
+- I2C 通信接口
+- 按键布局: QWERTY 键盘
+- 输入状态指示灯: 蓝色 LED x2
+
+## 包装内容
+
+- 1x Faces Keyboard3
+
+## 应用场景
+
+- 人机交互输入场景
+- 参数配置与快捷操作
+- 文本输入与菜单控制
+
+## 规格参数
+
+| 规格               | 参数                 |
+| ------------------ | -------------------- |
+| MCU                | STM32F030C8T6        |
+| 通信接口           | I2C 通信 @ 0x08      |
+| 按键布局           | QWERTY 全键盘        |
+| 按键数量           | 35 键                |
+| 输入状态指示灯     | 蓝色 LED x2          |
+| 待机功耗（仅面板） | 3.3V@5.51mA          |
+| 产品尺寸           | 57.0 x 54.1 x 10.0mm |
+| 产品重量           | 21.4g                |
+| 包装尺寸           | 56.0 x 59.0 x 19.0mm |
+| 毛重               | 26.4g                |
+
+## 操作说明
+
+#>指示灯说明|键盘的**左侧蓝色指示灯常亮**表示当前为基底层（黑色字符）；**右侧蓝色指示灯常亮**表示当前为符号层（蓝色字符）；**左右指示灯交替闪烁**表示当前为功能层（红色字符）。请根据指示灯状态判断当前所处输入层级。
+
+## 原理图
+
+- [Faces Keyboard3 原理图 PDF](https://m5stack-doc.oss-cn-shenzhen.aliyuncs.com/1270/A003-V3_Faces_Keyboard3.pdf)
+
+## 管脚映射
+
+### Faces Panel Bus
+
+::m5-bus-table
+| PIN | LEFT | RIGHT | PIN |
+| --- | ---- | ----- | --- |
+| GND | 1    | 2     |     |
+| INT | 3    | 4     | 3V3 |
+|     | 5    | 6     |     |
+|     | 7    | 8     |     |
+|     | 9    | 10    |     |
+|     | 11   | 12    |     |
+|     | 13   | 14    |     |
+|     | 15   | 16    | SDA |
+|     | 17   | 18    | SCL |
+|     | 19   | 20    |     |
+|     | 21   | 22    |     |
+::
+
+## 尺寸图
+
+- [Faces Keyboard3 模型尺寸PDF](https://m5stack-doc.oss-cn-shenzhen.aliyuncs.com/1270/A003-V3_Faces_Keyboard3_model_size.pdf)
+
+<img src=""https://m5stack-doc.oss-cn-shenzhen.aliyuncs.com/1270/A003-V3_Faces_Keyboard3_model_size_page_01.png"" width=""100%"">
+
+## 软件开发
+
+### Arduino
+
+- [Faces Keyboard3 Arduino 快速上手](/zh_CN/arduino/projects/faces/faces_keyboard3)
+- [Faces Keyboard3 驱动库](https://github.com/m5stack/M5Faces)
+
+### UiFlow2
+
+- [Faces Keyboard3 UiFlow2 文档](https://uiflow-micropython.readthedocs.io/zh-cn/develop/module/faces_keyboard3.html)
+
+### 内置固件
+
+- [Faces Keyboard3 内置固件](https://github.com/m5stack/M5Faces-Keyboard3-Internal-FW)
+
+### 通信协议
+
+<MarkdownPreview src=""/zh_CN/protocol/A003-V3/I2C"" title=""查看通信协议"" />
+
+## 相关视频
+
+<VideoGallery>
+  <VideoItem title=""第三代 Face系列产品介绍以及功能展示"" url=""https://m5stack-doc.oss-cn-shenzhen.aliyuncs.com/1273/Faces_Series_Video-CN.mp4"" />
+</VideoGallery>
+
+## 产品对比
+
+::compare-table
+| 产品对比表 | [Faces Keyboard3](/zh_CN/faces/Faces_Keyboard3) ![Faces Keyboard3](https://m5stack-doc.oss-cn-shenzhen.aliyuncs.com/1270/A003-V3_Faces_Keyboard3_main_pictures_02.webp) | [Faces QWERTY](/zh_CN/module/faces_keyboard) ![Faces QWERTY](https://static-cdn.m5stack.com/resource/docs/products/module/faces_keyboard/faces_keyboard_cover_01.webp) |
+| ---------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| MCU        | STM32F030C8T6                                                                                                                                                           | MEGA328                                                                                                                                                                |
+::"
 Hat CBack NBIoT,https://static-cdn.m5stack.com/resource/docs/products/hat/C-BACK NB-IoT(SIM7020G)/img-8181af47-822b-4626-b507-993b4fa955cb.webp,"# Hat CBack NBIoT
 
 <span class=""product-sku"">SKU:A113</span>
@@ -42516,6 +44182,139 @@ CAN 通信部分采用 CA - IS3050G 隔离收发器，RS485 部分采用 CA-IS30
 - [Module13.2 PwrCAN UiFlow2 文档](https://uiflow-micropython.readthedocs.io/zh-cn/latest/module/pwrcan.html)
 
 ## 相关视频"
+Module13.2 LoRa-1262,https://m5stack-doc.oss-cn-shenzhen.aliyuncs.com/1277/SCH_Module13.2_LoRa1262_V1.0_2026_09_02_17_15_18_page_01.png,"# Module13.2 LoRa-1262
+
+<span class=""product-sku"">SKU:M149</span>
+
+## 描述
+
+**Module13.2 LoRa-1262** 是一款基于 Stamp LoRa-1262 的 M5Stack 堆叠式 LoRa 通信模块，内部集成 SX1262 LoRa 射频收发器，**支持 868 ~ 923 MHz 频段**，与主控通过 SPI 接口通信，模块板载 RP-SMA 天线接口，并通过拨码开关灵活配置 **NSS**、**BUSY** 和 **IRQ** 引脚，可适配不同主控设备的 GPIO 配置。
+
+模块还集成了基于 I2C 协议的 IO 扩展芯片，用于控制 LoRa 模组复位、旁通、关断、3.3V 电源。IO 扩展芯片的 I2C 地址由 SW2 的 A、B 拨码位选择，可在 0x71 ~ 0x74 范围内配置，多个模块堆叠使用时可为每个模块设置不同的 I2C 地址，适用于远程监测、智能家居、工业自动化和物联网 (IoT) 等应用场景。
+
+## 注意事项
+
+!> 天线连接 | 使用 LoRa 模块前请先连接匹配的外置天线，禁止在未连接天线的情况下进行发射，否则设备硬件可能会永久损坏！
+
+## 产品特性
+
+- 集成 Stamp LoRa-1262 模组 (基于 SX1262)
+- 支持 868 ~ 923 MHz 工作频段
+- 支持 SPI 串行通信协议
+- 支持 FSK、GFSK、MSK、GMSK、LoRa 和 OOK 调制模式
+- LoRa 最大发射功率约 +22 dBm，接收灵敏度低至 -147 dBm（LoRa 低速率模式下）
+- 板载 RP-SMA 外置天线接口
+- DIP 拨码开关灵活切换 NSS、BUSY 和 IRQ 引脚
+- IO 扩展芯片支持 4 档 I2C 地址选择
+- 支持多个模块堆叠使用
+- 开发平台：
+  - Arduino
+  - UiFlow2
+
+## 包装内容
+
+- 1 x Module13.2 LoRa-1262
+- 1 x 868 MHz RP-SMA 胶棒天线
+
+## 应用场景
+
+- 远程监测
+- 智能家居
+- 工业自动化
+- 物联网 (IoT) 设备
+
+## 规格参数
+
+| 规格                 | 参数                                                                                                                                                                   |
+| -------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| LoRa 模组            | Stamp LoRa-1262                                                                                                                                                        |
+| 工作频段             | 868 ~ 923 MHz                                                                                                                                                          |
+| 通信接口             | SPI                                                                                                                                                                    |
+| 天线规格             | 长 108mm，接口类型 RP-SMA（内螺内孔），工作频段 868 MHz，增益 3dBi                                                                                                     |
+| 支持调制方式         | FSK / GFSK / MSK / GMSK / LoRa / OOK                                                                                                                                   |
+| 发射功率             | 最大约为 +22 dBm                                                                                                                                                       |
+| 接收灵敏度           | -147 dBm (LoRa 低速率模式)                                                                                                                                             |
+| 天线接口             | RP-SMA                                                                                                                                                                 |
+| 拉距实测             | 62.5kHz: 3.8 km<br>125kHz: 3.6 km<br>500kHz: 2.7 km                                                                                                                    |
+| 工作功耗             | LoRa 模块最大功率传输数据：<br>发送: **4.2V** @ 277.45 mA / **5V** @ 137.10 mA / **12V** @ 71.38 mA<br>接收: **4.2V** @ 174.52 mA/ **5V** @ 9.94 mA / **12V** @ 4.5 mA |
+| IO 拓展芯片 I2C 地址 | 0x71 ~ 0x74，拨码开关控制                                                                                                                                              |
+| 待机功耗             | LoRa 模块待机或睡眠：**4.2V** @ 79.4 uA / **5V** @ 693.03 uA / **12V** @ 1.06 mA<br>LoRa 模块电源关闭： **5V** @ 2.76 uA                                               |
+| 工作电压             | DC 9 ~ 24V                                                                                                                                                             |
+| 工作电流             | DC 5V@163.4mA                                                                                                                                                          |
+| 产品尺寸             | 59.1 x 54.0 x 20.2mm                                                                                                                                                   |
+| 产品重量             | XXXg（不含天线）                                                                                                                                                       |
+| 包装尺寸             | XXX x XXX x XXXmm                                                                                                                                                      |
+| 毛重                 | XXXg                                                                                                                                                                   |
+
+## 原理图
+
+- [Module13.2 LoRa-1262 原理图 PDF](https://m5stack-doc.oss-cn-shenzhen.aliyuncs.com/1277/SCH_Module13.2_LoRa1262_V1.0_2026_09_02_17_15_18.pdf)
+
+## 管脚映射
+
+### M5-Bus
+
+\#> DIP Switch | 下方 M5-Bus 中标记 `SW1` 和 `SW3` 的引脚，可通过拨码开关进行切换，用于适配不同的主控设备。
+
+::m5-bus-table
+| PIN        | LEFT | RIGHT | PIN        |
+| ---------- | ---- | ----- | ---------- |
+| GND        | 1    | 2     | IRQ (SW3)  |
+| GND        | 3    | 4     | BUSY (SW1) |
+| GND        | 5    | 6     | EN         |
+| MOSI       | 7    | 8     | BUSY (SW1) |
+| MISO       | 9    | 10    | IRQ (SW3)  |
+| SCK        | 11   | 12    | 3V3        |
+|            | 13   | 14    |            |
+|            | 15   | 16    |            |
+| SDA        | 17   | 18    | SCL        |
+| BUSY (SW1) | 19   | 20    | NSS (SW1)  |
+| NSS (SW1)  | 21   | 22    | BUSY (SW1) |
+| NSS (SW1)  | 23   | 24    | NSS (SW1)  |
+| HPWR       | 25   | 26    | IRQ (SW3)  |
+| HPWR       | 27   | 28    | 5V         |
+| HPWR       | 29   | 30    | VBAT       |
+::
+
+<!--todo:补引脚切换开关示意图-->
+
+### IO_EXP
+
+| IO_EXP 引脚 | 连接信号           | 功能说明         |
+| ----------- | ------------------ | ---------------- |
+| IO2         | `PY_IO2_LORA_RST`  | LoRa 模组复位    |
+| IO3         | `PY_IO3_BYPASS`    | LoRa Bypass 控制 |
+| IO5         | `PY_IO5_PWR_EN`    | 3.3V 电源使能    |
+| I2C_SDA     | `SDA`              | I2C 数据         |
+| I2C_SCL     | `SCL`              | I2C 时钟         |
+| ADD_SEL     | `ADD_SEL`          | I2C 地址选择     |
+
+### I2C 地址选择
+
+通过 SW2 的 `A`、`B` 两个地址选择位，可以为 IO_EXP 配置以下 I2C 地址。多个模块堆叠使用时，请为每个模块设置不同的地址。
+
+| A   | B   | I2C 地址 |
+| --- | --- | -------- |
+| 0   | 0   | 0x74     |
+| 1   | 0   | 0x73     |
+| 0   | 1   | 0x72     |
+| 1   | 1   | 0x71     |
+
+## 尺寸图
+
+......
+
+## 数据手册
+
+- [SX1262 数据手册](https://m5stack-doc.oss-cn-shenzhen.aliyuncs.com/1177/DS_SX1261_2_V2-2.pdf)
+- [M5IOE1 IO 拓展管理芯片](https://m5stack-doc.oss-cn-shenzhen.aliyuncs.com/1210/IO_Expander_Datasheet_CN.pdf)
+
+## 软件开发
+
+### Arduino
+
+- [Module13.2 LoRa-1262 Arduino 驱动库](https://github.com/jgromes/RadioLib)
+- [Module13.2 LoRa-1262 Arduino 快速上手](/zh_CN/arduino/projects/module/module13.2_lora-1262)"
 Module13.2 QRCode,https://m5stack-doc.oss-cn-shenzhen.aliyuncs.com/1163/SCH_Module13.2_QRCODE_V1.0_docs_page_01.png,"# Module13.2 QRCode
 
 <span class=""product-sku"">SKU:M145</span>
@@ -44345,17 +46144,19 @@ Module Servo,https://static-cdn.m5stack.com/resource/docs/products/module/servo/
 - 控制舵机旋转角度
 
 - Module Servo 的使用教程"
-Module13.2 Servo2,https://static-cdn.m5stack.com/resource/docs/products/module/servo2/servo2_sch_01.webp,"# Module13.2 Servo2
+Module13.2 Servo2,https://m5stack-doc.oss-cn-shenzhen.aliyuncs.com/965/M014-B_Module13.2_Servo2_Sche_page_01.png,"# Module13.2 Servo2
 
 <span class=""product-sku"">SKU:M014-B</span>
 
 ## 描述
 
-**Module13.2 Servo2** 是 M5Stack 堆叠模块系列中的一款舵机驱动模块 ，内部采用 PCA9685 16 通道 PWM 控制器，可以同时控制 16 路舵机。采用直流电源输入（6 ~ 12V） 设计，通过两片 SY8368AQQC 进行降压，双通道输出最大总功率 35W （5V/3.5A x 2） ，单通道输出最大功率 25W（5V / 5A） ，当使用电池底座供电时最高支持 5V/2A 输出。模块与主机直接通过 I2C 进行通讯 （默认 0x40） ，通过拨码开关可改变 I2C 地址 （0x40 ~ 0x47） ，这也意味着多个 Module13.2 Servo2 可以堆叠使用，板上有一个电源切换开关，可控制 Module13.2 Servo2 电源通断。
+**Module13.2 Servo2** 是一款适用于 M5Stack 堆叠式主机的 16 通道舵机驱动模块。模块采用 PCA9685 12 位 PWM 控制器，可独立控制 16 路舵机信号，并通过 M5-Bus I2C 与主机通信。板载 3 位地址拨码开关，支持在 `0x40`（默认）至 `0x47` 之间配置 I2C 地址，最多支持 8 个模块堆叠使用（每个模块独立供电）。
+
+模块的逻辑控制与舵机供电相互独立：PCA9685 由 M5-Bus 3.3V 供电，16 路舵机接口则分为两组，每组 8 路，由两颗 SY8368AQQC 降压转换器分别提供 5V 电源，每路降压转换器给 8 组舵机供电。通过 XT60 接口输入 DC 6 ~ 12V 时，两组舵机接口同时输出最高可达 5V/3.5A x 2（总功率 35W），单组最高可达 5V/5A（25W）；使用兼容电池底座供电时，最高支持 5V/2A 输出。板载电源开关用于控制 Module13.2 Servo2 电源通断，两颗绿色指示灯分别显示两组 5V 输出状态。
 
 ## 注意事项
 
-\#> 模块供电 | 该模块驱动舵机时必须使用 DC 接口外部供电。使用电源管理芯片的主控 (如 Core2/CoreS3), 在程序初始化时需要将 M5-Bus 电源模式配置为输入。
+?> 模块供电 | 该模块驱动舵机时必须使用 DC 接口外部供电。使用电源管理芯片的主控 (如 Core2/CoreS3)，在程序初始化时需要将 M5-Bus 电源模式配置为输入（即 `cfg.output_power = false`）。
 
 ## 产品特性
 
@@ -44369,7 +46170,7 @@ Module13.2 Servo2,https://static-cdn.m5stack.com/resource/docs/products/module/s
 ## 包装内容
 
 - 1 x Module13.2 Servo2
-- 1 x XT60 电源连接线 (11.5cm)
+- 1 x XT60 电源连接线（11.5cm）
 
 ## 应用场景
 
@@ -44379,40 +46180,69 @@ Module13.2 Servo2,https://static-cdn.m5stack.com/resource/docs/products/module/s
 
 ## 规格参数
 
-| 规格     | 参数                   |
-| -------- | ---------------------- |
-| 通信接口 | I2C 通信 @ 0x40 ~ 0x47 |
-| 产品尺寸 | 54.2 x 54.2 x 19.7mm   |
-| 产品重量 | 28.0g                  |
-| 包装尺寸 | 135.0 x 95.0 x 20.5mm  |
-| 毛重     | 60.0g                  |
+| 规格                 | 参数                         |
+| -------------------- | ---------------------------- |
+| PWM 控制器           | PCA9685                      |
+| PWM 分辨率           | 12 位（4096 级）             |
+| 舵机通道             | 16 路，分为 2 组，每组 8 路  |
+| 通信接口             | I2C @ 0x40（默认）~ 0x47     |
+| 外部电源输入         | DC 6 ~ 12V                   |
+| 外部电源接口         | XT60                         |
+| 舵机输出电压         | 5V                           |
+| 双组同时带载能力     | 每组 5V/3.5A，总功率最高 35W |
+| 单组最大带载能力     | 5V/5A，功率最高 25W          |
+| 电池底座供电带载能力 | 最高 5V/2A                   |
+| 电源指示灯           | 2 x 绿色 LED                 |
+| 产品尺寸             | 54.2 x 54.2 x 19.7mm         |
+| 产品重量             | 28.0g                        |
+| 包装尺寸             | 135.0 x 95.0 x 20.5mm        |
+| 毛重                 | 60.0g                        |
+
+## 操作说明
+
+### I2C 地址切换
+
+Module13.2 Servo2 板载 3 位 I2C 地址配置拨码，拨码 1、2、3 分别对应地址位 A0、A1、A2；拨码置上记为 1，置下记为 0。请在设备断电状态下设置拨码，重新上电后生效。
+
+<img src=""https://m5stack-doc.oss-cn-shenzhen.aliyuncs.com/965/i2c.png"" width=""80%"">
+
+|  A0   |  A1   |  A2   | 7 位 I2C 地址 |
+| :---: | :---: | :---: | :-----------: |
+|   0   |   0   |   0   |     0x40      |
+|   1   |   0   |   0   |     0x41      |
+|   0   |   1   |   0   |     0x42      |
+|   1   |   1   |   0   |     0x43      |
+|   0   |   0   |   1   |     0x44      |
+|   1   |   0   |   1   |     0x45      |
+|   0   |   1   |   1   |     0x46      |
+|   1   |   1   |   1   |     0x47      |
 
 ## 原理图
 
-<img src=""https://static-cdn.m5stack.com/resource/docs/products/module/servo2/servo2_sch_01.webp"" width=""80%"">
+- [Module13.2 Servo2 原理图 PDF](https://m5stack-doc.oss-cn-shenzhen.aliyuncs.com/965/M014-B_Module13.2_Servo2_Sche.pdf)
 
 ## 管脚映射
 
 ### M5-Bus
 
 ::m5-bus-table
-| PIN | LEFT | RIGHT | PIN |
-| --- | ---- | ----- | --- |
-| GND | 1    | 2     |     |
-| GND | 3    | 4     |     |
-| GND | 5    | 6     |     |
-|     | 7    | 8     |     |
-|     | 9    | 10    |     |
-|     | 11   | 12    | 3V3 |
-|     | 13   | 14    |     |
-|     | 15   | 16    |     |
-| SDA | 17   | 18    | SCL |
-|     | 19   | 20    |     |
-|     | 21   | 22    |     |
-|     | 23   | 24    |     |
-|     | 25   | 26    |     |
-|     | 27   | 28    | 5V  |
-|     | 29   | 30    |     |
+| PIN  | LEFT | RIGHT | PIN |
+| ---- | ---- | ----- | --- |
+| GND  | 1    | 2     |     |
+| GND  | 3    | 4     |     |
+| GND  | 5    | 6     |     |
+|      | 7    | 8     |     |
+|      | 9    | 10    |     |
+|      | 11   | 12    | 3V3 |
+|      | 13   | 14    |     |
+|      | 15   | 16    |     |
+| SDA  | 17   | 18    | SCL |
+|      | 19   | 20    |     |
+|      | 21   | 22    |     |
+|      | 23   | 24    |     |
+| HPWR | 25   | 26    |     |
+| HPWR | 27   | 28    | 5V  |
+| HPWR | 29   | 30    |     |
 ::
 
 ## 尺寸图
@@ -44427,9 +46257,12 @@ Module13.2 Servo2,https://static-cdn.m5stack.com/resource/docs/products/module/s
 
 ## 软件开发
 
+#> I2C 地址冲突 | Module13.2 Servo2 内置 `PCA9685` 芯片默认使能 ALL_CALL 广播地址`0x70`，用于多个芯片同步控制。模块上电后，除接收本机的 I2C 通信地址 (0x40 ~ 0x47) 的请求以外，还会额外响应 ALL_CALL 功能的 I2C 地址 `0x70`。如果当前 I2C 总线上连接了相同地址的设备，将引发地址冲突，导致通信异常。该情况可通过配置 PCA9685 的工作模式寄存器 (0x00H) 中的 `ALLCALL` (bit:0)，将其设置为 `0` 即可禁用`ALL_CALL`功能。可参考 [Module13.2 Servo2 ALL_CALL 功能配置](/zh_CN/arduino/projects/module/module13.2_servo2#32-all_call-%E5%8A%9F%E8%83%BD%E9%85%8D%E7%BD%AE) 案例程序。
+
 ### Arduino
 
-- [Module13.2 Servo2 Example with M5Core](https://github.com/m5stack/M5Stack/tree/master/examples/Modules/SERVO2_PCA9685)
+- [Adafruit-PWM-Servo-Driver-Library](https://github.com/adafruit/Adafruit-PWM-Servo-Driver-Library)
+- [Module13.2 Servo2 Arduino 上手教程](/zh_CN/arduino/projects/module/module13.2_servo2)
 
 ### UiFlow1
 
@@ -44438,12 +46271,6 @@ Module13.2 Servo2,https://static-cdn.m5stack.com/resource/docs/products/module/s
 ### UiFlow2
 
 - [Module13.2 Servo2 UiFlow2 文档](https://uiflow-micropython.readthedocs.io/zh-cn/latest/module/servo2.html)
-
-### Easyloader
-
-| Easyloader                                       | 下载链接                                                                                                 | 备注 |
-| ------------------------------------------------ | -------------------------------------------------------------------------------------------------------- | ---- |
-| Module13.2 Servo2 Example Easyloader with M5Core | [download](https://m5stack.oss-cn-shenzhen.aliyuncs.com/EasyLoader/Windows/MODULE/EasyLoader_Servo2.exe) | /    |
 
 ## 相关视频"
 Module SIM800L,https://static-cdn.m5stack.com/resource/docs/products/module/sim800/sim800_sch_01.webp,"# Module SIM800L
@@ -45884,6 +47711,110 @@ Stamp-AddOn Cam0308 是一款 L 型 FPC 柔性排线微型 CMOS 摄像头拓展�
 - Stamp-AddOn Cam0308 模型尺寸 PDF
 
 <img src=""https://m5stack-doc.oss-cn-shenzhen.aliyuncs.com/1145/coming-soon.png"" width=""100%"">-->"
+Stamp-AddOn Cam3660,https://m5stack-doc.oss-cn-shenzhen.aliyuncs.com/1266/A182_Stamp-AddOn_Cam3660_HZVS6049_V1.0_CS-Model_3660_2026_04_13_15_25_47_page_01.png,"# Stamp-AddOn Cam3660
+
+<span class=""product-sku"">SKU:A182</span>
+
+## 描述
+
+**Stamp-AddOn Cam3660** 是一款专为 Stamp-S3Bat 设计的微型 CMOS 摄像头拓展模组，采用 3MP OV3660 图像传感器和 L 型柔性 FPC 结构，底部集成 24Pin B2B 板对板连接器，镜头侧边设有金属固定孔。模组通过 8 位 DVP 并行接口输出图像数据，并使用 SCCB 总线进行寄存器配置，最高支持 3MP (2048 x 1536) 分辨率图像采集。其紧凑结构适合集成至空间受限的设备中，可用于图像采集、视觉识别、视频传输等嵌入式视觉应用。
+
+## 产品特性
+
+- 3MP OV3660 CMOS 图像传感器
+- 最高支持 2048 x 1536 分辨率
+- 支持 JPEG、RAW RGB、RGB565/555/444、CCIR656 和 YCbCr422 输出格式
+- 8 位 DVP 并行图像输出接口
+- SCCB 配置总线
+- 支持 PWDN 低功耗控制与硬件复位
+- L 型柔性 FPC 结构，集成 24Pin B2B 板对板连接器
+- 侧边金属固定孔，便于螺丝安装固定
+- 适配 Stamp-S3Bat
+
+## 包装内容
+
+- 1 x Stamp-AddOn Cam3660
+
+## 应用场景
+
+- 嵌入式图像采集
+- 物体识别与视觉检测
+- 二维码识别
+- 视频监控与无线图传
+- IoT 视觉传感节点
+
+## 规格参数
+
+| 规格                 | 参数                                                                      |
+| -------------------- | ------------------------------------------------------------------------- |
+| 图像传感器           | OV3660 CMOS                                                               |
+| 有效像素             | 3MP                                                                       |
+| 最大分辨率           | 2048 x 1536                                                               |
+| 镜头尺寸             | 1/5 inch                                                                  |
+| 焦距                 | 2.97 ±5% mm                                                               |
+| 光圈                 | F2.0 ±5%                                                                  |
+| 视场角               | 60°                                                                       |
+| 畸变                 | <1.5%                                                                     |
+| 对焦方式             | 固定焦距 (FF)                                                             |
+| 拍摄范围             | 20cm ~ ∞                                                                  |
+| 调焦距离             | 80cm，点胶                                                                |
+| 支持分辨率           | QVGA (320 x 240) / VGA (640 x 480) / HD (1280 x 720) / QXGA (2048 x 1536) |
+| 最大帧率             | 30fps                                                                     |
+| 输出格式             | JPEG、RAW RGB、RGB565/555/444、CCIR656、YCbCr422                          |
+| 图像输出接口         | 8 位 DVP 并行接口                                                         |
+| 配置接口             | SCCB                                                                      |
+| 通信地址             | 0x3C                                                                      |
+| 连接方式             | 24Pin B2B 板对板连接器                                                    |
+| 外部时钟             | 20MHz                                                                     |
+| 数字电路电压 (DVDD)  | 1.5V ±5%                                                                  |
+| 模拟电路电压 (AVDD)  | 2.6 ~ 3.3V                                                                |
+| 接口电路电压 (DOVDD) | 1.8V / 2.8V                                                               |
+| 控制信号             | PWDN、RESET                                                               |
+| 工作温度             | -30 ~ 70°C                                                                |
+| 适配设备             | Stamp-S3Bat                                                               |
+
+## 原理图
+
+- [Stamp-AddOn Cam3660 原理图 PDF](https://m5stack-doc.oss-cn-shenzhen.aliyuncs.com/1266/A182_Stamp-AddOn_Cam3660_HZVS6049_V1.0_CS-Model_3660_2026_04_13_15_25_47_page_01.pdf)
+
+## 管脚映射
+
+| EXP.B2B | Stamp-AddOn Cam3660 |
+| ------- | ------------------- |
+| 1       | MCLK                |
+| 2       | D7                  |
+| 3       | NC                  |
+| 4       | D6                  |
+| 5       | RESET               |
+| 6       | D5                  |
+| 7       | NC                  |
+| 8       | PCLK                |
+| 9       | VS                  |
+| 10      | D4                  |
+| 11      | PWDN                |
+| 12      | D3                  |
+| 13      | GND                 |
+| 14      | D2                  |
+| 15      | HS                  |
+| 16      | D1                  |
+| 17      | NC                  |
+| 18      | D0                  |
+| 19      | SCL                 |
+| 20      | VCC3.3V             |
+| 21      | GND                 |
+| 22      | SYS                 |
+| 23      | SDA                 |
+| 24      | SYS                 |
+
+## 数据手册
+
+- [OV3660](https://m5stack-doc.oss-cn-shenzhen.aliyuncs.com/1060/OV3660_datasheet.pdf)
+
+## 软件开发
+
+### Arduino
+
+- [Stamp-AddOn Cam3660 摄像头示例程序](/zh_CN/arduino/m5stamp_s3bat/camera)"
 Stamp Cat1,https://m5stack-doc.oss-cn-shenzhen.aliyuncs.com/570/Sch_StampCat1_sch_01.png,"# Stamp Cat1
 
 <span class=""product-sku"">SKU:S004</span>
@@ -46181,6 +48112,105 @@ Stamp IO,https://m5stack-doc.oss-cn-shenzhen.aliyuncs.com/568/Sch_StampIO_sch_01
 ### 通信协议
 
 <img src=""https://m5stack.oss-cn-shenzhen.aliyuncs.com/resource/docs/products/stamp/stamp_io/map.png"" width=""80%"">"
+Stamp LoRa-1262,https://m5stack-doc.oss-cn-shenzhen.aliyuncs.com/1279/S014_Stamp_LoRa-1262_Sche_page_01.png,"# Stamp LoRa-1262
+
+<span class=""product-sku"">SKU:S014/S014-IF/S014-I</span>
+
+## 描述
+
+**Stamp LoRa-1262** 是一款超小体积的嵌入式 **LoRa 通信模组**，内置 SX1262 高性能 LoRa 收发器，工作频段覆盖 868 ~ 923 MHz。 模组体积迷你、性能强大，即便在复杂和剧烈的环境变化下，也能保持稳定可靠的射频性能。其最大发射功率可达 +22 dBm，接收灵敏度低至 -147 dBm，兼顾远距离通信与系统可靠性。产品提供多种型号可选，可根据应用需求选择预贴 IPEX-4 天线座 与 0.5 mm @ 12P FPC 座（模组通信 IO 引出） 的不同组合方案，方便集成到不同尺寸和结构的硬件设计中，适用于**智慧城市建设**、**农业与环境监测**及**户外通信**等应用场景。
+
+## 产品特性
+
+- 集成 LoRa 收发器 SX1262
+- 工作频率 868 ~ 923 MHz
+- 支持 FSK，GFSK / MSK / GMSK / LoRa / OOK 调制模式
+- 接收灵敏度：低至 -147 dBm（LoRa 低速率模式下）
+- 最大发射功率：+22 dBm
+
+## 包装内容
+
+### Stamp LoRa-1262 (SKU:S014)
+
+- 1 x Stamp LoRa-1262
+- 1 x 868 MHz RP-SMA 胶棒天线
+- 1 x RP‑SMA 转 IPEX‑4 代 天线延长线（40mm）
+- 1 x 天线座垫片（厚度 1.0mm）
+- 1 x 天线座花齿垫片（厚度 0.5mm）
+
+### Stamp LoRa-1262 I (SKU:S014-I)
+
+- 1 x Stamp LoRa-1262 I
+- 1 x 868 MHz RP-SMA 胶棒天线
+- 1 x RP‑SMA 转 IPEX‑4 代 天线延长线（40mm）
+- 1 x 天线座垫片（厚度 1.0mm）
+- 1 x 天线座花齿垫片（厚度 0.5mm）
+
+### Stamp LoRa-1262 IF (SKU:S014-IF)
+
+- 1 x Stamp LoRa-1262 IF
+- 1 x 868 MHz RP-SMA 胶棒天线
+- 1 x RP‑SMA 转 IPEX‑4 代 天线延长线（40mm）
+- 1 x 天线座垫片（厚度 1.0mm）
+- 1 x 天线座花齿垫片（厚度 0.5mm）
+
+## 应用场景
+
+- 智慧城市建设
+- 农业与环境监测
+- 户外通信
+
+## 规格参数
+
+| 规格              | 参数                                                               |
+| ----------------- | ------------------------------------------------------------------ |
+| LoRa 模组         | SX1262                                                             |
+| LoRa 频段范围     | 868 ~ 923 MHz                                                      |
+| LoRa 可编程比特率 | 最高可达 300kbps                                                   |
+| LoRa 通讯接口     | SPI                                                                |
+| 支持调制模式      | FSK / GFSK / MSK / GMSK / LoRa / OOK                               |
+| LoRa 发射功率     | +22dBm                                                             |
+| LoRa 接收灵敏度   | -147dBm（LoRa 低速率模式）                                         |
+| 天线规格          | 长 108mm，接口类型 RP-SMA（内螺内孔），工作频段 868 MHz，增益 3dBi |
+| IPEX 座子规格     | IPEX-4                                                             |
+| FPC 座子规格      | 0.5mm @ 12P                                                        |
+| 上电功耗          | 3.3V@3.03mA                                                        |
+| 产品尺寸          | 14.0 x 10.0 x 3.6mm                                                |
+| 产品重量          | xxg                                                                |
+| 包装尺寸          | xxxmm                                                              |
+| 毛重              | xxg                                                                |
+
+## 原理图
+
+- [Stamp LoRa-1262 原理图 PDF](https://m5stack-doc.oss-cn-shenzhen.aliyuncs.com/1279/S014_Stamp_LoRa-1262_Sche.pdf)
+
+## 管脚映射
+
+### Stamp LoRa-1262
+
+<img src=""https://m5stack-doc.oss-cn-shenzhen.aliyuncs.com/1279/S014-pinmap.jpg"">
+
+### Stamp LoRa-1262 I
+
+<img src=""https://m5stack-doc.oss-cn-shenzhen.aliyuncs.com/1279/S014-I-pinmap.jpg"">
+
+### Stamp LoRa-1262 IF
+
+<img src=""https://m5stack-doc.oss-cn-shenzhen.aliyuncs.com/1279/S014-IF-pinmap.jpg"">
+
+## 软件开发
+
+### Arduino
+
+- [Stamp LoRa-1262 Arduino LoRa 驱动库](https://github.com/jgromes/RadioLib)
+
+## 产品对比
+
+| SKU     | 产品名称           | IPEX-4 座子 | 0.5mm @ 12P FPC 座子 |
+| ------- | ------------------ | ----------- | -------------------- |
+| S014    | Stamp LoRa-1262    | ❌           | ❌                    |
+| S014-I  | Stamp LoRa-1262 I  | ✅           | ❌                    |
+| S014-IF | Stamp LoRa-1262 IF | ✅           | ✅                    |"
 Stamp PWR485,https://m5stack-doc.oss-cn-shenzhen.aliyuncs.com/567/Sch_StampPWR485_sch_01.png,"# Stamp PWR485
 
 <span class=""product-sku"">SKU:S001</span>
@@ -46255,6 +48285,232 @@ Stamp PWR485,https://m5stack-doc.oss-cn-shenzhen.aliyuncs.com/567/Sch_StampPWR48
   - [Arduino485 Lib](https://github.com/m5stack/ArduinoRS485)
 
 ## 相关视频"
+Stamp UWB,https://m5stack-doc.oss-cn-shenzhen.aliyuncs.com/1262/SCH_UWB_MODULE_SCH_main_V0.2_20251128_2026_06_01_11_54_35_page_01.png,"# Stamp UWB
+
+<span class=""product-sku"">SKU:S017</span>
+
+## 描述
+
+Stamp UWB 是一款超小体积的嵌入式 UWB 测距模组，**支持邮票孔 SMT 贴片安装**，内置 QM33120W 低功耗 UWB 收发器，兼容 IEEE 802.15.4‑2020 以及 IEEE 802.15.4z‑2020 BPRF，工作在 UWB Channel 9，中心频率 7987.2 MHz。模组体积小巧、射频性能稳定，支持搭建 TWR、TDoA 定位方案，可实现厘米级测距与高精度定位。目前驱动库支持单边双向测距（SS‑TWR）及双边双向测距（DS‑TWR）两种测距模式，适用于室内定位、安全测距、资产追踪、近距检测及机器人导航等应用场景。
+
+## 注意事项
+
+?>供电说明|为保证通信质量，请使用高 PSRR LDO 或电源纹波在 12mVpp 以内的电源给 Stamp UWB 供电。
+
+?> 兼容性注意 | 该 Stamp UWB 模组的 FPC 焊盘线序与 Stamp-S3 / S3A 背部 FPC 线序不兼容，实际应用请确认引脚实际连接情况，否则可能导致设备永久性损坏。
+
+?>模组布局|如使用模组进行板上（on-board）设计，需注意模组在底板上的布局，尽可能减小底板对模组 PCB 天线性能及测距精度的影响。
+建议将模组天线区域完全伸出底板边缘，并使天线馈点一侧靠近底板板边放置。天线区域下方及周围应避免铺铜、走线、放置器件或其他金属结构。在下图所示的模组摆放位置中，“✓”表示强烈推荐的摆放位置，其他位置不推荐。<br>在进行整机设计时，需注意外壳、电池、显示屏及其他金属结构对模组天线的影响，建议天线在各方向保留净空区域。整机装配完成后，应进行射频性能和测距精度测试，以确保产品性能满足设计要求。
+
+<img src=""https://m5stack-doc.oss-cn-shenzhen.aliyuncs.com/1262/S017_Stamp_UWB_operate_01.png"" width=""60%"">
+
+## 产品特性
+
+- 集成 QM33120W UWB 收发器，支持增强型 Time-of-Flight 安全模式，集成 AES-256
+- 支持 UWB Channel 9
+- 支持 IEEE 802.15.4-2020 / IEEE 802.15.4z-2020 BPRF
+- 支持 TWR、TDoA 定位方案
+- 支持 850 kbps / 6.81 Mbps 无线通信速率
+- SPI 通信接口
+- 支持邮票孔 SMT 贴片安装，间距 1.27 mm
+
+## 包装内容
+
+- 1 x Stamp UWB
+
+## 应用场景
+
+- 室内人员定位
+- 货物资产追踪
+- 近距检测
+- 机器人导航
+
+## 规格参数
+
+| 规格         | 参数                                                                                                                                                      |
+| ------------ | --------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| UWB 芯片     | QM33120W                                                                                                                                                  |
+| UWB 频率范围 | 8GHz (7987.2 MHz)<br>**Channel 9：7987.2 MHz**<br>Low frequency: 7737.6 MHz<br>Mid frequency: 7987.2 MHz<br>High frequency: 8236.8 MHz<br>带宽：499.2 MHz |
+| UWB 通信接口 | SPI                                                                                                                                                       |
+| 支持的标准   | IEEE 802.15.4-2020 / IEEE 802.15.4z-2020 BPRF                                                                                                             |
+| 无线通信速率 | 850 kbps / 6.81 Mbps                                                                                                                                      |
+| 测距功能     | 支持 SS-TWR / DS-TWR 测距                                                                                                                                 |
+| 最远通信距离 | 55m （正对）                                                                                                                                              |
+| 定位功能     | 支持 TWR、TDoA 定位方案                                                                                                                                   |
+| 测量误差     | DS-TWR：约 0.14m                                                                                                                                          |
+| 邮票孔间距   | 1.27 mm                                                                                                                                                   |
+| 休眠功耗     | DC 3.3V@75.9uA                                                                                                                                            |
+| 工作功耗     | 作为基站：DC 3.3V@5.23mA <br>作为从机：DC 3.3V@58.0mA                                                                                                     |
+| 产品尺寸     | 11.5 x 12.0 x 1.6mm                                                                                                                                       |
+| 产品重量     | 0.5g                                                                                                                                                      |
+| 包装尺寸     | 138.0 x 93.0 x 15.0mm                                                                                                                                     |
+| 毛重         | 4.6g                                                                                                                                                      |
+
+## 原理图
+
+- [Stamp UWB 原理图 PDF](https://m5stack-doc.oss-cn-shenzhen.aliyuncs.com/1262/SCH_UWB_MODULE_SCH_main_V0.2_20251128_2026_06_01_11_54_35.pdf)
+
+## 管脚映射
+
+<img src=""https://m5stack-doc.oss-cn-shenzhen.aliyuncs.com/1262/S017_Stamp_UWB_pinmap.jpg"">
+
+## 尺寸图
+
+- [Stamp UWB 模型尺寸PDF](https://m5stack-doc.oss-cn-shenzhen.aliyuncs.com/1262/S017-Stamp_UWB_model_size.pdf)
+
+<img src=""https://m5stack-doc.oss-cn-shenzhen.aliyuncs.com/1262/S017-Stamp_UWB_model_size_page_01.png"" width=""100%"">
+
+## PCB
+
+- [Stamp UWB PcbDoc](https://github.com/m5stack/M5_Hardware/tree/master/Products/S017_Stamp_UWB/Footprint)
+- [Stamp UWB KiCad 封装库](https://github.com/m5stack/M5_Hardware/blob/master/KiCad/Footprints/M5Stack.pretty/Stamp_UWB.kicad_mod)
+
+## 结构文件
+
+- [Stamp UWB KiCad 3D](https://github.com/m5stack/M5_Hardware/blob/master/KiCad/3D/M5Stack.3dshapes/Stamp_UWB.step)
+
+## 数据手册
+
+- [QM33120W Datasheet](https://m5stack-doc.oss-cn-shenzhen.aliyuncs.com/1262/QM33120W_datasheet.pdf)
+- [QM33120W Product Brief](https://m5stack-doc.oss-cn-shenzhen.aliyuncs.com/1262/QM33120W_Product_Brief.pdf)
+
+## 软件开发
+
+### Arduino
+
+- [Stamp UWB Arduino 上手教程](/zh_CN/arduino/projects/stamp/stamp_uwb)
+- [Stamp UWB 驱动库](https://github.com/m5stack/M5Stamp-UWB)
+
+## 相关视频
+
+<VideoGallery>
+  <VideoItem title=""Stamp UWB 产品介绍以及功能展示"" url=""https://m5stack-doc.oss-cn-shenzhen.aliyuncs.com/1262/S017_Stamp_UWB_video_CN.mp4"" />
+</VideoGallery>
+
+## 产品对比
+
+::compare-table
+| 产品对比表                      | [Stamp UWB F](/zh_CN/stamp/Stamp_UWB_F) ![Stamp UWB F](https://m5stack-doc.oss-cn-shenzhen.aliyuncs.com/1269/S017-F_Stamp_UWB_F_main_pictures_02.webp)                        | [Stamp UWB](/zh_CN/stamp/Stamp_UWB) ![Stamp UWB](https://m5stack-doc.oss-cn-shenzhen.aliyuncs.com/1262/S017_Stamp_UWB_main_pictures_02.webp)                                    |
+| ------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| 是否默认焊接 0.5mm-12P FPC 座子 | ✅                                                                                                                                                                             | ❌                                                                                                                                                                               |
+| 是否标配 0.5mm-12P FPC 排线     | ✅                                                                                                                                                                             | ❌                                                                                                                                                                               |
+::"
+Stamp UWB F,https://m5stack-doc.oss-cn-shenzhen.aliyuncs.com/1262/SCH_UWB_MODULE_SCH_main_V0.2_20251128_2026_06_01_11_54_35_page_01.png,"# Stamp UWB F
+
+<span class=""product-sku"">SKU:S017-F</span>
+
+## 描述
+
+Stamp UWB F 是一款超小体积的嵌入式 UWB 测距模组，**模组背部预焊 0.5mm‑12P FPC 座子，可通过 0.5mm‑12P FPC 排线对外引出**。内置 QM33120W 低功耗 UWB 收发器，兼容 IEEE 802.15.4‑2020 以及 IEEE 802.15.4z‑2020 BPRF，工作在 UWB Channel 9，中心频率 7987.2 MHz。模组体积小巧、射频性能稳定，支持搭建 TWR、TDoA 定位方案，可实现厘米级测距与高精度定位。目前驱动库支持单边双向测距（SS‑TWR）及双边双向测距（DS‑TWR）两种测距模式，适用于室内人员定位、货物资产追踪、近距检测、机器人导航等应用场景。
+
+## 注意事项
+
+!> 接线说明| 该模组可搭配 **Stamp‑C5 DIP** 使用，接线时请注意**区分 FPC 排线正反面**，切勿接反，否则会损坏设备。<br>该 Stamp UWB F 模组的 FPC 座线序与 Stamp-S3 / S3A 背部 FPC 线序不兼容，严禁直接连接，否则可能导致设备永久性损坏。
+
+<img src=""https://m5stack-doc.oss-cn-shenzhen.aliyuncs.com/1269/S017_F_FPC_Warning.png"" width=""60%"">
+
+!>FPC 排线说明| 下方示意图使用的是 Stamp UWB F 配套的 FPC 排线。若用户自行更换第三方排线使用，请**务必仔细核对排线线序与触点方向**，线序或方向错误会损坏硬件。
+
+<img src=""https://m5stack-doc.oss-cn-shenzhen.aliyuncs.com/1269/S017_F_FPC_Warning_02.png"" width=""60%"">
+
+?>供电说明|为保证通信质量，请使用高 PSRR LDO 或电源纹波在 12mVpp 以内的电源给 Stamp UWB F 供电。
+
+?>PCB 天线净空|在进行整机设计时，请注意 FPC 排线及其连接器对模组天线性能的影响。FPC 排线不得经过模组 PCB 天线下方或天线净空区域，否则可能改变天线阻抗和辐射特性，降低射频性能并引入测距误差。建议将 FPC 排线布置在天线区域之外，并在整机装配完成后进行实际测试，以确保产品的通信距离和测距精度满足设计要求。<br>**如需获得更好的射频性能，推荐使用 SMT 版本 Stamp UWB。**
+
+<img src=""https://m5stack-doc.oss-cn-shenzhen.aliyuncs.com/1269/S017-F_Stamp_UWB_F_operate_01.png"" width=""60%"">
+
+## 产品特性
+
+- 集成 QM33120W UWB 收发器，支持增强型 Time-of-Flight 安全模式，集成 AES-256
+- 支持 UWB Channel 9
+- 支持 IEEE 802.15.4-2020 / IEEE 802.15.4z-2020 BPRF
+- 支持 TWR、TDoA 定位方案
+- 支持 850 kbps / 6.81 Mbps 无线通信速率
+- SPI 通信接口
+- 支持 0.5mm-12P FPC 连接方式
+
+## 包装内容
+
+- 1 x Stamp UWB F
+- 1 x 0.5mm-12P FPC 排线
+
+## 应用场景
+
+- 室内人员定位
+- 货物资产追踪
+- 近距检测
+- 机器人导航
+
+## 规格参数
+
+| 规格         | 参数                                                                                                                                                      |
+| ------------ | --------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| UWB 芯片     | QM33120W                                                                                                                                                  |
+| UWB 频率范围 | 8GHz (7987.2 MHz)<br>**Channel 9：7987.2 MHz**<br>Low frequency: 7737.6 MHz<br>Mid frequency: 7987.2 MHz<br>High frequency: 8236.8 MHz<br>带宽：499.2 MHz |
+| UWB 通信接口 | SPI                                                                                                                                                       |
+| 支持的标准   | IEEE 802.15.4-2020 / IEEE 802.15.4z-2020 BPRF                                                                                                             |
+| 无线通信速率 | 850 kbps / 6.81 Mbps                                                                                                                                      |
+| 测距功能     | 支持 SS-TWR / DS-TWR 测距                                                                                                                                 |
+| 最远通信距离 | 55m （正对）                                                                                                                                              |
+| 定位功能     | 支持 TWR、TDoA 定位方案                                                                                                                                   |
+| 测量误差     | DS-TWR：约 0.14m                                                                                                                                          |
+| 背部扩展接口 | FPC 0.5mm-12P                                                                                                                                             |
+| 休眠功耗     | DC 3.3V@75.9uA                                                                                                                                            |
+| 工作功耗     | 作为基站：DC 3.3V@5.23mA <br>作为从机：DC 3.3V@58.0mA                                                                                                     |
+| 产品尺寸     | 11.5 x 12.0 x 2.8mm                                                                                                                                       |
+| 产品重量     | 0.6g                                                                                                                                                      |
+| 包装尺寸     | 138.0 x 93.0 x 17.0mm                                                                                                                                     |
+| 毛重         | 4.8g                                                                                                                                                      |
+
+## 原理图
+
+- [Stamp UWB F 原理图 PDF](https://m5stack-doc.oss-cn-shenzhen.aliyuncs.com/1262/SCH_UWB_MODULE_SCH_main_V0.2_20251128_2026_06_01_11_54_35.pdf)
+
+## 管脚映射
+
+<img src=""https://m5stack-doc.oss-cn-shenzhen.aliyuncs.com/1269/S017-F_Stamp_UWB_F.jpg"">
+
+## 尺寸图
+
+- [Stamp UWB F 模型尺寸PDF](https://m5stack-doc.oss-cn-shenzhen.aliyuncs.com/1269/S017-F-Stamp_UWB_F_model_size.pdf)
+
+<img src=""https://m5stack-doc.oss-cn-shenzhen.aliyuncs.com/1269/S017-F-Stamp_UWB_F_model_size_page_01.png"" width=""100%"">
+
+## PCB
+
+- [Stamp UWB PcbDoc](https://github.com/m5stack/M5_Hardware/tree/master/Products/S017_Stamp_UWB/Footprint)
+- [Stamp UWB KiCad 封装库](https://github.com/m5stack/M5_Hardware/blob/master/KiCad/Footprints/M5Stack.pretty/Stamp_UWB.kicad_mod)
+
+## 结构文件
+
+- [Stamp UWB KiCad 3D](https://github.com/m5stack/M5_Hardware/blob/master/KiCad/3D/M5Stack.3dshapes/Stamp_UWB.step)
+
+## 数据手册
+
+- [QM33120W Datasheet](https://m5stack-doc.oss-cn-shenzhen.aliyuncs.com/1262/QM33120W_datasheet.pdf)
+- [QM33120W Product Brief](https://m5stack-doc.oss-cn-shenzhen.aliyuncs.com/1262/QM33120W_Product_Brief.pdf)
+
+## 软件开发
+
+### Arduino
+
+- [Stamp UWB F Arduino 上手教程](/zh_CN/arduino/projects/stamp/stamp_uwb)
+- [Stamp UWB F 驱动库](https://github.com/m5stack/M5Stamp-UWB)
+
+## 相关视频
+
+<VideoGallery>
+  <VideoItem title=""Stamp UWB 产品介绍以及功能展示"" url=""https://m5stack-doc.oss-cn-shenzhen.aliyuncs.com/1262/S017_Stamp_UWB_video_CN.mp4"" />
+</VideoGallery>
+
+## 产品对比
+
+::compare-table
+| 产品对比表                      | [Stamp UWB F](/zh_CN/stamp/Stamp_UWB_F) ![Stamp UWB F](https://m5stack-doc.oss-cn-shenzhen.aliyuncs.com/1269/S017-F_Stamp_UWB_F_main_pictures_02.webp)                        | [Stamp UWB](/zh_CN/stamp/Stamp_UWB) ![Stamp UWB](https://m5stack-doc.oss-cn-shenzhen.aliyuncs.com/1262/S017_Stamp_UWB_main_pictures_02.webp)                                    |
+| ------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| 是否默认焊接 0.5mm-12P FPC 座子 | ✅                                                                                                                                                                             | ❌                                                                                                                                                                               |
+| 是否标配 0.5mm-12P FPC 排线     | ✅                                                                                                                                                                             | ❌                                                                                                                                                                               |
+::"
 Stamp-S3 BreakOut,https://m5stack-doc.oss-cn-shenzhen.aliyuncs.com/534/Sch_StampS3BreakOut_sch_01.png,"# Stamp-S3 BreakOut
 
 <span class=""product-sku"">SKU:A129</span>
@@ -46428,6 +48684,157 @@ learn>| ![Arduino IDE](https://m5stack.oss-cn-shenzhen.aliyuncs.com/resource/doc
 ## 相关视频
 
 - StamPLC AC 产品介绍以及功能展示"
+StamPLC IO,"https://m5stack-doc.oss-cn-shenzhen.aliyuncs.com/1257/SCH_StamPLC_IO_SCH_V0.5_20260430_2026_07_02_18_04_04_page_01.png,https://m5stack-doc.oss-cn-shenzhen.aliyuncs.com/1257/SCH_StamPLC_IO_SCH_V0.5_20260430_2026_07_02_18_04_04_page_02.png","# StamPLC IO
+
+<span class=""product-sku"">SKU:A176</span>
+
+## 描述
+
+StamPLC IO 为配套 StamPLC 主机设计的电气隔离型 IO 扩展模块，专为工业现场强弱电混合场景开发。模块搭载 2 路有源模拟量采集通道、2 路固态继电器输出、1 路机械继电器输出，支持工业有源电压 / 电流型传感器信号采集，同时实现各类负载回路通断控制。板载 STM32G030F6P6 主控芯片，统一管理外部输入输出、继电器驱动、地址分配与隔离通道 I2C 总线通信；配套硬件拨码开关完成 I2C 地址自定义，支持多模块并联级联，灵活扩展系统 IO 点位。
+
+模块搭载 CA-IS3020S 数字隔离器与 B0505M-2WR3 隔离电源，实现通信总线与供电回路完全电气隔离，有效抑制传感器、现场负载带来的共模干扰、浪涌冲击，大幅提升整套系统运行稳定性。适用于电源支路监测、低压执行器驱动、传感器供电管控等工业自动化场景。
+
+## 产品特性
+
+- STM32G030F6P6 核心主控
+- I2C 通信接口
+- 板载 4 位拨码开关，可配置设备 I2C 地址
+- 2 路有源模拟信号检测通道
+  - 支持接入 DC 0 ~ 10V 电压型传感器
+  - 支持接入 0 ~ 20mA 电流型传感器
+- 2 路固态继电器控制
+  - 支持 DC 0 ~ 60V MAX 2.5A 线路通断
+- 1 路机械式继电器控制
+  - 支持 AC 250V@5A / DC 28V@5A 线路通断
+- 内置 CA-IS3020S I2C 隔离器
+- 内置 B0505M-2WR3 隔离电源模块
+- 板载继电器输出状态指示 LED
+- 输入与输出通道带保护电路
+- DIN 导轨安装 / 挂孔安装
+
+## 包装内容
+
+- 1 x StamPLC IO
+- 2 x 固定连接件
+
+## 应用场景
+
+- 通用模拟量信号采集
+- 外部执行器开关控制
+- 继电器干接点远程控制
+- 多模块隔离 IO 扩展
+
+## 规格参数
+
+| 规格            | 参数                                                                                         |
+| --------------- | -------------------------------------------------------------------------------------------- |
+| MCU             | STM32G030F6P6                                                                                |
+| 通信方式        | I2C @ 0x20                                                                                   |
+| I2C 隔离器      | CA-IS3020S                                                                                   |
+| 隔离电源        | B0505M-2WR3                                                                                  |
+| 电源转换        | TPAP7343D-33FS4                                                                              |
+| 电压 / 电流检测 | INA226AIDGSR                                                                                 |
+| 检测通道        | 2 路模拟信号检测通道（兼容 0 ~ 20mA 和 0 ~ 10V 模拟量采集）                                  |
+| MOS 开关输出    | 2 路固态继电器 MOS1 / MOS2，公共端 COM，支持 DC 0 ~ 60V  MAX 2.5A 线路通断                   |
+| 继电器输出      | 1 路 SRD-5VDC-SL-C 机械式继电器，端子 N.C / COM / N.O ，支持 AC 250V@5A / DC 28V@5A 线路通断 |
+| 地址配置        | 4 位拨码开关，可配置 I2C 地址范围：0x20 ~ 0x2F                                               |
+| 控制接口类型    | 2 x 3P 开关输出 / 继电器接线端子，1 x 6P 输入端子                                            |
+| 安装方式        | DIN 导轨安装 / 挂孔                                                                          |
+| 产品尺寸        | 51.4 x 80.0 x 27.1mm                                                                         |
+| 产品重量        | 62.1g                                                                                        |
+| 包装尺寸        | 84.0 x 56.0 x 29.0mm                                                                         |
+| 毛重            | 69.2g                                                                                        |
+
+## 操作说明
+
+### 电压型传感器检测接法说明
+
+- 测试电压时，使用输入检测通道的 IN+、ISO GND 端子接入有源被测设备，接线示意图如下：
+
+<img src=""https://m5stack-doc.oss-cn-shenzhen.aliyuncs.com/1257/A176_StamPLC_IO_connect_pictures_01_CN.png"" width=""60%"">
+
+### 电流型传感器检测接法说明
+
+- 测试电流时，使用输入检测通道的 IN+、IN- 端子接入有源被测设备，接线示意图如下：
+
+<img src=""https://m5stack-doc.oss-cn-shenzhen.aliyuncs.com/1257/A176_StamPLC_IO_connect_pictures_02_CN.png"" width=""60%"">
+
+### 继电器开关接法说明
+
+- 机械式继电器输出端子提供 N.C / COM / N.O 三个端子，固态继电器输出端子提供 MOS1 / MOS2 / COM 三个端子，接线示意图如下：
+
+!> 安全警告 | 机械式继电器端子接入 220V 交流电时，请务必确保操作安全，避免触电风险。
+
+<img src=""https://m5stack-doc.oss-cn-shenzhen.aliyuncs.com/1257/A176_StamPLC_IO_connect_pictures_04_CN.png"" width=""60%"">
+
+### StamPLC 与 StamPLC IO 连接示意图
+
+<img src=""https://m5stack-doc.oss-cn-shenzhen.aliyuncs.com/1257/StamPLC_IO_connect.png"" width=""70%"">
+
+## 原理图
+
+- [StamPLC IO 原理图 PDF](https://m5stack-doc.oss-cn-shenzhen.aliyuncs.com/1257/SCH_StamPLC_IO_SCH_V0.5_20260430_2026_07_02_18_04_04.pdf)
+
+## 管脚映射
+
+| StamPLC    | G15 | G13 |
+| ---------- | --- | --- |
+| StamPLC IO | SCL | SDA |
+
+### StamPLC-Bus
+
+::m5-bus-table
+| PIN      | LEFT | RIGHT | PIN      |
+| -------- | ---- | ----- | -------- |
+| IO_1     | 1    | 2     | IO_2     |
+| IO_3     | 3    | 4     | IO_4     |
+| IO_5     | 5    | 6     | IO_6     |
+| IO_7     | 7    | 8     | IO_8     |
+| USER_SDA | 9    | 10    | USER_SCL |
+| EXT_5V   | 11   | 12    | GND      |
+| GND      | 13   | 14    | GND      |
+| GND      | 15   | 16    | HV_IN    |
+::
+
+## 尺寸图
+
+- [StamPLC IO 模型尺寸PDF](https://m5stack-doc.oss-cn-shenzhen.aliyuncs.com/1257/A176_StamPLC_IO_model_size.pdf)
+
+<img src=""https://m5stack-doc.oss-cn-shenzhen.aliyuncs.com/1257/A176_StamPLC_IO_model_size_page_01.png"" width=""100%"">
+
+## 数据手册
+
+- [STM32G030F6P6](https://m5stack.oss-cn-shenzhen.aliyuncs.com/resource/docs/datasheet/unit/U162%20AIN4-20mA%20Unit/STM32G030F6%20datasheet.PDF)
+- [INA226AIDGSR](https://m5stack-doc.oss-cn-shenzhen.aliyuncs.com/1129/INA226AIDGSR.pdf)
+- [CA-IS3020S](https://m5stack.oss-cn-shenzhen.aliyuncs.com/resource/docs/datasheet/unit/CA-IS3020S.pdf)
+- [TPAP7343D](https://m5stack-doc.oss-cn-shenzhen.aliyuncs.com/1158/LDO_TPAP7343D-33FS4_datasheet.pdf)
+
+## 软件开发
+
+### Arduino
+
+- [StamPLC IO Arduino 快速上手](/zh_CN/arduino/projects/stamplc/stamplc_io)
+- [StamPLC IO Arduino 案例程序](https://github.com/m5stack/M5StamPLC/tree/main/examples/Modules/StamPLC_IO)
+
+### 内置固件
+
+- [StamPLC IO 内置固件](https://github.com/m5stack/M5StamPLC-IO-Internal-FW)
+
+### 通信协议
+
+- [StamPLC IO I2C 通信协议 PDF](https://m5stack-doc.oss-cn-shenzhen.aliyuncs.com/1257/StamPLC_IO-I2C-Protocol-CN-V1.0.pdf)
+
+<img src=""https://m5stack-doc.oss-cn-shenzhen.aliyuncs.com/1257/StamPLC_IO-I2C-Protocol-CN-V1.0_page_01.png"" width=""100%"">
+
+<!-- 英文版：
+https://m5stack-doc.oss-cn-shenzhen.aliyuncs.com/1257/StamPLC_IO-I2C-Protocol-EN-V1.0.pdf
+https://m5stack-doc.oss-cn-shenzhen.aliyuncs.com/1257/StamPLC_IO-I2C-Protocol-EN-V1.0_page_01.png -->
+
+## 相关视频
+
+- StamPLC IO 产品介绍以及功能展示
+
+   <!--英文视频链接：https://m5stack-doc.oss-cn-shenzhen.aliyuncs.com/1257/A176_StamPLC_IO-video_EN.mp4>"
 StamPLC PoE,"https://m5stack-doc.oss-cn-shenzhen.aliyuncs.com/1202/SCH_StamPLC_PoE_SCH_MAIN_V1.0_20251104_2025_12_02_17_25_33_page_01.png,https://m5stack-doc.oss-cn-shenzhen.aliyuncs.com/1202/SCH_StamPLC_PoE_SCH_MAIN_V1.0_20251104_2025_12_02_17_25_33_page_02.png","# StamPLC PoE
 
 <span class=""product-sku"">SKU:A165</span>

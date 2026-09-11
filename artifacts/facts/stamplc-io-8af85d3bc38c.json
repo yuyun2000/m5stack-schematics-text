@@ -1,0 +1,1313 @@
+{
+  "schema_version": 1,
+  "generator": "schematic_describer",
+  "product": {
+    "product_id": "stamplc-io-8af85d3bc38c",
+    "product_name": "StamPLC IO",
+    "sku": "A176",
+    "source_path": "stamplc/StamPLC_IO.md",
+    "source_sha256": "f83613b825575030a0b08d419a99d4d22e15a2b3805aaa7837bc7ab543da3c39",
+    "input_sha256": "7c13ff0e102b43a27ad42a8779d1ac9cad658983aa676e04bf9e1cec4d314f87"
+  },
+  "schematic_assets": [
+    {
+      "sha256": "169a06e29b1243ff8876082d3abe97e28549c6d1af92f0a184b68c283004ccc6",
+      "source_url": "https://m5stack-doc.oss-cn-shenzhen.aliyuncs.com/1257/SCH_StamPLC_IO_SCH_V0.5_20260430_2026_07_02_18_04_04_page_01.png",
+      "pages": [
+        1
+      ]
+    },
+    {
+      "sha256": "4fac7d1a14c7cd931b65204376646c4d524676b390ef397a31f587c7aaf281d5",
+      "source_url": "https://m5stack-doc.oss-cn-shenzhen.aliyuncs.com/1257/SCH_StamPLC_IO_SCH_V0.5_20260430_2026_07_02_18_04_04_page_02.png",
+      "pages": [
+        1
+      ]
+    }
+  ],
+  "summary": "StamPLC IO 由 STM32G030F6P6 管理两路 INA226AIDGSR 模拟采样、两路光隔离固态开关输出和一路机械继电器输出。外部 USER_SDA/USER_SCL 经 CA-IS3020S 隔离为 ISO_SDA/ISO_SCL，EXT_5V 经 B0505M-2WR3 产生隔离侧 ISO_5V，并由两颗 TPAP7343D-33FS4 分别生成 3V3 与 ISO_3V3。两路采样通道具有 3R 分流电阻、PPTC、二极管和 SMBJ24A-13-F 保护，板上还提供四位地址拨码、双 2x8 总线连接器和 SWD 调试口。",
+  "keywords": [
+    "StamPLC IO",
+    "A176",
+    "STM32G030F6P6",
+    "INA226AIDGSR",
+    "0x40",
+    "0x45",
+    "CA-IS3020S",
+    "B0505M-2WR3",
+    "TPAP7343D-33FS4",
+    "GAQY252G3S",
+    "GAQY212GS",
+    "SRD-5VDC-SL-C",
+    "AO3400A",
+    "USER_SDA",
+    "USER_SCL",
+    "ISO_SDA",
+    "ISO_SCL",
+    "INA_I2C_SDA",
+    "INA_I2C_SCL",
+    "ISO_5V",
+    "ISO_3V3",
+    "EXT_5V",
+    "HV_IN",
+    "CH1_P",
+    "CH1_N",
+    "CH2_P",
+    "CH2_N",
+    "CH1_PU_EN",
+    "CH2_PU_EN",
+    "EX_CTR_1",
+    "EX_CTR_2",
+    "RELAY_TRIG_0",
+    "ADDR_0",
+    "ADDR_1",
+    "ADDR_2",
+    "ADDR_3",
+    "SWDIO",
+    "SWCLK"
+  ],
+  "components": [
+    {
+      "reference": "U4",
+      "part_number": "STM32G030F6P6",
+      "role": "隔离侧主控，连接采样 I2C、隔离通信、地址位、通道供电、固态输出和机械继电器控制网络",
+      "evidence": [
+        {
+          "asset_sha256": "4fac7d1a14c7cd931b65204376646c4d524676b390ef397a31f587c7aaf281d5",
+          "page": 1,
+          "locator": "B3-B4，U4 STM32G030F6P6 主控符号及两侧网络标注"
+        }
+      ]
+    },
+    {
+      "reference": "U2, U3",
+      "part_number": "INA226AIDGSR",
+      "role": "两路分流与总线电压采样器，地址分别在图中标为 0x40 和 0x45",
+      "evidence": [
+        {
+          "asset_sha256": "169a06e29b1243ff8876082d3abe97e28549c6d1af92f0a184b68c283004ccc6",
+          "page": 1,
+          "locator": "B1-B2，U2/U3 INA226AIDGSR 及 0x40/0x45 标注"
+        }
+      ]
+    },
+    {
+      "reference": "U7",
+      "part_number": "CA-IS3020S",
+      "role": "在 GND/3V3 域与 ISO_GND/ISO_3V3 域之间隔离 USER_SDA/USER_SCL",
+      "evidence": [
+        {
+          "asset_sha256": "4fac7d1a14c7cd931b65204376646c4d524676b390ef397a31f587c7aaf281d5",
+          "page": 1,
+          "locator": "C2，U7 CA-IS3020S 跨蓝色隔离边界"
+        }
+      ]
+    },
+    {
+      "reference": "U15",
+      "part_number": "B0505M-2WR3",
+      "role": "将 EXT_5V/GND 转换为 ISO_5V/ISO_GND 的隔离电源模块",
+      "evidence": [
+        {
+          "asset_sha256": "4fac7d1a14c7cd931b65204376646c4d524676b390ef397a31f587c7aaf281d5",
+          "page": 1,
+          "locator": "C2-C3，U15 B0505M-2WR3 跨蓝色隔离边界"
+        }
+      ]
+    },
+    {
+      "reference": "U12",
+      "part_number": "TPAP7343D-33FS4",
+      "role": "非隔离侧 3.3 V 稳压器，由 EXT_5V 路径供电并输出 3V3",
+      "evidence": [
+        {
+          "asset_sha256": "4fac7d1a14c7cd931b65204376646c4d524676b390ef397a31f587c7aaf281d5",
+          "page": 1,
+          "locator": "C1-C2，U12 TPAP7343D-33FS4，输入 5V、输出 3V3"
+        }
+      ]
+    },
+    {
+      "reference": "U5",
+      "part_number": "TPAP7343D-33FS4",
+      "role": "隔离侧 3.3 V 稳压器，由 ISO_5V 输出 ISO_3V3",
+      "evidence": [
+        {
+          "asset_sha256": "4fac7d1a14c7cd931b65204376646c4d524676b390ef397a31f587c7aaf281d5",
+          "page": 1,
+          "locator": "C3，U5 TPAP7343D-33FS4，输入 ISO_5V、输出 ISO_3V3"
+        }
+      ]
+    },
+    {
+      "reference": "U13, U14",
+      "part_number": "GAQY252G3S",
+      "role": "由 EX_CTR_1/EX_CTR_2 驱动的两路光隔离背靠背 MOS 固态开关",
+      "evidence": [
+        {
+          "asset_sha256": "169a06e29b1243ff8876082d3abe97e28549c6d1af92f0a184b68c283004ccc6",
+          "page": 1,
+          "locator": "A3-A4 与 B3-B4，U13/U14 GAQY252G3S 输出级"
+        }
+      ]
+    },
+    {
+      "reference": "U19, U20",
+      "part_number": "GAQY212GS",
+      "role": "由 CH1_PU_EN/CH2_PU_EN 控制的两路隔离通道 VBUS 上拉/偏置开关",
+      "evidence": [
+        {
+          "asset_sha256": "169a06e29b1243ff8876082d3abe97e28549c6d1af92f0a184b68c283004ccc6",
+          "page": 1,
+          "locator": "C1 与 C2，U19/U20 GAQY212GS，ISO_5V 经 10K 电阻至 CH1_VBUS/CH2_VBUS 的串联路径"
+        }
+      ]
+    },
+    {
+      "reference": "JK1",
+      "part_number": "SRD-5VDC-SL-C",
+      "role": "ISO_5V 线圈供电的单刀双掷机械继电器",
+      "evidence": [
+        {
+          "asset_sha256": "169a06e29b1243ff8876082d3abe97e28549c6d1af92f0a184b68c283004ccc6",
+          "page": 1,
+          "locator": "C3-C4，JK1 SRD-5VDC-SL-C 线圈与转换触点符号"
+        }
+      ]
+    },
+    {
+      "reference": "Q3",
+      "part_number": "AO3400A",
+      "role": "由 RELAY_TRIG_0 驱动的机械继电器低侧 MOSFET",
+      "evidence": [
+        {
+          "asset_sha256": "169a06e29b1243ff8876082d3abe97e28549c6d1af92f0a184b68c283004ccc6",
+          "page": 1,
+          "locator": "C3，Q3 AO3400A、R7/R8 与 JK1 线圈驱动路径"
+        }
+      ]
+    },
+    {
+      "reference": "U11, RP1",
+      "part_number": "DSHP04TSGER / 10K/1%",
+      "role": "四位地址拨码及 ISO_3V3 上拉电阻网络，对 ADDR_0 至 ADDR_3 进行高低电平配置",
+      "evidence": [
+        {
+          "asset_sha256": "4fac7d1a14c7cd931b65204376646c4d524676b390ef397a31f587c7aaf281d5",
+          "page": 1,
+          "locator": "C3-C4，RP1 与 U11 DSHP04TSGER 的 ADDR_0..ADDR_3 网络"
+        }
+      ]
+    },
+    {
+      "reference": "U1, U6",
+      "part_number": null,
+      "role": "两路三针模拟输入连接器，分别引出 IN1+/IN1-/ISO_GND 与 IN2+/IN2-/ISO_GND",
+      "evidence": [
+        {
+          "asset_sha256": "169a06e29b1243ff8876082d3abe97e28549c6d1af92f0a184b68c283004ccc6",
+          "page": 1,
+          "locator": "A1 与 A2，U1/U6 三针端子及 IN1+/IN1-/IN2+/IN2-/ISO_GND 标注"
+        }
+      ]
+    },
+    {
+      "reference": "U9",
+      "part_number": null,
+      "role": "三针固态开关输出连接器，引出 SWITCH_2、SWITCH_1 和 OUT_COM",
+      "evidence": [
+        {
+          "asset_sha256": "169a06e29b1243ff8876082d3abe97e28549c6d1af92f0a184b68c283004ccc6",
+          "page": 1,
+          "locator": "B4，U9 三针连接器及 OUT_COM/SWITCH_1/SWITCH_2 标注"
+        }
+      ]
+    },
+    {
+      "reference": "U10",
+      "part_number": null,
+      "role": "三针机械继电器触点连接器，引出 JK1_A、JK1_COM 和 JK1_B",
+      "evidence": [
+        {
+          "asset_sha256": "169a06e29b1243ff8876082d3abe97e28549c6d1af92f0a184b68c283004ccc6",
+          "page": 1,
+          "locator": "C4，U10 三针连接器及 JK1_A/JK1_COM/JK1_B 标注"
+        }
+      ]
+    },
+    {
+      "reference": "U8, H1",
+      "part_number": "PM254-2-08-W-8.5 / A2541WR-2x8P",
+      "role": "两组并联信号定义的 2x8 StamPLC 总线连接器",
+      "evidence": [
+        {
+          "asset_sha256": "4fac7d1a14c7cd931b65204376646c4d524676b390ef397a31f587c7aaf281d5",
+          "page": 1,
+          "locator": "A1-B2，U8 与 H1 的 1..16 针网络标注"
+        }
+      ]
+    },
+    {
+      "reference": "JP1",
+      "part_number": null,
+      "role": "五针 SWD 调试接口，提供 ISO_3V3、SWCLK、SWDIO、RST 和 ISO_GND",
+      "evidence": [
+        {
+          "asset_sha256": "4fac7d1a14c7cd931b65204376646c4d524676b390ef397a31f587c7aaf281d5",
+          "page": 1,
+          "locator": "B3，JP1 五针接口"
+        }
+      ]
+    },
+    {
+      "reference": "R18, R19",
+      "part_number": "3R/0.1%/ARG06BTC0030",
+      "role": "CH1_P-CH1_N 与 CH2_P-CH2_N 之间的精密分流电阻",
+      "evidence": [
+        {
+          "asset_sha256": "169a06e29b1243ff8876082d3abe97e28549c6d1af92f0a184b68c283004ccc6",
+          "page": 1,
+          "locator": "A1-A2，R18/R19 标值 3R/0.1%/ARG06BTC0030"
+        }
+      ]
+    },
+    {
+      "reference": "F1, F2, F3, F4",
+      "part_number": "PPTC/nSMD012",
+      "role": "两路模拟输入正负线路串联 PPTC 保护",
+      "evidence": [
+        {
+          "asset_sha256": "169a06e29b1243ff8876082d3abe97e28549c6d1af92f0a184b68c283004ccc6",
+          "page": 1,
+          "locator": "A1-A2，F1/F3 与 F2/F4 串接于 IN1+/IN1- 和 IN2+/IN2-"
+        }
+      ]
+    },
+    {
+      "reference": "D3, D4, D5, D6",
+      "part_number": "1N5819 / 1N4148",
+      "role": "跨接各通道 P/N 节点的双向差模钳位二极管对",
+      "evidence": [
+        {
+          "asset_sha256": "169a06e29b1243ff8876082d3abe97e28549c6d1af92f0a184b68c283004ccc6",
+          "page": 1,
+          "locator": "A1-A2，D3/D4 跨 CH1_P/CH1_N，D5/D6 跨 CH2_P/CH2_N"
+        }
+      ]
+    },
+    {
+      "reference": "D7, D8",
+      "part_number": "SMBJ24A-13-F",
+      "role": "CH1_N 与 CH2_N 到 ISO_GND 的浪涌钳位器件",
+      "evidence": [
+        {
+          "asset_sha256": "169a06e29b1243ff8876082d3abe97e28549c6d1af92f0a184b68c283004ccc6",
+          "page": 1,
+          "locator": "A1-A2，D7/D8 SMBJ24A-13-F 至 ISO_GND"
+        }
+      ]
+    },
+    {
+      "reference": "J2, J3",
+      "part_number": "1808_PPTC / BSMD1206C-1200T",
+      "role": "两路固态开关输出串联过流保护器件",
+      "evidence": [
+        {
+          "asset_sha256": "169a06e29b1243ff8876082d3abe97e28549c6d1af92f0a184b68c283004ccc6",
+          "page": 1,
+          "locator": "A4 与 B4，J2 串接 SWITCH_1，J3 串接 SWITCH_2"
+        }
+      ]
+    },
+    {
+      "reference": "D10, D11",
+      "part_number": null,
+      "role": "分别跨接 U14 与 U13 输出端的未标值钳位器件",
+      "evidence": [
+        {
+          "asset_sha256": "169a06e29b1243ff8876082d3abe97e28549c6d1af92f0a184b68c283004ccc6",
+          "page": 1,
+          "locator": "A4 与 B4，D11/D10 跨固态开关输出，图面未标料号"
+        }
+      ]
+    },
+    {
+      "reference": "D9",
+      "part_number": "DSK16",
+      "role": "跨 JK1 线圈的续流二极管",
+      "evidence": [
+        {
+          "asset_sha256": "169a06e29b1243ff8876082d3abe97e28549c6d1af92f0a184b68c283004ccc6",
+          "page": 1,
+          "locator": "C3，D9 DSK16 跨接 ISO_5V 与 Q3 漏极/JK1 线圈低端"
+        }
+      ]
+    },
+    {
+      "reference": "L1, L2",
+      "part_number": "100R@100Mhz",
+      "role": "两颗 INA226 隔离侧电源串联磁珠",
+      "evidence": [
+        {
+          "asset_sha256": "169a06e29b1243ff8876082d3abe97e28549c6d1af92f0a184b68c283004ccc6",
+          "page": 1,
+          "locator": "B1-B2，L1/L2 从 ISO_5V 接至 U2/U3 VS+"
+        }
+      ]
+    },
+    {
+      "reference": "LED1, LED2, LED3",
+      "part_number": "蓝色",
+      "role": "机械继电器及两路固态输出控制状态指示灯",
+      "evidence": [
+        {
+          "asset_sha256": "169a06e29b1243ff8876082d3abe97e28549c6d1af92f0a184b68c283004ccc6",
+          "page": 1,
+          "locator": "A3、B3、C3，LED2/LED3/LED1 均标注蓝色"
+        }
+      ]
+    }
+  ],
+  "facts": [
+    {
+      "id": "system.architecture",
+      "category": "system",
+      "subject": "整板架构",
+      "statement": "STM32G030F6P6 在隔离侧连接两路 INA226AIDGSR 采样通道、两路 GAQY252G3S 固态输出、一路 SRD-5VDC-SL-C 机械继电器、四位地址拨码以及隔离后的外部 I2C。",
+      "confidence": "confirmed",
+      "attributes": {
+        "mcu": "U4 STM32G030F6P6",
+        "analog_channels": 2,
+        "solid_state_outputs": 2,
+        "mechanical_relay_outputs": 1,
+        "address_bits": 4
+      },
+      "evidence": [
+        {
+          "asset_sha256": "169a06e29b1243ff8876082d3abe97e28549c6d1af92f0a184b68c283004ccc6",
+          "page": 1,
+          "locator": "A1-C4，采样、固态输出和机械继电器功能块"
+        },
+        {
+          "asset_sha256": "4fac7d1a14c7cd931b65204376646c4d524676b390ef397a31f587c7aaf281d5",
+          "page": 1,
+          "locator": "A3-C4，U4、U7、U11、U15 与电源功能块"
+        }
+      ]
+    },
+    {
+      "id": "system.isolation-domains",
+      "category": "system",
+      "subject": "电气隔离域",
+      "statement": "图中以蓝色虚线分隔 GND/3V3/EXT_5V 域与 ISO_GND/ISO_3V3/ISO_5V 域，U7 跨越 I2C 信号边界，U15 跨越电源边界。",
+      "confidence": "confirmed",
+      "attributes": {
+        "primary_domain": "GND, 3V3, EXT_5V",
+        "isolated_domain": "ISO_GND, ISO_3V3, ISO_5V",
+        "signal_isolator": "U7 CA-IS3020S",
+        "power_isolator": "U15 B0505M-2WR3"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "4fac7d1a14c7cd931b65204376646c4d524676b390ef397a31f587c7aaf281d5",
+          "page": 1,
+          "locator": "A2-D2 蓝色虚线及 C2-C3 的 U7/U15"
+        }
+      ]
+    },
+    {
+      "id": "analog.channel-count",
+      "category": "analog",
+      "subject": "模拟采样通道",
+      "statement": "图面包含 CH1 与 CH2 两组结构对称的输入保护、分流和 INA226 采样电路。",
+      "confidence": "confirmed",
+      "attributes": {
+        "channels": 2,
+        "channel_1_nodes": "CH1_P, CH1_N, CH1_VBUS",
+        "channel_2_nodes": "CH2_P, CH2_N, CH2_VBUS"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "169a06e29b1243ff8876082d3abe97e28549c6d1af92f0a184b68c283004ccc6",
+          "page": 1,
+          "locator": "A1-B2，CH1 与 CH2 对称输入及 U2/U3 电路"
+        }
+      ]
+    },
+    {
+      "id": "interface.analog-inputs",
+      "category": "interface",
+      "subject": "U1/U6 模拟输入端子",
+      "statement": "U1 与 U6 分别连接 IN1+/IN1-/ISO_GND 和 IN2+/IN2-/ISO_GND，正负输入线路经 PPTC 后进入各自 P/N 节点。",
+      "confidence": "confirmed",
+      "attributes": {
+        "channel_1": "U1: IN1+, IN1-, ISO_GND",
+        "channel_2": "U6: IN2+, IN2-, ISO_GND",
+        "series_protection": "F1/F3 and F2/F4"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "169a06e29b1243ff8876082d3abe97e28549c6d1af92f0a184b68c283004ccc6",
+          "page": 1,
+          "locator": "A1-A2，U1/U6 端子与 IN1+/IN1-/IN2+/IN2- 网络"
+        }
+      ]
+    },
+    {
+      "id": "analog.shunts",
+      "category": "analog",
+      "subject": "R18/R19 分流电阻",
+      "statement": "R18 跨接 CH1_P 与 CH1_N，R19 跨接 CH2_P 与 CH2_N，两者均标为 3R/0.1%/ARG06BTC0030。",
+      "confidence": "confirmed",
+      "attributes": {
+        "references": "R18, R19",
+        "value": "3R",
+        "tolerance": "0.1%",
+        "part_marking": "ARG06BTC0030"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "169a06e29b1243ff8876082d3abe97e28549c6d1af92f0a184b68c283004ccc6",
+          "page": 1,
+          "locator": "A1-A2，R18/R19 位于各通道 P/N 节点之间"
+        }
+      ]
+    },
+    {
+      "id": "protection.analog-input-pptc",
+      "category": "protection",
+      "subject": "模拟输入串联保护",
+      "statement": "F1/F3 串联在通道 1 的正负输入线路，F2/F4 串联在通道 2 的正负输入线路，四者均标为 PPTC/nSMD012。",
+      "confidence": "confirmed",
+      "attributes": {
+        "channel_1": "F1, F3",
+        "channel_2": "F2, F4",
+        "marking": "PPTC/nSMD012"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "169a06e29b1243ff8876082d3abe97e28549c6d1af92f0a184b68c283004ccc6",
+          "page": 1,
+          "locator": "A1-A2，IN1+/IN1-/IN2+/IN2- 入口后的 F1..F4"
+        }
+      ]
+    },
+    {
+      "id": "protection.analog-differential-clamps",
+      "category": "protection",
+      "subject": "模拟输入差模钳位",
+      "statement": "D3/D4 以相反方向跨接 CH1_P 与 CH1_N，D5/D6 以相反方向跨接 CH2_P 与 CH2_N；通道 1 标为 1N5819，通道 2 标为 1N4148。",
+      "confidence": "confirmed",
+      "attributes": {
+        "channel_1": "D3/D4 1N5819",
+        "channel_2": "D5/D6 1N4148",
+        "topology": "antiparallel across P/N"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "169a06e29b1243ff8876082d3abe97e28549c6d1af92f0a184b68c283004ccc6",
+          "page": 1,
+          "locator": "A1-A2，D3/D4 与 D5/D6 跨各通道 P/N 母线"
+        }
+      ]
+    },
+    {
+      "id": "protection.analog-tvs",
+      "category": "protection",
+      "subject": "D7/D8 浪涌钳位",
+      "statement": "D7 与 D8 均标为 SMBJ24A-13-F，分别从 CH1_N、CH2_N 接至 ISO_GND。",
+      "confidence": "confirmed",
+      "attributes": {
+        "channel_1": "D7: CH1_N to ISO_GND",
+        "channel_2": "D8: CH2_N to ISO_GND",
+        "part_number": "SMBJ24A-13-F"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "169a06e29b1243ff8876082d3abe97e28549c6d1af92f0a184b68c283004ccc6",
+          "page": 1,
+          "locator": "A1-A2，D7/D8 垂直接至 ISO_GND"
+        }
+      ]
+    },
+    {
+      "id": "analog.ina226-input-map",
+      "category": "analog",
+      "subject": "INA226 采样输入映射",
+      "statement": "U2 的 VIN-、VIN+、VBUS 分别经 R4、R12、直接网络连接 CH1_N、CH1_P、CH1_VBUS；U3 对应经 R6、R13、直接网络连接 CH2_N、CH2_P、CH2_VBUS。",
+      "confidence": "confirmed",
+      "attributes": {
+        "channel_1": "U2 VIN-=CH1_N via R4 0R; VIN+=CH1_P via R12 0R; VBUS=CH1_VBUS",
+        "channel_2": "U3 VIN-=CH2_N via R6 0R; VIN+=CH2_P via R13 0R; VBUS=CH2_VBUS",
+        "input_capacitors": "C8 NC, C9 NC"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "169a06e29b1243ff8876082d3abe97e28549c6d1af92f0a184b68c283004ccc6",
+          "page": 1,
+          "locator": "B1-B2，U2/U3 VIN-/VIN+/VBUS 引脚及 R4/R12/R6/R13"
+        }
+      ]
+    },
+    {
+      "id": "address.ina226-channel-1",
+      "category": "address",
+      "subject": "U2 I2C 地址",
+      "statement": "U2 的 A0 与 A1 均接 ISO_GND，器件旁明确标注地址 0x40。",
+      "confidence": "confirmed",
+      "attributes": {
+        "reference": "U2",
+        "address": "0x40",
+        "a0": "ISO_GND",
+        "a1": "ISO_GND"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "169a06e29b1243ff8876082d3abe97e28549c6d1af92f0a184b68c283004ccc6",
+          "page": 1,
+          "locator": "B1，U2 A0/A1 接地与器件右下 0x40 标注"
+        }
+      ]
+    },
+    {
+      "id": "address.ina226-channel-2",
+      "category": "address",
+      "subject": "U3 I2C 地址",
+      "statement": "U3 的 A0 与 A1 均接 ISO_5V，器件旁明确标注地址 0x45。",
+      "confidence": "confirmed",
+      "attributes": {
+        "reference": "U3",
+        "address": "0x45",
+        "a0": "ISO_5V",
+        "a1": "ISO_5V"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "169a06e29b1243ff8876082d3abe97e28549c6d1af92f0a184b68c283004ccc6",
+          "page": 1,
+          "locator": "B2，U3 A0/A1 接 ISO_5V 与器件右下 0x45 标注"
+        }
+      ]
+    },
+    {
+      "id": "bus.ina226-i2c",
+      "category": "bus",
+      "subject": "内部采样 I2C",
+      "statement": "U2 与 U3 共用 INA_I2C_SCL 和 INA_I2C_SDA，两条网络连接到 U4 左侧引脚。",
+      "confidence": "confirmed",
+      "attributes": {
+        "clock": "INA_I2C_SCL",
+        "data": "INA_I2C_SDA",
+        "devices": "U2, U3",
+        "controller": "U4"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "169a06e29b1243ff8876082d3abe97e28549c6d1af92f0a184b68c283004ccc6",
+          "page": 1,
+          "locator": "B1-B2，U2/U3 SCL/SDA 共同网络"
+        },
+        {
+          "asset_sha256": "4fac7d1a14c7cd931b65204376646c4d524676b390ef397a31f587c7aaf281d5",
+          "page": 1,
+          "locator": "B3，INA_I2C_SCL/INA_I2C_SDA 进入 U4"
+        }
+      ]
+    },
+    {
+      "id": "power.ina226-supplies",
+      "category": "power",
+      "subject": "INA226 供电滤波",
+      "statement": "U2 与 U3 的 VS+ 分别由 ISO_5V 经 L1/L2 供电，L1/L2 标为 100R@100Mhz，并分别以 C11/C12 1uF/50V 对 ISO_GND 去耦。",
+      "confidence": "confirmed",
+      "attributes": {
+        "supply": "ISO_5V",
+        "beads": "L1, L2: 100R@100Mhz",
+        "decoupling": "C11, C12: 1uF/50V",
+        "ground": "ISO_GND"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "169a06e29b1243ff8876082d3abe97e28549c6d1af92f0a184b68c283004ccc6",
+          "page": 1,
+          "locator": "B1-B2，U2/U3 VS+、L1/L2 与 C11/C12"
+        }
+      ]
+    },
+    {
+      "id": "key_net.ina226-alert",
+      "category": "key_net",
+      "subject": "INA226 ALERT 引脚",
+      "statement": "U2 与 U3 的 ALERT 引脚均以短线结束，图面未连接到其他网络。",
+      "confidence": "confirmed",
+      "attributes": {
+        "u2_pin": 3,
+        "u3_pin": 3,
+        "connection": "no net shown"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "169a06e29b1243ff8876082d3abe97e28549c6d1af92f0a184b68c283004ccc6",
+          "page": 1,
+          "locator": "B1-B2，U2/U3 ALERT pin 3 的未连接短线"
+        }
+      ]
+    },
+    {
+      "id": "analog.channel-vbus-bias",
+      "category": "analog",
+      "subject": "CH1_VBUS/CH2_VBUS 受控偏置",
+      "statement": "U19 与 U20 的开关侧分别在 ISO_5V 与 CH1_VBUS、CH2_VBUS 之间形成受控串联路径，各路径包含一颗 1N5819 和 10K/1% 电阻。",
+      "confidence": "confirmed",
+      "attributes": {
+        "channel_1": "ISO_5V -> U19 -> D1 1N5819 -> R31 10K/1% -> CH1_VBUS",
+        "channel_2": "ISO_5V -> U20 -> D2 1N5819 -> R32 10K/1% -> CH2_VBUS",
+        "controls": "CH1_PU_EN, CH2_PU_EN"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "169a06e29b1243ff8876082d3abe97e28549c6d1af92f0a184b68c283004ccc6",
+          "page": 1,
+          "locator": "C1-C2，U19/U20、D1/D2、R31/R32 构成的 ISO_5V 至 CH1_VBUS/CH2_VBUS 串联路径"
+        }
+      ]
+    },
+    {
+      "id": "gpio.channel-power-enable",
+      "category": "gpio",
+      "subject": "通道供电使能映射",
+      "statement": "U4 的 PA0/pin 7 连接 CH1_PU_EN，PA1/pin 8 连接 CH2_PU_EN；两网分别经 R28/R29 210R/1% 驱动 U19/U20 输入侧。",
+      "confidence": "confirmed",
+      "attributes": {
+        "ch1": "U4 PA0 pin 7 -> CH1_PU_EN -> R28 -> U19 pin 1",
+        "ch2": "U4 PA1 pin 8 -> CH2_PU_EN -> R29 -> U20 pin 1"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "4fac7d1a14c7cd931b65204376646c4d524676b390ef397a31f587c7aaf281d5",
+          "page": 1,
+          "locator": "A4，U4 PA0/PA1 对应 CH1_PU_EN/CH2_PU_EN"
+        },
+        {
+          "asset_sha256": "169a06e29b1243ff8876082d3abe97e28549c6d1af92f0a184b68c283004ccc6",
+          "page": 1,
+          "locator": "C1-C2，CH1_PU_EN/CH2_PU_EN 经 R28/R29 至 U19/U20"
+        }
+      ]
+    },
+    {
+      "id": "interface.solid-state-output-1",
+      "category": "interface",
+      "subject": "固态输出 1",
+      "statement": "EX_CTR_1 经 R1 100R/1% 驱动 U13 输入，U13 输出位于 OUT_COM 与经 J2 1808_PPTC 引出的 SWITCH_1 之间。",
+      "confidence": "confirmed",
+      "attributes": {
+        "control": "EX_CTR_1",
+        "input_resistor": "R1 100R/1%",
+        "switch": "U13 GAQY252G3S",
+        "protected_output": "J2 1808_PPTC -> SWITCH_1",
+        "common": "OUT_COM"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "169a06e29b1243ff8876082d3abe97e28549c6d1af92f0a184b68c283004ccc6",
+          "page": 1,
+          "locator": "A3-A4，EX_CTR_1、R1、U13、D11、J2、SWITCH_1 与 OUT_COM"
+        }
+      ]
+    },
+    {
+      "id": "interface.solid-state-output-2",
+      "category": "interface",
+      "subject": "固态输出 2",
+      "statement": "EX_CTR_2 经 R2 100R/1% 驱动 U14 输入，U14 输出位于 OUT_COM 与经 J3 BSMD1206C-1200T 引出的 SWITCH_2 之间。",
+      "confidence": "confirmed",
+      "attributes": {
+        "control": "EX_CTR_2",
+        "input_resistor": "R2 100R/1%",
+        "switch": "U14 GAQY252G3S",
+        "protected_output": "J3 BSMD1206C-1200T -> SWITCH_2",
+        "common": "OUT_COM"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "169a06e29b1243ff8876082d3abe97e28549c6d1af92f0a184b68c283004ccc6",
+          "page": 1,
+          "locator": "B3-B4，EX_CTR_2、R2、U14、D10、J3、SWITCH_2 与 OUT_COM"
+        }
+      ]
+    },
+    {
+      "id": "interface.solid-state-output-terminal",
+      "category": "interface",
+      "subject": "U9 固态输出端子",
+      "statement": "U9 pin 3、pin 2、pin 1 分别连接 OUT_COM、SWITCH_1、SWITCH_2。",
+      "confidence": "confirmed",
+      "attributes": {
+        "pin_3": "OUT_COM",
+        "pin_2": "SWITCH_1",
+        "pin_1": "SWITCH_2"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "169a06e29b1243ff8876082d3abe97e28549c6d1af92f0a184b68c283004ccc6",
+          "page": 1,
+          "locator": "B4，U9 旁三条网络及针号"
+        }
+      ]
+    },
+    {
+      "id": "gpio.solid-state-output-controls",
+      "category": "gpio",
+      "subject": "固态输出控制映射",
+      "statement": "U4 的 PA6/pin 13 连接 EX_CTR_1，U4 pin 20 的 PB3/PB4/PB5/PB6 复用引脚组连接 EX_CTR_2。",
+      "confidence": "confirmed",
+      "attributes": {
+        "output_1": "U4 PA6 pin 13 -> EX_CTR_1",
+        "output_2": "U4 pin 20 PB3/PB4/PB5/PB6 group -> EX_CTR_2"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "4fac7d1a14c7cd931b65204376646c4d524676b390ef397a31f587c7aaf281d5",
+          "page": 1,
+          "locator": "A4-B3，U4 的 EX_CTR_1 与 EX_CTR_2 网络"
+        },
+        {
+          "asset_sha256": "169a06e29b1243ff8876082d3abe97e28549c6d1af92f0a184b68c283004ccc6",
+          "page": 1,
+          "locator": "A3 与 B3，EX_CTR_1/EX_CTR_2 进入 U13/U14"
+        }
+      ]
+    },
+    {
+      "id": "other.output-indicators",
+      "category": "other",
+      "subject": "输出状态指示",
+      "statement": "EX_CTR_1 经 R11 1K 和蓝色 LED2 接 ISO_GND，EX_CTR_2 经 R14 1K 和蓝色 LED3 接 ISO_GND，RELAY_TRIG_0 经 R20 1K 和蓝色 LED1 接 ISO_GND。",
+      "confidence": "confirmed",
+      "attributes": {
+        "switch_1": "R11 1K + LED2 blue",
+        "switch_2": "R14 1K + LED3 blue",
+        "relay": "R20 1K + LED1 blue"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "169a06e29b1243ff8876082d3abe97e28549c6d1af92f0a184b68c283004ccc6",
+          "page": 1,
+          "locator": "A3、B3、C3，三组控制网至电阻与蓝色 LED"
+        }
+      ]
+    },
+    {
+      "id": "protection.solid-state-output-clamps",
+      "category": "protection",
+      "subject": "固态输出钳位器件",
+      "statement": "D11 与 D10 分别跨接 U13 与 U14 的输出两端，图面仅给出位号而未标注具体料号或参数。",
+      "confidence": "confirmed",
+      "attributes": {
+        "output_1": "D11 across U13 pins 4 and 3",
+        "output_2": "D10 across U14 pins 4 and 3",
+        "part_number": null
+      },
+      "evidence": [
+        {
+          "asset_sha256": "169a06e29b1243ff8876082d3abe97e28549c6d1af92f0a184b68c283004ccc6",
+          "page": 1,
+          "locator": "A4 与 B4，D11/D10 跨接固态开关输出"
+        }
+      ]
+    },
+    {
+      "id": "interface.mechanical-relay-drive",
+      "category": "interface",
+      "subject": "机械继电器线圈驱动",
+      "statement": "JK1 线圈上端接 ISO_5V，下端由 Q3 AO3400A 下拉驱动；D9 DSK16 跨线圈续流，Q3 栅极由 RELAY_TRIG_0 控制并由 R7 10K/1% 下拉。",
+      "confidence": "confirmed",
+      "attributes": {
+        "relay": "JK1 SRD-5VDC-SL-C",
+        "driver": "Q3 AO3400A",
+        "control": "RELAY_TRIG_0",
+        "gate_pulldown": "R7 10K/1%",
+        "flyback": "D9 DSK16",
+        "source_path": "Q3 pin 2 -> R8 22R/1% -> ISO_GND"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "169a06e29b1243ff8876082d3abe97e28549c6d1af92f0a184b68c283004ccc6",
+          "page": 1,
+          "locator": "C3-C4，JK1 线圈、D9、Q3、R7、R8 和 RELAY_TRIG_0"
+        }
+      ]
+    },
+    {
+      "id": "gpio.mechanical-relay-control",
+      "category": "gpio",
+      "subject": "机械继电器控制映射",
+      "statement": "U4 的 PA7/pin 14 连接 RELAY_TRIG_0，网络在输出页驱动 Q3 栅极和 LED1 指示支路。",
+      "confidence": "confirmed",
+      "attributes": {
+        "mcu_pin": "U4 PA7 pin 14",
+        "network": "RELAY_TRIG_0",
+        "loads": "Q3 gate, R20/LED1"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "4fac7d1a14c7cd931b65204376646c4d524676b390ef397a31f587c7aaf281d5",
+          "page": 1,
+          "locator": "A4，U4 PA7/pin 14 至 RELAY_TRIG_0"
+        },
+        {
+          "asset_sha256": "169a06e29b1243ff8876082d3abe97e28549c6d1af92f0a184b68c283004ccc6",
+          "page": 1,
+          "locator": "C3，RELAY_TRIG_0 至 Q3 与 LED1 支路"
+        }
+      ]
+    },
+    {
+      "id": "interface.mechanical-relay-terminal",
+      "category": "interface",
+      "subject": "U10 机械继电器端子",
+      "statement": "JK1 的转换触点引出 JK1_A、JK1_COM、JK1_B，并在 U10 上分别对应 pin 3、pin 2、pin 1。",
+      "confidence": "confirmed",
+      "attributes": {
+        "pin_3": "JK1_A",
+        "pin_2": "JK1_COM",
+        "pin_1": "JK1_B",
+        "common": "JK1_COM"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "169a06e29b1243ff8876082d3abe97e28549c6d1af92f0a184b68c283004ccc6",
+          "page": 1,
+          "locator": "C4，JK1 触点网络及 U10 针号"
+        }
+      ]
+    },
+    {
+      "id": "interface.bus-connectors",
+      "category": "interface",
+      "subject": "U8/H1 2x8 总线连接器",
+      "statement": "U8 与 H1 显示相同的 16 针网络定义：1..8 为 IO_1..IO_8，9 为 USER_SDA，10 为 USER_SCL，11 为 EXT_5V，12..15 为 GND，16 为 HV_IN。",
+      "confidence": "confirmed",
+      "attributes": {
+        "pin_1": "IO_1",
+        "pin_2": "IO_2",
+        "pin_3": "IO_3",
+        "pin_4": "IO_4",
+        "pin_5": "IO_5",
+        "pin_6": "IO_6",
+        "pin_7": "IO_7",
+        "pin_8": "IO_8",
+        "pin_9": "USER_SDA",
+        "pin_10": "USER_SCL",
+        "pin_11": "EXT_5V",
+        "pins_12_to_15": "GND",
+        "pin_16": "HV_IN"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "4fac7d1a14c7cd931b65204376646c4d524676b390ef397a31f587c7aaf281d5",
+          "page": 1,
+          "locator": "A1-B2，U8/H1 的针号和网络标注"
+        }
+      ]
+    },
+    {
+      "id": "power.primary-3v3",
+      "category": "power",
+      "subject": "非隔离侧 3V3 电源",
+      "statement": "EXT_5V 经 R21 0R/1% 到 5V 节点并送入 U12 的 VIN/EN，U12 输出 3V3；C6 与 C7 均标为 1uF/25V。",
+      "confidence": "confirmed",
+      "attributes": {
+        "input": "EXT_5V",
+        "link": "R21 0R/1%",
+        "regulator": "U12 TPAP7343D-33FS4",
+        "output": "3V3",
+        "input_capacitor": "C6 1uF/25V",
+        "output_capacitor": "C7 1uF/25V"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "4fac7d1a14c7cd931b65204376646c4d524676b390ef397a31f587c7aaf281d5",
+          "page": 1,
+          "locator": "C1-C2，EXT_5V、R21、U12、C6/C7 与 3V3"
+        }
+      ]
+    },
+    {
+      "id": "power.isolated-5v",
+      "category": "power",
+      "subject": "隔离侧 ISO_5V 电源",
+      "statement": "U15 的 +Vin/-Vin 接 EXT_5V/GND，+Vout/-Vout 接 ISO_5V/ISO_GND；输入 C17 为 4.7uF/25V，输出 C20 为 10uF/25V。",
+      "confidence": "confirmed",
+      "attributes": {
+        "converter": "U15 B0505M-2WR3",
+        "input": "EXT_5V/GND",
+        "output": "ISO_5V/ISO_GND",
+        "input_capacitor": "C17 4.7uF/25V",
+        "output_capacitor": "C20 10uF/25V"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "4fac7d1a14c7cd931b65204376646c4d524676b390ef397a31f587c7aaf281d5",
+          "page": 1,
+          "locator": "C2-C3，U15 输入输出及 C17/C20"
+        }
+      ]
+    },
+    {
+      "id": "power.isolated-3v3",
+      "category": "power",
+      "subject": "隔离侧 ISO_3V3 电源",
+      "statement": "U5 的 VIN 与 EN 接 ISO_5V，VOUT 输出 ISO_3V3；C21 与 C22 均标为 1uF/25V 并接 ISO_GND。",
+      "confidence": "confirmed",
+      "attributes": {
+        "regulator": "U5 TPAP7343D-33FS4",
+        "input": "ISO_5V",
+        "output": "ISO_3V3",
+        "input_capacitor": "C21 1uF/25V",
+        "output_capacitor": "C22 1uF/25V"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "4fac7d1a14c7cd931b65204376646c4d524676b390ef397a31f587c7aaf281d5",
+          "page": 1,
+          "locator": "C3，U5、C21/C22、ISO_5V 与 ISO_3V3"
+        }
+      ]
+    },
+    {
+      "id": "bus.external-i2c-isolation",
+      "category": "bus",
+      "subject": "外部 I2C 隔离链路",
+      "statement": "U7 A 侧以 3V3/GND 供电并连接 USER_SDA/USER_SCL，B 侧以 ISO_3V3/ISO_GND 供电并输出 ISO_SDA/ISO_SCL。",
+      "confidence": "confirmed",
+      "attributes": {
+        "isolator": "U7 CA-IS3020S",
+        "side_a_power": "3V3/GND",
+        "side_a_bus": "USER_SDA/USER_SCL",
+        "side_b_power": "ISO_3V3/ISO_GND",
+        "side_b_bus": "ISO_SDA/ISO_SCL",
+        "decoupling": "C1/C2 0.1uF/25V"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "4fac7d1a14c7cd931b65204376646c4d524676b390ef397a31f587c7aaf281d5",
+          "page": 1,
+          "locator": "C2-C3，U7 两侧电源、地与 SDA/SCL 网络"
+        }
+      ]
+    },
+    {
+      "id": "bus.external-i2c-pullups",
+      "category": "bus",
+      "subject": "隔离 I2C 上拉",
+      "statement": "隔离侧 R3、R5 均为 2.2k/1%，分别将 ISO_SCL、ISO_SDA 上拉到 ISO_3V3；非隔离侧 R9、R10 连接 3V3 与 USER_SCL/USER_SDA，但图面标值为 NC。",
+      "confidence": "confirmed",
+      "attributes": {
+        "isolated_side": "R3 ISO_SCL and R5 ISO_SDA, 2.2k/1% to ISO_3V3",
+        "primary_side": "R9 USER_SCL and R10 USER_SDA to 3V3, marked NC"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "4fac7d1a14c7cd931b65204376646c4d524676b390ef397a31f587c7aaf281d5",
+          "page": 1,
+          "locator": "C1-D1 的 R9/R10 与 C3-D3 的 R3/R5"
+        }
+      ]
+    },
+    {
+      "id": "bus.ina226-pullups",
+      "category": "bus",
+      "subject": "内部采样 I2C 上拉",
+      "statement": "R25 与 R26 均为 2.2k/1%，分别将 INA_I2C_SCL 与 INA_I2C_SDA 上拉到 ISO_3V3。",
+      "confidence": "confirmed",
+      "attributes": {
+        "clock_pullup": "R25 2.2k/1%",
+        "data_pullup": "R26 2.2k/1%",
+        "rail": "ISO_3V3"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "4fac7d1a14c7cd931b65204376646c4d524676b390ef397a31f587c7aaf281d5",
+          "page": 1,
+          "locator": "C3-D3，R25/R26 至 INA_I2C_SCL/INA_I2C_SDA"
+        }
+      ]
+    },
+    {
+      "id": "component.mcu-power",
+      "category": "component",
+      "subject": "U4 主控供电",
+      "statement": "U4 STM32G030F6P6 的 VDD/VDDA 接 ISO_3V3，VSS/VSSA 接 ISO_GND；C4 4.7uF/25V 与 C3 100nF/50V 位于该电源轨。",
+      "confidence": "confirmed",
+      "attributes": {
+        "reference": "U4",
+        "part_number": "STM32G030F6P6",
+        "supply": "ISO_3V3",
+        "ground": "ISO_GND",
+        "bulk_capacitor": "C4 4.7uF/25V",
+        "decoupling_capacitor": "C3 100nF/50V"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "4fac7d1a14c7cd931b65204376646c4d524676b390ef397a31f587c7aaf281d5",
+          "page": 1,
+          "locator": "A3-B4，U4 VDD/VDDA、VSS/VSSA 与 C3/C4"
+        }
+      ]
+    },
+    {
+      "id": "bus.mcu-isolated-i2c",
+      "category": "bus",
+      "subject": "U4 隔离侧外部 I2C 引脚",
+      "statement": "U4 pin 16 的 PA11[PA9] 连接 ISO_SCL，pin 17 的 PA12[PA10] 连接 ISO_SDA。",
+      "confidence": "confirmed",
+      "attributes": {
+        "scl": "U4 PA11[PA9] pin 16 -> ISO_SCL",
+        "sda": "U4 PA12[PA10] pin 17 -> ISO_SDA"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "4fac7d1a14c7cd931b65204376646c4d524676b390ef397a31f587c7aaf281d5",
+          "page": 1,
+          "locator": "A4，U4 pin 16/17 与 ISO_SCL/ISO_SDA"
+        }
+      ]
+    },
+    {
+      "id": "gpio.address-bit-map",
+      "category": "gpio",
+      "subject": "U4 地址位引脚",
+      "statement": "U4 的 PA2/pin 9、PA3/pin 10、PA4/pin 11、PA5/pin 12 分别连接 ADDR_1、ADDR_0、ADDR_3、ADDR_2。",
+      "confidence": "confirmed",
+      "attributes": {
+        "addr_1": "PA2 pin 9",
+        "addr_0": "PA3 pin 10",
+        "addr_3": "PA4 pin 11",
+        "addr_2": "PA5 pin 12"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "4fac7d1a14c7cd931b65204376646c4d524676b390ef397a31f587c7aaf281d5",
+          "page": 1,
+          "locator": "A4，U4 PA2..PA5 与 ADDR_1/ADDR_0/ADDR_3/ADDR_2"
+        }
+      ]
+    },
+    {
+      "id": "interface.address-switch",
+      "category": "interface",
+      "subject": "四位地址拨码",
+      "statement": "RP1 以四路 10K/1% 电阻将 ADDR_0..ADDR_3 上拉至 ISO_3V3，U11 的四个开关分别可将对应地址线接至 ISO_GND。",
+      "confidence": "confirmed",
+      "attributes": {
+        "pullup_network": "RP1 10K/1%",
+        "switch": "U11 DSHP04TSGER",
+        "signals": "ADDR_0, ADDR_1, ADDR_2, ADDR_3",
+        "open_state_bias": "ISO_3V3",
+        "closed_state": "ISO_GND"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "4fac7d1a14c7cd931b65204376646c4d524676b390ef397a31f587c7aaf281d5",
+          "page": 1,
+          "locator": "C3-C4，RP1、U11、ISO_3V3/ISO_GND 与 ADDR_0..ADDR_3"
+        }
+      ]
+    },
+    {
+      "id": "reset.mcu-reset",
+      "category": "reset",
+      "subject": "U4 复位网络",
+      "statement": "U4 RST/pin 6 接 RST 网络，R15 4.7k/1% 将其上拉至 ISO_3V3，C5 1uF/10V 将其接至 ISO_GND。",
+      "confidence": "confirmed",
+      "attributes": {
+        "pin": "U4 RST pin 6",
+        "pullup": "R15 4.7k/1% to ISO_3V3",
+        "capacitor": "C5 1uF/10V to ISO_GND",
+        "network": "RST"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "4fac7d1a14c7cd931b65204376646c4d524676b390ef397a31f587c7aaf281d5",
+          "page": 1,
+          "locator": "A3-B3，U4 RST、R15 与 C5"
+        }
+      ]
+    },
+    {
+      "id": "debug.swd",
+      "category": "debug",
+      "subject": "SWD 调试连接",
+      "statement": "JP1 pin 1..5 依次连接 ISO_3V3、SWCLK、SWDIO、RST、ISO_GND；U4 pin 18 连接 SWDIO，pin 19 连接 SWCLK。",
+      "confidence": "confirmed",
+      "attributes": {
+        "jp1_pin_1": "ISO_3V3",
+        "jp1_pin_2": "SWCLK",
+        "jp1_pin_3": "SWDIO",
+        "jp1_pin_4": "RST",
+        "jp1_pin_5": "ISO_GND",
+        "mcu_swdio": "PA13 pin 18",
+        "mcu_swclk": "PA15/PA14-BOOT0 pin 19"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "4fac7d1a14c7cd931b65204376646c4d524676b390ef397a31f587c7aaf281d5",
+          "page": 1,
+          "locator": "B3 的 JP1 与 A4 的 U4 SWDIO/SWCLK"
+        }
+      ]
+    },
+    {
+      "id": "clock.no-external-clock-shown",
+      "category": "clock",
+      "subject": "U4 时钟器件可见性",
+      "statement": "本页未画出连接 U4 的外部晶振或谐振器，PC15-OSC32 OUT 对应 pin 3 以未连接短线结束。",
+      "confidence": "confirmed",
+      "attributes": {
+        "external_crystal": "not shown",
+        "visible_unconnected_pin": "U4 pin 3 PC15-OSC32 OUT"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "4fac7d1a14c7cd931b65204376646c4d524676b390ef397a31f587c7aaf281d5",
+          "page": 1,
+          "locator": "B3-B4，U4 左侧 PC15-OSC32 OUT pin 3 与全页时钟器件可见性"
+        }
+      ]
+    },
+    {
+      "id": "address.module-i2c-address",
+      "category": "address",
+      "subject": "模块外部 I2C 地址",
+      "statement": "原理图显示四位 ADDR_0..ADDR_3 拨码输入，但未给出固件如何将四位状态映射为模块 I2C 从地址，因此仅凭图面不能确定实际地址或地址范围。",
+      "confidence": "uncertain",
+      "attributes": {
+        "address_bits": "ADDR_0..ADDR_3",
+        "mapping": "not shown",
+        "base_address": null
+      },
+      "evidence": [
+        {
+          "asset_sha256": "4fac7d1a14c7cd931b65204376646c4d524676b390ef397a31f587c7aaf281d5",
+          "page": 1,
+          "locator": "A4 与 C3-C4，U4 地址输入及 U11/RP1 拨码网络，无地址换算表"
+        }
+      ]
+    },
+    {
+      "id": "analog.external-range",
+      "category": "analog",
+      "subject": "外部模拟量范围",
+      "statement": "图面可确认 3R 分流、INA226 采样和保护拓扑，但未标注外部电压/电流量程、精度或允许输入边界。",
+      "confidence": "uncertain",
+      "attributes": {
+        "voltage_range": null,
+        "current_range": null,
+        "accuracy": null
+      },
+      "evidence": [
+        {
+          "asset_sha256": "169a06e29b1243ff8876082d3abe97e28549c6d1af92f0a184b68c283004ccc6",
+          "page": 1,
+          "locator": "A1-B2，两路输入保护、R18/R19 与 U2/U3；图面无量程注记"
+        }
+      ]
+    },
+    {
+      "id": "interface.output-ratings",
+      "category": "interface",
+      "subject": "外部输出额定值",
+      "statement": "原理图给出 GAQY252G3S、SRD-5VDC-SL-C 及其保护和端子连接，但未在页面标注固态输出或机械继电器触点的最大电压、电流与负载降额。",
+      "confidence": "uncertain",
+      "attributes": {
+        "solid_state_voltage": null,
+        "solid_state_current": null,
+        "relay_contact_voltage": null,
+        "relay_contact_current": null
+      },
+      "evidence": [
+        {
+          "asset_sha256": "169a06e29b1243ff8876082d3abe97e28549c6d1af92f0a184b68c283004ccc6",
+          "page": 1,
+          "locator": "A3-C4，U13/U14/JK1 输出链路；页面无额定值标注"
+        }
+      ]
+    },
+    {
+      "id": "interface.relay-contact-polarity",
+      "category": "interface",
+      "subject": "继电器 A/B 触点语义",
+      "statement": "图面将机械继电器端子命名为 JK1_A、JK1_COM、JK1_B，未用 N.C. 或 N.O. 文字标明 JK1_A 与 JK1_B 的常闭/常开对应关系。",
+      "confidence": "uncertain",
+      "attributes": {
+        "common": "JK1_COM",
+        "contact_a": "JK1_A",
+        "contact_b": "JK1_B",
+        "nc_no_labels": "not shown"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "169a06e29b1243ff8876082d3abe97e28549c6d1af92f0a184b68c283004ccc6",
+          "page": 1,
+          "locator": "C4，JK1 转换触点与 U10 的 JK1_A/JK1_COM/JK1_B 标注"
+        }
+      ]
+    }
+  ],
+  "needs_review": [
+    {
+      "id": "review.module-i2c-address",
+      "fact_id": "address.module-i2c-address",
+      "question": "ADDR_0..ADDR_3 的四位状态如何映射为模块实际 7-bit I2C 地址？",
+      "reason": "原理图仅显示拨码电气连接，地址基值与固件换算规则不在两张页面中。",
+      "evidence": [
+        {
+          "asset_sha256": "4fac7d1a14c7cd931b65204376646c4d524676b390ef397a31f587c7aaf281d5",
+          "page": 1,
+          "locator": "A4 与 C3-C4，ADDR_0..ADDR_3 的 MCU 引脚和拨码网络"
+        }
+      ]
+    },
+    {
+      "id": "review.analog-external-range",
+      "fact_id": "analog.external-range",
+      "question": "两路输入允许的电压、电流范围、精度与瞬态边界分别是多少？",
+      "reason": "图面给出器件和阻值，但没有系统级输入规格与校准信息。",
+      "evidence": [
+        {
+          "asset_sha256": "169a06e29b1243ff8876082d3abe97e28549c6d1af92f0a184b68c283004ccc6",
+          "page": 1,
+          "locator": "A1-B2，两路输入保护、3R 分流与 INA226 采样块"
+        }
+      ]
+    },
+    {
+      "id": "review.output-ratings",
+      "fact_id": "interface.output-ratings",
+      "question": "两路固态输出及一路机械继电器触点的保证额定值和负载降额是什么？",
+      "reason": "器件型号和连接可见，但原理图页面未标注系统级输出额定参数。",
+      "evidence": [
+        {
+          "asset_sha256": "169a06e29b1243ff8876082d3abe97e28549c6d1af92f0a184b68c283004ccc6",
+          "page": 1,
+          "locator": "A3-C4，U13/U14 固态输出和 JK1 机械继电器"
+        }
+      ]
+    },
+    {
+      "id": "review.relay-contact-polarity",
+      "fact_id": "interface.relay-contact-polarity",
+      "question": "JK1_A 与 JK1_B 中哪一个对应 N.C.，哪一个对应 N.O.？",
+      "reason": "原理图连接器只使用 A/B 命名，未直接给出 N.C./N.O. 文字映射。",
+      "evidence": [
+        {
+          "asset_sha256": "169a06e29b1243ff8876082d3abe97e28549c6d1af92f0a184b68c283004ccc6",
+          "page": 1,
+          "locator": "C4，JK1 触点符号与 U10 的 JK1_A/JK1_COM/JK1_B"
+        }
+      ]
+    }
+  ]
+}

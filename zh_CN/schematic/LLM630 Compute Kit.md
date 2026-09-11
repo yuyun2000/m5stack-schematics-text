@@ -11,277 +11,335 @@
 
 ## 概述
 
-LLM630 Compute Kit 当前原理图展示 AX630C 计算模组的底板接口：中央多针模组连接器引出 MIPI DSI/CSI、音频、TF、I2C、UART、以太网 MDI 和电源控制。底板集成双 USB-C、CH9102F、AW32001ECSR 充电、BQ27220YZFR 电量计、BMI270、NS4150B、LCD/Camera 电源与电平转换、microSD、双 Grove、RJ45 磁性接口及按键/LED/电源时序控制。SYS_I2C_SCL/SDA 连接充电、电量计、BMI270、PI4IOE5V6408 与 MIPI 外设控制，CAM 使用 2.8V/1.2V/1.8V，LCD 使用 3.3V 与背光驱动。AX630C/NPU、4GB LPDDR4、32GB eMMC、ESP32-C6/JL2101 以及性能和软件能力位于模组或正文范围，当前底板页不能直接验证。
+本页展示 LLM630 Compute Kit 底板电路，以 J6 APCI0107-P001A 板对板连接器引出电源、USB、UART、I2C、音频、MIPI、TF 和四对以太网 MDI 网络。底板集成双 USB-C、CH9102F、Type-C 检测、电池管理与电量采样、BMI270、GPIO 扩展、音频功放、LCD/Camera 电源、双 Grove、以太网磁性接口和 TF 卡座。图中没有展示计算模组内部芯片、存储器、内存或无线电路，因此不据此描述其内部实现。
 
 ## 检索关键词
 
-`LLM630 Compute Kit`、`K143`、`AX630C`、`AW32001ECSR`、`BQ27220YZFR`、`BMI270`、`NS4150B`、`CH9102F`、`PI4IOE5V6408`、`PMS150G-U6`、`AW99703CSR`、`WL2863E28-5/TR`、`ME6211A12M3G-N`、`TXS0102DCUR`、`MIPI DSI`、`MIPI CSI`、`MIPI_TX0`、`MIPI_RX0`、`CAM_2.8V`、`CAM_1.2V`、`CAM_1.8V`、`LCD_LEDA`、`LCD_KEY`、`SYS_I2C_SCL`、`SYS_I2C_SDA`、`TRM_TXD`、`TRM_RXD`、`USB_D_P`、`USB_D_N`、`OTG_DP`、`OTG_DM`、`microSD`、`TF_CLK`、`TF_CMD`、`RJ45`、`MDI0`、`MDI1`、`SOC_VIN`、`SYS_VIN`、`SYS_VBAT`
+`LLM630 Compute Kit`、`K143`、`APCI0107-P001A`、`J6`、`CH9102F`、`SGM7220XUQT12G/TR`、`FP6276BXR-G1`、`AW32001ECSR`、`BQ27220YZFR`、`BMI270`、`PI4IOE5V6408`、`PMS150G-U06`、`NS4150B`、`AW99703CSR`、`TXS0102DCUR`、`LPW5209AB5F`、`RMT-410B-10W4-NL-Y`、`USBIN_DP`、`USB_OTG_P`、`USB_D_P`、`OTG_ID`、`SYS_I2C_SCL`、`I2C0_SCL`、`SOC_VIN`、`SYS_VIN`、`SYS_VBAT`、`SYS_VBUS`、`TF_VDD`、`TF_PWR_EN`、`MIPI_TX0`、`MIPI_TX2`、`MIPI_RX0`、`MIPI_RX4`、`CAM_2.8V`、`CAM_1.8V`、`CAM_1.2V`、`LCD_LEDA`、`MDI1_0_P`、`TRM_TXD`、`RF_COAXIAL`
 
 ## 主要器件
 
 | 位号 | 型号 | 作用 | 证据 |
 | --- | --- | --- | --- |
-| AX630C 模组连接器 | 未标注 | 中央多针计算模组接口，承载电源、MIPI、音频、TF、I2C、UART 与以太网 MDI | 图 40ac0b8ed636 / 第 1 页 / 网格 A3-C4，中央 74 针模组连接器，SOC_VIN/MIPI/AUDIO/TF/I2C/MDI 网络 |
-| USB 调试口 | USB C 16P Horizontal | USB_VIN 与 USB_D_P/USB_D_N 的 Type-C 调试/串口接口 | 图 40ac0b8ed636 / 第 1 页 / 网格 A1，左上 USB C 16P Horizontal、USB_VIN、USB_D_P/N |
-| U4 | CH9102F | USB_D_P/USB_D_N 到 DBG_RXD/DBG_TXD 的 USB-UART 桥 | 图 40ac0b8ed636 / 第 1 页 / 网格 A2，U4 CH9102F、USB_D_P/N、DBG_RXD/DBG_TXD |
-| OTG USB-C | USB C 16P Horizontal | OTG_VBUS、OTG_DP/OTG_DM 的第二路 Type-C 接口 | 图 40ac0b8ed636 / 第 1 页 / 网格 A1-B1，左侧第二个 USB C 16P Horizontal、OTG_VBUS/DP/DM |
-| D4,D5 | ESD0524P | 两路 USB-C 数据/CC 信号的多通道 ESD 保护 | 图 40ac0b8ed636 / 第 1 页 / 网格 A1-B1，D4/D5 ESD0524P 与 USB/OTG 数据线 |
-| U6,U16 | LPW5209AB5F | 受 OTG_EN 控制的 USB/系统电源开关路径 | 图 40ac0b8ed636 / 第 1 页 / 网格 A2-B3，U6/U16 LPW5209AB5F、OTG_VBUS/SOC_VIN/SYS_VIN 与 Q4/Q8 |
-| J1 | 1.25mm 5P | AGND、麦克风差分输入与 SPK_P/SPK_N 音频接口 | 图 40ac0b8ed636 / 第 1 页 / 网格 B1，AUDIO J1 5P、AGND、AUDIO_IN_L_P/N、SPK_P/N |
-| U14 | NS4150B | AUDIO_OUT_L_P/N 到 SPK_P/SPK_N 的差分 D 类扬声器功放 | 图 40ac0b8ed636 / 第 1 页 / 网格 B2-C3，U14 NS4150B、INP/INN、SPK_EN、SPK_P/N |
-| J2 | 1.25mm 2P | EXT_VBAT 与 GND 的外接电池接口 | 图 40ac0b8ed636 / 第 1 页 / 网格 B1，BAT J2、EXT_VBAT 与保护器件 |
-| U3 | AW32001ECSR | SYS_VIN 输入、SYS_VBAT 输出并连接 SYS_I2C 的电池充电管理器 | 图 40ac0b8ed636 / 第 1 页 / 网格 C2-C3，U3 AW32001ECSR、SYS_VIN/SYS_VBAT、SYS_I2C_SCL/SDA |
-| U8 | BQ27220YZFR | SYS_VBAT/EXT_VBAT 电量检测并通过 SYS_I2C 通信 | 图 40ac0b8ed636 / 第 1 页 / 网格 C3-C4，U8 BQ27220YZFR、SRP/SRN、BAT、SYS_I2C_SCL/SDA |
-| U9 | BMI270 | SYS_I2C_SCL/SDA 六轴惯性传感器 | 图 40ac0b8ed636 / 第 1 页 / 网格 C4，U9 BMI270、SYS_I2C_SCL/SDA、SOC_3.3V |
-| U7 | PI4IOE5V6408 | SYS_I2C 八位 GPIO 扩展器，控制 LCD/CAM 复位、系统 LED、电源与外部 LED 网络 | 图 40ac0b8ed636 / 第 1 页 / 网格 D2-D3，U7 PI4IOE5V6408、P0-P7、SYS_I2C_SCL/SDA |
-| U2 | PMS150G-U6 | MPWR_EN/SW_PWR/BOOT_RST 等电源按键与时序辅助控制器 | 图 40ac0b8ed636 / 第 1 页 / 网格 D1-D2，U2 PMS150G-U6、MPWR_EN/SW_PWR/BOOT_RST |
-| U1 | WPN3012H2R2MT | SYS_VBUS 输入、MPWR_EN 控制并输出 SOC_VIN 的 DC/DC | 图 40ac0b8ed636 / 第 1 页 / 网格 C1-C2，U1 WPN3012H2R2MT、SYS_VBUS、MPWR_EN、SOC_VIN |
-| U10 | AW99703CSR | SYS_I2C 控制的 LCD 背光升压/LED 驱动器，输出 LCD_LEDA/LCD_LEDK | 图 40ac0b8ed636 / 第 1 页 / 网格 A6，U10 AW99703CSR、SYS_I2C、LCD_LEDA/LCD_LEDK |
-| J11 | FPC-24P | MIPI DSI LCD、I2C、触摸中断/复位和显示电源接口 | 图 40ac0b8ed636 / 第 1 页 / 网格 A7-A8，J11 FPC-24P、MIPI_TX、SYS_I2C、TP_INT/TP_RST、LCD_LEDA/LEDK |
-| U12 | WL2863E28-5/TR | CAM_VIN 输入、CAM_2.8V 输出的摄像头 LDO | 图 40ac0b8ed636 / 第 1 页 / 网格 B6-B7，U12 WL2863E28-5/TR、CAM_VIN、CAM_2.8V |
-| U11 | ME6211A12M3G-N | CAM_1.8V 输入、CAM_1.2V 输出的摄像头 LDO | 图 40ac0b8ed636 / 第 1 页 / 网格 B6-C7，U11 ME6211A12M3G-N、CAM_1.8V、CAM_1.2V |
-| U13 | TXS0102DCUR | SOC_3.3V 与 CAM_1.8V 之间的 CAM_SCL/CAM_SDA 双向电平转换 | 图 40ac0b8ed636 / 第 1 页 / 网格 C7-C8，U13 TXS0102DCUR、CAM_SCL/CAM_SDA、CAM_1.8V |
-| CAM 连接器 | FPC-30P | 四通道 MIPI CSI、时钟、I2C、复位和 2.8V/1.8V/1.2V 电源接口 | 图 40ac0b8ed636 / 第 1 页 / 网格 B7-C8，CAM FPC-30P、MIPI_RX0-RX3、CAM_MCLK/RSTN/SCL/SDA 与电源 |
-| J8,J9 | GROVE CON4 | 分别引出 TRM_TXD/TRM_RXD 与 SYS_I2C_SDA/SCL 的两路 Grove 接口 | 图 40ac0b8ed636 / 第 1 页 / 网格 C6-C7，J8 BLUE GROVE 与 J9 RED GROVE |
-| J14 | RF_COAXIAL | 预留外部射频同轴接口 | 图 40ac0b8ed636 / 第 1 页 / 网格 C5-C6，J14 RF_COAXIAL |
-| RJ45 磁性接口 | RMT-410B-10V4-NL-Y | MDI0/MDI1 四对差分网络到 RJ45 与链路 LED 的千兆以太网磁性接口 | 图 40ac0b8ed636 / 第 1 页 / 网格 D5-D7，RMT-410B-10V4-NL-Y、MDI0/MDI1、RJ45 与 LED |
-| J10 | TF_CARD_SOCKET | TF_D0-D3、TF_CMD、TF_CLK 与卡检测的 microSD 卡座 | 图 40ac0b8ed636 / 第 1 页 / 网格 D7-D8，J10 TF_CARD_SOCKET、TF_D0-D3/TF_CMD/TF_CLK/SD_DETN |
-| S1,S2 | SW | BOOT/用户及系统电源交互按键 | 图 40ac0b8ed636 / 第 1 页 / 网格 D4-D5，S1/S2、BOOT/USER/VIN_DET 网络与绿色 LED |
+| J6 | APCI0107-P001A | 中央板对板连接器，引出底板所用的电源、USB、UART、I2C、音频、MIPI、TF、控制和以太网 MDI 网络 | 图 e19d6c21ee54 / 第 1 页 / 网格 A4-C5，J6 APCI0107-P001A 及两侧网络 |
+| J5 | USB C 16P Horizontal | USB_VIN 与 USBIN_DP/USBIN_DM 的 Type-C 接口 | 图 e19d6c21ee54 / 第 1 页 / 网格 A1，J5 USB-C |
+| U4 | CH9102F | USBIN_DP/USBIN_DM 到 DBG_RXD/DBG_TXD 的 USB-UART 桥 | 图 e19d6c21ee54 / 第 1 页 / 网格 A2-A3，U4 CH9102F |
+| J4 | USB C 16P Horizontal | OTG_VBUS、USB_OTG_P/N 与 OTG_CC1/CC2 的 Type-C 接口 | 图 e19d6c21ee54 / 第 1 页 / 网格 A1-B2，J4 USB-C |
+| U5 | SGM7220XUQT12G/TR | 连接 OTG_CC1/CC2、OTG_VBUS、OTG_ID、USB_DET 和 SYS_I2C 的 Type-C 检测器件 | 图 e19d6c21ee54 / 第 1 页 / 网格 B2-B3，U5 SGM7220XUQT12G/TR |
+| U6,U16 | LPW5209AB5F | SOC_VIN、OTG_VBUS 与 SYS_VIN 之间的受控电源路径 | 图 e19d6c21ee54 / 第 1 页 / 网格 A2-A3，U6/U16 与 Q4A/Q4B |
+| J1 | 1.25mm_5P | APWR、MIC_P、AGND、SPK_P 与 SPK_N 音频接口 | 图 e19d6c21ee54 / 第 1 页 / 网格 B1，J1 AUDIO |
+| U14 | NS4150B | AUDIO_OUT_L_P/N 到 SPK_P/N 的扬声器功放 | 图 e19d6c21ee54 / 第 1 页 / 网格 B2-B3，U14 NS4150B |
+| J2 | 1.25mm_2P | 经 Q2 与 TVS1 接入 EX_VBAT 的两针电池接口 | 图 e19d6c21ee54 / 第 1 页 / 网格 B1，J2 BAT |
+| J12 | 1.25MM_8P | EXTRG、SW_PWR、EXT_LED、SYS_I2C、SOC_VIN、SYS_VIN 与 GND 的 WKUP/PWR 扩展接口 | 图 e19d6c21ee54 / 第 1 页 / 网格 B1-C1，J12 WKUP/PWR |
+| U1 | FP6276BXR-G1 | SYS_VBUS 经 L2 转换到 SOC_VIN、由 MPWR_EN 使能的开关电源器件 | 图 e19d6c21ee54 / 第 1 页 / 网格 C1-C2，U1 FP6276BXR-G1 |
+| U3 | AW32001ECSR | 连接 SYS_VIN、SYS_VBAT、NTC 与 SYS_I2C 的电池管理器件 | 图 e19d6c21ee54 / 第 1 页 / 网格 C2-C3，U3 AW32001ECSR |
+| U8 | BQ27220YZFR | 通过 R25 检测 SYS_VBAT/EX_VBAT 路径并连接 SYS_I2C 的电量采样器件 | 图 e19d6c21ee54 / 第 1 页 / 网格 C3-C4，U8 BQ27220YZFR 与 R25 |
+| U2 | PMS150G-U06 | 连接 MPWR_EN、SW_PWR、BOOT_TRG 与 nINT_STAT_TRIG 的定制带程序芯片 | 图 e19d6c21ee54 / 第 1 页 / 网格 D1-D2，U2 PMS150G-U06 |
+| U7 | PI4IOE5V6408 | SYS_I2C 八位 GPIO 扩展器，输出触摸、LCD、按键、LED、电源检测和关机脉冲网络 | 图 e19d6c21ee54 / 第 1 页 / 网格 D2-D3，U7 PI4IOE5V6408 |
+| U9 | BMI270 | 由 SOC_3.3V 供电并连接 SYS_I2C 的惯性传感器 | 图 e19d6c21ee54 / 第 1 页 / 网格 C4，U9 BMI270 |
+| S1,S2 | SW | USR_KEY 与 SW_PWR 对地按键，分别由 TVS3 与 TVS2 保护 | 图 e19d6c21ee54 / 第 1 页 / 网格 D4，S1/S2 与 TVS2/TVS3 |
+| U10 | AW99703CSR | 由 SOC_VIN 供电、通过 SYS_I2C 控制并生成 LCD_LEDA/LCD_LEDK 的背光驱动器 | 图 e19d6c21ee54 / 第 1 页 / 网格 A6-A7，U10/L1/D15 |
+| J11 | FPC_24P | LCD 的三对 MIPI_TX、SYS_I2C、触摸控制、背光和 SOC_3.3V 接口 | 图 e19d6c21ee54 / 第 1 页 / 网格 A7-A8，J11 LCD |
+| U17 | LPW5209AB5F | SOC_3.3V 到 TF_VDD、由 TF_PWR_EN 使能的负载开关 | 图 e19d6c21ee54 / 第 1 页 / 网格 B5-C5，U17 LPW5209AB5F |
+| U12 | WL2863E28-5/TR | CAM_VIN 到 CAM_2.8V 的摄像头电源器件 | 图 e19d6c21ee54 / 第 1 页 / 网格 B6-C7，U12 WL2863E28-5/TR |
+| U11 | ME6211A12M3G-N | CAM_1.8V 到 CAM_1.2V 的摄像头 LDO | 图 e19d6c21ee54 / 第 1 页 / 网格 B6-C7，U11 ME6211A12M3G-N |
+| U13 | TXS0102DCUR | I2C0_SCL/SDA 与 CAM_SCL_1V8/CAM_SDA_1V8 之间的双通道电平转换器 | 图 e19d6c21ee54 / 第 1 页 / 网格 C6-C7，U13 TXS0102DCUR |
+| J3 | FPC_30P | Camera 的五对 MIPI_RX、MCLK、复位、1.8V I2C 与三路电源接口 | 图 e19d6c21ee54 / 第 1 页 / 网格 B7-C8，J3 CAM |
+| J8,J9 | CON4 | 分别引出 TRM UART 与 SYS_I2C 的两路 Grove 接口 | 图 e19d6c21ee54 / 第 1 页 / 网格 C6-C7，J8 BLUE GROVE 与 J9 RED GROVE |
+| J14 | RF_COAXIAL | 两引脚均标记未连接的 RF 同轴连接器符号 | 图 e19d6c21ee54 / 第 1 页 / 网格 C4-C5，J14 两脚红色 NC 标记 |
+| J13 | RMT-410B-10W4-NL-Y | 四对 MDI1 差分网络的磁性器件与 RJ45 接口 | 图 e19d6c21ee54 / 第 1 页 / 网格 D4-D6，J13 RMT-410B-10W4-NL-Y |
+| J10 | TF_CARD_SOCKET | TF_D0-D3、TF_CMD、TF_CLK、SD_DET_N 与 TF_VDD 的存储卡座 | 图 e19d6c21ee54 / 第 1 页 / 网格 D7-D8，J10 TF_CARD_SOCKET |
+| D4,D5,D11-D14 | ESD0524P | 双 USB-C、双 Grove 与 TF 卡信号的多通道 ESD 保护器件 | 图 e19d6c21ee54 / 第 1 页 / 网格 A1-D8，D4/D5/D11-D14 |
+| TVS4-TVS7 | WS03DLC-B | 四对以太网差分线的 TVS 保护器件 | 图 e19d6c21ee54 / 第 1 页 / 网格 D4-D6，ETH_0 至 ETH_3 上的 TVS4-TVS7 |
+| D2,D16,D17 | DSK34 | USB_VIN 到 SYS_VIN，以及 SYS_VIN/SYS_VBAT 到 SYS_VBUS 的电源导向二极管 | 图 e19d6c21ee54 / 第 1 页 / 网格 A1 与 C2-C3，D2、D16、D17 |
 
 ## 系统结构
 
-### LLM630 Compute Kit 底板架构
+### LLM630 Compute Kit 底板原理图范围
 
-中央 AX630C 模组接口连接双 USB-C/CH9102F、MIPI LCD/Camera、音频、TF、I2C、UART、以太网 MDI 和电源控制；底板另集成 AW32001ECSR、BQ27220YZFR、BMI270、PI4IOE5V6408、NS4150B 与 RJ45/microSD/Grove。
+本页以 J6 APCI0107-P001A 为中央接口，连接底板的 USB、UART、I2C、音频、MIPI、TF、以太网 MDI 和电源管理电路；页面没有画出计算模组内部芯片、内存、存储或无线电路。
 
-- 参数与网络：`compute_interface=central 74-pin AX630C module connector`；`usb_uart=U4 CH9102F`；`power=U1/U3/U6/U16`；`battery=AW32001ECSR + BQ27220YZFR`；`sensor=BMI270`；`audio=NS4150B + J1`；`display=J11 MIPI DSI`；`camera=CAM FPC-30P MIPI CSI`；`network=MDI0/MDI1 RJ45`；`storage=J10 microSD`
-- 证据：图 40ac0b8ed636 / 第 1 页 / 完整单页 A1-D8 全部功能分区
+- 参数与网络：`central_connector=J6`；`connector_part=APCI0107-P001A`；`page_scope=baseboard interfaces and support circuits`；`module_internal_circuits_shown=false`
+- 证据：图 e19d6c21ee54 / 第 1 页 / 全页，中央 J6 与四周底板功能分区
 
 ## 电源
 
-### USB_VIN、SYS_VIN、OTG_VBUS 与 SOC_VIN
+### J5 USB_VIN 输入
 
-USB 调试口 USB_VIN 经 D2 DSK34 接 SYS_VIN；OTG_VBUS 经受控开关网络连接 SOC_VIN/SYS_VIN；U1 WPN3012H2R2MT 以 SYS_VBUS 为输入、MPWR_EN 为使能并输出 SOC_VIN。
+J5 的 VBUS 经 FU1 2A/6V 自恢复保险丝形成 USB_VIN，USB_VIN 再经 D2 DSK34 接入 SYS_VIN；U4 的 VBUS/REGIN 也由 USB_VIN 供电。
 
-- 参数与网络：`debug_input=USB_VIN -> D2 DSK34 -> SYS_VIN`；`otg_input=OTG_VBUS via U6/U16/Q4/Q8`；`converter=U1 WPN3012H2R2MT`；`converter_input=SYS_VBUS`；`enable=MPWR_EN`；`output=SOC_VIN`
-- 证据：图 40ac0b8ed636 / 第 1 页 / 网格 A1-C2，D2、U6/U16、U1 与 USB_VIN/SYS_VIN/SOC_VIN
+- 参数与网络：`connector=J5`；`input_net=USB_VIN`；`fuse=FU1 2A/6V 自恢复`；`steering_diode=D2 DSK34`；`downstream_net=SYS_VIN`
+- 证据：图 e19d6c21ee54 / 第 1 页 / 网格 A1-A2，J5/FU1/D2/U4
 
-### AW32001ECSR 电池充电路径
+### OTG_VBUS 双向开关路径
 
-U3 AW32001ECSR 的 VIN 接 SYS_VIN，BAT 输出 SYS_VBAT，NTC/TS 连接电池温度网络，SCL/SDA 接 SYS_I2C_SCL/SDA；J2 EXT_VBAT 通过保护/开关网络进入系统电池路径。
+U6 LPW5209AB5F 的 VIN 接 SOC_VIN、OUT 接 OTG_VBUS；U16 的 VIN 接 OTG_VBUS、OUT 接 SYS_VIN。两路 EN 由 Q4A/Q4B 2N7002DW 组成的 OTG_ID 控制网络驱动。
 
-- 参数与网络：`charger=U3 AW32001ECSR`；`input=SYS_VIN`；`battery_output=SYS_VBAT`；`temperature=NTC/TS network`；`bus=SYS_I2C_SCL/SYS_I2C_SDA`；`external_connector=J2 EXT_VBAT/GND`
-- 证据：图 40ac0b8ed636 / 第 1 页 / 网格 B1-C3，J2/U3/SYS_VIN/SYS_VBAT/SYS_I2C
+- 参数与网络：`source_switch=U6 SOC_VIN to OTG_VBUS`；`sink_switch=U16 OTG_VBUS to SYS_VIN`；`control=OTG_ID via Q4A/Q4B`；`switch_part=LPW5209AB5F`；`mosfet_part=2N7002DW`
+- 证据：图 e19d6c21ee54 / 第 1 页 / 网格 A2-A3，U6/U16/Q4A/Q4B
+
+### U3 电池管理连接
+
+U3 AW32001ECSR 的 IN 接 SYS_VIN，BAT 接 SYS_VBAT，NTC 接 IVDD，SDA/SCL 接 SYS_I2C_SDA/SCL；SYS 引脚仅在本页接出局部去耦网络。
+
+- 参数与网络：`device=U3 AW32001ECSR`；`input=SYS_VIN`；`battery=SYS_VBAT`；`ntc=IVDD`；`bus=SYS_I2C_SDA,SYS_I2C_SCL`；`sys_net_label=null`
+- 证据：图 e19d6c21ee54 / 第 1 页 / 网格 C2-C3，U3 pins IN/SYS/BAT/NTC/SDA/SCL
+
+### SYS_VBUS 与 SOC_VIN 电源路径
+
+D16 与 D17 两只 DSK34 分别将 SYS_VIN、SYS_VBAT 导向 SYS_VBUS；SYS_VBUS 经 L2 进入 U1 FP6276BXR-G1，U1 在 MPWR_EN 控制下输出 SOC_VIN。
+
+- 参数与网络：`sources=SYS_VIN,SYS_VBAT`；`or_diodes=D16,D17 DSK34`；`intermediate_rail=SYS_VBUS`；`converter=U1 FP6276BXR-G1`；`output=SOC_VIN`；`enable=MPWR_EN`
+- 证据：图 e19d6c21ee54 / 第 1 页 / 网格 C1-C3，D16/D17/L2/U1
 
 ### LCD 背光驱动
 
-U10 AW99703CSR 由 SOC_VIN 供电，通过 SYS_I2C_SCL/SDA 控制，SW 经 L1 WPN3012H100MT 与 D15 B5819WS 升压形成 LCD_LEDA，并输出 LCD_LEDK 回路到 J11。
+U10 AW99703CSR 由 SOC_VIN 供电并连接 SYS_I2C_SCL/SDA；SW 经 L1 WPN3012H100MT 与 D15 1N5819WS 形成 LCD_LEDA，HVLED3 输出 LCD_LEDK，HVLED1/HVLED2 标记未连接。
 
-- 参数与网络：`driver=U10 AW99703CSR`；`input=SOC_VIN`；`bus=SYS_I2C_SCL/SDA`；`inductor=L1 WPN3012H100MT`；`diode=D15 B5819WS`；`outputs=LCD_LEDA,LCD_LEDK`
-- 证据：图 40ac0b8ed636 / 第 1 页 / 网格 A6-A8，U10/L1/D15/J11 LCD_LEDA/LEDK
+- 参数与网络：`device=U10 AW99703CSR`；`supply=SOC_VIN`；`bus=SYS_I2C_SCL,SYS_I2C_SDA`；`anode_net=LCD_LEDA`；`cathode_net=LCD_LEDK`；`unused_outputs=HVLED1,HVLED2`
+- 证据：图 e19d6c21ee54 / 第 1 页 / 网格 A6-A7，U10/L1/D15/LCD_LEDA/LCD_LEDK
 
-### Camera 2.8V、1.8V 与 1.2V
+### TF_VDD 受控电源
 
-SOC_VIN 经 FB1 进入 CAM_VIN，U12 WL2863E28-5/TR 输出 CAM_2.8V；CAM_1.8V 由模组接口提供并作为 U11 ME6211A12M3G-N 输入，U11 输出 CAM_1.2V；R40 连接 SOC_1.8V 与 CAM_1.8V。
+U17 LPW5209AB5F 的 VIN 接 SOC_3.3V、OUT 接 TF_VDD、EN 接 TF_PWR_EN，SET 经 R65 12K/1% 接地，EN 经 R66 5.1K/1% 下拉；R64 标记 NC 并跨在 SOC_3.3V 与 TF_VDD 之间。
 
-- 参数与网络：`camera_input=SOC_VIN -> FB1 -> CAM_VIN`；`analog=U12 WL2863E28-5/TR -> CAM_2.8V`；`io=SOC_1.8V/R40 -> CAM_1.8V`；`core=U11 ME6211A12M3G-N CAM_1.8V -> CAM_1.2V`
-- 证据：图 40ac0b8ed636 / 第 1 页 / 网格 B6-C8，FB1/U12/U11/R40/CAM rails
+- 参数与网络：`device=U17 LPW5209AB5F`；`input=SOC_3.3V`；`output=TF_VDD`；`enable=TF_PWR_EN`；`set_resistor=R65 12K/1%`；`enable_pulldown=R66 5.1K/1%`；`bypass=R64 NC`
+- 证据：图 e19d6c21ee54 / 第 1 页 / 网格 B5-C5，U17/R64/R65/R66
+
+### Camera 三路电源
+
+SOC_VIN 经 FB1 PZ1005E221-R60TF 和 R39 1R/1% 形成 CAM_VIN，U12 WL2863E28-5/TR 输出 CAM_2.8V；SOC_1.8V 经 R40 1R/1% 形成 CAM_1.8V，U11 ME6211A12M3G-N 再输出 CAM_1.2V。
+
+- 参数与网络：`camera_input=CAM_VIN from SOC_VIN via FB1/R39`；`rail_2v8=U12 WL2863E28-5/TR`；`rail_1v8=SOC_1.8V via R40 1R/1%`；`rail_1v2=U11 ME6211A12M3G-N`
+- 证据：图 e19d6c21ee54 / 第 1 页 / 网格 B6-C7，FB1/R39/U12/R40/U11
 
 ## 接口
 
-### J1 麦克风与扬声器接口
+### J6 板对板连接器信号组
 
-J1 5P 引出 AGND、MIC 差分支路 AUDIO_IN_L_P/AUDIO_IN_L_N，以及 SPK_P/SPK_N；麦克风输入经电阻/电容交流耦合到模组 AUDIO_IN_L_P/N，扬声器输出来自 U14 NS4150B。
+J6 可见信号包括 SOC_VIN、SOC_3.3V、SOC_1.8V、TRM_TXD/RXD、DBG_TXD/RXD、SOC_RST、AX_GPIOA2_BOOT、AUDIO_IN_L_P/N、AUDIO_OUT_L_P/N、MIPI_RX0..4、MIPI_TX0..2、MDI1_0..3、SDCARD_CLK/CMD/DAT0..3、USB_D_P/N、SYS_I2C、I2C0、USB_DET、SPK_EN、TP_INT、SYS_INT、TF_PWR_EN、CAM_RSTN 和 CAM_MCLK。
 
-- 参数与网络：`connector=J1 1.25mm 5P`；`ground=AGND`；`microphone=AUDIO_IN_L_P/AUDIO_IN_L_N`；`speaker=SPK_P/SPK_N`；`amplifier=U14 NS4150B`
-- 证据：图 40ac0b8ed636 / 第 1 页 / 网格 B1-B3，J1 音频接口及输入/功放网络
+- 参数与网络：`reference=J6`；`power=SOC_VIN,SOC_3.3V,SOC_1.8V`；`serial=TRM_TXD,TRM_RXD,DBG_TXD,DBG_RXD`；`mipi_rx_pairs=MIPI_RX0..MIPI_RX4`；`mipi_tx_pairs=MIPI_TX0..MIPI_TX2`；`ethernet_pairs=MDI1_0..MDI1_3`；`i2c_buses=SYS_I2C,I2C0`
+- 证据：图 e19d6c21ee54 / 第 1 页 / 网格 A4-C5，J6 pins 1-75
+
+### J1 音频接口
+
+J1 pin1=APWR、pin2=MIC_P、pin3=AGND、pin4=SPK_P、pin5=SPK_N；MIC_P 经 C2 100nF/50V 形成 AUDIO_IN_L_P，AGND 经 C3 100nF/50V 形成 AUDIO_IN_L_N，屏蔽端经 R52 0R 接 AGND。
+
+- 参数与网络：`reference=J1`；`pin1=APWR`；`pin2=MIC_P`；`pin3=AGND`；`pin4=SPK_P`；`pin5=SPK_N`；`input_nets=AUDIO_IN_L_P,AUDIO_IN_L_N`
+- 证据：图 e19d6c21ee54 / 第 1 页 / 网格 B1，J1/R51-R53/C2/C3/C36
+
+### J12 WKUP/PWR 接口
+
+J12 pin1..8 依次为 EXTRG、SW_PWR、EXT_LED、SYS_I2C_SDA、SYS_I2C_SCL、SOC_VIN、SYS_VIN、GND，屏蔽端接地。
+
+- 参数与网络：`reference=J12`；`part=1.25MM_8P`；`pins=1:EXTRG,2:SW_PWR,3:EXT_LED,4:SYS_I2C_SDA,5:SYS_I2C_SCL,6:SOC_VIN,7:SYS_VIN,8:GND`
+- 证据：图 e19d6c21ee54 / 第 1 页 / 网格 B1-C1，J12 WKUP/PWR pins 1-8
+
+### S1/S2 用户按键
+
+S1 将 USR_KEY 按下接地并由 TVS3 PESDNC2FD3V3B 保护；S2 将 SW_PWR 按下接地并由 TVS2 PESDNC2FD5VBS 保护，VIN_DET 由 R26/R27 22K/1% 分压。
+
+- 参数与网络：`s1_net=USR_KEY`；`s1_protection=TVS3 PESDNC2FD3V3B`；`s2_net=SW_PWR`；`s2_protection=TVS2 PESDNC2FD5VBS`；`vin_det_divider=R26=22K/1%,R27=22K/1%`
+- 证据：图 e19d6c21ee54 / 第 1 页 / 网格 D4，S1/S2/TVS2/TVS3/R26/R27
 
 ### 双 Grove 接口
 
-J8 BLUE GROVE pin1/2=GND/SOC_VIN、pin3/4=TRM_TXD/TRM_RXD；J9 RED GROVE pin1/2=GND/SOC_VIN、pin3/4=SYS_I2C_SDA/SYS_I2C_SCL，两接口均配置 ESD0524P 保护。
+J8 BLUE GROVE pins 1..4 为 GND、SOC_VIN、TRM_TXD、TRM_RXD；J9 RED GROVE pins 1..4 为 GND、SOC_VIN、SYS_I2C_SDA、SYS_I2C_SCL，D11/D12 ESD0524P 分别保护两组端口。
 
-- 参数与网络：`blue=J8 GND,SOC_VIN,TRM_TXD,TRM_RXD`；`red=J9 GND,SOC_VIN,SYS_I2C_SDA,SYS_I2C_SCL`；`protection=D11/D12 ESD0524P`；`uart_direction=TRM_TXD output,TRM_RXD input`；`i2c_direction=bidirectional`
-- 证据：图 40ac0b8ed636 / 第 1 页 / 网格 C6-C7，J8/J9/D11/D12
+- 参数与网络：`j8=1:GND,2:SOC_VIN,3:TRM_TXD,4:TRM_RXD`；`j9=1:GND,2:SOC_VIN,3:SYS_I2C_SDA,4:SYS_I2C_SCL`；`protection=D11,D12 ESD0524P`
+- 证据：图 e19d6c21ee54 / 第 1 页 / 网格 C6-C7，D11/J8 与 D12/J9
 
-### 以太网 MDI 与 RJ45
+### J13 四对以太网接口
 
-中央模组的 MDI0_P/N、MDI1_P/N 经 R29-R36 22Ω、TVS4-TVS7 和 RMT-410B-10V4-NL-Y 磁性器件连接 RJ45 J1A-J8D 差分触点，接口还引出绿色/黄色链路 LED。
+J6 的 MDI1_0_P/N 至 MDI1_3_P/N 四对网络分别经 R29-R36 2.2R/1%、TVS4-TVS7 WS03DLC-B 接到 J13 RMT-410B-10W4-NL-Y 的四组 1CT:1CT 磁性通道，再到 RJ45 触点 J1 A+ 至 J8 D-。
 
-- 参数与网络：`module_pairs=MDI0_P/N,MDI1_P/N`；`series=R29-R36 22Ω`；`tvs=TVS4-TVS7 W903DLC-B`；`magnetics=RMT-410B-10V4-NL-Y`；`connector=RJ45 J1A-J8D`；`leds=LED_GREEN,link LED`
-- 证据：图 40ac0b8ed636 / 第 1 页 / 网格 D5-D7，MDI0/MDI1/R29-R36/TVS4-TVS7/RJ45
+- 参数与网络：`module_nets=MDI1_0_P/N,MDI1_1_P/N,MDI1_2_P/N,MDI1_3_P/N`；`series_resistors=R29-R36 2.2R/1%`；`tvs=TVS4-TVS7 WS03DLC-B`；`connector=J13 RMT-410B-10W4-NL-Y`；`magnetics=four 1CT:1CT channels`
+- 证据：图 e19d6c21ee54 / 第 1 页 / 网格 D4-D6，MDI1_0..3/R29-R36/TVS4-TVS7/J13
 
 ## 总线
 
-### 第二路 USB OTG 硬件
+### J4 USB 数据路径
 
-第二个 Type-C 连接器引出 OTG_DP、OTG_DM、OTG_VBUS 与 CC1/CC2，D5 ESD0524P 保护高速/CC 网络；OTG_VBUS 进入 U6/U16 LPW5209AB5F 与 Q4/Q8 组成的受 OTG_EN 控制电源路径。
+J4 的 DP/DM 命名为 USB_OTG_P/USB_OTG_N，经 D5 ESD0524P 保护；FT1 SDMM0806HF-2-900T 将 USB_OTG_P/N 对接到 USB_D_P/N，后者进入 J6 pins 19/17。
 
-- 参数与网络：`data=OTG_DP/OTG_DM`；`power=OTG_VBUS`；`cc=OTG_CC1/OTG_CC2`；`esd=D5 ESD0524P`；`switches=U6/U16 LPW5209AB5F,Q4/Q8`；`enable=OTG_EN`
-- 证据：图 40ac0b8ed636 / 第 1 页 / 网格 A1-B3，OTG USB-C/D5/U6/U16/Q4/Q8
+- 参数与网络：`connector=J4`；`port_side=USB_OTG_P,USB_OTG_N`；`module_side=USB_D_P,USB_D_N`；`filter=FT1 SDMM0806HF-2-900T`；`j6_pins=19,17`
+- 证据：图 e19d6c21ee54 / 第 1 页 / 网格 A1-B2 与 C4，J4/D5/FT1/J6 USB_D pins
+
+### J4 CC 与检测网络
+
+J4 的 OTG_CC1/OTG_CC2 接 U5 SGM7220XUQT12G/TR 的 CC1/CC2，OTG_VBUS 经 R13 866K/1% 接 VBUS_DET；U5 还连接 OTG_ID、USB_DET、SYS_I2C_SDA/SCL，ADDR 经 R23 0R 接地，EN 引脚接地。
+
+- 参数与网络：`device=U5 SGM7220XUQT12G/TR`；`cc_nets=OTG_CC1,OTG_CC2`；`outputs=OTG_ID,USB_DET`；`control_bus=SYS_I2C_SDA,SYS_I2C_SCL`；`addr_strap=R23 0R to GND`；`en_connection=GND`
+- 证据：图 e19d6c21ee54 / 第 1 页 / 网格 B2-B3，U5 及 R13/R21/R23/R24
 
 ### SYS_I2C_SCL/SYS_I2C_SDA
 
-SYS_I2C_SCL/SDA 由中央模组接口引出，并连接 U3 AW32001ECSR、U8 BQ27220YZFR、U9 BMI270、U7 PI4IOE5V6408、U10 LCD 背光驱动、J9 Grove 及 LCD/Camera 控制网络。
+SYS_I2C_SCL/SDA 从 J6 pins 15/13 引出，并连接 U3 AW32001ECSR、U5 SGM7220XUQT12G/TR、U7 PI4IOE5V6408、U8 BQ27220YZFR、U9 BMI270、U10 AW99703CSR、J9、J11 与 J12。
 
-- 参数与网络：`controller=AX630C module interface I2C`；`signals=SYS_I2C_SCL,SYS_I2C_SDA`；`devices=AW32001ECSR,BQ27220YZFR,BMI270,PI4IOE5V6408,AW99703CSR`；`external=J9 RED GROVE,LCD/Camera`
-- 证据：图 40ac0b8ed636 / 第 1 页 / 完整单页 SYS_I2C_SCL/SDA 网络，网格 A6-D3
+- 参数与网络：`controller_side=J6 pins 15/13`；`devices=U3,U5,U7,U8,U9,U10`；`connectors=J9,J11,J12`；`nets=SYS_I2C_SCL,SYS_I2C_SDA`
+- 证据：图 e19d6c21ee54 / 第 1 页 / 网格 A4-D8，所有 SYS_I2C_SCL/SDA 标号连接
 
-### LCD MIPI DSI 与控制
+### J11 LCD MIPI 与控制
 
-J11 FPC-24P 引出 MIPI_TX0_P/N、MIPI_TX1_P/N、MIPI_TX_C_P/N 两数据通道加时钟，另含 SYS_I2C_SCL/SDA、TP_INT、TP_RST、LCD_RST、LCD_LEDA/LCD_LEDK、SOC_3.3V 和 GND。
+J11 FPC_24P 引出 MIPI_TX0_P/N、MIPI_TX1_P/N、MIPI_TX2_P/N 三对差分网络，以及 SYS_I2C_SCL/SDA、TP_INT、TP_RST、LCD_RST、SOC_3.3V、LCD_LEDA、LCD_LEDK 和 GND；本页不标注三对网络各自的数据或时钟角色。
 
-- 参数与网络：`connector=J11 FPC-24P`；`lanes=MIPI_TX0,MIPI_TX1`；`clock=MIPI_TX_C`；`control=SYS_I2C_SCL/SDA,TP_INT,TP_RST,LCD_RST`；`power=SOC_3.3V,LCD_LEDA,LCD_LEDK`；`direction=module -> display`
-- 证据：图 40ac0b8ed636 / 第 1 页 / 网格 A7-A8，J11 pins1-24
+- 参数与网络：`connector=J11 FPC_24P`；`differential_pairs=MIPI_TX0,MIPI_TX1,MIPI_TX2`；`control=SYS_I2C_SCL,SYS_I2C_SDA,TP_INT,TP_RST,LCD_RST`；`power=SOC_3.3V,LCD_LEDA,LCD_LEDK`；`pair_roles_shown=false`
+- 证据：图 e19d6c21ee54 / 第 1 页 / 网格 A7-A8，J11 pins 1-24
 
-### Camera MIPI CSI 与控制
+### J3 Camera MIPI 与控制
 
-CAM FPC-30P 引出 MIPI_RX0-RX3 四数据通道、MIPI_RX_C 时钟、CAM_MCLK、CAM_RSTN、CAM_SCL_1V8/CAM_SDA_1V8，以及 CAM_2.8V/CAM_1.8V/CAM_1.2V 和 GND。
+J3 FPC_30P 引出 MIPI_RX0_P/N 至 MIPI_RX4_P/N 五对差分网络，以及 CAM_MCLK、CAM_RSTN、CAM_SCL_1V8、CAM_SDA_1V8、CAM_2.8V、CAM_1.8V、CAM_1.2V 和 GND；本页不标注五对网络各自的数据或时钟角色。
 
-- 参数与网络：`connector=CAM FPC-30P`；`lanes=MIPI_RX0,MIPI_RX1,MIPI_RX2,MIPI_RX3`；`clock=MIPI_RX_C`；`master_clock=CAM_MCLK`；`reset=CAM_RSTN`；`control=CAM_SCL_1V8,CAM_SDA_1V8`；`rails=CAM_2.8V,CAM_1.8V,CAM_1.2V`；`direction=camera -> module`
-- 证据：图 40ac0b8ed636 / 第 1 页 / 网格 B7-C8，CAM FPC-30P pins1-30
+- 参数与网络：`connector=J3 FPC_30P`；`differential_pairs=MIPI_RX0,MIPI_RX1,MIPI_RX2,MIPI_RX3,MIPI_RX4`；`control=CAM_MCLK,CAM_RSTN,CAM_SCL_1V8,CAM_SDA_1V8`；`power=CAM_2.8V,CAM_1.8V,CAM_1.2V`；`pair_roles_shown=false`
+- 证据：图 e19d6c21ee54 / 第 1 页 / 网格 B7-C8，J3 pins 1-30
 
-### Camera I2C 电平转换
+### Camera I2C0 电平转换
 
-U13 TXS0102DCUR 的 B 侧由 SOC_3.3V 供电并连接 CAM_SCL/CAM_SDA，A 侧由 CAM_1.8V 供电并经 R49/R50 15KΩ 输出 CAM_SCL_1V8/CAM_SDA_1V8。
+U13 TXS0102DCUR 的 B 侧由 SOC_3.3V 供电，B1/B2 接 I2C0_SCL/I2C0_SDA 并由 R41/R42 2.2K/1% 上拉；A 侧由 CAM_1.8V 供电，A1/A2 接 CAM_SCL_1V8/CAM_SDA_1V8 并由 R49/R50 1.5K/1% 上拉，OE 接 CAM_1.8V。
 
-- 参数与网络：`translator=U13 TXS0102DCUR`；`b_supply=SOC_3.3V`；`b_signals=CAM_SCL,CAM_SDA`；`a_supply=CAM_1.8V`；`a_signals=CAM_SCL_1V8,CAM_SDA_1V8`；`resistors=R49/R50 15KΩ`
-- 证据：图 40ac0b8ed636 / 第 1 页 / 网格 C7-C8，U13/R41/R42/R49/R50
+- 参数与网络：`device=U13 TXS0102DCUR`；`b_side=SOC_3.3V,I2C0_SCL,I2C0_SDA`；`a_side=CAM_1.8V,CAM_SCL_1V8,CAM_SDA_1V8`；`b_pullups=R41,R42 2.2K/1%`；`a_pullups=R49,R50 1.5K/1%`；`oe=CAM_1.8V`
+- 证据：图 e19d6c21ee54 / 第 1 页 / 网格 C6-C7，U13/R41/R42/R49/R50
 
 ## GPIO 与控制信号
 
-### PI4IOE5V6408 控制网络
+### U7 GPIO 扩展映射
 
-U7 PI4IOE5V6408 通过 SYS_I2C 控制 P0-P7，页面标出的输出包括 LCD_RST、LCD_KEY、SYS_LED、VIN_DET、POWER_PULSE 与 EXT_LED；INT 连接 SYS_INT，RESET 有 RC 网络。
+U7 PI4IOE5V6408 的 P1=TP_RST、P2=LCD_RST、P3=USR_KEY、P4=SYS_LED、P5=VIN_DET、P6=PWROFF_PULSE、P7=EXT_LED，P0 未连接；nINT=SYS_INT，nRESET=SYS_RST，ADDR 接地。
 
-- 参数与网络：`device=U7 PI4IOE5V6408`；`bus=SYS_I2C_SCL/SDA`；`outputs=LCD_RST,LCD_KEY,SYS_LED,VIN_DET,POWER_PULSE,EXT_LED`；`interrupt=SYS_INT`；`reset=RC reset network`；`supply=SOC_3.3V`
-- 证据：图 40ac0b8ed636 / 第 1 页 / 网格 D2-D3，U7 PI4IOE5V6408 P0-P7
+- 参数与网络：`device=U7 PI4IOE5V6408`；`p0=null`；`p1=TP_RST`；`p2=LCD_RST`；`p3=USR_KEY`；`p4=SYS_LED`；`p5=VIN_DET`；`p6=PWROFF_PULSE`；`p7=EXT_LED`；`interrupt=SYS_INT`；`reset=SYS_RST`；`address_strap=GND`
+- 证据：图 e19d6c21ee54 / 第 1 页 / 网格 D2-D3，U7 pins P0-P7/nINT/nRESET/ADDR
 
 ## 复位
 
-### 电源按键、Boot 与复位控制
+### 电源、Boot 与复位控制
 
-U2 PMS150G-U6 连接 MPWR_EN、SW_PWR 与 BOOT_RST；下方 Q1-Q5/D3-D8/R/C 网络形成 PWRKEY_PULSE、BOOT_CTRL、SYS_VBUS 与 SOC_3.3V 的电源/复位时序，S1/S2 提供用户与电源交互。
+U2 PMS150G-U06 连接 MPWR_EN、SW_PWR、BOOT_TRG 与 nINT_STAT_TRIG，并由 SYS_VBUS 供电；J6 的 SOC_RST 经 D9 形成 SYS_RST，AX_GPIOA2_BOOT 经 D10 形成 BOOT_CTRL，底部 Q1/Q3/Q5/Q6 与 D1/D3/D6/D7/D20 组成脉冲和 Boot 控制网络。
 
-- 参数与网络：`controller=U2 PMS150G-U6`；`signals=MPWR_EN,SW_PWR,BOOT_RST,PWRKEY_PULSE,BOOT_CTRL`；`switches=Q1-Q5`；`buttons=S1,S2`；`rails=SYS_VBUS,SOC_3.3V`
-- 证据：图 40ac0b8ed636 / 第 1 页 / 网格 D1-D5，U2、Q1-Q5、D3-D8、S1/S2 与 Boot/Power 网络
+- 参数与网络：`controller=U2 PMS150G-U06`；`controller_nets=MPWR_EN,SW_PWR,BOOT_TRG,nINT_STAT_TRIG`；`reset_path=SOC_RST through D9 to SYS_RST`；`boot_path=AX_GPIOA2_BOOT through D10 to BOOT_CTRL`；`supply=SYS_VBUS`
+- 证据：图 e19d6c21ee54 / 第 1 页 / 网格 A4-D3，J6 D9/D10 与 U2/Q1/Q3/Q5/Q6 控制区
 
 ## 保护电路
 
-### 外部接口 ESD 与滤波
+### J2 电池输入保护
 
-两路 USB 使用 D4/D5 ESD0524P，Grove 使用 D11/D12，microSD 使用 D13/D14；以太网四对差分线使用 TVS4-TVS7，音频/电源/MIPI 接口还配置磁珠、串联电阻和去耦电容。
+J2 pin1 经 Q2 WST2339 串联到 EX_VBAT，TVS1 PESDNC2FD5VBS 从输入节点接地，R9 5.1K/1% 接在 Q2 控制节点与地之间；J2 pin2 与屏蔽端接地。
 
-- 参数与网络：`usb=D4,D5 ESD0524P`；`grove=D11,D12 ESD0524P`；`microsd=D13,D14 ESD0524P`；`ethernet=TVS4-TVS7 W903DLC-B`；`other=ferrite beads,series resistors,decoupling`
-- 证据：图 40ac0b8ed636 / 第 1 页 / 完整单页各外部连接器周边保护器件
+- 参数与网络：`connector=J2`；`output_net=EX_VBAT`；`series_device=Q2 WST2339`；`tvs=TVS1 PESDNC2FD5VBS`；`gate_resistor=R9 5.1K/1%`
+- 证据：图 e19d6c21ee54 / 第 1 页 / 网格 B1-B2，J2/Q2/TVS1/R9
+
+### 外部接口保护
+
+J5/J4 使用 D4/D5 ESD0524P，J8/J9 使用 D11/D12 ESD0524P，J10 使用 D13/D14 ESD0524P，J13 四对差分线使用 TVS4-TVS7 WS03DLC-B；J2 另使用 TVS1 PESDNC2FD5VBS。
+
+- 参数与网络：`usb=D4,D5 ESD0524P`；`grove=D11,D12 ESD0524P`；`tf=D13,D14 ESD0524P`；`ethernet=TVS4-TVS7 WS03DLC-B`；`battery=TVS1 PESDNC2FD5VBS`
+- 证据：图 e19d6c21ee54 / 第 1 页 / 网格 A1-D8，各外部连接器旁保护器件
 
 ## 存储
 
-### microSD 四位接口
+### J10 TF 卡接口
 
-J10 TF_CARD_SOCKET 引出 TF_D0、TF_D1、TF_D2、TF_D3、TF_CMD、TF_CLK、SD_DETN 和 TF_VDD；D13/D14 ESD0524P 保护数据/命令/时钟，R43/R44/R45 为相关串联或上拉网络。
+J10 的 DAT2/DAT3/CMD/CLK/DAT0/DAT1/Detect 分别接 TF_D2/TF_D3/TF_CMD/TF_CLK/TF_D0/TF_D1/SD_DET_N，VDD 接 TF_VDD；D13/D14 ESD0524P 保护这些信号，R43/R44 阵列提供 5.1K/5% 上拉。
 
-- 参数与网络：`connector=J10 TF_CARD_SOCKET`；`data=TF_D0,TF_D1,TF_D2,TF_D3`；`command=TF_CMD`；`clock=TF_CLK`；`detect=SD_DETN`；`supply=TF_VDD`；`esd=D13/D14 ESD0524P`；`resistors=R43/R44/R45`
-- 证据：图 40ac0b8ed636 / 第 1 页 / 网格 D7-D8，D13/D14/R43-R45/J10
+- 参数与网络：`connector=J10 TF_CARD_SOCKET`；`data=TF_D0,TF_D1,TF_D2,TF_D3`；`command=TF_CMD`；`clock=TF_CLK`；`detect=SD_DET_N`；`supply=TF_VDD`；`protection=D13,D14 ESD0524P`
+- 证据：图 e19d6c21ee54 / 第 1 页 / 网格 D7-D8，J10/D13/D14/R43/R44
 
 ## 音频
 
-### NS4150B 扬声器功放
+### U14 NS4150B 扬声器功放
 
-模组 AUDIO_OUT_L_P/N 经 R55/R56 47KΩ 和 C4/C5 100nF 进入 U14 NS4150B INP/INN，SPK_EN 控制 CTRL；U14 VOP/VON 经 FB2/FB3 输出 SPK_P/SPK_N，供电为 SOC_VIN。
+AUDIO_OUT_L_P/N 分别经 R55/R56 47K/1% 与 C4/C5 100nF/50V 接 U14 INP/INN，SPK_EN 接 CTRL；VOP/VON 经 FB2/FB3 输出 SPK_P/SPK_N，U14 由 SOC_VIN 供电。
 
-- 参数与网络：`amplifier=U14 NS4150B`；`inputs=AUDIO_OUT_L_P/N via R55/R56 47KΩ,C4/C5 100nF`；`enable=SPK_EN`；`outputs=VOP/VON -> FB2/FB3 -> SPK_P/SPK_N`；`supply=SOC_VIN`
-- 证据：图 40ac0b8ed636 / 第 1 页 / 网格 B2-C3，U14/R55/R56/C4/C5/FB2/FB3
+- 参数与网络：`amplifier=U14 NS4150B`；`inputs=AUDIO_OUT_L_P,AUDIO_OUT_L_N`；`enable=SPK_EN`；`outputs=SPK_P,SPK_N`；`supply=SOC_VIN`；`input_resistors=R55=47K/1%,R56=47K/1%`
+- 证据：图 e19d6c21ee54 / 第 1 页 / 网格 B2-B3，U14/FB2/FB3/R55/R56/C4/C5
 
 ## 传感器
 
-### BMI270 六轴传感器
+### U9 BMI270 连接
 
-U9 BMI270 由 SOC_3.3V 供电，SCx/SDx 接 SYS_I2C_SCL/SDA；INT1/INT2 引脚在本页未连接，CSB 接 SOC_3.3V。
+U9 BMI270 的 VDDIO/VDD 接 SOC_3.3V，SCx/SDx 接 SYS_I2C_SCL/SDA，CSB 接 SOC_3.3V，SDO 接地；INT1、INT2、ASDx、ASCx、OCSB 与 OSDO 在本页未连接。
 
-- 参数与网络：`sensor=U9 BMI270`；`supply=SOC_3.3V`；`scl=SYS_I2C_SCL`；`sda=SYS_I2C_SDA`；`csb=SOC_3.3V`；`interrupts=INT1/INT2 not connected`
-- 证据：图 40ac0b8ed636 / 第 1 页 / 网格 C4，U9 BMI270、SOC_3.3V、SYS_I2C
+- 参数与网络：`device=U9 BMI270`；`supply=SOC_3.3V`；`bus=SYS_I2C_SCL,SYS_I2C_SDA`；`csb=SOC_3.3V`；`sdo=GND`；`unconnected=INT1,INT2,ASDx,ASCx,OCSB,OSDO`
+- 证据：图 e19d6c21ee54 / 第 1 页 / 网格 C4，U9 BMI270 全部引脚
+
+## 射频
+
+### J14 RF_COAXIAL
+
+J14 标注 RF_COAXIAL，但 pin1 与 pin2 均画有未连接标记，本页没有从 J14 到任何射频网络或器件的连线。
+
+- 参数与网络：`reference=J14`；`part=RF_COAXIAL`；`pin1_connected=false`；`pin2_connected=false`；`rf_net=null`
+- 证据：图 e19d6c21ee54 / 第 1 页 / 网格 C4-C5，J14 pins 1/2 的红色 NC 标记
 
 ## 调试与烧录
 
-### USB-C 调试串口
+### CH9102F USB-UART
 
-USB 调试 Type-C 的 DP/DM 形成 USB_D_P/USB_D_N，经 D4 ESD0524P 保护后连接 U4 CH9102F DP/DM；U4 TXD 经 R19 1KΩ 接 DBG_RXD，RXD 经 R20 1KΩ 接 DBG_TXD，并由 USB_VIN 供电。
+J5 的 USBIN_DP/USBIN_DM 经 D4 保护后接 U4 CH9102F 的 DP/DM；U4 TXD 经 R19 1K/1% 接 DBG_RXD，RXD 经 R20 1K/1% 接 DBG_TXD。
 
-- 参数与网络：`connector=USB C 16P Horizontal`；`bridge=U4 CH9102F`；`usb=USB_D_P/USB_D_N`；`uart=TXD -> R19 1KΩ -> DBG_RXD; RXD -> R20 1KΩ -> DBG_TXD`；`esd=D4 ESD0524P`；`supply=USB_VIN`
-- 证据：图 40ac0b8ed636 / 第 1 页 / 网格 A1-A3，USB 调试口/D4/U4/R19/R20
+- 参数与网络：`usb_connector=J5`；`bridge=U4 CH9102F`；`usb_nets=USBIN_DP,USBIN_DM`；`uart_nets=DBG_RXD,DBG_TXD`；`series_resistors=R19=1K/1%,R20=1K/1%`
+- 证据：图 e19d6c21ee54 / 第 1 页 / 网格 A1-A3，J5/D4/U4/R19/R20
 
 ## 模拟电路
 
-### BQ27220 电量检测
+### U8 电池电流采样
 
-U8 BQ27220YZFR 的 SRP/SRN 跨接电池采样电阻，BAT/VDD 接 SYS_VBAT/EXT_VBAT 电池路径，SCL/SDA 接 SYS_I2C；R25 标注 R010/1% 作为电流采样元件。
+U8 BQ27220YZFR 的 SRN 接 SYS_VBAT，SRP 接 EX_VBAT，R25 R010/1% 跨接 SRN/SRP；BAT 接 SRP 节点，SDA/SCL 接 SYS_I2C_SDA/SCL。
 
-- 参数与网络：`gauge=U8 BQ27220YZFR`；`bus=SYS_I2C_SCL/SYS_I2C_SDA`；`sense=SRP/SRN`；`shunt=R25 R010/1%`；`battery_nets=SYS_VBAT,EXT_VBAT`
-- 证据：图 40ac0b8ed636 / 第 1 页 / 网格 C3-C4，U8/R25/SYS_VBAT/EXT_VBAT
+- 参数与网络：`device=U8 BQ27220YZFR`；`sense_positive=SRP=EX_VBAT`；`sense_negative=SRN=SYS_VBAT`；`shunt=R25 R010/1%`；`bus=SYS_I2C_SDA,SYS_I2C_SCL`
+- 证据：图 e19d6c21ee54 / 第 1 页 / 网格 C3-C4，U8/R25/SYS_VBAT/EX_VBAT
 
 ## 参数与信号索引
 
 | 分类 | 对象 | 参数 |
 | --- | --- | --- |
-| 系统结构 | LLM630 Compute Kit 底板架构 | `compute_interface=central 74-pin AX630C module connector`；`usb_uart=U4 CH9102F`；`power=U1/U3/U6/U16`；`battery=AW32001ECSR + BQ27220YZFR`；`sensor=BMI270`；`audio=NS4150B + J1`；`display=J11 MIPI DSI`；`camera=CAM FPC-30P MIPI CSI`；`network=MDI0/MDI1 RJ45`；`storage=J10 microSD` |
-| 调试与烧录 | USB-C 调试串口 | `connector=USB C 16P Horizontal`；`bridge=U4 CH9102F`；`usb=USB_D_P/USB_D_N`；`uart=TXD -> R19 1KΩ -> DBG_RXD; RXD -> R20 1KΩ -> DBG_TXD`；`esd=D4 ESD0524P`；`supply=USB_VIN` |
-| 总线 | 第二路 USB OTG 硬件 | `data=OTG_DP/OTG_DM`；`power=OTG_VBUS`；`cc=OTG_CC1/OTG_CC2`；`esd=D5 ESD0524P`；`switches=U6/U16 LPW5209AB5F,Q4/Q8`；`enable=OTG_EN` |
-| 电源 | USB_VIN、SYS_VIN、OTG_VBUS 与 SOC_VIN | `debug_input=USB_VIN -> D2 DSK34 -> SYS_VIN`；`otg_input=OTG_VBUS via U6/U16/Q4/Q8`；`converter=U1 WPN3012H2R2MT`；`converter_input=SYS_VBUS`；`enable=MPWR_EN`；`output=SOC_VIN` |
-| 接口 | J1 麦克风与扬声器接口 | `connector=J1 1.25mm 5P`；`ground=AGND`；`microphone=AUDIO_IN_L_P/AUDIO_IN_L_N`；`speaker=SPK_P/SPK_N`；`amplifier=U14 NS4150B` |
-| 音频 | NS4150B 扬声器功放 | `amplifier=U14 NS4150B`；`inputs=AUDIO_OUT_L_P/N via R55/R56 47KΩ,C4/C5 100nF`；`enable=SPK_EN`；`outputs=VOP/VON -> FB2/FB3 -> SPK_P/SPK_N`；`supply=SOC_VIN` |
-| 电源 | AW32001ECSR 电池充电路径 | `charger=U3 AW32001ECSR`；`input=SYS_VIN`；`battery_output=SYS_VBAT`；`temperature=NTC/TS network`；`bus=SYS_I2C_SCL/SYS_I2C_SDA`；`external_connector=J2 EXT_VBAT/GND` |
-| 模拟电路 | BQ27220 电量检测 | `gauge=U8 BQ27220YZFR`；`bus=SYS_I2C_SCL/SYS_I2C_SDA`；`sense=SRP/SRN`；`shunt=R25 R010/1%`；`battery_nets=SYS_VBAT,EXT_VBAT` |
-| 总线 | SYS_I2C_SCL/SYS_I2C_SDA | `controller=AX630C module interface I2C`；`signals=SYS_I2C_SCL,SYS_I2C_SDA`；`devices=AW32001ECSR,BQ27220YZFR,BMI270,PI4IOE5V6408,AW99703CSR`；`external=J9 RED GROVE,LCD/Camera` |
-| 传感器 | BMI270 六轴传感器 | `sensor=U9 BMI270`；`supply=SOC_3.3V`；`scl=SYS_I2C_SCL`；`sda=SYS_I2C_SDA`；`csb=SOC_3.3V`；`interrupts=INT1/INT2 not connected` |
-| GPIO 与控制信号 | PI4IOE5V6408 控制网络 | `device=U7 PI4IOE5V6408`；`bus=SYS_I2C_SCL/SDA`；`outputs=LCD_RST,LCD_KEY,SYS_LED,VIN_DET,POWER_PULSE,EXT_LED`；`interrupt=SYS_INT`；`reset=RC reset network`；`supply=SOC_3.3V` |
-| 复位 | 电源按键、Boot 与复位控制 | `controller=U2 PMS150G-U6`；`signals=MPWR_EN,SW_PWR,BOOT_RST,PWRKEY_PULSE,BOOT_CTRL`；`switches=Q1-Q5`；`buttons=S1,S2`；`rails=SYS_VBUS,SOC_3.3V` |
-| 总线 | LCD MIPI DSI 与控制 | `connector=J11 FPC-24P`；`lanes=MIPI_TX0,MIPI_TX1`；`clock=MIPI_TX_C`；`control=SYS_I2C_SCL/SDA,TP_INT,TP_RST,LCD_RST`；`power=SOC_3.3V,LCD_LEDA,LCD_LEDK`；`direction=module -> display` |
-| 电源 | LCD 背光驱动 | `driver=U10 AW99703CSR`；`input=SOC_VIN`；`bus=SYS_I2C_SCL/SDA`；`inductor=L1 WPN3012H100MT`；`diode=D15 B5819WS`；`outputs=LCD_LEDA,LCD_LEDK` |
-| 总线 | Camera MIPI CSI 与控制 | `connector=CAM FPC-30P`；`lanes=MIPI_RX0,MIPI_RX1,MIPI_RX2,MIPI_RX3`；`clock=MIPI_RX_C`；`master_clock=CAM_MCLK`；`reset=CAM_RSTN`；`control=CAM_SCL_1V8,CAM_SDA_1V8`；`rails=CAM_2.8V,CAM_1.8V,CAM_1.2V`；`direction=camera -> module` |
-| 电源 | Camera 2.8V、1.8V 与 1.2V | `camera_input=SOC_VIN -> FB1 -> CAM_VIN`；`analog=U12 WL2863E28-5/TR -> CAM_2.8V`；`io=SOC_1.8V/R40 -> CAM_1.8V`；`core=U11 ME6211A12M3G-N CAM_1.8V -> CAM_1.2V` |
-| 总线 | Camera I2C 电平转换 | `translator=U13 TXS0102DCUR`；`b_supply=SOC_3.3V`；`b_signals=CAM_SCL,CAM_SDA`；`a_supply=CAM_1.8V`；`a_signals=CAM_SCL_1V8,CAM_SDA_1V8`；`resistors=R49/R50 15KΩ` |
-| 接口 | 双 Grove 接口 | `blue=J8 GND,SOC_VIN,TRM_TXD,TRM_RXD`；`red=J9 GND,SOC_VIN,SYS_I2C_SDA,SYS_I2C_SCL`；`protection=D11/D12 ESD0524P`；`uart_direction=TRM_TXD output,TRM_RXD input`；`i2c_direction=bidirectional` |
-| 接口 | 以太网 MDI 与 RJ45 | `module_pairs=MDI0_P/N,MDI1_P/N`；`series=R29-R36 22Ω`；`tvs=TVS4-TVS7 W903DLC-B`；`magnetics=RMT-410B-10V4-NL-Y`；`connector=RJ45 J1A-J8D`；`leds=LED_GREEN,link LED` |
-| 存储 | microSD 四位接口 | `connector=J10 TF_CARD_SOCKET`；`data=TF_D0,TF_D1,TF_D2,TF_D3`；`command=TF_CMD`；`clock=TF_CLK`；`detect=SD_DETN`；`supply=TF_VDD`；`esd=D13/D14 ESD0524P`；`resistors=R43/R44/R45` |
-| 保护电路 | 外部接口 ESD 与滤波 | `usb=D4,D5 ESD0524P`；`grove=D11,D12 ESD0524P`；`microsd=D13,D14 ESD0524P`；`ethernet=TVS4-TVS7 W903DLC-B`；`other=ferrite beads,series resistors,decoupling` |
-| 系统结构 | AX630C、NPU、LPDDR4、eMMC 与无线/PHY | `documented_soc=AX630C dual Cortex-A53 1.2GHz`；`documented_npu=3.2TOPs INT8,12.8TOPs INT4`；`documented_ram=4GB LPDDR4`；`documented_emmc=32GB eMMC5.1`；`documented_wifi=ESP32-C6`；`documented_ethernet_phy=JL2101B-N040C`；`schematic_internal_parts=null` |
-| 总线地址 | 底板 I2C 设备地址 | `charger=AW32001ECSR`；`gauge=BQ27220YZFR`；`imu=BMI270`；`expander=PI4IOE5V6408`；`backlight=AW99703CSR`；`addresses=null` |
-| 电源 | 3.7V 电池与充放电边界 | `documented_battery=3.7V lithium`；`connector=J2 1.25mm 2P`；`charger=AW32001ECSR`；`gauge=BQ27220YZFR`；`capacity=null`；`chemistry=null`；`protection=null`；`charge_current=null`；`termination_voltage=null` |
-| 核心器件 | MIPI 显示与摄像头性能 | `documented_dsi=2-lane max 1080p@30fps`；`documented_csi=4-lane max 4K@30fps`；`schematic_dsi_lanes=2`；`schematic_csi_lanes=4`；`display_model=null`；`camera_model=null`；`validated_timing=null` |
-| 音频 | 麦克风、功放与全双工音频性能 | `microphone_model=null`；`amplifier=NS4150B`；`documented_mode=full duplex`；`mic_sensitivity=null`；`mic_snr=null`；`speaker_impedance=null`；`speaker_power=null`；`sample_rate=null`；`thd=null` |
-| 射频 | Wi-Fi、SMA 与千兆网络性能 | `documented_wifi=ESP32-C6 2.4GHz`；`documented_antenna=SMA`；`documented_ethernet=JL2101B-N040C 1GbE`；`documented_bridge=Wi-Fi/Ethernet bridge`；`schematic_rf=J14 RF_COAXIAL only`；`schematic_phy=null`；`throughput=null`；`gain=null`；`certification=null` |
-| 其他事实 | StackFlow 与 AI 模型能力 | `documented_framework=StackFlow`；`documented_models=Yolov11,DepthAnything,InternVL2.5,Qwen2.5,Llama3.2,Whisper,MeloTTS`；`firmware_version=null`；`api_version=null`；`model_versions=null`；`latency=null`；`concurrency=null`；`update_behavior=null` |
-| 其他事实 | USB Host/Device 与 OTG 行为 | `documented_usb=USB 2.0 Host or Device,OTG`；`data=OTG_DP/OTG_DM`；`power=OTG_VBUS via LPW5209AB5F/Q4/Q8`；`role_detection=null`；`current_limit=null`；`protocol_stack=null`；`supported_classes=null` |
+| 系统结构 | LLM630 Compute Kit 底板原理图范围 | `central_connector=J6`；`connector_part=APCI0107-P001A`；`page_scope=baseboard interfaces and support circuits`；`module_internal_circuits_shown=false` |
+| 接口 | J6 板对板连接器信号组 | `reference=J6`；`power=SOC_VIN,SOC_3.3V,SOC_1.8V`；`serial=TRM_TXD,TRM_RXD,DBG_TXD,DBG_RXD`；`mipi_rx_pairs=MIPI_RX0..MIPI_RX4`；`mipi_tx_pairs=MIPI_TX0..MIPI_TX2`；`ethernet_pairs=MDI1_0..MDI1_3`；`i2c_buses=SYS_I2C,I2C0` |
+| 电源 | J5 USB_VIN 输入 | `connector=J5`；`input_net=USB_VIN`；`fuse=FU1 2A/6V 自恢复`；`steering_diode=D2 DSK34`；`downstream_net=SYS_VIN` |
+| 调试与烧录 | CH9102F USB-UART | `usb_connector=J5`；`bridge=U4 CH9102F`；`usb_nets=USBIN_DP,USBIN_DM`；`uart_nets=DBG_RXD,DBG_TXD`；`series_resistors=R19=1K/1%,R20=1K/1%` |
+| 总线 | J4 USB 数据路径 | `connector=J4`；`port_side=USB_OTG_P,USB_OTG_N`；`module_side=USB_D_P,USB_D_N`；`filter=FT1 SDMM0806HF-2-900T`；`j6_pins=19,17` |
+| 总线 | J4 CC 与检测网络 | `device=U5 SGM7220XUQT12G/TR`；`cc_nets=OTG_CC1,OTG_CC2`；`outputs=OTG_ID,USB_DET`；`control_bus=SYS_I2C_SDA,SYS_I2C_SCL`；`addr_strap=R23 0R to GND`；`en_connection=GND` |
+| 电源 | OTG_VBUS 双向开关路径 | `source_switch=U6 SOC_VIN to OTG_VBUS`；`sink_switch=U16 OTG_VBUS to SYS_VIN`；`control=OTG_ID via Q4A/Q4B`；`switch_part=LPW5209AB5F`；`mosfet_part=2N7002DW` |
+| 接口 | J1 音频接口 | `reference=J1`；`pin1=APWR`；`pin2=MIC_P`；`pin3=AGND`；`pin4=SPK_P`；`pin5=SPK_N`；`input_nets=AUDIO_IN_L_P,AUDIO_IN_L_N` |
+| 音频 | U14 NS4150B 扬声器功放 | `amplifier=U14 NS4150B`；`inputs=AUDIO_OUT_L_P,AUDIO_OUT_L_N`；`enable=SPK_EN`；`outputs=SPK_P,SPK_N`；`supply=SOC_VIN`；`input_resistors=R55=47K/1%,R56=47K/1%` |
+| 保护电路 | J2 电池输入保护 | `connector=J2`；`output_net=EX_VBAT`；`series_device=Q2 WST2339`；`tvs=TVS1 PESDNC2FD5VBS`；`gate_resistor=R9 5.1K/1%` |
+| 电源 | U3 电池管理连接 | `device=U3 AW32001ECSR`；`input=SYS_VIN`；`battery=SYS_VBAT`；`ntc=IVDD`；`bus=SYS_I2C_SDA,SYS_I2C_SCL`；`sys_net_label=null` |
+| 模拟电路 | U8 电池电流采样 | `device=U8 BQ27220YZFR`；`sense_positive=SRP=EX_VBAT`；`sense_negative=SRN=SYS_VBAT`；`shunt=R25 R010/1%`；`bus=SYS_I2C_SDA,SYS_I2C_SCL` |
+| 电源 | SYS_VBUS 与 SOC_VIN 电源路径 | `sources=SYS_VIN,SYS_VBAT`；`or_diodes=D16,D17 DSK34`；`intermediate_rail=SYS_VBUS`；`converter=U1 FP6276BXR-G1`；`output=SOC_VIN`；`enable=MPWR_EN` |
+| 接口 | J12 WKUP/PWR 接口 | `reference=J12`；`part=1.25MM_8P`；`pins=1:EXTRG,2:SW_PWR,3:EXT_LED,4:SYS_I2C_SDA,5:SYS_I2C_SCL,6:SOC_VIN,7:SYS_VIN,8:GND` |
+| 总线 | SYS_I2C_SCL/SYS_I2C_SDA | `controller_side=J6 pins 15/13`；`devices=U3,U5,U7,U8,U9,U10`；`connectors=J9,J11,J12`；`nets=SYS_I2C_SCL,SYS_I2C_SDA` |
+| 总线地址 | SYS_I2C 设备地址 | `bus=SYS_I2C_SCL,SYS_I2C_SDA`；`addresses_shown=false`；`u5_addr_strap=R23 0R to GND`；`u7_addr_strap=GND` |
+| 传感器 | U9 BMI270 连接 | `device=U9 BMI270`；`supply=SOC_3.3V`；`bus=SYS_I2C_SCL,SYS_I2C_SDA`；`csb=SOC_3.3V`；`sdo=GND`；`unconnected=INT1,INT2,ASDx,ASCx,OCSB,OSDO` |
+| GPIO 与控制信号 | U7 GPIO 扩展映射 | `device=U7 PI4IOE5V6408`；`p0=null`；`p1=TP_RST`；`p2=LCD_RST`；`p3=USR_KEY`；`p4=SYS_LED`；`p5=VIN_DET`；`p6=PWROFF_PULSE`；`p7=EXT_LED`；`interrupt=SYS_INT`；`reset=SYS_RST`；`address_strap=GND` |
+| 复位 | 电源、Boot 与复位控制 | `controller=U2 PMS150G-U06`；`controller_nets=MPWR_EN,SW_PWR,BOOT_TRG,nINT_STAT_TRIG`；`reset_path=SOC_RST through D9 to SYS_RST`；`boot_path=AX_GPIOA2_BOOT through D10 to BOOT_CTRL`；`supply=SYS_VBUS` |
+| 接口 | S1/S2 用户按键 | `s1_net=USR_KEY`；`s1_protection=TVS3 PESDNC2FD3V3B`；`s2_net=SW_PWR`；`s2_protection=TVS2 PESDNC2FD5VBS`；`vin_det_divider=R26=22K/1%,R27=22K/1%` |
+| 总线 | J11 LCD MIPI 与控制 | `connector=J11 FPC_24P`；`differential_pairs=MIPI_TX0,MIPI_TX1,MIPI_TX2`；`control=SYS_I2C_SCL,SYS_I2C_SDA,TP_INT,TP_RST,LCD_RST`；`power=SOC_3.3V,LCD_LEDA,LCD_LEDK`；`pair_roles_shown=false` |
+| 电源 | LCD 背光驱动 | `device=U10 AW99703CSR`；`supply=SOC_VIN`；`bus=SYS_I2C_SCL,SYS_I2C_SDA`；`anode_net=LCD_LEDA`；`cathode_net=LCD_LEDK`；`unused_outputs=HVLED1,HVLED2` |
+| 电源 | TF_VDD 受控电源 | `device=U17 LPW5209AB5F`；`input=SOC_3.3V`；`output=TF_VDD`；`enable=TF_PWR_EN`；`set_resistor=R65 12K/1%`；`enable_pulldown=R66 5.1K/1%`；`bypass=R64 NC` |
+| 存储 | J10 TF 卡接口 | `connector=J10 TF_CARD_SOCKET`；`data=TF_D0,TF_D1,TF_D2,TF_D3`；`command=TF_CMD`；`clock=TF_CLK`；`detect=SD_DET_N`；`supply=TF_VDD`；`protection=D13,D14 ESD0524P` |
+| 总线 | J3 Camera MIPI 与控制 | `connector=J3 FPC_30P`；`differential_pairs=MIPI_RX0,MIPI_RX1,MIPI_RX2,MIPI_RX3,MIPI_RX4`；`control=CAM_MCLK,CAM_RSTN,CAM_SCL_1V8,CAM_SDA_1V8`；`power=CAM_2.8V,CAM_1.8V,CAM_1.2V`；`pair_roles_shown=false` |
+| 电源 | Camera 三路电源 | `camera_input=CAM_VIN from SOC_VIN via FB1/R39`；`rail_2v8=U12 WL2863E28-5/TR`；`rail_1v8=SOC_1.8V via R40 1R/1%`；`rail_1v2=U11 ME6211A12M3G-N` |
+| 总线 | Camera I2C0 电平转换 | `device=U13 TXS0102DCUR`；`b_side=SOC_3.3V,I2C0_SCL,I2C0_SDA`；`a_side=CAM_1.8V,CAM_SCL_1V8,CAM_SDA_1V8`；`b_pullups=R41,R42 2.2K/1%`；`a_pullups=R49,R50 1.5K/1%`；`oe=CAM_1.8V` |
+| 接口 | 双 Grove 接口 | `j8=1:GND,2:SOC_VIN,3:TRM_TXD,4:TRM_RXD`；`j9=1:GND,2:SOC_VIN,3:SYS_I2C_SDA,4:SYS_I2C_SCL`；`protection=D11,D12 ESD0524P` |
+| 射频 | J14 RF_COAXIAL | `reference=J14`；`part=RF_COAXIAL`；`pin1_connected=false`；`pin2_connected=false`；`rf_net=null` |
+| 接口 | J13 四对以太网接口 | `module_nets=MDI1_0_P/N,MDI1_1_P/N,MDI1_2_P/N,MDI1_3_P/N`；`series_resistors=R29-R36 2.2R/1%`；`tvs=TVS4-TVS7 WS03DLC-B`；`connector=J13 RMT-410B-10W4-NL-Y`；`magnetics=four 1CT:1CT channels` |
+| 保护电路 | 外部接口保护 | `usb=D4,D5 ESD0524P`；`grove=D11,D12 ESD0524P`；`tf=D13,D14 ESD0524P`；`ethernet=TVS4-TVS7 WS03DLC-B`；`battery=TVS1 PESDNC2FD5VBS` |
 
 ## 待确认事项
 
-- `system.documented-compute-module`：正文称计算模组包含 AX630C、3.2TOPs INT8 NPU、4GB LPDDR4、32GB eMMC、ESP32-C6 与 JL2101B-N040C；当前原理图仅展示底板到模组的接口网络，没有这些芯片的位号、供电、内存总线或模组内部连接。（证据：图 40ac0b8ed636 / 第 1 页 / 中央模组连接器仅引出接口，整页无 AX630C/LPDDR4/eMMC/ESP32-C6/JL2101 器件本体）
-- `address.system-i2c-devices`：原理图确认 AW32001ECSR、BQ27220YZFR、BMI270、PI4IOE5V6408 和 AW99703CSR 共用 SYS_I2C，但页面没有标注任何 7 位地址或地址选择状态。（证据：图 40ac0b8ed636 / 第 1 页 / SYS_I2C_SCL/SDA 连接的 U3/U8/U9/U7/U10 区域，无地址文字）
-- `power.documented-battery-spec`：正文称可接 3.7V 锂电池并使用 AW32001ECSR/BQ27220YZFR；原理图确认 J2、充电和电量采样路径，但未给出电芯容量、化学体系、极性容错、保护板、充电电流/终止电压、温度范围或续航。（证据：图 40ac0b8ed636 / 第 1 页 / 网格 B1-C4，J2/U3/U8 电池路径，无电芯与充电性能表）
-- `component.documented-mipi-performance`：正文称 DSI 为 2-lane、最高 1080p@30fps，CSI 为 4-lane、最高 4K@30fps；原理图确认两路 DSI 数据通道和四路 CSI 数据通道，但不能证明面板/摄像头兼容型号、分辨率、帧率、时序或信号完整性余量。（证据：图 40ac0b8ed636 / 第 1 页 / 网格 A7-C8，J11 LCD 与 CAM FPC 的 MIPI 差分网络，无性能表）
-- `audio.documented-performance`：正文称底板支持麦克风、扬声器和全双工通信；原理图只确认模拟麦克风差分接口和 NS4150B 扬声器功放连接，未标麦克风型号、灵敏度/SNR、扬声器阻抗/功率、采样率或整机失真。（证据：图 40ac0b8ed636 / 第 1 页 / 网格 B1-C3，J1/U14 音频电路，无性能参数）
-- `rf.documented-network-performance`：正文称 ESP32-C6 2.4GHz Wi-Fi、SMA 天线、JL2101B-N040C 1GbE 和 Wi-Fi/以太网桥接；当前底板页只画 J14 RF_COAXIAL、MDI0/MDI1 与 RJ45 磁性接口，未画无线芯片/PHY 或给出增益、吞吐、桥接行为与认证。（证据：图 40ac0b8ed636 / 第 1 页 / 网格 C5-D7，J14 与 MDI/RJ45 区，无 ESP32-C6/JL2101B 器件）
-- `other.documented-stackflow-models`：正文描述 StackFlow、视觉/语音/LLM pipeline、模型热更新和多种具体模型；原理图只能证明底板硬件接口，不能验证系统镜像、API、模型版本、推理性能、并发、更新机制或后续支持计划。（证据：图 40ac0b8ed636 / 第 1 页 / 完整底板原理图，无软件/模型/性能信息）
-- `other.documented-usb-behavior`：正文称 USB 2.0 可作为 Host 或 Device 并支持 OTG；原理图确认 OTG_DP/DM、OTG_VBUS 和受控电源开关，但不能证明角色检测、VBus 电流限制、协议栈、支持设备类别或量产固件行为。（证据：图 40ac0b8ed636 / 第 1 页 / 网格 A1-B3，OTG USB-C 与电源开关硬件，无软件行为）
-- `review.compute-module`：请提供 AX630C 计算模组原理图/BOM，确认 AX630C、NPU、4GB LPDDR4、32GB eMMC、ESP32-C6 与 JL2101B-N040C 的具体连接和料号。；原因：当前资源仅为底板接口页。
-- `review.i2c-addresses`：AW32001ECSR、BQ27220YZFR、BMI270、PI4IOE5V6408 与 AW99703CSR 的量产 7 位 I2C 地址及地址脚状态是什么？；原因：原理图未标地址。
-- `review.battery-spec`：请确认支持电芯的容量/化学体系/极性/保护板，以及 AW32001ECSR 充电电流、终止条件、温度保护和 BQ27220 配置。；原因：原理图没有电芯与充放电安全边界。
-- `review.mipi-performance`：请确认已验证的 DSI/CSI 面板和摄像头型号、lane速率、分辨率、帧率、时序与信号完整性测试结果。；原因：连接图只能确认 lane 数和网络。
-- `review.audio-performance`：请用麦克风/扬声器 BOM、NS4150B datasheet 和整机实测确认全双工、灵敏度、SNR、阻抗、功率、采样率与失真。；原因：原理图仅显示模拟输入和功放连接。
-- `review.network-rf`：请提供 ESP32-C6/JL2101B-N040C 模组证据、SMA/射频路径、天线增益、1GbE吞吐、桥接固件行为和认证结果。；原因：当前底板页只显示 RF_COAXIAL 和 MDI/RJ45 接口。
-- `review.stackflow-models`：当前系统镜像、StackFlow/API 和各 AI 模型的正式版本、资源占用、性能、并发与热更新边界是什么？；原因：软件能力不属于原理图可验证内容。
-- `review.usb-otg`：量产固件如何选择 USB Host/Device，OTG VBus 电流限制和支持的 USB 类别是什么？；原因：原理图只能确认 OTG 硬件网络。
+- `address.system-i2c-devices`：本页未标注 U3、U5、U7、U8、U9 或 U10 的 7 位 I2C 地址；U5 只显示 ADDR 经 R23 0R 接地，U7 只显示 ADDR 接地。（证据：图 e19d6c21ee54 / 第 1 页 / 网格 B2-D7，U3/U5/U7/U8/U9/U10 的 I2C 引脚与地址脚）
+- `review.system-i2c-addresses`：U3、U5、U7、U8、U9 和 U10 在图示地址脚状态下的量产 7 位 I2C 地址分别是什么？；原因：新页只显示共享 SYS_I2C 网络和部分地址脚绑定位，没有标出数值地址。
 
 ## 原理图来源
 
 | 资源 | 页码 | SHA-256 | 原始地址 |
 | --- | --- | --- | --- |
-| 1 | 1 | `40ac0b8ed6362568031542b4550b7d882491b078d17e2de5d0ee2dfb735a9fa7` | `https://m5stack-doc.oss-cn-shenzhen.aliyuncs.com/459/SCH_LLM630_Compute_Kit_page_01.png` |
+| 1 | 1 | `e19d6c21ee5459f17dcf39ac041ad28aba31818742853d6b7cc7eba29a1149a4` | `https://m5stack-doc.oss-cn-shenzhen.aliyuncs.com/459/K143_SCH_ax630c_m2_base_b03_SCH_2024_11_29_17_06_23_page_01.png` |
 
 ---
 
 源文档：`zh_CN/core/LLM630 Compute Kit.md`
 
-源文档 SHA-256：`4c1de8a6445f6a3ab028ebdf245acc70e947a84d5ed9e3941ef91e244ca4fdad`
+源文档 SHA-256：`ef7ae07b0764fb12f8d89dccf27259b523f92c90cd446bb373f5c9b731870442`
 
 *该文档由专用原理图子智能体基于原理图证据自动生成；无法确认的内容集中列在“待确认事项”章节。*

@@ -1,0 +1,21 @@
+{
+  "dry_run": false,
+  "failed": 0,
+  "published": 1,
+  "results": [
+    {
+      "backup": null,
+      "draft_action": "unchanged",
+      "dry_run": false,
+      "errors": [],
+      "needs_review": 6,
+      "product_id": "module13-2-lora-1262-b5bb939be918",
+      "product_name": "Module13.2 LoRa-1262",
+      "publish_action": "unchanged",
+      "sha256": "344f1b26165f9427c0befdeb4908e04b158b774dc3975d1c5163fd95012fb2a9",
+      "status": "valid",
+      "uncertain_facts": 6
+    }
+  ],
+  "schema_version": 1
+}

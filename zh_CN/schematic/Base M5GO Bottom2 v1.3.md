@@ -6,8 +6,8 @@
 | --- | --- |
 | 产品 | Base M5GO Bottom2 v1.3 |
 | SKU | A014-C-V13 |
-| 产品 ID | `base-m5go-bottom2-v1-3-ccd29a0e34c3` |
-| 源文档 | `zh_CN/base/m5go_bottom2_v1.3.md` |
+| 产品 ID | `base-m5go-bottom2-v1-3-3d649b5f248c` |
+| 源文档 | `zh_CN/base/Base_M5GO_Bottom2_v1.3.md` |
 
 ## 概述
 
@@ -320,8 +320,8 @@ U3 PROG pin6 经 R9 2K 接 GND，VIN/BAT+ 分别配置 C6/C7 10uF；原理图未
 
 ---
 
-源文档：`zh_CN/base/m5go_bottom2_v1.3.md`
+源文档：`zh_CN/base/Base_M5GO_Bottom2_v1.3.md`
 
-源文档 SHA-256：`c66cd642f12c6cdb358093aa9e7941004abb36ef07f4a0eb3b50cae0ab091896`
+源文档 SHA-256：`b25e0831c5f23dd8f3daba8faba3c2a22990ce9a4485ab83be5d7a9af6c132b0`
 
 *该文档由专用原理图子智能体基于原理图证据自动生成；无法确认的内容集中列在“待确认事项”章节。*

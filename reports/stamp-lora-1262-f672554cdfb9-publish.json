@@ -1,0 +1,21 @@
+{
+  "dry_run": false,
+  "failed": 0,
+  "published": 1,
+  "results": [
+    {
+      "backup": null,
+      "draft_action": "unchanged",
+      "dry_run": false,
+      "errors": [],
+      "needs_review": 4,
+      "product_id": "stamp-lora-1262-f672554cdfb9",
+      "product_name": "Stamp LoRa-1262",
+      "publish_action": "unchanged",
+      "sha256": "2ece80af926809569a763aad0bfc536058b32bfcaef6a8db1c22f705e0d903f0",
+      "status": "valid",
+      "uncertain_facts": 4
+    }
+  ],
+  "schema_version": 1
+}
