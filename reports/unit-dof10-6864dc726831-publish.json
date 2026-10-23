@@ -1,0 +1,21 @@
+{
+  "dry_run": false,
+  "failed": 0,
+  "published": 1,
+  "results": [
+    {
+      "backup": null,
+      "draft_action": "create",
+      "dry_run": false,
+      "errors": [],
+      "needs_review": 2,
+      "product_id": "unit-dof10-6864dc726831",
+      "product_name": "Unit DoF10",
+      "publish_action": "create",
+      "sha256": "9858f3c9bf0bd4fb454352bf000b4620bf82ce09fca8980680769b736f407fb6",
+      "status": "valid",
+      "uncertain_facts": 2
+    }
+  ],
+  "schema_version": 1
+}

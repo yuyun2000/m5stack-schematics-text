@@ -1,0 +1,21 @@
+{
+  "dry_run": false,
+  "failed": 0,
+  "published": 1,
+  "results": [
+    {
+      "backup": null,
+      "draft_action": "create",
+      "dry_run": false,
+      "errors": [],
+      "needs_review": 1,
+      "product_id": "unit-8servos2-chain-5cbe245777be",
+      "product_name": "Unit 8Servos2-Chain",
+      "publish_action": "create",
+      "sha256": "35735d6344ea57a806adc6950b3d390c34932a4ff79fddd86fb3fb7c21cbe4d9",
+      "status": "valid",
+      "uncertain_facts": 0
+    }
+  ],
+  "schema_version": 1
+}

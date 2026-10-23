@@ -12984,6 +12984,115 @@ Chain Key 集成 STM32G031G8U6 核心主控，采用 UART 串口级联通信协�
 - Chain Key 产品介绍以及功能展示
 
  <!--注意中英文链接不一样-->"
+Chain MIC,https://m5stack-doc.oss-cn-shenzhen.aliyuncs.com/1284/Chain_MIC_SCH_Main_V1.0_20250626_2026_07_10_13_59_52.png,"# Chain MIC
+
+<span class=""product-sku"">SKU:U226</span>
+
+## 描述
+
+Chain MIC 是 M5Stack Chain 系列中的一款声音采集节点。内置 GMI4015P-2C 麦克风、SGM321YC5/TR 运算放大器与可编程 RGB LED，支持声音信号 **12 位 ADC** 采样及阈值触发，适用于环境声音检测、声控交互和设备状态提示等应用场景。内部集成 STM32G031G8U6 核心主控，采用 UART 串口级联通信协议，通过两个 HY2.0-4P 扩展接口，可扩展更多 Chain 系列设备，构建更加丰富的声音感知与交互应用。
+
+## 产品特性
+
+- M5Stack Chain 系列
+- GMI4015P-2C 麦克风声音采集
+- 支持声音信号 **12 位 ADC** 采样与阈值触发
+- STM32G031G8U6 核心主控
+- 1x RGB LED
+- 采用 UART 串口级联通信协议
+- 2x HY2.0-4P 扩展接口，可扩展 Chain 系列设备
+
+## 包装内容
+
+- 1 x Chain MIC
+- 1 x Chain Bridge
+
+## 应用场景
+
+- 环境声音检测
+- 声音阈值触发
+- 声控交互设备
+- 智能家居声音感知
+
+## 规格参数
+
+| 规格       | 参数                            |
+| ---------- | ------------------------------- |
+| MCU        | STM32G031G8U6                   |
+| 输入电源   | DC 5V                           |
+| 通信方式   | UART 115200bps@8N1              |
+| 接口规格   | 2x HY2.0-4P                     |
+| 麦克风     | GMI4015P-2C                     |
+| 运算放大器 | SGM321YC5/TR                    |
+| RGB LED    | 1x WS2812C-2020                 |
+| 声音信号   | 12 位 ADC 采样值、阈值触发状态  |
+| 工作功耗   | 5V@35.54mA (MIC 工作、白灯常亮) |
+| 产品尺寸   | 24.0 x 24.0 x 16.0mm            |
+| 产品重量   | 5.7g                            |
+| 包装尺寸   | 138.0 x 93.0 x 17.0mm           |
+| 毛重       | 9.0g                            |
+
+## 操作说明
+
+用 Chain Bridge 连接器连接主控 Chain DualKey 和各个 Chain 系列设备。连接时需要注意方向，三角箭头从主控 Chain DualKey 指向外侧，如图：
+
+<img src=""https://m5stack-doc.oss-cn-shenzhen.aliyuncs.com/1176/Chain_connect.jpg"" width=""50%"">
+
+## 原理图
+
+- [Chain MIC 原理图 PDF](https://m5stack-doc.oss-cn-shenzhen.aliyuncs.com/1284/Chain_MIC_SCH_Main_V1.0_20250626_2026_07_10_13_59_52.pdf)
+
+## 管脚映射
+
+### RGB LED
+
+| STM32G031 | PA8 |
+| --------- | --- |
+| WS2812C   | RGB |
+
+### MIC
+
+| STM32G031 | PA7 | PB0 |
+| --------- | --- | --- |
+| MIC       | AIN | DIN |
+
+### UART
+
+| STM32G031 | PB6  | PB7  | PA2  | PA3  |
+| --------- | ---- | ---- | ---- | ---- |
+| UART1     | TXD1 | RXD1 |      |      |
+| UART2     |      |      | TXD2 | RXD2 |
+
+## 尺寸图
+
+- [Chain MIC 模型尺寸PDF](https://m5stack-doc.oss-cn-shenzhen.aliyuncs.com/1284/U226_Chain_MIC_model_size.pdf)
+
+<img src=""https://m5stack-doc.oss-cn-shenzhen.aliyuncs.com/1284/U226_Chain_MIC_model_size_page_01.png"" width=""100%"">
+
+## 软件开发
+
+### Arduino
+
+- [Chain MIC Arduino 快速上手](/zh_CN/arduino/projects/chain/chain_mic)
+- [Chain MIC Arduino 驱动库](https://github.com/m5stack/M5Chain)
+
+### UiFlow2
+
+- [Chain MIC UiFlow2 文档](https://uiflow-micropython.readthedocs.io/zh-cn/latest/chain/mic.html)
+
+### 内置固件
+
+- [Chain MIC 内置固件](https://github.com/m5stack/M5Chain-Series-Internal-FW/tree/main/Chain-MIC)
+
+### 通信协议
+
+<MarkdownPreview src=""/zh_CN/protocol/U226/UART"" title=""查看通信协议"" />
+
+## 相关视频
+
+<VideoGallery>
+  <VideoItem title=""Chain MIC 产品介绍以及功能展示"" url=""https://m5stack-doc.oss-cn-shenzhen.aliyuncs.com/1284/U226_Chain_MIC_video_CN.mp4"" />
+</VideoGallery>"
 Chain Mono,"https://m5stack-doc.oss-cn-shenzhen.aliyuncs.com/1245/SCH_Chain_MONO_SCH_V0.1_2026_01_04_09_51_33_page_01.png,https://m5stack-doc.oss-cn-shenzhen.aliyuncs.com/1245/SCH_Chain_MONO_SCH_V0.1_2026_01_04_09_51_33_page_02.png","# Chain Mono
 
 <span class=""product-sku"">SKU:U217</span>
@@ -13342,6 +13451,110 @@ Chain RGB 是 M5Stack Chain 系列中的**全彩 LED 点阵显示节点**，核�
 ## 相关视频
 
 - Chain RGB 产品介绍以及功能展示"
+Chain Switch,https://m5stack-doc.oss-cn-shenzhen.aliyuncs.com/1283/U227_Chain_Switch_SCH_Main_V1.0_20260608_page_01.png,"# Chain Switch
+
+<span class=""product-sku"">SKU:U227</span>
+
+## 描述
+
+Chain Switch 是 M5Stack Chain 系列中的一款滑动开关输入节点，支持滑动条模式与开关模式。设备可输出 12 位滑动位置数据，并配有可编程 RGB LED，用于提供直观的状态反馈。内部集成 STM32G031G8U6 核心主控，采用 UART 串口级联通信协议，通过两个 HY2.0-4P 扩展接口，可连接更多 Chain 系列设备，适用于控制面板、状态切换和交互装置等应用。
+
+## 产品特性
+
+- M5Stack Chain 系列
+- 支持滑动条模式与开关模式：
+  - 滑动条模式：读取滑动位置，输出范围为 0 ~ 4095
+  - 开关模式：根据设定的开、关阈值输出开关状态
+- 12 位 ADC 滑动位置检测
+- STM32G031G8U6 核心主控
+- 1x RGB LED
+- 采用 UART 串口级联通信协议
+- 2x HY2.0-4P 扩展接口，可扩展 Chain 系列设备
+
+## 包装内容
+
+- 1 x Chain Switch
+- 1 x Chain Bridge
+
+## 应用场景
+
+- 控制面板输入
+- 智能家居状态切换
+- 交互装置控制
+
+## 规格参数
+
+| 规格         | 参数                         |
+| ------------ | ---------------------------- |
+| MCU          | STM32G031G8U6                |
+| 输入电源     | DC 5V                        |
+| 通信方式     | UART 115200bps@8N1           |
+| 接口规格     | 2x HY2.0-4P                  |
+| 滑动位置检测 | 12 位 ADC，输出范围 0 ~ 4095 |
+| RGB LED      | 1x WS2812C                   |
+| 工作功耗     | 5V@10.57mA (典型工作状态)    |
+| 产品尺寸     | 24.0 x 24.0 x 18.5mm         |
+| 产品重量     | 5.9g                         |
+| 包装尺寸     | 138.0 x 93.0 x 21.0mm        |
+| 毛重         | 9.2g                         |
+
+## 操作说明
+
+用 Chain Bridge 连接器连接主控 Chain DualKey 和各个 Chain 系列设备。连接时需要注意方向，三角箭头从主控 Chain DualKey 指向外侧，如图：
+
+<img src=""https://m5stack-doc.oss-cn-shenzhen.aliyuncs.com/1176/Chain_connect.jpg"" width=""50%"">
+
+## 原理图
+
+- [Chain Switch 原理图PDF](https://m5stack-doc.oss-cn-shenzhen.aliyuncs.com/1283/U227_Chain_Switch_SCH_Main_V1.0_20260608.pdf)
+
+## 管脚映射
+
+### Slider
+
+| STM32G031 | PB0    |
+| --------- | ------ |
+| Slider    | ADC_IN |
+
+### RGB LED
+
+| STM32G031 | PA8 |
+| --------- | --- |
+| WS2812C   | RGB |
+
+### UART
+
+| STM32G031 | PB6  | PB7  | PA2  | PA3  |
+| --------- | ---- | ---- | ---- | ---- |
+| UART1     | TXD1 | RXD1 |      |      |
+| UART2     |      |      | TXD2 | RXD2 |
+
+## 尺寸图
+
+- [Chain Switch 模型尺寸PDF](https://m5stack-doc.oss-cn-shenzhen.aliyuncs.com/1283/U227_Chain_Switch_model_size.pdf)
+
+<img src=""https://m5stack-doc.oss-cn-shenzhen.aliyuncs.com/1283/U227_Chain_Switch_model_size_page_01.png"" width=""100%"">
+
+## 软件开发
+
+### Arduino
+
+- [Chain Switch Arduino 快速上手](/zh_CN/arduino/projects/chain/chain_switch)
+- [Chain Switch Arduino 驱动库](https://github.com/m5stack/M5Chain)
+
+### 内置固件
+
+- [Chain Switch 内置固件](https://github.com/m5stack/M5Chain-Series-Internal-FW/tree/main/Chain-Switch)
+
+### 通信协议
+
+<MarkdownPreview src=""/zh_CN/protocol/U227/UART"" title=""查看通信协议"" />
+
+## 相关视频
+
+<VideoGallery>
+  <VideoItem title=""Chain Switch 产品介绍以及功能展示"" url=""https://m5stack-doc.oss-cn-shenzhen.aliyuncs.com/1283/U227_Chain_Switch_video_CN.mp4"" />
+</VideoGallery>"
 Chain ToF,https://m5stack-doc.oss-cn-shenzhen.aliyuncs.com/1199/U209_Chain-ToF_SCH_Main_V1.0_20250515_2025_10_30_22_09_27_page_01.png,"# Chain ToF
 
 <span class=""product-sku"">SKU:U209</span>
@@ -28159,6 +28372,454 @@ lib_deps =
 ## 相关视频
 
 - PaperColor 产品介绍以及功能展示"
+PaperDIY Assembly Kit,"https://m5stack-doc.oss-cn-shenzhen.aliyuncs.com/1288/K159-B_PaperDIY_sche_01.png,https://m5stack-doc.oss-cn-shenzhen.aliyuncs.com/1288/K159-B_PaperDIY_sche_02.png,https://m5stack-doc.oss-cn-shenzhen.aliyuncs.com/1288/K159-B_PaperDIY_sche_03.png,https://m5stack-doc.oss-cn-shenzhen.aliyuncs.com/1288/K159-B_PaperDIY_sche_04.png","# PaperDIY Assembly Kit
+
+<span class=""product-sku"">SKU:K159</span>
+
+## 描述
+
+**PaperDIY Assembly Kit** 是一款 DIY 墨水屏开发板套件，内含主控板与墨水屏，以及 140mAh 锂电池，由用户完成硬件装配；主控板采用 ESP32-S3R8 核心主控，标配 16MB Flash + 8MB PSRAM 内存组合，支持 2.4 GHz Wi-Fi 连接。套件搭载 4.7"" 电子墨水屏，分辨率 960×540，支持 16 阶灰度显示。板载电池接口， microSD 卡槽，USB Type-C 接口。开放式结构支持用户自主设计外围结构，适合搭建桌面信息屏、电子标签、创客 DIY 项目与嵌入式硬件开发实验。
+
+## 教程 & 快速上手
+
+learn>| ![UiFlow2](https://m5stack.oss-cn-shenzhen.aliyuncs.com/resource/docs/static/assets/img/uiflow2/uiflow2.0_banner_01.png) | [UiFlow2](/zh_CN/uiflow2/paperdiy/program) | 本教程将向你介绍，如何通过 UiFlow2 图形化编程平台控制 PaperDIY 设备。
+
+## 产品特性
+
+- ESP32-S3R8 核心主控:
+  - 16MB Flash 
+  - 8MB PSRAM
+  - 2.4 GHz Wi-Fi
+- 4.7"" 电子墨水屏 960×540 分辨率
+- 16 阶灰度显示
+- 板载 DC 3.7V 电池接口，包含 140mAh 锂电池
+- microSD 卡槽
+- 低功耗电源管理设计
+
+## 包装内容
+
+- 1 x PaperDIY (墨水屏 + 主控板 + 140mAh 锂电池 + 亚克力屏幕压板)
+
+## 应用场景
+
+- 电子 DIY 创意项目
+- 自制桌面信息显示屏
+- 定制电子标签、标识牌
+- 硬件开发学习与实验
+
+## 规格参数
+
+| 规格     | 参数                                                               |
+| -------- | ------------------------------------------------------------------ |
+| SoC      | ESP32-S3-WROOM-1-N16R8 @ Xtensa® 32 位 LX7 双核处理器，主频 240MHz |
+| Flash    | 16MB                                                               |
+| PSRAM    | 8MB Octal                                                          |
+| Wi-Fi    | 2.4 GHz Wi-Fi                                                      |
+| 墨水屏   | 型号：ET047TC1 <br/> 540 x 960@4.7"" <br/> 灰度 : 16 级             |
+| 扩展存储 | microSD                                                            |
+| 供电方式 | 3.7V 电池供电、USB Type‑C（DC 5V）、5V 焊盘供电                    |
+| 电源管理 | M5PM1                                                              |
+| 按键     | 1x 电源按键（ON / OFF / RESET / BOOT） + 2x 用户按键               |
+| 电池     | 电池容量：140mAh<br>接口规格：SH1.0-2P                             |
+| 扩展接口 | 2x FPC 0.5mm-12P                                                   |
+| 工作温度 | 0 ~ 40°C                                                           |
+| 工作功耗 | 4.2V@40.95mA（峰值最高 161mA）                                     |
+| 产品尺寸 | 115.3 x 62.5 x 5.5mm                                               |
+| 产品重量 | 26.4g                                                              |
+| 包装尺寸 | 137.0 x 78.0 x 19.0mm                                              |
+| 毛重     | 50.0g                                                              |
+
+## 操作说明
+
+### 电源按键操作
+
+- 单击：开机 / 复位
+- 双击：关机
+- 长按：进入下载模式
+
+<img src=""https://m5stack-doc.oss-cn-shenzhen.aliyuncs.com/1287/K159_PaperDIY_Assembly_Kit_pwr.png"" width=""60%"">
+
+### 进入下载模式
+
+如需烧录固件，请将设备通过 USB Type-C 数据线连接至电脑，长按电源按键（大约 2 秒），直到红色 LED 闪烁后松开按键，表示设备已进入下载模式，等待烧录。
+
+## 原理图
+
+- [PaperDIY 原理图 PDF](https://m5stack-doc.oss-cn-shenzhen.aliyuncs.com/1288/K159-B_PaperDIY_sche.pdf)
+
+## 管脚映射
+
+### E-Paper
+
+| ESP32-S3 | G6      | G14     | G7      | G12     | G9      | G11     | G8      | G10     |
+| -------- | ------- | ------- | ------- | ------- | ------- | ------- | ------- | ------- |
+| ET047TC1 | EPD_DB0 | EPD_DB1 | EPD_DB2 | EPD_DB3 | EPD_DB4 | EPD_DB5 | EPD_DB6 | EPD_DB7 |
+
+| ESP32-S3 | G16     | G15     | G13      | G18     | G17     | G46    |
+| -------- | ------- | ------- | -------- | ------- | ------- | ------ |
+| ET047TC1 | EPD_XCL | EPD_XLE | EPD_XSTL | EPD_CKV | EPD_SPV | BST_EN |
+
+通过 `M5PM1` 电源管理芯片的 `PYG2 (EPD_PWR)` 控制电子墨水屏及其驱动电路供电，`G46 (BST_EN)` 控制墨水屏升压电路使能。
+
+### microSD
+
+| ESP32-S3 | G40       | G47     | G39      | G38       | G48      |
+| -------- | --------- | ------- | -------- | --------- | -------- |
+| microSD  | CARD_MISO | CARD_CS | CARD_SCK | CARD_MOSI | CARD_DET |
+
+### Button
+
+| ESP32-S3 | G4              | G3              |
+| -------- | --------------- | --------------- |
+| KEY      | KEY1（ButtonA） | KEY2（ButtonB） |
+
+电源按键连接至 `M5PM1` 电源管理芯片的 `PY_BTN (BTN_PU)` 引脚。
+
+### M5PM1
+
+| ESP32-S3 | G42     | G41     |
+| -------- | ------- | ------- |
+| M5PM1    | SYS_SCL | SYS_SDA |
+
+| M5PM1   | DCDC3V3_EN_PP | CHG_EN_PP | BAT_ADC_EN_PP |
+| ------- | ------------- | --------- | ------------- |
+| 3V3_L2  | PY_MPWR_EN    |           |               |
+| Charge  |               | CHG_EN    |               |
+| Battery |               |           | BAT_ADC_EN    |
+
+| M5PM1              | 5VIN_ADC_IN | BAT_ADC_IN |
+| ------------------ | ----------- | ---------- |
+| Voltage Monitoring | USB_ADC     | BAT_ADC    |
+
+| M5PM1     | PYG0  | PYG1  | PYG2    | PYG3     | PYG4  |
+| --------- | ----- | ----- | ------- | -------- | ----- |
+| FPC - I2S | PY_G0 |       |         |          |       |
+| FPC - SPI |       | PY_G1 |         |          | PY_G4 |
+| E-Paper   |       |       | EPD_PWR |          |       |
+| Charge    |       |       |         | CHG_STAT |       |
+
+- PYG0(PY_G0): FPC - I2S 接口扩展信号
+- PYG1(PY_G1): FPC - SPI 接口开关信号
+- PYG2(EPD_PWR): 电子墨水屏及其驱动电路电源使能
+- PYG3(CHG_STAT): 充电状态
+- PYG4(PY_G4): FPC - SPI 接口复位信号
+
+### FPC - I2S
+
+| FPC 0.5mm-12P | PaperDIY      |
+| ------------- | ------------- |
+| Pin1          | G5 (SCLK)     |
+| Pin2          | GND           |
+| Pin3          | PY_G0         |
+| Pin4          | G41 (SYS_SDA) |
+| Pin5          | G42 (SYS_SCL) |
+| Pin6          | GND           |
+| Pin7          | G2 (LRCK)     |
+| Pin8          | G1 (DSDIN)    |
+| Pin9          | G0 (DOUT)     |
+| Pin10         | G45 (MCLK)    |
+| Pin11         | 3V3_AU        |
+| Pin12         | 3V3_AU        |
+
+### FPC - SPI
+
+| FPC 0.5mm-12P | PaperDIY    |
+| ------------- | ----------- |
+| Pin1          | G39 (SCK)   |
+| Pin2          | GND         |
+| Pin3          | G21 (CS)    |
+| Pin4          | G38 (MOSI)  |
+| Pin5          | G40 (MISO)  |
+| Pin6          | GND         |
+| Pin7          | PY_G4 (RST) |
+| Pin8          | G43 (BUSY)  |
+| Pin9          | G44 (IRQ)   |
+| Pin10         | PY_G1 (SW)  |
+| Pin11         | 3V3_L2      |
+| Pin12         | 3V3_L2      |
+
+## 尺寸图
+
+- [PaperDIY Assembly Kit 模型尺寸PDF](https://m5stack-doc.oss-cn-shenzhen.aliyuncs.com/1287/K159_PaperDIY_Assembly_Kit_model_size.pdf)
+
+<img src=""https://m5stack-doc.oss-cn-shenzhen.aliyuncs.com/1287/K159_PaperDIY_Assembly_Kit_model_size_page_01.png"" width=""100%"">
+
+## 结构文件
+
+- [PaperDIY 结构文件](https://github.com/m5stack/M5_Hardware/tree/master/Products/K159-B_PaperDIY_Complete_Kit/Structures)
+
+## 数据手册
+
+- [ESP32-S3-WROOM-1-N16R8](https://m5stack.oss-cn-shenzhen.aliyuncs.com/resource/docs/products/unit/Unit-CamS3/ESP32-S3-WROOM-1-N16R8.pdf)
+
+## 软件开发
+
+### Arduino
+
+- [PaperDIY Arduino 快速上手](/zh_CN/arduino/paperdiy/program)
+- [PaperDIY M5PM1 电源管理](/zh_CN/arduino/paperdiy/m5pm1)
+- [M5PM1 Arduino Library](https://github.com/m5stack/M5PM1)
+- [PaperDIY Arduino M5Unified 驱动库](https://github.com/m5stack/M5Unified)
+- [PaperDIY Arduino M5GFX 驱动库](https://github.com/m5stack/M5GFX)
+
+### UiFlow2
+
+- [PaperDIY UiFlow2 快速上手](/zh_CN/uiflow2/paperdiy/program)
+
+### ESP-IDF
+
+- [PaperDIY 出厂固件源码](https://github.com/m5stack/M5PaperDIY-UserDemo)
+
+### 其他
+
+- [PaperDIY 出厂固件 WebBurner](https://burner.m5stack.com/share/firmware/UVVZ26)
+
+## 相关视频
+
+<VideoGallery>
+  <VideoItem title=""PaperDIY 产品介绍以及功能展示"" url=""https://m5stack-doc.oss-cn-shenzhen.aliyuncs.com/1288/K159_K159-B_PaperDIY_video_CN.mp4"" />
+</VideoGallery>
+
+## 产品对比
+
+::compare-table
+| 产品对比项  | [PaperDIY Complete Kit](/zh_CN/core/PaperDIY_Complete_Kit)<br/>![PaperDIY Complete Kit](https://m5stack-doc.oss-cn-shenzhen.aliyuncs.com/1288/K159-B_PaperDIY_Complete_Kit_main_pictures_02.webp) | [PaperDIY Assembly Kit](/zh_CN/core/PaperDIY_Assembly_Kit)<br/>![PaperDIY Assembly Kit](https://m5stack-doc.oss-cn-shenzhen.aliyuncs.com/1287/K159-PaperDIY-Assembly-Kit_main_pictures_02.webp) |
+| ----------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| 装配形式    | 出厂已完成硬件装配，预装 3D 打印外壳                                                                                                                                                              | 用户自行装配，开放式结构                                                                                                                                                                        |
+| 3D 打印外壳 | 标配 PLA 3D 打印外壳，外壳模型开源，支持重新打印与自定义修改                                                                                                                                      | ❌️（开放式结构，支持用户自主设计外围结构）                                                                                                                                                      |
+| 包装内容    | 墨水屏 + 主控板 + 140mAh 锂电池 + 亚克力屏幕压板（**预装 3D 打印外壳**）                                                                                                                          | 墨水屏 + 主控板 + 140mAh 锂电池+ 亚克力屏幕压板                                                                                                                                                 |
+| 主控 / 内存 | ESP32-S3R8，16MB Flash + 8MB PSRAM                                                                                                                                                                | ESP32-S3R8，16MB Flash + 8MB PSRAM                                                                                                                                                              |
+| 墨水屏      | 4.7"" ET047TC1，540 x 960，16 级灰度                                                                                                                                                               | 4.7"" ET047TC1，540 x 960，16 级灰度                                                                                                                                                             |
+| 电池        | 140mAh                                                                                                                                                                                            | 140mAh                                                                                                                                                                                          |
+::"
+PaperDIY Complete Kit,"https://m5stack-doc.oss-cn-shenzhen.aliyuncs.com/1288/K159-B_PaperDIY_sche_01.png,https://m5stack-doc.oss-cn-shenzhen.aliyuncs.com/1288/K159-B_PaperDIY_sche_02.png,https://m5stack-doc.oss-cn-shenzhen.aliyuncs.com/1288/K159-B_PaperDIY_sche_03.png,https://m5stack-doc.oss-cn-shenzhen.aliyuncs.com/1288/K159-B_PaperDIY_sche_04.png","# PaperDIY Complete Kit
+
+<span class=""product-sku"">SKU:K159-B</span>
+
+## 描述
+
+**PaperDIY Complete Kit** 是一款墨水屏开发板套件，标配主控板、墨水屏与 3D 打印外壳，出厂已完成硬件装配；主控板采用 ESP32-S3R8 核心主控，标配 16MB Flash + 8MB PSRAM 内存组合，支持 2.4 GHz Wi-Fi 连接。套件搭载 4.7"" 电子墨水屏，分辨率 960×540，支持 16 阶灰度显示。板载电池接口、microSD 卡槽与 USB Type-C 接口，内置 140mAh 锂电池。配套开源模型文件，支持用户重制外壳或自主调整设计，适合搭建桌面信息屏、电子标签、创客 DIY 项目与嵌入式硬件开发实验。
+
+## 教程 & 快速上手
+
+learn>| ![UiFlow2](https://m5stack.oss-cn-shenzhen.aliyuncs.com/resource/docs/static/assets/img/uiflow2/uiflow2.0_banner_01.png) | [UiFlow2](/zh_CN/uiflow2/paperdiy/program) | 本教程将向你介绍，如何通过 UiFlow2 图形化编程平台控制 PaperDIY 设备。
+
+## 产品特性
+
+- ESP32-S3R8 核心主控：
+  - 16MB Flash 
+  - 8MB PSRAM
+  - 2.4 GHz Wi-Fi
+- 4.7"" 电子墨水屏 960×540 分辨率
+- 16 阶灰度显示
+- 板载 DC 3.7V 电池接口，内置 140mAh 锂电池
+- microSD 卡槽
+- 低功耗电源管理设计
+- 标配 3D 打印外壳，外壳模型开源，支持重新打印与自定义修改
+
+## 包装内容
+
+- 1 x PaperDIY (墨水屏 + 主控板 + 140mAh 锂电池 + 亚克力屏幕压板，预装 3D 打印外壳)
+
+## 应用场景
+
+- 电子 DIY 创意项目
+- 自制桌面信息显示屏
+- 定制电子标签、标识牌
+- 硬件开发学习与实验
+
+## 规格参数
+
+| 规格     | 参数                                                               |
+| -------- | ------------------------------------------------------------------ |
+| SoC      | ESP32-S3-WROOM-1-N16R8 @ Xtensa® 32 位 LX7 双核处理器，主频 240MHz |
+| Flash    | 16MB                                                               |
+| PSRAM    | 8MB Octal                                                          |
+| Wi-Fi    | 2.4 GHz Wi-Fi                                                      |
+| 墨水屏   | 型号：ET047TC1 <br/> 540 x 960@4.7"" <br/> 灰度 : 16 级             |
+| 扩展存储 | microSD                                                            |
+| 供电方式 | 3.7V 电池供电、USB Type‑C（DC 5V）、5V 焊盘供电                    |
+| 电源管理 | M5PM1                                                              |
+| 按键     | 1x 电源按键（ON / OFF / RESET / BOOT） + 2x 用户按键               |
+| 电池     | 电池容量：140mAh<br>接口规格：SH1.0-2P                             |
+| 扩展接口 | 2x FPC 0.5mm-12P                                                   |
+| 外壳材质 | 3D 打印（PLA）                                                     |
+| 工作温度 | 0 ~ 40°C                                                           |
+| 工作功耗 | 4.2V@40.95mA（峰值最高 161mA）                                     |
+| 产品尺寸 | 120.0 x 68.2 x 6.3mm                                               |
+| 产品重量 | 43.1g                                                              |
+| 包装尺寸 | 137.0 x 78.0 x 19.0mm                                              |
+| 毛重     | 66.9g                                                              |
+
+## 操作说明
+
+### 电源按键操作
+
+- 单击：开机 / 复位
+- 双击：关机
+- 长按：进入下载模式
+
+<img src=""https://m5stack-doc.oss-cn-shenzhen.aliyuncs.com/1288/K159-B_PaperDIY_Complete_Kit_pwr.png"" width=""60%"">
+
+### 进入下载模式
+
+如需烧录固件，请将设备通过 USB Type-C 数据线连接至电脑，长按电源按键（大约 2 秒），直到红色 LED 闪烁后松开按键，表示设备已进入下载模式，等待烧录。
+
+### 组装说明
+
+?>螺丝规格说明|PaperDIY Complete Kit 的 3D 打印外壳背部预留 **M2** 规格螺丝固定孔位，用于安装固定。请使用螺纹长度**小于 3mm** 的螺丝。若螺丝过长，会顶触屏幕，造成屏幕损坏。
+
+<img src=""https://m5stack-doc.oss-cn-shenzhen.aliyuncs.com/1288/K159-B_M2_note.png"" width=""40%"">
+
+## 原理图
+
+- [PaperDIY 原理图 PDF](https://m5stack-doc.oss-cn-shenzhen.aliyuncs.com/1288/K159-B_PaperDIY_sche.pdf)
+
+## 管脚映射
+
+### E-Paper
+
+| ESP32-S3 | G6      | G14     | G7      | G12     | G9      | G11     | G8      | G10     |
+| -------- | ------- | ------- | ------- | ------- | ------- | ------- | ------- | ------- |
+| ET047TC1 | EPD_DB0 | EPD_DB1 | EPD_DB2 | EPD_DB3 | EPD_DB4 | EPD_DB5 | EPD_DB6 | EPD_DB7 |
+
+| ESP32-S3 | G16     | G15     | G13      | G18     | G17     | G46    |
+| -------- | ------- | ------- | -------- | ------- | ------- | ------ |
+| ET047TC1 | EPD_XCL | EPD_XLE | EPD_XSTL | EPD_CKV | EPD_SPV | BST_EN |
+
+通过 `M5PM1` 电源管理芯片的 `PYG2 (EPD_PWR)` 控制电子墨水屏及其驱动电路供电，`G46 (BST_EN)` 控制墨水屏升压电路使能。
+
+### microSD
+
+| ESP32-S3 | G40       | G47     | G39      | G38       | G48      |
+| -------- | --------- | ------- | -------- | --------- | -------- |
+| microSD  | CARD_MISO | CARD_CS | CARD_SCK | CARD_MOSI | CARD_DET |
+
+### Button
+
+| ESP32-S3 | G4              | G3              |
+| -------- | --------------- | --------------- |
+| KEY      | KEY1（ButtonA） | KEY2（ButtonB） |
+
+电源按键连接至 `M5PM1` 电源管理芯片的 `PY_BTN (BTN_PU)` 引脚。
+
+### M5PM1
+
+| ESP32-S3 | G42     | G41     |
+| -------- | ------- | ------- |
+| M5PM1    | SYS_SCL | SYS_SDA |
+
+| M5PM1   | DCDC3V3_EN_PP | CHG_EN_PP | BAT_ADC_EN_PP |
+| ------- | ------------- | --------- | ------------- |
+| 3V3_L2  | PY_MPWR_EN    |           |               |
+| Charge  |               | CHG_EN    |               |
+| Battery |               |           | BAT_ADC_EN    |
+
+| M5PM1              | 5VIN_ADC_IN | BAT_ADC_IN |
+| ------------------ | ----------- | ---------- |
+| Voltage Monitoring | USB_ADC     | BAT_ADC    |
+
+| M5PM1     | PYG0  | PYG1  | PYG2    | PYG3     | PYG4  |
+| --------- | ----- | ----- | ------- | -------- | ----- |
+| FPC - I2S | PY_G0 |       |         |          |       |
+| FPC - SPI |       | PY_G1 |         |          | PY_G4 |
+| E-Paper   |       |       | EPD_PWR |          |       |
+| Charge    |       |       |         | CHG_STAT |       |
+
+- PYG0(PY_G0): FPC - I2S 接口扩展信号
+- PYG1(PY_G1): FPC - SPI 接口开关信号
+- PYG2(EPD_PWR): 电子墨水屏及其驱动电路电源使能
+- PYG3(CHG_STAT): 充电状态
+- PYG4(PY_G4): FPC - SPI 接口复位信号
+
+### FPC - I2S
+
+| FPC 0.5mm-12P | PaperDIY      |
+| ------------- | ------------- |
+| Pin1          | G5 (SCLK)     |
+| Pin2          | GND           |
+| Pin3          | PY_G0         |
+| Pin4          | G41 (SYS_SDA) |
+| Pin5          | G42 (SYS_SCL) |
+| Pin6          | GND           |
+| Pin7          | G2 (LRCK)     |
+| Pin8          | G1 (DSDIN)    |
+| Pin9          | G0 (DOUT)     |
+| Pin10         | G45 (MCLK)    |
+| Pin11         | 3V3_AU        |
+| Pin12         | 3V3_AU        |
+
+### FPC - SPI
+
+| FPC 0.5mm-12P | PaperDIY    |
+| ------------- | ----------- |
+| Pin1          | G39 (SCK)   |
+| Pin2          | GND         |
+| Pin3          | G21 (CS)    |
+| Pin4          | G38 (MOSI)  |
+| Pin5          | G40 (MISO)  |
+| Pin6          | GND         |
+| Pin7          | PY_G4 (RST) |
+| Pin8          | G43 (BUSY)  |
+| Pin9          | G44 (IRQ)   |
+| Pin10         | PY_G1 (SW)  |
+| Pin11         | 3V3_L2      |
+| Pin12         | 3V3_L2      |
+
+## 尺寸图
+
+- [PaperDIY Complete Kit 模型尺寸PDF](https://m5stack-doc.oss-cn-shenzhen.aliyuncs.com/1288/K159-B_PaperDlY_Complete_Kit_model_size.pdf)
+
+<img src=""https://m5stack-doc.oss-cn-shenzhen.aliyuncs.com/1288/K159-B_PaperDlY_Complete_Kit_model_size_page_01.png"" width=""100%"">
+
+## 结构文件
+
+- [PaperDIY 结构文件](https://github.com/m5stack/M5_Hardware/tree/master/Products/K159-B_PaperDIY_Complete_Kit/Structures)
+
+## 数据手册
+
+- [ESP32-S3-WROOM-1-N16R8](https://m5stack.oss-cn-shenzhen.aliyuncs.com/resource/docs/products/unit/Unit-CamS3/ESP32-S3-WROOM-1-N16R8.pdf)
+
+## 软件开发
+
+### Arduino
+
+- [PaperDIY Arduino 快速上手](/zh_CN/arduino/paperdiy/program)
+- [PaperDIY M5PM1 电源管理](/zh_CN/arduino/paperdiy/m5pm1)
+- [M5PM1 Arduino Library](https://github.com/m5stack/M5PM1)
+- [PaperDIY Arduino M5Unified 驱动库](https://github.com/m5stack/M5Unified)
+- [PaperDIY Arduino M5GFX 驱动库](https://github.com/m5stack/M5GFX)
+
+### UiFlow2
+
+- [PaperDIY UiFlow2 快速上手](/zh_CN/uiflow2/paperdiy/program)
+
+### ESP-IDF
+
+- [PaperDIY 出厂固件源码](https://github.com/m5stack/M5PaperDIY-UserDemo)
+
+### 其他
+
+- [PaperDIY 出厂固件 WebBurner](https://burner.m5stack.com/share/firmware/UVVZ26)
+
+## 相关视频
+
+<VideoGallery>
+  <VideoItem title=""PaperDIY 产品介绍以及功能展示"" url=""https://m5stack-doc.oss-cn-shenzhen.aliyuncs.com/1288/K159_K159-B_PaperDIY_video_CN.mp4"" />
+</VideoGallery>
+
+## 产品对比
+
+::compare-table
+| 产品对比项  | [PaperDIY Complete Kit](/zh_CN/core/PaperDIY_Complete_Kit)<br/>![PaperDIY Complete Kit](https://m5stack-doc.oss-cn-shenzhen.aliyuncs.com/1288/K159-B_PaperDIY_Complete_Kit_main_pictures_02.webp) | [PaperDIY Assembly Kit](/zh_CN/core/PaperDIY_Assembly_Kit)<br/>![PaperDIY Assembly Kit](https://m5stack-doc.oss-cn-shenzhen.aliyuncs.com/1287/K159-PaperDIY-Assembly-Kit_main_pictures_02.webp) |
+| ----------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| 装配形式    | 出厂已完成硬件装配，预装 3D 打印外壳                                                                                                                                                              | 用户自行装配，开放式结构                                                                                                                                                                        |
+| 3D 打印外壳 | 标配 PLA 3D 打印外壳，外壳模型开源，支持重新打印与自定义修改                                                                                                                                      | ❌️（开放式结构，支持用户自主设计外围结构）                                                                                                                                                      |
+| 包装内容    | 墨水屏 + 主控板 + 140mAh 锂电池 + 亚克力屏幕压板（**预装 3D 打印外壳**）                                                                                                                          | 墨水屏 + 主控板 + 140mAh 锂电池+ 亚克力屏幕压板                                                                                                                                                 |
+| 主控 / 内存 | ESP32-S3R8，16MB Flash + 8MB PSRAM                                                                                                                                                                | ESP32-S3R8，16MB Flash + 8MB PSRAM                                                                                                                                                              |
+| 墨水屏      | 4.7"" ET047TC1，540 x 960，16 级灰度                                                                                                                                                               | 4.7"" ET047TC1，540 x 960，16 级灰度                                                                                                                                                             |
+| 电池        | 140mAh                                                                                                                                                                                            | 140mAh                                                                                                                                                                                          |
+::"
 PaperMono-Lite,"https://m5stack-doc.oss-cn-shenzhen.aliyuncs.com/1268/PaperMono-Lite_PRJ_V0.6.2_20260522_page_02.png,https://m5stack-doc.oss-cn-shenzhen.aliyuncs.com/1268/PaperMono-Lite_PRJ_V0.6.2_20260522_page_03.png,https://m5stack-doc.oss-cn-shenzhen.aliyuncs.com/1268/PaperMono-Lite_PRJ_V0.6.2_20260522_page_04.png,https://m5stack-doc.oss-cn-shenzhen.aliyuncs.com/1268/PaperMono-Lite_PRJ_V0.6.2_20260522_page_05.png","# PaperMono-Lite
 
 <span class=""product-sku"">SKU:C153-Lite</span>
@@ -34120,6 +34781,295 @@ learn>| ![Arduino IDE](https://m5stack.oss-cn-shenzhen.aliyuncs.com/resource/doc
 ## 产品对比
 
 如需对比控制器系列产品信息，可访问[产品选型表](/zh_CN/products_selector/m5core_compare?select=K034)，勾选目标产品即可获取对比结果。选型表涵盖核心参数、功能特性等关键信息，支持多产品同步比对。"
+ToughC5,"https://m5stack-doc.oss-cn-shenzhen.aliyuncs.com/1275/K162_ToughC5_sche_page_01.png,https://m5stack-doc.oss-cn-shenzhen.aliyuncs.com/1275/K162_ToughC5_sche_page_02.png,https://m5stack-doc.oss-cn-shenzhen.aliyuncs.com/1275/K162_ToughC5_sche_page_03.png,https://m5stack-doc.oss-cn-shenzhen.aliyuncs.com/1275/K162_ToughC5_sche_page_04.png","# ToughC5
+
+<span class=""product-sku"">SKU:K162</span>
+
+## 描述
+
+**ToughC5** 是一款户外防水型物联网控制器。基于 ESP32-C5HR8 核心主控，搭载 **RISC-V** 32 位单核处理器，主频 240MHz，配备 16MB Flash 与 8MB PSRAM。支持 2.4 & 5 GHz 双频 Wi-Fi 6、BLE 5 以及 IEEE 802.15.4（Zigbee、Thread）多协议连接，可满足不同网络场景下的接入需求。
+集成 2.0"" 彩色 LCD 显示屏（分辨率 320 × 240），配备高灵敏电容触控面板；板载蜂鸣器、microSD 卡槽和 RX8130CE 实时时钟。外壳采用 PC + ABS（加 UV 粉）材质，具备抗紫外线老化能力。设备内部提供 I2C、GPIO、UART、RS485 扩展接口，以及电池接口，可通过机身两侧的 M12 接口对外引出，实现更多扩展功能。系统采用 M5PM1 + M5IOE1 实现多级电源管理，支持低功耗唤醒。设备支持常规防水防尘（非浸泡式防护），适用于户外边缘数据采集、智能楼宇、工业网关等多种应用场景。
+
+## 教程 & 快速上手
+
+learn>| ![UiFlow2](https://m5stack.oss-cn-shenzhen.aliyuncs.com/resource/docs/static/assets/img/uiflow2/uiflow2.0_banner_01.png) | [UiFlow2](/zh_CN/uiflow2/toughc5/program) | 本教程将向你介绍，如何通过 UiFlow2 图形化编程平台控制 ToughC5 设备。
+
+learn>| ![Arduino IDE](https://m5stack.oss-cn-shenzhen.aliyuncs.com/resource/docs/static/assets/img/arduino/arduino_banner_01.png) | [Arduino IDE](/zh_CN/arduino/toughc5/program) | 本教程将向你介绍，如何通过 Arduino IDE 编程控制 ToughC5 设备。
+
+## 产品特性
+
+- ESP32-C5HR8 核心主控
+  - 16MB Flash
+  - 8MB PSRAM
+  - 2.4 & 5 GHz 双频 Wi-Fi 6
+  - 支持 BLE 5 / IEEE 802.15.4（Zigbee、Thread）
+- 人机交互
+  - 2.0"" LCD 电容触控屏幕，分辨率 320 x 240
+  - 板载无源蜂鸣器
+- 时钟与电源
+  - 板载 RX8130CE RTC 时钟
+  - RTC 时钟电池（CR2032 纽扣电池 DC 3V@220mAh）
+  - M5PM1 + M5IOE1 多级电源管理
+  - DC 3.7V 电池接口
+- 接口与扩展
+  - USB Type-C 调试 / 程序下载
+  - 内部接口扩展板: HY2.0-4P x 4 (RS485/I2C/GPIO/UART)
+  - 2x M12 机身走线孔位
+  - microSD 卡槽
+- 便捷接线，磁吸安装
+- PC + ABS（加 UV 粉）外壳材质，抗紫外线老化
+
+## 包装内容
+
+- 1 x ToughC5
+- 1 x USB Type-C 连接线 (1m)
+- 1 x 内六角扳手 L 形 2.5mm (适配 M3 螺丝)
+- 1 x 内六角扳手 L 形 1.5mm (适配 M2 螺丝)
+- 1 x 1.25-2P 单头端子线
+- 1 x 1.25-4P 单头端子线
+- 1 x 防水 O 型圈
+
+## 应用场景
+
+- 户外边缘数据采集
+- 室外工业现场控制
+- 露天环境网关监测
+- 野外低功耗传感终端
+
+## 规格参数
+
+| 规格             | 参数                                                                                        |
+| ---------------- | ------------------------------------------------------------------------------------------- |
+| SoC              | ESP32-C5HR8 @ RISC-V® 32 位单核处理器，主频 240MHz                                          |
+| Flash            | 16MB                                                                                        |
+| PSRAM            | 8MB Quad                                                                                    |
+| 无线通信         | 2.4 & 5 GHz 双频 Wi-Fi 6 / BLE 5 / IEEE 802.15.4（Zigbee、Thread）                          |
+| 输入电压         | USB (DC 5V@500mA) / RS485 接口输入电源 (DC 6 ~ 24V@1A) / 电池 (DC 3.7V)                     |
+| 接口             | USB Type-C x 1, HY2.0-4P x 4 (RS485/I2C/GPIO/UART)                                          |
+| RS485 信号转换   | RS485 @ SP485EEN-L/TR                                                                       |
+| LCD 屏幕         | 2.0"" @ 320 x 240 ILI9342C IPS 面板，最大亮度 853nit                                         |
+| 触控面板驱动芯片 | CHSC6540                                                                                    |
+| RTC              | RTC 芯片：RX8130CE<br>RTC 电池规格: DC 3V@220mAh，尺寸 20 x 3.2mm<br>电池座子规格：SH1.0-2P |
+| 电池接口规格     | MX1.25-2P                                                                                   |
+| 蜂鸣器           | 板载无源蜂鸣器 @8530                                                                        |
+| FPC 天线         | 2.4 GHz & 5 GHz，IPEX‑2 代，14.3x5.3mm，线长 50mm                                           |
+| 电源管理         | M5PM1 + M5IOE1                                                                              |
+| 功耗             | 关机状态：DC 4.2V@10.41uA<br>满载状态：DC 4.2V@320mA                                        |
+| 外壳材质         | PC + ABS（加 UV 粉）                                                                        |
+| 产品尺寸         | 75.9 x 58.0 x 42.5mm                                                                        |
+| 产品重量         | 119.0g                                                                                      |
+| 包装尺寸         | 101.0 x 83.0 x 46.0mm                                                                       |
+| 毛重             | 161.4g                                                                                      |
+
+## 操作说明
+
+### 按键操作
+
+#> 进入下载模式 | 常规情况下，设备可经由引出 USB 线直接烧录程序。开发调试过程中，如遇程序烧录异常，可拆卸外壳，**长按电源键**强制进入下载模式。
+
+- 单击：开机 / 复位
+- 双击：关机
+- 长按：进入下载模式
+
+<img src=""https://m5stack-doc.oss-cn-shenzhen.aliyuncs.com/1275/K162_ToughC5_operate_note.png"" width=""60%""/>
+
+## 原理图
+
+- [ToughC5 原理图 PDF](https://m5stack-doc.oss-cn-shenzhen.aliyuncs.com/1275/K162_ToughC5_sche.pdf)
+
+## 管脚映射
+
+### LCD
+
+| ESP32-C5HR8 | G25 | G26 | G7   | G8   | G9  |
+| ----------- | --- | --- | ---- | ---- | --- |
+| ILI9342C    | CS  | DC  | MOSI | MISO | SCK |
+
+通过 `M5IOE1` 扩展芯片的 `PYG5 (PYB_LCD_EN)` 控制屏幕使能，`PYG4 (PYB_LCD_RST)` 控制屏幕复位。
+
+### microSD
+
+| ESP32-C5HR8 | G7   | G8   | G9  | G10 |
+| ----------- | ---- | ---- | --- | --- |
+| microSD     | MOSI | MISO | SCK | CS  |
+
+通过 `M5IOE1` 扩展芯片的 `PYG6 (PYB_TF_EN)` 控制 microSD 卡槽使能，`PYG14 (PYB_TF_DET)` 检测 microSD 卡插入状态。
+
+| PYG14_PYB_TF_DET | Status       |
+| ---------------- | ------------ |
+| LOW              | Inserted     |
+| HIGH             | Not Inserted |
+
+### Touch
+
+| ESP32-C5HR8 | G2  | G3  |
+| ----------- | --- | --- |
+| CHSC6540    | SDA | SCL |
+
+通过 `M5PM1` 电源管理芯片的 `PMG0 (PM_TP_INT)` 捕获触摸屏中断信号输入，`PYG2 (PM_TP_RST)` 控制触摸驱动芯片复位。
+
+### I2C Devices（TP & M5IOE1 & M5PM1）
+
+| ESP32-C5HR8     | G2  | G3  |
+| --------------- | --- | --- |
+| CHSC6540 (0x2E) | SDA | SCL |
+| M5IOE1 (0x4F)   | SDA | SCL |
+| M5PM1 （0x6E）  | SDA | SCL |
+
+### RS485
+
+| ESP32-C5HR8   | G23      | G24      |
+| ------------- | -------- | -------- |
+| SP485EEN-L/TR | RS485_RX | RS485_TX |
+
+### HY2.0-4P
+
+::grove-table
+
+| HY2.0-4P   | Black | Red              | Yellow | White |
+| ---------- | ----- | ---------------- | ------ | ----- |
+| PORT.A     | GND   | 5V               | G2     | G3    |
+| PORT.B     | GND   | 5V               | G6     | G1    |
+| PORT.C     | GND   | 5V               | G12    | G11   |
+| PORT.RS485 | GND   | DC 6 ~ 24V INPUT | A      | B     |
+::
+
+### M5-Bus
+
+::m5-bus-table
+| FUNC       | PIN       | LEFT | RIGHT | PIN       | FUNC       |
+| ---------- | --------- | ---- | ----- | --------- | ---------- |
+|            | GND       | 1    | 2     | G0        | ADC        |
+|            | GND       | 3    | 4     | G1        | ADC        |
+|            | GND       | 5    | 6     | RST       | EN         |
+| MOSI       | G7        | 7    | 8     | G4        | DAC        |
+| MISO       | G8        | 9    | 10    | G6        | DAC        |
+| SCK        | G9        | 11   | 12    | 3V3       |            |
+| RXD0       | G12_PC_RX | 13   | 14    | G11_PC_TX | TXD0       |
+| RXD2       | G12_PC_RX | 15   | 16    | G11_PC_TX | TXD2       |
+| Int SDA    | G2        | 17   | 18    | G3        | Int SCL    |
+| PORT.A SDA | G2        | 19   | 20    | G3        | PORT.A SCL |
+| GPIO       | G23       | 21   | 22    | G24       | GPIO       |
+| GPIO       | G27       | 23   | 24    | G28       | GPIO       |
+|            | NC        | 25   | 26    | G5        | GPIO       |
+|            | NC        | 27   | 28    | 5V        |            |
+|            | NC        | 29   | 30    | BAT       |            |
+::
+
+### M5PM1
+
+| M5PM1       | PYG0      | PYG1         | PYG2      | PYG3       | PYG4         |
+| ----------- | --------- | ------------ | --------- | ---------- | ------------ |
+| TOUCH       | PM_TP_INT |              | PM_TP_RST |            |              |
+| ESP32-C5HR8 |           | PM_G1_IRQout |           |            |              |
+| RTC         |           |              |           | PM_RTC_INT |              |
+| BUZZER      |           |              |           |            | PM_BUZZER_EN |
+
+- PYG0(PM_TP_INT): 触摸屏中断唤醒信号
+- PYG1(PM_G1_IRQout): 连接至 ESP32-C5 的中断输出信号
+- PYG2(PM_TP_RST): 触摸屏复位
+- PYG3(PM_RTC_INT): RTC 中断唤醒信号
+- PYG4(PM_BUZZER_EN): 蜂鸣器驱动信号
+
+### M5IOE1
+
+| M5IOE1  | PYG1         | PYG3         | PYG4        | PYG5       | PYG6      | PYG10     | PYG14      |
+| ------- | ------------ | ------------ | ----------- | ---------- | --------- | --------- | ---------- |
+| CHARGE  | PYB_CHG_PROG | PYB_CHG_STAT |             |            |           |           |            |
+| LCD     |              |              | PYB_LCD_RST | PYB_LCD_EN |           | PYB_BL_EN |            |
+| microSD |              |              |             |            | PYB_TF_EN |           | PYB_TF_DET |
+
+- PYG1(PYB_CHG_PROG): 充电电流控制
+- PYG3(PYB_CHG_STAT): 充电状态检测
+- PYG4(PYB_LCD_RST): LCD 屏幕复位
+- PYG5(PYB_LCD_EN): LCD 屏幕使能
+- PYG10(PYB_BL_EN): LCD 屏幕背光驱动信号
+- PYG6(PYB_TF_EN): microSD 卡槽使能
+- PYG14(PYB_TF_DET): microSD 卡槽插入状态检测
+
+| PYG1_CHG_PROG | CHARGE CURRENT  |
+| ------------- | --------------- |
+| LOW           | 650mA           |
+| HIGH          | 180mA (Default) |
+
+## 尺寸图
+
+- [ToughC5 模型尺寸PDF](https://m5stack-doc.oss-cn-shenzhen.aliyuncs.com/1275/K162_ToughC5_model_size.pdf)
+
+<img src=""https://m5stack-doc.oss-cn-shenzhen.aliyuncs.com/1275/K162_ToughC5_model_size_page_01.png"" width=""100%"">
+
+## 数据手册
+
+- [ESP32-C5](https://m5stack-doc.oss-cn-shenzhen.aliyuncs.com/644/esp32_datasheet_cn.pdf)
+- [ILI9342C](https://m5stack.oss-cn-shenzhen.aliyuncs.com/resource/docs/datasheet/core/ILI9342C-ILITEK.pdf)
+- [RX8130CE 技术手册](https://m5stack-doc.oss-cn-shenzhen.aliyuncs.com/1132/RX8130CE_cn.pdf)
+- [RX8130CE 寄存器手册](https://m5stack-doc.oss-cn-shenzhen.aliyuncs.com/1132/RX8130CE_cn-Register-Datasheet.pdf)
+
+## 软件开发
+
+### Arduino
+
+- [ToughC5 Arduino 快速上手](/zh_CN/arduino/toughc5/program)
+- [ToughC5 Arduino M5Unified 驱动库](https://github.com/m5stack/M5Unified)
+- [ToughC5 Arduino M5GFX 驱动库](https://github.com/m5stack/M5GFX)
+- [ToughC5 M5PM1 & M5IOE1 电源管理](/zh_CN/arduino/toughc5/m5pm1_m5ioe1)
+- [M5PM1 Arduino 驱动库](https://github.com/m5stack/M5PM1)
+- [M5IOE1 Arduino 驱动库](https://github.com/m5stack/M5IOE1)
+
+### UiFlow2
+
+- [ToughC5 UiFlow2 快速上手](/zh_CN/uiflow2/toughc5/program)
+
+### PlatformIO
+
+```bash
+[env:m5stack-toughc5]
+platform = https://github.com/pioarduino/platform-espressif32.git#55.03.37
+upload_speed = 1500000
+monitor_speed = 115200
+build_type = debug
+framework = arduino
+board = esp32-c5-devkitc-1
+build_flags =
+    -DBOARD_HAS_PSRAM
+    -DCORE_DEBUG_LEVEL=5
+    -DARDUINO_USB_CDC_ON_BOOT=1
+    -DARDUINO_USB_MODE=1
+lib_deps =
+    M5Unified = https://github.com/M5Stack/M5Unified
+    M5GFX = https://github.com/M5Stack/M5GFX
+```
+
+- [ToughC5 出厂固件源码](https://github.com/m5stack/M5Tools/tree/master)
+
+### 其他
+
+- [ToughC5 出厂固件 WebBurner](https://burner.m5stack.com/share/firmware/4LK4YR)
+
+## 相关视频
+
+<VideoGallery>
+  <VideoItem title=""ToughC5 产品介绍以及功能展示"" url=""https://m5stack-doc.oss-cn-shenzhen.aliyuncs.com/1275/K162_ToughC5_video_CN.mp4"" />
+</VideoGallery>
+
+## 产品对比
+
+::compare-table
+| 产品对比项       | [ToughC5](/zh_CN/core/ToughC5) ![ToughC5](https://m5stack-doc.oss-cn-shenzhen.aliyuncs.com/1275/K162_ToughC5_main_pictures_02.webp)      | [Tough](/zh_CN/core/tough) ![Tough](https://static-cdn.m5stack.com/resource/docs/products/core/tough/tough_cover_01.webp) |
+| ---------------- | ---------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------- |
+| SoC              | ESP32-C5HR8 @ RISC-V 32 位单核处理器，主频 240MHz                                                                                        | ESP32-D0WDQ6-V3 @ Xtensa 32 位 LX6 双核处理器，主频 240MHz                                                                |
+| SRAM             | 384 KB HP SRAM + 16 KB LP SRAM                                                                                                           | 520KB                                                                                                                     |
+| Flash            | 16MB                                                                                                                                     | 16MB                                                                                                                      |
+| PSRAM            | 8MB Quad                                                                                                                                 | 8MB Quad                                                                                                                  |
+| 无线通信         | 2.4 & 5 GHz 双频 Wi-Fi 6 / Zigbee / Thread (802.15.4)                                                                                    | 2.4 GHz Wi-Fi                                                                                                             |
+| 天线             | FPC 天线，2.4G & 5G，IPEX-2 代，14.3 x 5.3mm，线长 50mm                                                                                  | 3D Wi-Fi 天线                                                                                                             |
+| LCD 屏幕         | 2.0"" 320 x 240 ILI9342C 全彩显示屏，最大亮度 853nit                                                                                      | 2.0"" 320 x 240 ILI9342C 全彩显示屏，最大亮度 853nit                                                                       |
+| 触控面板驱动芯片 | CHSC6540                                                                                                                                 | CHSC6540                                                                                                                  |
+| 音频             | 板载无源蜂鸣器 @8530                                                                                                                     | NS4168 16bit I2S 功放 + 1W 扬声器                                                                                         |
+| PMU              | M5PM1                                                                                                                                    | AXP192                                                                                                                    |
+| IO 扩展          | M5IOE1 外设控制系统                                                                                                                      | /                                                                                                                         |
+| RTC 时钟芯片     | RX8130CE                                                                                                                                 | BM8563                                                                                                                    |
+::"
 VAMeter,"https://m5stack-doc.oss-cn-shenzhen.aliyuncs.com/518/Sch_VAMeter_V1.2_sch_01.png,https://m5stack-doc.oss-cn-shenzhen.aliyuncs.com/518/Sch_VAMeter_base_V1.0_sch_01.png,https://m5stack.oss-cn-shenzhen.aliyuncs.com/resource/docs/products/core/VA%20Meter/01.png","# VAMeter
 
 <span class=""product-sku"">SKU:K136</span>
@@ -48285,6 +49235,70 @@ Stamp PWR485,https://m5stack-doc.oss-cn-shenzhen.aliyuncs.com/567/Sch_StampPWR48
   - [Arduino485 Lib](https://github.com/m5stack/ArduinoRS485)
 
 ## 相关视频"
+Stamp Timer Power2,https://m5stack-doc.oss-cn-shenzhen.aliyuncs.com/1294/S021_Stamp_Timer_Power2_SCH_V0.7.1_page_01.png,"# Stamp Timer Power2
+
+<span class=""product-sku"">SKU:S021</span>
+
+## 描述
+
+**Stamp Timer Power2** 是一款面向低功耗嵌入式设备的电源管理模组，内置 M5PM1 电源管理芯片，采用多级供电控制架构，可按需管理主控及各类外设的电源使能，有效降低整机待机功耗并延长电池续航时间。
+模组支持 DC 5V 输入 / 输出控制、DC 3.7V 锂电池供电及输入电压检测，并集成两档可调充电电流的锂电池充电电路；采用 1.27mm 邮票孔封装设计，除基本的电源输入，输出控制引脚外，还提供了 5 路可编程 IO，可复用为 GPIO、ADC、PWM、RGB LED 和 IRQ 等功能，同时支持定时唤醒与外部输入中断唤醒，便于构建按需上电、周期运行和事件触发的低功耗系统。
+
+## 产品特性
+
+- 内置 M5PM1 电源管理芯片
+- I2C 通信接口 (0x6E) 
+- 内置锂电池充电芯片，两档可调充电电流 (650mA/180mA)
+- 5x 可编程扩展 IO (GPIO，ADC，PWM，RGB LED，IRQ)
+- 支持 DC 5V / DC 3.7V 电池输入供电
+- 外设 & 控制
+  - 电源按键输入信号接口
+  - 电源指示灯信号接口
+  - Boot 控制接口，用于 MCU 下载模式控制
+- 1.27mm @ 2x14P 邮票孔封装
+
+## 包装内容
+
+- 1 x Stamp Timer Power2
+
+## 应用场景
+
+- 嵌入式设备电源管理
+- 智能家居
+- 低功耗物联网设备
+
+## 规格参数
+
+| 规格         | 参数                                                  |
+| ------------ | ----------------------------------------------------- |
+| 电源管理芯片 | M5PM1                                                 |
+| I2C 通信接口 | 通信地址 0x6E,  支持 100 kHz (default) / 400 kHz      |
+| 功耗         | 关机: DC 4.2V@6.72uA <br> 低功耗休眠: DC 4.2V@12.27uA |
+| 电池充电芯片 | LGS4056HDA                                            |
+| 产品尺寸     |                                                       |
+| 产品重量     |                                                       |
+| 包装尺寸     |                                                       |
+| 毛重         |                                                       |
+
+## 原理图
+
+- [Stamp Timer Power2 原理图 PDF](https://m5stack-doc.oss-cn-shenzhen.aliyuncs.com/1294/S021_Stamp_Timer_Power2_SCH_V0.7.1.pdf)
+
+## 管脚映射
+
+## 尺寸图
+
+## PCB
+
+## 数据手册
+
+todo: markdown 版本的 通信协议 link
+
+## 软件开发
+
+### Arduino
+
+- [M5PM1 Arduino 驱动库](https://github.com/m5stack/M5PM1)"
 Stamp UWB,https://m5stack-doc.oss-cn-shenzhen.aliyuncs.com/1262/SCH_UWB_MODULE_SCH_main_V0.2_20251128_2026_06_01_11_54_35_page_01.png,"# Stamp UWB
 
 <span class=""product-sku"">SKU:S017</span>
@@ -65641,6 +66655,280 @@ Unit Weight-I2C,https://m5stack-doc.oss-cn-shenzhen.aliyuncs.com/632/SCH_UNIT_WE
 | 芯片方案     | STM32+HX711                                                                                                                                                                     | HX711                                                                                                                                            | STM32+HX711                                                                                                                                                                                         | HX711                                                                                                                                                             | STM32+HX711                                                                                                                                                                                     |
 | 传感器量程   | 0~20kg                                                                                                                                                                          | 0~200kg                                                                                                                                          | 0~5kg                                                                                                                                                                                               | 取决应变片与控制芯片                                                                                                                                              | 取决应变片与控制芯片                                                                                                                                                                            |
 ::"
+Unit 8Servos2-Chain,https://m5stack-doc.oss-cn-shenzhen.aliyuncs.com/1280/SCH_Unit_8Servos2-Chain_V0.4_SCH_PDF_20260526_2026_05_26_17_14_00_page_01.png,"# Unit 8Servos2-Chain
+
+<span class=""product-sku"">SKU:U223</span>
+
+## 描述
+
+**Unit 8Servos2-Chain** 是一款 8 通道舵机级联控制单元，内部集成 **STM32G031G8U6** 主控， 采用 UART 通信接口，兼容 Chain 系列 UART 串口级联通信协议。提供 8x 可配置 IO 通道，支持配置多种工作模式：舵机控制、数字输入/输出、ADC 输入、RGB LED 控制和 PWM 模式。
+板载两组 HY2.0-4P 接口，对应 Chain 系列协议的输入与输出接口，可实现多设备链式连接。
+本单元支持 DC 9 ~ 24V 输入，内置 SY8303AIC 降压电路提供 5V 电源，降压电路最大输出总电流为 3A。板载 INA199A1DCKR 电流检测电路，可采集舵机总电流，并设有输入电压及 5V 电源电压采样电路、DC 电源接口状态指示灯和 HY2.0-4P 接口欠压状态指示灯，适用于多舵机控制、机器人关节驱动、智能玩具等应用场景。
+
+## 产品特性
+
+- STM32G031G8U6 核心主控
+- 8x 可配置 IO 通道，支持配置多种工作模式：
+  - 舵机控制
+  - 数字输入/输出
+  - ADC 输入
+  - RGB LED 控制
+  - PWM 模式
+- 通信接口
+  - 采用 Chain 系列 UART 串口级联通信协议
+  - 2x HY2.0-4P 接口支持多设备级联
+- 电源与检测
+  - DC 9 ~ 24V 电源输入，内部集成 5V@3A 降压电路 (外设驱动 + HY2.0-4P 输出主控供电)
+  - 集成舵机总电流检测
+  - DC 输入电压检测
+  - 5V 电源电压检测
+- 状态指示
+  - 红色指示灯：DC 电源接口状态指示灯（ 接口电压高于 8.5V 时点亮）
+  - 绿色指示灯：HY2.0-4P 接口欠压状态指示灯（接口电压低于 4.5V 时点亮）
+
+## 包装内容
+
+- 1 x Unit 8Servos2-Chain
+- 1 x HY2.0-4P Grove 连接线 (20cm)
+
+## 应用场景
+
+- 多舵机控制
+- 机器人关节驱动
+- 智能玩具
+- STEAM 教育
+
+## 规格参数
+
+| 规格            | 参数                                                                      |
+| --------------- | ------------------------------------------------------------------------- |
+| MCU             | STM32G031G8U6                                                             |
+| 可配置 IO 通道  | 8 路，支持工作模式: 舵机控制、数字输入/输出、 ADC 输入、RGB LED、PWM 模式 |
+| IO 通道接口     | 8 x 2.54-3P                                                               |
+| 通信接口        | UART 通信 @ Chain 系列通信协议 （IN / OUT）                               |
+| DC 电源输入接口 | 输入电压：DC 9 ~ 24V，规格：5.5 x 2.1mm，极性：内正外负                   |
+| 降压芯片        | SY8303AIC                                                                 |
+| 电源输出        | DC 5V，最大 3A （板上各路负载共用）                                       |
+| 电流检测电路    | INA199A1DCKR，搭配 10mΩ 采样电阻                                          |
+| 指示灯          | 红色 DC 输入监测指示灯、绿色欠压监测指示灯                                |
+| 待机功耗        | DC 12V@5.71mA                                                             |
+| 工作功耗        | DC 12V@1.6A（8 路舵机负载）                                               |
+| 产品尺寸        | 56.0 x 24.0 x 11.5mm                                                      |
+| 产品重量        | 11.7g                                                                     |
+| 包装尺寸        | 138.0 x 93.0 x 14.0mm                                                     |
+| 毛重            | 17.1g                                                                     |
+
+## 操作说明
+
+#> 级联连接 | 请将上一级设备的 OUT 接口连接至下一级设备的 IN 接口。Chain IN、OUT 与板载降压输出共用 5V 电源网络，多设备供电时应避免将多个独立 5V 电源直接并联。
+
+## 原理图
+
+- [Unit 8Servos2-Chain 原理图 PDF](https://m5stack-doc.oss-cn-shenzhen.aliyuncs.com/1280/SCH_Unit_8Servos2-Chain_V0.4_SCH_PDF_20260526_2026_05_26_17_14_00.pdf)
+
+## 管脚映射
+
+### UART
+
+UART2 的 TX2 通过 R12（0Ω）连接至 PA14，RX2 连接至 PA15。
+
+| STM32G031G8U6 | PB7  | PB6  | PA14 | PA15 |
+| ------------- | ---- | ---- | ---- | ---- |
+| UART1         | RXD1 | TXD1 |      |      |
+| UART2         |      |      | TXD2 | RXD2 |
+
+## 尺寸图
+
+- [Unit 8Servos2-Chain 模型尺寸PDF](https://m5stack-doc.oss-cn-shenzhen.aliyuncs.com/1280/U223_Unit_8Servos2-Chain_model_size.pdf)
+
+<img src=""https://m5stack-doc.oss-cn-shenzhen.aliyuncs.com/1280/U223_Unit_8Servos2-Chain_model_size_page_01.png"" width=""100%"">
+
+## 数据手册
+
+- [INA199A1DCKR 数据手册](https://www.ti.com/lit/ds/symlink/ina199.pdf)
+
+## 软件开发
+
+### Arduino
+
+- [Unit 8Servos2-Chain Arduino 驱动库](https://github.com/m5stack/M5Chain)
+- [Unit 8Servos2-Chain Arduino 使用教程](/zh_CN/arduino/projects/unit/unit_8servos2_chain)
+
+### 内置固件
+
+- [Unit 8Servos2-Chain 内置固件](https://github.com/m5stack/M5Chain-Series-Internal-FW/tree/main/Unit-8Servos-Chain)
+
+### 通信协议
+
+<MarkdownPreview src=""/zh_CN/protocol/U223/UART"" title=""查看通信协议"" />
+
+## 相关视频
+
+<VideoGallery>
+  <VideoItem title=""Unit 8Servos2-I2C 与 Unit 8Servos2-Chain 产品介绍以及功能展示"" url=""https://m5stack-doc.oss-cn-shenzhen.aliyuncs.com/1281/U222_U223_video_CN.mp4"" />
+</VideoGallery>
+
+## 产品对比
+
+::compare-table
+| 产品对比表   | [Unit 8Servos2-I2C](/zh_CN/unit/Unit_8Servos2-I2C) ![Unit 8Servos2-I2C](https://m5stack-doc.oss-cn-shenzhen.aliyuncs.com/1281/U222_Unit_8Servos2-I2C_main_pictures_02.jpg) | [Unit 8Servos2-Chain](/zh_CN/unit/Unit_8Servos2-Chain) ![Unit 8Servos2-Chain](https://m5stack-doc.oss-cn-shenzhen.aliyuncs.com/1280/U223_Unit_8Servos2-Chain_main_pictures_02.jpg) |
+| ------------ | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| 通信接口     | I2C                                                                                                                                                                        | UART (Chain Protocol)                                                                                                                                                              |
+| 节点扩展     | I2C 地址：0x25 ~ 0x34                                                                                                                                                      | Chain 链路级联                                                                                                                                                                     |
+| 通道数量     | 8                                                                                                                                                                          | 8                                                                                                                                                                                  |
+| 工作模式     | 数字输入输出 / 舵机 / ADC / RGB / PWM                                                                                                                                      | 数字输入输出 / 舵机 / ADC / RGB / PWM                                                                                                                                              |
+| 电源输入     | DC 9 ~ 24V                                                                                                                                                                 | DC 9 ~ 24V                                                                                                                                                                         |
+| 舵机供电     | DC 5V                                                                                                                                                                      | DC 5V                                                                                                                                                                              |
+| 电流检测     | INA199                                                                                                                                                                     | INA199                                                                                                                                                                             |
+| 主控芯片     | STM32G031G8U6                                                                                                                                                              | STM32G031G8U6                                                                                                                                                                      |
+::"
+Unit 8Servos2-I2C,https://m5stack-doc.oss-cn-shenzhen.aliyuncs.com/1281/SCH_Unit_8Servos2-I2C_V0.4_SCH_PDF_20260526_2026_05_26_11_47_47_page_01.png,"# Unit 8Servos2-I2C
+
+<span class=""product-sku"">SKU:U222</span>
+
+## 描述
+
+**Unit 8Servos2-I2C** 是一款 8 通道舵机级联控制单元，内置 **STM32G031G8U6** 核心主控，采用 I2C 通信接口，提供 8x 可配置 IO 通道，支持配置多种工作模式：舵机控制、数字输入 / 输出、ADC 输入、RGB LED 控制和 PWM 模式。
+板载两组 HY2.0-4P 接口，硬件上两组接口相连共用同一 I2C 总线，并且配备 16 档旋转编码开关，用于灵活配置设备 I2C 地址，方便扩展连接其他 I2C 设备。本单元支持 DC 9 ~ 24V 输入，内置 SY8303AIC 降压电路提供 5V 电源，降压电路最大输出总电流为 3A。板载 INA199A1DCKR 电流检测电路，可采集舵机总电流，并设有输入电压及 5V 电源电压采样电路、电源状态指示灯，适用于多舵机控制、机器人关节驱动、智能玩具等应用场景。
+
+## 产品特性
+
+- STM32G031G8U6 核心主控
+- 8x 可配置 IO 通道，支持配置多种工作模式：
+  - 舵机控制
+  - 数字输入 / 输出
+  - ADC 输入
+  - RGB LED 控制
+  - PWM 模式
+- 通信接口与地址配置
+  - I2C 通信接口
+  - 2x HY2.0-4P 接口支持多 I2C 设备扩展
+  - 16 档旋转编码开关配置 I2C 地址
+- 电源与检测
+  - DC 9 ~ 24V 电源输入，内部集成 5V@3A 降压电路（外设驱动 + HY2.0-4P 输出主控供电）
+  - 集成舵机总电流监测
+  - DC 输入电压检测
+  - 5V 电源电压检测
+- 状态指示
+  - 红色指示灯：DC 电源接口状态指示灯（接口电压高于 8.5V 时点亮）
+  - 绿色指示灯：HY2.0-4P 接口欠压状态指示灯（接口电压低于 4.5V 时点亮）
+
+## 包装内容
+
+- 1 x Unit 8Servos2-I2C
+- 1 x HY2.0-4P Grove 连接线 (20cm)
+
+## 应用场景
+
+- 多舵机控制
+- 机器人关节驱动
+- 智能玩具
+- STEAM 教育
+
+## 规格参数
+
+| 规格            | 参数                                                                       |
+| --------------- | -------------------------------------------------------------------------- |
+| MCU             | STM32G031G8U6                                                              |
+| 可配置 IO 通道  | 8 路，支持工作模式：舵机控制、数字输入 / 输出、ADC 输入、RGB LED、PWM 模式 |
+| IO 通道接口     | 8 x 2.54-3P                                                                |
+| 通信接口        | I2C 通信 @ 0x25 ~ 0x34                                                     |
+| DC 电源输入接口 | 输入电压：DC 9 ~ 24V，规格：5.5 x 2.1mm，极性：内正外负                    |
+| 降压芯片        | SY8303AIC                                                                  |
+| 电源输出        | DC 5V，最大 3A（板上各路负载共用）                                         |
+| 电流检测电路    | INA199A1DCKR，搭配 10mΩ 采样电阻                                           |
+| 指示灯          | 红色 DC 输入 监测指示灯、绿色欠压监测指示灯                                |
+| 待机功耗        | DC 12V@4.56mA                                                              |
+| 工作功耗        | DC 12V@1.6A（8 路舵机负载）                                                |
+| 产品尺寸        | 56.0 x 24.0 x 11.5mm                                                       |
+| 产品重量        | 11.6g                                                                      |
+| 包装尺寸        | 138.0 x 93.0 x 13.0mm                                                      |
+| 毛重            | 17.2g                                                                      |
+
+## 原理图
+
+- [Unit 8Servos2-I2C 原理图 PDF](https://m5stack-doc.oss-cn-shenzhen.aliyuncs.com/1281/SCH_Unit_8Servos2-I2C_V0.4_SCH_PDF_20260526_2026_05_26_11_47_47.pdf)
+
+## 管脚映射
+
+### HY2.0-4P
+
+::grove-table
+| HY2.0-4P | Black | Red | Yellow | White |
+| -------- | ----- | --- | ------ | ----- |
+| IN & OUT | GND   | 5V  | SDA    | SCL   |
+::
+
+#>输入输出接口说明|Unit 8Servos2-I2C 输入与输出接口，内部相连，可用于级联挂载更多 Unit 8Servos2-I2C 或 I2C 设备。
+
+### I2C 地址对照表
+
+| 旋转编码开关 | I2C 地址 |
+| ------------ | -------- |
+| 0            | 0x25     |
+| 1            | 0x26     |
+| 2            | 0x27     |
+| 3            | 0x28     |
+| 4            | 0x29     |
+| 5            | 0x2A     |
+| 6            | 0x2B     |
+| 7            | 0x2C     |
+| 8            | 0x2D     |
+| 9            | 0x2E     |
+| A            | 0x2F     |
+| B            | 0x30     |
+| C            | 0x31     |
+| D            | 0x32     |
+| E            | 0x33     |
+| F            | 0x34     |
+
+<img src=""https://m5stack-doc.oss-cn-shenzhen.aliyuncs.com/1281/U222_Unit_8Servos2-I2C_Rotary_Encoder.png"" width=""60%"">
+
+## 尺寸图
+
+- [Unit 8Servos2-I2C 模型尺寸PDF](https://m5stack-doc.oss-cn-shenzhen.aliyuncs.com/1281/U222_Unit_8Servos2-I2C_model_size.pdf)
+
+<img src=""https://m5stack-doc.oss-cn-shenzhen.aliyuncs.com/1281/U222_Unit_8Servos2-I2C_model_size_page_01.png"" width=""100%"">
+
+## 数据手册
+
+- [INA199A1DCKR 数据手册](https://www.ti.com/lit/ds/symlink/ina199.pdf)
+
+## 软件开发
+
+### Arduino
+
+- [Unit 8Servos2-I2C Arduino 驱动库](https://github.com/m5stack/M5Unit-8Servos2-I2C)
+- [Unit 8Servos2-I2C Arduino 使用教程](/zh_CN/arduino/projects/unit/unit_8servos2_i2c)
+
+### 内置固件
+
+- [Unit 8Servos2-I2C 内置固件](https://github.com/m5stack/M5Unit-8Servos2-I2C-Internal-FW)
+
+### 通信协议
+
+<MarkdownPreview src=""/zh_CN/protocol/U222/I2C"" title=""查看通信协议"" />
+
+## 相关视频
+
+<VideoGallery>
+  <VideoItem title=""Unit 8Servos2-I2C 与 Unit 8Servos2-Chain 产品介绍以及功能展示"" url=""https://m5stack-doc.oss-cn-shenzhen.aliyuncs.com/1281/U222_U223_video_CN.mp4"" />
+</VideoGallery>
+
+## 产品对比
+
+::compare-table
+| 产品对比表   | [Unit 8Servos2-I2C](/zh_CN/unit/Unit_8Servos2-I2C) ![Unit 8Servos2-I2C](https://m5stack-doc.oss-cn-shenzhen.aliyuncs.com/1281/U222_Unit_8Servos2-I2C_main_pictures_02.jpg) | [Unit 8Servos2-Chain](/zh_CN/unit/Unit_8Servos2-Chain) ![Unit 8Servos2-Chain](https://m5stack-doc.oss-cn-shenzhen.aliyuncs.com/1280/U223_Unit_8Servos2-Chain_main_pictures_02.jpg) |
+| ------------ | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| 通信接口     | I2C                                                                                                                                                                        | UART (Chain Protocol)                                                                                                                                                              |
+| 节点扩展     | I2C 地址：0x25 ~ 0x34                                                                                                                                                      | Chain 链路级联                                                                                                                                                                     |
+| 通道数量     | 8                                                                                                                                                                          | 8                                                                                                                                                                                  |
+| 工作模式     | 数字输入输出 / 舵机 / ADC / RGB / PWM                                                                                                                                      | 数字输入输出 / 舵机 / ADC / RGB / PWM                                                                                                                                              |
+| 电源输入     | DC 9 ~ 24V                                                                                                                                                                 | DC 9 ~ 24V                                                                                                                                                                         |
+| 舵机供电     | DC 5V                                                                                                                                                                      | DC 5V                                                                                                                                                                              |
+| 电流检测     | INA199                                                                                                                                                                     | INA199                                                                                                                                                                             |
+| 主控芯片     | STM32G031G8U6                                                                                                                                                              | STM32G031G8U6                                                                                                                                                                      |
+::"
 Unit AudioPlayer,https://m5stack-doc.oss-cn-shenzhen.aliyuncs.com/1155/Unit_AudioPlayer_U197_page_01.png,"# Unit AudioPlayer
 
 <span class=""product-sku"">SKU:U197</span>
@@ -65730,6 +67018,117 @@ Unit AudioPlayer 是一款自带解码的 MP3 音频播放单元，配有音频�
 ## 相关视频
 
 Unit AudioPlayer 产品介绍以及案例展示"
+Unit BMM350,https://m5stack-doc.oss-cn-shenzhen.aliyuncs.com/1293/U231_Unit_BMM350_sche_page_01.png,"# Unit BMM350
+
+<span class=""product-sku"">SKU:U231</span>
+
+## 描述
+
+**Unit BMM350** 是一款三轴地磁传感器单元，搭载 BMM350 三轴磁力计，支持 100 kHz、400 kHz 通信速率。芯片基于 TMR 隧道磁阻技术，可实现 X/Y/Z 三轴磁场测量，磁场分辨率约 0.1 μT，温度稳定性优异。模块通过 I2C 总线传输数据，能够实时采集三轴地磁场数据，支持校准后航向角检测，适用于机器人导航、航向检测、电子罗盘、运动追踪、磁场感知等应用场景。
+
+## 产品特性
+
+- 搭载 BMM350 三轴 TMR 磁力计
+- 测量轴：X / Y / Z
+- 磁场分辨率：约 0.1 μT
+- 磁场测量范围：典型 ±2000 μT
+- 磁传感技术：TMR 隧道磁阻
+- 通信速率：100 kHz / 400 kHz
+- 支持航向角读取及校准
+
+## 包装内容
+
+- 1 x Unit BMM350
+- 1 x HY2.0-4P Grove 连接线 (5cm)
+
+## 应用场景
+
+- 机器人导航
+- 航向检测
+- 电子罗盘
+- 运动追踪
+- 磁场感知
+
+## 规格参数
+
+| 规格         | 参数                   |
+| ------------ | ---------------------- |
+| IC 型号      | BMM350                 |
+| 传感器类型   | 三轴地磁传感器         |
+| 磁场测量范围 | X/Y/Z 轴典型 ±2000 μT  |
+| 磁场分辨率   | 约 0.1 μT              |
+| 通信接口     | I2C @ 0x14             |
+| I2C 通信速率 | 100 kHz / 400 kHz      |
+| 休眠功耗     | 实测 6.42 μA           |
+| 连续读取功耗 | 实测 167.02 μA         |
+| 航向角测试   | 校准后误差小于 10°     |
+| 工作温度范围 | -40 ~ 85°C（芯片规格） |
+| 产品尺寸     | 24.0 x 24.0 x 8.0mm    |
+| 产品重量     | 3.1g                   |
+| 包装尺寸     | 138.0 x 93.0 x 7.0mm   |
+| 毛重         | 6.6g                   |
+
+## 原理图
+
+- [Unit BMM350 原理图 PDF](https://m5stack-doc.oss-cn-shenzhen.aliyuncs.com/1293/U231_Unit_BMM350_sche.pdf)
+
+## 管脚映射
+
+### Unit BMM350
+
+::grove-table
+| HY2.0-4P | Black | Red | Yellow | White |
+| -------- | ----- | --- | ------ | ----- |
+| PORT.A   | GND   | 5V  | SDA    | SCL   |
+::
+
+## 数据手册
+
+- [BMM350 Datasheet](https://m5stack-doc.oss-cn-shenzhen.aliyuncs.com/1289/bst-bmm350-ds001.pdf)
+
+## 尺寸图
+
+- [BMM350 模型尺寸PDF](https://m5stack-doc.oss-cn-shenzhen.aliyuncs.com/1293/Unit_BMM350__model_size.pdf)
+
+<img src=""https://m5stack-doc.oss-cn-shenzhen.aliyuncs.com/1293/Unit_BMM350__model_size_page_01.png"" width=""100%"">
+
+## 结构文件
+
+- [Unit BMM350 结构文件](https://github.com/m5stack/M5_Hardware/tree/master/Products/U231_Unit_BMM350/Structures)
+
+## 软件开发
+
+### Arduino
+
+- [Unit BMM350 Arduino 快速上手](/zh_CN/arduino/projects/unit/unit_bmm350)
+- [Unit BMM350 Arduino 驱动库](https://github.com/m5stack/M5Unit-IMU)
+- [M5Unified](https://github.com/m5stack/M5Unified)
+- [M5UnitUnified](https://github.com/m5stack/M5UnitUnified)
+
+### UiFlow2
+
+- [Unit BMM350 UiFlow2 文档](https://uiflow-micropython.readthedocs.io/en/latest/unit/bmm350.html)
+
+## 相关视频
+
+<VideoGallery>
+  <VideoItem title=""Unit BMM350 产品介绍以及功能展示"" url=""https://m5stack-doc.oss-cn-shenzhen.aliyuncs.com/1293/U231_Unit_BMM350_video_CN.mp4"" />
+</VideoGallery>
+
+## 产品对比
+
+::compare-table
+| 产品对比     | [Unit DoF6](/zh_CN/unit/Unit_DoF6) ![Unit DoF6](https://m5stack-doc.oss-cn-shenzhen.aliyuncs.com/1289/U228_Unit_DoF6_main_pictures_02.webp) | [Unit DoF9](/zh_CN/unit/Unit_DoF9) ![Unit DoF9](https://m5stack-doc.oss-cn-shenzhen.aliyuncs.com/1292/U229_Unit_DoF9_main_pictures_02.webp) | [Unit DoF10](/zh_CN/unit/Unit_DoF10) ![Unit DoF10](https://m5stack-doc.oss-cn-shenzhen.aliyuncs.com/1291/U230_Unit_DoF10_main_pictures_02.webp) | [Unit BMM350](/zh_CN/unit/Unit_BMM350) ![Unit BMM350](https://m5stack-doc.oss-cn-shenzhen.aliyuncs.com/1293/U231_Unit_BMM350_main_pictures_02.webp) |
+| ------------ | ---------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------- |
+| 传感器组合   | BMI270                                                                                                                 | BMI270 + BMM350                                                                                                        | BMI270 + BMM350 + SPA06-003                                                                                               | BMM350                                                                                                                       |
+| 传感器类型   | 六轴惯性传感器                                                                                                         | 六轴惯性 + 三轴地磁传感器                                                                                              | 六轴惯性 + 三轴地磁 + 气压传感器                                                                                          | 三轴地磁传感器                                                                                                               |
+| 加速度计     | 16 位三轴                                                                                                              | 16 位三轴                                                                                                              | 16 位三轴                                                                                                                 | ❌                                                                                                                            |
+| 陀螺仪       | 16 位三轴                                                                                                              | 16 位三轴                                                                                                              | 16 位三轴                                                                                                                 | ❌                                                                                                                            |
+| 磁力计       | ❌                                                                                                                      | BMM350（TMR，约 0.1 μT）                                                                                               | BMM350（TMR，约 0.1 μT）                                                                                                  | BMM350（TMR，约 0.1 μT）                                                                                                     |
+| 气压传感器   | ❌                                                                                                                      | ❌                                                                                                                      | SPA06-003                                                                                                                 | ❌                                                                                                                            |
+| I2C 地址     | 0x68 / 0x69（板载开关切换）                                                                                            | BMI270：0x68 / 0x69（板载开关切换）<br>BMM350：0x14                                                                    | BMI270：0x68 / 0x69（板载开关切换）<br>BMM350：0x14<br>SPA06-003：0x76                                                    | 0x14                                                                                                                         |
+| 主要功能     | 加速度、角速度、温度采集；片上运动检测                                                                                 | 加速度、角速度、温度、三轴磁场采集；片上运动检测                                                                       | 加速度、角速度、温度、三轴磁场、气压采集；片上运动检测                                                                    | 三轴磁场采集；校准后航向角输出                                                                                               |
+::"
 Unit C6L,"https://m5stack-doc.oss-cn-shenzhen.aliyuncs.com/1185/U202-SCH_Sch_M5_C6_Lora_v0.2.3_2025_06_25_16_54_56_page_01.png,https://m5stack-doc.oss-cn-shenzhen.aliyuncs.com/1185/U202-SCH_Sch_M5_C6_Lora_v0.2.3_2025_06_25_16_54_56_page_02.png,https://m5stack-doc.oss-cn-shenzhen.aliyuncs.com/1185/U202-SCH_Sch_M5_C6_Lora_v0.2.3_2025_06_25_16_54_56_page_03.png,https://m5stack-doc.oss-cn-shenzhen.aliyuncs.com/1185/U202-SCH_Unit_C6L_SCH_B0.4.1_20250826_2025_08_26_16_13_36_page_01.png","# Unit C6L
 
 <span class=""product-sku"">SKU:U202</span>
@@ -66565,6 +67964,380 @@ Unit ChainBus 采用与 Chain 系列其他拓展设备（如 Chain Angle、Chain
 - Unit ChainBus 产品介绍以及功能展示
 
 <!-- 中英文视频链接不一样 -->"
+Unit DoF10,https://m5stack-doc.oss-cn-shenzhen.aliyuncs.com/1291/U230_Unit_DoF10_sche_page_01.png,"# Unit DoF10
+
+<span class=""product-sku"">SKU:U230</span>
+
+## 描述
+
+**Unit DoF10** 是一款集成六轴惯性、三轴地磁与气压传感器的 10 轴姿态检测组合单元。板载低功耗 BMI270 IMU、BMM350 三轴磁力计及 SPA06-003 气压传感器。BMI270 内置 16 位三轴加速度计与 16 位三轴陀螺仪，支持多量程配置与片上运动事件检测；BMM350 基于 TMR 隧道磁阻技术实现三轴磁场采集，磁场分辨率可达约 0.1 μT，温度稳定性优异；SPA06-003 可测量气压、温度与相对高度。
+Unit DoF10 能够实时输出加速度、角速度、温度、三轴磁场及气压数据，适用于机器人姿态解算、航向检测、电子罗盘、运动追踪、气压测高、楼层变化识别、无人机等场景。
+
+## 产品特性
+
+- 集成六轴惯性、三轴地磁与气压传感器
+- I2C 通信接口
+- BMI270，16 位采样，支持运动检测
+- BMM350，TMR 技术，磁场分辨率高
+- SPA06-003，气压温度高度测量
+- 支持姿态航向测高多类应用
+
+## 包装内容
+
+- 1 x Unit DoF10
+- 1 x HY2.0-4P Grove 连接线 (5cm)
+
+## 应用场景
+
+- 机器人姿态感知
+- 航向检测
+- 电子罗盘
+- 运动追踪
+- 气压测高
+- 楼层变化检测
+- 无人机
+
+## 规格参数
+
+| 规格               | 参数                                          |
+| ------------------ | --------------------------------------------- |
+| IC 型号            | BMI270 + BMM350 + SPA06-003                   |
+| 传感器类型         | 六轴惯性、三轴地磁与气压传感器                |
+| 加速度计           | 16 位三轴加速度计                             |
+| 加速度量程         | ±2 g / ±4 g / ±8 g / ±16 g                    |
+| 加速度计精度       | ±20 mg（约 ±0.02 g）                          |
+| 陀螺仪             | 16 位三轴陀螺仪                               |
+| 陀螺仪量程         | ±125 / ±250 / ±500 / ±1000 / ±2000 °/s        |
+| 陀螺仪精度         | ±0.5 °/s                                      |
+| 磁力计             | BMM350 三轴磁力计                             |
+| 磁场测量范围       | X/Y/Z 轴典型 ±2000 μT                         |
+| 磁场分辨率         | 约 0.1 μT                                     |
+| 气压传感器         | SPA06-003                                     |
+| 气压测量范围       | 300 ~ 1100 hPa                                |
+| 气压绝对精度       | 典型值 ±0.3 hPa                               |
+| 气压相对精度       | 典型值 ±0.03 hPa                              |
+| 温度测量范围       | -40 ~ +85 °C                                  |
+| 温度精度           | 典型值 ±1 °C                                  |
+| 通信接口           | I2C 通信                                      |
+| BMI270 通信地址    | I2C @ 0x68 / 0x69（可通过板载开关切换）       |
+| BMM350 通信地址    | I2C @ 0x14                                    |
+| SPA06-003 通信地址 | I2C @ 0x76                                    |
+| 产品尺寸           | 24.0 x 24.0 x 8.0mm                           |
+| 产品重量           | 3.1g                                          |
+| 包装尺寸           | 138.0 x 93.0 x 7.0mm                          |
+| 毛重               | 6.6g                                          |
+
+## 操作说明
+
+### I2C 地址切换
+
+BMI270 I2C 地址可通过板载开关进行切换，拨至 `0` 时地址为 `0x68`；拨至 `1` 时地址为 `0x69`，用于避免 I2C 总线设备地址冲突。
+
+<img src=""https://m5stack-doc.oss-cn-shenzhen.aliyuncs.com/1291/Unit_DoF10_witch_note.png"" width=""70%""/>
+
+## 原理图
+
+- [Unit DoF10 原理图 PDF](https://m5stack-doc.oss-cn-shenzhen.aliyuncs.com/1291/U230_Unit_DoF10_sche.pdf)
+
+## 管脚映射
+
+### Unit DoF10
+
+::grove-table
+| HY2.0-4P | Black | Red | Yellow | White |
+| -------- | ----- | --- | ------ | ----- |
+| PORT.A   | GND   | 5V  | SDA    | SCL   |
+::
+
+## 数据手册
+
+- [BMI270 Datasheet](https://m5stack-doc.oss-cn-shenzhen.aliyuncs.com/1289/bst-bmi270-ds000.pdf)
+- [BMM350 Datasheet](https://m5stack-doc.oss-cn-shenzhen.aliyuncs.com/1289/bst-bmm350-ds001.pdf)
+- [SPA06-003 Datasheet](https://m5stack-doc.oss-cn-shenzhen.aliyuncs.com/1289/spa06-003.pdf)
+
+## 尺寸图
+
+- [Unit DoF10 模型尺寸PDF](https://m5stack-doc.oss-cn-shenzhen.aliyuncs.com/1289/Unit_DoF6DoF9DoF10_model_size.pdf)
+
+<img src=""https://m5stack-doc.oss-cn-shenzhen.aliyuncs.com/1289/Unit_DoF6DoF9DoF10_model_size_page_01.png"" width=""100%"">
+
+## 结构文件
+
+- [Unit DoF10 结构文件](https://github.com/m5stack/M5_Hardware/tree/master/Products/U230_Unit_DoF10/Structures)
+
+## 软件开发
+
+### Arduino
+
+- [Unit DoF10 Arduino 快速上手](/zh_CN/arduino/projects/unit/unit_dof10)
+- [Unit DoF10 Arduino 驱动库](https://github.com/m5stack/M5Unit-IMU)
+- [M5Unified](https://github.com/m5stack/M5Unified)
+- [M5UnitUnified](https://github.com/m5stack/M5UnitUnified)
+
+### UiFlow2
+
+- [Unit DoF10 UiFlow2 文档](https://uiflow-micropython.readthedocs.io/en/latest/unit/dof10.html)
+
+## 相关视频
+
+<VideoGallery>
+  <VideoItem title=""Unit DoF6 / Unit DoF9 / Unit DoF10 产品介绍以及功能展示"" url=""https://m5stack-doc.oss-cn-shenzhen.aliyuncs.com/1289/Unit_DoF_serials_video_CN.mp4"" />
+</VideoGallery>
+
+## 产品对比
+
+::compare-table
+| 产品对比     | [Unit DoF6](/zh_CN/unit/Unit_DoF6) ![Unit DoF6](https://m5stack-doc.oss-cn-shenzhen.aliyuncs.com/1289/U228_Unit_DoF6_main_pictures_02.webp) | [Unit DoF9](/zh_CN/unit/Unit_DoF9) ![Unit DoF9](https://m5stack-doc.oss-cn-shenzhen.aliyuncs.com/1292/U229_Unit_DoF9_main_pictures_02.webp) | [Unit DoF10](/zh_CN/unit/Unit_DoF10) ![Unit DoF10](https://m5stack-doc.oss-cn-shenzhen.aliyuncs.com/1291/U230_Unit_DoF10_main_pictures_02.webp) | [Unit BMM350](/zh_CN/unit/Unit_BMM350) ![Unit BMM350](https://m5stack-doc.oss-cn-shenzhen.aliyuncs.com/1293/U231_Unit_BMM350_main_pictures_02.webp) |
+| ------------ | ---------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------- |
+| 传感器组合   | BMI270                                                                                                                 | BMI270 + BMM350                                                                                                        | BMI270 + BMM350 + SPA06-003                                                                                               | BMM350                                                                                                                       |
+| 传感器类型   | 六轴惯性传感器                                                                                                         | 六轴惯性 + 三轴地磁传感器                                                                                              | 六轴惯性 + 三轴地磁 + 气压传感器                                                                                          | 三轴地磁传感器                                                                                                               |
+| 加速度计     | 16 位三轴                                                                                                              | 16 位三轴                                                                                                              | 16 位三轴                                                                                                                 | ❌                                                                                                                            |
+| 陀螺仪       | 16 位三轴                                                                                                              | 16 位三轴                                                                                                              | 16 位三轴                                                                                                                 | ❌                                                                                                                            |
+| 磁力计       | ❌                                                                                                                      | BMM350（TMR，约 0.1 μT）                                                                                               | BMM350（TMR，约 0.1 μT）                                                                                                  | BMM350（TMR，约 0.1 μT）                                                                                                     |
+| 气压传感器   | ❌                                                                                                                      | ❌                                                                                                                      | SPA06-003                                                                                                                 | ❌                                                                                                                            |
+| I2C 地址     | 0x68 / 0x69（板载开关切换）                                                                                            | BMI270：0x68 / 0x69（板载开关切换）<br>BMM350：0x14                                                                    | BMI270：0x68 / 0x69（板载开关切换）<br>BMM350：0x14<br>SPA06-003：0x76                                                    | 0x14                                                                                                                         |
+| 主要功能     | 加速度、角速度、温度采集；片上运动检测                                                                                 | 加速度、角速度、温度、三轴磁场采集；片上运动检测                                                                       | 加速度、角速度、温度、三轴磁场、气压采集；片上运动检测                                                                    | 三轴磁场采集；校准后航向角输出                                                                                               |
+::"
+Unit DoF6,https://m5stack-doc.oss-cn-shenzhen.aliyuncs.com/1289/U228_Unit_DoF6_sche_page_01.png,"# Unit DoF6
+
+<span class=""product-sku"">SKU:U228</span>
+
+## 描述
+
+**Unit DoF6** 是一款六轴惯性传感器单元，搭载低功耗 BMI270 IMU。BMI270 集成 16 位三轴加速度计与 16 位三轴陀螺仪，支持多量程配置、片上运动检测与快速启动。模块通过 I2C 总线传输数据，可实时采集加速度、角速度、温度数据，适用于机器人姿态感知、运动检测、智能穿戴、云台控制、人机交互等运动状态检测场景。
+
+## 产品特性
+
+- 搭载 BMI270 六轴惯性传感器
+- I2C 接口，支持地址切换
+- 16 位加速度与陀螺仪采样
+- 多量程配置，内置运动检测
+- 支持加速度角速度温度采集
+- 适配姿态感知、运动检测场景
+
+## 包装内容
+
+- 1 x Unit DoF6
+- 1 x HY2.0-4P Grove 连接线 (5cm)
+
+## 应用场景
+
+- 机器人姿态感知
+- 运动检测
+- 智能穿戴
+- 云台控制
+- 人机交互
+
+## 规格参数
+
+| 规格         | 参数                                          |
+| ------------ | --------------------------------------------- |
+| IC 型号      | BMI270                                        |
+| 传感器类型   | 六轴惯性传感器                                |
+| 加速度计     | 16 位三轴加速度计                             |
+| 加速度量程   | ±2 g / ±4 g / ±8 g / ±16 g                    |
+| 加速度计精度 | ±20 mg（约 ±0.02 g）                          |
+| 陀螺仪       | 16 位三轴陀螺仪                               |
+| 陀螺仪量程   | ±125 / ±250 / ±500 / ±1000 / ±2000 °/s        |
+| 陀螺仪精度   | ±0.5 °/s                                      |
+| 通信接口     | I2C @ 0x68 / 0x69（可通过板载开关切换）       |
+| 产品尺寸     | 24.0 x 24.0 x 8.0mm                           |
+| 产品重量     | 3.1g                                          |
+| 包装尺寸     | 138.0 x 93.0 x 7.0mm                          |
+| 毛重         | 6.6g                                          |
+
+## 操作说明
+
+### I2C 地址切换
+
+BMI270 I2C 地址可通过板载开关进行切换，拨至 `0` 时地址为 `0x68`；拨至 `1` 时地址为 `0x69`，用于避免 I2C 总线设备地址冲突。
+
+<img src=""https://m5stack-doc.oss-cn-shenzhen.aliyuncs.com/1289/Unit_DoF6_witch_note.png"" width=""50%""/>
+
+## 原理图
+
+- [Unit DoF6 原理图 PDF](https://m5stack-doc.oss-cn-shenzhen.aliyuncs.com/1289/U228_Unit_DoF6_sche.pdf)
+
+## 管脚映射
+
+### Unit DoF6
+
+::grove-table
+| HY2.0-4P | Black | Red | Yellow | White |
+| -------- | ----- | --- | ------ | ----- |
+| PORT.A   | GND   | 5V  | SDA    | SCL   |
+::
+
+## 数据手册
+
+- [BMI270 Datasheet](https://m5stack-doc.oss-cn-shenzhen.aliyuncs.com/1289/bst-bmi270-ds000.pdf)
+
+## 尺寸图
+
+- [Unit DoF6 模型尺寸PDF](https://m5stack-doc.oss-cn-shenzhen.aliyuncs.com/1289/Unit_DoF6DoF9DoF10_model_size.pdf)
+
+<img src=""https://m5stack-doc.oss-cn-shenzhen.aliyuncs.com/1289/Unit_DoF6DoF9DoF10_model_size_page_01.png"" width=""100%"">
+
+## 结构文件
+
+- [Unit DoF6 结构文件](https://github.com/m5stack/M5_Hardware/tree/master/Products/U228_Unit_DoF6/Structures)
+
+## 软件开发
+
+### Arduino
+
+- [Unit DoF6 Arduino 快速上手](/zh_CN/arduino/projects/unit/unit_dof6)
+- [Unit DoF6 Arduino 驱动库](https://github.com/m5stack/M5Unit-IMU)
+- [M5Unified](https://github.com/m5stack/M5Unified)
+- [M5UnitUnified](https://github.com/m5stack/M5UnitUnified)
+
+### UiFlow2
+
+- [Unit DoF6 UiFlow2 文档](https://uiflow-micropython.readthedocs.io/en/latest/unit/dof6.html)
+
+## 相关视频
+
+<VideoGallery>
+  <VideoItem title=""Unit DoF6 / Unit DoF9 / Unit DoF10 产品介绍以及功能展示"" url=""https://m5stack-doc.oss-cn-shenzhen.aliyuncs.com/1289/Unit_DoF_serials_video_CN.mp4"" />
+</VideoGallery>
+
+## 产品对比
+
+::compare-table
+| 产品对比     | [Unit DoF6](/zh_CN/unit/Unit_DoF6) ![Unit DoF6](https://m5stack-doc.oss-cn-shenzhen.aliyuncs.com/1289/U228_Unit_DoF6_main_pictures_02.webp) | [Unit DoF9](/zh_CN/unit/Unit_DoF9) ![Unit DoF9](https://m5stack-doc.oss-cn-shenzhen.aliyuncs.com/1292/U229_Unit_DoF9_main_pictures_02.webp) | [Unit DoF10](/zh_CN/unit/Unit_DoF10) ![Unit DoF10](https://m5stack-doc.oss-cn-shenzhen.aliyuncs.com/1291/U230_Unit_DoF10_main_pictures_02.webp) | [Unit BMM350](/zh_CN/unit/Unit_BMM350) ![Unit BMM350](https://m5stack-doc.oss-cn-shenzhen.aliyuncs.com/1293/U231_Unit_BMM350_main_pictures_02.webp) |
+| ------------ | ---------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------- |
+| 传感器组合   | BMI270                                                                                                                 | BMI270 + BMM350                                                                                                        | BMI270 + BMM350 + SPA06-003                                                                                               | BMM350                                                                                                                       |
+| 传感器类型   | 六轴惯性传感器                                                                                                         | 六轴惯性 + 三轴地磁传感器                                                                                              | 六轴惯性 + 三轴地磁 + 气压传感器                                                                                          | 三轴地磁传感器                                                                                                               |
+| 加速度计     | 16 位三轴                                                                                                              | 16 位三轴                                                                                                              | 16 位三轴                                                                                                                 | ❌                                                                                                                            |
+| 陀螺仪       | 16 位三轴                                                                                                              | 16 位三轴                                                                                                              | 16 位三轴                                                                                                                 | ❌                                                                                                                            |
+| 磁力计       | ❌                                                                                                                      | BMM350（TMR，约 0.1 μT）                                                                                               | BMM350（TMR，约 0.1 μT）                                                                                                  | BMM350（TMR，约 0.1 μT）                                                                                                     |
+| 气压传感器   | ❌                                                                                                                      | ❌                                                                                                                      | SPA06-003                                                                                                                 | ❌                                                                                                                            |
+| I2C 地址     | 0x68 / 0x69（板载开关切换）                                                                                            | BMI270：0x68 / 0x69（板载开关切换）<br>BMM350：0x14                                                                    | BMI270：0x68 / 0x69（板载开关切换）<br>BMM350：0x14<br>SPA06-003：0x76                                                    | 0x14                                                                                                                         |
+| 主要功能     | 加速度、角速度、温度采集；片上运动检测                                                                                 | 加速度、角速度、温度、三轴磁场采集；片上运动检测                                                                       | 加速度、角速度、温度、三轴磁场、气压采集；片上运动检测                                                                    | 三轴磁场采集；校准后航向角输出                                                                                               |
+::"
+Unit DoF9,https://m5stack-doc.oss-cn-shenzhen.aliyuncs.com/1292/U229_Unit_DoF9_sche_page_01.png,"# Unit DoF9
+
+<span class=""product-sku"">SKU:U229</span>
+
+## 描述
+
+**Unit DoF9** 是一款集成六轴惯性传感器和三轴地磁传感器的 9 轴姿态检测组合单元，搭载低功耗 BMI270 IMU 与 BMM350 三轴磁力计。BMI270 集成 16 位三轴加速度计与 16 位三轴陀螺仪，支持多量程配置与片上运动检测；BMM350 基于 TMR 隧道磁阻技术实现三轴磁场采集，磁场分辨率可达约 0.1 μT，温度稳定性优异。模块通过 I2C 总线传输数据，可实时输出加速度、角速度、温度、三轴磁场数据，适用于机器人姿态感知、航向检测、电子罗盘、运动追踪、导航辅助、云台控制等应用场景。
+
+## 产品特性
+
+- 集成六轴惯性与三轴地磁传感器
+- 16 位加速度计与陀螺仪采样
+- TMR 磁力计，0.1μT 高磁场分辨率
+- 实时采集惯性、温度、磁场数据
+- I2C 接口，支持 BMI270 地址切换
+
+## 包装内容
+
+- 1 x Unit DoF9
+- 1 x HY2.0-4P Grove 连接线 (5cm)
+
+## 应用场景
+
+- 机器人姿态感知
+- 航向检测
+- 电子罗盘
+- 运动追踪
+- 导航辅助
+- 云台控制
+
+## 规格参数
+
+| 规格            | 参数                                          |
+| --------------- | --------------------------------------------- |
+| 惯性传感器 IC   | BMI270                                        |
+| 地磁传感器 IC   | BMM350                                        |
+| 传感器类型      | 六轴惯性与三轴地磁传感器                      |
+| 加速度计        | 16 位三轴加速度计                             |
+| 加速度量程      | ±2 g / ±4 g / ±8 g / ±16 g                    |
+| 加速度计精度    | ±20 mg（约 ±0.02 g）                          |
+| 陀螺仪          | 16 位三轴陀螺仪                               |
+| 陀螺仪量程      | ±125 / ±250 / ±500 / ±1000 / ±2000 °/s        |
+| 陀螺仪精度      | ±0.5 °/s                                      |
+| 磁力计          | BMM350 三轴磁力计                             |
+| 磁场测量范围    | X/Y/Z 轴典型 ±2000 μT                         |
+| 磁场分辨率      | 约 0.1 μT                                     |
+| BMI270 通讯地址 | I2C @ 0x68 / 0x69（可通过板载开关切换）       |
+| BMM350 通讯地址 | I2C @ 0x14                                    |
+| 产品尺寸        | 24.0 x 24.0 x 8.0mm                           |
+| 产品重量        | 3.1g                                          |
+| 包装尺寸        | 138.0 x 93.0 x 7.0mm                          |
+| 毛重            | 6.6g                                          |
+
+## 操作说明
+
+### I2C 地址切换
+
+BMI270 I2C 地址可通过板载开关进行切换，拨至 `0` 时地址为 `0x68`；拨至 `1` 时地址为 `0x69`，用于避免 I2C 总线设备地址冲突。
+
+<img src=""https://m5stack-doc.oss-cn-shenzhen.aliyuncs.com/1292/Unit_DoF9_witch_note.png"" width=""70%""/>
+
+## 原理图
+
+- [Unit DoF9 原理图 PDF](https://m5stack-doc.oss-cn-shenzhen.aliyuncs.com/1292/U229_Unit_DoF9_sche.pdf)
+
+## 管脚映射
+
+### Unit DoF9
+
+::grove-table
+| HY2.0-4P | Black | Red | Yellow | White |
+| -------- | ----- | --- | ------ | ----- |
+| PORT.A   | GND   | 5V  | SDA    | SCL   |
+::
+
+## 数据手册
+
+- [BMI270 Datasheet](https://m5stack-doc.oss-cn-shenzhen.aliyuncs.com/1289/bst-bmi270-ds000.pdf)
+- [BMM350 Datasheet](https://m5stack-doc.oss-cn-shenzhen.aliyuncs.com/1289/bst-bmm350-ds001.pdf)
+
+## 尺寸图
+
+- [Unit DoF9 模型尺寸PDF](https://m5stack-doc.oss-cn-shenzhen.aliyuncs.com/1289/Unit_DoF6DoF9DoF10_model_size.pdf)
+
+<img src=""https://m5stack-doc.oss-cn-shenzhen.aliyuncs.com/1289/Unit_DoF6DoF9DoF10_model_size_page_01.png"" width=""100%"">
+
+## 结构文件
+
+- [Unit DoF9 结构文件](https://github.com/m5stack/M5_Hardware/tree/master/Products/U229_Unit_DoF9/Structures)
+
+## 软件开发
+
+### Arduino
+
+- [Unit DoF9 Arduino 快速上手](/zh_CN/arduino/projects/unit/unit_dof9)
+- [Unit DoF9 Arduino 驱动库](https://github.com/m5stack/M5Unit-IMU)
+- [M5Unified](https://github.com/m5stack/M5Unified)
+- [M5UnitUnified](https://github.com/m5stack/M5UnitUnified)
+
+### UiFlow2
+
+- [Unit DoF9 UiFlow2 文档](https://uiflow-micropython.readthedocs.io/en/latest/unit/dof9.html)
+
+## 相关视频
+
+<VideoGallery>
+  <VideoItem title=""Unit DoF6 / Unit DoF9 / Unit DoF10 产品介绍以及功能展示"" url=""https://m5stack-doc.oss-cn-shenzhen.aliyuncs.com/1289/Unit_DoF_serials_video_CN.mp4"" />
+</VideoGallery>
+
+## 产品对比
+
+::compare-table
+| 产品对比     | [Unit DoF6](/zh_CN/unit/Unit_DoF6) ![Unit DoF6](https://m5stack-doc.oss-cn-shenzhen.aliyuncs.com/1289/U228_Unit_DoF6_main_pictures_02.webp) | [Unit DoF9](/zh_CN/unit/Unit_DoF9) ![Unit DoF9](https://m5stack-doc.oss-cn-shenzhen.aliyuncs.com/1292/U229_Unit_DoF9_main_pictures_02.webp) | [Unit DoF10](/zh_CN/unit/Unit_DoF10) ![Unit DoF10](https://m5stack-doc.oss-cn-shenzhen.aliyuncs.com/1291/U230_Unit_DoF10_main_pictures_02.webp) | [Unit BMM350](/zh_CN/unit/Unit_BMM350) ![Unit BMM350](https://m5stack-doc.oss-cn-shenzhen.aliyuncs.com/1293/U231_Unit_BMM350_main_pictures_02.webp) |
+| ------------ | ---------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------- |
+| 传感器组合   | BMI270                                                                                                                 | BMI270 + BMM350                                                                                                        | BMI270 + BMM350 + SPA06-003                                                                                               | BMM350                                                                                                                       |
+| 传感器类型   | 六轴惯性传感器                                                                                                         | 六轴惯性 + 三轴地磁传感器                                                                                              | 六轴惯性 + 三轴地磁 + 气压传感器                                                                                          | 三轴地磁传感器                                                                                                               |
+| 加速度计     | 16 位三轴                                                                                                              | 16 位三轴                                                                                                              | 16 位三轴                                                                                                                 | ❌                                                                                                                            |
+| 陀螺仪       | 16 位三轴                                                                                                              | 16 位三轴                                                                                                              | 16 位三轴                                                                                                                 | ❌                                                                                                                            |
+| 磁力计       | ❌                                                                                                                      | BMM350（TMR，约 0.1 μT）                                                                                               | BMM350（TMR，约 0.1 μT）                                                                                                  | BMM350（TMR，约 0.1 μT）                                                                                                     |
+| 气压传感器   | ❌                                                                                                                      | ❌                                                                                                                      | SPA06-003                                                                                                                 | ❌                                                                                                                            |
+| I2C 地址     | 0x68 / 0x69（板载开关切换）                                                                                            | BMI270：0x68 / 0x69（板载开关切换）<br>BMM350：0x14                                                                    | BMI270：0x68 / 0x69（板载开关切换）<br>BMM350：0x14<br>SPA06-003：0x76                                                    | 0x14                                                                                                                         |
+| 主要功能     | 加速度、角速度、温度采集；片上运动检测                                                                                 | 加速度、角速度、温度、三轴磁场采集；片上运动检测                                                                       | 加速度、角速度、温度、三轴磁场、气压采集；片上运动检测                                                                    | 三轴磁场采集；校准后航向角输出                                                                                               |
+::"
 Unit ENV-IV,https://m5stack-doc.oss-cn-shenzhen.aliyuncs.com/573/Sch_UNIT_ENVIV_sch_01.png,"# Unit ENV-IV
 
 <span class=""product-sku"">SKU:U001-D</span>

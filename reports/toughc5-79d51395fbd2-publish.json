@@ -1,0 +1,21 @@
+{
+  "dry_run": false,
+  "failed": 0,
+  "published": 1,
+  "results": [
+    {
+      "backup": null,
+      "draft_action": "create",
+      "dry_run": false,
+      "errors": [],
+      "needs_review": 5,
+      "product_id": "toughc5-79d51395fbd2",
+      "product_name": "ToughC5",
+      "publish_action": "create",
+      "sha256": "e0e8963dd8eb7ac85843106ae3d4d8ed5a89ea599caf197b0e72cdcc95056535",
+      "status": "valid",
+      "uncertain_facts": 5
+    }
+  ],
+  "schema_version": 1
+}
