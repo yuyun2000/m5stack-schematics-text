@@ -1,46 +1,3936 @@
 {
-  "dry_run": false,
-  "failed": 0,
-  "published": 3,
+  "dry_run": true,
+  "failed": 539,
+  "published": 12,
   "results": [
+    {
+      "errors": [
+        "[Errno 2] No such file or directory: '/Users/m5agent/Documents/m5stack-schematics-text/artifacts/schematics/16-key-capacitive-touch-ff4446a15faf/asset_manifest.json'"
+      ],
+      "product_id": "16-key-capacitive-touch-ff4446a15faf",
+      "status": "failed"
+    },
+    {
+      "errors": [
+        "[Errno 2] No such file or directory: '/Users/m5agent/Documents/m5stack-schematics-text/artifacts/schematics/485t-ba3491b476d0/asset_manifest.json'"
+      ],
+      "product_id": "485t-ba3491b476d0",
+      "status": "failed"
+    },
+    {
+      "errors": [
+        "[Errno 2] No such file or directory: '/Users/m5agent/Documents/m5stack-schematics-text/artifacts/schematics/addon-display-in-for-poe-p4-09beae90926b/asset_manifest.json'"
+      ],
+      "product_id": "addon-display-in-for-poe-p4-09beae90926b",
+      "status": "failed"
+    },
+    {
+      "errors": [
+        "[Errno 2] No such file or directory: '/Users/m5agent/Documents/m5stack-schematics-text/artifacts/schematics/addon-display-out-for-poe-p4-33184beb8d4b/asset_manifest.json'"
+      ],
+      "product_id": "addon-display-out-for-poe-p4-33184beb8d4b",
+      "status": "failed"
+    },
+    {
+      "errors": [
+        "[Errno 2] No such file or directory: '/Users/m5agent/Documents/m5stack-schematics-text/artifacts/schematics/ai-pyramid-fd54617506a4/asset_manifest.json'"
+      ],
+      "product_id": "ai-pyramid-fd54617506a4",
+      "status": "failed"
+    },
+    {
+      "errors": [
+        "[Errno 2] No such file or directory: '/Users/m5agent/Documents/m5stack-schematics-text/artifacts/schematics/ai-pyramid-pro-0d03bb19c983/asset_manifest.json'"
+      ],
+      "product_id": "ai-pyramid-pro-0d03bb19c983",
+      "status": "failed"
+    },
+    {
+      "errors": [
+        "[Errno 2] No such file or directory: '/Users/m5agent/Documents/m5stack-schematics-text/artifacts/schematics/air-quality-1ff69f191246/asset_manifest.json'"
+      ],
+      "product_id": "air-quality-1ff69f191246",
+      "status": "failed"
+    },
+    {
+      "errors": [
+        "[Errno 2] No such file or directory: '/Users/m5agent/Documents/m5stack-schematics-text/artifacts/schematics/air-quality-v1-1-46cfc56dec39/asset_manifest.json'"
+      ],
+      "product_id": "air-quality-v1-1-46cfc56dec39",
+      "status": "failed"
+    },
+    {
+      "errors": [
+        "[Errno 2] No such file or directory: '/Users/m5agent/Documents/m5stack-schematics-text/artifacts/schematics/arduino-nesso-n1-9bc6c4c0b02d/asset_manifest.json'"
+      ],
+      "product_id": "arduino-nesso-n1-9bc6c4c0b02d",
+      "status": "failed"
+    },
+    {
+      "errors": [
+        "[Errno 2] No such file or directory: '/Users/m5agent/Documents/m5stack-schematics-text/artifacts/schematics/atom-can-8022ccbcf601/asset_manifest.json'"
+      ],
+      "product_id": "atom-can-8022ccbcf601",
+      "status": "failed"
+    },
+    {
+      "errors": [
+        "[Errno 2] No such file or directory: '/Users/m5agent/Documents/m5stack-schematics-text/artifacts/schematics/atom-display-10d88169847b/asset_manifest.json'"
+      ],
+      "product_id": "atom-display-10d88169847b",
+      "status": "failed"
+    },
+    {
+      "errors": [
+        "[Errno 2] No such file or directory: '/Users/m5agent/Documents/m5stack-schematics-text/artifacts/schematics/atom-display-lite-0734246aa8a5/asset_manifest.json'"
+      ],
+      "product_id": "atom-display-lite-0734246aa8a5",
+      "status": "failed"
+    },
+    {
+      "errors": [
+        "[Errno 2] No such file or directory: '/Users/m5agent/Documents/m5stack-schematics-text/artifacts/schematics/atom-dtu-cat1-e0915fd91516/asset_manifest.json'"
+      ],
+      "product_id": "atom-dtu-cat1-e0915fd91516",
+      "status": "failed"
+    },
+    {
+      "errors": [
+        "[Errno 2] No such file or directory: '/Users/m5agent/Documents/m5stack-schematics-text/artifacts/schematics/atom-dtu-lorawan-cn470-98a5914f1c4e/asset_manifest.json'"
+      ],
+      "product_id": "atom-dtu-lorawan-cn470-98a5914f1c4e",
+      "status": "failed"
+    },
+    {
+      "errors": [
+        "[Errno 2] No such file or directory: '/Users/m5agent/Documents/m5stack-schematics-text/artifacts/schematics/atom-dtu-lorawan-eu868-a2ca17869da8/asset_manifest.json'"
+      ],
+      "product_id": "atom-dtu-lorawan-eu868-a2ca17869da8",
+      "status": "failed"
+    },
+    {
+      "errors": [
+        "[Errno 2] No such file or directory: '/Users/m5agent/Documents/m5stack-schematics-text/artifacts/schematics/atom-dtu-lorawan-us915-b4f731cf691f/asset_manifest.json'"
+      ],
+      "product_id": "atom-dtu-lorawan-us915-b4f731cf691f",
+      "status": "failed"
+    },
+    {
+      "errors": [
+        "[Errno 2] No such file or directory: '/Users/m5agent/Documents/m5stack-schematics-text/artifacts/schematics/atom-dtu-lorawan470-8e943f8cb5b9/asset_manifest.json'"
+      ],
+      "product_id": "atom-dtu-lorawan470-8e943f8cb5b9",
+      "status": "failed"
+    },
+    {
+      "errors": [
+        "[Errno 2] No such file or directory: '/Users/m5agent/Documents/m5stack-schematics-text/artifacts/schematics/atom-dtu-lorawan868-e296ebc8f834/asset_manifest.json'"
+      ],
+      "product_id": "atom-dtu-lorawan868-e296ebc8f834",
+      "status": "failed"
+    },
+    {
+      "errors": [
+        "[Errno 2] No such file or directory: '/Users/m5agent/Documents/m5stack-schematics-text/artifacts/schematics/atom-dtu-lorawan915-a9d2804d7e36/asset_manifest.json'"
+      ],
+      "product_id": "atom-dtu-lorawan915-a9d2804d7e36",
+      "status": "failed"
+    },
+    {
+      "errors": [
+        "[Errno 2] No such file or directory: '/Users/m5agent/Documents/m5stack-schematics-text/artifacts/schematics/atom-dtu-nbiot-7c62c876adb9/asset_manifest.json'"
+      ],
+      "product_id": "atom-dtu-nbiot-7c62c876adb9",
+      "status": "failed"
+    },
+    {
+      "errors": [
+        "[Errno 2] No such file or directory: '/Users/m5agent/Documents/m5stack-schematics-text/artifacts/schematics/atom-dtu-nbiot-cn-761b536e6b99/asset_manifest.json'"
+      ],
+      "product_id": "atom-dtu-nbiot-cn-761b536e6b99",
+      "status": "failed"
+    },
+    {
+      "errors": [
+        "[Errno 2] No such file or directory: '/Users/m5agent/Documents/m5stack-schematics-text/artifacts/schematics/atom-dtu-nbiot2-30888e04c136/asset_manifest.json'"
+      ],
+      "product_id": "atom-dtu-nbiot2-30888e04c136",
+      "status": "failed"
+    },
+    {
+      "errors": [
+        "[Errno 2] No such file or directory: '/Users/m5agent/Documents/m5stack-schematics-text/artifacts/schematics/atom-dtu-nbiot2-v1-1-7cc35e7fc6dc/asset_manifest.json'"
+      ],
+      "product_id": "atom-dtu-nbiot2-v1-1-7cc35e7fc6dc",
+      "status": "failed"
+    },
+    {
+      "errors": [
+        "[Errno 2] No such file or directory: '/Users/m5agent/Documents/m5stack-schematics-text/artifacts/schematics/atom-fly-1336978a00b2/asset_manifest.json'"
+      ],
+      "product_id": "atom-fly-1336978a00b2",
+      "status": "failed"
+    },
+    {
+      "errors": [
+        "[Errno 2] No such file or directory: '/Users/m5agent/Documents/m5stack-schematics-text/artifacts/schematics/atom-gps-a32cc93b32a0/asset_manifest.json'"
+      ],
+      "product_id": "atom-gps-a32cc93b32a0",
+      "status": "failed"
+    },
+    {
+      "errors": [
+        "[Errno 2] No such file or directory: '/Users/m5agent/Documents/m5stack-schematics-text/artifacts/schematics/atom-hdriver-e289df887408/asset_manifest.json'"
+      ],
+      "product_id": "atom-hdriver-e289df887408",
+      "status": "failed"
+    },
+    {
+      "errors": [
+        "[Errno 2] No such file or directory: '/Users/m5agent/Documents/m5stack-schematics-text/artifacts/schematics/atom-joystick-edbf9d8d61f7/asset_manifest.json'"
+      ],
+      "product_id": "atom-joystick-edbf9d8d61f7",
+      "status": "failed"
+    },
+    {
+      "errors": [
+        "[Errno 2] No such file or directory: '/Users/m5agent/Documents/m5stack-schematics-text/artifacts/schematics/atom-joystick-v1-1-6226448fea83/asset_manifest.json'"
+      ],
+      "product_id": "atom-joystick-v1-1-6226448fea83",
+      "status": "failed"
+    },
+    {
+      "errors": [
+        "[Errno 2] No such file or directory: '/Users/m5agent/Documents/m5stack-schematics-text/artifacts/schematics/atom-lite-f7be27b3adc3/asset_manifest.json'"
+      ],
+      "product_id": "atom-lite-f7be27b3adc3",
+      "status": "failed"
+    },
+    {
+      "errors": [
+        "[Errno 2] No such file or directory: '/Users/m5agent/Documents/m5stack-schematics-text/artifacts/schematics/atom-matrix-3eb9fc4ccc03/asset_manifest.json'"
+      ],
+      "product_id": "atom-matrix-3eb9fc4ccc03",
+      "status": "failed"
+    },
+    {
+      "errors": [
+        "[Errno 2] No such file or directory: '/Users/m5agent/Documents/m5stack-schematics-text/artifacts/schematics/atom-matrix-v1-1-055d78a9ea4e/asset_manifest.json'"
+      ],
+      "product_id": "atom-matrix-v1-1-055d78a9ea4e",
+      "status": "failed"
+    },
+    {
+      "errors": [
+        "[Errno 2] No such file or directory: '/Users/m5agent/Documents/m5stack-schematics-text/artifacts/schematics/atom-motion-3e67d876f82b/asset_manifest.json'"
+      ],
+      "product_id": "atom-motion-3e67d876f82b",
+      "status": "failed"
+    },
+    {
+      "errors": [
+        "[Errno 2] No such file or directory: '/Users/m5agent/Documents/m5stack-schematics-text/artifacts/schematics/atom-poe-2ad697f37267/asset_manifest.json'"
+      ],
+      "product_id": "atom-poe-2ad697f37267",
+      "status": "failed"
+    },
+    {
+      "errors": [
+        "[Errno 2] No such file or directory: '/Users/m5agent/Documents/m5stack-schematics-text/artifacts/schematics/atom-pwm-604957966ccb/asset_manifest.json'"
+      ],
+      "product_id": "atom-pwm-604957966ccb",
+      "status": "failed"
+    },
+    {
+      "errors": [
+        "[Errno 2] No such file or directory: '/Users/m5agent/Documents/m5stack-schematics-text/artifacts/schematics/atom-rs232-86a93d2cd17b/asset_manifest.json'"
+      ],
+      "product_id": "atom-rs232-86a93d2cd17b",
+      "status": "failed"
+    },
+    {
+      "errors": [
+        "[Errno 2] No such file or directory: '/Users/m5agent/Documents/m5stack-schematics-text/artifacts/schematics/atom-rs485-ab98568a0c94/asset_manifest.json'"
+      ],
+      "product_id": "atom-rs485-ab98568a0c94",
+      "status": "failed"
+    },
+    {
+      "errors": [
+        "[Errno 2] No such file or directory: '/Users/m5agent/Documents/m5stack-schematics-text/artifacts/schematics/atom-socket-296cfa94a291/asset_manifest.json'"
+      ],
+      "product_id": "atom-socket-296cfa94a291",
+      "status": "failed"
+    },
+    {
+      "errors": [
+        "[Errno 2] No such file or directory: '/Users/m5agent/Documents/m5stack-schematics-text/artifacts/schematics/atom-socket-cn-7f11d3b719f7/asset_manifest.json'"
+      ],
+      "product_id": "atom-socket-cn-7f11d3b719f7",
+      "status": "failed"
+    },
+    {
+      "errors": [
+        "[Errno 2] No such file or directory: '/Users/m5agent/Documents/m5stack-schematics-text/artifacts/schematics/atom-spk-9b8445334331/asset_manifest.json'"
+      ],
+      "product_id": "atom-spk-9b8445334331",
+      "status": "failed"
+    },
+    {
+      "errors": [
+        "[Errno 2] No such file or directory: '/Users/m5agent/Documents/m5stack-schematics-text/artifacts/schematics/atom-stepmotor-14a76edca66a/asset_manifest.json'"
+      ],
+      "product_id": "atom-stepmotor-14a76edca66a",
+      "status": "failed"
+    },
+    {
+      "errors": [
+        "[Errno 2] No such file or directory: '/Users/m5agent/Documents/m5stack-schematics-text/artifacts/schematics/atom-switch-1c4ab8c0f218/asset_manifest.json'"
+      ],
+      "product_id": "atom-switch-1c4ab8c0f218",
+      "status": "failed"
+    },
+    {
+      "errors": [
+        "[Errno 2] No such file or directory: '/Users/m5agent/Documents/m5stack-schematics-text/artifacts/schematics/atom-switch-d-7c3e8ae886fb/asset_manifest.json'"
+      ],
+      "product_id": "atom-switch-d-7c3e8ae886fb",
+      "status": "failed"
+    },
+    {
+      "errors": [
+        "[Errno 2] No such file or directory: '/Users/m5agent/Documents/m5stack-schematics-text/artifacts/schematics/atom-tfcard-5266b3dbdf9d/asset_manifest.json'"
+      ],
+      "product_id": "atom-tfcard-5266b3dbdf9d",
+      "status": "failed"
+    },
+    {
+      "errors": [
+        "[Errno 2] No such file or directory: '/Users/m5agent/Documents/m5stack-schematics-text/artifacts/schematics/atom-voice-b618de616492/asset_manifest.json'"
+      ],
+      "product_id": "atom-voice-b618de616492",
+      "status": "failed"
+    },
+    {
+      "errors": [
+        "[Errno 2] No such file or directory: '/Users/m5agent/Documents/m5stack-schematics-text/artifacts/schematics/atom-voices3r-a558a80fe93d/asset_manifest.json'"
+      ],
+      "product_id": "atom-voices3r-a558a80fe93d",
+      "status": "failed"
+    },
+    {
+      "errors": [
+        "[Errno 2] No such file or directory: '/Users/m5agent/Documents/m5stack-schematics-text/artifacts/schematics/atomic-audio-3-5-base-1cc81796eb02/asset_manifest.json'"
+      ],
+      "product_id": "atomic-audio-3-5-base-1cc81796eb02",
+      "status": "failed"
+    },
+    {
+      "errors": [
+        "[Errno 2] No such file or directory: '/Users/m5agent/Documents/m5stack-schematics-text/artifacts/schematics/atomic-battery-base-cdc6e6b48c99/asset_manifest.json'"
+      ],
+      "product_id": "atomic-battery-base-cdc6e6b48c99",
+      "status": "failed"
+    },
+    {
+      "errors": [
+        "[Errno 2] No such file or directory: '/Users/m5agent/Documents/m5stack-schematics-text/artifacts/schematics/atomic-can-base-4d4cc1e22580/asset_manifest.json'"
+      ],
+      "product_id": "atomic-can-base-4d4cc1e22580",
+      "status": "failed"
+    },
+    {
+      "errors": [
+        "[Errno 2] No such file or directory: '/Users/m5agent/Documents/m5stack-schematics-text/artifacts/schematics/atomic-display-base-d9f0339de757/asset_manifest.json'"
+      ],
+      "product_id": "atomic-display-base-d9f0339de757",
+      "status": "failed"
+    },
+    {
+      "errors": [
+        "[Errno 2] No such file or directory: '/Users/m5agent/Documents/m5stack-schematics-text/artifacts/schematics/atomic-gps-base-5a9b55b80f7b/asset_manifest.json'"
+      ],
+      "product_id": "atomic-gps-base-5a9b55b80f7b",
+      "status": "failed"
+    },
+    {
+      "errors": [
+        "[Errno 2] No such file or directory: '/Users/m5agent/Documents/m5stack-schematics-text/artifacts/schematics/atomic-gps-base-v2-0-3fdbfd29ae64/asset_manifest.json'"
+      ],
+      "product_id": "atomic-gps-base-v2-0-3fdbfd29ae64",
+      "status": "failed"
+    },
+    {
+      "errors": [
+        "[Errno 2] No such file or directory: '/Users/m5agent/Documents/m5stack-schematics-text/artifacts/schematics/atomic-hdriver-base-4810b53ccf76/asset_manifest.json'"
+      ],
+      "product_id": "atomic-hdriver-base-4810b53ccf76",
+      "status": "failed"
+    },
+    {
+      "errors": [
+        "[Errno 2] No such file or directory: '/Users/m5agent/Documents/m5stack-schematics-text/artifacts/schematics/atomic-motion-base-910a44802a78/asset_manifest.json'"
+      ],
+      "product_id": "atomic-motion-base-910a44802a78",
+      "status": "failed"
+    },
+    {
+      "errors": [
+        "[Errno 2] No such file or directory: '/Users/m5agent/Documents/m5stack-schematics-text/artifacts/schematics/atomic-motion-base-v1-1-5a63ca566c77/asset_manifest.json'"
+      ],
+      "product_id": "atomic-motion-base-v1-1-5a63ca566c77",
+      "status": "failed"
+    },
+    {
+      "errors": [
+        "[Errno 2] No such file or directory: '/Users/m5agent/Documents/m5stack-schematics-text/artifacts/schematics/atomic-motion-base-v1-2-f5b15b53f382/asset_manifest.json'"
+      ],
+      "product_id": "atomic-motion-base-v1-2-f5b15b53f382",
+      "status": "failed"
+    },
+    {
+      "errors": [
+        "[Errno 2] No such file or directory: '/Users/m5agent/Documents/m5stack-schematics-text/artifacts/schematics/atomic-poe-base-3b5470e5815f/asset_manifest.json'"
+      ],
+      "product_id": "atomic-poe-base-3b5470e5815f",
+      "status": "failed"
+    },
+    {
+      "errors": [
+        "[Errno 2] No such file or directory: '/Users/m5agent/Documents/m5stack-schematics-text/artifacts/schematics/atomic-port-abc-base-f732530bbecb/asset_manifest.json'"
+      ],
+      "product_id": "atomic-port-abc-base-f732530bbecb",
+      "status": "failed"
+    },
+    {
+      "errors": [
+        "[Errno 2] No such file or directory: '/Users/m5agent/Documents/m5stack-schematics-text/artifacts/schematics/atomic-pwm-base-0d888c312525/asset_manifest.json'"
+      ],
+      "product_id": "atomic-pwm-base-0d888c312525",
+      "status": "failed"
+    },
+    {
+      "errors": [
+        "[Errno 2] No such file or directory: '/Users/m5agent/Documents/m5stack-schematics-text/artifacts/schematics/atomic-qrcode2-base-06fd4484ce87/asset_manifest.json'"
+      ],
+      "product_id": "atomic-qrcode2-base-06fd4484ce87",
+      "status": "failed"
+    },
+    {
+      "errors": [
+        "[Errno 2] No such file or directory: '/Users/m5agent/Documents/m5stack-schematics-text/artifacts/schematics/atomic-rs232-base-fe6ddb6b8ad1/asset_manifest.json'"
+      ],
+      "product_id": "atomic-rs232-base-fe6ddb6b8ad1",
+      "status": "failed"
+    },
+    {
+      "errors": [
+        "[Errno 2] No such file or directory: '/Users/m5agent/Documents/m5stack-schematics-text/artifacts/schematics/atomic-rs485-base-ad1ee8db9696/asset_manifest.json'"
+      ],
+      "product_id": "atomic-rs485-base-ad1ee8db9696",
+      "status": "failed"
+    },
+    {
+      "errors": [
+        "[Errno 2] No such file or directory: '/Users/m5agent/Documents/m5stack-schematics-text/artifacts/schematics/atomic-spk-base-f156fbb512e7/asset_manifest.json'"
+      ],
+      "product_id": "atomic-spk-base-f156fbb512e7",
+      "status": "failed"
+    },
+    {
+      "errors": [
+        "[Errno 2] No such file or directory: '/Users/m5agent/Documents/m5stack-schematics-text/artifacts/schematics/atomic-stepmotor-base-0cceb8b75518/asset_manifest.json'"
+      ],
+      "product_id": "atomic-stepmotor-base-0cceb8b75518",
+      "status": "failed"
+    },
+    {
+      "errors": [
+        "[Errno 2] No such file or directory: '/Users/m5agent/Documents/m5stack-schematics-text/artifacts/schematics/atomic-tfcard-base-4b45dc9f4d11/asset_manifest.json'"
+      ],
+      "product_id": "atomic-tfcard-base-4b45dc9f4d11",
+      "status": "failed"
+    },
+    {
+      "errors": [
+        "[Errno 2] No such file or directory: '/Users/m5agent/Documents/m5stack-schematics-text/artifacts/schematics/atomic-tochain-base-30a3334c64cf/asset_manifest.json'"
+      ],
+      "product_id": "atomic-tochain-base-30a3334c64cf",
+      "status": "failed"
+    },
+    {
+      "errors": [
+        "[Errno 2] No such file or directory: '/Users/m5agent/Documents/m5stack-schematics-text/artifacts/schematics/atomic-tounit-base-6dd534d15886/asset_manifest.json'"
+      ],
+      "product_id": "atomic-tounit-base-6dd534d15886",
+      "status": "failed"
+    },
+    {
+      "errors": [
+        "[Errno 2] No such file or directory: '/Users/m5agent/Documents/m5stack-schematics-text/artifacts/schematics/atomic-voice-base-9afc5eb1fbae/asset_manifest.json'"
+      ],
+      "product_id": "atomic-voice-base-9afc5eb1fbae",
+      "status": "failed"
+    },
+    {
+      "errors": [
+        "[Errno 2] No such file or directory: '/Users/m5agent/Documents/m5stack-schematics-text/artifacts/schematics/atoms3-183970e4065c/asset_manifest.json'"
+      ],
+      "product_id": "atoms3-183970e4065c",
+      "status": "failed"
+    },
+    {
+      "errors": [
+        "[Errno 2] No such file or directory: '/Users/m5agent/Documents/m5stack-schematics-text/artifacts/schematics/atoms3-lite-26b960545806/asset_manifest.json'"
+      ],
+      "product_id": "atoms3-lite-26b960545806",
+      "status": "failed"
+    },
+    {
+      "errors": [
+        "[Errno 2] No such file or directory: '/Users/m5agent/Documents/m5stack-schematics-text/artifacts/schematics/atoms3r-494d86750895/asset_manifest.json'"
+      ],
+      "product_id": "atoms3r-494d86750895",
+      "status": "failed"
+    },
+    {
+      "errors": [
+        "[Errno 2] No such file or directory: '/Users/m5agent/Documents/m5stack-schematics-text/artifacts/schematics/atoms3r-ai-chatbot-54b324f77e29/asset_manifest.json'"
+      ],
+      "product_id": "atoms3r-ai-chatbot-54b324f77e29",
+      "status": "failed"
+    },
+    {
+      "errors": [
+        "[Errno 2] No such file or directory: '/Users/m5agent/Documents/m5stack-schematics-text/artifacts/schematics/atoms3r-cam-0e0d2aba4aaf/asset_manifest.json'"
+      ],
+      "product_id": "atoms3r-cam-0e0d2aba4aaf",
+      "status": "failed"
+    },
+    {
+      "errors": [
+        "[Errno 2] No such file or directory: '/Users/m5agent/Documents/m5stack-schematics-text/artifacts/schematics/atoms3r-cam-ai-chatbot-989c49375129/asset_manifest.json'"
+      ],
+      "product_id": "atoms3r-cam-ai-chatbot-989c49375129",
+      "status": "failed"
+    },
+    {
+      "errors": [
+        "[Errno 2] No such file or directory: '/Users/m5agent/Documents/m5stack-schematics-text/artifacts/schematics/atoms3r-ext-d9543400b982/asset_manifest.json'"
+      ],
+      "product_id": "atoms3r-ext-d9543400b982",
+      "status": "failed"
+    },
+    {
+      "errors": [
+        "[Errno 2] No such file or directory: '/Users/m5agent/Documents/m5stack-schematics-text/artifacts/schematics/atoms3r-m12-83a8cec27f25/asset_manifest.json'"
+      ],
+      "product_id": "atoms3r-m12-83a8cec27f25",
+      "status": "failed"
+    },
+    {
+      "errors": [
+        "[Errno 2] No such file or directory: '/Users/m5agent/Documents/m5stack-schematics-text/artifacts/schematics/atoms3r-m12-864fa7e586d0/asset_manifest.json'"
+      ],
+      "product_id": "atoms3r-m12-864fa7e586d0",
+      "status": "failed"
+    },
+    {
+      "errors": [
+        "[Errno 2] No such file or directory: '/Users/m5agent/Documents/m5stack-schematics-text/artifacts/schematics/atoms3u-52428c0e2839/asset_manifest.json'"
+      ],
+      "product_id": "atoms3u-52428c0e2839",
+      "status": "failed"
+    },
+    {
+      "errors": [
+        "[Errno 2] No such file or directory: '/Users/m5agent/Documents/m5stack-schematics-text/artifacts/schematics/atomu-83b61895ae06/asset_manifest.json'"
+      ],
+      "product_id": "atomu-83b61895ae06",
+      "status": "failed"
+    },
+    {
+      "errors": [
+        "[Errno 2] No such file or directory: '/Users/m5agent/Documents/m5stack-schematics-text/artifacts/schematics/bala2-73d3062b8111/asset_manifest.json'"
+      ],
+      "product_id": "bala2-73d3062b8111",
+      "status": "failed"
+    },
+    {
+      "errors": [
+        "[Errno 2] No such file or directory: '/Users/m5agent/Documents/m5stack-schematics-text/artifacts/schematics/bala2-fire-a634eb077ea9/asset_manifest.json'"
+      ],
+      "product_id": "bala2-fire-a634eb077ea9",
+      "status": "failed"
+    },
+    {
+      "errors": [
+        "[Errno 2] No such file or directory: '/Users/m5agent/Documents/m5stack-schematics-text/artifacts/schematics/base-aaa-4a99b42565c7/asset_manifest.json'"
+      ],
+      "product_id": "base-aaa-4a99b42565c7",
+      "status": "failed"
+    },
+    {
+      "errors": [
+        "[Errno 2] No such file or directory: '/Users/m5agent/Documents/m5stack-schematics-text/artifacts/schematics/base-bottom-v1-1-8ff41491e8be/asset_manifest.json'"
+      ],
+      "product_id": "base-bottom-v1-1-8ff41491e8be",
+      "status": "failed"
+    },
+    {
+      "errors": [
+        "[Errno 2] No such file or directory: '/Users/m5agent/Documents/m5stack-schematics-text/artifacts/schematics/base-btc-74e915409827/asset_manifest.json'"
+      ],
+      "product_id": "base-btc-74e915409827",
+      "status": "failed"
+    },
+    {
+      "errors": [
+        "[Errno 2] No such file or directory: '/Users/m5agent/Documents/m5stack-schematics-text/artifacts/schematics/base-din-9b4ada6f179d/asset_manifest.json'"
+      ],
+      "product_id": "base-din-9b4ada6f179d",
+      "status": "failed"
+    },
+    {
+      "errors": [
+        "[Errno 2] No such file or directory: '/Users/m5agent/Documents/m5stack-schematics-text/artifacts/schematics/base-dmx-a3b4cadace3f/asset_manifest.json'"
+      ],
+      "product_id": "base-dmx-a3b4cadace3f",
+      "status": "failed"
+    },
+    {
+      "errors": [
+        "[Errno 2] No such file or directory: '/Users/m5agent/Documents/m5stack-schematics-text/artifacts/schematics/base-dual-16340-262bfa1373e8/asset_manifest.json'"
+      ],
+      "product_id": "base-dual-16340-262bfa1373e8",
+      "status": "failed"
+    },
+    {
+      "errors": [
+        "[Errno 2] No such file or directory: '/Users/m5agent/Documents/m5stack-schematics-text/artifacts/schematics/base-lan-3a6ea180faee/asset_manifest.json'"
+      ],
+      "product_id": "base-lan-3a6ea180faee",
+      "status": "failed"
+    },
+    {
+      "errors": [
+        "[Errno 2] No such file or directory: '/Users/m5agent/Documents/m5stack-schematics-text/artifacts/schematics/base-lan-poe-329c1d37f3fa/asset_manifest.json'"
+      ],
+      "product_id": "base-lan-poe-329c1d37f3fa",
+      "status": "failed"
+    },
+    {
+      "errors": [
+        "[Errno 2] No such file or directory: '/Users/m5agent/Documents/m5stack-schematics-text/artifacts/schematics/base-lan-poe-v1-2-0c51709f4a9c/asset_manifest.json'"
+      ],
+      "product_id": "base-lan-poe-v1-2-0c51709f4a9c",
+      "status": "failed"
+    },
+    {
+      "errors": [
+        "[Errno 2] No such file or directory: '/Users/m5agent/Documents/m5stack-schematics-text/artifacts/schematics/base-lan-v1-2-1fe11278dc70/asset_manifest.json'"
+      ],
+      "product_id": "base-lan-v1-2-1fe11278dc70",
+      "status": "failed"
+    },
+    {
+      "errors": [
+        "[Errno 2] No such file or directory: '/Users/m5agent/Documents/m5stack-schematics-text/artifacts/schematics/base-m5go-bottom-94b45fc18195/asset_manifest.json'"
+      ],
+      "product_id": "base-m5go-bottom-94b45fc18195",
+      "status": "failed"
+    },
+    {
+      "errors": [
+        "[Errno 2] No such file or directory: '/Users/m5agent/Documents/m5stack-schematics-text/artifacts/schematics/base-m5go-bottom2-fc60f6c5b664/asset_manifest.json'"
+      ],
+      "product_id": "base-m5go-bottom2-fc60f6c5b664",
+      "status": "failed"
+    },
+    {
+      "errors": [
+        "[Errno 2] No such file or directory: '/Users/m5agent/Documents/m5stack-schematics-text/artifacts/schematics/base-m5go-bottom2-v1-3-3d649b5f248c/asset_manifest.json'"
+      ],
+      "product_id": "base-m5go-bottom2-v1-3-3d649b5f248c",
+      "status": "failed"
+    },
+    {
+      "errors": [
+        "'Product not found by product_id: base-m5go-bottom2-v1-3-ccd29a0e34c3'"
+      ],
+      "product_id": "base-m5go-bottom2-v1-3-ccd29a0e34c3",
+      "status": "failed"
+    },
+    {
+      "errors": [
+        "[Errno 2] No such file or directory: '/Users/m5agent/Documents/m5stack-schematics-text/artifacts/schematics/base-m5go-bottom3-e6363d570f6f/asset_manifest.json'"
+      ],
+      "product_id": "base-m5go-bottom3-e6363d570f6f",
+      "status": "failed"
+    },
+    {
+      "errors": [
+        "[Errno 2] No such file or directory: '/Users/m5agent/Documents/m5stack-schematics-text/artifacts/schematics/base-node-2f0fc735961b/asset_manifest.json'"
+      ],
+      "product_id": "base-node-2f0fc735961b",
+      "status": "failed"
+    },
+    {
+      "errors": [
+        "[Errno 2] No such file or directory: '/Users/m5agent/Documents/m5stack-schematics-text/artifacts/schematics/base-plc-m12-65acb1fdc778/asset_manifest.json'"
+      ],
+      "product_id": "base-plc-m12-65acb1fdc778",
+      "status": "failed"
+    },
+    {
+      "errors": [
+        "[Errno 2] No such file or directory: '/Users/m5agent/Documents/m5stack-schematics-text/artifacts/schematics/base-plc-m12-v1-1-a0933a0b5bdd/asset_manifest.json'"
+      ],
+      "product_id": "base-plc-m12-v1-1-a0933a0b5bdd",
+      "status": "failed"
+    },
+    {
+      "errors": [
+        "[Errno 2] No such file or directory: '/Users/m5agent/Documents/m5stack-schematics-text/artifacts/schematics/base15-2298d127e4b3/asset_manifest.json'"
+      ],
+      "product_id": "base15-2298d127e4b3",
+      "status": "failed"
+    },
+    {
+      "errors": [
+        "[Errno 2] No such file or directory: '/Users/m5agent/Documents/m5stack-schematics-text/artifacts/schematics/base15-v1-1-f39644ff5994/asset_manifest.json'"
+      ],
+      "product_id": "base15-v1-1-f39644ff5994",
+      "status": "failed"
+    },
+    {
+      "errors": [
+        "[Errno 2] No such file or directory: '/Users/m5agent/Documents/m5stack-schematics-text/artifacts/schematics/base26-5c79b1647571/asset_manifest.json'"
+      ],
+      "product_id": "base26-5c79b1647571",
+      "status": "failed"
+    },
+    {
+      "errors": [
+        "[Errno 2] No such file or directory: '/Users/m5agent/Documents/m5stack-schematics-text/artifacts/schematics/base26-v1-1-8403a8037d8d/asset_manifest.json'"
+      ],
+      "product_id": "base26-v1-1-8403a8037d8d",
+      "status": "failed"
+    },
+    {
+      "errors": [
+        "[Errno 2] No such file or directory: '/Users/m5agent/Documents/m5stack-schematics-text/artifacts/schematics/basic-4611b24b5375/asset_manifest.json'"
+      ],
+      "product_id": "basic-4611b24b5375",
+      "status": "failed"
+    },
+    {
+      "errors": [
+        "[Errno 2] No such file or directory: '/Users/m5agent/Documents/m5stack-schematics-text/artifacts/schematics/basic-v2-6-e80eb73f82d4/asset_manifest.json'"
+      ],
+      "product_id": "basic-v2-6-e80eb73f82d4",
+      "status": "failed"
+    },
+    {
+      "errors": [
+        "[Errno 2] No such file or directory: '/Users/m5agent/Documents/m5stack-schematics-text/artifacts/schematics/basic-v2-7-27c4169867b7/asset_manifest.json'"
+      ],
+      "product_id": "basic-v2-7-27c4169867b7",
+      "status": "failed"
+    },
+    {
+      "errors": [
+        "[Errno 2] No such file or directory: '/Users/m5agent/Documents/m5stack-schematics-text/artifacts/schematics/bugc2-9d763b1973a6/asset_manifest.json'"
+      ],
+      "product_id": "bugc2-9d763b1973a6",
+      "status": "failed"
+    },
+    {
+      "errors": [
+        "[Errno 2] No such file or directory: '/Users/m5agent/Documents/m5stack-schematics-text/artifacts/schematics/cammodule-sc850sl-002eb6b0807b/asset_manifest.json'"
+      ],
+      "product_id": "cammodule-sc850sl-002eb6b0807b",
+      "status": "failed"
+    },
+    {
+      "errors": [
+        "[Errno 2] No such file or directory: '/Users/m5agent/Documents/m5stack-schematics-text/artifacts/schematics/cap-cc1101-bc3594f2539a/asset_manifest.json'"
+      ],
+      "product_id": "cap-cc1101-bc3594f2539a",
+      "status": "failed"
+    },
+    {
+      "errors": [
+        "[Errno 2] No such file or directory: '/Users/m5agent/Documents/m5stack-schematics-text/artifacts/schematics/cap-lora-1262-be2dc05fa52a/asset_manifest.json'"
+      ],
+      "product_id": "cap-lora-1262-be2dc05fa52a",
+      "status": "failed"
+    },
+    {
+      "errors": [
+        "[Errno 2] No such file or directory: '/Users/m5agent/Documents/m5stack-schematics-text/artifacts/schematics/cap-lora868-cadd64e8b186/asset_manifest.json'"
+      ],
+      "product_id": "cap-lora868-cadd64e8b186",
+      "status": "failed"
+    },
+    {
+      "errors": [
+        "[Errno 2] No such file or directory: '/Users/m5agent/Documents/m5stack-schematics-text/artifacts/schematics/capsule-a356fc943d88/asset_manifest.json'"
+      ],
+      "product_id": "capsule-a356fc943d88",
+      "status": "failed"
+    },
+    {
+      "errors": [
+        "[Errno 2] No such file or directory: '/Users/m5agent/Documents/m5stack-schematics-text/artifacts/schematics/capsule-v1-1-45dc2708b826/asset_manifest.json'"
+      ],
+      "product_id": "capsule-v1-1-45dc2708b826",
+      "status": "failed"
+    },
+    {
+      "errors": [
+        "[Errno 2] No such file or directory: '/Users/m5agent/Documents/m5stack-schematics-text/artifacts/schematics/cardputer-adv-b4ebce93d617/asset_manifest.json'"
+      ],
+      "product_id": "cardputer-adv-b4ebce93d617",
+      "status": "failed"
+    },
+    {
+      "errors": [
+        "[Errno 2] No such file or directory: '/Users/m5agent/Documents/m5stack-schematics-text/artifacts/schematics/cardputer-ee2733259184/asset_manifest.json'"
+      ],
+      "product_id": "cardputer-ee2733259184",
+      "status": "failed"
+    },
+    {
+      "errors": [
+        "[Errno 2] No such file or directory: '/Users/m5agent/Documents/m5stack-schematics-text/artifacts/schematics/cardputer-mesh-kit-baeceb0b9c86/asset_manifest.json'"
+      ],
+      "product_id": "cardputer-mesh-kit-baeceb0b9c86",
+      "status": "failed"
+    },
+    {
+      "errors": [
+        "[Errno 2] No such file or directory: '/Users/m5agent/Documents/m5stack-schematics-text/artifacts/schematics/cardputer-v1-1-ac071156e7c9/asset_manifest.json'"
+      ],
+      "product_id": "cardputer-v1-1-ac071156e7c9",
+      "status": "failed"
+    },
+    {
+      "errors": [
+        "[Errno 2] No such file or directory: '/Users/m5agent/Documents/m5stack-schematics-text/artifacts/schematics/cardputerzero-5fe3a896d37a/asset_manifest.json'"
+      ],
+      "product_id": "cardputerzero-5fe3a896d37a",
+      "status": "failed"
+    },
+    {
+      "errors": [
+        "[Errno 2] No such file or directory: '/Users/m5agent/Documents/m5stack-schematics-text/artifacts/schematics/chain-angle-1f6d463f3b0d/asset_manifest.json'"
+      ],
+      "product_id": "chain-angle-1f6d463f3b0d",
+      "status": "failed"
+    },
+    {
+      "errors": [
+        "[Errno 2] No such file or directory: '/Users/m5agent/Documents/m5stack-schematics-text/artifacts/schematics/chain-blank-7c4fc41115c9/asset_manifest.json'"
+      ],
+      "product_id": "chain-blank-7c4fc41115c9",
+      "status": "failed"
+    },
+    {
+      "errors": [
+        "[Errno 2] No such file or directory: '/Users/m5agent/Documents/m5stack-schematics-text/artifacts/schematics/chain-bridge-989d2a56d4ae/asset_manifest.json'"
+      ],
+      "product_id": "chain-bridge-989d2a56d4ae",
+      "status": "failed"
+    },
+    {
+      "errors": [
+        "[Errno 2] No such file or directory: '/Users/m5agent/Documents/m5stack-schematics-text/artifacts/schematics/chain-buzzer-1fc7e7a7a6b2/asset_manifest.json'"
+      ],
+      "product_id": "chain-buzzer-1fc7e7a7a6b2",
+      "status": "failed"
+    },
+    {
+      "errors": [
+        "[Errno 2] No such file or directory: '/Users/m5agent/Documents/m5stack-schematics-text/artifacts/schematics/chain-dualkey-38acc9b60721/asset_manifest.json'"
+      ],
+      "product_id": "chain-dualkey-38acc9b60721",
+      "status": "failed"
+    },
+    {
+      "errors": [
+        "[Errno 2] No such file or directory: '/Users/m5agent/Documents/m5stack-schematics-text/artifacts/schematics/chain-encoder-89e7cf7197fa/asset_manifest.json'"
+      ],
+      "product_id": "chain-encoder-89e7cf7197fa",
+      "status": "failed"
+    },
+    {
+      "errors": [
+        "[Errno 2] No such file or directory: '/Users/m5agent/Documents/m5stack-schematics-text/artifacts/schematics/chain-joystick-0496041983c4/asset_manifest.json'"
+      ],
+      "product_id": "chain-joystick-0496041983c4",
+      "status": "failed"
+    },
+    {
+      "errors": [
+        "[Errno 2] No such file or directory: '/Users/m5agent/Documents/m5stack-schematics-text/artifacts/schematics/chain-key-663f4af06229/asset_manifest.json'"
+      ],
+      "product_id": "chain-key-663f4af06229",
+      "status": "failed"
+    },
     {
       "backup": null,
       "draft_action": "unchanged",
-      "dry_run": false,
+      "dry_run": true,
       "errors": [],
       "needs_review": 1,
-      "product_id": "16-key-capacitive-touch-ff4446a15faf",
-      "product_name": "16-Key Capacitive Touch",
+      "product_id": "chain-mic-7a26bc9bf2cb",
+      "product_name": "Chain MIC",
       "publish_action": "unchanged",
-      "sha256": "d647fe5ed42873d865ae65ec0e556b21d6d3708d8bf3f4f24b4779c8a9b632c6",
+      "sha256": "5a43dce014e9250c4668293d78c20986c06b1a8bc793f89bae2f5b1cb5608cf6",
+      "status": "valid",
+      "uncertain_facts": 0
+    },
+    {
+      "errors": [
+        "[Errno 2] No such file or directory: '/Users/m5agent/Documents/m5stack-schematics-text/artifacts/schematics/chain-mono-a83ce201f248/asset_manifest.json'"
+      ],
+      "product_id": "chain-mono-a83ce201f248",
+      "status": "failed"
+    },
+    {
+      "errors": [
+        "[Errno 2] No such file or directory: '/Users/m5agent/Documents/m5stack-schematics-text/artifacts/schematics/chain-mount-15c29cf8cbdc/asset_manifest.json'"
+      ],
+      "product_id": "chain-mount-15c29cf8cbdc",
+      "status": "failed"
+    },
+    {
+      "errors": [
+        "[Errno 2] No such file or directory: '/Users/m5agent/Documents/m5stack-schematics-text/artifacts/schematics/chain-pir-7fef392a5345/asset_manifest.json'"
+      ],
+      "product_id": "chain-pir-7fef392a5345",
+      "status": "failed"
+    },
+    {
+      "errors": [
+        "[Errno 2] No such file or directory: '/Users/m5agent/Documents/m5stack-schematics-text/artifacts/schematics/chain-return-0ee11469fa7b/asset_manifest.json'"
+      ],
+      "product_id": "chain-return-0ee11469fa7b",
+      "status": "failed"
+    },
+    {
+      "errors": [
+        "[Errno 2] No such file or directory: '/Users/m5agent/Documents/m5stack-schematics-text/artifacts/schematics/chain-rgb-0b295a8b03af/asset_manifest.json'"
+      ],
+      "product_id": "chain-rgb-0b295a8b03af",
+      "status": "failed"
+    },
+    {
+      "backup": null,
+      "draft_action": "unchanged",
+      "dry_run": true,
+      "errors": [],
+      "needs_review": 4,
+      "product_id": "chain-switch-c421afa4f073",
+      "product_name": "Chain Switch",
+      "publish_action": "unchanged",
+      "sha256": "ce754863f690999a90095b22ad12cc1bc31c1c88af72bfd44f8b1b5d956d097e",
+      "status": "valid",
+      "uncertain_facts": 4
+    },
+    {
+      "errors": [
+        "[Errno 2] No such file or directory: '/Users/m5agent/Documents/m5stack-schematics-text/artifacts/schematics/chain-tof-93d363be2dba/asset_manifest.json'"
+      ],
+      "product_id": "chain-tof-93d363be2dba",
+      "status": "failed"
+    },
+    {
+      "errors": [
+        "[Errno 2] No such file or directory: '/Users/m5agent/Documents/m5stack-schematics-text/artifacts/schematics/cm4stack-c8ed4963c06f/asset_manifest.json'"
+      ],
+      "product_id": "cm4stack-c8ed4963c06f",
+      "status": "failed"
+    },
+    {
+      "errors": [
+        "[Errno 2] No such file or directory: '/Users/m5agent/Documents/m5stack-schematics-text/artifacts/schematics/core-metal-5d62c0428d7c/asset_manifest.json'"
+      ],
+      "product_id": "core-metal-5d62c0428d7c",
+      "status": "failed"
+    },
+    {
+      "errors": [
+        "[Errno 2] No such file or directory: '/Users/m5agent/Documents/m5stack-schematics-text/artifacts/schematics/core2-51bd4e3e1bdb/asset_manifest.json'"
+      ],
+      "product_id": "core2-51bd4e3e1bdb",
+      "status": "failed"
+    },
+    {
+      "errors": [
+        "[Errno 2] No such file or directory: '/Users/m5agent/Documents/m5stack-schematics-text/artifacts/schematics/core2-for-aws-2e685fb3f300/asset_manifest.json'"
+      ],
+      "product_id": "core2-for-aws-2e685fb3f300",
+      "status": "failed"
+    },
+    {
+      "errors": [
+        "[Errno 2] No such file or directory: '/Users/m5agent/Documents/m5stack-schematics-text/artifacts/schematics/core2-for-aws-v1-3-9e942e074984/asset_manifest.json'"
+      ],
+      "product_id": "core2-for-aws-v1-3-9e942e074984",
+      "status": "failed"
+    },
+    {
+      "errors": [
+        "[Errno 2] No such file or directory: '/Users/m5agent/Documents/m5stack-schematics-text/artifacts/schematics/core2-v1-1-65056692be18/asset_manifest.json'"
+      ],
+      "product_id": "core2-v1-1-65056692be18",
+      "status": "failed"
+    },
+    {
+      "errors": [
+        "[Errno 2] No such file or directory: '/Users/m5agent/Documents/m5stack-schematics-text/artifacts/schematics/core2-v1-3-7def93e81521/asset_manifest.json'"
+      ],
+      "product_id": "core2-v1-3-7def93e81521",
+      "status": "failed"
+    },
+    {
+      "errors": [
+        "[Errno 2] No such file or directory: '/Users/m5agent/Documents/m5stack-schematics-text/artifacts/schematics/coreink-51c3aed4a6bc/asset_manifest.json'"
+      ],
+      "product_id": "coreink-51c3aed4a6bc",
+      "status": "failed"
+    },
+    {
+      "errors": [
+        "[Errno 2] No such file or directory: '/Users/m5agent/Documents/m5stack-schematics-text/artifacts/schematics/coremp135-98360de80ed5/asset_manifest.json'"
+      ],
+      "product_id": "coremp135-98360de80ed5",
+      "status": "failed"
+    },
+    {
+      "errors": [
+        "[Errno 2] No such file or directory: '/Users/m5agent/Documents/m5stack-schematics-text/artifacts/schematics/cores3-fe2e07941902/asset_manifest.json'"
+      ],
+      "product_id": "cores3-fe2e07941902",
+      "status": "failed"
+    },
+    {
+      "errors": [
+        "[Errno 2] No such file or directory: '/Users/m5agent/Documents/m5stack-schematics-text/artifacts/schematics/cores3-lite-998c3f3e6e87/asset_manifest.json'"
+      ],
+      "product_id": "cores3-lite-998c3f3e6e87",
+      "status": "failed"
+    },
+    {
+      "errors": [
+        "[Errno 2] No such file or directory: '/Users/m5agent/Documents/m5stack-schematics-text/artifacts/schematics/cores3-se-de74f0945ee3/asset_manifest.json'"
+      ],
+      "product_id": "cores3-se-de74f0945ee3",
+      "status": "failed"
+    },
+    {
+      "errors": [
+        "[Errno 2] No such file or directory: '/Users/m5agent/Documents/m5stack-schematics-text/artifacts/schematics/cores3-thread-br-3d5cedb82525/asset_manifest.json'"
+      ],
+      "product_id": "cores3-thread-br-3d5cedb82525",
+      "status": "failed"
+    },
+    {
+      "errors": [
+        "[Errno 2] No such file or directory: '/Users/m5agent/Documents/m5stack-schematics-text/artifacts/schematics/demo-board-sht30-57672aae1d3e/asset_manifest.json'"
+      ],
+      "product_id": "demo-board-sht30-57672aae1d3e",
+      "status": "failed"
+    },
+    {
+      "errors": [
+        "[Errno 2] No such file or directory: '/Users/m5agent/Documents/m5stack-schematics-text/artifacts/schematics/dial-aff7d730eff4/asset_manifest.json'"
+      ],
+      "product_id": "dial-aff7d730eff4",
+      "status": "failed"
+    },
+    {
+      "errors": [
+        "[Errno 2] No such file or directory: '/Users/m5agent/Documents/m5stack-schematics-text/artifacts/schematics/dial-v1-1-2c1d18834bdd/asset_manifest.json'"
+      ],
+      "product_id": "dial-v1-1-2c1d18834bdd",
+      "status": "failed"
+    },
+    {
+      "errors": [
+        "[Errno 2] No such file or directory: '/Users/m5agent/Documents/m5stack-schematics-text/artifacts/schematics/dinmeter-375ebdfc5925/asset_manifest.json'"
+      ],
+      "product_id": "dinmeter-375ebdfc5925",
+      "status": "failed"
+    },
+    {
+      "errors": [
+        "[Errno 2] No such file or directory: '/Users/m5agent/Documents/m5stack-schematics-text/artifacts/schematics/dinmeter-v1-1-1be53f587107/asset_manifest.json'"
+      ],
+      "product_id": "dinmeter-v1-1-1be53f587107",
+      "status": "failed"
+    },
+    {
+      "errors": [
+        "[Errno 2] No such file or directory: '/Users/m5agent/Documents/m5stack-schematics-text/artifacts/schematics/esp32-cam-88744061cd2f/asset_manifest.json'"
+      ],
+      "product_id": "esp32-cam-88744061cd2f",
+      "status": "failed"
+    },
+    {
+      "errors": [
+        "[Errno 2] No such file or directory: '/Users/m5agent/Documents/m5stack-schematics-text/artifacts/schematics/esp32-cam-psram-4bf1cbd7fd68/asset_manifest.json'"
+      ],
+      "product_id": "esp32-cam-psram-4bf1cbd7fd68",
+      "status": "failed"
+    },
+    {
+      "errors": [
+        "[Errno 2] No such file or directory: '/Users/m5agent/Documents/m5stack-schematics-text/artifacts/schematics/esp32-downloader-kit-50ce8c1a6007/asset_manifest.json'"
+      ],
+      "product_id": "esp32-downloader-kit-50ce8c1a6007",
+      "status": "failed"
+    },
+    {
+      "errors": [
+        "[Errno 2] No such file or directory: '/Users/m5agent/Documents/m5stack-schematics-text/artifacts/schematics/faces-bottom-0b69ecd4797d/asset_manifest.json'"
+      ],
+      "product_id": "faces-bottom-0b69ecd4797d",
+      "status": "failed"
+    },
+    {
+      "errors": [
+        "[Errno 2] No such file or directory: '/Users/m5agent/Documents/m5stack-schematics-text/artifacts/schematics/faces-bottom3-f33b429808b8/asset_manifest.json'"
+      ],
+      "product_id": "faces-bottom3-f33b429808b8",
+      "status": "failed"
+    },
+    {
+      "errors": [
+        "[Errno 2] No such file or directory: '/Users/m5agent/Documents/m5stack-schematics-text/artifacts/schematics/faces-calculator-ac468d2b86a6/asset_manifest.json'"
+      ],
+      "product_id": "faces-calculator-ac468d2b86a6",
+      "status": "failed"
+    },
+    {
+      "errors": [
+        "[Errno 2] No such file or directory: '/Users/m5agent/Documents/m5stack-schematics-text/artifacts/schematics/faces-calculator3-f4573557e7cb/asset_manifest.json'"
+      ],
+      "product_id": "faces-calculator3-f4573557e7cb",
+      "status": "failed"
+    },
+    {
+      "errors": [
+        "[Errno 2] No such file or directory: '/Users/m5agent/Documents/m5stack-schematics-text/artifacts/schematics/faces-finger-91bac52e5220/asset_manifest.json'"
+      ],
+      "product_id": "faces-finger-91bac52e5220",
+      "status": "failed"
+    },
+    {
+      "errors": [
+        "[Errno 2] No such file or directory: '/Users/m5agent/Documents/m5stack-schematics-text/artifacts/schematics/faces-gamepad-9d8f13459df2/asset_manifest.json'"
+      ],
+      "product_id": "faces-gamepad-9d8f13459df2",
+      "status": "failed"
+    },
+    {
+      "errors": [
+        "[Errno 2] No such file or directory: '/Users/m5agent/Documents/m5stack-schematics-text/artifacts/schematics/faces-gamepad3-674f9085ab88/asset_manifest.json'"
+      ],
+      "product_id": "faces-gamepad3-674f9085ab88",
+      "status": "failed"
+    },
+    {
+      "errors": [
+        "[Errno 2] No such file or directory: '/Users/m5agent/Documents/m5stack-schematics-text/artifacts/schematics/faces-keyboard3-d38f8dd92d25/asset_manifest.json'"
+      ],
+      "product_id": "faces-keyboard3-d38f8dd92d25",
+      "status": "failed"
+    },
+    {
+      "errors": [
+        "[Errno 2] No such file or directory: '/Users/m5agent/Documents/m5stack-schematics-text/artifacts/schematics/faces-kit-86a5bcb22553/asset_manifest.json'"
+      ],
+      "product_id": "faces-kit-86a5bcb22553",
+      "status": "failed"
+    },
+    {
+      "errors": [
+        "[Errno 2] No such file or directory: '/Users/m5agent/Documents/m5stack-schematics-text/artifacts/schematics/faces-qwerty-59a1a6d60299/asset_manifest.json'"
+      ],
+      "product_id": "faces-qwerty-59a1a6d60299",
+      "status": "failed"
+    },
+    {
+      "errors": [
+        "[Errno 2] No such file or directory: '/Users/m5agent/Documents/m5stack-schematics-text/artifacts/schematics/faces-rfid-a8dde6d671f3/asset_manifest.json'"
+      ],
+      "product_id": "faces-rfid-a8dde6d671f3",
+      "status": "failed"
+    },
+    {
+      "errors": [
+        "[Errno 2] No such file or directory: '/Users/m5agent/Documents/m5stack-schematics-text/artifacts/schematics/fire-2b6395d25b50/asset_manifest.json'"
+      ],
+      "product_id": "fire-2b6395d25b50",
+      "status": "failed"
+    },
+    {
+      "errors": [
+        "[Errno 2] No such file or directory: '/Users/m5agent/Documents/m5stack-schematics-text/artifacts/schematics/fire-v2-6-4b8ab98411fc/asset_manifest.json'"
+      ],
+      "product_id": "fire-v2-6-4b8ab98411fc",
+      "status": "failed"
+    },
+    {
+      "errors": [
+        "[Errno 2] No such file or directory: '/Users/m5agent/Documents/m5stack-schematics-text/artifacts/schematics/fire-v2-7-970c16a4d3f5/asset_manifest.json'"
+      ],
+      "product_id": "fire-v2-7-970c16a4d3f5",
+      "status": "failed"
+    },
+    {
+      "errors": [
+        "[Errno 2] No such file or directory: '/Users/m5agent/Documents/m5stack-schematics-text/artifacts/schematics/gray-23b722c20e0c/asset_manifest.json'"
+      ],
+      "product_id": "gray-23b722c20e0c",
+      "status": "failed"
+    },
+    {
+      "errors": [
+        "[Errno 2] No such file or directory: '/Users/m5agent/Documents/m5stack-schematics-text/artifacts/schematics/grove-converter-2257c4feeecf/asset_manifest.json'"
+      ],
+      "product_id": "grove-converter-2257c4feeecf",
+      "status": "failed"
+    },
+    {
+      "errors": [
+        "[Errno 2] No such file or directory: '/Users/m5agent/Documents/m5stack-schematics-text/artifacts/schematics/grove-to-servo-9672db30be29/asset_manifest.json'"
+      ],
+      "product_id": "grove-to-servo-9672db30be29",
+      "status": "failed"
+    },
+    {
+      "errors": [
+        "[Errno 2] No such file or directory: '/Users/m5agent/Documents/m5stack-schematics-text/artifacts/schematics/grove-to-usbc-a6f4ed3b21ac/asset_manifest.json'"
+      ],
+      "product_id": "grove-to-usbc-a6f4ed3b21ac",
+      "status": "failed"
+    },
+    {
+      "errors": [
+        "[Errno 2] No such file or directory: '/Users/m5agent/Documents/m5stack-schematics-text/artifacts/schematics/hat-18650c-a014bb8f97e1/asset_manifest.json'"
+      ],
+      "product_id": "hat-18650c-a014bb8f97e1",
+      "status": "failed"
+    },
+    {
+      "errors": [
+        "[Errno 2] No such file or directory: '/Users/m5agent/Documents/m5stack-schematics-text/artifacts/schematics/hat-8servos-v1-1-3d6b4fb4b335/asset_manifest.json'"
+      ],
+      "product_id": "hat-8servos-v1-1-3d6b4fb4b335",
+      "status": "failed"
+    },
+    {
+      "errors": [
+        "[Errno 2] No such file or directory: '/Users/m5agent/Documents/m5stack-schematics-text/artifacts/schematics/hat-adc-9bc52b24bfa8/asset_manifest.json'"
+      ],
+      "product_id": "hat-adc-9bc52b24bfa8",
+      "status": "failed"
+    },
+    {
+      "errors": [
+        "[Errno 2] No such file or directory: '/Users/m5agent/Documents/m5stack-schematics-text/artifacts/schematics/hat-adc-v1-1-d69fd0bf927a/asset_manifest.json'"
+      ],
+      "product_id": "hat-adc-v1-1-d69fd0bf927a",
+      "status": "failed"
+    },
+    {
+      "errors": [
+        "[Errno 2] No such file or directory: '/Users/m5agent/Documents/m5stack-schematics-text/artifacts/schematics/hat-cback-driver-a569848f16dc/asset_manifest.json'"
+      ],
+      "product_id": "hat-cback-driver-a569848f16dc",
+      "status": "failed"
+    },
+    {
+      "errors": [
+        "[Errno 2] No such file or directory: '/Users/m5agent/Documents/m5stack-schematics-text/artifacts/schematics/hat-cback-nbiot-cn-0c9d35945277/asset_manifest.json'"
+      ],
+      "product_id": "hat-cback-nbiot-cn-0c9d35945277",
+      "status": "failed"
+    },
+    {
+      "errors": [
+        "[Errno 2] No such file or directory: '/Users/m5agent/Documents/m5stack-schematics-text/artifacts/schematics/hat-cback-nbiot-ddfc8e81e058/asset_manifest.json'"
+      ],
+      "product_id": "hat-cback-nbiot-ddfc8e81e058",
+      "status": "failed"
+    },
+    {
+      "errors": [
+        "[Errno 2] No such file or directory: '/Users/m5agent/Documents/m5stack-schematics-text/artifacts/schematics/hat-dac-b4c8fa71d070/asset_manifest.json'"
+      ],
+      "product_id": "hat-dac-b4c8fa71d070",
+      "status": "failed"
+    },
+    {
+      "errors": [
+        "[Errno 2] No such file or directory: '/Users/m5agent/Documents/m5stack-schematics-text/artifacts/schematics/hat-dac2-2b545f79b2ab/asset_manifest.json'"
+      ],
+      "product_id": "hat-dac2-2b545f79b2ab",
+      "status": "failed"
+    },
+    {
+      "errors": [
+        "[Errno 2] No such file or directory: '/Users/m5agent/Documents/m5stack-schematics-text/artifacts/schematics/hat-dlight-620edc6f0f90/asset_manifest.json'"
+      ],
+      "product_id": "hat-dlight-620edc6f0f90",
+      "status": "failed"
+    },
+    {
+      "errors": [
+        "[Errno 2] No such file or directory: '/Users/m5agent/Documents/m5stack-schematics-text/artifacts/schematics/hat-env-b52ddfec42a4/asset_manifest.json'"
+      ],
+      "product_id": "hat-env-b52ddfec42a4",
+      "status": "failed"
+    },
+    {
+      "errors": [
+        "[Errno 2] No such file or directory: '/Users/m5agent/Documents/m5stack-schematics-text/artifacts/schematics/hat-env-ii-37219b0722b8/asset_manifest.json'"
+      ],
+      "product_id": "hat-env-ii-37219b0722b8",
+      "status": "failed"
+    },
+    {
+      "errors": [
+        "[Errno 2] No such file or directory: '/Users/m5agent/Documents/m5stack-schematics-text/artifacts/schematics/hat-env-ii-r-da72c940f235/asset_manifest.json'"
+      ],
+      "product_id": "hat-env-ii-r-da72c940f235",
+      "status": "failed"
+    },
+    {
+      "errors": [
+        "[Errno 2] No such file or directory: '/Users/m5agent/Documents/m5stack-schematics-text/artifacts/schematics/hat-env-iii-5c419dff5145/asset_manifest.json'"
+      ],
+      "product_id": "hat-env-iii-5c419dff5145",
+      "status": "failed"
+    },
+    {
+      "errors": [
+        "[Errno 2] No such file or directory: '/Users/m5agent/Documents/m5stack-schematics-text/artifacts/schematics/hat-finger-06fd21063c9c/asset_manifest.json'"
+      ],
+      "product_id": "hat-finger-06fd21063c9c",
+      "status": "failed"
+    },
+    {
+      "errors": [
+        "[Errno 2] No such file or directory: '/Users/m5agent/Documents/m5stack-schematics-text/artifacts/schematics/hat-heart-b9504abac304/asset_manifest.json'"
+      ],
+      "product_id": "hat-heart-b9504abac304",
+      "status": "failed"
+    },
+    {
+      "errors": [
+        "[Errno 2] No such file or directory: '/Users/m5agent/Documents/m5stack-schematics-text/artifacts/schematics/hat-joystick-35079aeb568e/asset_manifest.json'"
+      ],
+      "product_id": "hat-joystick-35079aeb568e",
+      "status": "failed"
+    },
+    {
+      "errors": [
+        "[Errno 2] No such file or directory: '/Users/m5agent/Documents/m5stack-schematics-text/artifacts/schematics/hat-mini-encoderc-9161059da3b0/asset_manifest.json'"
+      ],
+      "product_id": "hat-mini-encoderc-9161059da3b0",
+      "status": "failed"
+    },
+    {
+      "errors": [
+        "[Errno 2] No such file or directory: '/Users/m5agent/Documents/m5stack-schematics-text/artifacts/schematics/hat-mini-joyc-2b282d3bc3f8/asset_manifest.json'"
+      ],
+      "product_id": "hat-mini-joyc-2b282d3bc3f8",
+      "status": "failed"
+    },
+    {
+      "errors": [
+        "[Errno 2] No such file or directory: '/Users/m5agent/Documents/m5stack-schematics-text/artifacts/schematics/hat-ncir-bad0ce1008dc/asset_manifest.json'"
+      ],
+      "product_id": "hat-ncir-bad0ce1008dc",
+      "status": "failed"
+    },
+    {
+      "errors": [
+        "[Errno 2] No such file or directory: '/Users/m5agent/Documents/m5stack-schematics-text/artifacts/schematics/hat-neoflash-93d4a8411d1c/asset_manifest.json'"
+      ],
+      "product_id": "hat-neoflash-93d4a8411d1c",
+      "status": "failed"
+    },
+    {
+      "errors": [
+        "[Errno 2] No such file or directory: '/Users/m5agent/Documents/m5stack-schematics-text/artifacts/schematics/hat-pir-629e63ebfbd6/asset_manifest.json'"
+      ],
+      "product_id": "hat-pir-629e63ebfbd6",
+      "status": "failed"
+    },
+    {
+      "errors": [
+        "[Errno 2] No such file or directory: '/Users/m5agent/Documents/m5stack-schematics-text/artifacts/schematics/hat-powerc-5d32112284e6/asset_manifest.json'"
+      ],
+      "product_id": "hat-powerc-5d32112284e6",
+      "status": "failed"
+    },
+    {
+      "errors": [
+        "[Errno 2] No such file or directory: '/Users/m5agent/Documents/m5stack-schematics-text/artifacts/schematics/hat-proto-1360162c8e23/asset_manifest.json'"
+      ],
+      "product_id": "hat-proto-1360162c8e23",
+      "status": "failed"
+    },
+    {
+      "errors": [
+        "[Errno 2] No such file or directory: '/Users/m5agent/Documents/m5stack-schematics-text/artifacts/schematics/hat-rs485-9c47adff6d40/asset_manifest.json'"
+      ],
+      "product_id": "hat-rs485-9c47adff6d40",
+      "status": "failed"
+    },
+    {
+      "errors": [
+        "[Errno 2] No such file or directory: '/Users/m5agent/Documents/m5stack-schematics-text/artifacts/schematics/hat-servo-35c2561dfa31/asset_manifest.json'"
+      ],
+      "product_id": "hat-servo-35c2561dfa31",
+      "status": "failed"
+    },
+    {
+      "errors": [
+        "[Errno 2] No such file or directory: '/Users/m5agent/Documents/m5stack-schematics-text/artifacts/schematics/hat-spk-360caf2204fc/asset_manifest.json'"
+      ],
+      "product_id": "hat-spk-360caf2204fc",
+      "status": "failed"
+    },
+    {
+      "errors": [
+        "[Errno 2] No such file or directory: '/Users/m5agent/Documents/m5stack-schematics-text/artifacts/schematics/hat-spk2-bc9ad7479cc6/asset_manifest.json'"
+      ],
+      "product_id": "hat-spk2-bc9ad7479cc6",
+      "status": "failed"
+    },
+    {
+      "errors": [
+        "[Errno 2] No such file or directory: '/Users/m5agent/Documents/m5stack-schematics-text/artifacts/schematics/hat-thermal-289aedfdfc7c/asset_manifest.json'"
+      ],
+      "product_id": "hat-thermal-289aedfdfc7c",
+      "status": "failed"
+    },
+    {
+      "errors": [
+        "[Errno 2] No such file or directory: '/Users/m5agent/Documents/m5stack-schematics-text/artifacts/schematics/hat-tof-1a91e659606c/asset_manifest.json'"
+      ],
+      "product_id": "hat-tof-1a91e659606c",
+      "status": "failed"
+    },
+    {
+      "errors": [
+        "[Errno 2] No such file or directory: '/Users/m5agent/Documents/m5stack-schematics-text/artifacts/schematics/hat-vibrator-f6de18d5539b/asset_manifest.json'"
+      ],
+      "product_id": "hat-vibrator-f6de18d5539b",
+      "status": "failed"
+    },
+    {
+      "errors": [
+        "[Errno 2] No such file or directory: '/Users/m5agent/Documents/m5stack-schematics-text/artifacts/schematics/hat-yun-e8e5bb044b49/asset_manifest.json'"
+      ],
+      "product_id": "hat-yun-e8e5bb044b49",
+      "status": "failed"
+    },
+    {
+      "errors": [
+        "[Errno 2] No such file or directory: '/Users/m5agent/Documents/m5stack-schematics-text/artifacts/schematics/iot-base-catm-48c8b724925a/asset_manifest.json'"
+      ],
+      "product_id": "iot-base-catm-48c8b724925a",
+      "status": "failed"
+    },
+    {
+      "errors": [
+        "[Errno 2] No such file or directory: '/Users/m5agent/Documents/m5stack-schematics-text/artifacts/schematics/iot-base-nbiot-cn-fbca1fe6128f/asset_manifest.json'"
+      ],
+      "product_id": "iot-base-nbiot-cn-fbca1fe6128f",
+      "status": "failed"
+    },
+    {
+      "errors": [
+        "[Errno 2] No such file or directory: '/Users/m5agent/Documents/m5stack-schematics-text/artifacts/schematics/iot-base-thermal-online-catm-d6c7a2ed64cc/asset_manifest.json'"
+      ],
+      "product_id": "iot-base-thermal-online-catm-d6c7a2ed64cc",
+      "status": "failed"
+    },
+    {
+      "errors": [
+        "[Errno 2] No such file or directory: '/Users/m5agent/Documents/m5stack-schematics-text/artifacts/schematics/iotbase-nbiot-c11e4cdf4097/asset_manifest.json'"
+      ],
+      "product_id": "iotbase-nbiot-c11e4cdf4097",
+      "status": "failed"
+    },
+    {
+      "errors": [
+        "[Errno 2] No such file or directory: '/Users/m5agent/Documents/m5stack-schematics-text/artifacts/schematics/llm-8850-kit-19733465ff8f/asset_manifest.json'"
+      ],
+      "product_id": "llm-8850-kit-19733465ff8f",
+      "status": "failed"
+    },
+    {
+      "errors": [
+        "[Errno 2] No such file or directory: '/Users/m5agent/Documents/m5stack-schematics-text/artifacts/schematics/llm630-compute-kit-6280ac7a8617/asset_manifest.json'"
+      ],
+      "product_id": "llm630-compute-kit-6280ac7a8617",
+      "status": "failed"
+    },
+    {
+      "errors": [
+        "[Errno 2] No such file or directory: '/Users/m5agent/Documents/m5stack-schematics-text/artifacts/schematics/m5camera-24cee0cc02a5/asset_manifest.json'"
+      ],
+      "product_id": "m5camera-24cee0cc02a5",
+      "status": "failed"
+    },
+    {
+      "errors": [
+        "[Errno 2] No such file or directory: '/Users/m5agent/Documents/m5stack-schematics-text/artifacts/schematics/m5camera-f-00c809bf2b2e/asset_manifest.json'"
+      ],
+      "product_id": "m5camera-f-00c809bf2b2e",
+      "status": "failed"
+    },
+    {
+      "errors": [
+        "[Errno 2] No such file or directory: '/Users/m5agent/Documents/m5stack-schematics-text/artifacts/schematics/m5camera-f-new-1006d5674b34/asset_manifest.json'"
+      ],
+      "product_id": "m5camera-f-new-1006d5674b34",
+      "status": "failed"
+    },
+    {
+      "errors": [
+        "[Errno 2] No such file or directory: '/Users/m5agent/Documents/m5stack-schematics-text/artifacts/schematics/m5camera-x-d535da8c5a43/asset_manifest.json'"
+      ],
+      "product_id": "m5camera-x-d535da8c5a43",
+      "status": "failed"
+    },
+    {
+      "errors": [
+        "[Errno 2] No such file or directory: '/Users/m5agent/Documents/m5stack-schematics-text/artifacts/schematics/m5go-iot-kit-7548fd87ca51/asset_manifest.json'"
+      ],
+      "product_id": "m5go-iot-kit-7548fd87ca51",
+      "status": "failed"
+    },
+    {
+      "errors": [
+        "[Errno 2] No such file or directory: '/Users/m5agent/Documents/m5stack-schematics-text/artifacts/schematics/m5go-iot-kit-v2-6-398b26645492/asset_manifest.json'"
+      ],
+      "product_id": "m5go-iot-kit-v2-6-398b26645492",
+      "status": "failed"
+    },
+    {
+      "errors": [
+        "[Errno 2] No such file or directory: '/Users/m5agent/Documents/m5stack-schematics-text/artifacts/schematics/m5go-iot-kit-v2-7-566311c71a9f/asset_manifest.json'"
+      ],
+      "product_id": "m5go-iot-kit-v2-7-566311c71a9f",
+      "status": "failed"
+    },
+    {
+      "errors": [
+        "[Errno 2] No such file or directory: '/Users/m5agent/Documents/m5stack-schematics-text/artifacts/schematics/m5stick-ccff3e07ed3c/asset_manifest.json'"
+      ],
+      "product_id": "m5stick-ccff3e07ed3c",
+      "status": "failed"
+    },
+    {
+      "errors": [
+        "[Errno 2] No such file or directory: '/Users/m5agent/Documents/m5stack-schematics-text/artifacts/schematics/module-4encodermotor-0af1ee832906/asset_manifest.json'"
+      ],
+      "product_id": "module-4encodermotor-0af1ee832906",
+      "status": "failed"
+    },
+    {
+      "errors": [
+        "[Errno 2] No such file or directory: '/Users/m5agent/Documents/m5stack-schematics-text/artifacts/schematics/module-4encodermotor-v1-1-5d1e23f0b5b5/asset_manifest.json'"
+      ],
+      "product_id": "module-4encodermotor-v1-1-5d1e23f0b5b5",
+      "status": "failed"
+    },
+    {
+      "errors": [
+        "[Errno 2] No such file or directory: '/Users/m5agent/Documents/m5stack-schematics-text/artifacts/schematics/module-air-quality-692ca7671c88/asset_manifest.json'"
+      ],
+      "product_id": "module-air-quality-692ca7671c88",
+      "status": "failed"
+    },
+    {
+      "errors": [
+        "[Errno 2] No such file or directory: '/Users/m5agent/Documents/m5stack-schematics-text/artifacts/schematics/module-asr-9df8acfba584/asset_manifest.json'"
+      ],
+      "product_id": "module-asr-9df8acfba584",
+      "status": "failed"
+    },
+    {
+      "errors": [
+        "[Errno 2] No such file or directory: '/Users/m5agent/Documents/m5stack-schematics-text/artifacts/schematics/module-audio-156e2a4470b4/asset_manifest.json'"
+      ],
+      "product_id": "module-audio-156e2a4470b4",
+      "status": "failed"
+    },
+    {
+      "errors": [
+        "[Errno 2] No such file or directory: '/Users/m5agent/Documents/m5stack-schematics-text/artifacts/schematics/module-cc1101-7382c678b783/asset_manifest.json'"
+      ],
+      "product_id": "module-cc1101-7382c678b783",
+      "status": "failed"
+    },
+    {
+      "errors": [
+        "[Errno 2] No such file or directory: '/Users/m5agent/Documents/m5stack-schematics-text/artifacts/schematics/module-commu-a942b3345b57/asset_manifest.json'"
+      ],
+      "product_id": "module-commu-a942b3345b57",
+      "status": "failed"
+    },
+    {
+      "errors": [
+        "[Errno 2] No such file or directory: '/Users/m5agent/Documents/m5stack-schematics-text/artifacts/schematics/module-comx-cat1-6bc022329978/asset_manifest.json'"
+      ],
+      "product_id": "module-comx-cat1-6bc022329978",
+      "status": "failed"
+    },
+    {
+      "errors": [
+        "[Errno 2] No such file or directory: '/Users/m5agent/Documents/m5stack-schematics-text/artifacts/schematics/module-comx-gps-d5bf31dc5c7e/asset_manifest.json'"
+      ],
+      "product_id": "module-comx-gps-d5bf31dc5c7e",
+      "status": "failed"
+    },
+    {
+      "errors": [
+        "[Errno 2] No such file or directory: '/Users/m5agent/Documents/m5stack-schematics-text/artifacts/schematics/module-comx-gsm-e81b91d4b9ec/asset_manifest.json'"
+      ],
+      "product_id": "module-comx-gsm-e81b91d4b9ec",
+      "status": "failed"
+    },
+    {
+      "errors": [
+        "[Errno 2] No such file or directory: '/Users/m5agent/Documents/m5stack-schematics-text/artifacts/schematics/module-comx-lorawan470-0079a37aa09d/asset_manifest.json'"
+      ],
+      "product_id": "module-comx-lorawan470-0079a37aa09d",
+      "status": "failed"
+    },
+    {
+      "errors": [
+        "[Errno 2] No such file or directory: '/Users/m5agent/Documents/m5stack-schematics-text/artifacts/schematics/module-comx-lorawan868-9537116beb9a/asset_manifest.json'"
+      ],
+      "product_id": "module-comx-lorawan868-9537116beb9a",
+      "status": "failed"
+    },
+    {
+      "errors": [
+        "[Errno 2] No such file or directory: '/Users/m5agent/Documents/m5stack-schematics-text/artifacts/schematics/module-comx-lorawan868-v2-0-f51e2213e53b/asset_manifest.json'"
+      ],
+      "product_id": "module-comx-lorawan868-v2-0-f51e2213e53b",
+      "status": "failed"
+    },
+    {
+      "errors": [
+        "[Errno 2] No such file or directory: '/Users/m5agent/Documents/m5stack-schematics-text/artifacts/schematics/module-comx-lorawan915-111e3c82be41/asset_manifest.json'"
+      ],
+      "product_id": "module-comx-lorawan915-111e3c82be41",
+      "status": "failed"
+    },
+    {
+      "errors": [
+        "[Errno 2] No such file or directory: '/Users/m5agent/Documents/m5stack-schematics-text/artifacts/schematics/module-comx-lte-20b73553b7c9/asset_manifest.json'"
+      ],
+      "product_id": "module-comx-lte-20b73553b7c9",
+      "status": "failed"
+    },
+    {
+      "errors": [
+        "[Errno 2] No such file or directory: '/Users/m5agent/Documents/m5stack-schematics-text/artifacts/schematics/module-comx-lte-data-5df34570f62f/asset_manifest.json'"
+      ],
+      "product_id": "module-comx-lte-data-5df34570f62f",
+      "status": "failed"
+    },
+    {
+      "errors": [
+        "[Errno 2] No such file or directory: '/Users/m5agent/Documents/m5stack-schematics-text/artifacts/schematics/module-comx-nbiot-82ecd2e5c625/asset_manifest.json'"
+      ],
+      "product_id": "module-comx-nbiot-82ecd2e5c625",
+      "status": "failed"
+    },
+    {
+      "errors": [
+        "[Errno 2] No such file or directory: '/Users/m5agent/Documents/m5stack-schematics-text/artifacts/schematics/module-comx-nbiot-cn-388620d06d52/asset_manifest.json'"
+      ],
+      "product_id": "module-comx-nbiot-cn-388620d06d52",
+      "status": "failed"
+    },
+    {
+      "errors": [
+        "[Errno 2] No such file or directory: '/Users/m5agent/Documents/m5stack-schematics-text/artifacts/schematics/module-comx-zigbee-02106baaddac/asset_manifest.json'"
+      ],
+      "product_id": "module-comx-zigbee-02106baaddac",
+      "status": "failed"
+    },
+    {
+      "errors": [
+        "[Errno 2] No such file or directory: '/Users/m5agent/Documents/m5stack-schematics-text/artifacts/schematics/module-dcmotor-fbc738802491/asset_manifest.json'"
+      ],
+      "product_id": "module-dcmotor-fbc738802491",
+      "status": "failed"
+    },
+    {
+      "errors": [
+        "[Errno 2] No such file or directory: '/Users/m5agent/Documents/m5stack-schematics-text/artifacts/schematics/module-extport-for-core2-0e97ef7bee82/asset_manifest.json'"
+      ],
+      "product_id": "module-extport-for-core2-0e97ef7bee82",
+      "status": "failed"
+    },
+    {
+      "errors": [
+        "[Errno 2] No such file or directory: '/Users/m5agent/Documents/m5stack-schematics-text/artifacts/schematics/module-fan-v1-1-fb76038d1490/asset_manifest.json'"
+      ],
+      "product_id": "module-fan-v1-1-fb76038d1490",
+      "status": "failed"
+    },
+    {
+      "errors": [
+        "[Errno 2] No such file or directory: '/Users/m5agent/Documents/m5stack-schematics-text/artifacts/schematics/module-gateway-h2-1a78b06ae3b4/asset_manifest.json'"
+      ],
+      "product_id": "module-gateway-h2-1a78b06ae3b4",
+      "status": "failed"
+    },
+    {
+      "errors": [
+        "[Errno 2] No such file or directory: '/Users/m5agent/Documents/m5stack-schematics-text/artifacts/schematics/module-gnss-409f80dbfd81/asset_manifest.json'"
+      ],
+      "product_id": "module-gnss-409f80dbfd81",
+      "status": "failed"
+    },
+    {
+      "errors": [
+        "[Errno 2] No such file or directory: '/Users/m5agent/Documents/m5stack-schematics-text/artifacts/schematics/module-goplus-140e3b5d1a2f/asset_manifest.json'"
+      ],
+      "product_id": "module-goplus-140e3b5d1a2f",
+      "status": "failed"
+    },
+    {
+      "errors": [
+        "[Errno 2] No such file or directory: '/Users/m5agent/Documents/m5stack-schematics-text/artifacts/schematics/module-gps-26e24f02380f/asset_manifest.json'"
+      ],
+      "product_id": "module-gps-26e24f02380f",
+      "status": "failed"
+    },
+    {
+      "errors": [
+        "[Errno 2] No such file or directory: '/Users/m5agent/Documents/m5stack-schematics-text/artifacts/schematics/module-gps-v2-0-5fb55f2eda3d/asset_manifest.json'"
+      ],
+      "product_id": "module-gps-v2-0-5fb55f2eda3d",
+      "status": "failed"
+    },
+    {
+      "errors": [
+        "[Errno 2] No such file or directory: '/Users/m5agent/Documents/m5stack-schematics-text/artifacts/schematics/module-gps-v2-1-ba8e2cd14583/asset_manifest.json'"
+      ],
+      "product_id": "module-gps-v2-1-ba8e2cd14583",
+      "status": "failed"
+    },
+    {
+      "errors": [
+        "[Errno 2] No such file or directory: '/Users/m5agent/Documents/m5stack-schematics-text/artifacts/schematics/module-gsm-0ac1e8c6b626/asset_manifest.json'"
+      ],
+      "product_id": "module-gsm-0ac1e8c6b626",
+      "status": "failed"
+    },
+    {
+      "errors": [
+        "[Errno 2] No such file or directory: '/Users/m5agent/Documents/m5stack-schematics-text/artifacts/schematics/module-hmi-3a13e8f227d3/asset_manifest.json'"
+      ],
+      "product_id": "module-hmi-3a13e8f227d3",
+      "status": "failed"
+    },
+    {
+      "errors": [
+        "[Errno 2] No such file or directory: '/Users/m5agent/Documents/m5stack-schematics-text/artifacts/schematics/module-llm-f66d28e8903c/asset_manifest.json'"
+      ],
+      "product_id": "module-llm-f66d28e8903c",
+      "status": "failed"
+    },
+    {
+      "errors": [
+        "[Errno 2] No such file or directory: '/Users/m5agent/Documents/m5stack-schematics-text/artifacts/schematics/module-llm-kit-6dad0f809655/asset_manifest.json'"
+      ],
+      "product_id": "module-llm-kit-6dad0f809655",
+      "status": "failed"
+    },
+    {
+      "errors": [
+        "[Errno 2] No such file or directory: '/Users/m5agent/Documents/m5stack-schematics-text/artifacts/schematics/module-lora433-046039625b36/asset_manifest.json'"
+      ],
+      "product_id": "module-lora433-046039625b36",
+      "status": "failed"
+    },
+    {
+      "errors": [
+        "[Errno 2] No such file or directory: '/Users/m5agent/Documents/m5stack-schematics-text/artifacts/schematics/module-lora433-v1-1-28fc5bde4e02/asset_manifest.json'"
+      ],
+      "product_id": "module-lora433-v1-1-28fc5bde4e02",
+      "status": "failed"
+    },
+    {
+      "errors": [
+        "[Errno 2] No such file or directory: '/Users/m5agent/Documents/m5stack-schematics-text/artifacts/schematics/module-lora868-e0f14d8b25dd/asset_manifest.json'"
+      ],
+      "product_id": "module-lora868-e0f14d8b25dd",
+      "status": "failed"
+    },
+    {
+      "errors": [
+        "[Errno 2] No such file or directory: '/Users/m5agent/Documents/m5stack-schematics-text/artifacts/schematics/module-lora868-v1-1-6677d43231dd/asset_manifest.json'"
+      ],
+      "product_id": "module-lora868-v1-1-6677d43231dd",
+      "status": "failed"
+    },
+    {
+      "errors": [
+        "[Errno 2] No such file or directory: '/Users/m5agent/Documents/m5stack-schematics-text/artifacts/schematics/module-lora868-v1-2-7e034afde4eb/asset_manifest.json'"
+      ],
+      "product_id": "module-lora868-v1-2-7e034afde4eb",
+      "status": "failed"
+    },
+    {
+      "errors": [
+        "[Errno 2] No such file or directory: '/Users/m5agent/Documents/m5stack-schematics-text/artifacts/schematics/module-lorawan-5f58a4b63025/asset_manifest.json'"
+      ],
+      "product_id": "module-lorawan-5f58a4b63025",
+      "status": "failed"
+    },
+    {
+      "errors": [
+        "[Errno 2] No such file or directory: '/Users/m5agent/Documents/m5stack-schematics-text/artifacts/schematics/module-lorawan-eu868-17765fac0b44/asset_manifest.json'"
+      ],
+      "product_id": "module-lorawan-eu868-17765fac0b44",
+      "status": "failed"
+    },
+    {
+      "errors": [
+        "[Errno 2] No such file or directory: '/Users/m5agent/Documents/m5stack-schematics-text/artifacts/schematics/module-lte-893b13655c18/asset_manifest.json'"
+      ],
+      "product_id": "module-lte-893b13655c18",
+      "status": "failed"
+    },
+    {
+      "errors": [
+        "[Errno 2] No such file or directory: '/Users/m5agent/Documents/m5stack-schematics-text/artifacts/schematics/module-nb-iot-plus-879adbfc094e/asset_manifest.json'"
+      ],
+      "product_id": "module-nb-iot-plus-879adbfc094e",
+      "status": "failed"
+    },
+    {
+      "errors": [
+        "[Errno 2] No such file or directory: '/Users/m5agent/Documents/m5stack-schematics-text/artifacts/schematics/module-nbiot-96c9ad4f52eb/asset_manifest.json'"
+      ],
+      "product_id": "module-nbiot-96c9ad4f52eb",
+      "status": "failed"
+    },
+    {
+      "errors": [
+        "[Errno 2] No such file or directory: '/Users/m5agent/Documents/m5stack-schematics-text/artifacts/schematics/module-plus-0deeb6e681d6/asset_manifest.json'"
+      ],
+      "product_id": "module-plus-0deeb6e681d6",
+      "status": "failed"
+    },
+    {
+      "errors": [
+        "[Errno 2] No such file or directory: '/Users/m5agent/Documents/m5stack-schematics-text/artifacts/schematics/module-servo-47e4512cdf0a/asset_manifest.json'"
+      ],
+      "product_id": "module-servo-47e4512cdf0a",
+      "status": "failed"
+    },
+    {
+      "errors": [
+        "[Errno 2] No such file or directory: '/Users/m5agent/Documents/m5stack-schematics-text/artifacts/schematics/module-sim800l-899e03111377/asset_manifest.json'"
+      ],
+      "product_id": "module-sim800l-899e03111377",
+      "status": "failed"
+    },
+    {
+      "errors": [
+        "[Errno 2] No such file or directory: '/Users/m5agent/Documents/m5stack-schematics-text/artifacts/schematics/module-stepmotor-fd1897c65a3e/asset_manifest.json'"
+      ],
+      "product_id": "module-stepmotor-fd1897c65a3e",
+      "status": "failed"
+    },
+    {
+      "errors": [
+        "[Errno 2] No such file or directory: '/Users/m5agent/Documents/m5stack-schematics-text/artifacts/schematics/module-usb-e0c9e68607fe/asset_manifest.json'"
+      ],
+      "product_id": "module-usb-e0c9e68607fe",
+      "status": "failed"
+    },
+    {
+      "errors": [
+        "[Errno 2] No such file or directory: '/Users/m5agent/Documents/m5stack-schematics-text/artifacts/schematics/module-usb-v1-2-696c7d48b650/asset_manifest.json'"
+      ],
+      "product_id": "module-usb-v1-2-696c7d48b650",
+      "status": "failed"
+    },
+    {
+      "errors": [
+        "[Errno 2] No such file or directory: '/Users/m5agent/Documents/m5stack-schematics-text/artifacts/schematics/module13-2-2relay-c332f9f68be2/asset_manifest.json'"
+      ],
+      "product_id": "module13-2-2relay-c332f9f68be2",
+      "status": "failed"
+    },
+    {
+      "errors": [
+        "[Errno 2] No such file or directory: '/Users/m5agent/Documents/m5stack-schematics-text/artifacts/schematics/module13-2-4in8out-af00e1ccbdea/asset_manifest.json'"
+      ],
+      "product_id": "module13-2-4in8out-af00e1ccbdea",
+      "status": "failed"
+    },
+    {
+      "errors": [
+        "[Errno 2] No such file or directory: '/Users/m5agent/Documents/m5stack-schematics-text/artifacts/schematics/module13-2-4relay-d4630d25eb4c/asset_manifest.json'"
+      ],
+      "product_id": "module13-2-4relay-d4630d25eb4c",
+      "status": "failed"
+    },
+    {
+      "errors": [
+        "[Errno 2] No such file or directory: '/Users/m5agent/Documents/m5stack-schematics-text/artifacts/schematics/module13-2-4relay-v1-1-965327c80c46/asset_manifest.json'"
+      ],
+      "product_id": "module13-2-4relay-v1-1-965327c80c46",
+      "status": "failed"
+    },
+    {
+      "errors": [
+        "[Errno 2] No such file or directory: '/Users/m5agent/Documents/m5stack-schematics-text/artifacts/schematics/module13-2-ain4-20ma-27da563bb743/asset_manifest.json'"
+      ],
+      "product_id": "module13-2-ain4-20ma-27da563bb743",
+      "status": "failed"
+    },
+    {
+      "errors": [
+        "[Errno 2] No such file or directory: '/Users/m5agent/Documents/m5stack-schematics-text/artifacts/schematics/module13-2-bldc-drvier-6121c64a1745/asset_manifest.json'"
+      ],
+      "product_id": "module13-2-bldc-drvier-6121c64a1745",
+      "status": "failed"
+    },
+    {
+      "errors": [
+        "[Errno 2] No such file or directory: '/Users/m5agent/Documents/m5stack-schematics-text/artifacts/schematics/module13-2-display-b5f636da83c6/asset_manifest.json'"
+      ],
+      "product_id": "module13-2-display-b5f636da83c6",
+      "status": "failed"
+    },
+    {
+      "errors": [
+        "[Errno 2] No such file or directory: '/Users/m5agent/Documents/m5stack-schematics-text/artifacts/schematics/module13-2-dual-kmeter-6688bfd97eaf/asset_manifest.json'"
+      ],
+      "product_id": "module13-2-dual-kmeter-6688bfd97eaf",
+      "status": "failed"
+    },
+    {
+      "errors": [
+        "[Errno 2] No such file or directory: '/Users/m5agent/Documents/m5stack-schematics-text/artifacts/schematics/module13-2-ecg-7962c838495e/asset_manifest.json'"
+      ],
+      "product_id": "module13-2-ecg-7962c838495e",
+      "status": "failed"
+    },
+    {
+      "errors": [
+        "[Errno 2] No such file or directory: '/Users/m5agent/Documents/m5stack-schematics-text/artifacts/schematics/module13-2-goplus2-5e9f31ba4cb3/asset_manifest.json'"
+      ],
+      "product_id": "module13-2-goplus2-5e9f31ba4cb3",
+      "status": "failed"
+    },
+    {
+      "errors": [
+        "[Errno 2] No such file or directory: '/Users/m5agent/Documents/m5stack-schematics-text/artifacts/schematics/module13-2-grbl-372f1e1be2cc/asset_manifest.json'"
+      ],
+      "product_id": "module13-2-grbl-372f1e1be2cc",
+      "status": "failed"
+    },
+    {
+      "errors": [
+        "[Errno 2] No such file or directory: '/Users/m5agent/Documents/m5stack-schematics-text/artifacts/schematics/module13-2-lan-55693d26da93/asset_manifest.json'"
+      ],
+      "product_id": "module13-2-lan-55693d26da93",
+      "status": "failed"
+    },
+    {
+      "errors": [
+        "[Errno 2] No such file or directory: '/Users/m5agent/Documents/m5stack-schematics-text/artifacts/schematics/module13-2-lora-1262-b5bb939be918/asset_manifest.json'"
+      ],
+      "product_id": "module13-2-lora-1262-b5bb939be918",
+      "status": "failed"
+    },
+    {
+      "errors": [
+        "[Errno 2] No such file or directory: '/Users/m5agent/Documents/m5stack-schematics-text/artifacts/schematics/module13-2-pps-687698164018/asset_manifest.json'"
+      ],
+      "product_id": "module13-2-pps-687698164018",
+      "status": "failed"
+    },
+    {
+      "errors": [
+        "[Errno 2] No such file or directory: '/Users/m5agent/Documents/m5stack-schematics-text/artifacts/schematics/module13-2-pwrcan-de2c622a3f3f/asset_manifest.json'"
+      ],
+      "product_id": "module13-2-pwrcan-de2c622a3f3f",
+      "status": "failed"
+    },
+    {
+      "errors": [
+        "[Errno 2] No such file or directory: '/Users/m5agent/Documents/m5stack-schematics-text/artifacts/schematics/module13-2-qrcode-4a6d94edd708/asset_manifest.json'"
+      ],
+      "product_id": "module13-2-qrcode-4a6d94edd708",
+      "status": "failed"
+    },
+    {
+      "errors": [
+        "[Errno 2] No such file or directory: '/Users/m5agent/Documents/m5stack-schematics-text/artifacts/schematics/module13-2-rca-e64f78ddd7c5/asset_manifest.json'"
+      ],
+      "product_id": "module13-2-rca-e64f78ddd7c5",
+      "status": "failed"
+    },
+    {
+      "errors": [
+        "[Errno 2] No such file or directory: '/Users/m5agent/Documents/m5stack-schematics-text/artifacts/schematics/module13-2-rs232f-18a695a51a0b/asset_manifest.json'"
+      ],
+      "product_id": "module13-2-rs232f-18a695a51a0b",
+      "status": "failed"
+    },
+    {
+      "errors": [
+        "[Errno 2] No such file or directory: '/Users/m5agent/Documents/m5stack-schematics-text/artifacts/schematics/module13-2-rs232m-43012a76a175/asset_manifest.json'"
+      ],
+      "product_id": "module13-2-rs232m-43012a76a175",
+      "status": "failed"
+    },
+    {
+      "errors": [
+        "[Errno 2] No such file or directory: '/Users/m5agent/Documents/m5stack-schematics-text/artifacts/schematics/module13-2-servo2-40ec9a04a77c/asset_manifest.json'"
+      ],
+      "product_id": "module13-2-servo2-40ec9a04a77c",
+      "status": "failed"
+    },
+    {
+      "errors": [
+        "[Errno 2] No such file or directory: '/Users/m5agent/Documents/m5stack-schematics-text/artifacts/schematics/module13-2-stepmotor-driver-33d897af1a0b/asset_manifest.json'"
+      ],
+      "product_id": "module13-2-stepmotor-driver-33d897af1a0b",
+      "status": "failed"
+    },
+    {
+      "errors": [
+        "[Errno 2] No such file or directory: '/Users/m5agent/Documents/m5stack-schematics-text/artifacts/schematics/module13-2-stepmotor-driver-v1-1-9b3781dbcfa8/asset_manifest.json'"
+      ],
+      "product_id": "module13-2-stepmotor-driver-v1-1-9b3781dbcfa8",
+      "status": "failed"
+    },
+    {
+      "errors": [
+        "[Errno 2] No such file or directory: '/Users/m5agent/Documents/m5stack-schematics-text/artifacts/schematics/nanoc6-6ea666d1c510/asset_manifest.json'"
+      ],
+      "product_id": "nanoc6-6ea666d1c510",
+      "status": "failed"
+    },
+    {
+      "errors": [
+        "[Errno 2] No such file or directory: '/Users/m5agent/Documents/m5stack-schematics-text/artifacts/schematics/nanoh2-6dd9fc2743d5/asset_manifest.json'"
+      ],
+      "product_id": "nanoh2-6dd9fc2743d5",
+      "status": "failed"
+    },
+    {
+      "errors": [
+        "[Errno 2] No such file or directory: '/Users/m5agent/Documents/m5stack-schematics-text/artifacts/schematics/paper-a89f57fad62a/asset_manifest.json'"
+      ],
+      "product_id": "paper-a89f57fad62a",
+      "status": "failed"
+    },
+    {
+      "errors": [
+        "[Errno 2] No such file or directory: '/Users/m5agent/Documents/m5stack-schematics-text/artifacts/schematics/paper-comm-edition-52a904d8e4ec/asset_manifest.json'"
+      ],
+      "product_id": "paper-comm-edition-52a904d8e4ec",
+      "status": "failed"
+    },
+    {
+      "errors": [
+        "[Errno 2] No such file or directory: '/Users/m5agent/Documents/m5stack-schematics-text/artifacts/schematics/paper-v1-1-791f70ff5573/asset_manifest.json'"
+      ],
+      "product_id": "paper-v1-1-791f70ff5573",
+      "status": "failed"
+    },
+    {
+      "errors": [
+        "[Errno 2] No such file or directory: '/Users/m5agent/Documents/m5stack-schematics-text/artifacts/schematics/papercolor-a872f67ef4c9/asset_manifest.json'"
+      ],
+      "product_id": "papercolor-a872f67ef4c9",
+      "status": "failed"
+    },
+    {
+      "backup": null,
+      "draft_action": "unchanged",
+      "dry_run": true,
+      "errors": [],
+      "needs_review": 2,
+      "product_id": "paperdiy-assembly-kit-d0e86df6fdd8",
+      "product_name": "PaperDIY Assembly Kit",
+      "publish_action": "unchanged",
+      "sha256": "8f4ba111f345597510d7c2a4b8d22e3357460e66950607708ea456d3d3defb98",
+      "status": "valid",
+      "uncertain_facts": 2
+    },
+    {
+      "backup": null,
+      "draft_action": "unchanged",
+      "dry_run": true,
+      "errors": [],
+      "needs_review": 2,
+      "product_id": "paperdiy-complete-kit-d39fc45c3c60",
+      "product_name": "PaperDIY Complete Kit",
+      "publish_action": "unchanged",
+      "sha256": "bcf6559a0fa717d320dba60704df13560c148d6ebc9930b03e2a6322706e42d8",
+      "status": "valid",
+      "uncertain_facts": 2
+    },
+    {
+      "errors": [
+        "[Errno 2] No such file or directory: '/Users/m5agent/Documents/m5stack-schematics-text/artifacts/schematics/papermono-59c8b1a7cae9/asset_manifest.json'"
+      ],
+      "product_id": "papermono-59c8b1a7cae9",
+      "status": "failed"
+    },
+    {
+      "errors": [
+        "[Errno 2] No such file or directory: '/Users/m5agent/Documents/m5stack-schematics-text/artifacts/schematics/papermono-lite-2ac40c4cf3c5/asset_manifest.json'"
+      ],
+      "product_id": "papermono-lite-2ac40c4cf3c5",
+      "status": "failed"
+    },
+    {
+      "errors": [
+        "[Errno 2] No such file or directory: '/Users/m5agent/Documents/m5stack-schematics-text/artifacts/schematics/papers3-d121b5ce3fad/asset_manifest.json'"
+      ],
+      "product_id": "papers3-d121b5ce3fad",
+      "status": "failed"
+    },
+    {
+      "errors": [
+        "[Errno 2] No such file or directory: '/Users/m5agent/Documents/m5stack-schematics-text/artifacts/schematics/pm2-5-air-quality-kit-sht30-f8c045ee6b54/asset_manifest.json'"
+      ],
+      "product_id": "pm2-5-air-quality-kit-sht30-f8c045ee6b54",
+      "status": "failed"
+    },
+    {
+      "errors": [
+        "[Errno 2] No such file or directory: '/Users/m5agent/Documents/m5stack-schematics-text/artifacts/schematics/pm2-5-kit-752db3817213/asset_manifest.json'"
+      ],
+      "product_id": "pm2-5-kit-752db3817213",
+      "status": "failed"
+    },
+    {
+      "errors": [
+        "[Errno 2] No such file or directory: '/Users/m5agent/Documents/m5stack-schematics-text/artifacts/schematics/powerhub-896e97cb79d5/asset_manifest.json'"
+      ],
+      "product_id": "powerhub-896e97cb79d5",
+      "status": "failed"
+    },
+    {
+      "errors": [
+        "[Errno 2] No such file or directory: '/Users/m5agent/Documents/m5stack-schematics-text/artifacts/schematics/scales-kit-1d6fff1475ba/asset_manifest.json'"
+      ],
+      "product_id": "scales-kit-1d6fff1475ba",
+      "status": "failed"
+    },
+    {
+      "errors": [
+        "[Errno 2] No such file or directory: '/Users/m5agent/Documents/m5stack-schematics-text/artifacts/schematics/stackchan-4ab98aca5f72/asset_manifest.json'"
+      ],
+      "product_id": "stackchan-4ab98aca5f72",
+      "status": "failed"
+    },
+    {
+      "errors": [
+        "[Errno 2] No such file or directory: '/Users/m5agent/Documents/m5stack-schematics-text/artifacts/schematics/stackchan-body-b8923242348a/asset_manifest.json'"
+      ],
+      "product_id": "stackchan-body-b8923242348a",
+      "status": "failed"
+    },
+    {
+      "errors": [
+        "[Errno 2] No such file or directory: '/Users/m5agent/Documents/m5stack-schematics-text/artifacts/schematics/stackchan-core-cbbf2e7748c5/asset_manifest.json'"
+      ],
+      "product_id": "stackchan-core-cbbf2e7748c5",
+      "status": "failed"
+    },
+    {
+      "errors": [
+        "[Errno 2] No such file or directory: '/Users/m5agent/Documents/m5stack-schematics-text/artifacts/schematics/stamp-addon-c6-for-p4-e374038cd38a/asset_manifest.json'"
+      ],
+      "product_id": "stamp-addon-c6-for-p4-e374038cd38a",
+      "status": "failed"
+    },
+    {
+      "errors": [
+        "[Errno 2] No such file or directory: '/Users/m5agent/Documents/m5stack-schematics-text/artifacts/schematics/stamp-addon-cam0308-be641eb7056e/asset_manifest.json'"
+      ],
+      "product_id": "stamp-addon-cam0308-be641eb7056e",
+      "status": "failed"
+    },
+    {
+      "errors": [
+        "[Errno 2] No such file or directory: '/Users/m5agent/Documents/m5stack-schematics-text/artifacts/schematics/stamp-addon-cam3660-5a49456d2fd0/asset_manifest.json'"
+      ],
+      "product_id": "stamp-addon-cam3660-5a49456d2fd0",
+      "status": "failed"
+    },
+    {
+      "errors": [
+        "[Errno 2] No such file or directory: '/Users/m5agent/Documents/m5stack-schematics-text/artifacts/schematics/stamp-c3-ba12ba083e85/asset_manifest.json'"
+      ],
+      "product_id": "stamp-c3-ba12ba083e85",
+      "status": "failed"
+    },
+    {
+      "errors": [
+        "[Errno 2] No such file or directory: '/Users/m5agent/Documents/m5stack-schematics-text/artifacts/schematics/stamp-c3-mate-47c961525c5c/asset_manifest.json'"
+      ],
+      "product_id": "stamp-c3-mate-47c961525c5c",
+      "status": "failed"
+    },
+    {
+      "errors": [
+        "[Errno 2] No such file or directory: '/Users/m5agent/Documents/m5stack-schematics-text/artifacts/schematics/stamp-c3u-0078f7670939/asset_manifest.json'"
+      ],
+      "product_id": "stamp-c3u-0078f7670939",
+      "status": "failed"
+    },
+    {
+      "errors": [
+        "[Errno 2] No such file or directory: '/Users/m5agent/Documents/m5stack-schematics-text/artifacts/schematics/stamp-c3u-mate-2c4b99d9b539/asset_manifest.json'"
+      ],
+      "product_id": "stamp-c3u-mate-2c4b99d9b539",
+      "status": "failed"
+    },
+    {
+      "errors": [
+        "[Errno 2] No such file or directory: '/Users/m5agent/Documents/m5stack-schematics-text/artifacts/schematics/stamp-c5-cb6d75715d18/asset_manifest.json'"
+      ],
+      "product_id": "stamp-c5-cb6d75715d18",
+      "status": "failed"
+    },
+    {
+      "errors": [
+        "[Errno 2] No such file or directory: '/Users/m5agent/Documents/m5stack-schematics-text/artifacts/schematics/stamp-c5-dip-9f73b7531dde/asset_manifest.json'"
+      ],
+      "product_id": "stamp-c5-dip-9f73b7531dde",
+      "status": "failed"
+    },
+    {
+      "errors": [
+        "[Errno 2] No such file or directory: '/Users/m5agent/Documents/m5stack-schematics-text/artifacts/schematics/stamp-c6lora-8e0b68b10cfd/asset_manifest.json'"
+      ],
+      "product_id": "stamp-c6lora-8e0b68b10cfd",
+      "status": "failed"
+    },
+    {
+      "errors": [
+        "[Errno 2] No such file or directory: '/Users/m5agent/Documents/m5stack-schematics-text/artifacts/schematics/stamp-cat1-ddeb053d5191/asset_manifest.json'"
+      ],
+      "product_id": "stamp-cat1-ddeb053d5191",
+      "status": "failed"
+    },
+    {
+      "errors": [
+        "[Errno 2] No such file or directory: '/Users/m5agent/Documents/m5stack-schematics-text/artifacts/schematics/stamp-catm-4363106b3648/asset_manifest.json'"
+      ],
+      "product_id": "stamp-catm-4363106b3648",
+      "status": "failed"
+    },
+    {
+      "errors": [
+        "[Errno 2] No such file or directory: '/Users/m5agent/Documents/m5stack-schematics-text/artifacts/schematics/stamp-io-bf4e37ffdb03/asset_manifest.json'"
+      ],
+      "product_id": "stamp-io-bf4e37ffdb03",
+      "status": "failed"
+    },
+    {
+      "errors": [
+        "[Errno 2] No such file or directory: '/Users/m5agent/Documents/m5stack-schematics-text/artifacts/schematics/stamp-isp-c565fe0a6c4b/asset_manifest.json'"
+      ],
+      "product_id": "stamp-isp-c565fe0a6c4b",
+      "status": "failed"
+    },
+    {
+      "errors": [
+        "[Errno 2] No such file or directory: '/Users/m5agent/Documents/m5stack-schematics-text/artifacts/schematics/stamp-lora-1262-f672554cdfb9/asset_manifest.json'"
+      ],
+      "product_id": "stamp-lora-1262-f672554cdfb9",
+      "status": "failed"
+    },
+    {
+      "errors": [
+        "[Errno 2] No such file or directory: '/Users/m5agent/Documents/m5stack-schematics-text/artifacts/schematics/stamp-p4-dc40121df2ce/asset_manifest.json'"
+      ],
+      "product_id": "stamp-p4-dc40121df2ce",
+      "status": "failed"
+    },
+    {
+      "errors": [
+        "[Errno 2] No such file or directory: '/Users/m5agent/Documents/m5stack-schematics-text/artifacts/schematics/stamp-pico-2def1461ad81/asset_manifest.json'"
+      ],
+      "product_id": "stamp-pico-2def1461ad81",
+      "status": "failed"
+    },
+    {
+      "errors": [
+        "[Errno 2] No such file or directory: '/Users/m5agent/Documents/m5stack-schematics-text/artifacts/schematics/stamp-pico-diy-kit-8e4dd31d2e05/asset_manifest.json'"
+      ],
+      "product_id": "stamp-pico-diy-kit-8e4dd31d2e05",
+      "status": "failed"
+    },
+    {
+      "errors": [
+        "[Errno 2] No such file or directory: '/Users/m5agent/Documents/m5stack-schematics-text/artifacts/schematics/stamp-pico-mate-ac5ec8809d80/asset_manifest.json'"
+      ],
+      "product_id": "stamp-pico-mate-ac5ec8809d80",
+      "status": "failed"
+    },
+    {
+      "errors": [
+        "[Errno 2] No such file or directory: '/Users/m5agent/Documents/m5stack-schematics-text/artifacts/schematics/stamp-pwr485-f925b02d2ef4/asset_manifest.json'"
+      ],
+      "product_id": "stamp-pwr485-f925b02d2ef4",
+      "status": "failed"
+    },
+    {
+      "errors": [
+        "[Errno 2] No such file or directory: '/Users/m5agent/Documents/m5stack-schematics-text/artifacts/schematics/stamp-s3-07ce7ee8d7e0/asset_manifest.json'"
+      ],
+      "product_id": "stamp-s3-07ce7ee8d7e0",
+      "status": "failed"
+    },
+    {
+      "errors": [
+        "[Errno 2] No such file or directory: '/Users/m5agent/Documents/m5stack-schematics-text/artifacts/schematics/stamp-s3-breakout-3a05e8fd268c/asset_manifest.json'"
+      ],
+      "product_id": "stamp-s3-breakout-3a05e8fd268c",
+      "status": "failed"
+    },
+    {
+      "errors": [
+        "[Errno 2] No such file or directory: '/Users/m5agent/Documents/m5stack-schematics-text/artifacts/schematics/stamp-s3-grovebreakout-1f94bdf41b56/asset_manifest.json'"
+      ],
+      "product_id": "stamp-s3-grovebreakout-1f94bdf41b56",
+      "status": "failed"
+    },
+    {
+      "errors": [
+        "[Errno 2] No such file or directory: '/Users/m5agent/Documents/m5stack-schematics-text/artifacts/schematics/stamp-s3-pin1-27-5e8237b9206f/asset_manifest.json'"
+      ],
+      "product_id": "stamp-s3-pin1-27-5e8237b9206f",
+      "status": "failed"
+    },
+    {
+      "errors": [
+        "[Errno 2] No such file or directory: '/Users/m5agent/Documents/m5stack-schematics-text/artifacts/schematics/stamp-s3-pin2-54-5c5f339edd77/asset_manifest.json'"
+      ],
+      "product_id": "stamp-s3-pin2-54-5c5f339edd77",
+      "status": "failed"
+    },
+    {
+      "errors": [
+        "[Errno 2] No such file or directory: '/Users/m5agent/Documents/m5stack-schematics-text/artifacts/schematics/stamp-s3a-5b8c594bed8f/asset_manifest.json'"
+      ],
+      "product_id": "stamp-s3a-5b8c594bed8f",
+      "status": "failed"
+    },
+    {
+      "errors": [
+        "[Errno 2] No such file or directory: '/Users/m5agent/Documents/m5stack-schematics-text/artifacts/schematics/stamp-s3a-pin1-27-5dd833869320/asset_manifest.json'"
+      ],
+      "product_id": "stamp-s3a-pin1-27-5dd833869320",
+      "status": "failed"
+    },
+    {
+      "errors": [
+        "[Errno 2] No such file or directory: '/Users/m5agent/Documents/m5stack-schematics-text/artifacts/schematics/stamp-s3a-pin2-54-7a199e4470e6/asset_manifest.json'"
+      ],
+      "product_id": "stamp-s3a-pin2-54-7a199e4470e6",
+      "status": "failed"
+    },
+    {
+      "errors": [
+        "[Errno 2] No such file or directory: '/Users/m5agent/Documents/m5stack-schematics-text/artifacts/schematics/stamp-s3bat-7601115a7f19/asset_manifest.json'"
+      ],
+      "product_id": "stamp-s3bat-7601115a7f19",
+      "status": "failed"
+    },
+    {
+      "errors": [
+        "[Errno 2] No such file or directory: '/Users/m5agent/Documents/m5stack-schematics-text/artifacts/schematics/stamp-s3bat-dip-36a8afc15a95/asset_manifest.json'"
+      ],
+      "product_id": "stamp-s3bat-dip-36a8afc15a95",
+      "status": "failed"
+    },
+    {
+      "errors": [
+        "[Errno 2] No such file or directory: '/Users/m5agent/Documents/m5stack-schematics-text/artifacts/schematics/stamp-timer-power-e1b11c744436/asset_manifest.json'"
+      ],
+      "product_id": "stamp-timer-power-e1b11c744436",
+      "status": "failed"
+    },
+    {
+      "backup": null,
+      "draft_action": "unchanged",
+      "dry_run": true,
+      "errors": [],
+      "needs_review": 2,
+      "product_id": "stamp-timer-power2-bb65c8e7c60b",
+      "product_name": "Stamp Timer Power2",
+      "publish_action": "unchanged",
+      "sha256": "0963fb92a36635221dfd3544dd72aaede7537e46c7d2cd06797446e9091548a9",
+      "status": "valid",
+      "uncertain_facts": 2
+    },
+    {
+      "errors": [
+        "[Errno 2] No such file or directory: '/Users/m5agent/Documents/m5stack-schematics-text/artifacts/schematics/stamp-uwb-97095012361a/asset_manifest.json'"
+      ],
+      "product_id": "stamp-uwb-97095012361a",
+      "status": "failed"
+    },
+    {
+      "errors": [
+        "[Errno 2] No such file or directory: '/Users/m5agent/Documents/m5stack-schematics-text/artifacts/schematics/stamp-uwb-f-c5fdb11e08a9/asset_manifest.json'"
+      ],
+      "product_id": "stamp-uwb-f-c5fdb11e08a9",
+      "status": "failed"
+    },
+    {
+      "errors": [
+        "[Errno 2] No such file or directory: '/Users/m5agent/Documents/m5stack-schematics-text/artifacts/schematics/stampfly-156124ab77ad/asset_manifest.json'"
+      ],
+      "product_id": "stampfly-156124ab77ad",
+      "status": "failed"
+    },
+    {
+      "errors": [
+        "[Errno 2] No such file or directory: '/Users/m5agent/Documents/m5stack-schematics-text/artifacts/schematics/stampfly-v1-1-f012eacc6ec8/asset_manifest.json'"
+      ],
+      "product_id": "stampfly-v1-1-f012eacc6ec8",
+      "status": "failed"
+    },
+    {
+      "errors": [
+        "[Errno 2] No such file or directory: '/Users/m5agent/Documents/m5stack-schematics-text/artifacts/schematics/stamplc-0cdf00b2da3a/asset_manifest.json'"
+      ],
+      "product_id": "stamplc-0cdf00b2da3a",
+      "status": "failed"
+    },
+    {
+      "errors": [
+        "[Errno 2] No such file or directory: '/Users/m5agent/Documents/m5stack-schematics-text/artifacts/schematics/stamplc-ac-69d472906fd8/asset_manifest.json'"
+      ],
+      "product_id": "stamplc-ac-69d472906fd8",
+      "status": "failed"
+    },
+    {
+      "errors": [
+        "[Errno 2] No such file or directory: '/Users/m5agent/Documents/m5stack-schematics-text/artifacts/schematics/stamplc-io-8af85d3bc38c/asset_manifest.json'"
+      ],
+      "product_id": "stamplc-io-8af85d3bc38c",
+      "status": "failed"
+    },
+    {
+      "errors": [
+        "[Errno 2] No such file or directory: '/Users/m5agent/Documents/m5stack-schematics-text/artifacts/schematics/stamplc-poe-c8d18c868a51/asset_manifest.json'"
+      ],
+      "product_id": "stamplc-poe-c8d18c868a51",
+      "status": "failed"
+    },
+    {
+      "errors": [
+        "[Errno 2] No such file or directory: '/Users/m5agent/Documents/m5stack-schematics-text/artifacts/schematics/station-485-a0c0e6720492/asset_manifest.json'"
+      ],
+      "product_id": "station-485-a0c0e6720492",
+      "status": "failed"
+    },
+    {
+      "errors": [
+        "[Errno 2] No such file or directory: '/Users/m5agent/Documents/m5stack-schematics-text/artifacts/schematics/station-bat-19af8aaec9ac/asset_manifest.json'"
+      ],
+      "product_id": "station-bat-19af8aaec9ac",
+      "status": "failed"
+    },
+    {
+      "errors": [
+        "[Errno 2] No such file or directory: '/Users/m5agent/Documents/m5stack-schematics-text/artifacts/schematics/stickc-03f0da06c74a/asset_manifest.json'"
+      ],
+      "product_id": "stickc-03f0da06c74a",
+      "status": "failed"
+    },
+    {
+      "errors": [
+        "[Errno 2] No such file or directory: '/Users/m5agent/Documents/m5stack-schematics-text/artifacts/schematics/stickc-plus-12af40664144/asset_manifest.json'"
+      ],
+      "product_id": "stickc-plus-12af40664144",
+      "status": "failed"
+    },
+    {
+      "errors": [
+        "[Errno 2] No such file or directory: '/Users/m5agent/Documents/m5stack-schematics-text/artifacts/schematics/stickc-plus-se-7629b95652fc/asset_manifest.json'"
+      ],
+      "product_id": "stickc-plus-se-7629b95652fc",
+      "status": "failed"
+    },
+    {
+      "errors": [
+        "'Product not found by product_id: stickc-plus-se-coming-soon-7629b95652fc'"
+      ],
+      "product_id": "stickc-plus-se-coming-soon-7629b95652fc",
+      "status": "failed"
+    },
+    {
+      "errors": [
+        "[Errno 2] No such file or directory: '/Users/m5agent/Documents/m5stack-schematics-text/artifacts/schematics/stickc-plus-watch-kit-cf5757c3c407/asset_manifest.json'"
+      ],
+      "product_id": "stickc-plus-watch-kit-cf5757c3c407",
+      "status": "failed"
+    },
+    {
+      "errors": [
+        "[Errno 2] No such file or directory: '/Users/m5agent/Documents/m5stack-schematics-text/artifacts/schematics/stickc-plus2-84b7dafe0db8/asset_manifest.json'"
+      ],
+      "product_id": "stickc-plus2-84b7dafe0db8",
+      "status": "failed"
+    },
+    {
+      "errors": [
+        "[Errno 2] No such file or directory: '/Users/m5agent/Documents/m5stack-schematics-text/artifacts/schematics/stickc-plus2-watch-kit-32a0fef6022f/asset_manifest.json'"
+      ],
+      "product_id": "stickc-plus2-watch-kit-32a0fef6022f",
+      "status": "failed"
+    },
+    {
+      "errors": [
+        "[Errno 2] No such file or directory: '/Users/m5agent/Documents/m5stack-schematics-text/artifacts/schematics/sticks3-c6d889ecb262/asset_manifest.json'"
+      ],
+      "product_id": "sticks3-c6d889ecb262",
+      "status": "failed"
+    },
+    {
+      "errors": [
+        "[Errno 2] No such file or directory: '/Users/m5agent/Documents/m5stack-schematics-text/artifacts/schematics/stickv-b3c3e7b4b90e/asset_manifest.json'"
+      ],
+      "product_id": "stickv-b3c3e7b4b90e",
+      "status": "failed"
+    },
+    {
+      "errors": [
+        "[Errno 2] No such file or directory: '/Users/m5agent/Documents/m5stack-schematics-text/artifacts/schematics/stopwatch-1414a8f866be/asset_manifest.json'"
+      ],
+      "product_id": "stopwatch-1414a8f866be",
+      "status": "failed"
+    },
+    {
+      "errors": [
+        "[Errno 2] No such file or directory: '/Users/m5agent/Documents/m5stack-schematics-text/artifacts/schematics/tab5-2e8b5b5de1fb/asset_manifest.json'"
+      ],
+      "product_id": "tab5-2e8b5b5de1fb",
+      "status": "failed"
+    },
+    {
+      "errors": [
+        "[Errno 2] No such file or directory: '/Users/m5agent/Documents/m5stack-schematics-text/artifacts/schematics/tab5-keyboard-d4c3f4783ca5/asset_manifest.json'"
+      ],
+      "product_id": "tab5-keyboard-d4c3f4783ca5",
+      "status": "failed"
+    },
+    {
+      "errors": [
+        "[Errno 2] No such file or directory: '/Users/m5agent/Documents/m5stack-schematics-text/artifacts/schematics/tail-bat-8596aaaaa9a1/asset_manifest.json'"
+      ],
+      "product_id": "tail-bat-8596aaaaa9a1",
+      "status": "failed"
+    },
+    {
+      "errors": [
+        "[Errno 2] No such file or directory: '/Users/m5agent/Documents/m5stack-schematics-text/artifacts/schematics/tail-rs485-35d2ba502abe/asset_manifest.json'"
+      ],
+      "product_id": "tail-rs485-35d2ba502abe",
+      "status": "failed"
+    },
+    {
+      "errors": [
+        "[Errno 2] No such file or directory: '/Users/m5agent/Documents/m5stack-schematics-text/artifacts/schematics/timercamera-56ad239d7994/asset_manifest.json'"
+      ],
+      "product_id": "timercamera-56ad239d7994",
+      "status": "failed"
+    },
+    {
+      "errors": [
+        "[Errno 2] No such file or directory: '/Users/m5agent/Documents/m5stack-schematics-text/artifacts/schematics/timercamera-f-964a85b1021e/asset_manifest.json'"
+      ],
+      "product_id": "timercamera-f-964a85b1021e",
+      "status": "failed"
+    },
+    {
+      "errors": [
+        "[Errno 2] No such file or directory: '/Users/m5agent/Documents/m5stack-schematics-text/artifacts/schematics/timercamera-x-eba094edbdc4/asset_manifest.json'"
+      ],
+      "product_id": "timercamera-x-eba094edbdc4",
+      "status": "failed"
+    },
+    {
+      "errors": [
+        "[Errno 2] No such file or directory: '/Users/m5agent/Documents/m5stack-schematics-text/artifacts/schematics/tough-1f2d2983b489/asset_manifest.json'"
+      ],
+      "product_id": "tough-1f2d2983b489",
+      "status": "failed"
+    },
+    {
+      "backup": null,
+      "draft_action": "unchanged",
+      "dry_run": true,
+      "errors": [],
+      "needs_review": 5,
+      "product_id": "toughc5-79d51395fbd2",
+      "product_name": "ToughC5",
+      "publish_action": "unchanged",
+      "sha256": "e0e8963dd8eb7ac85843106ae3d4d8ed5a89ea599caf197b0e72cdcc95056535",
+      "status": "valid",
+      "uncertain_facts": 5
+    },
+    {
+      "errors": [
+        "[Errno 2] No such file or directory: '/Users/m5agent/Documents/m5stack-schematics-text/artifacts/schematics/unit-2relay-082cac04e142/asset_manifest.json'"
+      ],
+      "product_id": "unit-2relay-082cac04e142",
+      "status": "failed"
+    },
+    {
+      "errors": [
+        "[Errno 2] No such file or directory: '/Users/m5agent/Documents/m5stack-schematics-text/artifacts/schematics/unit-4relay-30ce3c3f2670/asset_manifest.json'"
+      ],
+      "product_id": "unit-4relay-30ce3c3f2670",
+      "status": "failed"
+    },
+    {
+      "errors": [
+        "[Errno 2] No such file or directory: '/Users/m5agent/Documents/m5stack-schematics-text/artifacts/schematics/unit-8angle-e52c04131be5/asset_manifest.json'"
+      ],
+      "product_id": "unit-8angle-e52c04131be5",
+      "status": "failed"
+    },
+    {
+      "errors": [
+        "[Errno 2] No such file or directory: '/Users/m5agent/Documents/m5stack-schematics-text/artifacts/schematics/unit-8encoder-02e2f84d6fb0/asset_manifest.json'"
+      ],
+      "product_id": "unit-8encoder-02e2f84d6fb0",
+      "status": "failed"
+    },
+    {
+      "errors": [
+        "[Errno 2] No such file or directory: '/Users/m5agent/Documents/m5stack-schematics-text/artifacts/schematics/unit-8servos-206387ff33ed/asset_manifest.json'"
+      ],
+      "product_id": "unit-8servos-206387ff33ed",
+      "status": "failed"
+    },
+    {
+      "backup": null,
+      "draft_action": "unchanged",
+      "dry_run": true,
+      "errors": [],
+      "needs_review": 1,
+      "product_id": "unit-8servos2-chain-5cbe245777be",
+      "product_name": "Unit 8Servos2-Chain",
+      "publish_action": "unchanged",
+      "sha256": "35735d6344ea57a806adc6950b3d390c34932a4ff79fddd86fb3fb7c21cbe4d9",
+      "status": "valid",
+      "uncertain_facts": 0
+    },
+    {
+      "backup": null,
+      "draft_action": "unchanged",
+      "dry_run": true,
+      "errors": [],
+      "needs_review": 1,
+      "product_id": "unit-8servos2-i2c-781bab2970d2",
+      "product_name": "Unit 8Servos2-I2C",
+      "publish_action": "unchanged",
+      "sha256": "4931b1644e64f49456c75365cf1ee1bc7f65f5856ae382e0f6ac52bf94b3283c",
+      "status": "valid",
+      "uncertain_facts": 0
+    },
+    {
+      "errors": [
+        "[Errno 2] No such file or directory: '/Users/m5agent/Documents/m5stack-schematics-text/artifacts/schematics/unit-ac-measure-661899298cfe/asset_manifest.json'"
+      ],
+      "product_id": "unit-ac-measure-661899298cfe",
+      "status": "failed"
+    },
+    {
+      "errors": [
+        "[Errno 2] No such file or directory: '/Users/m5agent/Documents/m5stack-schematics-text/artifacts/schematics/unit-accel-b0c92dda0614/asset_manifest.json'"
+      ],
+      "product_id": "unit-accel-b0c92dda0614",
+      "status": "failed"
+    },
+    {
+      "errors": [
+        "[Errno 2] No such file or directory: '/Users/m5agent/Documents/m5stack-schematics-text/artifacts/schematics/unit-acssr-856e468edd0e/asset_manifest.json'"
+      ],
+      "product_id": "unit-acssr-856e468edd0e",
+      "status": "failed"
+    },
+    {
+      "errors": [
+        "[Errno 2] No such file or directory: '/Users/m5agent/Documents/m5stack-schematics-text/artifacts/schematics/unit-adc-9b141c912f2a/asset_manifest.json'"
+      ],
+      "product_id": "unit-adc-9b141c912f2a",
+      "status": "failed"
+    },
+    {
+      "errors": [
+        "[Errno 2] No such file or directory: '/Users/m5agent/Documents/m5stack-schematics-text/artifacts/schematics/unit-adc-v1-1-4f4844dbea51/asset_manifest.json'"
+      ],
+      "product_id": "unit-adc-v1-1-4f4844dbea51",
+      "status": "failed"
+    },
+    {
+      "errors": [
+        "[Errno 2] No such file or directory: '/Users/m5agent/Documents/m5stack-schematics-text/artifacts/schematics/unit-ain4-20ma-d3746bdaf710/asset_manifest.json'"
+      ],
+      "product_id": "unit-ain4-20ma-d3746bdaf710",
+      "status": "failed"
+    },
+    {
+      "errors": [
+        "[Errno 2] No such file or directory: '/Users/m5agent/Documents/m5stack-schematics-text/artifacts/schematics/unit-angle-69efbab3ceb4/asset_manifest.json'"
+      ],
+      "product_id": "unit-angle-69efbab3ceb4",
+      "status": "failed"
+    },
+    {
+      "errors": [
+        "[Errno 2] No such file or directory: '/Users/m5agent/Documents/m5stack-schematics-text/artifacts/schematics/unit-asr-a8e654b97ac6/asset_manifest.json'"
+      ],
+      "product_id": "unit-asr-a8e654b97ac6",
+      "status": "failed"
+    },
+    {
+      "errors": [
+        "[Errno 2] No such file or directory: '/Users/m5agent/Documents/m5stack-schematics-text/artifacts/schematics/unit-audioplayer-948669ca7509/asset_manifest.json'"
+      ],
+      "product_id": "unit-audioplayer-948669ca7509",
+      "status": "failed"
+    },
+    {
+      "errors": [
+        "[Errno 2] No such file or directory: '/Users/m5agent/Documents/m5stack-schematics-text/artifacts/schematics/unit-bldc-driver-fe1397986f4b/asset_manifest.json'"
+      ],
+      "product_id": "unit-bldc-driver-fe1397986f4b",
+      "status": "failed"
+    },
+    {
+      "backup": null,
+      "draft_action": "unchanged",
+      "dry_run": true,
+      "errors": [],
+      "needs_review": 1,
+      "product_id": "unit-bmm350-88be2b4d449c",
+      "product_name": "Unit BMM350",
+      "publish_action": "unchanged",
+      "sha256": "2884a5312bdf7805ea6556e8873ec850eed683232af862a87caad363e3dc1482",
+      "status": "valid",
+      "uncertain_facts": 1
+    },
+    {
+      "errors": [
+        "[Errno 2] No such file or directory: '/Users/m5agent/Documents/m5stack-schematics-text/artifacts/schematics/unit-button-15587bbf1a6f/asset_manifest.json'"
+      ],
+      "product_id": "unit-button-15587bbf1a6f",
+      "status": "failed"
+    },
+    {
+      "errors": [
+        "[Errno 2] No such file or directory: '/Users/m5agent/Documents/m5stack-schematics-text/artifacts/schematics/unit-buzzer-e992324e6a5f/asset_manifest.json'"
+      ],
+      "product_id": "unit-buzzer-e992324e6a5f",
+      "status": "failed"
+    },
+    {
+      "errors": [
+        "[Errno 2] No such file or directory: '/Users/m5agent/Documents/m5stack-schematics-text/artifacts/schematics/unit-bytebutton-afe4979eef29/asset_manifest.json'"
+      ],
+      "product_id": "unit-bytebutton-afe4979eef29",
+      "status": "failed"
+    },
+    {
+      "errors": [
+        "[Errno 2] No such file or directory: '/Users/m5agent/Documents/m5stack-schematics-text/artifacts/schematics/unit-byteswitch-8affca4358be/asset_manifest.json'"
+      ],
+      "product_id": "unit-byteswitch-8affca4358be",
+      "status": "failed"
+    },
+    {
+      "errors": [
+        "[Errno 2] No such file or directory: '/Users/m5agent/Documents/m5stack-schematics-text/artifacts/schematics/unit-c6l-978d685b24b9/asset_manifest.json'"
+      ],
+      "product_id": "unit-c6l-978d685b24b9",
+      "status": "failed"
+    },
+    {
+      "errors": [
+        "[Errno 2] No such file or directory: '/Users/m5agent/Documents/m5stack-schematics-text/artifacts/schematics/unit-cam-0e7a4ce648c7/asset_manifest.json'"
+      ],
+      "product_id": "unit-cam-0e7a4ce648c7",
+      "status": "failed"
+    },
+    {
+      "errors": [
+        "[Errno 2] No such file or directory: '/Users/m5agent/Documents/m5stack-schematics-text/artifacts/schematics/unit-camera-5eca3cc8e61e/asset_manifest.json'"
+      ],
+      "product_id": "unit-camera-5eca3cc8e61e",
+      "status": "failed"
+    },
+    {
+      "errors": [
+        "[Errno 2] No such file or directory: '/Users/m5agent/Documents/m5stack-schematics-text/artifacts/schematics/unit-camera-diy-kit-db540551e151/asset_manifest.json'"
+      ],
+      "product_id": "unit-camera-diy-kit-db540551e151",
+      "status": "failed"
+    },
+    {
+      "errors": [
+        "[Errno 2] No such file or directory: '/Users/m5agent/Documents/m5stack-schematics-text/artifacts/schematics/unit-cams3-5a4131b60dd3/asset_manifest.json'"
+      ],
+      "product_id": "unit-cams3-5a4131b60dd3",
+      "status": "failed"
+    },
+    {
+      "errors": [
+        "[Errno 2] No such file or directory: '/Users/m5agent/Documents/m5stack-schematics-text/artifacts/schematics/unit-cams3-5mp-7f472b7f6963/asset_manifest.json'"
+      ],
+      "product_id": "unit-cams3-5mp-7f472b7f6963",
+      "status": "failed"
+    },
+    {
+      "errors": [
+        "[Errno 2] No such file or directory: '/Users/m5agent/Documents/m5stack-schematics-text/artifacts/schematics/unit-can-bcce96f7e852/asset_manifest.json'"
+      ],
+      "product_id": "unit-can-bcce96f7e852",
+      "status": "failed"
+    },
+    {
+      "errors": [
+        "[Errno 2] No such file or directory: '/Users/m5agent/Documents/m5stack-schematics-text/artifacts/schematics/unit-cardkb2-f04738bf1335/asset_manifest.json'"
+      ],
+      "product_id": "unit-cardkb2-f04738bf1335",
+      "status": "failed"
+    },
+    {
+      "errors": [
+        "[Errno 2] No such file or directory: '/Users/m5agent/Documents/m5stack-schematics-text/artifacts/schematics/unit-cat1-cn-2bfd2e248c89/asset_manifest.json'"
+      ],
+      "product_id": "unit-cat1-cn-2bfd2e248c89",
+      "status": "failed"
+    },
+    {
+      "errors": [
+        "[Errno 2] No such file or directory: '/Users/m5agent/Documents/m5stack-schematics-text/artifacts/schematics/unit-catm-8f4ee0c8d6cd/asset_manifest.json'"
+      ],
+      "product_id": "unit-catm-8f4ee0c8d6cd",
+      "status": "failed"
+    },
+    {
+      "errors": [
+        "[Errno 2] No such file or directory: '/Users/m5agent/Documents/m5stack-schematics-text/artifacts/schematics/unit-catm-gnss-dc6725ac8794/asset_manifest.json'"
+      ],
+      "product_id": "unit-catm-gnss-dc6725ac8794",
+      "status": "failed"
+    },
+    {
+      "errors": [
+        "[Errno 2] No such file or directory: '/Users/m5agent/Documents/m5stack-schematics-text/artifacts/schematics/unit-chainbus-c02a3e614b6e/asset_manifest.json'"
+      ],
+      "product_id": "unit-chainbus-c02a3e614b6e",
+      "status": "failed"
+    },
+    {
+      "errors": [
+        "[Errno 2] No such file or directory: '/Users/m5agent/Documents/m5stack-schematics-text/artifacts/schematics/unit-co2-0262cfa83a1c/asset_manifest.json'"
+      ],
+      "product_id": "unit-co2-0262cfa83a1c",
+      "status": "failed"
+    },
+    {
+      "errors": [
+        "[Errno 2] No such file or directory: '/Users/m5agent/Documents/m5stack-schematics-text/artifacts/schematics/unit-co2l-f63045a68676/asset_manifest.json'"
+      ],
+      "product_id": "unit-co2l-f63045a68676",
+      "status": "failed"
+    },
+    {
+      "errors": [
+        "[Errno 2] No such file or directory: '/Users/m5agent/Documents/m5stack-schematics-text/artifacts/schematics/unit-color-c738d15370d3/asset_manifest.json'"
+      ],
+      "product_id": "unit-color-c738d15370d3",
+      "status": "failed"
+    },
+    {
+      "errors": [
+        "[Errno 2] No such file or directory: '/Users/m5agent/Documents/m5stack-schematics-text/artifacts/schematics/unit-dac-fadb28ec7087/asset_manifest.json'"
+      ],
+      "product_id": "unit-dac-fadb28ec7087",
+      "status": "failed"
+    },
+    {
+      "errors": [
+        "[Errno 2] No such file or directory: '/Users/m5agent/Documents/m5stack-schematics-text/artifacts/schematics/unit-dac2-b428d9b69609/asset_manifest.json'"
+      ],
+      "product_id": "unit-dac2-b428d9b69609",
+      "status": "failed"
+    },
+    {
+      "errors": [
+        "[Errno 2] No such file or directory: '/Users/m5agent/Documents/m5stack-schematics-text/artifacts/schematics/unit-dds-233a84b8d205/asset_manifest.json'"
+      ],
+      "product_id": "unit-dds-233a84b8d205",
+      "status": "failed"
+    },
+    {
+      "errors": [
+        "[Errno 2] No such file or directory: '/Users/m5agent/Documents/m5stack-schematics-text/artifacts/schematics/unit-digiclock-63cf25e6b4eb/asset_manifest.json'"
+      ],
+      "product_id": "unit-digiclock-63cf25e6b4eb",
+      "status": "failed"
+    },
+    {
+      "errors": [
+        "[Errno 2] No such file or directory: '/Users/m5agent/Documents/m5stack-schematics-text/artifacts/schematics/unit-dlight-ef874caa3331/asset_manifest.json'"
+      ],
+      "product_id": "unit-dlight-ef874caa3331",
+      "status": "failed"
+    },
+    {
+      "errors": [
+        "[Errno 2] No such file or directory: '/Users/m5agent/Documents/m5stack-schematics-text/artifacts/schematics/unit-dmx-012418845602/asset_manifest.json'"
+      ],
+      "product_id": "unit-dmx-012418845602",
+      "status": "failed"
+    },
+    {
+      "backup": null,
+      "draft_action": "unchanged",
+      "dry_run": true,
+      "errors": [],
+      "needs_review": 2,
+      "product_id": "unit-dof10-6864dc726831",
+      "product_name": "Unit DoF10",
+      "publish_action": "unchanged",
+      "sha256": "9858f3c9bf0bd4fb454352bf000b4620bf82ce09fca8980680769b736f407fb6",
+      "status": "valid",
+      "uncertain_facts": 2
+    },
+    {
+      "backup": null,
+      "draft_action": "unchanged",
+      "dry_run": true,
+      "errors": [],
+      "needs_review": 2,
+      "product_id": "unit-dof6-acb3895e8d5b",
+      "product_name": "Unit DoF6",
+      "publish_action": "unchanged",
+      "sha256": "7fff577eaf30cacbdd893900456a855f6e9a7ce08d6edb3a69803bf5c2590d9a",
       "status": "valid",
       "uncertain_facts": 1
     },
     {
       "backup": null,
       "draft_action": "unchanged",
-      "dry_run": false,
+      "dry_run": true,
       "errors": [],
-      "needs_review": 0,
-      "product_id": "485t-ba3491b476d0",
-      "product_name": "485T",
+      "needs_review": 1,
+      "product_id": "unit-dof9-a231857e2581",
+      "product_name": "Unit DoF9",
       "publish_action": "unchanged",
-      "sha256": "afc76579ab7f5b3e62ad82b9bceee7899e757fb610f2edd37991dea84836320a",
+      "sha256": "476aafd798a1650fa469fdaa93de68b05a747c73e4325b207da03f2b33c70085",
       "status": "valid",
-      "uncertain_facts": 0
+      "uncertain_facts": 1
     },
     {
-      "backup": null,
-      "draft_action": "unchanged",
-      "dry_run": false,
-      "errors": [],
-      "needs_review": 0,
-      "product_id": "tab5-2e8b5b5de1fb",
-      "product_name": "Tab5",
-      "publish_action": "unchanged",
-      "sha256": "8eacafd9df300761418e05d47b336471125da53c61b8067715fee19dda721d37",
-      "status": "valid",
-      "uncertain_facts": 0
+      "errors": [
+        "[Errno 2] No such file or directory: '/Users/m5agent/Documents/m5stack-schematics-text/artifacts/schematics/unit-dual-button-276964214cf7/asset_manifest.json'"
+      ],
+      "product_id": "unit-dual-button-276964214cf7",
+      "status": "failed"
+    },
+    {
+      "errors": [
+        "[Errno 2] No such file or directory: '/Users/m5agent/Documents/m5stack-schematics-text/artifacts/schematics/unit-earth-4cde6301f673/asset_manifest.json'"
+      ],
+      "product_id": "unit-earth-4cde6301f673",
+      "status": "failed"
+    },
+    {
+      "errors": [
+        "[Errno 2] No such file or directory: '/Users/m5agent/Documents/m5stack-schematics-text/artifacts/schematics/unit-encoder-20eb287ba027/asset_manifest.json'"
+      ],
+      "product_id": "unit-encoder-20eb287ba027",
+      "status": "failed"
+    },
+    {
+      "errors": [
+        "[Errno 2] No such file or directory: '/Users/m5agent/Documents/m5stack-schematics-text/artifacts/schematics/unit-env-2ba151987edb/asset_manifest.json'"
+      ],
+      "product_id": "unit-env-2ba151987edb",
+      "status": "failed"
+    },
+    {
+      "errors": [
+        "[Errno 2] No such file or directory: '/Users/m5agent/Documents/m5stack-schematics-text/artifacts/schematics/unit-env-ii-87836fb3befd/asset_manifest.json'"
+      ],
+      "product_id": "unit-env-ii-87836fb3befd",
+      "status": "failed"
+    },
+    {
+      "errors": [
+        "[Errno 2] No such file or directory: '/Users/m5agent/Documents/m5stack-schematics-text/artifacts/schematics/unit-env-iii-b7aa03a7c9e8/asset_manifest.json'"
+      ],
+      "product_id": "unit-env-iii-b7aa03a7c9e8",
+      "status": "failed"
+    },
+    {
+      "errors": [
+        "[Errno 2] No such file or directory: '/Users/m5agent/Documents/m5stack-schematics-text/artifacts/schematics/unit-env-iv-911c8353d3dd/asset_manifest.json'"
+      ],
+      "product_id": "unit-env-iv-911c8353d3dd",
+      "status": "failed"
+    },
+    {
+      "errors": [
+        "[Errno 2] No such file or directory: '/Users/m5agent/Documents/m5stack-schematics-text/artifacts/schematics/unit-env-pro-c6547e5b42d2/asset_manifest.json'"
+      ],
+      "product_id": "unit-env-pro-c6547e5b42d2",
+      "status": "failed"
+    },
+    {
+      "errors": [
+        "[Errno 2] No such file or directory: '/Users/m5agent/Documents/m5stack-schematics-text/artifacts/schematics/unit-ext-io-9b18ce60fe27/asset_manifest.json'"
+      ],
+      "product_id": "unit-ext-io-9b18ce60fe27",
+      "status": "failed"
+    },
+    {
+      "errors": [
+        "[Errno 2] No such file or directory: '/Users/m5agent/Documents/m5stack-schematics-text/artifacts/schematics/unit-ext-io2-70ff0c02255f/asset_manifest.json'"
+      ],
+      "product_id": "unit-ext-io2-70ff0c02255f",
+      "status": "failed"
+    },
+    {
+      "errors": [
+        "[Errno 2] No such file or directory: '/Users/m5agent/Documents/m5stack-schematics-text/artifacts/schematics/unit-extencoder-afea3e9f9b59/asset_manifest.json'"
+      ],
+      "product_id": "unit-extencoder-afea3e9f9b59",
+      "status": "failed"
+    },
+    {
+      "errors": [
+        "[Errno 2] No such file or directory: '/Users/m5agent/Documents/m5stack-schematics-text/artifacts/schematics/unit-fader-21ccf33d2601/asset_manifest.json'"
+      ],
+      "product_id": "unit-fader-21ccf33d2601",
+      "status": "failed"
+    },
+    {
+      "errors": [
+        "[Errno 2] No such file or directory: '/Users/m5agent/Documents/m5stack-schematics-text/artifacts/schematics/unit-fan-2ed411433320/asset_manifest.json'"
+      ],
+      "product_id": "unit-fan-2ed411433320",
+      "status": "failed"
+    },
+    {
+      "errors": [
+        "[Errno 2] No such file or directory: '/Users/m5agent/Documents/m5stack-schematics-text/artifacts/schematics/unit-finger-cb97ff2ea398/asset_manifest.json'"
+      ],
+      "product_id": "unit-finger-cb97ff2ea398",
+      "status": "failed"
+    },
+    {
+      "errors": [
+        "[Errno 2] No such file or directory: '/Users/m5agent/Documents/m5stack-schematics-text/artifacts/schematics/unit-fingerprint2-df1b9c951b4d/asset_manifest.json'"
+      ],
+      "product_id": "unit-fingerprint2-df1b9c951b4d",
+      "status": "failed"
+    },
+    {
+      "errors": [
+        "[Errno 2] No such file or directory: '/Users/m5agent/Documents/m5stack-schematics-text/artifacts/schematics/unit-flashlight-e11cc1d58c76/asset_manifest.json'"
+      ],
+      "product_id": "unit-flashlight-e11cc1d58c76",
+      "status": "failed"
+    },
+    {
+      "errors": [
+        "[Errno 2] No such file or directory: '/Users/m5agent/Documents/m5stack-schematics-text/artifacts/schematics/unit-gateway-h2-3d4f3f01cf7e/asset_manifest.json'"
+      ],
+      "product_id": "unit-gateway-h2-3d4f3f01cf7e",
+      "status": "failed"
+    },
+    {
+      "errors": [
+        "[Errno 2] No such file or directory: '/Users/m5agent/Documents/m5stack-schematics-text/artifacts/schematics/unit-gesture-b878d4a41acb/asset_manifest.json'"
+      ],
+      "product_id": "unit-gesture-b878d4a41acb",
+      "status": "failed"
+    },
+    {
+      "errors": [
+        "[Errno 2] No such file or directory: '/Users/m5agent/Documents/m5stack-schematics-text/artifacts/schematics/unit-glass-135ab40c2570/asset_manifest.json'"
+      ],
+      "product_id": "unit-glass-135ab40c2570",
+      "status": "failed"
+    },
+    {
+      "errors": [
+        "[Errno 2] No such file or directory: '/Users/m5agent/Documents/m5stack-schematics-text/artifacts/schematics/unit-glass2-f68c9376b2f6/asset_manifest.json'"
+      ],
+      "product_id": "unit-glass2-f68c9376b2f6",
+      "status": "failed"
+    },
+    {
+      "errors": [
+        "[Errno 2] No such file or directory: '/Users/m5agent/Documents/m5stack-schematics-text/artifacts/schematics/unit-gps-14a75f276fa6/asset_manifest.json'"
+      ],
+      "product_id": "unit-gps-14a75f276fa6",
+      "status": "failed"
+    },
+    {
+      "errors": [
+        "[Errno 2] No such file or directory: '/Users/m5agent/Documents/m5stack-schematics-text/artifacts/schematics/unit-gps-sma-0205aa2de7bb/asset_manifest.json'"
+      ],
+      "product_id": "unit-gps-sma-0205aa2de7bb",
+      "status": "failed"
+    },
+    {
+      "errors": [
+        "[Errno 2] No such file or directory: '/Users/m5agent/Documents/m5stack-schematics-text/artifacts/schematics/unit-gps-v1-1-798281308d46/asset_manifest.json'"
+      ],
+      "product_id": "unit-gps-v1-1-798281308d46",
+      "status": "failed"
+    },
+    {
+      "errors": [
+        "[Errno 2] No such file or directory: '/Users/m5agent/Documents/m5stack-schematics-text/artifacts/schematics/unit-grove-to-grove-011b18ade30e/asset_manifest.json'"
+      ],
+      "product_id": "unit-grove-to-grove-011b18ade30e",
+      "status": "failed"
+    },
+    {
+      "errors": [
+        "[Errno 2] No such file or directory: '/Users/m5agent/Documents/m5stack-schematics-text/artifacts/schematics/unit-hall-5e561c7d32c0/asset_manifest.json'"
+      ],
+      "product_id": "unit-hall-5e561c7d32c0",
+      "status": "failed"
+    },
+    {
+      "errors": [
+        "[Errno 2] No such file or directory: '/Users/m5agent/Documents/m5stack-schematics-text/artifacts/schematics/unit-hbridge-be6746009602/asset_manifest.json'"
+      ],
+      "product_id": "unit-hbridge-be6746009602",
+      "status": "failed"
+    },
+    {
+      "errors": [
+        "[Errno 2] No such file or directory: '/Users/m5agent/Documents/m5stack-schematics-text/artifacts/schematics/unit-hbridge-v1-1-13c2bfb2a9d9/asset_manifest.json'"
+      ],
+      "product_id": "unit-hbridge-v1-1-13c2bfb2a9d9",
+      "status": "failed"
+    },
+    {
+      "errors": [
+        "[Errno 2] No such file or directory: '/Users/m5agent/Documents/m5stack-schematics-text/artifacts/schematics/unit-heart-641c5a874047/asset_manifest.json'"
+      ],
+      "product_id": "unit-heart-641c5a874047",
+      "status": "failed"
+    },
+    {
+      "errors": [
+        "[Errno 2] No such file or directory: '/Users/m5agent/Documents/m5stack-schematics-text/artifacts/schematics/unit-hex-3391bac05f15/asset_manifest.json'"
+      ],
+      "product_id": "unit-hex-3391bac05f15",
+      "status": "failed"
+    },
+    {
+      "errors": [
+        "[Errno 2] No such file or directory: '/Users/m5agent/Documents/m5stack-schematics-text/artifacts/schematics/unit-hub-21425f603dc6/asset_manifest.json'"
+      ],
+      "product_id": "unit-hub-21425f603dc6",
+      "status": "failed"
+    },
+    {
+      "errors": [
+        "[Errno 2] No such file or directory: '/Users/m5agent/Documents/m5stack-schematics-text/artifacts/schematics/unit-id-14401b5e5d23/asset_manifest.json'"
+      ],
+      "product_id": "unit-id-14401b5e5d23",
+      "status": "failed"
+    },
+    {
+      "errors": [
+        "[Errno 2] No such file or directory: '/Users/m5agent/Documents/m5stack-schematics-text/artifacts/schematics/unit-ina226-10a-aa1797f184e5/asset_manifest.json'"
+      ],
+      "product_id": "unit-ina226-10a-aa1797f184e5",
+      "status": "failed"
+    },
+    {
+      "errors": [
+        "[Errno 2] No such file or directory: '/Users/m5agent/Documents/m5stack-schematics-text/artifacts/schematics/unit-ina226-1a-2d8f6544e320/asset_manifest.json'"
+      ],
+      "product_id": "unit-ina226-1a-2d8f6544e320",
+      "status": "failed"
+    },
+    {
+      "errors": [
+        "[Errno 2] No such file or directory: '/Users/m5agent/Documents/m5stack-schematics-text/artifacts/schematics/unit-ir-0f40b3a22490/asset_manifest.json'"
+      ],
+      "product_id": "unit-ir-0f40b3a22490",
+      "status": "failed"
+    },
+    {
+      "errors": [
+        "[Errno 2] No such file or directory: '/Users/m5agent/Documents/m5stack-schematics-text/artifacts/schematics/unit-joystick-3a33915b6406/asset_manifest.json'"
+      ],
+      "product_id": "unit-joystick-3a33915b6406",
+      "status": "failed"
+    },
+    {
+      "errors": [
+        "[Errno 2] No such file or directory: '/Users/m5agent/Documents/m5stack-schematics-text/artifacts/schematics/unit-joystick-v1-1-a7c7ae16fa9a/asset_manifest.json'"
+      ],
+      "product_id": "unit-joystick-v1-1-a7c7ae16fa9a",
+      "status": "failed"
+    },
+    {
+      "errors": [
+        "[Errno 2] No such file or directory: '/Users/m5agent/Documents/m5stack-schematics-text/artifacts/schematics/unit-joystick2-df80d35d1bae/asset_manifest.json'"
+      ],
+      "product_id": "unit-joystick2-df80d35d1bae",
+      "status": "failed"
+    },
+    {
+      "errors": [
+        "[Errno 2] No such file or directory: '/Users/m5agent/Documents/m5stack-schematics-text/artifacts/schematics/unit-key-643866be96b3/asset_manifest.json'"
+      ],
+      "product_id": "unit-key-643866be96b3",
+      "status": "failed"
+    },
+    {
+      "errors": [
+        "[Errno 2] No such file or directory: '/Users/m5agent/Documents/m5stack-schematics-text/artifacts/schematics/unit-kmeter-21cc0cf305f9/asset_manifest.json'"
+      ],
+      "product_id": "unit-kmeter-21cc0cf305f9",
+      "status": "failed"
+    },
+    {
+      "errors": [
+        "[Errno 2] No such file or directory: '/Users/m5agent/Documents/m5stack-schematics-text/artifacts/schematics/unit-kmeter-iso-446da9e20650/asset_manifest.json'"
+      ],
+      "product_id": "unit-kmeter-iso-446da9e20650",
+      "status": "failed"
+    },
+    {
+      "errors": [
+        "[Errno 2] No such file or directory: '/Users/m5agent/Documents/m5stack-schematics-text/artifacts/schematics/unit-laser-rx-d2bc4b24c5c2/asset_manifest.json'"
+      ],
+      "product_id": "unit-laser-rx-d2bc4b24c5c2",
+      "status": "failed"
+    },
+    {
+      "errors": [
+        "[Errno 2] No such file or directory: '/Users/m5agent/Documents/m5stack-schematics-text/artifacts/schematics/unit-laser-tx-9cc73b1c6bc0/asset_manifest.json'"
+      ],
+      "product_id": "unit-laser-tx-9cc73b1c6bc0",
+      "status": "failed"
+    },
+    {
+      "errors": [
+        "[Errno 2] No such file or directory: '/Users/m5agent/Documents/m5stack-schematics-text/artifacts/schematics/unit-lcd-f6d3e8883759/asset_manifest.json'"
+      ],
+      "product_id": "unit-lcd-f6d3e8883759",
+      "status": "failed"
+    },
+    {
+      "errors": [
+        "[Errno 2] No such file or directory: '/Users/m5agent/Documents/m5stack-schematics-text/artifacts/schematics/unit-light-efa135d85ff4/asset_manifest.json'"
+      ],
+      "product_id": "unit-light-efa135d85ff4",
+      "status": "failed"
+    },
+    {
+      "errors": [
+        "[Errno 2] No such file or directory: '/Users/m5agent/Documents/m5stack-schematics-text/artifacts/schematics/unit-limit-76279fe54f4f/asset_manifest.json'"
+      ],
+      "product_id": "unit-limit-76279fe54f4f",
+      "status": "failed"
+    },
+    {
+      "errors": [
+        "[Errno 2] No such file or directory: '/Users/m5agent/Documents/m5stack-schematics-text/artifacts/schematics/unit-lorae220-433-fd8862b01edf/asset_manifest.json'"
+      ],
+      "product_id": "unit-lorae220-433-fd8862b01edf",
+      "status": "failed"
+    },
+    {
+      "errors": [
+        "[Errno 2] No such file or directory: '/Users/m5agent/Documents/m5stack-schematics-text/artifacts/schematics/unit-lorae220-920-da0bbe16dcc2/asset_manifest.json'"
+      ],
+      "product_id": "unit-lorae220-920-da0bbe16dcc2",
+      "status": "failed"
+    },
+    {
+      "errors": [
+        "[Errno 2] No such file or directory: '/Users/m5agent/Documents/m5stack-schematics-text/artifacts/schematics/unit-lorawan-as923-0a82795306a4/asset_manifest.json'"
+      ],
+      "product_id": "unit-lorawan-as923-0a82795306a4",
+      "status": "failed"
+    },
+    {
+      "errors": [
+        "[Errno 2] No such file or directory: '/Users/m5agent/Documents/m5stack-schematics-text/artifacts/schematics/unit-lorawan-cn470-6c30432ff630/asset_manifest.json'"
+      ],
+      "product_id": "unit-lorawan-cn470-6c30432ff630",
+      "status": "failed"
+    },
+    {
+      "errors": [
+        "[Errno 2] No such file or directory: '/Users/m5agent/Documents/m5stack-schematics-text/artifacts/schematics/unit-lorawan-eu868-30781d39aa5f/asset_manifest.json'"
+      ],
+      "product_id": "unit-lorawan-eu868-30781d39aa5f",
+      "status": "failed"
+    },
+    {
+      "errors": [
+        "[Errno 2] No such file or directory: '/Users/m5agent/Documents/m5stack-schematics-text/artifacts/schematics/unit-lorawan-us915-c3e231464cb3/asset_manifest.json'"
+      ],
+      "product_id": "unit-lorawan-us915-c3e231464cb3",
+      "status": "failed"
+    },
+    {
+      "errors": [
+        "[Errno 2] No such file or directory: '/Users/m5agent/Documents/m5stack-schematics-text/artifacts/schematics/unit-lorawan470-9d0faaf6a4e5/asset_manifest.json'"
+      ],
+      "product_id": "unit-lorawan470-9d0faaf6a4e5",
+      "status": "failed"
+    },
+    {
+      "errors": [
+        "[Errno 2] No such file or directory: '/Users/m5agent/Documents/m5stack-schematics-text/artifacts/schematics/unit-lorawan868-9340b4ba3b1b/asset_manifest.json'"
+      ],
+      "product_id": "unit-lorawan868-9340b4ba3b1b",
+      "status": "failed"
+    },
+    {
+      "errors": [
+        "[Errno 2] No such file or directory: '/Users/m5agent/Documents/m5stack-schematics-text/artifacts/schematics/unit-lorawan915-ddbda4e45fbc/asset_manifest.json'"
+      ],
+      "product_id": "unit-lorawan915-ddbda4e45fbc",
+      "status": "failed"
+    },
+    {
+      "errors": [
+        "[Errno 2] No such file or directory: '/Users/m5agent/Documents/m5stack-schematics-text/artifacts/schematics/unit-mic-20ab34202cb7/asset_manifest.json'"
+      ],
+      "product_id": "unit-mic-20ab34202cb7",
+      "status": "failed"
+    },
+    {
+      "errors": [
+        "[Errno 2] No such file or directory: '/Users/m5agent/Documents/m5stack-schematics-text/artifacts/schematics/unit-midi-8013566d6639/asset_manifest.json'"
+      ],
+      "product_id": "unit-midi-8013566d6639",
+      "status": "failed"
+    },
+    {
+      "errors": [
+        "[Errno 2] No such file or directory: '/Users/m5agent/Documents/m5stack-schematics-text/artifacts/schematics/unit-mini-bps-50b079f537c4/asset_manifest.json'"
+      ],
+      "product_id": "unit-mini-bps-50b079f537c4",
+      "status": "failed"
+    },
+    {
+      "errors": [
+        "[Errno 2] No such file or directory: '/Users/m5agent/Documents/m5stack-schematics-text/artifacts/schematics/unit-mini-bps-v1-1-64ad14dd1681/asset_manifest.json'"
+      ],
+      "product_id": "unit-mini-bps-v1-1-64ad14dd1681",
+      "status": "failed"
+    },
+    {
+      "errors": [
+        "[Errno 2] No such file or directory: '/Users/m5agent/Documents/m5stack-schematics-text/artifacts/schematics/unit-mini-can-51ef4fa38658/asset_manifest.json'"
+      ],
+      "product_id": "unit-mini-can-51ef4fa38658",
+      "status": "failed"
+    },
+    {
+      "errors": [
+        "[Errno 2] No such file or directory: '/Users/m5agent/Documents/m5stack-schematics-text/artifacts/schematics/unit-mini-imu-09095c14c090/asset_manifest.json'"
+      ],
+      "product_id": "unit-mini-imu-09095c14c090",
+      "status": "failed"
+    },
+    {
+      "errors": [
+        "[Errno 2] No such file or directory: '/Users/m5agent/Documents/m5stack-schematics-text/artifacts/schematics/unit-mini-imu-pro-d28db2be8dfa/asset_manifest.json'"
+      ],
+      "product_id": "unit-mini-imu-pro-d28db2be8dfa",
+      "status": "failed"
+    },
+    {
+      "errors": [
+        "[Errno 2] No such file or directory: '/Users/m5agent/Documents/m5stack-schematics-text/artifacts/schematics/unit-mini-oled-da4ed5824b0e/asset_manifest.json'"
+      ],
+      "product_id": "unit-mini-oled-da4ed5824b0e",
+      "status": "failed"
+    },
+    {
+      "errors": [
+        "[Errno 2] No such file or directory: '/Users/m5agent/Documents/m5stack-schematics-text/artifacts/schematics/unit-mini-pdm-2175a10d1184/asset_manifest.json'"
+      ],
+      "product_id": "unit-mini-pdm-2175a10d1184",
+      "status": "failed"
+    },
+    {
+      "errors": [
+        "[Errno 2] No such file or directory: '/Users/m5agent/Documents/m5stack-schematics-text/artifacts/schematics/unit-mini-proto-eb1e36d8926b/asset_manifest.json'"
+      ],
+      "product_id": "unit-mini-proto-eb1e36d8926b",
+      "status": "failed"
+    },
+    {
+      "errors": [
+        "[Errno 2] No such file or directory: '/Users/m5agent/Documents/m5stack-schematics-text/artifacts/schematics/unit-mini-scales-7a0edd9429d6/asset_manifest.json'"
+      ],
+      "product_id": "unit-mini-scales-7a0edd9429d6",
+      "status": "failed"
+    },
+    {
+      "errors": [
+        "[Errno 2] No such file or directory: '/Users/m5agent/Documents/m5stack-schematics-text/artifacts/schematics/unit-mini-tof-90-aa3bfaada847/asset_manifest.json'"
+      ],
+      "product_id": "unit-mini-tof-90-aa3bfaada847",
+      "status": "failed"
+    },
+    {
+      "errors": [
+        "[Errno 2] No such file or directory: '/Users/m5agent/Documents/m5stack-schematics-text/artifacts/schematics/unit-mini-tvoc-eco2-eb6f13365a1f/asset_manifest.json'"
+      ],
+      "product_id": "unit-mini-tvoc-eco2-eb6f13365a1f",
+      "status": "failed"
+    },
+    {
+      "errors": [
+        "[Errno 2] No such file or directory: '/Users/m5agent/Documents/m5stack-schematics-text/artifacts/schematics/unit-mq-2a13ac26d1ac/asset_manifest.json'"
+      ],
+      "product_id": "unit-mq-2a13ac26d1ac",
+      "status": "failed"
+    },
+    {
+      "errors": [
+        "[Errno 2] No such file or directory: '/Users/m5agent/Documents/m5stack-schematics-text/artifacts/schematics/unit-mqtt-poe-9ff834605eee/asset_manifest.json'"
+      ],
+      "product_id": "unit-mqtt-poe-9ff834605eee",
+      "status": "failed"
+    },
+    {
+      "errors": [
+        "[Errno 2] No such file or directory: '/Users/m5agent/Documents/m5stack-schematics-text/artifacts/schematics/unit-nbiot-812620512877/asset_manifest.json'"
+      ],
+      "product_id": "unit-nbiot-812620512877",
+      "status": "failed"
+    },
+    {
+      "errors": [
+        "[Errno 2] No such file or directory: '/Users/m5agent/Documents/m5stack-schematics-text/artifacts/schematics/unit-nbiot-cn-bff1068848bb/asset_manifest.json'"
+      ],
+      "product_id": "unit-nbiot-cn-bff1068848bb",
+      "status": "failed"
+    },
+    {
+      "errors": [
+        "[Errno 2] No such file or directory: '/Users/m5agent/Documents/m5stack-schematics-text/artifacts/schematics/unit-nbiot2-1c4bde8307d2/asset_manifest.json'"
+      ],
+      "product_id": "unit-nbiot2-1c4bde8307d2",
+      "status": "failed"
+    },
+    {
+      "errors": [
+        "[Errno 2] No such file or directory: '/Users/m5agent/Documents/m5stack-schematics-text/artifacts/schematics/unit-ncir-d867e38eced1/asset_manifest.json'"
+      ],
+      "product_id": "unit-ncir-d867e38eced1",
+      "status": "failed"
+    },
+    {
+      "errors": [
+        "[Errno 2] No such file or directory: '/Users/m5agent/Documents/m5stack-schematics-text/artifacts/schematics/unit-ncir2-f812153e5668/asset_manifest.json'"
+      ],
+      "product_id": "unit-ncir2-f812153e5668",
+      "status": "failed"
+    },
+    {
+      "errors": [
+        "[Errno 2] No such file or directory: '/Users/m5agent/Documents/m5stack-schematics-text/artifacts/schematics/unit-neco-a68addc8d9ac/asset_manifest.json'"
+      ],
+      "product_id": "unit-neco-a68addc8d9ac",
+      "status": "failed"
+    },
+    {
+      "errors": [
+        "[Errno 2] No such file or directory: '/Users/m5agent/Documents/m5stack-schematics-text/artifacts/schematics/unit-neohex-95295c2bb825/asset_manifest.json'"
+      ],
+      "product_id": "unit-neohex-95295c2bb825",
+      "status": "failed"
+    },
+    {
+      "errors": [
+        "[Errno 2] No such file or directory: '/Users/m5agent/Documents/m5stack-schematics-text/artifacts/schematics/unit-nfc-003c544bf944/asset_manifest.json'"
+      ],
+      "product_id": "unit-nfc-003c544bf944",
+      "status": "failed"
+    },
+    {
+      "errors": [
+        "[Errno 2] No such file or directory: '/Users/m5agent/Documents/m5stack-schematics-text/artifacts/schematics/unit-oled-562ec96af36e/asset_manifest.json'"
+      ],
+      "product_id": "unit-oled-562ec96af36e",
+      "status": "failed"
+    },
+    {
+      "errors": [
+        "[Errno 2] No such file or directory: '/Users/m5agent/Documents/m5stack-schematics-text/artifacts/schematics/unit-op180-07ef3904e266/asset_manifest.json'"
+      ],
+      "product_id": "unit-op180-07ef3904e266",
+      "status": "failed"
+    },
+    {
+      "errors": [
+        "[Errno 2] No such file or directory: '/Users/m5agent/Documents/m5stack-schematics-text/artifacts/schematics/unit-op90-38e94bce5a10/asset_manifest.json'"
+      ],
+      "product_id": "unit-op90-38e94bce5a10",
+      "status": "failed"
+    },
+    {
+      "errors": [
+        "[Errno 2] No such file or directory: '/Users/m5agent/Documents/m5stack-schematics-text/artifacts/schematics/unit-pahub-8ef77a36b7a9/asset_manifest.json'"
+      ],
+      "product_id": "unit-pahub-8ef77a36b7a9",
+      "status": "failed"
+    },
+    {
+      "errors": [
+        "[Errno 2] No such file or directory: '/Users/m5agent/Documents/m5stack-schematics-text/artifacts/schematics/unit-pahub-v2-0-52108d21a0fe/asset_manifest.json'"
+      ],
+      "product_id": "unit-pahub-v2-0-52108d21a0fe",
+      "status": "failed"
+    },
+    {
+      "errors": [
+        "[Errno 2] No such file or directory: '/Users/m5agent/Documents/m5stack-schematics-text/artifacts/schematics/unit-pahub-v2-1-3cae2bc62d83/asset_manifest.json'"
+      ],
+      "product_id": "unit-pahub-v2-1-3cae2bc62d83",
+      "status": "failed"
+    },
+    {
+      "errors": [
+        "[Errno 2] No such file or directory: '/Users/m5agent/Documents/m5stack-schematics-text/artifacts/schematics/unit-pbhub-3ebe0981c7ee/asset_manifest.json'"
+      ],
+      "product_id": "unit-pbhub-3ebe0981c7ee",
+      "status": "failed"
+    },
+    {
+      "errors": [
+        "[Errno 2] No such file or directory: '/Users/m5agent/Documents/m5stack-schematics-text/artifacts/schematics/unit-pbhub-v1-1-b2aa06be0a47/asset_manifest.json'"
+      ],
+      "product_id": "unit-pbhub-v1-1-b2aa06be0a47",
+      "status": "failed"
+    },
+    {
+      "errors": [
+        "[Errno 2] No such file or directory: '/Users/m5agent/Documents/m5stack-schematics-text/artifacts/schematics/unit-pir-4c2bd1465db8/asset_manifest.json'"
+      ],
+      "product_id": "unit-pir-4c2bd1465db8",
+      "status": "failed"
+    },
+    {
+      "errors": [
+        "[Errno 2] No such file or directory: '/Users/m5agent/Documents/m5stack-schematics-text/artifacts/schematics/unit-poe-cam-457508024666/asset_manifest.json'"
+      ],
+      "product_id": "unit-poe-cam-457508024666",
+      "status": "failed"
+    },
+    {
+      "errors": [
+        "[Errno 2] No such file or directory: '/Users/m5agent/Documents/m5stack-schematics-text/artifacts/schematics/unit-poe-cam-w-b5ad042ba84a/asset_manifest.json'"
+      ],
+      "product_id": "unit-poe-cam-w-b5ad042ba84a",
+      "status": "failed"
+    },
+    {
+      "errors": [
+        "[Errno 2] No such file or directory: '/Users/m5agent/Documents/m5stack-schematics-text/artifacts/schematics/unit-poe-cam-w-v1-1-32186dd0cb2c/asset_manifest.json'"
+      ],
+      "product_id": "unit-poe-cam-w-v1-1-32186dd0cb2c",
+      "status": "failed"
+    },
+    {
+      "errors": [
+        "[Errno 2] No such file or directory: '/Users/m5agent/Documents/m5stack-schematics-text/artifacts/schematics/unit-poe-p4-ad6370b7c836/asset_manifest.json'"
+      ],
+      "product_id": "unit-poe-p4-ad6370b7c836",
+      "status": "failed"
+    },
+    {
+      "errors": [
+        "[Errno 2] No such file or directory: '/Users/m5agent/Documents/m5stack-schematics-text/artifacts/schematics/unit-poesp32-7d38dbaac194/asset_manifest.json'"
+      ],
+      "product_id": "unit-poesp32-7d38dbaac194",
+      "status": "failed"
+    },
+    {
+      "errors": [
+        "[Errno 2] No such file or directory: '/Users/m5agent/Documents/m5stack-schematics-text/artifacts/schematics/unit-power-2f15cdb873cb/asset_manifest.json'"
+      ],
+      "product_id": "unit-power-2f15cdb873cb",
+      "status": "failed"
+    },
+    {
+      "errors": [
+        "[Errno 2] No such file or directory: '/Users/m5agent/Documents/m5stack-schematics-text/artifacts/schematics/unit-proto-342508bb9734/asset_manifest.json'"
+      ],
+      "product_id": "unit-proto-342508bb9734",
+      "status": "failed"
+    },
+    {
+      "errors": [
+        "[Errno 2] No such file or directory: '/Users/m5agent/Documents/m5stack-schematics-text/artifacts/schematics/unit-puzzle-916715c42dc0/asset_manifest.json'"
+      ],
+      "product_id": "unit-puzzle-916715c42dc0",
+      "status": "failed"
+    },
+    {
+      "errors": [
+        "[Errno 2] No such file or directory: '/Users/m5agent/Documents/m5stack-schematics-text/artifacts/schematics/unit-qrcode-3b010e4b3474/asset_manifest.json'"
+      ],
+      "product_id": "unit-qrcode-3b010e4b3474",
+      "status": "failed"
+    },
+    {
+      "errors": [
+        "[Errno 2] No such file or directory: '/Users/m5agent/Documents/m5stack-schematics-text/artifacts/schematics/unit-rca-6800a4734c3e/asset_manifest.json'"
+      ],
+      "product_id": "unit-rca-6800a4734c3e",
+      "status": "failed"
+    },
+    {
+      "errors": [
+        "[Errno 2] No such file or directory: '/Users/m5agent/Documents/m5stack-schematics-text/artifacts/schematics/unit-reflective-ir-b9aa857e0a62/asset_manifest.json'"
+      ],
+      "product_id": "unit-reflective-ir-b9aa857e0a62",
+      "status": "failed"
+    },
+    {
+      "errors": [
+        "[Errno 2] No such file or directory: '/Users/m5agent/Documents/m5stack-schematics-text/artifacts/schematics/unit-relay-b14b02f11c3d/asset_manifest.json'"
+      ],
+      "product_id": "unit-relay-b14b02f11c3d",
+      "status": "failed"
+    },
+    {
+      "errors": [
+        "[Errno 2] No such file or directory: '/Users/m5agent/Documents/m5stack-schematics-text/artifacts/schematics/unit-rf433r-7245b9cbf66d/asset_manifest.json'"
+      ],
+      "product_id": "unit-rf433r-7245b9cbf66d",
+      "status": "failed"
+    },
+    {
+      "errors": [
+        "[Errno 2] No such file or directory: '/Users/m5agent/Documents/m5stack-schematics-text/artifacts/schematics/unit-rf433t-21f49a191358/asset_manifest.json'"
+      ],
+      "product_id": "unit-rf433t-21f49a191358",
+      "status": "failed"
+    },
+    {
+      "errors": [
+        "[Errno 2] No such file or directory: '/Users/m5agent/Documents/m5stack-schematics-text/artifacts/schematics/unit-rfid-a52b2b4084a4/asset_manifest.json'"
+      ],
+      "product_id": "unit-rfid-a52b2b4084a4",
+      "status": "failed"
+    },
+    {
+      "errors": [
+        "[Errno 2] No such file or directory: '/Users/m5agent/Documents/m5stack-schematics-text/artifacts/schematics/unit-rfid2-f87703264348/asset_manifest.json'"
+      ],
+      "product_id": "unit-rfid2-f87703264348",
+      "status": "failed"
+    },
+    {
+      "errors": [
+        "[Errno 2] No such file or directory: '/Users/m5agent/Documents/m5stack-schematics-text/artifacts/schematics/unit-rgb-c8ad97af0ab8/asset_manifest.json'"
+      ],
+      "product_id": "unit-rgb-c8ad97af0ab8",
+      "status": "failed"
+    },
+    {
+      "errors": [
+        "[Errno 2] No such file or directory: '/Users/m5agent/Documents/m5stack-schematics-text/artifacts/schematics/unit-roller485-7ac377f08255/asset_manifest.json'"
+      ],
+      "product_id": "unit-roller485-7ac377f08255",
+      "status": "failed"
+    },
+    {
+      "errors": [
+        "[Errno 2] No such file or directory: '/Users/m5agent/Documents/m5stack-schematics-text/artifacts/schematics/unit-roller485-lite-f16bc5177915/asset_manifest.json'"
+      ],
+      "product_id": "unit-roller485-lite-f16bc5177915",
+      "status": "failed"
+    },
+    {
+      "errors": [
+        "[Errno 2] No such file or directory: '/Users/m5agent/Documents/m5stack-schematics-text/artifacts/schematics/unit-rollercan-c1f9bc3acb1b/asset_manifest.json'"
+      ],
+      "product_id": "unit-rollercan-c1f9bc3acb1b",
+      "status": "failed"
+    },
+    {
+      "errors": [
+        "[Errno 2] No such file or directory: '/Users/m5agent/Documents/m5stack-schematics-text/artifacts/schematics/unit-rollercan-lite-e7b0b6e3f917/asset_manifest.json'"
+      ],
+      "product_id": "unit-rollercan-lite-e7b0b6e3f917",
+      "status": "failed"
+    },
+    {
+      "errors": [
+        "[Errno 2] No such file or directory: '/Users/m5agent/Documents/m5stack-schematics-text/artifacts/schematics/unit-rs485-ba5717526e3a/asset_manifest.json'"
+      ],
+      "product_id": "unit-rs485-ba5717526e3a",
+      "status": "failed"
+    },
+    {
+      "errors": [
+        "[Errno 2] No such file or directory: '/Users/m5agent/Documents/m5stack-schematics-text/artifacts/schematics/unit-rs485-iso-a1adae831e85/asset_manifest.json'"
+      ],
+      "product_id": "unit-rs485-iso-a1adae831e85",
+      "status": "failed"
+    },
+    {
+      "errors": [
+        "[Errno 2] No such file or directory: '/Users/m5agent/Documents/m5stack-schematics-text/artifacts/schematics/unit-rtc-b22b49da279c/asset_manifest.json'"
+      ],
+      "product_id": "unit-rtc-b22b49da279c",
+      "status": "failed"
+    },
+    {
+      "errors": [
+        "[Errno 2] No such file or directory: '/Users/m5agent/Documents/m5stack-schematics-text/artifacts/schematics/unit-scales-b8e4bdd6bf8a/asset_manifest.json'"
+      ],
+      "product_id": "unit-scales-b8e4bdd6bf8a",
+      "status": "failed"
+    },
+    {
+      "errors": [
+        "[Errno 2] No such file or directory: '/Users/m5agent/Documents/m5stack-schematics-text/artifacts/schematics/unit-scroll-ed7a75d33f1d/asset_manifest.json'"
+      ],
+      "product_id": "unit-scroll-ed7a75d33f1d",
+      "status": "failed"
+    },
+    {
+      "errors": [
+        "[Errno 2] No such file or directory: '/Users/m5agent/Documents/m5stack-schematics-text/artifacts/schematics/unit-ssr-c02f2f7ee8c4/asset_manifest.json'"
+      ],
+      "product_id": "unit-ssr-c02f2f7ee8c4",
+      "status": "failed"
+    },
+    {
+      "errors": [
+        "[Errno 2] No such file or directory: '/Users/m5agent/Documents/m5stack-schematics-text/artifacts/schematics/unit-step16-f64c5daa39b8/asset_manifest.json'"
+      ],
+      "product_id": "unit-step16-f64c5daa39b8",
+      "status": "failed"
+    },
+    {
+      "errors": [
+        "[Errno 2] No such file or directory: '/Users/m5agent/Documents/m5stack-schematics-text/artifacts/schematics/unit-synth-ae301994d0ec/asset_manifest.json'"
+      ],
+      "product_id": "unit-synth-ae301994d0ec",
+      "status": "failed"
+    },
+    {
+      "errors": [
+        "[Errno 2] No such file or directory: '/Users/m5agent/Documents/m5stack-schematics-text/artifacts/schematics/unit-thermal-cc672b6b369c/asset_manifest.json'"
+      ],
+      "product_id": "unit-thermal-cc672b6b369c",
+      "status": "failed"
+    },
+    {
+      "errors": [
+        "[Errno 2] No such file or directory: '/Users/m5agent/Documents/m5stack-schematics-text/artifacts/schematics/unit-thermal2-332816353c42/asset_manifest.json'"
+      ],
+      "product_id": "unit-thermal2-332816353c42",
+      "status": "failed"
+    },
+    {
+      "errors": [
+        "[Errno 2] No such file or directory: '/Users/m5agent/Documents/m5stack-schematics-text/artifacts/schematics/unit-timerpwr-2ec0fb97a5f8/asset_manifest.json'"
+      ],
+      "product_id": "unit-timerpwr-2ec0fb97a5f8",
+      "status": "failed"
+    },
+    {
+      "errors": [
+        "[Errno 2] No such file or directory: '/Users/m5agent/Documents/m5stack-schematics-text/artifacts/schematics/unit-tmos-pir-a9b1c47d19d8/asset_manifest.json'"
+      ],
+      "product_id": "unit-tmos-pir-a9b1c47d19d8",
+      "status": "failed"
+    },
+    {
+      "errors": [
+        "[Errno 2] No such file or directory: '/Users/m5agent/Documents/m5stack-schematics-text/artifacts/schematics/unit-tof-03243b056d52/asset_manifest.json'"
+      ],
+      "product_id": "unit-tof-03243b056d52",
+      "status": "failed"
+    },
+    {
+      "errors": [
+        "[Errno 2] No such file or directory: '/Users/m5agent/Documents/m5stack-schematics-text/artifacts/schematics/unit-tof4m-f7f755230293/asset_manifest.json'"
+      ],
+      "product_id": "unit-tof4m-f7f755230293",
+      "status": "failed"
+    },
+    {
+      "errors": [
+        "[Errno 2] No such file or directory: '/Users/m5agent/Documents/m5stack-schematics-text/artifacts/schematics/unit-trace-b883f0a704ce/asset_manifest.json'"
+      ],
+      "product_id": "unit-trace-b883f0a704ce",
+      "status": "failed"
+    },
+    {
+      "errors": [
+        "[Errno 2] No such file or directory: '/Users/m5agent/Documents/m5stack-schematics-text/artifacts/schematics/unit-tube-pressure-c550b29fbc78/asset_manifest.json'"
+      ],
+      "product_id": "unit-tube-pressure-c550b29fbc78",
+      "status": "failed"
+    },
+    {
+      "errors": [
+        "[Errno 2] No such file or directory: '/Users/m5agent/Documents/m5stack-schematics-text/artifacts/schematics/unit-typec-to-grove-7849605a2401/asset_manifest.json'"
+      ],
+      "product_id": "unit-typec-to-grove-7849605a2401",
+      "status": "failed"
+    },
+    {
+      "errors": [
+        "[Errno 2] No such file or directory: '/Users/m5agent/Documents/m5stack-schematics-text/artifacts/schematics/unit-uhf-rfid-e13e5fc00641/asset_manifest.json'"
+      ],
+      "product_id": "unit-uhf-rfid-e13e5fc00641",
+      "status": "failed"
+    },
+    {
+      "errors": [
+        "[Errno 2] No such file or directory: '/Users/m5agent/Documents/m5stack-schematics-text/artifacts/schematics/unit-uwb-066371890460/asset_manifest.json'"
+      ],
+      "product_id": "unit-uwb-066371890460",
+      "status": "failed"
+    },
+    {
+      "errors": [
+        "[Errno 2] No such file or directory: '/Users/m5agent/Documents/m5stack-schematics-text/artifacts/schematics/unit-vibrator-ee09b947945b/asset_manifest.json'"
+      ],
+      "product_id": "unit-vibrator-ee09b947945b",
+      "status": "failed"
+    },
+    {
+      "errors": [
+        "[Errno 2] No such file or directory: '/Users/m5agent/Documents/m5stack-schematics-text/artifacts/schematics/unit-vmeter-9e126bbd9b81/asset_manifest.json'"
+      ],
+      "product_id": "unit-vmeter-9e126bbd9b81",
+      "status": "failed"
+    },
+    {
+      "errors": [
+        "[Errno 2] No such file or directory: '/Users/m5agent/Documents/m5stack-schematics-text/artifacts/schematics/unit-watering-9305c7e679f8/asset_manifest.json'"
+      ],
+      "product_id": "unit-watering-9305c7e679f8",
+      "status": "failed"
+    },
+    {
+      "errors": [
+        "[Errno 2] No such file or directory: '/Users/m5agent/Documents/m5stack-schematics-text/artifacts/schematics/unit-weight-b35adfabb254/asset_manifest.json'"
+      ],
+      "product_id": "unit-weight-b35adfabb254",
+      "status": "failed"
+    },
+    {
+      "errors": [
+        "[Errno 2] No such file or directory: '/Users/m5agent/Documents/m5stack-schematics-text/artifacts/schematics/unit-weight-i2c-6c9d7b7fb61d/asset_manifest.json'"
+      ],
+      "product_id": "unit-weight-i2c-6c9d7b7fb61d",
+      "status": "failed"
+    },
+    {
+      "errors": [
+        "[Errno 2] No such file or directory: '/Users/m5agent/Documents/m5stack-schematics-text/artifacts/schematics/unit-zigbee-ddec232a18a5/asset_manifest.json'"
+      ],
+      "product_id": "unit-zigbee-ddec232a18a5",
+      "status": "failed"
+    },
+    {
+      "errors": [
+        "[Errno 2] No such file or directory: '/Users/m5agent/Documents/m5stack-schematics-text/artifacts/schematics/unitv2-26188210094d/asset_manifest.json'"
+      ],
+      "product_id": "unitv2-26188210094d",
+      "status": "failed"
+    },
+    {
+      "errors": [
+        "[Errno 2] No such file or directory: '/Users/m5agent/Documents/m5stack-schematics-text/artifacts/schematics/unitv2-m12-8d140c5aef60/asset_manifest.json'"
+      ],
+      "product_id": "unitv2-m12-8d140c5aef60",
+      "status": "failed"
+    },
+    {
+      "errors": [
+        "[Errno 2] No such file or directory: '/Users/m5agent/Documents/m5stack-schematics-text/artifacts/schematics/usb-downloader-d0bdffc696b7/asset_manifest.json'"
+      ],
+      "product_id": "usb-downloader-d0bdffc696b7",
+      "status": "failed"
+    },
+    {
+      "errors": [
+        "[Errno 2] No such file or directory: '/Users/m5agent/Documents/m5stack-schematics-text/artifacts/schematics/vameter-1ffcc2eeb50a/asset_manifest.json'"
+      ],
+      "product_id": "vameter-1ffcc2eeb50a",
+      "status": "failed"
+    },
+    {
+      "errors": [
+        "[Errno 2] No such file or directory: '/Users/m5agent/Documents/m5stack-schematics-text/artifacts/schematics/voice-pyramid-c17fa45aea23/asset_manifest.json'"
+      ],
+      "product_id": "voice-pyramid-c17fa45aea23",
+      "status": "failed"
+    },
+    {
+      "errors": [
+        "[Errno 2] No such file or directory: '/Users/m5agent/Documents/m5stack-schematics-text/artifacts/schematics/xiaozhi-card-kit-c26d860f8f0b/asset_manifest.json'"
+      ],
+      "product_id": "xiaozhi-card-kit-c26d860f8f0b",
+      "status": "failed"
     }
   ],
   "schema_version": 1

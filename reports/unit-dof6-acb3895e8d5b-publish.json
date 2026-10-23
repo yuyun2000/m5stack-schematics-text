@@ -1,0 +1,21 @@
+{
+  "dry_run": false,
+  "failed": 0,
+  "published": 1,
+  "results": [
+    {
+      "backup": null,
+      "draft_action": "create",
+      "dry_run": false,
+      "errors": [],
+      "needs_review": 2,
+      "product_id": "unit-dof6-acb3895e8d5b",
+      "product_name": "Unit DoF6",
+      "publish_action": "create",
+      "sha256": "7fff577eaf30cacbdd893900456a855f6e9a7ce08d6edb3a69803bf5c2590d9a",
+      "status": "valid",
+      "uncertain_facts": 1
+    }
+  ],
+  "schema_version": 1
+}

@@ -1,0 +1,21 @@
+{
+  "dry_run": false,
+  "failed": 0,
+  "published": 1,
+  "results": [
+    {
+      "backup": null,
+      "draft_action": "create",
+      "dry_run": false,
+      "errors": [],
+      "needs_review": 1,
+      "product_id": "unit-bmm350-88be2b4d449c",
+      "product_name": "Unit BMM350",
+      "publish_action": "create",
+      "sha256": "2884a5312bdf7805ea6556e8873ec850eed683232af862a87caad363e3dc1482",
+      "status": "valid",
+      "uncertain_facts": 1
+    }
+  ],
+  "schema_version": 1
+}

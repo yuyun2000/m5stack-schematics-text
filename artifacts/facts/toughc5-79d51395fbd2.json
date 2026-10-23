@@ -1,0 +1,1566 @@
+{
+  "schema_version": 1,
+  "generator": "schematic_describer",
+  "product": {
+    "product_id": "toughc5-79d51395fbd2",
+    "product_name": "ToughC5",
+    "sku": "K162",
+    "source_path": "core/ToughC5.md",
+    "source_sha256": "8b9618d4d405f5591bad74c37a42e68533440f3f901a8935b759df6a6e16027d",
+    "input_sha256": "1470a1b9f1414f614f9e78fd79e7f535d008458c94d4ca7292a3f39fdf12c7d7"
+  },
+  "schematic_assets": [
+    {
+      "sha256": "65f28dc6f899b53d540a5fde2c3f75b7e54e5e7480e356a2e97482b92884a9c6",
+      "source_url": "https://m5stack-doc.oss-cn-shenzhen.aliyuncs.com/1275/K162_ToughC5_sche_page_01.png",
+      "pages": [
+        1
+      ]
+    },
+    {
+      "sha256": "5ca6589619677cb92305aedccaf2f401bc7bc3689c39c7eb58d8eecbdaa41c5e",
+      "source_url": "https://m5stack-doc.oss-cn-shenzhen.aliyuncs.com/1275/K162_ToughC5_sche_page_02.png",
+      "pages": [
+        1
+      ]
+    },
+    {
+      "sha256": "7462e5815f4a7b77d8908909ae0b23a5c955aa269bb5684aee46e2f3ebf2a5c9",
+      "source_url": "https://m5stack-doc.oss-cn-shenzhen.aliyuncs.com/1275/K162_ToughC5_sche_page_03.png",
+      "pages": [
+        1
+      ]
+    },
+    {
+      "sha256": "577c50e9cbeb765827ad3f58861619024b8e44fffbcc94d1c98810e9ec887e6b",
+      "source_url": "https://m5stack-doc.oss-cn-shenzhen.aliyuncs.com/1275/K162_ToughC5_sche_page_04.png",
+      "pages": [
+        1
+      ]
+    }
+  ],
+  "summary": "ToughC5 以 ESP32-C5HR8 为主控，外置 XM25UH128DHIQT 16MB SPI Flash，并配置 StampTimerPower2 电源管理、IO_EXP 扩展器、RX8130CE RTC 与 microSD。USB-C 的 5V_IN 与电池 VBAT 汇入 M1 电源管理，M1 提供 5V_INOUT 以及 3V3_L0、3V3_L2、3V3_L2_LDO 等分级电源轨，再由 M5BUS、LCD、TF 和 GROVE 各自的 LDO 或负载开关生成域电源。2.4GHz 与 5GHz 射频经 U4 合路到 IPEX-4 天线座，显示与触控分别通过 10Pin LCD FPC 和 6Pin 触控 FPC 接入。主要数字连接包括 G2_SDA/G3_SCL 的 I2C、G7_MOSI/G8_MISO/G9_SCK 的 SPI、USB_P/USB_N、UART0 信号 G11_PC_TX/G12_PC_RX 以及 30Pin M5BUS 扩展接口。",
+  "keywords": [
+    "ToughC5",
+    "K162",
+    "ESP32-C5HR8",
+    "XM25UH128DHIQT",
+    "StampTimerPower2",
+    "M5PM1",
+    "IO_EXP",
+    "M5IOE1",
+    "RX8130CE",
+    "LFD182G45DCHD481",
+    "TXB0104RUTR",
+    "MTXS0102DQER",
+    "MT9700-N",
+    "TPAP7343D-33FS4",
+    "USB_C_16P_Horizontal",
+    "ICMF062P900MFR",
+    "HC-FPC-0.5-10P-FH20",
+    "IPEX_4",
+    "M5BUS",
+    "3V3_L0",
+    "3V3_L2",
+    "3V3_L2_LDO",
+    "5V_IN",
+    "5V_INOUT",
+    "VBAT",
+    "G2_SDA",
+    "G3_SCL",
+    "G7_MOSI",
+    "G8_MISO",
+    "G9_SCK",
+    "G11_PC_TX",
+    "G12_PC_RX",
+    "G23_RX",
+    "G24_TX",
+    "PM_RTC_INT",
+    "PYB_LCD_EN",
+    "PYB_TF_EN",
+    "PM_BUZZER_EN",
+    "USB_P",
+    "USB_N"
+  ],
+  "components": [
+    {
+      "reference": "U3",
+      "part_number": "ESP32-C5HR8",
+      "role": "主控 SoC，提供 2.4GHz/5GHz 射频端口、SPI、I2C、UART、USB 与 GPIO",
+      "evidence": [
+        {
+          "asset_sha256": "7462e5815f4a7b77d8908909ae0b23a5c955aa269bb5684aee46e2f3ebf2a5c9",
+          "page": 1,
+          "locator": "03 MCU Core 区：U3 型号 ESP32-C5HR8，ANT_5G/ANT_2G、XTAL_P/XTAL_N 与 GPIO 引脚"
+        }
+      ]
+    },
+    {
+      "reference": "U6",
+      "part_number": "XM25UH128DHIQT",
+      "role": "16MB SPI Flash",
+      "evidence": [
+        {
+          "asset_sha256": "7462e5815f4a7b77d8908909ae0b23a5c955aa269bb5684aee46e2f3ebf2a5c9",
+          "page": 1,
+          "locator": "16MB Flash 区：U6 型号 XM25UH128DHIQT 与 8 脚 SPI 引脚"
+        }
+      ]
+    },
+    {
+      "reference": "M1",
+      "part_number": "StampTimerPower2",
+      "role": "电源管理芯片，I2C 地址 0x6E，产生多级 3.3V 与 5V_INOUT 电源",
+      "evidence": [
+        {
+          "asset_sha256": "5ca6589619677cb92305aedccaf2f401bc7bc3689c39c7eb58d8eecbdaa41c5e",
+          "page": 1,
+          "locator": "TimerPower2 区：M1 型号 StampTimerPower2、IIC Address:0X6E 与电源引脚"
+        }
+      ]
+    },
+    {
+      "reference": "U5",
+      "part_number": null,
+      "role": "IO_EXP 扩展器，I2C 地址 0x4F，控制 LCD、背光、TF、充电与复位信号",
+      "evidence": [
+        {
+          "asset_sha256": "7462e5815f4a7b77d8908909ae0b23a5c955aa269bb5684aee46e2f3ebf2a5c9",
+          "page": 1,
+          "locator": "PYB IOEXP 区：U5、IIC Address:0X4F 与 IO_EXP 符号"
+        }
+      ]
+    },
+    {
+      "reference": "U4",
+      "part_number": "LFD182G45DCHD481",
+      "role": "双频射频前端器件，将 H_PORT/L_PORT 合路到 CM 并接天线座",
+      "evidence": [
+        {
+          "asset_sha256": "7462e5815f4a7b77d8908909ae0b23a5c955aa269bb5684aee46e2f3ebf2a5c9",
+          "page": 1,
+          "locator": "03 MCU Core 区右侧：U4 型号 LFD182G45DCHD481 与 H_PORT/L_PORT/CM 引脚"
+        }
+      ]
+    },
+    {
+      "reference": "U8",
+      "part_number": "RX8130CE:B3",
+      "role": "I2C 实时时钟，带独立 VBAT 与中断输出",
+      "evidence": [
+        {
+          "asset_sha256": "577c50e9cbeb765827ad3f58861619024b8e44fffbcc94d1c98810e9ec887e6b",
+          "page": 1,
+          "locator": "RTC 区：U8 型号 RX8130CE:B3 与 VIO/VDD/VBAT/SCL/SDA/nIRQ 引脚"
+        }
+      ]
+    },
+    {
+      "reference": "U11",
+      "part_number": "TXB0104RUTR",
+      "role": "microSD 四路电平转换器",
+      "evidence": [
+        {
+          "asset_sha256": "577c50e9cbeb765827ad3f58861619024b8e44fffbcc94d1c98810e9ec887e6b",
+          "page": 1,
+          "locator": "TF CARD 区：U11 TXB0104RUTR 与 VCCB/VCCA、B1-B3/A1-A3、OE 引脚"
+        }
+      ]
+    },
+    {
+      "reference": "U2",
+      "part_number": "MTXS0102DQER",
+      "role": "GROVE I2C 双向电平转换器",
+      "evidence": [
+        {
+          "asset_sha256": "577c50e9cbeb765827ad3f58861619024b8e44fffbcc94d1c98810e9ec887e6b",
+          "page": 1,
+          "locator": "GROVE 区：U2 MTXS0102DQER 与 GROVE_SCL/GROVE_SDA、G3_SCL/G2_SDA"
+        }
+      ]
+    },
+    {
+      "reference": "U12",
+      "part_number": "MTXS0102DQER",
+      "role": "M5BUS I2C 双向电平转换器",
+      "evidence": [
+        {
+          "asset_sha256": "5ca6589619677cb92305aedccaf2f401bc7bc3689c39c7eb58d8eecbdaa41c5e",
+          "page": 1,
+          "locator": "M5BUS 区：U12 MTXS0102DQER 与 MBUS_SCL/MBUS_SDA"
+        }
+      ]
+    },
+    {
+      "reference": "U13",
+      "part_number": "MTXS0102DQER",
+      "role": "M5BUS GPIO 电平转换器",
+      "evidence": [
+        {
+          "asset_sha256": "5ca6589619677cb92305aedccaf2f401bc7bc3689c39c7eb58d8eecbdaa41c5e",
+          "page": 1,
+          "locator": "M5BUS 区：U13 MTXS0102DQER 与 G27/G28_BOOT6、MBUS_G27/MBUS_G28"
+        }
+      ]
+    },
+    {
+      "reference": "U9",
+      "part_number": "MT9700-N",
+      "role": "LCD 电源负载开关，限流设定为 340mA",
+      "evidence": [
+        {
+          "asset_sha256": "577c50e9cbeb765827ad3f58861619024b8e44fffbcc94d1c98810e9ec887e6b",
+          "page": 1,
+          "locator": "LCD & TP 区：U9 MT9700-N、VIN/VOUT/EN/SET 与 340mA 标注"
+        }
+      ]
+    },
+    {
+      "reference": "U7",
+      "part_number": "MT9700-N",
+      "role": "microSD 电源负载开关，限流设定为 340mA",
+      "evidence": [
+        {
+          "asset_sha256": "577c50e9cbeb765827ad3f58861619024b8e44fffbcc94d1c98810e9ec887e6b",
+          "page": 1,
+          "locator": "TF CARD 区：U7 MT9700-N、VIN/VOUT/EN/SET 与 340mA 标注"
+        }
+      ]
+    },
+    {
+      "reference": "U10",
+      "part_number": "TPAP7343D-33FS4",
+      "role": "M5BUS 3.3V LDO",
+      "evidence": [
+        {
+          "asset_sha256": "5ca6589619677cb92305aedccaf2f401bc7bc3689c39c7eb58d8eecbdaa41c5e",
+          "page": 1,
+          "locator": "M5BUS 区右侧：U10 TPAP7343D-33FS4、VIN/OUT/EN、C3/C2"
+        }
+      ]
+    },
+    {
+      "reference": "U1",
+      "part_number": "TPAP7343D-33FS4",
+      "role": "GROVE 3.3V LDO",
+      "evidence": [
+        {
+          "asset_sha256": "577c50e9cbeb765827ad3f58861619024b8e44fffbcc94d1c98810e9ec887e6b",
+          "page": 1,
+          "locator": "GROVE 区：U1 TPAP7343D-33FS4、VIN/OUT/EN、C64/C63"
+        }
+      ]
+    },
+    {
+      "reference": "Q1",
+      "part_number": "HL2301A",
+      "role": "LCD 背光 P-MOS 高侧开关",
+      "evidence": [
+        {
+          "asset_sha256": "577c50e9cbeb765827ad3f58861619024b8e44fffbcc94d1c98810e9ec887e6b",
+          "page": 1,
+          "locator": "LCD & TP 区背光：Q1 HL2301A 与 BL_3V3_L3B、R60、R50"
+        }
+      ]
+    },
+    {
+      "reference": "Q2",
+      "part_number": "2N7002W",
+      "role": "LCD 背光使能 N-MOS 驱动",
+      "evidence": [
+        {
+          "asset_sha256": "577c50e9cbeb765827ad3f58861619024b8e44fffbcc94d1c98810e9ec887e6b",
+          "page": 1,
+          "locator": "LCD & TP 区背光：Q2 2N7002W、PYB_BL_EN、R52"
+        }
+      ]
+    },
+    {
+      "reference": "Q3",
+      "part_number": "2N7002W",
+      "role": "蜂鸣器低边开关",
+      "evidence": [
+        {
+          "asset_sha256": "577c50e9cbeb765827ad3f58861619024b8e44fffbcc94d1c98810e9ec887e6b",
+          "page": 1,
+          "locator": "BUZZER 区：Q3 2N7002W、PM_BUZZER_EN、R53"
+        }
+      ]
+    },
+    {
+      "reference": "Q4",
+      "part_number": "2N7002DW",
+      "role": "触摸 I2C SCL 双向电平转换 MOS",
+      "evidence": [
+        {
+          "asset_sha256": "577c50e9cbeb765827ad3f58861619024b8e44fffbcc94d1c98810e9ec887e6b",
+          "page": 1,
+          "locator": "LCD & TP 区：Q4A/Q4B 2N7002DW、G3_SCL 与 TP_SCL"
+        }
+      ]
+    },
+    {
+      "reference": "Q5",
+      "part_number": "2N7002DW",
+      "role": "触摸 I2C SDA 双向电平转换 MOS",
+      "evidence": [
+        {
+          "asset_sha256": "577c50e9cbeb765827ad3f58861619024b8e44fffbcc94d1c98810e9ec887e6b",
+          "page": 1,
+          "locator": "LCD & TP 区：Q5A/Q5B 2N7002DW、G2_SDA 与 TP_SDA"
+        }
+      ]
+    },
+    {
+      "reference": "D5",
+      "part_number": "TPBT4148-1006",
+      "role": "充电状态信号二极管",
+      "evidence": [
+        {
+          "asset_sha256": "7462e5815f4a7b77d8908909ae0b23a5c955aa269bb5684aee46e2f3ebf2a5c9",
+          "page": 1,
+          "locator": "PYB IOEXP 区下方：D5 TPBT4148-1006、PYB_CHG_STAT 与 CHG_STAT"
+        }
+      ]
+    },
+    {
+      "reference": "D6",
+      "part_number": "1N4148W",
+      "role": "蜂鸣器续流二极管",
+      "evidence": [
+        {
+          "asset_sha256": "577c50e9cbeb765827ad3f58861619024b8e44fffbcc94d1c98810e9ec887e6b",
+          "page": 1,
+          "locator": "BUZZER 区：D6 1N4148W 并联于蜂鸣器两端"
+        }
+      ]
+    },
+    {
+      "reference": "BUZZER1",
+      "part_number": "MLT-8530",
+      "role": "板载无源蜂鸣器",
+      "evidence": [
+        {
+          "asset_sha256": "577c50e9cbeb765827ad3f58861619024b8e44fffbcc94d1c98810e9ec887e6b",
+          "page": 1,
+          "locator": "BUZZER 区：BUZZER1 MLT-8530 及 1/2 脚"
+        }
+      ]
+    },
+    {
+      "reference": "X1",
+      "part_number": "CN4048M000B17A822001",
+      "role": "主控晶振，连接 XTAL_P/XTAL_N",
+      "evidence": [
+        {
+          "asset_sha256": "7462e5815f4a7b77d8908909ae0b23a5c955aa269bb5684aee46e2f3ebf2a5c9",
+          "page": 1,
+          "locator": "03 MCU Core 区顶部：X1 CN4048M000B17A822001、C19/C20、L1"
+        }
+      ]
+    },
+    {
+      "reference": "J1",
+      "part_number": "USB_C_16P_Horizontal",
+      "role": "USB Type-C 输入与数据连接器",
+      "evidence": [
+        {
+          "asset_sha256": "5ca6589619677cb92305aedccaf2f401bc7bc3689c39c7eb58d8eecbdaa41c5e",
+          "page": 1,
+          "locator": "USB C IN 区：J1 USB_C_16P_Horizontal"
+        }
+      ]
+    },
+    {
+      "reference": "JP1",
+      "part_number": null,
+      "role": "4Pin USB 扩展点：5V_IN、GND、USB_N、USB_P",
+      "evidence": [
+        {
+          "asset_sha256": "5ca6589619677cb92305aedccaf2f401bc7bc3689c39c7eb58d8eecbdaa41c5e",
+          "page": 1,
+          "locator": "USB C IN 区右侧：JP1 与 1~4 脚网络"
+        }
+      ]
+    },
+    {
+      "reference": "JP2",
+      "part_number": null,
+      "role": "2Pin 电池输入/输出接口，连接 VBAT",
+      "evidence": [
+        {
+          "asset_sha256": "5ca6589619677cb92305aedccaf2f401bc7bc3689c39c7eb58d8eecbdaa41c5e",
+          "page": 1,
+          "locator": "BAT IN/OUT 区：JP2 2/1 脚与 VBAT"
+        }
+      ]
+    },
+    {
+      "reference": "S1",
+      "part_number": null,
+      "role": "电源按键，产生 PWR_BTN 信号",
+      "evidence": [
+        {
+          "asset_sha256": "5ca6589619677cb92305aedccaf2f401bc7bc3689c39c7eb58d8eecbdaa41c5e",
+          "page": 1,
+          "locator": "KEY 区：S1、PWR_BTN、C6、DR3"
+        }
+      ]
+    },
+    {
+      "reference": "JP3",
+      "part_number": null,
+      "role": "30Pin M5BUS 扩展接口",
+      "evidence": [
+        {
+          "asset_sha256": "5ca6589619677cb92305aedccaf2f401bc7bc3689c39c7eb58d8eecbdaa41c5e",
+          "page": 1,
+          "locator": "M5BUS 区：JP3 30Pin 与 1~30 脚网络"
+        }
+      ]
+    },
+    {
+      "reference": "JP4",
+      "part_number": "HC-FPC-0.5-10P-FH20",
+      "role": "10Pin LCD FPC 连接器",
+      "evidence": [
+        {
+          "asset_sha256": "577c50e9cbeb765827ad3f58861619024b8e44fffbcc94d1c98810e9ec887e6b",
+          "page": 1,
+          "locator": "LCD & TP 区：JP4 HC-FPC-0.5-10P-FH20 与 1~10/SH 脚"
+        }
+      ]
+    },
+    {
+      "reference": "JP5",
+      "part_number": null,
+      "role": "6Pin C-TP 触控 FPC 连接器",
+      "evidence": [
+        {
+          "asset_sha256": "577c50e9cbeb765827ad3f58861619024b8e44fffbcc94d1c98810e9ec887e6b",
+          "page": 1,
+          "locator": "LCD & TP 区右下方：JP5 C-TP 与 1~6/SH 脚"
+        }
+      ]
+    },
+    {
+      "reference": "JP6",
+      "part_number": null,
+      "role": "4Pin GROVE/I2C 扩展接口",
+      "evidence": [
+        {
+          "asset_sha256": "577c50e9cbeb765827ad3f58861619024b8e44fffbcc94d1c98810e9ec887e6b",
+          "page": 1,
+          "locator": "GROVE 区：JP6 1~4 脚与 GND、5V_INOUT、GROVE_SDA、GROVE_SCL"
+        }
+      ]
+    },
+    {
+      "reference": "JP7",
+      "part_number": null,
+      "role": "2Pin RTC 备用电池接口",
+      "evidence": [
+        {
+          "asset_sha256": "577c50e9cbeb765827ad3f58861619024b8e44fffbcc94d1c98810e9ec887e6b",
+          "page": 1,
+          "locator": "RTC 区：JP7 与 RTC_BAT、GND"
+        }
+      ]
+    },
+    {
+      "reference": "J2",
+      "part_number": "TF_Card",
+      "role": "microSD 卡座",
+      "evidence": [
+        {
+          "asset_sha256": "577c50e9cbeb765827ad3f58861619024b8e44fffbcc94d1c98810e9ec887e6b",
+          "page": 1,
+          "locator": "TF CARD 区右侧：J2 TF_Card 与 DATA/CMD/VDD/CLK/VSS/DET 引脚"
+        }
+      ]
+    },
+    {
+      "reference": "J3",
+      "part_number": "IPEX_4",
+      "role": "2.4GHz/5GHz 天线连接器",
+      "evidence": [
+        {
+          "asset_sha256": "7462e5815f4a7b77d8908909ae0b23a5c955aa269bb5684aee46e2f3ebf2a5c9",
+          "page": 1,
+          "locator": "03 MCU Core 区右侧：J3 IPEX_4 与 U4 CM 输出"
+        }
+      ]
+    },
+    {
+      "reference": "BAT1",
+      "part_number": "C80909/MS621FE-FL11E",
+      "role": "RTC 备用电池",
+      "evidence": [
+        {
+          "asset_sha256": "577c50e9cbeb765827ad3f58861619024b8e44fffbcc94d1c98810e9ec887e6b",
+          "page": 1,
+          "locator": "RTC 区：BAT1 C80909/MS621FE-FL11E 与 RTC_BAT"
+        }
+      ]
+    },
+    {
+      "reference": "D1 / D2 / D4",
+      "part_number": "ESD0524P",
+      "role": "M5BUS GPIO 与 UART/SPI 信号的多路 ESD 保护",
+      "evidence": [
+        {
+          "asset_sha256": "5ca6589619677cb92305aedccaf2f401bc7bc3689c39c7eb58d8eecbdaa41c5e",
+          "page": 1,
+          "locator": "M5BUS 区：D2/D4/D1 均为 ESD0524P，IN1~IN4 接对应信号"
+        }
+      ]
+    },
+    {
+      "reference": "D7",
+      "part_number": "ESD0524P",
+      "role": "触控中断、I2C 与复位信号 ESD 保护",
+      "evidence": [
+        {
+          "asset_sha256": "577c50e9cbeb765827ad3f58861619024b8e44fffbcc94d1c98810e9ec887e6b",
+          "page": 1,
+          "locator": "LCD & TP 区左下方：D7 ESD0524P 与 PM_TP_INT/TP_SDA/TP_SCL/PM_TP_RST"
+        }
+      ]
+    },
+    {
+      "reference": "DR1-DR13",
+      "part_number": "ESD5311",
+      "role": "USB、按键、M5BUS、microSD、触控与 GROVE 信号 TVS 保护",
+      "evidence": [
+        {
+          "asset_sha256": "5ca6589619677cb92305aedccaf2f401bc7bc3689c39c7eb58d8eecbdaa41c5e",
+          "page": 1,
+          "locator": "第 2 页：DR1~DR6、DR13 为 ESD5311"
+        },
+        {
+          "asset_sha256": "577c50e9cbeb765827ad3f58861619024b8e44fffbcc94d1c98810e9ec887e6b",
+          "page": 1,
+          "locator": "第 4 页：DR7~DR12 为 ESD5311"
+        }
+      ]
+    }
+  ],
+  "facts": [
+    {
+      "id": "system.power-domains",
+      "category": "system",
+      "subject": "ToughC5",
+      "statement": "系统定义 L0 Shipping、L1 Standby、L2 DeepSleep、L3A CORE ACTIVE、L3B ALL ACTIVE 五个电源状态；ESP32-C5 与 PY B 从 L2 起有效，TP 从 L3A 起有效，M5BUS、LCD、蜂鸣器与 GROVE 位于 L3B。",
+      "confidence": "confirmed",
+      "attributes": {
+        "states": "L0/L1/L2/L3A/L3B",
+        "l2": "ESP32-C5,PY B",
+        "l3a": "TP",
+        "l3b": "M5BUS,LCD,BUZZER,GROVE"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "65f28dc6f899b53d540a5fde2c3f75b7e54e5e7480e356a2e97482b92884a9c6",
+          "page": 1,
+          "locator": "右上 PowerMode 表与 Power Mode Switch 区：L0/L1/L2/L3A/L3B"
+        }
+      ]
+    },
+    {
+      "id": "system.mode-flow",
+      "category": "system",
+      "subject": "ToughC5",
+      "statement": "L1 上电后自动开启；PWR_BTN 或 CHG_STAT 触发 L2，随后开启 L3A 与 L3B；软件睡眠关闭 L2、L3A、L3B，TP_INT 用于退出睡眠。",
+      "confidence": "confirmed",
+      "attributes": {
+        "entry": "PWR_BTN,CHG_STAT",
+        "sleep_exit": "TP_INT",
+        "levels": "L1->L2->L3A->L3B"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "65f28dc6f899b53d540a5fde2c3f75b7e54e5e7480e356a2e97482b92884a9c6",
+          "page": 1,
+          "locator": "左下 Power Mode Switch：L0~L3B 状态与转换文字"
+        }
+      ]
+    },
+    {
+      "id": "component.mcu",
+      "category": "component",
+      "subject": "U3",
+      "statement": "U3 为 ESP32-C5HR8，CHIP_PU 为第 9 脚，XTAL_P/XTAL_N 为第 6/5 脚，ANT_5G/ANT_2G 为第 48/42 脚。",
+      "confidence": "confirmed",
+      "attributes": {
+        "part": "ESP32-C5HR8",
+        "chip_pu_pin": "9",
+        "xtal_p_pin": "6",
+        "xtal_n_pin": "5",
+        "ant_5g_pin": "48",
+        "ant_2g_pin": "42"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "7462e5815f4a7b77d8908909ae0b23a5c955aa269bb5684aee46e2f3ebf2a5c9",
+          "page": 1,
+          "locator": "03 MCU Core 区：U3 ESP32-C5HR8 与 5/6/9/42/48 脚"
+        }
+      ]
+    },
+    {
+      "id": "component.pmic",
+      "category": "component",
+      "subject": "M1",
+      "statement": "M1 为 StampTimerPower2 电源管理器件，I2C 地址为 0x6E，负责 5V、VBAT、系统 VBUS 与多路 3.3V 电源。",
+      "confidence": "confirmed",
+      "attributes": {
+        "part": "StampTimerPower2",
+        "i2c_address": "0x6E"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "5ca6589619677cb92305aedccaf2f401bc7bc3689c39c7eb58d8eecbdaa41c5e",
+          "page": 1,
+          "locator": "TimerPower2 区：M1 StampTimerPower2、IIC Address:0X6E"
+        }
+      ]
+    },
+    {
+      "id": "component.pmic-identity",
+      "category": "component",
+      "subject": "M1",
+      "statement": "原理图仅将 M1 标为 StampTimerPower2，未在该符号旁直接标注产品文档中的 M5PM1 名称。",
+      "confidence": "uncertain",
+      "attributes": {
+        "schematic_name": "StampTimerPower2",
+        "document_name": "M5PM1",
+        "i2c_address": "0x6E"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "5ca6589619677cb92305aedccaf2f401bc7bc3689c39c7eb58d8eecbdaa41c5e",
+          "page": 1,
+          "locator": "TimerPower2 区：M1 与 StampTimerPower2 标注"
+        }
+      ]
+    },
+    {
+      "id": "component.ioexp",
+      "category": "component",
+      "subject": "U5",
+      "statement": "U5 为 IO_EXP 扩展器，I2C 地址 0x4F，VCC 接 3V3_L2，VSS 接地。",
+      "confidence": "confirmed",
+      "attributes": {
+        "schematic_name": "IO_EXP",
+        "i2c_address": "0x4F",
+        "vcc": "3V3_L2"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "7462e5815f4a7b77d8908909ae0b23a5c955aa269bb5684aee46e2f3ebf2a5c9",
+          "page": 1,
+          "locator": "PYB IOEXP 区：U5 IO_EXP、IIC Address:0X4F、VCC/VSS"
+        }
+      ]
+    },
+    {
+      "id": "component.ioexp-identity",
+      "category": "component",
+      "subject": "U5",
+      "statement": "原理图仅标注 U5 为 IO_EXP 与地址 0x4F，未在器件符号处标注完整型号。",
+      "confidence": "uncertain",
+      "attributes": {
+        "schematic_name": "IO_EXP",
+        "document_name": "M5IOE1",
+        "i2c_address": "0x4F"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "7462e5815f4a7b77d8908909ae0b23a5c955aa269bb5684aee46e2f3ebf2a5c9",
+          "page": 1,
+          "locator": "PYB IOEXP 区：U5、IO_EXP 与 IIC Address:0X4F"
+        }
+      ]
+    },
+    {
+      "id": "component.rf-frontend",
+      "category": "component",
+      "subject": "U4",
+      "statement": "U4 为 LFD182G45DCHD481，H_PORT 接 ANT_5G 匹配网络，L_PORT 接 ANT_2G 匹配网络，CM 经 L3(0R) 接 J3 IPEX_4。",
+      "confidence": "confirmed",
+      "attributes": {
+        "part": "LFD182G45DCHD481",
+        "high_port": "H_PORT",
+        "low_port": "L_PORT",
+        "combined": "CM",
+        "antenna": "J3 IPEX_4"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "7462e5815f4a7b77d8908909ae0b23a5c955aa269bb5684aee46e2f3ebf2a5c9",
+          "page": 1,
+          "locator": "03 MCU Core 区右侧：U4、L2/L4、L3 与 J3"
+        }
+      ]
+    },
+    {
+      "id": "component.rtc",
+      "category": "component",
+      "subject": "U8",
+      "statement": "U8 为 RX8130CE:B3 RTC，VIO(1) 与 VDD(8) 接 3V3_L0，VBAT(10) 经 R64(0R) 接 RTC_BAT，SCL(2)/SDA(3) 接 G3_SCL/G2_SDA。",
+      "confidence": "confirmed",
+      "attributes": {
+        "part": "RX8130CE:B3",
+        "vio_pin": "1",
+        "vdd_pin": "8",
+        "vbat_pin": "10",
+        "scl_pin": "2",
+        "sda_pin": "3"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "577c50e9cbeb765827ad3f58861619024b8e44fffbcc94d1c98810e9ec887e6b",
+          "page": 1,
+          "locator": "RTC 区：U8 与 1/8/10/2/3 脚"
+        }
+      ]
+    },
+    {
+      "id": "component.levelshifters",
+      "category": "component",
+      "subject": "U11 / U12 / U13 / U2",
+      "statement": "U11 为 TXB0104RUTR 四路转换器，U12/U13/U2 为 MTXS0102DQER 两路转换器，分别服务 microSD、M5BUS I2C、M5BUS GPIO 与 GROVE I2C。",
+      "confidence": "confirmed",
+      "attributes": {
+        "sd": "U11 TXB0104RUTR",
+        "m5bus_i2c": "U12 MTXS0102DQER",
+        "m5bus_gpio": "U13 MTXS0102DQER",
+        "grove_i2c": "U2 MTXS0102DQER"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "5ca6589619677cb92305aedccaf2f401bc7bc3689c39c7eb58d8eecbdaa41c5e",
+          "page": 1,
+          "locator": "M5BUS 区：U12/U13 MTXS0102DQER"
+        },
+        {
+          "asset_sha256": "577c50e9cbeb765827ad3f58861619024b8e44fffbcc94d1c98810e9ec887e6b",
+          "page": 1,
+          "locator": "TF CARD 区 U11 TXB0104RUTR；GROVE 区 U2 MTXS0102DQER"
+        }
+      ]
+    },
+    {
+      "id": "power.timer-io",
+      "category": "power",
+      "subject": "M1",
+      "statement": "M1 的 5V_IN(16)、EXT_5V_INOUT(18)、VBAT(20)、SYS_VBUS(24) 分别连接对应电源网络；DCDC_3V3_OUT(26) 输出 3V3_L2，LDO_3V3_OUT(28) 输出 3V3_L2_LDO，3V3_ALWAYS_ON(22) 输出 3V3_L0。",
+      "confidence": "confirmed",
+      "attributes": {
+        "5v_in_pin": "16",
+        "ext_5v_inout_pin": "18",
+        "vbat_pin": "20",
+        "sys_vbus_pin": "24",
+        "dcdc_3v3_pin": "26",
+        "ldo_3v3_pin": "28",
+        "always_3v3_pin": "22"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "5ca6589619677cb92305aedccaf2f401bc7bc3689c39c7eb58d8eecbdaa41c5e",
+          "page": 1,
+          "locator": "TimerPower2 区：M1 16/18/20/24/26/28/22 脚与输出网络"
+        }
+      ]
+    },
+    {
+      "id": "power.usb-input",
+      "category": "power",
+      "subject": "J1",
+      "statement": "J1 的 VBUS 由 A4/B9 与 B4/A9 并联引出 5V_IN；CC1(A5)、CC2(B5) 分别经 R2、R3(5.1K) 下拉到 GND。",
+      "confidence": "confirmed",
+      "attributes": {
+        "vbus_pins": "A4/B9,B4/A9",
+        "cc1_pin": "A5",
+        "cc2_pin": "B5",
+        "cc_pulldown": "R2/R3 5.1K"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "5ca6589619677cb92305aedccaf2f401bc7bc3689c39c7eb58d8eecbdaa41c5e",
+          "page": 1,
+          "locator": "USB C IN 区：J1 VBUS、CC1/CC2、R2/R3"
+        }
+      ]
+    },
+    {
+      "id": "power.battery-input",
+      "category": "power",
+      "subject": "JP2",
+      "statement": "JP2 第 2 脚接 VBAT，第 1 脚接 GND；VBAT 由 C4(100nF/16V) 与 C5(10uF/10V) 对地滤波。",
+      "confidence": "confirmed",
+      "attributes": {
+        "pin2": "VBAT",
+        "pin1": "GND",
+        "c4": "100nF/16V",
+        "c5": "10uF/10V"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "5ca6589619677cb92305aedccaf2f401bc7bc3689c39c7eb58d8eecbdaa41c5e",
+          "page": 1,
+          "locator": "BAT IN/OUT 区：JP2、VBAT、C4/C5"
+        }
+      ]
+    },
+    {
+      "id": "power.m5bus-grove",
+      "category": "power",
+      "subject": "U10 / U1",
+      "statement": "U10 将 5V_INOUT 转为 M5BUS_3V3_L3B，U1 将 5V_INOUT 转为 GROVE_3V3_L3B；两者的 EN 脚均接各自 VIN，C3/C63(10uF) 接输入，C2/C64(1uF) 接输出。",
+      "confidence": "confirmed",
+      "attributes": {
+        "m5bus_ldo": "U10 TPAP7343D-33FS4",
+        "grove_ldo": "U1 TPAP7343D-33FS4",
+        "input": "5V_INOUT",
+        "outputs": "M5BUS_3V3_L3B,GROVE_3V3_L3B"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "5ca6589619677cb92305aedccaf2f401bc7bc3689c39c7eb58d8eecbdaa41c5e",
+          "page": 1,
+          "locator": "M5BUS 区右侧：U10、C2/C3、5V_INOUT"
+        },
+        {
+          "asset_sha256": "577c50e9cbeb765827ad3f58861619024b8e44fffbcc94d1c98810e9ec887e6b",
+          "page": 1,
+          "locator": "GROVE 区：U1、C63/C64、5V_INOUT"
+        }
+      ]
+    },
+    {
+      "id": "power.lcd-tf-switches",
+      "category": "power",
+      "subject": "U9 / U7",
+      "statement": "U9 以 3V3_L2_LDO 为输入生成 LCD_3V3_L3B，U7 以 3V3_L2 为输入生成 TF_3V3_L3B；两路 MT9700-N 的 SET 脚分别接 R47/R35(20K) 到地并标注 340mA，EN 脚分别由 R49/R37(100K) 下拉。",
+      "confidence": "confirmed",
+      "attributes": {
+        "lcd_switch": "U9 MT9700-N",
+        "sd_switch": "U7 MT9700-N",
+        "current_limit": "340mA",
+        "lcd_output": "LCD_3V3_L3B",
+        "sd_output": "TF_3V3_L3B"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "577c50e9cbeb765827ad3f58861619024b8e44fffbcc94d1c98810e9ec887e6b",
+          "page": 1,
+          "locator": "LCD & TP 区 U9；TF CARD 区 U7；两处 340mA 标注"
+        }
+      ]
+    },
+    {
+      "id": "power.backlight",
+      "category": "power",
+      "subject": "Q1 / Q2",
+      "statement": "3V3_L2_LDO 经 R60(4.7R/5%) 接 Q1(HL2301A) 源极，Q1 漏极输出 BL_3V3_L3B；Q2(2N7002W) 的栅极接 PYB_BL_EN，R50/R52 均为 100K，C56 为 100nF/16V。",
+      "confidence": "confirmed",
+      "attributes": {
+        "pmos": "Q1 HL2301A",
+        "nmos": "Q2 2N7002W",
+        "series_r": "R60 4.7R 5%",
+        "enable": "PYB_BL_EN",
+        "output": "BL_3V3_L3B"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "577c50e9cbeb765827ad3f58861619024b8e44fffbcc94d1c98810e9ec887e6b",
+          "page": 1,
+          "locator": "LCD & TP 区背光：R60、Q1、Q2、R50/R52、C56"
+        }
+      ]
+    },
+    {
+      "id": "power.timer-decoupling",
+      "category": "power",
+      "subject": "M1",
+      "statement": "M1 引出的电源网络配置 C7(10uF/25V)、C8(1uF/100V)、C9(10uF/100V)、C10/C11(100nF/16V)，3V3_L2 与 3V3_L2_LDO 另配 C58/C59(22uF/16V)、C12/C14(100nF/16V)、C13(10uF/16V)、C1/C15(1uF/16V)。",
+      "confidence": "confirmed",
+      "attributes": {
+        "input_caps": "C7,C8,C9,C10,C11",
+        "dcdc_caps": "C58,C59,C12,C14",
+        "ldo_caps": "C13,C1,C15"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "5ca6589619677cb92305aedccaf2f401bc7bc3689c39c7eb58d8eecbdaa41c5e",
+          "page": 1,
+          "locator": "TimerPower2 区左侧：C7~C11、C58/C59、C12~C15"
+        }
+      ]
+    },
+    {
+      "id": "interface.usb",
+      "category": "interface",
+      "subject": "J1 / JP1",
+      "statement": "J1 的 DP1/DP2(A6/B6) 与 DM1/DM2(A7/B7) 汇合为 USB_P/USB_N，经 FT1(ICMF062P900MFR) 连接 JP1 的 USB_P/USB_N；JP1 第 1/2/3/4 脚依次为 5V_IN、GND、USB_N、USB_P。",
+      "confidence": "confirmed",
+      "attributes": {
+        "dp": "A6/B6",
+        "dm": "A7/B7",
+        "filter": "FT1 ICMF062P900MFR",
+        "jp1_pin1_4": "5V_IN,GND,USB_N,USB_P"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "5ca6589619677cb92305aedccaf2f401bc7bc3689c39c7eb58d8eecbdaa41c5e",
+          "page": 1,
+          "locator": "USB C IN 区：J1、FT1、USB_P/USB_N 与 JP1"
+        }
+      ]
+    },
+    {
+      "id": "interface.m5bus",
+      "category": "interface",
+      "subject": "JP3",
+      "statement": "JP3 30Pin M5BUS 的奇数脚 1/3/5 为 GND，7/9/11 为 G7_MOSI/G8_MISO/G9_SCK，13/15 为 G12_PC_RX，17/19 为 MBUS_SDA，21/23 为 G23_RX/MBUS_G27；偶数脚 2/4/6 为 G0/G1/CHIP_EN，8/10/12 为 G4/G6/M5BUS_3V3_L3B，14/16 为 G11_PC_TX，18/20 为 MBUS_SCL，22/24 为 G24_TX/MBUS_G28，26/28/30 为 G5/5V_INOUT/VBAT。",
+      "confidence": "confirmed",
+      "attributes": {
+        "connector": "JP3 30Pin",
+        "i2c": "MBUS_SDA/MBUS_SCL",
+        "spi": "G7_MOSI/G8_MISO/G9_SCK",
+        "uart": "G11_PC_TX/G12_PC_RX,G23_RX/G24_TX",
+        "power": "M5BUS_3V3_L3B,5V_INOUT,VBAT"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "5ca6589619677cb92305aedccaf2f401bc7bc3689c39c7eb58d8eecbdaa41c5e",
+          "page": 1,
+          "locator": "M5BUS 区：JP3 与 1~30 脚网络名"
+        }
+      ]
+    },
+    {
+      "id": "interface.grove",
+      "category": "interface",
+      "subject": "JP6",
+      "statement": "JP6 第 4、3、2、1 脚依次为 GROVE_SCL、GROVE_SDA、5V_INOUT、GND；GROVE_SCL/SDA 经 U2 转换到 G3_SCL/G2_SDA。",
+      "confidence": "confirmed",
+      "attributes": {
+        "pin4": "GROVE_SCL",
+        "pin3": "GROVE_SDA",
+        "pin2": "5V_INOUT",
+        "pin1": "GND",
+        "translator": "U2 MTXS0102DQER"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "577c50e9cbeb765827ad3f58861619024b8e44fffbcc94d1c98810e9ec887e6b",
+          "page": 1,
+          "locator": "GROVE 区：JP6 与 U2"
+        }
+      ]
+    },
+    {
+      "id": "interface.lcd",
+      "category": "interface",
+      "subject": "JP4",
+      "statement": "JP4 10Pin LCD FPC：1=G7_MOSI，2=G8_MISO，3=G9_SCK，4=G25_LCD_CS，5=PYB_LCD_RST，6=G26_LCD_DC，7=LCD_3V3_L3B，8=GND，9=BL_3V3_L3B，10=GND，SH=GND；数据引脚 1~4 与 6 各串 0R 电阻。",
+      "confidence": "confirmed",
+      "attributes": {
+        "connector": "JP4 HC-FPC-0.5-10P-FH20",
+        "spi": "G7_MOSI,G8_MISO,G9_SCK",
+        "control": "G25_LCD_CS,PYB_LCD_RST,G26_LCD_DC",
+        "power": "LCD_3V3_L3B,BL_3V3_L3B"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "577c50e9cbeb765827ad3f58861619024b8e44fffbcc94d1c98810e9ec887e6b",
+          "page": 1,
+          "locator": "LCD & TP 区：JP4 与 1~10/SH 脚、R43~R48"
+        }
+      ]
+    },
+    {
+      "id": "interface.touch",
+      "category": "interface",
+      "subject": "JP5",
+      "statement": "JP5 C-TP：1=3V3_L2_LDO，2=PM_TP_RST，3=TP_SCL，4=TP_SDA，5=PM_TP_INT，SH=GND；第 1 脚经 R62(0R) 供电，2~5 脚各串 0R 电阻。",
+      "confidence": "confirmed",
+      "attributes": {
+        "connector": "JP5 C-TP",
+        "pin1": "3V3_L2_LDO",
+        "pin2": "PM_TP_RST",
+        "pin3": "TP_SCL",
+        "pin4": "TP_SDA",
+        "pin5": "PM_TP_INT"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "577c50e9cbeb765827ad3f58861619024b8e44fffbcc94d1c98810e9ec887e6b",
+          "page": 1,
+          "locator": "LCD & TP 区右下方：JP5 C-TP、R62、R56~R59"
+        }
+      ]
+    },
+    {
+      "id": "interface.tf-antenna",
+      "category": "interface",
+      "subject": "J2 / J3",
+      "statement": "J2 microSD 的 TF_CMD/TF_CLK/TF_D0 分别来自 U11 的 A1/A2/A3，VDD 接 TF_3V3_L3B，PYB_TF_DET 接卡检测脚；J3 为 IPEX_4 天线座，经 L3(0R) 接 U4 的 CM。",
+      "confidence": "confirmed",
+      "attributes": {
+        "sd_cmd": "TF_CMD",
+        "sd_clk": "TF_CLK",
+        "sd_d0": "TF_D0",
+        "sd_detect": "PYB_TF_DET",
+        "antenna": "J3 IPEX_4"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "577c50e9cbeb765827ad3f58861619024b8e44fffbcc94d1c98810e9ec887e6b",
+          "page": 1,
+          "locator": "TF CARD 区右侧 J2；RTC/TF 区上方 U11"
+        },
+        {
+          "asset_sha256": "7462e5815f4a7b77d8908909ae0b23a5c955aa269bb5684aee46e2f3ebf2a5c9",
+          "page": 1,
+          "locator": "03 MCU Core 区右侧：U4 CM、L3、J3 IPEX_4"
+        }
+      ]
+    },
+    {
+      "id": "interface.rs485-transceiver",
+      "category": "interface",
+      "subject": "RS485",
+      "statement": "四页主原理图直接引出 G23_RX/G24_TX 到 M5BUS，但未画出产品文档所述 SP485EEN-L/TR 收发器。",
+      "confidence": "uncertain",
+      "attributes": {
+        "uart_nets": "G23_RX,G24_TX",
+        "document_transceiver": "SP485EEN-L/TR",
+        "schematic_presence": "not shown on four pages"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "7462e5815f4a7b77d8908909ae0b23a5c955aa269bb5684aee46e2f3ebf2a5c9",
+          "page": 1,
+          "locator": "03 MCU Core 区：U3 的 G23/G24 GPIO"
+        },
+        {
+          "asset_sha256": "5ca6589619677cb92305aedccaf2f401bc7bc3689c39c7eb58d8eecbdaa41c5e",
+          "page": 1,
+          "locator": "M5BUS 区：JP3 的 G23_RX/G24_TX"
+        }
+      ]
+    },
+    {
+      "id": "interface.lcd-driver",
+      "category": "interface",
+      "subject": "JP4",
+      "statement": "JP4 仅给出 LCD 的 SPI、复位、DC、电源与背光接口，未在主板原理图中标注 ILI9342C 控制器型号。",
+      "confidence": "uncertain",
+      "attributes": {
+        "connector": "JP4",
+        "document_controller": "ILI9342C",
+        "schematic_label": "not shown"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "577c50e9cbeb765827ad3f58861619024b8e44fffbcc94d1c98810e9ec887e6b",
+          "page": 1,
+          "locator": "LCD & TP 区：JP4 与 LCD 接口网络"
+        }
+      ]
+    },
+    {
+      "id": "interface.touch-controller",
+      "category": "interface",
+      "subject": "JP5",
+      "statement": "JP5 仅给出触控 I2C、复位、中断与电源接口，未在主板原理图中标注 CHSC6540 控制器型号。",
+      "confidence": "uncertain",
+      "attributes": {
+        "connector": "JP5 C-TP",
+        "document_controller": "CHSC6540",
+        "schematic_label": "not shown"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "577c50e9cbeb765827ad3f58861619024b8e44fffbcc94d1c98810e9ec887e6b",
+          "page": 1,
+          "locator": "LCD & TP 区：JP5 C-TP 与 TP_SCL/TP_SDA/PM_TP_INT/PM_TP_RST"
+        }
+      ]
+    },
+    {
+      "id": "bus.i2c",
+      "category": "bus",
+      "subject": "G2_SDA / G3_SCL",
+      "statement": "G2_SDA/G3_SCL 连接 M1(0x6E)、U5(0x4F)、U8 RTC 及 U2/Q4/Q5 触控转换链路，并由 R20/R21(2.2K) 上拉到 3V3_L2。",
+      "confidence": "confirmed",
+      "attributes": {
+        "sda": "G2_SDA",
+        "scl": "G3_SCL",
+        "pullups": "R20/R21 2.2K",
+        "devices": "M1 0x6E,U5 0x4F,U8,U2/Q4/Q5"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "7462e5815f4a7b77d8908909ae0b23a5c955aa269bb5684aee46e2f3ebf2a5c9",
+          "page": 1,
+          "locator": "03 MCU Core 区左侧：R20/R21、G2_SDA/G3_SCL；U5 I2C 脚"
+        },
+        {
+          "asset_sha256": "5ca6589619677cb92305aedccaf2f401bc7bc3689c39c7eb58d8eecbdaa41c5e",
+          "page": 1,
+          "locator": "TimerPower2 区：G3_SCL/G2_SDA 与 M1"
+        },
+        {
+          "asset_sha256": "577c50e9cbeb765827ad3f58861619024b8e44fffbcc94d1c98810e9ec887e6b",
+          "page": 1,
+          "locator": "RTC 区 U8；GROVE 区 U2；LCD & TP 区 Q4/Q5"
+        }
+      ]
+    },
+    {
+      "id": "bus.spi",
+      "category": "bus",
+      "subject": "U3",
+      "statement": "U3 第 16~18 脚为 G7_MOSI/G8_MISO/G9_SCK，直接接 LCD JP4 并经 U11 转成 TF 信号；U6 Flash 使用独立的 FLASH_CS0/SPIQ/SPIWP/SPIHD/SPICLK/SPID，经 R18/R19/R22/R23/R24 接到 U3 第 26~31 脚。",
+      "confidence": "confirmed",
+      "attributes": {
+        "lcd_sd_spi": "G7_MOSI,G8_MISO,G9_SCK",
+        "mcu_pins": "16,17,18",
+        "flash_spi": "FLASH_CS0,FLASH_SPIQ,FLASH_SPIWP,FLASH_SPIHD,FLASH_SPICLK,FLASH_SPID",
+        "flash_resistors": "R18,R19,R22,R23,R24"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "7462e5815f4a7b77d8908909ae0b23a5c955aa269bb5684aee46e2f3ebf2a5c9",
+          "page": 1,
+          "locator": "03 MCU Core 区：U3 16~18、26~31 脚与 FLASH SPI 网络"
+        }
+      ]
+    },
+    {
+      "id": "bus.uart",
+      "category": "bus",
+      "subject": "U3",
+      "statement": "U3 的 U0TXD(20)/U0RXD(21) 形成 G11_PC_TX/G12_PC_RX，TXD 串联 R16(499R)，两路信号同时引到 JP3 的 13/15 与 14/16 脚；G23_RX/G24_TX 接 JP3 的 21/22 脚。",
+      "confidence": "confirmed",
+      "attributes": {
+        "uart0_tx": "U0TXD/G11_PC_TX",
+        "uart0_rx": "U0RXD/G12_PC_RX",
+        "series_resistor": "R16 499R",
+        "rs485_uart": "G23_RX/G24_TX",
+        "m5bus_pins": "13,14,15,16,21,22"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "7462e5815f4a7b77d8908909ae0b23a5c955aa269bb5684aee46e2f3ebf2a5c9",
+          "page": 1,
+          "locator": "03 MCU Core 区：U3 20/21/33/34 脚、R16"
+        },
+        {
+          "asset_sha256": "5ca6589619677cb92305aedccaf2f401bc7bc3689c39c7eb58d8eecbdaa41c5e",
+          "page": 1,
+          "locator": "M5BUS 区：JP3 13/14/15/16/21/22 脚"
+        }
+      ]
+    },
+    {
+      "id": "bus.rf",
+      "category": "bus",
+      "subject": "U3 / U4",
+      "statement": "ANT_5G(48) 经 L2(0.8nH)、C31/C32(0.2pF) 接 U4 H_PORT；ANT_2G(42) 经 L4(2.7nH)、C35(0.5pF)、C36(1pF) 接 U4 L_PORT。",
+      "confidence": "confirmed",
+      "attributes": {
+        "ant_5g_pin": "48",
+        "ant_2g_pin": "42",
+        "5g_match": "L2 0.8nH,C31 0.2pF,C32 0.2pF",
+        "2g_match": "L4 2.7nH,C35 0.5pF,C36 1pF",
+        "frontend": "U4 LFD182G45DCHD481"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "7462e5815f4a7b77d8908909ae0b23a5c955aa269bb5684aee46e2f3ebf2a5c9",
+          "page": 1,
+          "locator": "03 MCU Core 区右侧：ANT_5G/ANT_2G 匹配网络与 U4"
+        }
+      ]
+    },
+    {
+      "id": "gpio.ioexp",
+      "category": "gpio",
+      "subject": "U5",
+      "statement": "U5 的 PYG10_PWM4=PYB_BL_EN，PYG4_ADC2=PYB_LCD_RST，PYG5_ADC3=PYB_LCD_EN，PYG1=PYB_CHG_PROG，PYG3=PYB_CHG_STAT，PYG6=PYB_TF_EN，PYG14=PYB_TF_DET。",
+      "confidence": "confirmed",
+      "attributes": {
+        "pyg10": "PYB_BL_EN",
+        "pyg4": "PYB_LCD_RST",
+        "pyg5": "PYB_LCD_EN",
+        "pyg1": "PYB_CHG_PROG",
+        "pyg3": "PYB_CHG_STAT",
+        "pyg6": "PYB_TF_EN",
+        "pyg14": "PYB_TF_DET"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "7462e5815f4a7b77d8908909ae0b23a5c955aa269bb5684aee46e2f3ebf2a5c9",
+          "page": 1,
+          "locator": "PYB IOEXP 区：U5 PYG1/PYG3/PYG4/PYG5/PYG6/PYG10/PYG14 网络"
+        }
+      ]
+    },
+    {
+      "id": "gpio.touch-level",
+      "category": "gpio",
+      "subject": "Q4 / Q5",
+      "statement": "G3_SCL 经 Q4A/Q4B 转成 TP_SCL，G2_SDA 经 Q5A/Q5B 转成 TP_SDA；TP_SCL/TP_SDA 侧由 R12/R65(2.2K) 上拉到 3V3_L2_LDO。",
+      "confidence": "confirmed",
+      "attributes": {
+        "scl": "G3_SCL <-> TP_SCL",
+        "sda": "G2_SDA <-> TP_SDA",
+        "pullups": "R12/R65 2.2K",
+        "rail": "3V3_L2_LDO"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "577c50e9cbeb765827ad3f58861619024b8e44fffbcc94d1c98810e9ec887e6b",
+          "page": 1,
+          "locator": "LCD & TP 区左侧：Q4A/Q4B、Q5A/Q5B、R12/R65"
+        }
+      ]
+    },
+    {
+      "id": "gpio.buzzer",
+      "category": "gpio",
+      "subject": "Q3",
+      "statement": "PM_BUZZER_EN 驱动 Q3(2N7002W) 栅极，栅极由 R53(100K) 下拉；Q3 漏极接 BUZZER1 第 2 脚，源极接地，R51(10R) 串在 3V3_L2 与蜂鸣器第 1 脚之间。",
+      "confidence": "confirmed",
+      "attributes": {
+        "enable": "PM_BUZZER_EN",
+        "nmos": "Q3 2N7002W",
+        "gate_pulldown": "R53 100K",
+        "series_r": "R51 10R",
+        "buzzer": "BUZZER1 MLT-8530"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "577c50e9cbeb765827ad3f58861619024b8e44fffbcc94d1c98810e9ec887e6b",
+          "page": 1,
+          "locator": "BUZZER 区：PM_BUZZER_EN、Q3、R51/R53、BUZZER1"
+        }
+      ]
+    },
+    {
+      "id": "clock.crystal",
+      "category": "clock",
+      "subject": "X1",
+      "statement": "X1(CN4048M000B17A822001) 的 1/3 脚接 XTAL_P/XTAL_N，2/4 脚接地；XTAL_P 与 XTAL_N 分别通过 C19/C20(15pF/50V) 到地，XTAL_P 路径串接 L1(24nH)。",
+      "confidence": "confirmed",
+      "attributes": {
+        "part": "CN4048M000B17A822001",
+        "load_caps": "C19/C20 15pF/50V",
+        "series_l": "L1 24nH"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "7462e5815f4a7b77d8908909ae0b23a5c955aa269bb5684aee46e2f3ebf2a5c9",
+          "page": 1,
+          "locator": "03 MCU Core 区顶部：X1、C19/C20、L1、XTAL_P/XTAL_N"
+        }
+      ]
+    },
+    {
+      "id": "reset.mcu-chip-en",
+      "category": "reset",
+      "subject": "U3",
+      "statement": "CHIP_EN 网络由 R14(10K) 上拉到 3V3_L2，并由 C30(1uF/16V) 对地，同时连接到 U3 的 CHIP_PU(9) 与 U5 的 NRST(1)。",
+      "confidence": "confirmed",
+      "attributes": {
+        "pullup": "R14 10K",
+        "cap": "C30 1uF/16V",
+        "mcu_pin": "CHIP_PU/9",
+        "ioexp_pin": "NRST/1"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "7462e5815f4a7b77d8908909ae0b23a5c955aa269bb5684aee46e2f3ebf2a5c9",
+          "page": 1,
+          "locator": "03 MCU Core 区左侧 CHIP_EN/R14/C30；PYB IOEXP 区 R26"
+        }
+      ]
+    },
+    {
+      "id": "reset.ioexp",
+      "category": "reset",
+      "subject": "U5",
+      "statement": "U5 的 NRST(1) 经 R26(0R) 接 CHIP_EN，OD_INTOUT(2) 悬空。",
+      "confidence": "confirmed",
+      "attributes": {
+        "nrst_pin": "1",
+        "series_r": "R26 0R",
+        "reset_net": "CHIP_EN",
+        "od_intout": "NC"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "7462e5815f4a7b77d8908909ae0b23a5c955aa269bb5684aee46e2f3ebf2a5c9",
+          "page": 1,
+          "locator": "PYB IOEXP 区：U5 NRST、R26、OD_INTOUT"
+        }
+      ]
+    },
+    {
+      "id": "protection.esd",
+      "category": "protection",
+      "subject": "ESD arrays",
+      "statement": "USB_P/USB_N 由 DR1/DR2(ESD5311) 保护；M5BUS 信号由 D2/D4/D1(ESD0524P) 与 DR4/DR5/DR13 保护；microSD 由 DR9~DR12、触控由 D7(ESD0524P)、GROVE 由 DR7/DR8 保护。",
+      "confidence": "confirmed",
+      "attributes": {
+        "usb": "DR1/DR2 ESD5311",
+        "m5bus": "D1/D2/D4 ESD0524P",
+        "sd": "DR9-DR12 ESD5311",
+        "touch": "D7 ESD0524P",
+        "grove": "DR7/DR8 ESD5311"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "5ca6589619677cb92305aedccaf2f401bc7bc3689c39c7eb58d8eecbdaa41c5e",
+          "page": 1,
+          "locator": "USB C IN 区 DR1/DR2；M5BUS 区 D1/D2/D4/DR4/DR5/DR13"
+        },
+        {
+          "asset_sha256": "577c50e9cbeb765827ad3f58861619024b8e44fffbcc94d1c98810e9ec887e6b",
+          "page": 1,
+          "locator": "GROVE 区 DR7/DR8；TF CARD 区 DR9~DR12；LCD & TP 区 D7"
+        }
+      ]
+    },
+    {
+      "id": "key_net.3v3-l0",
+      "category": "key_net",
+      "subject": "3V3_L0",
+      "statement": "3V3_L0 由 M1 的 3V3_ALWAYS_ON(22) 产生，供 U8 RTC 的 VIO/VDD 与 R33 上拉使用。",
+      "confidence": "confirmed",
+      "attributes": {
+        "source": "M1 pin22",
+        "loads": "U8 VIO/VDD,R33"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "5ca6589619677cb92305aedccaf2f401bc7bc3689c39c7eb58d8eecbdaa41c5e",
+          "page": 1,
+          "locator": "TimerPower2 区：M1 22 脚 3V3_ALWAYS_ON/3V3_L0"
+        },
+        {
+          "asset_sha256": "577c50e9cbeb765827ad3f58861619024b8e44fffbcc94d1c98810e9ec887e6b",
+          "page": 1,
+          "locator": "RTC 区：3V3_L0、U8 VIO/VDD、R33"
+        }
+      ]
+    },
+    {
+      "id": "key_net.3v3-l2",
+      "category": "key_net",
+      "subject": "3V3_L2",
+      "statement": "3V3_L2 由 M1 的 DCDC_3V3_OUT(26) 产生，连接 U3 电源脚、U5 VCC、U11/U12/U13 的 VCCB、U2 的 VCCA、TF/U7 输入以及 I2C 上拉。",
+      "confidence": "confirmed",
+      "attributes": {
+        "source": "M1 pin26",
+        "loads": "U3,U5,U11,U12,U13,U2,U7,R20/R21"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "5ca6589619677cb92305aedccaf2f401bc7bc3689c39c7eb58d8eecbdaa41c5e",
+          "page": 1,
+          "locator": "TimerPower2 区：M1 26 脚 DCDC_3V3_OUT/3V3_L2"
+        },
+        {
+          "asset_sha256": "7462e5815f4a7b77d8908909ae0b23a5c955aa269bb5684aee46e2f3ebf2a5c9",
+          "page": 1,
+          "locator": "03 MCU Core 区与 PYB IOEXP 区：3V3_L2 电源网络"
+        }
+      ]
+    },
+    {
+      "id": "storage.flash",
+      "category": "storage",
+      "subject": "U6",
+      "statement": "U6(XM25UH128DHIQT) 的 VCC(8) 接 VDD_SPI 并用 C47(1uF/16V) 去耦，VSS(4) 接地；CS#/SO/WP#/HOLD#/SCLK/SI 分别接 FLASH_CS0/SPIQ/SPIWP/SPIHD/SPICLK/SPID。",
+      "confidence": "confirmed",
+      "attributes": {
+        "part": "XM25UH128DHIQT",
+        "size": "128Mbit/16MB",
+        "vcc_pin": "8",
+        "vss_pin": "4",
+        "decoupling": "C47 1uF/16V"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "7462e5815f4a7b77d8908909ae0b23a5c955aa269bb5684aee46e2f3ebf2a5c9",
+          "page": 1,
+          "locator": "16MB Flash 区：U6、C47 与 1~8 脚网络"
+        }
+      ]
+    },
+    {
+      "id": "storage.sd",
+      "category": "storage",
+      "subject": "J2",
+      "statement": "microSD J2 的 TF_CMD/TF_CLK/TF_D0 来自 U11 转换侧 A1/A2/A3，PYB_TF_DET 接卡检测脚并由 R63(10K) 下拉、C51(1uF) 对地；TF_3V3_L3B 由 U7 负载开关产生并用 C50(100nF) 去耦。",
+      "confidence": "confirmed",
+      "attributes": {
+        "connector": "J2 TF_Card",
+        "cmd": "TF_CMD",
+        "clk": "TF_CLK",
+        "data0": "TF_D0",
+        "detect": "PYB_TF_DET",
+        "detect_pulldown": "R63 10K",
+        "rail": "TF_3V3_L3B"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "577c50e9cbeb765827ad3f58861619024b8e44fffbcc94d1c98810e9ec887e6b",
+          "page": 1,
+          "locator": "TF CARD 区：U11、U7、J2、R63、C50/C51"
+        }
+      ]
+    },
+    {
+      "id": "other.rtc",
+      "category": "other",
+      "subject": "U8",
+      "statement": "U8 的 nIRQ(6) 为 PM_RTC_INT，并由 R33(100K) 上拉到 3V3_L0；VBAT(10) 经 R64(0R) 接 RTC_BAT 与 BAT1，C16(1nF/10V) 对地；nRSTO(5) 与 FOUT(4) 悬空。",
+      "confidence": "confirmed",
+      "attributes": {
+        "irq_pin": "6",
+        "irq_net": "PM_RTC_INT",
+        "pullup": "R33 100K",
+        "backup_battery": "BAT1",
+        "vbat_r": "R64 0R",
+        "vbat_c": "C16 1nF/10V"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "577c50e9cbeb765827ad3f58861619024b8e44fffbcc94d1c98810e9ec887e6b",
+          "page": 1,
+          "locator": "RTC 区：U8 4/5/6/10 脚、R33、R64、C16、BAT1"
+        }
+      ]
+    },
+    {
+      "id": "other.buzzer",
+      "category": "other",
+      "subject": "BUZZER1",
+      "statement": "BUZZER1(MLT-8530) 由 3V3_L2 经 R51(10R) 供电，D6(1N4148W) 反向并联于蜂鸣器两端，Q3(2N7002W) 作为低边开关。",
+      "confidence": "confirmed",
+      "attributes": {
+        "buzzer": "BUZZER1 MLT-8530",
+        "series_r": "R51 10R",
+        "flyback": "D6 1N4148W",
+        "switch": "Q3 2N7002W"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "577c50e9cbeb765827ad3f58861619024b8e44fffbcc94d1c98810e9ec887e6b",
+          "page": 1,
+          "locator": "BUZZER 区：BUZZER1、R51、D6、Q3"
+        }
+      ]
+    },
+    {
+      "id": "other.led",
+      "category": "other",
+      "subject": "LED1 / LED2",
+      "statement": "LED1 为红色充电状态灯，VBAT 经 R27(1K) 接其阳极、CHG_STAT 接其阴极；LED2 为绿色电源灯，LED_PWR_GREEN 经 R9(4.7K) 接其阳极、阴极接地。",
+      "confidence": "confirmed",
+      "attributes": {
+        "led1": "RED,CHG_STAT",
+        "led1_resistor": "R27 1K",
+        "led2": "GREEN,LED_PWR_GREEN",
+        "led2_resistor": "R9 4.7K",
+        "r8": "NC"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "5ca6589619677cb92305aedccaf2f401bc7bc3689c39c7eb58d8eecbdaa41c5e",
+          "page": 1,
+          "locator": "LED 区：R27/R8、LED1 RED、R9、LED2 GREEN"
+        }
+      ]
+    }
+  ],
+  "needs_review": [
+    {
+      "id": "nr-1",
+      "fact_id": "component.pmic-identity",
+      "question": "请依据 BOM 确认 M1(StampTimerPower2) 是否对应产品文档中的 M5PM1。",
+      "reason": "原理图在 M1 符号处标注 StampTimerPower2 与 0x6E，但未直接标注 M5PM1。",
+      "evidence": [
+        {
+          "asset_sha256": "5ca6589619677cb92305aedccaf2f401bc7bc3689c39c7eb58d8eecbdaa41c5e",
+          "page": 1,
+          "locator": "TimerPower2 区：M1、StampTimerPower2、IIC Address:0X6E"
+        }
+      ]
+    },
+    {
+      "id": "nr-2",
+      "fact_id": "component.ioexp-identity",
+      "question": "请确认 U5(IO_EXP, 0x4F) 是否对应产品文档中的 M5IOE1。",
+      "reason": "原理图只显示 IO_EXP 通用符号名和 I2C 地址，完整型号由产品文档给出。",
+      "evidence": [
+        {
+          "asset_sha256": "7462e5815f4a7b77d8908909ae0b23a5c955aa269bb5684aee46e2f3ebf2a5c9",
+          "page": 1,
+          "locator": "PYB IOEXP 区：U5、IO_EXP、IIC Address:0X4F"
+        }
+      ]
+    },
+    {
+      "id": "nr-3",
+      "fact_id": "interface.rs485-transceiver",
+      "question": "请确认 SP485EEN-L/TR 收发器所在原理图页或接口扩展板，并补齐其 UART/方向控制连接。",
+      "reason": "四页主板原理图仅显示 G23_RX/G24_TX 的 M5BUS 引出，未出现 SP485EEN-L/TR。",
+      "evidence": [
+        {
+          "asset_sha256": "7462e5815f4a7b77d8908909ae0b23a5c955aa269bb5684aee46e2f3ebf2a5c9",
+          "page": 1,
+          "locator": "03 MCU Core 区：G23/G24 GPIO"
+        },
+        {
+          "asset_sha256": "5ca6589619677cb92305aedccaf2f401bc7bc3689c39c7eb58d8eecbdaa41c5e",
+          "page": 1,
+          "locator": "M5BUS 区：G23_RX/G24_TX 到 JP3"
+        }
+      ]
+    },
+    {
+      "id": "nr-4",
+      "fact_id": "interface.lcd-driver",
+      "question": "请确认 JP4 所接 LCD 面板内置的控制器型号是否为 ILI9342C，并核对 FPC 引脚定义。",
+      "reason": "主板原理图只给出 JP4 接口网络，未标注面板控制器型号。",
+      "evidence": [
+        {
+          "asset_sha256": "577c50e9cbeb765827ad3f58861619024b8e44fffbcc94d1c98810e9ec887e6b",
+          "page": 1,
+          "locator": "LCD & TP 区：JP4 与 LCD 接口信号"
+        }
+      ]
+    },
+    {
+      "id": "nr-5",
+      "fact_id": "interface.touch-controller",
+      "question": "请确认 JP5 所接触控面板的控制器型号是否为 CHSC6540。",
+      "reason": "主板原理图只给出 JP5 的 I2C、复位、中断与电源接口，未标注控制器型号。",
+      "evidence": [
+        {
+          "asset_sha256": "577c50e9cbeb765827ad3f58861619024b8e44fffbcc94d1c98810e9ec887e6b",
+          "page": 1,
+          "locator": "LCD & TP 区：JP5 C-TP 与触控信号"
+        }
+      ]
+    }
+  ]
+}

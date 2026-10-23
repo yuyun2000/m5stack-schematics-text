@@ -1,0 +1,21 @@
+{
+  "dry_run": false,
+  "failed": 0,
+  "published": 1,
+  "results": [
+    {
+      "backup": null,
+      "draft_action": "create",
+      "dry_run": false,
+      "errors": [],
+      "needs_review": 1,
+      "product_id": "unit-8servos2-i2c-781bab2970d2",
+      "product_name": "Unit 8Servos2-I2C",
+      "publish_action": "create",
+      "sha256": "4931b1644e64f49456c75365cf1ee1bc7f65f5856ae382e0f6ac52bf94b3283c",
+      "status": "valid",
+      "uncertain_facts": 0
+    }
+  ],
+  "schema_version": 1
+}

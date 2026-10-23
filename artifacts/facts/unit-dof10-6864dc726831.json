@@ -1,0 +1,642 @@
+{
+  "schema_version": 1,
+  "generator": "schematic_describer",
+  "product": {
+    "product_id": "unit-dof10-6864dc726831",
+    "product_name": "Unit DoF10",
+    "sku": "U230",
+    "source_path": "unit/Unit_DoF10.md",
+    "source_sha256": "ce87690f434ff765d96112715f9212375874d3db3dac5ea9d02a02f100b79a6a",
+    "input_sha256": "401022e23963b8e19214c00661816ecedcce7ccc23c434c7c967f151ad473dac"
+  },
+  "schematic_assets": [
+    {
+      "sha256": "ff9fd127d707d3ce01ad78cbcbc040e18f75a89a4fa10ae43985894918a0f459",
+      "source_url": "https://m5stack-doc.oss-cn-shenzhen.aliyuncs.com/1291/U230_Unit_DoF10_sche_page_01.png",
+      "pages": [
+        1
+      ]
+    }
+  ],
+  "summary": "Unit DoF10 集成 BMI270、BMM350 与 SPA06-003，三者共用 GROVE_IO 的 I2C 总线。ME6206A33M3G 将 5V 转为 3V3，SSP7615-18DFR 将 3V3 转为 1V8 供 BMM350；BMI270 的 SDO 由 SW1/R3 选择 0x68 或 0x69。SCL/SDA 由 R1/R2 上拉，BMM350 经 R4/R5 0R 接入，SPA06-003 与 BMI270 由 3V3 供电。",
+  "keywords": [
+    "Unit DoF10",
+    "U230",
+    "BMI270",
+    "BMM350",
+    "SPA06-003",
+    "ME6206A33M3G",
+    "SSP7615-18DFR",
+    "GROVE_IO",
+    "I2C",
+    "SCL",
+    "SDA",
+    "BMM_SCL",
+    "BMM_SDA",
+    "0x68",
+    "0x69",
+    "0x14",
+    "0x76",
+    "SDO",
+    "SW1",
+    "R3",
+    "ADSEL",
+    "CRST",
+    "BYPASS",
+    "VDD",
+    "VDDIO",
+    "VCC_5V",
+    "3V3",
+    "1V8",
+    "INT1",
+    "INT2",
+    "CSB"
+  ],
+  "components": [
+    {
+      "reference": "U1",
+      "part_number": "ME6206A33M3G",
+      "role": "5V 转 3.3V LDO",
+      "evidence": [
+        {
+          "asset_sha256": "ff9fd127d707d3ce01ad78cbcbc040e18f75a89a4fa10ae43985894918a0f459",
+          "page": 1,
+          "locator": "B 区中部：U1 型号与 VIN/VOUT/GND"
+        }
+      ]
+    },
+    {
+      "reference": "U2",
+      "part_number": "BMI270",
+      "role": "六轴 IMU，I2C 从机",
+      "evidence": [
+        {
+          "asset_sha256": "ff9fd127d707d3ce01ad78cbcbc040e18f75a89a4fa10ae43985894918a0f459",
+          "page": 1,
+          "locator": "B 区右侧：U2 BMI270 与 1~14 脚"
+        }
+      ]
+    },
+    {
+      "reference": "U4",
+      "part_number": "SPA06-003",
+      "role": "气压/温度传感器，I2C 从机",
+      "evidence": [
+        {
+          "asset_sha256": "ff9fd127d707d3ce01ad78cbcbc040e18f75a89a4fa10ae43985894918a0f459",
+          "page": 1,
+          "locator": "C 区左侧：U4 SPA06-003 与 1~8 脚"
+        }
+      ]
+    },
+    {
+      "reference": "U5",
+      "part_number": "SSP7615-18DFR",
+      "role": "3V3 转 1V8 LDO",
+      "evidence": [
+        {
+          "asset_sha256": "ff9fd127d707d3ce01ad78cbcbc040e18f75a89a4fa10ae43985894918a0f459",
+          "page": 1,
+          "locator": "D 区中部：U5 SSP7615-18DFR 与 VIN/OUT/EN/GND_EP"
+        }
+      ]
+    },
+    {
+      "reference": "BMM350",
+      "part_number": "BMM350",
+      "role": "三轴磁力计；可见符号未单列 U 位号",
+      "evidence": [
+        {
+          "asset_sha256": "ff9fd127d707d3ce01ad78cbcbc040e18f75a89a4fa10ae43985894918a0f459",
+          "page": 1,
+          "locator": "C 区右侧：绿色 BMM350 符号及 A1~C3 引脚"
+        }
+      ]
+    },
+    {
+      "reference": "J1",
+      "part_number": "GROVE_IO",
+      "role": "I2C 接口：IO2=SCL、IO1=SDA、VCC=VCC_5V、GND",
+      "evidence": [
+        {
+          "asset_sha256": "ff9fd127d707d3ce01ad78cbcbc040e18f75a89a4fa10ae43985894918a0f459",
+          "page": 1,
+          "locator": "B 区左侧：J1 GROVE_IO 与网络名"
+        }
+      ]
+    },
+    {
+      "reference": "SW1",
+      "part_number": "SW-PWR",
+      "role": "BMI270 SDO 地址选择开关，可将 SDO 接至 3V3",
+      "evidence": [
+        {
+          "asset_sha256": "ff9fd127d707d3ce01ad78cbcbc040e18f75a89a4fa10ae43985894918a0f459",
+          "page": 1,
+          "locator": "B 区右侧：SW1 与 SDO/R3"
+        }
+      ]
+    },
+    {
+      "reference": "R1 / R2",
+      "part_number": "4.7K",
+      "role": "SCL 与 SDA 上拉到 3V3",
+      "evidence": [
+        {
+          "asset_sha256": "ff9fd127d707d3ce01ad78cbcbc040e18f75a89a4fa10ae43985894918a0f459",
+          "page": 1,
+          "locator": "B 区左侧 J1 上方：R1、R2 4.7K"
+        }
+      ]
+    },
+    {
+      "reference": "R3",
+      "part_number": "10K",
+      "role": "BMI270 SDO 下拉至 GND",
+      "evidence": [
+        {
+          "asset_sha256": "ff9fd127d707d3ce01ad78cbcbc040e18f75a89a4fa10ae43985894918a0f459",
+          "page": 1,
+          "locator": "B 区右侧：R3 10K 至 GND"
+        }
+      ]
+    },
+    {
+      "reference": "R4 / R5",
+      "part_number": "0R",
+      "role": "BMM_SCL/BMM_SDA 到 SCL/SDA 的串联连接电阻",
+      "evidence": [
+        {
+          "asset_sha256": "ff9fd127d707d3ce01ad78cbcbc040e18f75a89a4fa10ae43985894918a0f459",
+          "page": 1,
+          "locator": "C 区右侧：R4、R5 0R"
+        }
+      ]
+    },
+    {
+      "reference": "C1",
+      "part_number": "10uF",
+      "role": "VCC_5V 输入滤波",
+      "evidence": [
+        {
+          "asset_sha256": "ff9fd127d707d3ce01ad78cbcbc040e18f75a89a4fa10ae43985894918a0f459",
+          "page": 1,
+          "locator": "B 区中部：C1 10uF"
+        }
+      ]
+    },
+    {
+      "reference": "C2",
+      "part_number": "100nF",
+      "role": "3V3 输出高频滤波",
+      "evidence": [
+        {
+          "asset_sha256": "ff9fd127d707d3ce01ad78cbcbc040e18f75a89a4fa10ae43985894918a0f459",
+          "page": 1,
+          "locator": "B 区中部：C2 100nF"
+        }
+      ]
+    },
+    {
+      "reference": "C3",
+      "part_number": "10uF",
+      "role": "3V3 输出储能滤波",
+      "evidence": [
+        {
+          "asset_sha256": "ff9fd127d707d3ce01ad78cbcbc040e18f75a89a4fa10ae43985894918a0f459",
+          "page": 1,
+          "locator": "B 区中部：C3 10uF"
+        }
+      ]
+    },
+    {
+      "reference": "C5 / C6",
+      "part_number": "100nF",
+      "role": "BMI270 VDD 与 VDDIO 去耦",
+      "evidence": [
+        {
+          "asset_sha256": "ff9fd127d707d3ce01ad78cbcbc040e18f75a89a4fa10ae43985894918a0f459",
+          "page": 1,
+          "locator": "B 区右侧：C5、C6 各 100nF"
+        }
+      ]
+    },
+    {
+      "reference": "C8",
+      "part_number": "100nF",
+      "role": "SPA06-003 VDDIO 去耦",
+      "evidence": [
+        {
+          "asset_sha256": "ff9fd127d707d3ce01ad78cbcbc040e18f75a89a4fa10ae43985894918a0f459",
+          "page": 1,
+          "locator": "C 区左侧：C8 100nF"
+        }
+      ]
+    },
+    {
+      "reference": "C4",
+      "part_number": "100nF",
+      "role": "BMM350 3V3/VDDIO 去耦",
+      "evidence": [
+        {
+          "asset_sha256": "ff9fd127d707d3ce01ad78cbcbc040e18f75a89a4fa10ae43985894918a0f459",
+          "page": 1,
+          "locator": "C 区右侧 BMM350 左侧：C4 100nF"
+        }
+      ]
+    },
+    {
+      "reference": "C7",
+      "part_number": "100nF",
+      "role": "BMM350 1V8/VDD 去耦",
+      "evidence": [
+        {
+          "asset_sha256": "ff9fd127d707d3ce01ad78cbcbc040e18f75a89a4fa10ae43985894918a0f459",
+          "page": 1,
+          "locator": "C 区右侧 BMM350 左侧：C7 100nF"
+        }
+      ]
+    },
+    {
+      "reference": "C9",
+      "part_number": "2.2uF",
+      "role": "BMM350 CRST 对地电容",
+      "evidence": [
+        {
+          "asset_sha256": "ff9fd127d707d3ce01ad78cbcbc040e18f75a89a4fa10ae43985894918a0f459",
+          "page": 1,
+          "locator": "C 区右侧 BMM350 左侧：C9 2.2uF"
+        }
+      ]
+    },
+    {
+      "reference": "C10 / C11",
+      "part_number": "104",
+      "role": "1V8 LDO 输入与输出滤波",
+      "evidence": [
+        {
+          "asset_sha256": "ff9fd127d707d3ce01ad78cbcbc040e18f75a89a4fa10ae43985894918a0f459",
+          "page": 1,
+          "locator": "D 区中部：C10、C11 均标 104"
+        }
+      ]
+    }
+  ],
+  "facts": [
+    {
+      "id": "system.dof10-architecture",
+      "category": "system",
+      "subject": "Unit DoF10",
+      "statement": "Unit DoF10 的传感器组合为 BMI270、BMM350 与 SPA06-003，三个器件均接入 SCL/SDA I2C 总线并由同一 GROVE_IO 对外连接。",
+      "confidence": "confirmed",
+      "attributes": {
+        "imu": "BMI270",
+        "magnetometer": "BMM350",
+        "pressure_sensor": "SPA06-003",
+        "external_connector": "J1 GROVE_IO"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "ff9fd127d707d3ce01ad78cbcbc040e18f75a89a4fa10ae43985894918a0f459",
+          "page": 1,
+          "locator": "B/C 区：U2 BMI270、BMM350、U4 SPA06-003 与 J1"
+        }
+      ]
+    },
+    {
+      "id": "power.5v-to-3v3",
+      "category": "power",
+      "subject": "U1",
+      "statement": "VCC_5V 接 U1(ME6206A33M3G) 的 VIN(3)，VOUT(2) 输出 3V3，GND(1) 接地；输入 C1=10uF，输出 C2=100nF、C3=10uF。",
+      "confidence": "confirmed",
+      "attributes": {
+        "vin": "VCC_5V",
+        "vout": "3V3",
+        "vin_pin": "3",
+        "vout_pin": "2",
+        "gnd_pin": "1",
+        "c1": "10uF",
+        "c2": "100nF",
+        "c3": "10uF"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "ff9fd127d707d3ce01ad78cbcbc040e18f75a89a4fa10ae43985894918a0f459",
+          "page": 1,
+          "locator": "B 区中部：U1 与 C1-C3"
+        }
+      ]
+    },
+    {
+      "id": "power.1v8-ldo",
+      "category": "power",
+      "subject": "U5",
+      "statement": "U5(SSP7615-18DFR) 的 VIN(4)=3V3、EN(3)=3V3、OUT(1)=1V8，GND(2) 与 GND_EP(5) 接地；输入 C10 与输出 C11 均标 104。",
+      "confidence": "confirmed",
+      "attributes": {
+        "part": "SSP7615-18DFR",
+        "vin": "3V3",
+        "vout": "1V8",
+        "enable": "3V3",
+        "c10": "104",
+        "c11": "104"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "ff9fd127d707d3ce01ad78cbcbc040e18f75a89a4fa10ae43985894918a0f459",
+          "page": 1,
+          "locator": "D 区中部：U5 与 C10/C11"
+        }
+      ]
+    },
+    {
+      "id": "interface.grove",
+      "category": "interface",
+      "subject": "J1",
+      "statement": "J1(GROVE_IO)：IO2=SCL，IO1=SDA，VCC=VCC_5V，GND=GND。",
+      "confidence": "confirmed",
+      "attributes": {
+        "io2": "SCL",
+        "io1": "SDA",
+        "vcc": "VCC_5V",
+        "gnd": "GND"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "ff9fd127d707d3ce01ad78cbcbc040e18f75a89a4fa10ae43985894918a0f459",
+          "page": 1,
+          "locator": "B 区左侧：J1 GROVE_IO"
+        }
+      ]
+    },
+    {
+      "id": "bus.i2c-pullup",
+      "category": "bus",
+      "subject": "R1/R2",
+      "statement": "SCL 与 SDA 分别经 R1、R2（4.7K）上拉到 3V3。",
+      "confidence": "confirmed",
+      "attributes": {
+        "scl_pullup": "R1 4.7K",
+        "sda_pullup": "R2 4.7K",
+        "pullup_rail": "3V3"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "ff9fd127d707d3ce01ad78cbcbc040e18f75a89a4fa10ae43985894918a0f459",
+          "page": 1,
+          "locator": "B 区左侧 J1 上方：R1/R2"
+        }
+      ]
+    },
+    {
+      "id": "component.bmi270-power",
+      "category": "component",
+      "subject": "U2",
+      "statement": "BMI270 的 VDD(8) 与 VDDIO(5) 均接 3V3，CSB(12) 接 VDDIO 所在 3V3 网络，GNDIO(6) 与 GND(7) 接地；C5、C6 各 100nF。",
+      "confidence": "confirmed",
+      "attributes": {
+        "vdd": "3V3",
+        "vddio": "3V3",
+        "csb": "3V3",
+        "c5": "100nF",
+        "c6": "100nF"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "ff9fd127d707d3ce01ad78cbcbc040e18f75a89a4fa10ae43985894918a0f459",
+          "page": 1,
+          "locator": "B 区右侧：U2 电源脚、CSB 与 C5/C6"
+        }
+      ]
+    },
+    {
+      "id": "bus.bmi270-i2c",
+      "category": "bus",
+      "subject": "U2",
+      "statement": "BMI270 的 SDA(14) 接 SDA，SCX(13) 接 SCL；SDO(1) 接地址选择网络。",
+      "confidence": "confirmed",
+      "attributes": {
+        "sda_pin": "14",
+        "scl_pin": "13",
+        "sdo_pin": "1"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "ff9fd127d707d3ce01ad78cbcbc040e18f75a89a4fa10ae43985894918a0f459",
+          "page": 1,
+          "locator": "B 区右侧：U2 SDX/SCX/SDO 与网络名"
+        }
+      ]
+    },
+    {
+      "id": "address.bmi270",
+      "category": "address",
+      "subject": "U2",
+      "statement": "BMI270 地址由 SDO(1) 决定：SDO=1 为 0x69，SDO=0 为 0x68（默认）；R3(10K) 下拉 SDO，SW1 可将 SDO 接到 3V3。",
+      "confidence": "confirmed",
+      "attributes": {
+        "sdo0": "0x68",
+        "sdo1": "0x69",
+        "default": "0x68",
+        "pulldown": "R3 10K",
+        "switch": "SW1"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "ff9fd127d707d3ce01ad78cbcbc040e18f75a89a4fa10ae43985894918a0f459",
+          "page": 1,
+          "locator": "B 区右侧：BMI270 I2C Address 注释与 SW1/R3"
+        }
+      ]
+    },
+    {
+      "id": "power.bmm350-rails",
+      "category": "power",
+      "subject": "BMM350",
+      "statement": "BMM350 的 VDDIO(B3) 接 3V3，VDD(C1) 接 1V8；CRST(C2) 经 C9(2.2uF) 到地，BYPASS(C3) 接地；C4 与 C7 均为 100nF。",
+      "confidence": "confirmed",
+      "attributes": {
+        "vddio": "3V3",
+        "vdd": "1V8",
+        "crst_cap": "C9 2.2uF",
+        "bypass": "GND",
+        "c4": "100nF",
+        "c7": "100nF"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "ff9fd127d707d3ce01ad78cbcbc040e18f75a89a4fa10ae43985894918a0f459",
+          "page": 1,
+          "locator": "C 区右侧 BMM350 左侧：VDDIO/VDD/CRST/BYPASS 与 C4/C7/C9"
+        }
+      ]
+    },
+    {
+      "id": "bus.bmm350-i2c",
+      "category": "bus",
+      "subject": "BMM350",
+      "statement": "BMM350 的 SCK(A3) 为 BMM_SCL，经 R4(0R) 接 SCL；SDA(A2) 为 BMM_SDA，经 R5(0R) 接 SDA；ADSEL(B2) 与 GND(B1) 接地。",
+      "confidence": "confirmed",
+      "attributes": {
+        "sck_pin": "A3",
+        "sda_pin": "A2",
+        "r4": "0R",
+        "r5": "0R",
+        "adsel": "GND"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "ff9fd127d707d3ce01ad78cbcbc040e18f75a89a4fa10ae43985894918a0f459",
+          "page": 1,
+          "locator": "C 区右侧：BMM350 SCK/SDA/ADSEL/GND 与 R4/R5"
+        }
+      ]
+    },
+    {
+      "id": "address.bmm350-value",
+      "category": "address",
+      "subject": "BMM350 I2C address",
+      "statement": "产品清单给出的 BMM350 I2C 地址为 0x14。原理图将 ADSEL(B2) 与 GND(B1) 接地，但页内没有打印地址值。",
+      "confidence": "uncertain",
+      "attributes": {
+        "documented_address": "0x14",
+        "adsel_level": "low"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "ff9fd127d707d3ce01ad78cbcbc040e18f75a89a4fa10ae43985894918a0f459",
+          "page": 1,
+          "locator": "C 区右侧：BMM350 ADSEL(B2)/GND(B1)"
+        }
+      ]
+    },
+    {
+      "id": "component.spa06-i2c",
+      "category": "component",
+      "subject": "U4",
+      "statement": "SPA06-003 的 SCK(4)=SCL、SDI(3)=SDA、CSB(2)=3V3、VDD(8)=VDDIO(6)=3V3、SDO(5)=GND、GND(1,7)=GND，C8 为 100nF。",
+      "confidence": "confirmed",
+      "attributes": {
+        "sck_pin": "4",
+        "sdi_pin": "3",
+        "csb_pin": "2",
+        "vdd_pin": "8",
+        "vddio_pin": "6",
+        "sdo_pin": "5",
+        "c8": "100nF"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "ff9fd127d707d3ce01ad78cbcbc040e18f75a89a4fa10ae43985894918a0f459",
+          "page": 1,
+          "locator": "C 区左侧：U4 SPA06-003、1~8 脚与 C8"
+        }
+      ]
+    },
+    {
+      "id": "address.spa06-value",
+      "category": "address",
+      "subject": "SPA06-003 I2C address",
+      "statement": "产品清单给出的 SPA06-003 I2C 地址为 0x76。原理图将 SDO(5) 接地且 CSB(2) 接 3V3，但页内没有打印地址值。",
+      "confidence": "uncertain",
+      "attributes": {
+        "documented_address": "0x76",
+        "sdo": "GND",
+        "csb": "3V3"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "ff9fd127d707d3ce01ad78cbcbc040e18f75a89a4fa10ae43985894918a0f459",
+          "page": 1,
+          "locator": "C 区左侧：U4 SDO(5) 与 CSB(2)"
+        }
+      ]
+    },
+    {
+      "id": "gpio.bmi270-int",
+      "category": "gpio",
+      "subject": "BMI270 INT",
+      "statement": "BMI270 的 INT1(4) 与 INT2(9) 仅绘出短引脚线，未连接命名网络、GROVE 接口或其他器件。",
+      "confidence": "confirmed",
+      "attributes": {
+        "int1_pin": "4",
+        "int2_pin": "9",
+        "net": null
+      },
+      "evidence": [
+        {
+          "asset_sha256": "ff9fd127d707d3ce01ad78cbcbc040e18f75a89a4fa10ae43985894918a0f459",
+          "page": 1,
+          "locator": "B 区右侧：U2 INT1/INT2"
+        }
+      ]
+    },
+    {
+      "id": "gpio.bmm350-int",
+      "category": "gpio",
+      "subject": "BMM350 INT",
+      "statement": "BMM350 的 INT(A1) 引脚只绘出短引脚线，未连接命名网络、GROVE 接口或其他器件。",
+      "confidence": "confirmed",
+      "attributes": {
+        "pin": "A1",
+        "net": null
+      },
+      "evidence": [
+        {
+          "asset_sha256": "ff9fd127d707d3ce01ad78cbcbc040e18f75a89a4fa10ae43985894918a0f459",
+          "page": 1,
+          "locator": "C 区右侧：BMM350 INT(A1)"
+        }
+      ]
+    },
+    {
+      "id": "key_net.i2c",
+      "category": "key_net",
+      "subject": "I2C nets",
+      "statement": "外部 I2C 网络名称为 SCL/SDA；BMM350 侧网络名称为 BMM_SCL/BMM_SDA，两组网络分别通过 R4/R5 的 0R 电阻连接。",
+      "confidence": "confirmed",
+      "attributes": {
+        "external_scl": "SCL",
+        "external_sda": "SDA",
+        "sensor_scl": "BMM_SCL",
+        "sensor_sda": "BMM_SDA",
+        "series_resistors": "R4/R5 0R"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "ff9fd127d707d3ce01ad78cbcbc040e18f75a89a4fa10ae43985894918a0f459",
+          "page": 1,
+          "locator": "B/C 区：SCL/SDA、BMM_SCL/BMM_SDA 与 R4/R5"
+        }
+      ]
+    }
+  ],
+  "needs_review": [
+    {
+      "id": "nr-bmm350-address",
+      "fact_id": "address.bmm350-value",
+      "question": "请以 BMM350 数据手册确认 ADSEL 低电平时对应的 I2C 地址是否为 0x14。",
+      "reason": "产品清单给出 0x14，原理图只明确 ADSEL(B2) 接地，未在页内打印地址值。",
+      "evidence": [
+        {
+          "asset_sha256": "ff9fd127d707d3ce01ad78cbcbc040e18f75a89a4fa10ae43985894918a0f459",
+          "page": 1,
+          "locator": "C 区右侧：BMM350 ADSEL(B2)/GND(B1)"
+        }
+      ]
+    },
+    {
+      "id": "nr-spa06-address",
+      "fact_id": "address.spa06-value",
+      "question": "请以 SPA06-003 数据手册确认 SDO 接地时对应的 I2C 地址是否为 0x76。",
+      "reason": "产品清单给出 0x76，原理图只明确 SDO(5) 接地且 CSB(2) 接 3V3，未在页内打印地址值。",
+      "evidence": [
+        {
+          "asset_sha256": "ff9fd127d707d3ce01ad78cbcbc040e18f75a89a4fa10ae43985894918a0f459",
+          "page": 1,
+          "locator": "C 区左侧：U4 SDO(5) 与 CSB(2)"
+        }
+      ]
+    }
+  ]
+}

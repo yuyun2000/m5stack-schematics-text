@@ -1,0 +1,21 @@
+{
+  "dry_run": false,
+  "failed": 0,
+  "published": 1,
+  "results": [
+    {
+      "backup": null,
+      "draft_action": "create",
+      "dry_run": false,
+      "errors": [],
+      "needs_review": 1,
+      "product_id": "unit-dof9-a231857e2581",
+      "product_name": "Unit DoF9",
+      "publish_action": "create",
+      "sha256": "476aafd798a1650fa469fdaa93de68b05a747c73e4325b207da03f2b33c70085",
+      "status": "valid",
+      "uncertain_facts": 1
+    }
+  ],
+  "schema_version": 1
+}

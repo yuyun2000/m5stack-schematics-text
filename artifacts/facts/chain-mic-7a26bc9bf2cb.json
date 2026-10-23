@@ -1,0 +1,524 @@
+{
+  "schema_version": 1,
+  "generator": "schematic_describer",
+  "product": {
+    "product_id": "chain-mic-7a26bc9bf2cb",
+    "product_name": "Chain MIC",
+    "sku": "U226",
+    "source_path": "chain/Chain_MIC.md",
+    "source_sha256": "975ee69dd4c51db85ec8694408c9dc24b11281eb1e3df2e39f81f24cc13e2513",
+    "input_sha256": "71465339fb398f7b3cbaafd49da085dd9fee72036d8c1fe6fa7538474360eb40"
+  },
+  "schematic_assets": [
+    {
+      "sha256": "8e80406304a6c8519aecaf0fb0655399f0febb10a5d9dac1a7d53ecf6e901856",
+      "source_url": "https://m5stack-doc.oss-cn-shenzhen.aliyuncs.com/1284/Chain_MIC_SCH_Main_V1.0_20250626_2026_07_10_13_59_52.png",
+      "pages": [
+        1
+      ]
+    }
+  ],
+  "summary": "Chain MIC 是以 STM32G031G8U6 为核心的链式麦克风节点：5V 经 TPA7343D-33FS4 LDO 得到 3.3V；GMI4015P-2C 驻极体经偏置与 RC 滤波后由 SGM321YC5/TR 运放放大约 100 倍送入 MCU 的 PA7/AIN；链路上下游各用一个 GROVE 接口，UART1/UART2 分别用于级联收发，另有 WS2812C-2020 状态灯和 5Pin SWD 调试口。",
+  "keywords": [
+    "Chain MIC",
+    "U226",
+    "STM32G031G8U6",
+    "TPA7343D-33FS4",
+    "SGM321YC5",
+    "WS2812C-2020",
+    "GMI4015P-2C",
+    "VCC_5V",
+    "VCC_3V3",
+    "AIN",
+    "UART1",
+    "UART2",
+    "TXD1",
+    "RXD1",
+    "TXD2",
+    "RXD2",
+    "SWD",
+    "MCU_SWCLK",
+    "MCU_SWDIO",
+    "NRST",
+    "GROVE_IO",
+    "RGB"
+  ],
+  "components": [
+    {
+      "reference": "U1",
+      "part_number": "STM32G031G8U6",
+      "role": "主控 MCU，处理麦克风采样、链路 UART 通信与 RGB 控制",
+      "evidence": [
+        {
+          "asset_sha256": "8e80406304a6c8519aecaf0fb0655399f0febb10a5d9dac1a7d53ecf6e901856",
+          "page": 1,
+          "locator": "B/C 区：U1 符号与型号 STM32G031G8U6"
+        }
+      ]
+    },
+    {
+      "reference": "U2",
+      "part_number": "TPA7343D-33FS4",
+      "role": "5V 转 3.3V LDO，为 MCU 与模拟电路供电",
+      "evidence": [
+        {
+          "asset_sha256": "8e80406304a6c8519aecaf0fb0655399f0febb10a5d9dac1a7d53ecf6e901856",
+          "page": 1,
+          "locator": "A 区 LDO：U2 型号及 VIN/VOUT/EN 引脚"
+        }
+      ]
+    },
+    {
+      "reference": "U3",
+      "part_number": "WS2812C-2020",
+      "role": "单线 RGB 状态指示灯",
+      "evidence": [
+        {
+          "asset_sha256": "8e80406304a6c8519aecaf0fb0655399f0febb10a5d9dac1a7d53ecf6e901856",
+          "page": 1,
+          "locator": "B 区 RGB：U3 型号及 VDD/DI/DO/GND 引脚"
+        }
+      ]
+    },
+    {
+      "reference": "U4",
+      "part_number": "SGM321YC5/TR",
+      "role": "麦克风信号放大运放，输出至 MCU AIN",
+      "evidence": [
+        {
+          "asset_sha256": "8e80406304a6c8519aecaf0fb0655399f0febb10a5d9dac1a7d53ecf6e901856",
+          "page": 1,
+          "locator": "C/D 区 MIC：U4 型号及 +IN/-IN/OUT 引脚"
+        }
+      ]
+    },
+    {
+      "reference": "MK1",
+      "part_number": "GMI4015P-2C",
+      "role": "驻极体麦克风，1 脚为信号正端，2 脚接地",
+      "evidence": [
+        {
+          "asset_sha256": "8e80406304a6c8519aecaf0fb0655399f0febb10a5d9dac1a7d53ecf6e901856",
+          "page": 1,
+          "locator": "C/D 区 MIC：MK1 型号与 1/2 脚"
+        }
+      ]
+    },
+    {
+      "reference": "J1",
+      "part_number": "GROVE_IO",
+      "role": "链路 IN 侧 GROVE 接口：IO2=TXD1、IO1=RXD1、VCC=VCC_5V、GND",
+      "evidence": [
+        {
+          "asset_sha256": "8e80406304a6c8519aecaf0fb0655399f0febb10a5d9dac1a7d53ecf6e901856",
+          "page": 1,
+          "locator": "A 区左侧：J1 GROVE_IO 及网络标注"
+        }
+      ]
+    },
+    {
+      "reference": "J2",
+      "part_number": "GROVE_IO",
+      "role": "链路 OUT 侧 GROVE 接口：IO2=RXD2、IO1=TXD2、VCC=VCC_5V、GND",
+      "evidence": [
+        {
+          "asset_sha256": "8e80406304a6c8519aecaf0fb0655399f0febb10a5d9dac1a7d53ecf6e901856",
+          "page": 1,
+          "locator": "A 区右侧：J2 GROVE_IO 及网络标注"
+        }
+      ]
+    },
+    {
+      "reference": "J4",
+      "part_number": "SWD_5P",
+      "role": "5 Pin 调试口：1=VCC_3V3、2=MCU_SWCLK、3=MCU_SWDIO、4=NRST、5=GND",
+      "evidence": [
+        {
+          "asset_sha256": "8e80406304a6c8519aecaf0fb0655399f0febb10a5d9dac1a7d53ecf6e901856",
+          "page": 1,
+          "locator": "B 区 RGB/SWD：J4 与 1~5 脚网络"
+        }
+      ]
+    },
+    {
+      "reference": "R2",
+      "part_number": "10K",
+      "role": "NRST 上拉到 VCC_3V3",
+      "evidence": [
+        {
+          "asset_sha256": "8e80406304a6c8519aecaf0fb0655399f0febb10a5d9dac1a7d53ecf6e901856",
+          "page": 1,
+          "locator": "B 区 MCU 左侧：R2 10K"
+        }
+      ]
+    },
+    {
+      "reference": "C1",
+      "part_number": "1uF",
+      "role": "NRST 对地滤波",
+      "evidence": [
+        {
+          "asset_sha256": "8e80406304a6c8519aecaf0fb0655399f0febb10a5d9dac1a7d53ecf6e901856",
+          "page": 1,
+          "locator": "B 区 MCU 左侧：C1 1uF"
+        }
+      ]
+    },
+    {
+      "reference": "R1 / R3",
+      "part_number": "1K",
+      "role": "麦克风偏置分压/限流电阻",
+      "evidence": [
+        {
+          "asset_sha256": "8e80406304a6c8519aecaf0fb0655399f0febb10a5d9dac1a7d53ecf6e901856",
+          "page": 1,
+          "locator": "C/D 区 MIC：R1、R3 均为 1K"
+        }
+      ]
+    },
+    {
+      "reference": "C4 / C9",
+      "part_number": "100nF / 10nF",
+      "role": "偏置滤波与麦克风信号耦合",
+      "evidence": [
+        {
+          "asset_sha256": "8e80406304a6c8519aecaf0fb0655399f0febb10a5d9dac1a7d53ecf6e901856",
+          "page": 1,
+          "locator": "C/D 区 MIC：C4 100nF、C9 10nF"
+        }
+      ]
+    },
+    {
+      "reference": "R4 / R7",
+      "part_number": "1M",
+      "role": "运放同相端偏置分压",
+      "evidence": [
+        {
+          "asset_sha256": "8e80406304a6c8519aecaf0fb0655399f0febb10a5d9dac1a7d53ecf6e901856",
+          "page": 1,
+          "locator": "C/D 区 MIC：R4 1M、R7 1M"
+        }
+      ]
+    },
+    {
+      "reference": "R8 / C11",
+      "part_number": "100K / 100pF",
+      "role": "运放反馈网络，决定约 100 倍增益",
+      "evidence": [
+        {
+          "asset_sha256": "8e80406304a6c8519aecaf0fb0655399f0febb10a5d9dac1a7d53ecf6e901856",
+          "page": 1,
+          "locator": "D 区 MIC：R8 100K 与 C11 100pF 并联反馈"
+        }
+      ]
+    },
+    {
+      "reference": "R9 / C13",
+      "part_number": "1K / 1uF",
+      "role": "运放反相端交流接地网络",
+      "evidence": [
+        {
+          "asset_sha256": "8e80406304a6c8519aecaf0fb0655399f0febb10a5d9dac1a7d53ecf6e901856",
+          "page": 1,
+          "locator": "D 区 MIC：R9 1K 串 C13 1uF 到地"
+        }
+      ]
+    }
+  ],
+  "facts": [
+    {
+      "id": "power.5v-to-3v3",
+      "category": "power",
+      "subject": "U2",
+      "statement": "VCC_5V 输入 LDO U2 的 VIN(4) 与 EN(3)，VOUT(1) 输出 VCC_3V3，GND(2) 与 EP(5) 接地。",
+      "confidence": "confirmed",
+      "attributes": {
+        "input": "VCC_5V",
+        "output": "VCC_3V3",
+        "vin_pin": "4",
+        "en_pin": "3",
+        "vout_pin": "1",
+        "gnd_pin": "2",
+        "ep_pin": "5"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "8e80406304a6c8519aecaf0fb0655399f0febb10a5d9dac1a7d53ecf6e901856",
+          "page": 1,
+          "locator": "A 区 LDO：U2 引脚与电源网络"
+        }
+      ]
+    },
+    {
+      "id": "power.decoupling",
+      "category": "power",
+      "subject": "C5-C8",
+      "statement": "LDO 输入侧 C6=100nF、C5=10uF，输出侧 C7=100nF、C8=10uF 均对地。",
+      "confidence": "confirmed",
+      "attributes": {
+        "input_100n": "C6",
+        "input_10u": "C5",
+        "output_100n": "C7",
+        "output_10u": "C8"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "8e80406304a6c8519aecaf0fb0655399f0febb10a5d9dac1a7d53ecf6e901856",
+          "page": 1,
+          "locator": "A 区 LDO：四个电容标注"
+        }
+      ]
+    },
+    {
+      "id": "component.mcu-core",
+      "category": "component",
+      "subject": "U1",
+      "statement": "U1 为 STM32G031G8U6，VDD/VDDA(3) 接 VCC_3V3，VSS/VSSA(4) 接地，PF2-NRST 为复位脚(5)。",
+      "confidence": "confirmed",
+      "attributes": {
+        "part": "STM32G031G8U6",
+        "vdd_pin": "3",
+        "vss_pin": "4",
+        "nrst_pin": "5"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "8e80406304a6c8519aecaf0fb0655399f0febb10a5d9dac1a7d53ecf6e901856",
+          "page": 1,
+          "locator": "B 区：U1 型号与 3/4/5 脚"
+        }
+      ]
+    },
+    {
+      "id": "reset.nrst",
+      "category": "reset",
+      "subject": "U1",
+      "statement": "NRST 网络由 R2(10K) 上拉到 VCC_3V3，并由 C1(1uF) 对地；同时引到 SWD 接口 J4 第 4 脚。",
+      "confidence": "confirmed",
+      "attributes": {
+        "pullup": "R2 10K",
+        "cap": "C1 1uF",
+        "swd_pin": "J4-4"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "8e80406304a6c8519aecaf0fb0655399f0febb10a5d9dac1a7d53ecf6e901856",
+          "page": 1,
+          "locator": "B 区 MCU 左侧与 J4"
+        }
+      ]
+    },
+    {
+      "id": "debug.swd",
+      "category": "debug",
+      "subject": "J4",
+      "statement": "J4(SWD_5P) 定义：1=VCC_3V3，2=MCU_SWCLK，3=MCU_SWDIO，4=NRST，5=GND。",
+      "confidence": "confirmed",
+      "attributes": {
+        "pin1": "VCC_3V3",
+        "pin2": "MCU_SWCLK",
+        "pin3": "MCU_SWDIO",
+        "pin4": "NRST",
+        "pin5": "GND"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "8e80406304a6c8519aecaf0fb0655399f0febb10a5d9dac1a7d53ecf6e901856",
+          "page": 1,
+          "locator": "B 区 J4 与 1~5 脚"
+        }
+      ]
+    },
+    {
+      "id": "bus.uart1",
+      "category": "bus",
+      "subject": "U1",
+      "statement": "UART1 使用 PB6(TXD1,26) 与 PB7(RXD1,27)，其中 TXD1/RXD1 引到 IN 侧 GROVE J1 的 IO2/IO1。",
+      "confidence": "confirmed",
+      "attributes": {
+        "tx": "PB6",
+        "rx": "PB7",
+        "connector": "J1"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "8e80406304a6c8519aecaf0fb0655399f0febb10a5d9dac1a7d53ecf6e901856",
+          "page": 1,
+          "locator": "A 区 J1 与 B 区 U1 右侧"
+        }
+      ]
+    },
+    {
+      "id": "bus.uart2",
+      "category": "bus",
+      "subject": "U1",
+      "statement": "UART2 使用 PA2(TXD2,8) 与 PA3(RXD2,9)，TXD2/RXD2 引到 OUT 侧 GROVE J2 的 IO1/IO2。",
+      "confidence": "confirmed",
+      "attributes": {
+        "tx": "PA2",
+        "rx": "PA3",
+        "connector": "J2"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "8e80406304a6c8519aecaf0fb0655399f0febb10a5d9dac1a7d53ecf6e901856",
+          "page": 1,
+          "locator": "A 区 J2 与 B 区 U1 左侧"
+        }
+      ]
+    },
+    {
+      "id": "interface.grove-in",
+      "category": "interface",
+      "subject": "J1",
+      "statement": "J1(GROVE_IO, IN 方向)：IO2=TXD1，IO1=RXD1，VCC=VCC_5V，GND=GND。",
+      "confidence": "confirmed",
+      "attributes": {
+        "io2": "TXD1",
+        "io1": "RXD1",
+        "vcc": "VCC_5V",
+        "gnd": "GND"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "8e80406304a6c8519aecaf0fb0655399f0febb10a5d9dac1a7d53ecf6e901856",
+          "page": 1,
+          "locator": "A 区左侧 J1"
+        }
+      ]
+    },
+    {
+      "id": "interface.grove-out",
+      "category": "interface",
+      "subject": "J2",
+      "statement": "J2(GROVE_IO, OUT 方向)：IO2=RXD2，IO1=TXD2，VCC=VCC_5V，GND=GND。",
+      "confidence": "confirmed",
+      "attributes": {
+        "io2": "RXD2",
+        "io1": "TXD2",
+        "vcc": "VCC_5V",
+        "gnd": "GND"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "8e80406304a6c8519aecaf0fb0655399f0febb10a5d9dac1a7d53ecf6e901856",
+          "page": 1,
+          "locator": "A 区右侧 J2"
+        }
+      ]
+    },
+    {
+      "id": "sensor.mic-bias",
+      "category": "sensor",
+      "subject": "MK1",
+      "statement": "MK1(GMI4015P-2C) 1 脚经 R3(1K) 接到偏置节点，偏置节点由 VCC_3V3 经 R1(1K) 供电并用 C4(100nF) 对地；2 脚接地。",
+      "confidence": "confirmed",
+      "attributes": {
+        "mic": "GMI4015P-2C",
+        "bias_r": "R1/R3 1K",
+        "bias_c": "C4 100nF"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "8e80406304a6c8519aecaf0fb0655399f0febb10a5d9dac1a7d53ecf6e901856",
+          "page": 1,
+          "locator": "C/D 区 MIC 左侧"
+        }
+      ]
+    },
+    {
+      "id": "analog.mic-amp",
+      "category": "analog",
+      "subject": "U4",
+      "statement": "MK1 信号经 C9(10nF) 耦合到 U4(SGM321YC5/TR) 同相端(1)；同相端由 R4(1M) 上拉、R7(1M) 下拉偏置；U4 输出(4)=AIN 接 MCU PA7(13)。",
+      "confidence": "confirmed",
+      "attributes": {
+        "opamp": "SGM321YC5/TR",
+        "in_plus": "1",
+        "out": "4",
+        "ain_pin": "PA7/13"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "8e80406304a6c8519aecaf0fb0655399f0febb10a5d9dac1a7d53ecf6e901856",
+          "page": 1,
+          "locator": "C/D 区 MIC 与 U1 左侧"
+        }
+      ]
+    },
+    {
+      "id": "analog.mic-gain",
+      "category": "analog",
+      "subject": "U4",
+      "statement": "U4 反馈网络为 R8(100K) 并联 C11(100pF)，反相端经 R9(1K) 串 C13(1uF) 到地，构成约 100 倍同相放大。",
+      "confidence": "confirmed",
+      "attributes": {
+        "feedback_r": "R8 100K",
+        "feedback_c": "C11 100pF",
+        "gain_leg": "R9 1K + C13 1uF",
+        "gain": "约 100"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "8e80406304a6c8519aecaf0fb0655399f0febb10a5d9dac1a7d53ecf6e901856",
+          "page": 1,
+          "locator": "D 区 MIC 反馈网络"
+        }
+      ]
+    },
+    {
+      "id": "interface.rgb",
+      "category": "interface",
+      "subject": "U3",
+      "statement": "U3(WS2812C-2020)：VDD(4)=VCC_3V3，DI(3)=RGB 网络接 MCU PA8(16)，GND(2) 接地，DO(1) 悬空/级联输出。",
+      "confidence": "confirmed",
+      "attributes": {
+        "led": "WS2812C-2020",
+        "vdd_pin": "4",
+        "di_pin": "3",
+        "gnd_pin": "2",
+        "do_pin": "1",
+        "data_net": "RGB (PA8)"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "8e80406304a6c8519aecaf0fb0655399f0febb10a5d9dac1a7d53ecf6e901856",
+          "page": 1,
+          "locator": "B 区 RGB 与 U1 右侧"
+        }
+      ]
+    },
+    {
+      "id": "power.rgb-decoupling",
+      "category": "power",
+      "subject": "C12",
+      "statement": "C12(100nF) 跨接 VCC_3V3 与 GND，为 U3 去耦。",
+      "confidence": "confirmed",
+      "attributes": {
+        "cap": "C12 100nF"
+      },
+      "evidence": [
+        {
+          "asset_sha256": "8e80406304a6c8519aecaf0fb0655399f0febb10a5d9dac1a7d53ecf6e901856",
+          "page": 1,
+          "locator": "B 区 RGB 左侧"
+        }
+      ]
+    }
+  ],
+  "needs_review": [
+    {
+      "id": "nr-1",
+      "fact_id": "interface.rgb",
+      "question": "U3 的 DO(1) 是否在板上连接到下一颗 LED 或测试点？",
+      "reason": "原理图该引脚仅画出短引线，未见明确网络名。",
+      "evidence": [
+        {
+          "asset_sha256": "8e80406304a6c8519aecaf0fb0655399f0febb10a5d9dac1a7d53ecf6e901856",
+          "page": 1,
+          "locator": "B 区 RGB：U3 DO 引脚"
+        }
+      ]
+    }
+  ]
+}
