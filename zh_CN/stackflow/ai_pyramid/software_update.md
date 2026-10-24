@@ -97,7 +97,7 @@ apt install llm-asr
 apt install llm-llm
 ```
 
-- [下载 llm-llm deb](https://repo.llm.m5stack.com/m5stack-apt-repo/pool/jammy/ax630c/v1.9/llm-llm_1.9-m5stack1_arm64.deb)
+- [下载 llm-llm deb（ax650c，v1.12）](https://repo.llm.m5stack.com/m5stack-apt-repo/pool/jammy/ax650c/v1.12/llm-llm_1.12-m5stack1_arm64.deb)
 
 ### llm-vlm
 
